@@ -1,38 +1,61 @@
 #!/usr/bin/perl -w
-my $USAGE = <<END_USAGE;
 
-$0 (c) Eimear Kenny, Wormbase, 2005.
-    
-Usage: $0 <Wormbase link definitions file> <link to locus names at Sanger> <Wormbase url> <in file(s)?>
-
-- or -
-
-Usage: $0 <link directory> <in file(s)?> 
-
-SAMPLE INPUT: WormbaseLinkGenerator.pl WormbaseLinks.def http://www.sanger.ac.uk/Projects/C_elegans/LOCI/loci_all.txt aceserver.cshl.org  wnt_signal.html
-
-- or -
-
-SAMPLE INPUT: WormbaseLinkGenerator.pl WS140/ wnt_signal.html
-\n
-    
-END_USAGE
-####################################################################################
-$|=1;     
-use Ace; 
 use strict;
+use Getopt::Long;
+use Ace;
 use IO::Handle;
 use IPC::Open2;
 use HTTP::Request;
 use LWP::UserAgent;
 use File::Basename;
 
+my ($def_file,$locus_names,$wormbase_url,$link_directory,@input_files,$help);
+
+GetOptions ("def_file=s"       => \$def_file,    
+	    "locus_names=s"     => \$locus_names, 
+	    "wormbase_url=s"   => \$wormbase_url,
+	    "link_directory=s" => \$link_directory,
+	    "input_files=s"    => \@input_files,
+	    "help"             => \$help,
+    );
+
+@input_files = split(/,/,join(',',@input_files));
+
+
+if ($help) {
+    die <<USAGE;
+
+Markup docbook html chapters. This script can be called in two fashions.
+
+
+1. Generate links from WormBase:
+
+   $0 --def_file [WormBase link definitions file] --locus_names [link to locus names at Sanger] \
+      --wormbase_url [WormBase URL] --input_files [file1.html,file2.html]
+
+2. Generate links from a directory
+
+   $0 --link_directory [path to link directory] --input_files [file1.html,file2.html]
+
+USAGE;
+
+}
+
+$|=1;     
+
+
+
+
+    
+
+
+
   #####################################
   # Declare globals                    #
   #####################################
 
 my ($db) = "";
-my %Links = ();
+my %links = ();
 my $j=0;
 my $version = "";
 
@@ -43,6 +66,10 @@ my $version = "";
 # Generate links from wormbase     
 #           or                                 
 # Grab links from directory                
+
+
+if ($link_directory) {
+    %links
 
 
 if (@ARGV == 2){
