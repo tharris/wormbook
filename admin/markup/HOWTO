@@ -1,15 +1,22 @@
-Usage of textpresso :
+HowTo markup WormBook chapters in DocBook XML with links to WormBase.
 
-1. Be sure the path for 'perl' and 'touch' are correct in the script.  To execute the script for the first time :
+ shell> ./WormbaseLinkGenerator.pl --def_file WormbaseLinks.def \
+                                   --locus_url http://www.sanger.ac.uk/Projects/C_elegans/LOCI/loci_all.txt \
+                                   --wormbase_aceserver aceserver.cshl.org \
+				   --input_files docbook.xml
 
-textpresso$ ./WormbaseLinkGenerator.pl WormbaseLinks.def http://www.sanger.ac.uk/Projects/C_elegans/LOCI/loci_all.txt aceserver.cshl.org docbook.xml
+   For any given release, the first time the script is run it will create a reference directory
+   for that release, eg WS210/. This directory will be several GB in size.
 
-(where docbook.xml is the input chapter in docbook xml format)
+   Subsequent invocations for the provided release will rely on this directory at
+   significant time savings.  Invoke as:
 
-The first run will generate a directory named WS149 (or similar name WS###)  of size ~ 1GB.
+ shell> ./WormBaseLinkGenerator.pl --link_directory WS210/ \ 
+ 	                           --input_files docbook2.xml
 
-2. After the WSXX/ directory is created, subsequent runs of textpresso utilize the local WS### directory.  The script is executed as follows :
 
-textpresso$ ./WormbaseLinkGenerator.pl WS149/ docbook2.xml
 
-(where docbook2.xml is the next chapter in docbook xml format)
+
+	Todd Harris
+	12/29/2012
+

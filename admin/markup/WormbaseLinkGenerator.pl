@@ -9,11 +9,11 @@ use HTTP::Request;
 use LWP::UserAgent;
 use File::Basename;
 
-my ($def_file,$locus_names,$wormbase_url,$link_directory,@input_files,$help);
+my ($def_file,$locus_url,$wormbase_aceserver,$link_directory,@input_files,$help);
 
 GetOptions ("def_file=s"       => \$def_file,    
-	    "locus_names=s"     => \$locus_names, 
-	    "wormbase_url=s"   => \$wormbase_url,
+	    "locus_url=s"      => \$locus_url, 
+	    "wormbase_aceserver=s"   => \$wormbase_aceserver,
 	    "link_directory=s" => \$link_directory,
 	    "input_files=s"    => \@input_files,
 	    "help"             => \$help,
@@ -25,17 +25,20 @@ GetOptions ("def_file=s"       => \$def_file,
 if ($help) {
     die <<USAGE;
 
-Markup docbook html chapters. This script can be called in two fashions.
+Markup docbook html chapters. This script can be called in two ways, one using WormBase to define
+links, the other using a local directory with link definitions.
 
+1. Generate links via WormBase:
 
-1. Generate links from WormBase:
-
-   $0 --def_file [WormBase link definitions file] --locus_names [link to locus names at Sanger] \
-      --wormbase_url [WormBase URL] --input_files [file1.html,file2.html]
+   $0 --def_file [WormBase link definitions file] \
+      --locus_url [link to locus_all.txt at Sanger] \
+      --wormbase_aceserver [WormBase AceServer eg mining.wormbase.org] \
+      --input_files [file1.html,file2.html]
 
 2. Generate links from a directory
 
-   $0 --link_directory [path to link directory] --input_files [file1.html,file2.html]
+   $0 --link_directory [path to link directory] \
+      --input_files [file1.html,file2.html]
 
 USAGE;
 
@@ -51,54 +54,31 @@ $|=1;
 
 
   #####################################
-  # Declare globals                    #
+  # Declare globals   OMG
   #####################################
 
 my ($db) = "";
-my %links = ();
 my $j=0;
 my $version = "";
+my %links;
 
-  #####################################
-  # Main                              #
-  #####################################
-
-# Generate links from wormbase     
-#           or                                 
-# Grab links from directory                
-
-
+# Fetch links from a directory
 if ($link_directory) {
-    %links
+    %links = fetch_links_from_directory($link_directory);
 
-
-if (@ARGV == 2){
-    
-    my $links = $ARGV[0]; # directory
-    
-    %Links = &grabLinksFromDirectory($links);
-    
+# Fetch links from WormBase
+} elsif ($def_file) {
+    my %templates = read_definitions_file();
+    %links = fetch_links_from_wormbase(\%templates);
 }
 
-if(@ARGV == 4){
-    
-    my $defs = $ARGV[0]; # def file
-    my $locus_url = $ARGV[1]; # url to locus_all.txt file at sanger
-    my $links = $ARGV[2]; # ace server
 
-    my %Templates = &readDefs($defs);  
-    %Links = &grabLinksFromWormbase($links, $locus_url, \%Templates);
 
-}
 
-if ((@ARGV < 2) || (@ARGV == 3) || (@ARGV > 4))
-{
-    die "$USAGE\n";
-}
 
 # Mark up links in .html files
 
-my @xml = pop(@ARGV);
+my @xml = @input_files;
 
 # start log file
 
@@ -129,7 +109,7 @@ for (@xml){
 
     print "The following biological entities occur in $_:\n";
 
-    my $xml = &GetSentences($_);
+    my $xml = get_sentences($_);
 
 #    TJF commented 2 lines below per discussion with Eimear 24 May 2005
 #    $xml =~ s/(\>)(\w)/$1 $2/g; # add white spaces around xml tagged words so
@@ -151,7 +131,7 @@ for (@xml){
 	# print the closing ulink tag
 	# print the following character for the term
 	# repeat for all instances of the term
-	my $matches = scalar($xml =~ s%([\>\s\/\(\[\{\*]+?)(${pterm})(\<|\s|\/|\. |\,|\:|\;|\)|\]|\}|\*)+?%$1\<ulink url\=\"$Links{$term}\" role\=\"_blank\"\>$2\<\/ulink\>$3%mg);
+	my $matches = scalar($xml =~ s%([\>\s\/\(\[\{\*]+?)(${pterm})(\<|\s|\/|\. |\,|\:|\;|\)|\]|\}|\*)+?%$1\<ulink url\=\"$links{$term}\" role\=\"_blank\"\>$2\<\/ulink\>$3%mg);
 	
 	$Report{$2} = $matches if defined ($2);
     }
@@ -184,102 +164,95 @@ close STDERR;
 close STDOUT;
 close LOG;
 
-exit(0);
-
-  ########################################
-  # Subroutines                          #
-  ########################################
 
 
-sub grabLinksFromDirectory{
-    my ($u) = @_;
 
-    my @files = <$u/*>;
-    my %Links=();
+########################################
+# Subroutines                          #
+########################################
 
-    print "Grabbing links from $u ...";
+
+sub fetch_links_from_directory {
+    my $link_directory = shift;
+
+    my @files = <$link_directory/*>;
+    my %links;
+    
+    print "Fetching links from $link_directory...\n";
     
     for my $path (@files){
 	my $object = basename($path, '');
-	my $link = join (" ", GetContents("$path"));
-	$Links{$object} = $link;
+	my $link = join (" ", get_contents("$path"));
+	$links{$object} = $link;
     }
-    print " done\n";
-
-    return %Links;
+    print " done\n";   
+    return %links;
 }
 
-sub grabLinksFromWormbase{
-    my ($links, $locus_url, $Templates) = @_;
-    
-    
-    my (%Objects) = &readAceObjects($links,$Templates);
-    my (%Locus) = &readCurrentLocus($locus_url);
-
-    my (%Links) = &makeWBLinks(\%Objects,\%Locus, $Templates);
-    return %Links;
+sub fetch_links_from_wormbase {
+    my ($templates) = @_;    
+    my %objects = read_acedb_objects($templates);
+    my %locus   = read_current_locus_names();
+    my (%links) = make_wormbase_links(\%objects,\%locus, $templates);
+    return %links;
 }
 
-sub readDefs{
-    my $template = shift;
-
-    my %Templates=();
+sub read_definitions_file {    
+    my %definitions;
 
     print "\n";
     print "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS\n";
     print "Reading in URL templates ...";
-    open TMP, "<$template"
-	or die "Can't open $template: $!";
+    open TMP, "<$def_file"
+	or die "Can't open $def_file: $!";
     while (<TMP>){
 	chomp;
 	next if /^\/\//; # get rid of comment lines
 	my ($class, $template, $rules) = split/\t+/, $_;
-	$Templates{$class} = [ ($template, $rules) ];
+	$definitions{$class} = [ ($template, $rules) ];
     }
     close TMP
 	or die "Can't close $template: $!";
     print "done\n\n";
-    return %Templates;
+    return %definitions;
 }
 
 
-sub readAceObjects{
-    my ($links, $Templates) = @_;
-
+sub read_acedb_objects {
+    my ($templates) = @_;
+    
     print "Opening Wormbase connection ....";
 
-    my $db = Ace->connect(-host=>$links,-port=>2005) || die "Connection failure: ",Ace->error;
-
+    my $db = Ace->connect(-host=>$wormbase_aceserver,-port=>2005) || die "Connection failure: ",Ace->error;
+    
     print "done\n";
     
-    my %Objects=();
-
-    # get ws version
+    my %objects=();
+    
+    # get ws version - cruft - this is a global
     my %status = $db->status;
     $version = $status{database}{version};
 
     system(`mkdir $version`) unless (-d $version);  # make directory of version number
-
-    for (sort keys %$Templates){
-	next if /Locus/;     #skips Locus
-	next if /Protein/;   #skips Protein
+    
+    for (sort keys %$templates){
+	next if /Locus/;     # skips Locus
+	next if /Protein/;   # skips Protein
 	my @objects = ();
 	my $count = $db->count($_ => '*');
 	print "\nThere are $count terms in the $_ data class.\n";
 	print "Downloading now .......";
 	@objects = $db->fetch($_);
-	$Objects{$_} = [ @objects ];
+	$objects{$_} = [ @objects ];
 	print "done\n";
     }
-    return (%Objects);
+    return (%objects);
 }
 
-sub readCurrentLocus{
-    my $u = shift;
-
-    my %Locus=();
-
-    my $page = &getWebPage($u);
+sub read_current_locus_names {
+    my $locus=();
+    
+    my $page = get_web_page($locus_url);
     my $cgc_gene_pattern = "[a-z]{3,4}-[0-9]{1,}\.?[0-9]{1,}?";
 
     my @tmp = split /\n/, $page;    #splits by line
@@ -292,48 +265,51 @@ sub readCurrentLocus{
 	my $syn_list = $line[-2];                #grabs any synonyms 
 	my @syn = split / /, $syn_list;          
 	for (@syn){
-	    $Locus{$_} = $wbgene if $_ =~ /^$cgc_gene_pattern$/;
+	    $locus{$_} = $wbgene if $_ =~ /^$cgc_gene_pattern$/;
 	    } #pushes into %Locus
     }
-    my $count = scalar(keys %Locus);
+    my $count = scalar(keys %locus);
     print "There are $count terms in the Locus class.\n\n";
-    return %Locus;                               #returns hash
+    return %locus;                               #returns hash
 }
 
-sub makeWBLinks{
-    my ($Objects, $Locus, $Templates) = @_;
 
-    my %Links=();
 
+
+sub make_worbase_links {
+    my ($objects, $locus, $templates) = @_;
+
+    my %links=();
+    
     print "Making links now .....";
-    for (keys %$Locus){
+    for (keys %$locus){
 	my ($o, $u) = "";
-
-	($o, $u) = &makeURL($$Locus{$_}, $$Templates{Locus}[0], $$Templates{Locus}[1], $version);
+	
+	($o, $u) = make_url($$locus{$_}, $$templates{Locus}[0], $$templates{Locus}[1], $version);
 	next unless (defined ($o) && defined ($u));
-	$Links{$o}=$u;
+	$links{$o}=$u;
 
-	($o, $u) = &makeURL($_, $$Templates{Locus}[0], $$Templates{Locus}[1], $version);
+	($o, $u) = make_url($_, $$templates{Locus}[0], $$templates{Locus}[1], $version);
 	next unless (defined ($o) && defined ($u));
-	$Links{$o}=$u;
+	$links{$o}=$u;
 
 	tr/a-z/A-Z/ for $_; # convert to uppercase for protein names
 
-	($o, $u) = &makeURL($_, $$Templates{Protein}[0], $$Templates{Protein}[1], $version);
+	($o, $u) = make_url($_, $$templates{Protein}[0], $$templates{Protein}[1], $version);
 	next unless (defined ($o) && defined ($u));
-	$Links{$o}=$u;
+	$links{$o}=$u;
 
    }
 
-    my $count = scalar(keys %$Objects);
-    for (keys %$Objects){
+    my $count = scalar(keys %$objects);
+    for (keys %$objects){
 	for my $i ( 0 .. $#{ $$Objects{$_} }){
-	    $$Objects{$_}[$i] =~ s/\///g;     # gets rid of forwardslashes
-	    $$Objects{$_}[$i] =~ s/\'//g;     # gets rid of primes
+	    $$objects{$_}[$i] =~ s/\///g;     # gets rid of forwardslashes
+	    $$objects{$_}[$i] =~ s/\'//g;     # gets rid of primes
 	    my ($o, $u) = "";
-	    ($o, $u) = &makeURL($$Objects{$_}[$i], $$Templates{$_}[0], $$Templates{$_}[1]);
+	    ($o, $u) = make_url($$objects{$_}[$i], $$templates{$_}[0], $$templates{$_}[1]);
 	    next unless (defined ($o) && defined ($u));
-	    $Links{$o}=$u;
+	    $links{$o}=$u;
 	}
    }
 
@@ -341,10 +317,10 @@ sub makeWBLinks{
     print "There are $j total links\n";
     print "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\n";
 
-    return %Links;
+    return %links;
 }
 
-sub makeURL{
+sub make_url{
     my ($object, $url, $rule) = @_;
     return unless $object =~ /$rule/;
     $j++;
@@ -360,8 +336,7 @@ sub makeURL{
 }
 
 
-sub GetContents {
-    
+sub get_contents {
     my $filename = shift;
     my @return = ();
     open (IN,"$filename");
@@ -370,11 +345,10 @@ sub GetContents {
 	push @return, $line;
     }
     close (IN);
-    return @return;
-    
+    return @return;  
 }
 
-sub getWebPage{
+sub get_web_page{
     my $u = shift;
     
     my $ua = LWP::UserAgent->new(timeout => 30); #instantiates a new user agent
@@ -386,11 +360,8 @@ sub getWebPage{
     return $page;
 }
 
-sub GetSentences {
-
+sub get_sentences {
     my $xmlfile = shift;
-
-
     open (XML, "<$xmlfile") or die "Can't open xml file $xmlfile.";
     undef $/; 				# read the whole thing
     my $xml = <XML>;
