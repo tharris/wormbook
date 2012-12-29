@@ -1,0 +1,50 @@
+use warnings;
+use strict;
+use Boilerplate;
+use CGI qw/:standard/;
+use CGI::Pretty qw( :html3 );
+
+my $boiler = Boilerplate->new();
+
+print header();
+print start_html(-title=>'WormBook - requested page not found',-style=>{src=>'/css/bookworm.css'});
+print qq(<div id="container">);   # open div="container"
+print $boiler->banner;
+
+print h4("The requested WormBook page was not found: >>$ENV{REDIRECT_URL}<<"), hr,;
+
+print "Please report this page missing using the WormBook ",
+        a({-href=>'/db/misc/feedback'},
+                  "Feedback Page"),
+	".", p;
+
+# separate "words" denoted by lowercase then uppercase, clean up and parse REDIRECT_URL
+my $parsed_URL;
+($parsed_URL = $ENV{REDIRECT_URL}) =~ s/(?<=[a-z])(?=[A-Z])/ /g;
+my @terms = split /[\/.[:space:]_]/, $parsed_URL;
+
+shift @terms; # unclear why first element in array must be removed; but this appears empty!
+
+# remove meaningless terms
+@terms = grep { !/(chapter)|(www)|(preprint)|(html)|(pdf)|(jpg)/i } @terms;
+
+# extract unique items from list (Perl CookBook recipt 4.7)
+my %seen = ();
+@terms = grep { ! $seen{$_} ++  } @terms;
+
+# construct search query
+my $query_OR  = join '%20OR%20', @terms;
+my $query_AND = join '%20AND%20', @terms;
+
+print "Search terms: @terms", p;
+print "To search for WormBook chapters containing ANY of these terms (boolean OR), click ",
+       a({-href=>"/db/misc/search.cgi?search_html=on;search_preprints=on;query=$query_OR"},
+       "here."), p,
+
+       "To search for WormBook chapters containing ALL of these terms (boolean AND), click ",
+       a({-href=>"/db/misc/search.cgi?search_html=on;search_preprints=on;query=$query_AND"},
+       "here."), p;
+
+print qq(</div>);  # close div="container"
+
+print $boiler->footer;

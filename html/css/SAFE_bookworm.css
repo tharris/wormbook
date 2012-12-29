@@ -1,0 +1,101 @@
+ /*  Main CSS for the WormBook Project */
+
+h1 {
+color: white;
+background-color: purple;
+padding: 10px 20px;
+}
+
+body {
+margin-left: 5%; 
+margin-right: 5%; 
+font-family: Verdana, sans-serif;
+background-color: gray;
+}
+
+/* ***********  Expand / Collapse TOC - BEGIN *************** */
+
+/* main list without Javascript */
+		ul#nav{
+			width:100%;
+			margin:0;
+			background: gray;
+			padding:.5em;
+			list-style-type:square;
+		}
+		ul#nav ul{
+			margin:0 0 0 1em;
+			padding:0;
+		}
+		ul#nav a{
+			text-decoration:none;
+			color:white;
+		}
+
+/* main list with Javascript */
+		ul#nav.pde_nav{
+			padding:.5em;
+			list-style-type:none;
+			line-height:1.7em;
+
+		}
+		ul#nav.pde_nav ul{
+			padding:0;
+		}
+		ul#nav.pde_nav li{
+			margin:0;
+			padding:0;
+			height:1.5em;		
+			list-style-type:none;
+		}
+		html>body ul#nav.pde_nav li{
+			height:auto;
+		}
+		ul.pde_nav a{
+			width:95%;
+			text-decoration:none;
+			color:white;
+			display:block;
+			padding:0 0 0 1em;
+		}
+		
+/* Classes added to show and hide and to indicate active state */
+		.pde_hide{display:none;}
+		.pde_show{display:block;}
+		.pde_parent{background:url(../images/plus.gif) 0 50% no-repeat transparent;}
+		.pde_active{background:url(../images/minus.gif) 0 50% no-repeat transparent;}
+		
+/* ***********  Expand / Collapse TOC - END *************** */
+
+
+/* *********** Photo Credit Popup on Mouseover - BEGIN ***************** */
+div#fotocredit *{position: absolute; left: 80%; text-align: right; text-decoration: none; color: #AAA; font-size: 0.8em;}
+div#fotocredit a span {display: none;}
+
+div#fotocredit a:hover span {display: block;
+   position: absolute; left: 0; width: 100%;
+   padding:10px; margin: 5px; z-index: 100;
+   color: #black; background: grey;
+   font: 10px Verdana, sans-serif; text-align: left;}
+
+/* *********** Photo Credit Popup on Mouseover - END ***************** */
+
+
+/* **********  Test fixed position box - should not move when page is scrolled ********** */
+
+#left {
+  background-color: #f0d0d0;
+  border: solid 1px #000000;
+  color: #000000;
+  padding: 8px;
+  left: 0px;
+  width: 70%;
+}
+
+#footer {
+	clear: both;
+	border-top: 1px solid #5C6F90;
+	border-bottom: 1px solid #5C6F90;
+	text-align: center;
+	color: #000;
+	}

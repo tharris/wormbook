@@ -1,0 +1,95 @@
+package Apache::AddBoilerplate;
+# $Id: AddBoilerplate.pm,v 1.13 2009/10/05 22:39:54 qwang Exp $
+
+use strict;
+
+use Apache::Constants qw(:common);
+use Apache::File;
+use Boilerplate;
+
+sub handler {
+    my $r = shift;
+
+    return DECLINED unless $r->content_type eq 'text/html';
+    -r $r->filename || return DECLINED;
+
+    my $rc = $r->meets_conditions;
+    return $rc unless $rc == OK;
+
+    my $fh = Apache::File->new($r->filename) || return DECLINED;
+
+    my $stats;
+    if ($r->filename =~ /access_statistics/) {
+	$stats++;
+    }
+
+    $r->send_http_header;
+    return OK if $r->header_only;
+
+    my $boilerplate = Boilerplate->new();
+    my $style;
+    if ($r->filename =~ /index\.html/) {
+	$style = '/css/bookworm.css';
+    } elsif ($r->filename =~ /announce\.html/ || $r->filename =~ /sponsors\.html/ 
+	     || $r->filename =~ /about\.html/ 
+	     || $r->filename =~ /citewb\.html/ 
+	     || $r->filename =~ /authorinfo\.html/
+             || $r->filename =~ /mailarch/  
+	     || $r->filename =~ /search\.html/
+	     || $r->filename =~ /not_found\.html/
+	     || $r->filename =~ /newsarchive\.html/
+	     || $r->filename =~ /photocredits\.html/
+	     || $r->filename =~ /toc_/           # keeps css correct for subsection table of contents
+	     ) {
+
+	$style = '/css/bookworm.css';
+    } elsif ($r->filename =~ /docbook/ ) {
+	$style = undef;
+    } 
+     else {
+	$style = '/css/article.css';
+    }
+  
+    my $boiler = 0; #don't show boilerplates (header, footer)
+    while (<$fh>) {
+	if (m/noboiler/ || $boiler eq 'off' || $stats) {
+	    $r->print($_);
+	    $boiler = 'off';
+	    next;
+	}
+	if (m!</head(.*)!) {
+	    if ($style) {
+		$r->print(qq(<link rel="stylesheet" href="$style" />\n));
+	    }  
+	    $r->print(qq(<script language="JavaScript" type="text/javascript" src="/js/highlightTerms.js"></script>\n));
+	}
+
+	if (/<body(.*)>/i) {
+	    if ($style eq '/css/article.css') {
+		$_ =~ s/$1>/$1 onload='highlightIgorSearchTerms(document.referrer);'>/;
+	    }
+	    else {
+		$_ =~ s/$1>/$1 onload='highlightIgorSearchTerms(document.referrer);'><div id="container">/;
+	    }
+	}
+	
+    # so that we can turn off the auto-added header if need be
+	if ($stats) {
+	    $r->print($_);
+	    next;
+	} elsif (m!<body(.*)>!i && (!m/noboiler/i)) {
+	    $boiler = 1;
+	    $r->print($_);
+	    $r->print($boilerplate->banner());
+	    next;
+	} elsif (m!</body.*>!i && $boiler) {
+	    $r->print($boilerplate->footer());
+	    return OK;
+	}
+	$r->print($_);
+    }
+    return OK;
+}
+
+1;
+

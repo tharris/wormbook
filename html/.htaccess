@@ -1,0 +1,10 @@
+AddHandler server-parsed .html
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /wbg/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /wbg/index.php [L]
+</IfModule>

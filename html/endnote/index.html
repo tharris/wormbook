@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+                <title>WormBook - EndNote HOWTO</title>
+                <meta name="http-equiv" content="pragma:no-cache" />
+
+<!--            blue favicon  http://home.arcor.de/chatterji/projekte/gfe/aktuell.htm
+                red favicon http://www.nasa.gov/audience/forstudents/postsecondary/features/F_Worms_in_Space.html
+                favicon generator : http://www.123promotion.co.uk/favicon/   -->
+
+                <link rel="shortcut icon" href="../favicon.ico" />
+</head>
+<body>
+
+<h2>Importing and Exporting WormBook citations using EndNote</h2>
+<p>The following has been tested on EndNote 9.0.0 (Mac OSX) and EndNote X (Windows).  Where different, Windows commands are shown in [brackets].  A few changes are needed for import to <a href="#v8">EndNote version 8</a>.</p>
+
+<h3>Importing the WormBook citation set into an EndNote library</h3>
+<ol>
+   <li>EndNote [Edit] > Preferences > Reference Types > Modify Reference Types > Reference Type
+      <ul>
+        <li><p>choose 'Unused 1' or similar</p></li>
+	<li><p>map <em>only</em> the fields (all lowercase) shown below, then click OK > Save [OK; in previous window APPLY > OK]</p></li>
+	
+	  <table border="1">
+	    <tr>
+	      <th>Generic field name</th>
+	      <th>Enter text below</th>
+	    </tr>
+	    <tr>
+	      <td>Generic</td>
+	      <td>wormbook</td>
+	    </tr>
+            <tr>
+              <td>Author</td>
+              <td>author</td>
+            </tr>
+            <tr>
+              <td>Title</td>
+              <td>chapter</td>
+            </tr>
+            <tr>
+              <td>Secondary author</td>
+              <td>editor</td>
+            </tr>
+            <tr>
+              <td>Secondary title</td>
+              <td>book</td>
+            </tr>
+            <tr>
+              <td>Publisher</td>
+              <td>publisher</td>
+            </tr>
+            <tr>
+              <td>Date</td>
+              <td>date</td>
+            </tr>
+            <tr>
+              <td>ISBN / ISSN</td>
+              <td>issn</td>
+            </tr>
+            <tr>
+              <td>Electronic Resource Number</td>
+              <td>doi</td>
+            </tr>
+            <tr>
+              <td>URL</td>
+              <td>url</td>
+            </tr>
+
+	  </table>
+      </ul>
+   </li>
+
+   <li><p>Open either a new or existing Endnote library, e.g.  File > New > WormBook</p></li>
+   <li><p>File > Import > references.txt (available from the <a href="references.txt">WormBook website</a>)</p>
+     <ul>
+       <li>Import Options : Tab Delimited</li>
+       <li>Duplicates : Import All</li>
+       <li>Text Translation : Unicode (UTF-8) -- for diacritics and extended characters</li>
+     </ul>
+   </li>
+</ol>
+
+<p><a name="v8"<em>EndNote version 8 users:</em></a> The first two lines of 'references.txt' should be changed from <br />
+<pre>
+*wormbook
+author  chapter  editor  book  publisher  date  issn  doi  url
+</pre>
+to
+<pre>
+*Unused 1
+Author  Title  Secondary Author  Secondary Title  Publisher  Date  ISBN/ISSN  Custom 1  URL 
+</pre>
+</p>
+
+<p>EndNote v8 will not import any renamed Reference Types, preventing custom naming such as '*wormbook' shown in line 1 of the original 'references.txt'.
+If '*Unused 1' has been previously assigned, '*Unused 2' or '*Unused 3' may be utilized.  Tabs (not spaces) should delimit the field names.  Field names 3, 4, and 8 are composed of two terms separated by a space rather than a tab, i.e. 'Secondary[space]Author'.</p>
+
+<p>A bug in EndNote v8 prevents import using the 'Electronic Resource Number' field.  The 'Custom 1' field is used in place of 
+'Electronic Resource Number'.  Diacritics will not be imported.  Text Translation should be set to "No Translation".  Once imported, if new references do not appear in window, simply close and reopen the file.  Fields may be renamed after the references are successfully imported as shown in the table in step 1 above.  'Electronic Resource Number' must be replace by 'Custom 1'.</p>
+
+<p>For more information, consult the <a href="http://www.endnote.com/support/helpdocs/EndNote8_GuidedTour.pdf">EndNote Manual</a>, Chapter 8: Importing Reference Data into EndNote.</p>
+
+<h3>Exporting WormBook citations using Modified Style Templates</h3> [Windows comments to be added to this section]
+<p>This export procedures assumes that the 'wormbook' Reference Type has been created, as described above.</p>
+
+<ol>
+  <li>Edit > Output Styles > Open Style Manager
+      <p>Choose relevant journal style (e.g. Genome Res.ens) then click 'Edit'</p>
+      <p>File > Save As > Genome Res wormbook (for example)</p>
+  </li>
+  <li>Bibliography > Templates > Reference Types >  wormbook
+      <p>In the resulting 'wormbook' style box, enter the following fields and punctuation.  Field names may be entered using  the 'Insert Field' drop-down menu.</p>
+      <code>author chapter (date), book, ed. editor, publisher, `doi`/doi, url</code>
+      <p>(note backticks surrounding the first doi)</p>
+  </li>
+  <li><p>Bibliography > Editor Name > First Author > Jane Smith</p>
+      <p>Bibliography > Editor Name > Other Authors > John Doe</p>
+      <p>Bibliography > Editor Name > Initials > Full Name</p>
+  </li>
+  <li><p>Depending on the specific journal's Author field formatting, minor edits of the Bibliography >  Author Name may be needed to correct punctuation and abbreviations.  The current release of EndNote (Windows v.X, Mac OSX v.9) does not allow an output style to italicize specific words.  Minor formatting of the bibliography may be required.</p></li>
+</ol>
+
+<h2>Importing WormBook citations using Reference Manager</h2>
+<p>The following has been tested on Reference Manager 11 (Windows). If you are not using Reference Manager 11 (Windows) or experience difficulties in importing WormBook citations into your Reference Manager, please go to <a href="http://www.refman.com/support/rmsupport.asp" target="_blank">Reference Manager Technical Support & Services</a> for further help.</p>
+
+<h3>Importing the WormBook citation set into a Reference Manager library</h3>
+
+<ol>
+  <li><p>Download <a href="WormBook.cap">WormBook import filter</a> and <a href="references_refman.txt">Refman bibliographic library file</a>, save them in your local drive.</p>
+  </li>
+  <li><p>Open the Reference Manager database into which you want to import the references.</p>
+  </li>
+  <li><p>From the File menu, choose Import Text File.</p>
+  </li>
+  <li><p>In the Database drop-down list, select the database into which you want to import references, or go back to the File menu and choose to Create a new database if necessary.</p>
+  </li>
+  <li>In the Filter field, use the browse button to display the Select filter dialog box.
+<p>Locate the WormBook.cap file and click Open.</p>
+<p>The import filter tells Reference Manager how to format and organize the text as it is imported.</p>
+  </li>In the Text file field, click the browse button to locate references_refman.txt.
+<p>If you would like to view the text file, click View Text File.</p>
+  <li>Click Import to begin importing references.
+<p>You can see the text file scrolling in the background as Reference Manager reads it and imports the references.</p>
+  </li>
+</ol>
+
+Comments or questions?  Please email <a href="mailto:wormbook-help@wormbase.org?subject=feedback%20on%20EndNote%20HOWTO">wormbook-help@wormbase.org</a>
+
+<p id="someright"><a href="http://creativecommons.org/licenses/by/2.5/"><img class="floatLeft" border="0" src="/images/somerights20.gif" alt="Creative Commons License"/></a> All WormBook content, except where otherwise noted, is licensed under a <a href="http://creativecommons.org/licenses/by/2.5/" title="Creative Commons Attribution License" target="_blank">Creative Commons Attribution License.</a></p>
+
+</div>
+</body>
+</html>

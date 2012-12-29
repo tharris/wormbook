@@ -1,0 +1,89 @@
+# -*- Mode: perl -*-
+
+package Boilerplate;
+use strict 'vars';
+
+use CGI qw(:standard *table *TR *td center);
+use CGI::Carp;
+use Carp 'croak','cluck';
+
+my @cells = (qw|home about wormbase atlas sponsors author feedback|);
+my %cells2urls   = (
+		    home   => { name      => '<font color="#000000"><b>WormBook Home</b></font>',
+				url       => "/"},
+		    about => { name   => '<font color="#FFF5FF">About WormBook</font>',
+				   url      => "/about.html",
+			       },
+		    wormbase =>      { name       => '<font color="#FFF5FF">WormBase</font>',
+				   url        => "http://www.wormbase.org",
+			       },
+		    atlas   =>    { name       => '<font color="#FFF5FF">WormAtlas</font>',
+				   url        => "http://www.wormatlas.org",
+			       },
+		    sponsors =>  { name        => '<font color="#FFF5FF">Sponsors</font>',
+				   url         => "/sponsors.html",
+			       },
+		    author =>    { name       => '<font color="#FFF5FF">Author Info</font>',
+				   url        => "/authorinfo.html"
+			       },
+		    feedback => { name     => '<font color="#FFF5FF">Feedback</font>',
+				  url      => "/db/misc/feedback"
+				 },
+		    );
+
+
+sub new {
+    my $this = bless {},shift;
+    return $this;
+}
+
+sub banner {
+    my $self = shift;
+    my $self_url = url(-relative=>1);
+    my $html = a({-href=>"/"},  img({-src=>'/images/header_760x96.png',alt=>'WormBook Header Image',border=>"0"}) );
+
+#    if ($self_url eq 'index.html') {
+#	$html .= div({-id=>'fotocredit'},a({-href=>'#'},'Photo Credit',
+#					   span('  Embryo series courtesy of Einhard Schierenberg'))),
+#	h2(a({-href=>"javascript:openWindow()"},'How to Cite WormBook'));
+#    }
+
+    my $table = qq(<table id="navbar" border="0" cellpadding="2" cellspacing="1" width="760"><tr>\n);
+    foreach my $cell (@cells) {
+	my $name = $cells2urls{$cell}->{name};
+	my $url  = $cells2urls{$cell}->{url};
+
+	(my $check_url = $url) =~ s/\?.*$//;
+	my $active = $self_url ? $check_url =~ /$self_url$/ : $check_url eq '/';
+	my ($cell_color,$cell_css);
+	
+	if ($active) {
+	    $cell_color = '#9370db';
+	    $cell_css = 'bactive';
+	} else {
+	    $cell_color = '#9932cc';
+	    $cell_css = 'binactive';
+	}
+	
+	$table .= qq{<td bgcolor="$cell_color" align="center" nowrap="nowrap">
+			 <a href="$url" class="$cell_css">$name</a></td>\n};
+    }
+	
+    $table .= end_TR . end_table;
+    $html .= $table;
+    return $html;
+}
+
+sub footer {
+    my $self = shift;
+    my $html = <<END;
+<div id="footer">
+    <p>&copy; 2005 WormBook, except where otherwise noted</p>
+</div>
+</body>
+</html>
+END
+    return $html;
+}
+
+1;
