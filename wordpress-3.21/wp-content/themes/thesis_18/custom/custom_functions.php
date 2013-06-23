@@ -217,14 +217,14 @@ function front_page($slug) {
  
                  </div>';
 
-    // UPDATE WITH EACH NEW RELEASE.
+    // UPDATE WITH EACH NEW RELEASE. Change the future volume and date as appropriate.
     echo '<div id="big-note">
 	   <h3>Next Worm Breeder\'s Gazette</h3>
            <p class="noindent">
 
-	   <!--
-	   The next issue of the Worm Breeder\'s Gazette (Volume 19, #3) will be released in December 2013.  The <b>submission deadline</b> is <b>01 June, 2012</b>.</p>
-	   -->
+
+	   The next issue of the Worm Breeder\'s Gazette (Volume 19, #4) will be released in August 2013.  The <b>submission deadline</b> is <b>01 August, 2013</b>.</p>
+
 
           <h3>Stay up-to-date!</h3>
           <p class="noindent">Subscribe for updates to the WBG by <a href="http://feedburner.google.com/fb/a/mailverify?uri=TheWormBreedersGazette&amp;loc=en_US">email</a> or <a href="http://feedburner.google.com/TheWormBreedersGazette">RSS</a>.
@@ -683,7 +683,7 @@ function _display_figures() {
 	$img = wp_get_attachment_image($img_id , 'medium' ) ;
 
 	// Get the src
-	$src = wp_get_attachment_image_src($img_id , 'medium' );
+	$src = wp_get_attachment_image_src($img_id , 'full' );
 //	$src = wp_get_attachment_image_src($img_id , 'small' );
 	// $img = wp_get_attachment_image($img_id , 'attachment-160x160' ) ;	
             
