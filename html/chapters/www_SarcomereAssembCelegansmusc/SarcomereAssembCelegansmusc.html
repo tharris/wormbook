@@ -1,0 +1,1345 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Sarcomere assembly in C. elegans muscle
+         
+      </title>
+      <meta name="generator" content="DocBook XSL Stylesheets V1.67.2">
+      <link rel="start" href="#Muscle_ArticleID" title="Sarcomere assembly in C. elegans muscle&#xA;        ">
+      <link rel="next" href="#d0e86" title="1.&nbsp;Introduction">
+      <!--#include virtual="/ssi/header_article.html" -->
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<!--#include virtual="/ssi/boilerplate.html" -->
+<div class="html_to_pdf_link">
+	<a href="SarcomereAssembCelegansmusc.pdf">Download PDF version</a>
+</div>
+      <div class="article" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h1 class="title"><a name="Muscle_ArticleID"></a>Sarcomere assembly in <span class="emphasis"><em>C. elegans</em></span> muscle<sup><a name="d0e11" href="#ftn.d0e11">*</a></sup>
+                             
+                  </h1>
+               </div>
+               <div>
+                  <div class="author"><span class="author"><span class="firstname">Donald G.</span> <span class="surname">Moerman<em><span class="remark">
+                                 				<sup><a name="d0e41" href="#ftn.d0e41">&sect;</a></sup>
+                                                 </span></em>
+                                       </span><br></span><span class="affiliation"><span class="address">Department of Zoology, University of British Columbia, Vancouver, B.C., Canada V6T 1Z4
+                           <p></p></span></span></div>
+               </div>
+               <div>
+                  <div class="author"><span class="author"><span class="firstname">Benjamin D.</span> <span class="surname">Williams<em><span class="remark">
+                                 				<sup><a name="d0e41" href="#ftn.d0e41">&sect;</a></sup>
+                                                 </span></em>
+                                       </span><br></span><span class="affiliation"><span class="address">Department of Cell and Structural Biology, University of Illinois, Urbana, IL, 61801 USA
+                           <p></p></span></span></div>
+               </div>
+            </div>
+            <hr>
+         </div>
+         <div class="toc">
+
+	   <div id="section_locator"><a href="/toc_cellbiology.html">
+	         <b>This chapter is in WormBook section:</b><br />
+		       > Cell biology
+		</a></div><hr />
+
+<a href="http://www.wormbase.org/forums/index.php?board=221.0" title="Discuss WormBook" target="_blank"><font color="#9932cc"><b>View/Add Comments</b></font></a><br/>
+<IFRAME  SRC="http://tazendra.caltech.edu/~acedb/cgi-bin/wormbook_comment.cgi?name=Sarcomere+assembly+in+C.+elegans+muscle" HEIGHT=50 WIDTH=180 FRAMEBORDER=0 SCROLLING=NO allowTransparency="true"></IFRAME>
+
+<hr />
+
+            <p><b>Table of Contents</b></p>
+            <dl>
+               <dt><span class="sect1"><a href="#d0e86">1. Introduction</a></span></dt>
+               <dt><span class="sect1"><a href="#d0e121">2. Muscle attachments</a></span></dt>
+               <dt><span class="sect1"><a href="#d0e212">3. Dissection of muscle attachment assembly</a></span></dt>
+               <dt><span class="sect1"><a href="#d0e359">4. Initiating a sarcomere leads to distinct assembly dependence pathways for dense
+                                    bodies and M-lines</a></span></dt>
+               <dt><span class="sect1"><a href="#d0e1031">5. Distinguishing dense bodies from M-lines</a></span></dt>
+               <dt><span class="sect1"><a href="#d0e1057">6. Spacing of the components</a></span></dt>
+               <dt><span class="sect1"><a href="#d0e1266">7. Is sarcomere assembly in <span class="emphasis"><em>C. elegans</em></span> a general model of sarcomere assembly?</a></span></dt>
+               <dt><span class="sect1"><a href="#d0e1328">8. Summary</a></span></dt>
+               <dt><span class="sect1"><a href="#d0e1344">9. Acknowledgements</a></span></dt>
+               <dt><span class="sect1"><a href="#d0e1354">10. References</a></span></dt>
+            </dl>
+         </div>
+         <div class="abstract">
+            <p class="title"><span class="bold"><strong>Abstract</strong></span></p>
+            <p><span class="bold"><strong>Sarcomeres within body wall muscle in</strong></span> <span class="emphasis"><em><span class="bold"><strong>C. elegans</strong></span></em></span> <span class="bold"><strong>include attachments to the sarcolemma that are remarkably similar in structure to vertebrate adhesion complexes. Crucial early
+                     steps in muscle sarcomere assembly, a highly orchestrated affair involving many proteins, involve the assembly of these sarcomere
+                     attachments.  The steps involved in initiating the correct placement of these attachments and other sarcomere substructures
+                     are poorly understood. Using mutants in</strong></span> <span class="emphasis"><em><span class="bold"><strong>C. elegans</strong></span></em></span> <span class="bold"><strong>we are attempting to dissect the various steps in this process. We review what has been discovered to date and present a model
+                     of sarcomere assembly that initiates at the plasma membrane and involves proteins within muscle, the hypodermis and within
+                     the extracellular matrix.</strong></span></p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e86"></a>1.&nbsp;Introduction
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>The nematode <span class="emphasis"><em>Caenorhabditis elegans</em></span> has proven to be a useful
+                           system to study the development of muscle (<a href="#bib53">Waterston, 1988</a>; <a href="#bib38">Moerman and Fire, 1997</a>).
+                           Here we review sarcomere assembly, focusing specifically on the early events that occur
+                           at the muscle cell membrane. Myoblasts arise after the end of gastrulation (at 290 min.
+                           of embryonic development; <a href="#bib60">Sulston et al., 1983</a>) and are defined by the accumulation of
+                           structural components such as myosin, actin, vinculin, and integrin (<a href="#bib15">Epstein et al., 1993</a>; <a href="#bib29">Hresko et al., 1994</a>). Myoblasts then migrate to their final positions in four
+                           longitudinal quadrants, each of which is a double row of muscle cells (<a href="#bib29">Hresko et al.,
+                              1994</a>; <a href="#bib49">Schnabel et al., 1997</a>). The myoblasts flatten basally against the hypodermis and
+                           laterally against the neighboring muscle cell. The result is a continuous muscle-muscle
+                           junction running down the center of the muscle quadrant that is flanked on either side
+                           by a muscle-hypodermal junction (<a href="#bib29">Hresko et al., 1994</a>). In mid embryogenesis (450 min),
+                           the sarcomere components move to the muscle cell membrane where the muscle-muscle and
+                           muscle-hypoderm junctions converge at the center of the muscle quadrant, and then
+                           organize into sarcomeres. At this same time they form attachment structures that provide
+                           a physical linkage laterally between muscles cells and basally between muscle and
+                           hypodermis (<a href="#bib29">Hresko et al., 1994</a>).
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e121"></a>2.&nbsp;Muscle attachments
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>There are three related attachment complexes formed, the muscle-muscle adhesion
+                           plaques, and two related muscle-hypodermal structures termed dense bodies and M-lines.
+                           Although the attachment plaques also contribute, the dense bodies and M-line are
+                           primarily responsible for translating the mechanical movement of myofibrillar components
+                           to motion of the whole animal (<a href="#bib17">Francis and Waterston, 1985</a>).
+            </p>
+            <p>In adult muscle cells both dense bodies and M-lines are finger-like projections that
+                           extend from the muscle cell membrane into the cytoplasm where they ultimately attach to
+                           and organize the myofilaments within the contractile units. This arrangement is
+                           illustrated in <a href="#figure1">Figure 1</a>, which shows the overall distribution of
+                               <span class="emphasis"><em>C. elegans</em></span> body wall muscle and the organization of sarcomeres
+                           within muscle. Dense bodies and M-lines attach to actin filaments and myosin filaments,
+                           respectively, and are homologs of the Z-lines and M-lines in vertebrate striated muscle.
+                           The attachment plaques at muscle-muscle junctions are most similar to dense bodies, and
+                           anchor the actin filaments of the last half-I-band to the cell membrane (<a href="#bib17">Francis and
+                              Waterston, 1985</a>).
+            </p>
+            <div class="mediaobject" align="center"><a name="figure1"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="630">
+<tr>
+  <td align="center"><p><a href="Musclefig1.jpg"><img src="Musclefig1_s.jpg" border="2" align="middle" alt="Schematic Diagram of the C. elegans Body-Wall Muscle&#xA;                    Structure, and fluorescence microcopy of muscle attachments in embryos and&#xA;                    adults Figure 1"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 1. Schematic Diagram of the <span class="emphasis"><em>C. elegans</em></span> Body-Wall Muscle Structure, and fluorescence microcopy of muscle attachments in embryos and adults.&nbsp;</b>(A) An adult worm with body-wall muscle quadrants visible (orange). (B) A body-wall cross-section with cuticle, hypodermis,
+                     and basal lamina peeled away to reveal the basal membrane of two body-wall muscle cells. (C) A longitudinal section through
+                     a body-wall muscle cell. Dense bodies and M-lines attach actin thin filaments and myosin thick filaments, respectively, to
+                     the basal sarcolemma. (D) Locations of several different muscle attachment proteins. Loss-of-function for proteins shown in
+                     red causes the Pat developmental arrest phenotype. (E-J). <a href="http://www.wormbase.org/db/seq/protein?name=PAT-4;class=protein" target="_blank">PAT-4</a>/ILK and <a href="http://www.wormbase.org/db/seq/protein?name=PAT-3;class=protein" target="_blank">PAT-3</a> integrin colocalize at muscle attachments in embryos and adults. (E) A wild-type, 420 min. embryo. <a href="http://www.wormbase.org/db/seq/protein?name=PAT-4;class=protein" target="_blank">PAT-4</a>::GFP localizes to body-wall muscle attachments (arrow). The scale bar represents 2 <span class="symbol">&#956;</span>m. (F) The same embryo as that shown in (E) double stained with monoclonal antibodies MH25, recognizing <a href="http://www.wormbase.org/db/seq/protein?name=PAT-3;class=protein" target="_blank">PAT-3</a> integrin, and MH27, recognizing hypodermal-hypodermal cell junctions (included for developmental staging and orientation
+                     purposes). (G) An overlay of (E) and (F). Areas of <a href="http://www.wormbase.org/db/seq/protein?name=PAT-4;class=protein" target="_blank">PAT-4</a>::GFP and integrin colocalization appear yellow. (H-J) Detail of body-wall muscle from a rescued p<span class="emphasis"><em>at-4(<a href="http://www.wormbase.org/db/get?name=st551;class=Variation" target="_blank">st551</a>)</em></span> adult hermaphrodite coexpressing (H) p<span class="emphasis"><em>at-4::yfp</em></span> and (E) p<span class="emphasis"><em>at-3::cfp</em></span>. Dense bodies (arrows), M-lines (arrowheads), and muscle-muscle adhesion plaques (brackets in H) are indicated. (J) An overlay
+                     of panels (H) and (I). Regions in which <a href="http://www.wormbase.org/db/seq/protein?name=PAT-3;class=protein" target="_blank">PAT-3</a>::CFP and <a href="http://www.wormbase.org/db/seq/protein?name=PAT-4;class=protein" target="_blank">PAT-4</a>::YFP colocalize appear white. The scale bar in (H) represents 5 <span class="symbol">&#956;</span>m. Right-click or control-click for larger image.
+                  </p>
+               </div>
+            </div>
+            <p>Here we discuss early events in the assembly of muscle attachments, so it is important
+                           to recognize that all three types of attachments appear as morphologically similar dense
+                           plaques when they are first formed in embryos (<a href="#bib29">Hresko et al., 1994</a>). This is indicated
+                           for dense bodies and M-lines on the right of panel d in <a href="#figure1">Figure 1</a>. It
+                           is only during larval stages that the dense bodies and M-lines extend deeper into the
+                           cytoplasm and assume the shape of finger-like projections from the membrane (<a href="#bib17">Francis and
+                              Waterston, 1985</a>). Interestingly, at least for the dense body, projection from the
+                           membrane corresponds with the addition of the membrane-distal component, alpha-actinin
+                           (<a href="#bib17">Francis and Waterston, 1985</a>; <a href="#bib1">Barstead and Waterston, 1991</a>).
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e212"></a>3.&nbsp;Dissection of muscle attachment assembly
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>The extracellular matrix (ECM) receptor <a href="http://www.wormbase.org/db/seq/protein?name=PAT-2;class=protein" target="_blank">PAT-2</a>/<a href="http://www.wormbase.org/db/seq/protein?name=PAT-3;class=protein" target="_blank">PAT-3</a> integrin (<a href="#bib20">Gettner et al., 1995</a>; B.
+                           Williams, unpublished results) is concentrated at the membrane of attachment plaques, as
+                           well as dense bodies and M-lines, allowing them to transmit mechanical force across the
+                           muscle cell membrane to the basal lamina. This force can be transmitted, either between
+                           adjacent muscle cells, or between muscle and hypodermis. Fibrous organelle (FO's)
+                           complexes in the hypodermis, which are similar to hemi-desmosomes, then complete the
+                           mechanical linkage to the cuticular exoskeleton (<a href="#bib18">Francis and Waterston, 1991</a>).
+                           Patterning of the muscle to hypodermis linkage may involve the hypodermal transmembrane
+                           protein myotactin at the hypodermal/muscle interface (<a href="#bib28">Hresko et al., 1999</a>). A major
+                           component of the hemidesmosome at hypodermal/muscle and hypodermal/cuticle interfaces is
+                           <a href="http://www.wormbase.org/db/seq/protein?name=VAB-10;class=protein" target="_blank">VAB-10</a>/ spectroplakin (<a href="#bib6">Bosher et al., 2003</a>). Also probably present at both sites is the
+                           <a href="http://www.wormbase.org/db/seq/protein?name=VAB-19;class=protein" target="_blank">VAB-19</a>/Krank protein (<a href="#bib14">Ding et al., 2003</a>). The linkage from the epidermis to the cuticle
+                           is through cytoplasmic intermediate filaments (e.g., <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=mua-6" target="_blank">mua-6</a></em></span>; <a href="#bib24">Hapiak
+                              et al., 2003</a>). Present only at the hypodermal/cuticle interface are the transmembrane
+                           proteins, <a href="http://www.wormbase.org/db/seq/protein?name=MUA-3;class=protein" target="_blank">MUA-3</a> and <a href="http://www.wormbase.org/db/seq/protein?name=MUP-4;class=protein" target="_blank">MUP-4</a> (<a href="#bib4">Bercher et al., 2001</a>; <a href="#bib27">Hong et al., 2001</a>), which mediate the
+                           final step in the mechanical linkage to the cuticle.
+            </p>
+            <p>Just as occurs in vertebrate integrin-mediated attachments between the ECM and the
+                           actin cytoskeleton, dense bodies contain cytoskeletal adaptor proteins such as vinculin,
+                           alpha-actinin, talin, PINCH, <a href="http://www.wormbase.org/db/seq/protein?name=MIG-2;class=protein" target="_blank">MIG-2</a>, integrin linked kinase (ILK), and actopaxin, which
+                           complete the linkage between the cytoplasmic domain of integrin and actin filaments (see
+                               <a href="#figure2">Figure 2</a>; <a href="#bib17">Francis and Waterston, 1985</a>; <a href="#bib1">Barstead and Waterston,
+                              1991</a>; <a href="#bib40">Moulder et al., 1996</a>, <a href="#bib26">Hobert et al., 1999</a>, <a href="#bib46">Rogalski et al., 2000</a>; <a href="#bib36">Mackinnon et al., 2002</a>; <a href="#bib34">Lin et al., 2003</a>). The M-lines contain many of the same membrane-proximal adaptors,
+                           but lack vinculin. The membrane-distal region of the M-line lacks the dense body protein
+                           alpha-actinin, but does include the M-line specific protein <a href="http://www.wormbase.org/db/seq/protein?name=UNC-89;class=protein" target="_blank">UNC-89</a> (<a href="#bib3">Benian et al., 1996</a>).
+                           Given their protein composition and functions, dense bodies and M-lines are both
+                           analogous and homologous to vertebrate integrin mediated adhesion plaques, commonly
+                           called focal adhesions (FA's) in tissue culture cells (<a href="#figure2">Figure 2</a>; for
+                           review see <a href="#bib9">Burridge and Chrzanowska-Wodnicka, 1996</a>; and <a href="#bib19">Geiger and Bershadsky, 2001</a>). In
+                           effect, these attachment complexes and associated myofilaments can be thought of as a
+                           highly ordered set of focal adhesions that offer a unique opportunity for genetic
+                           analysis. The regulatory steps that coordinate the assembly of adherens junction
+                           components into functional attachment structures capable of enduring and transmitting
+                           mechanical stress are largely undefined. Genetic screens for mutants with defects in
+                           sarcomere assembly have proven a powerful aid in identifying novel focal adhesion
+                           proteins and for the investigation of their functions <span class="emphasis"><em>in vivo</em></span> (for
+                           example, see <a href="#bib57">Williams and Waterston, 1994</a>). Mutants with early, severe defects in
+                           sarcomere assembly fail to begin normal embryonic movements at mid-embryogenesis, and
+                           soon after this point the morphogenetic process of elongation stops prematurely at the
+                           two fold length. This is referred to as the Pat developmental arrest phenotype (<span class="underline">P</span>aralyzed,
+                           <span class="underline">A</span>rrested elongation at <span class="underline">T</span>wo fold).
+            </p>
+            <div class="mediaobject" align="center"><a name="figure2"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="495">
+<tr>
+  <td align="center"><p><a href="Musclefig2.jpg"><img src="Musclefig2_s.jpg" border="2" align="middle" alt="Comparison between vertebrate focal adhesions and C.&#xA;                    elegans dense bodies Figure 2"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 2. Comparison between vertebrate focal  adhesions and <span class="emphasis"><em>C. elegans</em></span> dense bodies.&nbsp;</b>Modified from Figure 5 in Cox and Hardin (2004). It should be noted in the dense body diagram that <a href="http://www.wormbase.org/db/seq/protein?name=PAT-4;class=protein" target="_blank">PAT-4</a>/ILK is shown making contact with the cytoplasmic domain of the <a href="http://www.wormbase.org/db/seq/protein?name=PAT-3;class=protein" target="_blank">PAT-3</a> integrin subunit because this interaction has been reported for the vertebrate homologs. To date we have failed to observe
+                     this binding interaction in <span class="emphasis"><em>C. elegans</em></span>, so the nature of any linkage between <a href="http://www.wormbase.org/db/seq/protein?name=PAT-3;class=protein" target="_blank">PAT-3</a> integrin and the complex of proteins that bind to <a href="http://www.wormbase.org/db/seq/protein?name=PAT-4;class=protein" target="_blank">PAT-4</a> remains to be elucidated Similarly, the potential interactions between <a href="http://www.wormbase.org/db/seq/protein?name=PAT-3;class=protein" target="_blank">PAT-3</a> integrin, CeTalin, alpha-actinin and <a href="http://www.wormbase.org/db/seq/protein?name=DEB-1;class=protein" target="_blank">DEB-1</a>/vinculin are based upon the binding interactions demonstrated for the vertebrate homologs. See text for details.
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e359"></a>4.&nbsp;Initiating a sarcomere leads to distinct assembly dependence pathways for dense
+                                    bodies and M-lines
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Genetic dissection of muscle attachment assembly has allowed us to construct distinct
+                           "assembly dependence" pathways for dense body and M-lines (see <a href="#table1" title="Table 1. Muscle cell phenotype in Pat mutants">Table 1</a> and <a href="#figure3">Figure 3</a>). These pathways differ in their membrane-distal components,
+                           probably reflecting the separate roles of dense bodies and M-lines in anchoring either
+                           thin or thick filaments to the cell membrane. Within each pathway, location of one
+                           protein above another with an intervening arrow means that the top protein is recruited
+                           to attachments independent of the protein below, or any of the other proteins further
+                           down the pathway. Reciprocally, the recruitment of the protein below is dependent upon
+                           the protein above. This diagram therefore shows the results of a genetic epistasis
+                           analysis of "assembly dependence". It is important to note that the arrows indicate
+                           specific requirements for protein recruitment <span class="emphasis"><em>in vivo</em></span>, rather than
+                           evidence of direct protein-protein binding in teractions. Proteins within parallel
+                           branches in the pathway are recruited independent of one another to attachments.
+                           Conversely, two proteins located at the same level in the pathway
+                           (i.e., not separated by an arrow) are mutually dependent on each other for recruitment.
+            </p>
+            <div class="mediaobject" align="center"><a name="figure3"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="450">
+<tr>
+  <td align="center"><p><a href="Musclefig3.jpg"><img src="Musclefig3_s.jpg" border="2" align="middle" alt="&#34;Assembly dependence&#34; pathways for dense bodies and M-lines"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 3. "Assembly dependence" pathways for dense bodies and M-lines.&nbsp;</b>See text for details.
+                  </p>
+               </div>
+            </div>
+            <div class="table"><a name="table1"></a><p class="title">Table 1. Muscle cell phenotype in Pat mutants</p>
+               <table summary="Table 1. Muscle cell phenotype in Pat mutants" border="1">
+                  <colgroup>
+                     <col align="left">
+                     <col align="center">
+                     <col align="center">
+                     <col align="center">
+                  </colgroup>
+                  <thead>
+                     <tr>
+                        <th align="left" valign="middle">Genes</th>
+                        <th align="center" valign="middle">Cell polarization</th>
+                        <th align="center" valign="middle">Myosin organization</th>
+                        <th align="center" valign="middle">Actin organization</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td align="left" valign="middle">
+                                                       
+                           <table class="simplelist" border="0" summary="Simple list">
+                              <tr>
+                                 <td><span class="bold"><strong>Class I</strong></span></td>
+                              </tr>
+                              <tr>
+                                 <td><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=unc-52" target="_blank">unc-52</a></em></span> (perlecan)
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=pat-2" target="_blank">pat-2</a></em></span> (alpha-integrin)
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=pat-3" target="_blank">pat-3</a></em></span> (beta-integrin)
+                                 </td>
+                              </tr>
+                           </table>
+                                                   
+                        </td>
+                        <td align="center" valign="middle">No</td>
+                        <td align="center" valign="middle">No</td>
+                        <td align="center" valign="middle">No</td>
+                     </tr>
+                     <tr>
+                        <td align="left" valign="middle">
+                                                       
+                           <table class="simplelist" border="0" summary="Simple list">
+                              <tr>
+                                 <td><span class="bold"><strong>Class II</strong></span></td>
+                              </tr>
+                              <tr>
+                                 <td><span class="emphasis"><em>pat-34</em></span> (ILK)
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=unc-97" target="_blank">unc-97</a></em></span> (PINCH)
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=unc-112" target="_blank">unc-112</a> </em></span> (<a href="http://www.wormbase.org/db/seq/protein?name=MIG-2;class=protein" target="_blank">MIG-2</a>)
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=pat-6" target="_blank">pat-6</a></em></span> (Actopaxin)
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=pat-11" target="_blank">pat-11</a></em></span></td>
+                              </tr>
+                           </table>
+                                                   
+                        </td>
+                        <td align="center" valign="middle">Yes</td>
+                        <td align="center" valign="middle">No</td>
+                        <td align="center" valign="middle">No</td>
+                     </tr>
+                     <tr>
+                        <td align="left" valign="middle">
+                                                       
+                           <table class="simplelist" border="0" summary="Simple list">
+                              <tr>
+                                 <td><span class="bold"><strong>Class III</strong></span></td>
+                              </tr>
+                              <tr>
+                                 <td><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=deb-1" target="_blank">deb-1</a></em></span> (vinculin)
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=pat-9" target="_blank">pat-9</a></em></span></td>
+                              </tr>
+                              <tr>
+                                 <td><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=pat-12" target="_blank">pat-12</a></em></span></td>
+                              </tr>
+                           </table>
+                                                   
+                        </td>
+                        <td align="center" valign="middle">Yes</td>
+                        <td align="center" valign="middle">Yes</td>
+                        <td align="center" valign="middle">Yes</td>
+                     </tr>
+                     <tr>
+                        <td align="left" valign="middle">
+                                                       
+                           <table class="simplelist" border="0" summary="Simple list">
+                              <tr>
+                                 <td><span class="bold"><strong>Class IV</strong></span></td>
+                              </tr>
+                              <tr>
+                                 <td><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lev-11" target="_blank">lev-11</a></em></span> (Tropomyosin)
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=egl-19" target="_blank">egl-19</a></em></span> (L-type calcium channel)
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td><span class="emphasis"><em>tnc-1</em></span> (troponin C)
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=mup-2" target="_blank">mup-2</a></em></span> (troponin T)
+                                 </td>
+                              </tr>
+                           </table>
+                                                   
+                        </td>
+                        <td align="center" valign="middle">Yes</td>
+                        <td align="center" valign="middle">Yes</td>
+                        <td align="center" valign="middle">Yes</td>
+                     </tr>
+                     <tr>
+                        <td align="left" valign="middle">
+                                                       
+                           <table class="simplelist" border="0" summary="Simple list">
+                              <tr>
+                                 <td><span class="bold"><strong>Class V</strong></span></td>
+                              </tr>
+                              <tr>
+                                 <td><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=myo-3" target="_blank">myo-3</a></em></span> (myosin heavy chain)</td>
+                              </tr>
+                           </table>
+                                                   
+                        </td>
+                        <td align="center" valign="middle">Yes</td>
+                        <td align="center" valign="middle">No</td>
+                        <td align="center" valign="middle">Yes</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <p>Modified from <a href="#bib57">Williams and Waterston (1994).</a></p>
+            <p>We have also included one "counter current" dashed arrow in each of the pathways.
+                           These arrows indicate more subtle requirements for proper attachment assembly than gross
+                           recruitment, as we describe in more detail below. The first protein to consider is
+                           <a href="http://www.wormbase.org/db/seq/protein?name=UNC-52;class=protein" target="_blank">UNC-52</a>/perlecan, which is found in the basement membrane between the body wall muscle
+                           cells and the hypodermis, and is concentrated at muscle cell dense bodies and M-lines
+                           (<a href="#bib18">Francis and Waterston, 1991</a>; <a href="#bib47">Rogalski et al., 1993</a>; <a href="#bib41">Mullen et al., 1999</a>).
+                           <a href="http://www.wormbase.org/db/seq/protein?name=UNC-52;class=protein" target="_blank">UNC-52</a>/perlcan is at the top of each pathway because protein-null mutations in the
+                           <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=unc-52" target="_blank">unc-52</a></em></span> gene block all subsequent steps in sarcomere development,
+                           including the next step, which is the polarization of integrin to the basal membrane and
+                           its subsequent aggregation, (for each of the four muscle quadrants) into a stripe of
+                           small, isotropically arranged focal contacts (<a href="#figure1">Figure 1</a>E&#8211;G). At this
+                           stage, <a href="http://www.wormbase.org/db/seq/protein?name=UNC-52;class=protein" target="_blank">UNC-52</a> is normally organized in a corresponding stripe within the adjacent basal
+                           lamina. (<a href="#bib47">Rogalski et al., 1993</a>; <a href="#bib29">Hresko et al., 1994</a>; <a href="#bib57">Williams and Waterston, 1994</a>; <a href="#bib41">Mullen et al., 1999</a>). The interaction of integrin and perlecan, either directly or
+                           indirectly, is a key early event in the assembly of these attachment structures. While
+                           there is no evidence in <span class="emphasis"><em>C. elegans</em></span> for a direct interaction of
+                           <a href="http://www.wormbase.org/db/seq/protein?name=UNC-52;class=protein" target="_blank">UNC-52</a> and integrin there is evidence for a direct protein-protein interaction between
+                           integrin and perlecan in vertebrates (<a href="#bib25">Hayashi et al., 1992</a>; <a href="#bib12">Chakravarti et al., 1995</a>; <a href="#bib8">Brown et al., 1997</a>). The <a href="http://www.wormbase.org/db/seq/protein?name=PAT-2;class=protein" target="_blank">PAT-2</a>/<a href="http://www.wormbase.org/db/seq/protein?name=PAT-3;class=protein" target="_blank">PAT-3</a> integrin heterodimer is next in the pathway because
+                           removal of integrin does not block <a href="http://www.wormbase.org/db/seq/protein?name=UNC-52;class=protein" target="_blank">UNC-52</a>/perlecan deposition in the basal lamina, but
+                           does block the recruitment of all other attachment proteins and myofilaments to the
+                           muscle cell membrane (<a href="#bib47">Rogalski et al., 1993</a>; <a href="#bib29">Hresko et al., 1994</a>; <a href="#bib57">Williams and Waterston, 1994</a>).
+            </p>
+            <p>During subsequent steps of normal attachment assembly, other components are recruited
+                           to the focal contacts, and as the nascent complexes mature, they enter into a highly
+                           ordered array of recognizable dense bodies and M-lines. We have shown that the
+                           recruitment of <a href="http://www.wormbase.org/db/seq/protein?name=UNC-112;class=protein" target="_blank">UNC-112</a>/Mig-2 (<a href="#bib46">Rogalski et al., 2000</a>) and <a href="http://www.wormbase.org/db/seq/protein?name=PAT-4;class=protein" target="_blank">PAT-4</a>/ILK (<a href="#bib36">Mackinnon et al.,
+                              2002</a>) are mutually dependent, but that both are required for the recruitment of
+                           <a href="http://www.wormbase.org/db/seq/protein?name=PAT-6;class=protein" target="_blank">PAT-6</a>/actopaxin (<a href="#bib34">Lin et al., 2003</a>). The three proteins form a complex, <a href="http://www.wormbase.org/db/seq/protein?name=UNC-112;class=protein" target="_blank">UNC-112</a>/Mig-2 and
+                           <a href="http://www.wormbase.org/db/seq/protein?name=PAT-6;class=protein" target="_blank">PAT-6</a>/actopaxin binding to the amino portion of <a href="http://www.wormbase.org/db/seq/protein?name=PAT-4;class=protein" target="_blank">PAT-4</a>/ILK (<a href="#figure4">Figure 4</a>).
+                           Interestingly, we have found that <a href="http://www.wormbase.org/db/seq/protein?name=PAT-6;class=protein" target="_blank">PAT-6</a> protein is not detectable in
+                           <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=pat-4" target="_blank">pat-4</a></em></span> mutants, suggesting that the stability of <a href="http://www.wormbase.org/db/seq/protein?name=PAT-6;class=protein" target="_blank">PAT-6</a>/actopaxin may
+                           be dependent upon its entry into a complex with <a href="http://www.wormbase.org/db/seq/protein?name=PAT-4;class=protein" target="_blank">PAT-4</a>/ILK (<a href="#bib34">Lin et al., 2003</a>).
+            </p>
+            <div class="mediaobject" align="center"><a name="figure4"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="315">
+<tr>
+  <td align="center"><p><a href="Musclefig4.jpg"><img src="Musclefig4_s.jpg" border="2" align="middle" alt="Interactions between UNC-112, UNC-97, PAT-4, PAT-6 and UNC-98 as determined&#xA;                    by yeast two-hybrid Figure 4 analysis"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 4. Interactions between <a href="http://www.wormbase.org/db/seq/protein?name=UNC-112;class=protein" target="_blank">UNC-112</a>, <a href="http://www.wormbase.org/db/seq/protein?name=UNC-97;class=protein" target="_blank">UNC-97</a>, <a href="http://www.wormbase.org/db/seq/protein?name=PAT-4;class=protein" target="_blank">PAT-4</a>, <a href="http://www.wormbase.org/db/seq/protein?name=PAT-6;class=protein" target="_blank">PAT-6</a> and <a href="http://www.wormbase.org/db/seq/protein?name=UNC-98;class=protein" target="_blank">UNC-98</a> as determined by yeast two-hybrid analysis.&nbsp;</b></p>
+               </div>
+            </div>
+            <p><a href="http://www.wormbase.org/db/seq/protein?name=DEB-1;class=protein" target="_blank">DEB-1</a>/vinculin is placed in a parallel branch because its recruitment to attachments
+                           is independent of <a href="http://www.wormbase.org/db/seq/protein?name=UNC-112;class=protein" target="_blank">UNC-112</a>, <a href="http://www.wormbase.org/db/seq/protein?name=PAT-4;class=protein" target="_blank">PAT-4</a> and <a href="http://www.wormbase.org/db/seq/protein?name=PAT-6;class=protein" target="_blank">PAT-6</a>, and reciprocally, the recruitment of
+                           <a href="http://www.wormbase.org/db/seq/protein?name=UNC-112;class=protein" target="_blank">UNC-112</a>, <a href="http://www.wormbase.org/db/seq/protein?name=PAT-4;class=protein" target="_blank">PAT-4</a> and <a href="http://www.wormbase.org/db/seq/protein?name=PAT-6;class=protein" target="_blank">PAT-6</a> is not dependent upon <a href="http://www.wormbase.org/db/seq/protein?name=DEB-1;class=protein" target="_blank">DEB-1</a>/vinculin (<a href="#bib46">Rogalski et al., 2000</a>;
+                           <a href="#bib36">Mackinnon et al., 2002</a>; <a href="#bib34">Lin et al., 2003</a>). This feature may reflect vinculin's involvement
+                           in the separate "classical" linkage between integrin and the cytoskeleton involving
+                           talin and <span class="symbol">&#945;</span>-actinin (illustrated in <a href="#figure5">Figure 5</a>). Actin filaments are placed at the convergence of the <a href="http://www.wormbase.org/db/seq/protein?name=UNC-112;class=protein" target="_blank">UNC-112</a>,
+                           <a href="http://www.wormbase.org/db/seq/protein?name=PAT-4;class=protein" target="_blank">PAT-4</a>, <a href="http://www.wormbase.org/db/seq/protein?name=PAT-6;class=protein" target="_blank">PAT-6</a> and the <a href="http://www.wormbase.org/db/seq/protein?name=DEB-1;class=protein" target="_blank">DEB-1</a> branches because removal of any of these four proteins blocks
+                           the normal recruitment of actin filaments to the basal membrane. Similarly, myosin thick
+                           filaments are at the bottom of the M-line pathway because removal of any of the upstream
+                           components blocks thick filament recruitment to the cell membrane.
+            </p>
+            <div class="mediaobject" align="center"><a name="figure5"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="315">
+<tr>
+  <td align="center"><p><a href="Musclefig5.jpg"><img src="Musclefig5_s.jpg" border="2" align="middle" alt="Two different linkage pathways between integrin and actin filaments Figure5"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 5. Two different linkage pathways between integrin and actin filaments.&nbsp;</b>(<span class="emphasis"><em>Left</em></span>) The classic talin linkage, including talin, vinculin and alpha-actinin. (<span class="emphasis"><em>Right</em></span>) Linkage through the <a href="http://www.wormbase.org/db/seq/protein?name=PAT-4;class=protein" target="_blank">PAT-4</a>/ILK complex.
+                  </p>
+               </div>
+            </div>
+            <p>To this point we have indicated the assembly dependencies between proteins as revealed
+                           by substantial disruptions in protein recruitment to nascent attachments. Our genetic
+                           analysis has also revealed additional dependencies that are subtler, but nevertheless
+                           crucial for proper attachment formation. Although the removal of <a href="http://www.wormbase.org/db/seq/protein?name=UNC-112;class=protein" target="_blank">UNC-112</a>, <a href="http://www.wormbase.org/db/seq/protein?name=PAT-4;class=protein" target="_blank">PAT-4</a> or <a href="http://www.wormbase.org/db/seq/protein?name=PAT-6;class=protein" target="_blank">PAT-6</a>
+                           does not affect integrin's polarization to the basal membrane and entering nascent focal
+                           contacts, removing any of these members of the PAT-4 complex does disrupt the refinement
+                           of integrin patterning within the cell membrane. In these mutants integrin never enters
+                           the recognizable striated arrays that correspond to dense bodies and M-lines (<a href="#bib46">Rogalski
+                              et al., 2000</a>; <a href="#bib36">Mackinnon et al., 2002</a>; <a href="#bib34">Lin et al., 2003</a>). We indicate this more subtle type
+                           of assembly dependence with a dashed arrow (<a href="#figure3">Figure 3</a>) in both the dense
+                           body and M-line pathways that extends from the <a href="http://www.wormbase.org/db/seq/protein?name=PAT-4;class=protein" target="_blank">PAT-4</a> complex back to integrin. The
+                           relationships indicated by these counter-current arrows are perhaps not surprising. The
+                           complexity of these muscle attachments seem almost certain to have many such
+                           interdependencies that will preclude a simple linear pathway of assembly.
+            </p>
+            <p>At least three LIM domain proteins are also involved in adhesion complexes in
+                               <span class="emphasis"><em>C. elegans</em></span>, <a href="http://www.wormbase.org/db/seq/protein?name=UNC-95;class=protein" target="_blank">UNC-95</a>, <a href="http://www.wormbase.org/db/seq/protein?name=UNC-97;class=protein" target="_blank">UNC-97</a>/PINCH and <a href="http://www.wormbase.org/db/seq/protein?name=UNC-98;class=protein" target="_blank">UNC-98</a> (<a href="#bib7">Broday et al.,
+                              2004</a>; <a href="#bib26">Hobert et al., 1999</a>, Norman et al., unpublished; <a href="#bib37">Mercer et al., 2003</a>). Of these three genes
+                           only <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=unc-97" target="_blank">unc-97</a></em></span> has a Pat null phenotype suggesting that like
+                           <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=unc-112" target="_blank">unc-112</a></em></span>, <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=pat-4" target="_blank">pat-4</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=pat-6" target="_blank">pat-6</a></em></span>,
+                           it is involved with the very early stages of dense body and M-line organization (<a href="#bib26">Hobert
+                              et al., 1999</a>; Norman et al., unpublished). Indeed, in <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=unc-97" target="_blank">unc-97</a></em></span>,
+                           <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=unc-112" target="_blank">unc-112</a></em></span>, <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=pat-4" target="_blank">pat-4</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=pat-6" target="_blank">pat-6</a></em></span>
+                           mutants, integrin and vinculin are recruited to nascent attachments but myofilaments are
+                           not recruited, and the stalled complexes never form a striated array. Although
+                           additional experiments are needed to place <a href="http://www.wormbase.org/db/seq/protein?name=UNC-97;class=protein" target="_blank">UNC-97</a> relative to <a href="http://www.wormbase.org/db/seq/protein?name=UNC-112;class=protein" target="_blank">UNC-112</a>, <a href="http://www.wormbase.org/db/seq/protein?name=PAT-4;class=protein" target="_blank">PAT-4</a> and <a href="http://www.wormbase.org/db/seq/protein?name=PAT-6;class=protein" target="_blank">PAT-6</a>
+                           on the assembly dependence pathway, the biochemical data support the notion that these
+                           proteins work together during attachment assembly. Similar to mammalian PINCH (<a href="#bib51">Tu et al.,
+                              1999</a>), <a href="http://www.wormbase.org/db/seq/protein?name=UNC-97;class=protein" target="_blank">UNC-97</a> binds to the carboxy portion of <a href="http://www.wormbase.org/db/seq/protein?name=PAT-4;class=protein" target="_blank">PAT-4</a>/ILK and is found in dense bodes and
+                           M-lines (Norman et al., unpublished; <a href="#bib26">Hobert et al., 1999</a>; <a href="#figure4">Figure 4</a>).
+            </p>
+            <p>Null alleles of <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=unc-95" target="_blank">unc-95</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=unc-98" target="_blank">unc-98</a></em></span> affect
+                           myofilament organization and both proteins are located in dense bodies and M-lines
+                           (<a href="#bib7">Broday et al., 2004</a>; <a href="#bib37">Mercer et al., 2003</a>). <a href="http://www.wormbase.org/db/seq/protein?name=UNC-95;class=protein" target="_blank">UNC-95</a> is first detected in dense bodes and is
+                           only later found in M-lines as well, while <a href="http://www.wormbase.org/db/seq/protein?name=UNC-98;class=protein" target="_blank">UNC-98</a> is found initially in M-lines and only
+                           sporadically in dense bodies (there is some disagreement here between GFP fusion and
+                           antibody results). <a href="http://www.wormbase.org/db/seq/protein?name=UNC-98;class=protein" target="_blank">UNC-98</a> has been shown to bind to <a href="http://www.wormbase.org/db/seq/protein?name=UNC-97;class=protein" target="_blank">UNC-97</a>/PINCH, but no binding studies
+                           have yet been done with <a href="http://www.wormbase.org/db/seq/protein?name=UNC-95;class=protein" target="_blank">UNC-95</a> and members of the <a href="http://www.wormbase.org/db/seq/protein?name=PAT-4;class=protein" target="_blank">PAT-4</a>/ILK complex. Curiously, vinculin
+                           levels within the dense body are dependent on <a href="http://www.wormbase.org/db/seq/protein?name=UNC-95;class=protein" target="_blank">UNC-95</a>; loss of <a href="http://www.wormbase.org/db/seq/protein?name=UNC-95;class=protein" target="_blank">UNC-95</a> shows most vinculin
+                           located within the cytosol, not within the dense body. However the animals are not Pat,
+                           which suggests that some vinculin is present within the dense body as
+                           <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=deb-1" target="_blank">deb-1</a>/</em></span>vinculin null animals are Pat (<a href="#bib1">Barstead and Waterston, 1991</a>).
+                           In addition to their role as attachment proteins, all three LIM proteins are found
+                           within the nucleus throughout muscle development and growth (<a href="#figure6">Figure 6</a>).
+                           Whether any of these proteins shuttle between the nucleus and the plasma membrane as
+                           demonstrated for zyxin (<a href="#bib42">Nix et al., 2001</a>) has not been tested. Their localization to both
+                           the nucleus and the cytoplasm does make them candidate biosensors (<a href="#bib32">Kadrmas and Beckerle, 2004</a>).
+            </p>
+            <div class="mediaobject" align="center"><a name="figure6"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="315">
+<tr>
+  <td align="center"><p><a href="Musclefig6.jpg"><img src="Musclefig6_s.jpg" border="2" align="middle" alt="Localization of UNC-97::GFP within muscle body wall muscle Figure 6"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 6. Localization of <a href="http://www.wormbase.org/db/seq/protein?name=UNC-97;class=protein" target="_blank">UNC-97</a>::GFP within muscle body wall muscle.&nbsp;</b>(A) <a href="http://www.wormbase.org/db/seq/protein?name=UNC-97;class=protein" target="_blank">UNC-97</a> is found in dense bodies (red arrow) and M-lines (yellow arrow) in mature muscle. (B) Within the same cells <a href="http://www.wormbase.org/db/seq/protein?name=UNC-97;class=protein" target="_blank">UNC-97</a> is found in a punctate or speckled pattern within the nucleus (red arrowhead).
+                  </p>
+               </div>
+            </div>
+            <p><a href="#figure2">Figure 2</a>, <a href="#figure3">Figure 3</a>, and <a href="#figure5">Figure 5</a>
+                           suggest strong parallels between vertebrate and nematode attachment complexes, but there
+                           are some differences. The binding of the complex of talin, vinculin and alpha-actinin to
+                           integrin in vertebrates is through the FERM domain of talin (reviewed in <a href="#bib10">Calderwood,
+                              2004</a>; <a href="#bib11">Campbell and Ginsberg, 2004</a>). By analogy we suggest that <span class="emphasis"><em>C.
+                                 elegans</em></span> talin does the same. However, the <a href="http://www.wormbase.org/db/seq/protein?name=PAT-4;class=protein" target="_blank">PAT-4</a>/ILK complex behaves
+                           differently in vertebrates and <span class="emphasis"><em>C. elegans</em></span>. In vertebrates ILK is
+                           the linker to integrin (Hannibal et al., 1996), but in <span class="emphasis"><em>C. elegans</em></span>
+                           and <span class="emphasis"><em>Drosophila</em></span> it is not (<a href="#bib36">Mackinnon et al., 2002</a>; <a href="#bib59">Zervas et al.,
+                              2001</a>). We suggest that binding of this complex to integrin may be mediated through
+                           <a href="http://www.wormbase.org/db/seq/protein?name=UNC-112;class=protein" target="_blank">UNC-112</a> since this protein when used as bait in a yeast two-hybrid assay identified
+                           <a href="http://www.wormbase.org/db/seq/protein?name=PAT-3;class=protein" target="_blank">PAT-3</a> integrin as a binding partner (Hiroshi Qadota and DGM, unpublished results). No
+                           follow-up binding studies have yet been done to confirm these findings but we find it
+                           intriguing that <a href="http://www.wormbase.org/db/seq/protein?name=UNC-112;class=protein" target="_blank">UNC-112</a>, similar to talin, has a FERM domain that may bind integrin.
+            </p>
+            <p>The assembly pathway described here relies on epistasis analysis, which would not be
+                           possible without mutants in each of the key molecules involved. The subset of Pat
+                           mutants described above may offer an entry point into the spatial control of adhesion
+                           sites. ILK and its binding partners do not appear to interfere with the formation of the
+                           "classical" talin vinculin adhesion complex, but removal of any member of the ILK
+                           complex inhibits the formation of a functional sarcomere. Myosin and actin filament
+                           networks are not assembled into sarcomeres, but even earlier, correct organization of
+                           integrin within the membrane is perturbed. Perhaps the role of the ILK complex,
+                           including <a href="http://www.wormbase.org/db/seq/protein?name=UNC-112;class=protein" target="_blank">UNC-112</a>, <a href="http://www.wormbase.org/db/seq/protein?name=UNC-97;class=protein" target="_blank">UNC-97</a> and <a href="http://www.wormbase.org/db/seq/protein?name=PAT-6;class=protein" target="_blank">PAT-6</a>, is to give definition to integrin spacing within
+                           the plane of the muscle plasma membrane. This spatial organization of integrin clusters
+                           may be achieved by linking the integrins to the underlying cytoskeleton which then
+                           "tows" the complex into position. Obviously, this is still a working hypothesis and
+                           needs to be verified through further experiments.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e1031"></a>5.&nbsp;Distinguishing dense bodies from M-lines
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>The pathway described above gives an order of events starting at the cell membrane and
+                           progressing deeper into the cell. At some point along this progression adhesion plaques
+                           are segregated into two pools, one destined to be dense bodies and the other destined to
+                           be M-lines. These nascent adhesion plaques have at least nine proteins in common
+                           including integrin, talin, the ILK complex and the various LIM proteins. Divergence into
+                           distinct actin and myosin filament anchorage sites occurs after the addition of the
+                           ILK-binding complex, but presumably before alpha-actinin is added to the dense body or
+                           <a href="http://www.wormbase.org/db/seq/protein?name=UNC-89;class=protein" target="_blank">UNC-89</a> is added to the M-line. It is noteworthy in this regard that null mutations in
+                           alpha-actinin or <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=unc-89" target="_blank">unc-89</a></em></span> do not lead to a Pat phenotype (R.
+                           Barstead, personal commun; <a href="#bib3">Benian et al., 1996</a>). In fact, alpha-actinin is not even
+                           present at this stage of embryogenesis. Vinculin (possibly along with <a href="http://www.wormbase.org/db/seq/protein?name=UNC-95;class=protein" target="_blank">UNC-95</a>) is the
+                           first component that is unique to the dense body over the M-line and is the first
+                           protein that allows us to distinguish these two adhesion complexes. Is it the addition
+                           of vinculin that gives an adhesion complex its specific identity as a dense body, and is
+                           an adhesion complex without vinculin by default an M-line? Consider a model in which
+                           vinculin is the key factor capable of determining whether a developing complex becomes a
+                           dense body or an M-line. The key issue would seem to be controlling the binding of
+                           vinculin to talin, perhaps by regulating the accessibility of binding sites on these two
+                           molecules (<a href="#bib31">Izard et al., 2004</a>; <a href="#bib16">Fillingham et al., 2005</a>). As a mechanism phosphorylation is
+                           one possibility that comes to mind, but one is then still faced with the problem of how
+                           such a switch distinguishes the adhesion complex pools. More specifically, how might
+                           such a switch be controlled spatially to create the characteristic, regular striated
+                           pattern of dense bodies and M-lines?
+            </p>
+            <p>One idea that we explore further below in a speculative model is the possibility that
+                           the binary switch described above is simply stochastic. In other words, the initial
+                           isotropic fields of immature attachment complexes are randomly assigned either a dense
+                           body or M-line identity. How then is the ordered spatial array of dense bodies and
+                           M-lines established? The pattern could be established through the subsequent "pruning"
+                           of complexes that do not make productive transmembrane linkages. In our model a
+                           "productive" linkage is put under significant mechanical tension, which stabilizes it.
+                           In this view, nascent complexes formed "in the wrong place" fail and are disassembled,
+                           which frees their components to contribute to the continued growth of the appropriately
+                           positioned dense bodies and M-lines. The binary switch is not used to produce the
+                           pattern, but instead, patterning occurs after the switch has determined dense
+                           body/M-line fate. Below we speculate on mechanisms that might establish the patterned
+                           array of dense bodies and M-lines.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e1057"></a>6.&nbsp;Spacing of the components
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>While it may seem counter-intuitive, adhesion plaques are relatively dynamic
+                           structures within tissue culture cells since they are not only important for adherence
+                           but are also necessary for cell motility. During nematode body wall muscle development
+                           integrin clusters must also have some flexibility. This can be observed during muscle
+                           cell growth. A newly formed muscle cell is two sarcomeres wide and has filaments 5
+                               <span class="symbol">&#956;</span>m long. In an adult animal this same
+                           muscle cell will be 10 sarcomeres wide and have individual filaments as long as 10
+                               <span class="symbol">&#956;</span>m (<a href="#bib55">Waterston and Francis, 1985</a>).
+                           Muscle cell mass increases greatly from an L1 lava to an adult so that individual dense
+                           bodies and M lines must also increase in size. A single A-band in an L1 larva has 100
+                           filaments while an adult A-band may have as many as 600 filaments (<a href="#bib35">MacKenzie et al.,
+                              1978</a>). Increased filament length implies increased spacing between integrin clusters,
+                           and increased filament number implies larger integrin clusters. This latter point is
+                           important if the dense body is to increase in size, which it does. There is much in the
+                           literature on integrin clustering and on what some of the control elements may be
+                           (reviewed in <a href="#bib21">Giancotti and Ruoslahti, 1999</a>) and there are inroads being made to explain
+                           mechanosensitivity of integrin sites and the dynamics of integrin turnover during cell
+                           migration (<a href="#bib5">Bershadsky et al., 2003</a>; <a href="#bib56">Wehrle-Haller and Imhof, 2002</a>). However, with the
+                           notable exception of Ingber's theories on tensegrity (<a href="#bib30">Ingber, 1997</a>), there is little
+                           information available to explain how proper spacing of integrin within the plane of the
+                           membrane might be achieved.
+            </p>
+            <p>Our model for the initial patterning of integrin into a proper array of dense bodies
+                           and M-lines relies on tissue interaction between muscle and hypodermis, and requires
+                           tension produced by the developing myofilament lattice. Several lines of evidence
+                           suggest that cytoskeletal patterning in muscle and hypodermis are tightly coupled during
+                           sarcomere assembly. The first suggestive evidence comes from the observation that in
+                           adults the muscle adhesion complexes and fibrous organelles (FO's) of the hypodermis,
+                           while not precisely aligned, do exhibit a tantalizing similarity in spacing. Strong
+                           evidence that muscle may induce the underlying patterning of the hypodermis comes from
+                           laser ablation experiments. Laser ablation of muscle precursors in the developing embryo
+                           leave substantial gaps in the normally continuous muscle quadrants. Underneath the
+                           muscle gaps there is no perlecan in the basement membrane (<a href="#bib39">Moerman et al., 1996</a>) and FO's
+                           fail to form in the underlying hypodermis (<a href="#bib28">Hresko et al., 1999</a>). One interpretation of
+                           these observations is that body wall muscle cells provide a signal that positions FO's
+                           in the hypodermis, and perhaps also induces FO assembly at appropriate sub cellular
+                           sites. Genetic analysis demonstrates that the hypodermal transmembrane protein myotactin
+                           is a key component in this tissue interaction. In myotactin loss-of-function mutants the
+                           FO's spread out laterally (and abnormally) into regions of hypodermis that are not in
+                           contact with body wall muscle (<a href="#bib28">Hresko et al., 1999</a>). What is particularly fascinating
+                           about myotactin is how it changes localization during the time of sarcomere assembly
+                           within body wall muscle. Initially myotactin is arranged in a pattern coinciding with
+                           the arrays of newly formed dense body and M-lines in the attached muscle cell just
+                           across the basement membrane, but at later stages of development myotactin moves from
+                           these nearly longitudinal lines into a series of circumferential lines as it joins the
+                           hypodermal FO's (<a href="#bib28">Hresko et al., 1999</a>). Myotactin may therefore be initially patterned by the
+                           muscle cell cytoskeleton.
+            </p>
+            <p>There is also evidence that the hypodermis may influence muscle development and
+                           sarcomere assembly. Embryonic elongation is driven by circumferential actin cables
+                           assembled within the hypodermis (<a href="#bib45">Priess and Hirsh, 1986</a>). Mutations in the only alpha
+                           spectrin gene in <span class="emphasis"><em>C. elegans</em></span>, <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=spc-1" target="_blank">spc-1</a></em></span>, disrupts
+                           the regular patterning of these cables, causing the mutant embryos to elongate more
+                           slowly than normal, and eventually arrest at the two-fold length (<a href="#bib44">Norman and Moerman,
+                              2002</a>). Interestingly, the A-bands in the body wall muscles of these arrested
+                           <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=spc-1" target="_blank">spc-1</a></em></span> embryos are much wider than normal, and are oriented at ~20
+                           degrees to the longitudinal access instead of the normal ~6 degrees. This wider zone
+                           within muscle for myofilament organization correlates with wider than normal zones of
+                           both <a href="http://www.wormbase.org/db/seq/protein?name=UNC-52;class=protein" target="_blank">UNC-52</a> depositions in the basement membrane and FO organization in the hypodermis.
+                           These changes in the muscle cytoskeleton are not simply due to a failure to complete
+                           elongation as several Pat mutants limited to expression in muscle (e.g.,
+                           <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=egl-19" target="_blank">egl-19</a></em></span>) exhibit normal myofilament orientation and A-band width
+                           (<a href="#bib44">Norman and Moerman, 2002</a>). These effects on the <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=spc-1" target="_blank">spc-1</a></em></span> mutant
+                           muscle cells are also not simply caused by the absence of alpha spectrin in the muscle
+                           cells. The <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=unc-70" target="_blank">unc-70</a></em></span> gene encodes beta-spectrin (<a href="#bib22">Hammerlund et al.,
+                              2000</a>), and in <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=unc-70" target="_blank">unc-70</a></em></span> mutants, alpha-spectrin remains cytoplasmic in
+                           body wall muscle cells, instead of localizing normally to the muscle cell membrane. The
+                           mutant <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=unc-70" target="_blank">unc-70</a></em></span> embryos have normal muscle structure, suggesting that
+                           it is the loss of spectrin activity in the hypodermis that is altering the patterning of
+                           muscle sarcomeres (<a href="#bib44">Norman and Moerman, 2002</a>). Although the mechanism responsible for
+                           this effect remains to be elucidated, these results raise the interesting possibility that the contracting hypodermis
+               affects the amount of muscle cell surface area that
+                           comes into contact with the hypodermis during the initial assembly of sarcomeres. This
+                           change in the basal surface of the muscle cell in turn has a direct effect on the
+                           spatial orientation of the incipient sarcomeres, the width of the basement membrane and,
+                           by extension, the width of FO's within the hypodermis.
+            </p>
+            <p>As well as hypodermal/muscle contact there is evidence that mechanical tension is
+                           needed for the proper formation of muscle-hypodermal cytoskeletal linkages. Body wall
+                           muscle cells never contract forcefully in Pat mutants, and it appears that the resulting
+                           lack of tension blocks the normal development muscle-hypodermal linkages. The
+                           <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=myo-3" target="_blank">myo-3</a></em></span> Pat mutants provide the best example. The
+                           <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=myo-3" target="_blank">myo-3</a></em></span> gene encodes myosin A protein, which is the central component
+                           of body wall muscle thick filaments (<a href="#bib54">Waterston 1989</a>). Despite the fact that myosin A is
+                           not a structural component of muscle attachment complexes, linkages to the hypodermis
+                           are extremely weak in these animals. This is shown by the frequent detachment of their
+                           dorsal muscle quadrants from the body wall near the bend of the arrested two fold
+                           embryos. These detachments are a characteristic that is shared by a subset of Pat
+                           embryos able to weakly contract their body wall muscle cells . In the
+                           <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=myo-3" target="_blank">myo-3</a></em></span> mutants, we speculate that these weak movements are powered
+                           by other myosin isoforms expressed by the muscle cells.
+            </p>
+            <p>Our model for how sarcomere spacing may be achieved is as follows. <a href="http://www.wormbase.org/db/seq/protein?name=UNC-52;class=protein" target="_blank">UNC-52</a>/perlecan
+                           begins to accumulate in the extracellular space separating two longitudinal rows of
+                           muscle cells making up each quadrant (green, <a href="#figure7">Figure 7</a>A), and then
+                           initiates the assembly of muscle attachments in the basal membrane adjacent the
+                           centerline of the quadrant. The adhesions first appear as two parallel stripes closely
+                           flanking the quadrant centerline (black dots, <a href="#figure7">Figure 7</a>A, also <a href="#figure7">Figure 7</a>E&#8211;G). The newly formed complexes are small and are randomly
+                           positioned within each of the stripes. Actin filaments organize next through their
+                           association with the attachment complexes, resulting in two large, longitudinally
+                           oriented bundles of actin filaments flanking the quadrant centerline (vertical red
+                           lines; <a href="#figure7">Figure 7</a>B; <a href="#figure8">Figure 8</a>). Myosin assembles into
+                           thick filaments and then forms larger aggregates (blue lines; <a href="#figure7">Figure 7</a>B-C) that are dispersed throughout the muscle cell cytoplasm (see
+                           <a href="#bib15">Epstein et al., 1993</a>). The myosin aggregates interact with the bundled actin filaments,
+                           and are also recruited to the centerline. Actin and myosin filaments begin to
+                           interdigitate, and the resulting myofilament lattice begins to contract (<a href="#figure7">Figure 7</a>C). During the next phase of muscle development a subset of the
+                           attachment complexes continue to grow and form longitudinal rows of uniformly spaced
+                           dense bodies, while others are either disassembled or are repositioned to join the
+                           successful attachments. For a dense body to persist during this phase it must be under
+                           significant tension from the myofilament lattice and must also become mechanically
+                           linked to the actin cables in the adjacent hypodermis (<a href="#figure7">Figure 7</a>G). This
+                           process is illustrated at the bottom of <a href="#figure7">Figure 7</a>B-D, which shows the
+                           loss of small integrin clusters from sites not immediately adjacent to actin cables in the
+                           underlying hypodermis (black horizontal lines), and the simultaneous enlargement of the
+                           remaining muscle-muscle attachment complexes (black half-circles; <a href="#figure7">Figure 7</a>D). These combined constraints limit the locations where dense bodies
+                           can mature, and ultimately imposes the longitudinal spacing between these mature
+                           attachments. The M-line complexes require only linkage to the center of myosin thick
+                           filaments to persist, which permits the very close spacing that often appears as a
+                           continuous line (see <a href="#figure7">Figure 7</a>H-J). It is important to note that because
+                           each muscle cell is two sarcomeres "wide", one end of every sarcomere is precisely
+                           positioned by the intersecting "grid" of nearly longitudinal muscle-muscle junctions and
+                           the circumferential hypodermal actin cables (<a href="#figure7">Figure 7</a>D). Thus, it may
+                           be this intersection that initially determines the spacing of dense bodies and M-lines.
+                           In  <a href="#figure7">Figure 7</a>G, we diagram a hypothetical "linker" protein that
+                           binds <a href="http://www.wormbase.org/db/seq/protein?name=UNC-52;class=protein" target="_blank">UNC-52</a>, which in turn may be bound by integrin, thus establishing a mechanical
+                           linkage that stabilizes the nascent dense body or muscle attachment plaque.
+            </p>
+            <p>The idea that actin cytoskeleton in the hypodermis might establish the initial spacing
+                           of dense bodies is only one of many possible mechanisms that might bring this about. We
+                           raise this idea because the muscle and hypodermis are clearly interacting in important
+                           ways at this stage of development, and it is intriguing that the spacing between actin
+                           cables and newly formed dense bodies is of the same order of magnitude. It should be
+                           noted, however, that we are not aware of any data demonstrating that the position of
+                           actin cables and newly forming muscle attachments coincides precisely, as this model
+                           predicts and is indicated in <a href="#figure7">Figure 7</a>.
+            </p>
+            <div class="mediaobject" align="center"><a name="figure7"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="495">
+<tr>
+  <td align="center"><p><a href="Musclefig7.jpg"><img src="Musclefig7_s.jpg" border="2" align="middle" alt="Model of sarcomere development showing several adjacent cells in one dorsal&#xA;                    muscle quadrant at several successive developmental stages Figure 7"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 7. Model of sarcomere development showing several adjacent cells in one dorsal muscle quadrant at several successive
+                        developmental stages.&nbsp;</b>Developmental stage is indicated by the extent of elongation in embryo cartoons at the top.  Wild-type (A-D) and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=spc-1" target="_blank">spc-1</a></em></span> mutant embryos (E, F) are shown.  In panels A-F, muscle cells (<span class="emphasis"><em>white</em></span>) are shown on top of the basal lamina (<span class="emphasis"><em>light green</em></span>) and the basal face of the hypodermis (<span class="emphasis"><em>shaded gray</em></span>).  The bottom of panels B-D show enlarged views of developing muscle attachments (black dots), with the position of hypodermal
+                     circumferential actin cables indicated (<span class="emphasis"><em>black horizontal red lines</em></span>). G shows a hypothetical linkage between muscle attachments and hypodermal actin cables involving a "linker protein" bound
+                     to <a href="http://www.wormbase.org/db/seq/protein?name=UNC-52;class=protein" target="_blank">UNC-52</a>/perlecan, which in turn binds integrin.  Note that direct binding between integrin and <a href="http://www.wormbase.org/db/seq/protein?name=UNC-52;class=protein" target="_blank">UNC-52</a> has not been demonstrated in <span class="emphasis"><em>C. elegans</em></span>, although integrin-perlecan binding has been demonstrated in vertebrates. See text for further details.
+                  </p>
+               </div>
+            </div>
+            <p>Why are the dense body rows pitched ~6 degrees from the longitudinal axis? We propose
+                           that the angle is imposed by shape of the muscle cells at the time when dense bodies and
+                           the related adhesion plaques (hemi-dense bodies) become stabilized by linkage to the
+                           hypodermal cytoskeleton. The muscle cells have assumed a spindle shape by the
+                           one-and-three-quarter-fold stage, and muscle-muscle junctions between anterior-posterior
+                           neighbors are approximately 6 degrees from longitudinal. The intersections between these
+                           junctions and the nearly orthogonal pattern of actin hypodermal actin cables define a
+                           series of points where attachment plaques will persist and mature (unipolar dense
+                           bodies). Interestingly, in the <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=spc-1" target="_blank">spc-1</a></em></span> mutants elongation is much
+                           slower than normal, so dense bodies and attachment plaques are "selected" when the
+                           muscle cells are in the "wrong" shape. The cells are much wider than they should be for
+                           their chronological age, and the muscle-muscle junctions between anterior-posterior
+                           neighbors are closer to 20 than to 6 degrees (<a href="#figure7">Figure 7</a>E&#8211;F). The
+                           A-bands, like the muscle cells, are too wide, and their angle to the longitudinal axis
+                           is 20 degrees.
+            </p>
+            <div class="mediaobject" align="center"><a name="figure8"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="297">
+<tr>
+  <td align="center"><p><a href="Musclefig8.jpg"><img src="Musclefig8_s.jpg" border="2" align="middle" alt="View of a phalloidin stained 1.5 fold wild type embryo figure 8"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 8. View of a phalloidin stained 1.5 fold wild type embryo.&nbsp;</b>(A) Whole embryo shown from a left dorsal view. Two bundles of actin filaments running longitudinally along left dorsal muscle
+                     quadrant are visible. The outline of hypodermal cells is also visible as well the circumferential actin cables (arrows). (B)
+                     A cross section of the embryo illustrating the polarized position of the actin filaments within the muscle cells. C and D
+                     are schematic views of A and B respectively.
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e1266"></a>7.&nbsp;Is sarcomere assembly in <span class="emphasis"><em>C. elegans</em></span> a general model of sarcomere assembly?
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>A key question is whether these studies on sarcomere assembly in <span class="emphasis"><em>C.
+                                 elegans</em></span> have any relevance for mammalian muscle development. For several
+                           years those working on myogenesis in vertebrates largely ignored the work on
+                               <span class="emphasis"><em>C. elegans</em></span> sarcomere assembly. At the same time those working
+                           on adhesion complexes have used observations in <span class="emphasis"><em>C. elegans</em></span> and
+                               <span class="emphasis"><em>Drosophila melanogaster</em></span> to advance our understanding of
+                           adhesion complexes in mammals (reviewed in <a href="#bib33">Labouesse and Georges-Labouesse, 2003</a>). Three
+                           examples serve to illustrate this point. First, recent studies on flies and worms
+                           demonstrate that ILK is an adaptor molecule and all of its behavior can be explained as
+                           an adaptor molecule, not as a kinase (<a href="#bib59">Zervas et al., 2001</a>; <a href="#bib36">Mackinnon et al., 2002</a>;
+                           reviewed in <a href="#bib58">Zervas and Brown, 2002</a>). These observations have been confirmed in mammals
+                           using an ILK knockout mouse (<a href="#bib48">Sakai et al., 2003</a>). Second, it was the genetic analysis in
+                               <span class="emphasis"><em>C. elegans</em></span> that first demonstrated the key roles of <a href="http://www.wormbase.org/db/seq/protein?name=UNC-112;class=protein" target="_blank">UNC-112</a>,
+                           <a href="http://www.wormbase.org/db/seq/protein?name=UNC-97;class=protein" target="_blank">UNC-97</a>, <a href="http://www.wormbase.org/db/seq/protein?name=PAT-4;class=protein" target="_blank">PAT-4</a> and <a href="http://www.wormbase.org/db/seq/protein?name=PAT-6;class=protein" target="_blank">PAT-6</a> in the assembly of integrin attachment complexes. Third, the
+                           observation that <a href="http://www.wormbase.org/db/seq/protein?name=UNC-112;class=protein" target="_blank">UNC-112</a>/Mig-2 is localized to adhesion complexes, and binds ILK and
+                           PINCH, led <a href="#bib52">Tu et al. (2003)</a> to recapitulate these results and do 2-hybrid screens for a
+                           novel Mig-2 binding partner. This led to the isolation of a protein with a proline rich
+                           amino terminus and three LIM domains, Migfilin, which they demonstrated binds to
+                           filamin. This is the first example linking filamin regulation of actin filaments to the
+                           integrin/vinculin pathway for actin filament assembly. Finally, and to come full circle,
+                           the critical role played by beta 1 integrin in early mouse myogenesis has recently been
+                           demonstrated. In a mouse mutant lacking beta 1 integrin, recruitment of talin and
+                           vinculin to costamers is inhibited and proper rcomeres are not formed (<a href="#bib50">Schwander et al.,
+                              2003</a>). The phenotype observed is reminiscent of Pat mutants in <span class="emphasis"><em>C.
+                                 elegans</em></span> confirming the phylogenetic conservation of integrin complexes in
+                           sarcomere assembly.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e1328"></a>8.&nbsp;Summary
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>We, and others, have made significant inroads into how a muscle sarcomere is initiated
+                           and some progress on dissecting the assembly pathway that leads to this complex
+                           structure. However, there are several outstanding issues that remain including "
+            </p>
+            <p>1. How does the cell distinguish adhesion sites destined to be dense bodies from those
+                           destined to be M-lines?
+            </p>
+            <p>2. How is the precise spacing between sarcomere units generated and maintained
+                           throughout development?
+            </p>
+            <p>3. How are actin and myosin microfilaments inserted into the nascent sarcomere, and
+                           then how is filament length regulated as the animal grows?
+            </p>
+            <p>These are difficult questions, ones that we think go to the heart of a very difficult
+                           problem in cytoarchitecture. <span class="emphasis"><em>C. elegans</em></span> may offer the best
+                           opportunity to solve these challenging problems in macromolecular assembly and cellular organization.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e1344"></a>9.&nbsp;Acknowledgements
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>We thank Ken Norman for <a href="#figure8">Figure 8</a> and Hiroshi Qadota for permission to
+                           cite his data on <a href="http://www.wormbase.org/db/seq/protein?name=UNC-112;class=protein" target="_blank">UNC-112</a> binding to integrin. This review benefited greatly from the
+                           insightful comments of an anonymous reviewer. Research in the laboratory of DGM relevant
+                           to this review was supported by grants from the Canadian Institute for Health Research,
+                           the National Science and Engineering Research Council of Canada, the Heart and Stroke
+                           Foundation of Canada and the Health Research Foundation of British Columbia. Research in
+                           the laboratory of BDW relevant to this review was supported by grants from the National
+                           Institutes of Health (R01 HD38646) and the American Heart Association, Midwest Affiliate.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e1354"></a>10.&nbsp;References
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p></p>
+            <div class="bibliography">
+               <div class="bibliomixed"><a name="bib1"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Barstead, R.J., and Waterston, R.H. (1991). Cloning, sequencing and mapping of an alpha-actinin gene from the nematode <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Cell Motil. Cytoskeleton <span class="emphasis"><em>20</em></span>, 69&#8211;78.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=1756579&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1002/cm.970200108" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib2"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Barstead, R.J., and Waterston, R.H. (1991). Vinculin is essential for muscle function in the nematode. J. Cell Biol. <span class="emphasis"><em>114</em></span>, 715&#8211;724.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=1907975&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1083/jcb.114.4.715" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib3"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Benian, G.M., Tinley, T.L., Tang, X., and Borodovsky, M. (1996). The <span class="emphasis"><em>Caenorhabditis elegans</em></span> gene <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=unc-89" target="_blank">unc-89</a></em></span>, required fpr muscle M-line assembly, encodes a giant modular protein composed of Ig and signal transduction domains. J.
+                        Cell Biol. <span class="emphasis"><em>132</em></span>, 835&#8211;848.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8603916&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1083/jcb.132.5.835" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib4"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Bercher, M., Wahl, J., Vogel, B.E., Lu, C., Hedgecock, E.M., Hall, D.H., and Plenefisch, J.D. (2001). <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=mua-3" target="_blank">mua-3</a></em></span>, a gene required for mechanical tissue integrity in <span class="emphasis"><em>Caenorhabditis elegans</em></span>, encodes a novel transmembrane protein of epithelial attachment complexes. J. Cell Biol. <span class="emphasis"><em>154</em></span>, 415&#8211;426.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11470828&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1083/jcb.200103035" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib5"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Bershadsky, A.D., Balaban, N.Q., and Geiger, B. (2003). Adhesion-dependent cell mechnosensitivity. Annu. Rev. Cell Dev. Biol.
+                        <span class="emphasis"><em>19</em></span>, 677&#8211;695.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=14570586&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1146/annurev.cellbio.19.111301.153011" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib6"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Bosher, J.M., Hahn, B.S., Legouis, R., Sookhareea, S., Weimer, R.M., Gansmuller, A., Chisholm, A.D., Rose, A.M., Bessereau,
+                        J.L., and Labouesse, M. (2003). The <span class="emphasis"><em>Caenorhabditis elegans</em></span> <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=vab-10" target="_blank">vab-10</a></em></span> spectraplakin isoforms protect the epidermis against internal and external forces. J. Cell Biol. <span class="emphasis"><em>161</em></span>, 757&#8211;768.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12756232&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1083/jcb.200302151" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib7"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Broday, L., Kolotuev, I., Didier, C., Bhoumik, A., Podbilewicz, B., and Ronai, Z. (2004). The LIM domain protein <a href="http://www.wormbase.org/db/seq/protein?name=UNC-95;class=protein" target="_blank">UNC-95</a> is required for the assembly of muscle attachment structures and is regulated by the RING finger protein <a href="http://www.wormbase.org/db/seq/protein?name=RNF-5;class=protein" target="_blank">RNF-5</a> in <span class="emphasis"><em>C. elegans</em></span>. J. Cell Biol. <span class="emphasis"><em>165</em></span>, 857&#8211;867.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15210732&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1083/jcb.200401133" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib8"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Brown, J.C., Sasaki, T., Gohring, W., Yamada, Y., and Timpl, R. (1997). The C-terminal domain V of perlecan promotes beta1
+                        integrin-mediated cell adhesion, binds heparin, nidogen and fibulin-2 and can be modified by glycosaminoglycans. Eur. J. Biochem.
+                        <span class="emphasis"><em>250</em></span>, 39&#8211;46.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=9431988&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1111/j.1432-1033.1997.t01-1-00039.x" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib9"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Burridge, K., and Chrzanowska-Wodnicka, M. (1996). Focal adhesions, contractility, and signaling. Annu. Rev. Cell Dev. Biol.
+                        <span class="emphasis"><em>12</em></span>, 463&#8211;518.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8970735&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1146/annurev.cellbio.12.1.463" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib10"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Calderwood, D.A. (2004). Taliin controls integrin activation. Biochem. Sci. Transactions <span class="emphasis"><em>32</em></span>(pt3), 434&#8211;437.</span>
+                     <a href="http://dx.doi.org/10.1042/BST0320434" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib11"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Campbell, I.D., and Ginsberg, M.H. (2004). The talin-tail interaction places integrin activation on FERM ground. Trends Biochemcal
+                        Sciences <span class="emphasis"><em>8</em></span>, 429&#8211;435.</span>
+                     <a href="http://dx.doi.org/10.1016/j.tibs.2004.06.005" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib12"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Chakravarti, S., Horchar, T., Jefferson, B., Laurie, W., and Hassell, J.R. (1995). Recombinant domain III of perlecan promotes
+                        cell attachment through its RGDS sequence. J. Biol. Chem. <span class="emphasis"><em>270</em></span>, 404&#8211;409.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=7814401&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1074/jbc.270.1.404" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib13"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Cox, E.A., and Hardin, J. (2004). Sticky worms: adhesion coomplexes in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. J. Cell Sci. <span class="emphasis"><em>117</em></span>, 1885&#8211;1897.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15090594&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1242/jcs.01176" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib14"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Ding, M., Goncharov, A., Jin, Y., and Chisholm, A.D. (2003). <span class="emphasis"><em>C. elegans</em></span> ankyrin repeat protein <a href="http://www.wormbase.org/db/seq/protein?name=VAB-19;class=protein" target="_blank">VAB-19</a> is a component of epidermal attachment structures and is essential for epidermal morphogenesis. Development <span class="emphasis"><em>130</em></span>, 5791&#8211;5801.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=14534136&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1242/dev.00791" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib15"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Epstein, H.F., Casey, D.L., and Ortiz, I. (1993). Myosin and paramyosin of <span class="emphasis"><em>Caenorhabditis elegans</em></span> embryos assemble into nascent structures distinct from thick filaments and multi-filament assemblages. J. Cell Biol. <span class="emphasis"><em>122</em></span>, 845&#8211;858.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8349734&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1083/jcb.122.4.845" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib16"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Fillingham, I., Gingras, A.R., Papagrigoriou, E., Patel, B., Emsley, J., Critchley, D.R., Roberts, G.C., and Barsukov, I.L.
+                        (2005). A vinculin binding domain from the talin rod unfolds to form a complex with the vinculin head. Structure (Camb.) <span class="emphasis"><em>13</em></span>, 65&#8211;74.</span>
+                     <a href="http://dx.doi.org/10.1016/j.str.2004.11.006" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib17"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Francis, G.R., and Waterston, R.H. (1985). Muscle organization in <span class="emphasis"><em>Caenorhabditis elegans</em></span>: localization of proteins implicated in thin filament attachment and I-band organization. J. Cell Biol. <span class="emphasis"><em>101</em></span>, 1532&#8211;1549.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=2413045&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1083/jcb.101.4.1532" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib18"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Francis, R., and Waterston, R.H. (1991). Muscle cell attachment in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. J. Cell Biol. <span class="emphasis"><em>114</em></span>, 465&#8211;479.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=1860880&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1083/jcb.114.3.465" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib19"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Geiger, B., and Bershadsky, A. (2001). Assembly and mechanosensory function of focal contacts. Curr. Opin. Cell Biol. <span class="emphasis"><em>13</em></span>, 584&#8211;592.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11544027&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0955-0674(00)00255-6" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib20"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Gettner, S.N., Kenyon, C., and Reichardt, L.F. (1995). Characterization of beta <a href="http://www.wormbase.org/db/gene/gene?name=pat-3" target="_blank">pat-3</a> heterodimers, a family of essential integrin receptors in <span class="emphasis"><em>C. elegans</em></span>. J. Cell Biol. <span class="emphasis"><em>129</em></span>, 1127&#8211;1141.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=7744961&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1083/jcb.129.4.1127" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib21"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Giancotti, F.G., and Ruoslahti, E. (1999). Integrin signaling. Science <span class="emphasis"><em>285</em></span>, 1028&#8211;1032.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10446041&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1126/science.285.5430.1028" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib22"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Hammerlund, M., Davis, W.S., and Jorgensen, E.M. (2000). Mutations in Beta-spectrin disrupt axon outgrowth and muscle attachment
+                        structures. J. Cell Biol. <span class="emphasis"><em>149</em></span>, 931&#8211;942.</span>
+                     <a href="http://dx.doi.org/10.1083/jcb.149.4.931" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib23"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Hannigan, G.E., Leung-Hagesteijn, C., Fitz-Gibbon, L., Coppolino, M.G., Radeva, G., Filmus, J., Bell, J.C., and Dedhar, S.
+                        (1996). Regulation of cell adhesion and anchorage-dependent growth by a new beta 1-integrin-linked protein kinase. Nature
+                        <span class="emphasis"><em>379</em></span>, 91&#8211;96.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8538749&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/379091a0" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib24"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Hapiak, V., Hresko, M.C., Schriefer, L.A., Saiyasisongkhram, K., Bercher, M., and Plenefisch, J. (2003). <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=mua-6" target="_blank">mua-6</a></em></span>, a gene required for tissue integrity in <span class="emphasis"><em>Caenorhabditis elegans</em></span>, encodes a cytoplasmic intermediate filament. Dev. Biol. <span class="emphasis"><em>263</em></span>, 330&#8211;342.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=14597206&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.ydbio.2003.08.001" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib25"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Hayashi, K., Madri, J.A., and Yurchenco, P.D. (1992). Endothelial cells interact with the core protein of basement membrane
+                        pelecan through beta 1 and beta 3 integrins: an adhesion modulated by glycosaminoglycan. J. Cell Biol. <span class="emphasis"><em>119</em></span>, 945&#8211;959.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=1385448&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1083/jcb.119.4.945" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib26"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Hobert, O., Moerman, D.G., Clark, K.A., Beckerle, M.C., and Ruvkun, G. (1999). A conserved LIM protein that affects muscular
+                        adherens junction integrity and mechanosensory function in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. J. Cell Biol. <span class="emphasis"><em>144</em></span>, 45&#8211;57.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=9885243&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1083/jcb.144.1.45" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib27"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Hong, L., Elbl, T., Ward, J., Franzini-Armstrong, C., Rybicka, K.K., Gatewood, B.K., Baillie, D.L., and Bucher, E.A. (2001).
+                        <a href="http://www.wormbase.org/db/seq/protein?name=MUP-4;class=protein" target="_blank">MUP-4</a> is a novel transmembrane protein with functions in epithelial cell adhesion in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. J. Cell Biol. <span class="emphasis"><em>154</em></span>, 403&#8211;414.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11470827&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1083/jcb.200007075" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib28"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Hresko, M.C., Schriefer, L.A., Shrimankar, P., and Waterston, R.H. (1999). Myotactin, a novel hypodermal protein involved
+                        in muscle-cell adhesion in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. J. Cell Biol. <span class="emphasis"><em>146</em></span>, 659&#8211;672.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10444073&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1083/jcb.146.3.659" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib29"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Hresko, M.C., Williams, B.D., and Waterston, R.H. (1994). Assembly of body wall muscle and muscle cell attachment structures
+                        in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. J. Cell Biol. <span class="emphasis"><em>124</em></span>, 491&#8211;506.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8106548&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1083/jcb.124.4.491" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib30"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Ingber, D.E. (1997). Tensegrity: the architectural basis of cellular mechanotransduction. Annu. Rev. Physiol. <span class="emphasis"><em>59</em></span>, 575&#8211;599.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=9074778&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1146/annurev.physiol.59.1.575" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib31"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Izard, T., Evans, G., Borgon, R.A., Rush, C.L., Bricogne, G., and Bois, P.R. (2004). Vinculin activation by talin through
+                        helical bundle conversion. Nature <span class="emphasis"><em>427</em></span>, 171&#8211;175.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=14702644&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nature02281" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib32"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Kadrmas, J.L., and Beckerle, M.C. (2004). The LIM domain: from the cytoskeleton to the nucleus. Nat. Rev. Mol. Cell Biol.
+                        <span class="emphasis"><em>5</em></span>, 920&#8211;931.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15520811&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nrm1499" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib33"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Labouesse, M., and Georges-Labouesse, E. (2003). Cell adhesion: parallels between vertebrate and invertebrate focal adhesions.
+                        Curr. Biol. <span class="emphasis"><em>13</em></span>, R528&#8211;R530.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12842032&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0960-9822(03)00448-2" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib34"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Lin, X., Qadota, H., Moerman, D.G., and Williams, B.D. (2003). <span class="emphasis"><em>C. elegans</em></span> <a href="http://www.wormbase.org/db/seq/protein?name=PAT-6;class=protein" target="_blank">PAT-6</a>/actopaxin plays a critical role in the assembly of integrin adhesion complexes in vivo. Curr. Biol. <span class="emphasis"><em>13</em></span>, 922&#8211;932.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12781130&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0960-9822(03)00372-5" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib35"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Mackenzie, J.M., Jr., Garcea, R.L., Zengel, J.M., and Epstein, H.F. (1978). Muscle development in <span class="emphasis"><em>Caenorhabditis elegans</em></span>: mutants exhibiting retarded sarcomere construction. Cell <span class="emphasis"><em>15</em></span>, 751&#8211;762.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=728988&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/0092-8674(78)90261-1" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib36"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Mackinnon, A.C., Qadota, H., Norman, K.R., Moerman, D.G., and Williams, B.D. (2002). <span class="emphasis"><em>C. elegans</em></span> <a href="http://www.wormbase.org/db/seq/protein?name=PAT-4;class=protein" target="_blank">PAT-4</a>/ILK functions as an adaptor protein within integrin adhesion complexes. Curr. Biol. <span class="emphasis"><em>12</em></span>, 787&#8211;797.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12015115&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0960-9822(02)00810-2" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib37"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Mercer, K.B., Flaherty, D.B., Miller, R.K., Qadota, H., Tinley, T.L., Moerman, D.G., and Benian, G.M. (2003). <span class="emphasis"><em>Caenorhabditis elegans</em></span> <a href="http://www.wormbase.org/db/seq/protein?name=UNC-98;class=protein" target="_blank">UNC-98</a>, a C2H2 Zn finger protein, is a novel partner of <a href="http://www.wormbase.org/db/seq/protein?name=UNC-97;class=protein" target="_blank">UNC-97</a>/PINCH in muscle adhesion complexes. Mol. Biol. Cell <span class="emphasis"><em>14</em></span>, 2492&#8211;2507.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12808046&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1091/mbc.E02-10-0676" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib38"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Moerman, D.G., and Fire, A. (1997). Muscle: Structure, function and development. In <span class="emphasis"><em>C. elegans</em></span> II, D.L. Riddle, T. Blumenthal, B.J. Meyer, and J.R. Priess, eds. (Cold Spring Harbor: Cold Spring Harbor Press), pp. 417&#8211;470.</span>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib39"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Moerman, D.G., Hutter, H., Mullen, G.P., and Schnabel, R. (1996). Cell autonomous expression of perlecan and plasticity of
+                        cell shape in embryonic muscle of <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Dev. Biol. <span class="emphasis"><em>173</em></span>, 228&#8211;242.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8575624&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1006/dbio.1996.0019" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib40"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Moulder, G.L., Huang, M.M., Waterston, R.H., and Barstead, R.J. (1996). Talin requires beta-integrin, but not vinculin, for
+                        its assembly into focal adhesion-like structures in the nematode <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Mol. Biol. Cell <span class="emphasis"><em>7</em></span>, 1181&#8211;1193.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8856663&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib41"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Mullen, G.P., Rogalski, T.M., Bush, J.A., Gorji, P.R., and Moerman, D.G. (1999). Complex patterns of alternative splicing
+                        mediate the spatial and temporal distribution of perlecan/<a href="http://www.wormbase.org/db/seq/protein?name=UNC-52;class=protein" target="_blank">UNC-52</a> in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Mol. Biol. Cell <span class="emphasis"><em>10</em></span>, 3205&#8211;3221.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10512861&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib42"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Nix, D.A., Fradelizi, J., Bockholt, S., Menichi, B., Louvard, D., Friederich, E., and Beckerle, M.C. (2001). Targeting of
+                        zyxin to sites of actin membrane interaction and to the nucleus. J. Biol. Chem. <span class="emphasis"><em>276</em></span>, 34759&#8211;34767.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11395501&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1074/jbc.M102820200" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib44"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Norman, K.R., and Moerman, D.G. (2002). Alpha spectrin is essential for morphogenesis and body wall muscle formation in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. J. Cell Biol. <span class="emphasis"><em>157</em></span>, 665&#8211;677.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11994313&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1083/jcb.200111051" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib45"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Priess, J.R., and Hirsh, D. (1986). <span class="emphasis"><em>Caenorhabditis elegans</em></span> morphogenesis: The role of the cytoskeleton in the elongation of the embryo. Dev. Biol. <span class="emphasis"><em>117</em></span>, 156&#8211;173.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=3743895&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/0012-1606(86)90358-1" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib46"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Rogalski, T.M., Mullen, G.P., Gilbert, M.M., Williams, B.D., and Moerman, D.G. (2000). The <a href="http://www.wormbase.org/db/seq/protein?name=UNC-112;class=protein" target="_blank">UNC-112</a> gene in <span class="emphasis"><em>Caenorhabditis elegans</em></span> encodes a novel component of cell-matrix adhesion structures required for integrin localization in the muscle cell membrane.
+                        J. Cell Biol. <span class="emphasis"><em>150</em></span>, 253&#8211;264.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10893272&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1083/jcb.150.1.253" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib47"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Rogalski, T.M., Williams, B.D., Mullen, G.P., and Moerman, D.G. (1993). Products of the <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=unc-52" target="_blank">unc-52</a></em></span> gene in <span class="emphasis"><em>Caenorhabditis elegans</em></span> are homologous to the core protein of the mammalian basement membrane heparan sulfate proteoglycan. Genes Dev. <span class="emphasis"><em>7</em></span>, 1471&#8211;1484.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8393416&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib48"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Sakai, T., Li, S., Docheva, D., Grashoff, C., Sakai, K., Kostka, G., Braun, A., Pfeifer, A., Yurchenco, P.D., and Fassler,
+                        R. (2003). Integrin-linked kinase (ILK) is required for polarizing the epiblast, cell adhesion, and controlling actin accumulation.
+                        Genes Dev. <span class="emphasis"><em>17</em></span>, 926&#8211;940.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12670870&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1101/gad.255603" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib49"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Schnabel, R., Hutter, H., Moerman, D., and Schnabel, H. (1997). Assessing normal embryogenesis in <span class="emphasis"><em>Caenorhabditis elegans</em></span> using a 4D microscope: variability of development and regional specification. Dev. Biol. <span class="emphasis"><em>184</em></span>, 234&#8211;265.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=9133433&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1006/dbio.1997.8509" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib50"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Schwander, M., Leu, M., Stumm, M., Dorchies, O.M., Ruegg, U.T., Schittny, J., and Muller, U. (2003). Beta1 integrins regulate
+                        myoblast fusion and sarcomere assembly. Dev. Cell <span class="emphasis"><em>4</em></span>, 673&#8211;685.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12737803&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S1534-5807(03)00118-7" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib60"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Sulston, J.E., Schierenberg, E., White, J.G., Thomson, J.N. (1983). The embryonic cell lineage of the nematode <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Dev Biol. <span class="emphasis"><em>100</em></span>, 64&#8211;119.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=6684600&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib51"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Tu, Y., Li, F., Goicoechea, S., and Wu, C. (1999). The LIM-only protein PINCH directly interacts with integrin-linked kinase
+                        and is recruited to integrin-rich sites in spreading cells. Mol. Cell Biol. <span class="emphasis"><em>19</em></span>, 2425&#8211;2434.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10022929&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib52"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Tu, Y., Wu, S., Shi, X., Chen, K., and Wu, C. (2003). Migfilin and Mig-2 link focal adhesions to filamin and the actin cytoskeleton
+                        and function in cell shape modulation. Cell <span class="emphasis"><em>113</em></span>, 37&#8211;47.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12679033&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0092-8674(03)00163-6" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib53"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Waterston, R.H. (1988). Muscle. In The nematode <span class="emphasis"><em>Caenorhabditis elegans</em></span>, W.B. Wood, ed. (Cold Spring Harbor: Cold Spring Harbor Press), pp. 281&#8211;335.</span>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib54"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Waterston, R.H. (1989). The minor myosin heavy chain gene, MHC A, of <span class="emphasis"><em>Caenorhabditis elegans</em></span> is necessary for the intitiation of thick filament assembly. EMBO J. <span class="emphasis"><em>8</em></span>, 3429&#8211;3436.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=2583106&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib55"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Waterston, R.H., and Francis, G.R. (1985). Genetic analuysis of muscle development in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Trends Neurosci. <span class="emphasis"><em>84</em></span>, 270&#8211;276.</span>
+                     <a href="http://dx.doi.org/10.1016/0166-2236(85)90101-8" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib56"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Wehrle-Haller, B., and Imhof, B.A. (2002). The inner lives of focal adhesions. Trends Cell Biol. <span class="emphasis"><em>12</em></span>, 382&#8211;389.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12191915&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0962-8924(02)02321-8" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib57"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Williams, B.D., and Waterston, R.H. (1994). Genes critical for muscle development and function in <span class="emphasis"><em>Caenorhabditis elegans</em></span> identified through lethal mutations. J. Cell Biol. <span class="emphasis"><em>124</em></span>, 475&#8211;490.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8106547&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1083/jcb.124.4.475" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib58"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Zervas, C.G., and Brown, N.H. (2002). Integrin adhesion: when is a kinase a kinase? Curr. Biol. <span class="emphasis"><em>12</em></span>, R350&#8211;R351.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12015134&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0960-9822(02)00856-4" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib59"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Zervas, C.G., Gregory, S.L., and Brown, N.H. (2001). <span class="emphasis"><em>Drosophila</em></span> integrin-linked kinase is required at sites of integrin adhesion to link the cytoskeleton to the plasma membrane. J. Cell
+                        Biol. <span class="emphasis"><em>152</em></span>, 1007&#8211;1018.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11238456&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1083/jcb.152.5.1007" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="footnotes"><br><hr width="100" align="left">
+            <div class="footnote">
+               <p><sup><a name="ftn.d0e11" href="#d0e11">*</a></sup>Edited by James M. Kramer and Donald G. Moerman. Last revised May 5, 2005. Published January 16, 2006. This chapter should
+                  be cited as: Moerman, D. G. and Williams, B. D. Sarcomere assembly in <span class="emphasis"><em>C. elegans</em></span> muscle (January 16, 2006), <span class="emphasis"><em>WormBook</em></span>, ed. The <span class="emphasis"><em>C. elegans</em></span> Research Community, WormBook, doi/10.1895/wormbook.1.81.1, <a href="http://www.wormbook.org" target="_top">http://www.wormbook.org</a>.
+               </p>
+               <p><span class="bold"><strong>Copyright:</strong></span> &copy; 2006 Donald G. Moerman and Benjamin D. Williams. This is an open-access article distributed under the terms of the Creative
+                  Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original
+                  author and source are credited.
+               </p>
+            </div>
+            <div class="footnote">
+               <p><sup><a name="ftn.d0e41" href="#d0e41">&sect;</a></sup>To whom correspondence should be addressed. E-mail: <a href="mailto:moerman@zoology.ubc.ca" target="_top">moerman@zoology.ubc.ca</a> or <a href="mailto:bdwillms@life.uiuc.edu" target="_top">bdwillms@life.uiuc.edu</a></p>
+			   <p><img src="somerights20.gif" alt="Creative Commons License" align="middle" border="0"> All WormBook content, except where otherwise noted, is licensed under a <a href="http://creativecommons.org/licenses/by/2.5/" title="Creative Commons Attribution License" target="_blank">Creative Commons Attribution License</a>.</p>
+            </div>
+         </div>
+      </div>
+   <!--#include virtual="/ssi/footer.html" --></body>
+</html>
+

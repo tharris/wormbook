@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY fig1 SYSTEM 'geneticsuppressionfig1.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'geneticsuppressionfig1leg.xml'>
+
+<!ENTITY geneticsuppression_Refs SYSTEM 'geneticsuppressionrefs.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="geneticsuppression_ArticleID">
+    <articleinfo>
+        <!--see DocBook's authorgroup element -->
+        <title>Genetic suppression<footnote>
+                <para>Edited by Philip Anderson. Last revised March 29, 2005. Published December 27, 2005. This chapter should be cited as: Hodgkin, J. Genetic suppression (December 27, 2005), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.59.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+		<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2005 Jonathan Hodgkin. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+            </footnote>
+        </title>
+        <!--		<revhistory>
+			<revision>
+				<revnumber>1.0</revnumber>
+				<date>Last revised 3/29/05</date>
+			</revision>
+		</revhistory>
+-->
+        <author>
+            <firstname>Jonathan</firstname>
+            <surname>Hodgkin<remark>
+                    <footnote>
+                        <para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:jah@bioch.ox.ac.uk">jah@bioch.ox.ac.uk</ulink></para>
+                    </footnote>
+                </remark>
+            </surname>
+            <affiliation>
+                <address>Genetics Unit, Department of Biochemistry, University of Oxford, Oxford OX1 3QU, UK</address>
+            </affiliation>
+        </author>
+    </articleinfo>
+    <abstract>
+        <title><emphasis role="bold">Abstract</emphasis></title>
+        <para><emphasis role="bold">Genetic suppression has provided a very powerful tool for analyzing</emphasis> <emphasis><emphasis role="bold">C. elegans.</emphasis></emphasis>
+            <emphasis role="bold">Suppression experiments are facilitated by the ability to handle very large numbers of
+            individuals and to apply powerful selections. Because the animal grows as a
+            self-fertilizing diploid, both dominant and recessive suppressors can be recovered. Many
+            different kinds of suppression have been reported. These are discussed by category, with
+            examples, together with discussion of how suppressors can be used to interpret the
+            underlying biology, and to enable further experimentation. Suppression phenomena can be
+            divided into intragenic and extragenic classes, depending on whether the suppressor lies
+            in the same gene as the starting mutation, or in a different gene. Intragenic types
+            include same-site replacement, compensatory mutation, alteration in splicing, and
+            reversion of dominant mutations by</emphasis> <emphasis><emphasis role="bold">cis-</emphasis></emphasis><emphasis role="bold">knockout. Extragenic suppression can occur by a
+            variety of informational mechanisms, such as alterations in splicing, translation or
+            nonsense-mediated decay. In addition, extragenic suppression can occur by bypass, dosage
+            effects, product interaction, or removal of toxic products. Within signaling pathways,
+            suppression can occur by modulating the strength of signal transmission, or by epistatic
+            interactions that can reveal the underlying regulatory hierarchies. In</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis>
+            <emphasis role="bold">biology, the processes of muscle development, vulva formation and sex determination have
+            provided remarkably rich arenas for the investigation and exploitation of suppression.</emphasis></para>
+    </abstract>
+    <sect1>
+        <title>Introduction</title>
+        <para>Genetic suppressors provide some of the most powerful tools available for exploring
+            gene expression, function and interaction. A suppressor mutation can be defined as a
+            second mutation, at a site distinct from the mutation under study, that suppresses the
+            phenotypic effect of the first mutation. <emphasis>C. elegans</emphasis> is especially suited for suppression
+            analysis, for several practical reasons: <orderedlist numeration="arabic">
+                <listitem>
+                    <para>Very large numbers of individuals can be handled, so that extremely rare
+                        mutational events can occur within a single experimental population.</para>
+                </listitem>
+                <listitem>
+                    <para>Strong selections can be applied, which may permit the detection and
+                        recovery of a single individual from a population of one hundred thousand or more.</para>
+                </listitem>
+                <listitem>
+                    <para>Mutations are easily generated, particularly by the chemical mutagen EMS.</para>
+                </listitem>
+                <listitem>
+                    <para>The predominant mode of reproduction is by self-fertilization, so that
+                        both recessive and dominant suppressors can be recovered readily.</para>
+                </listitem>
+            </orderedlist>
+        </para>
+        <para>Genetic suppression can arise in a variety of ways, which are described in the
+            sections below. Depending on the nature of the suppressive interaction, different kinds
+            of information can be obtained about the initial gene studied.</para>
+    </sect1>
+    <sect1>
+        <title>Intragenic suppression by same site replacement</title>
+        <para>In the simplest and least informative scenario, if a mutant carries a single base
+            change difference from wildtype, then reversion can occur simply by mutating the
+            sequence back to wildtype. However, intracodonic suppression can also occur, if a
+            different base change can result in a functional coding sequence. An example is
+            provided by a Gln-to-Pro mutant of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=dpy-31" role="_blank">dpy-31</ulink></emphasis>, encoding a collagen-processing protease,
+            which has been repeatedly reverted either by back mutation, Pro-to-Gln (CCT -&gt;
+            CTT), or by the only other acceptable change in this codon, Pro-to-Ser (CCT -&gt;
+            TCT) (<link linkend="bib42">Novelli et al., 2004</link><!--: PMID 15579684-->).</para>
+    </sect1>
+    <sect1>
+        <title>Intragenic suppression by compensatory second site mutation</title>
+        <para>In principle, missense mutations that result in a non-functional protein can sometimes
+            be suppressed by introducing another change elsewhere in the protein. Relatively few
+            cases of this effect have been studied so far in <emphasis>C. elegans</emphasis>. An example is provided by
+            the reversion of temperature-sensitive missense mutations in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis>, which encodes a cell
+            interaction protein; this experiment yielded a variety of second-site missense changes
+            that are able to correct the original defect (<link linkend="bib34">Lissemore et al., 1993</link><!--: PMID 8307320-->).</para>
+    </sect1>
+    <sect1>
+        <title>Intragenic suppression by altered splicing</title>
+        <para>Sometimes intragenic reversion can be achieved by a second mutation that leads to
+            omission of a deleterious mutation by means of exon skipping. This is particularly
+            likely to happen with genes that produce multiple splice variants, as illustrated by
+            studies of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-52" role="_blank">unc-52</ulink></emphasis>. This gene encodes multiple isoforms of perlecan, which are proteins
+            required for myofilament anchorage to the basement membrane underlying muscle cells.
+            Nonsense mutations located in some of the alternatively spliced exons can be suppressed
+            by a G-to-A change in the acceptor site adjoining the mutant exon, which leads to its
+            omission; the resulting RNA remains in frame and produces a functional protein (<link linkend="bib46">Rogalski
+            et al., 1995</link><!--: PMID 7535716-->).</para>
+    </sect1>
+    <sect1>
+        <title>Intragenic suppression of dominant mutations by loss-of-function in <emphasis>cis</emphasis>.</title>
+        <para>Most genes in <emphasis>C. elegans</emphasis> are haplo-sufficient, so the majority of dominant mutations
+            are associated with gain-of-function effects, which result in a toxic or inappropriately
+            expressed gene product (<link linkend="bib43">Park and Horvitz, 1986</link><!--: PMID 3744028-->). The dominant effect of
+            such a mutation can be suppressed by introducing a second mutation elsewhere in the
+            mutated gene that results in partial or complete loss-of-function in its product.</para>
+        <para>An early example was provided by studies of the myosin gene <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-54" role="_blank">unc-54</ulink></emphasis>. Some dominant
+            mutations of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-54" role="_blank">unc-54</ulink></emphasis> cause slow movement or paralysis in single dose, by poisoning thick
+            filament assembly. These mutations, such as the allele <emphasis><ulink url="http://www.wormbase.org/db/get?name=e1152;class=Variation" role="_blank">e1152</ulink></emphasis>, can be reverted by
+            introducing null or partial loss-of-function mutations in <emphasis>cis</emphasis>. Heterozygotes carrying
+            just the dominant allele <emphasis>(<ulink url="http://www.wormbase.org/db/get?name=e1152;class=Variation" role="_blank">e1152</ulink>/+)</emphasis> are slow, whereas <emphasis><ulink url="http://www.wormbase.org/db/get?name=e1152;class=Variation" role="_blank">e1152</ulink> null / +</emphasis> heterozygotes are
+            wildtype. The <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-54" role="_blank">unc-54</ulink></emphasis> gene is essential for movement, so <emphasis><ulink url="http://www.wormbase.org/db/get?name=e1152;class=Variation" role="_blank">e1152</ulink> null</emphasis> double homozygotes
+            are paralysed, but the mutations are initially recovered in healthy heterozygotes with
+            normal movement. Selection for improved movement of <emphasis><ulink url="http://www.wormbase.org/db/get?name=e1152;class=Variation" role="_blank">e1152</ulink>/+</emphasis> heterozygotes therefore
+            provided an efficient means of recovering many mutations in this gene (<link linkend="bib1">Anderson and
+            Brenner, 1984</link><!--: PMID 6589606-->).</para>
+        <para>Similar strategies have been used frequently and effectively to generate multiple
+            loss-of-function mutations in important or essential genes.</para>
+    </sect1>
+    <sect1>
+        <title>Extragenic suppression &#x02014; overview</title>
+        <para>Suppressing the effects of a mutant gene by changes elsewhere in the genome can occur
+            in a number of ways. Extragenic suppression is usually revealed by crossing a revertant
+            line with wildtype, and observing the re-appearance of the original mutant after
+            Mendelian segregation. Numerous cases of extragenic suppression have now been identified
+            and analysed in greater or lesser depth. Many different phenomena are involved in the
+            various cases. About 40 genes in the <emphasis>sup</emphasis> class have been defined thus far, and in
+            addition separate gene classes have been established for many of the more specific
+            processes that have been studied. As shown in <link linkend="table1">Table 1</link>, research on 21 suppressor gene
+            classes has been published. At least 20 further classes have been established (see
+            <ulink url="http://www.wormbase.org/" role="_blank">Wormbase</ulink>) but their properties are as yet unpublished. It should be noted that
+            suppressor mutations frequently turn out to be special alleles of genes that have
+            already been well studied and given more informative names, so the names of suppressor
+            loci are more transient than most.</para>
+<table id="table1" frame="all" rules="all" cellpadding="0" cellspacing="0" width="100%">
+<title>Table 1. Suppressor gene classes</title>
+<tgroup cols="3">
+<colspec colname="c1" align="left" colwidth="1*"/>
+<colspec colname="c2" align="left" colwidth="1*"/>
+<colspec colname="c3" align="left" colwidth="1*"/>
+<thead>
+<row>
+<entry>Gene name</entry>
+<entry>Explanation</entry>
+<entry>Initial references</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry><emphasis>cps</emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=CED-3;class=protein" role="_blank">CED-3</ulink> Protease Suppressor</entry>
+<entry><link linkend="bib56">Wang et al., 2002</link><!--: PMID 12446902--></entry>
+</row>
+<row>
+<entry><emphasis>des</emphasis></entry>
+<entry>DEgeneration Suppressor</entry>
+<entry><link linkend="bib55">Treinin et al., 1998</link><!--: PMID 9860996--></entry>
+</row>
+<row>
+<entry><emphasis>eor</emphasis></entry>
+<entry>Egl-1 suppressor/DiO uptake defect/Raf enhancer</entry>
+<entry><link linkend="bib19">Howard and Sundaram, 2002</link><!--: PMID 12130541--></entry>
+</row>
+<row>
+<entry><emphasis>ksr</emphasis></entry>
+<entry>Kinase Suppressor of activated Ras</entry>
+<entry><link linkend="bib53">Sundaram and Han, 1995</link><!--: PMID 8521513-->; <link linkend="bib27">Kornfeld et al., 1995</link><!--: PMID 8521514--></entry>
+</row>
+<row>
+<entry><emphasis>scd</emphasis></entry>
+<entry>Suppressor of Constitutive Dauer formation</entry>
+<entry><link linkend="bib21">Inoue and Thomas, 2000</link><!--: PMID 11063683--></entry>
+</row>
+<row>
+<entry><emphasis>sel</emphasis></entry>
+<entry>Suppressor/Enhancer of Lin-12</entry>
+<entry><link linkend="bib52">Sundaram and Greenwald, 1993</link><!--: PMID 8293978--></entry>
+</row>
+<row>
+<entry><emphasis>seu</emphasis></entry>
+<entry>Suppressor of Ectopic Unc-5</entry>
+<entry><link linkend="bib6">Colavita and Culotti, 1998</link><!--: PMID 9473333--></entry>
+</row>
+<row>
+<entry><emphasis>sgs</emphasis></entry>
+<entry>Suppressor of G protein S defect</entry>
+<entry><link linkend="bib28">Korswagen et al., 1998</link><!--: PMID 9724641--></entry>
+</row>
+<row>
+<entry><emphasis>sli</emphasis></entry>
+<entry>Suppressor of LIneage defect</entry>
+<entry><link linkend="bib23">Jongeward et al., 1995</link><!--: PMID 7789760--></entry>
+</row>
+<row>
+<entry><emphasis>smg</emphasis></entry>
+<entry>Suppressor, Morphological effect on Genitalia</entry>
+<entry><link linkend="bib18">Hodgkin et al., 1989</link><!--: PMID 2583479--></entry>
+</row>
+<row>
+<entry><emphasis>smu</emphasis></entry>
+<entry>Suppressor of Mec and Unc defects</entry>
+<entry><link linkend="bib36">Lundquist and Herman, 1994</link><!--: PMID 8001796--></entry>
+</row>
+<row>
+<entry><emphasis>soc</emphasis></entry>
+<entry>Suppressor Of Clr</entry>
+<entry><link linkend="bib49">Selfors et al., 1998</link><!--: PMID 9618511--></entry>
+</row>
+<row>
+<entry><emphasis>sog</emphasis></entry>
+<entry>Suppressor Of Glp</entry>
+<entry><link linkend="bib38">Maine and Kimble, 1993</link><!--: PMID 8307319--></entry>
+</row>
+<row>
+<entry><emphasis>sol</emphasis></entry>
+<entry>Suppressor Of Lurcher movement defect</entry>
+<entry><link linkend="bib65">Zheng et al., 2004</link><!--: PMID 14749834--></entry>
+</row>
+<row>
+<entry><emphasis>sop</emphasis></entry>
+<entry>Suppressor Of Pal</entry>
+<entry><link linkend="bib64">Zhang and Emmons, 2000</link><!--: PMID 10970880--></entry>
+</row>
+<row>
+<entry><emphasis>spr</emphasis></entry>
+<entry>Suppressor of PResenilin defect</entry>
+<entry><link linkend="bib60">Wen et al. 2000</link><!--: PMID 11114162--></entry>
+</row>
+<row>
+<entry><emphasis>srl</emphasis></entry>
+<entry>Suppressor of Roller Lethality</entry>
+<entry><link linkend="bib3">Barbazuk et al., 1994</link><!--: PMID 8138151--></entry>
+</row>
+<row>
+<entry><emphasis>sup</emphasis></entry>
+<entry>SUPpressor</entry>
+<entry><link linkend="bib45">Riddle and Brenner, 1978</link><!--: PMID 669254-->; <link linkend="bib58">Waterston and Brenner, 1978</link><!--: PMID 703836--></entry>
+</row>
+<row>
+<entry><emphasis>sur</emphasis></entry>
+<entry>SUppressor of activated Ras</entry>
+<entry><link linkend="bib29">Lackner et al., 1994</link><!--: PMID 8299936-->; <link linkend="bib62">Wu and Han, 1994</link><!--: PMID 8299935--></entry>
+</row>
+<row>
+<entry><emphasis>sus</emphasis></entry>
+<entry>SUppressor of Suppressor</entry>
+<entry><link linkend="bib5">Brown and Riddle, 1985</link><!--: PMID 4018568--></entry>
+</row>
+<row>
+<entry><emphasis>suv</emphasis></entry>
+<entry>SUppressor of Vulvaless</entry>
+<entry><link linkend="bib15">Hajnal et al., 1997</link><!--: PMID 9334333--></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+        <para>Space does not permit a full description of all the classes listed in <link linkend="table1">Table 1</link>, but
+		some of the major types of suppression that have been encountered are discussed below,
+            using particular examples.</para>
+    </sect1>
+    <sect1>
+        <title>Informational suppression &#x02014; overview</title>
+        <para>Alteration of the general machinery for transcription, RNA processing and translation
+            can sometimes ameliorate or suppress certain kinds of mutation in many different genes.
+            The hallmarks of informational suppression, as this phenomenon is known, are
+            allele-specificity and gene-non-specificity. Three kinds of informational suppression
+            have been described so far in <emphasis>C. elegans</emphasis>: nonsense suppression; suppression by modified
+            splicing; suppression by loss of nonsense-mediated decay (NMD).</para>
+    </sect1>
+    <sect1>
+        <title>Nonsense suppression</title>
+        <para>A large fraction of point mutations identified in <emphasis>C. elegans</emphasis> are changes from sense to
+            nonsense codons, either UAG (amber), UAA (ochre) or UGA (opal), resulting in polypeptide
+            chain termination and (usually) complete or almost complete loss of gene function. These
+            nonsense mutants can potentially be suppressed by nonsense suppressor tRNAs, in which a
+            sense codon has been changed to be able to decode the nonsense triplet. In practice,
+            only amber suppressors have been recovered. Early work identified two suppressor loci,
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sup-5" role="_blank">sup-5</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sup-7" role="_blank">sup-7</ulink></emphasis>, which could act to suppress certain mutations in a wide variety of
+            genes (<link linkend="bib58">Waterston and Brenner, 1978</link><!--: PMID 703836-->; <link linkend="bib57">Waterston, 1981</link><!--: PMID 7274656-->). These
+            were subsequently shown to be amber suppressor mutations of two Trp tRNA genes, carrying
+            alterations in their anticodons from CCA to CTA (<link linkend="bib61">Wills, et al., 1983</link><!--: PMID 6571695-->;
+            <link linkend="bib4">Bolten et al., 1984</link><!--: PMID 6093119-->).</para>
+        <para>There are twelve members of the Trp tRNA family in <emphasis>C. elegans</emphasis>, but only two can be
+            mutated to yield strong amber suppressors. The same two mutations, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sup-5" role="_blank">sup-5</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sup-7" role="_blank">sup-7</ulink></emphasis>, were
+            isolated repeatedly in independent experiments (<link linkend="bib57">Waterston, 1981</link><!--: PMID 7274656-->). Weak
+            amber suppressors were subsequently obtained for six additional members of the set (see
+            <link linkend="table2">Table 2</link>), by selecting for suppressors using amber mutants that are very easily
+            suppressed such as several in the sex determination gene <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-3" role="_blank">tra-3</ulink></emphasis> (<link linkend="bib16">Hodgkin, 1985</link>;
+            <link linkend="bib25">Kondo et al., 1988</link><!--: PMID 3221861-->; <link linkend="bib26">Kondo et al., 1990</link><!--: PMID 2398498-->). Probably only a
+            trace of full length <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-3;class=protein" role="_blank">TRA-3</ulink> protein is sufficient to provide enough activity for normal
+            sexual development, so weak suppressors can be recovered. As indicated in <link linkend="table2">Table 2</link>, the
+            eight identified amber suppressors appear to be expressed at different levels, and they
+            also exhibit some differences between tissues in the strength of suppression (<link linkend="bib26">Kondo et
+            al., 1990</link><!--: PMID 2398498-->). In vitro observations on the transcription of these genes
+            that are consistent with these different strengths have been reported (Li et al, 1988<!--:
+            PMID 9447966-->). The differences in strength show that flanking sequences can exert a
+            strong influence on expression level of these tRNAs, despite the fact that all eight are
+            identical in the internal promoter sequences believed to be sufficient for Pol III
+            transcription of tRNA genes.</para>
+<table id="table2" frame="all" rules="all" cellpadding="0" cellspacing="0" width="100%">
+<title>Table 2. Amber nonsense suppressors</title>
+<tgroup cols="4">
+<colspec colname="c1" align="left" colwidth="1*"/>
+<colspec colname="c2" align="left" colwidth="1*"/>
+<colspec colname="c3" align="left" colwidth="1*"/>
+<colspec colname="c4" align="left" colwidth="1*"/>
+<thead>
+<row>
+<entry>Gene name (allele)</entry>
+<entry>Class (other name)</entry>
+<entry>Approximate relative strength</entry>
+<entry>Reference</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry><emphasis>sup-5(<ulink url="http://www.wormbase.org/db/get?name=e1464;class=Variation" role="_blank">e1464</ulink>)</emphasis></entry>
+<entry>Trp (<emphasis>rtw-1</emphasis>)</entry>
+<entry>7</entry>
+<entry><link linkend="bib58">Waterston and Brenner (1978)</link></entry>
+</row>
+<row>
+<entry><emphasis>sup-7(st5)</emphasis></entry>
+<entry>Trp (<emphasis>rtw-2</emphasis>)</entry>
+<entry>8</entry>
+<entry><link linkend="bib57">Waterston (1981)</link></entry>
+</row>
+<row>
+<entry><emphasis>sup-21(<ulink url="http://www.wormbase.org/db/get?name=e1957;class=Variation" role="_blank">e1957</ulink>)</emphasis></entry>
+<entry>Trp (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rtw-10" role="_blank">rtw-10</ulink></emphasis>)</entry>
+<entry>3</entry>
+<entry><link linkend="bib16">Hodgkin (1985)</link></entry>
+</row>
+<row>
+<entry><emphasis>sup-24(<ulink url="http://www.wormbase.org/db/get?name=st354;class=Variation" role="_blank">st354</ulink>)</emphasis></entry>
+<entry>Trp (<emphasis>rtw-4</emphasis>)</entry>
+<entry>4</entry>
+<entry><link linkend="bib25">Kondo et al. (1988)</link></entry>
+</row>
+<row>
+<entry><emphasis>sup-28(<ulink url="http://www.wormbase.org/db/get?name=e2058;class=Variation" role="_blank">e2058</ulink>)</emphasis></entry>
+<entry>Trp (<emphasis>rtw-8</emphasis>)</entry>
+<entry>2</entry>
+<entry><link linkend="bib25">Kondo et al. (1988)</link></entry>
+</row>
+<row>
+<entry><emphasis>sup-29(<ulink url="http://www.wormbase.org/db/get?name=e1986;class=Variation" role="_blank">e1986</ulink>)</emphasis></entry>
+<entry>Trp (<emphasis>rtw-9</emphasis>)</entry>
+<entry>1</entry>
+<entry><link linkend="bib25">Kondo et al. (1988)</link></entry>
+</row>
+<row>
+<entry><emphasis>sup-33(<ulink url="http://www.wormbase.org/db/get?name=st389;class=Variation" role="_blank">st389</ulink>)</emphasis></entry>
+<entry>Trp (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rtw-11" role="_blank">rtw-11</ulink></emphasis>)</entry>
+<entry>4</entry>
+<entry><link linkend="bib26">Kondo et al. (1990)</link></entry>
+</row>
+<row>
+<entry><emphasis>sup-34(<ulink url="http://www.wormbase.org/db/get?name=e2227;class=Variation" role="_blank">e2227</ulink>)</emphasis></entry>
+<entry>Trp (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rtw-12" role="_blank">rtw-12</ulink></emphasis>)</entry>
+<entry>3</entry>
+<entry><link linkend="bib26">Kondo et al. (1990)</link></entry>
+</row>
+<row>
+<entry/>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry><emphasis>sup-22(<ulink url="http://www.wormbase.org/db/get?name=e2057;class=Variation" role="_blank">e2057</ulink>)</emphasis></entry>
+<entry>Non-Trp</entry>
+<entry>2</entry>
+<entry><link linkend="bib16">Hodgkin (1985)</link></entry>
+</row>
+<row>
+<entry><emphasis>sup-23(<ulink url="http://www.wormbase.org/db/get?name=e2059;class=Variation" role="_blank">e2059</ulink>)</emphasis></entry>
+<entry>?Non-Trp</entry>
+<entry>2</entry>
+<entry><link linkend="bib16">Hodgkin (1985)</link></entry>
+</row>
+<row>
+<entry><emphasis>sup-32(<ulink url="http://www.wormbase.org/db/get?name=e1958;class=Variation" role="_blank">e1958</ulink>)</emphasis></entry>
+<entry>Non-Trp</entry>
+<entry>2</entry>
+<entry><link linkend="bib16">Hodgkin (1985)</link></entry>
+</row>
+<row>
+<entry><emphasis>sup-?(st402)</emphasis></entry>
+<entry>Non-Trp</entry>
+<entry>3</entry>
+<entry><link linkend="bib26">Kondo et al. (1990)</link></entry>
+</row>
+<row>
+<entry><emphasis>sup-?(st414)</emphasis></entry>
+<entry>Non-Trp</entry>
+<entry>2</entry>
+<entry><link linkend="bib26">Kondo et al. (1990)</link></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+        <para>Too much suppression is clearly deleterious, because animals carrying two doses of
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sup-7" role="_blank">sup-7</ulink></emphasis> or <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sup-5" role="_blank">sup-5</ulink></emphasis> are inviable or subviable, especially at low temperature (<link linkend="bib57">Waterston,
+            1981</link><!--: PMID 7274656-->). Presumably the deleterious effects result from too much
+            readthrough of natural stop codons. Selection for improved low-temperature viability of
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sup-7" role="_blank">sup-7</ulink></emphasis> animals was used to generate deletions or loss-of-function mutations of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sup-7" role="_blank">sup-7</ulink></emphasis>,
+            suggesting that the inviability is due to readthrough rather than loss of the normal
+            function of the gene. The same effect may explain why ochre or opal suppressors have not
+            been recovered.</para>
+        <para>Additional weak amber suppressors have been isolated, which do not correspond to Trp
+            tRNA genes, but they have not yet been identified at the molecular level (<link linkend="table2">Table 2</link>). Some
+            of these are likely to be Gln tRNA genes, because a Gln CTG anticodon can be readily
+            mutated to read amber codons. Suppression by an amber-suppressing Ser tRNA from
+            Drosophila, introduced as a transgene, has been reported (<link linkend="bib44">Pilgrim and Bell, 1993</link><!--: PMID 8232208-->), demonstrating that endogenous Ser tRNA genes might also yield amber
+        suppressors. As well as providing valuable tools for examining mutations in
+        particular genes and for studying tRNA gene expression, amber suppressors have been useful
+        in the development of methods for microinjection and transformation of <emphasis>C. elegans</emphasis> (<link linkend="bib24">Kimble et
+        al., 1982</link><!--: PMID 7121584-->; <link linkend="bib9">Fire, 1986</link><!--: PMID -->) The dose-sensitivity of strong amber
+    suppressors also allows selection of single-copy transformants (<link linkend="bib10">Fire et al., 1990</link><!--: PMID 2377476-->).</para>
+	</sect1>
+    <sect1>
+        <title>Extragenic suppression by modified splicing</title>
+        <para>Two kinds of suppression by modified splicing have been reported. The first kind
+            depends on compensatory mutations in splice-site recognition machinery, and the second
+            is associated with mutations that affect alternative splicing.</para>
+        <para>The first kind involves allele-specific suppression of mutations that change the
+            conserved and essential GU donor sequence at the 5’ end of an intron, by means of
+            compensatory changes in the sequence of a U1 snRNA gene. In the case of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sup-6" role="_blank">sup-6</ulink></emphasis>, a donor
+            site mutation (AGgu --&gt; AGau) in allele <emphasis><ulink url="http://www.wormbase.org/db/get?name=e309;class=Variation" role="_blank">e309</ulink></emphasis> of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-13" role="_blank">unc-13</ulink></emphasis> is suppressed by a change
+            in one of the U1 snRNA genes (…UCCAUU… --&gt; UCUAUU) (<link linkend="bib63">Zahler et al., 2004</link><!--: PMID 15342508-->). In a related case, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sup-39" role="_blank">sup-39</ulink></emphasis>, a donor site mutation (AGgu --&gt; AGuu) in
+            allele <emphasis><ulink url="http://www.wormbase.org/db/get?name=e936;class=Variation" role="_blank">e936</ulink></emphasis> of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-73" role="_blank">unc-73</ulink></emphasis> is suppressed by a change in a different U1 snRNA gene (…UCCAUU…
+            --&gt;… UCAAUU…) (<link linkend="bib48">Run et al., 1996</link><!--: PMID 8722777-->; <link linkend="bib47">Roller et al., 2000</link>; <link linkend="bib63">Zahler et al., 2004</link><!--: PMID 10757761-->). These effects are consistent with the proposed role of U1 in pairing at the
+            donor site during splicing.</para>
+        <para>In <emphasis>C. elegans</emphasis>, there are 12 genes encoding U1 snRNA, yet only two have yielded
+            suppressors of this type (<link linkend="bib63">Zahler et al., 2004</link><!--: PMID 15342508-->). As with the failure to
+            find ochre or opal suppressors discussed above, it is possible that most U1 suppressor
+            mutations will be either too weak, because of redundancy, or too deleterious, because of
+            effects on normal genes. In support of the latter possibility, both <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sup-6" role="_blank">sup-6</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sup-39" role="_blank">sup-39</ulink></emphasis>
+            exhibit defects when homozygous: <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sup-6" role="_blank">sup-6</ulink></emphasis> homozygotes arrest in late-larval development,
+            and 50<symbol role= "symbolfont">&#x0025;</symbol> of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sup-39" role="_blank">sup-39</ulink></emphasis> homozygotes die as embryos. In addition, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sup-39" role="_blank">sup-39</ulink></emphasis> animals that escape
+            this embryonic lethality frequently exhibit two rows of oocytes rather than one in adult
+            hermaphrodites, an unusual and unexplained phenotype (<link linkend="bib48">Run et al., 1996</link><!--: PMID 8722777-->).</para>
+        <para>The second kind of extragenic suppression by altered splicing involves the regulation
+            of alternative splicing. As described above, some mutations of the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-52" role="_blank">unc-52</ulink></emphasis> perlecan gene
+            are located in alternatively spliced exons and can be suppressed by intragenic mutations
+            that cause exon-skipping. A subset of these, those located in exon 17, can also be
+            suppressed by loss-of-function mutations in two genes, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=smu-1" role="_blank">smu-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=smu-2" role="_blank">smu-2</ulink></emphasis>, which encode
+            proteins homologous to mammalian spliceosome-associated factors (<link linkend="bib50">Spartz et al., 2004</link><!--:
+            PMID 15254247-->). Loss of these factors leads to enhanced skipping of exon 17, and
+            consequently to suppression of mutations affecting this exon. The <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=smu-1" role="_blank">smu-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=smu-2" role="_blank">smu-2</ulink></emphasis>
+            mutations also weakly suppress the pleiotropic effects of mutations in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mec-8" role="_blank">mec-8</ulink></emphasis>, which
+            encodes another regulator of alternative splicing (<link linkend="bib36">Lundquist and Herman, 1994</link><!--: PMID 8001796-->). This suggests that the <ulink url="http://www.wormbase.org/db/seq/protein?name=SMU-1;class=protein" role="_blank">SMU-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=SMU-2;class=protein" role="_blank">SMU-2</ulink> factors can affect the splicing of
+            multiple genes, although neither is essential for viability. It seems very likely that
+            further cases of suppression by modified splicing will be encountered in the future.</para>
+    </sect1>
+    <sect1>
+        <title>Suppression by loss of NMD (Nonsense Mediated Decay)</title>
+        <para>Mutations resulting in a premature stop codon trigger the NMD system of message
+            degradation. If the
+            NMD system is absent, then mRNAs with such codons have longer lifetimes, increasing the
+            chance of readthrough at the stop codon and the production of a functional protein.
+            Alternatively, if the stop codon is located close to the end of the message, the
+            truncated polypeptide produced after translation of the stabilized message may be long
+            enough to have substantial activity. Nonsense mutations are frequently generated in <emphasis>C.
+            elegans</emphasis> forward mutagenesis screens, so a variety of suppressor screens have yielded
+            mutations in the <emphasis>C. elegans</emphasis> NMD genes (<link linkend="bib18">Hodgkin et al., 1989</link><!--: PMID 2583479-->). Seven genes
+            required for NMD have been identified in this way, which are called <emphasis>smg</emphasis> (for Suppressor
+            with Morphogenetic effect on Genitalia). Loss of NMD does not lead to inviability in <emphasis>C.
+            elegans</emphasis>, but does result in an abnormal morphology of the hermaphrodite vulva and of the
+            male tail, hence the name. Suppression is generally weaker than with amber suppression.</para>
+    </sect1>
+    <sect1>
+        <title>Extragenic suppression by non-specific physiological effects</title>
+        <para>Some cases of suppression probably result from general effects on the physiology of
+            the animal, which can alter the expression of a variety of different genes. An example
+            is provided by the recovery of mutations in eight or more cuticle collagen genes, all of
+            which cause a ‘dumpy left roller’ phenotype, as weak suppressors of two quite different
+            mutant defects: germline proliferation, in the case of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis> (<link linkend="bib37">Maine and Kimble, 1989</link><!--:
+            PMID 2627884-->), and embryonic gastrulation, in the case of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=emb-5" role="_blank">emb-5</ulink></emphasis> (<link linkend="bib41">Nishiwaki and Miwa,
+            1998</link><!--: PMID 9738874-->). The mechanism involved is unknown, but indirect effects via
+            alteration of extracellular matrix or of stress response have been suggested as possible explanations.</para>
+    </sect1>
+    <sect1>
+        <title>Suppression by altered gene dosage</title>
+        <para>Sometimes the lack of a particular protein can be compensated for by increasing the
+            amount of an alternative, related protein. This is illustrated by the analysis of a gene
+            initially called <emphasis>sup-3</emphasis> (<link linkend="bib45">Riddle and Brenner, 1978</link><!--: PMID 669254-->), identified by mutations
+            that acted to suppress <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-54" role="_blank">unc-54</ulink></emphasis> or <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-15" role="_blank">unc-15</ulink></emphasis> mutants; these lack either the major body wall
+            myosin (<ulink url="http://www.wormbase.org/db/seq/protein?name=UNC-54;class=protein" role="_blank">UNC-54</ulink>) or another thick filament component, paramyosin (<ulink url="http://www.wormbase.org/db/seq/protein?name=UNC-15;class=protein" role="_blank">UNC-15</ulink>). Molecular
+            analysis of <emphasis>sup-3</emphasis> showed that its mutant alleles are duplications or triplications of
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=myo-3" role="_blank">myo-3</ulink></emphasis>, which encodes a minor myosin. Normally <ulink url="http://www.wormbase.org/db/seq/protein?name=MYO-3;class=protein" role="_blank">MYO-3</ulink> accounts for only 15<symbol role= "symbolfont">&#x0025;</symbol> of the body
+            wall myosin, but its level is increased in the duplication alleles, and can thereby
+            compensate for the lack of <ulink url="http://www.wormbase.org/db/seq/protein?name=UNC-54;class=protein" role="_blank">UNC-54</ulink> or <ulink url="http://www.wormbase.org/db/seq/protein?name=UNC-15;class=protein" role="_blank">UNC-15</ulink> (<link linkend="bib39">Maruyama et al., 1989</link><!--: PMID 2575705-->).</para>
+    </sect1>
+    <sect1>
+        <title>Bypass suppression</title>
+        <para>Suppression by increased dosage can be regarded as a special case of bypass
+            suppression, wherein an alternative protein or pathway is up-regulated or de-regulated
+            to remove the need for a defective component. Mutations that activate alternative
+            pathways are often encountered as a result of suppressor analysis. Screens for
+            suppressors of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pal-1" role="_blank">pal-1</ulink></emphasis>, the <emphasis>C. elegans</emphasis> homolog of the developmental regulator caudal,
+            illustrate this effect (<link linkend="bib64">Zhang and Emmons, 2000</link><!--: PMID 10970880-->). In normal development,
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pal-1" role="_blank">pal-1</ulink></emphasis> expression in certain tail cells depends on a positive regulatory element located
+            in one of its introns. A screen was carried out for suppressors of a <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pal-1" role="_blank">pal-1</ulink></emphasis> mutation
+            affecting this intronic element, which led to the identification of three <emphasis>sop</emphasis>
+            (Suppressor Of Pal) genes. These encode factors that act as general repressors of an
+            alternative mode of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pal-1" role="_blank">pal-1</ulink></emphasis> transcription. Two of the <emphasis>sop</emphasis> genes encode components of the
+            transcriptional Mediator complex. Loss of these factors results in expression of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pal-1" role="_blank">pal-1</ulink></emphasis>
+            in the tail cells, and hence to suppression by bypassing the need for the intronic
+            regulatory element.</para>
+    </sect1>
+    <sect1>
+        <title>Extragenic suppression by interacting components</title>
+        <para>An abnormal protein can sometimes be restored to greater functionality by changes in
+            an interacting protein. Suppression by such a mechanism is usually allele-specific, and
+            provides <emphasis>in vivo</emphasis> evidence for protein interaction. An example is provided by mutations
+            of the muscle protein gene <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-22" role="_blank">unc-22</ulink></emphasis>, which cause a ‘twitcher’ abnormal movement phenotype.
+            Some revertants of certain <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-22" role="_blank">unc-22</ulink></emphasis> alleles were found to be unusual missense alleles of
+            the body wall myosin gene <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-54" role="_blank">unc-54</ulink></emphasis>, suggesting that the <ulink url="http://www.wormbase.org/db/seq/protein?name=UNC-22;class=protein" role="_blank">UNC-22</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=UNC-54;class=protein" role="_blank">UNC-54</ulink> proteins
+            interact directly (<link linkend="bib40">Moerman et al., 1982</link><!--: PMID 7151169-->). Both these proteins are,
+            indeed, located in the thick filaments of the myofilament lattice (<ulink url="http://www.wormbook.org/chapters/www_SarcomereAssembCelegansmusc/SarcomereAssembCelegansmusc.html" role="_blank">Sarcomere assembly in <emphasis>C. elegans</emphasis> muscle</ulink>).</para>
+        <para>Another example is provided by suppression of certain dominant mutations in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-105" role="_blank">unc-105</ulink></emphasis>,
+            a gene encoding a putative mechanosensory channel in muscle cells, by a specific
+            missense alteration in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-2" role="_blank">let-2</ulink></emphasis>, which encodes a basement membrane collagen (<link linkend="bib35">Liu et al.,
+            1996</link><!--: PMID 8662524-->). A plausible interpretation is that <ulink url="http://www.wormbase.org/db/seq/protein?name=UNC-105;class=protein" role="_blank">UNC-105</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-2;class=protein" role="_blank">LET-2</ulink> interact
+            directly, providing anchorage for the sensory channel and allowing it to act as a
+            stretch sensor.</para>
+    </sect1>
+    <sect1>
+        <title>Suppression by removal of a toxic protein or protein complex</title>
+        <para>A situation sometimes encountered in <emphasis>C. elegans</emphasis> genetics is the appearance of an
+            abnormal phenotype as the result of a neomorphic change in a gene, resulting in the
+            production of a toxic protein. Such mutations are usually but not always dominant
+            (sometimes they are recessive because in heterozygotes the abnormal protein is
+            outcompeted by normal protein). Suppression studies have been carried out with such
+            mutations in a variety of different genes. Any alteration that removes the toxic
+            protein, or prevents it from acting, will behave as a suppressor.</para>
+        <para>The simplest situation involves the introduction of a second inactivating mutation in
+            <emphasis>cis</emphasis> to the dominant allele. This is exemplified by dominant mutations of the myosin gene
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-54" role="_blank">unc-54</ulink></emphasis>, as already described.</para>
+        <para>A more complex situation was encountered with the gene <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-93" role="_blank">unc-93</ulink></emphasis>, which has been
+            subjected to extensive suppression analysis. A rare mutation of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-93" role="_blank">unc-93</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/get?name=e1500;class=Variation" role="_blank">e1500</ulink></emphasis>, causes a
+            distinctive movement and egg-laying defect referred to as the ‘rubber-band’ phenotype.
+            This phenotype is almost completely recessive, although genetic tests indicate that
+            <emphasis><ulink url="http://www.wormbase.org/db/get?name=e1500;class=Variation" role="_blank">e1500</ulink></emphasis> is neomorphic in character. Null mutations introduced in <emphasis>cis</emphasis> to <emphasis><ulink url="http://www.wormbase.org/db/get?name=e1500;class=Variation" role="_blank">e1500</ulink></emphasis> result in
+            normally moving animals, when homozygous. Therefore, the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-93" role="_blank">unc-93</ulink></emphasis> gene is dispensable, but
+            can be mutated to generate a product that is able to poison muscle contraction
+            (<link linkend="bib12">Greenwald and Horvitz, 1980</link><!--: PMID 6894129-->). The <emphasis><ulink url="http://www.wormbase.org/db/get?name=e1500;class=Variation" role="_blank">e1500</ulink></emphasis> phenotype can also be suppressed
+            by null mutations in three unlinked genes, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sup-9" role="_blank">sup-9</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sup-10" role="_blank">sup-10</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sup-18" role="_blank">sup-18</ulink></emphasis>, which act as
+            recessive suppressors, as well as by specific dominant mutations of another gene, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sup-11" role="_blank">sup-11</ulink></emphasis>
+            (<link linkend="bib13">Greenwald and Horvitz, 1982</link><!--: PMID 7173602-->). Moreover, ‘rubber-band’ alleles of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sup-9" role="_blank">sup-9</ulink></emphasis>
+            and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sup-10" role="_blank">sup-10</ulink></emphasis> were subsequently found, which can be suppressed by null alleles of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-93" role="_blank">unc-93</ulink></emphasis>
+            (<link linkend="bib14">Greenwald and Horvitz, 1986</link><!--: PMID 3710144-->; <link linkend="bib30">Levin and Horvitz, 1992</link><!--: PMID 1313436-->).
+            Molecular analysis indicates that these genes encode components of a muscle-specific
+            potassium channel: the <ulink url="http://www.wormbase.org/db/seq/protein?name=SUP-9;class=protein" role="_blank">SUP-9</ulink> sequence reveals that it belongs to the family of two-pore
+            K<superscript>+</superscript> channel proteins, and <ulink url="http://www.wormbase.org/db/seq/protein?name=SUP-10;class=protein" role="_blank">SUP-10</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=UNC-93;class=protein" role="_blank">UNC-93</ulink> are membrane proteins that co-localize with
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=SUP-9;class=protein" role="_blank">SUP-9</ulink> in muscle cells (<link linkend="bib31">Levin and Horvitz, 1993</link><!--: PMID 8224828-->; <link linkend="bib7">de la Cruz et al., 2003</link><!--:
+            PMID 14534247-->). The current interpretation is therefore that this multi-protein channel
+            complex is dispensable for normal muscle function, but it can be mutated so as to
+            interfere severely with contraction, presumably by affecting K<superscript>+</superscript> flux. The other two
+            interacting genes, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sup-11" role="_blank">sup-11</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sup-18" role="_blank">sup-18</ulink></emphasis>, likely encode additional components, but <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sup-11" role="_blank">sup-11</ulink></emphasis> is
+            known to be an essential gene, in contrast to the other four (because null mutations of
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sup-11" role="_blank">sup-11</ulink></emphasis> are embryonic lethal), so it must be involved in other processes as well.</para>
+        <para>A comparable situation was found in the case of the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=deg-3" role="_blank">deg-3</ulink></emphasis> gene, which encodes a
+            nicotinic acetylcholine receptor subunit. Rare dominant alleles of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=deg-3" role="_blank">deg-3</ulink></emphasis> cause neuronal
+            degeneration (hence the name), but the degeneration can be suppressed by
+            loss-of-function mutations of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=des-2" role="_blank">des-2</ulink></emphasis> (DEgeneration Suppressor). The <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=des-2" role="_blank">des-2</ulink></emphasis> gene was found
+            to encode another receptor subunit, and co-expression of wildtype <ulink url="http://www.wormbase.org/db/seq/protein?name=DEG-3;class=protein" role="_blank">DEG-3</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=DES-2;class=protein" role="_blank">DES-2</ulink> in
+          <emphasis>Xenopus</emphasis> oocytes resulted in formation of a functional acetylcholine-gated channel.
+            Co-expression of mutant <ulink url="http://www.wormbase.org/db/seq/protein?name=DEG-3;class=protein" role="_blank">DEG-3</ulink> with wildtype <ulink url="http://www.wormbase.org/db/seq/protein?name=DES-2;class=protein" role="_blank">DES-2</ulink> resulted in an abnormal channel.
+            Expression of either subunit alone, however, does not allow formation of a channel,
+            thereby explaining the mechanism of suppression (<link linkend="bib55">Treinin et al., 1998</link><!--: PMID 9860996-->).</para>
+    </sect1>
+    <sect1>
+        <title>Suppression by modulators of activity</title>
+        <para>The efficiency of a signal transduction pathway is usually modulated by interacting
+            components that can increase or decrease the strength of a signal. This is especially
+            true in multicellular organisms, where the same pathway may be used for multiple
+            purposes in different tissues, and can be fine-tuned by these modulators so as to allow
+            optimal function in each context. The presence of modulators is often revealed by
+            suppression analysis. Good illustrations of this type of suppression are provided by
+            extensive work on the <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-12;class=protein" role="_blank">LIN-12</ulink>/NOTCH receptor, which is involved in numerous important
+            signaling events during development (see <ulink url="http://www.wormbook.org/chapters/www_lin12Notch/lin12notch.html" role="_blank">LIN-12/Notch signaling in <emphasis>C. elegans</emphasis></ulink>). Suppression experiments
+            have been carried out using both hypomorphic, partial loss-of-function alleles (<link linkend="bib52">Sundaram
+            and Greenwald, 1993</link><!--: PMID 8293978-->) and hypermorphic, gain-of-function alleles of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-12" role="_blank">lin-12</ulink></emphasis>
+            (<link linkend="bib32">Levitan and Greenwald, 1995</link><!--: PMID 7566091-->; <link linkend="bib54">Tax et al., 1997</link><!--: PMID 9409830-->). The first
+            kind of experiment yielded mutations in negative regulators of <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-12;class=protein" role="_blank">LIN-12</ulink> activity, such as
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sel-1" role="_blank">sel-1</ulink></emphasis>, encoding an extracellular protein (<link linkend="bib11">Grant and Greenwald, 1996</link><!--: PMID 8722778-->), and
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sel-10" role="_blank">sel-10</ulink></emphasis>, encoding an F-box protein predicted to be involved in ubiquitin-mediated
+            turnover of <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-12;class=protein" role="_blank">LIN-12</ulink> (<link linkend="bib20">Hubbard et al., 1997</link><!--: PMID 9389650-->). <ulink url="http://www.wormbase.org/db/seq/protein?name=SEL-10;class=protein" role="_blank">SEL-10</ulink> was independently
+            identified as a factor affecting sex determination, again partly as a result of
+            suppressor analysis (<link linkend="bib22">Jager et al., 2004</link><!--: PMID 15306688-->).</para>
+        <para>The second kind of experiment, suppressing dominant gain-of-function alleles of
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-12" role="_blank">lin-12</ulink></emphasis>, generated mutations in positive regulators. These included <ulink url="http://www.wormbase.org/db/seq/protein?name=SUP-17;class=protein" role="_blank">SUP-17</ulink>, a protein
+            belonging to the ADAM protease family, which perhaps acts by cleaving and activating the
+            extracellular domain of the <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-12;class=protein" role="_blank">LIN-12</ulink> receptor (<link linkend="bib59">Wen et al., 1997</link><!--: PMID 9428412-->). Also
+            identified were <ulink url="http://www.wormbase.org/db/seq/protein?name=SEL-5;class=protein" role="_blank">SEL-5</ulink>, a serine/threonine kinase (<link linkend="bib8">Fares and Greenwald, 1999</link><!--: PMID 10581273-->) and <ulink url="http://www.wormbase.org/db/seq/protein?name=SEL-12;class=protein" role="_blank">SEL-12</ulink>, which is related to mammalian presenilin proteins and therefore
+            of great medical interest (<link linkend="bib32">Levitan and Greenwald, 1995</link><!--: PMID 7566091-->). Not
+            surprisingly, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sel-12" role="_blank">sel-12</ulink></emphasis> mutations have an egg-laying defect in a <emphasis>lin-12(+)</emphasis> background; this
+            in turn has allowed further suppressor screens for mutations correcting this defect, and
+            the identification of <emphasis>spr</emphasis> (Suppressor of Presenilin) genes (<link linkend="bib60">Wen et al. 2000</link><!--: PMID 11114162-->).</para>
+    </sect1>
+    <sect1>
+        <title>Suppression by epistasis</title>
+        <para>Suppression analysis has been invaluable in unraveling regulatory pathways in <emphasis>C.
+            elegans</emphasis>. Many important events in development depend on signal transduction events,
+            whereby an inductive signal emanating from one cell leads to a transcriptional response
+            in target cells or tissues. The transduction of the signal involves a chain of
+            interactions, with receptors, second messengers and transcription factors, and the
+            interactions may be either positive or negative at each step. Mutations that decrease or
+            increase signaling at one step can be epistatically suppressed by antagonistic mutations
+            acting at a downstream step, which in turn can be subjected to further analysis. If the
+            pathway involves a linear series of interactions, then the epistatic relationships of
+            mutations in the different genes can be used to deduce the order and nature of the steps
+            involved. More detailed discussion of the rules and interpretation of epistasis can be
+            found elsewhere (<link linkend="bib2">Avery and Wasserman 1992</link><!--: PMID 1365397-->).</para>
+        <para>Two good examples are provided by the vulval induction pathway (see <ulink url="http://www.wormbook.org/chapters/www_RTKRasMAPKsignaling/RTKRasMAPKsignaling.html" role="_blank">RTKRas/MAP kinase signaling</ulink > and the sex determination pathway (see <ulink url="http://www.wormbook.org/chapters/www_somaticsexdeterm/somaticsexdeterm.html" role="_blank">Somatic sex determination</ulink> and <ulink url="http://www.wormbook.org/chapters/www_sexgermline/sexgermline.html" role="_blank">Sex-determination in the germ line</ulink>). In
+            the first case, opposite mutant phenotypes result from either too little or too much
+            activation of the ERK MAP kinase pathway in the vulval precursor cells. These phenotypes
+            are called Vul (vulvaless, failure to induce or complete vulval differentation) and Muv
+            (multivulva, excess vulval differentiation) respectively. Both kinds of phenotype are
+            very conspicuous in adult hermaphrodites, and both are associated with egg-laying
+            defects and reduced fertility, so suppressors are easily detected. Mutations that
+            suppress a Vul phenotype often lead to a Muv phenotype on their own, and vice versa. For
+            example, screens for suppressors of a loss-of-function Vul mutation in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-23" role="_blank">let-23</ulink></emphasis>, encoding
+            the EGF receptor required for vulval induction, yielded a gain-of-function in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-60" role="_blank">let-60</ulink></emphasis>,
+            encoding the downstream Ras protein in this signal transduction pathway. The <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-60" role="_blank">let-60</ulink>(gf)</emphasis>
+            mutation has a Muv phenotype on its own, and screens for suppressors of the Muv
+            phenotype led to the isolation of mutations in ten or more genes encoding further
+            downstream components or modifiers of the pathway, most of which have a Vul phenotype on
+            their own. This kind of analysis has led to the identification of thirty or more genes
+            involved in EGF signaling, and has played a major role in the very detailed elucidation
+            of its properties and function (see <ulink url="http://www.wormbook.org/chapters/www_RTKRasMAPKsignaling/RTKRasMAPKsignaling.html">RTKRas/MAP kinase signaling</ulink>). For a summary of the
+            suppressor screens that have been carried out, see <link linkend="bib51">Sternberg and Han (1998</link><!--: PMID 9825675-->).</para>
+        <para>In the case of sex determination, the opposite phenotypes caused by mutation are
+            Masculinized and Feminized. It is frequently possible (for example by use of
+            temperature-sensitive mutants) to set up a situation in which a large population of
+            worms develops only along one sexual path. Such a pure male or pure female population
+            will yield no progeny, so there is extremely effective selection for any suppressor
+            mutation that reverts or ameliorates the phenotype, and thereby allows cross- or
+            self-fertilization, and the production of progeny. An extensive series of experiments of
+            this type has been carried out in a number of different laboratories, as summarized in
+            <xref linkend="figure1" />. Both loss-of-function and gain-of-function mutations have been isolated at
+            each of four regulatory steps, largely as a result of this approach. For example,
+            selections for suppressors of the masculinizing mutations of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-3" role="_blank">tra-3</ulink></emphasis> yielded feminizing
+            (loss-of-function) alleles of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-1" role="_blank">fem-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-2" role="_blank">fem-2</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink></emphasis>, as well as gain-of-function
+            alleles of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-1" role="_blank">tra-1</ulink></emphasis> (<link linkend="bib17">Hodgkin, 1986</link><!--: PMID 3770465-->). Amber alleles of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-3" role="_blank">tra-3</ulink></emphasis> were used in
+            some of these selections, which consequently also yielded many nonsense suppressors and
+            NMD (smg) suppressors (<link linkend="bib16">Hodgkin, 1985</link><!--: PMID ?-->; <link linkend="bib17">Hodgkin, 1986</link><!--: PMID 3770465-->).</para>
+        <mediaobject id="figure1" xreflabel="Figure 1">
+			<imageobject>
+			<imagedata entityref="fig1" width="5.5in" align="center"/>
+			</imageobject>
+<textobject>
+<phrase>Suppressor mutations figure 1</phrase>
+	</textobject> &fig1legend;</mediaobject>
+        <para>Almost every known control pathway in <emphasis>C. elegans</emphasis> has been subjected to some kind of
+            suppressor analysis, and the results have frequently been critical in elucidating
+            properties and testing models. Genetic suppression must also happen naturally, and is
+            certain to play an important role in evolution. Whether new kinds of suppression will
+            become apparent, as further genes and processes are subjected to investigation, remains
+        to be seen.</para>
+    </sect1>
+    <sect1>
+        <title>References</title>
+		<para/>
+		&geneticsuppression_Refs;</sect1>
+</article>

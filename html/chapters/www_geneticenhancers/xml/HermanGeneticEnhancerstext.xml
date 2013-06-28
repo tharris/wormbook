@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY fig1 SYSTEM 'geneticenhancersfig1.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'geneticenhancersfig1leg.xml'>
+<!ENTITY fig2 SYSTEM 'geneticenhancersfig2.jpg' NDATA JPG>
+<!ENTITY fig2legend SYSTEM 'geneticenhancersfig2leg.xml'>
+<!ENTITY fig3 SYSTEM 'geneticenhancersfig3.jpg' NDATA JPG>
+<!ENTITY fig3legend SYSTEM 'geneticenhancersfig3leg.xml'>
+<!ENTITY geneticenhancer_Refs SYSTEM 'geneticenhancersrefs.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="GeneticEnhancers_ArticleID">
+    <articleinfo>
+        <!--see DocBook's authorgroup element -->
+        <title>Genetic enhancers<footnote><para>Edited by Jonathan Hodgkin and Philip Anderson. Last revised March 14, 2005. Published September 16, 2005. This chapter should be cited as: Herman, R. K. and Yochem, J. Genetic enhancers (September 16, 2005), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.27.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2005 Robert K. Herman and John Yochem. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+</footnote></title>
+        <!--		<revhistory>
+			<revision>
+				<revnumber>1.0</revnumber>
+				<date>Last revised 3/14/05</date>
+			</revision>
+		</revhistory> 
+-->
+
+       <author>
+            <firstname>Robert K. Herman<remark><footnote><para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:bob-h@umn.edu">bob-h@umn.edu</ulink></para></footnote></remark>,</firstname>
+            <surname>John Yochem</surname>
+            <affiliation>
+                <address>Department of Genetics, Cell Biology, and Development, University of Minnesota, Minneapolis, MN 55455 USA</address>
+            </affiliation>
+        </author>
+    </articleinfo>
+    <abstract>
+        <title><emphasis role="bold">Abstract</emphasis></title>
+        <para><emphasis role="bold">A genetic enhancer is a mutation in one gene that intensifies the phenotype caused by a mutation in another gene. The phenotype of the double mutant is much stronger than the summation of the single mutant phenotypes. The isolation of enhancers can lead to the identification of interacting genes, including genes that act redundantly with respect to each other. Examples in</emphasis> <emphasis><emphasis role="bold">Caenorhabditis elegans</emphasis></emphasis> <emphasis role="bold">of dominant enhancers are presented first, followed by a review of recessive enhancers of null mutations. In some of these cases, the interacting genes are related in structure and function, but in other cases, the interacting genes are nonhomologous. Recessive enhancers of non-null mutations can also be useful. A powerful advance for the identification of recessive enhancers is genome-wide screening based on RNA interference.</emphasis></para>
+    </abstract>
+    <sect1>
+                <title>Overview</title>
+        <para>A mutation in one gene that enhances or exacerbates the phenotype caused by a mutation
+            in another gene is called an enhancer (not be confused with an enhancer DNA element,
+            which is a <emphasis>cis</emphasis>-acting regulator of transcription). The enhancement
+            must exceed what one would expect from a simple summation of the phenotypic effects of
+            the two mutations on their own, and thus each mutation can be considered to be an
+            enhancer of the other. When the double mutant exhibits a phenotype not apparent in
+            either single mutant, the novel phenotype is referred to as synthetic. Although one
+            should consider the possibility that mutations in two genes that have completely
+            unrelated functions might overburden an organism and be unexpectedly deleterious even
+            though the single mutants are relatively healthy, the identification of enhancers in
+                <emphasis>C. elegans</emphasis> has in practice often led to the discovery of genes
+            that interact in informative ways. Enhancement may arise from different types of genetic
+            interaction. For example, two genes may provide a specific function redundantly, in
+            which case the homozygous double mutant may exhibit a much stronger phenotype than
+            either single mutant. Alternatively, mutations in two genes that are both required for
+            the same function, say by encoding either components of a protein complex or different
+            steps in a signal transduction pathway, may synergize and lead to an enhanced double
+            mutant phenotype.</para>
+        <para>For two genes that exhibit enhancement, insight into the possible type of genetic
+            interaction can sometimes be gleaned from the nature of the mutations affecting the two
+            genes. For example, null mutations that enhance each other identify overlapping or
+            partially redundant functions. Each mutation on its own may cause a phenotype, but the
+            double mutant exhibits either a novel or a much enhanced phenotype relative to either
+            single mutant (<xref linkend="figure1"/>). The overlapping functions may be homologous,
+            or they may be independent functions that affect a specific biological process
+            redundantly. Many important functions appear to be provided redundantly or at least
+            partially redundantly, and screens for enhancement of null mutations are likely to
+            become increasingly important for the elucidation of worm development and behavior.</para>
+<literallayout></literallayout>
+            <mediaobject id="figure1" xreflabel="Figure 1">
+        <imageobject>
+            <imagedata entityref="fig1" width="6.5in" align="center"/>
+        </imageobject>
+        <textobject>
+            <phrase> Enhancers figure 1</phrase>
+        </textobject> &fig1legend; </mediaobject>
+        <para>Hypomorphic mutations that enhance each other, by contrast, may be in genes that work in the same pathway; the two wild-type genes may act in the same direction, either
+            positively or negatively, to regulate a downstream function, in which case the two
+            hypomorphic mutations can synergize to give a phenotype stronger than the phenotype
+            caused by either mutation on its own (<xref linkend="figure2"/>). We emphasize that two
+            mutually-enhancing hypomorphic mutations need not always reflect involvement of the two
+            genes in the same pathway or protein complex; impairment but not elimination of two
+            redundant pathways by hypomorphic mutations might result in an insufficient level of
+            final product or output.</para>
+    
+            
+    </sect1>
+    <sect1>
+        <title>Dominant enhancers</title>
+        <para>Intergenic noncomplementation refers to the situation in which two mutations are in
+            different genes and fail to complement despite being fully recessive to their wild-type
+            alleles when present by themselves; i. e., each single heterozygote has a wild-type
+            phenotype, but the double heterozygote exhibits a mutant phenotype. Each mutation can be
+            thought of as a genetic enhancer of the other mutation. Intergenic noncomplementation is
+            generally rare, and only a few examples are known in <emphasis>C. elegans</emphasis>,
+            but they are instructive. Various alleles of the genes <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sqt-1" role="_blank">sqt-1</ulink></emphasis>,
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sqt-2" role="_blank">sqt-2</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sqt-3" role="_blank">sqt-3</ulink></emphasis>, and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rol-8" role="_blank">rol-8</ulink></emphasis>
+            are recessive to their wild-type alleles on their own but show intergenic
+            noncomplementation in certain combinations to give a twisted cuticle, which may be
+            left-handed or right-handed, depending on the specific mutations involved (<link linkend="bib37">Kusch and Edgar, 1986</link><!-- PMID 3732788 -->). The alleles that behave in this way are not null, and it was
+            proposed that they produce proteins that interact to disrupt the cuticular architecture.
+            It is therefore not surprising that <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sqt-1" role="_blank">sqt-1</ulink></emphasis>,
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sqt-2" role="_blank">sqt-2</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sqt-3" role="_blank">sqt-3</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rol-8" role="_blank">rol-8</ulink></emphasis>
+            all encode cuticular collagens (<link linkend="bib36">Kramer et al., 1988</link><!-- PMID 3180220 -->; <link linkend="bib11">Cox et al., 1989</link><!-- PMID 2753356 -->; <link linkend="bib61">van der Keyl et al., 1994</link><!-- PMID 7803850 -->).</para>
+        <para>Mutations in genes that affect chemical synapse function have also provided good
+            examples of intergenic noncomplementation (<link linkend="bib68">Yook et al., 2001</link><!-- PMID 11333231 -->; see <ulink url="http://www.wormbook.org/chapters/www_complementation/complementation.html" role="_blank">Complementation</ulink>). For example, certain recessive mutations in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-13" role="_blank">unc-13</ulink></emphasis> and
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-64" role="_blank">unc-64</ulink></emphasis>, which encode proteins required for the exocytosis step of
+            the synaptic vesicle cycle, fail to complement. As in the cuticle examples,
+            noncomplementation does not occur when both mutations are null, which means that
+            noncomplementation is not simply the result of reduced dosage of both gene products but
+            depends on the poisoning effect of a partially functional protein. Noncomplementation
+            was also observed between mutations in other genes involved in synaptic vesicle
+            trafficking, including genes whose products are thought not to interact directly.
+            Allele-specific intergenic noncomplementation between mutations in genes that act in a
+            pathway for male tail ray development has also been reported (<link linkend="bib30">Ikegami et al., 2004</link><!-- PMID 15030761 -->).</para>
+            <mediaobject id="figure2" xreflabel="Figure 2">
+        <imageobject>
+            <imagedata entityref="fig2" width="5in" align="center"/>
+        </imageobject>
+        <textobject>
+            <phrase> Hypomorphic mutations figure 2</phrase>
+        </textobject> &fig2legend; </mediaobject>
+        <para>Dominant enhancement that does not involve intergenic noncomplementation has been seen
+            in an analysis of animals homozygous for a temperature-sensitive mutation in one of
+            several <emphasis>mec</emphasis> genes that affect the response to light touch (<link linkend="bib24">Gu et al., 1996</link><!-- PMID 8692859 -->). It was found that many otherwise-recessive mutations in other
+            <emphasis>mec</emphasis> genes dominantly enhance the mechanosensory defects conferred
+            by the temperature-sensitive mutations. The results were consistent with a model in
+            which the interacting genes encode components of a protein complex that transduces
+            mechanosensory signals. Finally, a <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=myo-3" role="_blank">myo-3</ulink></emphasis> null mutation dominantly
+            enhances the phenotype of a homozygous <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-54" role="_blank">unc-54</ulink></emphasis> mutant (<link linkend="bib63">Waterston, 1989</link><!-- PMID 2583106 -->); <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=myo-3" role="_blank">myo-3</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-54" role="_blank">unc-54</ulink></emphasis> encode
+            different forms of myosin heavy chain, both present in body wall muscle. The enhancement
+            in this case is due to reduced dosage of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=myo-3" role="_blank">myo-3</ulink></emphasis> product; conversely,
+            enhanced expression of <ulink url="http://www.wormbase.org/db/seq/protein?name=MYO-3;class=protein" role="_blank">MYO-3</ulink> suppresses the uncoordinated phenotype conferred by the
+            loss of <ulink url="http://www.wormbase.org/db/seq/protein?name=UNC-54;class=protein" role="_blank">UNC-54</ulink> (<link linkend="bib51">Riddle and Brenner, 1978</link><!-- PMID 669254 -->; <link linkend="bib45">Maruyama et al., 1989</link><!-- PMID 2575705 -->).</para>
+    </sect1>
+    <sect1>
+        <title>Genetic redundancy</title>
+        <para>Only 20-35<symbol role="symbolfont">&#x0025;</symbol> of all <emphasis>C.
+            elegans</emphasis> genes when inactivated by mutation give a lethal, sterile, or obvious
+            visible phenotype (<link linkend="bib31">Johnsen and Baillie, 1991</link><!-- PMID 1752418 -->; <link linkend="bib64">Waterston et al., 1997</link>;
+                <link linkend="bib5"><emphasis>C. elegans</emphasis> Sequencing Consortium, 1998<!-- PMID 9851916 --></link>; <link linkend="bib28">Hodgkin and Herman, 1998</link><!-- PMID 9769730 -->; see <ulink url="http://www.wormbook.org/chapters/www_essentialgenes/essentialgenes.html"
+                role="_blank">Essential genes</ulink>). The many genes with nearly silent null
+            alleles may contribute in subtle but significant ways to the fitness of the worm in
+            nature, perhaps under particular environmental conditions, but the mild effects of
+            knockout mutations make it difficult to study the specific roles of these genes. An
+            obvious challenge is to determine what all these additional genes are doing. Many genes
+            with subtle effects contribute redundantly to visible or essential functions (<link linkend="bib60">Thomas, 1993</link><!-- PMID 8310537 -->; <link linkend="bib10">Cooke et al., 1997</link><!-- PMID 9287491 -->). Redundancy is apparent when the
+            simultaneous inactivation of two genes results in a strong phenotype not seen with
+            either single gene knockout. In this case, each mutation is acting as an enhancer
+            (usually recessive) of the other mutation. Complete gene redundancy, in which two genes
+            perform exactly the same role and either can be inactivated with no loss of fitness, may
+            be rare (<link linkend="bib4">Brookfield, 1997</link><!-- PMID 9348654 -->), but partial gene redundancy seems to be common,
+            and many examples, again generally involving mutually-acting recessive enhancers, have
+            been studied in <emphasis>C. elegans</emphasis>, and several are cited in the following
+            two sections. Possible selective advantages of gene redundancy have been discussed
+            (<link linkend="bib60">Thomas, 1993</link><!-- PMID 8310537 -->; <link linkend="bib10">Cooke et al., 1997</link><!-- PMID 9287491 -->); one idea, for example, is
+            that partially redundant genes may together increase the fidelity of a biological
+            process. Whatever the benefit of redundancy for the organism, there are obvious benefits
+            to the researcher in studying redundant genes in appropriate double (or multiple) mutants.</para>
+    </sect1>
+    <sect1>
+        <title>Enhancement of mutations in homologous genes</title>
+        <para>Null or near-null mutations were identified in three genes that encode different
+            kinetic classes of acetylcholinesterase (<link linkend="bib13">Culotti et al., 1981</link><!-- PMID 7274655 -->; <link linkend="bib32">Johnson et al., 1981</link><!-- PMID 7274654 -->; <link linkend="bib33">Johnson et al., 1988</link><!-- PMID 3272166 -->). Single mutants and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ace-1" role="_blank">ace-1</ulink></emphasis>
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ace-3" role="_blank">ace-3</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ace-2" role="_blank">ace-2</ulink> <ulink url="http://www.wormbase.org/db/gene/gene?name=ace-3" role="_blank">ace-3</ulink></emphasis> double mutants exhibit
+            wild-type or nearly wild-type behavior, but <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ace-1" role="_blank">ace-1</ulink> <ulink url="http://www.wormbase.org/db/gene/gene?name=ace-2" role="_blank">ace-2</ulink></emphasis> mutations
+            enhance each other, causing a severe uncoordination in the homozygous double mutant.
+            Finally, the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ace-3" role="_blank">ace-3</ulink></emphasis> mutation is an enhancer in the triple mutant,
+            which is inviable&#x02014;a synthetic lethality. Clearly, certain acetylcholinesterase functions
+            are provided redundantly.</para>
+        <para>The genes <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-12" role="_blank">lin-12</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis> were originally
+            identified on the basis of mutations that led to cell fate transformations. The genes
+            were subsequently shown to encode similar Notch-like transmembrane receptors. The single
+            mutant phenotypes are distinct, but the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-12" role="_blank">lin-12</ulink></emphasis>
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis> double mutant exhibits a much more severe phenotype than that
+            of either single mutant (<link linkend="bib38">Lambie and Kimble, 1991</link><!-- PMID 1769331 -->). It was concluded that
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-12" role="_blank">lin-12</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis> provide some developmental
+            roles individually, which are apparent in single mutants, but that they also provide
+            some functions redundantly, which is made evident by the synthetic lethality of the
+            double mutant.</para>
+        <para>Many examples of enhancement between mutations in homologous genes are now known,
+            largely as a consequence of the availability of the genome sequence, which has given a
+            complete picture of duplicated genes and gene families (see <ulink url="http://www.wormbook.org/chapters/www_geneduplication/geneduplication.html" role="_blank">Gene duplications and genetic redundancy in <emphasis>C. elegans</emphasis></ulink>). Often, a mutation is identified that gives a phenotype (perhaps a subtle
+            one); the gene is cloned; a homolog in the worm genome is found; and then either a
+            knockout mutation of the second gene is sought, or RNA interference (RNAi) is used to
+            reduce its expression; the phenotypes of single gene knockouts are then compared to the
+            double knockout. <link linkend="table1">Table 1</link> is an incomplete list of examples in which enhancement has been
+            found by this general strategy. In all of these cases, it was concluded that the
+            functions of the two members of each pair of genes overlap at least partly.</para>
+            
+            <para>There are also cases of functional overlap involving three homologous genes, as was
+            seen above for the <emphasis>ace</emphasis> genes. For example, the three worm
+            <emphasis>rac</emphasis>-like genes function redundantly in axon pathfinding (<link linkend="bib43">Lundquist et al., 2001</link><!-- PMID 11714673 -->), as shown by enhancement of axon defects in various mutant
+            combinations or mutants treated by RNAi; and a combination of RNAi and mutation in a
+            sensitized genetic background has been used to demonstrate that the genes
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=apx-1" role="_blank">apx-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=dsl-1" role="_blank">dsl-1</ulink></emphasis>, and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lag-2" role="_blank">lag-2</ulink></emphasis>
+            encode redundantly-acting ligands for <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-12;class=protein" role="_blank">LIN-12</ulink> signaling during vulva development (<link linkend="bib9">Chen and Greenwald, 2004</link><!-- PMID 14960273 -->).</para>
+            </sect1>
+            <sect1>
+        <title>Enhancement of mutations in functionally redundant but nonhomologous genes</title>
+        <para>Overlapping functions can also be supplied by nonhomologous genes, which can be
+            assigned to distinct but functionally overlapping pathways when animals carrying null
+            mutations in both exhibit a more severe or more highly penetrant mutant phenotype than
+            that found for either single mutant. In this way, genes affecting engulfment of cell
+            corpses have been assigned to two parallel pathways (<link linkend="bib17">Ellis et al., 1991</link><!-- PMID 1936965 -->),
+            as have genes that regulate dauer larvae formation (<link linkend="bib44">Malone and Thomas, 1994</link><!-- PMID 8005442 -->), sex myoblast migration (<link linkend="bib7">Chen et al., 1997</link><!-- PMID 9073451 -->), entry into
+            meiosis (<link linkend="bib34">Kadyk and Kimble, 1998</link><!-- PMID 9550713 -->; <link linkend="bib25">Hansen et al., 2004</link><!-- PMID 14660440 -->),
+            embryonic morphogenesis (<link linkend="bib27">Harrington et al., 2002</link><!-- PMID 11959824 -->), and ventral axon
+            guidance (<link linkend="bib26">Hao et al., 2001</link><!-- PMID 11604136 -->).</para>
+
+<table id="table1" frame='all'>
+  <title>Table 1. An incomplete list of homologous gene pairs exhibiting enhancement</title>
+<tgroup cols='3' align='center' colsep='1' rowsep='1'>
+                <colspec colname="c1" colwidth="0.4*" align="center" />
+                <colspec colname="c2" colwidth="0.8*" align="center" />
+                <colspec colname="c3" colwidth="0.8*" align="center" />
+
+                <thead>
+                    <row valign="middle">
+                        <entry>Gene pairs</entry>
+                        <entry>Gene products or function</entry>
+                        <entry>References</entry>
+                   </row>
+                    </thead>
+                    <tbody>
+                        <row valign="middle">
+                            <entry><simplelist><member><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sel-12" role="_blank">sel-12</ulink></emphasis></member><member><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=hop-1" role="_blank">hop-1</ulink></emphasis></member></simplelist></entry>
+                            <entry>Presenilins</entry>
+                            <entry><link linkend="bib39">Li and Greenwald, 1997</link><!-- : PMID9342387 --></entry>
+                        </row>
+                          <row  valign="middle">
+                            <entry><simplelist><member><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mlc-1" role="_blank">mlc-1</ulink></emphasis></member><member><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mlc-2" role="_blank">mlc-2</ulink></emphasis></member></simplelist></entry>
+                            <entry>Regulatory myosin light chains</entry>
+                            <entry><link linkend="bib53">Rushforth et al., 1998</link><!-- : PMID9799259 --></entry>
+                        </row>
+                        <row  valign="middle">
+                            <entry><simplelist><member><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=nos-1" role="_blank">nos-1</ulink></emphasis></member><member><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=nos-2" role="_blank">nos-2</ulink></emphasis></member></simplelist></entry>
+                            <entry><emphasis>Drosophila</emphasis> nanos-like</entry>
+                            <entry><link linkend="bib58">Subramaniam and Seydoux, 1999</link><!-- : PMID10518502 --></entry>
+                        </row>
+                        <row  valign="middle">
+                            <entry><simplelist><member><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-27" role="_blank">egl-27</ulink></emphasis></member><member><emphasis><ulink url="http://www.wormbase.org/db/searches/basic" role="_blank">egr-1</ulink></emphasis></member></simplelist></entry>
+                            <entry>Transcription factors</entry>
+                            <entry><link linkend="bib57">Solari et al., 1999</link><!-- : PMID10226007 --></entry>
+                        </row>
+                        <row  valign="middle">
+                        <entry><simplelist><member><emphasis><ulink url="http://www.wormbase.org/db/searches/basic" role="_blank">mex-5</ulink></emphasis></member><member><emphasis><ulink url="http://www.wormbase.org/db/searches/basic" role="_blank">mex-6</ulink></emphasis></member></simplelist></entry>
+                            <entry>Early embryonic patterning</entry>
+                            <entry><link linkend="bib54">Schubert et al., 2000</link><!-- : PMID10882103 --></entry>
+                        </row>
+                        <row  valign="middle">
+                            <entry><simplelist><member><emphasis><ulink url="http://www.wormbase.org/db/searches/basic" role="_blank">unc-101</ulink></emphasis></member><member><emphasis><ulink url="http://www.wormbase.org/db/searches/basic" role="_blank">apm-1</ulink></emphasis></member></simplelist></entry>
+                            <entry>Medium chains of the AP-1 clathrin-associated protein complex	</entry>
+                            <entry><link linkend="bib55">Shim et al., 2000</link><!-- : PMID10930467 --></entry>
+                        </row>
+                        <row  valign="middle">
+                            <entry><simplelist><member><emphasis><ulink url="http://www.wormbase.org/db/searches/basic" role="_blank">rgs-1</ulink></emphasis></member><member><emphasis><ulink url="http://www.wormbase.org/db/searches/basic" role="_blank">rgs-2</ulink></emphasis></member></simplelist></entry>
+                            <entry>Regulate G-protein signaling</entry>
+                            <entry><link linkend="bib16">Dong et al., 2000</link><!-- : PMID10950865 --></entry>
+                        </row>
+                        <row  valign="middle">
+                            <entry><simplelist><member><emphasis><ulink url="http://www.wormbase.org/db/searches/basic" role="_blank">oma-1</ulink></emphasis></member><member><emphasis><ulink url="http://www.wormbase.org/db/searches/basic" role="_blank">oma-2</ulink></emphasis></member></simplelist></entry>
+                            <entry>Zinc finger proteins</entry>
+                            <entry><link linkend="bib15">Detwiler et al., 2001</link><!-- : PMID11702779 --></entry>
+                            
+                        </row>
+                        <row  valign="middle">
+                            <entry><simplelist><member><emphasis><ulink url="http://www.wormbase.org/db/searches/basic" role="_blank">smp-1</ulink></emphasis></member><member><emphasis><ulink url="http://www.wormbase.org/db/searches/basic" role="_blank">smp-2</ulink></emphasis></member></simplelist></entry>
+                            <entry>Semaphorins</entry>
+                            <entry><link linkend="bib23">Ginzburg et al., 2002</link><!-- : PMID11959817 --></entry>
+                        </row>
+                        <row  valign="middle">
+                            <entry><simplelist><member><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ksr-1" role="_blank">ksr-1</ulink></emphasis></member><member><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ksr-2" role="_blank">ksr-2</ulink></emphasis></member></simplelist></entry>
+                            <entry>Modulate Ras-mediated processes</entry>
+                            <entry><link linkend="bib46">Ohmachi et al., 2002</link><!-- : PMID11882296 --></entry>
+                        </row>
+                        <row  valign="middle">
+                            <entry><simplelist><member><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=nmy-1" role="_blank">nmy-1</ulink></emphasis></member><member><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=nmy-2" role="_blank">nmy-2</ulink></emphasis></member></simplelist></entry>
+                            <entry>Nonmuscle myosins</entry>
+                            <entry><link linkend="bib48">Piekny et al., 2003</link><!-- : PMID14522875 --></entry>
+                        </row>
+                        <row  valign="middle">
+                            <entry><simplelist><member><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pgl-1" role="_blank">pgl-1</ulink></emphasis></member><member><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pgl-3" role="_blank">pgl-3</ulink></emphasis></member></simplelist></entry>
+                            <entry>Associate with P granules</entry>
+                            <entry><link linkend="bib35">Kawasaki et al., 2004</link><!-- : PMID15238518 --></entry>
+                        </row>
+                        <row  valign="middle">
+                            <entry><simplelist><member><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tbx-8" role="_blank">tbx-8</ulink></emphasis></member><member><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tbx-9" role="_blank">tbx-9</ulink></emphasis></member></simplelist></entry>
+                            <entry>T-box transcription factors</entry>
+                            <entry><link linkend="bib49">Pocock et al., 2004</link><!-- : PMID15102704 --></entry>
+                        </row>
+                        <row  valign="middle">
+                            <entry><simplelist><member><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tba-1" role="_blank">tba-1</ulink></emphasis></member><member><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tba-2" role="_blank">tba-2</ulink></emphasis></member></simplelist></entry>
+                            <entry><symbol role="symbolfont">&#x003B1;</symbol>-tubulins</entry>
+                            <entry><link linkend="bib66">Wright and Hunter, 2003</link><!-- : PMID12937270 -->; <link linkend="bib47">Phillips et al., 2004</link><!-- : PMID15083533 --></entry>
+                        </row>
+                        <row  valign="middle">
+                            <entry><simplelist><member><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tbb-1" role="_blank">tbb-1</ulink></emphasis></member><member><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tbb-2" role="_blank">tbb-2</ulink></emphasis></member></simplelist></entry>
+                            <entry><symbol role="symbolfont">&#x003B2;</symbol>-tubulins</entry>
+                            <entry><link linkend="bib66">Wright and Hunter, 2003</link><!-- : PMID12937270 -->; <link linkend="bib40">Lu et al., 2004</link><!-- : PMID14565976 --></entry>
+                        </row>
+                </tbody>
+                </tgroup>
+                </table>
+
+
+<!--            &geneticenhancer_Table1; -->
+        <para>Enhancers of null mutations are perhaps most instructive when they uncover surprising
+            interactions. The classic worm example is provided by the synthetic multivulva (SynMuv)
+            genes (<link linkend="bib22">Ferguson and Horvitz, 1989</link><!-- PMID 2806880 -->). The Muv phenotype (see <ulink url="http://www.wormbook.org/chapters/www_vulvaldev/vulvaldev.html" role="_blank">Vulval development</ulink>) requires two SynMuv mutations, one in a SynMuv class A gene and the other in a
+            SynMuv class B gene. Two overlapping but nonhomologous pathways repress Muv development,
+            which occurs only when both pathways are inactivated. Evidence for a third overlapping
+            SynMuv pathway was recently published (<link linkend="bib6">Ceol and Horvitz, 2004</link><!-- PMID 15068795 -->). The
+            original SynMuv interaction was discovered when it was found that a SynMuv mutant
+            carried two unlinked mutations. Additional SynMuv genes were then found by screening for
+            new SynMuv mutants in a class A or class B mutant background.</para>
+        <para>Screens for enhancers (usually recessive) of null mutations using extrachromosomal
+            arrays provide a powerful method for discovering unanticipated overlapping functions.
+            For example, mutations were sought that on their own conferred no obvious phenotype but
+            which in combination with a null allele of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mec-8" role="_blank">mec-8</ulink></emphasis>, which encodes a
+            putative RNA splicing factor, were synthetically lethal (<link linkend="bib14">Davies et al., 1999</link><!-- PMID 10471705 -->). Four genes identified in this way have been characterized (<link linkend="bib14">Davies et al., 1999</link><!-- PMID 10471705 -->; <link linkend="bib67">Yochem et al., 2004</link>). Similarly, mutations have been identified that
+            are synthetically lethal with a mutation in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-35" role="_blank">lin-35</ulink></emphasis> (<link linkend="bib19">Fay et al., 2002</link><!-- PMID 11850412 -->), a class B SynMuv gene that encodes the worm homolog of the
+            retinoblastoma protein. The interacting genes have been implicated in control of cell
+            proliferation (<link linkend="bib19">Fay et al., 2002</link><!-- PMID 11850412 -->), pharyngeal morphogenesis (<link linkend="bib20">Fay et al., 2003</link><!-- PMID 12783801 -->; <link linkend="bib21">Fay et al., 2004</link><!-- PMID 15196946 -->), larval development (<link linkend="bib12">Cui et al., 2004</link><!-- PMID 15280233 -->), and somatic gonad development (<link linkend="bib1">Bender et al., 2004</link><!-- PMID 15328017 -->).
+            Synthetic interactions with <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-35" role="_blank">lin-35</ulink></emphasis> and with other SynMuv genes in
+            the control of cell-cycle progression have also been demonstrated by double-mutant and
+            RNAi combinations (<link linkend="bib2">Boxem and van den Heuvel, 2001</link><!-- PMID 11684669 -->, <link linkend="bib3">2002</link><!-- PMID 12062054 -->).</para>
+        <para>RNAi feeding of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-34" role="_blank">unc-34</ulink></emphasis> null mutants has identified a
+            synthetically lethal interaction between <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-34" role="_blank">unc-34</ulink></emphasis> and
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=wve-1" role="_blank">wve-1</ulink></emphasis> (<link linkend="bib65">Withee et al., 2004</link><!-- PMID 15280232 -->); these two genes encode
+            actin-regulating proteins that play overlapping roles in embryogenesis. In a genome-wide
+            screen using RNAi feeding, gene interactions have been identified that are involved in
+            the response to DNA damage (<link linkend="bib62">van Haaften et al., 2004</link><!-- PMID 15326288 -->). Genome-wide RNAi
+            feeding is likely to become increasingly popular for identifying genetic enhancers, and
+            an approach that uses extrachromosomal arrays is illustrated in <xref linkend="figure3"/>.</para>
+             <mediaobject id="figure3" xreflabel="Figure 3">
+        <imageobject>
+            <imagedata entityref="fig3" width="5in" align="center"/>
+        </imageobject>
+        <textobject>
+            <phrase> Genome-wide RNAi feeding figure 3</phrase>
+        </textobject> &fig3legend; </mediaobject>
+    </sect1>
+    <sect1>
+        <title>Recessive enhancers of non-null mutations</title>
+        <para>Screens for recessive enhancers of partial loss-of-function mutations are often
+            designed to identify additional components acting in the same pathway. For example, in a
+            screen for enhancers of a weak <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis> mutation affecting germline
+            proliferation, novel alleles of two genes previously known to play essential roles in
+            germline development were identified as well as mutations in five new genes (<link linkend="bib50">Qiao et al., 1995</link><!-- PMID 8647392 -->). One of the latter mutations was a weak allele of a gene called
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ego-1" role="_blank">ego-1</ulink></emphasis>, which encodes a predicted RNA-directed RNA polymerase that
+            functions both in germline development and in the process of RNA interference (<link linkend="bib56">Smardon et al., 2000</link><!-- PMID 10704412 -->). A screen for enhancers of defects in egg-laying and the
+            excretory system caused by a hypomorphic <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-45" role="_blank">lin-45</ulink></emphasis>
+            <emphasis>raf</emphasis> mutation yielded unusual alleles of several known Ras pathway
+            genes, confirming that the screen worked as intended, and two new genes,
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=eor-1" role="_blank">eor-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=eor-2" role="_blank">eor-2</ulink></emphasis> (<link linkend="bib29">Howard and Sundaram, 2002</link><!-- PMID 12130541 -->; <link linkend="bib52">Rocheleau et al., 2002</link><!-- PMID 12019228 -->). Apparent null alleles of
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=eor-1" role="_blank">eor-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=eor-2" role="_blank">eor-2</ulink></emphasis> on their own (or in
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=eor-1" role="_blank">eor-1</ulink> <ulink url="http://www.wormbase.org/db/gene/gene?name=eor-2" role="_blank">eor-2</ulink></emphasis> double mutants) cause only low penetrant defects,
+            but they synergize with other Ras pathway mutations, suggesting that they play a
+            modulatory role in Ras pathway signaling. Indeed, strong enhancement of null alleles of
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-25" role="_blank">lin-25</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sur-2" role="_blank">sur-2</ulink></emphasis>, which positively regulate
+            Ras signaling, indicates that <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=eor-1" role="_blank">eor-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=eor-2" role="_blank">eor-2</ulink></emphasis>
+            provide a function that is functionally redundant with the function provided by
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-25" role="_blank">lin-25</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sur-2" role="_blank">sur-2</ulink></emphasis> (<link linkend="bib29">Howard and Sundaram, 2002</link><!-- PMID 12130541 -->). In a screen for mutations that enhance a weak allele of
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-20" role="_blank">mab-20</ulink></emphasis>, which encodes a semaphorin and plays a role in the
+            formation of male tail rays, six genes were identified by enhancer mutations (<link linkend="bib30">Ikegami et al., 2004</link><!-- PMID 15030761 -->). One of these was the first known mutation in
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=plx-2" role="_blank">plx-2</ulink></emphasis>, which encodes a presumed receptor for <ulink url="http://www.wormbase.org/db/seq/protein?name=MAB-20;class=protein" role="_blank">MAB-20</ulink>. Although
+            mutations in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=plx-2" role="_blank">plx-2</ulink></emphasis> enhance a weak allele of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-20" role="_blank">mab-20</ulink></emphasis>, they do not
+            enhance a null allele, indicating that <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=plx-2" role="_blank">plx-2</ulink></emphasis> functions in the same
+            pathway as <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-20" role="_blank">mab-20</ulink></emphasis>. On the other hand, a putative null allele of
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=plx-2" role="_blank">plx-2</ulink></emphasis>, unlike <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-20" role="_blank">mab-20</ulink></emphasis> null, did not cause male
+            ray defects on its own; genetic interactions between <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=plx-2" role="_blank">plx-2</ulink></emphasis> and
+            other genes argued for the existence of a parallel pathway in <ulink url="http://www.wormbase.org/db/seq/protein?name=MAB-20;class=protein" role="_blank">MAB-20</ulink> signal reception,
+            involving an ephrin receptor.</para>
+        <para>Enhancer mutations can also be found among suppressor mutations (see <ulink url="http://www.wormbook.org/chapters/www_geneticsuppression/geneticsuppression.html" role="_blank">Genetic suppression</ulink>) when the suppressors are placed in a different genetic background. For example, suppressors of a <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-12" role="_blank">lin-12</ulink></emphasis> loss-of-function, not surprisingly, can enhance a <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-12" role="_blank">lin-12</ulink></emphasis> gain-of-function mutation
+            (<link linkend="bib59">Sundaram and Greenwald, 1993</link><!-- PMID 8293978 -->). Conversely, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sel-7" role="_blank">sel-7</ulink></emphasis>
+            mutations, identified as suppressors of a <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-12" role="_blank">lin-12</ulink></emphasis> gain-of-function
+            mutation, enhance a hypomorphic <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-12" role="_blank">lin-12</ulink></emphasis> mutation as well as a null
+            allele of the presenilin gene <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sel-12" role="_blank">sel-12</ulink></emphasis> (<link linkend="bib8">Chen et al., 2004</link><!-- PMID 15020414 -->).</para>
+        <para>The phenotypic effects of some non-null alleles of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-52" role="_blank">unc-52</ulink></emphasis> are
+            greatly enhanced by loss-of-function mutations in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mec-8" role="_blank">mec-8</ulink></emphasis> such that
+            the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mec-8" role="_blank">mec-8</ulink>; <ulink url="http://www.wormbase.org/db/gene/gene?name=unc-52" role="_blank">unc-52</ulink></emphasis> double mutant exhibits the
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-52" role="_blank">unc-52</ulink></emphasis> null phenotype (<link linkend="bib41">Lundquist and Herman, 1994</link><!-- PMID 8001796 -->).
+            The explanation for this result is that <ulink url="http://www.wormbase.org/db/seq/protein?name=MEC-8;class=protein" role="_blank">MEC-8</ulink> is required to promote specific
+            alternatively-spliced mRNA isoforms that skip <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-52" role="_blank">unc-52</ulink></emphasis> exons that
+            carry the enhanced mutations (<link linkend="bib42">Lundquist et al., 1996</link><!-- PMID 8625846 -->).</para>
+        <para>Enhancers have also been isolated in <emphasis>C. elegans</emphasis> that do not
+            enhance the phenotype caused by a mutation in an endogenous worm gene; rather, they
+            enhance a late-onset neuronal degeneration caused by an added transgene that expresses
+            polyglutamine fragments (<link linkend="bib18">Faber et al., 2002</link><!-- PMID 12486229 -->). Recessive enhancer mutations
+            in this case identified a gene that in its wild-type form can protect against
+            polyglutamine toxicity. Thus, the examples of genetic enhancement in <emphasis>C.
+            elegans</emphasis> are as multifarious as they are informative, and additional analyses
+            should continue to enhance our knowledge of the genetic interactions within the worm genome.</para>
+    </sect1>
+    <sect1>
+        <title>References</title>
+        <para/>
+        &geneticenhancer_Refs; 
+        </sect1>
+</article>

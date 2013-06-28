@@ -1,0 +1,1586 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY fig1 SYSTEM 'revgenfig1.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'revgenfig1leg.xml'>
+<!ENTITY fig2 SYSTEM 'revgenfig2.jpg' NDATA JPG>
+<!ENTITY fig2legend SYSTEM 'revgenfig2leg.xml'>
+<!ENTITY fig3 SYSTEM 'revgenfig3.jpg' NDATA JPG>
+<!ENTITY fig3legend SYSTEM 'revgenfig3leg.xml'>
+<!ENTITY fig4 SYSTEM 'revgenfig4.jpg' NDATA JPG>
+<!ENTITY fig4legend SYSTEM 'revgenfig4leg.xml'>
+<!ENTITY fig5 SYSTEM 'revgenfig5.jpg' NDATA JPG>
+<!ENTITY fig5legend SYSTEM 'revgenfig5leg.xml'>
+<!ENTITY fig6 SYSTEM 'revgenfig6.jpg' NDATA JPG>
+<!ENTITY fig6legend SYSTEM 'revgenfig6leg.xml'>
+<!ENTITY fig7 SYSTEM 'revgenfig7.jpg' NDATA JPG>
+<!ENTITY fig7legend SYSTEM 'revgenfig7leg.xml'>
+<!ENTITY fig8 SYSTEM 'revgenfig8.jpg' NDATA JPG>
+<!ENTITY fig8legend SYSTEM 'revgenfig8leg.xml'>
+<!ENTITY fig9 SYSTEM 'revgenfig9.jpg' NDATA JPG>
+<!ENTITY fig9legend SYSTEM 'revgenfig9leg.xml'>
+<!ENTITY ufig1 SYSTEM 'revgenufig1.jpg' NDATA JPG>
+<!ENTITY ufig2 SYSTEM 'revgenufig2.jpg' NDATA JPG>
+
+<!ENTITY revgen_Refs SYSTEM 'revgenrefs.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="revgen_ArticleID">
+	<articleinfo>
+		<!--see DocBook's authorgroup element -->
+		<title>Reverse genetics<footnote>
+		<para>Edited by Victor Ambros. Last revised August 20, 2005. Published April 6, 2006. This chapter should be cited as: Ahringer, J., ed. Reverse genetics (April 6, 2006), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.47.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+		<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2006 Julie Ahringer and contributors. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+		</footnote>
+		</title>
+		<author>
+			<firstname>Julie</firstname>
+			<surname>Ahringer</surname>
+			<lineage>ed.<remark>
+			<footnote>
+				<para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:jaa@mole.bio.cam.ac.uk">jaa@mole.bio.cam.ac.uk</ulink></para>
+			</footnote>
+			</remark>
+			</lineage>
+			<affiliation>
+				<address>The Gurdon Institute, University of Cambridge, Cambridge, CB2 1QN, UK</address>
+			</affiliation>
+		</author>
+	</articleinfo>
+	<sect1>
+<title>Introduction to reverse genetics in <emphasis>C. elegans</emphasis></title>
+<para>Through genetic analyses, the function of genes is investigated by studying organisms where gene function is altered. In classical forward genetic screening, individuals are treated with mutagens to induce DNA lesions and mutants with a phenotype of interest are sought. After a mutant is found, the gene mutated is identified through standard molecular techniques. Detailed studies of the mutant phenotype coupled with molecular analyses of the gene allows elucidation of the gene&apos;s function. Forward genetics has been responsible for our understanding of many biological processes and is an excellent method for identifying genes that function in a particular process.</para>
+<para>In reverse genetics, the functional study of a gene starts with the gene sequence rather than a mutant phenotype. Using various techniques, a gene&apos;s function is altered and the effect on the development or behaviour of the organism is analysed. Reverse genetics is an important complement to forward genetics. For example, using reverse genetics, one can investigate the function of all genes in a gene family, something not easily done with forward genetics. Further, one can study the function of a gene found to be involved in a process of interest in another organism, but for which no forward genetic mutants have yet been identified. Finally, the vast majority of genes have not yet been mutated in most organisms and reverse genetics allows their study. The availability of complete genome sequences combined with reverse genetics can allow every gene to be studied.</para>
+<para>This chapter gives detailed protocols for the two main methods of perturbing gene function in <emphasis>C. elegans</emphasis>: RNA interference and the creation of deletion mutants. Either technique can be applied to the study of individual genes. With less than a day of actual work, RNAi creates a knockdown of gene function without altering the organism&apos;s DNA (see below). In contrast, with about a month of work, a deletion mutation permanently removes all gene function. Deciding which technique to use will depend on the nature of the experiment. The techniques can also be combined, where RNAi is used for rapid screening of loss of function phenotypes and then deletion mutants are made to study genes of particular interest. RNAi can also be carried out on a global scale, where knockdown of (nearly) every gene is tested for inducing a phenotype of interest. In this case, the reverse genetics technique of RNAi can be thought of as a forward genetic screening tool.</para>
+</sect1>
+<sect1>
+<title>Using RNAi to knockdown gene function</title>
+<para>&#x000A0;</para>
+<remark>
+<author>
+	<firstname>Julie</firstname>
+	<surname>Ahringer,</surname>
+</author>
+		<orgname>The Gurdon Institute, University of Cambridge, Cambridge CB2 1QN, UK</orgname>
+</remark>
+<para>In 1998, Fire and Mello discovered that injection of double stranded RNA (dsRNA) into worms leads to specific degradation of the corresponding mRNA, a process termed RNA interference (RNAi; <link linkend="bib9">Fire et al., 1998</link><!--; PMID 9486653-->). Soon afterwards, it was found that either soaking worms in dsRNA solution or feeding worms bacteria engineered to produce dsRNA also could induce a robust RNAi response (<link linkend="bib16">Tabara et al., 1998</link><!--; PMID 9841401-->; <link linkend="bib18">Timmons and Fire, 1998</link><!--; PMID 9804418-->). The technique of RNAi, coupled with the availability of the complete genomic sequence of <emphasis>C. elegans</emphasis> (<link linkend="bib8">Consortium, 1998</link><!--; PMID 9851916-->), has made possible the rapid study of gene function, both on a single gene level and at a global scale. This section discusses general features to consider when using this technique. Sections following this give detailed protocols for RNAi by injection, soaking and feeding.</para>
+<sect2>
+<title>Which RNAi method to use?</title>
+<para>There are three ways to carry out RNAi in <emphasis>C. elegans</emphasis>: injection (<link linkend="bib9">Fire et al., 1998</link><!--; PMID 9486653-->), soaking (<link linkend="bib16">Tabara et al., 1998</link><!--; PMID 9841401-->), and feeding (<link linkend="bib18">Timmons and Fire, 1998</link><!--; PMID 9804418-->). All three can produce efficient gene knockdowns. Which method to use will depend on your particular experiment.</para>
+<?newpage?>
+<para><emphasis role="underline">RNAi by injection:</emphasis> dsRNA produced <emphasis>in vitro</emphasis> is injected into young adult hermaphrotides and the progeny scored for mutant phenotypes. RNAi by injection gives very reliable gene inhibition from worm to worm, but is more labor intensive than other methods. A small transcription reaction produces 5&#x02013;10 &#x003BC;g dsRNA, which is sufficient to conduct many experiments.</para>
+<para><emphasis role="underline">RNAi by soaking:</emphasis> worms are soaked in a high concentration dsRNA solution and then subsequently they or their progeny scored for phenotypes. RNAi by soaking is useful for treating a moderately large number of animals (e.g., tens to hundreds) or for high throughput screening in 96 well format. Worms of any stage can be soaked. More dsRNA is needed for soaking than for injection (5&#x02013;10 &#x003BC;g per experiment).</para>
+<para><emphasis role="underline">RNAi by feeding:</emphasis> bacteria producing the desired dsRNA are fed to worms and either they or their progeny are scored. RNAi by feeding is the least labor intensive and most inexpensive method, but produces slightly more variable results than RNAi by soaking or injection. RNAi by feeding can be used to treat a large number of animals at once or for high throughput screening, both on agar plates and in liquid culture. Worms of any stage can be subjected to RNAi by feeding.</para>
+</sect2>
+<sect2>
+<title>Which worm strain to use?</title>
+<para>This will depend on the nature of the experiment. Worm strains and tissues differ in their sensitivity to RNAi. For many phenotypes and assays, using wild type worms will give good results. However, in some cases, phenotypes are seen in RNAi supersensitive strains [e.g., <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rrf-3" role="_blank">rrf-3</ulink></emphasis> (<link linkend="bib15">Simmer et al., 2002</link><!--; PMID 12176360-->) <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=eri-1" role="_blank">eri-1</ulink></emphasis> (<link linkend="bib13">Kennedy et al., 2004</link><!--; PMID 14961122-->) or <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=eri-1" role="_blank">eri-1</ulink></emphasis>; <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-15B" role="_blank">lin-15B</ulink></emphasis> (Wang et al., 2005)] but not in wild-type, or are stronger in RNAi supersensitive strains, so it is a good idea to try these as well. <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rrf-3" role="_blank">rrf-3</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=eri-1" role="_blank">eri-1</ulink></emphasis> have lower brood sizes than wild-type and are sterile at 25&#x000B0;C, so they require a bit more attention. The sterility can be overcome by mating with males.</para>
+</sect2>
+<sect2>
+<title>Which stage of worm to use?</title>
+<para>Again, this will depend on your experiment and assay. RNAi by injection is usually carried out on adult hermaphrodites, and the progeny assayed. Injecting younger worms is possible but more difficult. Any stage of worms can be fed or soaked, but one of two stages are usually used: L3/L4s or starved L1s. For feeding, it is desirable to allow the worms to feed for 2&#x02013;3 days before they or their progeny are assayed. In general, feeding or soaking L3/L4 worms is used if the assay will be carried out on the progeny. If the assay will be on the RNAi treated worms, then starved L1s or later stages can be used. It is also possible to assay the progeny of RNAi treated L1s. However, it is important to keep in mind that phenotypes observed can differ depending on which stage is used. For example, RNAi of some genes causes sterility of the fed worm if L1s are used whereas embryonic lethality is induced if L4s are used. (S. Woods, D. Rivers, and J. Ahringer, unpublished). Therefore, if the assay will be on embryos, then it may not be a good idea to use L1s.</para>
+</sect2>
+<sect2>
+<title>How do I know whether the RNAi has worked?</title>
+<para>Induction of a phenotype is a reliable indication of a positive RNAi result, as the level of false positives is extremely low (&lt;1%, <link linkend="bib12">Kamath et al., 2003</link>). However, it is more difficult to draw conclusions from a negative RNAi experiment; the false negative rate is about 30% over all genes, and varies depending on the tissue (<link linkend="bib12">Kamath et al., 2003</link>). Using RT-PCR, you can test whether the mRNA has been knocked down. However, the protein product could still be present even if the mRNA is undetectable. Some proteins are stable over many days. An antibody can be used to measure the level of protein reduction. It is important to be cautious when drawing conclusions following a negative RNAi experiment, as it is possible that a small amount of residual protein is sufficient for gene activity.</para>
+</sect2>
+<sect2>
+<title>Can I use RNAi to target multiple genes?</title>
+<para>When targeting more than one gene by RNAi, the efficiency of knockdown may be reduced when compared to targeting each gene separately (e.g., see Table 1 in <link linkend="bib11">Gonczy et al., 2000</link><!--; PMID 11099034-->). This may not be a problem for some experiments. For example, if two genes each have no detectable RNAi phenotype, but targeting them together causes a phenotype, then this would show some overlap in function. However, if you are carrying out an epistasis experiment, reduced RNAi efficiency may lead to an inaccurate result, if only one of the two genes is efficiently knocked down. Therefore, it is ideal to target one gene by RNAi in the mutant background of the other gene. If it is not possible to use a mutant, then use antibodies to test that the level of protein knockdown is the same in the double and single RNAi experiments for both genes. Use of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rrf-3" role="_blank">rrf-3</ulink></emphasis> or <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=eri-1" role="_blank">eri-1</ulink></emphasis> RNAi supersensitive strains (<link linkend="bib15">Simmer et al., 2002</link><!--; PMID 12176360-->; <link linkend="bib13">Kennedy et al., 2004</link><!--; PMID 14961122-->; Wang et al., 2005) enhances the effectiveness of targeting multiple genes (S. Woods, D. Rivers, and J. Ahringer, unpublished; A. Fraser, pers. comm.).</para>
+</sect2>
+<sect2>
+<title>Desigining a large-scale RNAi screen</title>
+<para>It is essential to optimize screening conditions before embarking on a large-scale screen. If at all possible, assemble a set of control genes that you expect to be positive in your screen, and a set of genes you expect to be negative. Test these under different conditions (e.g., different temperature, stage of worm fed, background, plate configuration, etc) to find the highest hit rate and fastest screening time. Carrying out these controls will save time and make your final list of positive candidates more specific. Positive hits should be rescreened to ensure reproducibility. If possible, is it a good idea to design and carry out a different, second assay on your positive candidate genes to ensure they are involved in the process you are studying.</para>
+</sect2>
+<sect2>
+<title>Where do I get RNAi clones?</title>
+<para>There are currently two RNAi feeding libraries for <emphasis>C. elegans</emphasis>. One is from the Ahringer lab and has 16,757 clones, made by cloning gene-specific genomic fragments between two inverted T7 promoters (<link linkend="bib10">Fraser et al., 2000</link><!--; PMID 11099033-->; <link linkend="bib12">Kamath et al., 2003</link><!--; PMID 12529635-->). The inserts contain exons and introns and sizes vary from 500 bp to 2.5 kb. The other is from the Vidal lab and has 11,511 clones, made by the Gateway cloning of full-length open reading frame (ORF) cDNAs into a double T7 vector (<link linkend="bib14">Rual et al., 2004</link><!--; PMID 15489339-->). Both libraries use the HT115 bacterial strain as a host for the plasmid RNAi clones; HT115 has IPTG inducible T7 polymerase and a disruption of the RNAse III gene (a dsRNAse), the latter marked with Tetracycline resistance (<link linkend="bib17">Timmons et al., 2001</link><!--; PMID 11223248-->). There is some overlap between the two libraries; together they can target about 94&#x00025; of <emphasis>C. elegans</emphasis> genes. Individual clones and whole libraries are available from <ulink url="http://www.geneservice.co.uk/products/rnai/">Geneservice</ulink>. The Vidal library is also available from <ulink url="http://www.openbiosystems.com/">Open Biosystems</ulink>.</para>
+</sect2>
+<sect2>
+<title>Did I target the gene I wanted to target?</title>
+<para>As there are some errors in any library, you should sequence any clone you are going to work with to ensure you know which gene is being targeted (single genes or positives from a screen). It is also a good idea to look for potential cross interference (where RNAi of one gene inhibits the intended target gene as well as a closely related gene) using BlastN to compare the sequence of the RNAi template with <emphasis>C. elegans</emphasis> genes. So far, there is no hard and fast rule for predicting cross interference. A reasonable guide is that if there is 80&#x00025; nucleotide identity over 200bp, cross-interference is likely. Wormbase Gene Summary pages give information on which gene(s) an RNAi clone is likely to target.</para>
+</sect2>
+</sect1>
+<sect1>
+<title>RNAi by injection</title>
+<para>&#x000A0;</para>
+<remark>
+<author>
+	<firstname>Julie</firstname>
+	<surname>Ahringer,</surname>
+</author>
+		<orgname>The Gurdon Institute, University of Cambridge, Cambridge CB2 1QN, UK</orgname>
+</remark>
+<para><emphasis role="underline">Synopsis:</emphasis> Prepare dsRNA corresponding to gene of interest by <emphasis>in vitro</emphasis> transcription. Inject dsRNA into young adult hermaphrodites, wait for RNAi to take effect, then score progeny of injected mother. This is a modification of the protocol in <link linkend="bib19">Zipperlen et al. (2001)</link><!--; PMID 11483502-->.</para>
+<sect2>
+<title>Preparing template for <emphasis>in vitro</emphasis> transcription</title>
+<para>Use PCR to prepare a gene specific fragment containing bacterial polymerase promoter sequences (T7 or T3) at each end. Fragments of 500 bp &#x2013; 2kb can be used, though dsRNA yields decrease over 1 kb. If possible, use the same bacterial promoter sequence at both ends, then only one transcription reaction is necessary for dsRNA preparation. There are several ways to obtain a template:</para>
+<orderedlist numeration="loweralpha">
+<listitem>
+<para>Use T3 and T7 primers to PCR amplify a gene specific fragment cloned into a Bluescript or similar vector that has these primer sequences flanking the insert site.</para>
+</listitem>
+<listitem>
+<para>Design gene specific primers and add T7 promoter sequences to the 5&apos; ends. Use primers to PCR amplify desired fragment directly from cDNA or genomic DNA.</para>
+</listitem>
+<listitem>
+<para>Use T7 primers to amplify the insert from a clone in a double T7 feeding vector (e.g., L4440); 5&apos;-CGTAATACGACTCACTATAG-3&apos;.</para>
+</listitem>
+</orderedlist>
+<para>Below is a general method for making a template from an RNAi feeding clone:</para>
+<orderedlist numeration="arabic">
+<listitem>
+<para>With a yellow tip, pick a small amount of a bacterial clone into 100 &#x003BC;l of water.</para>
+</listitem>
+<listitem>
+<para>Use 1 &#x003BC;l of bacterial solution as a template for PCR using a standard Taq enzyme in a 25 &#x003BC;l reaction, with 1 &#x003BC;M T7 oligo, 0.2 mM dNTPs and the following cycling conditions: 95&#x00B0;C 50s, 52&#x00B0;C 30s, 72&#x00B0;C 90s for 25 cycles. For a good transcription reaction in the next step, the PCR reaction should yield &#x007E;200ng/ul of product.</para>
+</listitem>
+</orderedlist>
+</sect2>
+<sect2>
+<title>Preparing dsRNA</title>
+<orderedlist numeration="arabic">
+<listitem>
+<para>For high efficiency high yield transcription reactions, we recommend using an <emphasis>in vitro</emphasis> transcription kit (e.g., Promega RiboMAX or equivalent). Use 1 &#x003BC;l of unpurified template from the PCR reaction above in a 5 &#x003BC;l <emphasis>in vitro</emphasis> transcription reaction, incubating 4.5hrs at 37&#x00B0;C. If different polymerase promoters are at each end, carry out each transcription reaction separately.</para>
+</listitem>
+<listitem>
+<para>Dilute the transcription reaction 4X with 20 &#x003BC;l sterile DEPC water or 10mM Tris 8.0, 0.1mM EDTA and run 2 &#x003BC;l on a gel for quantification. The concentration should be 0.2 &#x02013; 1.0 &#x003BC;g/ul. If two separate reactions were performed, pool them together, heat to 72&#x00B0;C for 10 minutes and allow to cool to RT for annealing.</para>
+</listitem>
+</orderedlist>
+</sect2>
+<sect2>
+<title>Worm handling</title>
+<orderedlist numeration="arabic">
+<listitem>
+<para>Inject the dsRNA solution without purification (see note 1) into the intestine, body cavity or gonad of young adult hermaphrotides (see note 2).</para>
+</listitem>
+<listitem>
+<para>Put injected worms onto plates. Move to new plates every 24 hours and score progeny produced at different times after injection (see note 3).</para>
+</listitem>
+</orderedlist>
+<para><emphasis role="underline">Note 1:</emphasis></para>
+<para>Many investigators purify their dsRNA prior to injection, either by ethanol precipitation or using an RNA purification kit. However, we obtain equivalent RNAi injection results with purified and unpurified dsRNA. For RNAi by soaking, purification is necessary to prevent death during the soaking process.</para>
+<para><emphasis role="underline">Note 2:</emphasis></para>
+<para>In general, equivalent results are seen irrespective of the site of injection, but some RNAi phenotypes might be stronger after a gonad injection. For example, progeny might inherit more dsRNA with a gonad injection, which might be helpful if the gene is active in mid-embryogenesis. This can be tested empirically for your gene. If the needle clogs during injection, try diluting the dsRNA a further 2X or more. Strong RNAi effects are seen by injection at quite low dsRNA concentrations (e.g., 50 ng/ul). However, mixing dsRNAs together can significantly reduce the RNAi effect for a given gene (see Table 1 in <link linkend="bib11">Gonczy et al., 2000</link><!--; PMID 11099034-->). Therefore, it is important to use care in experiments where two or more genes are to be inhibited simultaneously by RNAi (e.g., use antibodies to confirm that the knockdowns have been successful).</para>
+<para><emphasis role="underline">Note 3:</emphasis></para>
+<para>Typically, 24 hours post-injection is a good starting point for a good RNAi effect. For many genes, the strength and penetrance of RNAi phenotypes are increased in progeny laid more than 24 hours post-injection, especially for genes with a strong maternal contribution. It is a good idea to do a time course to find the optimum time of scoring post-injection, looking for a time when the phenotype is strongest and most penetrant. For some genes, shorter times post-injection will give a stronger effect, particularly for genes with a zygotic but not a maternal function. If antibodies are available, it can be helpful to stain progeny at different times post-injection to see when the protein is maximally reduced. In order to maintain progeny production at later time points, mate the injected hermaphrodites with N2 males after injection. Using an RNAi supersensitive strain can increase the strength and penetrance of phenotypes. <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rrf-3" role="_blank">rrf-3</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=eri-1" role="_blank">eri-1</ulink></emphasis> both display sterility at 25&#x000B0;C and smaller broods than N2 at lower temperatures (<link linkend="bib15">Simmer et al., 2002</link><!--; PMID 12176360-->; <link linkend="bib13">Kennedy et al., 2004</link><!--; PMID 14961122-->), but this can be overcome by mating with N2 males after injection, as they are cross fertile at all temperatures (J. Ahringer, unpublished).</para>
+</sect2>
+<?newpage?>
+<sect2>
+<title>Acknowledgements</title>
+<para>I thank members of the lab for helpful comments. This protocol is a modification of one developed by Peder Zipperlen.</para>
+</sect2>
+</sect1>
+<sect1>
+<title>RNAi by soaking</title>
+<para>&#x000A0;</para>
+<remark>
+<author>
+	<firstname>Asako</firstname>
+	<surname>Sugimoto,</surname>
+</author>
+		<orgname>Laboratory of Developmental Genomics, RIKEN Center for Developmental Biology, Kobe, 650-0047, Japan</orgname>
+</remark>
+<sect2>
+<title>Preparing dsRNA</title>
+<sect3>
+<title>Template preparation by PCR</title>
+<orderedlist numeration="arabic">
+<listitem><para>DNA template for dsRNA synthesis can be prepared by PCR with primers designed to add T7 promoter sites at both ends. Below are examples of the primer sets for yk cDNA clones (available from Yuji Kohara).</para>
+<itemizedlist>
+<listitem><para>yk001-yk699: These clones are in lambdaZAP II vector, which can be converted to pBluescript plasmid by <emphasis>in vivo</emphasis> excision. A phage suspension or plasmids can be used as the PCR templates.</para>
+<simplelist>
+<member>T7: 5' - G<emphasis role="bold"><emphasis role="underline">TAATACGACTCACTATAGG</emphasis></emphasis>GC-3'</member>
+<member>Cmo422: 5'-GCG<emphasis role="bold"><emphasis role="underline">TAATACGACTCACTATAGG</emphasis></emphasis>GAACAAAAGCTGGAGCT-3'</member>
+</simplelist>
+<para>(T7 sequences are underlined.)</para></listitem>
+<listitem><para>yk700 and up: These clones are in pME18S-FL3 vector.</para>
+<simplelist>
+<member>T7ME774FW: 5'-<emphasis role="bold"><emphasis role="underline">TAATACGACTCACTATAGG</emphasis></emphasis>GCTTCTGCTCTAAAAGCTGCG-3'</member>
+<member>T7-ME1250RV: 5'-<emphasis role="bold"><emphasis role="underline">TAATACGACTCACTATAGG</emphasis></emphasis>GTGTGGGAGGTTTTTTCTCTA-3'</member>
+</simplelist>
+<para>(T7 sequences are underlined.)</para></listitem></itemizedlist></listitem>
+<listitem><para>Perform PCR reaction at a 30&#x003BC;l scale; reactions will typically produce ~0.4 &#x003BC;g/&#x003BC;l of DNA fragment. The PCR reaction can be used for <emphasis>in vitro</emphasis> transcription without purification.</para></listitem></orderedlist>
+</sect3>
+<sect3>
+<title><emphasis>In vitro</emphasis> transcription</title>
+<para>Use 7&#x003BC;l of the PCR reaction mixture (above) for <emphasis>in vitro</emphasis> transcription with T7 RNA polymerase (e.g., Thermo T7 polymerase: TOYOBO (#TRL-201)) in a 100&#x003BC;l scale reaction. Both sense and antisense RNAs are transcribed from the PCR product in this single reaction. An annealing step is unnecessary. Typical yields are ~0.4 &#x003BC;g/&#x003BC;l of RNA (40&#x003BC;g total).</para>
+</sect3>
+<sect3>
+<title>dsRNA purification</title>
+<orderedlist numeration="arabic">
+<listitem><para>Digest the DNA template with DNase I.</para></listitem>
+<listitem><para>Extract the reaction with phenol/chloroform. Repeat 2&#x02013;4 times.</para>
+<blockquote><para>Alternatively, &#x0201C;Wizard Plus SV Miniprep DNA Purification System&#x0201D; (Promega #A-1330) can be used for dsRNA purification. Add 700 &#x003BC;l 0.01 M Tris/HCl pH 7.5 to 100 &#x003BC;l transcription reaction mixture before putting onto the column. Follow the supplier's instruction for washing and elution.</para></blockquote></listitem>
+<listitem><para>EtOH precipitate the extracted reaction. Rinse with 70% EtOH.</para></listitem>
+<listitem><para>Resuspend pellet in 40&#x003BC;l H<subscript>2</subscript>O. A concentration of 0.5&#x02013;5 &#x003BC;g/&#x003BC;l dsRNA is suitable for RNAi by soaking. dsRNA can be stored at <symbol role="symbolfont">&#x02212;</symbol>20&#x000B0;C.</para></listitem>
+<listitem><para>Check the concentration and integrity of dsRNA by agarose gel electrophoresis.</para></listitem>
+</orderedlist>
+</sect3>
+</sect2>
+<sect2>
+<title>RNAi by soaking</title>
+<para>By allowing investigators to select the developmental stage for dsRNA delivery, the soaking method can be used to conduct stage-specific RNAi experiments.</para>
+<itemizedlist>
+<listitem><para><emphasis role="bold">L4-soaking</emphasis>: L4 worms are soaked in dsRNA, and their progeny (as well as soaked worms) are examined for phenotypes. In many cases, the first embryo laid is already fully affected by RNAi.</para></listitem>
+<listitem><para><emphasis role="bold">L1-soaking</emphasis>: To perform post-embryonic development specific knockdowns, L1 larvae are soaked in a dsRNA solution. During soaking (which is done in the absence of food), the development of the L1 larvae is arrested but the RNAi response continues, making it possible to suppress gene function from the onset of post-embryonic development.</para></listitem>
+</itemizedlist>
+<sect3>
+<title>L4-soaking</title>
+<para><emphasis role="bold">Day 1: Soaking</emphasis></para>
+<orderedlist numeration="arabic">
+<listitem><para>In a 200&#x003BC;l PCR tube, put 2&#x003BC;l 5X soaking buffer and 8&#x003BC;l dsRNA solution (prepared as above).</para>
+<simplelist>
+<member><emphasis role="bold">5X soaking buffer</emphasis></member>
+</simplelist>
+<simplelist>
+<member>1.25 X M9 (Mg<superscript>2&#x0002B;</superscript> free)</member>
+<member>15 mM spermidine (SIGMA S2626)</member>
+<member>0.25 % gelatine</member>
+<member>(Store at <symbol role="symbolfont">&#x02212;</symbol>20&#x000B0;C)</member></simplelist></listitem>
+<listitem><para>Pick L4 worms to a fresh NGM plate without bacteria, and let them crawl for several minutes to remove bacteria completely.</para></listitem>
+<listitem><para>Put 6 - 10 L4 worms (=P0 worms) in the dsRNA solution, and incubate at 20&#x000B0;C for 24 hours.</para></listitem>
+</orderedlist>
+<para><emphasis role="bold">Day 2: Recovery</emphasis></para>
+<orderedlist numeration="arabic">
+<listitem><para>Transfer the soaked worms on a 6cm NGM plate with OP50 (max. 4 worms/plate). This is Plate 1.</para></listitem>
+<listitem><para>Incubate at 25&#x000B0;C for 24 hours. (Other temperature can also be used.)</para></listitem></orderedlist>
+<para><emphasis role="bold">Day 3</emphasis></para>
+<orderedlist numeration="arabic">
+<listitem><para>Transfer the P0 worms to a new NGM plate with OP50. This is Plate 2.</para></listitem>
+<listitem><para>Check the condition of the P0 worms (they may also show phenotypes).</para></listitem>
+<listitem><para>Incubate Plate 1 and 2 at 25&#x000B0;C for 24 hours.</para></listitem></orderedlist>
+<para><emphasis role="bold">Day 4</emphasis></para>
+<orderedlist numeration="arabic">
+<listitem><para>Transfer the P0 worms on Plate 2 to a new plate (Plate 3).</para></listitem>
+<listitem><para>Check the condition (and phenotypes) of the P0 worms.</para></listitem>
+<listitem><para>Count the F1 embryos and larvae on Plate 1.</para></listitem></orderedlist>
+<para><emphasis role="bold">Day 5</emphasis></para>
+<orderedlist numeration="arabic">
+<listitem><para>Count the F1 embryos and larvae on Plate 2.</para></listitem>
+<listitem><para>Examine the phenotypes of F1 worms on Plate 1.</para></listitem></orderedlist>
+<para><emphasis role="bold">Day 6</emphasis></para>
+<orderedlist numeration="arabic">
+<listitem><para>Examine the phenotypes of F1 worms on Plate 2.</para></listitem></orderedlist>
+<literallayout></literallayout>
+<mediaobject>
+<imageobject>
+<imagedata entityref="ufig1" width="6in" align="center"/>
+</imageobject>
+</mediaobject>
+</sect3>
+<sect3>
+<title>L1-soaking</title>
+<para><emphasis role="bold">Day 1: Egg preparation</emphasis></para>
+<simplelist>
+<member>Collect gravid adult worms in a 15 ml tube. Collect the embryos by hypochlorite/NaOH
+treatment. Wash eggs with M9 several times. Let the eggs hatch at 20&#x000B0;C in 1ml M9, or on a NGM plate without bacteria.</member>
+</simplelist>
+<para><emphasis role="bold">Day 2: Soaking</emphasis></para>
+<orderedlist numeration="arabic">
+<listitem><para>Collect the L1 larvae at a concentration of ~100 larvae/ &#x007E;l M9.</para></listitem>
+<listitem><para>In a 200 &#x007E;l PCR tube, put 2 &#x007E;l 5X soaking buffer and 8 &#x007E;l dsRNA solution.</para></listitem>
+<listitem><para>Add 1 &#x007E;l L1 larvae suspension to the tube.</para></listitem>
+<listitem><para>Incubate at 20&#x000B0;C for 24&#x02013;48 hours.</para></listitem>
+</orderedlist>
+<para><emphasis role="bold">Day 3 or 4: Recovery</emphasis></para>
+<simplelist>
+<member>Recover L1 larvae on a NGM plate with OP50. Incubate at 25&#x000B0;C.</member>
+</simplelist>
+<para><emphasis role="bold">Day 4&#x02013;6: Phenotype observation</emphasis></para>
+<simplelist>
+<member>Check the growth and phenotype of the soaked worms.</member></simplelist>
+<literallayout></literallayout>
+<mediaobject>
+<imageobject>
+<imagedata entityref="ufig2" width="6in" align="center"/>
+</imageobject>
+</mediaobject>
+</sect3>
+</sect2>
+<sect2>
+<title>Notes and troubleshooting</title>
+<orderedlist numeration="arabic">
+<listitem><para>More than one gene can be targeted simultaneously by the soaking method in wild-type animals. Because the efficiency of double RNAi might be lower than that of single RNAi for each gene, protein or mRNA levels for each gene should be assessed whenever possible.</para></listitem>
+<listitem><para>Some RNAi supersensitive strains (e.g., <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rrf-3" role="_blank">rrf-3</ulink></emphasis>) exhibit developmental phenotypes, such as temperature-sensitive sterility, at a low penetrance. Because these background phenotypes tend to be enhanced by the soaking process, be cautious about interpreting results when these strains are used.</para></listitem>
+<listitem><para>If the soaked worms die, become sick, or sterile, check the following points:</para>
+<itemizedlist>
+<listitem><para>Worms may be physically damaged when they are picked and transferred into the tube. Pick them gently!</para></listitem>
+<listitem><para>dsRNA may not be clean enough. Use highly purified RNA. Do not use DEPC-treated water for soaking method.</para></listitem>
+<listitem><para>The P0 generation can also be affected by RNAi&#x02014;P0 sterility or lethality may be THE phenotype. Always perform control experiments in parallel (soaking buffer only, dsRNA that cause no phenotype, and dsRNA that cause a known phenotype).</para></listitem>
+</itemizedlist>
+</listitem></orderedlist>
+</sect2>
+<sect2>
+<title>Acknowledgement</title>
+<para>I thank Yuichi Iino and Momoyo Hanazawa for the primer sequences for the yk700- clones.</para>
+</sect2>
+</sect1>
+<sect1>
+<title>RNAi feeding on agar plates</title>
+<para>&#x000A0;</para>
+<remark>
+<author>
+	<firstname>Julie</firstname>
+	<surname>Ahringer,</surname>
+</author>
+		<orgname>The Gurdon Institute, University of Cambridge, Cambridge CB2 1QN, UK</orgname>
+</remark>
+<para>Synopsis: Grow RNAi bacteria and seed plates. Feed worms with RNAi bacteria and score for phenotypes. The following is based on the protocol in <link linkend="bib23">Kamath et al. (2001)</link><!--PMID: 11178279-->.</para>
+<sect2>
+<title>Preparing feeding plates</title>
+<orderedlist numeration="arabic">
+<listitem>
+<para>Pour plates: make standard NGM agar and add carbenicillin to 25 &#x003BC;g/ml and IPTG to 1mM just prior to before pouring. Pour plates 4&#x02013;7 days before seeding, to allow them to dry. If plates are too wet, the bacteria won&apos;t dry after seeding and RNAi phenotypes will be weaker. Feeding can conducted using any format plates (e.g., single plates, 6-well, 12-well).</para>
+</listitem>
+<listitem>
+<para>Spot individual desired bacterial strain(s) from glycerol stock to an LB plate containing 50 &#x003BC;g/ml ampicillin (or 25 &#x003BC;g/ml carbenicillin) and 10 &#x003BC;g/ml tetracycline. Use a 96-pin replicator to spot on a rectangular flat plate if growing in 96-well format. Grow overnight at 37&#x00B0;C.</para>
+</listitem>
+<listitem><para>Grow cultures in LB medium containing 50 &#x003BC;g/ml ampicillin. If using 96-well format, add 800 &#x003BC;l medium to each well of a 96-well deep well plate. To inoculate the cultures, use individual yellow tips or tips in a multichannel pipettor to scrape bacteria from a row or column and eject tips into the correct row or column of medium. When finished innoculating, remove the tips and cover the plates with plastic microtitre lids. Grow cultures with shaking at 300rpm for 6&#x02013;8 hours.</para>
+</listitem>
+<listitem>
+<para>Seed NGM agar feeding plates the bacterial culture. Use two 30 &#x003BC;l drops if using 12-well plates, and three 50 &#x003BC;l drops if using 6-well or individual plates. Let dry and induce overnight at room temperature.</para>
+</listitem>
+</orderedlist>
+</sect2>
+<sect2>
+<title>Preparing the worms</title>
+<orderedlist numeration="arabic">
+<listitem>
+<para>Grow desired worm strain on standard NGM plates seeded with OP50 bacteria. Carry out standard bleaching/washing protocol to obtain embryos, and leave to hatch into L1s overnight in M9 buffer. These starved L1s will be synchronized at the beginning of the L1 stage. If feeding will be done with larvae older than L1, then put hatched L1s onto standard NGM plates containing OP50 and grow to the desired stage.</para>
+</listitem>
+<listitem>
+<para>Wash worms off plates using M9 buffer, then wash 3X to remove bacteria. It is critical to remove OP50 as residual non-RNAi bacteria will interfere with the feeding results. Resuspend final worm pellet in M9 buffer containing 0.1&#x00025; Tween-20 to prevent them from sticking to plastic. Adjust the volume of buffer so that the number of worms you want to aliquot per plate is in 10&#x02013;15 &#x003BC;l.</para>
+</listitem>
+</orderedlist>
+</sect2>
+<sect2>
+<title>Feeding and scoring</title>
+<para>This part of the protocol will differ slightly depending on your assay. After feeding, either the aliquoted worms or their progeny can be scored. For some assays, scoring is easier if progeny are synchronized. In this case, fed gravid mothers are allowed to lay eggs on a new plate, then removed, and the progeny subsequently scored. This step is time consuming and not always necessary.</para>
+<sect3>
+<title>Standard L3/L4 feeding protocol: scoring of synchronized progeny</title>
+<para>In this protocol, a semi-synchronized population of progeny laid in a 24-hour window are scored.</para>
+<orderedlist numeration="arabic">
+<listitem>
+<para>Aliquot 10&#x02013;15 &#x003BC;l of L3/L4 worms per plate or well (10&#x02013;20 worms).</para>
+</listitem>
+<listitem>
+<para>Leave 72 hours at 15&#x00B0;C (or 36&#x02013;40 hours at 22&#x00B0;C) for RNAi to take effect, then replica plate single adults onto other plates or wells seeded with the same bacteria.</para>
+</listitem>
+<listitem>
+<para>After 24 hours, remove the adults from the replica and score the progeny for phenotypes at appropriate time points.</para>
+</listitem>
+</orderedlist>
+</sect3>
+<sect3>
+<title>Streamlined L3/L4 feeding protocol: scoring of asynchronous progeny</title>
+<para>In this protocol, all the progeny laid by fed mothers are scored. It has the benefit of being quick as there is no replica plating involved. Progeny laid early and late in the feeding protocol are in a single well, producing a range of RNAi knockdowns, from weak to strong. This can be helpful if screening for post-embryonic phenotypes, where a strong knockdown might cause embryonic lethality. Low percentage embryonic lethality is difficult to score using this method.</para>
+<orderedlist numeration="arabic">
+<listitem>
+<para>Aliquot 10&#x02013;15 &#x003BC;l of L3/L4 worms per plate or well. As the adults and all the progeny will remain in this initial plate or well, it is important not to have too many worms for the food available. The optimal number should be determined empirically. For 6-well plates, using 10 worms per well should allow scoring of adult progeny in most cases.</para>
+</listitem>
+<listitem>
+<para>Score when the progeny reach the desired age.</para>
+</listitem>
+</orderedlist>
+</sect3>
+<?newpage?>
+<sect3>
+<title>Feeding L1s instead of L4s</title>
+<para>L1s can be used instead of L4s in either of the above protocols. An advantage of using L1s is that some phenotypes can be scored in the fed worms instead of the progeny, allowing an easily scored synchronized population to be used. However for some genes, inherited maternal product will be sufficient for gene activity, preventing induction of a phenotype in the fed worms. Also, as many genes are required at multiple times in development, different phenotypes may be seen when using L1s compared to L4s. For example, RNAi of some genes induces sterility of the fed L1s whereas L4 feeding induces embryonic lethality of the progeny. This will preclude scoring of progeny for these genes if L1s are fed. In contrast, using L1s is beneficial if the assay is for any form of lethality (e.g., sterility, larval lethality, or embryonic lethality).</para>
+<para>Notes: Aliquoting bleached embryos directly onto feeding plates instead of hatching them into starved L1s first is not recommended because it is more difficult to aliquot the same number of animals/well due to embryos sticking together. Also, variable hatching rates between bleached preparations will cause inter-experiment variation.</para>
+</sect3>
+</sect2>
+<sect2>
+<title>Feeding two bacterial strains at the same time</title>
+<para>The protocol is identical to feeding a single bacterial strain except that the two bacterial cultures are mixed prior to seeding. Double feeding works much better and more reproducibly in an RNAi supersensitive strain (e.g., <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rrf-3" role="_blank">rrf-3</ulink></emphasis>; <link linkend="bib15">Simmer et al., 2002</link><!--; PMID 12176360-->; <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=eri-1" role="_blank">eri-1</ulink></emphasis>; <link linkend="bib13">Kennedy et al., 2004</link><!--; PMID 14961122--> or <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=eri-1" role="_blank">eri-1</ulink>; <ulink url="http://www.wormbase.org/db/gene/gene?name=lin-15B" role="_blank">lin-15B</ulink></emphasis>; Wang et al., 2005<!--; PMID 16049496-->; S. Woods, D. Rivers, and J. Ahringer, unpublished; A. Fraser, pers. comm.). In a test of 17 control double feedings, 4 were successful in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=eri-1" role="_blank">eri-1</ulink></emphasis>, 7 in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rrf-3" role="_blank">rrf-3</ulink></emphasis>, and 14 in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=eri-1" role="_blank">eri-1</ulink></emphasis>; <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-15B" role="_blank">lin-15B</ulink></emphasis> (S. Woods, D. Rivers, and J. Ahringer, unpublished). Double feeding is less reliable than single feeding, so in some cases, only one gene may be significantly inhibited, or both genes may be only slightly knocked down. Controls should be carried out to test for knockdown of each gene.</para>
+</sect2>
+<sect2>
+<title>Acknowledgements</title>
+<para>I thank members of the lab for comments. This is a modification of the protocol developed by Ravi Kamath (<link linkend="bib23">Kamath et al., 2001</link><!--; PMID: 11178279-->), with modifications from Gino Poulin, David Rivers, and Shane Woods.</para>
+</sect2>
+</sect1>
+<sect1>
+<title>RNAi feeding in liquid culture (96 well format)</title>
+<para>&#x000A0;</para>
+<remark>
+<author>
+	<othername>David Rivers, Bruno Fievet and Julie Ahringer,</othername>
+</author>
+		<orgname>The Gurdon Institute, University of Cambridge, Cambridge CB2 1QN, UK</orgname>
+</remark>
+<para>RNAi feeding in liquid is a good method to use when the assay is growth or lack of growth. High embryonic lethality, sterility, larval lethality, and severe slow growth phenotypes are easy to score in liquid culture. Scoring a population for a large change in expression of a GFP reporter can also be done in liquid culture. Screening for post-embryonic phenotypes or low percentage lethality (e.g., under 30&#x00025;) is better done using RNAi by feeding on plates.</para>
+<para><emphasis role="underline">Synopsis:</emphasis> Grow bacteria in 96 well format, spin, resuspend in feeding buffer, and aliquot into 96 well plates. Synchronize worms by bleaching and grow to desired stage. Wash and aliquot worms into 96 well plate containing RNAi bacteria using a 96-well plate dispenser. Incubate for desired length of time and score.</para>
+<sect2>
+<title>Preparing bacteria</title>
+<orderedlist numeration="arabic">
+<listitem>
+<para>Use a 96-pin replicator to spot bacteria from a glycerol stock to a flat LB plate containing 50 &#x003BC;g/ml ampicillin (or 25 &#x003BC;g/ml carbenicillin) and 10 &#x003BC;g/ml tetracycline. Grow overnight at 37 degrees.</para>
+</listitem>
+<listitem>
+<para>Add 500&#x03BC;l of LB medium containing 50 &#x003BC;g/ml ampicillin into each well of a 96-well deep well plate. To inoculate the cultures, use tips in a multichannel pipettor to scrape bacteria from a row or column and eject tips into the correct row or column of medium. When finished innoculating, remove the tips and cover with a plastic microtitre plate, taped on. Grow cultures with shaking overnight (300 rpm).</para>
+</listitem>
+<listitem>
+<para>Add IPTG to 1mM final concentration. Shake at 37&#x000B0;C for 1 hour.</para>
+</listitem>
+<listitem>
+<para>Spin the 96 well plate cultures in centrifuge at 4000 g for 20 minutes.</para>
+</listitem>
+<listitem>
+<para>Discard the supernatant.</para>
+</listitem>
+<listitem>
+<para>Resuspend bacteria in 160 &#x003BC;l S-Basal containing standard S-Basal additives plus 100 &#x003BC;g/ml ampicillin and 1mM IPTG.</para>
+</listitem>
+<listitem>
+<para>Aliquot 30&#x03BC;l into each well of shallow flat bottomed 96 well plates with lids.</para>
+</listitem>
+</orderedlist>
+<para>Notes: Some investigators leave the bacteria in LB amp then add IPTG to the worms in M9 buffer before aliquoting, instead of spinning the bacteria down and resuspending in S-Basal. In our hands, this has variable success. There is a higher incidence of contamination and bacteria continue to grow, making scoring more difficult, as the wells do not clear. We find that removing the LB and resuspending the bacteria in S-Basal produces more reproducible and easier to score results.</para>
+</sect2>
+<sect2>
+<title>Worm handling</title>
+<orderedlist numeration="arabic">
+<listitem>
+<para>Bleach adult worms using standard procedure and leave eggs to hatch into L1s in M9 buffer overnight.</para>
+</listitem>
+<listitem>
+<para>If feeding a stage later than L1, aliquot the worms onto plates with OP50 bacteria and grow to the desired stage.</para>
+</listitem>
+<listitem>
+<para>Wash synchronized worms off plates using M9 buffer, spin 600g for 2 minutes. Repeat wash 2X.</para>
+</listitem>
+<listitem>
+<para>Resuspend worms in S-Basal (containing standard S-Basal additives plus 1mM IPTG, 100ug/ml Amp + and 0.01&#x00025; Tween -20) at a concentration of 10 worms/20 &#x003BC;l and transfer to a tube compatible with your dispenser.</para>
+</listitem>
+<listitem>
+<para>Use 96-well plate dispenser to aliquot 20 &#x003BC;l worm solution into each well of 96-well plates containing the RNAi bacteria from above. The number of worms/well will probably range from 5&#x02013;15.</para>
+</listitem>
+<listitem>
+<para>Put plates in a humid chamber at the desired temperature with no shaking. Score 4&#x02013;7 days later for phenotypes. Depending on your assay, this can be done directly in the microtitre plates (e.g., lethality) or worms can be transferred to agar plates or other assay containers.</para>
+</listitem>
+</orderedlist>
+<para>Note 1: The number of worms and the amount of bacteria suggested above are a good starting point. These may need to be adjusted to suit your screen.</para>
+<para>Note 2: Feeding of different larval stages may give different results. For example, many genes that induce an embryonic lethal RNAi phenotype from an L4 feeding induce sterility with L1 feeding. Which stage or stages to use will depend on the assay and your specific phenotype and should be determined empirically using controls.</para>
+<para>Note 3: If you want to use a larger volume of media per well (e.g., 150 &#x003BC;l), the plates will need to be shaken for aeration or worms may die due to lack of oxygen.</para>
+</sect2>
+<sect2>
+<title>Strain choice</title>
+<para>The choice of strain will be somewhat limited by your assay, but it is a good idea to try several different backgrounds. In particular, we recommend testing whether your phenotype is induced more strongly in an RNAi supersensitive strain e.g., <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rrf-3" role="_blank">rrf-3</ulink></emphasis> (<link linkend="bib15">Simmer et al., 2002</link><!--; PMID 12176360-->), <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=eri-1" role="_blank">eri-1</ulink></emphasis> (<link linkend="bib13">Kennedy et al., 2004</link><!--; PMID 14961122-->) or <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=eri-1" role="_blank">eri-1</ulink>; <ulink url="http://www.wormbase.org/db/gene/gene?name=lin-15B" role="_blank">lin-15B</ulink></emphasis> (Wang et al., 2005<!--; PMID 16049496-->).</para>
+</sect2>
+<sect2>
+<title>Feeding two bacterial strains at the same time</title>
+<para>It is possible to carry out a liquid culture screen feeding two bacterial strains at once. For example, one common bacterial strain can be mixed with each individual strain to look for interacting genes. The bacteria should be grown separately, mixed in equal amounts, then spun down and resuspended in S-basal feeding buffer as above, or else prepared completely separately before mixing. In most cases, the use of an RNAi supersensitive strain is necessary for the success of feeding two RNAi bacterial strains together (S. Woods, D. Rivers, and J. Ahringer, unpublished; A Fraser, pers. comm.).</para>
+</sect2>
+<?newpage?>
+<sect2>
+<title>Acknowledgements</title>
+<para>We thank members of the lab for input into the development of this protocol and comments on the manuscript. We also gratefully acknowledge Peter Askjaer, Andrew Fraser, Monica Gotta, and Gijs van Haaften for sharing their experiences with RNAi in liquid culture.</para>
+</sect2>
+</sect1>
+<sect1>
+<title>Construction and screening of deletion mutant libraries to generate <emphasis>C. elegans</emphasis> gene knockouts</title>
+<para>&#x000A0;</para>
+<remark>
+<author>
+	<firstname>Heather</firstname>
+	<surname>Hess,</surname>
+</author>
+		<orgname>Department of Genetics, Yale University, New Haven, Connecticut 06520 USA</orgname>
+</remark>
+<remark>
+<author>
+	<firstname>Valerie</firstname>
+	<surname>Reinke,</surname>
+</author>
+		<orgname>Department of Genetics, Yale University, New Haven, Connecticut 06520 USA</orgname>
+</remark>
+<remark>
+<author>
+	<firstname>Michael</firstname>
+	<surname>Koelle,</surname>
+</author>
+		<orgname>Department of Molecular Biophysics &amp; Biochemistry, Yale University, New Haven, Connecticut 06520 USA</orgname>
+</remark>
+<sect2>
+<title>Introduction</title>
+<sect3>
+<title>The overall strategy</title>
+<para>This gene knockout strategy uses a random mutagen, trimethylpsoralen (psoralen) to mutagenize a very large number of worms. The worms are divided into many small subcultures and allowed to have progeny. A portion of each subculture is stored alive in the freezer, and genomic DNA is made from the rest of the culture. This DNA is thus made from the siblings of the frozen worms and carries the same mutations as the frozen worms carry. At a very low frequency (&#x007E;1/200,000 mutagenized genomes) the mutagenesis will produce a small deletion (100-1000 bp) in any gene of interest. If PCR primers flanking an area of the gene of interest are used to amplify from the genomic DNA samples, deletions between the primers can be detected since they will bring the primer sites closer together and thus will generate a PCR amplicon smaller in size than that amplified from wild-type genomic DNA. When the PCR reaction is carried out under appropriate conditions, smaller deletion amplicons are amplified much more efficiently than the larger wild-type amplicon. Thus DNA representing several thousand mutagenized genomes can be amplified in a single reaction and a deletion amplicon generated from just one of those genomes will still be detected on an ethidium bromide-stained agarose gel. Once a DNA pool containing a deletion is identified, one can work back to identify the subculture of worms in which the deletion occurred. The frozen worms from that subculture are thawed, and individual live animals carrying the deletion mutation can be identified. It is important to note that deletion mutations are detected and recovered in heterozygous form, so recessive mutations that cause lethality or sterility are not selected against and can easily be obtained.</para>
+<para>A standard mutant library consists of psoralen-UV mutagenized worms representing about 920,000 haploid genomes. Twenty F1 progeny of mutagenized worms are cultured and allowed to have F2 progeny in each well of 240 96-well microtiter plates. Half of each culture is frozen (generating a 240 microtiter plate frozen library of live animals), 1/4 of each culture is used to generate genomic DNA preps from pools of 96 wells: these pooled DNA preps are used as PCR templates for first level screening. The remaining 1/4 of each culture is lysed in the original culture well and frozen for use as PCR templates in second level screening (generating a second set of 240 plates that must be stored in a freezer). 240 microtiter plates fit on one shelf of a standard -80 degree freezer, so two freezer shelves are required to store the library.</para>
+</sect3>
+<sect3>
+<title>Time and manpower required to carry out the procedure</title>
+<para>This procedure requires an initial investment of about two weeks of part-time work to pilot the methods followed by &#x007E;three weeks of full-time work (if two individuals work together) to construct a frozen mutant library. The library can be stored indefinitely and can be screened at least 400 times. Once the library is constructed one can isolate a live mutant in a gene of interest in only 2&#x02013;3 weeks of work.</para>
+<para>We suggest that no more than two people should do the actual work of library construction. Spreading the work among a larger number of people may sound appealing, but the amount of work involved is not so much that more than two people are needed, and a larger group can be detrimental to quality control. We also suggest that at least one of the individuals constructing a deletion library should have several years of bench experience. These protocols are written based on the assumption that the reader has some familiarity with <emphasis>C. elegans</emphasis> and standard worm culture methods. If you have no experience with <emphasis>C. elegans</emphasis> we do not recommend you attempt this method without help.</para>
+<para>The time, manpower, space, and financial resources required to use this procedure are modest enough that this technology is suitable for even a small laboratory that needs to generate several knockout mutations in several genes. However, we do not recommend it for labs that only need to knockout a single or just a few genes. For such laboratories, requests can be made to two <emphasis>C. elegans</emphasis> gene knockout consortiums. Information about such knockout requests can be found online at: <ulink url="http://celeganskoconsortium.omrf.org/">http://celeganskoconsortium.omrf.org/</ulink> or <ulink url="http://shigen.lab.nig.ac.jp/c.elegans/index.jsp">http://shigen.lab.nig.ac.jp/c.elegans/ index.jsp</ulink>.</para>
+</sect3>
+<sect3>
+<title>Success rate of the strategy</title>
+<para>A key feature of these protocols is that they include quantitative quality control assessments at each stage of library construction. Thus the success of each part of the procedure can be verified along the way, and any unsuccessful batches can be discarded immediately if a failure occurs. The production of a successful deletion library can be essentially guaranteed as long as the individuals constructing the library are committed to meeting all the quality control criteria. Every failure we are aware of resulted from individuals failing to take the quality control targets seriously and forging ahead without meeting them.</para>
+<para>A standard 920,000 mutagenized genome library is adequate to identify at least one deletion allele in most genes. The size of the library can easily be increased to improve the success rate and average number of alleles obtained per gene. At Yale we have two mutant libraries representing a total of about two million genomes. Since completing the second library, we have succeeded in isolating at least one deletion mutation for every gene we have attempted to knock out. Two publications that contain examples of using this technology to knock out whole families of genes are <link linkend="bib3">Hess et al. (2004)</link><!-- PMID15479638--> and <link linkend="bib1">Chase et al. (2004)</link><!-- PMID15378064-->.</para>
+</sect3>
+<sect3>
+<title>Credits</title>
+<para>These protocols are based on methods originally developed and described previously by three different groups: 1) Bob Barstead&apos;s lab at the Oklahoma Medical Research Center (<link linkend="bib2">Edgley et al., 2002</link><!--: PMID12060690-->); 2) the NemaPharm Group at Axys Pharmaceuticals (<link linkend="bib6">Liu et al., 1999</link><!--: PMID10508845-->); and 3) Ron Plasterk&apos;s lab at the Netherlands Cancer Institute (<link linkend="bib4">Jansen et al., 1997</link><!-- PMID9288111-->; <link linkend="bib5">Jansen et al., 1999</link><!-- PMID10192394-->). The library construction methods described here are most similar to those originated at NemaPharm, and include the microtiter culture/frozen worm strategy pioneered there. Rajesh Ranganathan and Peter Reddien in the Horvitz lab developed the special container used to freeze worms in microtiter plates. The library screening protocols are based on the &#x0201C;poison primer&#x0201D; method described in <link linkend="bib2">Edgley et al. (2002)</link><!-- PMID12060690-->. Most aspects of the procedure have been varied to improve efficiency and success rate. Thus, these methods differ from those of others in a number of details.</para>
+</sect3>
+<sect3>
+<title>Outline and flowchart for library construction</title>
+<para>The protocols below describe in detail each aspect of library construction and screening, but they are so lengthy that it can be difficult when initially reading them to get the overview needed to start organizing the necessary efforts. Therefore, described first is a brief outline and flowchart of the actions required while constructing the library. The purpose and logic of each of the various activities described will become clearer after having read the detailed protocols. Therefore, first become familiar with the strategy by reading through the whole document and then return to the overview and flowchart (<link linkend="figure1">Figure 1</link>).</para>
+<sect4>
+<title>Obtain equipment and reagents</title>
+<orderedlist numeration="loweralpha">
+<listitem>
+<para>For mutagenesis, order psoralen and find or buy an appropriate UV illuminator and a UV dose meter.</para>
+</listitem>
+<listitem>
+<para>For microtiter culture of worms, buy 96-well culture plates and Tupperware-style boxes.</para>
+</listitem>
+<listitem>
+<para>For freezing of worms in 96-well format, order flexible plastic 96-well plates and film to seal the tops of the plates. Obtain four or more New England Bioloabs styrofoam coolers and construct the foam rubber pieces that will go inside to make the specialized freezing boxes.</para>
+</listitem>
+<listitem>
+<para>For storing the library, clear two shelves of a -80&#x00B0; C freezer. The library is stored in Tupperware-style boxes that hold 24 plates each, and ten such boxes must fit on each freezer shelf. Find freezer boxes that will hold 24 plates and which are the right dimensions to fit 10 per shelf in your freezer.</para>
+</listitem>
+<listitem>
+<para>Obtain two 12-channel pipettors, one for small volumes (5-50&#x03BC;l) and one for larger volumes (up to 200 &#x03BC;l).</para>
+</listitem>
+<listitem>
+<para>For library construction, an oven is needed for 55&#x00B0;C and 95&#x00B0;C incubations (a hybridization oven can be used for 55&#x00B0;C, but a high temperature oven is required for 95&#x00B0;C).</para>
+</listitem>
+<listitem>
+<para>For screening the library, at least one 96-well format PCR machine is needed.</para>
+</listitem>
+<listitem>
+<para>There are other minor supplies required that are described in the detailed protocol.</para>
+</listitem>
+</orderedlist>
+<literallayout></literallayout>
+<mediaobject id="figure1" xreflabel="Figure 1">
+<imageobject>
+<imagedata entityref="fig1" align="center" width="5.4in"/>
+</imageobject>
+<textobject>
+<phrase>figure 1</phrase>
+</textobject> &fig1legend;</mediaobject>
+</sect4>
+<?newpage?>
+<sect4>
+<title>Pilot the deletion library</title>
+<orderedlist numeration="loweralpha">
+<listitem>
+<para>Optimize the psoralen-UV mutagenesis of <emphasis>C. elegans</emphasis>. Monitor the success of the mutagenesis by quantitating the percent lethality in the F1 progeny of the mutagenized animals.</para>
+</listitem>
+<listitem>
+<para>Optimize the growth of 96-well liquid cultures of the F1 progeny of mutagenized animals. Monitor the success by 1) counting the number of F1 animals per well to make sure the target of about 20 animals per well is attained; 2) counting the number of F2 progeny produced per well to make sure the target of &gt;1500 per well is obtained; 3) making sure the cultures starve with F2 animals that are predominantly arrested as L1 and L2 larvae; and 4) making sure the cultures are not contaminated. The appropriate amount of bacteria supplied to the worms as food must be empirically determined in order to optimize the culturing conditions.</para>
+</listitem>
+<listitem>
+<para>Optimize the freezing of live animals in 96-well format. Using the practice 96-well cultures as tests, construct and test the special freezing containers. Monitor the success by counting the number of viable animals recovered after thawing test aliquots. A successful freeze/thaw should recover &gt;200 live animals per frozen culture.</para>
+</listitem>
+</orderedlist>
+</sect4>
+<sect4>
+<title>Produce the deletion library</title>
+<orderedlist numeration="loweralpha">
+<listitem>
+<para>The library is produced in batches of 24 96-well plates. A total of 10 batches are required to produce the entire 240 plate library.</para>
+</listitem>
+<listitem>
+<para>Each 24-plate batch requires a mutagenesis, five days of culturing the animals in microtiter dishes, and then one day for processing the grown cultures. Processing involves 1) producing a set of 24 microtiter plates of frozen worms, stored at -80&#x00B0;C; 2) producing a corresponding set of 24 &#x0201C;single well lysates&#x0201D; that can be used as PCR templates, also stored at <symbol role="symbolfont">&#x02212;</symbol>80&#x00B0;C; and 3) producing 24 &#x0201C;pooled DNA&#x0201D; preps, one for each plate, that are also used as PCR templates. The day a batch is harvested, do items 1 and 2 from this list. When all the growths are done, complete the DNA preps for all the batches at the same time.</para>
+</listitem>
+<listitem>
+<para>It is recommended to start by just setting up one batch and processing it from beginning to end to make sure all the technical steps work before beginning full-scale production. Proceed to full-scale production by setting up five batches, one per day for five days, and then spending five days harvesting those batches, one per day. Repeat this procedure once more to produce enough batches for a complete library. At the end, complete the processing of the pooled DNA preps for all the batches. This schedule distributes the work over a three-week period in a fairly even fashion.</para>
+</listitem>
+</orderedlist>
+</sect4>
+</sect3>
+</sect2>
+<sect2>
+<title>Protocols for constructing the frozen library of mutagenized animals and DNA templates</title>
+<sect3>
+<title>Preparing mutagenized animals</title>
+<sect4>
+<title>Synchronize a culture of P0 worms for mutagenesis</title>
+<orderedlist numeration="loweralpha">
+<listitem>
+<para>Grow N2 worms on three 15 cm NGM plates with thick bacterial lawns. Use a healthy bacterial strain like HB101 rather than the more sickly standard strain OP50 to get a thick lawn. For instructions on standard <emphasis>C. elegans</emphasis> culture and media there are several reference books, such as <link linkend="bib7">Wood et al., 1988</link><!--: #-->. The library is constructed in batches of 24 microtiter plates, and the three NGM plates will provide enough animals for several batches. Let the plates grow until there are a large number of gravid adults but the plates have not yet starved.</para>
+</listitem>
+<listitem>
+<para>Add 10 mls sterile S medium to each of the three plates and use a sterile Pasteur pipette to transfer the worm suspension to three sterile 15 ml centrifuge tubes. (The recipe for S medium is given below in section 7.2.2). Spin the tubes in a clinical centrifuge (30 sec at &#x007E;1000 rpm) and remove the supernatant.</para>
+</listitem>
+<listitem>
+<para>Add 5 mls alkaline bleach solution to each tube. Incubate at room temperature for 3 minutes with occasional gentle agitation. This kills all adults and larvae, while leaving the eggs alive. The eggs must be washed from the bleach solution in less than 5 minutes to prevent them from dying.</para>
+<para>
+<simplelist>
+<member><emphasis role="bold">Alkaline bleach solution</emphasis></member>
+<member>0.25 M NaOH</member>
+<member>20&#x00025; (by volume) commercial Chlorox (final concentration = 1&#x00025; hypochlorite)</member>
+</simplelist>
+</para>
+</listitem>
+<listitem>
+<para>Spin as before and remove the supernatant. Add 10 mls S medium (within 5 minutes after adding the bleach solution), mix, spin, and remove the supernatant. Repeat this wash twice more. Fill the tubes one last time with S medium and pour the contents of all the tubes into a sterile 250 ml Erlenmeyer flask containing &#x007E;50 mls S medium.</para>
+</listitem>
+<listitem>
+<para>Place the flask on a 20&#x00B0;C shaker overnight (or longer). All the eggs will hatch and the animals will arrest as starved L1 larvae. This step produces almost perfect synchrony of the population. The worms can be left on the shaker for up to two weeks. During library construction several 24-plate batches can be started from this same flask of L1&apos;s. The following steps describe how to restart growth of L1&apos;s for a 24-plate batch.</para>
+</listitem>
+<listitem>
+<para>Late in the afternoon, pour some of the L1 solution into sterile 15 ml centrifuge tubes, spin the animals down, remove most of the supernatant, and combine all the animals into one tube.</para>
+</listitem>
+<listitem>
+<para>Quantitate the concentration of L1&apos;s. Use serial dilutions to reduce the L1 concentration to something easier to count: be sure that you shake up the suspensions of animals immediately prior to any pipetting, as the animals settle rapidly. To count the animals in a suspension, use a P20 pipetteman to remove 10 &#x03BC;l of suspension and then place it onto an unseeded NGM plate in a long, thin line. Count the worms under a dissecting microscope. The long thin line makes it easy to count the worms without skipping any or counting any twice.</para>
+</listitem>
+<listitem>
+<para>Pipette a volume containing 10,000 worms onto each of six 15 cm NGM plates with thick bacterial lawns. There should be enough food on the plates to allow the animals to grow to the L4 stage without starving. Set the plates at 20&#x00B0;C.</para>
+</listitem>
+</orderedlist>
+</sect4>
+<sect4>
+<title>Psoralen-UV mutagenesis</title>
+<para>Psoralen-UV mutagenesis is less used and somewhat more difficult than <ulink url="http://www.wormbase.org/db/get?name=EMS;class=Cell" role="_blank">EMS</ulink> mutagenesis, which is the standard method for most <emphasis>C. elegans</emphasis> genetics. However, psoralen-UV mutagenesis is thought to produce a higher frequency of the class of small deletions detected by the deletion screening methods described below.</para>
+<para>Animals should be mutagenized at the late L4 stage. Use a dissecting microscope to verify the staging: almost all the animals should have a white crescent visible where the vulva is undergoing morphogenesis; a few will be just past this stage. This should be at about 43&#x02013;48 hours after they were put on plates with food. The animals should be almost perfectly synchronous.</para>
+<para>Keep all solutions of psoralen and worms treated with psoralen in the dark; ordinary room light has &#x007E;3-4 &#x03BC;W/cm<superscript>2</superscript> of 360 nm UV light.</para>
+<orderedlist numeration="loweralpha">
+<listitem>
+<para>Wash the worms off the NGM plates with M9 medium, using sterile glass pipettes, and transfer the worms to a sterile 15 ml plastic centrifuge tube. Spin the worms down (1000 rpm in a clinical centrifuge for 30 sec.) and remove the supernatant or add M9 until the total volume of the worm suspension is 7 mls.
+<simplelist>
+<member><emphasis role="bold">M9 Medium</emphasis></member>
+<member>5.8 g Na<subscript>2</subscript>HPO<subscript>4</subscript></member>
+<member>3.0 g KH<subscript>2</subscript>PO<subscript>4</subscript></member>
+<member>0.5 g NaCl</member>
+<member>1.0 g NH<subscript>4</subscript>Cl</member>
+</simplelist></para>
+<para>Bring to 1 liter w/ dH<subscript>2</subscript>0. Dispense into 100 ml bottles and autoclave.</para>
+</listitem>
+<listitem>
+<para>Place 7 mls M9 in a separate 50 ml tube that is covered with aluminum foil to block out light. While working in a hood and wearing gloves, add 210 &#x03BC;l of 2 mg/ml psoralen in DMSO (this requires heating and stirring to get into solution). Follow proper procedures for disposing of psoralen waste. Our experience suggests that psoralen solutions go bad over time. Therefore, make a fresh solution of psoralen, store frozen aliquots at <symbol role="symbolfont">&#x02212;</symbol>80&#x00B0;C, and use these aliquots for no more than a few weeks before discarding them.</para>
+</listitem>
+<listitem>
+<para>Transfer the 7 mls of worms into the tube of psoralen and rock on a rocker at 20&#x00B0;C for 15 minutes. In the meantime, turn on the UV light of the UV illuminator to warm up for &gt;10 minutes. Note that an appropriate UV illuminator and dose meter, along with specifics on other equipment and supplies, are described at the end of this document.</para>
+</listitem>
+<listitem>
+<para>Pour the worms into a 15 cm sterile plastic petri dish. Use a UV dose meter to monitor the 360 nm UV dose (through a petri dish bottom) on the UV box. For example, if the machine gives an intensity of 3.05&#x02013;3.2 mW/cm2, expose the worms for &#x007E;7&#x02013;8 seconds. Quickly place the petri dish at the center of the machine, time the 7&#x02013;8 seconds, and remove the dish. Afterward transfer the worms with a Pasteur pipette back to a 15 ml tube and spin down in a clinical centrifuge. Remove the supernatant to a psoralen liquid waste container. Wash the worms twice in &#x007E;5 mls of M9. Remove all of the last supernatant except for &#x007E;200 &#x03BC;l. Using a sterile glass pipette, transfer the worms to the edge of the bacterial lawn on 15 cm NGM plates. Eight 15 cm plates should suffice to give enough food to allow the worms to grow to gravid adults. Place plates at 25&#x00B0;C in the dark.</para>
+</listitem>
+<listitem>
+<para>This is a very heavy mutagenesis and results in significant lethality of the F1 progeny of the mutagenized animals. Raising the UV dose even slightly leads to a rapid increase in the F1 lethality, so the UV dose must be monitored and controlled carefully. The best way to monitor the mutagenesis is to measure the F1 lethality and adjust the UV dose until you reach the desired range of 10&#x02013;15&#x00025; lethality, as described below.</para>
+</listitem>
+<listitem>
+<para>A more convenient way to carry out the psoralen mutagenesis is as follows. After the 15 minute incubation in psoralen solution, spin down the worms and remove the supernatant. Transfer the animals in a small amount of liquid to the surface of unseeded NGM plates. Place the plates in a &#x0201C;Stratalinker&#x0201D; (Stratagene) equipped with long-wave (360 nm) UV bulbs (note that the standard bulbs in these machines are for short-wave UV). The Stratalinker can then be used to deliver a measured dose of UV radiation. While this method has been very successful for psoralen mutagenesis for other purposes, it has not been used to generate a deletion library and thus this method of mutagenesis cannot be guaranteed to work for library production.</para>
+</listitem>
+</orderedlist>
+</sect4>
+<sect4>
+<title>Quality control check for adequate psoralen mutagenesis</title>
+<para>When the mutagenized P0&apos;s are gravid adults, about 24&#x02013;30 hours after the end of mutagenesis, they are ready for processing. The plates should be recently starved, there should be lots of F1 L1&apos;s on the plate, and the P0 adults should be bloated with unlaid eggs.</para>
+<para>To assess the success of mutagenesis, remove &#x007E;20 worms to a freshly-seeded plate at 25&#x00B0;C for a few hours, remove the adults, and then replace the plates at 25&#x00B0;C overnight. The next day count the number of hatched larvae and dead eggs among the F1. The mutagenesis worked well if there is &#x007E;10&#x02013;15&#x00025; lethality in the F1&apos;s. This is the first quantitative quality control criterion to be met for each batch. Keep a set of records noting the numbers measured at each quality control point for each batch during the library construction.</para>
+</sect4>
+<sect4>
+<title>Synchronize the F1 worms for culturing.</title>
+<para>After setting up the quality control check, treat the remainder of the mutagenized worms with alkaline bleach as described earlier. Plate the surviving eggs on two <emphasis role="underline">unseeded</emphasis> 6 cm NGM plates. The hatched eggs will arrest as starved and perfectly synchronized L1&apos;s that will then be ready to transfer to liquid culture.</para>
+<para>An alternative method of getting gravid adults bloated with eggs prior to the second bleaching may be used to greatly increase the yield of F2 animals. At 24&#x02013;30 hours after the end of the mutagenesis, while the 15 cm plates are <emphasis role="underline">not</emphasis> close to starvation, wash off the worms with 5 mls of M9 per plate and transfer to a 15 ml centrifuge tube. Spin the worms down, remove the supernatant, and wash twice with S medium, leaving 14 mls final volume. Pour the worms and S medium into an empty, sterile 15 ml plastic petri dish (<emphasis role="underline">not</emphasis> filled with agar) and let sit on the lab bench for 4&#x02013;5 hours. Shake the dish occasionally to keep the worms aerated, and to avoid them sticking to the bottom of the dish. Inspect the culture periodically. When the worms appear bloated with eggs (they do not lay eggs well in M9 medium) transfer the liquid to a 15 ml centrifuge tube, spin, remove the supernatant, and bleach the eggs as stated in section 7.2.1.1 and above. Transfer the pellet of eggs to two unseeded plates. Add 10 mls of S medium to the remaining empty petri dish, which will still have eggs stuck to its surface. Incubate the three petri dishes overnight in the 25&#x00B0;C incubator. This technique will produce reliable yields of about 80&#x02013;100 thousand L1 animals.</para>
+<para><emphasis role="bold">Commentary:</emphasis> The synchrony induced by starving the F1 animals is critical to the success of the procedure. It guarantees that an F1 animal carrying a deletion mutation of interest will be the same age as the &#x007E;19 animals it is cultured with (see section 7.2.2). If the animal of interest is younger than the others in the well it will have few F2 progeny and the deletion will therefore be difficult to detect and recover.</para>
+</sect4>
+</sect3>
+<sect3>
+<title>Culturing mutagenized worms in microtiter wells</title>
+<para>Use sterile technique when culturing the mutagenized worms. The growth medium contains an antibiotic/antimycotic to reduce contamination. Visually inspect some of the plates for contamination when the cultures are harvested. Contaminated plates must be discarded.</para>
+<para>The three critical parameters for growth in microtiter wells are 1) amount of bacteria added, 2) adequate aeration, and 3) growth temperature. If too much bacteria is added the worms will die; if too little bacteria is added the worms will produce few progeny before the culture starves. With the proper amount of food, 1000&#x02013;2000 progeny will be obtained from the 20 worms added to each microtiter well, and these progeny will starve as L1, L2, and L3 larvae 4&#x02013;5 days after the culture is started. Inadequate aeration causes the cultures to grow slowly or not at all. Cultures grow slowly at temperatures below 20&#x00B0;C or above 25&#x00B0;C.</para>
+<para><simplelist>
+<member><emphasis role="bold">S-medium (4 liters)</emphasis></member>
+<member>23.2 g NaCl</member>
+<member>200 ml 1M potassium phosphate, pH 6.0 (136.1 g KH<subscript>2</subscript>PO<subscript>4</subscript> per 1000 ml; start with 800 ml and adjust to pH 6.0 with solid KOH (approx. 15g) before bringing up to volume.)</member>
+<member>3.8 L dH<subscript>2</subscript>0</member>
+<member>4 ml 5 mg/ml cholesterol in 95&#x00025; EtOH. Warm to 37&#x00B0;C to dissolve.</member>
+<member>Aliquot 400 ml into each of 10 bottles; autoclave.</member>
+</simplelist></para>
+<para>Just before use, supplement each sterile 400 ml aliquot of S Medium with six solutions (I-VI). These must be added after the S Medium has been autoclaved. Each supplement should be sterile and added to the S medium using sterile technique.</para>
+<orderedlist numeration="upperroman">
+<listitem>
+<para>1.2 ml 1M MgSO<subscript>4</subscript></para>
+</listitem>
+<listitem>
+<para>1.2 ml 1M CaCl<subscript>2</subscript></para>
+</listitem>
+<listitem>
+<para>4 ml 100X trace metals solution
+<simplelist>
+<member>0.346 g FeSO<subscript>4</subscript>.7H<subscript>2</subscript>O</member>
+<member>0.930 g Na<subscript>2</subscript>EDTA</member>
+<member>0.098 g MnCL<subscript>2</subscript>.4H<subscript>2</subscript>O</member>
+<member>0.144 g ZnSO<subscript>4</subscript>.7H<subscript>2</subscript>O</member>
+<member>0.012 g CuSO<subscript>4</subscript>.5H<subscript>2</subscript>O</member>
+<member><emphasis role="underline">bring up to 500 ml final volume with dH20</emphasis></member>
+<member>Autoclave. Store trace metals solution in the dark.</member>
+</simplelist>
+</para>
+</listitem>
+<listitem>
+<para>4 ml 1M potassium citrate, pH 6.0 (21.01 g citric acid monohydrate per 100 ml; start with 80 ml and adjust to pH 6.0 with solid KOH (approx. 17 g) before bringing up to volume. Autoclave.)</para>
+</listitem>
+<listitem>
+<para>4 ml Gibco 100X penicillin/streptomycin</para></listitem>
+<listitem><para>4 ml 100X nystatin suspension 10,000 units/ml.
+<simplelist>
+<member><emphasis role="bold">L broth</emphasis> (2 liters)</member>
+<member>20 g tryptone (Difco)</member>
+<member>20 g NaCl</member>
+<member>10 g yeast extract (Difco)</member>
+<member>dH20 to 2 liters</member>
+<member>Autoclave.</member>
+</simplelist></para></listitem>
+</orderedlist>
+<sect4>
+<title>Growing the bacteria</title>
+<para>Set up a bacterial culture each day before worm cultures are to be set up.</para>
+<orderedlist numeration="loweralpha">
+<listitem>
+<para>Prepare several aliquots of 400 ml of L broth in 1 L flasks (see above for L broth recipe).</para>
+</listitem>
+<listitem>
+<para>Inoculate HB101 bacteria into a flask; grow overnight @ 37&#x00B0;C with shaking. (Note: DH5alpha bacteria, a standard strain used for cloning, has also been used. For growing worms a healthy <emphasis>E. coli</emphasis> strain that will grow to high density is needed). To ensure reproducibility, use freshly grown bacteria each day the worms are cultured.</para>
+</listitem>
+<listitem>
+<para>Spin down the bacteria in a 500 ml bottle (6,000 RPM for 6 minutes) and resuspend the bacterial pellet in 6 mls of S medium by vortexing.</para>
+</listitem>
+<listitem>
+<para>Quantitate the amount of bacteria by diluting a small amount of the suspension 1000-fold (using serial dilutions) in S medium and measuring the OD<subscript>550</subscript>. The OD of the diluted solution should be around 0.2.</para>
+</listitem>
+</orderedlist>
+</sect4>
+<sect4>
+<title>Growing the worms</title>
+<para>Once the F1 lethality has been confirmed to be 10&#x02013;15&#x00025; from the test plate, as described earlier, it is time to generate the 96-well microtiter plate cultures.</para>
+<orderedlist numeration="loweralpha">
+<listitem>
+<para>Wash the mutagenized F1 L1 larvae off of the plates using 5&#x02013;10 mls of S medium. Transfer the suspension to a 15 ml centrifuge tube. If the F1s have been hatched into a liquid culture from a petri dish as described in the last part of part 7.2.1.4, simply transfer this liquid to a 15 ml centrifuge tube.</para>
+</listitem>
+<listitem>
+<para>Quantitate the concentration of worms in the suspension: mix the suspension well, remove 10 &#x03BC;l to an unseeded plate (apply to plate as a long thin line of liquid to facilitate counting the worms), and count the number of larvae using a dissecting microscope. Repeat two times and average the three numbers.</para>
+</listitem>
+<listitem>
+<para>Prepare a suspension of 130 ml of S medium with HB101 at OD<subscript>550</subscript>=6.6 using an appropriate volume for the desired batch size. To this add a sufficient quantity of the suspension prepared in step 7.2.1.4 (above) so as to bring the final worm concentration to 20 worms/50 &#x03BC;l. Check carefully that the worms are at the targeted concentration by removing 50 &#x03BC;l aliquots to unseeded plates and counting the worms. The concentrations of both bacteria and worms must be reproducible and accurate; the success of the cultures (and of the library) depends on this.</para>
+</listitem>
+<listitem>
+<para>Mix the bacteria/worm suspension well prior to each transfer or pouring to be sure the worms are uniformly suspended. Pour some of the suspension into a sterile reagent reservoir, and use a 12-channel pipettor to pipette 50 &#x03BC;l into each well of a Corning &#x0201C;cell well&#x0201D; microtiter plate. (These are standard, flat-bottomed 96-well tissue culture plates, and other brands may be substituted). Agitate the reservoir frequently to ensure the worms are not settling. Repeat to set up a total of 25 plates. 24 of these plates will be used for the library, and the 25th plate will be used to monitor the success of the cultures.</para>
+</listitem>
+<listitem>
+<para>Cover the plates with their lids and place them in a loosely covered plastic Tupperware box lined with wet paper towels. The lids and wet towels help reduce the loss of volume from the cultures due to evaporation.</para>
+</listitem>
+<listitem>
+<para>Set the box in a 20&#x00B0;C incubator for five days, after which the cultures should have starved. Determine that the worm cultures have starved by checking that all or most of the wells have turned &#x0201C;clear&#x0201D;- look at the plate from below to see that the cloudy bacteria are gone. At the same time, check plates for mold and discard any plates with mold growing in the wells.</para>
+</listitem>
+<listitem>
+<para>It takes about 2 hours to harvest the bacteria and set up 24 microtiter dishes of worm cultures.</para>
+</listitem>
+</orderedlist>
+</sect4>
+<sect4>
+<title>Quality control check for adequate culture growth</title>
+<para>An important quality-control check is carried out at the time of harvesting to ensure that culturing has gone well. One of the 25 plates in the batch is used as a &#x0201C;test plate&#x0201D;. 20 &#x03BC;l are withdrawn from each of four wells in the test plate (pipette up/down several times first to get a uniform suspension of worms) and combined in a tube containing 320 &#x03BC;l of S medium. Plate 10 &#x03BC;l of the diluted sample (again, removed after mixing well) on an unseeded NGM plate. Count the number of F2 larvae under a dissecting scope to calculate the average number of F2 worms per &#x03BC;l of culture. Repeat this measurement several times in each early batch to feel confident that it is calculated accurately. Try to obtain &gt;1500 per well. Less than 1000 is absolutely unacceptable. Record the number of worms calculated per well for each batch. When piloting and in early batches, also use a P200 pipetteman to withdraw all the liquid and thus measure the volume of liquid in several wells of the test plate. Some evaporation may have occurred, but there should be at least 40 &#x03BC;l left in each well. If not, increase the moisture added to the wet paper towels in the Tupperware container used for culturing.</para>
+<para>It is critical to the success of the overall procedure that the culturing go as well as possible&#x2013;this is the major factor affecting the reliability of recovering mutant animals. It is best if all cultures have &gt;1500 F2 animals per well. When the number of F2 per well goes much below this, most of the F2 animals do not run out of food and arrest their development until after they are past the L1 stage. Because these older animals do not survive freezing well, the relatively few live animals recovered from thawing a positive culture may not be sufficient to guarantee that a live animal carrying the deletion of interest will be recovered.</para>
+<para>Before scaling up to production level batches of 24 plates, run pilot worm cultures to make sure the target of 1500 starved L1 F2 animals per well is being met or exceeded. During the piloting, ensure that 20 F1 animals are placed in each well. Also, try culturing worms by varying the concentration of bacteria up and down within a two-fold range. It is critical to empirically optimize the culturing step, and also to empirically determine that the target of 1500 F2 per well is met. Please note that psoralen-mutagenized animals grow very differently from non-mutagenized animals. It is thus critical to optimize growth conditions using animals mutagenized with psoralen following the same procedure as will be used for the library. This will also provide an opportunity to optimize the UV dose during psoralen mutagenesis.</para>
+</sect4>
+</sect3>
+<sect3>
+<title>Harvesting the cultures and preparing diluted DNA templates</title>
+<sect4>
+<title>Summary</title>
+<para>When a batch is ready to harvest, four things must be done in order. These are here briefly summarized. Detailed protocols for each procedure are given in the subsequent sections.</para>
+<orderedlist numeration="loweralpha">
+<listitem>
+<para>Half the volume of each well is frozen so that live worms can be recovered from wells of interest. This generates a set of 24 frozen plates of live worms for each batch processed that will be stored at <symbol role="symbolfont">&#x02212;</symbol>80&#x00B0;C.</para>
+</listitem>
+<listitem>
+<para>A &#x0201C;pooled DNA prep&#x0201D; is prepared from each plate (i.e. a DNA prep from a mixture of animals in all 96 wells). These pools are generated from 1/4 of the volume of each culture well in a plate and they will be used as PCR templates in screens for deletion mutations. Each pool has a complexity of 4,000 mutagenized haploid genomes. For convenience, the pooled animals from each plate are frozen immediately after each batch of cultures has grown. Then, after growing all the batches, the DNA preps from the frozen pools of animals are completed as the last step of library construction.</para>
+</listitem>
+<listitem>
+<para>The remaining 1/4 volume in each well is lysed with proteinase K, and these &#x0201C;single-well lysates&#x0201D; are frozen. When a pooled DNA prep scores positive for a deletion, the single-well lysates from that plate will be tested by PCR to identify the well containing the mutant.</para>
+</listitem>
+<listitem>
+<para>Diluted DNA templates are prepared for the primary PCR screen. Each template used for the primary PCR screens consists of a diluted pooled DNA prep prepared from a 96-well plate of cultured mutagenized worms.</para>
+</listitem>
+</orderedlist>
+</sect4>
+<sect4>
+<title>Freezing live worms using a quality control check for viabiliy</title>
+<para>After the cultures have passed the quality control check, label the plates before proceeding with the harvest. The plates making up the library are numbered 1&#x02013;240. Label each plate twice to ensure at least one number will remain legible, since these plates are going to be kept and used for years. Stick-on labels (e.g., &#x0201C;Tough-tags&#x0201D;) can come off in the freezer, so use these for no more than one of the two labels. Write directly on the plate (not the lid) with a good marker for one or both of the labels.</para>
+<para><emphasis role="bold">Quality control:</emphasis> The 24 plates in the batch will be initially frozen in four containers, each containing six plates. Each container must contain a test sample to monitor the viability of the frozen animals. Thus a small PCR tube containing worms from a well in the test plate plus freezing solution should be nestled in the stack of 6 plates within each freezing container, as described below. After overnight in the freezer, the PCR tubes are test-thawed to measure the viability after freezing for each styrofoam box. Record the number of live thawed worms recovered for this test-thaw from each box of worms frozen in order to have a quality-control record for the viability of the frozen cultures.</para>
+<orderedlist numeration="loweralpha">
+<listitem>
+<para>Add S medium using a 12 channel pipettor to each well of the culture plates to bring the final volume in each well up to 150 &#x03BC;l (i.e. if there was no evaporation, add 100 &#x03BC;l/well; if there was some evaporation, add more).</para>
+</listitem>
+<listitem>
+<para>For each plate to be frozen, label a new freezing plate: a 96-well Falcon 3911 &#x0201C;Microtest III flexible assay plate&#x0201D;. These special, soft plastic plates will allow you to cut out individual wells with a razor blade so that an individual microtiter well can be thawed without having to thaw (and throw away) an entire plate. Label each plate twice to ensure that at least one label will be legible - these plates must be identified correctly possibly years later. There are special sticky tags (e.g., &#x0201C;sidewall tough-tags&#x0201D;) that are easy to write on that can be put on the sides of plates. These can come off in the freezer, so if you use these only do so for one of the two labels per plate.</para>
+</listitem>
+<listitem>
+<para>Add 70 &#x03BC;l freezing solution (see recipe below) to each well of the freezing plates.
+<simplelist>
+<member><emphasis role="bold">Freezing solution</emphasis></member>
+<member>200 ml 1M NaCl</member>
+<member>100 ml 1M KPO<subscript>4</subscript>, pH 6.0.</member>
+<member>600 ml glycerol</member>
+<member>Bring to 2 liters with dH<subscript>2</subscript>O</member>
+<member>Distribute to 200 ml bottles</member>
+<member>Autoclave</member>
+<member>Add 0.06 ml sterile 1M MgSO<subscript>4</subscript> per 200 ml bottle</member>
+</simplelist></para>
+</listitem>
+<listitem>
+<para>Withdraw 70 &#x03BC;l from each culture well using a 12 channel pipettor and pipette into the corresponding well of the freezing plate. Withdraw the worms by pipetting up/down several times to mix the well before withdrawing liquid. Dispense the liquid by pipetting down/up to mix the solution in the freezing plate. Once the worms are in the freezing solution work quickly to get them in the freezer: the freezing solution damages worms at room temperature.</para>
+</listitem>
+<listitem>
+<para>To speed the work, use the same tips for all the pipetting - it is faster to rinse them between use than to switch them. To minimize contamination of worms from inappropriate wells into the freeze plates, wash out the tips by pipetting dH20 up/down several times between uses. Also, add worms to just six plates at a time, and get those plates into the freezer before putting worms from the next six plates into freezing solution.</para>
+</listitem>
+<listitem>
+<para>Cover the freezing plates with Rainin thermalseal film (ordering information for these and all other specialized materials are at the end of this document).</para>
+</listitem>
+<listitem>
+<para>Put a stack of six freezing plates with the test thaw PCR tube nestled in among them in a special cooler (described below) and place at <symbol role="symbolfont">&#x02212;</symbol>80&#x00B0;C overnight. The test thaw tube is prepared by adding 100 &#x03BC;l of S medium to a well from the test plate, withdrawing 70 &#x03BC;l into a 200 &#x03BC;l PCR tube, and adding 70 &#x03BC;l of freezing solution. The next day the plates can be quickly removed from the cooler and stored in the <symbol role="symbolfont">&#x02212;</symbol>80&#x00B0;C freezer in an appropriately labeled Tupperware container.</para>
+</listitem>
+</orderedlist>
+<sect5>
+<title>Special cooler for freezing worms</title>
+<para>The rate at which worms cool during freezing is critical for their viability. You must freeze the worms in the freezer using an insulated container to slow the cooling rate. The container must be constructed exactly as described here and as diagramed in <link linkend="figure2">Figure 2</link>. Exactly six plates must be included in each container as the plates themselves contribute to the proper heat capacity and cooling rate. The cultures need to have grown well in order to get good viability. Only the cultures that have starved when the F2 animals are predominantly L1 larvae will survive freezing well.</para>
+<literallayout></literallayout>
+<mediaobject id="figure2" xreflabel="Figure 2">
+<imageobject>
+<imagedata entityref="fig2" align="center" width="4.6in"/>
+</imageobject>
+<textobject>
+<phrase>figure 2</phrase>
+</textobject> &fig2legend;</mediaobject>
+<para>The outer container is the small, cubical styrofoam package in which New England Biolabs ships enzymes. These containers are packaged with a gel-ice pack and one soft foam rubber block inside. Discard the gel-ice and save the foam rubber - two foam rubber blocks are needed to construct the inner insulation for each styrofoam container. Also, as the foam rubber tends to get torn with use (it is very brittle when frozen at <symbol role="symbolfont">&#x02212;</symbol>80&#x00B0;C), it is necessary to have a supply of replacement foam rubber. Although the foam rubber shipped by New England Biolabs works well, any other foam rubber of similar density and consistency seems to also work.</para>
+<para>Cut a foam block lengthwise in two. These pieces fit exactly into the top and bottom of the cooler, and will be above and below the stack of six freezing plates placed inside. Cut a second foam block lengthwise into thirds. These pieces will fill all the rest of the space inside the cooler. Two pieces fit along the two sides of the stack of plates. Cut the third piece in half; one half fits in front of the stack, one behind. Finally, place other small pieces of foam in the unoccupied corners of the cooler to fill the air spaces. See <link linkend="figure2">Figure 2</link> for a diagram of this assembly. Handle the plates carefully to avoid splashing the liquid worm suspensions onto the plate sealing film. This could cause some worms to be lost when a well is later thawed from one of the plates.</para>
+<para>The stack of plates and foam assembly are held together with two rubber bands placed around the circumference of the foam pieces. These serve the dual purpose of holding the corner pieces in place, and securing an airtight seal among the many pieces. Close the cooler, and use about twelve rubber bands (or some sturdy tape) to hold it tightly shut. Place the cooler in the <symbol role="symbolfont">&#x02212;</symbol>80&#x00B0;C freezer.</para>
+<para>The next day, transfer the plates to a properly labeled plastic Tupperware box in the freezer. It is important to place the plates in their final spot in the appropriate order, so that they don&apos;t have to be re-arranged later. Test thaw the loose PCR tube: thaw the sample by holding it between your fingers, and pipette the liquid onto a seeded NGM plate, and after 24 hours in a 20&#x00B0;C incubator, count the number of live animals. If fewer than 100 live worms survive the test thaw then the set of six plates from the corresponding freezing container should be discarded. Survival of greater than 200 worms is the minimum necessary to allow adequately reliable recovery of mutant animals. Good batches have more than 400 live worms from the test thaw.</para>
+<para>It takes two people about 1 hour to do the pipetting to freeze worms from 24 microtiter plates.</para>
+</sect5>
+</sect4>
+<sect4>
+<title>Pooled DNA preps</title>
+<para>Make one pooled DNA prep from each 96-well culture plate that has starved (five days after set up). Each prep has a complexity of 4,000 mutagenized genomes. Label each tube of DNA with the plate number from which it is derived.</para>
+<para>
+<simplelist>
+<member><emphasis role="bold">Pooled DNA prep worm lysis buffer</emphasis></member>
+<member>20 mM Tris pH 7.5</member>
+<member>50 mM EDTA</member>
+<member>200 mM NaCl</member>
+<member>0.5&#x00025; SDS</member>
+<member>Add Proteinase K to 100&#x03BC;g/ml just prior to use</member>
+</simplelist>
+</para>
+<para>
+<simplelist>
+<member><emphasis role="bold">Proteinase K</emphasis></member>
+<member>10 mg/ml in water; store aliquots at &#x2013;20&#x00B0;C</member>
+</simplelist>
+</para>
+<orderedlist numeration="loweralpha">
+<listitem>
+<para>Using the 12 channel multipipettor, move 1/4 the original volume (i.e. 35 &#x03BC;l) from each of the 96 wells to be pooled into a single sterile reservoir. Pipet up and down several times to resuspend the worms before removing the liquid from the wells. Reuse the same tips over and over, but rinse by pipetting up and down twice in a trough of water between each use of the tips for actual samples. Pasteur pipette the liquid from the reservoir to a 1.5 ml snap-cap Eppendorf tube, washing both the pipette and the reservoir in between each prep so they can be reused. Spin briefly at 3000 rpm to pellet the worms, and use an aspirator to remove as much of the supernatant as possible without losing worms. The total volume of worms in liquid needs to be reduced from &gt;3 mls in the reservoir to 1.5 mls in the Eppendorf tube, so repeat the spin and removal of the supernatant a couple of times. Label each tube with the number of the corresponding culture plate. Numbering the tubes without error is critical for success: errors will make it impossible to trace mutants initially identified by PCR.</para>
+<para>It takes two people about an hour to do the pipetting to make pooled worm samples from 24 microtiter plates.</para>
+</listitem>
+<listitem>
+<para>Add 200 &#x03BC;l Pooled DNA prep worm lysis buffer (see above) to which proteinase K has freshly been added to 100 &#x03BC;g/ml.</para>
+</listitem>
+<listitem>
+<para>Freeze the tube for &gt;10 min. at <symbol role="symbolfont">&#x02212;</symbol>80&#x00B0;C to crack open the worms. The tubes can sit in the freezer for weeks at this step if needed. Then, after all the batches of cultures have been grown and processed, the pooled DNA preps can be completed. This is the most convenient way to distribute the work.</para>
+</listitem>
+<listitem>
+<para>When ready to proceed with the DNA preps, thaw the tubes and incubate them at 55&#x00B0;C, with rocking, for 4 -6 hours. A Robbins Scientific hybridization oven equipped with a rocker works well for this. Place the tubes in a rack with a piece of cardboard rubber-banded over the top to keep the tubes in. Place the rack on its side on the rocker so that the liquid sloshes from the top to the bottom of the tube for maximum mixing. After the incubation, examine using a dissecting microscope. Almost all the worms should be dissolved. If you do not have an incubator equipped with a rocker, shaking the tubes by hand a couple of times during the incubation works fine.</para>
+</listitem>
+<listitem>
+<para>Extract the DNA with 200 &#x03BC;l phenol/chloroform using pH 6.7 1:1 phenol:chloroform mix from American Bioanalytical. Add the phenol/chloroform, vortex the tube for 30 sec, centrifuge for 4 min., and carefully remove the aqueous layer (top) to a new labeled tube, avoiding the white interface. Note that phenol/chloroform will dissolve labels written on the tubes if any spills onto the outside of the tubes. So, check for this frequently, and keep the tubes in numerical order at all stages of the procedure to minimize the possibility of mixing up the tubes.</para>
+</listitem>
+<listitem>
+<para>Extract the DNA in each tube with 200 &#x03BC;l of chloroform (add, vortex, spin 1 min., remove aqueous layer to a new labeled tube).</para>
+</listitem>
+<listitem>
+<para>Add 800 &#x03BC;l of 100&#x00025; EtOH to each tube, and invert several times to mix. Incubate for 10 min. at room temperature, centrifuge for 10 min. A pellet should be visible. Remove the supernatant with an aspirator, making sure not to lose the pellet.</para>
+</listitem>
+<listitem>
+<para>Wash with 200 &#x03BC;l of 70&#x00025; EtOH (add, spin 1 min., aspirate). Again, make sure not to lose the pellet.</para>
+</listitem>
+<listitem>
+<para>Dry briefly by leaving the lid off the tube on the bench top for 10 min.</para>
+</listitem>
+<listitem>
+<para>Resuspend the pellet in 100 &#x03BC;l of 10 mM Tris, 0.l mM EDTA, pH 8.0 by letting the tube sit at room temperature overnight. Vortex briefly the next day. Store the DNA at <symbol role="symbolfont">&#x02212;</symbol>80&#x00B0;C.</para>
+</listitem>
+<listitem>
+<para>The yield should be at least 3.4 &#x03BC;g of genomic DNA, contaminated by a small amount of RNA. It is absolutely essential that a good yield is achieved, so piloting the DNA preps and quantitating the yield is essential before proceeding at production scale. The yield of some of the preps can be checked by running a bit (3 &#x03BC;l) on an ethidium bromide stained agarose gel and comparing to a larger, purer prep of genomic DNA of known concentration (determined by OD<subscript>260</subscript>). When things go well, it is possible to achieved yields of up to 15 &#x03BC;g.</para>
+</listitem>
+<listitem>
+<para>For screening the library, these preps will be diluted and aliquotted into microtiter plates (described below). The number of times the library can be screened is limited by the yield of DNA in these pooled preps, so make sure to get the best yield possible. If the yields achieved are 3.4 &#x03BC;g per prep, the library can be screened about 400 times. Better yields will allow more screens.</para>
+</listitem>
+</orderedlist>
+</sect4>
+<sect4>
+<title>Single well lysates</title>
+<para>After freezing live worms and making pooled DNA preps (protocols above), 1/4 of the original culture volume will be left in each well of the culture plate (about 35 &#x03BC;l). These worms will be lysed and the resulting single well lysates will be used as PCR templates to find which well among the 96 contains a deletion first detected in the corresponding pooled DNA prep.</para>
+<para>
+<simplelist>
+<member><emphasis role="bold">Single well lysis buffer</emphasis></member>
+<member>30 mM Tris pH 8</member>
+<member>8 mM EDTA</member>
+<member>100 mM NaCl</member>
+<member>0.7&#x00025; NP40</member>
+<member>0.7&#x00025; Tween 20</member>
+<member>Add proteinase K to 100 &#x03BC;g/ml just before use</member>
+<member>Note: the 8 mM EDTA chelates the Mg<superscript>2+</superscript> and Ca<superscript>2+</superscript> ions from the S medium and thus inactivates any DNAses released from the worms.</member>
+</simplelist>
+</para>
+<orderedlist numeration="loweralpha">
+<listitem>
+<para>To each well, add 35 &#x03BC;l of Single well lysis buffer (above) to which proteinase K has been freshly added to 100 &#x03BC;g/ml, and cover each plate with Rainin Thermalseal film to prevent evaporation during the subsequent incubations.</para>
+</listitem>
+<listitem>
+<para>Incubate at 55&#x00B0;C for 4 hours with rocking if possible. However, rocking does not seem to be essential.</para>
+</listitem>
+<listitem>
+<para>Examine the wells using a dissecting microscope at the end of this incubation. Almost all of the worms should be lysed and just a few unlysed eggs and dauers should be visible.</para>
+</listitem>
+<listitem>
+<para>Incubate for 30 min. at 95&#x00B0;C to inactivate the proteinase K. We use a Fisher Isotemp oven.</para>
+</listitem>
+<listitem>
+<para>Remove the Thermalseal film from the plates. Cover the plates with their lids. Arrange them in order in Tupperware containers and store at <symbol role="symbolfont">&#x02212;</symbol>80&#x00B0;C.</para>
+</listitem>
+<listitem>
+<para>The diagram in <link linkend="figure3">Figure 3</link> shows how to arrange the boxes of microtiter plates in the freezer. Try to find the best Tupperware-style container that will fit stacks of microtiter plates without wasting space, and that will also fit onto the shelf of the <symbol role="symbolfont">&#x02212;</symbol>80&#x00B0;C freezer. Make sure to take the dimensions of the freezer shelf before purchasing the Tupperware-style containers. If the right container is found, buy a lot of them: stores seem to change the styles of the containers they stock frequently.</para>
+</listitem>
+</orderedlist>
+</sect4>
+<sect4>
+<title>Preparing diluted templates</title>
+<sect5>
+<title>Theory</title>
+<para>A deletion mutation should be present at &#x007E;one part in 4000 of a pooled DNA prep. The templates for the primary PCR screens consist of 5 &#x03BC;l of 10-fold dilutions of the 4,000 genome pools. The total yield of the 4,000 genome DNA preps should be at least 3.4 &#x03BC;g in 200 &#x03BC;l. Thus about 8.5 ng of genomic DNA is present in each PCR reaction, which is &#x007E;77,500 copies of the genome, or about 20 copies of the mutant genome. This should be enough copies to ensure the mutant DNA can be amplified successfully. This means the library can be screened 400 times before running out of DNA. If the yield of DNA is significantly higher than 3.4 &#x03BC;g per prep, use a higher dilution of the DNA preps for the screening templates. This will allow the library to be screened more than 400 times.</para>
+</sect5>
+<sect5>
+<title>Practice</title>
+<para>Each template used for the primary PCR screens consists of a diluted pooled DNA prep prepared from a 96-well plate of cultured mutagenized worms. These templates thus represent DNA from 4,000 mutagenized haploid genomes. Diluted 4,000 genome pooled DNA preps are prepared in microtiter format in M&#x03BC;TI PCR plates (VWR). These have conical bottoms and are convenient to pipette from using 12 channel pipettors. 20 &#x03BC;l of each 4,000 genome prep is diluted by adding 180 &#x03BC;l of 10 mM Tris pH 8.0, 0.1 mM EDTA. The M&#x03BC;lti plate is placed in a microtiter format tray (pipette tip holder) for stability, covered with parafilm, and stored at <symbol role="symbolfont">&#x02212;</symbol>80&#x00B0;C. As there is a danger that such a plate might be dropped and the DNA lost, it is nice that only 10&#x00025; of the total pooled DNA preps are stored in any one such set of plates of diluted templates.</para>
+<para>The entire library is represented in 2.5 such plates. The arrangement of templates in the microtiter plates is diagrammed in <link linkend="figure4">Figure 4</link>. The arrangement shown is convenient. Because of the 2X microtiter spacing of the combs on the gels used to analyze the reaction products, this arrangement causes the samples to be in the order 1,2,3, &#x02026; after loading on the gel.</para>
+<mediaobject id="figure3" xreflabel="Figure 3">
+<imageobject>
+<imagedata entityref="fig3" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 3</phrase>
+</textobject> &fig3legend;</mediaobject>
+<literallayout></literallayout>
+<mediaobject id="figure4" xreflabel="Figure 4">
+<imageobject>
+<imagedata entityref="fig4" width="6.5in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 4</phrase>
+</textobject> &fig4legend;</mediaobject>
+</sect5>
+</sect4>
+</sect3>
+<?newpage?>
+<sect3>
+<title>Summary of quality control criteria for library construction</title>
+<para>This completes the protocols for construction of a frozen library of deletion mutants. Before moving forward to protocols for library screening, presented here is a summary of the quality control targets that must be met during library construction. If every single one of these targets is met, success can almost be guaranteed. If even a single one of these criteria is not met, the resulting library will be of little or no use.</para>
+<orderedlist numeration="arabic">
+<listitem>
+<para>Mutagenesis: check for 10&#x02013;15&#x00025; F1 lethality, discard any batches that fall outside this range.</para>
+</listitem>
+<listitem>
+<para>Culturing: check that the F1 animals were accurately diluted and pipetted so that an average of &#x007E;20 F1 animals actually ended up in each culture well.</para>
+</listitem>
+<listitem>
+<para>Culturing: check that there were &gt;1500 F2 animals per well, that the cultures had starved with no bacterial or mold contamination, and that the starved F2 animals arrested predominantly as early (L1 or L2) larvae.</para>
+</listitem>
+<listitem>
+<para>Freezing: check that &gt;200 live animals came from the test thaw for every single freezer box of 6 plates used in library construction.</para>
+</listitem>
+<listitem>
+<para>DNA preps: check that the average yield per pooled DNA prep was at least 3.4 &#x03BC;g.</para>
+</listitem>
+</orderedlist>
+</sect3>
+</sect2>
+<sect2>
+<title>PCR screening</title>
+<sect3>
+<title>Theory</title>
+<para>Recent improvements have been made in the protocol for screening deletion libraries using procedures based on the &#x0201C;poison primer&#x0201D; method (<link linkend="bib2">Edgley et al., 2002</link><!--: PMID12060690-->). This method is a dramatic improvement on earlier screening methods. Whereas earlier methods mainly detected larger (&gt;600 bp) deletions, the poison primer method allows more sensitive detection of smaller deletions. These smaller deletions appear to occur more frequently in psoralen-mutagenized libraries than do larger deletions, so that the efficiency of detecting deletions appears to be perhaps 2&#x02013;3 fold better using the poison primer method (<link linkend="bib2">Edgley et al., 2002</link><!--: PMID12060690-->). However, the previous sentence understates how great an improvement the poison primer method is. Because it involves smaller PCR amplicons that are amplified more reliably and reproducibly, the poison primer method dramatically reduces the time spent optimizing PCR conditions and dealing with failed PCR reactions.</para>
+<para>The goal of the screening procedure is to identify pooled DNA samples that contain DNA from a deletion mutant for a gene of interest. By PCR amplifying a region of the gene of interest and running the products on a gel, in principle the smaller deletion amplicon will be observed on the gel as a band with faster mobility than the larger wild-type amplicon. However, deletion mutant DNA is present at only 1 part in 4,000 in the pooled DNA sample, so the challenge is to increase the abundance of the deletion amplicon to the point where it can be visualized on a gel.</para>
+<para>A template that has suffered an internal deletion has a small advantage over the wild-type template during each cycle of PCR due to the shorter length of the deleted template. Suppose that the chance of completing an extension across a deleted template is 10&#x00025; better than for the wild type. After 35 cycles of amplification there will be a 28-fold enrichment of the deleted amplicon relative to the wild-type amplicon. After 70 cycles the enrichment will be 790-fold. As can be seen from this example, a key to detecting rare deletion mutations is to send the PCR through a very large number of productive cycles. Even if the PCR machine is programmed to run through 70 cycles, if the amplification reactions run out of reagents and reach their endpoints after only a small number of cycles, rare deletion amplicons will not be enriched sufficiently to detect them. The goal is thus to set up PCR reactions under relatively inefficient conditions that will allow amplification to continue productively for a full 70 cycles. The poison primer method, described below, is a simple way to do this.</para>
+<para>It is desirable to set up conditions such that wild-type template produces a nice clean single band on a gel without too much smear or artifact bands that might obscure deletion amplicons. This seems to require doing two rounds of PCR using nested primers, as sending a single primer pair through 70 cycles under inefficient amplification conditions tends to give messy results in which artifactual amplicons can predominate. Even with nesting, multiple artifactual bands arise in the amplifications. These artifactual bands may constitute an acceptable background as long as they are not too intense or too variable. Such artifacts that occur reproducibly in amplifications from many or all pooled DNA templates can be discounted. The screener is looking for rare events that occur reproducibly only when a particular pooled DNA sample is amplified.</para>
+<sect4>
+<title>Theory behind the poison primer method</title>
+<para>The poison primer method is a procedure for limiting the efficiency of amplification of the PCR product of interest in the first of the two rounds of nested PCR (<link linkend="bib2">Edgley et al., 2002</link><!--: PMID12060690-->). Relatively little product is made in the first round of 35 cycles, and this limited product is then further diluted for use as the template for the second round of amplification. So little template is thus added for amplification to the second round that most of its 35 amplification cycles occur before the reaction reaches saturation. Therefore, a large portion of the 70 cycles of PCR from the two rounds of amplification are productive and can thus help enrich for deletion amplicons.</para>
+<para>The diagram in <link linkend="figure5">Figure 5</link> schematizes the primers used in the two rounds of amplification in the poison primer method and the amplification products produced.</para>
+<mediaobject id="figure5" xreflabel="Figure 5">
+<imageobject>
+<imagedata entityref="fig5" width="5.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 5</phrase>
+</textobject> &fig5legend;
+</mediaobject>
+</sect4>
+<sect4>
+<title>Notes on the poison primer method</title>
+<orderedlist numeration="arabic">
+<listitem>
+<para>The poison products effectively suppresses amplification of the full-length outer amplicon during the first round because the poison amplicons are relatively short and thus efficiently amplified. By efficiently using up reagents in the amplification reaction, the poison products suppress production of other amplicons.</para>
+</listitem>
+<listitem>
+<para>The second round primers cannot reamplify the poison products, but can reamplify the first round outer amplicon and any deletion mutant amplicons. A gel run after the second round reaction thus shows only the large second round amplicon, plus any deletion amplicons. The poison products from the first round have been diluted below the threshold of detection.</para>
+</listitem>
+<listitem>
+<para>The poison primer method is the simplest and most effective method tried so far for detecting deletion amplicons. Other methods based on seemingly simpler or more logical designs have been extensively piloted and used, but the poison primer method is easily the winner based on empirical results. In addition to being the most effective screening method, it is also very simple and rapid.</para>
+</listitem>
+</orderedlist>
+</sect4>
+</sect3>
+<sect3>
+<title>Designing and testing the screening primers</title>
+<sect4>
+<title>Designing primers</title>
+<para>Design two sets of primers flanking the region of the gene in which you would like to obtain a deletion. An amplicon size of 1 kb is easily amplified during PCR and seems sufficient in size to allow detection of deletions. Therefore, choose outer primers that will amplify a region just larger than 1 kb and inner primers that will amplify a region of &#x007E;1 kb. Along with the outer primer set, choose two poison primers that are roughly in the middle of the outer amplicon. Make one forward and one reverse poison primer. These two poison primers should be near each other but not overlapping by more than one base pair on their 5&apos; ends. To select primer sets, follow a simple set of rules: 1) primers should be 22mers; 2) they should have 11 &#x000B1; 1 G/C residues (since all <emphasis>C. elegans</emphasis> genomic DNA except for exons is very A/T rich, the primer sites will usually be placed in exons); 3) avoid having an A or T as the 3&apos; residue; 4) avoid sequences that could form strong hairpins. Also, it can be helpful to check that the 3&apos;-most five base pair sequence of the primers does not occur greater than once in the interval being amplified (which can lead to non-specific priming and amplification).</para>
+<para>Here are some hints for choosing useful primer sets. Choose a region of the gene in which a small deletion will likely cause a loss-of-function mutation (i.e. the 5&apos; end of the gene or a region of the gene that contains few or small introns). Therefore, decide where to put the poison primers first and then choose the outer primer sets to flank the poisons. Try to avoid encompassing non-coding sequence or introns &gt;200 bp within the selected screening interval since a small deletion in that area could fall entirely within the non-coding region and therefore be questionable as to whether it has caused any effect on gene expression or function.</para>
+<para>In order to ensure that a deletion is recovered, several 1 kb intervals of the same gene can be screened in parallel. For each interval to be screened, order a set of six primers (two outers, two poisons, two inners).</para>
+</sect4>
+<sect4>
+<title>Empirically checking that the primers work</title>
+<para>Before screening the library, run a quick set of test amplifications to check that all the primers involved work adequately. For each primer set, five different test amplifications are done, each in duplicate:</para>
+<orderedlist numeration="loweralpha">
+<listitem>
+<para>outer oligos only</para>
+</listitem>
+<listitem>
+<para>outer oligos plus one or the other poison primer</para>
+</listitem>
+<listitem>
+<para>outer oligos plus both poison primers</para>
+</listitem>
+<listitem>
+<para>inner oligos only</para>
+</listitem>
+</orderedlist>
+<mediaobject id="figure6" xreflabel="Figure 6">
+<imageobject>
+<imagedata entityref="fig6" width="6.5in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 6</phrase>
+</textobject> &fig6legend;</mediaobject>
+<para>Note the following regarding the results shown in <link linkend="figure6">Figure 6</link>:</para>
+<orderedlist numeration="arabic">
+<listitem>
+<para>All the non-poison primers worked well (as seen in tests a and d) except the outer oligos for primer set 4 (reactions 4a), which gave only weak amplification products. In some cases there is no amplification from certain primer pairs, which suggests that the reactions failed. If there is very weak or no amplification in reactions a or d, design new primers to replace the failed pair and try again. In the primer set 4 example shown in <link linkend="figure6">Figure 6</link>, the outer primer amplification is too weak and a new primer set should be ordered.</para>
+</listitem>
+<listitem>
+<para>All the poison primers gave poison products, seen in reactions b1 and b2. If both poison primers work, as in these examples, do the screen using both poison primers (the condition in reactions c). If one poison primer fails to give products, leave out that poison primer and do the screen just using the other poison primer. Only use a poison primer if it gives a single, clean poison product of the predicted size.</para>
+</listitem>
+<listitem>
+<para>It is evident in the gel that the poison products suppress production of the outer amplicon. The intensity of the outer amplicon band is clearly reduced in reactions b1, b2, and c relative to reactions a. If the outer amplicon is suppressed below the threshold of detection (most likely in reaction c with both poison primers) this is ok and the screen can be conducted using those conditions. Partial suppression of the amplicon, as shown in the gel for primer sets 1&#x02013;3 is also acceptable (<link linkend="figure6">Figure 6</link>).</para>
+</listitem>
+<listitem>
+<para>Certain primer sets give, in addition to the predicted amplicons, additional smaller bands on the gel or smears. While these can sometimes be eliminated by moving the primers, such artifacts are sometimes properties of the region of DNA being amplified, not of the particular primer sites chosen, and cannot be eliminated. As long as the artifactual smears or bands are lower in intensity than the predicted amplicons, go ahead with a screen and look for deletion amplicons while ignoring the artifacts.</para>
+</listitem>
+<listitem>
+<para>One additional test reaction can be added that is not shown in <link linkend="figure6">Figure 6</link>. Reamplify the &#x0201C;c&#x0201D; reactions described above with the inner primers in a second round of PCR, just as will be done in the actual screen. Check that a single clean band is produced and that the actual amplification protocol to be used for the large-scale screen will work.</para>
+</listitem>
+</orderedlist>
+<sect5>
+<title>Recipes for setting up test amplifications</title>
+<para>The following materials are needed:</para>
+<para>
+<simplelist>
+<member><emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">genomic DNA</emphasis></member>
+<member>For test reactions, a genomic DNA template is needed. Prepare a large batch of genomic DNA by scaling up the method used to make the pooled DNA templates during library construction. This DNA prep is then diluted to the same concentration as the diluted library templates.</member>
+<member><emphasis role="bold">Oligonucleotides</emphasis></member>
+<member>These are resuspended in TE (10 mM Tris, pH 8.0, 1 mM EDTA) at 100 &#x03BC;M and stored at <symbol role="symbolfont">&#x02212;</symbol>20&#x00B0;C. To prepare test amplifications, make working stocks by further diluting 10-fold in water to a final concentration of 10 &#x03BC;M.</member>
+<member><emphasis role="bold">Taq polymerase</emphasis></member>
+<member>Invitrogen Taq (5 units/&#x03BC;l) is used along with the 10X buffer and 50 mM MgCl<subscript>2</subscript> solutions supplied with it. Different commercial sources of Taq are quite similar, but the buffers supplied by different manufacturers are of different composition and these differences have large effects on amplification.</member>
+<member><emphasis role="bold">dNTPs</emphasis></member>
+<member>Purchased from Pharmacia as a mixture of dATP, dCTP, dGTP, and dTTP at 20 mM each. To prepare test amplifications, dilute the commercial mixture 10-fold in water to 2 mM each dNTP.</member>
+</simplelist>
+</para>
+</sect5>
+<sect5>
+<title>Setting up the test reactions</title>
+<para>Make a premix that contains everything except the primers. Make enough for 11 reactions (only 10 reactions must be set up, and the extra is included to allow for errors in pipetting volumes):</para>
+<para>
+<simplelist>
+<member><emphasis role="bold">Premix for test reactions</emphasis></member>
+<member>27.5 &#x03BC;l 10X PCR buffer</member>
+<member>27.5 &#x03BC;l 2 mM dNTP mix</member>
+<member>13.75 &#x03BC;l 50 mM MgCl<subscript>2</subscript></member>
+<member>105.6 &#x03BC;l H<subscript>2</subscript>0</member>
+<member>55 &#x03BC;l genomic DNA</member>
+<member><emphasis role="underline">1.65 &#x03BC;l Taq (5 U/&#x03BC;l)</emphasis></member>
+<member>aliquot 21 &#x03BC;l of the premix into each of 10 PCR tubes</member>
+<member>add 4 &#x03BC;l of primers (1 &#x03BC;l of each 10&#x03BC;M primer and additional H<subscript>2</subscript>0 for those reactions with less than 4 primers)</member>
+</simplelist>
+</para>
+<para>First set up the two duplicate d reactions (21 &#x03BC;l premix, 1 &#x03BC;l each of the inner primers, 2 &#x03BC;l water).</para>
+<para>The remaining reactions all have the outer primers, so add 9 &#x03BC;l of each of the outer primers to the remaining premix. Then pipette 23 &#x03BC;l of the resulting mix to each of 8 tubes and add water or primers as needed to set up reactions a, b1, b2, and c.</para>
+</sect5>
+<sect5>
+<title>Amplifying the test reactions</title>
+<para>Carry out a single round of amplification using the standard amplification PCR protocol:</para>
+<para>94&#x000B0;X30&#x0201D;, (92&#x000B0;X30&#x0201D;, 55&#x000B0;X30&#x0201D;, 72&#x000B0;X2 min.)X35, 72&#x000B0;X5 min., 4&#x000B0; hold</para>
+<para>As a crude type of &#x0201C;hot start&#x0201D;, wait until the PCR block heats up to 94&#x00B0;C before placing the tubes in the block. If the PCR machines have heated lids, put no oil in the tubes.</para>
+<para>For 1 kb amplicons use a 30 second extension time, as indicated above. For amplicons greater than 1.2 kb use a 1 min. extension time. Run out PCR products on a 2&#x00025; agarose gel.</para>
+<para>If the products appear as extremely strong bands in the test reactions, reduce the extension time by &#x007E;5-10 seconds when screening the library to decrease the amplification efficiency. The reactions should not be too efficient, as this indicates that they may have reached their endpoints in a small number of cycles, and less productive amplification cycles would lead to less enrichment of deletion amplicons. However, do not obsess on this point or spend time running additional test reactions with different extension times. The whole beauty of the poison primer method is that it is relatively robust and thus allows screening to move forward quickly without a long delay for optimizing conditions. Running extra rounds of optimization can actually be detrimental: after too many amplifications of the same DNA there is the possibility of the lab/reagents/equipment becoming contaminated by the amplicon being amplified, ruining your ability to do further amplifications of this DNA.</para>
+</sect5>
+</sect4>
+</sect3>
+<sect3>
+<title>Production level PCR</title>
+<para>After determining that the primers work and that addition of one or more poison primers results in reduction of wild-type product, make large PCR premixes sufficient for the entire primary screen as well as the subsequent retest reactions that will be used to follow up primary positives. Note that more than &#x00024;200 worth of material is used here, so make sure the primers work and that the PCR conditions are worked out before making these mixes. Also note that the large premixes are made with the concentrated stocks of dNTPs and primers, not the diluted stocks used to prepare the test reactions.</para>
+<table id="table1" frame="all" rules="all" cellpadding="0" cellspacing="0" width="100%">
+<title><emphasis role="bold">Premixes for screening</emphasis></title>
+<tgroup cols="2">
+<colspec colname="c1" align="left" colwidth="1*"/>
+<colspec colname="c2" align="center" colwidth="1*"/>
+<thead>
+<row>
+<entry>Large premix for round 1</entry>
+<entry>Large premix for round 2</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>1.07 ml 10X Invitrogen Taq buffer</entry>
+<entry>1.07 ml 10X Invitrogen Taq buffer</entry>
+</row>
+<row>
+<entry>533 &#x03BC;l 50 mM MgCl<subscript>2</subscript></entry>
+<entry>533 &#x03BC;l 50 mM MgCl<subscript>2</subscript></entry>
+</row>
+<row>
+<entry>107 &#x03BC;l 20 mM dNTPs</entry>
+<entry>107 &#x03BC;l 20 mM dNTPs</entry>
+</row>
+<row>
+<entry>43 &#x03BC;l outer forward primer (100 &#x03BC;M)</entry>
+<entry>43 &#x03BC;l inner forward primer (100 &#x03BC;M)</entry>
+</row>
+<row>
+<entry>43 &#x03BC;l outer reverse primer (100 &#x03BC;M)</entry>
+<entry>43 &#x03BC;l inner reverse primer (100 &#x03BC;M)</entry>
+</row>
+<row>
+<entry>43 &#x03BC;l forward poison primer (100 &#x03BC;M)</entry>
+<entry>&#x2013;</entry>
+</row>
+<row>
+<entry>43 &#x03BC;l reverse poison primer (100 &#x03BC;M)</entry>
+<entry>&#x2013;</entry>
+</row>
+<row>
+<entry>6574 &#x03BC;l dH20</entry>
+<entry>8800 &#x03BC;l dH20</entry>
+</row>
+<row>
+<entry>64 &#x03BC;l Invitrogen Taq 5 U/&#x03BC;l</entry>
+<entry>64 &#x03BC;l Invitrogen Taq 5 U/&#x03BC;l</entry>
+</row>
+<row>
+<entry>7 aliquots of 1.06 m</entry>
+<entry>7 aliquots of 1.325 ml</entry>
+</row>
+<row>
+<entry>&#x007E;10 aliquots of 100 &#x03BC;l</entry>
+<entry>&#x007E;10 aliquots of 125 &#x03BC;l</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<para>Note: If using only one poison primer, make up the volume by substituting 43 &#x03BC;l of water for the second poison primer.</para>
+<para>Make premixes and aliquot into screwcap Eppendorf tubes, flash freeze them in liquid nitrogen and store them at <symbol role="symbolfont">&#x02212;</symbol>80&#x00B0;C. The premixes are not stable when stored at <symbol role="symbolfont">&#x02212;</symbol>20&#x00B0;C, so they must be stored at <symbol role="symbolfont">&#x02212;</symbol>80&#x00B0;C.</para>
+</sect3>
+<sect3>
+<title>Production level reactions</title>
+<para>Thaw two large aliquots of the &#x0201C;large premix for round 1&#x0201D; for each 96-well plate to be amplified. For ease of aliquoting the premix into the 96-well plates, first distribute the premix equally into a strip of 12 tubes (microtiter spaced PCR tubes), and use a 12-channel multipipettor to distribute 20&#x03BC;l (first round reactions) or 25&#x03BC;l (second round reactions) into each well of a microtiter PCR plate. The library DNA templates will be added to the 96-well plate containing the distributed premix.</para>
+<para>For the first round reactions, the templates will be 5 &#x03BC;l of the pooled DNA preps from the library. Thaw the diluted templates by placing in a PCR machine set at 37&#x000B0;C. Add 5 &#x003BC;l of each template to the PCR plate using a 12-channel pipettor.</para>
+<para>For the second round reactions, the templates are an extremely small volume of liquid transferred from the first round reactions using a &#x0201C;hedgehog&#x0201D; device (Boekel replicator) with 96 metal pins spaced to fit into each well of a microtiter plate. Store the hedgehog in clean dH<subscript>2</subscript>0, dip in EtOH, flame to get rid of the EtOH, dip in the first round reactions, and then dip in the second round PCR premixes to add the templates. Rinse the hedgehog extensively between uses in running water so as to prevent unwanted DNA from contaminating future PCR reactions.</para>
+<para>Be careful during screening to be clean. Try to avoid contaminating pipettors and other bench items with the PCR amplicon. After about 800 amplifications of the same gene the PCR reactions can start giving very smeary patterns on gels due to contamination. If this happens the best remedy is to switch to a new set of primers outside of the original sets that gave rise to the contamination.</para>
+</sect3>
+<sect3>
+<title>Electrophoresis</title>
+<para>Pour a 300 ml 2&#x00025; agarose gel with two 50-well combs in the Owl Centipede gel box. All 96 second-round reactions, plus marker lanes, can be loaded on a single gel. The high percentage agarose gel allows separation of bands that differ by only a small amount. Some of the deletions identified using this poison method can be quite small (50 bp) and give rise to very low abundance amplicons, so detecting them on a gel requires good separation and a good eye with willingness to look closely and carefully at the gel for <emphasis>any</emphasis> band smaller than wild type. These products resulting from small deletions may run just under the wild-type product and can be difficult to detect.</para>
+<para>Samples from one 96-well plate fit on one gel. The comb teeth are spaced twice as densely as microtiter wells. Thus, the 12-channel pipettor loads <emphasis role="underline">every</emphasis> <emphasis role="underline">other</emphasis> well. Arrange the samples in the PCR plate such that the gel comes out in a logical fashion (<link linkend="figure7">Figure 7</link>).</para>
+<mediaobject id="figure7" xreflabel="Figure 7">
+<imageobject>
+<imagedata entityref="fig7" width="6.5in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 7</phrase>
+</textobject> &fig7legend;</mediaobject>
+<table id="table2" frame="all" rules="all" cellpadding="0" cellspacing="0" width="100%">
+<title/>
+<tgroup cols="2">
+<colspec colname="c1" align="left" colwidth="0.7*"/>
+<colspec colname="c2" align="center" colwidth="1*"/>
+<tbody>
+<row>
+<entry>Gel <symbol role="symbolfont">&#x0023;</symbol>1</entry>
+<entry/>
+</row>
+<row>
+<entry>First row</entry>
+<entry>1 kb marker, 1, 2, 3,......24, 1 kb marker, 25, 26,.........48</entry>
+</row>
+<row>
+<entry>Second row</entry>
+<entry>1 kb marker, 49.............72, 1 kb marker, 73...............96</entry>
+</row>
+<row>
+<entry>Gel &#x0023;2</entry>
+<entry/>
+</row>
+<row>
+<entry>First row</entry>
+<entry>1 kb marker, 97.............120, 1 kb marker, 121...........144</entry>
+</row>
+<row>
+<entry>Second row</entry>
+<entry>1 kb marker, 145...........168, 1 kb marker, 169............192</entry>
+</row>
+<row>
+<entry>Gel &#x0023;3</entry>
+<entry/>
+</row>
+<row>
+<entry>First row</entry>
+<entry>1 kb marker, 193............216, 1 kb marker, 217...........240</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<para>Loading these gels requires care and practice: generally the tips are initially placed in the wells at a shallow angle to the gel, and then raised to near vertical before dispensing the samples. If care is not taken some tips will not be in the appropriate wells. Run the gel at 110 volts for 90 min. in 1X TAE. The gel and running buffer should contain ethidium bromide at 0.2 &#x03BC;g/ml. A representative gel is shown in <link linkend="figure7">Figure 7</link>.</para>
+</sect3>
+<sect3>
+<title>Rechecking primary positives</title>
+<para>Recheck primary positives by reamplifying the appropriate diluted pooled DNA templates three times to see if the deletion band reproduces at least twice. The extra frozen large aliquots of the PCR premixes may be used for this purpose. Typically 70&#x02013;90&#x00025; of the &#x0201C;positives&#x0201D; from the primary screen will not reproduce. Real positives will reproduce typically in all three retries. Check that the deleted amplicons seen in the rescreen are the same size as the original positive. If a positive rechecks, cut the deletion bands out of the gel, purify the DNA (Qiagen Qiaquick gel purification kit) and use this to restriction map the deleted amplicon. (Alternatively, carry out a 100 &#x03BC;l PCR amplification of the positive band using the inner primers to get enough to restriction map the amplicon. These PCR products can be purified using a Qiagen Qiaquick PCR purification kit). Restriction map the deletion by using &#x007E;5 enzymes that cut at unique sites spread across the amplicon and check to see which enzymes cut (site not deleted) versus which enzymes do not cut (site deleted). If the restriction map shows that the amplicon may carry a useful deletion (i.e. removes some coding sequence), send the purified PCR amplicon for sequencing to determine the exact deletion sequence. On occasion, in addition to material being deleted, a short stretch of sequence is inserted at the site of the deleted material.</para>
+</sect3>
+</sect2>
+<sect2>
+<title>Recovering, genotyping, and backcrossing a live mutant animal</title>
+<sect3>
+<title>Recovering a live mutant animal</title>
+<sect4>
+<title>PCR from single-well lysates to identify the positive microtiter culture</title>
+<para>A positive 4,000-genome pooled DNA sample represents all 96 cultures from one microtiter plate. To identify the single well in which the mutant animals reside, amplify from all 96 single-well lysates from the plate corresponding to the positive pool.</para>
+<para>Carry out nested PCR using the same PCR primers used for the primary screen. Two rounds of nested PCR from the single-well lysates is used even though the deleted DNA should be present at one part in 20 in these samples and only one round should, theoretically, be required. This is because the single-well lysates are quite crude and therefore serve as poor PCR templates. Carry out the first round of PCR in 50 &#x03BC;l rather than 25 &#x03BC;l to dilute out the inhibitors of PCR amplification found in the crude lysates.</para>
+<para>First round: distribute 50 &#x03BC;l of the PCR premix in 96 wells, and use the hedgehog to add a trace of the appropriate single-well lysates into the reactions. Amplify using the same PCR program used for the primary screen.</para>
+<para>Second round: distribute 25 &#x03BC;l of the PCR premix in 96 wells and use the hedgehog to dope in the first round reactions as templates.</para>
+<table id="table3" frame="all" rules="all" cellpadding="0" cellspacing="0" width="100%">
+<title/>
+<tgroup cols="2">
+<colspec colname="c1" align="left" colwidth="1*"/>
+<colspec colname="c2" align="center" colwidth="1*"/>
+<thead>
+<row>
+<entry>First round premix</entry>
+<entry>Second round premix</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>530 &#x03BC;l 10X Invitrogen PCR buffer</entry>
+<entry>266 &#x03BC;l 10X Invitrogen PCR buffer</entry>
+</row>
+<row>
+<entry>53 &#x03BC;l 20 mM dNTP mix</entry>
+<entry>27 &#x03BC;l 20 mM dNTP mix</entry>
+</row>
+<row>
+<entry>266 &#x03BC;l 50 mM MgCl2</entry>
+<entry>125 &#x03BC;l 50 mM MgCl2</entry>
+</row>
+<row>
+<entry>21 &#x03BC;l outer forward primer, (100 &#x03BC;M)</entry>
+<entry>11 &#x03BC;l inner forward primer, 100 &#x03BC;M</entry>
+</row>
+<row>
+<entry>21 &#x03BC;l outer reverse primer, (100 &#x03BC;M)</entry>
+<entry>11 &#x03BC;l inner reverse primer, 100 &#x03BC;M</entry>
+</row>
+<row>
+<entry>21 &#x03BC;l forward poison primer, (100 &#x03BC;M)</entry>
+<entry>&#x2013;</entry>
+</row>
+<row>
+<entry>21 &#x03BC;l reverse poison primer, (100 &#x03BC;M)</entry>
+<entry>&#x2013;</entry>
+</row>
+<row>
+<entry>4.3 ml H<subscript>2</subscript>0</entry>
+<entry>2.2 ml H<subscript>2</subscript>0</entry>
+</row>
+<row>
+<entry>31.8 &#x03BC;l Invitrogen Taq (5U/&#x03BC;l)</entry>
+<entry>16 &#x03BC;l Invitrogen Taq (5U/&#x03BC;l)</entry>
+</row>
+<row>
+<entry>for PCR: use 50 &#x03BC;l premix per well</entry>
+<entry>for PCR: use 25 &#x03BC;l premix per well</entry>
+</row>
+<row>
+<entry>add templates with the hedgehog</entry>
+<entry>add templates with the hedgehog</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<?newpage?>
+<para>Run the second round products on a 2&#x00025; agarose gel and analyze.</para>
+<para>Results: exactly one single-well lysate should give rise to a deletion amplicon of the appropriate size, thus identifying the microtiter culture well in which the deletion arose.</para>
+</sect4>
+<sect4>
+<title>Thawing the frozen culture</title>
+<para>Place dry ice pellets and/or powder to fill up the lower &#x007E;1/4 of a styrofoam cooler. Place a flat piece of styrofoam on top of the dry ice inside the cooler. Go to the <symbol role="symbolfont">&#x02212;</symbol>80&#x00B0;C freezer and quickly remove the appropriate plate of frozen cultures and place it into the styrofoam container. Work quickly. The idea is to remove the positive well while leaving all the other 95 wells in the plate nicely frozen and viable. Place the plate upside down on the piece of styrofoam. Carefully identify the positive well. Using a brand-new razor blade mounted in a &#x0201C;carton-cutter&#x0201D; handle (can be bought at drugstores/hardware stores), make a cut on all four sides of the positive well as illustrated by the dashed lines in <link linkend="figure8">Figure 8</link>. As shown, make the cuts more than long enough to be sure they will intersect so that the well will be cleanly removed. The razor blade will cut deeply down into the underlying styrofoam which helps make sure the cut has gone all the way through the soft plastic plate. Once the well is removed, immediately put the plate back in the <symbol role="symbolfont">&#x02212;</symbol>80&#x00B0;C freezer in its proper position.</para>
+<literallayout></literallayout>
+<mediaobject id="figure8" xreflabel="Figure 8">
+<imageobject>
+<imagedata entityref="fig8" align="center" width="4.5in"/>
+</imageobject>
+<textobject>
+<phrase>figure 8</phrase>
+</textobject> &fig8legend;</mediaobject>
+<para>Place the excised well, top up, between your fingers to thaw. When thawed, use a sterile yellow tip and a P200 pipettor to distribute the liquid around the outside of the bacterial lawn on seeded NGM plates. Wash the empty well and the used pipette tip with 50 &#x03BC;l of M9 medium to recover any residual animals remaining. Every worm is potentially carrying the deletion of interest and is therefore precious! Leave the plates right side up until the liquid is absorbed. Then culture the plates upside down in a 20&#x00B0;C incubator.</para>
+<para>As many live worms as possible must be recovered from the thaw. It is desirable to get more than 300 live animals from the thaw as the mutant animals may be present at a frequency of 1/100 or less. Absolutely every animal must be removed from the thaw plate before it becomes an adult. However, <emphasis role="underline">do not</emphasis> pick the worms off the plate before they are L3 or L4 animals, as this would risk killing them. Therefore, check the thaw plates twice a day and pick off every single live L3 or L4 animal. Animals will thus be picked over a 2&#x02013;3 day interval. Please note that larvae recovering from a thaw are <emphasis role="underline">much</emphasis> more delicate than <emphasis>C. elegans</emphasis> larvae that have not been frozen, and therefore the warning not to pick L1 or L2 larvae must be taken seriously.</para>
+</sect4>
+<sect4>
+<title>Single-worm liquid cultures</title>
+<para>Make 100 mls of S medium containing freshly grown HB101 at OD<subscript>550</subscript>=2.0. This can be stored refrigerated and used (after swirling to resuspend the bacteria) to set up cultures over a period of several days.</para>
+<para>Single-worm cultures are grown in 50 &#x03BC;l of the S medium/HB101 per well. Individual live thawed L3 or L4 worms are picked one to a well (i.e. &#x0201C;cloned&#x0201D;). The plates are covered with their hard plastic lids, placed inside a moist paper towel-lined Tupperware-style plastic box with a loose-fitting lid to maintain humidity, and incubated at 20&#x00B0;C with no shaking. Label the plates to indicate the date each well was set up with a worm. The cultures should grow about five days before they are ready for PCR testing. By then there should be &#x007E;100 L1-L4 starved progeny in each well and the bacteria should have cleared.</para>
+<para>Note that any L4 or adult animals immediately recovered from the thaw will usually end up being sterile. The animals that are useful will come out of the thaw as L1 or L2 animals and will grow up to be fertile adults.</para>
+</sect4>
+<sect4>
+<title>PCR from cloned worm cultures</title>
+<para>Prepare some single worm lysis buffer with Proteinase K at 100 &#x03BC;g/ml.</para>
+<para>
+<simplelist>
+<member><emphasis role="bold">Single worm lysis buffer</emphasis></member>
+<member>30 mM Tris pH 8</member>
+<member>8 mM EDTA</member>
+<member>100 mM NaCl</member>
+<member>0.7&#x00025; NP40</member>
+<member>0.7&#x00025; Tween 20</member>
+<member>Add proteinase K to 100 &#x03BC;g/ml just before use.</member>
+</simplelist>
+</para>
+<orderedlist numeration="loweralpha">
+<listitem>
+<para>Pipet 20 &#x03BC;l of single-worm lysis buffer into each well of an appropriate number of M&#x03BC;lti microtiter plates. The M&#x03BC;lti plates can be held in tip racks to increase their stability.</para>
+</listitem>
+<listitem>
+<para>Transfer 20 &#x03BC;l of the single-worm cultures into the lysis buffer. Use a 12-channel pipettor, and first pipet up/down in the cultures to make sure the worms are well suspended.</para>
+</listitem>
+<listitem>
+<para>Cover the tops of the lysis plates with Thermalseal film and seal well with a roller. Put the plate at <symbol role="symbolfont">&#x02212;</symbol>80&#x00B0;C for 10 min., which helps crack open the worm cuticle.</para>
+</listitem>
+<listitem>
+<para>Incubate in a hybridization oven at 55&#x00B0;C for 2 hours with rocking. The worms should now be dissolved.</para>
+</listitem>
+<listitem>
+<para>Inactivate the proteinase K by incubating at 95&#x00B0;C for 30 min. in an oven. Store the lysates at <symbol role="symbolfont">&#x02212;</symbol>80&#x00B0;C.</para>
+</listitem>
+<listitem>
+<para>Carry out PCR amplifications in 25 &#x03BC;l reactions, adding the lysates as templates using the Boekel hedgehog. Amplify for just a single round of 35 cycles using a set of two new primers designed to amplify only &#x007E;300 bp from the mutant, and a larger band from the wild type. These amplifications are not very efficient and sometimes do not give a detectable wild-type product.</para>
+</listitem>
+<listitem>
+<para>Some mutants are recovered at &#x003C;1/100 of the thawed animals. Thus, several hundred cultures may need to be analyzed. It is therefore important that great care be taken with the thaws to recover this many animals.</para>
+</listitem>
+<listitem>
+<para>When a positive well is detected, use a P200 pipettor to remove the remaining culture from the well to an NGM plate. Do not throw away any of the cultures until a mutant has been successfully recovered! Clone individual animals from the plate, let them have progeny, and analyze the animals by single-worm duplex PCR (described below) to verify that a deletion mutant has been correctly identified.</para>
+</listitem>
+<listitem>
+<para>Assign an allele number to the mutation and get the strain frozen ASAP.</para>
+</listitem>
+</orderedlist>
+<para><emphasis role="bold">Commentary:</emphasis> Typically deletion-positive worms are detected at frequencies of 1/8-1/100 among the live worms recovered from thawing a positive well.</para>
+</sect4>
+</sect3>
+<?newpage?>
+<sect3>
+<title>Genotyping and backcrossing a deletion mutant</title>
+<para>Animals recovered from the deletion library have been heavily mutagenized and contain many mutations in addition to the deletion of interest. Therefore, it is necessary to extensively backcross the recovered mutant to the wild type (at least 4&#x02013;6 times) to clean up the genetic background. During backcrossing, it is necessary to genotype many animals to determine whether they carry the deletion of interest and whether they are homozygous or heterozygous for the deletion. The backcrossing process is actually the slowest step in the procedure of obtaining a useful mutant. Described here is an efficient and rapid procedure to get through the process.</para>
+<sect4>
+<title>Duplex PCR genotyping of single worms</title>
+<sect5>
+<title>Theory</title>
+<para>In the backcrossing procedure described below, sets of 8&#x02013;16 adult hermaphrodite worms must be genotyped. These animals are placed, one worm per tube, into PCR tubes containing a proteinase K solution, digested to release DNA, and then amplified by PCR using primers specific to the gene of interest. Use &#x0201C;duplex&#x0201D; PCR reactions in which three primers are used to produce two different-sized products that are simultaneously amplified, one that arises only from the wild-type allele, and one that arises only from the deletion allele. Design the primers so that the amplicon from the wild-type allele is only 250&#x02013;400 bp, and the amplicon from the deletion allele is &#x007E;100 bp larger than the wild-type amplicon (<link linkend="figure9">Figure 9</link>). The small size of the amplicons is necessary in order to get adequately efficient amplification from single-worm lysates. The closeness in size of the two amplicons ensures that they compete with each other fairly equally for reagents during amplification. Always make the wild-type amplicon smaller than the mutant amplicon since the smaller amplicon sometimes suppresses amplification of the larger one, and it is absolutely necessary to correctly identify a worm as a mutant homozygote.</para>
+<mediaobject id="figure9" xreflabel="Figure 9">
+<imageobject>
+<imagedata entityref="fig9" width="5.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 9</phrase>
+</textobject> &fig9legend;</mediaobject>
+</sect5>
+<sect5>
+<title>Solutions</title>
+<para>Make a large number of aliquots of the following two solutions in 200 &#x03BC;l PCR tubes (for convenience, the tubes can be stored inside 50 ml Falcon centrifuge tubes):</para>
+<para>
+<simplelist>
+<member><emphasis role="bold">Single-worm lysis buffer</emphasis></member>
+<member>50 mM KCl</member>
+<member>10 mM Tris pH 8.2</member>
+<member>2.5 mM MgCl<subscript>2</subscript></member>
+<member>0.45&#x00025; NP-40</member>
+<member>0.45&#x00025; Tween 20</member>
+<member><emphasis role="underline">0.01&#x00025; gelatin</emphasis></member>
+<member>Make 200 &#x03BC;l aliquots, store at <symbol role="symbolfont">&#x02212;</symbol>20&#x00B0;C.</member>
+</simplelist>
+</para>
+<para>
+<simplelist>
+<member><emphasis role="bold">10 mg/ml proteinase K in water</emphasis></member>
+<member>Make 20 &#x03BC;l aliquots, store at <symbol role="symbolfont">&#x02212;</symbol>20&#x00B0;C.</member>
+</simplelist>
+</para>
+<para>
+<simplelist>
+<member><emphasis role="bold">Duplex PCR premix</emphasis></member>
+<member>500 &#x03BC;l Gibco 10X PCR buffer</member>
+<member>50 &#x03BC;l 20 mM dNTPs</member>
+<member>250 &#x03BC;l 50 mM MgCl<subscript>2</subscript></member>
+<member>200 &#x03BC;l first primer, 10 &#x03BC;M</member>
+<member>200 &#x03BC;l second primer, 10 &#x03BC;M</member>
+<member>200 &#x03BC;l third primer, 10 &#x03BC;M</member>
+<member>3.57 ml dH20</member>
+<member><emphasis role="underline">30 &#x03BC;l Gibco Taq, 5U/&#x03BC;l</emphasis></member>
+<member>Make 220 &#x03BC;l aliquots in screw cap tubes, snap freeze in liquid N2, store at <symbol role="symbolfont">&#x02212;</symbol>80&#x00B0;C. Each aliquot is sufficient to genotype 8 worms.</member>
+</simplelist>
+</para>
+<orderedlist numeration="loweralpha">
+<listitem>
+<para>PCR on single worms is generally carried out in strips of 8 PCR tubes. Just before use, thaw an aliquot of single-worm lysis buffer and an aliquot of proteinase K. Add 1.2 &#x03BC;l of proteinase K to the lysis buffer, mix, and dispense 2.5 &#x03BC;l of the mix into each tube.</para>
+</listitem>
+<listitem>
+<para>Using a worm pick, place the worms to be genotyped each into separate tubes. Do this under the dissecting microscope so that you actually watch each worm float off the pick into the lysis buffer - try not to carry too much bacteria along with the worm, but some is okay. You may need to bend the platinum wire a bit on the worm pick to make it easy to negotiate the worm into the bottom of the PCR tube under the dissecting scope.</para>
+</listitem>
+<listitem>
+<para>Put 2 drops of mineral oil in each tube to prevent evaporation. Oil is necessary even if a heated-lid PCR machine is used.</para>
+</listitem>
+<listitem>
+<para>Lyse the worms in the PCR machine by running the following program: 60&#x00B0;X60&apos;, 95&#x00B0;X15&apos;, 4&#x00B0; hold. The worms are digested at 60&#x00B0;C, and the prtoeinase K is inactivated at 95&#x00B0;C.</para>
+</listitem>
+<listitem>
+<para>Thaw the aliquot(s) of duplex PCR premix. To each PCR tube containing a lysed animal add 25 &#x03BC;l of duplex PCR mix (use a P200 pipettor to pipet the premix under the oil so that the drop of liquid containing the lysed worm mixes with it under the oil).</para>
+</listitem>
+<listitem>
+<para>Carry out PCR using the following program: 94&#x00B0;X30&apos;, (92&#x00B0;X30&apos;, 55&#x00B0;X30&apos;, 72&#x00B0;X30&apos;)X40, 72&#x00B0;X5&apos;; 4&#x00B0; hold.</para>
+</listitem>
+<listitem>
+<para>Analyze on a 1&#x00025; agarose gel to determine the genotype of the animals.</para>
+</listitem>
+</orderedlist>
+</sect5>
+</sect4>
+<sect4>
+<title>Backcrossing strategy</title>
+<para>This strategy applies to autosomal mutations. A modified (slower) scheme is needed for X-linked mutations. Mutations are almost always recovered in heterozygotes. Do not try to homozygose mutations until they have been backcrossed. The mutations are kept heterozygous throughout backcrossing, which saves time.</para>
+<?newpage?>
+<orderedlist numeration="loweralpha">
+<listitem>
+<para>Clone a mutant heterozygote on a plate. Pick six of its L4 progeny to individual plates and mate each with 6&#x02013;12 wild-type males. Two days after the matings were set up, genotype the hermaphrodite mothers (by duplex PCR). Discard any matings in which the hermaphrodite did not carry the mutation of interest.</para>
+</listitem>
+<listitem>
+<para>Pick L4 male cross progeny from a successful mating. Set up several plates, each carrying 6&#x02013;10 of these males and two L4 wild-type hermaphrodites. Move the mating animals to new plates each day for the next two days.</para>
+</listitem>
+<listitem>
+<para>On the second or third days&apos; plates, check that mating was successful (i.e. look for about 50&#x00025; males among the progeny). Clone sixteen L4 hermaphrodites (putative cross progeny, 1/4-1/2 should carry the deletion of interest) to individual plates.</para>
+</listitem>
+<listitem>
+<para>Two days later (after the animals have produced lots of progeny on the plate) pick the mothers off the plates and genotype them by duplex PCR. Discard plates from mothers not carrying the mutation of interest. Animals carrying the mutation have now been backcrossed 2X (actually the autosomes have been backcrossed 2X, and the X chromosome only 1X). To continue backcrossing, go immediately back to step &#x0201C;a&#x0201D; and repeat until sufficient backcrossing (4-6X) has been done.</para>
+</listitem>
+<listitem>
+<para>At the end, let a mutant heterozygote self-fertilize. Clone &#x007E;16 of its progeny to separate plates, let them lay eggs for two days, and genotype to try to identify a mutant homozygote.</para>
+</listitem>
+<listitem>
+<para>Freeze the homozygous mutant strain for long-term storage.</para>
+</listitem>
+</orderedlist>
+</sect4>
+</sect3>
+</sect2>
+<sect2>
+<title>Supplies</title>
+<sect3>
+<title>For mutagenesis</title>
+<para>4,5&apos;-8-trimethylpsoralen (Sigma, T 6137)</para>
+<para>UV Dose meter (International Light Inc., Radiometer/Photometer, IL1400A)</para>
+<para>or, with &#x0201C;UVA&#x0201D; i.e. 360 nm light detector (International Light Inc., Radiometer/Photometer, SEL 033)</para>
+<para>UV illuminator Built by The Southern New England Ultraviolet Company, 203-483-5810. The apparatus has a home-built appearance. It consists of a box with a power supply, 8 UV bulbs (The Southern New England Ultraviolet Company, RPR-3500) below a glass plate on which the sample sits, and 8 more UV bulbs above the glass plate. Only the bulbs below the sample are used. Any apparatus using similar UV bulbs should give equivalent results.</para>
+</sect3>
+<sect3>
+<title>For pipetting</title>
+<para><simplelist>
+<member>12-channel multipipettors</member>
+</simplelist></para>
+<para>USA Scientific brand pipettors:</para>
+<para>5&#x02013;50 &#x03BC;l multipipettor (USA Scientific, 4812-0550)</para>
+<para>50&#x02013;200 &#x03BC;l multipipettor (USA Scientific, 4812-5250)</para>
+<para>Eppendorf brand pipettors:</para>
+<para>0.5&#x02013;10 &#x03BC;l Eppendorf multipipettor (Brinkmann, 022452061)</para>
+<para>10-100 &#x03BC;l Eppendorf multipipettor (Brinkmann, 022452088)</para>
+<para>If you are not experienced with 12-channel pipettors, please note that you must generally use tips made by the same manufacturer that made the pipettor. While this is not necessary for single-channel pipettors, the fit between pipettor and tip must be more precise for 12-channel pipettors in order that they can both seal well when the tips are put on, and also release well when the tips are ejected.</para>
+<para>Reagent reservoirs, sterile (Pierce, 15075)</para>
+<sect4>
+<title>For microtiter cultures of worms</title>
+<para>96-well microtiter dishes (Corning/Costar, C3595) or (BD Biosciences, 353072)</para>
+<para>Microtiter plate brayer (Diversified Biotech, BRAY-4000)</para>
+<para>&#x0201C;Sidewall tough-tags&#x0201D; labels for the sides of microtiter dishes (Diversified Biotech, TT-SWALL)</para>
+<para>100X Penicillin/streptomycin (Invitrogen, 15140-122)</para>
+<para>100X Nystatin suspension 10,000 units/ml (Sigma, N 1638)</para>
+</sect4>
+<sect4>
+<title>For freezing of live worms</title>
+<para>U-bottom 96-well MicroTest III Flexible Assay Plate (BD Biosciences, 353911)</para>
+<para>Film to seal plates of live worm cultures for freezing</para>
+<para>Thermalseal for PCR (Rainin, 96-TR-100)</para>
+<para>Or MicroAmp Clear Adhesive Films (Applied Biosystems, 4306311)</para>
+<para>Styrofoam box for freezing live worms (New England Biolabs, small enzyme shipping containers)</para>
+</sect4>
+<sect4>
+<title>For extracting genomic DNA from pooled DNA preps</title>
+<para>pH 6.7 1:1 phenol:chloroform mix (American Bioanalytical, AB11051)</para>
+</sect4>
+<sect4>
+<title>For storing diluted genomic DNA templates for PCR</title>
+<para>M&#x03BC;TI PCR tubes in trays (VWR, 53550-036)</para>
+</sect4>
+<sect4>
+<title>For PCR</title>
+<para>Thermal cycler (MJ Research, PTC-100HB-96AgV)</para>
+<para>Microtiter format polycarbonate V-Bottom microtiter 96-well PCR plates (USA/Scientific, 2796-3330)</para>
+<para>Microseal A film for PCR (MJ Research, MSA-5001)</para>
+<para>Taq polymerase, 500 Units (Invitrogen, 10342-020)</para>
+<para>Deoxynucleotide triphosphates</para>
+<para>dNTP mixture (dATP, dCTP, dGTP, dTTP), 20 mM each (Amersham Biosciences, 27-2094-02)</para>
+<para>Gel box</para>
+<para>OWL Centipede extra wide minigel system (Owl Scientific, model D3-14)</para>
+<para>(this holds two 50 well combs in 2X microtiter spacing)</para>
+</sect4>
+</sect3>
+<sect3>
+<title>For mapping the deletion sites</title>
+<para>Qiaquick Gel Extraction Kit (Qiagen, 28704)</para>
+<para>Qiaquick PCR Purification Kit (Qiagen, 28104)</para>
+</sect3>
+<?newpage?>
+<sect3>
+<title>Acknowledgments</title>
+<para>David Shechner and Keith Kazmer provided help constructing libraries and also helped optimize the library construction protocols. This work was funded by NIH grant NS36818.</para>
+</sect3>
+</sect2>
+</sect1>
+<sect1>
+<title>References</title>
+<para/>
+&revgen_Refs;
+</sect1>
+</article>

@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY fig1 SYSTEM 'Compfig1.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'Compfig1leg.xml'>
+<!ENTITY fig2 SYSTEM 'Compfig2.jpg' NDATA JPG>
+<!ENTITY fig2legend SYSTEM 'Compfig2leg.xml'>
+<!ENTITY fig3 SYSTEM 'Compfig3.jpg' NDATA JPG>
+<!ENTITY fig3legend SYSTEM 'Compfig3leg.xml'>
+<!ENTITY fig4 SYSTEM 'Compfig4.jpg' NDATA JPG>
+<!ENTITY fig4legend SYSTEM 'Compfig4leg.xml'>
+<!ENTITY fig5 SYSTEM 'Compfig5.jpg' NDATA JPG>
+<!ENTITY fig5legend SYSTEM 'Compfig5leg.xml'>
+<!ENTITY fig6 SYSTEM 'Compfig6.jpg' NDATA JPG>
+<!ENTITY fig6legend SYSTEM 'Compfig6leg.xml'>
+<!ENTITY fig7 SYSTEM 'Compfig7.jpg' NDATA JPG>
+<!ENTITY fig7legend SYSTEM 'Compfig7leg.xml'>
+<!ENTITY fig8 SYSTEM 'Compfig8.jpg' NDATA JPG>
+<!ENTITY fig8legend SYSTEM 'Compfig8leg.xml'>
+<!ENTITY Comp_Refs SYSTEM 'Comprefs.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="Comp_ArticleID">
+    <articleinfo>
+        <!--see DocBook's authorgroup element -->
+        <!--change in PDF style sheet
+                <xsl:attribute-set name="normal.para.spacing">
+              <xsl:attribute name="space-before.optimum">0.8em</xsl:attribute>
+              <xsl:attribute name="space-before.minimum">0.8em</xsl:attribute>
+              <xsl:attribute name="space-before.maximum">1.0em</xsl:attribute>
+              <xsl:attribute name="text-indent">24pt</xsl:attribute> 
+              </xsl:attribute-set> -->
+        <title>X-Chromosome dosage compensation<footnote><para>Edited by Lisa R. Girard. Last revised June 24, 2005. Published June 25, 2005. This chapter should be cited as: Meyer, B. J. X-Chromosome dosage compensation (June 25, 2005), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.8.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2005 Barbara J. Meyer. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+</footnote></title>
+        <author>
+            <firstname>Barbara J.</firstname>
+            <surname>Meyer<remark><footnote>
+                        <para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:bjmeyer@berkeley.edu">bjmeyer@berkeley.edu</ulink></para></footnote></remark></surname>
+            <affiliation>
+                <address>Howard Hughes Medical Institute and Department of Molecular and Cell Biology, University of California, Berkeley, Berkeley, CA 94720-3204 USA</address>
+            </affiliation>
+        </author>
+    </articleinfo>
+    <abstract>
+        <title><emphasis role="bold">Abstract</emphasis></title>
+        <para><emphasis role="bold">In mammals, flies, and worms, sex is determined by distinctive regulatory mechanisms that cause males (XO or XY) and females (XX) to differ in their dose of X chromosomes. In each species, an essential X chromosome-wide process called dosage compensation ensures that somatic cells of either sex express equal levels of X-linked gene products. The strategies used to achieve dosage compensation are diverse, but in all cases, specialized complexes are targeted specifically to the X chromosome(s) of only one sex to regulate transcript levels. In</emphasis> <emphasis><emphasis role="bold">C. elegans,</emphasis></emphasis> <emphasis role="bold">this sex-specific targeting of the dosage compensation complex (DCC) is controlled by the same developmental signal that establishes sex, the ratio of X chromosomes to sets of autosomes (X:A signal). Molecular components of this chromosome counting process have been defined. Following a common step of regulation, sex determination and dosage compensation are controlled by distinct genetic pathways.</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">dosage compensation is implemented by a protein complex that binds both X chromosomes of hermaphrodites to reduce transcript levels by one-half. The dosage compensation complex resembles the conserved 13S condensin complex required for both mitotic and meiotic chromosome resolution and condensation, implying the recruitment of ancient proteins to the new task of regulating gene expression. Within each</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">somatic cell, one of the DCC components also participates in the separate mitotic/meiotic condensin complex. Other DCC components play pivotal roles in regulating the number and distribution of crossovers during meiosis. The strategy by which</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">X chromosomes attract the condensin-like DCC is known. Small, well-dispersed X-recognition elements act as entry sites to recruit the dosage compensation complex and to nucleate spreading of the complex to X regions that lack recruitment sites. In this manner, a repressed chromatin state is spread in</emphasis> <emphasis><emphasis role="bold">cis</emphasis></emphasis> <emphasis role="bold">over short or long distances, thus establishing the global, epigenetic regulation of X chromosomes that is maintained throughout the lifetime of hermaphrodites.</emphasis></para>
+	</abstract>
+    <sect1>
+        <title>Introduction</title>
+        <para>In numerous organisms, sex is determined by a chromosome counting mechanism that
+            distinguishes one sex chromosome from two. In flies and worms, XX embryos become females
+            (or hermaphrodites), while XO or XY embryos become males (<link linkend="bib3">Bridges, 1916</link>; <link linkend="bib29">Madl and Herman, 1979</link><!-- PMID 295035 -->; <link linkend="bib37">Nigon, 1951</link>). Sex can also be specified by the presence
+            of a particular sex chromosome, such as the Y chromosome of mammals: XY embryos are
+            males, and XX embryos females (<link linkend="bib15">Gubbay et al., 1990</link><!-- PMID 2374589 -->; <link linkend="bib24">Koopman et al., 1991</link><!-- PMID 2030730 -->; <link linkend="bib45">Sinclair et al., 1990</link><!-- PMID 1695712 -->). These sex-determining mechanisms
+            cause the two sexes to differ in their dose of X chromosomes, yet both sexes require
+            equivalent levels of X-chromosome gene products. A chromosome-wide regulatory process
+            called dosage compensation neutralizes the difference in X-linked gene dose between
+            sexes by equalizing X-chromosome transcript levels.</para>
+        <para>The strategies for dosage compensation are diverse in different organisms (<xref linkend="figure1"/>), but in
+            all known cases, specialized dosage compensation complexes are targeted exclusively to
+            the X chromosome(s) of one sex to modulate gene expression in only that sex. This
+            selective recruitment of the dosage compensation machinery establishes the epigenetic
+            regulation of X chromosomes that is maintained throughout the lifetime of the animal.
+            Female mammals randomly inactivate one X chromosome (<link linkend="bib40">Plath et al., 2002</link><!-- PMID 12429693 -->).
+            Male flies double the transcription rate of their single X chromosome (<link linkend="bib30">Meller and Kuroda, 2002</link><!-- PMID 11931222 -->). Hermaphrodite worms keep both X chromosomes active, but
+            repress transcript levels from each X chromosome by half (<link linkend="bib32">Meyer and Casson, 1986</link><!-- PMID 3779843 -->). In flies and mammals, this gene regulation utilizes non-coding RNAs that coat
+            the regulated X (<link linkend="bib30">Meller and Kuroda, 2002</link><!-- PMID 11931222 -->; <link linkend="bib40">Plath et al., 2002</link><!-- PMID 12429693 -->), and the chromosome-wide regulation is accompanied by the sex-specific
+            modification of histones on the dosage compensated X chromosomes (<link linkend="bib2">Bone et al., 1994</link><!-- PMID 8288132 -->; <link linkend="bib17">Heard et al., 2001</link><!-- PMID 11747809 -->; <link linkend="bib18">Hilfiker et al., 1997</link><!-- PMID 9155031 -->;
+            <link linkend="bib31">Mermoud et al., 2002</link><!-- PMID 11839280 -->). In all three species, dosage compensation is
+            essential, and failure to accomplish this global regulation causes either male- or
+            female-specific lethality.</para>
+<literallayout></literallayout>
+        <mediaobject id="figure1" xreflabel="Figure 1">
+            <imageobject>
+                <imagedata width="5in" entityref="fig1" align="center"/>
+            </imageobject>
+            <textobject>
+                <phrase>Diverse strategies for dosage compensation Figure 1</phrase>
+            </textobject> &fig1legend; </mediaobject>
+        <para>Fundamental questions are relevant to all forms of dosage compensation. First, what is
+            the composition of the machinery that implements dosage compensation? Second, what are
+            the sex-specific factors that activate the dosage compensation machinery in only one
+            sex? Third, what are the <emphasis>cis</emphasis>-acting recruitment sites that target X
+            chromosomes for regulation by the dosage compensation complex? Fourth, how is gene
+            expression coordinately controlled along an entire X chromosome? Fifth, what is the
+            molecular mechanism for fine-tuning X-linked gene expression by only two-fold? These
+            basic questions have been addressed in <emphasis>C. elegans</emphasis>, using integrated
+            genetic, biochemical, and cell biological approaches to dissect this regulatory process.</para>
+    </sect1>
+<?newpage?>
+    <sect1>
+        <title>Genes encoding the dosage compensation machinery</title>
+        <para>In <emphasis>C. elegans</emphasis>, the processes of dosage compensation and sex
+            determination are coordinately regulated by a group of genes that respond to the primary
+            sex-determination signal. Following this common step of regulation, sex determination
+            and dosage compensation are separately controlled by distinct genetic pathways.</para>
+        <para>The discovery of sex-specific lethal mutations that preferentially killed XX
+            hermaphrodites was pivotal for the identification of dosage compensation genes (<link linkend="bib20">Hodgkin, 1983</link>; <link linkend="bib42">Plenefisch et al., 1989</link><!-- PMID 2917714 -->). Mutations in eight
+            genes-<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sdc-1" role="_blank">sdc-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sdc-2" role="_blank">sdc-2</ulink></emphasis>,
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sdc-3" role="_blank">sdc-3</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=dpy-21" role="_blank">dpy-21</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=dpy-26" role="_blank">dpy-26</ulink></emphasis>,
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=dpy-27" role="_blank">dpy-27</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=dpy-28" role="_blank">dpy-28</ulink></emphasis>, and
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=dpy-30" role="_blank">dpy-30</ulink></emphasis> reduced the viability of XX but not XO animals. All
+            mutations disrupted dosage compensation, causing a two-fold elevation in X-linked
+            transcript levels in XX but not XO animals (<link linkend="bib13">DeLong et al., 1993</link><!-- PMID 8462848 -->; <link linkend="bib22">Hsu and Meyer, 1994</link><!-- PMID 7982580 -->; <link linkend="bib32">Meyer and Casson, 1986</link><!-- PMID 3779843 -->; <link linkend="bib38">Nusbaum and Meyer, 1989</link><!-- PMID 2759421 -->; <link linkend="bib48">Villeneuve and Meyer, 1987</link><!-- PMID 3791412 -->). XX animals that escape lethality have a dumpy (Dpy) phenotype caused by the over expression of X-linked genes. The specific X-linked genes that contribute to this phenotype have not been determined. XO mutants appear wild type, except for <ulink url="http://www.wormbase.org/db/gene/gene?name=dpy-30" role="_blank">dpy-30</ulink> XO animals, which are developmentally delayed and have numerous morphological and behavioral abnormalities. The <emphasis>sdc</emphasis> mutations disrupt sex determination as well as X-chromosome gene regulation, causing the rare, viable XX Dpy mutant embryos to develop as males. The <emphasis>sdc</emphasis> genes set the hermaphrodite mode of both sex determination and dosage compensation, acting early in the genetic regulatory hierarchy prior to the divergence of the sex determination and dosage compensation genes into two separate pathways (<link linkend="bib13">DeLong et al., 1993</link><!-- PMID 8462848 -->; <link linkend="bib38">Nusbaum and Meyer, 1989</link><!-- PMID 2759421 -->; <link linkend="bib48">Villeneuve and Meyer, 1987</link><!-- PMID 3791412 -->). The dosage compensation pathway includes the <emphasis>dpy</emphasis> genes listed above.</para>
+	    
+        <para>The hermaphrodite-specific elevation in X-linked transcript levels caused by all
+            dosage compensation mutations was consistent with either of two mechanisms for dosage
+            compensation: random inactivation of a single hermaphrodite X chromosome or repression
+            of both hermaphrodite X chromosomes by half. X inactivation was unlikely since neither
+            of the two genetic phenomena it would cause had been observed: first, hermaphrodites are
+            not mosaic in phenotype for cell-autonomous X-linked markers; second, most X-linked
+            loss-of-function mutations fail to behave as dominant alleles with variable penetrance
+            and expressivity. The molecular architecture of the dosage compensation proteins and
+            their localization to the two hermaphrodite X chromosomes (see below) confirmed that
+            dosage compensation involves the repression of both X chromosomes by half.</para>
+    </sect1>
+    <sect1>
+        <title>Dosage compensation proteins assemble onto hermaphrodite X chromosomes to regulate
+            gene expression and also function separately in chromosome segregation</title>
+        <para>Molecular analysis of the dosage compensation genes showed the similarity of <ulink url="http://www.wormbase.org/db/seq/protein?name=DPY-26;class=protein" role="_blank">DPY-26</ulink>,
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=DPY-27;class=protein" role="_blank">DPY-27</ulink>, and <ulink url="http://www.wormbase.org/db/seq/protein?name=DPY-28;class=protein" role="_blank">DPY-28</ulink> proteins to components of 13S condensin, a complex essential for the
+            resolution and compaction of mitotic and meiotic chromosomes from yeast to man (<xref linkend="figure2"/>A; <link linkend="bib6">Chan et al., 2004</link><!-- PMID 15557118 -->; <link linkend="bib8">Chuang et al., 1994</link><!-- PMID 7954812 -->; <link linkend="bib19">Hirano, 2002</link><!-- PMID 11850403 -->; <link linkend="bib27">Lieb et al., 1996</link><!-- PMID 8939869 -->; <link linkend="bib47">Swedlow and Hirano, 2003</link><!-- PMID 12667441 -->; C. Tsai and B. Meyer, in preparation). The prototypical
+            condensin complex contains at least five subunits, including a pair of SMC (Structural
+            Maintenance of Chromosomes) proteins (SMC2 and SMC4) and three non-SMC ancillary
+            factors, which belong to the Chromosome-Associated Polypeptide CAP-D2, CAP-G, and
+            CAP-H/Barren families (<link linkend="bib19">Hirano, 2002</link><!-- PMID 11850403 -->; <link linkend="bib47">Swedlow and Hirano, 2003</link><!-- PMID 12667441 -->). <ulink url="http://www.wormbase.org/db/seq/protein?name=DPY-26;class=protein" role="_blank">DPY-26</ulink> resembles CAP-H, <ulink url="http://www.wormbase.org/db/seq/protein?name=DPY-28;class=protein" role="_blank">DPY-28</ulink> resembles CAP-D2, and DPY-27 resembles SMC4.
+            These three dosage compensation proteins form part of a complex that associates with
+            both X chromosomes of hermaphrodites (<xref linkend="figure2"/>A-B).</para>
+ <mediaobject id="figure2" xreflabel="Figure 2">
+            <imageobject>
+                <imagedata width="5.2in" entityref="fig2" align="center"/>
+            </imageobject>
+            <textobject>
+                <phrase>Two condensin complexes in <emphasis>C. elegans </emphasis> Figure 2</phrase>
+            </textobject> &fig2legend; </mediaobject>
+
+            <para>Biochemical analysis of the dosage compensation complex identified an additional component, <ulink url="http://www.wormbase.org/db/seq/protein?name=MIX-1;class=protein" role="_blank">MIX-1</ulink>, the <emphasis>C. elegans</emphasis> homolog of SMC2 (<link linkend="bib27">Lieb et al., 1996</link><!-- PMID 8939869 -->).
+            Mutations in <emphasis>mix-1</emphasis> disrupt not only dosage compensation, but also
+            mitotic and meiotic chromosome resolution, condensation, and segregation, causing the
+            death of both XX and XO animals (<link linkend="bib6">Chan et al., 2004</link><!-- PMID 15557118 -->; <link linkend="bib16">Hagstrom et al., 2002</link><!-- PMID 11914278 -->; <link linkend="bib27">Lieb et al., 1996</link><!-- PMID 8939869 -->). The role of <ulink url="http://www.wormbase.org/db/seq/protein?name=MIX-1;class=protein" role="_blank">MIX-1</ulink> in these vital
+            cellular processes precluded its identification in genetic screens that exploited the
+            hermaphrodite-specific action of dosage compensation genes.</para>
+<?newpage?>
+        <para><ulink url="http://www.wormbase.org/db/seq/protein?name=MIX-1;class=protein" role="_blank">MIX-1</ulink> binds to X chromosomes of hermaphrodites when it associates with the dosage
+            compensation protein <ulink url="http://www.wormbase.org/db/seq/protein?name=DPY-27;class=protein" role="_blank">DPY-27</ulink>. <ulink url="http://www.wormbase.org/db/seq/protein?name=MIX-1;class=protein" role="_blank">MIX-1</ulink> co-localizes with the centromeres of mitotic
+            chromosomes in both sexes (<xref linkend="figure2"/>C) or with the meiotic chromosomes
+            in diplotene/diakinesis (<xref linkend="figure2"/>E) when it associates with the
+            mitotic/meiotic-specific SMC4 protein called SMC-4 (<link linkend="bib6">Chan et al., 2004</link><!-- PMID 15557118 -->;
+            <link linkend="bib16">Hagstrom et al., 2002</link><!-- PMID 11914278 -->; <link linkend="bib27">Lieb et al., 1996</link><!-- PMID 8939869 -->). That is, <ulink url="http://www.wormbase.org/db/seq/protein?name=MIX-1;class=protein" role="_blank">MIX-1</ulink>
+            partitions its roles in two separate biological process, gene expression and chromosome
+            segregation, through its participation in two separate condensin-like complexes, a
+            dosage compensation-specific complex and a mitotic/meiotic complex (<xref
+            linkend="figure2"/>A) (<link linkend="bib6">Chan et al., 2004</link><!-- PMID 15557118 -->; <link linkend="bib16">Hagstrom et al., 2002</link><!-- PMID 11914278 -->). Together, these results suggest that the <emphasis>C. elegans</emphasis>
+            dosage compensation process evolved by recruiting components used in other chromosome
+            behaviors to the new task of fine-tuning gene expression. The similarity of the dosage
+            compensation complex to condensin and the participation of <ulink url="http://www.wormbase.org/db/seq/protein?name=MIX-1;class=protein" role="_blank">MIX-1</ulink> in both complexes
+            suggest a common mechanism for repressing X-chromosome gene expression during dosage
+            compensation and for establishing chromosome resolution and higher order chromosome
+            structure during mitotic and meiotic chromosome segregation.</para>
+        <para>Other components of the dosage compensation complex have also retained their roles in conserved cellular processes. <ulink url="http://www.wormbase.org/db/seq/protein?name=DPY-28;class=protein" role="_blank">DPY-28</ulink> figures prominently in meiosis, where it regulates
+            the number and distribution of crossovers between homologous chromosomes (C. Tsai and B. Meyer, in preparation). <ulink url="http://www.wormbase.org/db/seq/protein?name=DPY-30;class=protein" role="_blank">DPY-30</ulink> not only binds X chromosomes to down regulate gene
+            expression, it associates with the COMPASS complex to methylate histones (C. Hassig and
+            B. Meyer, unpublished). <ulink url="http://www.wormbase.org/db/seq/protein?name=DPY-30;class=protein" role="_blank">DPY-30</ulink> is the <emphasis>C. elegans</emphasis> homolog of the
+                <emphasis>S. cerevisiae </emphasis> COMPASS protein Sdc1p (<link linkend="bib22">Hsu and Meyer, 1994</link><!-- PMID 7982580 -->; <link linkend="bib35">Nagy et al., 2002</link><!-- PMID 11752412 -->).</para>
+                   
+                       
+        <para>Recruitment of the DPY and MIX proteins to X chromosomes requires the activities of
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-2;class=protein" role="_blank">SDC-2</ulink> (a novel protein), <ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-3;class=protein" role="_blank">SDC-3</ulink> (a protein with two zinc fingers), and <ulink url="http://www.wormbase.org/db/seq/protein?name=DPY-30;class=protein" role="_blank">DPY-30</ulink> (<link linkend="bib9">Chuang et al., 1996</link><!-- PMID 8939870 -->; <link linkend="bib11">Davis and Meyer, 1997</link><!-- PMID 9056777 -->; <link linkend="bib23">Klein and Meyer, 1993</link><!-- PMID 8431944 -->; <link linkend="bib26">Lieb et al., 1998</link><!-- PMID 9458050 -->; <link linkend="bib27">Lieb et al., 1996</link><!-- PMID 8939869 -->; <link linkend="bib49">Yonker and Meyer, 2003</link><!-- PMID 14660541 -->). These three proteins recruit all other dosage
+            compensation proteins to X, including DPY-21 (a novel protein) and <ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-1;class=protein" role="_blank">SDC-1</ulink> (a protein with
+            seven zinc fingers), through their own association with X (<link linkend="bib6">Chu et al., 2002</link><!-- PMID 11937488 -->; <link linkend="bib11">Davis and Meyer, 1997</link><!-- PMID 9056777 -->; <link linkend="bib12">Dawes et al., 1999</link><!-- PMID 10364546 -->; <link linkend="bib49">Yonker and Meyer, 2003</link><!-- PMID 14660541 -->). <ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-3;class=protein" role="_blank">SDC-3</ulink> requires both <ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-2;class=protein" role="_blank">SDC-2</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=DPY-30;class=protein" role="_blank">DPY-30</ulink> for its
+            localization to X (<link linkend="bib11">Davis and Meyer, 1997</link><!-- PMID 9056777 -->), and <ulink url="http://www.wormbase.org/db/seq/protein?name=DPY-30;class=protein" role="_blank">DPY-30</ulink> requires both <ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-2;class=protein" role="_blank">SDC-2</ulink>
+            and <ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-3;class=protein" role="_blank">SDC-3</ulink> to bind X (C. Hassig and B. Meyer, unpublished). <ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-2;class=protein" role="_blank">SDC-2</ulink> is unique in that it
+            can localize to X independent ly from all other dosage compensation proteins, suggesting
+            that <ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-2;class=protein" role="_blank">SDC-2</ulink> is pivotal for X chromosome recognition and confers chromosome specificity to
+            dosage compensation (<link linkend="bib12">Dawes et al., 1999</link><!-- PMID 10364546 -->). Once the dosage compensation
+            machinery assembles on X chromosomes, it appears to remain localized to X throughout the
+            entire cell cycle, including mitosis (<xref linkend="figure2"/>D; <link linkend="bib26">Lieb et al., 1998</link><!-- PMID 9458050 -->).</para>
+    </sect1>
+    <sect1>
+        <title>Sex-specific targeting of the dosage compensation complex to hermaphrodite X chromosomes</title>
+        <para><ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-2;class=protein" role="_blank">SDC-2</ulink> not only confers chromosome-specificity to dosage compensation, it also confers
+            hermaphrodite-specificity. All properties of <ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-2;class=protein" role="_blank">SDC-2</ulink> are consistent with its role as the
+            sex-specific switch that activates dosage compensation in hermaphrodites (<link linkend="bib12">Dawes et al., 1999</link><!-- PMID 10364546 -->). All other dosage compensation proteins are supplied maternally and
+            are diffusely distributed throughout the nuclei of very young embryos (<symbol
+            role="symbolfont">&#x003C;</symbol>30 cells) in both sexes and only later become
+            localized to X chromosomes of XX but not XO animals. <ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-2;class=protein" role="_blank">SDC-2</ulink> differs in four important
+            ways. First, <ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-2;class=protein" role="_blank">SDC-2</ulink> is not maternally contributed and not expressed in very young
+            embryos. Its initial accumulation occurs around the 40-cell stage, the stage in which
+            the dosage compensation machinery assembles on X. Second, <ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-2;class=protein" role="_blank">SDC-2</ulink> localizes to
+            hermaphrodite X chromosomes from the onset of its accumulation. Third, <ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-2;class=protein" role="_blank">SDC-2</ulink> is not
+            expressed in wild-type XO embryos, indicating that <ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-2;class=protein" role="_blank">SDC-2</ulink>, unlike other dosage
+            compensation proteins, is sex-specifically regulated. <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sdc-2" role="_blank">sdc-2</ulink></emphasis> is
+            repressed in males by the male-specific gene <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=xol-1" role="_blank">xol-1</ulink></emphasis>, the master
+            sex-determination switch gene and direct target of the primary sex-determination signal
+                (<xref linkend="figure3"/>; <link linkend="bib34">Miller et al., 1988</link><!-- PMID 3167975 -->). When
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=xol-1" role="_blank">xol-1</ulink></emphasis> is active (in XO embryos), male development ensues; when
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=xol-1" role="_blank">xol-1</ulink></emphasis> is inactive (in XX embryos) hermaphrodite development ensues,
+            including the activation of dosage compensation (<link linkend="bib44">Rhind et al., 1995</link><!-- PMID 7813020 -->).
+            Finally, ectopic expression of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sdc-2" role="_blank">sdc-2</ulink></emphasis> in XO animals triggers
+            assembly of the dosage compensation complex on the single X, causing death. Thus, <ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-2;class=protein" role="_blank">SDC-2</ulink>
+            is the hermaphrodite-specific switch that is both necessary and sufficient to activate
+            dosage compensation.</para>
+        <mediaobject id="figure3" xreflabel="Figure 3">
+            <imageobject>
+                <imagedata width="4.3in" entityref="fig3" align="center"/>
+            </imageobject>
+            <textobject>
+                <phrase>Genetic control of sex determination and dosage compensation in <emphasis>C.
+                        elegans </emphasis> Figure 3</phrase>
+            </textobject> &fig3legend; </mediaobject>
+        <para>The mechanism by which <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=xol-1" role="_blank">xol-1</ulink></emphasis> controls <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sdc-2" role="_blank">sdc-2</ulink></emphasis>
+            remains a mystery. Whether it acts directly or indirectly is also not known.
+            Unexpectedly, the crystal structure of <ulink url="http://www.wormbase.org/db/seq/protein?name=XOL-1;class=protein" role="_blank">XOL-1</ulink> revealed it to be a GHMP kinase family
+            member, despite having sequence identity of less than 10% (<link linkend="bib28">Luz et al., 2003</link><!-- PMID 12672694 -->). GHMP kinases are small molecule kinases such as galactokinase and homoserine
+            kinase. <ulink url="http://www.wormbase.org/db/seq/protein?name=XOL-1;class=protein" role="_blank">XOL-1</ulink> does not appear to bind ATP, suggesting that it may not
+            have the enzymatic activity of a kinase. However, clues to <ulink url="http://www.wormbase.org/db/seq/protein?name=XOL-1;class=protein" role="_blank">XOL-1</ulink> function come from the
+            identity of GHMP kinase family members as regulators of gene expression. <emphasis>S.
+            cerevisiae</emphasis> GAL3p, a protein that is structurally similar to galactokinase and
+            can be converted to a galactokinase by the substitution of two amino acids, is a
+            galactose- and ATP-dependent transcriptional inducer of <emphasis>GAL</emphasis> genes
+            (<link linkend="bib41">Platt et al., 2000</link><!--  PMID 10737789 -->). Moreover, <emphasis>GAL1</emphasis> of
+                <emphasis>Kluyveromyces lactis</emphasis> is a bifunctional protein that acts as
+            both a galactokinase and a transcriptional inducer of <emphasis>GAL</emphasis> genes
+            (<link linkend="bib33">Meyer et al., 1991</link><!-- PMID 1922058 -->). <ulink url="http://www.wormbase.org/db/seq/protein?name=XOL-1;class=protein" role="_blank">XOL-1</ulink> might also act with a small effector molecule
+            to repress transcription of a downstream target gene such as <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sdc-2" role="_blank">sdc-2</ulink></emphasis>.</para>
+    </sect1>
+    <sect1>
+        <title>The X:A signal controls dosage compensation by regulating <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=xol-1" role="_blank">xol-1</ulink></emphasis>
+        </title>
+        <para>
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=xol-1" role="_blank">xol-1</ulink></emphasis>, in turn, is regulated by the primary sex-determination
+            signal, the X:A signal, the ratio of X chromosomes to sets of autosomes (the ploidy; (<xref linkend="figure3"/>; <link linkend="bib29">Madl and Herman, 1979</link><!-- PMID 295035 -->; <link linkend="bib34">Miller et al., 1988</link><!-- PMID 3167975 -->; <link linkend="bib37">Nigon, 1951</link>; <link linkend="bib44">Rhind et al., 1995</link><!-- PMID 7813020 -->). The two-fold
+            difference in X-chromosome dose between males and hermaphrodites is translated into the
+            ON/OFF state of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=xol-1" role="_blank">xol-1</ulink></emphasis>. A set of X-linked genes called X Signal
+            Elements (XSEs) communicate X-chromosome dose by repressing <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=xol-1" role="_blank">xol-1</ulink></emphasis>
+            in a dose-dependent manner. These XSEs include the nuclear receptor <ulink url="http://www.wormbase.org/db/seq/protein?name=SEX-1;class=protein" role="_blank">SEX-1</ulink> and the RNA
+            binding protein <ulink url="http://www.wormbase.org/db/seq/protein?name=FOX-1;class=protein" role="_blank">FOX-1</ulink> (<link linkend="bib1">Akerib and Meyer, 1994</link><!-- PMID 7896094 -->; <link linkend="bib4">Carmi et al., 1998</link><!-- PMID 9823896 -->; <link linkend="bib5">Carmi and Meyer, 1999</link><!-- PMID 10388819 -->; <link linkend="bib21">Hodgkin et al., 1994</link><!-- PMID 7821230 -->;
+            <link linkend="bib36">Nicoll et al., 1997</link><!-- PMID 9217163 -->; <link linkend="bib46">Skipper et al., 1999</link><!-- PMID 9927456 -->). XSEs act
+            cumulatively to inhibit <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=xol-1" role="_blank">xol-1</ulink></emphasis> by two different mechanisms,
+            transcriptional repression and obstruction of proper pre-mRNA splicing.</para>
+        <para>Recent experiments showed the autosomal component of the X:A signal to include a set
+            of dose-sensitive genes on autosomes called Autosomal-signal elements (ASE) that
+            communicate the poidy. <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=xol-1" role="_blank">xol-1</ulink></emphasis> is activated by this set of
+            dose-sensitive ASEs, which include the T-box protein <ulink url="http://www.wormbase.org/db/seq/protein?name=SEA-1;class=protein" role="_blank">SEA-1</ulink> (<link linkend="bib43">Powell et al., 2005</link>) and the zinc finger protein
+            SEA-2 (P. Nix and B. Meyer, unpublished). In XX animals, the double dose of
+            XSEs opposes the double dose of ASEs, causing <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=xol-1" role="_blank">xol-1</ulink></emphasis> to be
+            repressed. The mechanism by which this process occurs is not yet known. In XO animals,
+            the single dose of XSEs cannot oppose the double dose of ASEs, allowing
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=xol-1" role="_blank">xol-1</ulink></emphasis> to be active (<xref linkend="figure3"/>).</para>
+    </sect1>
+	<sect1>
+        <title>Recruitment of the dosage compensation complex for gene-specific versus
+            chromosome-wide repression</title>
+        <para>Not only does <ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-2;class=protein" role="_blank">SDC-2</ulink> activate dosage compensation, it also induces hermaphrodite sexual
+            differentiation in concert with <ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-1;class=protein" role="_blank">SDC-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-3;class=protein" role="_blank">SDC-3</ulink> (<link linkend="bib6">Chu et al., 2002</link><!-- PMID 11937488 -->; <link linkend="bib12">Dawes et al., 1999</link><!-- PMID 10364546 -->). Proof that <ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-2;class=protein" role="_blank">SDC-2</ulink> acts as the pivotal sex-specific factor
+            to initiate the hermaphrodite program of sexual development came in part from the
+            observation that overexpression of <ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-2;class=protein" role="_blank">SDC-2</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-1;class=protein" role="_blank">SDC-1</ulink> in XO animals, made viable by a
+            dosage compensation mutation, caused XO animals to develop as hermaphrodites. <ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-2;class=protein" role="_blank">SDC-2</ulink>
+            activates hermaphrodite sexual development by binding directly to regulatory regions of
+            the male sex-determination gene <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=her-1" role="_blank">her-1</ulink></emphasis>, repressing its transcription
+            20-fold, thereby directing the sex determination pathway to the hermaphrodite mode
+            (<link linkend="bib12">Dawes et al., 1999</link><!-- PMID 10364546 -->). <ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-2;class=protein" role="_blank">SDC-2</ulink> thus acts both as a strong gene-specific
+            repressor and a weaker chromosome-wide repressor. Unexpectedly, <ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-2;class=protein" role="_blank">SDC-2</ulink>, together with
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-1;class=protein" role="_blank">SDC-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-3;class=protein" role="_blank">SDC-3</ulink>, recruits other dosage compensation components to
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=her-1" role="_blank">her-1</ulink></emphasis>, directing this chromosome repression machinery to silence an
+            individual, autosomal gene (<link linkend="bib6">Chu et al., 2002</link><!-- PMID 11937488 -->).</para>
+        <para>Functional dissection of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=her-1" role="_blank">her-1</ulink> in vivo</emphasis> revealed three DNA
+            recognition elements required for SDC binding, recruitment of the DCC, and
+            transcriptional repression (<link linkend="bib6">Chu et al., 2002</link><!-- PMID 11937488 -->; <link linkend="bib25">Li et al., 1999</link><!-- PMID 10224257 -->). These <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=her-1" role="_blank">her-1</ulink></emphasis> elements differed in location (promoter and
+            2<superscript>nd</superscript> intron), sequence, and strength of repression. Two
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=her-1" role="_blank">her-1</ulink></emphasis> binding sites share a 15-nucleotide repeat essential for
+            repression, but the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=her-1" role="_blank">her-1</ulink></emphasis> sites bear no obvious resemblance to any
+            sequences on X, leading to the speculation that the chromosome-wide repression complex
+            achieves different degrees of repression in part by associating with different DNA
+            sequences. These results also imply that the dosage compensation complex regulates
+            transcription along X chromosomes using diverse DNA recognition elements.</para>
+        <para>Further analysis revealed important molecular differences in the composition and
+            targeting of the repression complex to <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=her-1" role="_blank">her-1</ulink></emphasis> versus X (<link linkend="bib49">Yonker and Meyer, 2003</link><!-- PMID 14660541 -->). The dosage compensation protein <ulink url="http://www.wormbase.org/db/seq/protein?name=DPY-21;class=protein" role="_blank">DPY-21</ulink>, a novel protein,
+            localizes to X but not to <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=her-1" role="_blank">her-1</ulink></emphasis>. Furthermore, within the complex,
+            different proteins play the lead role in recognizing DNA targets. <ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-2;class=protein" role="_blank">SDC-2</ulink> recognizes
+            X-chromosome targets, while <ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-3;class=protein" role="_blank">SDC-3</ulink> recognizes <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=her-1" role="_blank">her-1</ulink></emphasis> targets. These
+            results begin to explain how closely related complexes can achieve uniformly weak
+            repression of many genes in one context and strong repression of a specific gene in another.</para>
+    </sect1>
+    <sect1>
+        <title>Recruitment and spreading of the dosage compensation complex along hermaphrodite X chromosomes</title>
+        <para>To define <emphasis>cis</emphasis>-acting X-chromosome sites that recruit the dosage
+            compensation complex, a chromosome-wide search was conducted for regions of X sufficient
+            to recruit the complex when detached from X (<link linkend="bib10">Csankovszki et al., 2004</link><!-- PMID 14976312 -->).
+            Regions were analyzed in 32-ploid intestinal cell nuclei of XX hermaphrodite stains
+            carrying either free or autosome-attached X-chromosome duplications (<xref
+            linkend="figure4"/>). Provided that <emphasis>C. elegans</emphasis> X chromosomes
+            contained discrete X-recognition elements (<emphasis>rex</emphasis> sites) that recruit
+            the complex, four possibilities existed for how the complex might be targeted to X
+                (<xref linkend="figure5"/>). First, a single site on X could recruit the complex and
+            nucleate long-range spreading of the dosage compensation complex across the entire
+            chromosome. Second, a limited number of recognition sites could recruit the complex, and
+            some or all sites could nucleate short-range spreading. Third, a limited number of
+            recognition sites could recruit the complex but the complex would not spread. It would
+            only occupy sites that autonomously recruited it, influencing gene expression from a long
+            distance, perhaps by altering chromosome structure. Fourth, a high density of X
+            recognition sites could recruit the complex, but no spreading would occur, implying
+            direct, short-range regulation by the complex.</para>
+
+        <mediaobject id="figure4" xreflabel="Figure 4">
+            <imageobject>
+                <imagedata width="6.5in" entityref="fig4" align="center"/>
+            </imageobject>
+            <textobject>
+                <phrase>Multiple X regions recruit the dosage compensation complex and nucleate
+                    spreading Figure 4</phrase>
+            </textobject> &fig4legend; </mediaobject>
+<literallayout></literallayout>
+<mediaobject id="figure5" xreflabel="Figure 5">
+            <imageobject>
+                <imagedata width="4.5in" entityref="fig5" align="center"/>
+            </imageobject>
+            <textobject>
+                <phrase>Mechanisms for targeting dosage compensation complexes to X Figure 5</phrase>
+            </textobject> &fig5legend; </mediaobject>
+<?newpage?>
+			<para>The first possibility, the presence of a single recruitment site, was eliminated by
+            analysis of hermaphrodites carrying one copy of the X duplication
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/rearrange?name=mnDp1;class=Rearrangement" role="_blank">mnDp1</ulink></emphasis> and two chromosomes deleted for the corresponding region (<xref linkend="figure4"/>A and <xref linkend="figure6"/>). The dosage
+            compensation complex colocalized with both the duplication and the truncated X
+            chromosomes, indicating that <emphasis><ulink url="http://www.wormbase.org/db/gene/rearrange?name=mnDp1;class=Rearrangement" role="_blank">mnDp1</ulink></emphasis> harbors at least one
+            X-recognition element, as does the rest of X. The interpretation of multiple,
+            independent X-recognition elements was greatly reinforced by the identification of many
+            other non-overlapping, detached X regions that recruited the complex. Two classes of
+            dosage compensation complex recruitment were found, strong recruitment typified by
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/rearrange?name=mnDp1;class=Rearrangement" role="_blank">mnDp1</ulink></emphasis> and limited, but reproducible recruitment typified by
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/rearrange?name=mnDp57;class=Rearrangement" role="_blank">mnDp57</ulink></emphasis> (<xref linkend="figure4"/>B and <xref linkend="figure6"/>).</para>
+<literallayout></literallayout>
+        <mediaobject id="figure6" xreflabel="Figure 6">
+            <imageobject>
+                <imagedata width="5in" entityref="fig6" align="center"/>
+            </imageobject>
+            <textobject>
+                <phrase>Map of X regions that recruit the dosage compensation complex when detached
+                    from the native X Figure 6</phrase>
+            </textobject> &fig6legend; </mediaobject>
+
+            <para>The fourth possibility, a high density of recruitment sites, was eliminated by the
+            discovery of large X segments incapable of recruiting the complex when detached from X
+                (<xref linkend="figure4"/>C and <xref linkend="figure6"/>). Despite the inability to
+            autonomously recruit the complex, these regions, typified by <emphasis><ulink url="http://www.wormbase.org/db/gene/rearrange?name=stDp2;class=Rearrangement" role="_blank">stDp2</ulink></emphasis>,
+            harbor dosage compensated genes when present on the native X chromosome (<xref
+            linkend="figure6"/>). These results indicated that the dosage compensation complex
+            regulates gene expression in X regions that lack recruitment sites either by spreading
+            into the regions from neighboring X-recognition elements (second possibility) or by
+            acting over a distance (third possibility). The second possibility predicts binding of
+            the dosage compensation complex to the region on the native X corresponding to
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/rearrange?name=stDp2;class=Rearrangement" role="_blank">stDp2</ulink></emphasis>, and the third possibility predicts no binding. Robust
+            localization of the dosage compensation complex was found on the
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/rearrange?name=stDp2;class=Rearrangement" role="_blank">stDp2</ulink></emphasis> region (<xref linkend="figure4"/>D), on other native X
+            regions corresponding to duplications with no recruitment ability, and also on regions
+            corresponding to duplications with limited, but reproducible binding. Thus, the
+                <emphasis>C. elegans</emphasis> X chromosomes have discrete X-recognition elements
+            that recruit the dosage compensation complex and nucleate spreading of the complex over
+            short or long distances (<xref linkend="figure7"/>; <link linkend="bib10">Csankovszki et al., 2004</link><!-- PMID 14976312 -->). In contrast, mammals utilize a single recruitment site that nucleates
+            long-range spreading of dosage compensation components along the regulated X. Flies were
+            initially thought to have multiple recruitment sites that nucleate local spreading, but
+            recent evidence suggests that flies have a high density of recruitment sites and perhaps
+            little or no spreading (<link linkend="bib14">Fagegaltier and Baker, 2004</link><!-- PMID 15502872 -->; <link linkend="bib39">Oh et al., 2004</link><!-- PMID 15043812 -->).</para>
+        <mediaobject id="figure7" xreflabel="Figure 7">
+            <imageobject>
+                <imagedata width="4.9in" entityref="fig7" align="center"/>
+            </imageobject>
+            <textobject>
+                <phrase>Spreading Repression Figure 7</phrase>
+            </textobject> &fig7legend; </mediaobject>
+    </sect1>
+    <sect1>
+        <title>Molecular identification of discrete X-recognition elements</title>
+        <para>Small, discrete X-recognition elements responsible for recruitment activity were
+            identified by a general strategy that assessed binding of the dosage compensation
+            complex <emphasis>in vivo</emphasis> (<link linkend="bib10">Csankovszki et al., 2004</link><!-- PMID 14976312 -->).
+            Transgenic nematode lines carrying extrachromosomal DNA arrays with tandem copies of
+            cosmids from a recruitment region were made, and arrays were assayed for dosage
+            compensation complex binding (<xref linkend="figure8"/>A). Arrays also carried
+            <emphasis>lac</emphasis> operator repeats and <emphasis>lac</emphasis> repressor tagged
+            with GFP. <emphasis>lac</emphasis> repressor bound to its operator DNA tagged arrays in
+            interphase nuclei with GFP fluorescence. Co-localization of dosage compensation
+            protein antibodies with arrays indicated the presence of an X-recognition element. This
+            approach identified the element <emphasis>rex</emphasis>-1 from a region of X with
+            limited recruitment ability (<xref linkend="figure6"/> and <xref linkend="figure8"/>B; <link linkend="bib10">Csankovszki et al., 2004</link><!-- PMID 14976312 -->). Recruitment activity has subsequently been
+            attributed to a 33 bp fragment (P. McDonel and B. Meyer, unpublished).</para>
+        <para>Multiple copies of the X-recognition element titrate the dosage compensation complexes
+            from X and thereby impair dosage compensation (<xref linkend="figure8"/>B). Genetic
+            assays indicated that dosage compensation was compromised in animals carrying arrays
+            with X-recognition elements. Furthermore, X chromosomes could be detected easily by
+            dosage compensation protein antibodies only in XX cells that lost arrays because of
+            mitotic instability (<xref linkend="figure8"/>B; <link linkend="bib10">Csankovszki et al., 2004</link><!-- PMID 14976312 -->). Adjacent cells harboring arrays showed robust localization of the dosage
+            compensation complex to the array but not the X chromosomes. These results indicate that
+            X regions with limited recruitment ability harbor high-affinity recruitment sites
+            capable of competing with other recruitment sites on X for the dosage compensation
+            complex (<link linkend="bib10">Csankovszki et al., 2004</link><!-- PMID 14976312 -->).</para>
+<literallayout></literallayout>
+        <mediaobject id="figure8" xreflabel="Figure 8">
+            <imageobject>
+                <imagedata width="4.5in" entityref="fig8" align="center"/>
+            </imageobject>
+            <textobject>
+                <phrase>Molecular identification of an X-recognition element Figure 8</phrase>
+            </textobject> &fig8legend; </mediaobject>
+        <para>A total of thirteen X-recognition elements have thus far been identified by this approach
+            (J. Jans, P. McDonel, and B. Meyer, unpublished data). Further dissection of these sites
+            will reveal the features of X-recognition elements essential for recruitment of the
+            dosage compensation complex. Those features could be primary DNA sequence, DNA
+            structure, or a combination of both.</para>
+        <para>In summary, the strategy by which <emphasis>C. elegans</emphasis> X chromosomes
+            attract the condensin-like dosage compensation complex is now known. Discrete
+            X-recognition elements serve as entry sites to recruit the dosage compensation complex
+            and to nucleate spreading of the complex to X regions that lack recruitment sites (<xref
+            linkend="figure7"/>). In this manner, a repressed chromatin state can be spread in <emphasis>cis</emphasis> over short or long distances, thus establishing the global regulation of X chromosomes
+            that is maintained throughout the lifetime of hermaphrodites (<link linkend="bib10">Csankovszki et al., 2004</link><!-- PMID 14976312 -->).</para>
+    </sect1>
+<?newpage?>
+    <sect1>
+        <title>Future endeavors</title>
+        <para>Future experiments will reveal whether the X-recognition protein <ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-2;class=protein" role="_blank">SDC-2</ulink> binds X DNA
+            directly or instead requires other X-bound cellular proteins to reach its target.
+            Experiments will also determine the contributions, if any, of DNA structure or specific
+            DNA motifs within X-recognition elements for the recruitment of the dosage compensation
+            complex to X. Experiments will also define the mechanistic basis by which the dosage
+            compensation complex spreads along the X chromosome and whether such spreading involves
+            histone modifications and/or non-coding RNAs, as do other forms of epigenetic regulation
+            across whole chromosomes or chromosomal domains. Ultimately, a detailed biochemical
+            understanding of the two-fold X-chromosome repression will emerge.</para>
+    </sect1>
+    <sect1>
+        <title>References</title> 
+        <para/>
+        &Comp_Refs; 
+        </sect1>
+</article>

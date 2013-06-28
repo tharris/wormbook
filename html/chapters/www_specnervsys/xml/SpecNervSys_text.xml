@@ -1,0 +1,872 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY fig1 SYSTEM 'nervfig1.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'nervfig1leg.xml'>
+<!ENTITY fig2 SYSTEM 'nervfig2.jpg' NDATA JPG>
+<!ENTITY fig2legend SYSTEM 'nervfig2leg.xml'>
+<!ENTITY fig3 SYSTEM 'nervfig3.jpg' NDATA JPG>
+<!ENTITY fig3legend SYSTEM 'nervfig3leg.xml'>
+<!ENTITY fig4 SYSTEM 'nervfig4.jpg' NDATA JPG>
+<!ENTITY fig4legend SYSTEM 'nervfig4leg.xml'>
+<!ENTITY fig5 SYSTEM 'nervfig5.jpg' NDATA JPG>
+<!ENTITY fig5legend SYSTEM 'nervfig5leg.xml'>
+
+<!ENTITY nervous_Refs SYSTEM 'nervrefs.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="nervous_ArticleID">
+    <articleinfo>
+        <!--see DocBook's authorgroup element -->
+	
+	<title>Specification of the nervous system<footnote>
+<para>Edited by Erik M. Jorgensen and Joshua M. Kaplan. Last revised July 22, 2005. Published August 8, 2005. This chapter should be cited as: Hobert, O. Specification of the nervous system (August 8, 2005), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.12.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+		<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2005 Oliver Hobert. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+</footnote>
+        </title>
+
+        <!--		<revhistory>
+			<revision>
+				<revnumber>1.0</revnumber>
+				<date>Last revised 7/22/05</date>
+			</revision>
+		</revhistory> 
+-->
+        <author>
+            <firstname>Oliver</firstname>
+            <surname>Hobert<remark><footnote>
+	    <para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:or38@columbia.edu">or38@columbia.edu</ulink></para>
+                    </footnote></remark></surname>
+            <affiliation>
+                <address>Howard Hughes Medical Institute, Department of Biochemistry and Molecular Biophysics, Columbia University Medical Center, New York, NY 10032 USA</address>
+            </affiliation>
+        </author>
+    </articleinfo>
+    <abstract>
+        <title><emphasis role="bold">Abstract</emphasis></title>
+        <para><emphasis role="bold">Nervous systems are characterized by an astounding degree of cellular diversity. The
+            nematode</emphasis> <emphasis><emphasis role="bold">Caenorhabditis elegans</emphasis></emphasis> <emphasis role="bold">has served as a valuable model
+            system to define the genetic programs that serve to generate cellular diversity in the
+            nervous system. This review discusses neuronal diversity in</emphasis>
+            <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">and provides an overview of the molecular mechanisms that
+            define and specify neuronal cell types in</emphasis> <emphasis><emphasis role="bold">C. elegans.</emphasis></emphasis></para>
+    </abstract>
+    
+    <sect1>
+        <title>Overview</title>
+        <para>The nervous system represents the most complex organ of
+            <emphasis>C. elegans</emphasis>. It is the organ with the most cells (302 neurons and 56
+            glial cells make up 37% of the somatic cells in a hermaphrodite) and the largest
+            cellular diversity (at least 118 different neuron classes). Its cellular complexity
+            makes the <emphasis>C. elegans</emphasis> nervous system a prime model system to study a
+            central question in developmental neurobiology, namely how neuronal diversity is
+            genetically programmed. This question can be broken down into four separate steps that
+            will be discussed in this chapter. First, a cell must make a global choice between
+            neuronal and non-neuronal fate. Second, specific neuronal lineage
+            decisions must be made. Third, neurons must be instructed to
+            terminally differentiate into specific classes after their last cell division. Fourth,
+            within defined classes of neurons that share many different properties, subtle but
+            critical differences between individual class members must be established. I will give a
+            brief summary and several examples of molecular mechanisms that are involved in neuronal
+            specification on these levels. Rather than comprehensively discussing all known neuronal
+            specification genes, I will try to carve out a few general principles of neuronal
+            specification, using selected examples. Many aspects of neuron specification in
+            <emphasis>C. elegans</emphasis> have been discussed in several previous reviews to which
+            the reader is referred for more in-depth discussions (<link linkend="bib68">Ruvkun, 1997</link>; <link linkend="bib52">Melkman and Sengupta, 2004</link><!-- PMID 14732394 -->).</para>
+    </sect1>
+    <sect1>
+        <title>Neuronal vs. non-neuronal</title>
+        <para>At first sight, perhaps the most striking difference between neuronal specification in
+            <emphasis>C. elegans</emphasis> and many other well characterized systems concerns the
+            lineage history of individual neurons. While in many species the nervous system
+            originates from defined precursor cells in specific regions of the developing embryo, a
+            brief look at the lineage of <emphasis>C. elegans</emphasis> illustrates, strikingly,
+            that <emphasis>C. elegans</emphasis> neurons are largely non-clonally derived from many
+            different lineages (<xref linkend="figure1"/>). However, in analogy to vertebrate
+            neuronal development (<link linkend="bib29">Hemmati-Brivanlou and Melton, 1997</link><!-- PMID 9056707 -->), it is
+            conceivable that non-neuronal cells produced within largely neuron-producing lineages
+            may be derived from a "neuronal ground state", which would be actively repressed in
+            non-neuronal cells. Consistent with such a notion, mutants have been described in which
+            non-neuronal cells "revert" to a neuronal fate. For example, in animals that lack the
+            basic helix-loop-helix (bHLH) factor <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-22" role="_blank">lin-22</ulink></emphasis> or the Zn finger
+            transcription factor <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-26" role="_blank">lin-26</ulink></emphasis>, specific sets of hypodermal cells
+            inappropriately adopt a neuronal fate (<link linkend="bib35">Horvitz et al., 1983</link><!-- PMID 6586368 -->; <link linkend="bib45">Labouesse et al., 1994</link><!-- PMID 7956818 -->; <link linkend="bib95">Wrischnik and Kenyon, 1997</link><!-- PMID 9247331 -->; <xref linkend="figure2"/>A, B). Moreover, depletion of the transcriptional co-factor <emphasis><ulink url="http://www.wormbase.org/db/get?name=p300;class=Variation" role="_blank">p300</ulink>/<ulink url="http://www.wormbase.org/db/gene/gene?name=cbp-1" role="_blank">cbp-1</ulink></emphasis>
+            de-represses neuronal fate in many cell types (<link linkend="bib77">Shi and Mello, 1998</link><!-- PMID 9531533 -->).
+            Lastly, an embryonic induction mediated by the Notch gene <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis> can
+            be considered a diversification from a neuronal ground state; in the absence of this
+            induction both bilaterally homologous <ulink url="http://www.wormbase.org/db/get?name=ABara;class=Cell" role="_blank">ABara</ulink> and <ulink url="http://www.wormbase.org/db/get?name=ABala;class=Cell" role="_blank">ABala</ulink> lineages produce only neurons,
+            while in the presence of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis>, the <ulink url="http://www.wormbase.org/db/get?name=ABara;class=Cell" role="_blank">ABara</ulink> lineage produces neuronal
+            and non-neuronal cells (<link linkend="bib38">Hutter and Schnabel, 1994</link><!-- PMID 7925009 -->). Taken together, in
+            analogy to the vertebrate system, neuronal fate may be the "default" specification
+            program in many lineages that is modified through the action of specific gene products.</para>
+        <mediaobject id="figure1" xreflabel="Figure 1">
+            <imageobject>
+                <imagedata entityref="fig1" width="5.6in" align="center"/>
+            </imageobject>
+            <textobject>
+                <phrase> figure 1</phrase>
+            </textobject> &fig1legend; </mediaobject>
+
+            <mediaobject id="figure2" xreflabel="Figure 2">
+                <imageobject>
+                    <imagedata entityref="fig2" width="2.9in" align="center"/>
+                </imageobject>
+                <textobject>
+                    <phrase> figure 2</phrase>
+                </textobject> &fig2legend; </mediaobject>
+
+    </sect1>
+    <sect1>
+        <title>Neuron lineage specification</title>
+        <para>Once a lineage is fated to produce neurons, several genes are required to determine
+            the type of neuronal lineage program that is executed. Consequently, in the absence of
+            these genes, neuroblasts are either not specified correctly or undergo aberrant lineage
+            patterns. Genes that fall into this category include the classic examples of the
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-86" role="_blank">unc-86</ulink></emphasis> homeobox gene and the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-32" role="_blank">lin-32</ulink></emphasis> bHLH gene
+            (reviewed in <link linkend="bib68">Ruvkun, 1997</link>); more recently described examples include the
+            <emphasis>C. elegans</emphasis> NeuroD homolog <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cnd-1" role="_blank">cnd-1</ulink></emphasis> (<link linkend="bib27">Hallam et al., 2000</link><!-- PMID 10976055 -->), the <emphasis>daughterless</emphasis> homolog
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=hlh-2" role="_blank">hlh-2</ulink></emphasis> (<link linkend="bib64">Portman and Emmons, 2000</link><!-- PMID 11076762 -->) and the
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pag-3" role="_blank">pag-3</ulink></emphasis> Zn finger factor (<link linkend="bib7">Cameron et al., 2002</link><!-- PMID 11923211 -->). While
+            all genes in this category act by definition in neuroblasts to affect descendants of
+            these blast cells, it is notable that some of the genes have also later roles in
+            terminal neuron differentiation. For example, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-86" role="_blank">unc-86</ulink></emphasis> affects the
+            lineage that generates the touch sensory neurons, but also acts in the mature touch
+            neurons to directly regulate the expression of terminal differentiation features
+            (<link linkend="bib10">Chalfie and Sulston, 1981</link><!-- PMID 7227647 -->; <link linkend="bib18">Duggan et al., 1998</link><!-- PMID 9735371 -->). A similar
+            scenario holds for the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-32" role="_blank">lin-32</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=hlh-2" role="_blank">hlh-2</ulink></emphasis> bHLH
+            genes (<link linkend="bib64">Portman and Emmons, 2000</link><!-- PMID 11076762 -->). Re-utilization, or co-option, of
+            transcription factors in different contexts is a common theme in many developmental
+            pathways. </para>
+    </sect1>
+    <sect1>
+        <title>Neuron class specification</title>
+        <sect2>
+            <title>General considerations about neuron classification</title>
+            <para>If one wishes to discuss the genetic specification of individual neuron classes,
+                it is important to first consider what defines a neuron class. The most trivial
+                classification of neurons divides them into sensory, inter- and motorneurons.
+                However, there is little lineage relation among neurons that are predominantly of
+                the sensory-, inter- or motorneuron type in <emphasis>C. elegans</emphasis>. That is,
+                there is no defined neuroblast that exclusively produces each class. Nevertheless,
+                genetic analysis has revealed two common genetic specification programs. The
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=daf-19" role="_blank">daf-19</ulink></emphasis> transcription factor was found to be required for the
+                development of specific differentiated aspects of all ciliated sensory neurons, even
+                though most of them are unrelated by lineage (<link linkend="bib80">Swoboda et al., 2000</link><!-- PMID 10882127 -->). The
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cnd-1" role="_blank">cnd-1</ulink></emphasis> bHLH transcription factor is required for ventral nerve
+                cord (VNC) motorneuron specification (<link linkend="bib27">Hallam et al., 2000</link><!-- PMID 10976055 -->). These
+                observations indicate that <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=daf-19" role="_blank">daf-19</ulink></emphasis> and
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cnd-1" role="_blank">cnd-1</ulink></emphasis> may sample lineage specific cues (e.g. by having complex
+                promoters, responsive to transcription factors produced in different lineages) to
+                drive a specific type of differentiation program in cells derived from distinct lineages.</para>
+		
+            <para>Another broadly applied classification of neurons is based on the type of
+                neurotransmitter that a neuron produces ("neurotransmitter phenotype"). However,
+                    <emphasis>C. elegans</emphasis> neurons with the same neurotransmitter phenotype
+                show little if any lineage relation. Also, there are as yet no common specification
+                programs identified for the complete set of neurons classified by neurotransmitter
+                phenotypes. Rather, the neurons in this classification scheme appear to be generated
+                in a "mosaic" manner, best illustrated by the 26 GABAergic neurons. Two defining
+                features of GABAergic neurons are their production of a GABA-producing enzyme
+                (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-25" role="_blank">unc-25</ulink></emphasis>) and a vesicular GABA transporter
+                (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-47" role="_blank">unc-47</ulink></emphasis>). GABAergic ventral cord motorneurons require the
+                transcription factor <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-30" role="_blank">unc-30</ulink></emphasis> to express
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-25" role="_blank">unc-25</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-47" role="_blank">unc-47</ulink></emphasis> (<link linkend="bib40">Jin et al., 1994</link><!-- PMID 7997265 -->; <link linkend="bib19">Eastman et al., 1999</link><!-- PMID 10414952 -->). However, other GABAergic neurons do
+                not express <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-30" role="_blank">unc-30</ulink></emphasis> and require a different set of transcription
+                factors to express the GABAergic phenotype. For example, the GABAergic <ulink url="http://www.wormbase.org/db/get?name=DVB;class=Cell" role="_blank">DVB</ulink> and <ulink url="http://www.wormbase.org/db/get?name=AVL;class=Cell" role="_blank">AVL</ulink>
+                neurons require the homeobox gene <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lim-6" role="_blank">lim-6</ulink></emphasis> to express
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-25" role="_blank">unc-25</ulink></emphasis>, but not <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-47" role="_blank">unc-47</ulink></emphasis> (<link linkend="bib34">Hobert et al., 1999</link><!-- PMID 10068647 -->). Although expressing <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lim-6" role="_blank">lim-6</ulink></emphasis>, the RME neuron
+                class does not require <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lim-6" role="_blank">lim-6</ulink></emphasis> to express the GABAergic fate.</para>
+            <para>Another classification of neurons that relates directly to neuronal specification
+                goes along the lines of functional units. In the fly nervous system, neurons and
+                support cells that form a sensory sensillum derive from a common sublineage that are
+                jointly specified by gene regulatory programs (<link linkend="bib56">Modolell, 1997</link><!-- PMID 9171442 -->). In
+                contrast, cells that form specific types of sensory sensilla in worms (neuron,
+                sheath, socket) rarely have a common lineage history (<xref linkend="figure1"/>)
+                with the notable exception of the postdeirid sensory sensillum (<xref linkend="figure2"/>C). The V5.pa neuroblast creates a sensory neuron, <ulink url="http://www.wormbase.org/db/get?name=PDE;class=Cell" role="_blank">PDE</ulink>, its
+                sheath (PDEsh) and socket (PDEso), but also a different type of sensory neuron, PVD.
+                Hence, the V5.pa lineage is not specialized to exclusively produce components of a
+                sensory sensillum. However, genetic removal of the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-86" role="_blank">unc-86</ulink></emphasis>
+                homeobox gene causes the aberrant production of an extra <ulink url="http://www.wormbase.org/db/get?name=PDE;class=Cell" role="_blank">PDE</ulink> neuron at the expense
+                of the <ulink url="http://www.wormbase.org/db/get?name=PVD;class=Cell" role="_blank">PVD</ulink> neuron (<link linkend="bib10">Chalfie and Sulston, 1981</link><!-- PMID 7227647 -->; <xref linkend="figure2"/>C). Therefore, the lineage is now transformed to only produce
+                sensory sensillum components. It is perhaps a common principle that there is an
+                underlying, perhaps ancient, relationship between cells of a given lineage branch
+                (in the case of the V5.pa lineage branch, a sensory sensillum fate), but
+                transcriptional regulators (e.g., <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-86" role="_blank">unc-86</ulink></emphasis>) are "superimposed" onto this lineage to diversify individual cell types within this
+                lineage. This is the same principle as mentioned above for neuronal vs. non-neuronal
+                fate programs; the latter may be superimposed onto a neuronal ground state.</para>
+
+            <para>A more refined classification of neuronal cell types does not go along the lines of sensory vs. inter vs. motorneuron, but rather makes use of classifying neurons based on specific anatomical features, such as axodendritic morphology, cell body placement and synaptic connectivity. Based on their electron microscopy work, White et al. defined 118 neuron classes (<link linkend="bib92">White et al., 1986</link>), with members of individual neuron classes mostly distinguished by their relative position to the anterior/posterior or left/right axis (for examples, please see WormAtlas: <ulink url="http://www.wormatlas.org/neurons.htm/aiy.htm">www.wormatlas.org/neurons.htm/aiy.htm</ulink> and <ulink url="http://www.wormatlas.org/neurons.htm/rme.htm">www.wormatlas.org/neurons.htm/rme.htm</ulink>). Our understanding of the genetic mechanisms of neuronal specification on this single class level is extensive for individual cases and examples are summarized in <link linkend="table1">Table 1</link>. The overall emerging scheme is that each of these neuron types have their own "specification cassette", that is, a set of gene regulatory factors that specifies individual fates, as described in the next section.</para>
+<?newpage?>
+            <table id="table1" frame="all">
+                <title><emphasis role="bold">Table 1. Gene regulatory factors that control neuron class specification.</emphasis> Genes are grouped into three different categories according to the defects that are caused by their absence ("All  known features lost", "Subfeatures lost", "Alternative or default program executed"). Categorization can only be made within the limitations of current knowledge, meaning the current extent to which neuron properties are known and have been examined in the individual mutants. For example, at present it can not be excluded that a gene such as <emphasis>ttx-3</emphasis> controls hundreds of, but not quite all AIY-defining genes.  Also note that this list is not comprehensive. Examples that do not clearly fall into any of these categories are also not shown. Ubiquitously expressed co-factors that affect specific neuronal differentiation events by interacting with cell-type specific transcription factors, such as <emphasis>unc-37</emphasis> or <emphasis>lin-49</emphasis> and others, are not shown here. Transcription factors that broadly affect embryonic patterning, therefore obscuring any potential neuronal specification role, or factors that may affect neuronal specification indirectly are also not shown.</title>
+                
+		<tgroup cols="5">
+     <!--          <colspec colname="c1" colwidth="0.5in" align="center" />
+		<colspec colname="c2" colwidth="1in" align="center" />
+		<colspec colname="c3" colwidth="1.5in" align="center" />
+		<colspec colname="c4" colwidth="1.6in" align="center" />
+		<colspec colname="c5" colwidth="2in" align="left" />     -->
+		
+		<colspec colname="c1" colwidth="0.5*" align="center" />
+		<colspec colname="c2" colwidth="0.35*" align="center" />
+		<colspec colname="c3" colwidth="0.6*" align="center" />
+		<colspec colname="c4" colwidth="1.0*" align="center" />
+		<colspec colname="c5" colwidth="1.4*" align="center" />
+                <thead>
+                    <row valign="middle">
+                        <entry valign="middle"><emphasis role="bold">Defect</emphasis></entry>
+                        <entry valign="middle"><emphasis role="bold">Gene name</emphasis></entry>
+                        <entry valign="middle"><emphasis role="bold">Gene class</emphasis></entry>
+                        <entry valign="middle"><emphasis role="bold">Neurons affected</emphasis></entry>
+                        <entry valign="middle"><emphasis role="bold">Reference</emphasis></entry>
+                    </row>
+                </thead>
+                <tbody>
+                 <row valign="middle">
+				<entry morerows="12">All known features lost</entry>
+			<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ceh-36" role="_blank">ceh-36</ulink></emphasis></entry>
+                        <entry>Homeobox</entry>
+                        <entry>AWC sensory neurons</entry>
+                        <entry>
+				<simplelist>
+					<member><link linkend="bib47">Lanjuin et al., 2003</link>; </member>
+					<member><link linkend="bib44">Koga and Ohshima, 2004</link></member>
+				</simplelist>
+			</entry>					    
+		</row>
+
+                    <row valign="middle">
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ceh-37" role="_blank">ceh-37</ulink></emphasis></entry>
+                        <entry>Homeobox</entry>
+                        <entry>AWB sensory neurons</entry>
+                        <entry><link linkend="bib47">Lanjuin et al., 2003</link></entry>
+                    </row>
+		    
+		    <row valign="middle">
+						<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=che-1" role="_blank">che-1</ulink></emphasis></entry>
+                        <entry>Zn finger</entry>
+                        <entry>ASE sensory neurons</entry>
+                        <entry><link linkend="bib12">Chang et al., 2003</link>; <link linkend="bib85">Uchida et al., 2003</link></entry>
+			</row>
+
+                    <row valign="middle">
+                        <entry>
+                            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-44" role="_blank">egl-44</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=egl-46" role="_blank">egl-46</ulink></emphasis>
+                        </entry>
+                        <entry>Zn-finger and TEF-type</entry>
+                        <entry><ulink url="http://www.wormbase.org/db/get?name=HOB;class=Cell" role="_blank">HOB</ulink> sensory neurons</entry>
+                        <entry><link linkend="bib98">Yu et al., 2003</link></entry>
+                    </row>
+                    <row valign="middle">
+                        <entry>
+                            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-11" role="_blank">lin-11</ulink></emphasis>
+                        </entry>
+                        <entry>LIM homeobox</entry>
+                        <entry>
+				<simplelist>
+					<member>AWA sensory neurons</member>
+					<member><ulink url="http://www.wormbase.org/db/get?name=AVG;class=Cell" role="_blank">AVG</ulink> interneuron</member>
+				</simplelist>
+			</entry>
+                        <entry><link linkend="bib70">Sarafi-Reinach et al., 2001</link>; <link linkend="bib37">Hutter, 2003</link></entry>
+                    </row>
+		    
+                    <row valign="middle">
+                        <entry>
+                            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lim-4" role="_blank">lim-4</ulink></emphasis>
+                        </entry>
+                        <entry>LIM homeobox</entry>
+                        <entry>AWB sensory neurons</entry>
+                        <entry><link linkend="bib69">Sagasti et al., 1999</link></entry>
+                    </row>
+		    
+		   <row valign="middle">
+			<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mec-3" role="_blank">mec-3</ulink></emphasis></entry>
+                        <entry>LIM homeobox</entry>
+                        <entry>Touch neurons</entry>
+                        <entry>
+				<simplelist>
+					<member><link linkend="bib88">Way and Chalfie, 1988</link>; </member>
+					<member><link linkend="bib101">Zhang et al., 2002</link></member>
+				</simplelist>
+			</entry>
+                    </row>
+		    
+		     <row valign="middle">
+                        <entry>
+                            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=odr-7" role="_blank">odr-7</ulink></emphasis>
+                        </entry>
+                        <entry>Nuclear hormone receptor</entry>
+                        <entry>AWA sensory neurons</entry>
+                        <entry><link linkend="bib75">Sengupta et al., 1994</link></entry>
+                    </row>
+		    
+                   <row valign="middle">
+                        <entry>
+                            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ttx-1" role="_blank">ttx-1</ulink></emphasis><footnote id="t1f1"><para>Affects the maintenance but not initiation of all known differentiated features of the AFD neurons.</para></footnote>
+			</entry>
+			<entry>Homeobox</entry>
+                        <entry>AFD sensory neurons</entry>
+                        <entry><link linkend="bib72">Satterlee et al., 2001</link></entry>
+                    </row>
+		    
+		    
+		   <row valign="middle">
+                        <entry>
+                            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ttx-3" role="_blank">ttx-3</ulink></emphasis>
+                        </entry>
+                        <entry>LIM homeobox</entry>
+                        <entry>AIY interneurons</entry>
+                        <entry><link linkend="bib33">Hobert et al., 1997</link></entry>
+                    </row>
+
+                     <row valign="middle">
+                        <entry>
+                            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-30" role="_blank">unc-30</ulink></emphasis>
+                        </entry>
+                        <entry>Homeobox</entry>
+                        <entry>D-type motorneurons</entry>
+                        <entry><link linkend="bib40">Jin et al., 1994</link></entry>
+                    </row>
+                    <row valign="middle">
+                        <entry>
+                            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-86" role="_blank">unc-86</ulink></emphasis>
+                        </entry>
+                        <entry>POU homeobox</entry>
+                        <entry>Many</entry>
+                        <entry>
+				<simplelist>
+					<member><link linkend="bib22">Finney et al., 1988</link>; </member>
+					<member><link linkend="bib21">Finney and Ruvkun, 1990</link>; </member>
+					<member><link linkend="bib81">Sze et al., 2002</link></member>
+				</simplelist>
+			</entry>
+                    </row>
+                    <row valign="middle">
+						<entry>
+                            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-130" role="_blank">unc-130</ulink></emphasis>
+                        </entry>
+                        <entry>Forkhead</entry>
+                        <entry>ASG sensory neurons</entry>
+                        <entry><link linkend="bib71">Sarafi-Reinach and Sengupta, 2000</link></entry>
+                    </row>
+
+                    <row valign="middle"><?dbfo keep-together="always" ?>
+						<entry morerows="15">Subfeatures lost</entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ceh-2" role="_blank">ceh-2</ulink></emphasis></entry>
+                        <entry>Homeobox</entry>
+                        <entry><ulink url="http://www.wormbase.org/db/get?name=M3;class=Cell" role="_blank">M3</ulink> motorneuron</entry>
+                        <entry><link linkend="bib2">Aspock et al., 2003</link></entry>
+                    </row>
+			
+                    <row valign="middle"><?dbfo keep-together="always" ?>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ceh-10" role="_blank">ceh-10</ulink></emphasis></entry>
+                        <entry>Homeobox</entry>
+                        <entry>CAN neuron<footnote id="t1f2"><para>It is possible that <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ceh-10" role="_blank">ceh-10</ulink></emphasis> affects all known aspects of CAN cell differentiation. </para></footnote></entry>
+                        <entry><link linkend="bib23">Forrester et al., 1998</link></entry>
+                    </row>			
+			
+		    <row valign="middle"><?dbfo keep-together="always" ?>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ceh-14" role="_blank">ceh-14</ulink></emphasis></entry>
+                        <entry>Homeobox</entry>
+                        <entry>AFD sensory neurons</entry>
+                        <entry><link linkend="bib8">Cassata et al., 2000</link></entry>
+			
+                    </row>
+
+                    <row valign="middle">
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ceh-17" role="_blank">ceh-17</ulink></emphasis></entry>
+                        <entry>Homeobox</entry>
+                        <entry><ulink url="http://www.wormbase.org/db/get?name=ALA;class=Cell" role="_blank">ALA</ulink>, SIA neurons </entry>
+                        <entry><link linkend="bib66">Pujol et al., 2000</link></entry>
+                    </row>
+                    <row valign="middle">
+                        <entry>
+                            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ceh-23" role="_blank">ceh-23</ulink></emphasis>
+                        </entry>
+                        <entry>Homeobox</entry>
+                        <entry>AIY interneurons</entry>
+                        <entry><link linkend="bib1">Altun-Gultekin et al.,2001</link></entry>
+                    </row>
+		    
+		    <row valign="middle">
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-5" role="_blank">egl-5</ulink></emphasis></entry>
+                        <entry>HOX cluster </entry>
+                        <entry>HSN motorneurons</entry>
+                        <entry><link linkend="bib17">Desai et al., 1988</link></entry>
+                    </row>		   
+
+                    <row valign="middle">
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-43" role="_blank">egl-43</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=ham-2" role="_blank">ham-2</ulink></emphasis></entry>
+                        <entry>Zn finger</entry>
+                        <entry>HSN motorneurons</entry>
+                        <entry><link linkend="bib5">Baum et al., 1999</link></entry>
+                    </row>
+		    
+                    <row valign="middle">
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fax-1" role="_blank">fax-1</ulink></emphasis></entry>
+                        <entry>Nuclear hormone receptor </entry>
+                        <entry>AVK interneurons</entry>
+                        <entry><link linkend="bib57">Much et al., 2000</link></entry>
+                    </row>		    
+		    
+		  <row valign="middle">
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-11" role="_blank">lin-11</ulink></emphasis></entry>
+			<entry>LIM homeobox </entry>
+                        <entry>AIZ interneurons, VC motorneurons</entry>
+                        <entry><link linkend="bib31">Hobert et al., 1998</link></entry>
+                    </row>
+ 
+		   <row valign="middle">
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-39" role="_blank">lin-39</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=mab-5" role="_blank">mab-5</ulink></emphasis></entry>
+			<entry>HOX cluster</entry>
+                        <entry>Q neuroblasts</entry>
+                        <entry><link linkend="bib43">Kenyon, 1986</link>; <link linkend="bib13">Clark et al., 1993</link></entry>
+                    </row>
+
+                    <row valign="middle">
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lim-4" role="_blank">lim-4</ulink></emphasis></entry>
+                        <entry>LIM homeobox</entry>
+                        <entry><ulink url="http://www.wormbase.org/db/get?name=RID;class=Cell" role="_blank">RID</ulink> motorneuron</entry>
+                        <entry><link linkend="bib84">Tsalik et al., 2003</link></entry>
+                    </row>
+   
+		    
+		    <row valign="middle">
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lim-6" role="_blank">lim-6</ulink></emphasis></entry>
+                        <entry>LIM homeobox </entry>
+                        <entry>
+				<simplelist>
+					<member><ulink url="http://www.wormbase.org/db/get?name=DVB;class=Cell" role="_blank">DVB</ulink> motorneuron, </member>
+					<member><ulink url="http://www.wormbase.org/db/get?name=RIS;class=Cell" role="_blank">RIS</ulink> interneuron</member>
+				</simplelist>
+			</entry>
+                        <entry>
+				<simplelist>
+				<member><link linkend="bib34">Hobert et al., 1999</link>; </member>
+				<member><link linkend="bib84">Tsalik et al., 2003</link></member>
+				</simplelist>
+			</entry>
+                    </row>
+		    
+                    <row valign="middle">
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ttx-3" role="_blank">ttx-3</ulink></emphasis></entry>
+                        <entry>LIM homeobox </entry>
+                        <entry>AIA interneurons</entry>
+                        <entry><link linkend="bib1">Altun-Gultekin et al., 2001</link></entry>
+                    </row>
+
+                    <row valign="middle">
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-3" role="_blank">unc-3</ulink></emphasis></entry>
+                        <entry>Zn finger</entry>
+                        <entry>ASI, ventral cord motorneurons</entry>
+                        <entry><link linkend="bib65">Prasad et al., 1998</link></entry>
+                    </row>
+		    
+                 <row valign="middle">
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-42" role="_blank">unc-42</ulink></emphasis></entry>
+                        <entry>Homeobox</entry>
+                        <entry>
+				<simplelist>
+					<member>Command interneurons,</member>
+					<member>RMD motorneurons, </member>
+					<member>ASH sensory neurons</member>
+				</simplelist>
+			</entry>
+                        <entry><link linkend="bib3">Baran et al., 1999</link>; <link linkend="bib6">Brockie et al., 2001</link></entry>
+                    </row>
+		    
+		    <row valign="middle">
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=zag-1" role="_blank">zag-1</ulink></emphasis></entry>
+                        <entry>Zn finger</entry>
+                        <entry>Many neurons</entry>
+                        <entry>
+				<simplelist>
+					<member><link linkend="bib14">Clark and Chiu, 2003</link>; </member>
+					<member><link linkend="bib87">Wacker et al., 2003</link></member>
+				</simplelist>
+			</entry>
+                    </row>
+		    
+		    
+                   <row valign="middle">
+						<entry morerows="13">Alternative or "default" program executed</entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ahr-1" role="_blank">ahr-1</ulink></emphasis></entry>
+                        <entry>Zn finger</entry>
+                        <entry><ulink url="http://www.wormbase.org/db/get?name=RMED;class=Cell" role="_blank">RMED</ulink>/V vs. <ulink url="http://www.wormbase.org/db/get?name=RMEL;class=Cell" role="_blank">RMEL</ulink>/R motorneurons</entry>
+                        <entry><link linkend="bib36">Huang et al., 2004</link></entry>
+                    </row>
+		    
+		    <row valign="middle">
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ceh-36" role="_blank">ceh-36</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=cog-1" role="_blank">cog-1</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=lim-6" role="_blank">lim-6</ulink></emphasis></entry>
+                        <entry>Homeobox</entry>
+                        <entry morerows="2"><ulink url="http://www.wormbase.org/db/get?name=ASEL;class=Cell" role="_blank">ASEL</ulink> vs. <ulink url="http://www.wormbase.org/db/get?name=ASER;class=Cell" role="_blank">ASER</ulink></entry>
+                        <entry morerows="2">
+				<simplelist>
+					<member><link linkend="bib12">Chang et al., 2003</link>; </member>
+					<member><link linkend="bib42">Johnston and Hobert, 2003</link>;</member>
+					<member><link linkend="bib11">Chang et al., 2004</link></member>
+				</simplelist>
+			</entry>
+                    </row>
+		    <row valign="middle">
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=die-1" role="_blank">die-1</ulink></emphasis></entry>
+                        <entry>Zn finger</entry>
+                    </row>
+		    <row valign="middle">
+		    <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lsy-6" role="_blank">lsy-6</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=mir-273" role="_blank">mir-273</ulink></emphasis></entry>
+		    <entry>miRNA</entry>
+                    </row>
+
+                    <row valign="middle">
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cfi-1" role="_blank">cfi-1</ulink></emphasis></entry>
+                        <entry>ARID</entry>
+                        <entry>URA vs.CEM sensory neurons</entry>
+                        <entry><link linkend="bib76">Shaham and Bargmann, 2002</link></entry>
+                    </row>		
+	
+                    <row valign="middle">
+                        <entry>
+                            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-5" role="_blank">egl-5</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=mab-5" role="_blank">mab-5</ulink></emphasis>
+                        </entry>
+                        <entry>HOX gene</entry>
+                        <entry morerows='1'>Male sensory rays</entry>
+                        <entry morerows='1'><link linkend="bib51">Lints et al., 2004</link></entry>
+                    </row>
+		    
+                    <row valign="middle">
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-18" role="_blank">mab-18</ulink></emphasis></entry>
+                        <entry>Pax gene</entry>
+                    </row>
+
+                    <row valign="middle">
+		    	<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-44" role="_blank">egl-44</ulink></emphasis></entry>
+                        	<entry>TEF-family</entry>
+			<entry morerows='1'>Represses touch fate</entry>
+			<entry><link linkend="bib96">Wu et al., 2001</link></entry>
+                    </row>
+                    <row valign="middle">
+                     	<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-46" role="_blank">egl-46</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=sem-4" role="_blank">sem-4</ulink></emphasis></entry>
+                        	<entry>Zn finger</entry>
+			<entry><link linkend="bib96">Wu et al., 2001</link>; <link linkend="bib82">Toker et al., 2003</link></entry>
+                    </row>
+		    <row valign="middle">
+                        <entry>
+                            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mec-3" role="_blank">mec-3</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=unc-86" role="_blank">unc-86</ulink></emphasis></entry>
+                        <entry>Homeobox</entry>
+                        <entry>FLP vs. touch neurons</entry>
+                        <entry><link linkend="bib55">Mitani et al., 1993</link></entry>
+                    </row>
+		    <row valign="middle">
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pag-3" role="_blank">pag-3</ulink></emphasis></entry>
+                        <entry>Zn finger </entry>
+                        <entry>BDU vs. ALM</entry>
+                        <entry><link linkend="bib39">Jia et al., 1996</link></entry>
+                    </row>
+		    <row valign="middle">
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-4" role="_blank">unc-4</ulink></emphasis></entry>
+                        <entry>Homeobox</entry>
+                        <entry>VA vs. VB motorneurons DA vs. DB motorneurons <footnote id="t1f3"><para>The switch in VA/VB and DA/DB differentiation programs entails synaptic connectivity, but not all aspects of axon anatomy.</para>
+                                    </footnote></entry>
+                        <entry>
+				<simplelist>
+					<member><link linkend="bib93">Winnier et al., 1999</link>; </member>
+					<member><link linkend="bib20">Esmaeili et al., 2002</link></member>
+				</simplelist>
+			</entry>
+                    </row>
+		    
+		    <row valign="middle">
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-55" role="_blank">unc-55</ulink></emphasis></entry>
+                        <entry>Nuclear hormone receptor</entry>
+                        <entry>DD vs. VD motorneurons</entry>
+                        <entry><link linkend="bib102">Zhou and Walthall, 1998</link></entry>
+                    </row>
+
+		    <row valign="middle">
+		    <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=vab-7" role="_blank">vab-7</ulink></emphasis></entry>
+		    <entry>Homeobox</entry>
+		    <entry>DA vs. DB motorneurons</entry>
+		    <entry><link linkend="bib20">Esmaeili et al., 2002</link></entry>
+		    </row>
+		    </tbody>
+		</tgroup>
+            </table>
+        </sect2>
+<?newpage?>
+        <sect2>
+            <title>Genetic programs for neuron class specification</title>
+            <para>Genes that control neuronal specification have traditionally been identified
+                through forward genetic screens for mutants in which individual neuron classes with
+                easily scorable functions or morphologies (for example motorneurons or sensory
+                neurons) either do not differentiate or function appropriately, resulting, for
+                example, in characteristic sensory defects. The focus on individual neuron classes
+                introduced somewhat of a bias to the types of genes identified. Rather than
+                identifying genes that control early patterning in the nervous system (whose loss
+                would be expected to cause pleiotropic effects), these screens largely identified
+                gene regulatory factors that act at late stages of neuronal development, most often
+                during terminal differentiation of specific subsets of postmitotic neurons (<link linkend="table1">Table 1</link>). The preponderance of transcription factors is consistent with the
+                cell-autonomous programming of cell fate and corroborates early laser ablation
+                experiments (<link linkend="bib79">Sulston et al., 1983</link><!-- PMID 6684600 -->). A notable exception is the
+                involvement of TGF<symbol role="symbolfont">&#x03B2;</symbol> signaling in
+                determining the terminal identity of ray sensory lineages in males (<link linkend="bib50">Lints and Emmons, 1999</link><!-- PMID 10572056 -->; <link linkend="bib51">Lints et al., 2004</link><!-- PMID 15081363 -->).</para>
+
+            <para>One theme emerging from the genetic analysis of neuronal specification programs is that there appear to be three separable types of genetic programs operating in a given neuron type (<xref linkend="figure3"/>A). The well-characterized AIY interneuron class (<ulink url="http://www.wormatlas.org/neurons.htm/aiy.htm">www.wormatlas.org/neurons.htm/aiy.htm</ulink>) provides a paradigm for this notion (<xref linkend="figure3"/>B; <link linkend="bib1">Altun-Gultekin et al., 2001</link><!-- PMID 11493519 -->; <link linkend="bib89">Wenick and Hobert, 2004</link><!-- PMID 15177025 -->). One genetic specification program is the induction of pan-neuronal features, which include the expression of many "generic" genes required non-specifically for neuronal function, such as components of the synaptic vesicle machinery. The adoption of pan-neuronal features is genetically separable from a parallel program, the induction of cell-type specific features. Rather than there being many transcription factors, each inducing one subaspect of AIY differentiation, the two homeobox genes <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ceh-10" role="_blank">ceh-10</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ttx-3" role="_blank">ttx-3</ulink></emphasis> jointly control all known cell-type specific features of AIY, but have little impact on the expression of pan-neuronal features. Third, while <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ceh-10" role="_blank">ceh-10</ulink></emphasis>/<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ttx-3" role="_blank">ttx-3</ulink></emphasis> control expression of many terminal differentiation genes by directly binding to their <emphasis>cis</emphasis>-regulatory elements, they also induce the expression of intermediary transcription factors that regulate the expression of very specific subfeatures of AIY (<link linkend="bib1">Altun-Gultekin et al., 2001</link><!-- PMID 11493519 -->; <xref linkend="figure3"/>B).</para>
+
+	    <para>Genes that specify other neuronal differentiation programs often fall into one of these types. For example, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=che-1" role="_blank">che-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ceh-36" role="_blank">ceh-36</ulink></emphasis>,
+                    <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-30" role="_blank">unc-30</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mec-3" role="_blank">mec-3</ulink></emphasis> also affect all
+                neuron-class specific features of the AWE and AWC chemosensory neurons, D-type motorneurons
+                and touch sensory neurons, respectively (<xref linkend="figure3"/>C and <link linkend="table1">Table 1</link> for
+                references), while <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ceh-14" role="_blank">ceh-14</ulink></emphasis> or <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-42" role="_blank">unc-42</ulink></emphasis>, for
+                example, affect only sub-features of the differentiation programs in AFD and command
+                interneurons, respectively (<link linkend="table1">Table 1</link>). A more detailed review of motor neuron specification in <emphasis>C. elegans</emphasis> can be found in Von Stetina et al. (in press).</para>		
+		
+		        <para>Based on their anatomical features, ventral cord motor neurons can be divided into
+            specific classes, which are diversified by the action of specific transcription factors. For example, the D-type motor neurons can be subdivided
+            into embryonically and post-embryonically born D-type motor neurons, with distinct
+            muscle innervation properties. The <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-55" role="_blank">unc-55</ulink></emphasis> nuclear hormone receptor
+            is required to distinguish these two distinct classes. In the absence of
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-55" role="_blank">unc-55</ulink></emphasis>, the VD-class adopts the fate of the DD-class (<link linkend="bib102">Zhou and Walthall, 1998</link><!-- PMID 9852581 -->). In animals lacking the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-4" role="_blank">unc-4</ulink></emphasis> homeobox gene, the postembryonically born A-type motor neurons (VA subclass) adopt aspects of the fate of the B-type neurons (VB subclass; <link linkend="bib53">Miller and Niemeyer, 1995</link><!-- PMID 7555714 -->; <link linkend="bib93">Winnier et al., 1999</link><!-- PMID 10557206 -->).</para>
+        </sect2>
+    </sect1>
+    <sect1>
+        <title>Neuron subclass specification</title>
+        <para>Members of the 118 neuron classes defined by White et al. are distinguished by their
+            differential anterior/posterior, dorsal/ventral and left/right position. For example,
+            many head ganglia neuron classes are composed of a pair of two left/right symmetric
+            cells (example: AIY neurons:
+            <ulink url="http://www.wormatlas.org/neurons.htm/aiy.htm">www.wormatlas.org/ neurons.htm/aiy.htm</ulink>), while ventral cord
+            motor neuron classes are composed of many longitudinally aligned class members (example: DA1 through DA9 neurons <ulink url="http://www.wormatlas.org/neurons.htm/DAn.htm">www.wormatlas.org/neurons.htm/DAn.htm</ulink>). Individual class members can be distinguished by subtle functional criteria (see ASE or AWC examples mentioned below) or by slightly distinct axodendritic projection patterns (for example, DA neuron class members).</para>
+            <mediaobject id="figure3" xreflabel="Figure 3">
+                <imageobject>
+                    <imagedata entityref="fig3" width="3in" align="center"/>
+                </imageobject>
+                <textobject>
+                    <phrase> figure 3</phrase>
+                </textobject>&fig3legend;</mediaobject>
+	    <para>Genetic specification programs that distinguish individual class members are only beginning to be discovered. The RME motorneurons, composed of four radially symmetric cells, RME left, RME right, RME dorsal and RME ventral (<ulink url="http://www.wormatlas.org/neurons.htm/rme.htm">www.wormatlas.org/neurons.htm/rme.htm</ulink>) provide an illuminating example (<link linkend="bib36">Huang et al., 2004</link><!-- PMID 14757639 -->). Here, the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ahr-1" role="_blank">ahr-1</ulink></emphasis>
+            transcription factor imposes a <ulink url="http://www.wormbase.org/db/get?name=RMEL;class=Cell" role="_blank">RMEL</ulink>/R "fate" onto an apparent "RMED/V" ground state that
+            is executed by all four neurons. That is, loss of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ahr-1" role="_blank">ahr-1</ulink></emphasis> causes all
+            four RME neurons to express <ulink url="http://www.wormbase.org/db/get?name=RMED;class=Cell" role="_blank">RMED</ulink>/V markers, while ectopic expression of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ahr-1" role="_blank">ahr-1</ulink></emphasis> in all four RME neurons induced <ulink url="http://www.wormbase.org/db/get?name=RMEL;class=Cell" role="_blank">RMEL</ulink>/R fate. A tempting conclusion from
+            this study is that neuron subclasses are diversified from a "neuron class ground state"
+            common to all class members. Notably, the <ulink url="http://www.wormbase.org/db/get?name=RMED;class=Cell" role="_blank">RMED</ulink>/V and <ulink url="http://www.wormbase.org/db/get?name=RMEL;class=Cell" role="_blank">RMEL</ulink>/R neurons show little if any
+            lineage relationship.</para>
+
+        <para>Another more recent, and anatomically unexpected subclassification of neuron classes can be observed across the L/R axis. Most neuron classes in the nervous system are composed of a pair of two bilaterally symmetric neurons (<link linkend="bib78">Sulston, 1983</link><!-- PMID 6586366 -->; <link linkend="bib32">Hobert et al., 2002</link><!-- PMID 12154364 -->). While most known L/R bilateral analogs are indistinguishable from one another based on anatomic, functional and gene expression criteria, the bilaterally symmetric AWC olfactory (<ulink url="http://www.wormatlas.org/neurons.htm/awc.htm">www.wormatlas.org/neurons.htm/awc.htm</ulink>) and ASE gustatory neurons (<ulink url="http://www.wormatlas.org/neurons.htm/ase.htm">www.wormatlas.org/neurons.htm/ase.htm</ulink>) express different spectra of putative chemoreceptors and, therefore, have diverged their chemosensory capacities (<link linkend="bib99">Yu et al., 1997</link><!-- PMID 9096403 -->; <link linkend="bib83">Troemel et al., 1999</link><!-- PMID 10571181 -->; <link linkend="bib63">Pierce-Shimomura et al., 2001</link><!-- PMID 11287956 -->; <link linkend="bib90">Wes and Bargmann, 2001</link><!-- PMID 11287957 -->). In the case of ASE, this appears to be programmed in an invariant manner into the <ulink url="http://www.wormbase.org/db/get?name=ASEL;class=Cell" role="_blank">ASEL</ulink> and <ulink url="http://www.wormbase.org/db/get?name=ASER;class=Cell" role="_blank">ASER</ulink> lineages. Diversifying from a "bilaterally symmetric ground state", induced by the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=che-1" role="_blank">che-1</ulink></emphasis> Zn finger transcription factor, a regulatory network of several homeobox genes and microRNAs is required to make <ulink url="http://www.wormbase.org/db/get?name=ASEL;class=Cell" role="_blank">ASEL</ulink> and <ulink url="http://www.wormbase.org/db/get?name=ASER;class=Cell" role="_blank">ASER</ulink> different from each other (<link linkend="bib12">Chang et al., 2003</link><!-- PMID 12952888 -->; <link linkend="bib42">Johnston and Hobert, 2003</link><!-- PMID 14685240 -->; <link linkend="bib11">Chang et al., 2004</link><!-- PMID 15306811 -->). Interestingly, these factors do not act linearly, but constitute a "bistable feedback loop" (<xref linkend="figure3"/>C; <link linkend="bib41">Johnston et al., 2005</link>). The negative regulatory interaction between individual regulatory factors in this loop ensures that the loop can exist in two states (hence "bistable"). In the <ulink url="http://www.wormbase.org/db/get?name=ASEL;class=Cell" role="_blank">ASEL</ulink> cell, the output of the loop is the induction of a very specific subset of <ulink url="http://www.wormbase.org/db/get?name=ASEL;class=Cell" role="_blank">ASEL</ulink> fate markers, while in the <ulink url="http://www.wormbase.org/db/get?name=ASER;class=Cell" role="_blank">ASER</ulink> cell, the loop operates with the "opposite" sign, thus causing the induction of the <ulink url="http://www.wormbase.org/db/get?name=ASER;class=Cell" role="_blank">ASER</ulink> fate. What determines the cell-type specific activity of the loop is currently unknown. Yet this example illustrates that neurons have come up with very sophisticated regulatory devices to ensure their functional diversification. Another notable aspect of ASE cell fate determination is its illustration of the power of forward genetic analysis and the limitation of reverse genetic analysis, the predominant tool of, for example, mouse genetics. Genetic mutant screens for ASE fate determinants have uncovered hypo- and antimorphic alleles of genes whose null phenotype is either absent due to genetic redundancy, or is too pleiotropic. For example, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=die-1" role="_blank">die-1</ulink></emphasis> null mutants die before ASE is generated, while <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=die-1" role="_blank">die-1</ulink></emphasis> hypomorphic alleles revealed by genetic screening are viable yet display ASE fate defects (<link linkend="bib11">Chang et al., 2004</link><!-- PMID 15306811 -->). Similarly, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ceh-36" role="_blank">ceh-36</ulink></emphasis> null alleles show no significant ASE cell fate defect, likely due to redundancy with an as yet unknown factor, yet presumptive antimorphic alleles of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ceh-36" role="_blank">ceh-36</ulink></emphasis> allowed to implicate the gene in ASE fate determination (<link linkend="bib12">Chang et al., 2003</link><!-- PMID 12952888 -->; <link linkend="bib47">Lanjuin et al., 2003</link><!-- PMID 14536063 -->).</para>
+	
+			           
+
+        <para>Another interesting issue relates to the similarity, rather than difference, of
+            individual neuron class members. 98 neuron classes are composed of pairs of left/right
+            symmetric neurons, which, with the notable exception of the case of ASE and AWC
+            mentioned above, are indistinguishable in terms of all known morphological, functional
+            or gene expression criteria. Yet 35 of these 98 pairs are composed of cells that derive
+            from distinct embryonic lineages (<link linkend="bib78">Sulston, 1983</link><!-- PMID 6586366 -->). On the one hand, it is
+            tempting to speculate that positional information instructs lineally unrelated
+            neuroblasts to adopt similar, left/right symmetric fates (<link linkend="bib73">Schnabel, 1996</link><!-- PMID 8757938 -->).
+            On the other hand, the patterned expression of HOX cluster members along the
+            anterior/posterior axis is not determined by absolute positional information, but by
+            intrinsic lineage cues (<link linkend="bib15">Cowing and Kenyon, 1996</link><!-- PMID 8684464 -->; <link linkend="bib94">Wittmann et al., 1997</link><!-- PMID 9334268 -->), indicating that positional information can be lineally encoded.</para>
+    </sect1>
+    <sect1>
+        <title>Maintenance and plasticity of neuronal specification</title>
+        <para>Many of the transcription factors that determine the differentiated state of a neuron
+            autoregulate their expression and thereby maintain their expression throughout the life
+            of the animal. Although not experimentally tested in any of these cases, this strongly
+            suggests that once a terminally differentiated state is chosen, it is actively
+            maintained by the same factors that initiated the differentiation program. However, a
+            unique feature of the nervous system is its plasticity, that is, its ability to alter
+            specific properties at either defined developmental stages or under changes in external
+            conditions. This has been well documented in the chemosensory system of
+            <emphasis>C. elegans</emphasis>. While the terminally differentiated state of many
+            chemosensory neurons is defined by the expression of specific sets of orphan 7TMRs,
+            their expression profiles can change under defined environmental conditions and upon
+            changes in neuronal activity (<link linkend="bib61">Peckol et al., 2001</link><!-- PMID 11572964 -->; <link linkend="bib59">Nolan et al., 2002</link><!-- PMID 12464635 -->; <link linkend="bib100">Zhang et al., 2004</link><!-- PMID 14998926 -->). TGF<symbol role="symbolfont">&#x03B2;</symbol> signaling plays an important role in the
+            environmental induced alteration of 7TMR expression profiles; TGF<symbol role="symbolfont">&#x03B2;</symbol> signaling is also required to maintain specific
+            7TMR expression profiles (<link linkend="bib59">Nolan et al., 2002</link><!-- PMID 12464635 -->). Another prominent example
+            of the plasticity of the worm nervous system is its re-wiring of synaptic connection of
+            a class of ventral cord motorneurons at a specific developmental stage (<link linkend="bib91">White et al.,
+            1978</link>). This rewiring process is under control of a ubiquitous developmental timer, the
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-14" role="_blank">lin-14</ulink></emphasis> gene (<link linkend="bib28">Hallam and Jin, 1998</link><!-- PMID 9738501 -->).</para>
+    </sect1>
+<?newpage?>
+    <sect1>
+        <title>Concepts in neuronal fate specification in <emphasis>C. elegans</emphasis>
+        </title>
+	
+        <sect2>
+            <title>Combinatorial codes of gene regulatory factors</title>
+            <para>Individual cell types are defined by the combinatorial co-expression of terminal differentiation genes ("gene batteries"; <xref linkend="figure4"/>). Similarly, combinatorial codes of transcription factors control the composition of cell-type specific gene batteries (<link linkend="bib16">Davidson, 2001</link>; <link linkend="bib30">Hobert, 2004</link><!-- PMID 15337119 -->; <link linkend="bib46">Lanjuin and Sengupta, 2004</link><!-- PMID 15018934 -->).  This point is well exemplified by the AIY interneuron class, whose differentiation program is comparatively well defined by scores of terminal differentiation marker genes (<link linkend="bib1">Altun-Gultekin et al., 2001</link><!-- PMID 11493519 -->; <link linkend="bib89">Wenick and Hobert, 2004</link><!-- PMID 15177025 -->). Each of the AIY terminal differentiation genes (including neurotransmitter transporters, neurotransmitter receptors, putative adhesion molecules, etc.; <xref linkend="figure4"/>) is more broadly expressed, but expression of these genes uniquely overlaps in AIY, thereby defining a AIY-specific gene battery. The co-expression of all AIY-class specific genes is lost exclusively in AIY in animals that lack either the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ttx-3" role="_blank">ttx-3</ulink></emphasis> or the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ceh-10" role="_blank">ceh-10</ulink></emphasis> homeobox gene. Neither factor alone has the capability to determine AIY interneuron fate, a notion that is derived from the observations that (1) these factors are expressed in more cells than just AIY (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ttx-3" role="_blank">ttx-3</ulink></emphasis> is expressed also in AIA, ADL and ASI, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ceh-10" role="_blank">ceh-10</ulink></emphasis> in <ulink url="http://www.wormbase.org/db/get?name=RID;class=Cell" role="_blank">RID</ulink> and CAN) and (2) that ectopic expression of either of these factors alone does not broadly induce AIY fate. It is rather the unique co-expression in AIY that allows <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ttx-3" role="_blank">ttx-3</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ceh-10" role="_blank">ceh-10</ulink></emphasis> to act together in a complex to directly activate the expression of neuron class-specific genes, through their binding to a motif that is common to most AIY-expressed genes (<link linkend="bib89">Wenick and Hobert, 2004</link><!-- PMID 15177025 -->). The "combinatorial code" of co-expression of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ttx-3" role="_blank">ttx-3</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ceh-10" role="_blank">ceh-10</ulink></emphasis> is however still not a sufficient determinant for AIY fate. Forced co-expression of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ttx-3" role="_blank">ttx-3</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ceh-10" role="_blank">ceh-10</ulink></emphasis> in many other neuron classes, causes some but not all neuron classes to execute the AIY differentiation program. The example of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ttx-3" role="_blank">ttx-3</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ceh-10" role="_blank">ceh-10</ulink></emphasis> thus highlights the context-dependency of transcription factor action and, like many other examples, seriously questions the concept of single "master regulators" of cell fate determination. That is, rather than there being a single master-regulator, it is the unique combination of gene regulatory factors present in a given neuron class that determines its fate (<link linkend="bib16">Davidson, 2001</link>; <link linkend="bib30">Hobert, 2004</link><!-- PMID 15337119 -->; <link linkend="bib46">Lanjuin and Sengupta, 2004</link><!-- PMID 15018934 -->; <link linkend="bib51">Lints et al., 2004</link><!-- PMID 15081363 -->).
+	    </para>
+	    <mediaobject id="figure4" xreflabel="Figure 4">
+                <imageobject>
+                    <imagedata entityref="fig4" width="3in" align="center"/>
+                </imageobject>
+                <textobject>
+                    <phrase> figure 4</phrase>
+                </textobject> &fig4legend; </mediaobject>
+	    
+            <para>Consistent with the concept of combinatorial interaction of gene regulatory
+                factors, the coupling of gene regulatory factors to specific effector outputs is not
+                conserved in individual cell types. For example, the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lim-6" role="_blank">lim-6</ulink></emphasis>
+                homeobox gene regulates the expression of the GABA synthesizing enzyme
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-25" role="_blank">unc-25</ulink></emphasis> and the glutamate receptor <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glr-1" role="_blank">glr-1</ulink></emphasis> in
+                the <ulink url="http://www.wormbase.org/db/get?name=RIS;class=Cell" role="_blank">RIS</ulink> interneuron, but, although expressed in the RME motorneurons, it does not
+                regulate the expression of either gene in this cell type (<link linkend="bib84">Tsalik et al., 2003</link><!-- PMID 14568548 -->). Other examples are the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ttx-3" role="_blank">ttx-3</ulink></emphasis> and
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ceh-23" role="_blank">ceh-23</ulink></emphasis> homeobox genes whose expression overlaps in both AIY and
+                ADL; <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ttx-3" role="_blank">ttx-3</ulink></emphasis> regulates <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ceh-23" role="_blank">ceh-23</ulink></emphasis> in AIY, but
+                not in ADL (<link linkend="bib1">Altun-Gultekin et al., 2001</link><!-- PMID 11493519 -->). From the perspective of
+                terminal differentiation genes (e.g., <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-25" role="_blank">unc-25</ulink></emphasis>,
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glr-1" role="_blank">glr-1</ulink></emphasis>), one can therefore conclude that rather than being under
+                control of a common regulatory factor in different cell types, they are under
+                control of cell-type specific combinations of gene regulatory factors. </para>
+		
+            <para>The principle of combinatorial coding also rationalizes the effect that a loss of
+                a cell-fate determinant has on neuronal cell fate. In some cases, loss of the
+                determinant (e.g. <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=che-1" role="_blank">che-1</ulink></emphasis> or <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ttx-3" role="_blank">ttx-3</ulink></emphasis>; <xref linkend="figure3"/>B, C)
+                causes a loss of overall identity of a neuron, while in other cases (e.g.
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-4" role="_blank">unc-4</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-130" role="_blank">unc-130</ulink></emphasis>,
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cfi-1" role="_blank">cfi-1</ulink></emphasis>; <link linkend="table1">Table 1</link>) an alternative fate is adopted. These
+                differential effects may reflect the information content of specific gene regulatory
+                codes. For example, assume that transcription factor X regulates aspects of terminal
+                differentiation but also represses transcription factor V. Moreover, assume that the
+                transcription factors X, Y, Z determines fate "A" and the code V, Y, Z determines
+                fate "B". Loss of the factor X leads to a transformation from "A" fate (defined by
+                XYZ) to "B" (VYZ) since the "left-over" code still carries instructive information.
+                If the code left after removal of one transcription factors (e.g. remove factor Z)
+                does not specify any cell type, the neuron may remain undifferentiated.</para>
+            <para>The combinatorial coding by co-expression of defined transcription factors relays
+                the problem of neuronal fate specification to more "upstream" levels. In the case of
+                AIY, an upstream code of co-expressed transcription factors likely determines
+                co-expression of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ceh-10" role="_blank">ceh-10</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ttx-3" role="_blank">ttx-3</ulink></emphasis>
+                specifically in AIY. Neuronal fate specification can therefore be considered as the
+                interpretation of multiple, hierarchical layers of transcription factor codes (<xref linkend="figure4"/>). An individual transcription factor can be a part of a code at
+                different levels; for example, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-86" role="_blank">unc-86</ulink></emphasis> works at different stages
+                in the development of neuroblast lineage and presumably interacts with distinct sets
+                of factors at different stages (<link linkend="bib21">Finney and Ruvkun, 1990</link><!-- PMID 2257628 -->; <link linkend="bib18">Duggan et al., 1998</link><!-- PMID 9735371 -->; <link linkend="bib81">Sze et al., 2002</link><!-- PMID 12135927 -->), so does the
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-32" role="_blank">lin-32</ulink></emphasis> bHLH gene (<link linkend="bib64">Portman and Emmons, 2000</link><!-- PMID 11076762 -->). It
+                is in these hierarchical layers of transcription factor codes where one could see
+                how cell lineage and history are coupled to terminal neuronal fates. At each
+                developmental stage (<xref linkend="figure1"/>), an individual neuroblast contains a
+                specific and unique combination of transcription factors which are required to
+                select the next level of transcription factor code. Lineage-specific transcription
+                factor codes may be brought about by a lineage-intrinsic coordinate system. 
+		This coordinate system could be determined by a combination of early blastomere induction events and the ensuing differential anterior/posterior segregation of cell fate determinants into only one daughter cells after a cell division, demonstrated to occur for the POP-1 transcription factor (<link linkend="bib49">Lin et al., 1998</link><!-- PMID 9458047 -->). HAM-1, a novel protein with no obvious homologs, also appears to have a role in determining the asymmetric fate of the daughters of a neuroblast cell division (<link linkend="bib26">Guenther and Garriga, 1996</link><!-- PMID 8951066 -->). Another component of this coordinate system may be the temporally controlled induction of transcription factors in analogy to what has been observed in fly neuroblast determination (<link linkend="bib60">Pearson and Doe, 2004</link><!-- PMID 15473854 -->). A necessity to  time transcription factor activity precisely has recently been demonstrated during cell fate determination in the AWA sensory neuron class. To make this neuron class different from its sister neuron AWG, a brief pulse of expression of the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-11" role="_blank">lin-11</ulink></emphasis> homeobox is required; forced prolonged expression of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-11" role="_blank">lin-11</ulink></emphasis> disrupts AWA cell fate (<link linkend="bib70">Sarafi-Reinach et al., 2001</link><!-- PMID 11546744 -->).</para>
+		
+            <para>The concept of combinatorial coding of gene regulatory factors is not limited to
+                transcriptional regulation but includes a class of small regulatory factors,
+                microRNAs. miRNAs are small RNA molecules that bind to complementary sequences in
+                the 3'UTR of target genes and prevent their translation (<link linkend="bib4">Bartel, 2004</link><!-- PMID 14744438 -->). Originally identified as regulators of developmental timing of
+                non-neuronal cell division patterns (<link linkend="bib48">Lee et al., 1993</link><!-- PMID 15055592 -->; <link linkend="bib67">Reinhart et al., 2000</link><!-- PMID 10706289 -->), recent genetic and reverse genetic studies have shown
+                that miRNAs play a role in neuronal specification as well. Specifically, the two
+                miRNAs <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lsy-6" role="_blank">lsy-6</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mir-273" role="_blank">mir-273</ulink></emphasis> are involved in
+                diversifying the fates of a two members of a class of bilaterally symmetric sensory
+                neurons, the ASE neurons (<link linkend="bib42">Johnston and Hobert, 2003</link><!-- PMID 14685240 -->; <link linkend="bib11">Chang et al., 2004</link><!-- PMID 15306811 -->; <xref linkend="figure3"/>C). Animal genomes contain an
+                abundance of miRNA genes, the vast majority of which are uncharacterized. Expression
+                pattern analysis in <emphasis>C. elegans</emphasis> reveals neuron-class specific
+                expression profiles of many miRNAs (Penney, E. B. and O.H., unpubl. data). Together with the
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lsy-6" role="_blank">lsy-6</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mir-273" role="_blank">mir-273</ulink></emphasis> data, one can expect
+                that miRNAs fulfill widespread roles in neuronal specification. As clearly
+                demonstrated in the case of the ASE neurons, miRNAs can work much like transcription
+                factors as necessary and sufficient switches to trigger cellular specification
+                programs. In analogy to transcription factor codes, combinatorial codes of miRNAs
+                within a given cell-type may similarly contribute to cellular differentiation, also
+                by acting through differentially occupied <emphasis>cis</emphasis>-regulatory
+                elements which are in the case of miRNAs located in 3'UTRs (for a more in-depth
+                discussion of the conceptual similarity of transcription factors and miRNAs, see <link linkend="bib30">Hobert, 2004</link><!-- PMID 15337119 -->).</para>
+        </sect2>
+        <sect2>
+            <title>Repressing alternative or default programs and sequential repression</title>
+            <para>The importance of repression of alternative or default programs has long been
+                recognized in a variety of contexts (<xref linkend="figure5"/>). Two classic examples operate in motorneurons
+                and touch neurons. In the absence of the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-4" role="_blank">unc-4</ulink></emphasis> homeobox gene,
+                the VA motorneurons execute many but not all of the fates normally characteristic
+                for the VB motorneuron fate (<link linkend="bib53">Miller and Niemeyer, 1995</link><!-- PMID 7555714 -->; <link linkend="bib93">Winnier et al., 1999</link><!-- PMID 10557206 -->). <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-4" role="_blank">unc-4</ulink></emphasis> therefore prevents VB cell
+                fate to be expressed in the VA neurons. <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-4" role="_blank">unc-4</ulink></emphasis> exerts its
+                repressive activity in conjunction with the transcriptional co-repressor
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-37" role="_blank">unc-37</ulink></emphasis>/Groucho (<link linkend="bib54">Miller et al., 1993</link><!-- PMID 7904971 -->; <link linkend="bib62">Pflugrad et al., 1997</link><!-- PMID 9165118 -->). The <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-86" role="_blank">unc-86</ulink></emphasis> and
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mec-3" role="_blank">mec-3</ulink></emphasis> homeobox genes have the capacity to combinatorially drive
+                touch neuron fate in several cell types, but are prevented from doing so in a subset
+                of these cells, such as the FLP cells, where <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-86" role="_blank">unc-86</ulink></emphasis>/<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mec-3" role="_blank">mec-3</ulink></emphasis>
+                activity is genetically masked by the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-44" role="_blank">egl-44</ulink></emphasis> and
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-46" role="_blank">egl-46</ulink></emphasis> genes (<link linkend="bib55">Mitani et al., 1993</link><!-- PMID 8187641 -->). Other
+                examples are listed in <link linkend="table1">Table 1</link>. One of these examples warrants specific attention
+                since it illustrates both concepts of repression of defaults states and
+                combinatorial transcription factor codes. The HOX cluster gene
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-5" role="_blank">egl-5</ulink></emphasis> imposes specific male sensory ray neuronal identities
+                (ray 3&#x02013;5) on a common ground state (normally executed only by ray 2). It does so
+                either alone in ray 3 (or with an unknown co-factor), together with the HOX cluster
+                gene <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-5" role="_blank">mab-5</ulink></emphasis> (in ray 4), the Pax gene <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-18" role="_blank">mab-18</ulink></emphasis>
+                (in ray 5) or a SMAD-type TGF<symbol role="symbolfont">&#x03B2;</symbol>
+                effector (in ray 6; <link linkend="bib51">Lints et al., 2004</link><!-- PMID 15081363 -->).</para>
+		
+            <mediaobject id="figure5" xreflabel="Figure 5">
+                <imageobject>
+                    <imagedata entityref="fig5" width="4in" align="center"/>
+                </imageobject>
+                <textobject>
+                    <phrase> figure 5</phrase>
+                </textobject> &fig5legend; </mediaobject>
+		
+            <para>The concept of cell fate induction by repressing a default state has been
+                significantly expanded to include several layers of sequential repressive
+                interactions, thus making cell fate induction a "de-repression" phenomenon. This is
+                well illustrated in the vertebrate spinal cord (<link linkend="bib58">Muhr et al., 2001</link><!-- PMID 11290324 -->)
+                but also in several cases in the <emphasis>C. elegans</emphasis> nervous system. One
+                first glimpse in this direction came from the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-22" role="_blank">lin-22</ulink></emphasis> gene. In
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-22" role="_blank">lin-22</ulink></emphasis> mutants, several hypodermal cell lineages, derived from
+                the V1,V2, V3, V4, and V6 ectoblasts, inappropriately adopt neuronal character (<xref linkend="figure2"/>; <link linkend="bib35">Horvitz et al., 1983</link><!-- PMID 6586368 -->). Thus,
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-22" role="_blank">lin-22</ulink></emphasis> serves to repress neuronal fate in these lineages.
+                However, the V5 cell normally executes the neuronal differentiation program that is
+                executed inappropriately in V1, V2, V3, V4 and V6 in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-22" role="_blank">lin-22</ulink></emphasis>
+                mutants. Therefore, the inhibitory activity of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-22" role="_blank">lin-22</ulink></emphasis> on
+                neuronal fate is repressed in V5 (<xref linkend="figure2"/>). The overall scheme
+                emerging from this analysis is that a specific fate is not necessarily induced by a
+                positive inducer, but by sequential de-repression of a common ground state, as
+                illustrated in <xref linkend="figure5"/>. This scheme is not only emerging in the
+                vertebrate spinal cord, but is also apparent in the fly nervous system as well as in
+                other instances of the worm nervous system. For example, the
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=vab-7" role="_blank">vab-7</ulink></emphasis> homeobox gene induces DB fate by repressing the
+                expression of the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-4" role="_blank">unc-4</ulink></emphasis> homeobox gene, which represses DB fate
+                specification (<link linkend="bib20">Esmaeili et al., 2002</link><!-- PMID 11861469 -->). In the <ulink url="http://www.wormbase.org/db/get?name=ASEL;class=Cell" role="_blank">ASEL</ulink> sensory neuron,
+                the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lsy-6" role="_blank">lsy-6</ulink></emphasis> miRNA represses the expression of the
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cog-1" role="_blank">cog-1</ulink></emphasis> homeobox gene, a repressor of <ulink url="http://www.wormbase.org/db/get?name=ASEL;class=Cell" role="_blank">ASEL</ulink> fate (<link linkend="bib12">Chang et al., 2003</link><!-- PMID 12952888 -->; Johnston et al., 2003). In many cases described above (vertebrate spinal cord, DB
+                fate, ASE fate), a critical and evolutionarly ancient component of the repressive
+                interactions is the Groucho co-repressor protein (<link linkend="bib62">Pflugrad et al., 1997</link><!-- PMID 9165118 -->; <link linkend="bib58">Muhr et al., 2001</link><!-- PMID 11290324 -->; <link linkend="bib12">Chang et al., 2003</link><!-- PMID 12952888 -->). <xref linkend="figure5"/>B illustrates how sequential repression could contribute to the
+                potential evolvability of gene expression profiles, an important feature for an
+                organ that needs to maintain a set of commonly expressed genes (pan-neuronal genes)
+                but needs to "invent" novel gene expression profiles in order to generate neuronal diversity.</para>
+        </sect2>
+    </sect1>
+    <sect1>
+        <title>Perspectives</title>
+        <para>Terminal neuronal differentiation programs have been revealed in several cases on a
+            single neuron basis, therefore fulfilling the promises of <emphasis>C. elegans</emphasis>
+            as a model system. However, much remains to be learned in regard to the mechanisms of
+            lineage programming, particularly in the less accessible mid-embryonic stages. With the
+            abundance of cell-type specific <emphasis>gfp</emphasis> markers and the SNP-based facilitation of
+            traditional mapping and cloning approaches, it will be possible to now perform much
+            larger scale screens for neuronal fate mutants. As the examples mentioned above
+            illustrate, the key to success will be the ease with which specific phenotypes can be
+            screened for. Rather than using terminal differentiation marker, which bias for the
+            retrieval of genes involved in terminal differentiation, it is important to move to <emphasis>gfp</emphasis> markers that label earlier lineage decisions and to use a four-dimensional video
+            microscopy system (<link linkend="bib74">Schnabel et al., 1997</link><!-- PMID 913343 -->) to assist precise phenotypic
+            scoring of lineage defects. Genome wide analysis of expression patterns of gene
+            regulatory factors such as transcription factors and miRNAs, if done with single cell
+            resolution and at embryonic stages, will also provide testable hypotheses about the
+            existence of "codes" that are characteristic for individual lineages and will open the
+            door to a reverse genetic analysis of these codes.</para>
+    </sect1>
+    <sect1>
+        <title>Acknowledgments</title>
+        <para>Work in the author's laboratory is funded by the HHMI, NIH, the McKnight Foundation and Irma
+            T. Hirschl Trust. I am indebted to many colleagues for ongoing discussions and comments
+            on the manuscript, particularly David Miller, and apologize to all colleagues whose work
+            could not be appropriately discussed due to space constraints.</para>
+	    </sect1>
+		<sect1>
+			<title>References</title>
+			<para/>
+			&nervous_Refs;</sect1>
+</article>

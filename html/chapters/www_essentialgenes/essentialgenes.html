@@ -1,0 +1,723 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Essential genes
+         
+         
+         
+      </title>
+      <meta name="generator" content="DocBook XSL Stylesheets V1.67.2">
+      <link rel="start" href="#esg_ArticleID" title="Essential genes&#xA;               &#xA;            &#xA;        ">
+      <link rel="next" href="#d0e71" title="1.&nbsp;Overview">
+      <!--#include virtual="/ssi/header_article.html" -->
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<!--#include virtual="/ssi/boilerplate.html" -->
+<div class="html_to_pdf_link">
+	<a href="essentialgenes.pdf">Download PDF version</a>
+
+</div>
+      <div class="article" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h1 class="title"><a name="esg_ArticleID"></a>Essential genes<em><span class="remark">
+                                          <sup><a name="d0e10" href="#ftn.d0e10">*</a></sup>
+                                       </span></em>
+                             
+                  </h1>
+               </div>
+               <div>
+                  <div class="author"><span class="author"><span class="firstname">Kenneth</span> <span class="surname">Kemphues<em><span class="remark">
+                                                     <sup><a name="d0e38" href="#ftn.d0e38">&sect;</a></sup>
+                                                 </span></em>
+                                       </span><br></span><span class="affiliation"><span class="address">Department of Molecular Biology and Genetics, Cornell University, Ithaca, NY, 14853, USA
+                           <p></p></span></span></div>
+               </div>
+            </div>
+            <hr>
+         </div>
+         <div class="toc">
+
+	   <div id="section_locator"><a href="/toc_geneticsgenomics.html">
+	         <b>This chapter is in WormBook section:</b><br />
+		       > Genetics and genomics<br />>> Genetics
+		</a></div><hr />
+
+<a href="http://www.wormbase.org/forums/index.php?board=186.0" title="Discuss WormBook" target="_blank"><font color="#9932cc"><b>View/Add Comments</b></font></a><br/>
+<IFRAME  SRC="http://tazendra.caltech.edu/~acedb/cgi-bin/wormbook_comment.cgi?name=Essential+genes" HEIGHT=50 WIDTH=180 FRAMEBORDER=0 SCROLLING=NO allowTransparency="true"></IFRAME>
+
+<hr />
+
+            <p><b>Table of Contents</b></p>
+            <dl>
+               <dt><span class="sect1"><a href="#d0e71">1. Overview</a></span></dt>
+               <dt><span class="sect1"><a href="#d0e101">2. Types of essential genes</a></span></dt>
+               <dt><span class="sect1"><a href="#d0e106">3. Methods for identifying essential genes</a></span></dt>
+               <dd>
+                  <dl>
+                     <dt><span class="sect2"><a href="#d0e111">3.1. Classical mutant hunts</a></span></dt>
+                     <dt><span class="sect2"><a href="#d0e255">3.2. RNAi</a></span></dt>
+                     <dt><span class="sect2"><a href="#d0e316">3.3. Generating loss-of-function alleles by targeted intragenic deletion</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="sect1"><a href="#d0e354">4. Redundancy of essential genes</a></span></dt>
+               <dt><span class="sect1"><a href="#d0e379">5. Pleiotropic essential gene phenotypes</a></span></dt>
+               <dt><span class="sect1"><a href="#d0e483">6. Summary</a></span></dt>
+               <dt><span class="sect1"><a href="#d0e494">7. References</a></span></dt>
+            </dl>
+         </div>
+         <div class="abstract">
+            <p class="title"><span class="bold"><strong>Abstract</strong></span></p>
+            <p><span class="bold"><strong>Understanding the biology of</strong></span> <span class="emphasis"><em><span class="bold"><strong>C. elegans</strong></span></em></span> <span class="bold"><strong>relies on identification and analysis of
+                                 essential genes, genes required for growth to a fertile adult. Approaches for
+                                 identifying essential genes include several types of classical forward genetic screens,
+                                 genome-wide RNA interference screens and systematic targeted gene knockout. Based on
+                                 most estimates made from screening results thus far, from 15&#8211;30% of</strong></span> <span class="emphasis"><em><span class="bold"><strong>C. elegans</strong></span></em></span> <span class="bold"><strong>genes
+                                 appear to be essential. Genetic redundancy masks some essential functions and pleiotropy
+                                 of many essential genes poses a challenge for a full understanding of their functions.
+                                 Temperature sensitive mutations are valuable tools for studies of essential genes, but
+                                 our ability to analyze essential genes would benefit from development of new tools for
+                                 conditional inactivation or activation of specific genes.</strong></span></p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e71"></a>1.&nbsp;Overview
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Understanding the biology of <span class="emphasis"><em>C. elegans</em></span> relies on identification and analysis of
+                           essential genes. An essential gene is defined here as a gene necessary for growth to a
+                           fertile adult. Some essential genes were identified fortuitously, but most essential
+                           genes have been identified through mutant screens designed specifically to isolate
+                           lethal and sterile mutations. Starting with Sydney Brenner's pioneering genetic
+                           analysis, many <span class="emphasis"><em>C. elegans</em></span> geneticists have sought to understand the nature of the genome
+                           by estimating the fraction of the genome devoted to essential functions. Based on the
+                           frequency of X chromosome lethal mutations, Brenner estimated that the <span class="emphasis"><em>C. elegans</em></span> genome
+                           had about 2000 essential genes (<a href="#bib3">Brenner, 1974</a>). Inclusion of sterile
+                           mutations raised this estimate to about 3000, and a number of screens for lethal and
+                           sterile mutations in specific genomic regions in the 1970s and 80s yielded gene
+                           frequencies raising the upper limit of this estimate to as high as 30% of the genome or
+                           about 5700. (See <a href="#bib16">Herman, 1978</a> and <a href="#bib23">Johnsen and Baillie, 1997</a>) for
+                           references and discussion. Also see (<a href="#bib9">Feichtinger, 1995</a>, for alternative
+                           statistical analyses arriving at an estimate of about 8500.) With the sequencing of the
+                           genome and the development of methods to target specific genes, it is now within our
+                           power to obtain loss-of-function mutations in every gene in the worm, and efforts are
+                           under way to do just that. However, even with this new ability to systematically knock
+                           out genes, many essential functions can remain cryptic due to genetic redundancy or to pleiotropy.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e101"></a>2.&nbsp;Types of essential genes
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>There are three types of mutations that identify essential
+                       functions: zygotic lethal mutations (lethals), maternal-effect lethal mutations
+                       (maternal-effect lethals) and sterile mutations (steriles). Zygotic lethals prevent the
+                       development to adult of individuals homozygous for the mutation. Zygotic lethals are broadly
+                       categorized, based on the time of developmental arrest, as embryonic or larval lethals.
+                       Maternal-effect lethals are a special class of sterilizing mutations that prevent the
+                       development of the progeny of hermaphrodites homozygous for the mutation. Such mutations
+                       define genes whose expression in the mother is required for embryonic development. Sterile
+                       mutations prevent the production of fertilized eggs by individuals homozygous for the
+                       mutation. Sterility could arise due to defects in germline development, somatic gonad
+                   development, oogenesis, spermatogenesis, ovulation or fertilization.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e106"></a>3.&nbsp;Methods for identifying essential genes
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Classically, most lethal and sterile mutations have been identified by
+                       random mutagenesis followed by either of two types of screens: genome-wide screens for
+                       conditional lethals, such as temperature-sensitive mutations, and screens for
+                       non-conditional lethals and steriles in particular genomic regions for which balancers are
+                       available. More recently this approach has been augmented and, to a certain extent, replaced
+                       by approaches that target individual genes for knockdown or knockout. Two different
+                       large-scale screening methods are being used: systematic RNA interference (RNAi) and
+                       PCR-based screens for intragenic deletions after mutagenesis.
+            </p>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e111"></a>3.1.&nbsp;Classical mutant hunts
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Genome wide screens for temperature-sensitive embryonic lethal mutations carried out in the late
+                          1970s and early 80s provided the first stocked lethal mutants for studies of development.
+                          Genes identified in these early screens are named either <span class="emphasis"><em>emb</em></span> (arrest in embryogenesis) or
+                          <span class="emphasis"><em>zyg</em></span> (zygote defective) depending on the lab where the work was done, but operationally the
+                          screens were identical. Their analysis provided a foundation for understanding the
+                          complexity of lethal phenotypes as well as insight into the relative contributions of
+                          maternal vs. zygotic gene expression to the developmental process (see <a href="#bib48">Wood, 1988</a>
+                          for references and discussion). Conclusions from the work were that many genes are required
+                          at multiple times in development and maternal gene expression plays a major role in
+                          embryogenesis. Temperature-sensitive lethal mutations are extremely valuable because they
+                          can be used to analyze essential genes with roles in multiple processes and are discussed
+                          more below.
+               </p>
+               <p>Non-conditional lethal and sterile mutations must be maintained in the
+                          heterozygous condition, requiring constant selection to avoid loss of the mutation. This
+                          problem can be partially overcome by using closely linked visible markers to &#8220;balance&#8221; the
+                          lethal mutation. Because of this, early screens for lethal and sterile mutations were
+                          limited to small regions of the genome with convenient visible markers (e.g., <a href="#bib38">Rogalski et
+                             al., 1982</a>; <a href="#bib39">Rose and Baillie, 1980</a>). However, the development of
+                          free duplications and crossover-suppressing chromosomal rearrangements (balancer
+                          chromosomes) allowed easy maintenance of lethals and steriles, thus making it feasible to
+                          carry out large-scale screens for non-conditional lethal mutations (see <a href="#bib7">Edgley et al.,
+                             1995</a> for a detailed discussion of balancer chromosomes). Such screens are
+                          restricted to regions of the genome for which balancers are available. However, because such
+                          balancers cover much of the genome it has been possible to collect mutations representing
+                          more than 860 essential loci by this method (for example <a href="#bib4">Clark et al., 1988</a>;
+                          <a href="#bib13">Gonczy et al., 1999</a>; <a href="#bib16">Herman, 1978</a>; <a href="#bib17">Howell et al., 1987</a>;
+                          <a href="#bib18">Howell and Rose, 1990</a>; <a href="#bib21">Johnsen and Baillie, 1988</a>; <a href="#bib22">Johnsen and
+                             Baillie, 1991</a>; <a href="#bib25">Kemphues et al., 1988</a>; <a href="#bib29">McKim et al., 1988</a>; <a href="#bib30">McKim et al., 1992</a>; <a href="#bib32">Meneely and Herman, 1979</a>; <a href="#bib38">Rogalski
+                             et al., 1982</a>; <a href="#bib39">Rose and Baillie, 1980</a>; <a href="#bib40">Rosenbluth et al., 1983</a>; <a href="#bib44">Sigurdson et al., 1984</a>; <a href="#bib46">Stewart et al., 1998</a>; <a href="#bib49">Zetka and
+                             Rose, 1992</a>). Genes identified in these screens are named <span class="emphasis"><em>let</em></span> (lethal), <span class="emphasis"><em>ooc</em></span>
+                          (oocyte defective), <span class="emphasis"><em>mel</em></span> (maternal-effect lethal), and <span class="emphasis"><em>spe</em></span> (spermatogenesis defective) or <span class="emphasis"><em>fer</em></span>
+                          (fertilization defective &#8212; identical to <span class="emphasis"><em>spe</em></span> mutants in phenotype). For <span class="emphasis"><em>mel</em></span> and <span class="emphasis"><em>spe</em></span> mutants
+                          it has been possible to develop genome-wide screens for non-conditional mutations in the
+                          absence of balancer chromosomes. In these screens, F1 progeny of mutagenized hermaphrodites
+                          are picked singly onto plates and the phenotypes are scored in the F2. In the case of
+                          spermatogenesis defective mutations, the homozygotes are identified as hermaphrodites that
+                          produce only unfertilized eggs and whose embryo production can be rescued by mating to wild-type males (for example
+                  <a href="#bib1">Argon and Ward, 1980</a>; <a href="#bib27">L'Hernault et al., 1988</a>; <a href="#bib47">Ward and Miwa, 1978</a>). In the case of<span class="emphasis"><em> mel</em></span> mutations, the homozygous
+                          mutant animals are identified in the genetic background of an egg-laying defective mutation
+                          (<a href="#bib26">Kemphues et al., 1988</a>; <a href="#bib37">Priess et al., 1987</a>). Because egg-laying
+                          defects allow larvae to hatch inside the mother, killing her at a young age, mutations that
+                          block production of larval progeny allow survival of the F2 animals into old age.
+                          Maternal-effect lethal mutations can be distinguished from sterile mutations by the
+                          accumulation of fertilized but unhatched eggs in the uterus. Unfertilized eggs do not form
+                          light-refracting eggshells. 
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e255"></a>3.2.&nbsp;RNAi
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Identification and analysis of essential genes has been
+                          greatly facilitated by RNA interference (RNAi; see <a href="http://www.wormbook.org/chapters/www_introreversegenetics/introreversegenetics.html" target="_top">Reverse genetics</a>).RNAi leads to
+                          gene-specific mRNA degradation and is triggered by double stranded RNAi specific for the
+                          target gene. The double stranded RNA can be delivered by microinjection, by uptake of dsRNA
+                          by worms in solution (soaking), or by feeding worms bacteria engineered to synthesize the
+                          RNA of interest. Whole genome screens have been carried out by RNAi feeding in a wild-type
+                          genetic background (<a href="#bib10">Fraser et al., 2000</a>; <a href="#bib24">Kamath et al., 2003</a>)
+                          and in the <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=rrf-3" target="_blank">rrf-3</a></em></span> sensitized genetic background (<a href="#bib45">Simmer et al., 2003</a>). Because
+                          RNAi is susceptible to false negatives and often gives incompletely penetrant phenotypes
+                          (see below), it can only provide a minimum estimate for essential genes in the genome.
+                          Although the screens in the <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=rrf-3" target="_blank">rrf-3</a></em></span> genetic background were more sensitive for viable RNAi
+                          phenotypes, they identified slightly fewer essential genes than found in the wild-type
+                          background. Based on RNAi results in the wild-type background, the minimum number of
+                          essential genes is about 1750. (1170 genes with lethal and sterile RNAi phenotypes adjusted
+                          for a false negative rate of 22% and 86% genome coverage; <a href="#bib24">Kamath et al., 2003</a>) Screens have also been carried out using RNAi administered by injection or
+                          soaking worms in dsRNA solutions (<a href="#bib12">Gonczy et al., 2000</a>; <a href="#bib28">Maeda et al., 2001</a>; <a href="#bib35">Piano et al., 2000</a>; <a href="#bib36">Piano et al., 2002</a>).
+                          Comparison of these results to each other and to results from classical genetic screens has
+                          revealed some limitations of RNAi for discovering gene function: some genes appear to be
+                          insensitive to RNAi and outcomes can vary. Some essential genes will give no RNAi
+                          phenotypes, give very weak phenotypes or give phenotypes other than lethality or sterility.
+                          Furthermore, the efficiency of RNAi differs somewhat with different techniques for
+                          introducing the dsRNA triggers (<a href="#bib36">Piano et al., 2002</a>) and even from trial to
+                          trial with the same technique (<a href="#bib45">Simmer et al., 2003</a>). Another limitation, not
+                          restricted to RNAi, is genetic redundancy (discussed below and see <a href="http://www.wormbook.org/chapters/www_geneduplication/geneduplication.html" target="_top">Gene duplications and genetic redundancy in <span class="emphasis"><em>C. elegans</em></span></a>).
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e316"></a>3.3.&nbsp;Generating loss-of-function alleles by targeted intragenic deletion
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Two approaches have been used to generate targeted loss-of-function mutations by intragenic deletion. Common to both
+                          is the PCR-based screening of populations of randomly mutagenized worms to identify rare
+                          deletions in targeted genes. The worms carrying the deletions are enriched and eventually
+                          isolated by sibling selection schemes. Initially, transposon insertions in targeted genes
+                          were isolated in the expectation that the insertions would be mutagenic (<a href="#bib42">Rushforth et al.,
+                             1993</a>), but because of a high frequency of silent insertions (<a href="#bib41">Rushforth and
+                             Anderson, 1996</a>; <a href="#bib42">Rushforth et al., 1993</a>) a two-step process of
+                          first isolating insertion-bearing worms and then screening populations of these worms for
+                          imprecise excision events was developed (<a href="#bib50">Zwaal et al., 1993</a>). Chemical
+                          mutagenesis, which proved to be more efficient, has now replaced the use of transposon
+                          excision for generating deletions (<a href="#bib20">Jansen et al., 1997</a>). The procedure is
+                          labor-intensive, and not efficient for a single target gene. Therefore, two groups have
+                          organized large scale efforts and are now generating intragenic deletions based on requests
+                          from members of the research community: the <a href="http://celeganskoconsortium.omrf.org/" target="_blank"><span class="emphasis"><em>C. elegans</em></span> Gene Knockout Consortium</a>
+                          and the <a href="http://www.grs.nig.ac.jp/c.elegans/index.jsp" target="_blank">National Bioresource Project for the Experimental Animal <span class="emphasis"><em>C. elegans</em></span></a>
+                  Based on results to date, about 1800 genes
+                          have been knocked out with 20-24% being essential (Shohei Mitani, Don Moerman and Bob
+                          Barstead, personal communications). Projecting the higher frequency to the whole genome
+                          (19,727 CDS; <a href="http://www.wormbase.org/" target="_blank">Wormbase</a>, release WS136, 12/3/05) yields an estimate of 4645
+                          essential genes. However, this is likely to be inaccurate because gene knockouts are not
+                          being done randomly, but rather are biased toward genes with known functions in other
+                          organisms, or towards genes with known mutant or RNAi phenotypes.
+               </p>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e354"></a>4.&nbsp;Redundancy of essential genes
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Many genes are members of multigene families and members of these families can often
+                       have redundant functions. In rare cases where nucleotide sequence is highly conserved, RNAi
+                       with a single trigger molecule can target multiple family members (e.g., <a href="#bib5">Colombo et al.,
+                          2003</a>). If the number of family members is small, it is possible to reveal
+                       redundancies by double or triple knockout or knockdown (e.g., <a href="#bib43">Schubert et al., 2000</a>; <a href="#bib15">Gotta and Ahringer, 2001</a>). Redundant pathways, in which different
+                       processes can accomplish the same essential function, are more cryptic and are not likely to
+                       be detected except by fortuitous double mutant combinations or screens for synthetic lethal        mutations (enhancers).
+               See <a href="http://www.wormbook.org/chapters/www_geneduplication/geneduplication.html" target="_top">Gene duplications and genetic redundancy in <span class="emphasis"><em>C. elegans</em></span></a> for further consideration of redundancy and
+                       <a href="http://www.wormbook.org/chapters/www_geneticenhancers/geneticenhancers.html" target="_blank">Genetic enhancers</a> for further discussion of enhancers.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e379"></a>5.&nbsp;Pleiotropic essential gene phenotypes
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Many essential genes function repeatedly during the life of the worm and can have different
+                       essential roles in different tissues. (See <a href="http://www.wormbook.org/chapters/www_geneticmosaics/geneticmosaics.html" target="_top">Genetic mosaics</a>) However, null mutant phenotypes
+                       often reveal only one essential role, leading to incomplete understanding of the gene's
+                       role. A clear example is the Notch family member <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=glp-1" target="_blank">glp-1</a></em></span>. Null mutations in <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=glp-1" target="_blank">glp-1</a></em></span> are sterile
+                       mutations. Analysis of the null alleles revealed that <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=glp-1" target="_blank">glp-1</a></em></span> was required for germline
+                       proliferation (<a href="#bib2">Austin and Kimble, 1987</a>). Expression of <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=glp-1" target="_blank">glp-1</a></em></span> during oogenesis
+                       is also required for cell fate specification in the early embryo. However, this function is
+                       masked in animals homozygous for the null allele by the failure of these animals to produce
+                       embryos. The embryonic role of <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=glp-1" target="_blank">glp-1</a></em></span> was revealed by the recovery of <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=e2072;class=Variation" target="_blank">e2072</a></em></span>, a special
+                       non-conditional allele that did not affect germline proliferation, and three
+                       temperature-sensitive mutations (<a href="#bib37">Priess et al., 1987</a>). Analysis of these
+                       mutations revealed that signaling through the <a href="http://www.wormbase.org/db/seq/protein?name=GLP-1;class=protein" target="_blank">GLP-1</a> protein plays major roles in cell fate
+                       specification at multiple times in the early embryo (<a href="#bib19">Hutter and Schnabel, 1994</a>; <a href="#bib31">Mello et al., 1994</a>; <a href="#bib33">Moskowitz et al., 1994</a>; <a href="#bib37">Priess et
+                          al., 1987</a>). Clearly, null alleles generated by targeted deletions will be
+                       inadequate for full understanding of essential gene functions. 
+            </p>
+            <p>The <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=glp-1" target="_blank">glp-1</a></em></span> example illustrates
+                       not only the problem of pleiotropy but also one solution &#8212; the recovery and analysis of
+                       temperature-sensitive mutations. Temperature-sensitive mutations, as discussed above, are
+                       being used effectively for analysis of many essential <span class="emphasis"><em>C. elegans</em></span> genes. Judicious
+                       temperature shifts can reveal multiple functions for a given gene. For example, shifting
+                       from permissive to restrictive temperature for brief periods early in embryogenesis revealed
+                       distinct roles for <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=glp-1" target="_blank">glp-1</a></em></span> at the four-cell and the 12-cell stage (<a href="#bib31">Mello et al., 1994</a>). Therefore the continued screening for temperature-sensitive lethal mutations
+                       (e.g., <a href="#bib8">Encalada et al., 2000</a>; <a href="#bib11">Golden et al., 2000</a>; <a href="#bib34">O'Connell et
+                          al., 1998</a>) will provide reagents for specific analyses that often benefit the
+                       community at large. The relative rarity of temperature-sensitive mutations and the extreme
+                       difficulty of targeting such mutations to specific genes restricts their utility.
+            </p>
+            <p>Another
+                       solution to the pleiotropy problem, conditional gene expression, used effectively in other
+                       genetic models like fruit flies and mice, has not yet been developed for <span class="emphasis"><em>C. elegans</em></span>. In this
+                       approach, transgenes that have conditional promoters driving the gene of interest or that
+                       have strategically-placed recombination sequences are transformed into null mutant
+                       backgrounds. These constructs can be designed for gene activation or inactivation in
+                       specific tissues, at specific developmental times or in response to drug applications.
+                       Systems for conditional gene expression include the GAL4-UAS system applied effectively in
+                       fruit flies (<a href="#bib6">Duffy, 2002</a>) and the Cre/lox and tetracycline inducible systems
+                       being used in mouse (<a href="#bib14">Gossen and Bujard, 2002</a>). Adaptation of these tools for
+                       <span class="emphasis"><em>C. elegans</em></span> would greatly facilitate analysis of essential genes.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e483"></a>6.&nbsp;Summary
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>The number of essential genes in <span class="emphasis"><em>C. elegans</em></span> as estimated by gene knockout, RNAi and classical genetic
+                       screens appears to be less than 30% of the genome. The combination of RNAi and targeted gene
+                       knockouts ensures the identification of most essential <span class="emphasis"><em>C. elegans</em></span> genes in the foreseeable
+                       future. Genetic redundancy could mask a significant number of essential functions, but
+                       construction of double and triple mutants or polygenic RNAi has the potential to identify
+                       many of these cases. Studies of null mutations can identify many roles of essential genes,
+                       but some roles of essential genes can be masked by early developmental arrest. Although
+                       temperature-sensitive mutations can overcome this problem, the difficulty of targeting
+                       temperature-sensitive mutations to specific genes makes it desirable to develop additional
+                       tools for conditional inactivation or activation of essential genes.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e494"></a>7.&nbsp;References
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p></p>
+            <div class="bibliography">
+               <div class="bibliomixed"><a name="bib1"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Argon, Y., and Ward, S. (1980). <span class="emphasis"><em>Caenorhabditis elegans</em></span> fertilization-defective mutants with abnormal sperm. Genetics <span class="emphasis"><em>96</em></span>, 413&#8211;433.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=7196361&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib2"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Austin, J., and Kimble, J. (1987). <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=glp-1" target="_blank">glp-1</a></em></span> is required in the germ line for regulation of the decision between mitosis and meiosis in <span class="emphasis"><em>C. elegans</em></span>. Cell <span class="emphasis"><em>51</em></span>, 589&#8211;599.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=3677168&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib3"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Brenner, S. (1974). The genetics of <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Genetics <span class="emphasis"><em>77</em></span>, 71&#8211;94.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=4366476&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib4"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Clark, D.V., Rogalski, T.M., Donati, L.M., and Baillie, D.L. (1988). The <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=unc-22" target="_blank">unc-22</a></em></span>(IV) region of <span class="emphasis"><em>Caenorhabditis elegans</em></span>: genetic analysis of lethal mutations. Genetics <span class="emphasis"><em>119</em></span>, 345&#8211;353.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=3396868&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib5"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Colombo, K., Grill, S.W., Kimple, R.J., Willard, F.S., Siderovski, D.P., and Gonczy, P. (2003). Translation of polarity cues
+                        into asymmetric spindle positioning in<span class="emphasis"><em> Caenorhabditis elegans</em></span> embryos. Science <span class="emphasis"><em>300</em></span>, 1957&#8211;1961.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12750478&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1126/science.1084146" target="_blank"> Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib6"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Duffy, J.B. (2002). GAL4 system in <span class="emphasis"><em>Drosophila</em></span>: a fly geneticist's Swiss army knife. Genesis <span class="emphasis"><em>34</em></span>, 1&#8211;15.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12324939&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1002/gene.10150" target="_blank"> Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib7"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Edgley, M.L., Baillie, D.L., Riddle, D.L., and Rose, A.M. (1995). Genetic balancers. Methods Cell Biol. <span class="emphasis"><em>48</em></span>, 147&#8211;184.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8531724&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib8"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Encalada, S.E., Martin, P.R., Phillips, J.B., Lyczak, R., Hamill, D.R., Swan, K.A., and Bowerman, B. (2000). DNA replication
+                        defects delay cell division and disrupt cell polarity in early <span class="emphasis"><em>Caenorhabditis elegans</em></span> embryos. Dev. Biol. <span class="emphasis"><em>228</em></span>, 225&#8211;238.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11112326&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1006/dbio.2000.9965" target="_blank"> Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib9"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Feichtinger, R. (1995) Quantitative analysis of maternal gene functions of <span class="emphasis"><em>Caenorhabditis elegans</em></span>. University of Vienna, Austria, Vienna.</span>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib10"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Fraser, A.G., Kamath, R.S., Zipperlen, P., Martinez-Campos, M., Sohrmann, M., and Ahringer, J. (2000). Functional genomic
+                        analysis of <span class="emphasis"><em>C. elegans</em></span> chromosome I by systematic RNA interference. Nature <span class="emphasis"><em>408</em></span>, 325&#8211;330.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11099033&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/35042517" target="_blank"> Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib11"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Golden, A., Sadler, P.L., Wallenfang, M.R., Schumacher, J.M., Hamill, D.R., Bates, G., Bowerman, B., Seydoux, G., and Shakes,
+                        D.C. (2000). Metaphase to anaphase (mat) transition-defective mutants in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. J. Cell Biol. <span class="emphasis"><em>151</em></span>, 1469&#8211;1482.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11134076&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib12"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Gonczy, P., Echeverri, G., Oegema, K., Coulson, A., Jones, S.J., Copley, R.R., Duperon, J., Oegema, J., Brehm, M., Cassin,
+                        E., et al. (2000). Functional genomic analysis of cell division in <span class="emphasis"><em>C. elegans</em></span> using RNAi of genes on chromosome III. Nature <span class="emphasis"><em>408</em></span>, 331&#8211;336.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11099034&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/35042526" target="_blank"> Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib13"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Gonczy, P., Schnabel, H., Kaletta, T., Amores, A.D., Hyman, T., and Schnabel, R. (1999). Dissection of cell division processes
+                        in the one cell stage <span class="emphasis"><em>Caenorhabditis elegans</em></span> embryo by mutational analysis. J. Cell Biol. <span class="emphasis"><em>144</em></span>, 927&#8211;946.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10085292&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib14"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Gossen, M., and Bujard, H. (2002). Studying gene function in eukaryotes by conditional gene inactivation. Annu. Rev. Genet.
+                        <span class="emphasis"><em>36</em></span>, 153&#8211;173.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12429690&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1146/annurev.genet.36.041002.120114" target="_blank"> Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib15"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Gotta, M., and Ahringer, J. (2001). Distinct roles for G<span class="symbol">&#945;</span> and G<span class="symbol">&#946;</span><span class="symbol">&#947;</span> in regulating spindle position and orientation in <span class="emphasis"><em>Caenorhabditis elegans</em></span> embryos. Nat. Cell Biol. <span class="emphasis"><em>3</em></span>, 297&#8211;300.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11231580&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/35060092" target="_blank"> Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib16"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Herman, R.K. (1978). Crossover suppressors and balanced recessive lethals in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Genetics <span class="emphasis"><em>88</em></span>, 49&#8211;65.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=631558&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib17"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Howell, A.M., Gilmour, S.G., Mancebo, R.A., and Rose, A.M. (1987). Genetic analysis of a large autosomal region in <span class="emphasis"><em>Caenorhabditis elegans</em></span> by the use of a free duplication. Genet. Res. <span class="emphasis"><em>49</em></span>, 207&#8211;213.</span>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib18"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Howell, A.M., and Rose, A.M. (1990). Essential genes in the <span class="emphasis"><em>hDf6</em></span> region of chromosome I in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Genetics <span class="emphasis"><em>126</em></span>, 583&#8211;592.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=2249758&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib19"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Hutter, H., and Schnabel, R. (1994). <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=glp-1" target="_blank">glp-1</a></em></span> and inductions establishing embryonic axes in <span class="emphasis"><em>C. elegans</em></span>. Development <span class="emphasis"><em>120</em></span>, 2051&#8211;2064.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=7925009&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib20"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Jansen, G., Hazendonk, E., Thijssen, K.L., and Plasterk, R.H. (1997). Reverse genetics by chemical mutagenesis in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Nature Genetics <span class="emphasis"><em>17</em></span>, 119&#8211;121.</span>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib21"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Johnsen, R.C., and Baillie, D.L. (1988). Formaldehyde mutagenesis of the <span class="emphasis"><em>eT1</em></span> balanced region in <span class="emphasis"><em>Caenorhabditis elegans</em></span>: dose-response curve and the analysis of mutational events. Mutat. Res. <span class="emphasis"><em>201</em></span>, 137&#8211;147.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=3419443&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib22"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Johnsen, R.C., and Baillie, D.L. (1991). Genetic analysis of a major segment [LGV(left)] of the genome of <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Genetics <span class="emphasis"><em>129</em></span>, 735&#8211;752.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=1752418&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib23"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Johnsen, R.C., and Baillie, D.L. (1997). Mutation. In <span class="emphasis"><em>C. elegans</em></span> II, D.L. Riddle, T. Blumenthal, B.J. Meyer, and J.R. Priess, eds., Cold Spring Harbor, Cold Spring Harbor Laboratory Press,
+                        pp. 79&#8211;95.</span>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib24"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Kamath, R.S., Fraser, A.G., Dong, Y., Poulin, G., Durbin, R., Gotta, M., Kanapin, A., Le Bot, N., Moreno, S., Sohrmann, M.,
+                        et al. (2003). Systematic functional analysis of the <span class="emphasis"><em>Caenorhabditis elegans</em></span> genome using RNAi. Nature <span class="emphasis"><em>421</em></span>, 231&#8211;237.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12529635&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nature01278" target="_blank"> Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib25"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Kemphues, K.J., Kusch, M., and Wolf, N. (1988). Maternal-effect lethal mutations on linkage group II of <span class="emphasis"><em>C. elegans</em></span>. Genetics <span class="emphasis"><em>120</em></span>, 977&#8211;986.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=3224814&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib26"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Kemphues, K.J., Priess, J.R., Morton, D.G., and Cheng, N.S. (1988). Identification of genes required for cytoplasmic localization
+                        in early <span class="emphasis"><em>C. elegans</em></span> embryos. Cell <span class="emphasis"><em>52</em></span>, 311&#8211;320.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=3345562&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib27"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">L'Hernault, S.W., Shakes, D.C., and Ward, S. (1988). Developmental genetics of chromosome I spermatogenesis-defective mutants
+                        in the nematode <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Genetics <span class="emphasis"><em>120</em></span>, 435&#8211;452.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=3197956&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib28"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Maeda, I., Kohara, Y., Yamamoto, M., and Sugimoto, A. (2001). Large-scale analysis of gene function in <span class="emphasis"><em>Caenorhabditis elegans</em></span> by high-throughput RNAi. Curr. Biol. <span class="emphasis"><em>11</em></span>, 171&#8211;176.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11231151&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib29"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">McKim, K.S., Heschl, M.F., Rosenbluth, R.E., and Baillie, D.L. (1988). Genetic organization of the <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=unc-60" target="_blank">unc-60</a></em></span> region in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Genetics <span class="emphasis"><em>118</em></span>, 49&#8211;59.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8608931&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib30"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">McKim, K.S., Starr, T., and Rose, A.M. (1992). Genetic and molecular analysis of the <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=dpy-14" target="_blank">dpy-14</a></em></span> region in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Mol. Gen. Genet. <span class="emphasis"><em>233</em></span>, 241&#8211;251.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=1603066&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib31"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Mello, C.C., Draper, B.W., and Priess, J.R. (1994). The maternal genes <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=apx-1" target="_blank">apx-1</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=glp-1" target="_blank">glp-1</a></em></span> and establishment of dorsal-ventral polarity in the early <span class="emphasis"><em>C. elegans</em></span> embryo. Cell <span class="emphasis"><em>77</em></span>, 95&#8211;106.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8156602&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib32"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Meneely, P.M., and Herman, R.K. (1979). Lethals, steriles and deficiencies in a region of the X chromosome of <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Genetics <span class="emphasis"><em>92</em></span>, 99&#8211;115.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=574105&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib33"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Moskowitz, I.P., Gendreau, S.B., and Rothman, J.H. (1994). Combinatorial specification of blastomere identity by <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=glp-1" target="_blank">glp-1</a></em></span>-dependent cellular interactions in the nematode <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Development <span class="emphasis"><em>120</em></span>, 3325&#8211;3338.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=7720570&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib34"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">O'Connell, K.F., Leys, C.M., and White, J.G. (1998). A genetic screen for temperature-sensitive cell-division mutants of <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Genetics <span class="emphasis"><em>149</em></span>, 1303&#8211;1321.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=9649522&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib35"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Piano, F., Schetter, A.J., Mangone, M., Stein, L., and Kemphues, K.J. (2000). RNAi analysis of genes expressed in the ovary
+                        of <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Curr. Biol. <span class="emphasis"><em>10</em></span>, 1619&#8211;1622.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11137018&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib36"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Piano, F., Schetter, A.J., Morton, D.G., Gunsalus, K.C., Reinke, V., Kim, S.K., and Kemphues, K.J. (2002). Gene clustering
+                        based on RNAi phenotypes of ovary-enriched genes in <span class="emphasis"><em>C. elegans</em></span>. Curr. Biol. <span class="emphasis"><em>12</em></span>, 1959&#8211;1964.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12445391&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib37"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Priess, J.R., Schnabel, H., and Schnabel, R. (1987). The <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=glp-1" target="_blank">glp-1</a></em></span> locus and cellular interactions in early <span class="emphasis"><em>C. elegans</em></span> embryos. Cell <span class="emphasis"><em>51</em></span>, 601&#8211;611.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=3677169&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib38"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Rogalski, T.M., Moerman, D.G., and Baillie, D.L. (1982). Essential genes and deficiencies in the <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=unc-22" target="_blank">unc-22</a></em></span> IV region of <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Genetics <span class="emphasis"><em>102</em></span>, 725&#8211;736.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=7187364&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib39"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Rose, A.M., and Baillie, D.L. (1980). Genetic organization of the region around <a href="http://www.wormbase.org/db/seq/protein?name=UNC-15;class=protein" target="_blank">UNC-15</a> (I), a gene affecting paramyosin in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Genetics <span class="emphasis"><em>96</em></span>, 639&#8211;648.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=7262541&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib40"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Rosenbluth, R.E., Cuddeford, C., and Baillie, D.L. (1983). Mutagenesis in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. I. A rapid eukaryotic mutagen test system using the reciprocal translocation <span class="emphasis"><em>eT1 (III, V)</em></span>. Mutat. Res. <span class="emphasis"><em>110</em></span>, 39&#8211;48.</span>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib41"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Rushforth, A.M., and Anderson, P. (1996). Splicing removes the <span class="emphasis"><em>Caenorhabditis elegans</em></span> transposon Tc1 from most mutant pre-mRNAs. Mol. Cell Biol. <span class="emphasis"><em>16</em></span>, 422&#8211;429.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8524324&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib42"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Rushforth, A.M., Saari, B., and Anderson, P. (1993). Site-selected insertion of the transposon Tc1 into a <span class="emphasis"><em>Caenorhabditis elegans</em></span> myosin light chain gene. Mol. Cell Biol. <span class="emphasis"><em>13</em></span>, 902&#8211;910.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8380898&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib43"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Schubert, C.M., Lin, R., de Vries, C.J., Plasterk, R.H., and Priess, J.R. (2000). <a href="http://www.wormbase.org/db/seq/protein?name=MEX-5;class=protein" target="_blank">MEX-5</a> and <a href="http://www.wormbase.org/db/seq/protein?name=MEX-6;class=protein" target="_blank">MEX-6</a> function to establish soma/germline asymmetry in early <span class="emphasis"><em>C. elegans</em></span> embryos. Mol. Cell <span class="emphasis"><em>5</em></span>, 671&#8211;682.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10882103&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib44"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Sigurdson, D.C., Spanier, G.J., and Herman, R.K. (1984). <span class="emphasis"><em>Caenorhabditis elegans</em></span> deficiency mapping. Genetics <span class="emphasis"><em>108</em></span>, 331&#8211;345.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=6500256&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib45"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Simmer, F., Moorman, C., van der Linden, A.M., Kuijk, E., van den Berghe, P.V., Kamath, R.S., Fraser, A.G., Ahringer, J.,
+                        and Plasterk, R.H. (2003). Genome-wide RNAi of <span class="emphasis"><em>C. elegans</em></span> using the hypersensitive<span class="emphasis"><em> <a href="http://www.wormbase.org/db/gene/gene?name=rrf-3" target="_blank">rrf-3</a></em></span> strain reveals novel gene functions. PLoS Biol. <span class="emphasis"><em>1</em></span>, E12.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=14551910&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1371/journal.pbio.0000012" target="_blank"> Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib46"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Stewart, H.I., O'Neil, N.J., Janke, D.L., Franz, N.W., Chamberlin, H.M., Howell, A.M., Gilchrist, E.J., Ha, T.T., Kuervers,
+                        L.M., Vatcher, G.P., et al. (1998). Lethal mutations defining 112 complementation groups in a 4.5 Mb sequenced region of <span class="emphasis"><em>Caenorhabditis elegans</em></span> chromosome III. Mol. Gen. Genet. <span class="emphasis"><em>260</em></span>, 280&#8211;288.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=9862482&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib47"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Ward, S., and Miwa, J. (1978). Characterization of temperature-sensitive, fertilization-defective mutants of the nematode
+                        <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Genetics <span class="emphasis"><em>88</em></span>, 285&#8211;303.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=580424&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib48"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Wood, W.B., ed. (1988). The Nematode <span class="emphasis"><em>Caenorhabditis elegans</em></span> (Cold Spring Harbor, Cold Spring Harbor Laboratory Press).</span>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib49"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Zetka, M.C., and Rose, A.M. (1992). The meiotic behavior of an inversion in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Genetics <span class="emphasis"><em>131</em></span>, 321&#8211;332.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=1644275&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib50"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Zwaal, R.R., Broeks, A., Van, M.J., Groenen, J.T. M., and Plasterk, R.H. A. (1993). Target-selected gene inactivation in <span class="emphasis"><em>Caenorhabditis elegans</em></span> by using a frozen transposon insertion mutant bank. Proc. Natl. Acad. Sci. USA <span class="emphasis"><em>90</em></span>, 7431&#8211;7435.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8395047&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="footnotes"><br><hr width="100" align="left">
+            <div class="footnote">
+               <p><sup><a name="ftn.d0e10" href="#d0e10">*</a></sup>Edited by Jonathan Hodgkin and Philip Anderson. Last revised March 4, 2005. Published December 24, 2005. This chapter should
+                  be cited as: Kemphues K. Essential Genes (December 24, 2005), <span class="emphasis"><em>WormBook</em></span>, ed. The <span class="emphasis"><em>C. elegans</em></span> Research Community, WormBook, doi/10.1895/wormbook.1.57.1, <a href="http://www.wormbook.org" target="_top">http://www.wormbook.org</a>.
+               </p>
+               <p><span class="bold"><strong>Copyright:</strong></span> &copy; 2005 Kenneth Kemphues, This is an open-access article distributed under the terms of the Creative Commons Attribution License,
+                  which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are
+                  credited.
+               </p>
+            </div>
+            <div class="footnote">
+               <p><sup><a name="ftn.d0e38" href="#d0e38">&sect;</a></sup>To whom correspondence should be addressed. E-mail: <a href="mailto:kjk1@cornell.edu" target="_top">kjk1@cornell.edu</a>
+                                          
+               </p>
+			   <p><img src="somerights20.gif" alt="Creative Commons License" align="middle" border="0"> All journal content, except where otherwise noted, is licensed under a <a href="http://creativecommons.org/licenses/by/2.5/" title="Creative Commons Attribution License" target="_blank">Creative Commons Attribution License</a>.</p>
+            </div>
+         </div>
+      </div>
+   <!--#include virtual="/ssi/footer.html" --></body>
+</html>
+

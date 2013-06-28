@@ -1,0 +1,1320 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Keeping track of worm trackers
+         
+      </title>
+      <meta name="generator" content="DocBook XSL Stylesheets V1.67.2">
+      <link rel="start" href="#WormBook_Gottschalk_tracking_id" title="Keeping track of worm trackers&#xA;">
+      <link rel="next" href="#sec1" title="1.&nbsp;Introduction">
+      <!--#include virtual="/ssi/header_article.html" -->
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<!--#include virtual="/ssi/boilerplate.html" -->
+     <div class="html_to_pdf_link">
+       <a href="tracking.pdf">Download PDF version</a>
+    </div>
+      <div class="article" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h1 class="title"><a name="WormBook_Gottschalk_tracking_id"></a>Keeping track of worm trackers<sup><a name="d0e6" href="#ftn.d0e6">*</a></sup>
+                     
+                  </h1>
+               </div>
+               <div>
+                  <div class="author"><span class="author"><span class="othername">Steven J. Husson<sup>2</sup><span class="remark"><sup><a name="d0e47" href="#ftn.d0e47">&#8224;</a></sup></span>, Wagner Steuer Costa<sup>1</sup><span class="remark"><sup><a name="d0e47" href="#ftn.d0e47">&#8224;</a></sup></span>, Cornelia Schmitt<sup>1</sup>, Alexander Gottschalk<sup>1</sup><em><span class="remark"><sup><a name="d0e39" href="#ftn.d0e39">&sect;</a></sup></span></em>
+                           </span><br></span><span class="affiliation"><span class="orgname"><sup>1</sup>Buchman Institute for Molecular Life Sciences (BMLS), and Institute of Biochemistry, Goethe-University, Max von Laue Strasse
+                           15, D-60438 Frankfurt, Germany; </span></span><span class="affiliation"><span class="orgname"><sup>2</sup>Katholieke Universiteit Leuven, Research group of Functional Genomics and Proteomics, Naamsestraat 59, B-3000 Leuven, Belgium;
+                           </span></span></div>
+               </div>
+            </div>
+            <hr>
+         </div>
+         <div class="toc">
+	   <div id="section_locator"><a href="/toc_wormmethods.html">
+	         <b>This chapter is in WormBook section:</b><br />
+		       > WormMethods
+		</a></div><hr />
+
+            <p><b>Table of Contents</b></p>
+            <dl>
+               <dt><span class="sect1"><a href="#sec1">1. Introduction</a></span></dt>
+               <dd>
+                  <dl>
+                     <dt><span class="sect2"><a href="#sec2-1">1.1. Quantitative description of behavioral phenotypes using machine vision</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec2-2">1.2. History of <span class="emphasis"><em>C. elegans</em></span> tracking systems</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="sect1"><a href="#sec1-2">2. Worm trackers</a></span></dt>
+               <dd>
+                  <dl>
+                     <dt><span class="sect2"><a href="#sec2-3">2.1. Nemo (<span class="underline">Ne</span>matode <span class="underline">mo</span>vement)</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec2-4">2.2. Worm Tracker 2.0</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec2-5">2.3. The Parallel worm tracker and OptoTracker</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec2-6">2.4. The Multi Worm Tracker</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec2-7">2.5. Multimodal illumination and tracking system for optogenetic analyses of circuit function</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec2-8">2.6. CoLBeRT: control locomotion and behavior in real time</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec2-9">2.7. The opto-mechanical system for imaging or manipulation of neuronal activity in freely moving animals</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec2-10">2.8. Further systems allowing tracking and Ca<sup>2+</sup> imaging in semi-restrained or freely behaving animals</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec2-11">2.9. Behavioral arenas</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec2-12">2.10. The WormLab, a commercially available worm tracker</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="sect1"><a href="#sec1-3">3. Worm trackers optimized for liquid environments</a></span></dt>
+               <dt><span class="sect1"><a href="#sec1-4">4. Additional analysis tools for quantifying <span class="emphasis"><em>C. elegans</em></span> behavior</a></span></dt>
+               <dd>
+                  <dl>
+                     <dt><span class="sect2"><a href="#sec2-13">4.1. Eigenworms: Low-dimensional superposition of principal components</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec2-14">4.2. An analysis tool for the description of bending angles during swimming or crawling</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec2-15">4.3. The Worm Analysis System</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec2-16">4.4. The Multi-Environment Model Estimation for Motility Analysis</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="sect1"><a href="#sec1-5">5. Possible future developments</a></span></dt>
+               <dt><span class="sect1"><a href="#sec1-6">6. Conclusion</a></span></dt>
+               <dt><span class="sect1"><a href="#sec1-7">7. References</a></span></dt>
+            </dl>
+         </div>
+         <div class="abstract">
+            <p class="title"><span class="bold"><strong>Abstract</strong></span></p>
+            <p><span class="bold"><strong><span class="emphasis"><em>C. elegans</em></span> is used extensively as a model system in the neurosciences due to its well defined nervous system. However, the seeming simplicity
+                     of this nervous system in anatomical structure and neuronal connectivity, at least compared to higher animals, underlies a
+                     rich diversity of behaviors. The usefulness of the worm in genome-wide mutagenesis or RNAi screens, where thousands of strains
+                     are assessed for phenotype, emphasizes the need for computational methods for automated parameterization of generated behaviors.
+                     In addition, behaviors can be modulated upon external cues like temperature, O<sub>2</sub> and CO<sub>2</sub> concentrations, mechanosensory and chemosensory inputs. Different machine vision tools have been developed to aid researchers
+                     in their efforts to inventory and characterize defined behavioral &#8220;outputs&#8221;. Here we aim at providing an overview of different
+                     worm-tracking packages or video analysis tools designed to quantify different aspects of locomotion such as the occurrence
+                     of directional changes (turns, omega bends), curvature of the sinusoidal shape (amplitude, body bend angles) and velocity
+                     (speed, backward or forward movement).</strong></span></p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec1"></a>1.&nbsp;Introduction
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p><span class="emphasis"><em>C. elegans</em></span> is an outstanding model organism for the study of neuronal circuits at the systems level. Exactly 302 neurons coordinate
+               different behaviors such as feeding, mating, egg-laying, defecation, swimming and many subtle forms of locomotion on a solid
+               surface. Due to its experimental amenability, the nematode has been an ideal animal for examining the genetic basis of behavior.
+               Numerous phenotype-driven (forward and reverse) genetic screens have been performed, in search of defined behavioral abnormalities
+               that can be assigned to specific genes. However, the effects of specific mutations on behavioral changes under study are often
+               poorly described using imprecise terminology. In addition, as the phenotypes are difficult to quantify, lack of numerical
+               data hinders robust statistical analysis. These screens mostly provide an informative description of the phenotype like &#8220;Unc&#8221;
+               (uncoordinated) or similar descriptions (<a href="#bib4">Brenner, 1974</a>). However, an uncoordinated worm can be &#8220;coiling&#8221;, &#8220;kinky&#8221;, &#8220;sluggish&#8221;, &#8220;loopy&#8221;, &#8220;slow&#8221; or might not move at all (<a href="#bib18">Hodgkin, 1983</a>). These observations and phenotypical assignments are generally made by the experimenter and therefore involve the risk of
+               subjectivity and non-uniformity, and also fail to address issues of phenotypic penetrance and degree of severity. Moreover,
+               precise specification of the different aspects of locomotion that are affected, such as velocity, amplitude of the sinusoidal
+               movement, angles of body bends and turning frequency cannot be easily provided through visual inspection by an individual
+               researcher. The emergence of possibilities for tracking cells (particularly neurons; <a href="#bib15">Faumont et al., 2011</a>), as well as optogenetic technologies that use light to gain exogenous control of defined cells (e.g., activation by the
+               depolarizing Channelrhodopsin-2 [ChR2] and inhibition by the hyperpolarizing Halorhodopsin [NpHR] (<a href="#bib3">Boyden et al., 2005</a>; <a href="#bib12">Deisseroth, 2011</a>; <a href="#bib22">Liewald et al., 2008</a>; <a href="#bib26">Nagel et al., 2003</a>; <a href="#bib25">Nagel et al., 2005</a>; <a href="#bib39">Stirman et al., 2011</a>; <a href="#bib45">Zhang et al., 2007</a>; <a href="#bib21">Leifer et al., 2011</a>), has generated an even more pressing demand for neurobiologists to have robust computational methods for the quantification
+               of behavior.
+            </p>
+            <p>To address this problem, different machine vision approaches for automated behavioral analysis have been developed recently.
+               Here we focus on software (and, to some extent, hardware) tools that quantitatively analyze locomotion behavior. We aim to
+               provide a descriptive and currently comprehensive overview of different tracking systems and software developed by the worm
+               community. We will discuss obvious advantages and disadvantages of the respective systems, including some &#8220;how-to's&#8221; to the
+               extent that we can judge this either from our own experience or from the published work describing the systems. This review
+               focuses mainly on the &#8220;input&#8221; and the &#8220;output&#8221; of behavior tracking systems: how many worms can be analyzed with the respective
+               tool, and which behavioral parameters can be analyzed (<a href="#table1" title="Table 1. Comparison of tracking systems">Table 1</a>). An in-depth description of the various programs/codes of the diversity of video analysis tools is beyond the focus of this
+               review; these will rather be treated as &#8220;black boxes&#8221; and the reader is referred to the original publications. We will first
+               provide a short history of worm tracking and mention how different video analysis tools have been used to quantitatively analyze
+               <span class="emphasis"><em>C. elegans</em></span> behavior in the past, to illustrate how the field has evolved. Next, we will give an overview of the major approaches available
+               to-date and how, or if, these systems can be combined with optogenetic strategies that require precisely timed and synchronized
+               illumination of the animal(s) with various colors of light.
+            </p>
+            <div class="table"><a name="table1"></a><p class="title"><span class="bold">Table 1.</span> Comparison of tracking systems
+               </p>
+               <table summary="Table 1. Comparison of tracking systems" border="1">
+                  <colgroup>
+                     <col>
+                     <col>
+                     <col>
+                     <col>
+                     <col>
+                     <col>
+                     <col>
+                     <col>
+                     <col>
+                  </colgroup>
+                  <thead>
+                     <tr valign="bottom">
+                        <th align="center" valign="bottom">Name</th>
+                        <th align="center" valign="bottom">Worm Tracker 2.0 (Schafer lab)</th>
+                        <th align="center" valign="bottom">Nemo (Tavernarakis lab)</th>
+                        <th align="center" valign="bottom">The Parallel Worm Tracker (Goodman lab)</th>
+                        <th align="center" valign="bottom">OptoTracker (Gottschalk lab)</th>
+                        <th align="center" valign="bottom">Multimodal illumination and tracking system (Lu lab)</th>
+                        <th align="center" valign="bottom">CoLBeRT (Samuel lab)</th>
+                        <th align="center" valign="bottom">The Multi Worm Tracker (Kerr lab)</th>
+                        <th align="center" valign="bottom">Opto-mechanical system for virtual environments (Lockery lab)</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr valign="top">
+                        <td align="center" valign="top"><span class="bold"><strong>Single/Multi Worm</strong></span></td>
+                        <td align="center" valign="top">Single</td>
+                        <td align="center" valign="top">Single</td>
+                        <td align="center" valign="top">&lt;50</td>
+                        <td align="center" valign="top">&lt;50</td>
+                        <td align="center" valign="top">Single</td>
+                        <td align="center" valign="top">Single</td>
+                        <td align="center" valign="top">&lt;120</td>
+                        <td align="center" valign="top">Single</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="center" valign="top"><span class="bold"><strong>Adaptable</strong></span></td>
+                        <td align="center" valign="top">Yes, supports x-y stages by three different vendors, as well as other camera systems (i.e. USB cameras)</td>
+                        <td align="center" valign="top">Yes, code open for changes, supports other camera systems (i.e. USB cameras)</td>
+                        <td align="center" valign="top">Yes, code open for changes, supports other camera systems (i.e. USB cameras)</td>
+                        <td align="center" valign="top">Yes, code open for changes, supports other camera systems (i.e. USB cameras)</td>
+                        <td align="center" valign="top">Yes, code open for changes, supports any projector and LabVIEW Vision compatible camera systems (i.e. USB cameras)</td>
+                        <td align="center" valign="top">Yes, code open for changes</td>
+                        <td align="center" valign="top">Yes, code open for changes, supports LabVIEW Vision compatible camera systems</td>
+                        <td align="center" valign="top">NA</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="center" valign="top"><span class="bold"><strong>Optogenetic aplication</strong></span></td>
+                        <td align="center" valign="top">No</td>
+                        <td align="center" valign="top">No</td>
+                        <td align="center" valign="top">No</td>
+                        <td align="center" valign="top">Yes</td>
+                        <td align="center" valign="top">Yes &#8211; 3 wavelengths</td>
+                        <td align="center" valign="top">Yes</td>
+                        <td align="center" valign="top">Yes</td>
+                        <td align="center" valign="top">Yes</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="center" valign="top"><span class="bold"><strong>Illumination type</strong></span></td>
+                        <td align="center" valign="top">NA</td>
+                        <td align="center" valign="top">NA</td>
+                        <td align="center" valign="top">NA</td>
+                        <td align="center" valign="top">Whole field</td>
+                        <td align="center" valign="top">patterned; intensity adjustable &#8211; each wavelength independently</td>
+                        <td align="center" valign="top">patterned</td>
+                        <td align="center" valign="top">Whole field</td>
+                        <td align="center" valign="top">patterned, intensity adjustable</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="center" valign="top"><span class="bold"><strong>X-Y Stage control</strong></span></td>
+                        <td align="center" valign="top">Yes</td>
+                        <td align="center" valign="top">No</td>
+                        <td align="center" valign="top">No</td>
+                        <td align="center" valign="top">No</td>
+                        <td align="center" valign="top">Yes</td>
+                        <td align="center" valign="top">Yes</td>
+                        <td align="center" valign="top">No</td>
+                        <td align="center" valign="top">Yes</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="center" valign="top"><span class="bold"><strong>Measured parameters</strong></span></td>
+                        <td align="center" valign="top">Skeleton and outline</td>
+                        <td align="center" valign="top">Skeleton and outline</td>
+                        <td align="center" valign="top">Centroid</td>
+                        <td align="center" valign="top">Centroid</td>
+                        <td align="center" valign="top">Skeleton and outline</td>
+                        <td align="center" valign="top">Skeleton and outline</td>
+                        <td align="center" valign="top">Skeleton and outline</td>
+                        <td align="center" valign="top">Bright spot</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="center" valign="top"><span class="bold"><strong>Camera resolution/support for other resolution (pixel)</strong></span></td>
+                        <td align="center" valign="top">1280 &times; 1024/Yes</td>
+                        <td align="center" valign="top">800 &times; 600/Yes</td>
+                        <td align="center" valign="top">640 &times; 480/No, downsized if greater</td>
+                        <td align="center" valign="top">640 &times; 480/No, downsized if greater</td>
+                        <td align="center" valign="top">320 &times; 240/Yes, but reduced fps at higher resolutions</td>
+                        <td align="center" valign="top">1280 &times; 1024 /NA</td>
+                        <td align="center" valign="top">2352 &times; 1728/No</td>
+                        <td align="center" valign="top">4 quandrants photomultipliertube</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="center" valign="top"><span class="bold"><strong>Camera frequency/other supported (frames per second)</strong></span></td>
+                        <td align="center" valign="top">30/Yes</td>
+                        <td align="center" valign="top">40/Yes</td>
+                        <td align="center" valign="top">15/Yes</td>
+                        <td align="center" valign="top">15/Yes</td>
+                        <td align="center" valign="top">25/Yes</td>
+                        <td align="center" valign="top">50/Yes</td>
+                        <td align="center" valign="top">31/No</td>
+                        <td align="center" valign="top">NA-PMT</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="center" valign="top"><span class="bold"><strong>Video stored</strong></span></td>
+                        <td align="center" valign="top">Yes</td>
+                        <td align="center" valign="top">Yes</td>
+                        <td align="center" valign="top">Yes</td>
+                        <td align="center" valign="top">Yes</td>
+                        <td align="center" valign="top">Yes</td>
+                        <td align="center" valign="top">Yes</td>
+                        <td align="center" valign="top">No</td>
+                        <td align="center" valign="top">Yes</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="center" valign="top"><span class="bold"><strong>GUI</strong></span></td>
+                        <td align="center" valign="top">Yes</td>
+                        <td align="center" valign="top">Yes</td>
+                        <td align="center" valign="top">Yes</td>
+                        <td align="center" valign="top">Yes</td>
+                        <td align="center" valign="top">Yes</td>
+                        <td align="center" valign="top">Yes</td>
+                        <td align="center" valign="top">No</td>
+                        <td align="center" valign="top">Yes</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="center" valign="top"><span class="bold"><strong>Microscope required</strong></span></td>
+                        <td align="center" valign="top">No</td>
+                        <td align="center" valign="top">No</td>
+                        <td align="center" valign="top">No</td>
+                        <td align="center" valign="top">No</td>
+                        <td align="center" valign="top">Yes</td>
+                        <td align="center" valign="top">Yes</td>
+                        <td align="center" valign="top">No</td>
+                        <td align="center" valign="top">Yes</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="center" valign="top"><span class="bold"><strong>Required Hardware</strong></span><span class="bold"><strong><sup>*</sup></strong></span></td>
+                        <td align="center" valign="top">X-Y Stage, camera</td>
+                        <td align="center" valign="top">Camera</td>
+                        <td align="center" valign="top">Camera</td>
+                        <td align="center" valign="top">Camera, light source with shutter, filters</td>
+                        <td align="center" valign="top">X-Y Stage, camera, projector, filters</td>
+                        <td align="center" valign="top">X-Y Stage, Laser, DMD Array, frame grabber, camera</td>
+                        <td align="center" valign="top">Camera, frame grabber, background light</td>
+                        <td align="center" valign="top">PMTand centering device</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="center" valign="top"><span class="bold"><strong>Required software</strong></span></td>
+                        <td align="center" valign="top">Java, ffdshow, MATLAB or <a href="http://www.wormbase.org/db/get?name=MCR;class=Cell" target="_blank">MCR</a></td>
+                        <td align="center" valign="top">MATLAB (R13) + Image Processing Toolbox</td>
+                        <td align="center" valign="top">MATLAB (R13) + Image Acquisition and Image Processing Toolbox</td>
+                        <td align="center" valign="top">MATLAB (R13) + Image Acquisition and Image Processing Toolbox</td>
+                        <td align="center" valign="top">LabVIEW (+ Vision)</td>
+                        <td align="center" valign="top">MindControl (custom, C), MATLAB R2010a</td>
+                        <td align="center" valign="top">LabVIEW (+ Vision), C++ (custom), Java</td>
+                        <td align="center" valign="top">NA</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="center" valign="top"><span class="bold"><strong>Cost estimation excluding software, computer and microscope (US$)</strong></span></td>
+                        <td align="center" valign="top">3,500</td>
+                        <td align="center" valign="top">350</td>
+                        <td align="center" valign="top">350</td>
+                        <td align="center" valign="top">1600</td>
+                        <td align="center" valign="top">10,000</td>
+                        <td align="center" valign="top">16,000</td>
+                        <td align="center" valign="top">7,000</td>
+                        <td align="center" valign="top">Commercial version available (PhotoTrack, ASI)</td>
+                     </tr>
+                     <tr valign="top">
+                        <td colspan="9" align="justify" valign="top">
+                           
+                           <p>* Some cameras require a frame grabber and PCI card to communicate with LabVIEW or MATLAB; USB- or fire-wire cameras should
+                              work w/o these
+                           </p>
+                           
+                           <p>The authors thank Jeffrey N. Stirman for advice on assembling this table</p>
+                           
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2-1"></a>1.1.&nbsp;Quantitative description of behavioral phenotypes using machine vision
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Several machine vision programs follow a similar data processing strategy that first involves extraction of individual pictures
+                  from each frame of the movie file (<a href="#figure1"><span class="bold"><strong>Figure 1</strong></span></a>). The shape of the worm is then extracted from the background by a thresholding procedure. This operation allocates pixels
+                  to worm or background according to whether the intensity exceeds a defined threshold value thereby generating a two-color
+                  binary image (black and white). The next step is to depict the &#8220;skeleton&#8221; or &#8220;spine&#8221; of the animals from tail to head, often
+                  referred to as skeletonization of the worm shape (however, some systems do not use skeletonization, but segmentation of the
+                  worm shape). The one pixel thick line-image of the skeleton is further subdivided into different segments to allow computation
+                  of various parameters such as the center of mass (of the entire worm or for each segment) often referred to as the &#8220;centroid&#8221;,
+                  angles between two adjacent segments as a measure for body curvature, etc. In general, the velocities of individual worms
+                  are calculated as the rate of change in the location of their centroid or points along their skeleton over time, measured
+                  across the sequence of individual frames of the movie. Irrespective of the tracking program used, the key to success is to
+                  optimize the video quality such that the worms can be easily recognized as high contrast objects (dark) on a pale background
+                  (or <span class="emphasis"><em>vice versa</em></span>). One should also take into account that the camera resolution, magnification used, and the quality of the imaging conditions
+                  jointly determine the accuracy of the measurements. When programmed for tracking several worms simultaneously, most trackers
+                  have the option for particle size exclusion. Through this option, dust particles are excluded, colliding worms are ignored
+                  and new tracks are automatically assigned once they separate again. This procedure is easier to implement and requires a much
+                  smaller amount of computation than keeping track of both animals.
+               </p>
+               <div class="literallayout">
+                  <p></p>
+               </div>
+               <div class="mediaobject" align="center"><a name="figure1"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="432">
+<tr>
+  <td align="center"><p><a href="tracking_fig01.jpg"><img src="tracking_fig01_s.jpg" border="2" align="middle" alt="figure 1"></a>
+  </td>
+</tr>
+                  </table>
+                  <div class="caption">
+                     <p><b>Figure 1: General overview of the worm tracking procedure.&nbsp;</b>A movie of the behaving animal is taken either using a camera attached to a microscope (A) or with a camera and its macro
+                        function (B). Depending on the tracker software, a motorized stage (X, Y) can be used to keep the worm in the field of view.
+                        For simplicity, only one worm is depicted in the movie (C); multi worm trackers may track over 100 worms at the same time.
+                        Individual pictures or frames (D) are extracted from the video file, which are subsequently converted to binary (black and
+                        white) images (E). This operation is handled differently in each worm tracker implementation and mainly consists of thresholding
+                        and gap filling. When a motorized X-Y stage is used, the software calculates the worm's position in the binary image and moves
+                        its center of mass to the middle of the frame. In the next step, the worm's skeleton (F) is calculated from the binary image,
+                        which is further divided into individual segments (G). Different parameters (H) can be calculated based on the segmented skeletonized
+                        pictures, which are stored for further processing.
+                     </p>
+                  </div>
+               </div>
+               <p>Although this method can also be applied for tracking <span class="emphasis"><em>C. elegans</em></span> movement in a liquid environment, it is not optimal for quantification of swimming behavior. This fact led to the development
+                  of a covariance-based method, where the animals&#8217; morphology is not measured but rather similarities between frames are searched
+                  and used for motion frequency calculation (see section 3).
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2-2"></a>1.2.&nbsp;History of <span class="emphasis"><em>C. elegans</em></span> tracking systems
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>To our knowledge, the first video system, capable of tracking the movement of about 25 animals in real time at 1 Hz, was developed
+                  by Dusenbery and used to study chemotaxis (<a href="#bib14">Dusenbery, 1985</a>). This software was programmed in BASIC09. Later, Dusenbery and colleagues devised a system that could track even 100s of
+                  animals, based on NIH Image software (<a href="#bib13">Dhawan et al., 1999</a>). About the same time, another system, capable of tracking 50 animals, was used to characterize the neuropeptide Y receptor
+                  <a href="http://www.wormbase.org/db/get?name=NPR-1;class=Protein" target="_blank">NPR-1</a> and its role in aggregation behavior in the <a href="http://www.wormbase.org/resources/person/WBPerson42#01--9" target="_top">Cori Bargmann</a> lab (<a href="#bib11">de Bono and Bargmann, 1998</a>). Videos were analyzed using the &#8220;DIAS&#8221; software program that was initially developed to study basic crawling behaviors of
+                  amoeboid cells (<a href="#bib33">Soll, 1995</a>). The speed of the objects under study was calculated between successive frames or as average speed over a longer period
+                  of time.
+               </p>
+               <p>To study the role of pirouettes in chemotaxis behavior, another tracking system was developed and used to record the position,
+                  speed and turning rate of individual worms in the <a href="http://www.wormbase.org/resources/person/WBPerson383#01--9" target="_top">Shawn Lockery</a> lab (<a href="#bib28">Pierce-Shimomura et al., 1999</a>). The tracking system consisted of a computer-controlled motorized stage and a video camera mounted on a compound microscope.
+                  The system located the centroid of a worm under study and recorded x and y coordinates at a sampling rate of about 1 Hz. The
+                  worm was re-centered when it reached the edge of the field of view and the distance that the stage moved was recorded.
+               </p>
+               <p>A similar tracking system was developed and used in the <a href="http://www.wormbase.org/resources/person/WBPerson554#01--9" target="_top">William Schafer</a> lab to analyze egg-laying behavior (<a href="#bib17">Hardaker et al., 2001</a>; <a href="#bib44">Waggoner et al., 1998</a>). This prototype worm tracking system was further refined, in a joint venture between the <a href="http://www.wormbase.org/resources/person/WBPerson554#01--9" target="_top">Schafer</a> and <a href="http://www.wormbase.org/resources/person/WBPerson625#01--9" target="_top">Paul Sternberg</a> labs, for automated collection and analysis of <span class="emphasis"><em>C. elegans</em></span> locomotion data. These systems were able to parameterize and classify different behavioral phenotypes of <span class="emphasis"><em>unc</em></span> mutants by classification
+                  and regression tree (CART) algorithms. The tracker hardware and programming environment was estimated to cost about 10,000
+                  US$ (excluding the requisite microscope, lighting and optics), software was coded in &#8220;C&#8221; programming language and it could
+                  operate at 2 Hz. In order to make worm-tracking accessible for general use in the <span class="emphasis"><em>C. elegans</em></span> community, the system, with improved software, was described as a ready-to-use imaging system for standardized quantitative
+                  analysis of <span class="emphasis"><em>C. elegans</em></span> behavior, complete with a parts-list, software packages and code to download and install (<a href="#bib16">Feng et al., 2004</a>; <a href="#bib9">Cronin et al., 2005</a>). This &#8220;Wormtracker 1.0&#8221; used a Cohu monochrome CCD camera (460 &times; 380 pixels) and a Daedal motorize stage controlled by a
+                  National Instruments controller and could operate at 30 Hz. Alternatively, video acquisition was done through a video cassette
+                  recorder and the movie then digitized afterwards. Software consists of four basic modules: (1) the Tracker, (2) a Converter
+                  to process raw images into a morphological skeleton, (3) a Lineup module to order backbone points from head to tail and (4)
+                  a &#8220;Miner&#8221; module for parameter extraction. The latter module analyzes specific features that define important parameters related
+                  to locomotion and morphology of the worm such as body posture, bending angles, movement and locomotion waveform. A total of
+                  59 distinct features are measured, and the software is written with C/C++, LabVIEW 7.0 and MATLAB 13. Cronin and co-workers
+                  further described the metrics and application of their joint venture system with a toxicological assay as an example (<a href="#bib9">Cronin et al., 2005</a>). The software was further refined in the <a href="http://www.wormbase.org/resources/person/WBPerson625#01--9" target="_top">Sternberg</a> lab and can be downloaded as the Caltech Nematode Movement Analysis System (<a href="http://wormlab.caltech.edu/publications/download.html" target="_top">http://wormlab.caltech.edu/publications/download.html</a>). As the system originally described by <a href="#bib16">Feng et al. (2004)</a> was difficult to transfer to other labs, it has unfortunately not been widely used. An updated &#8220;Wormtracker 2.0&#8221; has been
+                  made available by the <a href="http://www.wormbase.org/resources/person/WBPerson554#01--9" target="_top">Schafer</a> lab on the MRC-LMB website, including instructions on how to build and use the hardware, as well as software packages both
+                  for operation of the hardware, and for analysis of the obtained videos (<a href="http://www.mrc-lmb.cam.ac.uk/wormtracker/" target="_top">http://www.mrc-lmb.cam.ac.uk/wormtracker/</a>). The system makes use of a digital microscope-type USB-camera (&#8220;Dino-lite&#8221;) that is able to acquire macro movies without
+                  the need for a compound microscope (see next paragraph).
+               </p>
+               <p>Furthermore, there are various computational approaches for tracking and feature extraction of <span class="emphasis"><em>C. elegans</em></span> in liquid environments. A system for quantifying the position, trajectory and body shape of worm populations in fluid environments
+                  has been developed by the <a href="http://www.wormbase.org/resources/person/WBPerson145#01--9" target="_top">Monica Driscoll</a> lab (<a href="#bib42">Tsechpenakis et al., 2008</a>), while the <a href="http://www.wormbase.org/resources/person/WBPerson1430#01--9" target="_top">David Sattelle</a> lab presented a rapid method for automated counting of thrashing frequencies (<a href="#bib5">Buckingham and Sattelle, 2009</a>). Another approach to quantify worm activity monitors the scattering of an infrared beam through a liquid culture of worms,
+                  and was used in the <a href="http://www.wormbase.org/resources/person/WBPerson8725#01--9" target="_top">Diego Golombek</a> lab to measuring circadian rhythms (<a href="#bib32">Simonetta and Golombek, 2007</a>). Moreover, the <a href="http://www.wormbase.org/resources/person/WBPerson1833#01--9" target="_top">Randy Blakely</a> lab created a MATLAB script for automatic analysis of worm inactivity in liquid environment using a fast Fourier transform
+                  (FFT) to measure movement frequency (<a href="#bib24">Matthies et al., 2006</a>).
+               </p>
+               <p>If studying the involvement of a neuron or class of neurons in a particular behavior is of interest, optogenetic tools like
+                  ChR2 or NpHR for activating and silencing the cells acutely is a promising approach, particularly if combined with behavioral
+                  tracking. However, achieving single-cell expression of optogenetic tools is challenging, even when using recombinase-based
+                  approaches (<a href="#bib10">Davis et al., 2008</a>; <a href="#bib23">Macosko et al., 2009</a>). If single neuron expression cannot be obtained, restricting light to the region of the body where the cell of interest
+                  is localized may overcome this problem. High spatial and temporal precision has to be achieved in order to selectively address
+                  the cell of interest. This problem was tackled and solved by both the <a href="http://www.wormbase.org/resources/person/WBPerson3658#013--9" target="_top">Hang Lu</a> and <a href="http://www.wormbase.org/resources/person/WBPerson4184#013--9" target="_top">Aravi Samuel</a> labs (<a href="#bib21">Leifer et al., 2011</a>; <a href="#bib39">Stirman et al., 2011</a>). Both systems were developed to illuminate distinct body regions, harboring the neurons of interest, in freely behaving
+                  animals. The respective neurons are, at least currently, defined and targeted by their anatomical position. Usually an area
+                  significantly larger than the size of the neuron's cell body is illuminated. This ensures that the neuron of interest is always
+                  illuminated for the defined period, even if the animal is moving quickly. In the future, it is conceivable that fluorescent
+                  markers expressed in a defined pattern (or within the cell of interest) may be used to address a specific cell. To some extent,
+                  the opto-mechanical tracker by the <a href="http://www.wormbase.org/resources/person/WBPerson383#013--9" target="_top">Lockery</a> lab provides an approach to such devices (<a href="#bib15">Faumont et al., 2011</a>).
+               </p>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec1-2"></a>2.&nbsp;Worm trackers
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2-3"></a>2.1.&nbsp;Nemo (<span class="underline">Ne</span>matode <span class="underline">mo</span>vement)
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>The <a href="http://www.wormbase.org/resources/person/WBPerson649#013--9" target="_top">Nektarios Tavernarakis</a> group developed a simple yet powerful tool for analyzing <span class="underline">ne</span>matode <span class="underline">mo</span>vement (Nemo) without the need of a tracking device (<a href="#bib43">Tsibidis and Tavernarakis, 2007</a>). Nemo is a modular software (written in MATLAB, release 13 or higher), that allows the user to specify which operation should
+                  occur on their data (software can be downloaded as supplementary material to <a href="#bib43">Tsibidis and Tavernarakis, 2007</a>; <a href="http://www.biomedcentral.com/content/supplementary/1471-2202-8-86-s2.zip" target="_top">http://www.biomedcentral.com/content/supplementary/1471-2202-8-86-s2.zip</a>). A GUI was designed to facilitate the processing and interpretation of the data and can be used to generate graphs and histograms
+                  of the computed parameters. We tested videos taken with different cameras at various settings and we could analyze the data
+                  without having to change the software. The software works with indexed images as input. These have to be obtained by the user
+                  through a 3<sup>rd</sup> party program like VirtualDub (<a href="http://virtualdub.sourceforge.net/" target="_top">http://virtualdub.sourceforge.net/</a>). Although Nemo might be used with all image resolutions and magnifications, it is advisable to enhance these in order to
+                  reduce the error rate later in the quantification processes. First, all images are converted to gray scale and then a low-pass
+                  filter is applied in order to reduce noise. This image processing sequence allows Nemo to quantify color (RGB) images. However,
+                  care must be taken, since the resulting gray values must have a good worm to background contrast after processing. Nemo then
+                  searches in the first video frame for a single distinct object (i.e. the imaged worm) and computes its perimeter and skeleton
+                  using standard MATLAB Image Analysis Toolbox functions. In the following frames, only a region adjacent to the last position
+                  of the worm is computed, avoiding time consuming operations. Nemo also provides an algorithm to clear the skeleton from small
+                  branches. The skeleton is subdivided into a user-specified number of lines, representing segments of the worm. The coordinates
+                  of the center of mass of all lines as well as of the whole worm are recorded. In addition, the system is laid out such that
+                  reference points on the plate are taken into account to determine when the plate had to be moved to keep the worm within the
+                  field of view. With this information, the dataset is used to characterize the worm's speed, waveform (of the whole animal,
+                  or of only parts of the body), angles between two segments, thickness, distance between head and tail and trajectory.
+               </p>
+               <p>Installing Nemo is straightforward and well-documented in the associated Readme.pdf file and the Algorithms.pdf document.
+                  Every function is clearly described, allowing non-MATLAB proficient users to understand how the program works.
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2-4"></a>2.2.&nbsp;Worm Tracker 2.0
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>The Worm Tracker 2.0 was released unofficially to the worm community in the beginning of 2007 by the <a href="http://www.wormbase.org/resources/person/WBPerson554#013--9" target="_top">Schafer</a> lab and is frequently updated. The current release can be downloaded from the MRC-LMB website (<a href="http://www.mrc-lmb.cam.ac.uk/wormtracker/" target="_top">http://www.mrc-lmb.cam.ac.uk/wormtracker/</a>). This single worm tracker operates with a Dino-lite digital microscope and camera (<a href="http://www.dino-lite.eu/" target="_top">http://www.dino-lite.eu/</a>), practically rendering a compound microscope unnecessary. The tracker supports motorized stages of a variety of vendors
+                  as well as other cameras mounted on conventional microscopes, allowing one to adapt an existing microscope setup to the Worm
+                  Tracker 2.0 with ease. The software is fully based on graphical user interfaces (GUI) and is self-explanatory. The dedicated
+                  web page presents information ranging from the hardware needed to software installation all the way to protocols on how to
+                  optimize the NGM plates for recording videos with Worm Tracker 2.0. Additionally, the group also released a free Worm Analysis
+                  Toolbox for MATLAB, specifically developed to analyze videos taken with the Worm Tracker 2.0.
+               </p>
+               <p>The tracker acquires the image stream from the camera and recognizes the worm and its centroid. It controls the motorized
+                  stage to position the worm's centroid at the center of the image as soon as the worm reaches previously selected boundaries
+                  in the field of view. The position of the stage is recorded in a separate file as well as the timing of the stage movement.
+                  This information is used in the Worm Analysis Toolbox to identify the frames where the stage moved. The blurred images caused
+                  by stage movement are dropped from the analysis, which is a drawback compared to systems that continuously re-center the animal
+                  with small motion increments, and may lead to loss of (some) information. However, the system also allows moving the microscope
+                  instead of the stage, thus leaving the worm completely non-agitated, in case vibrations due to stage movement, which may be
+                  sensed by the animal, are a concern. The stage's immobility also permits tracking of single worms swimming. The small form
+                  factor, due to the lack of a microscope, and low acquisition cost makes this system a good choice for locomotion studies without
+                  embedded optogenetic stimulus application.
+               </p>
+               <p>The Worm Analysis Toolbox can be used (off-line) for automated segmentation of the worm's image and subsequent feature extraction.
+                  The current release supports analysis of the worm's area, length, width, thickness, transparency and the brightness of head
+                  and tail. In addition, the Toolbox allows visual confirmation of the extracted data as well as debugging in case of errors
+                  with three helper tools. All functions are widely commented in a user manual.
+               </p>
+               <p>Installation of the Worm Tracker 2.0 requires a Java environment, while the Toolbox requires either a MATLAB installation
+                  or a MATLAB Compiler Runtime Environment. The latter can be downloaded for free with the Worm Analysis Toolbox. The group
+                  released an example folder for the Analysis Toolbox containing a video and all tracked data, allowing one to test the program
+                  prior to purchasing the required hardware.
+               </p>
+               <p>Although the Worm Tracker 2.0 is, at the time of writing, a work in progress, it can already be reliably used by the worm
+                  community. The software is free to use (provided acceptance of a software release agreement issued by the MRC) and the cost
+                  of the hardware needed is the smallest among the single worm trackers with automated stage control. The ease of installation
+                  and operation are further reasons to consider this system in laboratories that wish to start automatic behavioral assays.
+                  Unfortunately, however, at least the current version of the tracker does not support synchronized control of other devices
+                  (for example by using TTL pulses). Therefore, in the current form, this system is not recommended when combining worm tracking
+                  with optogenetic tools that require accurate programming of illumination protocols to be synchronized with the videos taken.
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2-5"></a>2.3.&nbsp;The Parallel worm tracker and OptoTracker
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>The Parallel worm tracker (PWT) was designed by the <a href="http://www.wormbase.org/resources/person/WBPerson209#013--9" target="_top">Miriam Goodman</a> lab as a high-throughput platform to analyze the locomotion (mainly centroid speed) of up to 50 worms in parallel, for example,
+                  enabling quantification of drug-induced paralysis (<a href="#bib30">Ramot et al., 2008</a>). The overall setup is similar to Nemo and all software packages are implemented in MATLAB (<a href="http://wormsense.stanford.edu/tracker/" target="_top">http://wormsense.stanford.edu/tracker/</a>). Video capture is performed using the VideoCapture module, which is compatible with any camera capable of communicating
+                  with the MATLAB Image Acquisition Toolbox. Thereafter tracking is performed off-line by the WormTracker module. The tracker
+                  records the centroid position of tens of worms in sequential movie frames extracted from uncompressed grayscale (8 bit) .avi
+                  format video files with a resolution of 640 &times; 480 pixels. If two animals collide, the tracking of each animal is terminated.
+                  New tracks are assigned to the animals once they separate. WormTracker only stores those tracks for analysis that persist
+                  for more than a certain amount of frames. Next, the WormAnalyzer package provides tools for analysis and display of generated
+                  tracks. It is capable of automatic detection of turning events or pirouettes, as described earlier by <a href="#bib6">Chalasani et al. (2007)</a>, measures the speed of individual worms and can use these data to measure the fraction of worms that are paralyzed by drug
+                  application. The preferences for each module are stored in an Excel file and analyzed data can be exported as figures or tables.
+               </p>
+               <p>The <a href="http://www.wormbase.org/resources/person/WBPerson2633#013--9" target="_top">Alexander Gottschalk</a> lab, i.e. the authors of this review, is interested in combining worm tracking with optogenetics-assisted modulation of neuronal
+                  activity. Thus, the parallel worm tracker software was implemented with a program that allows controlling an electronic shutter,
+                  blocking out light from, e.g., an HBO (Hg = mercury B = luminance O = unforced cooling) light source, through the LPT (parallel)
+                  port of the computer by sending a TTL (Transistor-Transistor Logic) pulse. In this way, a series of predefined light pulses
+                  can be applied to the worms for optogenetics-based behavioral studies. A user-friendly interface for this &#8220;OptoTracker&#8221; has
+                  also been generated, in which individual users can load the different modules (VideoCapture, WormTracker, WormAnalyzer and
+                  the additional Shutter module) with their saved preferences, to export acquired raw data into an Excel file for further characterization.
+               </p>
+               <p>The source code for the parallel worm tracker and a user manual can be downloaded from <a href="http://wormsense.stanford.edu/tracker/" target="_top">http://wormsense.stanford.edu/tracker/</a>, while the OptoTracker variant can be found on the <a href="http://www.wormbase.org/resources/person/WBPerson2633#013--9" target="_top">Gottschalk</a> lab website (<a href="http://www.biochem.uni-frankfurt.de/index.php?id=236" target="_top">http://www.biochem.uni-frankfurt.de/index.php?id=236</a>), together with an installation and user manual. This system provides a simple, though efficient, solution for multi worm
+                  tracking and only requires MATLAB software, including the Image Acquisition and the Image Processing Toolboxes, a digital
+                  video camera and a microscope (if at all).
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2-6"></a>2.4.&nbsp;The Multi Worm Tracker
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>The <a href="http://www.wormbase.org/resources/person/WBPerson317#013--9" target="_top">Rex Kerr</a> and <a href="http://www.wormbase.org/resources/person/WBPerson509#013--9" target="_top">Catharine Rankin</a> labs recently described a multi-worm tracking system that was used to analyze spontaneous movement on food, chemotaxis and
+                  habituation of response to tap stimulation. The software package consists of real-time image-analysis software, called &#8220;Multi-Worm
+                  Tracker (MWT)&#8221;, and an additional program, &#8220;Choreography&#8221;, for off-line analysis of different behavioral parameters (<a href="#bib40">Swierczek et al., 2011</a>). The MWT is used to provide basic features of the worm including its position and outline, whereas Choreography has to be
+                  employed to extract additional features after selecting the appropriate objects. The system can conveniently track up to 120
+                  animals per plate. More animals can be reliably tracked when dropping frames during the real time processing of the MWT; conversely,
+                  one might expect to have more worms tracked by increasing the processing power of the computer used.
+               </p>
+               <p>The core of the hardware system is a high-end digital camera (Falcon 4M30, 4 Megapixel (2352 &times; 1728), 31 fps, 10 bit digital
+                  camera equipped with a 25 mm modular focus block) that renders the use of a microscope system unnecessary. A special frame
+                  grabber is used to acquire the uncompressed video stream during experiments. As the camera streams the video at full rate
+                  of 7.2 gigabytes per minute, only the tracking files are stored during an experiment. It is recommended to use a stand for
+                  the camera and to build a stage to hold the Petri dish in front of the camera lens. The camera's high resolution can visualize
+                  the animals with 24 &micro;m/pixel resolution, which reduces the measurement errors due to pixel flickering. The tracking procedure
+                  searches for animals in the first frame of a movie and draws a box around these. In the following frames, only the area of
+                  the boxes will be tracked; all other pixels are skipped. The position of the worm is stored and the box around the animal
+                  is refreshed for the next frame. After a defined amount of frames, a subpart of the whole image is searched for new worms
+                  entering the field of view, creating new boxes where needed. These subparts are cycled through without decreasing the tracking
+                  capability. It is important to achieve homogenous background lighting as parts of the field of view will not be addressed
+                  due to over- or underexposure when unevenly illuminated. It is also crucial to use synchronized worms: since animal recognition
+                  is performed through particle size analysis, all pictured animals should have the same size. When two animals collide, their
+                  size is added and counted as one particle. These animals are ignored by the MWT until they separate and are again identified
+                  as single worms by the animal search algorithm. This might be an issue when tracking higher number or animals simultaneously
+                  for longer periods of time.
+               </p>
+               <p>All required software and documentation has been published in Sourceforge (<a href="http://sourceforge.net/projects/mwt/" target="_top">http://sourceforge.net/projects/mwt/</a>). The package is coded in C++ and based on LabVIEW (MWT) and JAVA (Choreography). Unfortunately, Choreography has no GUI
+                  and works with JAVA commands. In addition to multi-worm tracking and analysis of the data, the software also allows the control
+                  of up to three stimulus-presenting systems. This permits multi-worm tracking while giving a computer-controlled mechanical
+                  tap to the plate or presenting a &#8220;puff&#8221; of air over the NGM Petri dish. The system can also be used to challenge animals with
+                  a light pulse (e.g. delivered by a ring of LEDs), for whole field optogenetics experiments (Adriel and Rankin, unpublished).
+                  Furthermore, this system may be used to quantify high-throughput swimming assays.
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2-7"></a>2.5.&nbsp;Multimodal illumination and tracking system for optogenetic analyses of circuit function
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>The Tracker developed recently in the <a href="http://www.wormbase.org/resources/person/WBPerson3658#013--9" target="_top">Lu</a> lab resolves an hitherto existing problem in optical stimulus delivery for optogenetic manipulation of animal behavior: patterned
+                  illumination with various wavelengths at the same time to target several distinct optogenetic tools in the same animal, addressing
+                  different nodes of a neuronal network (<a href="#bib39">Stirman et al., 2011</a>; <a href="#bib38">Stirman et al., 2012</a>). The system combines an inverted microscope and a commercially available video projector for multi-color illumination of
+                  physically separated cells. At the same time, the position of the worm is tracked by a movable x-y stage and various behavioral
+                  parameters, such as velocity and body curvature, can be analyzed. The spatial resolution of the presented system has been
+                  calculated to 14 &micro;m/pixel at 25 Hz, depending on the objective used.
+               </p>
+               <p>The software saves two video streams: the originally acquired video of the behaving animal, and a parallel video stream with
+                  information regarding the pattern of light used to stimulate optogenetic tools expressed in particular neurons. There is the
+                  option to merge both videos, where the area being optically activated is marked in the color of the channel used for stimulation
+                  (red, green, blue, or combinations of these 3 colors). The calibration, steering and analysis programs are coded in LabVIEW
+                  and all required software can be downloaded as supplements accompanying the paper (<a href="#bib39">Stirman et al., 2011</a>; <a href="http://www.nature.com/nmeth/journal/v8/n2/extref/nmeth.1555-S10.zip" target="_top">http://www.nature.com/nmeth/journal/v8/n2/extref/nmeth.1555-S10.zip</a>). A step-by-step protocol to make the essential optical changes to the off-the-shelf LCD projector is also available, as
+                  well as instructions on how to use the different software packages required (<a href="#bib38">Stirman et al., 2012</a>). Briefly, the multimodal illumination and tracking system consists of three main LabVIEW programs. The first one is used
+                  for calibration prior to measurements. The second program performs the real-time tracking and patterned multimodal illumination
+                  while recording the movies. The third software package (consisting of different sub-programs) is used for post processing,
+                  i.e., head encoding, complete video analysis, and analysis of multiple data files in batch mode and presentation.
+               </p>
+               <p>The major advantage of the <a href="http://www.wormbase.org/resources/person/WBPerson3658#013--9" target="_top">Lu</a> system is that up to three different colors of light, each with 256 independent levels of intensity, can be used simultaneously
+                  which is essential to combine different optical tools with shifted action spectra; for example, ChR2 (major activation peak
+                  at 460 nm), Mac (peak at 535 nm) and NpHR (peak at 590 nm) (<a href="#bib7">Chow et al., 2010</a>; <a href="#bib26">Nagel et al., 2003</a>; <a href="#bib45">Zhang et al., 2007</a>). The applied wavelength depends on the installed band pass filter; therefore, changing the stimulation color is as convenient
+                  and cost-effective as possible. Similarly important is the fact that the <a href="http://www.wormbase.org/resources/person/WBPerson3658#013--9" target="_top">Lu</a> system can be assembled from a relatively cheap, off-the-shelf commercial video projector (less than 3000 US$ for a projector,
+                  band pass filters and the LabVIEW license). The software uses a common USB camera capable of communication with the LabVIEW
+                  Vision add-on and 25 Hz acquisition.
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2-8"></a>2.6.&nbsp;CoLBeRT: control locomotion and behavior in real time
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>The <a href="http://www.wormbase.org/resources/person/WBPerson4184#013--9" target="_top">Samuel</a> lab published a system, &#8220;CoLBeRT&#8221;,  for controlling locomotion and behavior in real time. CoLBeRT uses a digital micromirror
+                  device (DMD, from Texas Instruments) to reflect a diode-pumped solid-state laser in order to achieve selective illumination
+                  (<a href="#bib21">Leifer et al., 2011</a>). High light intensities come with the drawback of only one color of light being used at the same time, hampering
+                  the simultaneous use of different optogenetic tools, at least in the published version of the system. The tracking and illumination
+                  setup operates at 50 Hz and is excellent for analyzing body curvature. The DMD has a spatial limit of 5 &micro;m for the minimal
+                  area that may be accessed through CoLBeRT. This minimal area is larger for fast moving animals, i.e. about 30 &micro;m for swimming
+                  worms. The <a href="http://www.wormbase.org/resources/person/WBPerson4184#013--9" target="_top">Samuel</a> lab used viscous solutions to slow down the locomotion of the animals under study, allowing higher spatial accuracy in directing
+                  light at the respective cells.
+               </p>
+               <p>The &#8220;MindControl&#8221; software used to track a worm and create illumination patterns in real time is written in the &#8220;C&#8221; programming
+                  language and is also available together with documentation through &#8220;github&#8221; (<a href="http://github.com/samuellab/mindcontrol and https://github.com/samuellab/mindcontrol-analysis" target="_top">http://github.com/samuellab/mindcontrol and https://github.com/samuellab/mindcontrol-analysis</a>). MindControl stores two video sequences, an original stream and one with annotations regarding the optogenetic stimulation.
+                  During an experiment, a GUI allows one to change the optogenetic stimulation in real time as well as delivering manual stimulations.
+                  The raw data is stored in YAML format (a human-readable format to serialize/store data). This dataset is then processed in
+                  MATLAB to retrieve a quantitative analysis of the experiment, for instance, with kymographs (a graph of spatial position vs.
+                  time) of the worm's locomotion.
+               </p>
+               <p>In conclusion, this system is the fastest real-time single worm tracker to date, capable of spatially restricted optogenetic
+                  manipulations. The disadvantage of CoLBeRT, however, is that only one color of light can be used at the same time. Also, the
+                  acquisition cost is considerably higher compared to the <a href="http://www.wormbase.org/resources/person/WBPerson3658#013--9" target="_top">Lu</a> system (see <a href="#table1" title="Table 1. Comparison of tracking systems">Table 1</a>).
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2-9"></a>2.7.&nbsp;The opto-mechanical system for imaging or manipulation of neuronal activity in freely moving animals
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Non-invasive neuronal manipulation <span class="emphasis"><em>via</em></span> optogenetics in freely moving animals, while simultaneously tracking evoked behaviors (as discussed above), has been a significant
+                  step forward in the analysis of neural network function. In addition to optogenetics-assisted manipulation, imaging of neuronal
+                  activity in untethered, freely moving animals is a major technical challenge when combined with tracking and quantification
+                  of locomotory behavior. The image-free opto-mechanical system developed in the <a href="http://www.wormbase.org/resources/person/WBPerson383#013--9" target="_top">Lockery</a> lab promises to address both approaches (<a href="#bib15">Faumont et al., 2011</a>). This system can be used to create virtual environments by optogenetic activation of sensory neurons, or to image activity
+                  in identified neurons at high magnification. The system uses two light paths with different magnifications. The first path,
+                  with lower magnification, is used for behavioral analysis and records the image of the animal in a standard gray-scale movie.
+                  The second path has a higher magnification (typically 63x-100x) and is used for Ca<sup>2+</sup>-imaging and the actual tracking procedure. For this purpose, a beam splitter redirects a small amount (20%) of the light
+                  at the Ca<sup>2+</sup>-imaging camera to a four-quadrant photomultiplier tube (PMT). The four analog signal intensities are directed to a motorized
+                  stage controller, which regulates the speed of the servo motors in order to center the brightest spot to the center of the
+                  PMT. This approach thus requires a trackable bright spot, for instance, a cell expressing a fluorescent protein marker. As
+                  no software processing is required for stage control, i.e., this part is an all-analog system, this is the fastest tracking
+                  system available to date, allowing one to track neurons in animals thrashing in liquid. The combination of two recordings
+                  with different magnifications allows worm tracking in parallel with Ca<sup>2+</sup>-imaging in single neurons, which is a feature not commonly seen in tracking systems. The system can also create a so-called
+                  &#8220;virtual environment&#8221; by projecting light into a user-defined pattern. This projection can be used to control activity of
+                  (sensory) neurons expressing optogenetic tools, e.g., mimicking an aversive stimulus by specifically expressing channelrhodopsin
+                  in, and photoactivating the, polymodal aversive neuron ASH. The instructions needed to build the centering device have been
+                  published (<a href="#bib15">Faumont et al., 2011</a>) and a commercial version is available (PhotoTrack, Applied Scientific Instrumentation).
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2-10"></a>2.8.&nbsp;Further systems allowing tracking and Ca<sup>2+</sup> imaging in semi-restrained or freely behaving animals
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>As briefly described above, when one is interested in the neuronal basis of behavior, one ideally wants to track and quantify
+                  behavior, and at the same time record the activity of neurons involved in generating the behavior. Thus, several systems have
+                  been described that allow tracking of semi-restrained or freely behaving animals, and recording Ca<sup>2+</sup> signals in transgenic neurons. These systems have been successfully used, but, to our knowledge, not described in sufficient
+                  technical detail to be adopted by others. Thus, we can just mention them here and refer the reader to the respective researchers
+                  if they are interested in setting up these systems themselves.
+               </p>
+               <p>A first approach somewhat achieving this goal was described by the <a href="http://www.wormbase.org/resources/person/WBPerson4184#013--9" target="_top">Samuel</a> lab (<a href="#bib8">Clark et al, 2007</a>). They imaged fluorescent signals from the AFD thermosensory neuron expressing the ratiometric Ca<sup>2+</sup> sensor cameleon. This was done at intermediate magnification in animals whose tails were glued, but whose heads were free
+                  to move within a thermal gradient. They also tracked animals freely moving in such a gradient, at low magnification, by tracking
+                  the fluorescent neuron, in this case using a joystick-controlled x-y translational stage. Later the track of the animal was
+                  extracted from the recorded stage (and relative neuron) positions.
+               </p>
+               <p>A different system, tracking an animal moving on an open NGM plate automatically, and acquiring Ca<sup>2+</sup> signals from a neuron of interest, was developed by the <a href="http://www.wormbase.org/resources/person/WBPerson11210#013--9" target="_top">Didier Chatenay</a> and <a href="http://www.wormbase.org/resources/person/WBPerson554#013--9" target="_top">Schafer</a> labs, who imaged the AVA backward command motor neuron in freely moving animals (<a href="#bib2">Ben Arous et al., 2010</a>). This system uses two cameras, one for acquiring an image of the animal, which is used to track locomotion behavior and
+                  to re-center the stage (using a low magnification objective), and another to record fluorescent signals of the AVA neuron
+                  expressing the cameleon sensor (using higher magnification). The software operates at roughly 7 Hz, and is based on an ImageJ
+                  script, thus no costly commercial software package is required.
+               </p>
+               <p>The <a href="http://www.wormbase.org/resources/person/WBPerson720?query=zhen#013--9" target="_top">Mei Zhen</a> lab developed a similar system that tracks fluorescent cells and animal behavior, based on freely available software (MicroManager
+                  and ImageJ), and operating at up to 20 Hz (<a href="#bib20">Kawano et al., 2011</a>). This system allows one to image multiple command (or &#8220;premotor&#8221;) interneurons as well as ventral cord motor neurons expressing
+                  cameleon sensors in movement-restricted animals (under a cover slip, effectively slowing down but not preventing locomotion).
+               </p>
+               <p>The <a href="http://www.wormbase.org/resources/person/WBPerson2026#013--9" target="_top">Shawn Xu</a> and <a href="http://www.wormbase.org/resources/person/WBPerson4687#013--9" target="_top">Zhaoyang Feng</a> labs devised a tracker to study whether motor activity decline might be used as a lifespan predictor (<a href="#bib19">Hsu et al., 2009</a>). Their system is based on a stereomicroscope with a digital camera and a motorized stage. Custom software tracks the animal
+                  at 2 Hz for five minutes. The software was briefly described in the original publication, but was not published for further
+                  use. This system was further developed to allow Ca<sup>2+</sup> imaging, termed CARIBN (Ca<sup>2+</sup> ratiometric imaging of behaving nematodes), and allows tracking as well as Ca<sup>2+</sup> imaging using GCaMP3 (<a href="#bib29">Piggott et al., 2011</a>). They use DsRed (non-responsive to Ca<sup>2+</sup>) as a control for motion or focusing artifacts. In addition, the system may be suited for optogenetics experiments, while
+                  imaging Ca<sup>2+</sup> at the same time. However, as the Ca<sup>2+</sup> imaging light is also used for ChR2 activation, measurement of baseline fluorescence for Ca<sup>2+</sup> imaging is not possible and must be controlled in a separate experiment by imaging additional animals not expressing ChR2.
+                  The CARIBN II system adds the option of controlling the z-axis, allowing automatic focusing of the pictured neurons, as well
+                  as z-sectioning (<a href="#bib46">Zheng et al., 2012</a>). The latter function allows CARIBN II to image multiple neurons concomitantly. Both versions of CARIBN are available upon
+                  request.
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2-11"></a>2.9.&nbsp;Behavioral arenas
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Conventional trackers for freely moving animals on solid surfaces do not allow one to present odors in a spatially and temporally
+                  controlled manner. To quantitatively understand chemosensory behaviors, the <a href="http://www.wormbase.org/resources/person/WBPerson42?query=bargmann#013--9" target="_top">Bargmann</a> group recently described a microfluidics device allowing creation of precise spatiotemporal chemical environments while monitoring
+                  the resulting behavioral output (<a href="#bib1">Albrecht and Bargmann, 2011</a>). This &#8220;behavioral arena&#8221; consists of a 4 cm<sup>2</sup> polydimethylsiloxane (PDMS) surface containing a structured micropost array (hexagonally arranged, 200 &micro;m diameter pillars,
+                  separated by 100 &micro;m) through which the nematodes can crawl. The arena height is set to 70 &micro;m, which is roughly the diameter
+                  of a young adult animal. These parameters match the wavelength of normal crawling behavior on an agar substrate. The microfluidic
+                  chip has different inlets for stimulus inflow, a worm loading port with variable entry points and an outflow channel. Furthermore,
+                  the device boundaries are smooth in order to minimize the animal's tendency to explore sharp corners. The different stimulus
+                  inlets are controlled by valves, allowing different configurations of odor stimulation by generating gradients that mix two
+                  odor concentrations or through temporal control by timed opening of a valve. The worm entry point to the arena is variable
+                  depending on the device used. The system is equipped with a camera for recording the animal's behavior during stimulus presentation.
+                  The image analysis is performed offline, using MATLAB code that is partially based on the parallel worm tracker (<a href="#bib30">Ramot et al., 2008</a>). The system performs automated behavioral classification based on the identification of five primary locomotory states:
+                  forward locomotion (straight or curved), pause, reversal, pirouette reverse (the reversal before an omega turn) and pirouette
+                  forward (the subsequent resolution of the omega turn). Data can be presented in stimulus-aligned ethograms in which the five
+                  states are color-coded and plotted over time.
+               </p>
+               <p>The single-layer PDMS chips can be easily re-designed and the microfluidics system works with standard Luer valves. Second-generation
+                  devices promise high-throughput behavioral analysis. Concomitant separate population measurement is achieved by dividing the
+                  arena with worm barriers. A 2- and a 4-arena multiplexed device have been designed with multiple fluid inlets. These allow
+                  up to four different populations to be challenged with four unique stimuli simultaneously during one experiment.
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2-12"></a>2.10.&nbsp;The WormLab, a commercially available worm tracker
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>MicroBrightField Inc. developed a commercially available worm tracker called WormLab (<a href="http://www.mbfbioscience.com/wormlab" target="_top">http://www.mbfbioscience.com/wormlab</a>). At the time of writing, the software is available for pre-purchase, with the option for a complete system including microscope,
+                  video camera and motorized stage. The software features include tracking of selected worms through their centroid, head or
+                  tail markers. The analysis comprises the worm's velocity, position, area, direction and wavelength, as well as the track's
+                  length.
+               </p>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec1-3"></a>3.&nbsp;Worm trackers optimized for liquid environments
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p><span class="emphasis"><em>C. elegans</em></span> thrashing and swimming behavior have been effectively tracked by morphological analysis, but this approach requires high
+               computing power. The <a href="http://www.wormbase.org/resources/person/WBPerson1430#013--9" target="_top">Sattelle</a> lab published a new approach to quantify thrashing assays without morphometry (<a href="#bib5">Buckingham and Sattelle, 2009</a>). Their software is based on covariance analysis. First, the background is extracted from the images through a technique
+               employing Principal Component Analysis (the background is represented by the maximum covariance and is therefore coded by
+               the first principal component). Then a covariance matrix is computed for all frames. This matrix shows frames that are statistically
+               significantly similar to each other. Counting the amount of frames between two similar ones allows one to identify the time
+               needed to complete a full swing during thrashing, which ultimately leads to the thrashing frequency. This system was conceived
+               for high-throughput analysis of worm swimming behavior, but requires one worm per video to be analyzed. The <a href="http://www.wormbase.org/resources/person/WBPerson4687#013--9" target="_top">Feng</a> lab further improved the system with a program capable of controlling a motorized stage (<a href="#bib46">Zheng et al., 2011</a>). This software automatically records a movie of each well in a multi-well plate with parameters set by the user. The improved
+               system combines efficient thrashing assay analysis with high-throughput screening. The source code is written in C and compiled
+               in LabWindows (NI, Austin, TX, USA). The thrashing analysis core program does not require any specific hardware. The only
+               requirement for the video is that only one animal is depicted. The system is easily deployed and the instructions for the
+               hardware needed for the high-throughput measurements are available upon request by the authors.
+            </p>
+            <p>Furthermore, the <a href="http://www.wormbase.org/resources/person/WBPerson1833#013--9" target="_top">Blakely</a> lab created a system for automatic analysis of worm (in)activity in fluids. A MATLAB script automatically analyzes the thrashing
+               frequency of a single worm through a Fast-Fourier transform of the movement frequency (<a href="#bib24">Matthies et al., 2006</a>). Although the software is not published online, the authors do share it upon request.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec1-4"></a>4.&nbsp;Additional analysis tools for quantifying <span class="emphasis"><em>C. elegans</em></span> behavior
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>The following tools do not contain instructions for controlling x-y stages, thus they should be considered as stand-alone
+               video analysis tools that require videos or images as input.
+            </p>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2-13"></a>4.1.&nbsp;Eigenworms: Low-dimensional superposition of principal components
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Greg J. Stephens from the <a href="http://www.wormbase.org/resources/person/WBPerson8536#013--9" target="_top">William Ryu</a> lab showed that the space of shapes adopted by the worm can be described with just four &#8220;elementary shapes&#8221;, or &#8220;eigenworms&#8221;
+                  that provide a quantitative description of worm behavior, accounting for 95% of the variance in N2 shapes (<a href="#bib35">Stephens et al., 2008</a>). As the worm's shape determines its motion, characterization of the shape dynamics provides insights into locomotion behavior.
+                  Variations along the eigenworms thus offer a quantitative characterization of classical locomotion parameters such as forward
+                  crawling, reversals, omega bends etc. For this work, they built a homemade tracking system and used MATLAB to capture and
+                  process the images in order to calculate the eigenworms. Images of worms were first skeletonized to a single-pixel thick backbone
+                  that was segmented into 101 parts such that 100 angles between these segments could be calculated in order to deduce the four
+                  eigenworms or &#8220;modes&#8221;. The first two modes are sinusoidal-like oscillations that describe the orthogonal phases of a wave
+                  along the body. The third mode is related to the curvature and is thus used to identify or describe turns or omega bends.
+                  The fourth mode contributes to the shape of the head and tail region of the worm. One should interpret this approach as a
+                  projection or reduction of motor behaviors onto four templates or parameters with variable strengths. Mapping the dynamics
+                  of the shape space to the trajectory of the moving worm can reveal subtle differences in locomotion (<a href="#bib36">Stephens et al., 2010</a>; <a href="#bib34">Stephens et al., 2011</a>).
+               </p>
+               <p>The approach to calculate the eigenworms can easily be executed as a stand-alone MATLAB-based program and virtually any movie
+                  file can be analyzed (after thresholding and transformation into individual frames by other video processing programs like
+                  VirtualDub). The use of a tracking system is not required as one is only interested in the &#8220;space shape&#8221; of the worms. When
+                  using this software tool, one can just move the plate by hand to keep the worm in the center of the field of view. The backbone
+                  length also represents an accurate calculation of the length of the worm. This approach was used when measuring body contractions
+                  or elongations evoked by depolarization of muscle cells or cholinergic neurons <span class="emphasis"><em>via</em></span> optogenetic tools (<a href="#bib22">Liewald et al., 2008</a>). Thereafter, a microfluidics device was developed by the <a href="http://www.wormbase.org/resources/person/WBPerson3658#013--9" target="_top">Lu</a> lab for high-throughput automation of body length measurements to investigate synaptic transmission (<a href="#bib37">Stirman et al., 2010</a>), utilizing the algorithm devised by Stephens to analyze worm length (<a href="#bib35">Stephens et al., 2008</a>).
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2-14"></a>4.2.&nbsp;An analysis tool for the description of bending angles during swimming or crawling
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Body bends during crawling and swimming behaviors are best displayed through kymographs of the worm's body angles (or curvature)
+                  with respect to time. Although many trackers have an option to analyze these features, it is unnecessary to install an expensive
+                  system if one wishes only to address these aspects of locomotion. The <a href="http://www.wormbase.org/resources/person/WBPerson1263#013--9" target="_top">Steven McIntire</a> lab created video analysis software capable of displaying worm bending as kymographs/curvature matrices (<a href="#bib27">Pierce-Shimomura et al., 2008</a>). The software is programmed as a custom image analysis algorithm in ImagePro (Media Cybernetics). Videos are recorded with
+                  a resolution of 2.9 &micro;m/pixel at a frequency of 30 Hz. The software recognizes the animal and describes it through its midline.
+                  This skeleton is subdivided into 13 segments and the angles between them are color-coded to form an image of the angles over
+                  time. The columns created for each frame of the video are connected to form the curvature matrix. This method is advantageous
+                  when displaying <span class="emphasis"><em>C. elegans</em></span> body curvature changes during locomotion, since apprehension and comparison of curvature matrices is intuitive.
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2-15"></a>4.3.&nbsp;The Worm Analysis System
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>The open source Worm Analysis System implements the FARSIGHT Toolkit with a fully integrated GUI (<a href="http://farsight-toolkit.org/wiki/Worm_Analysis_System" target="_top">http://farsight-toolkit.org/wiki/Worm_Analysis_System</a> and <a href="http://farsight-toolkit.org/wiki/Worm_Features%26Events" target="_top">http://farsight-toolkit.org/wiki/Worm_Features%26Events</a>). The software analyzes movie files of multiple worms from which different parameters can be calculated, like the worm's
+                  length, width, curvature, area and speed (<a href="#bib31">Roussel et al., 2007</a>). It also describes the worm's state, as in forward motion, omega bend or pause. At the time of writing, the developers are
+                  working on a solution for collision detection. The software is capable of tracking two or more contacting nematodes, even
+                  if they partially overlap. The software has been optimized for usage of the graphical processing unit (GPU) during computation.
+                  One must note that implementation of this tracker requires more programming skills in comparison to the other systems available.
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2-16"></a>4.4.&nbsp;The Multi-Environment Model Estimation for Motility Analysis
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>The <a href="http://www.wormbase.org/resources/person/WBPerson11461#013--9" target="_top">Josue Sznitman</a> Lab recently described a new strategy for image recognition: the Multi-Environment Model Estimation (MEME) for <span class="emphasis"><em>C. elegans</em></span> motility analysis (<a href="#bib41">Sznitman et al., 2010</a>). The software is coded in MATLAB, all functions are accessed through a GUI and it is available upon request from the authors.
+                  MEME is an off-line image analysis software capable of recognizing worm body boundaries in image conditions that would not be
+                  tolerated by threshold-based worm trackers. As output, MEME &#8220;skeletonizes&#8221; the worm and saves images of the skeleton as well
+                  as a MATLAB file containing the x-y coordinates of the nematode over time. The software relies on the idea of Mixture of Gaussians
+                  (MOG). Briefly, MOG methods describe each pixel's intensity in an image as a variable with a Gaussian distribution. The background
+                  of an image can be recognized by analyzing the Gaussian distributions of all pixels, which requires a &#8220;background only&#8221; image
+                  (readers are referred to the paper by <a href="#bib41">Sznitman et al., (2010)</a>, for details of the method). The MEME strategy is more reliable when recognizing worms in microfluidic chips than the common
+                  thresholding methods. The MEME software requires a sequence of images as input, which has to be manually extracted by third-party
+                  software such as VirtualDub. The software does not control the image acquisition. MEME runs under the MATLAB R2009b release
+                  with the Image Processing Toolbox.
+               </p>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec1-5"></a>5.&nbsp;Possible future developments
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Regarding future development of Worm Trackers, one might expect advances in three fields. The first field is data acquisition.
+               Currently, some tracking systems can depict freely behaving animals with a resolution reaching 10 &micro;m per pixel for whole animals,
+               or they can track single (fluorescent) cells in a region of interest. Multi-channel acquisition allows trackers to not only
+               depict the animals&#8217; behavior, but also make use of fluorescent reporters to correlate behavior and, for instance, second messenger
+               signals (e.g. Ca<sup>2+</sup>). Parallel acquisition with different magnifications (e.g., using low and high magnification objectives above and below the
+               specimen plane) allows focusing on distinct behavioral aspects. The second field is dedicated to stimulus application. Although
+               many systems allow some sort of stimulus application during imaging, the nature of the stimulus is limited. Combination of
+               optical, mechanical and thermal stimulation in real time is likely to boost <span class="emphasis"><em>C. elegans</em></span> research. These aspects lead to the third field of innovation&mdash;modularity. For the time being, researchers working with worm
+               trackers are probably confronted with more than one system in order to address all research questions. As can be grasped from
+               this review, several labs have developed solutions to the same question, which is good on one hand, as different ideas are
+               being developed, and different aspects can be tackled. On the other hand, these systems generally are not compatible and thus
+               it would be desirable to have a common basic system that can be expanded individually, where new modules are being shared
+               on an open access basis (this is relatively straightforward for software, but less easy for hardware development). Modularity
+               of worm trackers would allow one to build upon a framework and enhance already existing systems. Most trackers are not bound
+               to a specific hardware configuration, although the first configuration of the new system might still be painstakingly difficult.
+               In the future, such hardware ties will play a lesser role. One might expect to have qualities of many described worm trackers
+               combined into such a framework, allowing a much broader approach for <span class="emphasis"><em>C. elegans</em></span> tracking and enriching research in the worm community.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec1-6"></a>6.&nbsp;Conclusion
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Due especially to the well-defined nervous system of <span class="emphasis"><em>C. elegans</em></span>, neurobiologists in the worm community aim at a comprehensive functional description of neuronal networks, assessing information
+               flow from sensory neurons through different circuit layers and motor circuits that define a prevalent behavioral response.
+               Due to the availability of various assays and optogenetic tools, precise behavioral parameterization is required to allow
+               straightforward (statistical) analysis and comparisons of the data. To this end, many tracking systems have been developed,
+               each with their individual strengths and applicability. The current overview aims at providing a guideline to keep track of
+               all the tracking systems and we hope that this WormBook chapter facilitates the search for a specific setup to fulfill individual
+               needs.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec1-7"></a>7.&nbsp;References
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p></p>
+            <div class="bibliography">
+               <div class="bibliomixed"><a name="bib1"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Albrecht, D.R., and Bargmann, C.I. (2011). High-content behavioral analysis of <span class="emphasis"><em>Caenorhabditis elegans</em></span> in precise spatiotemporal chemical environments. Nat. Methods <span class="emphasis"><em>8</em></span>, 599-605.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=21666667&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nmeth.1630" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib2"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Ben Arous, J., Tanizawa, Y., Rabinowitch, I., Chatenay, D., and Schafer, W.R. (2010). Automated imaging of neuronal activity
+                        in freely behaving <span class="emphasis"><em>Caenorhabditis elegans</em></span>. J. Neurosci. Methods <span class="emphasis"><em>187</em></span>, 229-34.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=20096306&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.jneumeth.2010.01.011" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib3"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Boyden, E.S., Zhang, F., Bamberg, E., Nagel, G., and Deisseroth, K. (2005). Millisecond-timescale, genetically targeted optical
+                        control of neural activity. Nat. Neurosci. <span class="emphasis"><em>8</em></span>, 1263-1268.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=16116447&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nn1525" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib4"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Brenner, S. (1974). The genetics of <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Genetics <span class="emphasis"><em>77</em></span>, 71-94.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=4366476&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib5"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Buckingham, S.D., and Sattelle, D.B. (2009). Fast, automated measurement of nematode swimming (thrashing) without morphometry.
+                        BMC Neurosci. <span class="emphasis"><em>10</em></span>, 84.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=19619274&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1186/1471-2202-10-84" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib6"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Chalasani, S.H., Chronis,N., Tsunozaki, M., Gray, J.M., Ramot, D., Goodman, M.B., and Bargmann, C.I. (2007). Dissecting a
+                        circuit for olfactory behaviour in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Nature <span class="emphasis"><em>450</em></span>, 63-70.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=17972877&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nature06292" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib7"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Chow, B.Y., Han, X., Dobry, A.S., Qian, X., Chuong, A.S., Li, M., Henninger, M.A., Belfort, G.M., Lin, Y., Monahan, P.E.,
+                        and Boyden, E.S. (2010). High-performance genetically targetable optical neural silencing by light-driven proton pumps. Nature
+                        <span class="emphasis"><em>463</em></span>, 98-102.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=20054397&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nature08652" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib8"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Clark, D.A., Gabel, C.V., Gabel, H., and Samuel, A.D. (2007). Temporal activity patterns in thermosensory neurons of freely
+                        moving <span class="emphasis"><em>Caenorhabditis elegans</em></span> encode spatial thermal gradients. J. Neurosci. <span class="emphasis"><em>27</em></span>, 6083-90.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=17553981&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1523/JNEUROSCI.1032-07.2007" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib9"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Cronin, C.J., Mendel, J.E., Mukhtar, S., Kim, Y.M., Stirbl, R.C., Bruck, J., and Sternberg, P.W. (2005). An automated system
+                        for measuring parameters of nematode sinusoidal movement. BMC Genet. <span class="emphasis"><em>6</em></span>, 5.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15698479&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1186/1471-2156-6-5" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib10"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Davis, M.W., Morton, J.J., Carroll, D., and Jorgensen, E.M. (2008). Gene activation using FLP recombinase in <span class="emphasis"><em>C. elegans</em></span>. PLoS Genet <span class="emphasis"><em>4</em></span>, e1000028.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=18369447&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1371/journal.pgen.1000028" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib11"></a><p class="bibliomixed">
+                     <span class="bibliomisc">de Bono, M., and Bargmann, C.I. (1998). Natural variation in a neuropeptide Y receptor homolog modifies social behavior and
+                        food response in <span class="emphasis"><em>C. elegans</em></span>. Cell <span class="emphasis"><em>94</em></span>, 679-689.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=9741632&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0092-8674(00)81609-8" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib12"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Deisseroth, K. (2011). Optogenetics. Nat. Methods <span class="emphasis"><em>8</em></span>, 26-29.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=21191368&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nmeth.f.324" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib13"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Dhawan, R., Duesenbery, D.B., and Williams, P.L. (1999), Comparison of lethality, reproduction and behavior as toxicological
+                        endpoints in the nematode <span class="emphasis"><em>Caenorhabditis elegans</em></span>. J. Toxicol. Environ. Health A <span class="emphasis"><em>58</em></span>, 451-462.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10616193&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1080/009841099157179" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib14"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Dusenbery, D.B. (1985). Using a microcomputer and video camera to simultaneously track 25 animals. Comput. Biol. Med. <span class="emphasis"><em>15</em></span>, 169-175.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=4017556&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/0010-4825(85)90058-7" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib15"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Faumont, S., Rondeau, G., Thiele, T.R., Lawton, K.J., McCormick, K.E., Sottile, M., Griesbeck, O., Heckscher, E.S., Roberts,
+                        W.M., Doe, C.Q., and Lockery, S.R. (2011). An image-free opto-mechanical system for creating virtual environments and imaging
+                        neuronal activity in freely moving <span class="emphasis"><em>Caenorhabditis elegans</em></span>. PLoS ONE <span class="emphasis"><em>6</em></span>, e24666.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=21969859&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1371/journal.pone.0024666" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib16"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Feng, Z., Cronin, C.J., Wittig, J.H., Jr., Sternberg, P.W., and Schafer, W.R. (2004). An imaging system for standardized quantitative
+                        analysis of <span class="emphasis"><em>C. elegans</em></span> behavior. BMC Bioinformatics <span class="emphasis"><em>5</em></span>, 115.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15331023&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1186/1471-2105-5-115" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib17"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Hardaker, L.A., Singer, E., Kerr, R., Zhou, G., and Schafer, W.R. (2001). Serotonin modulates locomotory behavior and coordinates
+                        egg-laying and movement in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. J. Neurobiol. <span class="emphasis"><em>49</em></span>, 303-313.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11745666&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1002/neu.10014" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib18"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Hodgkin, J. (1983). Male Phenotypes and Mating Efficiency in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Genetics <span class="emphasis"><em>103</em></span>, 43-64.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=17246100&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib19"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Hsu, A.L., Feng, Z., Hsieh, M.Y., and Xu, X.Z. (2009). Identification by machine vision of the rate of motor activity decline
+                        as a lifespan predictor in <span class="emphasis"><em>C. elegans</em></span>. Neurobiol. Aging <span class="emphasis"><em>30</em></span>, 1498-1503.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=18255194&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.neurobiolaging.2007.12.007" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib20"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Kawano, T., Po, M.D., Gao, S., Leung, G., Ryu, W.S, and Zhen, M. (2011). An imbalancing act: gap junctions reduce the backward
+                        motor circuit activity to bias <span class="emphasis"><em>C. elegans</em></span> for forward locomotion. Neuron <span class="emphasis"><em>72</em></span>, 572-86.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=22099460&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.neuron.2011.09.005" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib21"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Leifer, A.M., Fang-Yen, C., Gershow, M., Alkema, M.J., and Samuel, A.D.T. (2011). Optogenetic manipulation of neuroal activitgy
+                        in freely moving <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Nat. Methods <span class="emphasis"><em>8</em></span>, 147-152.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=21240279&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nmeth.1554" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib22"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Liewald, J.F., Brauner, M., Stephens, G.J., Bouhours, M., Schultheis, C., Zhen, M., and Gottschalk, A. (2008). Optogenetic
+                        analysis of synaptic function. Nat. Methods <span class="emphasis"><em>5</em></span>, 895-902.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=18794862&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nmeth.1252" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib23"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Macosko, E.Z., Pokala, N., Feinberg, E.H., Chalasani, S.H., Butcher, R.A., Clardy, J., and Bargmann, C.I. (2009). A hub-and-spoke
+                        circuit drives pheromone attraction and social behaviour in <span class="emphasis"><em>C. elegans</em></span>. Nature <span class="emphasis"><em>458</em></span>, 1171-1175.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=19349961&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nature07886" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib24"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Matthies, D.S., Fleming, P.A., Wilkes, D.M., and Blakely, R.D. (2006). The <span class="emphasis"><em>Caenorhabditis elegans</em></span> choline transporter <a href="http://www.wormbase.org/db/get?name=CHO-1;class=Protein" target="_blank">CHO-1</a> sustains acetylcholine synthesis and motor function in an activity-dependent manner. J, Neurosci. <span class="emphasis"><em>26</em></span>, 6200-6212.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=16763028&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1523/JNEUROSCI.5036-05.2006" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib25"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Nagel, G., Brauner, M., Liewald, J.F., Adeishvili, N., Bamberg, E., and Gottschalk, A. (2005). Light activation of channelrhodopsin-2
+                        in excitable cells of <span class="emphasis"><em>Caenorhabditis elegans</em></span> triggers rapid behavioral responses. Curr. Biol. <span class="emphasis"><em>15</em></span>, 2279-2284.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=16360690&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.cub.2005.11.032" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib26"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Nagel, G., Szellas, T., Huhn, W., Kateriya, S., Adeishvili, N., Berthold, P., Ollig, D., Hegemann, P., and Bamberg, E. (2003).
+                        Channelrhodopsin-2, a directly light-gated cation-selective membrane channel. Proc. Natl. Acad. Sci. U.S.A. <span class="emphasis"><em>100</em></span>, 13940-13945.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=14615590&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1073/pnas.1936192100" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib27"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Pierce-Shimomura, J.T., Chen, B.L., Mun, J.J., Ho, R., Sarkis, R., and McIntire, S.L. (2008). Genetic analysis of crawling
+                        and swimming locomotory patterns in <span class="emphasis"><em>C. elegans</em></span>. Proc. Natl. Acad. Sci, U.S.A. <span class="emphasis"><em>105</em></span>, 20982-20987.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=19074276&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1073/pnas.0810359105" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib28"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Pierce-Shimomura, J.T., Morse, T.M., and Lockery, S.R. (1999). The fundamental role of pirouettes in <span class="emphasis"><em>Caenorhabditis elegans</em></span> chemotaxis. J. Neurosci. <span class="emphasis"><em>19</em></span>, 9557-9569.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10531458&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib29"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Piggott, B.J., Liu, J., Feng, Z., Wescott, S.A., and Xu, X.Z. (2011). The neural circuits and synaptic mechanisms underlying
+                        motor initiation in <span class="emphasis"><em>C. elegans</em></span>. Cell <span class="emphasis"><em>147</em></span>, 922-933.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=22078887&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.cell.2011.08.053" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib30"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Ramot, D., Johnson, B.E., Berry, T.L., Jr., Carnell, L., and Goodman, M.B. (2008). The Parallel Worm Tracker: a platform for
+                        measuring average speed and drug-induced paralysis in nematodes. PLoS ONE <span class="emphasis"><em>3</em></span>, e2208.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=18493300&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1371/journal.pone.0002208" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib31"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Roussel, N., Morton, C.A., Finger, F.P., and Roysam, B. (2007). A computational model for <span class="emphasis"><em>C. elegans</em></span> locomotory behavior: application to multiworm tracking. IEEE Trans. Biomed. Eng. <span class="emphasis"><em>54</em></span>, 1786-97.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=17926677&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1109/TBME.2007.894981" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib32"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Simonetta, S.H., and Golombek, D.A. (2007). An automated tracking system for <span class="emphasis"><em>Caenorhabditis elegans</em></span> locomotor behavior and circadian studies application. J. Neurosci. Methods <span class="emphasis"><em>161</em></span>, 273-280.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=17207862&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.jneumeth.2006.11.015" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib33"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Soll, D.R. (1995). The use of computers in understanding how animal cells crawl. Int. Rev. Cyto. <span class="emphasis"><em>163</em></span>, 43-104.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8522423&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0074-7696(08)62209-3" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib34"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Stephens, G.J., Bueno, de M.M., Ryu, W.S., and Bialek, W. (2011). Emergence of long timescales and stereotyped behaviors in
+                        <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Proc. Natl. Acad. Sci. U.S.A. <span class="emphasis"><em>108</em></span>, 7286-7289.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=21502536&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1073/pnas.1007868108" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib35"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Stephens, G.J., Johnson-Kerner, B., Bialek, W., and Ryu, W.S. (2008). Dimensionality and dynamics in the behavior of <span class="emphasis"><em>C. elegans</em></span>. PLoS Comput. Biol. <span class="emphasis"><em>4</em></span>, e1000028.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=18389066&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1371/journal.pcbi.1000028" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib36"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Stephens, G.J., Johnson-Kerner, B., Bialek, W., and Ryu, W.S. (2010). From modes to movement in the behavior of <span class="emphasis"><em>Caenorhabditis elegans</em></span>. PLoS ONE <span class="emphasis"><em>5</em></span>, e139</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=21103370&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1371/journal.pone.0013914" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib37"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Stirman, J.N., Brauner, M., Gottschalk, A., and Lu, H. (2010). High-throughput study of synaptic transmission at the neuromuscular
+                        junction enabled by optogenetics and microfluidics. J. Neurosci Methods <span class="emphasis"><em>191</em></span>, 90-93.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=20538016&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.jneumeth.2010.05.019" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib38"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Stirman, J.N., Crane, M.M., Husson, S.J., Gottschalk, A., and Lu, H. (2012). Assembly of a multispectral optical illumination
+                        system with precise spatiotemporal control for the manipulation of optogenetic reagents. Nat. Protocols <span class="emphasis"><em>7</em></span>, 207-220.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=22240583&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib39"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Stirman, J.N., Crane, M.M., Husson, S.J., Wabnig, S., Schultheis, C., Gottschalk, A., and Lu, H. (2011). Real-time multimodal
+                        optical control of individual neurons and muscles in freely behaving <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Nat. Methods <span class="emphasis"><em>8</em></span>, 153-158.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=21240278&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nmeth.1555" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib40"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Swierczek, N.A., Giles, A.C., Rankin, C.H., and Kerr, R.A. (2011). High-throughput behavioral analysis in <span class="emphasis"><em>C. elegans</em></span>. Nat. Methods <span class="emphasis"><em>8</em></span>, 592-598.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=21642964&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nmeth.1625" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib41"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Sznitman, R., Gupta, M., Hager, G.D., Arratia, P.E., and Sznitman, J. (2010), Multi-environment model estimation for motility
+                        analysis of <span class="emphasis"><em>Caenorhabditis elegans</em></span>. PLoS ONE <span class="emphasis"><em>5</em></span>, e11631.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=20661478&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1371/journal.pone.0011631" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib42"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Tsechpenakis, G., Bianchi, L., Metaxas, D., and Driscoll, M. (2008). A novel computational approach for simultaneous tracking
+                        and feature extraction of <span class="emphasis"><em>C. elegans</em></span> populations in fluid environments. IEEE Trans. Biomed. Eng. <span class="emphasis"><em>55</em></span>, 1539-1549.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=18440900&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1109/TBME.2008.918582" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib43"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Tsibidis, G.D., and Tavernarakis, N. (2007). Nemo: a computational tool for analyzing nematode locomotion. BMC Neurosci. <span class="emphasis"><em>8</em></span>, 86.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=17941975&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1186/1471-2202-8-86" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib44"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Waggoner, L.E., Zhou, G.T., Schafer, R.W., and Schafer, W.R. (1998). Control of alternative behavioral states by serotonin
+                        in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Neuron <span class="emphasis"><em>21</em></span>, 203-214.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=9697864&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0896-6273(00)80527-9" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib45"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Zhang, F., Wang, L.P., Brauner, M., Liewald, J.F., Kay, K., Watzke, N., Wood, P.G., Bamberg, E., Nagel, G., Gottschalk, A.,
+                        and Deisseroth, K. (2007). Multimodal fast optical interrogation of neural circuitry. Nature <span class="emphasis"><em>446</em></span>, 633-639.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=17410168&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nature05744" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib46"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Zheng, M., Gorelenkova, O., Yang, J., and Feng, Z. (2011). A liquid phase based <span class="emphasis"><em>C. elegans</em></span> behavioral analysis system identifies motor activity loss in a nematode Parkinson's disease model. J. Neurosci. Methods doi:10.1016/j.jneumeth.2011.11.015.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=22108336&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="footnotes"><br><hr width="100" align="left">
+            <div class="footnote">
+               <p><sup><a name="ftn.d0e6" href="#d0e6">*</a></sup>Edited by Oliver Hobert. Last revised March 2, 2012. Published September 10, 2012. This chapter should be cited as: Husson, S. J. et al.
+                  Keeping track of worm trackers (September 10, 2012), <span class="emphasis"><em>WormBook</em></span>, ed. The <span class="emphasis"><em>C. elegans</em></span> Research Community, WormBook, doi/10.1895/wormbook.1.156.1, <a href="http://www.wormbook.org" target="_top">http://www.wormbook.org</a>.
+               </p>
+               <p><span class="bold"><strong>Copyright:</strong></span> &copy; 2012 Steven J. Husson, Wagner Steuer Costa, Cornelia Schmitt and Alexander Gottschalk. This is an open-access article distributed
+                  under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction
+                  in any medium, provided the original author and source are credited.
+               </p>
+            </div>
+            <div class="footnote">
+               <p><sup><a name="ftn.d0e39" href="#d0e39">&sect;</a></sup>To whom correspondence should be addressed. E-mail: <a href="mailto:a.gottschalk@em.uni-frankfurt.de" target="_top">a.gottschalk@em.uni-frankfurt.de</a>; phone: +496979842518; fax: +496979876342518
+               </p>
+            </div>
+            <div class="footnote">
+               <p><sup><a name="ftn.d0e47" href="#d0e47">&#8224;</a></sup><sup>*</sup>both authors contributed equally
+               </p>
+			   <p><img src="somerights20.gif" alt="Creative Commons License" align="middle" border="0"> All WormBook content, except where otherwise noted, is licensed under a <a href="http://creativecommons.org/licenses/by/2.5/" title="Creative Commons Attribution License" target="_blank">Creative Commons Attribution License</a>.</p>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

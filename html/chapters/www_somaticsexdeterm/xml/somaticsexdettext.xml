@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY fig1 SYSTEM 'somaticsexdetfig1.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'somaticsexdetfig1leg.xml'>
+<!ENTITY fig2 SYSTEM 'somaticsexdetfig2.jpg' NDATA JPG>
+<!ENTITY fig2legend SYSTEM 'somaticsexdetfig2leg.xml'>
+<!ENTITY fig3 SYSTEM 'somaticsexdetfig3.jpg' NDATA JPG>
+<!ENTITY fig3legend SYSTEM 'somaticsexdetfig3leg.xml'>
+
+<!ENTITY somaticsexdet_Refs SYSTEM 'somaticsexdetrefs.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="somaticsexdet_ArticleID">
+    <articleinfo>
+        <!--see DocBook's authorgroup element -->
+        <title>Somatic sex determination<remark>
+                <footnote>
+                    <para>Edited by Barbara J. Meyer. Last revised February 8, 2005. Published February 10, 2006. This chapter should be cited as: Zarkower, D. Somatic sex determination (February 10, 2006), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.84.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+		<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2006 David Zarkower. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+                </footnote>
+            </remark>
+        </title>
+        <!--		<revhistory>
+			<revision>
+				<revnumber>1.0</revnumber>
+				<date>Last revised 2/88/05</date>
+			</revision>
+		</revhistory>
+-->
+        <author>
+            <firstname>David</firstname>
+            <surname>Zarkower<remark>
+                    <footnote>
+                        <para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:zarko001@umn.edu">zarko001@umn.edu</ulink></para>
+                    </footnote>
+                </remark>
+            </surname>
+            <affiliation>
+                <address>Department of Genetics, Cell Biology, and Development, University of Minnesota, Minneapolis, MN 55455 USA</address>
+            </affiliation>
+        </author>
+    </articleinfo>
+    <abstract>
+        <title><emphasis role="bold">Abstract</emphasis></title>
+        <para><emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">occurs in two natural sexes, the XX hermaphrodite and
+            the XO male, which differ extensively in anatomy, physiology, and behavior. All somatic
+            differences between the sexes result from the differential activity of a “global” sex
+            determination regulatory pathway. This pathway also controls X chromosome dosage
+            compensation, which is coordinated with sex determination by the action of the three SDC
+            proteins. The SDC proteins control somatic and germline sex by transcriptional
+            repression of the</emphasis> <emphasis><emphasis role="bold"><ulink url="http://www.wormbase.org/db/gene/gene?name=her-1" role="_blank">her-1</ulink></emphasis></emphasis> <emphasis role="bold">gene. <ulink url="http://www.wormbase.org/db/seq/protein?name=HER-1;class=protein" role="_blank">HER-1</ulink> is a secreted protein that
+            controls a regulatory module consisting of a transmembrane receptor, <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-2;class=protein" role="_blank">TRA-2</ulink>, three
+            intracellular FEM proteins, and the zinc finger transcription factor <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink>. The
+            molecular workings of this regulatory module are still being elucidated. Similarity of
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-2;class=protein" role="_blank">TRA-2</ulink> to patched receptors and of <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> to GLI proteins suggests that parts of the
+            global pathway originally derived from a Hedgehog signaling pathway. <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> controls all
+            aspects of somatic sexual differentiation, presumably by regulating a variety of tissue-
+            and cell-specific downstream targets, including the cell death regulator <ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-1;class=protein" role="_blank">EGL-1</ulink> and the
+            male sexual regulator <ulink url="http://www.wormbase.org/db/seq/protein?name=MAB-3;class=protein" role="_blank">MAB-3</ulink>. Sex determination evolves rapidly, and conservation of
+            sexual regulators between phyla has been elusive. An apparent exception involves DM
+            domain proteins, including <ulink url="http://www.wormbase.org/db/seq/protein?name=MAB-3;class=protein" role="_blank">MAB-3</ulink>, which control sexual differentiation in nematodes,
+            arthropods, and vertebrates. Important issues needing more study include the detailed
+            molecular mechanisms of the global pathway, the identities of additional sexual
+            regulators acting in the global pathway and downstream of <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink>, and the evolutionary
+            history of the sex determination pathway. Recently developed genetic and genomic
+            technologies and comparative studies in divergent species have begun to address these issues.</emphasis></para>
+    </abstract>
+    <sect1>
+        <title>A global sex determination pathway controls sexual dimorphism</title>
+        <sect2>
+            <title>Two highly dimorphic sexes</title>
+            <para>The two natural sexes of <emphasis>C. elegans</emphasis> are the XX hermaphrodite
+                and the XO male (<xref linkend="figure1"/>). Hermaphrodites are somatically female
+                but can reproduce either by self-fertilization or by mating with males. Mating
+                generates broods of half XX and half XO progeny. Self progeny mostly are XX, but
+                about 1/500 are XO males, due to meiotic X chromosome nondisjunction, which ensures
+                genetic exchange between individuals. The level of X chromosome nondisjunction, and
+                hence the proportion of males in a population can be greatly increased by <emphasis>him</emphasis> (<emphasis role="underline">h</emphasis>igh
+               <emphasis role="underline">i</emphasis>ncidence of <emphasis role="underline">m</emphasis>ales) mutations (<link linkend="bib26">Hodgkin et al., 1979</link><!-- PMID-->). Because the two sexes
+                differ in X chromosome dosage, a dosage compensation system has evolved to equalize
+                expression of X-linked genes between XX and XO animals. This is accomplished by
+                specifically reducing transcription of X-linked genes in XX animals (see <ulink url="http://www.wormbook.org/chapters/www_dosagecomp/dosagecomp.html" role="_blank">X-chromosome dosage compensation</ulink>). Sexual dimorphism is extensive in <emphasis>C.
+                elegans</emphasis>, with most tissues and organs differing between the sexes in
+                anatomy or physiology (<xref linkend="figure1"/>). Indeed, at least 40<symbol role="symbolfont">&#x0025;</symbol> of male and 30<symbol role="symbolfont">&#x0025;</symbol> of hermaphrodite cells are sexually
+                specialized (<link linkend="bib58">Sulston and Horvitz, 1977</link><!-- PMID 838129-->). For further description of
+            male- and hermaphrodite-specific development, see <ulink url="http://www.wormbook.org/chapters/www_maledevelopment/maledevelopment.html" role="_blank">Male development</ulink> and <ulink url="http://www.wormbook.org/chapters/www_hermcellfate/hermcellfate.html" role="_blank">Hermaphrodite cell fate specification</ulink>, respectively.</para>
+<literallayout></literallayout>
+            <mediaobject id="figure1" xreflabel="Figure 1">
+			<imageobject>
+			<imagedata entityref="fig1" align="center" width="4.5in"/>
+			</imageobject>
+			<textobject>
+				<phrase> figure 1</phrase>
+			</textobject> &fig1legend;</mediaobject>
+        </sect2>
+        <sect2>
+            <title>The global somatic sex determination pathway</title>
+            <para>The sexual fates of all somatic cells are controlled by a regulatory pathway whose
+                activity differs between the sexes (<xref linkend="figure2" />). This regulatory pathway is often
+                called a “global” sex determination pathway to distinguish it from more specialized
+                regulatory pathways that control sexual differentiation of particular tissues and
+                lineages. The global pathway also controls dosage compensation, the process that
+                equalizes X-linked gene expression in the two sexes (see below). The global pathway
+                was originally proposed on the basis of extensive genetic epistasis tests involving
+                mutations affecting sex determination; it has been supported by subsequent molecular
+                analysis (<link linkend="bib23">Hodgkin, 1987</link><!-- PMID 3327460-->; <link linkend="bib60">Villeneuve and Meyer, 1990</link><!-- PMID 2190446-->). In
+                addition to the regulatory interactions shown in <xref linkend="figure2" />, several minor
+                interactions have been described, and these are thought to help reinforce the
+                activity of the pathway in one sex or the other (<link linkend="bib16">Goodwin and Ellis, 2002</link><!-- PMID 11839294-->). The same core regulatory pathway also controls sex determination in the
+                germ line (see <ulink url="http://www.wormbook.org/chapters/www_vulvaldev/vulvaldev.html" role="_blank">Vulval development</ulink>). However, because hermaphrodites need to generate both
+                oocytes and sperm, additional regulators are required in the germ line to
+                temporarily reverse the sex determination decision, as described in <ulink url="http://www.wormbook.org/chapters/www_controloocytematuration/controloocytematuration.html">Oocyte meiotic maturation and fertilization</ulink> and <ulink url="http://www.wormbook.org/chapters/www_spermatogenesis/spermatogenesis.html">Spermatogenesis</ulink> 
+.</para>
+            <mediaobject id="figure2" xreflabel="Figure 2">
+			<imageobject>
+			<imagedata entityref="fig2" align="center" width="6.5in"/>
+			</imageobject>
+			<textobject>
+				<phrase> figure 2</phrase>
+			</textobject> &fig2legend;</mediaobject>
+            <para>The overall regulatory logic of the somatic sex determination scheme is seemingly
+                straightforward. In essence, the number of X chromosomes controls a series of
+                inhibitory interactions that ultimately sets the activity of the terminal regulator
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-1" role="_blank">tra-1</ulink></emphasis> (<emphasis><emphasis role="underline">tra</emphasis>nsformer 1</emphasis>).
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-1" role="_blank">tra-1</ulink></emphasis> then directs sexual differentiation throughout the soma
+                (<link linkend="bib24">Hodgkin, 1987</link><!-- PMID 3428597-->; <link linkend="bib28">Hodgkin and Brenner, 1977</link><!-- PMID 560330-->; <link linkend="bib29">Hunter and Wood, 1990</link><!-- PMID 2261640-->).</para>
+            <para>If its purpose is to regulate <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-1" role="_blank">tra-1</ulink></emphasis> activity, why does the
+                pathway appear so needlessly baroque? Part of the explanation is that there are
+                other functions and features, such as the need to coordinate dosage compensation
+                with sex determination (see <ulink url="http://www.wormbook.org/chapters/www_dosagecomp/dosagecomp.html" role="_blank">X-chromosome dosage compensation</ulink>). Similarly, the <emphasis>fem</emphasis> genes promote
+                spermatogenesis independently of their regulation of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-1" role="_blank">tra-1</ulink></emphasis>
+                (<link linkend="bib22">Hodgkin, 1986</link><!-- PMID 3770465-->). In addition, the pathway has regulatory interactions
+                that enhance the plasticity and fidelity of the sex determination switch. One
+                example is the ability of the pathway to reverse the sex determination decision in
+                the XX germ line and allow both sperm and oocytes to form from a common stem cell
+                pool. Another is the cell non-autonomous regulation of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink></emphasis> by
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=her-1" role="_blank">her-1</ulink></emphasis>, described below.</para>
+        </sect2>
+    </sect1>
+    <sect1>
+        <title>The balance of X-linked and autosomal signal elements controls <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=xol-1" role="_blank">xol-1</ulink></emphasis>
+        </title>
+        <para>The sex determination cascade is initiated in the early embryo by the ratio between
+            the number of X chromosomes and sets of autosomes (X:A; <link linkend="bib45">Nigon, 1951</link><!-- PMID-->). The X:A
+            ratio determines the expression level of the upstream regulator
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=xol-1" role="_blank">xol-1</ulink></emphasis> (<emphasis role="underline">XO</emphasis> <emphasis role="underline">l</emphasis>ethal 1), with a high ratio (XX) repressing
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=xol-1" role="_blank">xol-1</ulink></emphasis> expression and a low ratio (XO) permitting high
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=xol-1" role="_blank">xol-1</ulink></emphasis> expression. The activity of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=xol-1" role="_blank">xol-1</ulink></emphasis> then
+            controls the rest of the sex determination pathway (<link linkend="bib42">Miller et al., 1988</link><!-- PMID 3167975-->;
+            <link linkend="bib51">Rhind et al., 1995</link><!-- PMID 7813020-->). <ulink url="http://www.wormbase.org/db/seq/protein?name=XOL-1;class=protein" role="_blank">XOL-1</ulink> is structurally related to GHMP small molecule
+            kinases, but it does not bind ATP and its regulatory activity is not yet understood (<link linkend="bib36">Luz et al., 2003</link><!-- PMID 12672694-->).</para>
+        <para>The X:A ratio regulates the activity of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=xol-1" role="_blank">xol-1</ulink></emphasis> via the combined
+            action of a set of “numerator” or X-signal elements on the X chromosome and
+            “denominator,” or autosomal, signal elements elsewhere in the genome. Genetic dissection
+            of the X chromosome using duplications and deletions revealed that the X-signal is
+            polygenic, involving at least four components (<link linkend="bib2">Akerib and Meyer, 1994</link><!-- PMID 7896094-->).
+            Further dissection and mutational analysis have identified two X-signal components,
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fox-1" role="_blank">fox-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sex-1" role="_blank">sex-1</ulink></emphasis>. <ulink url="http://www.wormbase.org/db/seq/protein?name=FOX-1;class=protein" role="_blank">FOX-1</ulink> is a putative RNA
+            binding protein (<link linkend="bib27">Hodgkin et al., 1994</link><!-- PMID 7821230-->; <link linkend="bib44">Nicoll et al., 1997</link><!-- PMID 9217163-->;
+            <link linkend="bib55">Skipper et al., 1999</link><!-- PMID 9927456-->) that can post-transcriptionally repress a
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=xol-1" role="_blank">xol-1</ulink></emphasis> reporter when overexpressed (<link linkend="bib44">Nicoll et al., 1997</link><!-- PMID 9217163-->). <ulink url="http://www.wormbase.org/db/seq/protein?name=SEX-1;class=protein" role="_blank">SEX-1</ulink> is related to nuclear hormone receptors and represses
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=xol-1" role="_blank">xol-1</ulink></emphasis> transcription, probably by direct binding to the
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=xol-1" role="_blank">xol-1</ulink></emphasis> promoter (<link linkend="bib5">Carmi et al., 1998</link><!-- PMID 9823896-->).</para>
+<?newpage?>
+        <para>The X-signal elements are opposed by autosomal signal elements. Three candidate genes
+            were identified in a screen for suppressors of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fox-1" role="_blank">fox-1</ulink></emphasis>
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sex-1" role="_blank">sex-1</ulink></emphasis> lethality. Two of these genes have been cloned and found to
+            encode likely transcriptional regulators: <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sea-1" role="_blank">sea-1</ulink></emphasis> encodes a T-box protein, and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sea-2" role="_blank">sea-2</ulink></emphasis> a
+            novel protein with zinc fingers and a metalloprotease domain (B. Meyer, pers. comm.; <link linkend="bib69">Powell et al., 2005</link>).</para>
+        <para>The X:A signal system is exquisitely sensitive: although normally required to
+            distinguish between ratios of 0.5 (XO) and 1.0 (XX), it can reliably discriminate a
+            ratio of 0.67 from one of 0.75 (<link linkend="bib37">Madl and Herman, 1979</link><!-- PMID 295035-->).</para>
+    </sect1>
+    <sect1>
+        <title>Sex determination and dosage compensation are coordinately regulated</title>
+        <sect2>
+            <title>The SDC proteins connect sex determination and dosage compensation</title>
+            <para>The global sex determination pathway can be divided into two segments (<xref linkend="figure2" />).
+                The first segment (X:A signal to <emphasis>sdc</emphasis> genes) coordinately controls both sex
+                determination and dosage compensation, ensuring that these processes always occur in
+                the same mode. The segment from <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=her-1" role="_blank">her-1</ulink></emphasis> onward is dedicated to
+                sex determination.</para>
+            <para>The three SDC (<emphasis role="underline">s</emphasis>ex determination and <emphasis role="underline">d</emphasis>osage <emphasis role="underline">c</emphasis>ompensation defective) proteins link
+                the gene-specific regulation of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=her-1" role="_blank">her-1</ulink></emphasis> that controls sex
+                determination with the chromosome-wide process of dosage compensation. The SDC
+                proteins are components of a large protein complex that localizes to the X
+                chromosomes of hermaphrodites early in embryogenesis and reduces their transcription
+                by one-half (reviewed by <link linkend="bib41">Meyer, 2000</link><!-- PMID 10827451-->; see <ulink url="http://www.wormbook.org/chapters/www_dosagecomp/dosagecomp.html" role="_blank">X-chromosome dosage compensation</ulink>).Components
+                of the dosage compensation complex including the SDC proteins also control sex
+                determination by binding to the promoter of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=her-1" role="_blank">her-1</ulink></emphasis> and
+                repressing its transcription in XX animals to one-twentieth that of XO animals (<emphasis>her</emphasis> = <emphasis role="underline">her</emphasis>maphroditization of XO; <link linkend="bib8">Chu et al., 2002</link><!-- PMID 11937488-->; <link linkend="bib11">Dawes et al., 1999</link><!-- PMID 10364546-->; <link linkend="bib59">Trent et al., 1991</link><!-- PMID 1716965-->).</para>
+        </sect2>
+        <sect2>
+            <title>SDC proteins and repression of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=her-1" role="_blank">her-1</ulink></emphasis>
+            </title>
+            <para>All three SDC proteins function both in repression of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=her-1" role="_blank">her-1</ulink></emphasis>
+                and in dosage compensation. However, there are clear indications that these
+                processes are mechanistically distinct. First, the two complexes have different
+                compositions. In particular, <ulink url="http://www.wormbase.org/db/seq/protein?name=DPY-21;class=protein" role="_blank">DPY-21</ulink> localizes to X but not to
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=her-1" role="_blank">her-1</ulink></emphasis> (<link linkend="bib64">Yonker and Meyer, 2003</link><!-- PMID 14660541-->). There also are
+                differences in how the complexes recognize their targets. <ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-2;class=protein" role="_blank">SDC-2</ulink> plays a key role in
+                X chromosome recognition, whereas <ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-3;class=protein" role="_blank">SDC-3</ulink> is more important for
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=her-1" role="_blank">her-1</ulink></emphasis> recognition (<link linkend="bib64">Yonker and Meyer, 2003</link><!-- PMID 14660541-->). The
+                magnitude of transcriptional repression is much greater for
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=her-1" role="_blank">her-1</ulink></emphasis> regulation than for dosage compensation of X-linked genes
+                (twenty-fold versus two-fold, respectively; <link linkend="bib11">Dawes et al., 1999</link><!-- PMID 10364546-->).
+                Finally, the two activities of <ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-3;class=protein" role="_blank">SDC-3</ulink> are genetically separable, with the ATP binding
+                motif of <ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-3;class=protein" role="_blank">SDC-3</ulink> required for regulation of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=her-1" role="_blank">her-1</ulink></emphasis> and the zinc
+                fingers required for dosage compensation (<link linkend="bib32">Klein and Meyer, 1993</link><!-- PMID 8431944-->).</para>
+            <para><ulink url="http://www.wormbase.org/db/seq/protein?name=SDC-2;class=protein" role="_blank">SDC-2</ulink> is expressed only in hermaphrodites, as a result of male-specific repression
+                by <ulink url="http://www.wormbase.org/db/seq/protein?name=XOL-1;class=protein" role="_blank">XOL-1</ulink>, and this gives the SDC complex sex-specificity (<link linkend="bib11">Dawes et al., 1999</link><!-- PMID 10364546-->). Several potential SDC binding elements have been identified in
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=her-1" role="_blank">her-1</ulink></emphasis>. Two of these contain a 15 bp sequence not found on X;
+                binding of SDC complexes to this element may mediate formation of a sex
+                determination-specific complex (<link linkend="bib8">Chu et al., 2002</link><!-- PMID 11937488-->). Two dominant
+                gain-of-function alleles of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=her-1" role="_blank">her-1</ulink></emphasis> have been shown to alter
+                promoter sequences and result in constitutive <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=her-1" role="_blank">her-1</ulink></emphasis> expression
+                (<link linkend="bib47">Perry et al., 1994</link><!-- PMID 7828816-->). These mutations interfere with binding and
+                regulation by the SDC complex (<link linkend="bib8">Chu et al., 2002</link><!-- PMID 11937488-->).</para>
+        </sect2>
+    </sect1>
+    <sect1>
+        <title><ulink url="http://www.wormbase.org/db/seq/protein?name=HER-1;class=protein" role="_blank">HER-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-2;class=protein" role="_blank">TRA-2</ulink> provide cell non-autonomous control of sexual fate</title>
+        <sect2>
+            <title><ulink url="http://www.wormbase.org/db/seq/protein?name=HER-1;class=protein" role="_blank">HER-1</ulink> inactivates <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-2;class=protein" role="_blank">TRA-2</ulink></title>
+            <para>
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=her-1" role="_blank">her-1</ulink></emphasis> controls the segment of the pathway that is dedicated to
+                sex determination. <ulink url="http://www.wormbase.org/db/seq/protein?name=HER-1;class=protein" role="_blank">HER-1</ulink> is a small secreted protein and promotes male development
+                in a cell non-autonomous manner, by inhibiting the function of the transmembrane
+                protein TRA-2A (<link linkend="bib30">Hunter and Wood, 1992</link><!-- PMID 1741033-->; <link linkend="bib46">Perry et al., 1993</link><!-- PMID 8436294-->). A model illustrating likely molecular interactions between the
+                sex-determining proteins from <ulink url="http://www.wormbase.org/db/seq/protein?name=HER-1;class=protein" role="_blank">HER-1</ulink> to <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> is shown in <xref linkend="figure3" />.</para>
+            <mediaobject id="figure3" xreflabel="Figure 3">
+			<imageobject>
+			<imagedata entityref="fig3" width="3.5in" align="center"/>
+			</imageobject>
+			<textobject>
+				<phrase> Types of alternative splicing figure 3</phrase>
+			</textobject> &fig3legend;</mediaobject>
+            <para>There is compelling evidence for direct <ulink url="http://www.wormbase.org/db/seq/protein?name=HER-1;class=protein" role="_blank">HER-1</ulink>/TRA-2A binding: TRA-2A expression is
+                necessary and sufficient to confer <ulink url="http://www.wormbase.org/db/seq/protein?name=HER-1;class=protein" role="_blank">HER-1</ulink> binding to cultured cells, and the probable
+                interaction interfaces of <ulink url="http://www.wormbase.org/db/seq/protein?name=HER-1;class=protein" role="_blank">HER-1</ulink> and TRA-2A have been identified by a combination of
+                genetic and structural studies (<link linkend="bib20">Hamaoka et al., 2004</link><!-- PMID 15289613-->; <link linkend="bib33">Kuwabara, 1996</link><!-- PMID 8681790-->). Having a cell non-autonomous step in the sex determination pathway
+                has been suggested to help avoid errors by coordinating the sexual fates of cells.
+                With a largely fixed cell lineage, <emphasis>C. elegans</emphasis> is limited in its
+                ability to repair errors in cell fate specification. Secreted <ulink url="http://www.wormbase.org/db/seq/protein?name=HER-1;class=protein" role="_blank">HER-1</ulink> also allows
+            somatic control of germline sexual fate (<link linkend="bib30">Hunter and Wood, 1992</link><!-- PMID 1741033-->).</para>
+            <para>
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink></emphasis> also is regulated by translational repression. This is of
+                particular importance in the germ line (see <ulink url="http://www.wormbook.org/chapters/www_vulvaldev/vulvaldev.html" role="_blank">Vulval development</ulink>), but also is likely to affect
+                <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-2;class=protein" role="_blank">TRA-2</ulink> expression in the soma. Disruption of elements in the 3’ UTR of
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink></emphasis> can cause weak dominant feminization of the male soma and
+                increased translation of reporters (<link linkend="bib13">Doniach, 1986</link><!-- PMID 3770471-->; <link linkend="bib18">Goodwin et al.,1993</link><!-- PMID 8402916-->). A candidate to mediate repression via the
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink></emphasis> 3’ UTR is the essential gene <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=laf-1" role="_blank">laf-1</ulink></emphasis> (<link linkend="bib17">Goodwin et al., 1997</link><!-- PMID 9043090-->).</para>
+        </sect2>
+        <sect2>
+            <title><ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-2;class=protein" role="_blank">TRA-2</ulink> inactivates the FEM proteins</title>
+            <para>The three FEM proteins (<emphasis>fem</emphasis> = <emphasis role="underline">fem</emphasis>inization) are a diverse group whose biochemistry
+                is still largely unclear. <ulink url="http://www.wormbase.org/db/seq/protein?name=FEM-1;class=protein" role="_blank">FEM-1</ulink> has ankyrin repeats, but otherwise no obvious
+                conserved motifs, <ulink url="http://www.wormbase.org/db/seq/protein?name=FEM-2;class=protein" role="_blank">FEM-2</ulink> is a serine/threonine protein phosphatase, and <ulink url="http://www.wormbase.org/db/seq/protein?name=FEM-3;class=protein" role="_blank">FEM-3</ulink> is
+                novel (<link linkend="bib1">Ahringer et al., 1992</link><!-- PMID 1376249-->; <link linkend="bib7">Chin-Sang and Spence, 1996</link><!-- PMID 8824590-->; <link linkend="bib48">Pilgrim et al., 1995</link><!-- PMID 8534913-->; <link linkend="bib57">Spence et al., 1990</link><!-- PMID 2317869-->). All
+                three are required for male development and, based on genetic epistasis tests, the
+                appear to act between <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-1" role="_blank">tra-1</ulink></emphasis> to
+                control somatic sex (<link linkend="bib22">Hodgkin, 1986</link><!-- PMID 3770465-->). TRA-2A inhibits the FEM proteins
+                in hermaphrodites, regulation that is prevented in males by <ulink url="http://www.wormbase.org/db/seq/protein?name=HER-1;class=protein" role="_blank">HER-1</ulink>. Regulation of the
+                <emphasis>fem</emphasis> genes is not transcriptional, as they show similar expression levels in both
+                sexes (<link linkend="bib1">Ahringer et al., 1992</link><!-- PMID 1376249-->; <link linkend="bib15">Gaudet et al., 1996</link><!-- PMID 8862524-->;
+                <link linkend="bib48">Pilgrim et al., 1995</link><!-- PMID 8534913-->). Instead regulation is likely to involve
+                protein/protein interactions: <emphasis>in vitro</emphasis> and yeast two-hybrid interactions have been
+                demonstrated between TRA-2A and <ulink url="http://www.wormbase.org/db/seq/protein?name=FEM-3;class=protein" role="_blank">FEM-3</ulink> (<link linkend="bib40">Mehra et al., 1999</link><!-- PMID 10364161-->) and
+                between <ulink url="http://www.wormbase.org/db/seq/protein?name=FEM-3;class=protein" role="_blank">FEM-3</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=FEM-2;class=protein" role="_blank">FEM-2</ulink> (<link linkend="bib7">Chin-Sang and Spence, 1996</link><!-- PMID 8824590-->). Consequently, a
+                simple model is that association of <ulink url="http://www.wormbase.org/db/seq/protein?name=HER-1;class=protein" role="_blank">HER-1</ulink> with an extracellular domain of TRA-2A
+                blocks the ability of an intracellular domain of TRA-2A to associate with and
+                inhibit <ulink url="http://www.wormbase.org/db/seq/protein?name=FEM-3;class=protein" role="_blank">FEM-3</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=FEM-2;class=protein" role="_blank">FEM-2</ulink>. How these interactions affect FEM protein function, whether
+                the three FEM proteins form a complex <emphasis>in vivo</emphasis>, and what substrate <ulink url="http://www.wormbase.org/db/seq/protein?name=FEM-2;class=protein" role="_blank">FEM-2</ulink>
+                dephosphorylates remain to be determined.</para>
+            <para>TRA-2A function may be enhanced by <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-3;class=protein" role="_blank">TRA-3</ulink>, a calcium-dependent protease that can
+                cleave TRA-2A <emphasis>in vitro</emphasis> to produce a peptide (TRA-2ic) that is predicted from
+                transgenic experiments to have feminizing activity (<link linkend="bib3">Barnes and Hodgkin, 1996</link><!-- PMID 8887539-->; <link linkend="bib56">Sokol and Kuwabara, 2000</link><!-- PMID 10783162-->). Another negative regulator of the
+                FEM proteins in hermaphrodites is <ulink url="http://www.wormbase.org/db/seq/protein?name=SEL-10;class=protein" role="_blank">SEL-10</ulink>, one of a large family of F-box proteins.
+                <ulink url="http://www.wormbase.org/db/seq/protein?name=SEL-10;class=protein" role="_blank">SEL-10</ulink> has weak feminizing activity <emphasis>in vivo</emphasis>, coimmunoprecipitates all three FEM
+                proteins from transfected cells, and appears to target <ulink url="http://www.wormbase.org/db/seq/protein?name=FEM-1;class=protein" role="_blank">FEM-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=FEM-3;class=protein" role="_blank">FEM-3</ulink> for
+                proteasomal degradation (<link linkend="bib31">Jager et al., 2004</link><!-- PMID 15306688-->).</para>
+        </sect2>
+    </sect1>
+    <sect1>
+        <title>High versus low <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-1" role="_blank">tra-1</ulink></emphasis> activity determines somatic cell sexual fates</title>
+        <sect2>
+            <title><ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> is the nematode GLI protein</title>
+            <para>The global sex determination pathway appears to act entirely though the terminal
+                regulator <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-1" role="_blank">tra-1</ulink></emphasis>. Active <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-1" role="_blank">tra-1</ulink></emphasis> promotes
+                hermaphrodite development and prevents male development (<link linkend="bib21">Hodgkin, 1983</link><!-- PMID 6866126-->; <link linkend="bib24">Hodgkin, 1987</link><!-- PMID 3428597-->). <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-1" role="_blank">tra-1</ulink></emphasis> expresses two
+                mRNAs encoding proteins with zinc fingers (<link linkend="bib66">Zarkower and Hodgkin, 1992</link><!-- PMID 1339311-->). The larger transcript encodes TRA-1A, with five zinc fingers, and the
+                smaller RNA encodes TRA-1B, which contains only the amino terminus and first two
+                zinc fingers. It is unknown whether both proteins contribute to
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-1" role="_blank">tra-1</ulink></emphasis> activity, but TRA-1A binds DNA <emphasis>in vitro</emphasis>, while TRA-1B
+                does not (<link linkend="bib67">Zarkower and Hodgkin, 1993</link><!-- PMID 8367286-->).</para>
+            <para>The zinc fingers of <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> are highly similar to those of the <emphasis>Drosophila</emphasis> Ci and
+                vertebrate GLI proteins, transcription factors regulated by Hedgehog signaling via
+                the Patched and Smoothened co-receptors (<link linkend="bib66">Zarkower and Hodgkin, 1992</link><!-- PMID 1339311-->).
+                Although <emphasis>C. elegans</emphasis> lacks obvious Hedgehog or Smoothened
+                homologs, it does have a number of Patched-related proteins, including TRA-2A
+                (<link linkend="bib34">Kuwabara et al., 2000</link><!-- PMID 10921907-->). This suggests that part of the global sex
+                determination pathway originally derived from a Hedgehog signaling pathway.</para>
+        </sect2>
+        <sect2>
+            <title>
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-1" role="_blank">tra-1</ulink></emphasis> has distinct functions in sex determination and gonadogenesis</title>
+            <para>
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-1" role="_blank">tra-1</ulink></emphasis>(null) XX animals are transformed into pseudomales that
+                can be fertile, so robust male development is possible in the absence of
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-1" role="_blank">tra-1</ulink></emphasis> function. However, these <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-1" role="_blank">tra-1</ulink></emphasis>
+                pseudomales frequently have small and disorganized somatic gonads, indicating that
+                some <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-1" role="_blank">tra-1</ulink></emphasis> activity is required for development of the male
+                somatic gonad (<link linkend="bib24">Hodgkin, 1987</link><!-- PMID 3428597-->; <link linkend="bib52">Schedl et al., 1989</link><!-- PMID 2612895-->). The
+                gonadal defects stem at least in part from roles in the organization and
+                proliferation of the gonadal primordium that are distinct from the sex determination
+                function of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-1" role="_blank">tra-1</ulink></emphasis>.</para>
+            <para>
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-1" role="_blank">tra-1</ulink></emphasis> controls gonadal development in concert with at least two
+                other factors. During embryogenesis <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-1" role="_blank">tra-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ehn-3" role="_blank">ehn-3</ulink></emphasis> together
+                regulate formation of the somatic gonadal primordium (<link linkend="bib38">Mathies et al., 2004</link><!-- PMID 15294864-->), and after hatching, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-1" role="_blank">tra-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fkh-6" role="_blank">fkh-6</ulink></emphasis> redundantly
+                control gonadal cell proliferation (<link linkend="bib6">Chang et al., 2004</link><!-- PMID 14993191-->).</para>
+        </sect2>
+        <sect2>
+            <title>Regulation of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-1" role="_blank">tra-1</ulink></emphasis> activity</title>
+            <para>How <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-1" role="_blank">tra-1</ulink></emphasis> activity is controlled is still poorly understood.
+                Many strong gain-of-function mutations have been isolated (<link linkend="bib24">Hodgkin, 1987</link><!-- PMID 3428597-->). All affect a short protein sequence common to TRA-1A and TRA-1B (the
+                “gain-of-function domain”), suggesting that regulation of <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> is primarily
+                post-translational (<link linkend="bib12">de Bono et al., 1995</link><!-- PMID 7851791-->). As
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-1" role="_blank">tra-1</ulink></emphasis> activity is controlled by the three FEM proteins, an
+                attractive model is that a FEM protein inhibits the activity of <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> via
+                interaction with the gain-of-function domain. Regulation may involve the
+                localization, modification, or degradation of <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> (or a combination of these, as
+                sex-specific differences in processing and nuclear accumulation of the <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink>
+                protein(s) have been observed; <link linkend="bib53">Segal et al., 2001</link><!-- PMID 11703944-->; A. Spence, pers. comm.).</para>
+        </sect2>
+    </sect1>
+    <sect1>
+        <title><ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> links global and tissue-specific sexual regulation</title>
+        <para><ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> directs sexually dimorphic development at the cellular level, with diverse
+            consequences in different cell types. Direct transcriptional regulation by <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> in
+            somatic cells has thus far been shown for <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-3" role="_blank">mab-3</ulink></emphasis> (<link linkend="bib62">Yi et al., 2000</link><!-- PMID 11003845-->) and
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-1" role="_blank">egl-1</ulink></emphasis> (<link linkend="bib10">Conradt and Horvitz, 1999</link><!-- PMID 10458607-->). Both genes are transcriptionally
+            repressed by <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> in specific hermaphrodite cell types in order to prevent male
+            differentiation. <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> represses <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-3" role="_blank">mab-3</ulink></emphasis> transcription in the XX intestine, thereby
+            preventing <ulink url="http://www.wormbase.org/db/seq/protein?name=MAB-3;class=protein" role="_blank">MAB-3</ulink> from repressing yolk protein transcription in hermaphrodites (<link linkend="bib63">Yi and Zarkower, 1999</link><!-- PMID 9927589-->; <link linkend="bib62">Yi et al., 2000</link><!-- PMID 11003845-->).<emphasis> <ulink url="http://www.wormbase.org/db/gene/gene?name=egl-1" role="_blank">egl-1</ulink></emphasis> is a global
+            regulator of programmed cell death (<link linkend="bib9">Conradt and Horvitz, 1998</link><!-- PMID 9604928-->); however a
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> binding site is found nearly 6 kb downstream of the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-1" role="_blank">egl-1</ulink></emphasis> coding region.
+            Disruption of this site in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-1" role="_blank">egl-1</ulink></emphasis> gain-of-function mutants results in ectopic <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-1" role="_blank">egl-1</ulink></emphasis>
+            transcription in the HSN neurons causes the death of these cells (<link linkend="bib10">Conradt and Horvitz,1999</link><!-- PMID 10458607-->). <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> likely represses the homeobox gene <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ceh-30" role="_blank">ceh-30</ulink></emphasis> to control
+            sex-specific death of the four CEM neurons: <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ceh-30" role="_blank">ceh-30</ulink></emphasis> is required for CEM survival in
+            males; and mutations in a conserved <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> consensus binding site near <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ceh-30" role="_blank">ceh-30</ulink></emphasis> cause
+            ectopic CEM survival in XX animals (H. Schwartz and H.R. Horvitz, pers. comm.).</para>
+        <para>From the limited data available, a picture emerges in which <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> is expressed widely
+            but exerts highly selective effects on target gene expression in particular cell types.
+            This specificity may arise from short-range transcriptional repression, in which <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink>
+            binding to DNA only blocks the activity of <emphasis>cis</emphasis> elements within a limited distance (<link linkend="bib62">Yi et al., 2000</link><!-- PMID 11003845-->). By repressing some enhancer elements in a target gene without
+            affecting others, a globally-expressed regulator like <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> can control expression of
+            each target gene selectively in particular cells or tissues. It has been suggested that
+            short-range repression facilitates “sampling” of new target genes by the global
+            regulator during evolution and thereby provides superior evolutionary flexibility (<link linkend="bib4">Cai et al., 1996</link><!-- PMID 8790326-->; <link linkend="bib19">Gray et al., 1994</link><!-- PMID 7958860-->; <link linkend="bib65">Zarkower, 2001</link><!-- PMID 11256069-->).</para>
+    </sect1>
+    <sect1>
+        <title>Downstream sexual regulators: the interface between sex determination and sexual differentiation</title>
+        <para>The critical role of <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> in establishing sexual dimorphism and its function as a
+            likely transcriptional regulator have been known for some time. Despite this,
+            surprisingly little is known of the genes that function directly downstream of <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> in
+            specific cell lineages, tissues, and organs to generate sexual dimorphism. For example,
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-1" role="_blank">tra-1</ulink></emphasis> controls whether the posterior seam cells V5 and V6 generate
+            male V rays or hermaphrodite lateral hypodermis (see <ulink url="http://www.wormbook.org/chapters/www_maledevelopment/maledevelopment.html" role="_blank">Male development</ulink>), but no <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> target
+            has been identified in this lineage. Regulation by <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-3" role="_blank">mab-3</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-1" role="_blank">egl-1</ulink></emphasis> accounts for
+            only a small proportion of sexual dimorphism; many additional direct targets likely
+            await discovery.</para>
+        <para>The establishment of sexual dimorphism can be roughly divided into two steps, first
+            the sex determination decision, and second the execution of sexual differentiation. In
+            general, mutations that abrogate sex determination cause sex reversal, and this is true
+            of all the genes in the global pathway. By contrast, mutations in regulators of sexual
+            differentiation cause defects in this process, but not sex reversal. <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> and its
+            targets are at the interface between these processes. <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-3" role="_blank">mab-3</ulink></emphasis> illustrates that the
+            distinction between regulators of sex determination and sexual differentiation can be
+            hazy. <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-3" role="_blank">mab-3</ulink></emphasis> mutant males have a feminized intestine that produces yolk, but the V ray
+            lineages in the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-3" role="_blank">mab-3</ulink></emphasis> male tail are defective rather than feminized (<link linkend="bib54">Shen and Hodgkin, 1988</link><!-- PMID 3046751-->). Another gene at this interface is the gonadal regulator <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fkh-6" role="_blank">fkh-6</ulink></emphasis>,
+            which has a sex-determining function in the early male somatic gonad, and a
+            differentiation role later in the hermaphrodite gonad (<link linkend="bib6">Chang et al., 2004</link><!-- PMID 14993191-->).</para>
+    </sect1>
+    <sect1>
+        <title>Some aspects of sex determination may be evolutionarily conserved</title>
+        <para>Primary sex-determining mechanisms are extremely varied and evolve rapidly (see
+            <ulink url="http://www.wormbook.org/chapters/www_evolutionsexdetermin/evolutionsexdetermin.htm" role="_blank">The evolution of nematode sex determination</ulink>). The lability of sex determination is clearly demonstrated by the ease
+            with which the process can be brought under the control of different genes in the
+            pathway. Hodgkin has shown that any of seven autosomal sex determination genes can be
+            genetically manipulated to become the primary determinant of sex, and that any of the
+            five autosomes can thereby become a sex chromosome (<link linkend="bib25">Hodgkin, 2002</link><!-- PMID 12399387-->). Given
+            the facility with which new sex determination pathways can be created in the laboratory,
+            they would be expected to be highly diverse in nature. This is the case: none of the
+            sex-determining genes in <xref linkend="figure2" /> has been found to have a homolog playing a similar
+            role outside the nematode phylum.</para>
+        <para>So far the best candidates for conserved sexual regulators are downstream genes
+            related to <emphasis>Drosophila doublesex</emphasis>. These are termed DM domain (<emphasis>doublesex</emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-3" role="_blank">mab-3</ulink></emphasis>
+            related) genes, after the conserved DNA binding motif they share (<link linkend="bib14">Erdman and Burtis, 1993</link><!-- PMID 8440242-->; <link linkend="bib50">Raymond et al., 1998</link><!-- PMID 9490411-->; <link linkend="bib68">Zhu et al., 2000</link><!-- PMID 10898790-->). In <emphasis>C. elegans</emphasis> these include <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-3" role="_blank">mab-3</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-23" role="_blank">mab-23</ulink></emphasis>, both of
+            which regulate multiple aspects of male differentiation and behavior (<link linkend="bib35">Lints and Emmons, 2002</link><!-- PMID 12231628-->; <link linkend="bib54">Shen and Hodgkin, 1988</link><!-- PMID 3046751-->; <link linkend="bib62">Yi et al., 2000</link><!-- PMID 11003845-->). Genes encoding DM domain proteins have been shown to regulate sexual
+            development in mammals (<link linkend="bib49">Raymond et al., 2000</link><!-- PMID 11040213-->) and fish (<link linkend="bib39">Matsuda et al., 2002</link><!-- PMID 12037570-->; <link linkend="bib43">Nanda et al., 2002</link><!-- PMID 12193652-->), and are likely, based on
+            sexually dimorphic expression and sex-linkage, to play similar roles in other
+            vertebrates with different sex determination mechanisms (<link linkend="bib65">Zarkower, 2001</link><!-- PMID 11256069-->).
+            Thus it appears that at least some downstream sexual regulators have an ancient
+            involvement in sexual dimorphism that is more stable than that of the upstream primary
+            sex determination pathway. While <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-3" role="_blank">mab-3</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-23" role="_blank">mab-23</ulink></emphasis> primarily function in sexual
+            differentiation rather than sex determination, comparison with Drosophila and vertebrate
+            homologs suggests that the ancestral role of these genes may have been in sex
+            determination. As more sexual regulators downstream of <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> are identified, other
+            conserved factors may be found.</para>
+    </sect1>
+    <sect1>
+        <title>Open questions</title>
+        <para>Much progress has been made in understanding the regulation of somatic sex
+            determination in <emphasis>C. elegans</emphasis>, but new questions have been raised and
+            some old ones remain unanswered. Questions needing more experimental attention can be
+            divided into four categories:</para>
+        <sect2>
+            <title>Molecular mechanisms of the global pathway</title>
+            <para>How the cascade of inhibitory interactions that converts X chromosome dosage into
+                <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> activity functions is known in outline, but not in great detail. Do the X and
+                autosomal signal elements antagonize one another directly or indirectly? How does
+                the interaction of TRA-2A with <ulink url="http://www.wormbase.org/db/seq/protein?name=FEM-3;class=protein" role="_blank">FEM-3</ulink> inactivate the FEM proteins, and how does <ulink url="http://www.wormbase.org/db/seq/protein?name=HER-1;class=protein" role="_blank">HER-1</ulink>
+                binding to TRA-2A prevent this inactivation? How do the FEM proteins repress
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-1" role="_blank">tra-1</ulink></emphasis> activity? <ulink url="http://www.wormbase.org/db/seq/protein?name=FEM-2;class=protein" role="_blank">FEM-2</ulink> is a phosphatase, so does regulation of
+                <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> involve sex-differential phosphorylation, and if so what is the kinase? How is
+                <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> processed to generate sex-specific peptides, and what are their activities?</para>
+        </sect2>
+        <sect2>
+            <title>Other regulators</title>
+            <para>Most of known sex determining genes were found in genetic screens for defects in
+                sexual differentiation. These screens have probably identified all of the genes
+                whose loss of function phenotype is severe sex reversal. However, although many of
+                these screens were conducted in sensitized genetic backgrounds, other regulators
+                must have been missed, particularly essential genes and those that act redundantly.
+                Two lines of evidence make it clear that such genes exist. First, there are
+                biochemical activities unaccounted for, such as the putative kinase whose
+                phosphorylation is reversed by <ulink url="http://www.wormbase.org/db/seq/protein?name=FEM-2;class=protein" role="_blank">FEM-2</ulink>. Second, there is genetic evidence for
+                additional regulators. As an example, mutating <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=xol-1" role="_blank">xol-1</ulink></emphasis> enhances
+                the masculinization of XX <emphasis>tra-(null)</emphasis> mutants, suggesting that another regulator(s)
+                acts downstream of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=xol-1" role="_blank">xol-1</ulink></emphasis> and in parallel with
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink></emphasis> to promote <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-1" role="_blank">tra-1</ulink></emphasis> activity (<link linkend="bib28">Hodgkin and Brenner, 1977</link><!-- PMID 560330-->; <link linkend="bib42">Miller et al., 1988</link><!-- PMID 3167975-->). Focused
+                molecular screens should allow the identification of such regulatory molecules.</para>
+        </sect2>
+        <sect2>
+            <title>What genes act downstream of TRA-1?</title>
+            <para><ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> activity directs alternative cell fates throughout the soma. This involves
+                transcriptional repression of dedicated sexual regulators (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-3" role="_blank">mab-3</ulink></emphasis>) and of more
+                general cellular factors (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-1" role="_blank">egl-1</ulink></emphasis>), and can control the physiology of entire organs
+                like the intestine or the fates of individual cells. Is <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-3" role="_blank">mab-3</ulink></emphasis> or <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-1" role="_blank">egl-1</ulink></emphasis> the more
+                typical <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> target? Does <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> act exclusively as a transcriptional repressor or
+                might it also activate transcription? Much work remains to find genes that act
+                downstream of <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> in other tissues. This will aid in understanding how sexual
+                dimorphism is established in different cell types and how sexual regulation
+                interacts with spatial and temporal regulation during development. The improved
+                availability of reporter genes marking sexually dimorphic tissues and new techniques
+                for global analysis of gene expression and function should accelerate progress.</para>
+        </sect2>
+        <sect2>
+            <title>How has the sex determination pathway evolved?</title>
+            <para>Evolution of sex determination pathways is covered in detail in <ulink url="http://www.wormbook.org/chapters/www_evolutionsexdetermin/evolutionsexdetermin.html" role="_blank">The evolution of nematode sex determination</ulink>. The
+                    <emphasis>C. elegans</emphasis> sex determination pathway has been proposed to
+                have arisen from a “bottom up” accretion of negative regulators during evolution
+                (<link linkend="bib61">Wilkins, 1995</link><!-- PMID 7702596-->). Genetic investigations of somatic sex determination
+                in other nematodes have begun, and these, along with comparative molecular studies,
+                are certain to be informative. As mentioned earlier, the pathway from
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=her-1" role="_blank">her-1</ulink></emphasis> to <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-1" role="_blank">tra-1</ulink></emphasis> appears to derive from a
+                hedgehog signaling pathway which might have been co-opted in one step; comparative
+                studies should clarify this question. As more divergent species are studied, it also
+                will become clearer which parts of the <emphasis>C. elegans</emphasis> pathway are
+                ancient and which are more recently recruited. In particular, it will be important
+                to test suggestions that DM domain genes like <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-3" role="_blank">mab-3</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-23" role="_blank">mab-23</ulink></emphasis> are descended from
+                very ancient metazoan sex-determining genes.</para>
+        </sect2>
+    </sect1>
+    <sect1>
+        <title>References</title>
+		<para/>
+		&somaticsexdet_Refs;</sect1>
+</article>

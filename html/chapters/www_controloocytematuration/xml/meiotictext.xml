@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY % local.notation.class '| MOV'>
+<!NOTATION MOV SYSTEM 'MOV'>
+<!ENTITY fig1 SYSTEM 'meioticfig1.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'meioticfig1leg.xml'>
+<!ENTITY fig2 SYSTEM 'meioticfig2.jpg' NDATA JPG>
+<!ENTITY fig2legend SYSTEM 'meioticfig2leg.xml'>
+<!ENTITY fig3 SYSTEM 'meioticfig3.jpg' NDATA JPG>
+<!ENTITY fig3legend SYSTEM 'meioticfig3leg.xml'>
+
+<!ENTITY mov1 SYSTEM 'meioticmov1.mov' NDATA MOV>
+<!ENTITY mov1legend SYSTEM 'meioticmov1leg.xml'>
+
+<!ENTITY meiotic_Refs SYSTEM 'meioticrefs.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="meiotic_ArticleID">
+    <articleinfo>
+        <!--see DocBook's authorgroup element -->
+        <title>Control of oocyte meiotic maturation and fertilization<footnote>
+                <para>Edited by Judith Kimble and Susan Strome. Last revised March 24, 2005. Published December 28, 2005. This chapter should be cited as: Greenstein, D. Control of oocyte meiotic maturation and fertilization (December 28, 2005), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.53.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+		<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2005 David Greenstein. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+            </footnote>
+       </title>
+        <!--		<revhistory>
+			<revision>
+				<revnumber>1.0</revnumber>
+				<date>Last revised 3/24/05</date>
+			</revision>
+		</revhistory>
+-->
+        <author>
+            <firstname>David</firstname>
+            <surname>Greenstein<remark>
+                    <footnote>
+                        <para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:david.greenstein@vanderbilt.edu">david.greenstein@vanderbilt.edu</ulink></para>
+                    </footnote>
+                </remark>
+            </surname>
+            <affiliation>
+                <address>Department of Cell and Developmental Biology, Vanderbilt University School of Medicine, Nashville, TN 37232 USA</address>
+            </affiliation>
+        </author>
+    </articleinfo>
+    <abstract>
+        <title><emphasis role="bold">Abstract</emphasis></title>
+        <para><emphasis role="bold">Sexual reproduction depends upon meiosis for the generation of haploid gamete nuclei,
+            which unite after fertilization to form the diploid zygote. The oocytes of most animal
+            species arrest during meiotic prophase, and complete meiosis in response to
+            intercellular signaling in a process called meiotic maturation. Oocyte meiotic
+            maturation is defined by the transition between diakinesis and metaphase of meiosis I
+            and is accompanied by nuclear envelope breakdown, rearrangement of the cortical
+            cytoskeleton, and meiotic spindle assembly. Thus, the meiotic maturation process is
+            essential for meiosis and prepares the oocyte for fertilization. In</emphasis> <emphasis><emphasis role="bold">C.
+            elegans,</emphasis></emphasis> <emphasis role="bold">the processes of meiotic maturation, ovulation, and fertilization
+            are temporally coupled: sperm utilize the major sperm protein as a hormone to trigger
+            oocyte meiotic maturation, and in turn, the maturing oocyte signals its own ovulation
+            thereby facilitating fertilization. This chapter highlights recent advances in
+            understanding meiotic maturation signaling and gametic interactions required for
+            fertilization.</emphasis></para>
+    </abstract>
+    <sect1>
+        <title>Overview</title>
+        <sect2>
+            <title>General features of meiotic maturation and fertilization</title>
+            <para>Sexual reproduction depends upon meiosis for the generation of haploid gamete
+                nuclei, which unite after fertilization to form the diploid zygote. Despite this
+                universal requirement, meiosis is regulated differently in oocytes and
+                spermatocytes. Whereas spermatocytes proceed through the meiotic divisions uninterrupted, oocytes almost invariably arrest during one, and sometimes two stages
+                following premeiotic DNA replication and meiotic recombination, depending on the
+                species. This unique characteristic of oocyte meiosis, as well as its close temporal
+                association with fertilization, was recognized early by developmental biologists
+                (see <link linkend="bib62">Wilson, 1925</link>), who coined the term meiotic maturation for the suite of
+                physiological changes occurring in oocytes just before zygote formation. Oocyte
+                meiotic maturation is defined by the transition between diakinesis and metaphase of
+                meiosis I and is accompanied by nuclear envelope breakdown, rearrangement of the
+                cortical cytoskeleton, and meiotic spindle assembly (<link linkend="figure1">Figure 1</link>).
+                Thus, the meiotic maturation process is essential for meiosis and may prepare the
+                oocyte for fertilization.</para>
+        <mediaobject id="figure1" xreflabel="Figure 1">
+            <imageobject>
+                <imagedata entityref="fig1" align="center" width="4in"/>
+            </imageobject>
+            <textobject>
+                <phrase>figure 1</phrase>
+            </textobject> &fig1legend;</mediaobject>
+            <para>To ensure successful fertilization, oocyte meiotic maturation must be coordinated
+                with other cellular events during oogenesis, including growth, meiotic chromosome
+                reorganization, and ovulation. To achieve this coordination, intercellular signals
+                regulate oocyte meiotic progression (reviewed by <link linkend="bib13">Ferrell, 1999</link><!--: PMID 10497333-->; <link linkend="bib42">Masui,
+                2001</link><!--: PMID 11776390-->). The timing of the meiotic divisions with respect to
+                fertilization varies among species, likely reflecting the diversity of reproductive
+                strategies observed in nature (<link linkend="figure1">Figure 1</link>). Despite these differences
+                in timing, extensive studies reveal striking conservation in the molecular
+                underpinnings of oocyte meiotic maturation among different animals. It was classic
+                studies of oocyte meiotic maturation in amphibian oocytes that led to the discovery
+                of the Maturation Promoting Factor (MPF; <link linkend="bib44">Masui and Markert, 1971</link><!--: PMID 5106340-->;
+                reviewed by <link linkend="bib42">Masui, 2001</link><!--: PMID 11776390-->). Genetic and biochemical analysis of the cell
+                cycle, together with MPF purification, subsequently demonstrated that
+                cyclin-dependent protein kinases are universal regulators of mitotic and meiotic
+                cell cycle progression in eukaryotes (reviewed by <link linkend="bib50">Morgan, 1995</link><!--: PMID 7877684-->).</para>
+        </sect2>
+        <sect2>
+            <title>Meiotic maturation and fertilization in <emphasis>C. elegans</emphasis></title>
+            <para>
+                <emphasis>C. elegans</emphasis> is an important system for addressing the
+                fundamental events of oocyte meiotic maturation and fertilization, complementing
+                studies in vertebrate systems (reviewed by <link linkend="bib25">Hubbard and Greenstein, 2000</link><!--:
+                PMID 10822256-->). Oocytes grow and develop in the proximal gonad arm of adult
+                hermaphrodites (<link linkend="figure2">Figure 2A</link>). Apoptotic cell death of germ cells is a
+                conserved feature of oogenesis, occurring in adults near the gonad loop region,
+                where the gonad tube bends ventrally. As germline nuclei transit through the loop
+                region, they exit pachytene, become more fully enclosed by plasma membrane, and form
+                a queue in the proximal gonad arm. The meiotic chromosomes condense as the
+                developing oocytes enter diplotene. In diakinesis, six discrete highly condensed
+                bivalents, corresponding to the homologous chromosome pairs, are readily visualized
+                    (<link linkend="figure2">Figure 2</link>B). Oocytes develop in close association with proximal
+                gonadal sheath cells (<link linkend="figure2">Figure 2</link>), smooth muscle-like cells that
+                regulate meiotic maturation and contract to drive ovulation (<link linkend="bib46">McCarter et al., 1997</link><!--:
+                PMID 9013925-->; <link linkend="bib19">Hall et al., 1999</link><!--: PMID 10419689-->; <link linkend="bib49">Miller et al., 2003</link><!--: PMID 12533508-->).
+                Meiotic maturation takes place in an assembly line fashion, such that the most
+                proximal oocyte (often referred to as the –1 oocyte) matures, enters the spermatheca
+                at ovulation, and is fertilized (<link linkend="figure2">Figure 2</link>; <link linkend="movie1">Movie 1</link>). In adult
+                hermaphrodites, the cycle repeats every ~23 minutes (<link linkend="bib47">McCarter et al., 1999</link><!--:
+                PMID 9882501-->).</para>
+            <mediaobject id="figure2" xreflabel="Figure 2">
+                <imageobject>
+                    <imagedata entityref="fig2" width="5in" align="center"/>
+                </imageobject>
+                <textobject>
+                    <phrase> figure 2</phrase>
+                </textobject> &fig2legend;</mediaobject>
+    <mediaobject id="movie1" xreflabel="Movie 1">
+        <imageobject>
+            <imagedata entityref="mov1" width="2in" align="center"/>
+        </imageobject>
+        <textobject>
+            <phrase>Movie</phrase>
+        </textobject> &mov1legend;</mediaobject>
+            <para>In many animals, including many species of sponges, annelids, mollusks, and
+                nematodes, sperm promote the resumption of meiosis in arrested oocytes (<link linkend="bib41">Masui, 1985</link>;
+                <link linkend="bib47">McCarter et al., 1999</link><!--: PMID 9882501-->). In <emphasis>C. elegans</emphasis>, sperm
+                utilize the major sperm protein (MSP) as a hormone to promote oocyte meiotic
+                maturation and gonadal sheath cell contraction at a distance (<link linkend="bib48">Miller et al., 2001</link><!--:
+                PMID 11251118-->). MSP is also the key cytoskeletal element required for amoeboid
+locomotion of nematode spermatozoa (<link linkend="bib26">Italiano et al., 1996</link><!--: PMID 8548814-->). MSP
+                promotes oocyte meiotic maturation, in part by binding the <ulink url="http://www.wormbase.org/db/seq/protein?name=VAB-1;class=protein" role="_blank">VAB-1</ulink> Eph receptor
+                protein-tyrosine kinase on oocytes, and in part by antagonizing an inhibitory
+                somatic gonadal sheath cell pathway (<link linkend="bib49">Miller et al., 2003</link><!--: PMID 12533508-->). Since
+                hermaphrodites produce only a fixed number of sperm, meiotic maturation rates are
+                initially high for the first two days of adulthood, but decline as sperm are used
+                for fertilization. In gonochoristic species (e.g., <emphasis>C. remanei</emphasis>),
+                oocytes arrest at diakinesis until the female is inseminated during mating.
+                Likewise, in sex-determination mutants of <emphasis>C. elegans</emphasis>, which
+                fully feminize the hermaphrodite gonad, oocytes also arrest until sperm are
+                supplied. Thus, the MSP hormone functions as the linchpin of a sperm-sensing
+                mechanism linking meiotic maturation and sperm availability, thereby ensuring
+                fertilization.</para>
+        </sect2>
+    </sect1>
+    <sect1>
+        <title>Control of oocyte meiotic maturation</title>
+        <sect2>
+            <title>Oocyte growth, development, and differentiation</title>
+            <sect3>
+                <title>Pachytene progression and oogenesis</title>
+                <para>Progression through pachytene to diplotene requires the mitogen-activated
+                    protein kinase (MAPK) signaling pathway in the germ line (<link linkend="bib8">Church et al., 1995</link><!--:
+                    PMID 7671816-->). MAPK activation is also involved in meiotic maturation (see
+                    below). Mutations in multiple RAS/MAPK pathway components cause a similar
+                    phenotype in which germline nuclei arrest in pachytene. The arrested germline
+                    nuclei are displaced from the surface of the gonadal tube and clump before the
+                    bend (<link linkend="bib8">Church et al., 1995</link><!--: PMID 7671816-->; <link linkend="bib24">Hsu et al., 2002</link><!--: PMID 11861555-->).</para>
+                <para>Whereas the RAS/MAPK pathway is required for fertility in both sexes, the
+                        <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=daz-1" role="_blank">daz-1</ulink></emphasis> gene, a homolog of the human Deleted in
+                    Azoospermia gene, is specifically required for progression through pachytene
+                    during oogenesis (<link linkend="bib33">Karashima et al., 2000</link><!--: PMID 10662646-->). Since
+                    <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=daz-1" role="_blank">daz-1</ulink></emphasis> encodes a ribonucleoprotein-type RNA-binding protein,
+                    it may regulate translation during female meiotic progression.
+                    <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=skr-1" role="_blank">skr-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=skr-2" role="_blank">skr-2</ulink></emphasis>, which encode two of
+                    the 21 Skp1-related genes in <emphasis>C. elegans</emphasis>, are also required
+                    for progression through pachytene during oogenesis (<link linkend="bib52">Nayak et al., 2002</link><!--:
+                    PMID 11864567-->). <ulink url="http://www.wormbase.org/db/seq/protein?name=SKP-1;class=protein" role="_blank">SKP-1</ulink> and SKP-2 interact with the <ulink url="http://www.wormbase.org/db/seq/protein?name=CUL-1;class=protein" role="_blank">CUL-1</ulink> cullin and are likely to
+                    regulate ubiquitin-mediated protein degradation to promote progression through
+                    pachytene. The maxi-KH/STAR domain RNA-binding protein <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> is also required
+                    for oocyte differentiation (<link linkend="bib15">Francis et al., 1995</link><!--: PMID 7713419-->; <link linkend="bib29">Jones and Schedl,
+                    1995</link><!--: PMID 7601353-->). In the absence of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gld-1" role="_blank">gld-1</ulink></emphasis>, germ cells
+                    destined to become oocytes enter meiosis, proceed to pachytene, but then exit
+                    meiosis, reentering the mitotic cell cycle to form a germline tumor (<link linkend="bib15">Francis et
+                    al., 1995</link><!--: PMID 7713419-->). <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> functions as a translational repressor protein
+                    (<link linkend="bib28">Jan et al., 1999</link><!--: PMID 9321409-->; <link linkend="bib38">Lee and Schedl, 2001</link><!--: PMID 11562350-->) that also
+                    protects its mRNA targets from nonsense-mediated decay (<link linkend="bib39">Lee and Schedl, 2004</link><!--:
+                    PMID 15105376-->). <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> protein levels are highest during pachytene, drop sharply
+                    as germ cells progress to diplotene, and decrease to undetectable levels in
+                    growing oocytes (<link linkend="bib30">Jones et al., 1996</link><!--: PMID 8948583-->). This observation suggested
+                    that <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gld-1" role="_blank">gld-1</ulink></emphasis> may prevent the translation of proteins needed for oocyte growth and
+                    development in early meiotic prophase. The isolation of <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> mRNA targets by
+                    immunoprecipitation identified candidate genes involved in oocyte development or
+                    function (<link linkend="bib38">Lee and Schedl, 2001</link><!--: PMID 11562350-->).</para>
+            </sect3>
+            <sect3>
+                <title>Oocyte growth</title>
+                <para>Oocytes grow in the proximal gonad arm, and accumulate yolk lipoprotein
+                    particles. The vitellogenins, protein components of yolk particles, are
+                    synthesized in the intestine (<link linkend="bib35">Kimble and Sharrock, 1983</link><!--: PMID 6825952-->) and
+                    secreted into the pseudocoelom. Yolk lipoprotein particles appear to pass
+                    through the gonadal basal lamina, move through pores in the gonadal sheath cells
+                        (<link linkend="figure2">Figure 2E</link>), are endocytosed, and stored in
+                    membrane-bounded granules within oocytes (<link linkend="bib19">Hall et al., 1999</link><!--: PMID 10419689-->).
+                    Endocytosis, of yolk lipoprotein particles requires the <ulink url="http://www.wormbase.org/db/seq/protein?name=RME-2;class=protein" role="_blank">RME-2</ulink> yolk receptor, a
+                    member of the low-density lipoprotein receptor superfamily (<link linkend="bib16">Grant and Hirsh,
+                    1999</link><!--: PMID 10588660-->). The spatial pattern of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rme-2" role="_blank">rme-2</ulink></emphasis>
+                    expression is controlled by <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gld-1" role="_blank">gld-1</ulink></emphasis> (<link linkend="bib38">Lee and Schedl, 2001</link><!--:
+                    PMID 11562350-->) and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=atx-2" role="_blank">atx-2</ulink></emphasis> (<link linkend="bib9">Ciosk et al., 2004</link><!--: PMID 15342467-->).
+                    The vitellogenins are cholesterol-binding proteins and <ulink url="http://www.wormbase.org/db/seq/protein?name=RME-2;class=protein" role="_blank">RME-2</ulink> receptor-mediated
+                    endocytosis is required for normal transport of cholesterol into oocytes
+                    (<link linkend="bib45">Matyash et al., 2001</link><!--: PMID 11408580-->). Since adult hermaphrodites turn over the
+                    entire volume of the gonad every 6.5 hours, (<link linkend="bib23">Hirsh et al., 1976</link><!--: PMID 943344-->),
+                    oocyte growth must be highly regulated. Understanding oocyte growth control is a
+                    frontier for the field. Signaling pathways that intersect with meiotic
+                    maturation and MAPK pathways appear to be involved (<link linkend="bib18">Gutch et al., 1998</link><!--:
+                    PMID 9472025-->; T. Schedl, unpublished results).</para>
+            </sect3>
+        </sect2>
+        <sect2>
+            <title>Oocyte meiotic maturation</title>
+            <sect3>
+                <title>Description of anatomy and timing of events</title>
+                <para>Oocyte meiotic maturation can be viewed by time-lapse videomicroscopy of
+                    living animals (<link linkend="bib61">Ward and Carrel, 1979</link><!--: PMID 499670-->; <link linkend="movie1">Movie 1</link>). The timing of
+                    landmark events during meiotic maturation (<link linkend="bib47">McCarter et al., 1999</link><!--: PMID 9882501-->)
+                    and the ultrastructure of the proximal gonad (<link linkend="bib19">Hall et al., 1999</link><!--: PMID 10419689-->)
+                    have been described. The nuclear envelope of the most proximal oocyte breaks
+                    down ~5 min prior to ovulation as it enters meiotic M-phase from prophase
+                    (<link linkend="bib47">McCarter et al., 1999</link><!--: PMID 9882501-->). During maturation, the oocyte also
+                    undergoes a structural change termed cortical rearrangement (<link linkend="bib47">McCarter et al.,
+                    1999</link><!--: PMID 9882501-->). These changes within the oocyte coincide with a reproducible
+                    sequence of somatic motor events mediated by the contractile proximal sheath
+                    cells (<link linkend="figure2">Figure 2A</link>, <link linkend="figure2">Figure 2D</link>) and the distal spermatheca resulting in
+                    ovulation. The gonadal sheath cells form gap junctions with oocytes (<link linkend="figure2">Figure 2D</link>, <link linkend="figure2">Figure 2E</link>) and regulate meiotic
+                    maturation and ovulation (<link linkend="bib17">Greenstein et al., 1994</link><!--: PMID 7958868-->; <link linkend="bib46">McCarter et al.,
+                    1997</link><!--: PMID 9013925-->; <link linkend="bib56">Rose et al., 1997</link><!--: PMID 9405097-->; <link linkend="bib49">Miller et al., 2003</link><!--:
+                    PMID 12533508-->).</para>
+            </sect3>
+            <sect3>
+                <title>The MSP signal</title>
+                <para>In a landmark study, <link linkend="bib47">McCarter et al., (1999</link><!--: PMID 9882501-->) showed that a
+                    sperm-associated signal promotes oocyte meiotic maturation independent of
+                    fertilization. In females (genetically altered XX animals that produce no
+                    sperm), oocytes mature and are ovulated at low rates (<symbol role="symbolfont"
+                        >&#x003C;</symbol> 0.1 maturations per gonad per hr). Mating to
+                    wild-type males, or fertilization incompetent sperm defective
+                    (<emphasis>spe</emphasis>) mutants restores the normal rate of oocyte maturation
+                    when sperm are plentiful (~2.5 maturations per gonad per hr). Until recently, a
+                    key unanswered question in the field concerned the nature of the sperm signal
+                    for oocyte meiotic maturation. <link linkend="bib48">Miller et al. (2001</link><!--: PMID 11251118-->) demonstrated
+                    that the major sperm protein (MSP), the central cytoskeletal element required
+                    for the actin-independent motility of nematode spermatozoa, has a dual role in
+                        <emphasis>C. elegans</emphasis> reproduction, functioning as a hormone for
+                    oocyte meiotic maturation and gonadal sheath cell contraction. An <emphasis>in vivo</emphasis>
+                    bioassay was developed in which sperm-conditioned medium or sperm lysates were
+                    injected into the uterus of unmated <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fog-2" role="_blank">fog-2</ulink></emphasis> female animals,
+                    and oocyte meiotic maturation and gonadal sheath cell contraction were monitored
+                    by time-lapse videomicroscopy. The bioactive factors were purified to
+                    homogeneity with reversed-phase high-performance liquid chromatography and shown
+                    to contain only MSP by mass spectrometry. Injection of MSP antibodies into the
+                    uterus of hermaphrodites results in a reduction in ovulation rates, consistent
+                    with the hypothesis that MSP is an endogenous signal. <emphasis>C.
+                    elegans</emphasis> MSP can signal in <emphasis>C. remanei</emphasis> (<link linkend="bib48">Miller et
+                    al., 2001</link><!--: PMID 11251118-->) and <emphasis>Ascaris</emphasis> MSP can signal in <emphasis>C.
+                    elegans</emphasis> (M. Kosinski and D.G., unpublished results), consistent with
+                    observations of heterospecific matings in the genus
+                    <emphasis>Caenorhabditis</emphasis> (<link linkend="bib22">Hill and L’Hernault, 2001</link><!--: PMID 11254351-->).</para>
+                <para>MAPK activation plays critical roles in regulating meiotic progression
+                    (<link linkend="bib13">Ferrell, 1999</link><!--: PMID 10497333-->). In <emphasis>C. elegans</emphasis>, the MAPK
+                    pathway is required for pachytene progression (<link linkend="bib8">Church et al., 1995</link><!--: PMID 7671816-->)
+                    and is important for meiotic maturation (M.-H. Lee and T. Schedl, pers. comm.).
+                    Proximal oocytes exhibit MAPK activation in the presence of sperm (<link linkend="bib48">Miller et
+                    al., 2001</link><!--: PMID 11251118-->; <link linkend="bib54">Page et al., 2001</link><!--: PMID  11463371-->), and MSP was shown to
+                    be sufficient to activate MAPK in oocytes (<link linkend="bib48">Miller et al., 2001</link><!--: PMID 11251118-->).
+                    MSP begins as a cytoplasmic protein and does not possess a signal sequence.
+                    Recent results suggest that MSP is exported from spermatids and spermatozoa by a
+                    vesicle budding mechanism (M. Kosinski, K. McDonald, J. Schwartz, I. Yamamoto,
+                    and D. G., unpublished results).</para>
+            </sect3>
+            <sect3>
+                <title>MSP signaling and the sperm-sensing mechanism</title>
+                <para>The identification of MSP’s signaling role posed the problem of how oocytes
+                    and sheath cells sense MSP. A key advance was the identification of the <ulink url="http://www.wormbase.org/db/seq/protein?name=VAB-1;class=protein" role="_blank">VAB-1</ulink>
+                    Eph receptor protein-tyrosine kinase as an MSP receptor (<link linkend="bib49">Miller et al., 2003</link><!--:
+                    PMID 12533508-->; reviewed by <link linkend="bib37">Kuwabara, 2003</link><!--: PMID 12533505-->). Recent results show
+                    that the <ulink url="http://www.wormbase.org/db/seq/protein?name=VAB-1;class=protein" role="_blank">VAB-1</ulink> ectodomain directly binds MSP in vitro (H. Cheng and D. G.,
+                    unpublished results). The observation that <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=vab-1" role="_blank">vab-1</ulink></emphasis> null mutant oocytes respond to
+                    and bind MSP, suggests the involvement of additional MSP receptors.
+                        <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=vab-1" role="_blank">vab-1</ulink></emphasis> was shown to function in parallel to a somatic
+                    gonadal pathway (<link linkend="bib49">Miller et al., 2003</link><!--: PMID 12533508-->), defined by the POU-class
+                    homeobox gene <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ceh-18" role="_blank">ceh-18</ulink></emphasis> (<link linkend="bib17">Greenstein et al., 1994</link><!--: PMID 7958868-->;
+                    <link linkend="bib56">Rose et al., 1997</link><!--: PMID 9405097-->). These parallel pathways negatively regulate
+                    oocyte maturation and MAPK activation in hermaphrodite and female gonads.
+                    Eliminating <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=vab-1" role="_blank">vab-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ceh-18" role="_blank">ceh-18</ulink> </emphasis>function
+                    removes the dependence of meiotic maturation and ovulation on the presence of
+                    sperm. Therefore, this meiotic control mechanism resembles a cell cycle
+                    checkpoint (<link linkend="bib21">Hartwell and Weinert, 1989</link><!--: PMID 2683079-->) and may confer a selective
+                    advantage in hermaphrodite and female species by conserving metabolically costly
+                    oocytes when sperm are unavailable for fertilization.</para>
+                <para>Positive effectors of oocyte meiotic maturation have been identified in <emphasis>C.
+                    elegans</emphasis>, including the cyclin-dependent kinase homolog <ulink url="http://www.wormbase.org/db/seq/protein?name=CDK-1;class=protein" role="_blank">CDK-1</ulink> (<link linkend="bib4">Boxem et al. 1999</link><!--:
+                    PMID 11684669-->) and the polo-like kinase homolog <ulink url="http://www.wormbase.org/db/seq/protein?name=PLK-1;class=protein" role="_blank">PLK-1</ulink> (<link linkend="bib7">Chase et al. 2000</link><!--:
+                    PMID 10660671-->). The zinc finger domain–containing proteins <ulink url="http://www.wormbase.org/db/seq/protein?name=OMA-1;class=protein" role="_blank">OMA-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=OMA-2;class=protein" role="_blank">OMA-2</ulink> are
+                    redundantly required for oocyte maturation and ovulation (<link linkend="bib12">Detwiler et al. 2001</link><!--:
+                    PMID 11702779-->). In <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=oma-1" role="_blank">oma-1</ulink>; <ulink url="http://www.wormbase.org/db/gene/gene?name=oma-2" role="_blank">oma-2</ulink></emphasis> double mutants, MAPK
+                    activation is not sustained and nuclear envelope breakdown does not occur. <ulink url="http://www.wormbase.org/db/seq/protein?name=OMA-1;class=protein" role="_blank">OMA-1</ulink>
+                    and <ulink url="http://www.wormbase.org/db/seq/protein?name=OMA-2;class=protein" role="_blank">OMA-2</ulink> may function upstream of two conserved cell cycle regulators, the
+                    MYT1–related kinase <ulink url="http://www.wormbase.org/db/seq/protein?name=WEE-1.3;class=protein" role="_blank">WEE-1.3</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=CDK-1;class=protein" role="_blank">CDK-1</ulink> (<link linkend="bib12">Detwiler et al. 2001</link><!--: PMID 11702779-->).
+                    Since <ulink url="http://www.wormbase.org/db/seq/protein?name=OMA-1;class=protein" role="_blank">OMA-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=OMA-2;class=protein" role="_blank">OMA-2</ulink> contain zinc finger domains, they could function as
+                    regulators of translation or as regulators of proteolysis (<link linkend="bib11">DeRenzo et al., 2003</link><!--:
+                    PMID 12894212-->).</para>
+            </sect3>
+        </sect2>
+    </sect1>
+    <sect1>
+        <title>Control of ovulation</title>
+        <para>The ovulatory process represents an attractive physiological model for how
+            intercellular signaling affects smooth muscle function. Ovulation involves the
+            coordinated function of the gonadal sheath cells, specialized smooth-muscle-like cells
+            that surround oocytes (<link linkend="figure2">Figure 2</link>). During ovulation, the proximal
+            gonadal sheath cells contract rapidly, the distal constriction of the spermatheca
+            dilates, and sheath cells pull the distal spermatheca over the mature oocyte (<link linkend="movie1">Movie 1</link>).
+            The maturing oocyte signals its own ovulation in two ways: it modulates sheath
+            contractions, which includes an increase in contraction rate and intensity during
+            ovulation, and it induces spermathecal dilation during ovulation (<link linkend="bib47">McCarter et al., 1999</link><!--:
+            PMID 9882501-->). Spermathecal dilation is regulated by a
+            LIN-3(EGF)/<ulink url="http://www.wormbase.org/db/seq/protein?name=LET-23;class=protein" role="_blank">LET-23</ulink>(EGF-receptor) signal transduction pathway
+            mediating the signal from oocyte to the distal spermatheca (<link linkend="bib10">Clandinin et al., 1998</link><!--:
+            PMID 9491893-->; T. Schedl, unpublished results). The <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-23" role="_blank">let-23</ulink></emphasis> pathway
+            required for spermathecal dilation during ovulation is
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-60" role="_blank">let-60</ulink></emphasis><emphasis>(ras)</emphasis>-independent and involves a downstream IP3-mediated
+            pathway (<link linkend="bib10">Clandinin et al., 1998</link><!--: PMID 9491893-->). Dominant gain-of-function mutations in
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-60" role="_blank">let-60</ulink></emphasis>(ras) also perturb ovulation, suggesting that
+            ras-dependent pathways are also involved (T. Schedl, unpublished results). Mutations in
+            two genes, <emphasis>lfe-1</emphasis>/<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=itr-1" role="_blank">itr-1</ulink></emphasis> and
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lfe-2" role="_blank">lfe-2</ulink></emphasis>, (gain-of-function and loss-of-function, respectively) were
+            isolated in a genetic screen for suppressors of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-23" role="_blank">let-23</ulink></emphasis> sterility
+            defects. <emphasis>lfe-1</emphasis>/<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=itr-1" role="_blank">itr-1</ulink></emphasis> and
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lfe-2" role="_blank">lfe-2</ulink></emphasis> genes encode an inositol (1, 4, 5) triphosphate receptor and
+            an inositol (1, 4, 5) triphosphate-3-kinase, respectively (<link linkend="bib10">Clandinin et al., 1998</link><!--:
+            PMID 9491893-->). These results suggest that spermathecal dilation is likely to be dependent
+            on calcium release regulated by IP3. Consistent with this possibility, a mutant allele
+            of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ipp-5" role="_blank">ipp-5</ulink></emphasis>, which encodes a type I 5-phosphatase, predicted to lower
+            IP3 levels, exhibits a novel ovulation phenotype in which the spermatheca overextends,
+            thereby ovulating two oocytes per cycle (<link linkend="bib5">Bui and Sternberg, 2002</link><!--: PMID 12006659-->).
+            Mutations in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=plc-1" role="_blank">plc-1</ulink></emphasis>, which encodes a phospholipase C epsilon
+            homolog, or <emphasis>plc-1(RNAi)</emphasis>, also result in spermathecal entry and exit
+            defects (<link linkend="bib34">Kariya et al., 2004</link><!--: PMID 15355798-->; <link linkend="bib65">Yin et al., 2004</link><!--: PMID 15194811-->).
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-23" role="_blank">let-23</ulink></emphasis>-mediated IP3 signaling also plays a role in promoting
+            the ovulatory gonadal sheath cell contractions (<link linkend="bib65">Yin et al., 2004</link><!--: PMID 15194811-->).</para>
+           <para>Mutations that lead to defective ovulation cause an endomitotic oocyte (Emo) phenotype
+           (<link linkend="bib27">Iwasaki et al., 1996</link><!--: PMID 8707849-->). When oocytes are retained in the gonad arm due to
+           defective ovulation, they undergo multiple rounds of nuclear envelope breakdown (M-phase
+           entry) and S-phase, and become highly polyploid. A large class of genes can mutate to an
+            Emo phenotype and these include <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=emo-1" role="_blank">emo-1</ulink></emphasis> (<link linkend="bib27">Iwasaki et al., 1996</link><!--:
+            PMID 8707849-->), <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mup-2" role="_blank">mup-2</ulink></emphasis> (<link linkend="bib51">Myers et al., 1996</link><!--: PMID 8601585-->),
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mel-11" role="_blank">mel-11</ulink></emphasis> (<link linkend="bib63">Wissmann et al., 1999</link><!--: PMID 10208747-->), tropomyosin, and
+            troponin C (<link linkend="bib53">Ono and Ono, 2004</link><!--: PMID 15064356-->) as well as genes involved in sheath or
+            spermathecal development (<link linkend="bib36">Kostic et al., 2003</link><!--PMID 14597199-->; <link linkend="bib2">Aono et al., 2004</link><!--:
+            PMID 1515198-->). In the future, studies of the physiology of ovulation will no doubt
+            benefit from the ability to measure calcium concentrations in the gonad (<link linkend="bib58">Samuel et al.,
+            2001</link><!--: PMID 11346453-->) and to record oocyte ion channels (<link linkend="bib57">Rutledge et al., 2001</link><!--:
+            PMID 11231150-->).</para>
+    </sect1>
+    <sect1>
+        <title>Control of fertilization</title>
+        <para>Successful fertilization depends on a series of gametic interactions in which
+            spermatozoa and oocyte recognize each other, bind, and fuse (reviewed by <link linkend="bib20">Hardy, 2002</link>).
+            Egg activation (the process whereby the oocyte completes the meiotic divisions), a block
+            to polyspermy, and activation of the embryonic program are dependent on fertilization.
+                <emphasis>C. elegans</emphasis> provides a promising experimental system for
+            examining fertilization because of the availability of fertilization-defective mutants
+            (<link linkend="bib40">L’Hernault et al., 1988</link><!--: PMID 3197956-->; reviewed by <link linkend="bib59">Singson, 2001</link><!--: PMID 11161565-->). The
+            central finding for the field was the phenotypic characterization and molecular cloning
+            of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=spe-9" role="_blank">spe-9</ulink></emphasis>, a gene whose function is required in sperm for
+            fertilization (<link linkend="bib60">Singson et al., 1998</link><!--: PMID 9546393-->). <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=spe-9" role="_blank">spe-9</ulink></emphasis>
+            spermatozoa are fertilization defective, despite being able to crawl, signal meiotic
+            maturation, and contact ovulated oocytes. <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=spe-9" role="_blank">spe-9</ulink></emphasis> mutations do not
+            affect spermiogenesis, and the mutant spermatozoa have a normal morphology at the EM
+            level. <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=spe-9" role="_blank">spe-9</ulink></emphasis> encodes a transmembrane protein containing an
+            extracellular domain with 10 EGF-like repeats. Based on these results, <link linkend="bib60">Singson et al.
+            (1998</link><!--: PMID 9546393-->) proposed that <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=spe-9" role="_blank">spe-9</ulink></emphasis> may function as a ligand
+            for an oocyte receptor. Analysis of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=spe-9" role="_blank">spe-9</ulink></emphasis>-deletion derivatives
+            using a transgenic assay is consistent with this proposal and indicates that the
+            EGF-like repeats and the transmembrane segment are required for function (<link linkend="bib55">Putiri et al.,
+            2004</link><!--: PMID 15282160-->). By contrast, the cytoplasmic domain was dispensable, ruling out the
+            possibility that this region plays a signaling role within spermatozoa.
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=spe-9" role="_blank">spe-9</ulink></emphasis> localizes to the membrane of spermatids, but reorganizes to
+            the pseudopod during spermiogenesis (<link linkend="bib66">Zannoni et al., 2003</link><!--: PMID 14653860-->; <link linkend="figure3">Figure 3</link>). Based on this result, <link linkend="bib66">Zannoni et al. (2003</link><!--: PMID 14653860-->)
+            proposed that the spermatozoan interacts with the oocyte cell surface in a “pseudopod
+            first” manner. While there are no published ultrastructural observations of
+            fertilization events in <emphasis>C. elegans</emphasis>, Foor (1968<!--: PMID 5678444-->)
+            reported a striking series of EM observations of fertilization in Ascaris lumbricoides,
+            which provided evidence for initial contact of the pseudopod with the mature oocyte,
+            fusion of cell membranes during fertilization, and first entry of the pseudopodal
+            extension. The identification of oocyte cell surface molecules that mediate
+            fertilization interactions is an exciting area for future work.</para>
+    <mediaobject id="figure3" xreflabel="Figure 3">
+        <imageobject>
+            <imagedata entityref="fig3" align="center" width="4in"/>
+        </imageobject>
+        <textobject>
+            <phrase> figure 3</phrase>
+        </textobject> &fig3legend;
+</mediaobject>
+        <para>Further studies of fertilization-defective mutations of the
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=spe-9" role="_blank">spe-9</ulink></emphasis> class promise essential information on gametic interactions
+            needed for fertilization. These mutations include <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=spe-13" role="_blank">spe-13</ulink></emphasis>,
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=spe-38" role="_blank">spe-38</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=spe-42" role="_blank">spe-42</ulink></emphasis>,
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fer-14" role="_blank">fer-14</ulink></emphasis>, and <emphasis>trp-3</emphasis> (<link linkend="bib60">Singson et al., 1998</link><!--:
+            PMID 9546393-->; <link linkend="bib64">Xu and Sternberg, 2003</link><!--: PMID 12914694-->; A. Singson, T. Kroft, and S.
+            L’Hernault, unpublished results). <link linkend="bib64">Xu and Sternberg (2003</link><!--: PMID 12914694-->) reported an
+            extensive characterization of <emphasis>trp-3</emphasis> (aka
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=spe-41" role="_blank">spe-41</ulink></emphasis>), which encodes a member of the transient receptor potential
+            (TRP) superfamily of cation channels. While <emphasis>trp-3</emphasis> plays a critical role in
+            fertilization, it is not absolutely essential because hermaphrodites homozygous for
+            likely <emphasis>trp-3</emphasis> null mutations have brood sizes that are approximately
+            5% of the wild type. TRP-3 displays a dynamic localization during spermiogenesis. TRP-3
+            localizes to the MOs in spermatids and translocates to the plasma membrane of the cell
+            body and pseudopod during spermiogenesis (<link linkend="figure3">Figure 3</link>). Calcium imaging
+            studies provided evidence that TRP-3 may function as a store-operated calcium entry
+            (SOCE) channel in spermatozoa. In addition to SOCE channels, spermatozoa contain
+            constitutively active calcium-permeable (CAC) channels. While <emphasis>trp-3</emphasis>
+            mutant spermatozoa exhibit lower SOCE channel activity than the wild type, the CAC
+            channel activity is normal. These results strongly suggest that TRP cation channel
+            activity plays an important role in fertilization. In mammals, TRP channels play roles
+            in the acrosome reaction (<link linkend="bib31">Jungnickel et al., 2001</link><!--: PMID 11331878-->) and sperm motility
+            (<link linkend="bib6">Castellano et al., 2003</link><!--: PMID 12706821-->). Additional members of this large channel family
+            may have conserved functions in fertilization.</para>
+    </sect1>
+    <sect1>
+        <title>Conclusion</title>
+        <para>Meiotic maturation and fertilization are fundamental developmental events, which have
+            been extensively studied for over a hundred years. Yet, the molecular mechanisms
+            underlying these critical processes remain incompletely understood. Many exciting
+            biological questions surrounding these events remain. For instance, it is unclear how
+            meiotic maturation events actually prepare the oocyte for fertilization. The sequence of
+            molecular events needed at fertilization and their interdependencies are
+            uncharacterized. How fertilization results in egg activation and triggers the embryonic
+            program is largely unknown. Recent progress described here gives confidence that
+                <emphasis>C. elegans</emphasis> provides a fertile field for answering basic
+            questions about the fundamental developmental mechanisms of oocyte meiotic maturation
+            and fertilization.</para>
+    </sect1>
+    <sect1>
+        <title>Acknowledgments</title>
+        <para>I thank Michael Miller, Tim Schedl, Andy Singson, and Steve L’Hernault for
+            communicating unpublished results and for discussions. Thanks to Kent McDonald for
+            high-pressure freezing electron microscopy. Thanks to Michael Miller, Sean Xu, and Andy
+            Singson for assistance with the figures. Judith Kimble, Mary Kosinski, Steve L’Hernault,
+            Tim Schedl, and Susan Strome provided valuable comments on the manuscript. Work in my
+            laboratory is supported by grants from the National Institutes of Health (GM57173 and
+            GM65115).</para>
+    </sect1>
+    <sect1>
+        <title>References</title>
+		<para/>
+		&meiotic_Refs;</sect1>
+</article>

@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY fig1 SYSTEM 'Cnetworkfig1.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'Cnetworkfig1leg.xml'>
+<!ENTITY fig2 SYSTEM 'Cnetworkfig2.jpg' NDATA JPG>
+<!ENTITY fig2legend SYSTEM 'Cnetworkfig2leg.xml'>
+<!ENTITY fig3 SYSTEM 'Cnetworkfig3.jpg' NDATA JPG>
+<!ENTITY fig3legend SYSTEM 'Cnetworkfig3leg.xml'>
+<!ENTITY Cnetwork_Refs SYSTEM 'Cnetworkrefs.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="Cnetwork_ArticleID">
+	<articleinfo>
+		<!--see DocBook's authorgroup element -->
+		<title><emphasis>C. elegans</emphasis> network biology: a beginning<footnote>
+			<para>Edited by Jonathan Hodgkin. Last revised May 21, 2006. Published August 21, 2006. This chapter should be cited as: Piano, F., et al. <emphasis>C. elegans</emphasis> network biology: a beginning (August 21, 2006), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.118.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+			<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2006 Fabio Piano, et al. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+			</footnote>
+		</title>
+<author>
+	<othername>Fabio Piano<superscript>1</superscript><superscript>&#x000A7;</superscript>, Kristin C. Gunsalus<superscript>1</superscript><superscript>&#x000A7;</superscript>, David E. Hill<superscript>2</superscript><superscript>&#x000A7;</superscript>, and Marc Vidal<superscript>2</superscript><remark><footnote><para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:fp1@nyu.edu">fp1@nyu.edu</ulink>, <ulink url="mailto:kcg1@nyu.edu">kcg1@nyu.edu</ulink>, <ulink url="david_hill@dfci.harvard.edu">david_hill@dfci.harvard.edu</ulink>, or <ulink url="mailto:marc_vidal@ccsb.dfci.harvard.edu">marc_vidal@ccsb.dfci.harvard.edu</ulink>.</para></footnote></remark></othername>
+<affiliation><orgname><superscript>1</superscript>Center for Comparative Functional Genomics, Department of Biology, New York University</orgname>
+	<address>New York, NY 10003 USA</address></affiliation>
+<affiliation><orgname><superscript>2</superscript>Center for Cancer Systems Biology (CCSB) and Department of Cancer Biology, Dana-Farber Cancer Institute and Department of Genetics, Harvard Medical School</orgname><address>Boston, MA 02115 USA</address></affiliation>
+</author>
+</articleinfo>
+<abstract>
+	<title><emphasis role="bold">Abstract</emphasis></title>
+	<para><emphasis role="bold">The architecture and dynamics of molecular networks can provide an understanding of complex biological processes complementary to that obtained from the in-depth study of single genes and proteins. With a completely sequenced and well-annotated genome, a fully characterized cell lineage, and powerful tools available to dissect development,</emphasis> <emphasis><emphasis role="bold">Caenorhabditis elegans,</emphasis></emphasis> <emphasis role="bold">among metazoans, provides an optimal system to bridge cellular and organismal biology with the global properties of macromolecular networks. This chapter considers omic technologies available for</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">to describe molecular networks - encompassing transcriptional and phenotypic profiling as well as physical interaction mapping - and discusses how their individual and integrated applications are paving the way for a network-level understanding of</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">biology.</emphasis></para>
+</abstract>
+<sect1>
+<title>Introduction</title>
+<para>The combined power of global approaches to systematically analyze interactions among genes and their products and the phenotypic consequences of <emphasis>in vivo</emphasis> perturbations promises to drive the development of increasingly sophisticated models of the topology, function, and dynamics of <emphasis>C. elegans</emphasis> molecular networks (<link linkend="figure1">Figure 1</link>). The <emphasis>C. elegans</emphasis> genome sequence and its annotation laid the foundation for the development of a variety of functional genomic or &#x0201C;omic&#x0201D; approaches to interrogate molecular networks. This chapter reviews the developments underpinning these technologies, giving particular attention to: i) identifying network components, i.e. the complete lists of non-coding and coding transcripts and open reading frames (ORFs); ii) mapping interconnections between these components; iii) systematic perturbation of networks; iv) spatiotemporal dynamics of network components; and v) global network modeling. We summarize the resources emerging from these efforts, current experimental and computational approaches including the integration of different omic datasets, and developments on the horizon.</para>
+<literallayout></literallayout>
+<mediaobject id="figure1" xreflabel="Figure 1">
+	<imageobject>
+		<imagedata entityref="fig1" width="5in" align="center"/>
+	</imageobject>
+	<textobject>
+		<phrase>figure 1</phrase>
+	</textobject> &fig1legend;</mediaobject>
+</sect1>
+<sect1>
+<title>Network components: transcriptome and ORFeome</title>
+<para>The initial release of the assembled, annotated <emphasis>C. elegans</emphasis> genome sequence (<link linkend="bib111">The <emphasis>C. elegans</emphasis> Sequencing Consortium, 1998</link><!--; PMID 9851916-->) was a milestone in genomics, marking the first sequenced genome from a multicellular organism. Importantly for comprehensive analyses, <emphasis>C. elegans</emphasis> remains the only multicellular organism for which a complete genome sequence is available with no gaps in the assembly (<link linkend="bib54">Hillier et al., 2005</link><!--; PMID 16339362-->).</para>
+<?newpage?>
+<sect2>
+<title>Genomic databases</title>
+<para>An innovative object-oriented database system, ACeDB (<link linkend="bib27">Durbin and Thierry-Mieg, 1994</link>; <link linkend="bib104">Stein et al., 2001</link><!--; PMID 11125056-->; see also <ulink url="http://www.acedb.org/Cornell/dkfz.html" role="_html">http://www.acedb.org/Cornell/dkfz.html</ulink>), was created to facilitate the <emphasis>C. elegans</emphasis> genome project. ACeDB was the first widely used database system designed specifically for capturing and archiving complex biological data. Coupling the database to a visual output anchored on the genomic sequence gave ACeDB a graphical user interface, allowing the <emphasis>C. elegans</emphasis> community to extract far more information than was previously possible. From ACeDB evolved WormBase, a collaborative effort to capture, curate, and distribute biological information on <emphasis>C. elegans</emphasis> and related nematodes (<link linkend="bib104">Stein et al., 2001</link><!--; PMID 11125056-->; <link linkend="bib17">Chen et al., 2005</link><!--; PMID 15608221-->), and the WormGenes database at NCBI, which also provides access to carefully curated <emphasis>C. elegans</emphasis> genome annotations and functional data (<link linkend="bib112">Thierry-Mieg et al., 2005</link>). These databases are invaluable sources of information for the <emphasis>C. elegans</emphasis> research community (see <link linkend="table1">Table 1</link> for a short guide to these and other useful online resources for <emphasis>C. elegans</emphasis>).</para>
+<table id="table1" frame="all" rules="all" cellpadding="0" cellspacing="0" width="100%">
+<title><emphasis role="bold">Table 1. Web resources for</emphasis> <emphasis><emphasis role="bold">C. elegans.</emphasis></emphasis></title>
+<tgroup cols="3">
+<colspec colname="c1" align="left" colwidth="0.6*"/>
+<colspec colname="c2" align="left" colwidth="1.7*"/>
+<colspec colname="c3" align="left" colwidth="1.3*"/>
+<thead>
+<row>
+<entry>Website</entry>
+<entry>URL</entry>
+<entry>Information provided</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry><emphasis role="bold">WormBase</emphasis></entry>
+<entry><ulink url="http://www.wormbase.org">http://www.wormbase.org</ulink></entry>
+<entry><emphasis>C. elegans</emphasis> genome annotation, including datasets and reagents for YK cDNAs, ORFeome clones, RNAi results, microarray experiments, Y2H and genetic interactions, and much more</entry>
+</row>
+<row>
+<entry><emphasis role="bold">WormGenes</emphasis></entry>
+<entry><ulink url="http://www.wormgenes.org">http://www.wormgenes.org</ulink></entry>
+<entry><emphasis>C. elegans</emphasis> genome annotation with carefully curated YK cDNA models and literature data</entry>
+</row>
+<row>
+<entry><emphasis role="bold">Intronerator</emphasis></entry>
+<entry><ulink url="http://www.soe.ucsc.edu/~kent/intronerator">http://www.soe.ucsc.edu/~kent/intronerator</ulink></entry>
+<entry>Tools for exploring the molecular biology and genomics of <emphasis>C. elegans</emphasis> with a special emphasis on alternative splicing</entry>
+</row>
+<row>
+<entry><emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">WWW server</emphasis></entry>
+<entry><ulink url="http://elegans.swmed.edu">http://elegans.swmed.edu</ulink></entry>
+<entry>Leon Avery's links to all things nematode</entry>
+</row>
+<row>
+<entry><emphasis role="bold">WORFDB</emphasis></entry>
+<entry><ulink url="http://worfdb.dfci.harvard.edu">http://worfdb.dfci.harvard.edu</ulink></entry>
+<entry>ORFeome clones and associated data</entry>
+</row>
+<row>
+<entry morerows="1"><emphasis role="bold">NextDB</emphasis></entry>
+<entry rowsep="0"><ulink url="http://nematode.lab.nig.ac.jp/dbest/keysrch.html">http://nematode.lab.nig.ac.jp/dbest/keysrch.html</ulink></entry>
+<entry rowsep="0">cDNA library clones and associated data</entry>
+</row>
+<row>
+<entry><ulink url="http://nematode.lab.nig.ac.jp/db2/index.php">http://nematode.lab.nig.ac.jp/db2/index.php</ulink></entry>
+<entry><emphasis>In situ</emphasis> mRNA expression patterns</entry>
+</row>
+<row>
+<entry><emphasis role="bold">Hope Lab Expression Pattern Database</emphasis></entry>
+<entry><ulink url="http://129.11.204.59:591/fmi/iwp/cgi?-db=Construct%20Info&amp;-loadframes">http://129.11.204.59:591/fmi/iwp/cgi?-db=Construct%20Info&amp;-loadframes</ulink></entry>
+<entry>Promoter::GFP fusion expression patterns</entry>
+</row>
+<row>
+<entry morerows="1"><emphasis role="bold">BC Gene Expression Consortium</emphasis></entry>
+<entry morerows="1"><ulink url="http://elegans.bcgsc.ca/home/ge_consortium.html">http://elegans.bcgsc.ca/home/ge_consortium.html</ulink></entry>
+<entry rowsep="0">SAGE data</entry>
+</row>
+<row>
+<entry>Promoter::GFP expression patterns</entry>
+</row>
+<row>
+<entry><emphasis role="bold">WormAtlas</emphasis></entry>
+<entry><ulink url="http://www.wormatlas.org">http://www.wormatlas.org</ulink></entry>
+<entry>Behavioral and structural anatomy</entry>
+</row>
+<row>
+<entry><emphasis role="bold">WormImage</emphasis></entry>
+<entry><ulink url="http://www.wormimage.org">http://www.wormimage.org</ulink></entry>
+<entry>Electron micrographs and associated data</entry>
+</row>
+<row>
+<entry><emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">Gene Knockout Consortium</emphasis></entry>
+<entry><ulink url="http://celeganskoconsortium.omrf.org">http://celeganskoconsortium.omrf.org</ulink></entry>
+<entry>Gene knockout strains</entry>
+</row>
+<row>
+<entry><emphasis role="bold">RNAiDB</emphasis></entry>
+<entry><ulink url="http://www.rnai.org">http://www.rnai.org</ulink></entry>
+<entry>RNAi phenotypes and associated data for most publicly available RNAi studies</entry>
+</row>
+<row>
+<entry morerows="1"><emphasis role="bold">PhenoBank</emphasis></entry>
+<entry rowsep="0"><ulink url="http://www.worm.mpi-cbg.de/phenobank2/cgi-bin/MenuPage.py">http://www.worm.mpi-cbg.de/phenobank2/cgi-bin/MenuPage.py</ulink></entry>
+<entry morerows="1">RNAi phenotypes and associated data from <link linkend="bib103">S&#x000F6;nnichsen et al. (2005)</link><!--; PMID 15791247--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.phenobank.org">http://www.phenobank.org</ulink></entry>
+</row>
+<row>
+<entry><emphasis role="bold">Predictions of</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">Genetic Interactions</emphasis></entry>
+<entry><ulink url="http://tenaya.caltech.edu:8000/predict">http://tenaya.caltech.edu:8000/predict</ulink></entry>
+<entry><link linkend="bib136">Zhong and Sternberg (2006)</link><!--: PMID 16527984--></entry>
+</row>
+<row>
+<entry><emphasis role="bold">NBrowse</emphasis></entry>
+<entry><ulink url="http://www.gnetbrowse.org">http://www.gnetbrowse.org</ulink></entry>
+<entry>Integrated functional network browser</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</sect2>
+<sect2>
+<title>Computational predictions</title>
+<para>At the time of the initial genome sequence release, GeneFinder (Green and Hillier, unpublished software) was used to predict approximately 20,000 protein coding sequences (CDSs) or ORFs. Alternative <emphasis>ab initio</emphasis> transcript or ORF prediction algorithms produce largely consistent results that differ primarily in predicted exon/intron junctions (<link linkend="bib105">Stein et al., 2003</link><!--; PMID 14624247-->; <link linkend="bib128">Wei et al., 2005</link><!--; PMID 15805498-->). Experimental evidence (see below) indicates that most of the ~20,000 predicted ORFs are at least transcribed (<link linkend="bib94">Reboul et al., 2001</link><!--; PMID 11242119-->; <link linkend="bib93">Reboul et al., 2003</link><!--; PMID 12679813-->). Approximately 1,300 noncoding RNA (ncRNA) transcripts have also been predicted, including at least 120 microRNAs (miRNAs) (see <ulink url="http://www.wormbook.org/chapters/www_noncodingRNA/noncodingRNA.htm"><emphasis>C. elegans</emphasis> noncoding RNA genes</ulink>).</para>
+</sect2>
+<sect2>
+<title>Transcriptome</title>
+<para>Accurate genome annotation requires both a high quality genome sequence and robust computational prediction tools. However, experimental validation of transcribed mRNA sequences and their protein products is indispensable to demonstrate transcription and splicing and to ensure that exon/intron boundaries and reading frames are correctly assigned. These companion activities together lead to the refinement of gene models through an iterative process. After an initial effort by the <emphasis>C. elegans</emphasis> Sequencing Consortium to sequence random expressed sequence tags (ESTs) (<link linkend="bib127">Waterston et al., 1992</link><!--; PMID 1302004-->), a long-term effort was dedicated to isolating, sequencing and distributing as many complementary DNA (cDNA) clones as possible, with the ultimate goal of obtaining full-length cDNAs for all protein-coding transcripts (see <link linkend="table1">Table 1</link>). This benefited the worm community by providing cDNAs that helped refine transcript models and enabled cloning experiments performed in many laboratories over the years. Data from this cDNA collection are available from the National Institute of Genetics in Japan (<link linkend="table1">Table 1</link>) and through WormGenes and WormBase, including details on sequences and corresponding gene products. The latest WormBase frozen release (WS150) contains over 250,000 EST reads from this library, matching ~10,500 distinct genes. Around 2,000 of these cDNAs are likely full-length clones. WormBase, WormGenes, and Intronerator (<link linkend="bib65">Kent and Zahler, 2000</link><!--; PMID 10592190-->) all offer graphical representations of the collection that make it very convenient to inspect the precise structure of transcript models along with all supporting evidence (<link linkend="table1">Table 1</link>).</para>
+</sect2>
+<sect2>
+<title>ORFeome</title>
+<para>Because most transcripts are expressed at relatively low levels, random sequencing of clones from cDNA libraries makes it extremely hard to capture an entire set of full-length cDNAs (<link linkend="bib93">Reboul et al., 2003</link><!--; PMID 12679813-->), and the rate of novel sequences identified has reached diminishing returns due to the relative abundance of encoded transcripts in the library (<link linkend="bib21">Das et al., 2001</link><!--; PMID 11459922-->). This is true not only for <emphasis>C. elegans</emphasis> but also for other organisms (<link linkend="bib13">Carninci et al., 2003</link><!--; PMID 12819125-->; <link linkend="bib14">Castelli et al., 2004</link><!--; PMID 14993207-->). In addition, although full-length cDNAs provide crucial information to annotate transcripts, their 5<symbol role="symbolfont">&#x02032;</symbol> and 3<symbol role="symbolfont">&#x02032;</symbol> UTR sequences usually prevent their use for large-scale protein expression studies. Finally, the vectors used in cDNA cloning projects are usually not designed for automated cloning and convenient proteome-wide protein expression (<link linkend="bib11">Brasch et al., 2004</link><!--; PMID 15489318-->). For these reasons, a <emphasis>C. elegans</emphasis> &#x0201C;ORFeome project&#x0201D; was initiated with the goal of generating Gateway recombinational clones for nearly all ORFs (i.e. precisely from the predicted initiation to the predicted termination codons) (<link linkend="bib122">Walhout et al., 2000</link><!--; PMID 11075367-->; <link linkend="bib94">Reboul et al., 2001</link><!--; PMID 11242119-->; <link linkend="bib93">Reboul et al., 2003</link><!--; PMID 12679813-->; <link linkend="bib72">Lamesch et al., 2004</link><!--; PMID 15489327-->).</para>
+<para>Rather than picking and sequencing individual clones from cDNA libraries, PCR amplification carried out with primer pairs specific to ORFs and with a cDNA library or reverse-transcribed polyA<superscript>+</superscript> mRNA as template can achieve nearly complete coverage (<link linkend="bib94">Reboul et al., 2001</link><!--; PMID 11242119-->). Using the ~20,000 ORF predictions from WS9 (released in 1999), nearly 11,000 ORF constructs suitable for protein expression were initially obtained (<link linkend="bib93">Reboul et al., 2003</link><!--; PMID 12679813-->) (<link linkend="figure2">Figure 2</link>). Over 4,000 of these had no prior experimental support, demonstrating that <emphasis>ab initio</emphasis> ORF predictions could indeed be verified experimentally. The nearly 8,000 unsuccessful attempts were due to imprecise exon/intron predictions, usually surrounding the putative translation start site (<link linkend="bib94">Reboul et al., 2001</link><!--; PMID 11242119-->). From 1999 to 2003, updates to WormBase led to over 4,200 new or revised ORF predictions, based on a combination of improved algorithms, comparative genomics, and experimental evidence from cDNA and ORF sequences. Of these repredicted ORFs, ~2,500 were cloned in Version 3.1 of the <emphasis>C. elegans</emphasis> ORFeome project (<link linkend="bib72">Lamesch et al., 2004</link><!--; PMID 15489327-->).</para>
+<literallayout></literallayout>
+<mediaobject id="figure2" xreflabel="Figure 2">
+	<imageobject>
+		<imagedata entityref="fig2" width="6.5in" align="center"/>
+	</imageobject>
+	<textobject>
+		<phrase>figure 2</phrase>
+	</textobject> &fig2legend;</mediaobject>
+<para>In total, there is currently experimental evidence for ~18,000 protein-coding ORFs. WormBase release WS150 contains over 22,000 ORF entries, of which ~2,800 are confirmed isoforms from alternative splicing, and ~4,800 are predicted ORFs with no experimental validation. The majority of clones from the ORFeome and cDNA collections have been end-sequenced (generating ESTs and OSTs) but not yet fully characterized. Sequencing of several hundred ORF clones suggests that more isoforms exist than are currently annotated in WormBase, and that the number of genes with alternative splicing is probably in the range of 15%, (<link linkend="bib93">Reboul et al., 2003</link><!--; PMID 12679813-->). A complete and accurate inventory of all isoforms represented by fully sequenced, wild-type clones awaits further experimental validation guided by gene prediction algorithms - such as Twinscan (e.g. <link linkend="bib69">Twinscan Korf et al., 2001</link><!--; PMID 11473003-->; <link linkend="bib128">Wei et al., 2005</link><!--; PMID 15805498-->) and others - that can take advantage of sequence comparisons with other <emphasis>Caenorhabditis</emphasis> species (<link linkend="bib105">Stein et al., 2003</link><!--; PMID 14624247-->; see <ulink url="bib67">The phylogenetic relationships of <emphasis>Caenorhabditis</emphasis> and other rhabditids</ulink>; <link linkend="bib85">NHGRI, 2005</link>). Access to precise gene structural information has enabled the development of multiple genome-scale resources that can be used for a variety of applications (<link linkend="table2">Table 2</link>), transforming the way experimental science is conducted. Overall, one important lesson learned from the <emphasis>C. elegans</emphasis> cDNA and ORFeome projects is that genome annotation and experimental verification are complementary activities that advance understanding through an iterative process.</para>
+<?newpage?>
+<table id="table2" frame="all" rules="all" cellpadding="0" cellspacing="0" width="100%">
+<title><emphasis role="bold">Table 2. Collections of reagents for functional genomics and proteomics in</emphasis> <emphasis><emphasis role="bold">C. elegans.</emphasis></emphasis></title>
+<tgroup cols="3">
+<colspec colname="c1" align="left" colwidth="0.6*"/>
+<colspec colname="c2" align="left" colwidth="1.7*"/>
+<colspec colname="c3" align="left" colwidth="1.3*"/>
+<thead>
+<row>
+<entry>Organization</entry>
+<entry>URL or contact</entry>
+<entry>Resource</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry><emphasis role="bold">Sanger Center</emphasis></entry>
+<entry>Send requests to Audrey Fraser (<ulink url="mailto:aef@sanger.ac.uk">aef@sanger.ac.uk</ulink>) and cc to Ratna Shownkeen (<ulink url="mailto:rs2@sanger.ac.uk">rs2@sanger.ac.uk</ulink>)</entry>
+<entry>Genomic (YAC and cosmid) clones</entry>
+</row>
+<row>
+<entry><emphasis role="bold">Kohara lab</emphasis></entry>
+<entry>Send requests to Yuji Kohara (<ulink url="mailto:ykohara@lab.nig.ac.jp">ykohara@lab.nig.ac.jp</ulink>)</entry>
+<entry>Kohara cDNA library clones</entry>
+</row>
+<row>
+<entry morerows="1"><emphasis role="bold">GeneService LTD</emphasis></entry>
+<entry rowsep="0"><ulink url="http://www.geneservice.co.uk/products/rnai/">http://www.geneservice.co.uk/products/rnai/</ulink></entry>
+<entry rowsep="0">Ahringer lab RNAi feeding library (<link linkend="bib62">Kamath et al., 2003</link><!--; PMID 12529635-->)</entry>
+</row>
+<row>
+<entry><ulink url="http://www.geneservice.co.uk/products/clones/Celegans_Fos.jsp">http://www.geneservice.co.uk/products/clones/ Celegans_Fos.jsp</ulink></entry>
+<entry>BC Fosmid library (D. Moerman et al., unpublished)</entry>
+</row>
+<row>
+<entry morerows="2"><emphasis role="bold">Open Biosystems</emphasis></entry>
+<entry morerows="2"><ulink url="http://www.openbiosystems.com/Genomics/Model%20Organism%20Resources/Worm%20Resources/">http://www.openbiosystems.com/Genomics/ Model%20Organism%20Resources/ Worm%20Resources/</ulink></entry>
+<entry rowsep="0">ORFeome library (<link linkend="bib93">Reboul et al., 2003</link><!--; PMID 12679813-->; <link linkend="bib72">Lamesch et al., 2004</link><!--; PMID 15489327-->)</entry>
+</row>
+<row>
+<entry rowsep="0">ORFeome-RNAi feeding library (<link linkend="bib99">Rual et al., 2004</link><!--; PMID 15489339-->)</entry>
+</row>
+<row>
+<entry>Promoterome library (<link linkend="bib26">Dupuy et al., 2004</link><!--; PMID 15489340-->)</entry>
+</row>
+<row>
+<entry><emphasis role="bold">Wash U Genome Sequencing Center</emphasis></entry>
+<entry><ulink url="http://www.genome.wustl.edu/genome/celegans/microarray/ma_gen_info.cgi">http://www.genome.wustl.edu/genome/ celegans/microarray/ma_gen_info.cgi</ulink></entry>
+<entry>70-mer oligonucleotide microarrays (<link linkend="bib126">Washington University Genome Sequencing Center, 2005</link>)</entry>
+</row>
+<row>
+<entry><emphasis role="bold">Affymetrix</emphasis></entry>
+<entry><ulink url="http://www.affymetrix.com/products/arrays/specific/celegans.affx">http://www.affymetrix.com/products/ arrays/specific/celegans.affx</ulink></entry>
+<entry><emphasis>C. elegans</emphasis> GeneChip genome arrays</entry>
+</row>
+<row>
+<entry><emphasis><emphasis role="bold">Caenorhabditis</emphasis></emphasis> <emphasis role="bold">Genetics Center (CGC)</emphasis></entry>
+<entry><ulink url="http://www.cbs.umn.edu/CGC/">http://www.cbs.umn.edu/CGC/</ulink></entry>
+<entry><emphasis>C. elegans</emphasis> strains (including gene knockout strains from the <emphasis>C. elegans</emphasis> Gene Knockout Consortium and some GFP transgenic strains from the BC Gene Expression Consortium)</entry>
+</row>
+<row>
+<entry><emphasis role="bold">BC Gene Expression Consortium</emphasis></entry>
+<entry><ulink url="http://elegans.bcgsc.ca/perl/eprofile/contact">http://elegans.bcgsc.ca/perl/eprofile/contact</ulink></entry>
+<entry>Promoter::GFP transgenic strains (<link linkend="bib81">McKay et al., 2003</link><!--; PMID 15338614-->)</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</sect2>
+</sect1>
+<sect1>
+<title>Network connections: interactome</title>
+<para>Proteins do not function in isolation, but rather as interacting partners in complexes (<link linkend="bib1">Alberts, 1998</link><!--; PMID 9476889-->), modules and networks (<link linkend="bib52">Hartwell et al., 1999</link><!--; PMID 10591225-->). Thus a major challenge is to establish the full set of all protein-protein, DNA-protein and RNA-protein interactions, or to map the &#x0201C;interactome&#x0201D; network. Binary protein-protein interactions can be readily identified using the yeast two-hybrid (Y2H) system (<link linkend="bib33">Fields and Song, 1989</link><!--; PMID 2547163-->; <link linkend="bib117">Vidal and Legrain, 1999</link><!--; PMID 9927722-->), with the advantage that this system is amenable to high-throughput proteome-wide mapping projects (<link linkend="bib123">Walhout and Vidal, 2001</link><!--; PMID 11403578-->). When generated with appropriate caution and necessary controls, Y2H datasets can be of high quality (<link linkend="bib118">Vidalain et al., 2004</link><!--; PMID 15003598-->).</para>
+<para>The <emphasis>C. elegans</emphasis> interactome mapping project was initiated in the context of specific biological processes such as vulval development, protein degradation, germline development, DNA damage response and Dauer formation (<link linkend="bib121">Walhout et al., 2000</link><!--; PMID 10615043-->; <link linkend="bib22">Davy et al., 2001</link><!--; PMID 11559592-->; <link linkend="bib10">Boulton et al., 2002</link><!--; PMID 11778048-->; <link linkend="bib120">Walhout et al., 2002</link><!--; PMID 12445390-->; <link linkend="bib110">Tewari et al., 2004</link><!--; PMID 14992718-->). One of the main lessons drawn by overlapping these datasets obtained up to that point was a much higher level of molecular connectivity between seemingly different pathways than previously imagined (<link linkend="bib93">Reboul et al., 2003</link><!--; PMID 12679813-->). The project then moved to a &#x0201C;first-draft&#x0201D; proteome-scale <emphasis>C. elegans</emphasis> interactome map primarily focused on metazoan-specific proteins (<link linkend="bib74">Li et al., 2004</link><!--; PMID 14704431-->). The current version of the global <emphasis>C. elegans</emphasis> Y2H-based interactome network contains ~5,500 potential interactions, comprising approximately 10% of the expected number of protein-protein interactions (<link linkend="bib74">Li et al., 2004</link><!--; PMID 14704431-->). The validation rate of the interactome map was estimated at ~70% by retesting large numbers of interactions using a completely different interaction assay (<link linkend="bib74">Li et al., 2004</link><!--; PMID 14704431-->), suggesting a high level of quality overall.</para>
+<?newpage?>
+<para>Like other interactome networks, the topology of the <emphasis>C. elegans</emphasis> interactome appears &#x0201C;scale-free&#x0201D; (a few proteins have many interacting partners whereas most proteins interact with only a few partners) and &#x0201C;small-world&#x0201D; (any two proteins can be connected through a chain of only a few interactions) (<link linkend="bib5">Barabasi and Albert, 1999</link><!--; PMID 10521342-->; <link linkend="bib42">Goldberg and Roth, 2003</link><!--; PMID 12676999-->; <link linkend="bib74">Li et al., 2004</link><!--; PMID 14704431-->). These and other topological properties of global interactome networks might relate to biological properties such as robustness and plasticity (<link linkend="bib59">Jeong et al., 2001</link><!--; PMID 11333967-->; <link linkend="bib50">Han et al., 2004</link><!--; PMID 15190252-->).</para>
+<para>Completing the interactome map will require both a nearly complete <emphasis>C. elegans</emphasis> ORFeome collection as well as additional approaches that utilize modified versions of either Y2H or affinity-purification of protein complexes, since no single method for capturing protein-protein interactions is 100% effective (<link linkend="bib119">Walhout et al., 2000</link><!--; PMID 10900455-->). As with efforts to accurately annotate the genome, interactome mapping projects will necessarily proceed iteratively through the interplay of direct experimentation and computational efforts (<link linkend="bib114">Vidal, 2005</link><!--; PMID 15763560-->).</para>
+</sect1>
+<sect1>
+<title>Network perturbations: phenome</title>
+<para>While physical interaction maps help elucidate molecular events at the biochemical level, other functional assays can reveal logical connections between gene products that are required for the same set of biological processes. RNAi (<link linkend="bib49">Guo and Kemphues, 1995</link><!--; PMID 7758115-->; <link linkend="bib34">Fire et al., 1998</link><!--; PMID 9486653-->) is amenable to medium to high throughput approaches that can be used to systematically knock down large numbers of transcripts, thereby relating perturbations of molecular networks to phenotypic analyses and setting the stage for generating a global phenotypic or &#x0201C;phenome&#x0201D; map of <emphasis>C. elegans</emphasis> (reviewed in <link linkend="bib46">Gunsalus and Piano, 2005</link><!--; PMID 15661512-->). The foundation for a phenome map of early embryogenesis has been laid by a host of recent large-scale RNAi studies, which have provided at least a first-pass phenotypic analysis for nearly every protein-coding gene in the genome (<link linkend="bib36">Fraser et al., 2000</link><!--; PMID 11099033-->; <link linkend="bib43">G&#x000F6;nczy et al., 2000</link><!--; PMID 11099034-->; <link linkend="bib89">Piano et al., 2000</link><!--; PMID 11137018-->; <link linkend="bib77">Maeda et al., 2001</link><!--; PMID 11231151-->; <link linkend="bib90">Piano et al., 2002</link><!--; PMID 12445391-->; <link linkend="bib62">Kamath et al., 2003</link><!--; PMID 12529635-->; <link linkend="bib102">Simmer et al., 2003</link><!--; PMID 14551910-->; <link linkend="bib99">Rual et al., 2004</link><!--; PMID 15489339-->; <link linkend="bib32">Fernandez et al., 2005</link><!--; PMID 15687288-->; <link linkend="bib103">S&#x000F6;nnichsen et al., 2005</link><!--; PMID 15791247-->). Results from various RNAi studies in <emphasis>C. elegans</emphasis> are available online through RNAiDB (<link linkend="bib48">Gunsalus et al., 2004</link><!--; PMID 14681444-->), PhenoBank (<link linkend="bib103">S&#x000F6;nnichsen et al., 2005</link><!--; PMID 15791247-->), and WormBase (see <link linkend="table1">Table 1</link>).</para>
+<para>Questions of reliability and completeness naturally arise regarding genome-scale RNAi analyses. Comparisons with genetic analyses have found that around 25% of the loci for which genetic alleles confer embryonic phenotypes are typically not recovered in large-scale RNAi studies in the laboratory strain N2 (<link linkend="bib62">Kamath et al., 2003</link><!--; PMID 12529635-->; <link linkend="bib32">Fernandez et al., 2005</link><!--; PMID 15687288-->; <link linkend="bib103">S&#x000F6;nnichsen et al., 2005</link><!--; PMID 15791247-->). In contrast, comparisons of embryonic lethality between genetic and high confidence RNAi results indicate a very low level (generally &lt;1%) of false positives (<link linkend="bib62">Kamath et al., 2003</link><!--; PMID 12529635-->; <link linkend="bib102">Simmer et al., 2003</link><!--; PMID 14551910-->; <link linkend="bib99">Rual et al., 2004</link><!--; PMID 15489339-->; <link linkend="bib32">Fernandez et al., 2005</link><!--; PMID 15687288-->). Potential false positive results could arise from the depletion of multiple transcripts by a single RNAi construct that inadvertantly targets multiple genes (<link linkend="bib48">Gunsalus et al., 2004</link><!--; PMID 14681444-->; <link linkend="bib92">Qiu et al., 2005</link><!--; PMID 15800213-->). The actual off-target error rate <emphasis>in vivo</emphasis> will depend on factors such as cooperativity between short interfering RNAs (siRNAs), mRNA abundances in different tissues, and saturation of the RNAi machinery. RNAiDB and WormBase both provide data on potential off-target effects for RNAi reagents used by the worm community, calculated using different methods.</para>
+<para>It is interesting to note that the proportion of essential genes appears to be in a similar range (~15&#x02013;25%) in yeast (<link linkend="bib130">Winzeler et al., 1999</link><!--; PMID 10436161-->; <link linkend="bib41">Giaever et al., 2002</link><!--; PMID 12140549-->), worms (see <ulink url="http://www.wormbook.org/chapters/www_essentialgenes/essentialgenes.html">Essential genes</ulink>), and flies (<link linkend="bib2">Ashburner et al., 1999</link><!--; PMID 10471707-->). This apparent similarity across phyla may reflect a universal property of networks, arising from a need to evolve network connectivity in order to maintain a balance between robustness (to survive perturbations) and plasticity (to explore new phenotypic space). An observation consistent with this idea is that the penetrance level observed in the RNAi analysis of essential genes is proportional to how ancient the targeted protein is (<link linkend="bib32">Fernandez et al., 2005</link><!--; PMID 15687288-->).</para>
+<sect2>
+<title>Systematic phenomics</title>
+<para>Global RNAi studies are valuable not only to generate hypotheses for individual proteins, analogous to conventional genetic screening strategies, but also to address higher-order questions about groups of functionally related proteins. A set of defined phenotypes resulting from perturbations can be systematically scored for both positive and negative effects, defining &#x0201C;phenotypic profiles&#x0201D;. Gene products can then be grouped into &#x0201C;phenoclusters&#x0201D; based on similarity between phenotypic profiles (<link linkend="bib113">Vidal, 2001</link><!--; PMID 11239391-->; <link linkend="bib90">Piano et al., 2002</link><!--; PMID 12445391-->). For example, two distinct phenoclusters were found among two dozen proteins implicated in a DNA damage response interactome map (<link linkend="bib10">Boulton et al., 2002</link><!--; PMID 11778048-->). One phenocluster predicted novel DNA repair proteins, while the other suggested novel proteins involved in the DNA damage induced checkpoint response.</para>
+<?newpage?>
+<para>In a set of comprehensive studies, RNAi phenotypes in the early embryo were analyzed using a systematic approach to explicitly score over 40 specific cell biological features (<link linkend="bib90">Piano et al., 2002</link><!--; PMID 12445391-->; <link linkend="bib103">S&#x000F6;nnichsen et al., 2005</link><!--; PMID 15791247-->). The resulting &#x0201C;phenotypic signatures&#x0201D; were used to cluster genes into groups of similar function, such as chromosome segregation or nuclear import-export. In a single study analyzing RNAi phenotypes for 98% of <emphasis>C. elegans</emphasis> genes, nearly all of the 661 genes identified genome-wide to elicit an RNAi phenotype in the early embryo could be placed into 23 separable phenotypic classes (<link linkend="bib103">S&#x000F6;nnichsen et al., 2005</link><!--; PMID 15791247-->). In addition numerous hypotheses could be formulated as to how molecular networks are coordinated to drive early embryogenesis (<link linkend="bib47">Gunsalus et al., 2005</link><!--; PMID 16094371-->).</para>
+<para>The development of automated image analysis could alleviate what is currently a principal bottleneck in phenotypic analysis: the manual scoring of phenotypes by visual inspection. Recently a formal classification system linked to an automated image analysis system was developed that is capable of automatically gathering many behavioral and gross morphological phenotypic parameters (<link linkend="bib39">Geng et al., 2003</link><!--; PMID 14668369-->; <link linkend="bib31">Feng et al., 2004</link><!--; PMID 15331023-->; <link linkend="bib40">Geng et al., 2004</link><!--; PMID 15490828-->). This system has been used to classify genotypes based on automatically extracted image features. Automated image analysis pipelines are also under development for analyzing cell lineage patterns (<link linkend="bib132">Yasuda et al., 1999</link><!--; PMID 11072351-->; <link linkend="bib4">Bao et al., 2006</link><!--; PMID 16477039-->) and high-content embryonic phenotypes (<link linkend="bib86">Ning et al., 2005</link>).</para>
+</sect2>
+</sect1>
+<sect1>
+<title>Network dynamics: from transcriptome to localizome</title>
+<para>The transcriptome and proteome at any given time and place constitute only a subset of all possible macromolecules potentially encoded in the genome: different combinations of expressed gene products are present in different cells at different times, move within and between cellular compartments, and interact with a variety of other molecules to carry out their functions. Thus to relate <emphasis>C. elegans</emphasis> cellular and organismal biology to global properties of molecular networks, it will become increasingly important to establish when and where the complete repertoire of coding and noncoding transcripts and protein products are expressed and localized throughout development, both at a cellular and sub-cellular level. Such a &#x0201C;localizome&#x0201D; map would be extremely valuable in the context of <emphasis>C. elegans</emphasis> since a nearly perfect anatomical atlas has already been generated, providing a complete description of the cell lineage and a map of the neuronal network (<link linkend="bib108">Sulston and Horvitz, 1977</link><!--; PMID 838129-->; <link linkend="bib129">White et al., 1982</link><!--; PMID 7088142-->; <link linkend="bib109">Sulston et al., 1983</link><!--; PMID 6684600-->).</para>
+<sect2>
+<title>Dynamic transcriptome analyses</title>
+<para>Technological innovations to parallelize studies of gene expression patterns have enabled genome-scale analyses of increasing sophistication to discover the spatiotemporal activity of promoters, to define sets of co-regulated genes, to identify shared <emphasis>cis</emphasis>-acting regulatory sites and corresponding <emphasis>trans</emphasis>-acting factors, and to use these data to build models of transcriptional networks and regulatory control mechanisms. Gene expression in <emphasis>C. elegans</emphasis> is being evaluated using a variety of methods, including microarrays (<link linkend="bib53">Hill et al., 2000</link><!--; PMID 11052945-->; <link linkend="bib96">Reinke et al., 2000</link><!--; PMID 11030340-->), serial analysis of gene expression (SAGE) (<link linkend="bib61">Jones et al., 2001</link><!--; PMID 11483575-->; <link linkend="bib91">Pleasance et al., 2003</link><!--; PMID 12743019-->), quantitative reverse-transcription with PCR (Q-RT-PCR) (reviewed in <link linkend="bib12">Bustin, 2000</link><!--; PMID 11013345-->), and <emphasis>in situ</emphasis> analyses of mRNA expression patterns (<link linkend="table2">Table 2</link>). Tiling arrays - now in use for human (<link linkend="bib9">Bertone et al., 2004</link><!--; PMID 15539566-->), <emphasis>Drosophila</emphasis> (<link linkend="bib106">Stolc et al., 2004</link><!--; PMID 15499012-->), and <emphasis>Arabidopsis</emphasis> (<link linkend="bib131">Yamada et al., 2003</link><!--; PMID 14593172-->) - should soon reveal alternative splicing patterns and expressed non-coding regions of the genome, providing further experimental data for improving genome annotation and defining the repertoire of functional genetic elements. See Tables 1-3 for representative examples of reagents and datasets.</para>
+<para>Specific developmental processes, temporal transitions, or environmental responses in <emphasis>C. elegans</emphasis> have been examined by measuring gene expression in wild type and genetically altered, RNAi-treated, or environmentally challenged animals using microarray and SAGE (<link linkend="table3">Table 3</link> provides a sampling of these studies). Remarkably, it has been possible to isolate mRNA from single tissues or cell types such as muscle or neurons, using highly specific promoters to drive transgenic constructs expressing either poly-A binding protein followed by co-immunoprecipitation (co-IP) (<link linkend="bib98">Roy et al., 2002</link><!--; PMID 12214599-->; <link linkend="bib70">Kunitomo et al., 2005</link><!--; PMID 15693946-->) or a fluorescent marker followed by fluorescence activated cell sorting (FACS) (<link linkend="bib134">Zhang et al., 2002</link><!--; PMID 12124626-->; <link linkend="bib20">Colosimo et al., 2004</link><!--; PMID 15620651-->; <link linkend="bib18">Cinar et al., 2005</link><!--; PMID 15723795-->; <link linkend="bib35">Fox et al., 2005</link><!--; PMID 15780142-->).</para>
+<?newpage?>
+<table id="table3" frame="all" rules="all" cellpadding="0" cellspacing="0" width="100%">
+<title><emphasis role="bold">Table 3. A sampling of dynamic transcriptome analyses of developmental processes or environmental responses in</emphasis> <emphasis><emphasis role="bold">C. elegans.</emphasis></emphasis></title>
+<tgroup cols="2">
+<colspec colname="c1" align="left" colwidth="1*"/>
+<colspec colname="c2" align="left" colwidth="2*"/>
+<thead>
+<row>
+<entry>Biological focus</entry>
+<entry>Reference</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Developmental transitions</entry>
+<entry><link linkend="bib53">Hill et al. (2000)</link><!--; PMID 11052945-->; <link linkend="bib60">Jiang et al. (2001)</link><!--; PMID 11134517-->; <link linkend="bib7">Baugh et al. (2003)</link><!--; PMID 12538516-->; <link linkend="bib97">Robertson et al. (2004)</link><!--; PMID 15581881--></entry>
+</row>
+<row>
+<entry>Germline development</entry>
+<entry><link linkend="bib96">Reinke et al. (2000)</link><!--; PMID 11030340-->; <link linkend="bib95">Reinke et al. (2004)</link><!--; PMID 14668411--></entry>
+</row>
+<row>
+<entry>Meiosis</entry>
+<entry><link linkend="bib19">Colaiacovo et al. (2002)</link><!--; PMID 12242227--></entry>
+</row>
+<row>
+<entry>Lineage specification</entry>
+<entry><link linkend="bib6">Baugh et al. (2005)</link><!--; PMID 15772128--></entry>
+</row>
+<row>
+<entry>Ethanol response</entry>
+<entry><link linkend="bib71">Kwon et al. (2004)</link><!--; PMID 15028283--></entry>
+</row>
+<row>
+<entry>Radiation response</entry>
+<entry><link linkend="bib84">Nelson et al. (2002)</link><!--; PMID 12793758--></entry>
+</row>
+<row>
+<entry>Heat shock response</entry>
+<entry><link linkend="bib45">GuhaThakurta et al. (2002)</link><!--; PMID 11997337--></entry>
+</row>
+<row>
+<entry>Developmental roles of fatty acids</entry>
+<entry><link linkend="bib68">Kniazeva et al. (2004)</link><!--; PMID 15340492--></entry>
+</row>
+<row>
+<entry>Translation initiation factors</entry>
+<entry><link linkend="bib25">Dinkova et al. (2005)</link><!--; PMID 15601834--></entry>
+</row>
+<row>
+<entry>Amyloid beta-responsive genes</entry>
+<entry><link linkend="bib75">Link et al. (2003)</link><!--; PMID 12600716--></entry>
+</row>
+<row>
+<entry>Aging / longevity</entry>
+<entry><link linkend="bib76">Lund et al. (2002)</link><!--; PMID 12372248-->; <link linkend="bib79">McCarroll et al. (2004)</link><!--; PMID 14730301--></entry>
+</row>
+<row>
+<entry>Dauer pathway</entry>
+<entry><link linkend="bib55">Holt and Riddle (2003)</link><!--; PMID 12875742-->; <link linkend="bib125">Wang and Kim (2003)</link><!--; PMID 12620986-->; <link linkend="bib80">McElwee et al. (2004)</link><!--; PMID 15308663--></entry>
+</row>
+<row>
+<entry>Hypertonic stress resistance</entry>
+<entry><link linkend="bib73">Lamitina and Strange, 2005)</link><!--; PMID 15496475--></entry>
+</row>
+<row>
+<entry>Muscle-specific genes</entry>
+<entry><link linkend="bib98">Roy et al. (2002)</link><!--; PMID 12214599--></entry>
+</row>
+<row>
+<entry>Neuronal genes</entry>
+<entry><link linkend="bib134">Zhang et al. (2002)</link><!--; PMID 12124626-->; <link linkend="bib20">Colosimo et al. (2004)</link><!--; PMID 15620651-->; <link linkend="bib18">Cinar et al. (2005)</link><!--; PMID 15723795-->; <link linkend="bib35">Fox et al. (2005)</link><!--; PMID 15780142-->; <link linkend="bib70">Kunitomo et al. (2005)</link><!--; PMID 15693946-->.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<para>To identify gene regulatory elements controlling expression and the logical circuitry driving transcriptional networks, both computational and experimental approaches are being pursued. Informatic analyses have provided insights into co-regulated groups of genes, either within <emphasis>C. elegans</emphasis> (<link linkend="bib66">Kim et al., 2001</link><!--; PMID 11557892-->; <link linkend="bib88">Owen et al., 2003</link><!--; PMID 12902378-->), or conserved across species (<link linkend="bib107">Stuart et al., 2003</link><!--; PMID 12934013-->; <link linkend="bib79">McCarroll et al., 2004</link><!--; PMID 14730301-->). Predictions of <emphasis>cis</emphasis>-regulatory elements based on conserved sequence motifs, either among co-expressed genes (<link linkend="bib45">GuhaThakurta et al., 2002</link><!--; PMID 11997337-->; <link linkend="bib134">Zhang et al., 2002</link><!--; PMID 12124626-->; <link linkend="bib71">Kwon et al., 2004</link><!--; PMID 15028283-->; <link linkend="bib18">Cinar et al., 2005</link><!--; PMID 15723795-->) or gene families (<link linkend="bib78">McCarroll et al., 2005</link><!--; PMID 15723796-->), or in combination with positional and combinatorial constraints (<link linkend="bib8">Beer and Tavazoie, 2004</link><!--; PMID 15084257-->), are generating testable hypotheses on gene regulatory circuitry and rules. Experimental efforts to decipher network logic are employing techniques such as yeast one-hybrid assays (<link linkend="bib24">Deplancke et al., 2004</link><!--; PMID 15489331-->; <link linkend="bib28">Deplancke et al., 2006</link><!--PMID: 16777607-->), <emphasis>in vivo</emphasis> analysis of green fluorescent protein (GFP) reporter expression (<link linkend="bib16">Chalfie et al., 1994</link><!--; PMID 8303295-->), and chromatin immunoprecipitation (ChIP-chip technology; <link linkend="bib51">Hanlon and Lieb, 2004</link><!--; PMID 15531167-->; <link linkend="bib87">Oh et al., 2006</link><!--; PMID 16380712-->). The recent demonstration that functional GFP can be reconstituted from fragments driven by separate promoters (<link linkend="bib133">Zhang et al., 2004</link><!--; PMID 15454087-->) opens the gate to large-scale systematic analysis to delineate combinatorial control <emphasis>in vivo</emphasis>.</para>
+<para>Increasingly, combined experimental and informatic efforts seek to characterize higher-order features of transcriptional networks. These global approaches have discovered, for example, the chromosomal clustering of muscle-expressed genes (<link linkend="bib98">Roy et al., 2002</link><!--; PMID 12214599-->), or different classes of radiation-modulated genes (<link linkend="bib84">Nelson et al., 2002</link><!--; PMID 12793758-->). Finally, comparative studies are addressing questions such as the evolution of gene expression patterns (<link linkend="bib23">Denver et al., 2005</link><!--; PMID 15852004-->) and <emphasis>cis</emphasis>-regulatory elements (<link linkend="bib15">Castillo-Davis et al., 2004</link><!--; PMID 15256508-->). While these studies represent just an early foray into the analysis of gene regulatory networks, significant strides in this area can be anticipated in the near future.</para>
+</sect2>
+<sect2>
+<title><emphasis>In situ</emphasis> and <emphasis>in vivo</emphasis> analyses</title>
+<para>High-resolution data on spatiotemporal expression patterns throughout development can be obtained using microscopic techniques. A large-scale <emphasis>in situ</emphasis> analysis of mRNA is being carried out using cDNAs (see <link linkend="table1">Table 1</link>) to identify when and where transcripts are expressed in the worm. <emphasis></emphasis> In addition, <emphasis>C. elegans</emphasis> provides an unparalleled opportunity to map dynamic patterns of expression <emphasis>in vivo</emphasis>, due to its invariant and comprehensively identified cell lineage (<link linkend="bib108">Sulston and Horvitz, 1977</link><!--; PMID 838129-->; <link linkend="bib129">White et al., 1982</link><!--; PMID 7088142-->; <link linkend="bib109">Sulston et al., 1983</link><!--; PMID 6684600-->) and the fact that animals are optically transparent throughout the life cycle. Transgenic animals containing different tissue-specific promoters driving GFP provide surrogate markers for expression, and protein-GFP fusion reporter constructs allow the direct visualization of subcellular localization. Systematic <emphasis>in vivo</emphasis> analyses of expression patterns are being carried out for thousands of genes (see <link linkend="table1">Table 1</link>) (<link linkend="bib81">McKay et al., 2003</link><!--; PMID 15338614-->; <link linkend="bib57">Hope et al., 2004</link><!--; PMID 15489328-->; <link linkend="bib135">Zhao et al., 2004</link><!--; PMID 15522294-->; <link linkend="bib3">Baillie and Moerman, 2005</link>), using transgenic worms that harbor reporter constructs containing GFP fused downstream of cloned intergenic promoter regions (<link linkend="bib56">Hope et al., 1996</link><!--; PMID 8855668-->; <link linkend="bib26">Dupuy et al., 2004</link><!--; PMID 15489340-->). This approach requires the ability to efficiently generate large numbers of transgenic worm strains transformed with cloned DNA fusion constructs and, ideally, should faithfully report promoter activity <emphasis>in vivo.</emphasis> The systematic large-scale application of this approach will require relatively convenient scoring by microscopy in live animals and will rely heavily on ongoing efforts to develop sophisticated imaging technologies (<link linkend="bib83">Mohler and White, 1998</link><!--; PMID 9631195-->; <link linkend="bib82">Mohler et al., 2003</link><!--; PMID 12543075-->; <link linkend="bib4">Bao et al., 2006</link><!--; PMID 16477039-->). Collections of transgenic strains (e.g. carrying GFP reporter constructs) are being made available for distribution (<link linkend="table2">Table 2</link>).</para>
+</sect2>
+</sect1>
+<sect1>
+<title>Network modeling: &#x0201C;omic&#x0201D; data integration</title>
+<para>The idea that meaningful hypotheses of gene function and network properties may be obtained by combining two or more types of functional associations (reviewed in <link linkend="bib113">Vidal, 2001</link><!--; PMID 11239391-->; <link linkend="bib38">Ge et al., 2003</link><!--; PMID 14550629-->) is being explored using a variety of approaches. Global evidence suggests that genes with similar expression profiles are more likely to encode interacting proteins (<link linkend="bib37">Ge et al., 2001</link><!--; PMID 11694880-->; <link linkend="bib44">Grigoriev, 2001</link><!--; PMID 11522820-->; <link linkend="bib58">Jansen et al., 2002</link><!--; PMID 11779829-->; <link linkend="bib63">Kemmeren et al., 2002</link><!--; PMID 12049748-->). Correlations between protein-protein interactions and phenotypic data have also been observed, both in yeast (<link linkend="bib100">Said et al., 2004</link><!--; PMID 15608068-->) and among <emphasis>C. elegans</emphasis> DNA damage response (DDR) (<link linkend="bib10">Boulton et al., 2002</link><!--; PMID 11778048-->) and germline-enriched genes (<link linkend="bib120">Walhout et al., 2002</link><!--; PMID 12445390-->).</para>
+<para>Extending a genome-wide phenotypic analysis of genes required in the early embryo, a combined analysis of high-content phenotypic data (<link linkend="bib103">S&#x000F6;nnichsen et al., 2005</link><!--; PMID 15791247-->), transcriptional correlations (<link linkend="bib66">Kim et al., 2001</link><!--; PMID 11557892-->), and protein-protein interaction data (<link linkend="bib74">Li et al., 2004</link><!--; PMID 14704431-->) has revealed correlations between all three data types (<link linkend="bib47">Gunsalus et al., 2005</link><!--; PMID 16094371-->) (<link linkend="figure3">Figure 3</link>). It appears that on a global scale, highly interconnected proteins give rise to the same range of phenotypes upon depletion by RNAi, and quantitatively similar phenotypes are predictive of protein-protein interactions. Extending this logic across the proteins found to be required for early embryonic events revealed assemblies of functionally linked components, generating testable functional predictions for numerous unknown genes. This analysis suggests that a limited number of interconnected &#x0201C;molecular machines&#x0201D; drive early embryogenesis and provides a global blueprint to explore how protein complexes are coordinated (<link linkend="bib47">Gunsalus et al., 2005</link><!--; PMID 16094371-->).</para>
+<para>Understanding how functional interactions between genes affect biological processes will ultimately require combinatorial <emphasis>in vivo</emphasis> perturbations. Since experimentally testing the 200 million possible pairwise combinations between 20,000 genes for each type of experimental perturbation (e.g., reduced or increased level of activity, or alteration of specific contacts) is currently intractable, computational methods are needed that can integrate heterogeneous data and help focus experimental efforts on pairs that may be more likely to be functionally related. A recent study has made genome-wide predictions of genetic interactions in <emphasis>C. elegans</emphasis> using a logistic regression approach to integrate data on protein-protein interactions, gene expression, and phenotypes from yeast, worm, and fly with available functional annotations (<link linkend="bib136">Zhong and Sternberg, 2006</link><!--: PMID 16527984-->). Like the early embryonic network described above, the resulting network of over 18,000 potential genetic interactions between about 10% of genes in <emphasis>C. elegans</emphasis> suggests a modular organization of protein complexes and specific cellular processes. These predictions provide a step toward a global view of genetic interactions in a multicellular organism.</para>
+<para>Visualizing multidimensional maps is essential to navigate the vast amounts of data now accumulating. To make the results of integrated network analyses more easily accessible, a web-based interactive graphical tool called &#x0201C;N-Browse&#x0201D; has been implemented to allow browsing integrated networks of physical and logical functional connections between genes and their products in <emphasis>C. elegans</emphasis> and other species (<link linkend="table1">Table 1</link>).</para>
+<literallayout></literallayout>
+<mediaobject id="figure3" xreflabel="Figure 3">
+	<imageobject>
+		<imagedata entityref="fig3" width="6.5in" align="center"/>
+	</imageobject>
+	<textobject>
+		<phrase>figure 3</phrase>
+	</textobject> &fig3legend;</mediaobject>
+</sect1>
+<sect1>
+<title>Perspectives</title>
+<para>The application of omic approaches to elucidate <emphasis>C. elegans</emphasis> network biology promises to extend our knowledge of cellular and organismal biology as more efforts are dedicated to the development of resources and the generation of improved interactome, phenome and localizome datasets. First, it will be important to improve and eventually complete genome-wide resources such as the ORFeome, the Promoterome, and other sets of important DNA sequences such as 5<symbol role="symbolfont">&#x02032;</symbol> and 3<symbol role="symbolfont">&#x02032;</symbol> untranslated regions (UTRs), miRNAs and other noncoding RNAs. Second, it is critical to continue improving the mapping of molecular networks by developing and implementing new protein-protein interaction assays (<link linkend="bib114">Vidal, 2005</link><!--; PMID 15763560-->) and other types of methods to assay DNA-protein (<link linkend="bib24">Deplancke et al., 2004</link><!--; PMID 15489331-->) and RNA-protein (<link linkend="bib101">SenGupta et al., 1996</link><!--; PMID 8710898-->) interactions. Third, it will be increasingly important to expand the phenome map by increasing the number of discrete phenotypes scored systematically and by improving and extending flexible RNAi resources (<link linkend="bib99">Rual et al., 2004</link><!--; PMID 15489339-->), phenotype scoring methodologies, and image analysis pipelines. <emphasis></emphasis> Fourth, the localizome map is currently only in its infancy, and it will be interesting to see how its development will help bridge network biology with the nearly perfect anatomy atlas available for <emphasis>C. elegans</emphasis>. Fifth, because disruption of biologically relevant interactions may be expected to phenocopy either null or gain-of-function alleles, it will be useful to exploit strategies for generating and using mutations that specifically perturb individual interactions (<link linkend="bib115">Vidal et al., 1996</link><!--; PMID 8816797-->; <link linkend="bib116">Vidal et al., 1996</link><!--; PMID 8816798-->; <link linkend="bib30">Endoh et al., 2000</link><!--; PMID 11075339-->; <link linkend="bib29">Endoh et al., 2002</link><!--; PMID 12073334-->).</para>
+<para>The combination of experimentation and informatic analysis in iterative cycles will take on a central role in the future of biological research. As more data from functional and proteomic mapping projects are generated and more sophisticated methods are applied to integrate these data on a genome/proteome scale, their synthesis should prove increasingly informative for the reconstruction of cellular networks and for generating new testable hypotheses of biological systems. The challenge is now to achieve a true synthesis of the data to obtain a system-level view of the underlying regulatory networks and the evolutionary forces that have shaped them. This will require the marriage of large datasets with computational models that can describe and predict the behavior of dynamic macromolecular networks and their relationship to the underlying biological processes they control.</para>
+</sect1>
+<sect1>
+<title>Acknowledgments</title>
+<para>The <emphasis>C. elegans</emphasis> ORFeome, interactome and localizome projects at the Center for Cancer Systems Biology (CCSB) at the Dana-Farber Cancer Institute are funded by a NHGRI/NIGMS grant awarded to MV and F. Roth and NCI grants awarded to MV. The phenome and network visualization projects at the Center for Comparative Functional Genomics (New York University) are funded by an NICHD grant to FP and support from the U.S. Army and NYSTAR to KCG. We thank D. Baillie, M. Brent, D. Fitch, I. Hope, J. Hubbard, D. Moerman, B. Mohler, N. Rajewsky, V. Reinke, F. Roth, D. Thierry-Mieg, J, Thierry-Mieg, S. Vandenheuvel and M. Walhout for productive and friendly collaborations, and M. Walhout and M. Cusick for critical reading of the manuscript. Finally, we thank the <emphasis>C. elegans</emphasis> Sequencing Consortium for having generated the complete genome sequence and provided a high quality genome annotation, and WormBase for ever-improving gene models.</para>
+</sect1>
+<sect1>
+<title>References</title>
+	&Cnetwork_Refs;
+	<para/>
+</sect1>
+</article>

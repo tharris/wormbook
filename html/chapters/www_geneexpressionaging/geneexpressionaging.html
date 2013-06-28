@@ -1,0 +1,888 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Gene expression changes associated with aging in C. elegans
+         		
+      </title>
+      <meta name="generator" content="DocBook XSL Stylesheets V1.67.2">
+      <link rel="start" href="#geneexprch_ArticleID" title="Gene expression changes associated with aging in C. elegans&#xA;">
+      <link rel="next" href="#sec1" title="1.&nbsp;Aging, models and theories">
+      <script language="javascript" type="text/javascript" src="/js/history_list.js"></script>
+      <!--#include virtual="/ssi/header_article.html" -->
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<!--#include virtual="/ssi/boilerplate.html" -->
+	<div class="html_to_pdf_link">
+		<a href="geneexpressionaging.pdf">Download PDF version</a>
+	</div>
+      <div class="article" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h1 class="title"><a name="geneexprch_ArticleID"></a>Gene expression changes associated with aging in <span class="emphasis"><em>C. elegans</em></span><sup><a name="d0e10" href="#ftn.d0e10">*</a></sup>
+                  </h1>
+		  <h3>This chapter has been revised.  See Publication History in side bar.</h3>
+               </div>
+               <div>
+                  <div class="author"><span class="author"><span class="othername">Tamara R. Golden<em><span class="remark"><sup>&sect;</sup></span></em>, Simon Melov<em><span class="remark"><sup><a name="d0e39" href="#ftn.d0e39">&sect;</a></sup></span></em></span><br></span><span class="affiliation"><span class="address">Buck Institute for Age Research, Novato, CA 94945 USA
+                           <p></p></span></span></div>
+               </div>
+            </div>
+            <hr>
+         </div>
+         <div class="toc">
+ 
+        <div id="section_locator"><a href="/toc_post-embryonicdev.html">
+	         <b>This chapter is in WormBook section:</b><br />
+		       > Post-embryonic development
+		</a></div><hr />
+
+          <p><a style="color:blue;cursor:pointer" onclick="return kadabra('history');" title="click to expand ..." >Publication History</a></p>
+           <ul id="history" style="display:none">
+            <li><a href="/chapters/www_geneexpressionaging/geneexpressionaging.html">version 1</a></li>
+            <li><a href="/chapters/www_geneexpressionaging.2/geneexpressionaging.html">latest version</a></li>
+           </ul>
+
+            <p><b>Table of Contents</b></p>
+            <dl>
+               <dt><span class="sect1"><a href="#sec1">1. Aging, models and theories</a></span></dt>
+               <dt><span class="sect1"><a href="#sec2">2. Microarray experimental design and analysis</a></span></dt>
+               <dd>
+                  <dl>
+                     <dt><span class="sect2"><a href="#sec2_1">2.1. Microarray platforms and methodology</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec2_2">2.2. Experimental design relevant to aging</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec2_3">2.3. Statistical analysis</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="sect1"><a href="#sec3">3. Published gene expression profiling relevant to <span class="emphasis"><em>C. elegans</em></span> aging</a></span></dt>
+               <dd>
+                  <dl>
+                     <dt><span class="sect2"><a href="#sec3_1">3.1. Studies of wild type aging</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec3_2">3.2. Studies involving dauer formation gene mutants</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec3_3">3.3. Studies of life-extension paradigms</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="sect1"><a href="#sec4">4. What have we learned?</a></span></dt>
+               <dd>
+                  <dl>
+                     <dt><span class="sect2"><a href="#sec4_1">4.1. Conclusions drawn from studies of worm aging</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec4_2">4.2. Conclusions drawn from the study of dauer formation mutants</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="sect1"><a href="#sec5">5. Future directions</a></span></dt>
+               <dt><span class="sect1"><a href="#sec6">6. References</a></span></dt>
+            </dl>
+         </div>
+         <div class="abstract">
+            <p class="title"><span class="bold"><strong>Abstract</strong></span></p>
+            <p><span class="bold"><strong>Great inroads into the understanding of aging have been made using</strong></span> <span class="emphasis"><em><span class="bold"><strong>C. elegans</strong></span></em></span> <span class="bold"><strong>as a model system. Several genes have been identified that, when mutated, can extend lifespan. Yet, much about aging remains
+                     a mystery, and new technologies that allow the simultaneous assay of expression levels of thousands of genes have been applied
+                     to the question of how and why aging might occur. With correct experimental design and statistical analysis, differential
+                     gene expression between two or more populations can be obtained with high confidence. The ability to survey the entire genome
+                     in an unbiased way is a great asset for the study of complex biological phenomena such as aging. Aging undoubtedly involves
+                     changes in multiple genes involved in multiple processes, some of which may not yet be known. Gene expression profiling of
+                     wild type aging, and of strains with increased life spans, has provided some insight into potential mechanisms, and more can
+                     be expected in the future.</strong></span></p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec1"></a>1.&nbsp;Aging, models and theories
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Aging, or organismal senescence, is defined as gradual changes in an organism that &#8220;adversely affect its vitality and function,
+               but most importantly, increase the mortality rate as a function of time&#8221; (<a href="#bib7">Finch, 1990</a>). The etiology of the aging process can be viewed within the framework of evolutionary theory; natural selection cannot act
+               on post-reproductive animals, hence there is no selection for mechanisms to maintain an organism past reproductive age. Aging
+               can therefore be regarded as a byproduct of this lack of maintenance. Numerous theories exist to explain the aging phenotype
+               within this evolutionary context, two of the most influential being those of the &#8220;disposable soma&#8221; (<a href="#bib20">Kirkwood, 1977</a>; <a href="#bib21">Kirkwood and Holliday, 1979</a>) and of antagonistic pleiotropy (<a href="#bib40">Williams, 1957</a>). The disposable soma theory posits that the organism must allocate resources between maintenance of somatic tissues and
+               reproduction, resulting in a trade-off between reproductive fitness and life span. The theory of antagonistic pleiotropy proposes
+               that genes that are actively selected because they increase reproductive fitness may have detrimental effects later in life
+               and contribute to aging.
+            </p>
+            <p>Consistent with these theories, various types of damage have been proposed to accumulate with age, either due to an increased
+               rate of production, or because of decreased repair or clearance, of damage with time. Though oxidative damage (<a href="#bib3">Beckman and Ames, 1998</a>) and damaged DNA have become favored candidates to &#8220;cause&#8221; aging, it remains unknown what the most important source and targets
+               of damage are, or if there is a common rate limiting step for aging in a given organism or tissue.
+            </p>
+            <p><span class="emphasis"><em>C. elegans</em></span> is a powerful model system for the study of aging, because of its genetics, relatively short life span, and ease of propagation
+               of populations of synchronized individuals. Numerous single-gene mutations (AGE genes) have been identified that increase
+               <span class="emphasis"><em>C. elegans</em></span> life span (summarized in the Genes and Interventions Database; <a href="http://sageke.sciencemag.org" target="_blank">http://sageke.sciencemag.org</a>; <a href="#bib9">Friedman and Johnson, 1988</a>; <a href="#bib15">Johnson, 2002</a>; <a href="#bib17">Kenyon et al., 1993</a>; <a href="#bib19">Kimura et al., 1997</a>). The best characterized of these (<span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span>, <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=age-1;class=Gene" target="_blank">age-1</a></em></span>) are in an insulin-like signaling pathway which culminates in altering the activity of the transcription factor <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a></em></span> (<a href="#bib22">Lin et al., 2001</a>; <a href="#bib29">Ogg et al., 1997</a>). This same signaling pathway controls the entry of developing nematodes into the alternate, dauer larval stage (<a href="#bib31">Riddle et al., 1981</a>). The cost to fitness of these longevity mutants predicted by evolutionary theory was observed under stressful laboratory
+               conditions (<a href="#bib38">Walker et al., 2000</a>).
+            </p>
+            <p>Predictions for changes in gene expression with age can be made, based on the existing theories of aging. For example, a generalized
+               increase in dysregulation of gene expression with age might be expected according to the mutation accumulation theory; such
+               an increase in disorder was observed in a survey of age-related microarray studies in mammalian systems (<a href="#bib32">Somel et al., 2006</a>), and an age-related increase in heterogeneity in gene expression between individual cardiomyocytes has also been described
+               in mouse (<a href="#bib1">Bahar et al., 2006</a>). Alternatively, one might expect to find systematic age-related changes in the expression of genes reflecting a need for
+               increased repair in response to increased fragility, or reflecting degeneration of certain tissues or systems. Gene expression
+               profiling experiments can, in an unbiased way, provide insight into the aging process.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec2"></a>2.&nbsp;Microarray experimental design and analysis
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2_1"></a>2.1.&nbsp;Microarray platforms and methodology
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Microarray methodology is currently well established, with a number of platforms giving equivalent results, especially for
+                  highly-expressed genes (<a href="#bib2">Barnes et al., 2005</a>; <a href="#bib4">Bowtell and Sambrook, 2003</a>). Arrays using oligos as probes, including Affymetrix and Illumina technologies, may be less subject to cross-hybridization
+                  than cDNA arrays, if oligos are chosen appropriately. Alternatively, genome-wide gene expression profiling can be carried
+                  out using non-array approaches such as Serial Analysis of Gene Expression (SAGE) (<a href="#bib36">Velculescu et al., 1995</a>). A discussion of the various microarray platforms and specific issues involved with the preparation of <span class="emphasis"><em>C. elegans</em></span> RNA are beyond the scope of this chapter, but are addressed elsewhere in the WormBook (see <a href="http://www.wormbook.org/chapters/www_DNAmicroarrays/DNAmicroarrays.html" target="_top">DNA microarrays</a>). As the choice of platform to carry out microarray experiments has become more robust over the last several years, more
+                  emphasis tends to be placed on experimental design, and statistical analysis (<a href="#bib41">Yang and Speed, 2002</a>). This is particularly important when carrying out time-course experiments that are necessary in aging studies.
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2_2"></a>2.2.&nbsp;Experimental design relevant to aging
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>To enable the identification of age-related trends, any study of the aging process should examine at least three ages (young,
+                  middle-aged, old) and ideally many more than this. Choosing only two ages (young vs. old, for example), risks missing trends
+                  that may occur during the lifespan; a peak in mid-life followed by a decline to near youthful levels, for example, would be
+                  missed by an experimental design including only two ages.
+               </p>
+               <p>Several steps can be taken to increase the reliability of the microarray data. Replicate arrays per sample can control for
+                  technical variance, but the number of replicates needed will depend upon the platform used and the magnitude of differential
+                  gene expression expected. Biological replicates are important to confirm that the population or individual studied at each
+                  age is representative. Randomization in sample and array processing is absolutely essential: day-to-day variation could conceivably
+                  mask true expression differences, or result in the identification of false positives if, for example, all &#8220;young&#8221; RNA samples
+                  or arrays are processed on one day and all &#8220;old&#8221; samples on another.
+               </p>
+               <p>Beyond these basic principles, optimal experimental design depends on the questions to be asked, and should be considered
+                  after consultation with a statistician familiar with microarrays and high-dimensionality data analysis.
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2_3"></a>2.3.&nbsp;Statistical analysis
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>The analysis of microarray data is a constantly evolving field; with ever more sophisticated methods becoming available. Arguably,
+                  only in the last few years, have truly robust analytical methods been developed and employed for microarray data. Optimally,
+                  the researcher will have access to statistical expertise to aid in the interpretation of data. In lieu of working with a statistician,
+                  a researcher may choose from numerous software packages available either for purchase or in the public domain that can be
+                  used for analysis. Analysis of microarray data can move beyond simple pair-wise comparisons (young versus old for example)
+                  to include pattern-matching and looking for time-related trends. Powerful resources such as <a href="http://www.bioconductor.org" target="_blank">Bioconductor</a>, an open source software project, can aid in these more complex approaches. Because microarray experiments generally involve
+                  thousands of comparisons, multiple testing must be taken into account when determining statistical significance. However one
+                  arrives at the list of differentially expressed genes, expression changes can be validated via Northern blotting, or quantitative
+                  PCR. Such validation techniques have become less routinely employed as the veracity of the microarray methodology has become
+                  more widely accepted.
+               </p>
+               <p>Beyond the identification of differentially expressed genes, various software tools exist to help the researcher put their
+                  gene lists into a biological context. Gene ontology resources (<a href="http://www.geneontology.org" target="_blank">Gene Ontology</a>, <a href="http://david.niaid.nih.gov/david/upload.asp" target="_blank">DAVID</a>, <a href="http://david.niaid.nih.gov/david/ease.htm" target="_blank">EASE</a>) can indicate whether a specific biological function or compartment is over- or under-represented in a list of differentially
+                  expressed genes. Pathway analysis software can also help identify unifying themes in a list of differentially expressed genes
+                  (<a href="http://www.stratagene.com/tradeshows/feature.aspx?fpId=90" target="_blank">PathwayArchitect</a> and <a href="http://www.chem.agilent.com/scripts/pds.asp?lpage=27881" target="_blank">GeneSpring</a>). Such tools allow the researcher to move beyond lists of genes to the identification of biologically relevant processes
+                  with a level of statistical confidence.
+               </p>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec3"></a>3.&nbsp;Published gene expression profiling relevant to <span class="emphasis"><em>C. elegans</em></span> aging
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec3_1"></a>3.1.&nbsp;Studies of wild type aging
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>To date, three studies have focused exclusively on gene expression changes in wild type nematodes with age, but only one microarray
+                  study has compiled gene expression profiles at the whole-genome level over the range of the wild-type <span class="emphasis"><em>C. elegans</em></span> lifespan (<a href="#bib23">Lund et al., 2002</a>). Another study examined four ages of wild-type nematodes over a subset of stress-related genes (<a href="#bib10">Golden and Melov, 2004</a>), while a third compared whole-genome expression profiles between young and old nematodes (<a href="#bib13">Hill et al., 2000</a>). These studies, and those discussed subsequently in this chapter, are summarized in the accompanying <a href="#table1" title="Table 1. Studies employing gene expression profiling to examine worm aging. Summary of the experimental design, statistical analysis, and results of each of the studies discussed in the chapter.">Table</a>.
+               </p>
+               <p>Before the appearance of microarray technology, other approaches were taken to identify age-related changes in gene expression
+                  in <span class="emphasis"><em>C. elegans</em></span>. Fabian and Johnson (<a href="#bib5">Fabian and Johnson, 1995</a>) identified 12 transcripts that changed in abundance with age in <span class="emphasis"><em>C. elegans</em></span> by generating a cDNA library from aged worms, and probing this library with poly(A<sup>+</sup>) RNA isolated from four or 14-day-old nematodes. Through sequencing of the clones, three of the nine transcripts that declined
+                  in abundance with age were determined to be vitellogenin genes, and one of the two transcripts that increased in abundance
+                  with age was an EF-1<span class="symbol">&#945;</span> homologue. These authors also examined changes in RNA populations with age in wild-type and long-lived nematodes (<a href="#bib6">Fabian and Johnson, 1995</a>), finding that rRNA levels did not change, while poly-A(<sup>+</sup>) RNA levels decreased with age in the long-lived and one wild-type strain.
+               </p>
+               <div class="table"><a name="table1"></a><p class="title"><span class="bold"><strong>Table 1. Studies employing gene expression profiling to examine worm aging.</strong></span> Summary of the experimental design, statistical analysis, and results of each of the studies discussed in the chapter.
+                  </p>
+                  <table summary="Table 1. Studies employing gene expression profiling to examine worm aging. Summary of the experimental design, statistical analysis, and results of each of the studies discussed in the chapter." border="1">
+                     <colgroup>
+                        <col align="left">
+                        <col align="left">
+                        <col align="left">
+                        <col align="center">
+                        <col align="center">
+                        <col align="center">
+                        <col align="left">
+                     </colgroup>
+                     <thead>
+                        <tr>
+                           <th align="left">Study</th>
+                           <th align="left">Experimental Design</th>
+                           <th align="left">Platform (number of genes)</th>
+                           <th align="center">Number of arrays</th>
+                           <th align="center">Statistical analysis</th>
+                           <th align="center">Differentially expressed genes</th>
+                           <th align="left">Interesting genes or gene families</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td align="left"><a href="#bib13">Hill et al., 2000</a></td>
+                           <td align="left">8 ages, 2 of which were adult, pools used, single array per age.</td>
+                           <td align="left">Affymetrix (18791)</td>
+                           <td align="center">8</td>
+                           <td align="center">ANOVA</td>
+                           <td align="center">4221</td>
+                           <td align="left">Metabolic-related, muscle-related fall between 60 hours and 2 weeks</td>
+                        </tr>
+                        <tr>
+                           <td align="left"><a href="#bib23">Lund et al., 2001</a></td>
+                           <td align="left">6 adult ages, pools used, three sterile mutant strains, 3-6 biological replicates per age group.</td>
+                           <td align="left">cDNA (17871)</td>
+                           <td align="center">26</td>
+                           <td align="center">ANOVA</td>
+                           <td align="center">164</td>
+                           <td align="left"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=ins-2;class=Gene" target="_blank">ins-2</a></em></span>, <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=ins-7;class=Gene" target="_blank">ins-7</a></em></span>, heat shock proteins, Tc3, &#8220;Mount 15&#8221;
+                           </td>
+                        </tr>
+                        <tr>
+                           <td align="left"><a href="#bib28">Murphy et al., 2003</a></td>
+                           <td align="left">Young adult <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> or <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=age-1;class=Gene" target="_blank">age-1</a></em></span> vs. control, N2, or <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a>; <a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a></em></span>, 1-4 replicates per comparison. Pools used. Time course of sterile mutant strain treated with <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span>, or <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> +<span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a></em></span> RNAi, or control vector, one array per condition per time point.
+                           </td>
+                           <td align="left">cDNA (18455)</td>
+                           <td align="center">60</td>
+                           <td align="center">Arbitrary 4-fold cut-off, SAM, Hierarchical clustering</td>
+                           <td align="center">170 (SAM)</td>
+                           <td align="left"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=ins-7;class=Gene" target="_blank">ins-7</a></em></span>, stress response (including <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=sod-3;class=Gene" target="_blank">sod-3</a></em></span>, heat shock proteins), anti-microbial defense, metabolism, proteases
+                           </td>
+                        </tr>
+                        <tr>
+                           <td align="left"><a href="#bib25">McElwee et al., 2003</a></td>
+                           <td align="left">First day adults, <span class="emphasis"><em>daf-2(<a href="http://www.wormbase.org/db/get?name=e1370;class=Variation" target="_blank">e1370</a>)</em></span> vs. <span class="emphasis"><em>daf2(<a href="http://www.wormbase.org/db/get?name=e1370;class=Variation" target="_blank">e1370</a>); <a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a>(<a href="http://www.wormbase.org/db/get?name=m27;class=Variation" target="_blank">m27</a>)</em></span>. Pools used, 2 biological replicates, 2 technical replicates of each.
+                           </td>
+                           <td align="left">cDNA (17871)</td>
+                           <td align="center">4</td>
+                           <td align="center">Arbitrary cut-off of 1.5 fold in all 4 arrays</td>
+                           <td align="center">1646</td>
+                           <td align="left"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=sod-3;class=Gene" target="_blank">sod-3</a>, <a href="http://www.wormbase.org/db/get?name=ins-7;class=Gene" target="_blank">ins-7</a></em></span>, heat shock proteins, proteases, &#8220;Mount 15&#8221;
+                           </td>
+                        </tr>
+                        <tr>
+                           <td align="left"><a href="#bib26">McElwee et al., 2004</a></td>
+                           <td align="left">First day adults, <span class="emphasis"><em>daf-2(<a href="http://www.wormbase.org/db/get?name=e1370;class=Variation" target="_blank">e1370</a>)</em></span> or <span class="emphasis"><em>daf-2(<a href="http://www.wormbase.org/db/get?name=m577;class=Variation" target="_blank">m577</a>)</em></span> vs. <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a>; <a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a></em></span>. Pools used, 5 biological replicates per genotype.
+                           </td>
+                           <td align="left">Affymetrix (&#8220;whole genome&#8221;)</td>
+                           <td align="center">10</td>
+                           <td align="center">SAM, EASE</td>
+                           <td align="center">2274</td>
+                           <td align="left">Heat shock proteins, metabolism of toxins, nutrient uptake &#8220;Mount 15&#8221;</td>
+                        </tr>
+                        <tr>
+                           <td align="left"><a href="#bib10">Golden &amp; Melov, 2004</a></td>
+                           <td align="left">4 adult ages, 4-5 individuals per strain per age, N2 and <span class="emphasis"><em>daf-2(<a href="http://www.wormbase.org/db/get?name=e1370;class=Variation" target="_blank">e1370</a>).</em></span></td>
+                           <td align="left">cDNA (921)</td>
+                           <td align="center">37</td>
+                           <td align="center">F test, linear modeling, empirical Bayes analysis</td>
+                           <td align="center">19 (F stat) 23 (B stat) N2, 17 (B stat) <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span></td>
+                           <td align="left">Heat shock proteins, proteases</td>
+                        </tr>
+                        <tr>
+                           <td align="left"><a href="#bib37">Viswanathan et al., 2005</a></td>
+                           <td align="left">Young adults, <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a></em></span> or N2, resveratrol-treated worms vs. untreated, pools used, 4 biological replicates per strain
+                           </td>
+                           <td align="left">cDNA (&#8220;genome wide&#8221;)</td>
+                           <td align="center">8</td>
+                           <td align="center">Student t test</td>
+                           <td align="center">3495 <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a></em></span>, 330 N2
+                           </td>
+                           <td align="left">ER stress, unfolded protein response</td>
+                        </tr>
+                        <tr>
+                           <td align="left"><a href="#bib11">Halaschek- Wiener et al., 2005</a></td>
+                           <td align="left">One population each of <span class="emphasis"><em>fer-15(b26ts)</em></span> at days 1 and 6 of adulthood, and of <span class="emphasis"><em>fer-15(b26ts); daf-2(<a href="http://www.wormbase.org/db/get?name=m41;class=Variation" target="_blank">m41</a>)</em></span> at days 1, 6 and 10 of adulthood
+                           </td>
+                           <td align="left">SAGE (60000&#8211; 70000 tags)</td>
+                           <td align="center">5</td>
+                           <td align="center">Discovery Space Platform</td>
+                           <td align="center">48 age-related in <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span>, 265 age-matched control vs <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span>, 130 physiologically matched control vs <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span></td>
+                           <td align="left">Lipid, protein and energy metabolism, stress response, cell structure</td>
+                        </tr>
+                        <tr>
+                           <td align="left"><a href="#bib8">Fisher and Lithgow, 2006</a></td>
+                           <td align="left">4 populations each of sterile strains containing <span class="emphasis"><em>daf-12(rh61rh411)</em></span> or <span class="emphasis"><em>daf-12(<a href="http://www.wormbase.org/db/get?name=rh273;class=Variation" target="_blank">rh273</a>),</em></span> assayed vs mixed stage N2 reference RNA, with dye-flip for each sample
+                           </td>
+                           <td align="left">Oligo (22490 features)</td>
+                           <td align="center">16</td>
+                           <td align="center">SAM</td>
+                           <td align="center">225 (SAM)</td>
+                           <td align="left">Sperm-related, digestion, detoxifcation, DUF141 domain-containing</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <p>The first microarray study that looked for gene expression changes associated with age in <span class="emphasis"><em>C. elegans</em></span> examined eight ages from oocyte to adult (<a href="#bib13">Hill et al., 2000</a>), including two adult time points (60 hours and 14 days). A single array per age was carried out on RNA extracted from thousands
+                  of synchronized worms. This study used Affymetrix arrays containing 18791 predicted open reading frames (ORFs). First, genes
+                  were filtered to identify those that were detected as expressed at at least one age. Then ANOVA (p&lt;0.001) was applied to identify
+                  genes whose expression changed during the life cycle. Pertinent to aging, several classes of genes were noted to decline in
+                  expression between the 60-hour and 2-week time points, including muscle-related genes and metabolic genes, suggesting a decline
+                  in muscle function, metabolic activity and the synthesis of extracellular matrix. These results are especially interesting
+                  in light of the report that muscle deterioration is a hallmark of nematode aging (<a href="#bib12">Herndon et al., 2002</a>).
+               </p>
+               <p>The first study examining longitudinal aging in nematodes (<a href="#bib23">Lund et al., 2002</a>) used cDNA arrays containing 17871 genes, examined six age categories, and used three different sterile strains. The data
+                  were analyzed via ANOVA (p&lt;0.001), resulting in a list of 201 genes with age-related expression changes. After the exclusion
+                  of 34 genes whose expression remained constant after four days of age, and three genes for which variance due to strain exceeded
+                  that due to age, only 164 genes, less than 1% of the genome, were found to change expression with age. This modest result
+                  may indicate that some age-related expression changes were too small to detect. This may also reflect a lack of coordinated
+                  gene expression with aging, as might be predicted by evolutionary theory, and consistent with proteomic studies of aging which
+                  found relatively few proteins changing in abundance with age (<a href="#bib16">Johnson and McCaffrey, 1985</a>).
+               </p>
+               <p>At the time of publication, 72 of the genes identified by this study had been annotated, including <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=sir-2.1;class=Gene" target="_blank">sir-2.1</a></em></span>, two heat shock proteins (hsp), three Tc3 transposons, and an insulin homologue <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=ins-2;class=Gene" target="_blank">ins-2</a></em></span>. Examination of gene families related to these genes identified additional genes that changed expression with age but which
+                  had not passed the criteria for significance in the ANOVA analysis, including insulin homologues such as <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=ins-7;class=Gene" target="_blank">ins-7</a></em></span>, several heat shock genes that shared a common expression profile of a peak in expression at mid life and subsequent decline
+                  at old age, and a general increase in expression of all mobile genetic elements. The increase in transposon expression is
+                  interesting because it implicates genomic instability as a potential mechanism of aging in <span class="emphasis"><em>C. elegans</em></span>. To test whether mitochondrial dysfunction or reactive oxidative species were implicated in <span class="emphasis"><em>C. elegans</em></span> aging, the authors also examined mitochondria-associated genes and genes involved in response to oxidative stress, but no
+                  consistent expression changes were seen. Finally, the genes which were differentially expressed with age were found to be
+                  over-represented in a group of genes called Mount 15 (<a href="#bib18">Kim et al., 2001</a>). Genes in Mount 15 were found to increase expression with age; interestingly, most of the genes in Mount 15 were also found
+                  to be upregulated in dauers in an additional microarray experiment.
+               </p>
+               <p>A second study of longitudinal wild-type aging used cDNA arrays containing only 921 genes, chosen with an emphasis on stress-response
+                  pathways (<a href="#bib10">Golden and Melov, 2004</a>). This study looked at wild-type N2, as well as a long-lived <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> strain, at four ages. These authors chose to assay expression in individual nematodes as a proof of principle of an approach
+                  that could facilitate the testing of certain theories of aging (see below). Data analysis involved an F test to find genes
+                  that differentiated the two genotypes, and linear modeling and empirical Bayes analysis to find genes differentially expressed
+                  in pairwise comparisons of each age vs. four-day-old worms. Though the study is limited in terms of the number of genes examined
+                  and the number of individuals used (4 per time point), several conclusions were reached. First, even at older ages, individual
+                  worms resembled each other with respect to gene expression, arguing against a global dysregulation of gene expression as a
+                  cause of aging. Clustering revealed two groups of genes that changed in a coordinated manner with age. The first cluster contained
+                  heat shock proteins, which peaked in expression at 14 days then declined, similar to the pattern identified in the study of
+                  Lund et al. (<a href="#bib23">Lund et al., 2002</a>). However, this pattern was found to be identical in chronologically matched N2 and <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span>, indicating that in the absence of external stress, heat shock protein expression is unlikely to explain the longevity of
+                  the <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> strain. The second cluster contained proteases that decrease in expression with age in N2 but not in <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span>, suggesting that maintenance of these proteases may contribute to <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> longevity. It is interesting in this regard that RNAi of an aspartyl protease was found to decrease <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> lifespan, but have only a small effect on N2 lifespan (<a href="#bib25">McElwee et al., 2003</a>). The five genes that best differentiated the two genotypes were thaumatin, a complex III subunit, a proteasome component,
+                  actin, and akt2. These genes highlight five prevalent areas associated with aging research: pathogen defense, bioenergetics,
+                  protein turnover, muscle maintenance, and cell survival.
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec3_2"></a>3.2.&nbsp;Studies involving dauer formation gene mutants
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Because mutations in components of the insulin-like signaling pathway can extend lifespan in <span class="emphasis"><em>C. elegans</em></span>, the majority of microarray studies have sought to gain insight into aging either by identifying differences in gene expression
+                  between wild-type and long-lived <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> mutant worms (<a href="#bib10">Golden and Melov, 2004</a>; <a href="#bib11">Halaschek-Wiener et al., 2005</a>), or between <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a>; <a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a></em></span> double mutants (<a href="#bib25">McElwee et al., 2003</a>; <a href="#bib26">McElwee et al., 2004</a>; <a href="#bib28">Murphy et al., 2003</a>). As <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a></em></span> is required for longevity in <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> mutants, it is expected that genes regulated by the <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a></em></span> transcription factor play a role in the longevity of the <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> strain. A direct biochemical approach has also been applied to identify genes that are direct targets of <a href="http://www.wormbase.org/db/get?name=DAF-16;class=Protein" target="_blank">DAF-16</a> (<a href="#bib30">Oh et al., 2006</a>). An additional study (<a href="#bib8">Fisher and Lithgow, 2006</a>) has compared gene expression in two strains containing mutations of another gene related to dauer formation, <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-12;class=Gene" target="_blank">daf-12</a></em></span>, that can also have an effect on adult life span.
+               </p>
+               <p>Murphy et al. (<a href="#bib28">Murphy et al., 2003</a>) aimed to identify targets of <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a></em></span>, a transcription factor required for long life in many AGE mutants. This study involved 60 essentially full-genome cDNA microarrays.
+                  One of these arrays was used to compare gene expression between <span class="emphasis"><em>daf-2(mu150)</em></span> and wild type worms on the first day of adulthood. This expression profile was compared to those of strains carrying <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=age-1;class=Gene" target="_blank">age-1</a></em></span>, <span class="emphasis"><em>daf-2(<a href="http://wormbase.org/db/misc/etree?name=%5Bcgc5976%5D%3Adaf-2%28mu150%29_A;class=Condition" target="_blank">mu150</a>)</em></span> or <span class="emphasis"><em>daf-2(<a href="http://www.wormbase.org/db/get?name=e1368;class=Variation" target="_blank">e1368</a>)</em></span> relative to their mutant background <span class="emphasis"><em>(<a href="http://www.wormbase.org/db/get?name=fer-15;class=Gene" target="_blank">fer-15</a>; <a href="http://www.wormbase.org/db/get?name=fem-1;class=Gene" target="_blank">fem-1</a>)</em></span>, and to <span class="emphasis"><em>daf-2(<a href="http://www.wormbase.org/db/get?name=e1370;class=Variation" target="_blank">e1370</a>)</em></span> relative to the double mutant <span class="emphasis"><em>daf-2(<a href="http://www.wormbase.org/db/get?name=e1370;class=Variation" target="_blank">e1370</a>); <a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a>(<a href="http://www.wormbase.org/db/get?name=mu86;class=Variation" target="_blank">mu86</a>)</em></span>. However, as there was only a single array used, caution should be used in interpreting these results. Using multiple comparisons,
+                  the authors were able to look for genes whose expression changed in the same way in multiple long-lived models in several
+                  backgrounds, and whose expression changes were reversed by the presence of the <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a></em></span> mutation. Genes were filtered based on an arbitrary cut-off of a four-fold difference in expression in all experiments, and
+                  then the resulting genes were clustered. Additionally, significance analysis of microarrays (SAM; <a href="#bib33">Tusher et al., 2001</a>) was used to identify genes that were differentially expressed.
+               </p>
+               <p>These results were then compared to two additional sets of arrays, comparing gene expression in sterile worms raised on control
+                  bacteria, <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> RNAi, or both <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a></em></span> RNAi at ten different times between 0 and 2 days of adulthood, or at 10 times from 0 to 8 days of adulthood. All the data
+                  were combined, and hierarchical clustering used to identify genes whose expression changed in similar ways across the experiment.
+                  Because of the interest in identifying targets of <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a></em></span>, clusters of genes whose expression was reversed by the <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a></em></span> RNAi were of interest. Two groups of genes, 263 class 1 genes, and 251 class 2 genes, were identified. Fifty-three genes
+                  were selected from these classes, and their expression reduced by RNAi; in approximately 75% of cases, the RNAi resulted in
+                  the predicted change in life span. Included in the lists of genes that are associated with changes in life span were metabolic
+                  genes, stress response genes, and several proteases.
+               </p>
+               <p>Similar results were identified in a much smaller study comparing gene expression profiles between <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a>; <a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a></em></span> strains (<a href="#bib25">McElwee et al., 2003</a>). This study involved four cDNA arrays. A list is provided of 1646 genes whose expression differed by at least 1.5-fold in
+                  all four experiments, but no statistical analysis is reported. The list of genes with higher expression in <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> overlapped with the same cluster of genes (Mountain 15; <a href="#bib18">Kim et al., 2001</a>), discussed in the study of wild-type <span class="emphasis"><em>C. elegans</em></span> aging by Lund et al. (see above). The expression of several gene families relevant to theories of aging were plotted to look
+                  for a trend towards differential expression between <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a>; <a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a></em></span>. Metabolism-related genes were found to have lower expression in <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span>. This study also carried out RNAi of genes of interest, and found that reducing <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=ins-7;class=Gene" target="_blank">ins-7</a></em></span> or superoxide dismutase expression resulted in an unexpected extension of life span. RNAi of a protease, <a href="http://www.wormbase.org/db/get?name=ZK384.3;class=Gene" target="_blank">ZK384.3</a>, reduced <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> lifespan but had no effect on N2 life span, consistent with the hypothesis that maintenance of protease expression plays
+                  a role in extended life span of <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span>.
+               </p>
+               <p>McElwee et al. followed up with a larger study (<a href="#bib26">McElwee et al., 2004</a>) comparing gene expression between <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a>;<a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a></em></span> nematodes, and further investigated the inference of their earlier work that a dauer-like transcriptional profile is found
+                  in <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> mutants. This study used oligo arrays, rather than cDNA arrays as in the other studies. Two different <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> alleles were examined on the first day of adulthood in the presence and absence of a <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a></em></span> mutation. Five biological replicates were conducted per strain, and all ten experiments were combined and SAM was used to
+                  identify a list of 2274 differentially expressed genes, Additionally, EASE was used to identify classes of genes based on
+                  gene ontology that were differentially expressed. The authors also re-analyzed the results of a cDNA array study of gene expression
+                  changes upon dauer recovery (<a href="#bib39">Wang and Kim, 2003</a>) and compared these results with their gene list; 16% of the genes that changed in expression during dauer recovery changed
+                  similarly in <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a>;<a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a></em></span> vs <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span>, and many of the same gene ontology classes were over-represented in both gene sets. This common dauer and <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> transcriptional profile included gene classes related to the metabolism and excretion of toxic metabolites, leading to the
+                  hypothesis that such toxins may cause damage that contributes to aging. Their results are interpreted as being in agreement
+                  with the disposable soma theory of aging. The authors also compared their results with the two earlier studies mentioned above
+                  (<a href="#bib25">McElwee et al., 2003</a>; <a href="#bib28">Murphy et al., 2003</a>), finding 90 common genes.
+               </p>
+               <p>One microarray study has compared gene expression between <span class="emphasis"><em>daf-2(<a href="http://www.wormbase.org/db/get?name=e1370;class=Variation" target="_blank">e1370</a>)</em></span> and N2 over the N2 lifespan (<a href="#bib10">Golden and Melov, 2004</a>). As mentioned earlier, this study considered only a limited number of genes (921), and unfortunately did not examine <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> at later points in the <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> lifespan (the ages examined were four, nine, 14 and 19 days of age at 20<sup>o</sup>C). Hence, though it is interesting to note that expression of several protease genes declined with age in N2 but was maintained
+                  in <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> at the same ages (discussed above), this study was not able to determine whether expression of these genes did fall later
+                  over the course of the <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> life span.
+               </p>
+               <p>Halaschek-Wiener et al. (<a href="#bib11">Halaschek-Wiener et al., 2005</a>) used SAGE to compare gene expression profiles between chronologically-matched and physiologically-matched <span class="emphasis"><em>daf-2(<a href="http://www.wormbase.org/db/get?name=m41;class=Variation" target="_blank">m41</a>)</em></span> and control animals. As in the study of Lund et al., the strains carried a temperature-sensitive fertility mutation to prevent
+                  contamination of the cultures by progeny, and to avoid collecting transcripts from developing embryos within the mothers.
+                  SAGE has an advantage over traditional microarray technology in that it does not require prior knowledge of the identity of
+                  expressed sequences as is necessary to synthesize the probes placed on the chip in traditional microarrays. In this work,
+                  <span class="emphasis"><em>daf-</em></span>2 animals were assayed at one, six, and ten days of age and control animals at one and six days of age (25.5<sup>o</sup>C), ten and six days being the latest points before animals began to die in the <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> and control populations respectively. The authors examined the <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> SAGE tags for those that progressively increased or decreased with age. Several heat shock and stress response tags increased
+                  dramatically with age in <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span>, while remaining relatively low in one and six-day-old control nematodes. Genes associated with sperm function and encoding
+                  collagens decreased with age in <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span>. The authors then compared six-day-old <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> with six-day-old control animals (chronologically matched populations) and ten-day-old <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> with six-day-old controls (physiologically matched populations). In the chronologically-matched populations, small heat shock
+                  proteins and transthyretin-like genes were more highly expressed in <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> than controls, while many metabolic pathways, including lipid, nucleic acid, and protein metabolism, were expressed at lower
+                  levels in <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span>, implying that the long-lived strain is hypometabolic compared to controls. This is consistent with biochemical studies of
+                  long-lived <span class="emphasis"><em>C. elegans</em></span> strains (<a href="#bib35">Van Voorhies and Ward, 1999</a>). The difference in expression of metabolic genes disappeared when the animals were physiologically matched. The authors
+                  compared their results with those of Murphy et al. and McElwee et al., and found common themes including stress response,
+                  lipid metabolism, and protein metabolism.
+               </p>
+               <p>Fisher and Lithgow (<a href="#bib8">Fisher and Lithgow, 2006</a>) observed overlap in repressed genes between their study of a long-lived strain containing a mutation in <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-12;class=Gene" target="_blank">daf-12</a></em></span>, and those identified in the studies of <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a></em></span>. These authors examined gene expression in two strains containing different mutations of <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-12;class=Gene" target="_blank">daf-12</a></em></span>, one strain short-lived and one long-lived. Four independent populations of each mutant were assayed on full-genome oligo
+                  arrays, using mixed-stage wild type worms as a control. Each array was repeated as a dye-flip experiment, resulting in a total
+                  of 16 arrays that were analyzed via SAM. Up-regulated genes in the long-lived strain were enriched in sperm-related processes,
+                  while down-regulated genes were enriched in processes related to metabolism. Comparison of the <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-12;class=Gene" target="_blank">daf-12</a></em></span> related gene lists with the dauer and <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> gene expression profiles revealed an overlapping set of repressed genes enriched in genes containing a DUF141 domain (Domain
+                  of unknown function), several of which have been confirmed to limit life span via RNAi. Bioinformatic analysis lead the authors
+                  to propose that these related proteins may represent a novel family of peptide hormones, secreted in response to <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-12;class=Gene" target="_blank">daf-12</a></em></span> signaling.
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec3_3"></a>3.3.&nbsp;Studies of life-extension paradigms
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>One study has used microarray analysis of gene expression to investigate a pharmacologic life-extension paradigm (<a href="#bib37">Viswanathan et al., 2005</a>). This study examined gene expression changes in resveratrol-treated <span class="emphasis"><em>C. elegans</em></span>. Both wild type and <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a></em></span> mutant worms were treated with resveratrol, and four biological replicates were carried out per strain. The log<sub>2</sub> of the differential expression was averaged for the four arrays, and a student t test applied to identify differentially
+                  expressed genes (<a href="#bib14">Jiang et al., 2001</a>). Interestingly, ten times more genes were identified in the <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a></em></span> mutant background (3495) than in N2 (330). Focusing on genes common to both backgrounds identified a class of ER stress response
+                  genes comprised of prion-like Q/N proteins (PQN) and activated in blocked unfolded protein response (ABU) proteins, which
+                  may function in an ER pathway in parallel with the canonical unfolded protein response. RNAi of two of these genes abolished
+                  the effect of resveratrol on life span.
+               </p>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec4"></a>4.&nbsp;What have we learned?
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec4_1"></a>4.1.&nbsp;Conclusions drawn from studies of worm aging
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>The studies of gene expression changes associated with wild-type worm aging point to interesting age-related phenomena, but
+                  leave open many questions about worm aging. The study of Hill et al. (<a href="#bib13">Hill et al., 2000</a>) implicated age-related muscle deterioration and a decline in metabolic function. Muscle deterioration has been described
+                  at the microscopic level in <span class="emphasis"><em>C. elegans</em></span> aging (<a href="#bib12">Herndon et al., 2002</a>), but the decline in expression of metabolic genes was not observed by the longitudinal study of Lund et al. (<a href="#bib23">Lund et al., 2002</a>). Lund et al. found relatively few genes to change significantly with age, which is interpreted as support for the theory
+                  that the accumulation of molecular and cellular damage with time is a basis for aging. The increase in expression of transposable
+                  elements in the study of Lund et al. also points to a potential role of genomic instability, while an age-related increase
+                  in the expression of genes that are highly expressed in dauers suggests that a common survival mechanism is activated in dauer
+                  larvae and older nematodes. Golden and Melov observed the same mid-life peak in small heat-shock protein (hsp) expression
+                  described by Lund et al. (<a href="#bib23">Lund et al., 2002</a>). Lund et al. hypothesized that the late-life decline in hsp expression might contribute to senescence, but in the work of
+                  <a href="#bib10">Golden and Melov (2004)</a>, hsp expression was found to be identical in age-matched <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> and wild type nematodes. It is interesting that Halaschek-Wiener (<a href="#bib11">Halaschek-Wiener et al., 2005</a>), via SAGE, detected the same increase in small hsp expression in <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> nematodes between one and ten days of age, but a <span class="emphasis"><em>decline</em></span> in expression of these genes between one and six days in wild type nematodes. It has been reported that though SAGE and microarray
+                  technologies are frequently in good accord with respect to highly expressed genes, overall agreement is only modest (<a href="#bib34">van Ruissen et al., 2005</a>), and poor agreement has been described for dauer expression profiling by the two approaches (<a href="#bib39">Wang and Kim, 2003</a>). The contradictions between the microarray and SAGE data related to N2 and <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> aging deserve further investigation.
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec4_2"></a>4.2.&nbsp;Conclusions drawn from the study of dauer formation mutants
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Interestingly, most studies have focused on differences in gene expression between <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a>;<a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a></em></span> rather than between N2 and <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span>. Presumably, this is because mutation of <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a></em></span> shortens (normalizes) <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> life span, and so expression differences between <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a></em></span> (+) and <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a></em></span> (-) in the <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> background are expected to be involved in <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> longevity. However, no studies have yet been published directly comparing <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a></em></span> to wild type nematodes. Mutation of <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a></em></span> also shortens N2 life span, and examining <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a></em></span> mutant worms directly would be an important means to identify <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a></em></span> targets, and would aid in the interpretation of the <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a>;<a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a></em></span> gene expression profiles.
+               </p>
+               <p>Complementary techniques will also be important to understanding the results of gene expression profiling in these models.
+                  Microarray and SAGE analysis can identify genes whose expression changes in response to conditions expected to change the
+                  binding of <a href="http://www.wormbase.org/db/get?name=DAF-16;class=Protein" target="_blank">DAF-16</a> to promoters, but cannot differentiate between direct and indirect targets of the transcription factor. Genome-wide biochemical
+                  analyses such as chromatin immunoprecipitation (ChIP) can identify direct targets whose promoters are bound by the transcription
+                  factor. Oh et al. (<a href="#bib30">Oh et al., 2006</a>) applied ChIP to identify <a href="http://www.wormbase.org/db/get?name=DAF-16;class=Protein" target="_blank">DAF-16</a> targets, finding 130 genes that were immunoprecipitated with an anti-DAF-16 antibody in the strain <span class="emphasis"><em>daf-2(<a href="http://www.wormbase.org/db/get?name=e1370;class=Variation" target="_blank">e1370</a>)</em></span>. These genes are involved in processes such as metabolism, development, and detoxification and stress response, but intriguingly,
+                  36% are of unknown function. Interestingly, only 88 of these had a consensus <a href="http://www.wormbase.org/db/get?name=DAF-16;class=Protein" target="_blank">DAF-16</a> binding site in the promoter, while 15 had a predicted <a href="http://www.wormbase.org/db/get?name=DAF-16;class=Protein" target="_blank">DAF-16</a> site in the coding region, and 27 had no known <a href="http://www.wormbase.org/db/get?name=DAF-16;class=Protein" target="_blank">DAF-16</a> binding site at all. Further analysis of the first 33 genes containing a predicted <a href="http://www.wormbase.org/db/get?name=DAF-16;class=Protein" target="_blank">DAF-16</a> consensus binding site found that in 10 of these genes, <a href="http://www.wormbase.org/db/get?name=DAF-16;class=Protein" target="_blank">DAF-16</a> was not binding to the canonical site but to a previously unknown binding site. These results indicate that bioinformatics
+                  approaches are not sufficient to understanding the complexities of the regulation of gene expression.
+               </p>
+               <p>Perhaps not surprisingly, since <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a></em></span> is required for both dauer formation and <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> longevity, the gene sets identified by comparing <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> with <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a>;<a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a></em></span> overlaps substantially with the gene sets identified by comparing dauer with non-dauer larvae. Less expected is the observation
+                  that a dauer-like transcriptional profile may be activated in normal worms with age (<a href="#bib23">Lund et al., 2002</a>), pointing to the significance of determining what, in the dauer transcriptional profile, constitutes an enhanced survival
+                  mechanism. Dauer animals have increased stress-resistance, and gene expression profiling confirms that several stress-response
+                  genes are upregulated in <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> animals relative to <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a>;<a href="http://www.wormbase.org/db/get?name=daf-16;class=Gene" target="_blank">daf-16</a></em></span> double mutants. Dauers also have an altered metabolism, consistent with the requirement that they survive in the absence
+                  of food. It is interesting, therefore, that gene expression profiling implies that both long-lived <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-12;class=Gene" target="_blank">daf-12</a></em></span> worms are hypometabolic, consistent with biochemical studies of metabolic rate in long-lived strains (<a href="#bib35">Van Voorhies and Ward, 1999</a>).
+               </p>
+               <p>Proteases were identified as age-related genes in each of the studies summarized here. Additionally, ER stress was implicated
+                  in the pharmacologic life extension model, which also points to a role for improved protein folding, or a decrease in the
+                  amount of mis-folded proteins, in enhancing life span. Consistent with this, reducing expression of relevant genes via RNAi
+                  reduced <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> or resveratrol-treated life span. However any experiment resulting in a shortened life span must be interpreted with the
+                  caveat that a shortened life span could result from the worms being sick, rather than aging more quickly. Overall, these studies
+                  implicate an accumulation of damaged or misfolded proteins as playing a role in limiting wild-type <span class="emphasis"><em>C. elegans</em></span> life span.
+               </p>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec5"></a>5.&nbsp;Future directions
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Much has been learned from the expression profiling that has been done related to <span class="emphasis"><em>C. elegans</em></span> aging. Yet, many questions remain. Detailed longitudinal studies of gene expression over the life span of <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> or other long-lived mutants would aid in the interpretation of the expression changes reported for wild type nematodes, as
+               this would allow the determination of whether age-related changes also occur in the long-lived strains, or perhaps occur on
+               a delayed time scale.
+            </p>
+            <p>Recent studies indicate that there is a substantial stochastic element to nematode aging (<a href="#bib12">Herndon et al., 2002</a>; <a href="#bib23">Lund et al., 2002</a>), which may preclude the identification of age-related expression changes when pools of worms are studied. The assay of gene
+               expression in individual nematodes may allow the detection of an increase in variance in gene expression with age, as might
+               be predicted if aging is accompanied by a loss of tight regulation of expression. Also, the study of individuals may allow
+               the identification of sub-sets of worm aging, whose associated expression profiles might be averaged out by the study of pools.
+            </p>
+            <p>Microarray studies can and have pointed to pathways and systems deserving of further examination relative to worm aging. As
+               more reports of expression profiling of worm aging accumulate, using various strains and platforms, a better understanding
+               of the universality of specific changes can be gained. Some studies have already begun to look for similarities of age-related
+               expression patterns across species (<a href="#bib24">McCarroll et al., 2004</a>). However, in carrying out such comparative studies, one has to be aware of the possibility of pseudo-replication, which
+               introduces significant error (see <a href="#bib27">Melov and Hubbard (2004)</a>, for discussion of pseudo-replication in the context of microarrays).
+            </p>
+            <p>Interpretation of expression profiles associated with aging is complicated by the fact that in some cases the observed expression
+               changes may be causal and reflect processes that contribute to the aging phenotype, or may be a result of or reaction to age-related
+               phenomena. Experiments such as reduction of expression through RNAi can and have been used to support the involvement of a
+               specific gene in limiting life span, but will not provide insight if the gene must change expression in conjunction with other
+               genes to exert an effect. The power of gene expression profiling techniques is the ability to identify suites of genes or
+               gene families involved in a complex process such as aging. Further studies will be necessary to differentiate between cause
+               and effect.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec6"></a>6.&nbsp;References
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <div class="bibliography">
+               <div class="bibliomixed"><a name="bib1"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Bahar, R., Hartmann, C.H., Rodriguez, K.A., Denny, A.D., Busuttil, R.A., Dolle, M.E., Calder, R.B., Chisholm, G.B., Pollock,
+                        B.H., Klein, C.A., and Vijg, J. (2006). Increased cell-to-cell variation in gene expression in ageing mouse heart. Nature
+                        <span class="emphasis"><em>441</em></span>, 1011&#8211;1014.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=16791200&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nature04844" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib2"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Barnes, M., Freudenberg, J., Thompson, S., Aronow, B., and Pavlidis, P. (2005). Experimental comparison and cross-validation
+                        of the Affymetrix and Illumina gene expression analysis platforms. Nucleic Acids Res. <span class="emphasis"><em>33</em></span>, 5914&#8211;5923.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=16237126&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1093/nar/gki890" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib3"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Beckman, K.B., and Ames, B.N. (1998). The free radical theory of aging matures. Physiol. Rev. <span class="emphasis"><em>78</em></span>, 547&#8211;581.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=9562038&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib4"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Bowtell, D., and Sambrook, J., eds. (2003). DNA Microarrays (Cold Spring Harbor, New York: Cold Spring Harbor Laboratory Press).</span>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib5"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Fabian, T.J., and Johnson, T.E. (1995). Identification genes that are differentially expressed during aging in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. J. Gerontol. A Biol. Sci. Med. Sci. <span class="emphasis"><em>50</em></span>, B245&#8211;B253.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=7671015&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib6"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Fabian, T.J., and Johnson, T.E. (1995). Total RNA, rRNA and poly(A)+RNA abundances during aging in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Mech. Ageing Dev. <span class="emphasis"><em>83</em></span>, 155&#8211;170.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8583834&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/0047-6374(95)01605-Y" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib7"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Finch, C.E. (1990). Longevity, Senescence, and the Genome, Paperback edition edn (Chicago: The University of Chicago Press).</span>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib8"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Fisher, A.L., and Lithgow, G.J. (2006). The nuclear hormone receptor <a href="http://www.wormbase.org/db/get?name=DAF-12;class=Protein" target="_blank">DAF-12</a> has opposing effects on <span class="emphasis"><em>Caenorhabditis elegans</em></span> lifespan and regulates genes repressed in multiple long-lived worms. Aging Cell <span class="emphasis"><em>5</em></span>, 127&#8211;138.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=16626392&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1111/j.1474-9726.2006.00203.x" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib9"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Friedman, D.B., and Johnson, T.E. (1988). A mutation in the <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=age-1;class=Gene" target="_blank">age-1</a></em></span> gene in <span class="emphasis"><em>Caenorhabditis elegans</em></span> lengthens life and reduces hermaphrodite fertility. Genetics <span class="emphasis"><em>118</em></span>, 75&#8211;86.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8608934&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib10"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Golden, T.R., and Melov, S. (2004). Microarray analysis of gene expression with age in individual nematodes. Aging Cell <span class="emphasis"><em>3</em></span>, 111&#8211;124.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15153179&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1111/j.1474-9728.2004.00095.x" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib11"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Halaschek-Wiener, J., Khattra, J.S., McKay, S., Pouzyrev, A., Stott, J.M., Yang, G.S., Holt, R.A., Jones, S.J., Marra, M.A.,
+                        Brooks-Wilson, A.R., and Riddle, D.L. (2005). Analysis of long-lived <span class="emphasis"><em>C. elegans</em></span> <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> mutants using serial analysis of gene expression. Genome Res. <span class="emphasis"><em>15</em></span>, 603&#8211;615.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15837805&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1101/gr.3274805" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib12"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Herndon, L.A., Schmeissner, P.J., Dudaronek, J.M., Brown, P.A., Listner, K.M., Sakano, Y., Paupard, M.C., Hall, D.H., and
+                        Driscoll, M. (2002). Stochastic and genetic factors influence tissue-specific decline in ageing <span class="emphasis"><em>C. elegans</em></span>. Nature <span class="emphasis"><em>419</em></span>, 808&#8211;814.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12397350&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nature01135" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib13"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Hill, A.A., Hunter, C.P., Tsung, B.T., Tucker-Kellogg, G., and Brown, E. L. (2000). Genomic analysis of gene expression in
+                        <span class="emphasis"><em>C. elegans</em></span>. Science <span class="emphasis"><em>290</em></span>, 809&#8211;812.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11052945&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1126/science.290.5492.809" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib14"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Jiang, M., Ryu, J., Kiraly, M., Duke, K., Reinke, V., and Kim, S.K. (2001). Genome-wide analysis of developmental and sex-regulated
+                        gene expression profiles in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Proc. Natl. Acad. Sci. U.S.A. <span class="emphasis"><em>98</em></span>, 218&#8211;223.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11134517&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1073/pnas.011520898" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib15"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Johnson, T.E. (2002). Subfield history: <span class="emphasis"><em>Caenorhabditis elegans</em></span> as a system for analysis of the genetics of aging. Sci. Aging Knowledge Environ., 1&#8211;9.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=14603001&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1126/sageke.2002.34.re4" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib16"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Johnson, T.E., and McCaffrey, G. (1985). Programmed aging or error catastrophe? An examination by two-dimensional polyacrylamide
+                        gel electrophoresis. Mech. Ageing Dev. <span class="emphasis"><em>30</em></span>, 285&#8211;297.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=4021560&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/0047-6374(85)90118-6" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib17"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Kenyon, C., Chang, J., Gensch, E., Rudner, A., and Tabtiang, R. (1993). A <span class="emphasis"><em>C. elegans</em></span> mutant that lives twice as long as wild type. Nature <span class="emphasis"><em>366</em></span>, 461&#8211;464.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8247153&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/366461a0" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib18"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Kim, S.K., Lund, J., Kiraly, M., Duke, K., Jiang, M., Stuart, J.M., Eizinger, A., Wylie, B.N., and Davidson, G.S. (2001).
+                        A gene expression map for <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Science <span class="emphasis"><em>293</em></span>, 2087&#8211;2092.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11557892&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1126/science.1061603" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib19"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Kimura, K.D., Tissenbaum, H.A., Liu, Y., and Ruvkun, G. (1997). <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span>, an insulin receptor-like gene that regulates longevity and diapause in <span class="emphasis"><em>Caenorhabditis elegans</em></span> [see comments]. Science <span class="emphasis"><em>277</em></span>, 942&#8211;946.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=9252323&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1126/science.277.5328.942" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib20"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Kirkwood, T.B. (1977). Evolution of ageing. Nature <span class="emphasis"><em>270</em></span>, 301&#8211;304.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=593350&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/270301a0" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib21"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Kirkwood, T.B., and Holliday, R. (1979). The evolution of ageing and longevity. Proc. R. Soc. Lond., B, Biol. Sci. <span class="emphasis"><em>205</em></span>, 531&#8211;546.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=42059&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib22"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Lin, K., Hsin, H., Libina, N., and Kenyon, C. (2001). Regulation of the <span class="emphasis"><em>Caenorhabditis elegans</em></span> longevity protein <a href="http://www.wormbase.org/db/get?name=DAF-16;class=Protein" target="_blank">DAF-16</a> by insulin/IGF-1 and germline signaling. Nat. Genet. <span class="emphasis"><em>28</em></span>, 139&#8211;145.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11381260&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/88850" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib23"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Lund, J., Tedesco, P., Duke, K., Wang, J., Kim, S., and Johnson, T. (2002). Transcriptional Profile of Aging in <span class="emphasis"><em>C. elegans</em></span>. Curr. Biol. <span class="emphasis"><em>12</em></span>, 1566.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12372248&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0960-9822(02)01146-6" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib24"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">McCarroll, S.A., Murphy, C.T., Zou, S., Pletcher, S.D., Chin, C.S., Jan, Y.N., Kenyon, C., Bargmann, C.I., and Li, H. (2004).
+                        Comparing genomic expression patterns across species identifies shared transcriptional profile in aging. Nat. Genet. <span class="emphasis"><em>36</em></span>, 197&#8211;204.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=14730301&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/ng1291" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib25"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">McElwee, J., Bubb, K., and Thomas, J.H. (2003). Transcriptional outputs of the <span class="emphasis"><em>Caenorhabditis elegans</em></span> forkhead protein <a href="http://www.wormbase.org/db/get?name=DAF-16;class=Protein" target="_blank">DAF-16</a>. Aging Cell <span class="emphasis"><em>2</em></span>, 111&#8211;121.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12882324&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1046/j.1474-9728.2003.00043.x" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib26"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">McElwee, J.J., Schuster, E., Blanc, E., Thomas, J.H., and Gems, D. (2004). Shared transcriptional signature in <span class="emphasis"><em>Caenorhabditis elegans Dauer</em></span> larvae and long-lived <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daf-2;class=Gene" target="_blank">daf-2</a></em></span> mutants implicates detoxification system in longevity assurance. J. Biol. Chem. <span class="emphasis"><em>279</em></span>, 44533&#8211;44543.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15308663&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1074/jbc.M406207200" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib27"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Melov, S., and Hubbard, A. (2004). Microarrays as a tool to investigate the biology of aging: a retrospective and a look to
+                        the future. Sci. Aging Knowledge Environ. <span class="emphasis"><em>2004</em></span>, re7.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15498758&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1126/sageke.2004.42.re7" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib28"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Murphy, C.T., McCarroll, S.A., Bargmann, C.I., Fraser, A., Kamath, R.S., Ahringer, J., Li, H., and Kenyon, C. (2003). Genes
+                        that act downstream of <a href="http://www.wormbase.org/db/get?name=DAF-16;class=Protein" target="_blank">DAF-16</a> to influence the lifespan of <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Nature <span class="emphasis"><em>424</em></span>, 277&#8211;283.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12845331&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nature01789" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib29"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Ogg, S., Paradis, S., Gottlieb, S., Patterson, G.I., Lee, L., Tissenbaum, H.A., and Ruvkun, G. (1997). The Fork head transcription
+                        factor <a href="http://www.wormbase.org/db/get?name=DAF-16;class=Protein" target="_blank">DAF-16</a> transduces insulin-like metabolic and longevity signals in <span class="emphasis"><em>C. elegans</em></span>. Nature <span class="emphasis"><em>389</em></span>, 994&#8211;999.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=9353126&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/40194" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib30"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Oh, S.W., Mukhopadhyay, A., Dixit, B.L., Raha, T., Green, M.R., and Tissenbaum, H.A. (2006). Identification of direct <a href="http://www.wormbase.org/db/get?name=DAF-16;class=Protein" target="_blank">DAF-16</a> targets controlling longevity, metabolism and diapause by chromatin immunoprecipitation. Nat. Genet. <span class="emphasis"><em>38</em></span>, 251&#8211;257.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=16380712&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/ng1723" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib31"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Riddle, D.L., Swanson, M.M., and Albert, P.S. (1981). Interacting genes in nematode dauer larva formation. Nature <span class="emphasis"><em>290</em></span>, 668&#8211;671.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=7219552&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/290668a0" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib32"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Somel, M., Khaitovich, P., Bahn, S., Paabo, S., and Lachmann, M. (2006). Gene expression becomes heterogeneous with age. Curr.
+                        Biol. <span class="emphasis"><em>16</em></span>, R359&#8211;360.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=16713941&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.cub.2006.04.024" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib33"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Tusher, V.G., Tibshirani, R., and Chu, G. (2001). Significance analysis of microarrays applied to the ionizing radiation response.
+                        Proc. Natl. Acad. Sci. U.S.A. <span class="emphasis"><em>98</em></span>, 5116&#8211;5121.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11309499&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1073/pnas.091062498" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib34"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">van Ruissen, F., Ruijter, J.M., Schaaf, G.J., Asgharnegad, L., Zwijnenburg, D.A., Kool, M., and Baas, F. (2005). Evaluation
+                        of the similarity of gene expression data estimated with SAGE and Affymetrix GeneChips. BMC Genomics <span class="emphasis"><em>6</em></span>, 91.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15955238&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1186/1471-2164-6-91" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib35"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Van Voorhies, W.A., and Ward, S. (1999). Genetic and environmental conditions that increase longevity in <span class="emphasis"><em>Caenorhabditis elegans</em></span> decrease metabolic rate. Proc. Natl. Acad. Sci. USA. <span class="emphasis"><em>96</em></span>, 11399&#8211;11403.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10500188&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1073/pnas.96.20.11399" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib36"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Velculescu, V.E., Zhang, L., Vogelstein, B., and Kinzler, K.W. (1995). Serial analysis of gene expression. Science <span class="emphasis"><em>270</em></span>, 484&#8211;487.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=7570003&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1126/science.270.5235.484" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib37"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Viswanathan, M., Kim, S.K., Berdichevsky, A., and Guarente, L. (2005). A role for <a href="http://www.wormbase.org/db/get?name=SIR-2.1;class=Protein" target="_blank">SIR-2.1</a> regulation of ER stress response genes in determining <span class="emphasis"><em>C. elegans</em></span> life span. Dev. Cell <span class="emphasis"><em>9</em></span>, 605&#8211;615.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=16256736&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.devcel.2005.09.017" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib38"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Walker, D.W., McColl, G., Jenkins, N.L., Harris, J., and Lithgow, G. J. (2000). Evolution of lifespan in <span class="emphasis"><em>C. elegans</em></span>. Nature <span class="emphasis"><em>405</em></span>, 296&#8211;297.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10830948&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/35012693" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib39"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Wang, J., and Kim, S.K. (2003). Global analysis of dauer gene expression in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Development <span class="emphasis"><em>130</em></span>, 1621&#8211;1634.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12620986&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1242/dev.00363" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib40"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Williams, G.C. (1957). Pleiotropy, natural selection and the evolution of senescence. Evolution <span class="emphasis"><em>11</em></span>, 398&#8211;411.</span>
+                     <a href="http://dx.doi.org/10.2307/2406060" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib41"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Yang, Y.H., and Speed, T. (2002). Design issues for cDNA microarray experiments. Nat. Rev. Genet. <span class="emphasis"><em>3</em></span>, 579&#8211;588.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12154381&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nrg863" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+            </div>
+            <p></p>
+         </div>
+         <div class="footnotes"><br><hr width="100" align="left">
+            <div class="footnote">
+               <p><sup><a name="ftn.d0e10" href="#d0e10">*</a></sup>Edited by Monica Driscoll and Garth Patterson. Last revised November 2, 2006. Published January 2, 2007. This chapter should
+                  be cited as: Golden, T.R. and Melov, S. Gene expression changes associated with aging in <span class="emphasis"><em>C. elegans</em></span> (January 2, 2007), <span class="emphasis"><em>WormBook</em></span>, ed. The <span class="emphasis"><em>C. elegans</em></span> Research Community, WormBook, doi/10.1895/wormbook.1.127.1, <a href="http://www.wormbook.org" target="_top">http://www.wormbook.org</a>.
+               </p>
+               <p><span class="bold"><strong>Copyright:</strong></span> &copy; 2006 Tamara R. Golden and Simon Melov. This is an open-access article distributed under the terms of the Creative Commons
+                  Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author
+                  and source are credited.
+               </p>
+            </div>
+            <div class="footnote">
+               <p><sup><a name="ftn.d0e39" href="#d0e39">&sect;</a></sup>To whom correspondence should be addressed. E-mail: <a href="mailto:tgolden@buckinstitute.org" target="_top">tgolden@buckinstitute.org</a> or <a href="mailto:smelov@buckinstitute.org" target="_top">smelov@buckinstitute.org</a></p>
+			   <p><img src="somerights20.gif" alt="Creative Commons License" align="middle" border="0"> All WormBook content, except where otherwise noted, is licensed under a <a href="http://creativecommons.org/licenses/by/2.5/" title="Creative Commons Attribution License" target="_blank">Creative Commons Attribution License</a>.</p>
+            </div>
+         </div>
+      </div>
+   <!--#include virtual="/ssi/footer.html" --></body>
+</html>

@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY fig1 SYSTEM 'immuneresponsefig1.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'immuneresponsefig1leg.xml'>
+<!ENTITY fig2 SYSTEM 'immuneresponsefig2.jpg' NDATA JPG>
+<!ENTITY fig2legend SYSTEM 'immuneresponsefig2leg.xml'>
+<!ENTITY fig3 SYSTEM 'immuneresponsefig3.jpg' NDATA JPG>
+<!ENTITY fig3legend SYSTEM 'immuneresponsefig3leg.xml'>
+<!ENTITY fig4 SYSTEM 'immuneresponsefig4.jpg' NDATA JPG>
+<!ENTITY fig4legend SYSTEM 'immuneresponsefig4leg.xml'>
+<!ENTITY fig5 SYSTEM 'immuneresponsefig5.jpg' NDATA JPG>
+<!ENTITY fig5legend SYSTEM 'immuneresponsefig5leg.xml'>
+<!ENTITY fig6 SYSTEM 'immuneresponsefig6.jpg' NDATA JPG>
+<!ENTITY fig6legend SYSTEM 'immuneresponsefig6leg.xml'>
+<!ENTITY fig7 SYSTEM 'immuneresponsefig7.jpg' NDATA JPG>
+<!ENTITY fig7legend SYSTEM 'immuneresponsefig7leg.xml'>
+
+<!ENTITY immuneresponse_Refs SYSTEM 'immuneresponserefs.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="immuneresponse_ArticleID">
+    <articleinfo>
+        <!--see DocBook's authorgroup element -->
+        <title>Signaling in the immune response<footnote>
+                <para>Edited by Iva Greenwald. Last revised February 7, 2005. Published January 23, 2006. This chapter should be cited as: Ewbank, J. J. Signaling in the immune response (January 23, 2006), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.83.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+		<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2006 Jonathan J. Ewbank. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+            </footnote>
+        </title>
+        <!--		<revhistory>
+			<revision>
+				<revnumber>1.0</revnumber>
+				<date>Last revised 2/7/05</date>
+			</revision>
+		</revhistory>
+-->
+        <author>
+            <firstname>Jonathan J.</firstname>
+            <surname>Ewbank<remark>
+                    <footnote>
+                        <para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:ewbank@ciml.univ-mrs.fr">ewbank@ciml.univ-mrs.fr</ulink></para>
+                    </footnote>
+                </remark>
+            </surname>
+            <affiliation>
+                <address>Centre d&apos;Immunologie de Marseille-Luminy, INSERM/CNRS/Universit&#x000E9; de la M&#x000E9;diterran&#x000E9;e, 13288 Marseille cedex 9, France</address>
+            </affiliation>
+        </author>
+    </articleinfo>
+    <abstract>
+        <title><emphasis role="bold">Abstract</emphasis></title>
+        <para><emphasis role="bold">Many pathogens that can infect</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">have been described,
+            including some that co-exist with the nematode in its natural environment. This chapter
+            describes our current understanding of the different innate immune responses of</emphasis>
+                <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">that follow infection. It focuses on the main
+            signalling pathways that have been identified and highlights the inclusion of certain
+            molecular cassettes in both immune and developmental functions.</emphasis></para>
+    </abstract>
+<sect1>
+<title>Introduction</title>
+        <para><emphasis>C. elegans</emphasis> has emerged as an extremely powerful model for the study
+            of innate immunity, that is to say the fundamental aspects of a host's response to
+            infection, complementing more established models such as <emphasis>Drosophila</emphasis>
+            (<link linkend="bib25">Kurz and Ewbank, 2003</link><!-- PMID 12728280-->). In 1999, the Ausubel group published work showing that
+                <emphasis>C. elegans</emphasis> could be infected by <emphasis>Pseudomonas
+                aeruginosa</emphasis>, a ubiquitous Gram negative bacterium associated
+            with chronic lung infections in cystic fibrosis patients, and that specific worm mutants
+            had an increased susceptibility to lethal intoxication (<link linkend="bib32">Mahajan-Miklos et al., 1999</link><!-- PMID-->). Work from the Ausubel group also showed that worms can be used to identify
+            universal virulence factors that are required for bacterial pathogenesis regardless of the host (reviewed in <link linkend="bib31">Mahajan-Miklos et al., 2000</link>; <link linkend="bib49">Tan et al., 1999a</link>; <link linkend="bib50">Tan et al., 1999b</link>). In the years since these publications, many different
+            microbes that can infect worms have been identified and there has been a wealth of
+            studies using <emphasis>C. elegans</emphasis> to investigate bacterial pathogenesis as
+            well as innate immunity. These have helped define the relevance of the model for
+            understanding host-pathogen interactions in higher organisms (reviewed in <link linkend="bib4">Alegado et al., 2003</link><!-- PMID 12814434-->; <link linkend="bib25">Kurz and Ewbank, 2003</link><!-- PMID 12728280-->; <link linkend="bib26">Kurz and Tan, 2004</link><!-- PMID 15268752-->; <link linkend="bib34">Millet and Ewbank, 2004</link><!-- PMID 14734103-->).</para>
+        <para>This chapter will deal with the pathways involved in the response of <emphasis>C.
+                elegans</emphasis> to infection. A recurrent theme will be that the signaling
+            pathways involved in innate defenses involve protein cassettes that play essential roles
+            in other, seemingly unrelated developmental or physiological processes.</para>
+        <para>The current view of worm defenses has been obtained through a variety of methods,
+            including forward genetic screens, RNAi, microarrays and candidate gene approaches. At
+            least 4 pathways have been shown to be involved in innate immunity in <emphasis>C.
+                elegans</emphasis> and an overlap has been found between the genes involved in
+            pathogen defense and longevity. In hindsight, this is not so surprising since the
+            standard <emphasis>E. coli</emphasis> strain OP50 is not entirely benign. Under certain
+            culture conditions it is capable of intoxicating worms rapidly (<link linkend="bib13">Garsin et al., 2001</link><!-- PMID 11535834-->) and even on standard NGM plates, colonization of the intestine by OP50,
+            with resultant tissue damage, appears to be one of the principal reasons why old worms die (<link linkend="bib15">Gems and Riddle, 2000</link>; <link linkend="bib16">Herndon et al., 2002</link>; reviewed in <link linkend="bib4">Alegado et al., 2003</link>; <link linkend="bib26">Kurz and Tan, 2004</link>).</para>
+        <para>Infection of <emphasis>C. elegans</emphasis> causes specific changes in gene
+            regulation. In the case of bacterial pathogens that colonize the gut, the induced genes
+            include those encoding antimicrobial peptides and proteins, (e.g., certain caenacins and
+            lysozymes, respectively). Many are specifically expressed in the intestinal cells and
+            there is circumstantial evidence to suggest that the peptides and proteins are secreted
+            into the gut lumen and directly target any microorganisms that are there, thereby
+            contributing to the worms' defenses (<link linkend="bib26">Kurz and Tan, 2004</link><!-- PMID 15268752-->; <link linkend="bib33">Mallo et al., 2002</link><!-- PMID 12176330-->). They may act in synergy with constitutively expressed
+            antimicrobial proteins and peptides, including the ABF (anti-bacterial factor) family
+            (<link linkend="bib20">Kato et al., 2002</link><!-- PMID 11772394-->).</para>
+</sect1>
+<sect1>
+<title>The <ulink url="http://www.wormbase.org/db/seq/protein?name=DBL-1;class=protein" role="_blank">DBL-1</ulink> pathway</title>
+<para>The resistance of worms to infection by <emphasis>P. aeruginosa</emphasis> and a second human opportunistic Gram-negative bacterial
+            pathogen, <emphasis>Serratia marcescens</emphasis>, involves in part the <ulink url="http://www.wormbase.org/db/seq/protein?name=DBL-1;class=protein" role="_blank">DBL-1</ulink> pathway
+            (<link linkend="bib33">Mallo et al., 2002</link><!-- PMID 12176330-->; <link linkend="bib48">Tan, 2001</link><!-- PMID-->). The gene <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=dbl-1" role="_blank">dbl-1</ulink></emphasis> (for Dpp, BMP-like; previously referred to as <emphasis>cet-1</emphasis>) encodes one of 4 TGF-<symbol role="symbolfont">&#x03B2;</symbol>-like ligands in the worm. <ulink url="http://www.wormbase.org/db/seq/protein?name=DBL-1;class=protein" role="_blank">DBL-1</ulink> binds the heterodimeric
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=DAF-4;class=protein" role="_blank">DAF-4</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=SMA-6;class=protein" role="_blank">SMA-6</ulink> receptor and acts via the <ulink url="http://www.wormbase.org/db/seq/protein?name=SMA-2;class=protein" role="_blank">SMA-2</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=SMA-3;class=protein" role="_blank">SMA-3</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=SMA-4;class=protein" role="_blank">SMA-4</ulink> SMAD complex to control gene
+            expression (<xref linkend="figure1"/>). It has a role in determining the structure of
+            the male tail, acting through <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-21" role="_blank">mab-21</ulink></emphasis> (<link linkend="bib36">Morita et al., 1999</link><!-- PMID 10021351-->), and in controlling body size and hypodermal and intestinal cell polyploidy
+            via <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lon-1" role="_blank">lon-1</ulink></emphasis> (<link linkend="bib30">Maduzia et al., 2002</link><!-- PMID 12051826-->; <link linkend="bib37">Morita et al., 2002</link><!-- PMID 11867534-->). Based on its similarity to the plant defense protein <ulink url="http://www.wormbase.org/db/seq/protein?name=PR-1;class=protein" role="_blank">PR-1</ulink>, we
+            previously speculated on a direct antimicrobial role for <ulink url="http://www.wormbase.org/db/seq/protein?name=LON-1;class=protein" role="_blank">LON-1</ulink> (<link linkend="bib25">Kurz and Ewbank, 2003</link><!-- PMID 12728280-->). But in fact, neither <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-21" role="_blank">mab-21</ulink></emphasis> nor
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lon-1" role="_blank">lon-1</ulink></emphasis> are required for resistance to <emphasis>P. aeruginosa</emphasis> (M.-W. Tan, personal communication), while
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sma-2" role="_blank">sma-2</ulink></emphasis>, <emphasis>-3</emphasis>, <emphasis>-4</emphasis> and
+                <emphasis>-6</emphasis> are. Thus loss of function mutants in the latter four genes
+            are hypersensitive to infection (<link linkend="bib33">Mallo et al., 2002</link><!-- PMID 12176330-->; <link linkend="bib48">Tan, 2001</link><!-- PMID-->). It
+            therefore appears that the upstream part of a single signaling pathway is used in very
+            distinct contexts and can target different genes when triggered by different stimuli.
+            How multiple independent genes can be specifically regulated as a function of the
+            activation of one pathway is only just beginning to be understood even in simpler model
+            systems (<link linkend="bib47">Seet and Pawson, 2004</link><!-- PMID 15341761-->). In part, the explanation likely comes
+            from pathway cross-talk, the interdependence of signal transduction mechanisms (see, for
+            example, <link linkend="bib34">Millet and Ewbank, 2004</link><!-- PMID 14734103-->) and the temporal and spatial restriction
+            of co-factor expression. As an example of the latter mechanism, it is known that the
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=SMA-2;class=protein" role="_blank">SMA-2</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=SMA-3;class=protein" role="_blank">SMA-3</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=SMA-4;class=protein" role="_blank">SMA-4</ulink> complex can act in association with certain of the multiple isoforms
+            of <ulink url="http://www.wormbase.org/db/seq/protein?name=SMA-9;class=protein" role="_blank">SMA-9</ulink>, a zinc finger transcription factor, and that the different
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sma-9" role="_blank">sma-9</ulink></emphasis> transcripts do have different patterns of expression (<link linkend="bib28">Liang et al., 2003</link><!-- PMID 14627718-->).</para>
+        <mediaobject id="figure1" xreflabel="Figure 1">
+            <imageobject>
+                <imagedata entityref="fig1" width="3.5in" align="center"/>
+            </imageobject>
+            <textobject>
+				<phrase> figure 1</phrase>
+			</textobject> &fig1legend;</mediaobject>
+</sect1>     
+<sect1>     
+<title>The <ulink url="http://www.wormbase.org/db/seq/protein?name=DAF-2;class=protein" role="_blank">DAF-2</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=DAF-16;class=protein" role="_blank">DAF-16</ulink> pathway</title>
+         <para>One of the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=dbl-1" role="_blank">dbl-1</ulink></emphasis> pathway targets that is upregulated by bacterial
+            infection is the lysozyme gene <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lys-8" role="_blank">lys-8</ulink></emphasis>. A second pathway shown to be
+            involved in antibacterial defenses, the <ulink url="http://www.wormbase.org/db/seq/protein?name=DAF-2;class=protein" role="_blank">DAF-2</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=DAF-16;class=protein" role="_blank">DAF-16</ulink> pathway (<xref linkend="figure2"/>), also regulates its expression (<link linkend="bib38">Murphy et al., 2003</link><!-- PMID 12845331-->). Alluded to
+            above, this pathway has been well characterized for its role in the control of longevity
+            in <emphasis>C. elegans</emphasis>.</para>
+            <mediaobject id="figure2" xreflabel="Figure 2">
+                <imageobject>
+                    <imagedata entityref="fig2" width="6in" align="center"/>
+                </imageobject>
+                <textobject>
+				<phrase> figure 2</phrase>
+				</textobject> &fig2legend;</mediaobject>
+            <para>Not only are <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=daf-2" role="_blank">daf-2</ulink></emphasis> mutants long-lived on a diet of OP50, but they also resist infection by a range of both
+            Gram-negative and Gram-positive bacterial pathogens (<link linkend="bib14">Garsin et al., 2003</link><!-- PMID 12817143-->). Known targets of the <ulink url="http://www.wormbase.org/db/seq/protein?name=DAF-2;class=protein" role="_blank">DAF-2</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=DAF-16;class=protein" role="_blank">DAF-16</ulink> pathway include the poorly characterized
+            members of the <emphasis>dod</emphasis> (<emphasis role="underline">d</emphasis>ownstream <emphasis role="underline">o</emphasis>f <ulink url="http://www.wormbase.org/db/seq/protein?name=DAF-16;class=protein" role="_blank"><emphasis role="underline">D</emphasis>AF-16</ulink>) gene group as well as
+            patent antimicrobial genes, such as <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lys-7" role="_blank">lys-7</ulink></emphasis>, those encoding saposins
+                (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=spp-1" role="_blank">spp-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=spp-12" role="_blank">spp-12</ulink></emphasis>, two of the worm's 20
+                <emphasis>spp</emphasis> genes) and the nematode thaumatin homologues (that in
+            plants are antifungal proteins; <link linkend="bib38">Murphy et al., 2003</link><!-- PMID 12845331-->). The pathway is
+            assumed to contribute to resistance to infection by regulating the production of these
+            different secreted antimicrobial proteins, as described for the <ulink url="http://www.wormbase.org/db/seq/protein?name=DBL-1;class=protein" role="_blank">DBL-1</ulink> pathway above.
+            Indeed, abrogation of the expression of several of these proteins (e.g., <ulink url="http://www.wormbase.org/db/seq/protein?name=SPP-1;class=protein" role="_blank">SPP-1</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=SPP-12;class=protein" role="_blank">SPP-12</ulink>
+            and <ulink url="http://www.wormbase.org/db/seq/protein?name=LYS-7;class=protein" role="_blank">LYS-7</ulink>) in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=daf-2" role="_blank">daf-2</ulink></emphasis> mutants leads to reduction in lifespan (<link linkend="bib38">Murphy et al., 2003</link><!-- PMID 12845331-->). It is noteworthy that the expression of <ulink url="http://www.wormbase.org/db/seq/protein?name=LYS-1;class=protein" role="_blank">LYS-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=LYS-2;class=protein" role="_blank">LYS-2</ulink>,
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=SPP-3;class=protein" role="_blank">SPP-3</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=SPP-18;class=protein" role="_blank">SPP-18</ulink> is also strongly upregulated upon <emphasis>P. aeruginosa</emphasis>
+            infection (<link linkend="bib26">Kurz and Tan, 2004</link><!-- PMID 15268752-->).</para>
+</sect1>
+<sect1>
+<title>The MAP kinase pathway</title>        
+<para>Resistance to <emphasis>P. aeruginosa</emphasis> has been shown to involve a third
+            pathway, a MAP kinase pathway, involving the MAP3K <ulink url="http://www.wormbase.org/db/seq/protein?name=NSY-1;class=protein" role="_blank">NSY-1</ulink> and the MAP2K <ulink url="http://www.wormbase.org/db/seq/protein?name=SEK-1;class=protein" role="_blank">SEK-1</ulink> that had originally been characterized as playing a role in determining asymmetric neuronal cell fate. While in wild-type worms the chemoreceptor
+<ulink url="http://www.wormbase.org/db/seq/protein?name=STR-2;class=protein" role="_blank">STR-2</ulink> is only expressed in one of the two AWC neurons, in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=nsy-1" role="_blank">nsy-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sek-1" role="_blank">sek-1</ulink></emphasis> mutants, both sister neurons express the receptor (<link linkend="bib42">Sagasti et al., 2001</link><!-- PMID 11336672-->; <link linkend="bib51">Tanaka-Hino et al., 2002</link><!-- PMID 11751572-->).
+            Alleles of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=nsy-1" role="_blank">nsy-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sek-1" role="_blank">sek-1</ulink></emphasis> were found in a
+            genetic screen for worms hyper-susceptible to <emphasis>P. aeruginosa</emphasis> and the
+            two genes were shown to act together upstream of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pmk-1" role="_blank">pmk-1</ulink></emphasis>. RNAi
+            against this gene, which encodes one of the worm's three p38-family MAP kinases, also
+            results in an increased susceptibility to infection (<link linkend="bib21">Kim et al., 2002</link><!-- PMID 12142542-->).
+            While in the context of cell determination <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=nsy-1" role="_blank">nsy-1</ulink></emphasis> and
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sek-1" role="_blank">sek-1</ulink></emphasis> act downstream of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-43" role="_blank">unc-43</ulink></emphasis> that
+            encodes a calcium-calmodulin-dependent kinase, this latter gene has been reported not to
+            play a role in innate immune signaling (<link linkend="bib21">Kim et al., 2002</link><!-- PMID 12142542-->). Further,
+            abrogation of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pmk-1" role="_blank">pmk-1</ulink></emphasis> function by RNAi does not provoke a cell
+            determination phenotype, suggesting that the downstream components of the pathway may
+            also differ in the two contexts (<link linkend="bib6">Chuang and Bargmann, 2005</link><!--PMID 15625192-->). On the other
+            hand, as discussed below, the adaptor protein <ulink url="http://www.wormbase.org/db/seq/protein?name=TIR-1;class=protein" role="_blank">TIR-1</ulink> was shown to be
+            involved in both neuronal and defense pathways (<xref linkend="figure3"/>).</para>
+        <mediaobject id="figure3" xreflabel="Figure 3">
+            <imageobject>
+                <imagedata entityref="fig3" width="4in" align="center"/>
+            </imageobject>
+            <textobject>
+				<phrase> figure 3</phrase>
+			</textobject> &fig3legend;</mediaobject>
+</sect1>
+<sect1>
+<title>Role of Toll-like receptors</title>        
+<para><emphasis>P. aeruginosa</emphasis> and <emphasis>S. marcescens</emphasis> are both
+            extracellular pathogens with a broad host range. <emphasis>Salmonella
+            typhimurium</emphasis> on the other hand causes very specific diseases in mammals,
+            associated with its entry into, and subsequent replication within host cells. Many
+            different <emphasis>Salmonella</emphasis> strains can infect worms, but they do not
+            behave as intracellular pathogens, and instead establish a permanent and debilitating
+            colonization of the intestine (<link linkend="bib3">Aballay et al., 2000</link><!-- PMID 0011114525-->; <link linkend="bib27">Labrousse et al., 2000</link><!-- PMID 0011114526-->). Infection of <emphasis>C. elegans</emphasis> provokes germline
+            apoptosis in a <emphasis>pmk 1</emphasis>-dependent fashion (<link linkend="bib1">Aballay and Ausubel, 2001</link><!--PMID 11226309-->; <link linkend="bib2">Aballay et al., 2003</link><!-- -PMID 12526744-->). <emphasis>Salmonella</emphasis>
+            mutants with an altered lipopolysaccharide (LPS; one of the main components of the
+            Gram-negative bacterial outer membrane) do not trigger the response. In vertebrates, the
+            Toll-like receptor TLR4 functions in LPS-recognition, but the sole worm TLR, encoded by
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tol-1" role="_blank">tol-1</ulink></emphasis>, is not necessary for
+            <emphasis>Salmonella</emphasis>-induced apoptosis (<link linkend="bib2">Aballay et al., 2003</link><!-- PMID 12526744-->).</para>
+        <para>In <emphasis>Drosophila</emphasis>, activation of Toll leads to the expression of
+            antifungal peptides. It appears that <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tol-1" role="_blank">tol-1</ulink></emphasis> is not directly involved
+            in regulating the expression of antimicrobial peptides, nor does it contribute to worms'
+            resistance to fungal infection (<link linkend="bib7">Couillault et al., 2004</link><!-- PMID 15048112-->), although it
+            does play an enigmatic role in a specific behavioral response that leads N2 worms to
+            avoid pathogenic <emphasis>S. marcescens</emphasis>, and is essential for embryonic
+            development (<link linkend="bib40">Pujol and Ewbank, 2003</link><!-- PMID-->; <link linkend="bib41">Pujol et al., 2001</link><!-- PMID 11516642-->).
+            Activation of TLRs in flies and mammals, where they play key roles in innate immunity,
+            leads to the nuclear import of NF-<symbol role="symbolfont">&#x03BA;</symbol>B
+            family transcription factors. There is no evident NF-<symbol role="symbolfont">&#x03BA;</symbol>B homolog in <emphasis>C. elegans</emphasis>. There are
+            several interpretations of these findings. Assuming a phylogeny that places <emphasis>C.
+                elegans</emphasis> and <emphasis>Drosophila</emphasis> in the same clade (the
+            Ecdysozoa), we previously proposed that the worm lost NF-<symbol role="symbolfont">&#x03BA;</symbol>B and the associated signaling pathways (<link linkend="bib23">Kurz and Ewbank, 2003</link><!--PMID 12728280-->). But, if flies are closer to humans in evolutionary terms than
+            worms are, a role for TLRs in defense may have evolved following the acquisition of
+                NF-<symbol role="symbolfont">&#x03BA;</symbol>B, after the split of the
+            nematodes from a common fly-human ancestor. As an alternative, it has been suggested
+            that a role for TLRs in innate immune signaling arose independently in protostomial and
+            deuterostomial coelomates, possibly for controlling microbial infection in the body
+            cavity (<link linkend="bib19">Kanzok et al., 2004</link><!-- PMID 15114422-->). It is noteworthy that work from H. Fares
+            has shown that <emphasis>C. elegans</emphasis> is extremely susceptible to the
+            intra-pseudocoelomic injection of even small numbers of non-pathogenic bacteria, and
+            that the coelomocytes appear not to have the capacity to phagocytose foreign particles
+            (reported in <link linkend="bib10">Ewbank, 2002</link><!--PMID 11880058-->). Currently, nothing is known of the signaling
+pathway that is downstream of <ulink url="http://www.wormbase.org/db/seq/protein?name=TOL-1;class=protein" role="_blank">TOL-1</ulink>, but it would be interesting to characterize as it
+            could represent the earliest context for TLR function.</para>
+        <para>TLRs share a common structure, and are comprised of an ectodomain of leucine-rich
+            repeats and an intracellular TIR (for Toll and Interleukin-1 receptor) domain that is
+            also present in a number of plant disease resistance proteins. In mammals, the
+            functionally characterized TLRs all act via TIR-domain containing adaptor proteins that
+            serve as signal transducers ultimately provoking a pro-inflammatory response via
+                NF-<symbol role="symbolfont">&#x03BA;</symbol>B. There are 5 members of the
+            TIR-domain adaptor family, and 4 of them, MyD88, TIRAP/Mal, TICAM/Trif and TRAM have
+            known roles in TLR signal transduction. The fifth, SARM has no known function, but is
+            the only one to have a direct orthologue in <emphasis>C. elegans</emphasis>. Given the
+            importance of TIR-domain proteins in both plants and animals, it was natural that the
+            role of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tir-1" role="_blank">tir-1</ulink></emphasis> in nematode defences was evaluated. It turned out
+            that the gene is important for resistance to the bacterial pathogens <emphasis>S.
+                marcescens</emphasis> and <emphasis>P. aeruginosa</emphasis> but not apparently for
+            normal longevity (<link linkend="bib7">Couillault et al., 2004</link><!-- PMID 15048112-->; <link linkend="bib29">Liberati et al., 2004</link><!-- PMID 15123841-->). RNAi directed against all 5 <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tir-1" role="_blank">tir-1</ulink></emphasis> isoforms provokes an
+            increased susceptibility not only to bacterial infection but also to the fungus
+                <emphasis>Drechmeria coniospora</emphasis>. Indeed, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tir-1" role="_blank">tir-1</ulink></emphasis> was
+            shown to be necessary for the induction of antimicrobial peptide expression provoked by
+            infection (<link linkend="bib7">Couillault et al., 2004</link><!-- PMID 15048112-->), specifically that of <ulink url="http://www.wormbase.org/db/seq/protein?name=NLP-29;class=protein" role="_blank">NLP-29</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=NLP-31;class=protein" role="_blank">NLP-31</ulink> (<xref linkend="figure4"/>). The expression, and presumably secretion, of these glycine- and tyrosine-rich peptides is increased following infection by <emphasis>D. coniospora</emphasis>. Significantly, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tir-1" role="_blank">tir-1</ulink></emphasis> appears to act in a TLR-independent fashion, suggesting that it may participate in a hitherto uncharacterised innate defence pathway (<link linkend="bib7">Couillault et al., 2004</link><!-- PMID 15048112-->). On the other hand, as mentioned above, it acts together with <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=nsy-1" role="_blank">nsy-1</ulink></emphasis> and
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sek-1" role="_blank">sek-1</ulink></emphasis> (<link linkend="bib29">Liberati et al., 2004</link><!-- PMID 15123841-->), and in fact was
+            identified (under the name of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=nsy-2" role="_blank">nsy-2</ulink></emphasis>) in the original screen for
+            genes necessary for the asymmetric expression of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=str-2" role="_blank">str-2</ulink></emphasis> in the AWC
+            pair of neurons. Further, it has been shown that <ulink url="http://www.wormbase.org/db/seq/protein?name=TIR-1;class=protein" role="_blank">TIR-1</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=NSY-1;class=protein" role="_blank">NSY-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=SEK-1;class=protein" role="_blank">SEK-1</ulink> can be co-immunoprecipitated when co-expressed
+            in cell culture, and so probably form a physical complex (<link linkend="bib6">Chuang and Bargmann, 2005</link><!--; PMID 15625192-->). These results, and the fact that <ulink url="http://www.wormbase.org/db/seq/protein?name=PMK-1;class=protein" role="_blank">PMK-1</ulink> phosphorylation is <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tir-1" role="_blank">tir-1</ulink></emphasis>-dependent (<link linkend="bib29">Liberati et al., 2004</link>), thus place the gene firmly in a MAPK pathway, but suggest that its activation in the context of infection in adult worms is different from that seen in the AWC neurons during development (<xref linkend="figure3"/>). Significantly, the enhanced susceptibility to <emphasis>P. aeruginosa</emphasis> infection of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sek-1" role="_blank">sek-1</ulink></emphasis> mutants can be rescued by intestine-specific expression of a
+            wild-type transgene (<link linkend="bib43">Sakaguchi et al., 2004</link><!-- PMID 15269234-->). <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tir-1" role="_blank">tir-1</ulink></emphasis>
+            has also been shown to interact in two-hybrid screens with <ulink url="http://www.wormbase.org/db/seq/protein?name=RAB-1;class=protein" role="_blank">RAB-1</ulink> and the f subunit of
+            ATP synthase. As RNAi of the corresponding genes phenocopies <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tir-1" role="_blank">tir-1</ulink></emphasis>
+            RNAi, these interactions would seem to be real (<link linkend="bib7">Couillault et al., 2004</link><!-- PMID 15048112-->).
+            For the moment their functional integration with <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tir-1" role="_blank">tir-1</ulink></emphasis> in the cell
+            remains obscure. Additionally, the putative receptor involved in pathogen recognition
+            upstream of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tir-1" role="_blank">tir-1</ulink></emphasis> has yet to be identified Genetic screens are currently underway to try to fill these lacunae (C. L. Kurz and N. Pujol, unpublished results).</para>
+        <mediaobject id="figure4" xreflabel="Figure 4">
+            <imageobject>
+                <imagedata entityref="fig4" width="5.6in" align="center"/>
+            </imageobject>
+            <textobject>
+				<phrase> figure 4</phrase>
+			</textobject> &fig4legend;</mediaobject>
+</sect1>
+<sect1>
+	<title>The ERK pathway</title>
+        <para>A different MAPK pathway, the ERK pathway involving <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-45;class=protein" role="_blank">LIN-45</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=MEK-2;class=protein" role="_blank">MEK-2</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=MPK-1;class=protein" role="_blank">MPK-1</ulink> (<xref linkend="figure5" />), is involved in the response of worms to the Gram-positive bacterial pathogen <emphasis>Microbacterium nematophilum</emphasis> (<link linkend="bib39">Nicholas and Hodgkin, 2004</link><!-- PMID 15268855-->). In this case, the bacteria adhere to a specific rectal and peri-anal region of the cuticle and induce a conspicuous swelling (<link linkend="bib17">Hodgkin et al., 2000</link>) that constitutes a specific host defense mechanism (<link linkend="bib54">Gravato-Nobre et al., 2005</link>).</para>
+<literallayout></literallayout>
+            <mediaobject id="figure5" xreflabel="Figure 5">
+                <imageobject>
+                    <imagedata entityref="fig5" width="1.5in" align="center"/>
+                </imageobject>
+                <textobject>
+					<phrase>figure 5</phrase>
+				</textobject> &fig5legend;</mediaobject>
+</sect1>
+<sect1>
+<title>Recognition of infection through stress response</title>            
+<para>In common with the other pathways mentioned above, in the case of
+                <emphasis>M. nematophilum</emphasis> it is unclear how the infection is recognised.
+            There still remains the formal possibility that <emphasis>C. elegans</emphasis> responds
+            to a stress induced by infection and not to the presence of a pathogen. For example, the
+                <emphasis>P. aeruginosa</emphasis> strain PA01 produces cyanide that paralyses and
+            kills worms (<link linkend="bib8">Darby et al., 1999</link><!-- PMID-->; <link linkend="bib12">Gallagher and Manoil, 2001</link><!-- PMID 11591663-->). In
+            common with the response to hypoxia, the response to PA01 involves the oxygen sensor
+            protein <ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-9;class=protein" role="_blank">EGL-9</ulink> that regulates the hypoxia-induced factor <ulink url="http://www.wormbase.org/db/seq/protein?name=HIF-1;class=protein" role="_blank">HIF-1</ulink> (<link linkend="bib9">Epstein et al., 2001</link><!--; PMID 11595184-->).<emphasis> <ulink url="http://www.wormbase.org/db/gene/gene?name=egl-9" role="_blank">egl-9</ulink></emphasis> mutants are resistant to PA01 (<link linkend="bib8">Darby et al., 1999</link><!--; PMID-->), presumably since they have an increased resistance to hypoxia at the
+            cellular level. In a similar manner, it is known that the response to the Cry toxins
+            produced by pathogenic <emphasis>Bacillus thuringiensis</emphasis> involves 2 distinct
+            MAPK pathways (p38 and JNK) and overlap to some degree with the response to abiotic
+            stresses such as heavy metals (<link linkend="bib18">Huffman et al., 2004</link><!-- PMID 15256590-->; reviewed in <link linkend="bib53">Young and Dillin, 2004</link><!-- PMID 15328410-->) and that the <ulink url="http://www.wormbase.org/db/seq/protein?name=DAF-2;class=protein" role="_blank">DAF-2</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=DAF-16;class=protein" role="_blank">DAF-16</ulink> pathway is involved in
+            resistance to heat, UV, hypoxia (<link linkend="bib46">Scott et al., 2002</link><!-- PMID 12065745-->), and heavy metals
+            (<link linkend="bib5">Barsyte et al., 2001</link><!-- PMID 11259381-->). Further, recent work has identified the MAPK
+            phosphatase VHP 1 as an integrator of the stress response provoked by heavy metals and
+            by infection, revealed the MAP2K <ulink url="http://www.wormbase.org/db/seq/protein?name=MEK-1;class=protein" role="_blank">MEK-1</ulink> to be required for full activation of <ulink url="http://www.wormbase.org/db/seq/protein?name=PMK-1;class=protein" role="_blank">PMK-1</ulink> (<link linkend="bib22">Kim et al., 2004</link><!-- PMID 15256594-->; <link linkend="bib35">Mizuno et al., 2004</link><!-- PMID 15116070-->), and shown that there
+            is a link between a MAPK pathway and the <ulink url="http://www.wormbase.org/db/seq/protein?name=DAF-2;class=protein" role="_blank">DAF-2</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=DAF-16;class=protein" role="_blank">DAF-16</ulink> pathway, as oxidative
+            stress-induced activation of <ulink url="http://www.wormbase.org/db/seq/protein?name=DAF-16;class=protein" role="_blank">DAF-16</ulink> requires the MAP2K <ulink url="http://www.wormbase.org/db/seq/protein?name=SEK-1;class=protein" role="_blank">SEK-1</ulink>. Significantly, normal
+            activation of <ulink url="http://www.wormbase.org/db/seq/protein?name=DAF-16;class=protein" role="_blank">DAF-16</ulink> was observed in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sek-1" role="_blank">sek-1</ulink></emphasis> mutants upon heat shock or starvation (<link linkend="bib24">Kondo et al., 2005</link>). On the other hand, the nuclear translocation of <ulink url="http://www.wormbase.org/db/seq/protein?name=DAF-16;class=protein" role="_blank">DAF-16</ulink> provoked by heat shock does require <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=jnk-1" role="_blank">jnk-1</ulink></emphasis>. Indeed <ulink url="http://www.wormbase.org/db/seq/protein?name=DAF-16;class=protein" role="_blank">DAF-16</ulink> appears to be a direct of <ulink url="http://www.wormbase.org/db/seq/protein?name=JNK-1;class=protein" role="_blank">JNK-1</ulink> phosphorylation (<link linkend="bib55">Oh et al., 2005</link>). These results clearly indicate that different pathways intervene in the response to distinct types of stress. These pathways are summarized in <xref linkend="figure6"/>.</para>
+        <mediaobject id="figure6" xreflabel="Figure 6">
+            <imageobject>
+                <imagedata entityref="fig6" width="4in" align="center"/>
+            </imageobject>
+            <textobject>
+				<phrase> figure 6</phrase>
+			</textobject> &fig6legend;</mediaobject>
+        <para>Despite these observations, the specificity of the induction of particular genes following infection argues for a more specific recognition and directed response. This is well illustrated for certain members of the <emphasis>nlp</emphasis> family, as individualgenes show distinct patterns of induction despite their similar sequences and close proximity in the genome. For example, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=nlp-29" role="_blank">nlp-29</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=nlp-31" role="_blank">nlp-31</ulink></emphasis> lie within a cluster of 6 <emphasis>nlp</emphasis> genes (<xref linkend="figure7"/>) but only p<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=nlp-29" role="_blank">nlp-29</ulink></emphasis>::gfp shows an intense induction in the peri-vulval cells upon <emphasis>D. coniospora</emphasis> infection (<link linkend="bib7">Couillault et al., 2004</link>). Further, different natural isolates of <emphasis>C. elegans</emphasis> can show very variable responses to infection, even when taken from the same geographic location (<link linkend="bib44">Schulenburg and Ewbank, 2004</link><!-- PMID 15555070-->).</para>
+</sect1>
+<sect1>
+	<title>Perspectives</title>
+		<para>The study of innate immunity in <emphasis>C. elegans</emphasis> is in its infancy.
+            Nevertheless, considerable advances have already been made in identifying signal
+            transduction pathways involved in the response to a number of pathogens. Little is know
+            about how different cells communicate during the response to infection. Judging from
+            what has been learnt about the regulation of longevity and resistance to oxidative
+            stress (e.g., <link linkend="bib11">Fujii et al., 2004</link><!-- PMID 14982934-->), it seems probable that the nervous
+            system will play a signaling or integrative role (reviewed in <link linkend="bib34">Millet and Ewbank, 2004</link><!-- PMID 14734103-->). Future work will also undoubtedly lead to an understanding of how pathogens are discriminated, as well as addressing the mechanisms involved in the response to intracellular pathogens, including viruses. RNAi is thought to represent an ancient and conserved antiviral response. Although for the moment no models of natural viral infection of <emphasis>C. elegans</emphasis> have been established, results from several laboratories strongly support such an idea (<link linkend="bib57">Lu et al., 2005</link>; <link linkend="bib58">Wilkins et al., 2005</link>; <link linkend="bib56">Schott et al., 2005</link>). Another area ripe for
+            study is the cell biology of the response; there are already tantalizing hints of a
+            coordination via <ulink url="http://www.wormbase.org/db/seq/protein?name=RAB-1;class=protein" role="_blank">RAB-1</ulink> of the signaling pathways that lead to antimicrobial peptide
+            expression and the subsequent secretion of these molecules (<link linkend="bib7">Couillault et al., 2004</link><!-- PMID 15048112-->). The fact that parts of “innate immunity” pathways function in other
+            essential cellular processes raises a host of issues, such as the primacy of the
+            different roles, the mechanics of their separation and the evolutionary constraints
+            associated with this molecular parsimony (<link linkend="bib45">Schulenburg et al., 2004</link><!-- PMID 15199953-->). Work
+            currently underway in an increasing number of laboratories will help answer these
+            questions, and should aid our understanding of vertebrate immunity.</para>
+<literallayout></literallayout>
+    <mediaobject id="figure7" xreflabel="Figure 7">
+        <imageobject>
+            <imagedata entityref="fig7" width="6in" align="center"/>
+        </imageobject>
+        <textobject>
+			<phrase> figure 7</phrase>
+		</textobject> &fig7legend;</mediaobject>
+</sect1>    
+<sect1>
+        <title>Acknowledgements</title>
+		<para>I thank L&#x000E9;o Kurz, Nathalie Pujol and Hinrich Schulenburg for constructive criticism, former and present members of my group for their contribution to the work described and the different laboratories using <emphasis>C. elegans</emphasis> as a model for the study of host-pathogen interactions for open and stimulating discussion. Work in the lab is supported by INSERM, the CNRS, the French Ministry of Research, the Marseille-Nice genopole&#x000AE; and the European Community (Nemagenetag).</para>
+	</sect1>
+    <sect1>
+        <title>References</title>
+		<para/>
+		&immuneresponse_Refs;</sect1>
+</article>

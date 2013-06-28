@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY fig1 SYSTEM 'germlinegenomicsfig1.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'germlinegenomicsfig1leg.xml'>
+<!ENTITY fig2 SYSTEM 'germlinegenomicsfig2.jpg' NDATA JPG>
+<!ENTITY fig2legend SYSTEM 'germlinegenomicsfig2leg.xml'>
+<!ENTITY fig3 SYSTEM 'germlinegenomicsfig3.jpg' NDATA JPG>
+<!ENTITY fig3legend SYSTEM 'germlinegenomicsfig3leg.xml'>
+<!ENTITY fig4 SYSTEM 'germlinegenomicsfig4.jpg' NDATA JPG>
+<!ENTITY fig4legend SYSTEM 'germlinegenomicsfig4leg.xml'>
+
+<!ENTITY germlinegenomics_Refs SYSTEM 'germlinegenomicsrefs.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="Germlinegenomics_ArticleID">
+    <articleinfo>
+        <!--see DocBook's authorgroup element -->
+        <title>Germline genomics<remark>
+                <footnote>
+                    <para>Edited by Judith Kimble and Susan Strome. Last revised March 18, 2005. Published January 20, 2006. This chapter should be cited as: Reinke, V. Germline genomics (January 20, 2006), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.74.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+		<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2006 Valerie Reinke. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+                </footnote>
+            </remark>
+        </title>
+        <!--		<revhistory>
+			<revision>
+				<revnumber>1.0</revnumber>
+				<date>Last revised 3/18/05</date>
+			</revision>
+		</revhistory>
+-->
+        <author>
+            <firstname>Valerie</firstname>
+            <surname>Reinke<remark>
+                    <footnote>
+                        <para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:valerie.reinke@yale.edu">valerie.reinke@yale.edu</ulink></para>
+                    </footnote>
+                </remark>
+            </surname>
+            <affiliation>
+                <address>Department of Genetics, Yale University, New Haven, CT 06520 USA</address>
+            </affiliation>
+        </author>
+    </articleinfo>
+    <abstract>
+        <title><emphasis role="bold">Abstract</emphasis></title>
+        <para><emphasis role="bold">The completion of the</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">genome sequence permits the
+            comprehensive examination of the expression and function of genes. Annotation of
+            virtually every encoded gene in the genome allows systematic analysis of those genes
+            using high-throughput assays, such as microarrays and RNAi. This chapter will center on
+            the use of microarrays to comprehensively identify genes with enriched expression in the
+            germ line during development. This knowledge provides a database for further studies
+            that focus on gene function during germline development or early embryogenesis.
+            Additionally, a comprehensive overview of germline gene expression can uncover striking
+            biases in how genes expressed in the germ line are distributed in the genome, leading to
+            new discoveries of global regulatory mechanisms in the germ line.</emphasis></para>
+    </abstract>
+    <sect1>
+        <title>Regulatory mechanisms of germline gene expression</title>
+        <para>Regulation of gene expression at both transcriptional and post-transcriptional levels
+            is crucial for the proper specification, proliferation and differentiation of germ
+            cells. At the transcriptional level, certain genes are effectively silenced while
+            other genes are expressed (see <ulink url="http://www.wormbook.org/chapters/www_specgermline/specgermline.html" role="_blank">Specification of the germ line</ulink> and <ulink url="http://www.wormbook.org/chapters/www_germlinechromatin/germlinechromatin.html" role="_blank">Germline chromatin</ulink>). After transcript production, complex networks of RNA regulatory proteins
+            modulate either the stability and/or translation of mRNAs. These processes combine to effectively control, both spatially and
+            temporally, the levels of germline-expressed gene products. Our understanding of these
+            mechanisms in the germ line is still murky. How are genes selected for silencing or
+            expression? How does germline gene expression influence the organization of genes in the
+            genome, and vice versa? How are the dramatic structural changes of meiotic chromosomes
+            coordinated with continued gene expression? What mechanisms control spatial and temporal
+            expression within the germ line?</para>
+        <para>For those wishing to understand these aspects of germline development, one goal is to
+            identify every germline-expressed gene. With such information in hand, it is possible to
+            analyze gene functions by RNAi and decipher regulatory mechanisms by a combination of
+            bioinformatics and molecular genetics. Such genome-wide studies reveal global trends,
+            and also identify individual genes that might function to control germ cell fate decisions or
+            terminal differentiation of gametes, making them candidates for future functional study.</para>
+    </sect1>
+    <sect1>
+        <title>Gene expression profiling of the germ line</title>
+        <sect2>
+            <title>DNA microarray technology</title>
+            <para>DNA microarray technology is frequently used to monitor changes in gene expression
+                for thousands of genes simultaneously (reviewed in <link linkend="bib7">Duggan et al., 1999</link><!-- [PMID 9915494]-->). Typically, DNA microarrays are common laboratory glass slides upon which
+                is printed a series of discrete spots of DNA. Each spot corresponds to some portion
+                of a known gene or predicted open reading frame. For each experiment, a comparison
+                is made between two different populations of transcripts that have been
+                reverse-transcribed to cDNA, each in the presence of a distinct fluorescent label.
+                At each spot, competitive hybridization between the two populations occurs. The
+                relative intensity of the two fluorescent labels at each spot measures the relative
+                abundance of a given gene transcript between the two populations (<xref linkend="figure1"/>). When used in this manner, microarrays provide information
+                about the steady state levels of mRNAs; they do not directly address the rate at
+                which a transcript is synthesized or degraded. The <emphasis>C. elegans</emphasis>
+                DNA microarrays that primarily have been used to investigate germline gene
+                expression contain over 18,000 spots and represent about 90<symbol role="symbolfont">&#x0025;</symbol> of the currently annotated genes in the
+                genome (<link linkend="bib12">Jiang et al., 2001</link><!-- [PMID 11134517]-->; see <ulink url="http://www.wormbook.org/chapters/www_DNAmicroarrays/DNAmicroarrays.html">DNA microarrays</ulink>).</para>
+<literallayout></literallayout>
+            <mediaobject id="figure1" xreflabel="Figure 1">
+                <imageobject>
+                    <imagedata entityref="fig1" align="center" width="4in"/>
+                </imageobject>
+                <textobject>
+                    <phrase> Example of microarray hybridization figure 1</phrase>
+                </textobject> &fig1legend;</mediaobject>
+        </sect2>
+<?newpage?>
+        <sect2>
+            <title>Identification of germline-enriched genes in adult hermaphrodites</title>
+            <para>The comprehensive identification of germline-expressed genes will comprise a
+                molecular definition of germline components, and provide the framework to identify
+                individual genes involved in specific germline functions. Microarrays are an
+                excellent platform to achieve such a goal because the expression of all genes in the
+                genome can be examined simultaneously. Microarray analysis of mutants that perturb
+                specific aspects of germline development has been very useful in defining sets of
+                genes with germline-enriched expression. Discussed below are three sets of genes
+                that have been identified to date: genes with enriched expression in the germline
+                relative to the soma, genes with enriched expression during spermatogenesis, and
+                genes with enriched expression during oogenesis.</para>
+            <para>One of the most straightforward comparisons identified genes with
+                germline-enriched expression relative to somatic tissues (<link linkend="bib20">Reinke et al., 2000</link><!--[PMID 11030340]-->; <link linkend="bib19">Reinke et al., 2004</link><!-- [PMID 14668411])-->). A temperature-sensitive
+                mutation, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-4" role="_blank">glp-4</ulink>(bn2)</emphasis>, causes severe defects in germ cell
+                proliferation, resulting in gonads with <symbol role="symbolfont">&#x223C;</symbol>100-fold fewer germ cells than wild type
+                (<link linkend="bib4">Beanan and Strome, 1992</link><!-- [PMID 1289064]-->). Microarray comparison of either L4 or
+                young adult wild type hermaphrodites to <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-4" role="_blank">glp-4(ts)</ulink></emphasis>
+                hermaphrodites of the corresponding stage identified 3144 genes with
+                germline-enriched expression relative to somatic tissues in hermaphrodites (<symbol role="symbolfont">&#x003E;</symbol>2x, p<symbol role="symbolfont">&#x003C;</symbol>0.01). When a similar comparison was done
+                with wild-type and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-4(ts)</ulink></emphasis> males, 1092 genes showed
+                significantly enriched expression in the germ line. Previous single-gene analyses
+                had identified <symbol role="symbolfont">&#x223C;</symbol>70 genes that are
+                expressed and/or function in the hermaphrodite germline. Essentially every one of
+                these genes was correctly identified as germline-enriched in the microarray
+                experiments, demonstrating the accuracy and comprehensiveness of the microarray
+                approach. However, it is important to note that a gene with equivalent expression in
+                both samples, even if expressed in the germline, will not be identified as a
+                “germline gene”. Thus, these studies are limited to identification of genes with
+                <emphasis>enriched</emphasis> expression in the germ line relative to the soma.</para>
+            <para>While the identification of genes with germline-enriched expression in the two
+                sexes is informative, the number of genes identified is formidably large. Further
+                microarray experiments using mutants that affect gametogenesis helped to group these
+                genes into distinct categories. <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-1" role="_blank">fem-1</ulink>(lf)</emphasis> mutant hermaphrodites
+                are defective in initiation of spermatogenesis and consequently produce only oocytes
+                (<link linkend="bib15">Nelson et al., 1978</link><!-- [PMID 700253]-->), while <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink>(gf)</emphasis> mutants
+                are defective in switching from spermatogenesis to oogenesis and consequently
+                produce only sperm (<link linkend="bib1">Barton et al. 1987</link><!-- [PMID 3557107]-->). Direct comparison of the
+                genes differentially expressed between <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-1" role="_blank">fem-1</ulink>(lf)</emphasis> and
+                    <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink>(gf)</emphasis> populations defined two sets of genes: those
+                expressed during spermatogenesis (1343) and those expressed during oogenesis (1652)
+                    (<symbol role="symbolfont">&#x003E;</symbol>2x, p<symbol role="symbolfont">&#x003C;</symbol>0.01). Genes with high expression during
+                spermatogenesis are likely to be involved in spermatocyte specification and
+                differentiation. Genes with high expression during oogenesis are expected to encode
+                proteins required for oocyte differentiation as well as maternally provided factors
+                necessary for proper development of the early embryo.</para>
+            <para>Combination of the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-4" role="_blank">glp-4</ulink>(ts)</emphasis> vs wild type comparison and the
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-1" role="_blank">fem-1</ulink>(lf)</emphasis> vs <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink>(gf)</emphasis> comparison
+                identifies 4245 genes with expression in the germ line and/or gametes –
+                approximately 20<symbol role="symbolfont">&#x0025;</symbol> of all the genes in
+                the genome (<xref linkend="figure2"/>). These genes can be divided into three
+                groups, spermatogenesis (genes in the green circle), oogenesis (genes in the orange
+                circle), and intrinsic, which includes germline genes not differentially expressed
+                during gametogenesis (genes in the blue circle but not in the green or orange
+                circles). Most of the spermatogenesis-enriched genes identified in hermaphrodites
+                were also enriched in males, as expected.</para>
+            <mediaobject id="figure2" xreflabel="Figure 2">
+                <imageobject>
+                    <imagedata entityref="fig2" align="center" width="4.2in"/>
+                </imageobject>
+                <textobject>
+                    <phrase> Germline gene sets figure 2</phrase>
+                </textobject> &fig2legend;</mediaobject>
+        </sect2>
+		<sect2>
+        <title>Analysis of germline gene expression during development</title>
+        <para>In addition to expression profiles of mutants, temporal expression profiles gathered
+            from wild type animals can also reveal sets of co-regulated genes. Microarrays have been
+            probed with RNAs prepared at consecutive times of development from wild type animals.
+            This timecourse provides high temporal resolution (every 3 hours for 36 hours) of gene
+            expression from mid-L3 through adulthood (<link linkend="bib19">Reinke et al., 2004</link><!-- [PMID 14668411]-->). During
+            this period, major germline events include entry into meiosis, spermatogenesis,
+            oogenesis and embryogenesis. Because intact animals were used for the timecourse
+            analysis, fluctuations in expression of somatic genes would also be detected. Among the
+            major developmental events in the soma during this period are gonadogenesis (i.e.,
+            generation of uterus, spermathecae and sheath cells) and vulval development. Statistical
+            analysis using ANOVA identified 5083 genes with a significant fluctuation in expression
+            level during the timecourse (p<symbol role="symbolfont">&#x003C;</symbol>0.01);
+            among these, 2426 genes had also been identified as germline-regulated genes.</para>
+        <para>To identify sets of co-regulated genes, gene expression data can be grouped together
+            by similarity of expression profiles. One method for grouping genes is hierarchical
+            clustering using the Pearson correlation coefficient to determine relatedness of
+            expression (<link linkend="bib8">Eisen et al., 1998</link><!-- [PMID 9843981]-->). In <xref linkend="figure3"/>,
+            hierarchical clustering was performed on the data from the timecourse microarrays. Not
+            surprisingly, some of these clusters based on common temporal regulation contain
+            particular classes of germline genes, as defined by the analysis of mutants (Clusters D-F in <link linkend="figure3">Figure 3</link>).</para>
+        <mediaobject id="figure3" xreflabel="Figure 3">
+            <imageobject>
+                <imagedata entityref="fig3" align="center" width="5in"/>
+            </imageobject>
+            <textobject>
+                <phrase> Gene expression analysis in larvae and adults figure 3</phrase>
+            </textobject> &fig3legend;</mediaobject>
+        <para>One prominent cluster identified from the timecourse microarrays contains a set of
+            genes with sharp onset of expression in late L3s and abrupt decline in late L4 (cluster
+            D in the temporal clustergram at left in <link linkend="figure3">Figure 3</link>). Examination of this set of genes in
+            the microarray analysis performed on mutants (right side of <link linkend="figure3">Figure 3</link>) showed that 99<symbol role="symbolfont">&#x0025;</symbol> are associated with
+            spermatogenesis. Thus, the spermatogenesis genes are regulated in a fashion that is
+            distinct from the oogenesis and intrinsic genes, and the timing of their expression
+            coincides with the duration of spermatogenesis in late L3/L4 larvae. Additionally,
+            spermatogenesis genes encode different classes of proteins, with more signaling
+            molecules and fewer DNA and RNA metabolism factors (<xref linkend="figure4"/>). Thus,
+            genes with spermatogenesis-enriched expression are clearly distinct from other
+            germline-enriched genes.</para>
+        <mediaobject id="figure4" xreflabel="Figure 4">
+            <imageobject>
+                <imagedata entityref="fig4" align="center" width="4.5in"/>
+            </imageobject>
+            <textobject>
+                <phrase> Classification of germline enriched genes figure 4</phrase>
+            </textobject> &fig4legend;</mediaobject>
+        <para>Unlike the spermatogenesis-enriched genes, expression of other germline-enriched genes
+            (in clusters E and F) increased over time without any significant decline. Overall, the
+            temporal regulation of these germline genes was very similar, but minor differences
+            sub-divided them into two groups. Expression of cluster F genes gradually increases in
+            L3 or L4, while expression of cluster E genes has a more abrupt onset at adulthood. The
+            cluster E expression profile is consistent with oogenesis, which initiates in the adult.
+            However, genes in the intrinsic and oogenesis sets are fairly evenly distributed between
+            cluster E and cluster F. Furthermore, the classes of protein functions are also
+            proportioned similarly in the two clusters (<xref linkend="figure4"/>). Thus, separation
+            of germline genes into “intrinsic” and “oogenesis” categories is not supported by the
+            temporal analysis, and it is difficult at this point to separate genes specifically
+            required in immature germ cells versus maturing oocytes (see <link linkend="bib19">Reinke et al., 2004</link><!-- [PMID 14668411]--> for discussion of possible reasons).</para>
+    </sect2>
+	</sect1>
+    <sect1>
+        <title>Chromosome bias for genes with germline-enriched expression</title>
+        <para>Genome-scale views can provide much more than gene lists. A prime example is the
+            discovery of a chromosomal bias in the genomic location of germline-enriched genes,
+            which arose from the microarray studies described above. The germline genes are
+            primarily located on the autosomes; very few reside on the X chromosome (<link linkend="bib20">Reinke et al., 2000</link><!-- [PMID 11030340]-->; <link linkend="bib19">Reinke et al., 2004</link><!-- [PMID 14668411]-->). This bias is particularly
+            strong for spermatogenesis genes, and though less marked for other germline genes, the
+            bias is quite significant.</para>
+        <para>The biased location of germline-enriched genes, in combination with electron
+            microscopic images of germ cell nuclei in males, led to the hypothesis that the X
+            chromosome might be transcriptionally silent in the germ line. By EM analysis of male
+            germlines, the unpaired X chromosome appears condensed (Goldstein, 1992<!--[PMID 7075356]-->),
+            a morphology now thought to be similar to the condensed, transcriptionally inactive sex
+            chromosome body observed during meiosis in organisms with single or non-equivalent sex
+            chromosomes (<link linkend="bib14">McKee and Handel, 1993</link><!-- [PMID 8432196]-->). If the X chromosome is essentially
+            transcriptionally inactive in the male germline, then it would be an inhospitable
+            environment for genes needed in that tissue. Thus, genes expressed in the germline would
+            ultimately be under-represented on the X chromosome. Alternatively, some unknown force
+            could prevent germline genes from residing on the X, and consequently, their absence
+            from the X triggers its apparent transcriptional silencing.</para>
+        <para>Subsequent experiments have supported and extended the hypothesis that the X is
+            silenced in the germline. In the male germline, the unpaired X chromosome is decorated
+            with histone modifications that correlate with transcriptional silencing, and is devoid
+            of modifications that correlate with active gene expression (<link linkend="bib13">Kelly et al., 2002</link><!-- [PMID 11807039]-->; see <ulink url="http://www.wormbook.org/chapters/www_germlinechromatin/germlinechromatin.html" role="_blank">Germline chromatin</ulink>). Unexpectedly, the synapsed X chromosomes
+            in hermaphrodites are also apparently silenced throughout most of the germ line, as they
+            largely lack detectable activating modifications (<link linkend="bib13">Kelly et al., 2002</link><!-- [PMID 11807039]-->;
+            see ). However, silencing modifications are not seen on the hermaphrodite Xs as they are
+            in the male (<link linkend="bib3">Bean et al., 2004</link><!-- [PMID 14702046]-->; see <ulink url="http://www.wormbook.org/chapters/www_germlinechromatin/germlinechromatin.html" role="_blank">Germline
+            chromatin</ulink>). This milder silencing correlates well with the extent of gene bias
+            against the X chromosome, which is less severe for genes expressed primarily in the
+            hermaphrodite germline (oogenesis genes) compared to those shared with the male germline
+            (spermatogenesis genes). The silencing of the Xs in hermaphrodites was subsequently
+            shown to require the activity of the MES proteins (<link linkend="bib9">Fong et al., 2002</link><!-- [PMID 12077420]-->).
+            Mutations in the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mes-2" role="_blank">mes-2</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mes-3" role="_blank">mes-3</ulink></emphasis>, and
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mes-6" role="_blank">mes-6</ulink> </emphasis>genes causes the X to inappropriately acquire marks of
+            active chromatin, suggesting that transcriptional control of the X chromosome is
+            disrupted (<link linkend="bib9">Fong et al., 2002</link><!-- [PMID 12077420]-->; see <ulink url="http://www.wormbook.org/chapters/www_specgermline/specgermline.html" role="_blank">Specification of the germ line</ulink>).</para>
+        <para>The remarkable insight that an entire chromosome is silenced in a major tissue such as
+            the germ line would have been difficult to achieve if the germ line had been studied
+            only on a gene-by-gene basis. As each individual germline-enriched gene was identified,
+            its location on an autosome would not have been surprising. By examining the expression
+            profiles of many germline genes in parallel, the bias against the X chromosome became
+            obvious, and could be further examined through additional experiments. This example
+            provides an important instance of how emergent properties become apparent from
+            comprehensive molecular depictions.</para>
+    </sect1>
+    <sect1>
+        <title>Integration of germline functional genomic data</title>
+        <para>In addition to the microarray approach described above, other large-scale methods of
+            examining gene expression have been undertaken. An <emphasis>in situ</emphasis> hybridization project
+            performed under the direction of Dr. Yuji Kohara examined the expression pattern of
+            several thousand genes at multiple stages of development, from embryos to young adults,
+            specifically in hermaphrodites. Because <emphasis>in situ</emphasis> hybridization analysis reveals both
+            location and timing of transcript accumulation, it complements the quantitative data
+            provided by microarrays. Together, these two methods provide insights into spatial,
+            temporal, and condition-dependent control of gene expression. The whole-mount <emphasis>in situ</emphasis>
+            studies have successfully identified many genes with germline-enriched expression,
+            perhaps because the germ line has a relatively high rate of mRNA production and/or
+            because the germ line is one of the largest organs in the adult. The spatial aspect of
+            <emphasis>in situ</emphasis> hybridization data is particularly informative. For instance, accumulation of
+            oogenesis transcripts from X-linked germline genes is restricted to the proximal germ
+            line, consistent with silencing of the X chromosome in the distal germ line (<link linkend="bib13">Kelly et al., 2002</link><!-- [PMID 11807039]-->, see <ulink url="http://www.wormbook.org/chapters/www_germlinechromatin/germlinechromatin.html" role="_blank">Germline chromatin</ulink>).</para>
+        <para>The identification of germline-expressed genes provides an excellent starting point
+            for analysis of gene function during oogenesis and early embryogenesis. Indeed such
+            studies have begun. Based on an early version of the germline gene set (<link linkend="bib20">Reinke et al., 2000</link><!-- [PMID 11030340]-->), several RNAi screens have been performed, including ones focused
+            on identification of genes required for early embryogenesis (<link linkend="bib17">Piano et al., 2002</link><!-- [PMID 12445391]-->), genes required for correct localization of <ulink url="http://www.wormbase.org/db/seq/protein?name=PIE-1;class=protein" role="_blank">PIE-1</ulink> in the early embryo
+            (<link linkend="bib16">Pellettieri et al., 2003</link><!-- [PMID 12967564]-->; see <ulink url="http://www.wormbook.org/chapters/www_specgermline/specgermline.html" role="_blank">Specification of the germline</ulink>), and genes required for
+            chromosome morphogenesis during meiosis (<link linkend="bib6">Colai&#x000E1;covo et al., 2003</link><!-- [PMID 12242227]-->). A
+            separate study identifying genes expressed during meiosis was followed by RNAi analysis
+            of candidate genes for roles in germline development (<link linkend="bib11">Hanazawa et al., 2001</link><!-- [PMID 1447255]-->). Additionally, protein partners are being identified by systematic yeast
+            two-hybrid analysis (<link linkend="bib22">Walhout et al., 2002</link><!-- [PMID 12445390]-->). Therefore, a tremendous data
+            set is emerging for germline genes, which includes their temporal and spatial
+            expression, biological functions, and protein partners. As this data set becomes more
+            comprehensive, the data will provide a remarkably complete overview of the function and
+            interaction of critical factors and can be used to assemble the genetic regulatory
+            networks underlying germline and embryonic development.</para>
+    </sect1>
+    <sect1>
+        <title>Future directions</title>
+        <para>Many questions about germline development and function remain that will benefit from
+            genomic analyses. Below, some questions are listed along with approaches for answering
+            those questions using DNA microarrays.</para>
+        <para>How does gene expression differ between different stages of germ cell development?
+            Many additional mutants exist that can be used to further distinguish genes that are
+            expressed in different germ cell types. For instance, a gain-of-function mutation in the
+            GLP-1(Notch) receptor causes excess germline stem cells (<link linkend="bib5">Berry et al., 1997</link><!-- [PMID 9043073]-->; see <ulink url="http://www.wormbook.org/chapters/www_germlineprolifcontrol/germlineprolifcontrol.html" role="_blank">Germline proliferation and its control</ulink>). Use of this mutant in
+            microarray experiments will identify genes expressed primarily in the distal
+            proliferating stem cells and better separate these genes from those that are expressed
+            and act in oogenesis.</para>
+        <para>How many germline-expressed genes still remain to be identified? Because the current
+            microarray studies used intact animals, somatic gene expression has likely masked the
+            germline expression of certain genes. In the future, the use of dissected gonads in
+            microarray experiments will greatly improve the sensitivity with which
+            germline-expressed genes can be identified. Dissected gonads are composed almost
+            entirely of germ cells; with careful dissection, the only somatic cells included are the
+            distal tip cell and sheath cells. Improvements to linear RNA amplification techniques
+            permit the use of very small amounts of RNA (<link linkend="bib2">Baugh et al., 2001</link><!--; [PMID 11222780]-->), and
+            it has been possible to perform microarray experiments with RNA derived from ~50
+            dissected adult gonads. Use of dissected gonads will also improve detection of gene
+            expression changes in mutants with only subtle germline defects.</para>
+        <para>How do post-transcriptional mechanisms control target mRNAs? Current germline
+            microarray analyses have identified many RNA-binding proteins that are likely to act in
+            the germ line to regulate mRNA translation and/or stability. The RNA targets bound by
+            these proteins can be identified using microarrays. In this experiment, an antibody
+            specific to the RNA binding protein is used to immunoprecipitate the protein and its
+            associated RNAs. These RNAs can then be isolated, labeled and hybridized to a
+            microarray. This approach has worked well for one germline RNA binding protein, <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink>
+            (see <ulink url="http://www.wormbook.org/chapters/www_RNAbindingproteins/RNAbindingproteins.html" role="_blank">RNA-binding
+            proteins</ulink>; M.H. Lee, V. Reinke, and T.
+            Schedl, unpublished data). Over 100 candidate <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> mRNA targets have been identified,
+            the vast majority of which have germline-enriched expression.</para>
+        <para>How do DNA- and chromatin-binding proteins affect germline gene expression? The
+            initial germline microarray experiments described above have identified many candidate
+            transcriptional regulators that likely function in the germ line. RNAi or a genetic
+            deletion of the transcriptional regulator will presumably result in changes in the
+            levels of its transcriptional targets that can be assessed by DNA microarray analysis.
+            These expression data can be correlated with the binding locations of these proteins in
+            the genome. Approaches such as chromatin immunoprecipitation (ChIP) or DNA adenine
+            methylase identification (DamID), which identify or mark DNA sequences bound by specific
+            transcriptional regulators, can be combined with DNA microarray technology to map the
+            bound DNA sequences genome-wide (<link linkend="bib18">Pollack and Iyer, 2002</link><!-- [PMID 12454647]-->; <link linkend="bib21">van Steensel and Henikoff, 2003</link><!-- [PMID 12951776]-->). Because most DNA-binding proteins bind in
+            non-coding, regulatory sequences that flank genes, a microarray that contains intergenic
+            sequences is required for this analysis. Such arrays are currently being built by Jason
+            Lieb at the University of North Carolina at Chapel Hill.</para>
+        <para>Global genome studies will help to further determine the gene regulatory networks that
+            govern germline function. In addition to microarray-based approaches, systematic RNAi
+            analysis of germline-expressed genes will shed significant light on their roles in
+            germline development (see for example <link linkend="bib6">Colai&#x000E1;covo et al., 2003</link><!-- [PMID 12242227]-->).
+            Proteomic approaches, such as systematic yeast two-hybrid, mass spectrometry analysis of
+            TAP-immunoprecipitated proteins, and systematic structural analysis (for review, see <link linkend="bib23">Zhu et al., 2003</link><!-- [PMID 14527327]-->), will also play important roles in deciphering the
+            functional relationships among germline gene products. When data from these different
+            functional approaches are combined for germline-expressed genes, we will be
+            well-launched on a comprehensive understanding of germline function.</para>
+    </sect1>
+    <sect1>
+        <title>Useful links for germline genomics</title>
+        <para>
+            <ulink url="http://wormgermline.yale.edu">http://wormgermline.yale.edu</ulink> (data generated in mutant and timecourse
+            microarray studies can be searched and downloaded).
+            <ulink url="http://nematode.lab.nig.ac.jp">http://nematode.lab.nig.ac.jp</ulink> (Kohara lab <emphasis>in situ</emphasis> database “NExtDB”)
+            <ulink url="http://www.RNAi.org">http://www.RNAi.org</ulink> (database of RNAi experiments including germline gene
+            set) <ulink url="http://www.wormbase.org">http://www.wormbase.org</ulink> (database of the genomic sequence and useful tools for database mining).</para>
+    </sect1>
+    <sect1>
+        <title>References</title>
+		<para/>
+		&germlinegenomics_Refs;</sect1>
+</article>

@@ -1,0 +1,1793 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>C. elegans network biology: a beginning
+         		
+      </title>
+      <meta name="generator" content="DocBook XSL Stylesheets V1.67.2">
+      <link rel="start" href="#Cnetwork_ArticleID" title="C. elegans network biology: a beginning&#xA;">
+      <link rel="next" href="#d0e110" title="1.&nbsp;Introduction">
+      <!--#include virtual="/ssi/header_article.html" -->
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<!--#include virtual="/ssi/boilerplate.html" -->
+	<div class="html_to_pdf_link">
+		<a href="networkbio.pdf">Download PDF version</a>
+	</div>
+      <div class="article" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h1 class="title"><a name="Cnetwork_ArticleID"></a><span class="emphasis"><em>C. elegans</em></span> network biology: a beginning<sup><a name="d0e10" href="#ftn.d0e10">*</a></sup>
+                     		
+                  </h1>
+               </div>
+               <div>
+                  <div class="author"><span class="author"><span class="othername">Fabio Piano<sup>1</sup><sup><a name="d0e52" href="#ftn.d0e52">&sect;</a></sup>, Kristin C. Gunsalus<sup>1</sup><sup><a name="d0e52" href="#ftn.d0e52">&sect;</a></sup>, David E. Hill<sup>2</sup><sup><a name="d0e52" href="#ftn.d0e52">&sect;</a></sup>, and Marc Vidal<sup>2</sup><em><span class="remark"><sup><a name="d0e52" href="#ftn.d0e52">&sect;</a></sup></span></em></span><br></span><span class="affiliation"><span class="orgname"><sup>1</sup>Center for Comparative Functional Genomics, Department of Biology, New York University, </span><span class="address">New York, NY 10003 USA
+                           <p></p></span></span><span class="affiliation"><span class="orgname"><sup>2</sup>Center for Cancer Systems Biology (CCSB) and Department of Cancer Biology, Dana-Farber Cancer Institute and Department of
+                           Genetics, Harvard Medical School, </span><span class="address">Boston, MA 02115 USA
+                           <p></p></span></span></div>
+               </div>
+            </div>
+            <hr>
+         </div>
+         <div class="toc">
+
+	   <div id="section_locator"><a href="/toc_geneticsgenomics.html">
+	         <b>This chapter is in WormBook section:</b><br />
+		       > Genetics and genomics<br />>> Genomics
+		</a></div><hr />
+
+<a href="http://www.wormbase.org/forums/index.php?board=192.0" title="Discuss WormBook" target="_blank"><font color="#9932cc"><b>View/Add Comments</b></font></a><br/>
+<IFRAME  SRC="http://tazendra.caltech.edu/~acedb/cgi-bin/wormbook_comment.cgi?name=C.+elegans+network+biology:+a+beginning" HEIGHT=50 WIDTH=180 FRAMEBORDER=0 SCROLLING=NO allowTransparency="true"></IFRAME>
+
+<hr />
+
+            <p><b>Table of Contents</b></p>
+            <dl>
+               <dt><span class="sect1"><a href="#d0e110">1. Introduction</a></span></dt>
+               <dt><span class="sect1"><a href="#d0e154">2. Network components: transcriptome and ORFeome</a></span></dt>
+               <dd>
+                  <dl>
+                     <dt><span class="sect2"><a href="#d0e177">2.1. Genomic databases</a></span></dt>
+                     <dt><span class="sect2"><a href="#d0e422">2.2. Computational predictions</a></span></dt>
+                     <dt><span class="sect2"><a href="#d0e451">2.3. Transcriptome</a></span></dt>
+                     <dt><span class="sect2"><a href="#d0e476">2.4. ORFeome</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="sect1"><a href="#d0e779">3. Network connections: interactome</a></span></dt>
+               <dt><span class="sect1"><a href="#d0e894">4. Network perturbations: phenome</a></span></dt>
+               <dd>
+                  <dl>
+                     <dt><span class="sect2"><a href="#d0e1030">4.1. Systematic phenomics</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="sect1"><a href="#d0e1094">5. Network dynamics: from transcriptome to localizome</a></span></dt>
+               <dd>
+                  <dl>
+                     <dt><span class="sect2"><a href="#d0e1117">5.1. Dynamic transcriptome analyses</a></span></dt>
+                     <dt><span class="sect2"><a href="#d0e1475">5.2. <span class="emphasis"><em>In situ</em></span> and <span class="emphasis"><em>in vivo</em></span> analyses</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="sect1"><a href="#d0e1558">6. Network modeling: &#8220;omic&#8221; data integration</a></span></dt>
+               <dt><span class="sect1"><a href="#d0e1682">7. Perspectives</a></span></dt>
+               <dt><span class="sect1"><a href="#d0e1735">8. Acknowledgments</a></span></dt>
+               <dt><span class="sect1"><a href="#d0e1746">9. References</a></span></dt>
+            </dl>
+         </div>
+         <div class="abstract">
+            <p class="title"><span class="bold"><strong>Abstract</strong></span></p>
+            <p><span class="bold"><strong>The architecture and dynamics of molecular networks can provide an understanding of complex biological processes complementary
+                     to that obtained from the in-depth study of single genes and proteins. With a completely sequenced and well-annotated genome,
+                     a fully characterized cell lineage, and powerful tools available to dissect development,</strong></span> <span class="emphasis"><em><span class="bold"><strong>Caenorhabditis elegans,</strong></span></em></span> <span class="bold"><strong>among metazoans, provides an optimal system to bridge cellular and organismal biology with the global properties of macromolecular
+                     networks. This chapter considers omic technologies available for</strong></span> <span class="emphasis"><em><span class="bold"><strong>C. elegans</strong></span></em></span> <span class="bold"><strong>to describe molecular networks - encompassing transcriptional and phenotypic profiling as well as physical interaction mapping
+                     - and discusses how their individual and integrated applications are paving the way for a network-level understanding of</strong></span> <span class="emphasis"><em><span class="bold"><strong>C. elegans</strong></span></em></span> <span class="bold"><strong>biology.</strong></span></p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e110"></a>1.&nbsp;Introduction
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>The combined power of global approaches to systematically analyze interactions among genes and their products and the phenotypic
+               consequences of <span class="emphasis"><em>in vivo</em></span> perturbations promises to drive the development of increasingly sophisticated models of the topology, function, and dynamics
+               of <span class="emphasis"><em>C. elegans</em></span> molecular networks (<a href="#figure1">Figure 1</a>). The <span class="emphasis"><em>C. elegans</em></span> genome sequence and its annotation laid the foundation for the development of a variety of functional genomic or &#8220;omic&#8221; approaches
+               to interrogate molecular networks. This chapter reviews the developments underpinning these technologies, giving particular
+               attention to: i) identifying network components, i.e. the complete lists of non-coding and coding transcripts and open reading
+               frames (ORFs); ii) mapping interconnections between these components; iii) systematic perturbation of networks; iv) spatiotemporal
+               dynamics of network components; and v) global network modeling. We summarize the resources emerging from these efforts, current
+               experimental and computational approaches including the integration of different omic datasets, and developments on the horizon.
+            </p>
+            <div class="literallayout">
+               <p></p>
+            </div>
+            <div class="mediaobject" align="center"><a name="figure1"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="450">
+<tr>
+  <td align="center"><p><a href="Cnetworkfig1.jpg"><img src="Cnetworkfig1_s.jpg" width="580" border="2" align="middle" alt=" figure 1"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 1. Omic approaches to generate gradually improving models of the complete set of biologically relevant interactions.&nbsp;</b>Genome- and proteome-scale studies have provided information on the topology, function and dynamics of <span class="emphasis"><em>C. elegans</em></span> macromolecular networks. Expression profiling (transcriptome), DNA-protein, RNA-protein, and protein-protein interactions
+                     (interactome), phenotypic analyses (phenome), and protein localization (localizome) can be integrated, allowing the dynamic
+                     properties of the resulting network to be related to <span class="emphasis"><em>C. elegans</em></span> biology. Adapted from <a href="#bib124">Walhout et al. (1998)</a> and <a href="#bib113">Vidal (2001)</a>.
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e154"></a>2.&nbsp;Network components: transcriptome and ORFeome
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>The initial release of the assembled, annotated <span class="emphasis"><em>C. elegans</em></span> genome sequence (<a href="#bib111">The <span class="emphasis"><em>C. elegans</em></span> Sequencing Consortium, 1998</a>) was a milestone in genomics, marking the first sequenced genome from a multicellular organism. Importantly for comprehensive
+               analyses, <span class="emphasis"><em>C. elegans</em></span> remains the only multicellular organism for which a complete genome sequence is available with no gaps in the assembly (<a href="#bib54">Hillier et al., 2005</a>).
+            </p>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e177"></a>2.1.&nbsp;Genomic databases
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>An innovative object-oriented database system, ACeDB (<a href="#bib27">Durbin and Thierry-Mieg, 1994</a>; <a href="#bib104">Stein et al., 2001</a>; see also <a href="http://www.acedb.org/Cornell/dkfz.html" target="_html">http://www.acedb.org/Cornell/dkfz.html</a>), was created to facilitate the <span class="emphasis"><em>C. elegans</em></span> genome project. ACeDB was the first widely used database system designed specifically for capturing and archiving complex
+                  biological data. Coupling the database to a visual output anchored on the genomic sequence gave ACeDB a graphical user interface,
+                  allowing the <span class="emphasis"><em>C. elegans</em></span> community to extract far more information than was previously possible. From ACeDB evolved WormBase, a collaborative effort
+                  to capture, curate, and distribute biological information on <span class="emphasis"><em>C. elegans</em></span> and related nematodes (<a href="#bib104">Stein et al., 2001</a>; <a href="#bib17">Chen et al., 2005</a>), and the WormGenes database at NCBI, which also provides access to carefully curated <span class="emphasis"><em>C. elegans</em></span> genome annotations and functional data (<a href="#bib112">Thierry-Mieg et al., 2005</a>). These databases are invaluable sources of information for the <span class="emphasis"><em>C. elegans</em></span> research community (see <a href="#table1" title="Table 1. Web resources for C. elegans.">Table 1</a> for a short guide to these and other useful online resources for <span class="emphasis"><em>C. elegans</em></span>).
+               </p>
+               <div class="table"><a name="table1"></a><p class="title"><span class="bold"><strong>Table 1. Web resources for</strong></span> <span class="emphasis"><em><span class="bold"><strong>C. elegans.</strong></span></em></span></p>
+                  <table summary="Table 1. Web resources for C. elegans." border="1">
+                     <colgroup>
+                        <col align="left">
+                        <col align="left">
+                        <col align="left">
+                     </colgroup>
+                     <thead>
+                        <tr>
+                           <th align="left">Website</th>
+                           <th align="left">URL</th>
+                           <th align="left">Information provided</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td align="left"><span class="bold"><strong>WormBase</strong></span></td>
+                           <td align="left"><a href="http://www.wormbase.org" target="_top">http://www.wormbase.org</a></td>
+                           <td align="left"><span class="emphasis"><em>C. elegans</em></span> genome annotation, including datasets and reagents for YK cDNAs, ORFeome clones, RNAi results, microarray experiments, Y2H
+                              and genetic interactions, and much more
+                           </td>
+                        </tr>
+                        <tr>
+                           <td align="left"><span class="bold"><strong>WormGenes</strong></span></td>
+                           <td align="left"><a href="http://www.wormgenes.org" target="_top">http://www.wormgenes.org</a></td>
+                           <td align="left"><span class="emphasis"><em>C. elegans</em></span> genome annotation with carefully curated YK cDNA models and literature data
+                           </td>
+                        </tr>
+                        <tr>
+                           <td align="left"><span class="bold"><strong>Intronerator</strong></span></td>
+                           <td align="left"><a href="http://www.soe.ucsc.edu/~kent/intronerator" target="_top">http://www.soe.ucsc.edu/~kent/intronerator</a></td>
+                           <td align="left">Tools for exploring the molecular biology and genomics of <span class="emphasis"><em>C. elegans</em></span> with a special emphasis on alternative splicing
+                           </td>
+                        </tr>
+                        <tr>
+                           <td align="left"><span class="emphasis"><em><span class="bold"><strong>C. elegans</strong></span></em></span> <span class="bold"><strong>WWW server</strong></span></td>
+                           <td align="left"><a href="http://elegans.swmed.edu" target="_top">http://elegans.swmed.edu</a></td>
+                           <td align="left">Leon Avery's links to all things nematode</td>
+                        </tr>
+                        <tr>
+                           <td align="left"><span class="bold"><strong>WORFDB</strong></span></td>
+                           <td align="left"><a href="http://worfdb.dfci.harvard.edu" target="_top">http://worfdb.dfci.harvard.edu</a></td>
+                           <td align="left">ORFeome clones and associated data</td>
+                        </tr>
+                        <tr>
+                           <td rowspan="2" align="left"><span class="bold"><strong>NextDB</strong></span></td>
+                           <td align="left"><a href="http://nematode.lab.nig.ac.jp/dbest/keysrch.html" target="_top">http://nematode.lab.nig.ac.jp/dbest/keysrch.html</a></td>
+                           <td align="left">cDNA library clones and associated data</td>
+                        </tr>
+                        <tr>
+                           <td align="left"><a href="http://nematode.lab.nig.ac.jp/db2/index.php" target="_top">http://nematode.lab.nig.ac.jp/db2/index.php</a></td>
+                           <td align="left"><span class="emphasis"><em>In situ</em></span> mRNA expression patterns
+                           </td>
+                        </tr>
+                        <tr>
+                           <td align="left"><span class="bold"><strong>Hope Lab Expression Pattern Database</strong></span></td>
+                           <td align="left"><a href="http://129.11.204.59:591/fmi/iwp/cgi?-db=Construct%20Info&amp;-loadframes" target="_top">http://129.11.204.59:591/fmi/iwp/cgi?-db=Construct%20Info&amp;-loadframes</a></td>
+                           <td align="left">Promoter::GFP fusion expression patterns</td>
+                        </tr>
+                        <tr>
+                           <td rowspan="2" align="left"><span class="bold"><strong>BC Gene Expression Consortium</strong></span></td>
+                           <td rowspan="2" align="left"><a href="http://elegans.bcgsc.ca/home/ge_consortium.html" target="_top">http://elegans.bcgsc.ca/home/ge_consortium.html</a></td>
+                           <td align="left">SAGE data</td>
+                        </tr>
+                        <tr>
+                           <td align="left">Promoter::GFP expression patterns</td>
+                        </tr>
+                        <tr>
+                           <td align="left"><span class="bold"><strong>WormAtlas</strong></span></td>
+                           <td align="left"><a href="http://www.wormatlas.org" target="_top">http://www.wormatlas.org</a></td>
+                           <td align="left">Behavioral and structural anatomy</td>
+                        </tr>
+                        <tr>
+                           <td align="left"><span class="bold"><strong>WormImage</strong></span></td>
+                           <td align="left"><a href="http://www.wormimage.org" target="_top">http://www.wormimage.org</a></td>
+                           <td align="left">Electron micrographs and associated data</td>
+                        </tr>
+                        <tr>
+                           <td align="left"><span class="emphasis"><em><span class="bold"><strong>C. elegans</strong></span></em></span> <span class="bold"><strong>Gene Knockout Consortium</strong></span></td>
+                           <td align="left"><a href="http://celeganskoconsortium.omrf.org" target="_top">http://celeganskoconsortium.omrf.org</a></td>
+                           <td align="left">Gene knockout strains</td>
+                        </tr>
+                        <tr>
+                           <td align="left"><span class="bold"><strong>RNAiDB</strong></span></td>
+                           <td align="left"><a href="http://www.rnai.org" target="_top">http://www.rnai.org</a></td>
+                           <td align="left">RNAi phenotypes and associated data for most publicly available RNAi studies</td>
+                        </tr>
+                        <tr>
+                           <td rowspan="2" align="left"><span class="bold"><strong>PhenoBank</strong></span></td>
+                           <td align="left"><a href="http://www.worm.mpi-cbg.de/phenobank2/cgi-bin/MenuPage.py" target="_top">http://www.worm.mpi-cbg.de/phenobank2/cgi-bin/MenuPage.py</a></td>
+                           <td rowspan="2" align="left">RNAi phenotypes and associated data from <a href="#bib103">S&ouml;nnichsen et al. (2005)</a></td>
+                        </tr>
+                        <tr>
+                           <td align="left"><a href="http://www.phenobank.org" target="_top">http://www.phenobank.org</a></td>
+                        </tr>
+                        <tr>
+                           <td align="left"><span class="bold"><strong>Predictions of</strong></span> <span class="emphasis"><em><span class="bold"><strong>C. elegans</strong></span></em></span> <span class="bold"><strong>Genetic Interactions</strong></span></td>
+                           <td align="left"><a href="http://tenaya.caltech.edu:8000/predict" target="_top">http://tenaya.caltech.edu:8000/predict</a></td>
+                           <td align="left"><a href="#bib136">Zhong and Sternberg (2006)</a></td>
+                        </tr>
+                        <tr>
+                           <td align="left"><span class="bold"><strong>NBrowse</strong></span></td>
+                           <td align="left"><a href="http://www.gnetbrowse.org" target="_top">http://www.gnetbrowse.org</a></td>
+                           <td align="left">Integrated functional network browser</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e422"></a>2.2.&nbsp;Computational predictions
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>At the time of the initial genome sequence release, GeneFinder (Green and Hillier, unpublished software) was used to predict
+                  approximately 20,000 protein coding sequences (CDSs) or ORFs. Alternative <span class="emphasis"><em>ab initio</em></span> transcript or ORF prediction algorithms produce largely consistent results that differ primarily in predicted exon/intron
+                  junctions (<a href="#bib105">Stein et al., 2003</a>; <a href="#bib128">Wei et al., 2005</a>). Experimental evidence (see below) indicates that most of the ~20,000 predicted ORFs are at least transcribed (<a href="#bib94">Reboul et al., 2001</a>; <a href="#bib93">Reboul et al., 2003</a>). Approximately 1,300 noncoding RNA (ncRNA) transcripts have also been predicted, including at least 120 microRNAs (miRNAs)
+                  (see <a href="http://www.wormbook.org/chapters/www_noncodingRNA/noncodingRNA.html" target="_top"><span class="emphasis"><em>C. elegans</em></span> noncoding RNA genes</a>).
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e451"></a>2.3.&nbsp;Transcriptome
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Accurate genome annotation requires both a high quality genome sequence and robust computational prediction tools. However,
+                  experimental validation of transcribed mRNA sequences and their protein products is indispensable to demonstrate transcription
+                  and splicing and to ensure that exon/intron boundaries and reading frames are correctly assigned. These companion activities
+                  together lead to the refinement of gene models through an iterative process. After an initial effort by the <span class="emphasis"><em>C. elegans</em></span> Sequencing Consortium to sequence random expressed sequence tags (ESTs) (<a href="#bib127">Waterston et al., 1992</a>), a long-term effort was dedicated to isolating, sequencing and distributing as many complementary DNA (cDNA) clones as possible,
+                  with the ultimate goal of obtaining full-length cDNAs for all protein-coding transcripts (see <a href="#table1" title="Table 1. Web resources for C. elegans.">Table 1</a>). This benefited the worm community by providing cDNAs that helped refine transcript models and enabled cloning experiments
+                  performed in many laboratories over the years. Data from this cDNA collection are available from the National Institute of
+                  Genetics in Japan (<a href="#table1" title="Table 1. Web resources for C. elegans.">Table 1</a>) and through WormGenes and WormBase, including details on sequences and corresponding gene products. The latest WormBase
+                  frozen release (WS150) contains over 250,000 EST reads from this library, matching ~10,500 distinct genes. Around 2,000 of
+                  these cDNAs are likely full-length clones. WormBase, WormGenes, and Intronerator (<a href="#bib65">Kent and Zahler, 2000</a>) all offer graphical representations of the collection that make it very convenient to inspect the precise structure of transcript
+                  models along with all supporting evidence (<a href="#table1" title="Table 1. Web resources for C. elegans.">Table 1</a>).
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e476"></a>2.4.&nbsp;ORFeome
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Because most transcripts are expressed at relatively low levels, random sequencing of clones from cDNA libraries makes it
+                  extremely hard to capture an entire set of full-length cDNAs (<a href="#bib93">Reboul et al., 2003</a>), and the rate of novel sequences identified has reached diminishing returns due to the relative abundance of encoded transcripts
+                  in the library (<a href="#bib21">Das et al., 2001</a>). This is true not only for <span class="emphasis"><em>C. elegans</em></span> but also for other organisms (<a href="#bib13">Carninci et al., 2003</a>; <a href="#bib14">Castelli et al., 2004</a>). In addition, although full-length cDNAs provide crucial information to annotate transcripts, their 5<span class="symbol">&#8242;</span> and 3<span class="symbol">&#8242;</span> UTR sequences usually prevent their use for large-scale protein expression studies. Finally, the vectors used in cDNA cloning
+                  projects are usually not designed for automated cloning and convenient proteome-wide protein expression (<a href="#bib11">Brasch et al., 2004</a>). For these reasons, a <span class="emphasis"><em>C. elegans</em></span> &#8220;ORFeome project&#8221; was initiated with the goal of generating Gateway recombinational clones for nearly all ORFs (i.e. precisely
+                  from the predicted initiation to the predicted termination codons) (<a href="#bib122">Walhout et al., 2000</a>; <a href="#bib94">Reboul et al., 2001</a>; <a href="#bib93">Reboul et al., 2003</a>; <a href="#bib72">Lamesch et al., 2004</a>).
+               </p>
+               <p>Rather than picking and sequencing individual clones from cDNA libraries, PCR amplification carried out with primer pairs
+                  specific to ORFs and with a cDNA library or reverse-transcribed polyA<sup>+</sup> mRNA as template can achieve nearly complete coverage (<a href="#bib94">Reboul et al., 2001</a>). Using the ~20,000 ORF predictions from WS9 (released in 1999), nearly 11,000 ORF constructs suitable for protein expression
+                  were initially obtained (<a href="#bib93">Reboul et al., 2003</a>) (<a href="#figure2">Figure 2</a>). Over 4,000 of these had no prior experimental support, demonstrating that <span class="emphasis"><em>ab initio</em></span> ORF predictions could indeed be verified experimentally. The nearly 8,000 unsuccessful attempts were due to imprecise exon/intron
+                  predictions, usually surrounding the putative translation start site (<a href="#bib94">Reboul et al., 2001</a>). From 1999 to 2003, updates to WormBase led to over 4,200 new or revised ORF predictions, based on a combination of improved
+                  algorithms, comparative genomics, and experimental evidence from cDNA and ORF sequences. Of these repredicted ORFs, ~2,500
+                  were cloned in Version 3.1 of the <span class="emphasis"><em>C. elegans</em></span> ORFeome project (<a href="#bib72">Lamesch et al., 2004</a>).
+               </p>
+               <div class="literallayout">
+                  <p></p>
+               </div>
+               <div class="mediaobject" align="center"><a name="figure2"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="585">
+<tr>
+  <td align="center"><p><a href="Cnetworkfig2.jpg"><img src="Cnetworkfig2_s.jpg" border="2" align="middle" alt="figure 2"></a>
+  </td>
+</tr>
+                  </table>
+                  <div class="caption">
+                     <p><b>Figure 2. The <span class="emphasis"><em>C. elegans</em></span> ORFeome.&nbsp;</b>A) Schematic representation of predicted exon/intron structures for three <span class="emphasis"><em>C. elegans</em></span> ORFs from WS9 of WormBase. Blue boxes correspond to predicted exons based on Genefinder. Based on ORF sequence tags (OSTs)
+                        obtained from <span class="emphasis"><em>C. elegans</em></span> cloned ORFs are aligned to the genome (red boxes), the structures of two ORFs match the Genefinder prediction whereas one
+                        differs from prediction. B) Agarose gels showing PCR products for ORFeome clones. The ~10,000 ORFs in <span class="emphasis"><em>C. elegans</em></span> ORFeome Version 1.1 (<a href="#bib93">Reboul et al., 2003</a>) (left-hand panel, 200 gels) were supplemented by an additional ~2,500 ORFs in Version 3.1 (right-hand panel, 49 gels) based
+                        on improved annotations in WormBase WS100 (<a href="#bib72">Lamesch et al., 2004</a>).
+                     </p>
+                  </div>
+               </div>
+               <p>In total, there is currently experimental evidence for ~18,000 protein-coding ORFs. WormBase release WS150 contains over 22,000
+                  ORF entries, of which ~2,800 are confirmed isoforms from alternative splicing, and ~4,800 are predicted ORFs with no experimental
+                  validation. The majority of clones from the ORFeome and cDNA collections have been end-sequenced (generating ESTs and OSTs)
+                  but not yet fully characterized. Sequencing of several hundred ORF clones suggests that more isoforms exist than are currently
+                  annotated in WormBase, and that the number of genes with alternative splicing is probably in the range of 15%, (<a href="#bib93">Reboul et al., 2003</a>). A complete and accurate inventory of all isoforms represented by fully sequenced, wild-type clones awaits further experimental
+                  validation guided by gene prediction algorithms - such as Twinscan (e.g. <a href="#bib69">Twinscan Korf et al., 2001</a>; <a href="#bib128">Wei et al., 2005</a>) and others - that can take advantage of sequence comparisons with other <span class="emphasis"><em>Caenorhabditis</em></span> species (<a href="#bib105">Stein et al., 2003</a>; see <a href="/chapters/www_phylogrhabditids/phylorhab.html" target="_top">The phylogenetic relationships of <span class="emphasis"><em>Caenorhabditis</em></span> and other rhabditids</a>; <a href="#bib85">NHGRI, 2005</a>). Access to precise gene structural information has enabled the development of multiple genome-scale resources that can be
+                  used for a variety of applications (<a href="#table2" title="Table 2. Collections of reagents for functional genomics and proteomics in C. elegans.">Table 2</a>), transforming the way experimental science is conducted. Overall, one important lesson learned from the <span class="emphasis"><em>C. elegans</em></span> cDNA and ORFeome projects is that genome annotation and experimental verification are complementary activities that advance
+                  understanding through an iterative process.
+               </p>
+               <div class="table"><a name="table2"></a><p class="title"><span class="bold"><strong>Table 2. Collections of reagents for functional genomics and proteomics in</strong></span> <span class="emphasis"><em><span class="bold"><strong>C. elegans.</strong></span></em></span></p>
+                  <table summary="Table 2. Collections of reagents for functional genomics and proteomics in C. elegans." border="1">
+                     <colgroup>
+                        <col align="left">
+                        <col align="left">
+                        <col align="left">
+                     </colgroup>
+                     <thead>
+                        <tr>
+                           <th align="left">Organization</th>
+                           <th align="left">URL or contact</th>
+                           <th align="left">Resource</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td align="left"><span class="bold"><strong>Sanger Institute</strong></span></td>
+                           <td align="left">Send inquires to Audrey Fraser (<a href="mailto:aef@sanger.ac.uk" target="_top">aef@sanger.ac.uk</a>)</td>
+                           <td align="left">Genomic (YAC and cosmid) clones<br />
+                           (Currently Unavailable)</td>
+                        </tr>
+                        <tr>
+                           <td align="left"><span class="bold"><strong>Kohara lab</strong></span></td>
+                           <td align="left">Send requests to Yuji Kohara (<a href="mailto:ykohara@lab.nig.ac.jp" target="_top">ykohara@lab.nig.ac.jp</a>)
+                           </td>
+                           <td align="left">Kohara cDNA library clones</td>
+                        </tr>
+                        <tr>
+                           <td rowspan="2" align="left"><span class="bold"><strong>GeneService LTD</strong></span></td>
+                           <td align="left"><a href="http://www.geneservice.co.uk/products/rnai/" target="_top">http://www.geneservice.co.uk/products/rnai/</a></td>
+                           <td align="left">Ahringer lab RNAi feeding library (<a href="#bib62">Kamath et al., 2003</a>)
+                           </td>
+                        </tr>
+                        <tr>
+                           <td align="left"><a href="http://www.geneservice.co.uk/products/clones/Celegans_Fos.jsp" target="_top">http://www.geneservice.co.uk/products/clones/ Celegans_Fos.jsp</a></td>
+                           <td align="left">BC Fosmid library (D. Moerman et al., unpublished)</td>
+                        </tr>
+                        <tr>
+                           <td rowspan="3" align="left"><span class="bold"><strong>Open Biosystems</strong></span></td>
+                           <td rowspan="3" align="left"><a href="http://www.openbiosystems.com/Genomics/Model%20Organism%20Resources/Worm%20Resources/" target="_top">http://www.openbiosystems.com/Genomics/ Model%20Organism%20Resources/ Worm%20Resources/</a></td>
+                           <td align="left">ORFeome library (<a href="#bib93">Reboul et al., 2003</a>; <a href="#bib72">Lamesch et al., 2004</a>)
+                           </td>
+                        </tr>
+                        <tr>
+                           <td align="left">ORFeome-RNAi feeding library (<a href="#bib99">Rual et al., 2004</a>)
+                           </td>
+                        </tr>
+                        <tr>
+                           <td align="left">Promoterome library (<a href="#bib26">Dupuy et al., 2004</a>)
+                           </td>
+                        </tr>
+                        <tr>
+                           <td align="left"><span class="bold"><strong>Wash U Genome Sequencing Center</strong></span></td>
+                           <td align="left"><a href="http://www.genome.wustl.edu/genome/celegans/microarray/ma_gen_info.cgi" target="_top">http://www.genome.wustl.edu/genome/ celegans/microarray/ma_gen_info.cgi</a></td>
+                           <td align="left">70-mer oligonucleotide microarrays (<a href="#bib126">Washington University Genome Sequencing Center, 2005</a>)
+                           </td>
+                        </tr>
+                        <tr>
+                           <td align="left"><span class="bold"><strong>Affymetrix</strong></span></td>
+                           <td align="left"><a href="http://www.affymetrix.com/products/arrays/specific/celegans.affx" target="_top">http://www.affymetrix.com/products/ arrays/specific/celegans.affx</a></td>
+                           <td align="left"><span class="emphasis"><em>C. elegans</em></span> GeneChip genome arrays
+                           </td>
+                        </tr>
+                        <tr>
+                           <td align="left"><span class="emphasis"><em><span class="bold"><strong>Caenorhabditis</strong></span></em></span> <span class="bold"><strong>Genetics Center (CGC)</strong></span></td>
+                           <td align="left"><a href="http://www.cbs.umn.edu/CGC/" target="_top">http://www.cbs.umn.edu/CGC/</a></td>
+                           <td align="left"><span class="emphasis"><em>C. elegans</em></span> strains (including gene knockout strains from the <span class="emphasis"><em>C. elegans</em></span> Gene Knockout Consortium and some GFP transgenic strains from the BC Gene Expression Consortium)
+                           </td>
+                        </tr>
+                        <tr>
+                           <td align="left"><span class="bold"><strong>BC Gene Expression Consortium</strong></span></td>
+                           <td align="left"><a href="http://elegans.bcgsc.ca/perl/eprofile/contact" target="_top">http://elegans.bcgsc.ca/perl/eprofile/contact</a></td>
+                           <td align="left">Promoter::GFP transgenic strains (<a href="#bib81">McKay et al., 2003</a>)
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e779"></a>3.&nbsp;Network connections: interactome
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Proteins do not function in isolation, but rather as interacting partners in complexes (<a href="#bib1">Alberts, 1998</a>), modules and networks (<a href="#bib52">Hartwell et al., 1999</a>). Thus a major challenge is to establish the full set of all protein-protein, DNA-protein and RNA-protein interactions, or
+               to map the &#8220;interactome&#8221; network. Binary protein-protein interactions can be readily identified using the yeast two-hybrid
+               (Y2H) system (<a href="#bib33">Fields and Song, 1989</a>; <a href="#bib117">Vidal and Legrain, 1999</a>), with the advantage that this system is amenable to high-throughput proteome-wide mapping projects (<a href="#bib123">Walhout and Vidal, 2001</a>). When generated with appropriate caution and necessary controls, Y2H datasets can be of high quality (<a href="#bib118">Vidalain et al., 2004</a>).
+            </p>
+            <p>The <span class="emphasis"><em>C. elegans</em></span> interactome mapping project was initiated in the context of specific biological processes such as vulval development, protein
+               degradation, germline development, DNA damage response and Dauer formation (<a href="#bib121">Walhout et al., 2000</a>; <a href="#bib22">Davy et al., 2001</a>; <a href="#bib10">Boulton et al., 2002</a>; <a href="#bib120">Walhout et al., 2002</a>; <a href="#bib110">Tewari et al., 2004</a>). One of the main lessons drawn by overlapping these datasets obtained up to that point was a much higher level of molecular
+               connectivity between seemingly different pathways than previously imagined (<a href="#bib93">Reboul et al., 2003</a>). The project then moved to a &#8220;first-draft&#8221; proteome-scale <span class="emphasis"><em>C. elegans</em></span> interactome map primarily focused on metazoan-specific proteins (<a href="#bib74">Li et al., 2004</a>). The current version of the global <span class="emphasis"><em>C. elegans</em></span> Y2H-based interactome network contains ~5,500 potential interactions, comprising approximately 10% of the expected number
+               of protein-protein interactions (<a href="#bib74">Li et al., 2004</a>). The validation rate of the interactome map was estimated at ~70% by retesting large numbers of interactions using a completely
+               different interaction assay (<a href="#bib74">Li et al., 2004</a>), suggesting a high level of quality overall.
+            </p>
+            <p>Like other interactome networks, the topology of the <span class="emphasis"><em>C. elegans</em></span> interactome appears &#8220;scale-free&#8221; (a few proteins have many interacting partners whereas most proteins interact with only
+               a few partners) and &#8220;small-world&#8221; (any two proteins can be connected through a chain of only a few interactions) (<a href="#bib5">Barabasi and Albert, 1999</a>; <a href="#bib42">Goldberg and Roth, 2003</a>; <a href="#bib74">Li et al., 2004</a>). These and other topological properties of global interactome networks might relate to biological properties such as robustness
+               and plasticity (<a href="#bib59">Jeong et al., 2001</a>; <a href="#bib50">Han et al., 2004</a>).
+            </p>
+            <p>Completing the interactome map will require both a nearly complete <span class="emphasis"><em>C. elegans</em></span> ORFeome collection as well as additional approaches that utilize modified versions of either Y2H or affinity-purification
+               of protein complexes, since no single method for capturing protein-protein interactions is 100% effective (<a href="#bib119">Walhout et al., 2000</a>). As with efforts to accurately annotate the genome, interactome mapping projects will necessarily proceed iteratively through
+               the interplay of direct experimentation and computational efforts (<a href="#bib114">Vidal, 2005</a>).
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e894"></a>4.&nbsp;Network perturbations: phenome
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>While physical interaction maps help elucidate molecular events at the biochemical level, other functional assays can reveal
+               logical connections between gene products that are required for the same set of biological processes. RNAi (<a href="#bib49">Guo and Kemphues, 1995</a>; <a href="#bib34">Fire et al., 1998</a>) is amenable to medium to high throughput approaches that can be used to systematically knock down large numbers of transcripts,
+               thereby relating perturbations of molecular networks to phenotypic analyses and setting the stage for generating a global
+               phenotypic or &#8220;phenome&#8221; map of <span class="emphasis"><em>C. elegans</em></span> (reviewed in <a href="#bib46">Gunsalus and Piano, 2005</a>). The foundation for a phenome map of early embryogenesis has been laid by a host of recent large-scale RNAi studies, which
+               have provided at least a first-pass phenotypic analysis for nearly every protein-coding gene in the genome (<a href="#bib36">Fraser et al., 2000</a>; <a href="#bib43">G&ouml;nczy et al., 2000</a>; <a href="#bib89">Piano et al., 2000</a>; <a href="#bib77">Maeda et al., 2001</a>; <a href="#bib90">Piano et al., 2002</a>; <a href="#bib62">Kamath et al., 2003</a>; <a href="#bib102">Simmer et al., 2003</a>; <a href="#bib99">Rual et al., 2004</a>; <a href="#bib32">Fernandez et al., 2005</a>; <a href="#bib103">S&ouml;nnichsen et al., 2005</a>). Results from various RNAi studies in <span class="emphasis"><em>C. elegans</em></span> are available online through RNAiDB (<a href="#bib48">Gunsalus et al., 2004</a>), PhenoBank (<a href="#bib103">S&ouml;nnichsen et al., 2005</a>), and WormBase (see <a href="#table1" title="Table 1. Web resources for C. elegans.">Table 1</a>).
+            </p>
+            <p>Questions of reliability and completeness naturally arise regarding genome-scale RNAi analyses. Comparisons with genetic analyses
+               have found that around 25% of the loci for which genetic alleles confer embryonic phenotypes are typically not recovered in
+               large-scale RNAi studies in the laboratory strain N2 (<a href="#bib62">Kamath et al., 2003</a>; <a href="#bib32">Fernandez et al., 2005</a>; <a href="#bib103">S&ouml;nnichsen et al., 2005</a>). In contrast, comparisons of embryonic lethality between genetic and high confidence RNAi results indicate a very low level
+               (generally &lt;1%) of false positives (<a href="#bib62">Kamath et al., 2003</a>; <a href="#bib102">Simmer et al., 2003</a>; <a href="#bib99">Rual et al., 2004</a>; <a href="#bib32">Fernandez et al., 2005</a>). Potential false positive results could arise from the depletion of multiple transcripts by a single RNAi construct that
+               inadvertantly targets multiple genes (<a href="#bib48">Gunsalus et al., 2004</a>; <a href="#bib92">Qiu et al., 2005</a>). The actual off-target error rate <span class="emphasis"><em>in vivo</em></span> will depend on factors such as cooperativity between short interfering RNAs (siRNAs), mRNA abundances in different tissues,
+               and saturation of the RNAi machinery. RNAiDB and WormBase both provide data on potential off-target effects for RNAi reagents
+               used by the worm community, calculated using different methods.
+            </p>
+            <p>It is interesting to note that the proportion of essential genes appears to be in a similar range (~15&#8211;25%) in yeast (<a href="#bib130">Winzeler et al., 1999</a>; <a href="#bib41">Giaever et al., 2002</a>), worms (see <a href="http://www.wormbook.org/chapters/www_essentialgenes/essentialgenes.html" target="_top">Essential genes</a>), and flies (<a href="#bib2">Ashburner et al., 1999</a>). This apparent similarity across phyla may reflect a universal property of networks, arising from a need to evolve network
+               connectivity in order to maintain a balance between robustness (to survive perturbations) and plasticity (to explore new phenotypic
+               space). An observation consistent with this idea is that the penetrance level observed in the RNAi analysis of essential genes
+               is proportional to how ancient the targeted protein is (<a href="#bib32">Fernandez et al., 2005</a>).
+            </p>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e1030"></a>4.1.&nbsp;Systematic phenomics
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Global RNAi studies are valuable not only to generate hypotheses for individual proteins, analogous to conventional genetic
+                  screening strategies, but also to address higher-order questions about groups of functionally related proteins. A set of defined
+                  phenotypes resulting from perturbations can be systematically scored for both positive and negative effects, defining &#8220;phenotypic
+                  profiles&#8221;. Gene products can then be grouped into &#8220;phenoclusters&#8221; based on similarity between phenotypic profiles (<a href="#bib113">Vidal, 2001</a>; <a href="#bib90">Piano et al., 2002</a>). For example, two distinct phenoclusters were found among two dozen proteins implicated in a DNA damage response interactome
+                  map (<a href="#bib10">Boulton et al., 2002</a>). One phenocluster predicted novel DNA repair proteins, while the other suggested novel proteins involved in the DNA damage
+                  induced checkpoint response.
+               </p>
+               <p>In a set of comprehensive studies, RNAi phenotypes in the early embryo were analyzed using a systematic approach to explicitly
+                  score over 40 specific cell biological features (<a href="#bib90">Piano et al., 2002</a>; <a href="#bib103">S&ouml;nnichsen et al., 2005</a>). The resulting &#8220;phenotypic signatures&#8221; were used to cluster genes into groups of similar function, such as chromosome segregation
+                  or nuclear import-export. In a single study analyzing RNAi phenotypes for 98% of <span class="emphasis"><em>C. elegans</em></span> genes, nearly all of the 661 genes identified genome-wide to elicit an RNAi phenotype in the early embryo could be placed
+                  into 23 separable phenotypic classes (<a href="#bib103">S&ouml;nnichsen et al., 2005</a>). In addition numerous hypotheses could be formulated as to how molecular networks are coordinated to drive early embryogenesis
+                  (<a href="#bib47">Gunsalus et al., 2005</a>).
+               </p>
+               <p>The development of automated image analysis could alleviate what is currently a principal bottleneck in phenotypic analysis:
+                  the manual scoring of phenotypes by visual inspection. Recently a formal classification system linked to an automated image
+                  analysis system was developed that is capable of automatically gathering many behavioral and gross morphological phenotypic
+                  parameters (<a href="#bib39">Geng et al., 2003</a>; <a href="#bib31">Feng et al., 2004</a>; <a href="#bib40">Geng et al., 2004</a>). This system has been used to classify genotypes based on automatically extracted image features. Automated image analysis
+                  pipelines are also under development for analyzing cell lineage patterns (<a href="#bib132">Yasuda et al., 1999</a>; <a href="#bib4">Bao et al., 2006</a>) and high-content embryonic phenotypes (<a href="#bib86">Ning et al., 2005</a>).
+               </p>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e1094"></a>5.&nbsp;Network dynamics: from transcriptome to localizome
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>The transcriptome and proteome at any given time and place constitute only a subset of all possible macromolecules potentially
+               encoded in the genome: different combinations of expressed gene products are present in different cells at different times,
+               move within and between cellular compartments, and interact with a variety of other molecules to carry out their functions.
+               Thus to relate <span class="emphasis"><em>C. elegans</em></span> cellular and organismal biology to global properties of molecular networks, it will become increasingly important to establish
+               when and where the complete repertoire of coding and noncoding transcripts and protein products are expressed and localized
+               throughout development, both at a cellular and sub-cellular level. Such a &#8220;localizome&#8221; map would be extremely valuable in
+               the context of <span class="emphasis"><em>C. elegans</em></span> since a nearly perfect anatomical atlas has already been generated, providing a complete description of the cell lineage
+               and a map of the neuronal network (<a href="#bib108">Sulston and Horvitz, 1977</a>; <a href="#bib129">White et al., 1982</a>; <a href="#bib109">Sulston et al., 1983</a>).
+            </p>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e1117"></a>5.1.&nbsp;Dynamic transcriptome analyses
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Technological innovations to parallelize studies of gene expression patterns have enabled genome-scale analyses of increasing
+                  sophistication to discover the spatiotemporal activity of promoters, to define sets of co-regulated genes, to identify shared
+                  <span class="emphasis"><em>cis</em></span>-acting regulatory sites and corresponding <span class="emphasis"><em>trans</em></span>-acting factors, and to use these data to build models of transcriptional networks and regulatory control mechanisms. Gene
+                  expression in <span class="emphasis"><em>C. elegans</em></span> is being evaluated using a variety of methods, including microarrays (<a href="#bib53">Hill et al., 2000</a>; <a href="#bib96">Reinke et al., 2000</a>), serial analysis of gene expression (SAGE) (<a href="#bib61">Jones et al., 2001</a>; <a href="#bib91">Pleasance et al., 2003</a>), quantitative reverse-transcription with PCR (Q-RT-PCR) (reviewed in <a href="#bib12">Bustin, 2000</a>), and <span class="emphasis"><em>in situ</em></span> analyses of mRNA expression patterns (<a href="#table2" title="Table 2. Collections of reagents for functional genomics and proteomics in C. elegans.">Table 2</a>). Tiling arrays - now in use for human (<a href="#bib9">Bertone et al., 2004</a>), <span class="emphasis"><em>Drosophila</em></span> (<a href="#bib106">Stolc et al., 2004</a>), and <span class="emphasis"><em>Arabidopsis</em></span> (<a href="#bib131">Yamada et al., 2003</a>) - should soon reveal alternative splicing patterns and expressed non-coding regions of the genome, providing further experimental
+                  data for improving genome annotation and defining the repertoire of functional genetic elements. See Tables 1-3 for representative
+                  examples of reagents and datasets.
+               </p>
+               <p>Specific developmental processes, temporal transitions, or environmental responses in <span class="emphasis"><em>C. elegans</em></span> have been examined by measuring gene expression in wild type and genetically altered, RNAi-treated, or environmentally challenged
+                  animals using microarray and SAGE (<a href="#table3" title="Table 3. A sampling of dynamic transcriptome analyses of developmental processes or environmental responses in C. elegans.">Table 3</a> provides a sampling of these studies). Remarkably, it has been possible to isolate mRNA from single tissues or cell types
+                  such as muscle or neurons, using highly specific promoters to drive transgenic constructs expressing either poly-A binding
+                  protein followed by co-immunoprecipitation (co-IP) (<a href="#bib98">Roy et al., 2002</a>; <a href="#bib70">Kunitomo et al., 2005</a>) or a fluorescent marker followed by fluorescence activated cell sorting (FACS) (<a href="#bib134">Zhang et al., 2002</a>; <a href="#bib20">Colosimo et al., 2004</a>; <a href="#bib18">Cinar et al., 2005</a>; <a href="#bib35">Fox et al., 2005</a>).
+               </p>
+               <div class="table"><a name="table3"></a><p class="title"><span class="bold"><strong>Table 3. A sampling of dynamic transcriptome analyses of developmental processes or environmental responses in</strong></span> <span class="emphasis"><em><span class="bold"><strong>C. elegans.</strong></span></em></span></p>
+                  <table summary="Table 3. A sampling of dynamic transcriptome analyses of developmental processes or environmental responses in C. elegans." border="1">
+                     <colgroup>
+                        <col align="left">
+                        <col align="left">
+                     </colgroup>
+                     <thead>
+                        <tr>
+                           <th align="left">Biological focus</th>
+                           <th align="left">Reference</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td align="left">Developmental transitions</td>
+                           <td align="left"><a href="#bib53">Hill et al. (2000)</a>; <a href="#bib60">Jiang et al. (2001)</a>; <a href="#bib7">Baugh et al. (2003)</a>; <a href="#bib97">Robertson et al. (2004)</a></td>
+                        </tr>
+                        <tr>
+                           <td align="left">Germline development</td>
+                           <td align="left"><a href="#bib96">Reinke et al. (2000)</a>; <a href="#bib95">Reinke et al. (2004)</a></td>
+                        </tr>
+                        <tr>
+                           <td align="left">Meiosis</td>
+                           <td align="left"><a href="#bib19">Colaiacovo et al. (2002)</a></td>
+                        </tr>
+                        <tr>
+                           <td align="left">Lineage specification</td>
+                           <td align="left"><a href="#bib6">Baugh et al. (2005)</a></td>
+                        </tr>
+                        <tr>
+                           <td align="left">Ethanol response</td>
+                           <td align="left"><a href="#bib71">Kwon et al. (2004)</a></td>
+                        </tr>
+                        <tr>
+                           <td align="left">Radiation response</td>
+                           <td align="left"><a href="#bib84">Nelson et al. (2002)</a></td>
+                        </tr>
+                        <tr>
+                           <td align="left">Heat shock response</td>
+                           <td align="left"><a href="#bib45">GuhaThakurta et al. (2002)</a></td>
+                        </tr>
+                        <tr>
+                           <td align="left">Developmental roles of fatty acids</td>
+                           <td align="left"><a href="#bib68">Kniazeva et al. (2004)</a></td>
+                        </tr>
+                        <tr>
+                           <td align="left">Translation initiation factors</td>
+                           <td align="left"><a href="#bib25">Dinkova et al. (2005)</a></td>
+                        </tr>
+                        <tr>
+                           <td align="left">Amyloid beta-responsive genes</td>
+                           <td align="left"><a href="#bib75">Link et al. (2003)</a></td>
+                        </tr>
+                        <tr>
+                           <td align="left">Aging / longevity</td>
+                           <td align="left"><a href="#bib76">Lund et al. (2002)</a>; <a href="#bib79">McCarroll et al. (2004)</a></td>
+                        </tr>
+                        <tr>
+                           <td align="left">Dauer pathway</td>
+                           <td align="left"><a href="#bib55">Holt and Riddle (2003)</a>; <a href="#bib125">Wang and Kim (2003)</a>; <a href="#bib80">McElwee et al. (2004)</a></td>
+                        </tr>
+                        <tr>
+                           <td align="left">Hypertonic stress resistance</td>
+                           <td align="left"><a href="#bib73">Lamitina and Strange, 2005)</a></td>
+                        </tr>
+                        <tr>
+                           <td align="left">Muscle-specific genes</td>
+                           <td align="left"><a href="#bib98">Roy et al. (2002)</a></td>
+                        </tr>
+                        <tr>
+                           <td align="left">Neuronal genes</td>
+                           <td align="left"><a href="#bib134">Zhang et al. (2002)</a>; <a href="#bib20">Colosimo et al. (2004)</a>; <a href="#bib18">Cinar et al. (2005)</a>; <a href="#bib35">Fox et al. (2005)</a>; <a href="#bib70">Kunitomo et al. (2005)</a>.
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <p>To identify gene regulatory elements controlling expression and the logical circuitry driving transcriptional networks, both
+                  computational and experimental approaches are being pursued. Informatic analyses have provided insights into co-regulated
+                  groups of genes, either within <span class="emphasis"><em>C. elegans</em></span> (<a href="#bib66">Kim et al., 2001</a>; <a href="#bib88">Owen et al., 2003</a>), or conserved across species (<a href="#bib107">Stuart et al., 2003</a>; <a href="#bib79">McCarroll et al., 2004</a>). Predictions of <span class="emphasis"><em>cis</em></span>-regulatory elements based on conserved sequence motifs, either among co-expressed genes (<a href="#bib45">GuhaThakurta et al., 2002</a>; <a href="#bib134">Zhang et al., 2002</a>; <a href="#bib71">Kwon et al., 2004</a>; <a href="#bib18">Cinar et al., 2005</a>) or gene families (<a href="#bib78">McCarroll et al., 2005</a>), or in combination with positional and combinatorial constraints (<a href="#bib8">Beer and Tavazoie, 2004</a>), are generating testable hypotheses on gene regulatory circuitry and rules. Experimental efforts to decipher network logic
+                  are employing techniques such as yeast one-hybrid assays (<a href="#bib24">Deplancke et al., 2004</a>; <a href="#bib28">Deplancke et al., 2006</a>), <span class="emphasis"><em>in vivo</em></span> analysis of green fluorescent protein (GFP) reporter expression (<a href="#bib16">Chalfie et al., 1994</a>), and chromatin immunoprecipitation (ChIP-chip technology; <a href="#bib51">Hanlon and Lieb, 2004</a>; <a href="#bib87">Oh et al., 2006</a>). The recent demonstration that functional GFP can be reconstituted from fragments driven by separate promoters (<a href="#bib133">Zhang et al., 2004</a>) opens the gate to large-scale systematic analysis to delineate combinatorial control <span class="emphasis"><em>in vivo</em></span>.
+               </p>
+               <p>Increasingly, combined experimental and informatic efforts seek to characterize higher-order features of transcriptional networks.
+                  These global approaches have discovered, for example, the chromosomal clustering of muscle-expressed genes (<a href="#bib98">Roy et al., 2002</a>), or different classes of radiation-modulated genes (<a href="#bib84">Nelson et al., 2002</a>). Finally, comparative studies are addressing questions such as the evolution of gene expression patterns (<a href="#bib23">Denver et al., 2005</a>) and <span class="emphasis"><em>cis</em></span>-regulatory elements (<a href="#bib15">Castillo-Davis et al., 2004</a>). While these studies represent just an early foray into the analysis of gene regulatory networks, significant strides in
+                  this area can be anticipated in the near future.
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e1475"></a>5.2.&nbsp;<span class="emphasis"><em>In situ</em></span> and <span class="emphasis"><em>in vivo</em></span> analyses
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>High-resolution data on spatiotemporal expression patterns throughout development can be obtained using microscopic techniques.
+                  A large-scale <span class="emphasis"><em>in situ</em></span> analysis of mRNA is being carried out using cDNAs (see <a href="#table1" title="Table 1. Web resources for C. elegans.">Table 1</a>) to identify when and where transcripts are expressed in the worm. <span class="emphasis"><em></em></span> In addition, <span class="emphasis"><em>C. elegans</em></span> provides an unparalleled opportunity to map dynamic patterns of expression <span class="emphasis"><em>in vivo</em></span>, due to its invariant and comprehensively identified cell lineage (<a href="#bib108">Sulston and Horvitz, 1977</a>; <a href="#bib129">White et al., 1982</a>; <a href="#bib109">Sulston et al., 1983</a>) and the fact that animals are optically transparent throughout the life cycle. Transgenic animals containing different tissue-specific
+                  promoters driving GFP provide surrogate markers for expression, and protein-GFP fusion reporter constructs allow the direct
+                  visualization of subcellular localization. Systematic <span class="emphasis"><em>in vivo</em></span> analyses of expression patterns are being carried out for thousands of genes (see <a href="#table1" title="Table 1. Web resources for C. elegans.">Table 1</a>) (<a href="#bib81">McKay et al., 2003</a>; <a href="#bib57">Hope et al., 2004</a>; <a href="#bib135">Zhao et al., 2004</a>; <a href="#bib3">Baillie and Moerman, 2005</a>), using transgenic worms that harbor reporter constructs containing GFP fused downstream of cloned intergenic promoter regions
+                  (<a href="#bib56">Hope et al., 1996</a>; <a href="#bib26">Dupuy et al., 2004</a>). This approach requires the ability to efficiently generate large numbers of transgenic worm strains transformed with cloned
+                  DNA fusion constructs and, ideally, should faithfully report promoter activity <span class="emphasis"><em>in vivo.</em></span> The systematic large-scale application of this approach will require relatively convenient scoring by microscopy in live
+                  animals and will rely heavily on ongoing efforts to develop sophisticated imaging technologies (<a href="#bib83">Mohler and White, 1998</a>; <a href="#bib82">Mohler et al., 2003</a>; <a href="#bib4">Bao et al., 2006</a>). Collections of transgenic strains (e.g. carrying GFP reporter constructs) are being made available for distribution (<a href="#table2" title="Table 2. Collections of reagents for functional genomics and proteomics in C. elegans.">Table 2</a>).
+               </p>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e1558"></a>6.&nbsp;Network modeling: &#8220;omic&#8221; data integration
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>The idea that meaningful hypotheses of gene function and network properties may be obtained by combining two or more types
+               of functional associations (reviewed in <a href="#bib113">Vidal, 2001</a>; <a href="#bib38">Ge et al., 2003</a>) is being explored using a variety of approaches. Global evidence suggests that genes with similar expression profiles are
+               more likely to encode interacting proteins (<a href="#bib37">Ge et al., 2001</a>; <a href="#bib44">Grigoriev, 2001</a>; <a href="#bib58">Jansen et al., 2002</a>; <a href="#bib63">Kemmeren et al., 2002</a>). Correlations between protein-protein interactions and phenotypic data have also been observed, both in yeast (<a href="#bib100">Said et al., 2004</a>) and among <span class="emphasis"><em>C. elegans</em></span> DNA damage response (DDR) (<a href="#bib10">Boulton et al., 2002</a>) and germline-enriched genes (<a href="#bib120">Walhout et al., 2002</a>).
+            </p>
+            <p>Extending a genome-wide phenotypic analysis of genes required in the early embryo, a combined analysis of high-content phenotypic
+               data (<a href="#bib103">S&ouml;nnichsen et al., 2005</a>), transcriptional correlations (<a href="#bib66">Kim et al., 2001</a>), and protein-protein interaction data (<a href="#bib74">Li et al., 2004</a>) has revealed correlations between all three data types (<a href="#bib47">Gunsalus et al., 2005</a>) (<a href="#figure3">Figure 3</a>). It appears that on a global scale, highly interconnected proteins give rise to the same range of phenotypes upon depletion
+               by RNAi, and quantitatively similar phenotypes are predictive of protein-protein interactions. Extending this logic across
+               the proteins found to be required for early embryonic events revealed assemblies of functionally linked components, generating
+               testable functional predictions for numerous unknown genes. This analysis suggests that a limited number of interconnected
+               &#8220;molecular machines&#8221; drive early embryogenesis and provides a global blueprint to explore how protein complexes are coordinated
+               (<a href="#bib47">Gunsalus et al., 2005</a>).
+            </p>
+            <p>Understanding how functional interactions between genes affect biological processes will ultimately require combinatorial
+               <span class="emphasis"><em>in vivo</em></span> perturbations. Since experimentally testing the 200 million possible pairwise combinations between 20,000 genes for each
+               type of experimental perturbation (e.g., reduced or increased level of activity, or alteration of specific contacts) is currently
+               intractable, computational methods are needed that can integrate heterogeneous data and help focus experimental efforts on
+               pairs that may be more likely to be functionally related. A recent study has made genome-wide predictions of genetic interactions
+               in <span class="emphasis"><em>C. elegans</em></span> using a logistic regression approach to integrate data on protein-protein interactions, gene expression, and phenotypes from
+               yeast, worm, and fly with available functional annotations (<a href="#bib136">Zhong and Sternberg, 2006</a>). Like the early embryonic network described above, the resulting network of over 18,000 potential genetic interactions between
+               about 10% of genes in <span class="emphasis"><em>C. elegans</em></span> suggests a modular organization of protein complexes and specific cellular processes. These predictions provide a step toward
+               a global view of genetic interactions in a multicellular organism.
+            </p>
+            <p>Visualizing multidimensional maps is essential to navigate the vast amounts of data now accumulating. To make the results
+               of integrated network analyses more easily accessible, a web-based interactive graphical tool called &#8220;N-Browse&#8221; has been implemented
+               to allow browsing integrated networks of physical and logical functional connections between genes and their products in <span class="emphasis"><em>C. elegans</em></span> and other species (<a href="#table1" title="Table 1. Web resources for C. elegans.">Table 1</a>).
+            </p>
+            <div class="literallayout">
+               <p></p>
+            </div>
+            <div class="mediaobject" align="center"><a name="figure3"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="585">
+<tr>
+  <td align="center"><p><a href="Cnetworkfig3.jpg"><img src="Cnetworkfig3_s.jpg" border="2" align="middle" alt="figure 3"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 3.&nbsp;</b>Combined analysis of (i.) transcriptional correlations (<a href="#bib66">Kim et al., 2001</a>); reprinted with permission from <a href="#bib66">Kim et al. (2001)</a>. Copyright 2001 American Association for the Advancement of Science. (ii.) protein-protein interaction data (<a href="#bib74">Li et al., 2004</a>), and (iii.) high-content phenotypic data (<a href="#bib103">S&ouml;nnichsen et al., 2005</a>). The three datasets are integrated (iv.) revealing correlations between all three data types (<a href="#bib47">Gunsalus et al., 2005</a>). Extending this logic across all protein-coding genes found to be required for early embryonic events reveals assemblies
+                     of functionally linked components, allowing testable functional predictions for numerous proteins.
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e1682"></a>7.&nbsp;Perspectives
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>The application of omic approaches to elucidate <span class="emphasis"><em>C. elegans</em></span> network biology promises to extend our knowledge of cellular and organismal biology as more efforts are dedicated to the
+               development of resources and the generation of improved interactome, phenome and localizome datasets. First, it will be important
+               to improve and eventually complete genome-wide resources such as the ORFeome, the Promoterome, and other sets of important
+               DNA sequences such as 5<span class="symbol">&#8242;</span> and 3<span class="symbol">&#8242;</span> untranslated regions (UTRs), miRNAs and other noncoding RNAs. Second, it is critical to continue improving the mapping of
+               molecular networks by developing and implementing new protein-protein interaction assays (<a href="#bib114">Vidal, 2005</a>) and other types of methods to assay DNA-protein (<a href="#bib24">Deplancke et al., 2004</a>) and RNA-protein (<a href="#bib101">SenGupta et al., 1996</a>) interactions. Third, it will be increasingly important to expand the phenome map by increasing the number of discrete phenotypes
+               scored systematically and by improving and extending flexible RNAi resources (<a href="#bib99">Rual et al., 2004</a>), phenotype scoring methodologies, and image analysis pipelines. <span class="emphasis"><em></em></span> Fourth, the localizome map is currently only in its infancy, and it will be interesting to see how its development will help
+               bridge network biology with the nearly perfect anatomy atlas available for <span class="emphasis"><em>C. elegans</em></span>. Fifth, because disruption of biologically relevant interactions may be expected to phenocopy either null or gain-of-function
+               alleles, it will be useful to exploit strategies for generating and using mutations that specifically perturb individual interactions
+               (<a href="#bib115">Vidal et al., 1996</a>; <a href="#bib116">Vidal et al., 1996</a>; <a href="#bib30">Endoh et al., 2000</a>; <a href="#bib29">Endoh et al., 2002</a>).
+            </p>
+            <p>The combination of experimentation and informatic analysis in iterative cycles will take on a central role in the future of
+               biological research. As more data from functional and proteomic mapping projects are generated and more sophisticated methods
+               are applied to integrate these data on a genome/proteome scale, their synthesis should prove increasingly informative for
+               the reconstruction of cellular networks and for generating new testable hypotheses of biological systems. The challenge is
+               now to achieve a true synthesis of the data to obtain a system-level view of the underlying regulatory networks and the evolutionary
+               forces that have shaped them. This will require the marriage of large datasets with computational models that can describe
+               and predict the behavior of dynamic macromolecular networks and their relationship to the underlying biological processes
+               they control.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e1735"></a>8.&nbsp;Acknowledgments
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>The <span class="emphasis"><em>C. elegans</em></span> ORFeome, interactome and localizome projects at the Center for Cancer Systems Biology (CCSB) at the Dana-Farber Cancer Institute
+               are funded by a NHGRI/NIGMS grant awarded to MV and F. Roth and NCI grants awarded to MV. The phenome and network visualization
+               projects at the Center for Comparative Functional Genomics (New York University) are funded by an NICHD grant to FP and support
+               from the U.S. Army and NYSTAR to KCG. We thank D. Baillie, M. Brent, D. Fitch, I. Hope, J. Hubbard, D. Moerman, B. Mohler,
+               N. Rajewsky, V. Reinke, F. Roth, D. Thierry-Mieg, J, Thierry-Mieg, S. Vandenheuvel and M. Walhout for productive and friendly
+               collaborations, and M. Walhout and M. Cusick for critical reading of the manuscript. Finally, we thank the <span class="emphasis"><em>C. elegans</em></span> Sequencing Consortium for having generated the complete genome sequence and provided a high quality genome annotation, and
+               WormBase for ever-improving gene models.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e1746"></a>9.&nbsp;References
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <div class="bibliography">
+               <div class="bibliomixed"><a name="bib1"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Alberts, B. (1998). The cell as a collection of protein machines: preparing the next generation of molecular biologists. Cell
+                        <span class="emphasis"><em>92</em></span>, 291&#8211;294.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=9476889&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0092-8674(00)80922-8" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib2"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Ashburner, M., Misra, S., Roote, J., Lewis, S.E., Blazej, R., Davis, T., Doyle, C., Galle, R., George, R., Harris, N., et
+                        al. (1999). An exploration of the sequence of a 2.9-Mb region of the genome of <span class="emphasis"><em>Drosophila melanogaster</em></span>: the Adh region. Genetics <span class="emphasis"><em>153</em></span>, 179&#8211;219.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10471707&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib3"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Baillie, D.L., and Moerman, D. (2005). BC <span class="emphasis"><em>C. elegans</em></span> Gene Expression Consortium. (<a href="http://elegans.bcgsc.ca/home/ge_consortium.html" target="_top">http://elegans.bcgsc.ca/home/ge_consortium.html</a>)</span>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib4"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Bao, Z., Murray, J.I., Boyle, T., Ooi, S.L., Sandel, M.J., and Waterston, R.H. (2006). Automated cell lineage tracing in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Proc. Natl. Acad. Sci. U.S.A. <span class="emphasis"><em>103</em></span>, 2707&#8211;2712.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=16477039&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1073/pnas.0511111103" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib5"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Barabasi, A.L., and Albert, R. (1999). Emergence of scaling in random networks. Science <span class="emphasis"><em>286</em></span>, 509&#8211;512.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10521342&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1126/science.286.5439.509" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib6"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Baugh, L.R., Hill, A.A., Claggett, J.M., Hill-Harfe, K., Wen, J.C., Slonim, D.K., Brown, E.L., and Hunter, C.P. (2005). The
+                        homeodomain protein <a href="http://www.wormbase.org/db/seq/protein?name=PAL-1;class=protein" target="_blank">PAL-1</a> specifies a lineage-specific regulatory network in the <span class="emphasis"><em>C. elegans</em></span> embryo. Development <span class="emphasis"><em>132</em></span>, 1843&#8211;1854.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15772128&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1242/dev.01782" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib7"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Baugh, L.R., Hill, A.A., Slonim, D.K., Brown, E.L., and Hunter, C.P. (2003). Composition and dynamics of the <span class="emphasis"><em>Caenorhabditis elegans</em></span> early embryonic transcriptome. Development <span class="emphasis"><em>130</em></span>, 889&#8211;900.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12538516&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1242/dev.00302" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib8"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Beer, M.A., and Tavazoie, S. (2004). Predicting gene expression from sequence. Cell <span class="emphasis"><em>117</em></span>, 185&#8211;198.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15084257&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0092-8674(04)00304-6" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib9"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Bertone, P., Stolc, V., Royce, T.E., Rozowsky, J.S., Urban, A.E., Zhu, X., Rinn, J.L., Tongprasit, W., Samanta, M., Weissman,
+                        S., et al. (2004). Global identification of human transcribed sequences with genome tiling arrays. Science <span class="emphasis"><em>306</em></span>, 2242&#8211;2246.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15539566&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1126/science.1103388" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib10"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Boulton, S.J., Gartner, A., Reboul, J., Vaglio, P., Dyson, N., Hill, D.E., and Vidal, M. (2002). Combined functional genomic
+                        maps of the <span class="emphasis"><em>C. elegans</em></span> DNA damage response. Science <span class="emphasis"><em>295</em></span>, 127&#8211;131.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11778048&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1126/science.1065986" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib11"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Brasch, M.A., Hartley, J.L., and Vidal, M. (2004). ORFeome cloning and systems biology: standardized mass production of the
+                        parts from the parts-list. Genome Res. <span class="emphasis"><em>14</em></span>, 2001&#8211;2009.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15489318&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1101/gr.2769804" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib12"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Bustin, S.A. (2000). Absolute quantification of mRNA using real-time reverse transcription polymerase chain reaction assays.
+                        J. Mol. Endocrinol. <span class="emphasis"><em>25</em></span>, 169&#8211;193.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11013345&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1677/jme.0.0250169" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib13"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Carninci, P., Waki, K., Shiraki, T., Konno, H., Shibata, K., Itoh, M., Aizawa, K., Arakawa, T., Ishii, Y., Sasaki, D., et
+                        al. (2003). Targeting a complex transcriptome: the construction of the mouse full-length cDNA encyclopedia. Genome Res. <span class="emphasis"><em>13</em></span>, 1273&#8211;1289.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12819125&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1101/gr.1119703" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib14"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Castelli, V., Aury, J.M., Jaillon, O., Wincker, P., Clepet, C., Menard, M., Cruaud, C., Quetier, F., Scarpelli, C., Schachter,
+                        V., et al. (2004). Whole genome sequence comparisons and &#8220;full-length&#8221; cDNA sequences: a combined approach to evaluate and
+                        improve <span class="emphasis"><em>Arabidopsis</em></span> genome annotation. Genome Res. <span class="emphasis"><em>14</em></span>, 406&#8211;413.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=14993207&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1101/gr.1515604" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib15"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Castillo-Davis, C.I., Hartl, D.L., and Achaz, G. (2004). cis-Regulatory and protein evolution in orthologous and duplicate
+                        genes. Genome Res. <span class="emphasis"><em>14</em></span>, 1530&#8211;1536.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15256508&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1101/gr.2662504" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib16"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Chalfie, M., Tu, Y., Euskirchen, G., Ward, W.W., and Prasher, D.C. (1994). Green fluorescent protein as a marker for gene
+                        expression. Science <span class="emphasis"><em>263</em></span>, 802&#8211;805.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8303295&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib17"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Chen, N., Harris, T.W., Antoshechkin, I., Bastiani, C., Bieri, T., Blasiar, D., Bradnam, K., Canaran, P., Chan, J., Chen,
+                        C.K., et al. (2005). WormBase: a comprehensive data resource for <span class="emphasis"><em>Caenorhabditis</em></span> biology and genomics. Nucleic Acids Res. <span class="emphasis"><em>33</em></span>, D383&#8211;D389.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15608221&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1093/nar/gki066" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib18"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Cinar, H., Keles, S., and Jin, Y. (2005). Expression Profiling of GABAergic Motor Neurons in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Curr. Biol. <span class="emphasis"><em>15</em></span>, 340&#8211;346.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15723795&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.cub.2005.02.025" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib19"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Colaiacovo, M.P., Stanfield, G.M., Reddy, K.C., Reinke, V., Kim, S.K., and Villeneuve, A.M. (2002). A targeted RNAi screen
+                        for genes involved in chromosome morphogenesis and nuclear organization in the <span class="emphasis"><em>Caenorhabditis elegans</em></span> germline. Genetics <span class="emphasis"><em>162</em></span>, 113&#8211;128.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12242227&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib20"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Colosimo, M.E., Brown, A., Mukhopadhyay, S., Gabel, C., Lanjuin, A.E., Samuel, A.D., and Sengupta, P. (2004). Identification
+                        of thermosensory and olfactory neuron-specific genes via expression profiling of single neuron types. Curr. Biol. <span class="emphasis"><em>14</em></span>, 2245&#8211;2251.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15620651&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.cub.2004.12.030" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib21"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Das, M., Harvey, I., Chu, L.L., Sinha, M., and Pelletier, J. (2001). Full-length cDNAs: more than just reaching the ends.
+                        Physiol. Genomics <span class="emphasis"><em>6</em></span>, 57&#8211;80.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11459922&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib22"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Davy, A., Bello, P., Thierry-Mieg, N., Vaglio, P., Hitti, J., Doucette-Stamm, L., Thierry-Mieg, D., Reboul, J., Boulton, S.,
+                        Walhout, A.J., et al. (2001). A protein-protein interaction map of the <span class="emphasis"><em>Caenorhabditis elegans</em></span> 26S proteasome. EMBO Rep. <span class="emphasis"><em>2</em></span>, 821&#8211;828.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11559592&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1093/embo-reports/kve184" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib23"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Denver, D.R., Morris, K., Streelman, J.T., Kim, S.K., Lynch, M., and Thomas, W.K. (2005). The transcriptional consequences
+                        of mutation and natural selection in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Nat. Genet. <span class="emphasis"><em>37</em></span>, 544&#8211;548.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15852004&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/ng1554" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib24"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Deplancke, B., Dupuy, D., Vidal, M., and Walhout, A.J. (2004). A gateway-compatible yeast one-hybrid system. Genome Res. <span class="emphasis"><em>14</em></span>, 2093&#8211;2101.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15489331&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1101/gr.2445504" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib28"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Deplancke, B., Mukhopadhyay, A., Ao, W., Elewa, A.M., Grove, C.A., Martinez, N.J., Sequerra, R., Doucette-Stamm, L., Reece-Hoyes,
+                        J.S., Hope, I.A., Tissenbaum, H.A., Mango, S.E., and Walhout, A.J. (2006). A gene-centered <span class="emphasis"><em>C. elegans</em></span> protein-DNA interaction network. Cell <span class="emphasis"><em>125</em></span>, 1032&#8211;1034.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=16777607&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.cell.2006.04.038" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib25"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Dinkova, T.D., Keiper, B.D., Korneeva, N.L., Aamodt, E.J., and Rhoads, R.E. (2005). Translation of a small subset of <span class="emphasis"><em>Caenorhabditis elegans</em></span> mRNAs is dependent on a specific eukaryotic translation initiation factor 4E isoform. Mol. Cell. Biol. <span class="emphasis"><em>25</em></span>, 100&#8211;113.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15601834&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1128/MCB.25.1.100-113.2005" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib26"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Dupuy, D., Li, Q.R., Deplancke, B., Boxem, M., Hao, T., Lamesch, P., Sequerra, R., Bosak, S., Doucette-Stamm, L., Hope, I.A.,
+                        et al. (2004). A first version of the <span class="emphasis"><em>Caenorhabditis elegans</em></span> Promoterome. Genome Res. <span class="emphasis"><em>14</em></span>, 2169&#8211;2175.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15489340&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1101/gr.2497604" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib27"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Durbin, R., and Thierry-Mieg, J. (1994). The ACeDB genome database. In: Computational Methods in Genome Research, Suhai, S.,
+                        ed., New York, NY: Plenum Press, pp 45&#8211;56.</span>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib29"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Endoh, H., Vincent, S., Jacob, Y., Real, E., Walhout, A.J., and Vidal, M. (2002). Integrated version of reverse two-hybrid
+                        system for the postproteomic era. Meth. Enzymol. <span class="emphasis"><em>350</em></span>, 525&#8211;545.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12073334&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib30"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Endoh, H., Walhout, A.J., and Vidal, M. (2000). A green fluorescent protein-based reverse two-hybrid system: application to
+                        the characterization of large numbers of potential protein-protein interactions. Meth. Enzymol. <span class="emphasis"><em>328</em></span>, 74&#8211;88.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11075339&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib31"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Feng, Z., Cronin, C.J., Wittig, J.H., Jr., Sternberg, P.W., and Schafer, W.R. (2004). An imaging system for standardized quantitative
+                        analysis of <span class="emphasis"><em>C. elegans</em></span> behavior. BMC Bioinformatics 5, 115.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15331023&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1186/1471-2105-5-115" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib32"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Fernandez, A.G., Gunsalus, K.C., Huang, J., Chuang, L.S., Ying, N., Liang, H.L., Tang, C., Schetter, A.J., Zegar, C., Rual,
+                        J.F., et al. (2005). New genes with roles in the <span class="emphasis"><em>C. elegans</em></span> embryo revealed using RNAi of ovary-enriched ORFeome clones. Genome Res. <span class="emphasis"><em>15</em></span>, 250&#8211;259.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15687288&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1101/gr.3194805" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib33"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Fields, S., and Song, O. (1989). A novel genetic system to detect protein-protein interactions. Nature <span class="emphasis"><em>340</em></span>, 245&#8211;246.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=2547163&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/340245a0" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib34"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Fire, A., Xu, S., Montgomery, M.K., Kostas, S.A., Driver, S.E., and Mello, C.C. (1998). Potent and specific genetic interference
+                        by double-stranded RNA in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Nature <span class="emphasis"><em>391</em></span>, 806&#8211;811.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=9486653&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/35888" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib35"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Fox, R.M., Von Stetina, S.E., Barlow, S.J., Shaffer, C., Olszewski, K.L., Moore, J.H., Dupuy, D., Vidal, M., and Miller, D.M.,
+                        3rd (2005). A gene expression fingerprint of <span class="emphasis"><em>C. elegans</em></span> embryonic motor neurons. BMC Genomics <span class="emphasis"><em>6</em></span>, 42.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15780142&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1186/1471-2164-6-42" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib36"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Fraser, A.G., Kamath, R.S., Zipperlen, P., Martinez-Campos, M., Sohrmann, M., and Ahringer, J. (2000). Functional genomic
+                        analysis of <span class="emphasis"><em>C. elegans</em></span> chromosome I by systematic RNA interference. Nature <span class="emphasis"><em>408</em></span>, 325&#8211;330.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11099033&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/35042517" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib37"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Ge, H., Liu, Z., Church, G.M., and Vidal, M. (2001). Correlation between transcriptome and interactome mapping data from Saccharomyces
+                        cerevisiae. Nat. Genet. <span class="emphasis"><em>29</em></span>, 482&#8211;486.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11694880&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/ng776" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib38"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Ge, H., Walhout, A.J., and Vidal, M. (2003). Integrating 'omic' information: a bridge between genomics and systems biology.
+                        Trends Genet. <span class="emphasis"><em>19</em></span>, 551&#8211;560.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=14550629&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.tig.2003.08.009" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib39"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Geng, W., Cosman, P., Baek, J.H., Berry, C.C., and Schafer, W.R. (2003). Quantitative classification and natural clustering
+                        of <span class="emphasis"><em>Caenorhabditis elegans</em></span> behavioral phenotypes. Genetics <span class="emphasis"><em>165</em></span>, 1117&#8211;1126.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=14668369&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib40"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Geng, W., Cosman, P., Berry, C.C., Feng, Z., and Schafer, W.R. (2004). Automatic tracking, feature extraction and classification
+                        of <span class="emphasis"><em>C elegans</em></span> phenotypes. IEEE Trans. Biomed. Eng. <span class="emphasis"><em>51</em></span>, 1811&#8211;1820.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15490828&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1109/TBME.2004.831532" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib41"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Giaever, G., Chu, A.M., Ni, L., Connelly, C., Riles, L., Veronneau, S., Dow, S., Lucau-Danila, A., Anderson, K., Andre, B.,
+                        et al. (2002). Functional profiling of the Saccharomyces cerevisiae genome. Nature <span class="emphasis"><em>418</em></span>, 387&#8211;391.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12140549&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nature00935" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib42"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Goldberg, D.S., and Roth, F.P. (2003). Assessing experimentally derived interactions in a small world. Proc. Natl. Acad. Sci.
+                        U.S.A. <span class="emphasis"><em>100</em></span>, 4372&#8211;4376.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12676999&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1073/pnas.0735871100" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib43"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">G&ouml;nczy, P., Echeverri, G., Oegema, K., Coulson, A., Jones, S.J., Copley, R.R., Duperon, J., Oegema, J., Brehm, M., Cassin,
+                        E., et al. (2000). Functional genomic analysis of cell division in <span class="emphasis"><em>C. elegans</em></span> using RNAi of genes on chromosome III. Nature <span class="emphasis"><em>408</em></span>, 331&#8211;336.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11099034&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/35042526" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib44"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Grigoriev, A. (2001). A relationship between gene expression and protein interactions on the proteome scale: analysis of the
+                        bacteriophage T7 and the yeast Saccharomyces cerevisiae. Nucleic Acids Res. <span class="emphasis"><em>29</em></span>, 3513&#8211;3519.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11522820&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1093/nar/29.17.3513" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib45"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">GuhaThakurta, D., Palomar, L., Stormo, G.D., Tedesco, P., Johnson, T.E., Walker, D.W., Lithgow, G., Kim, S., and Link, C.D.
+                        (2002). Identification of a novel cis-regulatory element involved in the heat shock response in <span class="emphasis"><em>Caenorhabditis elegans</em></span> using microarray gene expression and computational methods. Genome Res. <span class="emphasis"><em>12</em></span>, 701&#8211;712.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11997337&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1101/gr.228902" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib46"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Gunsalus, K.C., Ge, H., Schetter, A.J., Goldberg, D.S., Han, J.D., Hao, T., Berriz, G.F., Bertin, N., Huang, J., Chuang, L.S.,
+                        et al. (2005). Predictive models of molecular machines involved in <span class="emphasis"><em>Caenorhabditis elegans</em></span> early embryogenesis. Nature <span class="emphasis"><em>436</em></span>, 861&#8211;865.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15661512&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.ceb.2004.12.008" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib47"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Gunsalus, K.C., and Piano, F. (2005). RNAi as a tool to study cell biology: building the genome-phenome bridge. Curr. Opin.
+                        Cell Biol. <span class="emphasis"><em>17</em></span>, 3&#8211;8.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=16094371&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nature03876" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib48"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Gunsalus, K.C., Yueh, W.C., MacMenamin, P., and Piano, F. (2004). RNAiDB and PhenoBlast: web tools for genome-wide phenotypic
+                        mapping projects. Nucleic Acids Res. <span class="emphasis"><em>32</em></span>, D406&#8211;D410.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=14681444&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1093/nar/gkh110" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib49"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Guo, S., and Kemphues, K.J. (1995). <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=par-1" target="_blank">par-1</a></em></span>, a gene required for establishing polarity in <span class="emphasis"><em>C. elegans</em></span> embryos, encodes a putative Ser/Thr kinase that is asymmetrically distributed. Cell <span class="emphasis"><em>81</em></span>, 611&#8211;620.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=7758115&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/0092-8674(95)90082-9" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib50"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Han, J.D., Bertin, N., Hao, T., Goldberg, D.S., Berriz, G.F., Zhang, L.V., Dupuy, D., Walhout, A.J., Cusick, M.E., Roth, F.P.,
+                        and Vidal, M. (2004). Evidence for dynamically organized modularity in the yeast protein-protein interaction network. Nature
+                        <span class="emphasis"><em>430</em></span>, 88&#8211;93.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15190252&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nature02555" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib51"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Hanlon, S.E., and Lieb, J.D. (2004). Progress and challenges in profiling the dynamics of chromatin and transcription factor
+                        binding with DNA microarrays. Curr. Opin. Genet. Dev. <span class="emphasis"><em>14</em></span>, 697&#8211;705.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15531167&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.gde.2004.09.008" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib52"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Hartwell, L.H., Hopfield, J.J., Leibler, S., and Murray, A.W. (1999). From molecular to modular cell biology. Nature <span class="emphasis"><em>402</em></span>, C47&#8211;C52.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10591225&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/35011540" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib53"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Hill, A.A., Hunter, C.P., Tsung, B.T., Tucker-Kellogg, G., and Brown, E.L. (2000). Genomic analysis of gene expression in
+                        <span class="emphasis"><em>C. elegans</em></span>. Science <span class="emphasis"><em>290</em></span>, 809&#8211;812.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11052945&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1126/science.290.5492.809" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib54"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Hillier, L.W., Coulson, A., Murray, J.I., Bao, Z., Sulston, J.E., and Waterston, R.H. (2005). Genomics in <span class="emphasis"><em>C. elegans</em></span>: so many genes, such a little worm. Genome Res. <span class="emphasis"><em>15</em></span>, 1651&#8211;1660.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=16339362&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1101/gr.3729105" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib55"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Holt, S.J., and Riddle, D.L. (2003). SAGE surveys <span class="emphasis"><em>C. elegans</em></span> carbohydrate metabolism: evidence for an anaerobic shift in the long-lived dauer larva. Mech. Ageing Dev. <span class="emphasis"><em>124</em></span>, 779&#8211;800.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12875742&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0047-6374(03)00132-5" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib56"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Hope, I.A., Albertson, D.G., Martinelli, S.D., Lynch, A.S., Sonnhammer, E., and Durbin, R. (1996). The <span class="emphasis"><em>C. elegans</em></span> expression pattern database: a beginning. Trends Genet. <span class="emphasis"><em>12</em></span>, 370&#8211;371.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8855668&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/0168-9525(96)60033-X" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib57"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Hope, I.A., Stevens, J., Garner, A., Hayes, J., Cheo, D.L., Brasch, M.A., and Vidal, M. (2004). Feasibility of genome-scale
+                        construction of promoter::reporter gene fusions for expression in <span class="emphasis"><em>Caenorhabditis elegans</em></span> using a multisite gateway recombination system. Genome Res. <span class="emphasis"><em>14</em></span>, 2070&#8211;2075.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15489328&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1101/gr.2463804" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib58"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Jansen, R., Greenbaum, D., and Gerstein, M. (2002). Relating whole-genome expression data with protein-protein interactions.
+                        Genome Res. <span class="emphasis"><em>12</em></span>, 37&#8211;46.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11779829&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1101/gr.205602" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib59"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Jeong, H., Mason, S.P., Barabasi, A.L., and Oltvai, Z.N. (2001). Lethality and centrality in protein networks. Nature <span class="emphasis"><em>411</em></span>, 41&#8211;42.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11333967&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/35075138" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib60"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Jiang, M., Ryu, J., Kiraly, M., Duke, K., Reinke, V., and Kim, S.K. (2001). Genome-wide analysis of developmental and sex-regulated
+                        gene expression profiles in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Proc. Natl. Acad. Sci. U.S.A. <span class="emphasis"><em>98</em></span>, 218&#8211;223.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11134517&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1073/pnas.011520898" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib61"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Jones, S.J., Riddle, D.L., Pouzyrev, A.T., Velculescu, V.E., Hillier, L., Eddy, S.R., Stricklin, S.L., Baillie, D.L., Waterston,
+                        R., and Marra, M.A. (2001). Changes in gene expression associated with developmental arrest and longevity in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Genome Res. <span class="emphasis"><em>11</em></span>, 1346&#8211;1352.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11483575&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1101/gr.184401" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib62"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Kamath, R.S., Fraser, A.G., Dong, Y., Poulin, G., Durbin, R., Gotta, M., Kanapin, A., Le Bot, N., Moreno, S., Sohrmann, M.,
+                        et al. (2003). Systematic functional analysis of the <span class="emphasis"><em>Caenorhabditis elegans</em></span> genome using RNAi. Nature <span class="emphasis"><em>421</em></span>, 231&#8211;237.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12529635&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nature01278" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib63"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Kemmeren, P., van Berkum, N.L., Vilo, J., Bijma, T., Donders, R., Brazma, A., and Holstege, F.C. (2002). Protein interaction
+                        verification and functional annotation by integrated analysis of genome-scale data. Mol. Cell <span class="emphasis"><em>9</em></span>, 1133&#8211;1143.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12049748&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S1097-2765(02)00531-2" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib65"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Kent, W.J., and Zahler, A.M. (2000). The intronerator: exploring introns and alternative splicing in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Nucleic Acids Res. <span class="emphasis"><em>28</em></span>, 91&#8211;93.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10592190&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1093/nar/28.1.91" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib66"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Kim, S.K., Lund, J., Kiraly, M., Duke, K., Jiang, M., Stuart, J.M., Eizinger, A., Wylie, B.N., and Davidson, G.S. (2001).
+                        A gene expression map for <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Science <span class="emphasis"><em>293</em></span>, 2087&#8211;2092.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11557892&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1126/science.1061603" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib68"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Kniazeva, M., Crawford, Q.T., Seiber, M., Wang, C.Y., and Han, M. (2004). Monomethyl branched-chain fatty acids play an essential
+                        role in <span class="emphasis"><em>Caenorhabditis elegans</em></span> development. PLoS Biol. <span class="emphasis"><em>2</em></span>, E257.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15340492&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1371/journal.pbio.0020257" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib69"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Korf, I., Flicek, P., Duan, D., and Brent, M.R. (2001). Integrating genomic homology into gene structure prediction. Bioinformatics
+                        <span class="emphasis"><em>17</em></span>, S140&#8211;S148.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11473003&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib70"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Kunitomo, H., Uesugi, H., Kohara, Y., and Iino, Y. (2005). Identification of ciliated sensory neuron-expressed genes in <span class="emphasis"><em>Caenorhabditis elegans</em></span> using targeted pull-down of poly(A) tails. Genome Biol. <span class="emphasis"><em>6</em></span>, R17.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15693946&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1186/gb-2005-6-2-r17" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib71"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Kwon, J.Y., Hong, M., Choi, M.S., Kang, S., Duke, K., Kim, S., Lee, S., and Lee, J. (2004). Ethanol-response genes and their
+                        regulation analyzed by a microarray and comparative genomic approach in the nematode <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Genomics <span class="emphasis"><em>83</em></span>, 600&#8211;614.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15028283&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.ygeno.2003.10.008" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib72"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Lamesch, P., Milstein, S., Hao, T., Rosenberg, J., Li, N., Sequerra, R., Bosak, S., Doucette-Stamm, L., Vandenhaute, J., Hill,
+                        D.E., and Vidal, M. (2004). <span class="emphasis"><em>C. elegans</em></span> ORFeome version 3.1: increasing the coverage of ORFeome resources with improved gene predictions. Genome Res. <span class="emphasis"><em>14</em></span>, 2064&#8211;2069.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15489327&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1101/gr.2496804" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib73"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Lamitina, S.T., and Strange, K. (2005). Transcriptional targets of <a href="http://www.wormbase.org/db/seq/protein?name=DAF-16;class=protein" target="_blank">DAF-16</a> insulin signaling pathway protect <span class="emphasis"><em>C. elegans</em></span> from extreme hypertonic stress. Am. J. Physiol., Cell Physiol. <span class="emphasis"><em>288</em></span>, C467&#8211;C474.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15496475&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1152/ajpcell.00451.2004" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib74"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Li, S., Armstrong, C.M., Bertin, N., Ge, H., Milstein, S., Boxem, M., Vidalain, P.O., Han, J.D., Chesneau, A., Hao, T., et
+                        al. (2004). A map of the interactome network of the metazoan <span class="emphasis"><em>C. elegans</em></span>. Science <span class="emphasis"><em>303</em></span>, 540&#8211;543.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=14704431&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1126/science.1091403" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib75"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Link, C.D., Taft, A., Kapulkin, V., Duke, K., Kim, S., Fei, Q., Wood, D.E., and Sahagan, B.G. (2003). Gene expression analysis
+                        in a transgenic <span class="emphasis"><em>Caenorhabditis elegans</em></span> Alzheimer's disease model. Neurobiol. Aging <span class="emphasis"><em>24</em></span>, 397&#8211;413.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12600716&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0197-4580(02)00224-5" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib76"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Lund, J., Tedesco, P., Duke, K., Wang, J., Kim, S.K., and Johnson, T.E. (2002). Transcriptional profile of aging in <span class="emphasis"><em>C. elegans</em></span>. Curr. Biol. <span class="emphasis"><em>12</em></span>, 1566&#8211;1573.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12372248&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0960-9822(02)01146-6" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib77"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Maeda, I., Kohara, Y., Yamamoto, M., and Sugimoto, A. (2001). Large-scale analysis of gene function in <span class="emphasis"><em>Caenorhabditis elegans</em></span> by high-throughput RNAi. Curr. Biol. <span class="emphasis"><em>11</em></span>, 171&#8211;176.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11231151&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0960-9822(01)00052-5" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib78"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">McCarroll, S.A., Li, H., and Bargmann, C.I. (2005). Identification of transcriptional regulatory elements in chemosensory
+                        receptor genes by probabilistic segmentation. Curr. Biol. <span class="emphasis"><em>15</em></span>, 347&#8211;352.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15723796&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.cub.2005.02.023" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib79"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">McCarroll, S.A., Murphy, C.T., Zou, S., Pletcher, S.D., Chin, C.S., Jan, Y.N., Kenyon, C., Bargmann, C.I., and Li, H. (2004).
+                        Comparing genomic expression patterns across species identifies shared transcriptional profile in aging. Nat. Genet. <span class="emphasis"><em>36</em></span>, 197&#8211;204.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=14730301&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/ng1291" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib80"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">McElwee, J.J., Schuster, E., Blanc, E., Thomas, J.H., and Gems, D. (2004). Shared transcriptional signature in <span class="emphasis"><em>Caenorhabditis elegans</em></span> Dauer larvae and long-lived <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=daf-2" target="_blank">daf-2</a></em></span> mutants implicates detoxification system in longevity assurance. J. Biol. Chem. <span class="emphasis"><em>279</em></span>, 44533&#8211;44543.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15308663&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1074/jbc.M406207200" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib81"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">McKay, S.J., Johnsen, R., Khattra, J., Asano, J., Baillie, D.L., Chan, S., Dube, N., Fang, L., Goszczynski, B., Ha, E., et
+                        al. (2003). Gene expression profiling of cells, tissues, and developmental stages of the nematode <span class="emphasis"><em>C. elegans</em></span>. Cold Spring Harb. Symp. Quant. Biol. <span class="emphasis"><em>68</em></span>, 159&#8211;169.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15338614&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1101/sqb.2003.68.159" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib82"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Mohler, W., Millard, A.C., and Campagnola, P.J. (2003). Second harmonic generation imaging of endogenous structural proteins.
+                        Methods <span class="emphasis"><em>29</em></span>, 97&#8211;109.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12543075&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S1046-2023(02)00292-X" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib83"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Mohler, W.A., and White, J.G. (1998). Stereo-4-D reconstruction and animation from living fluorescent specimens. Biotechniques
+                        <span class="emphasis"><em>24</em></span>, 1006&#8211;1010, 1012.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=9631195&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib84"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Nelson, G.A., Jones, T.A., Chesnut, A., and Smith, A.L. (2002). Radiation-induced gene expression in the nematode <span class="emphasis"><em>Caenorhabditis elegans</em></span>. J. Radiat. Res. <span class="emphasis"><em>43</em></span>, S199&#8211;S203.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12793758&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1269/jrr.43.S199" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib85"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">NHGRI (2005). Roundworm Genome Sequencing: <span class="emphasis"><em>Caenorhabditis</em></span> species.</span>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib86"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Ning, F., LeCun, Y., Piano, F., Bottou, L., and Barbano, P.E. (2005). Toward Automatic Phenotyping of Developing Embryos from
+                        Videos. IEEE Trans. Image Process. (in press).</span>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib87"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Oh, S.W., Mukhopadhyay, A., Dixit, B.L., Raha, T., Green, M.R., and Tissenbaum, H.A. (2006). Identification of direct <a href="http://www.wormbase.org/db/seq/protein?name=DAF-16;class=protein" target="_blank">DAF-16</a> targets controlling longevity, metabolism and diapause by chromatin immunoprecipitation. Nat. Genet. <span class="emphasis"><em>38</em></span>, 251&#8211;257.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=16380712&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/ng1723" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib88"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Owen, A.B., Stuart, J., Mach, K., Villeneuve, A.M., and Kim, S. (2003). A gene recommender algorithm to identify coexpressed
+                        genes in <span class="emphasis"><em>C. elegans</em></span>. Genome Res. <span class="emphasis"><em>13</em></span>, 1828&#8211;1837.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12902378&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1101/gr.1125403" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib89"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Piano, F., Schetter, A.J., Mangone, M., Stein, L., and Kemphues, K.J. (2000). RNAi analysis of genes expressed in the ovary
+                        of <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Curr. Biol. <span class="emphasis"><em>10</em></span>, 1619&#8211;1622.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11137018&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0960-9822(00)00869-1" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib90"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Piano, F., Schetter, A.J., Morton, D.G., Gunsalus, K.C., Reinke, V., Kim, S.K., and Kemphues, K.J. (2002). Gene Clustering
+                        Based on RNAi Phenotypes of Ovary-Enriched Genes in <span class="emphasis"><em>C. elegans</em></span>. Curr. Biol. <span class="emphasis"><em>12</em></span>, 1959&#8211;1964.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12445391&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0960-9822(02)01301-5" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib91"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Pleasance, E.D., Marra, M.A., and Jones, S.J. (2003). Assessment of SAGE in transcript identification. Genome Res. <span class="emphasis"><em>13</em></span>, 1203&#8211;1215.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12743019&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1101/gr.873003" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib92"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Qiu, S., Adema, C.M., and Lane, T. (2005). A computational study of off-target effects of RNA interference. Nucleic Acids
+                        Res. <span class="emphasis"><em>33</em></span>, 1834&#8211;1847.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15800213&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1093/nar/gki324" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib93"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Reboul, J., Vaglio, P., Rual, J.F., Lamesch, P., Martinez, M., Armstrong, C.M., Li, S., Jacotot, L., Bertin, N., Janky, R.,
+                        et al. (2003). <span class="emphasis"><em>C. elegans</em></span> ORFeome version 1.1: experimental verification of the genome annotation and resource for proteome-scale protein expression.
+                        Nat. Genet. <span class="emphasis"><em>34</em></span>, 35&#8211;41.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12679813&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/ng1140" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib94"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Reboul, J., Vaglio, P., Tzellas, N., Thierry-Mieg, N., Moore, T., Jackson, C., Shin-i, T., Kohara, Y., Thierry-Mieg, D., Thierry-Mieg,
+                        J., et al. (2001). Open-reading-frame sequence tags (OSTs) support the existence of at least 17,300 genes in <span class="emphasis"><em>C. elegans</em></span>. Nat. Genet. <span class="emphasis"><em>27</em></span>, 332&#8211;336.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11242119&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/85913" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib95"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Reinke, V., Gil, I.S., Ward, S., and Kazmer, K. (2004). Genome-wide germline-enriched and sex-biased expression profiles in
+                        <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Development <span class="emphasis"><em>131</em></span>, 311&#8211;323.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=14668411&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1242/dev.00914" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib96"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Reinke, V., Smith, H.E., Nance, J., Wang, J., Van Doren, C., Begley, R., Jones, S.J., Davis, E.B., Scherer, S., Ward, S.,
+                        and Kim, S.K. (2000). A global profile of germline gene expression in <span class="emphasis"><em>C. elegans</em></span>. Mol. Cell <span class="emphasis"><em>6</em></span>, 605&#8211;616.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11030340&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S1097-2765(00)00059-9" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib97"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Robertson, S.M., Shetty, P., and Lin, R. (2004). Identification of lineage-specific zygotic transcripts in early <span class="emphasis"><em>Caenorhabditis elegans</em></span> embryos. Dev. Biol. <span class="emphasis"><em>276</em></span>, 493&#8211;507.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15581881&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.ydbio.2004.09.015" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib98"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Roy, P.J., Stuart, J.M., Lund, J., and Kim, S.K. (2002). Chromosomal clustering of muscle-expressed genes in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Nature <span class="emphasis"><em>418</em></span>, 975&#8211;979.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12214599&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nature01012" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib99"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Rual, J.F., Ceron, J., Koreth, J., Hao, T., Nicot, A.S., Hirozane-Kishikawa, T., Vandenhaute, J., Orkin, S.H., Hill, D.E.,
+                        van den Heuvel, S., and Vidal, M. (2004). Toward improving <span class="emphasis"><em>Caenorhabditis elegans</em></span> phenome mapping with an ORFeome-based RNAi library. Genome Res. <span class="emphasis"><em>14</em></span>, 2162&#8211;2168.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15489339&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1101/gr.2505604" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib100"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Said, M.R., Begley, T.J., Oppenheim, A.V., Lauffenburger, D.A., and Samson, L.D. (2004). Global network analysis of phenotypic
+                        effects: protein networks and toxicity modulation in Saccharomyces cerevisiae. Proc. Natl. Acad. Sci. U.S.A. <span class="emphasis"><em>101</em></span>, 18006&#8211;18011.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15608068&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1073/pnas.0405996101" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib101"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">SenGupta, D.J., Zhang, B., Kraemer, B., Pochart, P., Fields, S., and Wickens, M. (1996). A three-hybrid system to detect RNA-protein
+                        interactions in vivo. Proc. Natl. Acad. Sci. U.S.A. <span class="emphasis"><em>93</em></span>, 8496&#8211;8501.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8710898&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1073/pnas.93.16.8496" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib102"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Simmer, F., Moorman, C., van der Linden, A.M., Kuijk, E., van den Berghe, P.V., Kamath, R.S., Fraser, A.G., Ahringer, J.,
+                        and Plasterk, R.H. (2003). Genome-wide RNAi of <span class="emphasis"><em>C. elegans</em></span> using the hypersensitive <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=rrf-3" target="_blank">rrf-3</a></em></span> strain reveals novel gene functions. PLoS Biol. <span class="emphasis"><em>1</em></span>, E12.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=14551910&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1371/journal.pbio.0000012" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib103"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">S&ouml;nnichsen, B., Koski, L.B., Walsh, A., Marschall, P., Neumann, B., Brehm, M., Alleaume, A.M., Artelt, J., Bettencourt, P.,
+                        Cassin, E., et al. (2005). Full-genome RNAi profiling of early embryogenesis in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Nature <span class="emphasis"><em>434</em></span>, 462&#8211;469.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15791247&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nature03353" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib104"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Stein, L., Sternberg, P., Durbin, R., Thierry-Mieg, J., and Spieth, J. (2001). WormBase: network access to the genome and
+                        biology of <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Nucleic Acids Res. <span class="emphasis"><em>29</em></span>, 82&#8211;86.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11125056&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1093/nar/29.1.82" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib105"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Stein, L.D., Bao, Z., Blasiar, D., Blumenthal, T., Brent, M.R., Chen, N., Chinwalla, A., Clarke, L., Clee, C., Coghlan, A.,
+                        et al. (2003). The genome sequence of <span class="emphasis"><em>Caenorhabditis briggsae</em></span>: a platform for comparative genomics. PLoS Biol. <span class="emphasis"><em>1</em></span>, E45.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=14624247&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1371/journal.pbio.0000045" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib106"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Stolc, V., Gauhar, Z., Mason, C., Halasz, G., van Batenburg, M.F., Rifkin, S.A., Hua, S., Herreman, T., Tongprasit, W., Barbano,
+                        P.E., et al. (2004). A gene expression map for the euchromatic genome of <span class="emphasis"><em>Drosophila melanogaster</em></span>. Science <span class="emphasis"><em>306</em></span>, 655&#8211;660.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15499012&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1126/science.1101312" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib107"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Stuart, J.M., Segal, E., Koller, D., and Kim, S.K. (2003). A gene-coexpression network for global discovery of conserved genetic
+                        modules. Science <span class="emphasis"><em>302</em></span>, 249&#8211;255.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12934013&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1126/science.1087447" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib108"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Sulston, J.E., and Horvitz, H.R. (1977). Post-embryonic cell lineages of the nematode, <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Dev. Biol. <span class="emphasis"><em>56</em></span>, 110&#8211;156.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=838129&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/0012-1606(77)90158-0" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib109"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Sulston, J.E., Schierenberg, E., White, J.G., and Thomson, J.N. (1983). The embryonic cell lineage of the nematode <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Dev. Biol. <span class="emphasis"><em>100</em></span>, 64&#8211;119.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=6684600&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/0012-1606(83)90201-4" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib110"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Tewari, M., Hu, P.J., Ahn, J.S., Ayivi-Guedehoussou, N., Vidalain, P.O., Li, S., Milstein, S., Armstrong, C.M., Boxem, M.,
+                        Butler, M.D., et al. (2004). Systematic interactome mapping and genetic perturbation analysis of a <span class="emphasis"><em>C. elegans</em></span> TGF-beta signaling network. Mol. Cell <span class="emphasis"><em>13</em></span>, 469&#8211;482.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=14992718&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S1097-2765(04)00033-4" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib111"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">The <span class="emphasis"><em>C. elegans</em></span> Sequencing Consortium (1998). Genome sequence of the nematode <span class="emphasis"><em>C. elegans</em></span>: a platform for investigating biology. Science <span class="emphasis"><em>282</em></span>, 2012&#8211;2018.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=9851916&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1126/science.282.5396.2012" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib112"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Thierry-Mieg, J., Thierry-Mieg, D., Potdevin, M., and Sienkiewicz, M. (2005). Identification and functional annotation of
+                        cDNA-supported genes in higher organisms using AceView. (<a href="http://www.wormgenes.org" target="_top">http://www.wormgenes.org</a>)</span>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib113"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Vidal, M. (2001). A biological atlas of functional maps. Cell <span class="emphasis"><em>104</em></span>, 333&#8211;339.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11239391&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0092-8674(01)00221-5" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib114"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Vidal, M. (2005). Interactome modeling. FEBS Lett. <span class="emphasis"><em>579</em></span>, 1834&#8211;1838.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15763560&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.febslet.2005.02.030" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib115"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Vidal, M., Brachmann, R.K., Fattaey, A., Harlow, E., and Boeke, J.D. (1996). Reverse two-hybrid and one-hybrid systems to
+                        detect dissociation of protein-protein and DNA-protein interactions. Proc. Natl. Acad. Sci. U.S.A. <span class="emphasis"><em>93</em></span>, 10315&#8211;10320.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8816797&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1073/pnas.93.19.10315" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib116"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Vidal, M., Braun, P., Chen, E., Boeke, J.D., and Harlow, E. (1996). Genetic characterization of a mammalian protein-protein
+                        interaction domain by using a yeast reverse two-hybrid system. Proc. Natl. Acad. Sci. U.S.A. <span class="emphasis"><em>93</em></span>, 10321&#8211;10326.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8816798&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1073/pnas.93.19.10321" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib117"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Vidal, M., and Legrain, P. (1999). Yeast forward and reverse 'n'-hybrid systems. Nucleic Acids Res. <span class="emphasis"><em>27</em></span>, 919&#8211;929.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=9927722&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1093/nar/27.4.919" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib118"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Vidalain, P.O., Boxem, M., Ge, H., Li, S., and Vidal, M. (2004). Increasing specificity in high-throughput yeast two-hybrid
+                        experiments. Methods <span class="emphasis"><em>32</em></span>, 363&#8211;370.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15003598&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.ymeth.2003.10.001" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib119"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Walhout, A.J., Boulton, S.J., and Vidal, M. (2000). Yeast two-hybrid systems and protein interaction mapping projects for
+                        yeast and worm. Yeast <span class="emphasis"><em>17</em></span>, 88&#8211;94.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10900455&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib120"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Walhout, A.J., Reboul, J., Shtanko, O., Bertin, N., Vaglio, P., Ge, H., Lee, H., Doucette-Stamm, L., Gunsalus, K.C., Schetter,
+                        A.J., et al. (2002). Integrating interactome, phenome, and transcriptome mapping data for the <span class="emphasis"><em>C. elegans</em></span> germline. Curr. Biol. <span class="emphasis"><em>12</em></span>, 1952&#8211;1958.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12445390&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0960-9822(02)01279-4" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib121"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Walhout, A.J., Sordella, R., Lu, X., Hartley, J.L., Temple, G.F., Brasch, M.A., Thierry-Mieg, N., and Vidal, M. (2000). Protein
+                        interaction mapping in <span class="emphasis"><em>C. elegans</em></span> using proteins involved in vulval development. Science <span class="emphasis"><em>287</em></span>, 116&#8211;122.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10615043&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1126/science.287.5450.116" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib122"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Walhout, A.J., Temple, G.F., Brasch, M.A., Hartley, J.L., Lorson, M.A., van den Heuvel, S., and Vidal, M. (2000). GATEWAY
+                        recombinational cloning: application to the cloning of large numbers of open reading frames or ORFeomes. Meth. Enzymol. <span class="emphasis"><em>328</em></span>, 575&#8211;592.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11075367&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib123"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Walhout, A.J., and Vidal, M. (2001). High-throughput yeast two-hybrid assays for large-scale protein interaction mapping.
+                        Methods <span class="emphasis"><em>24</em></span>, 297&#8211;306.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11403578&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1006/meth.2001.1190" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib124"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Walhout, M., Endoh, H., Thierry-Mieg, N., Wong, W., and Vidal, M. (1998). A model of elegance. Am. J. Hum. Genet. <span class="emphasis"><em>63</em></span>, 955&#8211;961.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=9758636&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1086/302078" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib125"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Wang, J., and Kim, S.K. (2003). Global analysis of dauer gene expression in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Development <span class="emphasis"><em>130</em></span>, 1621&#8211;1634.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12620986&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1242/dev.00363" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib126"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Washington University Genome Sequencing Center (2005). <span class="emphasis"><em>C. elegans</em></span> long-oligomer spotted arrays. (<a href="http://genome.wustl.edu/genome/celegans/microarray/ma_gen_info.cgi" target="_top">http://www.genome.wustl.edu/</a>)</span>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib127"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Waterston, R., Martin, C., Craxton, M., Huynh, C., Coulson, A., Hillier, L., Durbin, R., Green, P., Shownkeen, R., Halloran,
+                        N., and et al. (1992). A survey of expressed genes in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Nat. Genet. <span class="emphasis"><em>1</em></span>, 114&#8211;123.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=1302004&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/ng0592-114" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib128"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Wei, C., Lamesch, P., Arumugam, M., Rosenberg, J., Hu, P., Vidal, M., and Brent, M.R. (2005). Closing in on the <span class="emphasis"><em>C. elegans</em></span> ORFeome by cloning TWINSCAN predictions. Genome Res. <span class="emphasis"><em>15</em></span>, 577&#8211;582.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15805498&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1101/gr.3329005" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib129"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">White, J.G., Horvitz, H.R., and Sulston, J.E. (1982). Neurone differentiation in cell lineage mutants of <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Nature <span class="emphasis"><em>297</em></span>, 584&#8211;587.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=7088142&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/297584a0" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib130"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Winzeler, E.A., Shoemaker, D.D., Astromoff, A., Liang, H., Anderson, K., Andre, B., Bangham, R., Benito, R., Boeke, J.D.,
+                        Bussey, H., et al. (1999). Functional characterization of the <span class="emphasis"><em>S. cerevisiae</em></span> genome by gene deletion and parallel analysis. Science <span class="emphasis"><em>285</em></span>, 901&#8211;906.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10436161&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1126/science.285.5429.901" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib131"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Yamada, K., Lim, J., Dale, J.M., Chen, H., Shinn, P., Palm, C.J., Southwick, A.M., Wu, H.C., Kim, C., Nguyen, M., et al. (2003).
+                        Empirical analysis of transcriptional activity in the <span class="emphasis"><em>Arabidopsis</em></span> genome. Science <span class="emphasis"><em>302</em></span>, 842&#8211;846.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=14593172&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1126/science.1088305" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib132"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Yasuda, T., Bannai, H., Onami, S., Miyano, S., and Kitano, H. (1999). Towards Automatic Construction of Cell-Lineage of <span class="emphasis"><em>C. elegans</em></span> from Nomarski DIC Microscope Images. Genome Inform. Ser. Workshop Genome Inform. <span class="emphasis"><em>10</em></span>, 144&#8211;154.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11072351&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib133"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Zhang, S., Ma, C., and Chalfie, M. (2004). Combinatorial marking of cells and organelles with reconstituted fluorescent proteins.
+                        Cell <span class="emphasis"><em>119</em></span>, 137&#8211;144.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15454087&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.cell.2004.09.012" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib134"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Zhang, Y., Ma, C., Delohery, T., Nasipak, B., Foat, B.C., Bounoutas, A., Bussemaker, H.J., Kim, S.K., and Chalfie, M. (2002).
+                        Identification of genes expressed in <span class="emphasis"><em>C. elegans</em></span> touch receptor neurons. Nature <span class="emphasis"><em>418</em></span>, 331&#8211;335.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12124626&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nature00891" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib135"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Zhao, Z., Sheps, J.A., Ling, V., Fang, L.L., and Baillie, D.L. (2004). Expression analysis of ABC transporters reveals differential
+                        functions of tandemly duplicated genes in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. J. Mol. Biol. <span class="emphasis"><em>344</em></span>, 409&#8211;417.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15522294&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.jmb.2004.09.052" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib136"></a><p class="bibliomixed">
+                     	<span class="bibliomisc">Zhong, W., and Sternberg, P.W. (2006). Genome-wide prediction of <span class="emphasis"><em>C. elegans</em></span> genetic interactions. Science <span class="emphasis"><em>311</em></span>, 1481&#8211;1484.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=16527984&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1126/science.1123287" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+            </div>
+            <p></p>
+         </div>
+         <div class="footnotes"><br><hr width="100" align="left">
+            <div class="footnote">
+               <p><sup><a name="ftn.d0e10" href="#d0e10">*</a></sup>Edited by Jonathan Hodgkin. Last revised May 21, 2006. Published August 21, 2006. This chapter should be cited as: Piano,
+                  F., et al. <span class="emphasis"><em>C. elegans</em></span> network biology: a beginning (August 21, 2006), <span class="emphasis"><em>WormBook</em></span>, ed. The <span class="emphasis"><em>C. elegans</em></span> Research Community, WormBook, doi/10.1895/wormbook.1.118.1, <a href="http://www.wormbook.org" target="_top">http://www.wormbook.org</a>.
+               </p>
+               <p><span class="bold"><strong>Copyright:</strong></span> &copy; 2006 Fabio Piano, et al. This is an open-access article distributed under the terms of the Creative Commons Attribution
+                  License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source
+                  are credited.
+               </p>
+            </div>
+            <div class="footnote">
+               <p><sup><a name="ftn.d0e52" href="#d0e52">&sect;</a></sup>To whom correspondence should be addressed. E-mail: <a href="mailto:fp1@nyu.edu" target="_top">fp1@nyu.edu</a>, <a href="mailto:kcg1@nyu.edu" target="_top">kcg1@nyu.edu</a>, <a href="mailto:david_hill@dfci.harvard.edu" target="_top">david_hill@dfci.harvard.edu</a>, or <a href="mailto:marc_vidal@ccsb.dfci.harvard.edu" target="_top">marc_vidal@ccsb.dfci.harvard.edu</a>.
+               </p>
+			   <p><img src="somerights20.gif" alt="Creative Commons License" align="middle" border="0"> All WormBook content, except where otherwise noted, is licensed under a <a href="http://creativecommons.org/licenses/by/2.5/" title="Creative Commons Attribution License" target="_blank">Creative Commons Attribution License</a>.</p>
+            </div>
+         </div>
+      </div>
+   <!--#include virtual="/ssi/footer.html" --></body>
+</html>
+

@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY fig1 SYSTEM 'WMTransformfig1.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'WMTransformfig1leg.xml'>
+<!ENTITY WMTransform_Refs SYSTEM 'WMTransformrefs.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="WMTransform_ArticleID">
+    <articleinfo>
+        <!--see DocBook's authorgroup element -->
+        <title>Transformation and microinjection<footnote>
+                <para>Edited by Victor Ambros. Last revised March 04, 2005. Published April 6, 2006. This chapter should be cited as: Evans, T. C., ed. Transformation and microinjection (April 6, 2006), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.108.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+		<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2006 Thomas C. Evans and contributors. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and contributors reproduction in any medium, provided the original author and source are credited.</para></footnote>
+       </title>
+        <!--		<revhistory>
+			<revision>
+				<revnumber>1.0</revnumber>
+				<date>Last revised 2/4/05</date>
+			</revision>
+		</revhistory>
+-->
+        <author>
+            <othername>Thomas C. Evans, ed.<remark>
+                     <footnote>
+                        <para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:tom.evans@uchsc.edu">tom.evans@uchsc.edu</ulink></para>
+                    </footnote>
+                   </remark>
+               </othername>
+            <affiliation>
+                <address>Department of Cell and Developmental Biology, University of Colorado School of Medicine, Aurora, CO 80045 USA</address>
+           </affiliation>
+       </author>
+   </articleinfo>
+<?newpage?>
+    <sect1>
+    <title>Introduction</title>
+    <para>DNA transformation and microinjection are essential tools for <emphasis>C. elegans</emphasis> research. Transformation is used to clone genes by mutant rescue, to over-express or ectopically express genes, to express tagged proteins, to study structure/function of protein domains, and to analyze DNA or RNA regulatory elements. Furthermore, transgenes can be powerful tools for the design of new genetic screens. Current transformation techniques generate large extrachromosomal DNA arrays, or cause "random" integration of transgenes into the genome. However, homologous recombination into endogenous loci can occur at low frequency suggesting that targeted gene replacement is possible (<link linkend="bib4">Broverman et al., 1993</link><!-- PMID 8506273-->; <link linkend="bib1">Berezikov et al., 2004</link><!-- PMID 14982959-->).</para>
+    <para>Microinjection is a proven and relatively simple method for introducing DNA into worms (<link linkend="bib21">Mello et al., 1991</link><!-- PMID 1935914-->; <link linkend="bib20">Mello and Fire, 1995</link><!-- PMID 8531738-->). Moreover, microinjection is a very effective approach to RNA interference (see <ulink url="http://www.wormbook.org/chapters/www_Introreversegenetics/Introreversegenetics.html">Reverse genetics</ulink>), and can be used to deliver synthetic mRNAs or other molecules directly to cells (<link linkend="bib14">Kimble et al., 1982</link><!-- PMID 7121584-->; <link linkend="bib3">Bossinger and Schierenberg, 1992</link><!-- PMID 1601175-->; <link linkend="bib6">Evans et al., 1994</link><!-- PMID 8168128-->). For transformation, the relatively new technique of gene bombardment is fast becoming a popular alternative because transgenes are often integrated into the genome at low copy number, which offers a number of advantages as described below (<link linkend="bib24">Praitis et al., 2001</link><!-- PMID 11238406-->; <link linkend="bib1">Berezikov et al., 2004</link><!-- PMID 14982959-->).</para>
+    <para>This chapter contains protocols for microinjection of <emphasis>C. elegans</emphasis>, and for generating transgenic nematode strains by both microinjection and gene bombardment. Protocols for integration of extrachromosomal arrays into the genome are also included. This chapter focuses on the methods themselves and on some practical considerations but does not include extensive discussions of transgene dynamics, vectors, or theory. For an excellent and more thorough analysis of these issues see <link linkend="bib20">Mello and  Fire (1995)</link>. In addition, different labs often have distinct preferences and unique modifications of these methods. The protocols below generally come from a single lab, although a few alternative modifications are included.</para>
+   </sect1>
+    <sect1>
+    <title>General considerations for DNA transformation</title>
+        <sect2>
+            <title>Scoreable/selectable marker genes</title>
+            <para>DNA transformation techniques typically require co-transformation with a scoreable or selectable marker gene. Transformation markers that induce a dominant phenotype allow transformation of any worm strain as long as the host's phenotype does not interfere with the marker-induced phenotype. Other selectable markers rescue lethal or non-lethal mutations and require use of specific mutant strains as transformation hosts. For some mutant rescue experiments, a co-injected marker may not be necessary but is usually advisable as a positive control for transformation. Some commonly used marker genes are listed in <link linkend="table1">Table 1</link>. For microinjection techniques, the popular choice is the pRF4 plasmid (Protocols 2 and 3). This plasmid encodes a mutant collagen (<emphasis>rol-6(<ulink url="http://www.wormbase.org/db/get?name=su1006;class=Variation" role="_blank">su1006</ulink></emphasis>)) that induces a dominant "roller" phenotype, where animals corkscrew around in circles (<link linkend="bib16">Kramer et al., 1990</link><!-- PMID 1970117-->; <link linkend="bib21">Mello et al., 1991</link><!-- PMID 1935914-->). This roller phenotype is very easy to spot in a simple dissecting microscope, although there are a few potential disadvantages. The roller phenotype is suppressed in some "dumpy" (<emphasis>dpy</emphasis>) and "uncoordinated" (<emphasis>unc</emphasis>) mutant backgrounds. In addition, rollers (especially males) have reduced mating efficiency. The twisted cuticle of roller animals can also complicate live analysis of some cell types. Alternatively, one can use an <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-22" role="_blank">unc-22</ulink></emphasis> anti-sense plasmid, a mutant-rescuing plasmid, or a strongly expressed GFP fusion (<link linkend="table1">Table 1</link>; <link linkend="bib8">Fire et al., 1991</link><!-- PMID 1782862-->; <link linkend="bib10">Granato et al., 1994</link><!-- PMID 8202383-->; <link linkend="bib11">Gu et al., 1998</link><!-- PMID 9671465-->). GFP markers require a dissecting microscope equipped with fluorescent optics. For gene bombardment, an <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-119" role="_blank">unc-119</ulink></emphasis> gene rescue system is the method of choice as described in Protocol 7.</para>
+           </sect2>
+            <sect2>
+            <title>Transgene regulatory elements</title>
+            <para>In constructing specific transgenes, non-coding regions must be carefully considered. Obviously important domains include the 5' flanking region with its promoter and transcriptional control elements, the 3' flanking region that might contain additional elements, the 5' UTR with a functional translation start site, and the 3' UTR that provides a cleavage and polyadenylation signal and translational control elements (see <ulink url="http://www.wormbook.org/chapters/www_transcriptionalregulation/transcriptionalregulation.html" role="_blank">Transcriptional regulation</ulink>, <ulink url="http://www.wormbook.org/chapters/www_mechregultranslation/mechregultranslation.html" role="_blank">Mechanism and regulation of translation in <emphasis>C. elegans</emphasis></ulink>). In addition, introns are important because pre-mRNA splicing promotes nuclear export, translation, and stability of mRNAs (<link linkend="bib19">Maniatis and Reed, 2002</link><!-- PMID 11932736-->; <link linkend="bib22">Nott et al., 2004</link><!-- PMID 14752011-->). Even purely synthetic introns substantially increase expression of reporter transgenes in <emphasis>C. elegans</emphasis> (<link linkend="bib23">Okkema et al., 1993</link><!-- PMID 8244003-->). Furthermore, gene-specific regulatory elements may reside within the first few introns of some genes (see <ulink url="http://www.wormbook.org/chapters/www_transcriptionalregulation/transcriptionalregulation.html" role="_blank">Transcriptional regulation</ulink>). Proteins can be expressed from cDNAs in worms, but expression will likely be inefficient unless an intron or two is inserted into the cDNA sequence. Finally, it is important to know if the gene to be studied is trans-spliced to the SL1 or SL2 leader RNAs (see <ulink url="http://www.wormbook.org/chapters/www_transsplicingoperons/transsplicingoperons.html">Trans-splicing and operons</ulink>). For SL2-spliced genes, which are downstream in multigene operons, promoters may be several kilobases upstream and the primary transcript may encode several genes. Fortunately, most <emphasis>C. elegans</emphasis> operons have been identified and can be analyzed using Wormbase (<link linkend="bib2">Blumenthal et al., 2002</link><!-- PMID 12075352-->; see <ulink url="http://www.wormbook.org/chapters/www_transsplicingoperons/transsplicingoperons.html">Trans-splicing and operons</ulink> and <ulink url="http://www.wormbook.org/chapters/www_webresourcesCelegans/webresourcesCelegans.html">Web resources for <emphasis>C. elegans</emphasis> studies</ulink>).</para>
+                <table id="table1" frame="all" rules="all" cellpadding="0" cellspacing="0" width="100%">
+				<title><emphasis role="bold">Table 1. Common markers for DNA transformation</emphasis></title>
+                <tgroup cols="5">
+				<colspec colname="c1" align="left" colwidth="1*"/>
+				<colspec colname="c2" align="left" colwidth="0.6*"/>
+				<colspec colname="c3" align="left" colwidth="1.2*"/>
+				<colspec colname="c4" align="left" colwidth="1.2*"/>
+				<colspec colname="c5" align="left" colwidth="1.5*"/>
+                <thead>
+                <row>
+                  <entry><emphasis role="bold">Marker gene</emphasis></entry>
+                  <entry><emphasis role="bold">Plasmid</emphasis></entry>
+                  <entry><emphasis role="bold">Marker phenotype</emphasis></entry>
+                  <entry><emphasis role="bold">Advantages</emphasis></entry>
+                  <entry><emphasis role="bold">Potential issues</emphasis></entry>
+               </row>
+               </thead>
+                <tbody>
+                <row>
+                  <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rol-6" role="_blank">rol-6</ulink>(<ulink url="http://www.wormbase.org/db/get?name=su1006;class=Variation" role="_blank">su1006</ulink>)</emphasis><superscript>a</superscript></entry>
+                  <entry>pRF4</entry>
+                  <entry>Dominant roller</entry>
+                  <entry>Dominant, easy to detect phenotype; known to be compatible with many co-injected transgenes</entry>
+                  <entry>Suppressed in some mutant backgrounds (<emphasis>unc, dpy</emphasis>); reduced mating efficiency; twisted cuticle can interfere with larval lineage analysis</entry>
+               </row>
+                <row>
+                  <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-22" role="_blank">unc-22</ulink> antisense</emphasis><superscript>b</superscript></entry>
+                  <entry>pPD10.46</entry>
+                  <entry>Dominant twitcher</entry>
+                  <entry>Similar to <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rol-6" role="_blank">rol-6</ulink></emphasis></entry>
+                  <entry>Suppressed in some mutant backgrounds; reduced mating in males; not as easy to detect as <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rol-6" role="_blank">rol-6</ulink></emphasis></entry>
+               </row>
+                <row>
+                  <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sur-5" role="_blank">sur-5</ulink>::gfp</emphasis><superscript>c</superscript></entry>
+                  <entry>pTG96_2</entry>
+                  <entry>GFP expression in many somatic cells</entry>
+                  <entry>Dominant visible marker; compatible with most host strains</entry>
+                  <entry>Requires fluorescent dissecting scope; interferes with expression study of other GFP fusions</entry>
+               </row>
+                <row>
+                  <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pha-1" role="_blank">pha-1</ulink>(wt)</emphasis><superscript>d</superscript></entry>
+                  <entry>pC1,pBX</entry>
+                  <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pha-1" role="_blank">pha-1</ulink>(e2123ts)</emphasis> rescue</entry>
+                  <entry>Allows selection of transformed worms; likely to work in most mutant backgrounds</entry>
+                  <entry>Requires <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pha-1" role="_blank">pha-1</ulink>(ts)</emphasis> as host strain, which is maintained at 15&#x000B0;C; selection requires growth at 25&#x000B0;C</entry>
+               </row>
+                <row>
+                  <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-119" role="_blank">unc-119</ulink>(wt)</emphasis><superscript>e</superscript></entry>
+                  <entry>Various<superscript>e</superscript></entry>
+                  <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-119" role="_blank">unc-119</ulink>(ed3)</emphasis> rescue</entry>
+                  <entry>Allows selection of transformed worms; useful for enrichment of integrants after bombardment</entry>
+                  <entry>Requires <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-119" role="_blank">unc-119</ulink>(lf)</emphasis> as host strain; selection process takes longer</entry>
+               </row>
+                <row>
+                  <entry namest="c1" nameend="c5" rowsep="0" colsep="0">References:
+				<simplelist>
+				<member><superscript>a</superscript><link linkend="bib21">Mello et al., 1991</link><!-- PMID 1935914-->; <link linkend="bib15">Kramer, 1996</link><!-- PMID 8811184--></member>
+				<member><superscript>b</superscript><link linkend="bib8">Fire et al., 1991</link><!-- PMID 1782862--></member>
+				<member><superscript>c</superscript><link linkend="bib11">Gu et al., 1998</link><!-- PMID 9671465--></member>
+				<member><superscript>d</superscript><link linkend="bib10">Granato et al., 1994</link><!-- PMID 8202383--></member>
+				<member><superscript>e</superscript><link linkend="bib18">Maduro and Pilgrim, 1995</link><!-- PMID 8582641-->; <link linkend="bib24">Praitis et al., 2001</link><!-- PMID 11238406--></member></simplelist>
+</entry>
+               </row>
+               </tbody>
+               </tgroup>
+               </table>
+           </sect2>
+          </sect1>
+    <sect1>
+        <title>Microinjection</title>
+                <formalpara>
+                <title>Introduction and considerations</title>
+                <para>Microinjection is an effective method for creating transgenic animals, for RNAi of selected genes, and for introducing various types of molecules directly to cells. For DNA transformation, the easiest approach is to inject DNAs into the distal arm of the gonad (<xref linkend="figure1"/>; <link linkend="bib21">Mello et al., 1991</link><!-- PMID 1935914-->; <link linkend="bib20">Mello and Fire, 1995</link><!-- PMID 8531738-->). The distal germ line of <emphasis>C. elegans</emphasis> contains a central core of cytoplasm that is shared by many germ cell nuclei (see <ulink url="http://www.wormbook.org/chapters/www_introgermline/introgermline.html" role="_blank">Introduction to the germ line</ulink>). Therefore, DNAs injected here can be delivered to many progeny. This approach usually leads to the formation of large extrachromosomal DNA arrays (<link linkend="bib21">Mello et al., 1991</link><!-- PMID 1935914-->). Microinjection directly into oocyte nuclei can induce chromosomal integration of transgenes, but this technique is relatively difficult to do (<link linkend="bib7">Fire, 1986</link><!-- PMID-->). For RNAi experiments, most progeny of injected animals can be affected by simply injecting dsRNA into a single gonad or intestinal cell because of a very efficient RNA transport system (see <ulink url="http://www.wormbook.org/chapters/www_Introreversegenetics/Introreversegenetics.html">Reverse genetics</ulink>). While RNAi by feeding is best for high throughput experiments, RNAi by microinjection is more effective for at least some genes (see <ulink url="http://www.wormbook.org/chapters/www_Introreversegenetics/Introreversegenetics.html">Reverse genetics</ulink>). Contrary to common perceptions, nematode microinjection is not hard to learn and does not require the most expensive equipment. The microinjection method described below is geared towards generating transgenic worms, but it can be readily adapted for injecting a variety of molecules into various locations.</para>
+               </formalpara>
+            <sect2>
+                <title>Protocol 1. Microinjection</title>
+                <para>Modified from <link linkend="bib21">Mello et al. (1991)</link><!-- PMID 1935914-->; <link linkend="bib20">Mello and Fire (1995)</link><!-- PMID 8531738-->.</para>
+				<sect3>
+					<title>Equipment</title>
+					<orderedlist>
+                    <listitem>
+                        <formalpara>
+                        <title>Injection table</title>
+                        <para>A heavy table segregated from strong vibrations and air currents is usually sufficient. If vibration is a problem, a heavy metal slab placed on a set of small, partly inflated, tire inner tubes can help.</para></formalpara>
+                   </listitem>
+                    <listitem>
+                        <formalpara>
+                        <title>Inverted DIC microscope</title>
+                        <para>A Zeiss Axiovert, or equivalent Nikon or Olympus instrument, equipped with standard 5X and 40X Nomarski objectives (non-oil immersion) is sufficient. Top of the line optics are not necessary. The microscope should have a flat, free-sliding glide stage with centered rotation.</para>
+                       </formalpara>
+                   </listitem>
+                    <listitem>
+                        <formalpara>
+                        <title>Micromanipulator</title>
+                        <para>Narashige, Leitz, and Zeiss make sufficient manipulators that can hold and position the needle holder. The ideal manipulator will have fine mobility in the X (forward and back), Y (side to side), and Z (vertical) axes, and allow easy alteration of needle angle and position.</para>
+                       </formalpara>
+                   </listitem>
+                    <listitem>
+                        <formalpara>
+                        <title>Pressurized injection system with needle holder</title>
+                        <para>The injection needle is placed in a holder with a tight-seal collar, which is then attached by plastic tubing to a regulated pressure source. The pressure regulator is attached to a nitrogen gas tank. A Narishige or Eppendorf microinjection controller equipped with a foot pedal switch is a good but somewhat expensive choice. Tritech (Los Angeles, CA) makes a less expensive system. <link linkend="bib21">Mello et al. (1991)</link> describe a homemade system.</para>
+                       </formalpara>
+                   </listitem>
+                    <listitem>
+                        <formalpara>
+                        <title>Needle puller</title>
+                        <para>Sutter instruments P-87 and P-97 microelectrode pullers are excellent for making very consistent needles of specific shapes and sizes, although a variety of other microelectrode pullers can be used. Several labs can easily share a single puller.</para>
+                       </formalpara>
+                   </listitem>
+                    <listitem>
+                        <formalpara>
+                        <title>A standard dissecting microscope.</title>
+                        <para></para>
+                       </formalpara>
+                   </listitem>
+               </orderedlist>
+       </sect3>
+        <sect3>
+            <title>Materials</title>
+            <orderedlist>
+            <listitem>
+            <formalpara>
+            <title>Microinjection needles</title>
+            <para>Pull needles using borosilicate glass capillaries (1.0mm OD, 0.75 mm ID) with a fine internal glass filament, which allows backfilling by capillary action (e.g., FLG10 from Dagan Corp., Minneapolis MN; or equivalent from World Precision Inst., Sarasota FL or Clark Inst., Reading, England). Good needles taper quickly (~5-7 mm) to a sharp but open point (<symbol role="symbolfont">&#x02265;</symbol>1 um), although each user may develop unique preferences. For needle pullers that produce a closed tip, break open the tip by gently tapping the needle across a glass slide, or by moving the needle against debris on the agarose pad under the microscope (see below).</para>
+           </formalpara>
+           </listitem>
+            <listitem>
+            <formalpara>
+            <title>Injection pads</title>
+            <para>Bring 2% agarose in water to a boil, mix well, and place in a heat block. Using a broken Pasteur pipette or a cut-off P200 tip, place a drop (~100ul) of hot agarose onto a #1, 50X22-mm glass coverslip. Quickly place a second coverslip on the drop and lightly tap it. Alternatively, place several drops on the first coverslip, which should merge and mostly cover the surface after adding the second coverslip; such pads can be used for several rounds of injection (<link linkend="bib20">Mello and Fire, 1995</link><!-- PMID 8531738-->). After the agarose is solidified, peel or slide coverslips apart, and bake the coverslip-pad in a vacuum oven at 80&#x000B0;C for 1h to overnight. Alternatively, injection pads can be air dried overnight, but worms may not stick well in humid climates. Bake or even re-bake the pads before use if worm adherence is chronically poor. Higher agarose concentrations (2.5-3%) can increase worm adhesion but will also increase their rate of drying out (see below).</para>
+           </formalpara>
+           </listitem>
+            <listitem>
+            <formalpara>
+            <title>Injection oil</title>
+            <para>Series 700 Halocarbon oil (Halocarbon Products, River Edge, NJ). Alternatively, Heavy Paraffin Oil can be used (BDH Chemicals, Poole, England; Gallard-Schlesinger, Carle Place, NY).</para>
+           </formalpara>
+           </listitem>
+            <listitem>
+            <formalpara>
+            <title>Worm pick</title>
+            <para>A worm pick with a very flat, narrow, arrow-shaped head works best.</para>
+           </formalpara>
+           </listitem>
+            <listitem>
+            <formalpara>
+            <title>Recovery buffer and M9 buffer</title>
+            <para>Recovery buffer: 5mm HEPES pH 7.2, 3 mM CaCl<subscript>2</subscript>, 3 mM MgCl<subscript>2</subscript>, 66 mM NaCl, 2.4 mM KCl, 4% Glucose (w/v). Standard M9 Buffer.</para>
+           </formalpara>
+           </listitem>
+            <listitem>
+            <formalpara>
+            <title>Worms</title>
+            <para>Well-fed, young to middle-aged (<symbol role="symbolfont">&#x02265;</symbol>1day old) gravid hermaphrodites with a full but single row of eggs are best.</para>
+           </formalpara>
+           </listitem>
+            <listitem>
+            <formalpara>
+            <title>Needle-loading pipettes</title>
+            <para>Place a 10ul standard glass capillary pipette over a flame until it softens, then remove from flame and quickly pull out and break to generate two drawn out pipettes. Use mouthpiece and tubing for ejecting solution. Alternatively, a p2 pipettor can be used to load needles.</para>
+           </formalpara>
+           </listitem>
+           </orderedlist>
+       </sect3>
+        <sect3>
+            <title>Microinjection method</title>
+                <procedure>
+                    <step>
+                        <para>Fill a needle-loading pipette by capillary action with <symbol role="symbolfont">&#x02265;</symbol> 1 ul of DNA injection mix.</para>
+                   </step>
+                    <step>
+                        <para>Insert the pipette tip in through the back of the injection needle, and expel injection mix onto the needle's internal filament. Watch to see that the injection solution is drawn into the needle tip. Several injection needles can be prepared and stored by resting them across raised clay or wax ridges in a humid box with lid.</para>
+                   </step>
+                    <step>
+                        <para>Place a loaded needle into the needle holder and mount on the manipulator.</para>
+                   </step>	
+                    <step>
+                        <para>Position the needle so that the tip is in the center of the microscope's field of view using the 5X objective. Once positioned, move the needle up (using the Z-axis control) so that it is slightly out of focus.</para>
+                   </step>
+                    <step>
+                        <para>Place a drop of oil on an injection pad and place under a dissecting microscope on top of a small Petri plate cover.</para>
+                   </step>
+                    <step>
+                        <para>Scoop one to several worms from a bacteria-free region of an NGM plate with a naked pick and transfer to the oil drop. Avoid contact with the worm's head. Alternatively, first touch the worm pick to the oil, and use the oil droplet to pick up the animals from a bacteria-free region. The idea is to minimize transfer of bacteria to the pad.</para>
+                   </step>
+                    <step>
+                        <para>Flame then cool the worm pick and use it to position the worms in the oil drop, and to gently push them down onto the pad. Orient the worms in rows with their ventral sides facing the same direction (opposite the needle direction). If the worms fail to adhere to the pad, move to a new location or rub the bodies with the pick to remove water or bacteria droplets. If adherence is still a problem re-bake the pads or use thicker or higher concentration agarose pads (see above).</para>
+                    <sidebar><note>
+                    <title>Notes</title>
+                        <para>a. This step requires practice so that injections can be done relatively quickly. Worms stick to the pads due to the absorption of water from the worm into the dry agarose. If this goes on too long the worms will desiccate and die. Beginners should inject only one or two worms at a time. It may also be helpful to establish needle flow before mounting worms on the pad (see step 9 below).</para>
+                        <para>b. For Paraffin oil, transfer worms one at a time. With the worm on the pick, place one part of the worm in contact with the pad and then gently remove the pick to allow the worm to situate itself completely on the pad.</para>
+                   </note></sidebar>
+                   </step>
+                    <step>
+                        <para>Transfer the slide face-up onto the microscope stage. Center the first worm to be injected and focus using the 5X objective. Move the needle down and in close proximity to the dorsal surface of the first animal. Switch to the 40X objective and focus on the worm.</para>
+                   </step>
+                    <step>
+                        <para>First make sure the needle is flowing: Move the needle down into focus. Then move the stage a little to move the worm away from the needle. Apply pressure to test if there is significant flow. If not, the needle is probably clogged. In this case, try a pulse of high pressure (but don't exceed the pressure tolerance of the system, which will cause needle ejection and possibly gasket damage). If this fails to work, focus down onto a piece of debris on the pad and move the needle tip gently down onto the pad surface. With the pressure applied, drag the stage away from the needle; often this will remove junk on the tip and induce flow without breaking the tip. Stop flow and move the needle up off the pad if flow resumes. If this doesn't work, break the tip by gently contacting a particle embedded within the pad while under pressure. Rub the particle across the needle tip by moving the stage. If this doesn't work, or if too much of the needle tip breaks off, mount a new needle. Worms can often tolerate broken needles with fairly large openings, but there is a limit that requires experience to determine.</para>
+                   </step>
+                    <step>
+                        <para>Insert the needle into the worm: Move the first worm back to the center of the field ("moving the worm" always means moving the stage). Position the worm so that its dorsal surface lies at a sharp angle to the needle (~15&#x000B0;-45&#x000B0;; <xref linkend="figure1"/>). Focus the objective on birefringent particles in the distal core cytoplasm of one gonad arm, at its widest point if possible (<xref linkend="figure1"/>). Using the manipulator, move the needle tip into the same focal plane directly adjacent to the targeted location. Push the worm up against the needle tip until the cuticle distends inward (i.e. is depressed), and then push the worm slightly back against the needle, into the tip, until the needle inserts into the core. The idea is to "pinch" a bit of cuticle and then push against the pinch, like a hypodermic needle into skin, except the stage is used to move the worm into a stationary needle. Alternatively, one can push the worm into the needle at a right angle, and then gently tap on the manipulator to induce insertion (<link linkend="bib20">Mello and Fire, 1995</link><!-- PMID 8531738-->). Note: Usually one gonad is easier to see than the other, but with practice both gonads can usually be injected.</para>
+<literallayout></literallayout>
+                        <mediaobject id="figure1" xreflabel="Figure 1">
+                        <imageobject>
+                            <imagedata entityref="fig1" width="4in" align="center"/>
+                       </imageobject><textobject>
+                            <phrase>WormBook Worm Methods Transformation and Microinjection Figure 1</phrase></textobject> &fig1legend;
+                       </mediaobject>
+                   </step>
+                    <step>
+                        <para>Inject the DNA solution. Using the fine X-axis control, position the tip into center of the cytoplasmic core. Apply pressure so that solution flows freely and smoothly in both directions throughout the gonad until the gonad noticeably swells up (<xref linkend="figure1"/>; see also Figure 1 of <link linkend="bib20">Mello and Fire, 1995</link><!-- PMID 8531738-->). If solution does not flow into the core, a gentle tap on the table can often help. For DNA transformation, the best results seem to occur when the gonad is filled seemingly to the point of damage. Stop the flow at this point and pull the worm off the needle. Test the needle for flow again and then move to the next worm and repeat steps 10 and 11. Unclog or break the needle tip if necessary (step 9).</para>
+                   </step>
+                    <step>
+                        <para>Recover the worms: Return the coverslip to the dissecting scope, and add a drop (~20 ul) of recovery buffer on the worms. Make sure buffer surrounds the worms so that they release off of the pad. Transfer coverslip to a large empty Petri dish, cover, and incubate for 10-60 min. Once the worms begin swimming briskly, M9 can be added; add an approximately equal volume of M9 and wait until worms swim briskly again, then repeat several times until the solution is mostly M9. The idea is to gradually change the osmotic strength over several minutes. Note: Worms that have not dried too much can often be recovered quickly by directly adding M9 (<link linkend="bib20">Mello and Fire, 1995</link><!-- PMID 8531738-->), although in our experience survival is highest using recovery buffer. Transfer the worms to seeded plates.</para>
+                   </step>
+                    <step>
+                        <para>Troubleshooting. An excellent troubleshooting guide is presented in <link linkend="bib20">Mello and Fire (1995)</link>. A few highlights are: (a) If the worm ruptures or dies after injection, the needle may be too big, there was too much tearing, or the worm became too dried out; try injecting only one gonad per animal with a fresh needle. Another less likely cause is a contaminated DNA mix (e.g., phenol). (b) If the animals fail to stick, the pads may be too thin or need to be baked (see above). Also, try drying the worm plates by placing coverless in a hood for a few hours. (c) If the worms dry out too fast, use thinner pads and/or transfer worms to moist fresh plates before injection. (d) If the injections look good but no transformants arise, the DNA prep may be dirty (a common problem) or the transgene may induce lethality (see below).</para>
+                   </step>
+               </procedure>
+           </sect3>
+       </sect2>
+   </sect1>
+<?newpage?>
+    <sect1>
+        <title>DNA transformation: Creating repetitive extrachromosomal arrays by microinjection</title>
+        <sect2>
+        <title>Introduction</title>
+        <para>The easiest approach to make transgenic strains is to co-inject two or more DNAs into the distal gonad syncytium; one or more DNAs carrying the intended transgenes and a plasmid carrying a transformation marker. Transgene DNAs can be plasmids, cosmids, phage, YACs, or PCR products. Injected DNAs undergo homologous recombination with each other quite efficiently, so it is not necessary to physically link them before injection (<link linkend="bib21">Mello et al., 1991</link><!-- PMID 1935914-->). For this reason, it works best if the injected DNAs share sequence homology in their backbones, although non-homologous recombination also occurs (<link linkend="bib20">Mello and Fire, 1995</link><!-- PMID 8531738-->). It is feasible to inject several DNAs and recover animals carrying all injected molecules. Whether the injected DNA is circular or linear does not seem to influence results.</para>
+        <para>Transgenic animals produced by injection typically carry large extrachromosomal arrays that contain many copies of the co-injected DNAs. These repetitive arrays are usually unstable to cell division but can become inheritable; a fraction of first generation progeny (F1) that contain the transgenes will transmit the array through many subsequent generations often without changes in heritability or expression (for somatic promoters). These heritable arrays still have varying degrees of mitotic instability and incomplete inheritance, although it is possible to integrate transgenic arrays into chromosomes (see Protocols 4-6).</para>
+        <formalpara>
+        <title>Advantages</title>
+        <para>This technique is relatively fast and efficient for genes expressed in somatic tissues; an experienced person injecting simple plasmids can generate 3-6 independent transgenic lines in 7-10 days from as few as 15-40 injected gonads. (If the transgene causes a deleterious phenotype or if large genomic fragments are used, the success rate can be lower). All that is needed is a plate of well-fed hermaphrodites and a few microliters of purified plasmids, and multiple constructs can be analyzed in a reasonable time frame. In addition, the mitotic instability of these arrays can actually be used to create genetic mosaics, which can then be analyzed to determine the lineages in which a gene functions (<link linkend="bib12">Herman, 1995</link><!-- PMID 8531723-->), see <ulink url="http://www.wormbook.org/chapters/www_geneticmosaics/geneticmosaics.html">Genetic mosaics</ulink>.</para>
+       </formalpara>
+        <formalpara>
+        <title>Disadvantages</title>
+        <para>(1) The transgene expression pattern may not mimic the endogenous gene, especially for germline-expressed genes. Transgenes in repetitive arrays are strongly silenced in germ cell nuclei (<link linkend="bib13">Kelly et al., 1997</link><!-- PMID 9136012-->). In addition, suppressed or ectopic transgene expression is sometimes observed in somatic tissues (<link linkend="bib20">Mello and Fire, 1995</link><!-- PMID 8531738-->). Rescue of a null mutant does not assure proper expression since even suppressed or ectopically expressed genes can give rescue. (2) It is difficult to predict and control the level of expression among different arrays. (3) Transgene expression can be variable among siblings of a single strain. Some variability probably relates to mitotic instability of arrays, but even integrated arrays can show expression variability for unknown reasons (<link linkend="bib20">Mello and Fire, 1995</link><!-- PMID 8531738-->). (4) Arrays sometimes induce RNAi-like effects that suppress endogenous gene function (<link linkend="bib5">Dernburg et al., 2000</link><!-- PMID 10887151-->). This could be due to DNA rearrangements during array formation that cause production of gene product fragments or antisense RNA (T. Evans and J. Kimble, unpublished). DNA rearrangements can also reposition gene regulatory elements leading to mis-regulated transgenes. Rearrangements may also occur during long term passage of some transgenic strains, since sometimes the properties of transgenic animals changes over time (T. Evans, unpublished). In spite of these pitfalls, many well-behaved transgenic strains have been created by this technique. Integration of arrays can minimize problems associated with transmission instability (Protocols 4-6). Therefore, as long as caution is exercised this remains a very important approach to nematode transformation.</para>
+       </formalpara>
+       </sect2>
+        <sect2>
+        <title>Protocol 2. Formation of repetitive arrays by microinjection</title>
+        <para>Modified from <link linkend="bib20">Mello and Fire (1995)</link><!-- PMID 8531738-->.</para>
+                <procedure>
+                <step>
+                <para>Purify DNAs for injection: Standard alkaline lysis protocols, including commercial kits, are sufficient for plasmids and cosmids although residual contaminants can prevent transformation. To generate clean DNA preps, do extra washes in the commercial column-based procedures and/or further purify DNA by phenol choloroform extraction, G-50 spin column, chloroform extraction, and ethanol precipitation. Miniprep procedures that use LiCl or CTAB precipitation steps are also effective for transgene DNAs (<link linkend="bib9">Fire et al., 1990</link><!-- PMID 2121610-->; <link linkend="bib20">Mello and Fire, 1995</link><!-- PMID 8531738-->). Protocols for preparing YACs and phage for injection can be found in <link linkend="bib20">Mello and Fire (1995)</link>. DNAs can be stored in standard Tris/EDTA (TE) buffer.</para>
+               </step>
+                <step>
+                <para>Mix transgene DNA (to 1-100 ug/ml final concentration) with pRF4 (or other marker; to 100 ug/ml). Dilute DNAs with sterile water or TE. Use lower transgene concentrations if the gene is toxic or if multiple plasmids/cosmids are used. Strive for a total DNA concentration of 100-200 ug/ml. An empty vector (e.g., Bluescript) can be used to reach this goal if desired.</para>
+               </step>
+                <step>
+                <para>Inject 15-50 gonads for each DNA mix as described in Protocol 1.</para>
+               </step>
+                <step>
+                <para>Transfer each injected worm to a separate, seeded NGM plate. Grow at 20-25&#x000B0;C.</para>
+               </step>
+                <step>
+                <para>When F1 progeny reach L3 to L4 stages, pick rollers to new plates, 2-3 rollers per plate. Continue to pick more rollers over the next day or two if necessary. Make sure to label plates to identify the parent for each plate.</para>
+               </step>
+                <step>
+                <para>Look for plates that produce F2 rollers and clone several F2 rollers from those plates. Typically, ~2-15% of F1 rollers will transmit the array to the F2 generation. Most F2 rollers will generate lines that continue to transmit their array at a consistent frequency, which can be 5-95% (30-60% is common). Keep only one strain from each injected parent, since lines from the same parent may not be independent transformants.</para>
+               </step>
+               </procedure>
+               </sect2>
+               </sect1>
+        <sect1>
+            <title>DNA transformation: Creating complex arrays by microinjection</title>
+             <sect2>
+                    <title>Introduction</title>
+                    <para>Germline silencing of repetitive transgene arrays depends at least partly on their repetitive sequences (<link linkend="bib13">Kelly et al., 1997</link><!-- PMID 9136012-->). To circumvent this problem, fragmented genomic DNA can be added to injection mixes, which presumably limits formation of tandem repeats that silence chromatin in the germ line (<link linkend="bib13">Kelly et al., 1997</link><!-- PMID 9136012-->). Such "complex" arrays incorporate transgene DNA, marker DNA, and genomic fragments without prior ligation, presumably due to non-homologous recombination. For this technique, DNA linearization seems to be important. These complex arrays, like repetitive arrays, are carried as heritable extrachromosomal fragments with varying degrees of germline transmission. For unknown reasons, germline expression from complex arrays can disappear after the first few generations even in strains that retain the array. Maintaining animals at 25&#x000B0;C suppresses transgene inactivation (<link linkend="bib25">Reese et al., 2000</link><!-- PMID 10983990-->; <link linkend="bib26">Strome et al., 2001</link><!-- PMID 11408582-->). A fraction of transgenic strains can maintain strong germline expression for many generations.</para>
+                    <formalpara>
+                        <title>Advantages</title>
+                        <para>The primary advantage of this technique is that it allows analysis of germline-expressed transgenes that do not work in repetitive arrays. It is relatively quick, inexpensive, and simple compared to gene bombardment protocols described below.</para>
+                   </formalpara>
+                    <formalpara>
+                        <title>Disadvantages</title>
+                        <para>Germline expression can become silenced after a few generations. In addition, because the number of transgenic animals recovered is low and only a small percentage of these will continue express the transgene, many animals must be injected. Complex arrays can also induce phenotypes in some transgenic strains, which probably depends on the combination of genomic fragments in the array. For similar reasons, various ectopic expression patterns are often detected in these transgenic strains.</para>
+                   </formalpara>
+           </sect2>
+            <sect2>
+                <title>Protocol 3. Formation of complex arrays by microinjection</title>
+                <para>(From Geraldine Seydoux and <link linkend="bib13">Kelly et al., 1997</link><!-- PMID 9136012-->)</para>
+                <procedure>
+                <step>
+                <para>Make a DNA injection mix:
+                    <simplelist type='horiz' columns='2'>
+                    <member>Transgene plasmid, linearized</member>
+                    <member>1ug/ml</member>
+                    <member>pRF4, cut with EcoRI</member>
+                    <member>1ug/ml</member>
+                    <member>N2 genomic DNA, cut with ScaI</member>
+                    <member>60ug/ml</member>
+                   </simplelist>
+               </para>
+               </step>
+                <step>
+                <para>Inject 30&#x02013;60 hermaphrodites (50&#x02013;100 gonads).</para>
+               </step>
+                <step>
+                <para>Transfer 1-3 injected animals per plate, and grow them at 25&#x000B0;C.</para>
+               </step>
+                <step>
+                <para>Clone F1 rollers to individual plates and grow at 25&#x000B0;C. Typically, 15&#x02013;50 F1 rollers will be obtained, and 10&#x02013;30% of these will give F2 rollers. Examine these F2 rollers as germline expression often diminishes in subsequent generations. Keep animals at 25&#x000B0;C to minimize this effect.</para>
+               </step>
+               </procedure>
+           </sect2>
+   </sect1>
+    <sect1>
+        <title>Integration of extrachromosomal arrays</title>
+            <sect2>
+                <title>Introduction and considerations</title>
+                <para>Extrachromosomal arrays can be integrated into a chromosome to help mitigate their genetic instability and variability. Three protocols for integrating arrays are described below. Two methods use irradiation of existing transgenic strains, which presumably induces chromosomal breaks and ligation of arrays to chromosomes during DNA repair. Because of this, mutations can arise in treated animals, so it is wise to outcross the recovered integrated strains by mating with wild type males (see <ulink url="http://www.wormbook.org/chapters/www_introandbasics/introandbasics.html" role="_blank">Genetic mapping and manipulation</ulink>). In most cases, integrated arrays retain their multicopy character, thus problems associated with repetitive sequences will remain (see Protocol 2). A third method involves co-injecting transgene DNAs with a single stranded DNA oligonucleotide (<link linkend="bib21">Mello et al., 1991</link><!-- PMID 1935914-->). The oligo apparently stimulates random integration and/or suppresses array formation. The primary advantage of this approach is that an integrated line can be directly derived from injected animals, but transformation efficiency is reduced about 10-fold.</para>
+               </sect2>
+            <sect2>
+                <title>Protocol 4. Integration of arrays by gamma irradiation</title>
+                <para>(From Peg MacMorris)</para>
+                <procedure>
+                <step>
+                <para>Choose a transgenic roller line with <symbol role="symbolfont">&#x02264;</symbol>50% transmission frequency (if possible). Note: Some people irradiate 2-3 lines to increase the probability of isolating a well-behaved integrant (<link linkend="bib20">Mello and Fire, 1995</link><!-- PMID 8531738-->).</para>
+               </step>
+                <step>
+                <para>For each strain, take 200-300 L4 rollers, or a mixed population with several hundred L4 rollers washed into M9 buffer, and irradiate with 3800 Rad from a 137Cesium source. (Each 137Cs source will have it's own instructions).</para>
+               </step>
+                <step>
+                <para>Transfer worms to seeded plates for several hours of recovery. Plate pools of about 20 irradiated young roller adults on 10 large (10cm) seeded plates. Grow at 20-25&#x000B0;C.</para>
+               </step>
+                <step>
+                <para>After the food is exhausted, transfer worms by washing each plate with 5ml M9, and drop ~0.1-0.5ml to each of another set of 10 seeded plates. Grow at 20-25&#x000B0;C. Repeat this step at least one time.</para>
+               </step>
+                <step>
+                <para>Clone 10 rollers from each plate and screen the progeny of these animals for clones with 100% roller progeny. (Note: It is important to screen the plates before the worms have starved).</para>
+               </step>
+                <step>
+                <para>
+                Outcross the suspected integrated lines by mating to N2 males. The integrated array should segregate like a dominant chromosomal mutation.</para>
+               </step>
+               </procedure>
+           </sect2>
+            <sect2>
+                <title>Protocol 5. Integration of arrays by UV irradiation</title>
+                <para>(From Ji Ying Sze)</para>
+                <procedure>
+                <step>
+                <para>Pick 30 L4 rollers to each of two plates.</para>
+               </step>
+                <step>
+                <para>Place the plates in a Stratagene UV crosslinker (Stratalinker), with the lids removed. Set the power to 300 and push start. (Note: UV bulb energy can decrease with time according to Stratagene).</para>
+               </step>
+                <step>
+                <para>Transfer worms to seeded plates.</para>
+               </step>
+                <step>
+                <para>Clone 200-300 F1 rollers. Then, screen these plates for those that have high transmission to the F2 progeny. Clone 7-8 F2 animals from "high transmitting" F1's, clone a few from "intermediate transmitters", and discard the rest. Keep plates producing 100% inheritance, which are likely to contain homozygous integrants.</para>
+               </step>
+                <step>
+                <para>Outcross the suspected integrants.</para>
+               </step>
+               </procedure>
+           </sect2>
+<?newpage?>
+            <sect2>
+                <title>Protocol 6. Integration by co-injection with single-stranded oligos</title>
+                <para>(From <link linkend="bib21">Mello et al., 1991</link><!-- PMID 1935914-->)</para>
+                <para>Injection mix: transgene plasmid + co-transformation marker (50-100 ug/ml total) + 1 mg/ml single stranded DNA oligo. The oligo sequence may not be important, but a 50mer that is known to work has been described (<link linkend="bib21">Mello et al., 1991</link><!-- PMID 1935914-->). Inject 100-200 gonads as in Protocol 1. Recover worms and place 2-3 worms on seeded plates. This procedure typically yields 5-10 heritable lines, one or two of which are integrants with 1-10 transgene copies.</para>
+           </sect2>
+   </sect1>
+    <sect1>
+        <title>DNA transformation by gene bombardment</title>
+          <sect2>
+            <title>Introduction</title>
+            <para>A significant advance in nematode transgenics was the discovery that microparticle bombardment can induce integrative transformation in <emphasis>C. elegans</emphasis> (<link linkend="bib24">Praitis et al., 2001</link><!-- PMID 11238406-->). With this technique, DNA is bound onto gold particles which are then "shot" into worms using a biolistic bombardment instrument or "gene gun". A significant number of transformants generated this way are integrants, and many of these contain only a few copies of the transgene. Perhaps these low copy integrants arise because some DNA-coated particles enter nuclei, since similar integration events are seen following direct injection of DNA into oocyte nuclei (<link linkend="bib7">Fire, 1986</link><!-- PMID-->; <link linkend="bib24">Praitis et al., 2001</link><!-- PMID 11238406-->). Particle bombardment will also generate extrachromosomal arrays, but using the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-119" role="_blank">unc-119</ulink></emphasis> gene as a selectable marker helps to enrich for integrants (<link linkend="bib24">Praitis et al., 2001</link><!-- PMID 11238406-->). The <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-119" role="_blank">unc-119</ulink> (ed3)</emphasis> mutant is viable and uncoordinated, but cannot survive dauer formation (<link linkend="bib18">Maduro and Pilgrim, 1995</link><!-- PMID 8582641-->). Therefore, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-119" role="_blank">unc-119</ulink> (ed3)</emphasis> animals transformed with a wild type <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-119" role="_blank">unc-119</ulink></emphasis> gene will survive starvation while non-transformed animals and those that have lost unstable arrays will not survive. Many rescued <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-119" role="_blank">unc-119</ulink></emphasis> animals grown this way carry transgenes integrated at various non-homologous sites in the genome. It is not known if there are integration hot spots. For this technique, the transgene must be subcloned into the same plasmid with the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-119" role="_blank">unc-119</ulink></emphasis> selectable marker.</para>
+                <formalpara>
+                <title>Advantages</title>
+                <para>Stable integrated transgenic strains can be isolated directly. Moreover, many integrated transgenes do not undergo germline silencing and germline expression can remain stable (<link linkend="bib24">Praitis et al., 2001</link><!-- PMID 11238406-->). In addition, low copy integrants are likely to avoid some of the other pitfalls of the repetitive and sometimes jumbled sequences in arrays (see Protocol 2 above). Transgenes integrated at low copy give the researcher more control over gene dosage and strain construction in various genetic backgrounds. Expression variability is also less of a problem with these low copy integrants (<link linkend="bib24">Praitis et al., 2001</link><!-- PMID 11238406-->). Finally, scaled-up bombardment allows isolation of strains with homologous gene replacements (<link linkend="bib1">Berezikov et al., 2004</link><!-- PMID 14982959-->).</para>
+               </formalpara>
+                <formalpara>
+                <title>Disadvantages</title>
+                <para>The preparation of nematodes and materials for gene bombardment is significantly more labor and material intensive than for microinjection, and it takes longer to generate transgenic strains. Gene bombardment is relatively expensive, as it requires access to a gene gun (~$17,000) and a steady supply of pricey materials. Nonetheless, the potential payoffs will make these investments worthwhile for some researchers.</para>
+               </formalpara>
+       </sect2>
+        <sect2>
+            <title>Protocol 7. Gene bombardment using rich plates</title>
+            <para>(From C. DeRenzo, D. Ghosh, A. Cuenca, M. Stitzel, and G. Seydoux; adapted from Shai Shaham, personal comm., and <link linkend="bib24">Praitis et al., 2001</link>)</para>
+            <sect3>
+            <title>Equipment, materials, and reagents</title>
+                <para>
+                    <simplelist type='horiz' columns='3'>
+					<member><emphasis role="underline">Equipment/material</emphasis></member>
+					<member><emphasis role="underline">Company</emphasis></member>
+					<member><emphasis role="underline">Cat. #</emphasis></member>
+                    <member>Biolistic PDS-1000/He particle delivery system</member>
+                    <member>Bio-rad</member>
+                    <member>1652257</member>
+                    <member>Hepta Adapter, biolistic</member>
+                    <member>Bio-rad</member>
+                    <member>1652225</member>
+                    <member>Biolistic Macrocarriers</member>
+                    <member>Bio-rad</member>
+                    <member>1652335  (500 ct)</member>
+                    <member>1&mgr;M gold beads</member>
+                    <member>Bio-rad</member>
+                    <member>1652263(0.25gm)</member>
+                    <member>Rupture Discs</member>
+                    <member>Bio-rad</member>
+                    <member>1652333 (2000psi)</member>
+                    <member>Hepta Stop Screen</member>
+                    <member>Bio-rad</member>
+                    <member>1652226 (50ct)</member>
+                    <member>Spermidine(tissue culture grade)</member>
+                    <member>Sigma</member>
+                    <member>S-4139  (5.0 gm)</member>
+                    <member>Nystatin</member>
+                    <member>Sigma</member>
+                    <member>N1638 (100mls)</member>
+                   </simplelist>
+               </para>
+                    <para><emphasis role="bold">Enriched Peptone Plates</emphasis> (1 Liter)
+                    <simplelist>
+                    <member>1.2g sodium chloride</member>
+                    <member>20g peptone</member>
+                    <member>25g agar</member>
+                    <member>water to 1 liter</member>
+                   </simplelist></para>
+					<procedure>
+                        <step>
+                        <para>Autoclave, then cool to 55&#x000B0;C and add sterile:
+                        <simplelist>
+                            <member>1ml cholesterol (5mg/ml in EtOH)</member>
+                            <member>1 ml 1M MgSO<subscript>4</subscript></member>
+                            <member>25 ml 1M potassium phosphate (pH 6.0)</member>
+                            <member>water to 1 liter</member>
+                       </simplelist>
+                       </para>
+                       </step>
+					   </procedure>
+                          <para><emphasis role="bold">Enriched Peptone Plates with nystatin</emphasis> (1 Liter)</para>
+					<procedure>
+                    <step><para>Use the same recipe as above and add 10mls Nystatin suspension (10,000 units/ml).</para>
+                   </step>
+				   </procedure>
+                  </sect3>
+            <sect3>
+                <title>Gene bombardment protocol</title>
+                <para><emphasis role="bold">Day 1: Master plate</emphasis></para>
+                    <para>Seed 50&#x02013;100 <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-119" role="_blank">unc-119</ulink></emphasis> (<emphasis>ed3</emphasis> or <emphasis>ed4</emphasis>) worms on an enriched peptone plate with NA22 bacteria spread evenly over the entire plate (use enriched peptone plates with NA22 bacteria throughout this protocol). Either pick worms on several different spots or evenly spread out worms, suspended in M9 buffer. Let the worms grow until they have starved for 2-3 days (~7 days total). The plate now contains numerous worm colonies, which consist mainly of L1s. Always have master plates ready when planning bombardments since <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-119" role="_blank">unc-119</ulink></emphasis> worms are slow growing.</para>
+                    <para><emphasis role="bold">Day 7: Amplify worms to 6&#x02013;7 plates</emphasis></para>
+                    <para>Wash worms off the master plate with M9 buffer. Repeat the wash step until most of the bacteria is gone. Resuspend worms in 6-7 ml M9 buffer and spread 1.0 ml onto each of 6-7 plates. Allow worms to grow and starve to L1s (2 days). These plates now contain ~ 2-4 x 10<superscript>6</superscript> L1s.</para>
+                    <para><emphasis role="bold">Day 9: Amplify worms to 60 plates</emphasis></para>
+                    <para>Wash off worms from 6-7 plates with M9 buffer until most of the bacteria is gone. Resuspend worms in 60 ml buffer. Add 1ml worms to each plate; spread worms evenly by holding 5 plates a time and gently rotating the stack. Let the worms grow for 2.5-3 days at 20&#x000B0;C or 2 days at 25&#x000B0;C (until they become young adults).</para>
+                    <para><emphasis role="bold">Day 12: DNA preparation</emphasis></para>
+					<orderedlist>
+						<listitem>
+						<para>Weigh 35-50 mg of 1 &mgr;m gold beads (Biorad) into a siliconized 1.5 ml eppendorf tube.</para>
+						</listitem>
+						<listitem>
+						<para>Add 1ml 70%EtOH. Vortex 5 minutes. Soak for 15 minutes. Pellet and remove sup.</para>
+						</listitem>
+						<listitem>
+						<para>Add 1ml sterile water. Vortex 1 minute. Soak for 1 minute. Pellet and remove sup.</para>
+						</listitem>
+						<listitem>
+						<para>Add 1ml sterile water. Vortex 1 minute. Soak for 1 minute. Pellet and remove sup.</para>
+						</listitem>
+						<listitem>
+						<para>Add 1ml sterile water. Vortex 1 minute. Soak for 1 minute. Pellet and remove sup.</para>
+						</listitem>
+						<listitem>
+<para>Resuspend in 500 &mgr;l sterile 50% glycerol. This bead stock can be used for 2 weeks (or more) and should be stored at 4 &#x000B0;C.</para>
+						</listitem>
+						<listitem>
+                    <para>Vortex mix for 5 minutes. Transfer 100 &mgr;l of bead suspension into 3 eppendorf tubes. Make sure to keep the gold beads in suspension while transferring; vortex the stock suspension at medium speed, stop, and then immediately transfer 100 &mgr;l to each tube.</para>
+						</listitem>
+						<listitem>
+                    <para>For each of the three tubes, add in order while vortexing on medium speed:
+                    <simplelist>
+                        <member>10 &mgr;l DNA (1 mg/ml)</member>
+                        <member>100 &mgr;l 2.5 M CaCl<subscript>2</subscript></member>
+                        <member>40&mgr;l 0.1 M spermidine (free base, tissue culture grade)</member>
+                   </simplelist>
+                   </para>
+						</listitem>
+						<listitem>
+                   <para>Vortex 2 minutes. Soak for 1 minute. Pellet and remove sup.</para>
+						</listitem>
+						<listitem>
+                   <para>Add 280 &mgr;l 70% EtOH. Flick tube to mix. Pellet and remove sup.</para>
+						</listitem>
+						<listitem>
+                   <para>Add 280 &mgr;l 100% EtOH. Flick tube to mix. Pellet and remove sup.</para>
+						</listitem>
+						<listitem>
+                   <para>Add 96 &mgr;l 100% EtOH and resuspend by gently flicking tube. This is your prepped DNA. Do this before preparing worms (below).</para>
+						</listitem>
+						</orderedlist>
+                <para><emphasis role="bold">Day 12: Worm preparation</emphasis></para>
+                    <para>Wash the 60 plates with M9 buffer into 50ml tubes (~400mls/60plates). Spin at low speed for 1 minute; wash worms until the M9 solution becomes clear and finally transfer worms to a 15ml tube. Spin again at low speed for 1 minute. This should give you a pellet of 2-4 ml packed worms. Remove liquid and resuspend worms to 10ml with M9.</para>
+                   <para><emphasis role="bold">Day 12: Bombardment</emphasis></para>
+			<orderedlist>
+				<listitem>
+					<para>Using a short pasteur pipette, transfer ~ 1.5 ml of worms to the surface of a dry (1 week post bacterial spreading) enriched peptone plate. Add them drop wise starting at the center and then spiraling around until you reach the edge of the plate. Repeat until all worms are plated (6 plates).</para>
+						</listitem>
+						<listitem>
+                   <para>Leave the covers off the plates to evaporate the liquid. This should take no more than 15 minutes. If it takes more, the enriched peptone plates are too wet.</para>
+						</listitem>
+						<listitem>
+                   <para>While the plates dry prepare the gene gun. We use the BioRad Biolistic PDS-1000/He particle delivery system with the Hepta adaptor. This adaptor saves an enormous amount of time and effort. Illustrations and jargon definitions are found in the BioRad manual. Read this manual to be familiar with the procedures described below.</para>
+						</listitem>
+						<listitem>
+                   <para>Hook the vacuum tubing to a vacuum source port (with plastic adaptor). Open vacuum port. Turn on gene gun. Open helium tank valve (check to make sure that He tank pressure is <symbol role="symbolfont">&#x02265;</symbol> 2200psi). Perform a test bombardment by wetting a rupture disk (1500-2000 psi) in isopropanol, placing in retaining cap for hepta adaptor, and tightening onto bombardment chamber.</para>
+						</listitem>
+						<listitem>
+                   <para>Close door. Pull vacuum to 27 in of Hg. Once it reaches 27 in of Hg press hold. Press Fire button and hold until disk ruptures. Release vacuum (Vent position), open door, unscrew retaining cap and discard the ruptured disk.</para>
+						</listitem>
+						<listitem>
+                   <para>Place 7 macrocarriers onto the hepta adaptor macrocarrier holder using the special tool. Vortex your DNA preparation at medium speed with cap open. Stop and immediately (quickly) transfer 6 &mgr;l of beads onto a macrocarrier and spread it around with your pipette tip. Only spread on area around the hole in the holder. Repeat for all macrocarriers. Let EtOH evaporate (this only takes a few minutes).</para>
+						</listitem>
+						<listitem>
+                   <para>Place a rupture disk soaked in isopropanol in the retaining cap and tighten. Place hepta stopping screen and macrocarrier holder in chamber as described in manual. Place uncovered worm plate (taped to the sample holder using a rolled piece of adhesive tape to create double sided tape) into lowest rung in bombardment chamber.</para>
+						</listitem>
+						<listitem>
+                   <para>Evacuate chamber to 26 in Hg. Press Fire button until disk ruptures. Release vacuum (Vent position), and remove plate.</para>
+						</listitem>
+						<listitem>
+                   <para>Repeat above for all 6 plates.</para>
+						</listitem>
+						<listitem>
+                   <para>Turn off the vacuum. Close the helium tank valve - make sure no pressure is left in the line. Turn the gene gun power OFF.</para>
+						</listitem>
+					</orderedlist>
+<para>**Wipe down all of the gene gun components with 70% ethanol, then autoclave the hepta adaptor and the macro carrier holder components. Wipe down the bombardment chamber with 70% ethanol.</para>
+                   <para><emphasis role="bold">Day 12: Plating worms</emphasis></para>
+                   <para>Wash bombarded worms off plates with M9. Place worms in 50ml tubes. Spin 1 minute at low speed. Resuspend worms evenly in 2 tubes with 80 ml of M9 media.</para>
+                   <para>Plate worms, 1ml per plate, enriched peptone plates with nystatin and seeded with NA22 bacteria. Should end up with ~80 plates.</para>
+                   <para>Once plates have dried, place them in a 25&#x000B0; C incubator (we found this to be important for GFP expression of several germline genes, you can grow worms at 20&#x000B0;C for non-GFP transgenes)  and let sit for 10-14 days (preferably in a plastic containers to avoid plates drying out).</para>
+                   <para><emphasis role="bold">Day 22&#x02013;26: Screening</emphasis></para>
+                   <para>Scan plates for WT animals. Typically, 10-20 plates contain WT animals with anywhere from 1 to many WT animals per plate.</para>
+                   <para>From each big plate, clone 3-5 WT worms to individual plates (regular NGM plates with OP50). Place the plates a 25&#x000B0; C for 4 days, and then examine the progeny for GFP expression.</para>
+                   <sidebar><note>
+                       <title>Notes</title>
+                       <para>Two alternative methods can be used to grow <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-119" role="_blank">unc-119</ulink></emphasis> worms for bombardment:
+                           <orderedlist>
+                           <listitem>
+                           <para>Worms can be grown on "egg plates" as described (<link linkend="bib1">Berezikov et al., 2004</link><!-- PMID 14982959-->).</para>
+                          </listitem>
+                           <listitem>
+                           <para>Worms can be grown in liquid culture (E. Moss, personal comm.; <link linkend="bib17">Lewis and Fleming, 1995</link><!-- PMID 8531730-->). For liquid culture, a 2L baffled flask containing 250ml of complete S medium with 30g/L E. coli is shaken vigorously. Before bombardment, <emphasis>unc-119(ed3)</emphasis> animals are grown at 15&#x000B0;C and fed regularly with E. coli concentrated from a 500ml culture. Gravid worms are isolated by flotation on 35% sucrose, embryos are isolated by bleach treatment, and synchronized adults are then used for bombardment. After bombardment, worms are rinsed into four 2L flasks and grown at 25&#x000B0;C. For one week, worms are fed regularly to expand the populations, and then are allowed to starve in the second week. Worms are then collected by low speed centrifugation and pipetted onto large plates. Rescued worms are then selected and cloned onto standard plates. (Contributed by Eric Moss).</para>
+                          </listitem>
+                          </orderedlist>
+                      </para>
+                 </note></sidebar>
+                 </sect3>
+                 </sect2>
+                 </sect1>
+          <sect1>
+                <title>Future prospects: Targeted gene replacement</title>
+                <para>Current transformation technology is powerful for the analysis of gene function and regulation in <emphasis>C. elegans</emphasis>. However, the holy grail of DNA transformation is targeted gene replacement by homologous recombination. As shown in yeast and mice, gene targeting can create null mutations in virtually any selected gene (gene knock-out), and can replace genes with designed derivatives (gene knock-in). Homologous recombination of transgenes into endogenous loci was observed in some <emphasis>C. elegans</emphasis> strains when DNA was injected into oocyte nuclei (<link linkend="bib4">Broverman et al., 1993</link><!-- PMID 8506273-->). By scaling up gene bombardment procedures, Berezikov et al. recently isolated a few knock-out homologous integrants, and one knock-in replacement (<link linkend="bib1">Berezikov et al., 2004</link><!-- PMID 14982959-->). These exciting results suggest that gene targeting may be feasible by microparticle bombardment. A limitation is that only ~0.5%-7% of integration events arise from homologous recombination, and it is not clear what parameters might affect these rates. Perhaps new transgene designs or isolation of mutants with increased recombination rates will soon lead to routine procedures for this powerful technology.</para>
+         </sect1>
+        <sect1>
+            <title>Acknowledgments</title>
+            <para>This chapter would not be possible without the generous contributions of the experts in these methods. Many thanks are due to Cyndy DeRenzo, Peg MacMorris, Eric Moss, Geraldine Seydoux, and Ji Ying Sze, for contributing protocols and unpublished information, and to David Fay, Andy Fire, Barth Grant, Wade Johnson, Chris Link, Morris Maduro, Craig Mello, and Ding Xue for valuable information and advice. Thanks are also due to the entire <emphasis>C. elegans</emphasis> community for their collective efforts that make these techniques work. Work in T.C.E's laboratory was supported by grants from NSF (9982944, 0345386), U. Colo. Cancer Center and ACS, and NIH (GM20599-03).</para>
+       </sect1>
+    <sect1>
+            <title>References</title>
+            &WMTransform_Refs;
+            <para/>
+       </sect1>
+</article>

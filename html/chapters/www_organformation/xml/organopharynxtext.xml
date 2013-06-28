@@ -1,0 +1,788 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY fig1 SYSTEM 'organopharynxfig1.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'organopharynxfig1leg.xml'>
+<!ENTITY fig2 SYSTEM 'organopharynxfig2.jpg' NDATA JPG>
+<!ENTITY fig2legend SYSTEM 'organopharynxfig2leg.xml'>
+<!ENTITY fig3 SYSTEM 'organopharynxfig3.jpg' NDATA JPG>
+<!ENTITY fig3legend SYSTEM 'organopharynxfig3leg.xml'>
+<!ENTITY fig4 SYSTEM 'organopharynxfig4.jpg' NDATA JPG>
+<!ENTITY fig4legend SYSTEM 'organopharynxfig4leg.xml'>
+<!ENTITY fig5 SYSTEM 'organopharynxfig5.jpg' NDATA JPG>
+<!ENTITY fig5legend SYSTEM 'organopharynxfig5leg.xml'>
+<!ENTITY fig6 SYSTEM 'organopharynxfig6.jpg' NDATA JPG>
+<!ENTITY fig6legend SYSTEM 'organopharynxfig6leg.xml'>
+<!ENTITY fig7 SYSTEM 'organopharynxfig7.jpg' NDATA JPG>
+<!ENTITY fig7legend SYSTEM 'organopharynxfig7leg.xml'>
+<!ENTITY fig8 SYSTEM 'organopharynxfig8.jpg' NDATA JPG>
+<!ENTITY fig8legend SYSTEM 'organopharynxfig8leg.xml'>
+<!ENTITY organopharynx_Refs SYSTEM 'organopharynxrefs.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="organopharynx_ArticleID">
+	<articleinfo>
+		<!--see DocBook's authorgroup element -->
+<title>The <emphasis>C. elegans</emphasis> pharynx: a model for organogenesis<footnote>
+			<para>Edited by Geraldine Seydoux and James R. Priess. Last revised November 7, 2006. Published January 22, 2007. This chapter should be cited as: Mango, S.E. The <emphasis>C. elegans</emphasis> pharynx: a model for organogenesis (January 22, 2007), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.129.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+			<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2007 Susan E. Mango. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+			</footnote>
+		</title>
+<author>
+<firstname>Susan E.</firstname>
+	<surname>Mango<remark><footnote><para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:susan.mango@hci.utah.edu">susan.mango@hci.utah.edu</ulink></para></footnote></remark></surname>
+<affiliation><address>Department of Oncological Sciences, Huntsman Cancer Institute, University of Utah, Salt Lake City, UT 84112 USA</address>
+</affiliation>
+</author>
+</articleinfo>
+	<abstract>
+<title><emphasis role="bold">Abstract</emphasis></title>
+<para><emphasis role="bold">The</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">foregut (pharynx) has emerged as a powerful system to study organ formation during embryogenesis. Here I review recent advances regarding cell-fate specification and epithelial morphogenesis during pharynx development. Maternally-supplied gene products function prior to gastrulation to establish pluripotent blastomeres. As gastrulation gets under way, pharyngeal precursors become committed to pharyngeal fate in a process that requires <ulink url="http://www.wormbase.org/db/get?name=PHA-4;class=Protein" role="_blank">PHA-4</ulink>/FoxA and the Tbox transcription factors <ulink url="http://www.wormbase.org/db/get?name=TBX-2;class=Protein" role="_blank">TBX-2</ulink>, <ulink url="http://www.wormbase.org/db/get?name=TBX-35;class=Protein" role="_blank">TBX-35</ulink>, <ulink url="http://www.wormbase.org/db/get?name=TBX-37;class=Protein" role="_blank">TBX-37</ulink> and <ulink url="http://www.wormbase.org/db/get?name=TBX-38;class=Protein" role="_blank">TBX-38</ulink>. Subsequent waves of gene expression depend on the affinity of <ulink url="http://www.wormbase.org/db/get?name=PHA-4;class=Protein" role="_blank">PHA-4</ulink> for its target promoters, coupled with combinatorial strategies such as feed-forward and positive-feedback loops. During later embryogenesis, pharyngeal precursors undergo reorganization and a mesenchymal-to-epithelial transition to form the linear gut tube. Surprisingly, epithelium formation does not depend on cadherins, catenins or integrins. Rather, the kinesin <ulink url="http://www.wormbase.org/db/get?name=ZEN-4;class=Protein" role="_blank">ZEN-4</ulink>/MKLP1 and <ulink url="http://www.wormbase.org/db/get?name=CYK-4;class=Protein" role="_blank">CYK-4</ulink>/RhoGAP are critical to establish the apical domain during epithelial polarization. Finally, I discuss similarities and differences between the nematode pharynx and the vertebrate heart.</emphasis></para>
+</abstract>
+<sect1>
+<title>The pharynx as a model for organ development</title>
+<para>Four characteristics of the <emphasis>C. elegans</emphasis> pharynx make it a powerful system to study organogenesis. First, <emphasis>C. elegans</emphasis> is transparent and the complete cell-lineage is known (<link linkend="bib134">Sulston et al., 1983</link>), making it possible to follow organogenesis from the earliest stages of primordium formation to the terminal steps of differentiation and morphogenesis. Second, the mature pharynx is simple and well-characterized. It is composed of 95 nuclei that can be grouped into seven cell types. The position and morphology of these cells have been characterized at the ultrastructural level (<link linkend="bib2">Albertson and Thomson, 1976</link>). In addition, there are antibodies and GFP reporters that mark individual cell types or developmental stages within the pharynx (<ulink url="http://www.wormbase.org/db/searches/expr_search" role="_blank">http://www.wormbase.org/db/searches/ expr_search</ulink>). These tools are invaluable for detailed studies of wildtype and mutant embryos at the level of individual cells. Third, pharynx development is robust. Embryos with abnormal development in other tissues can still produce a well-differentiated pharynx. For example, an embryo that cannot undergo normal morphogenesis arrests as a ball of cells with a differentiated pharynx (<link linkend="bib1">Ahnn and Fire, 1994</link>; <link linkend="bib30">Chanal and Labouesse, 1997</link>; <link linkend="bib133">Storfer-Glazer and Wood, 1994</link>; <link linkend="bib135">Terns et al., 1997</link>). This characteristic enables researchers to focus on molecules likely to play a direct role in pharynx formation without the problems associated with indirect effects. Fourth, formation of the pharynx faces similar developmental challenges to those of organs in more complex animals and uses conserved molecular pathways to meet those challenges. For example, the pharynx is composed of cells with different embryonic origins (<link linkend="bib134">Sulston et al., 1983</link>), similar to the polyclonal origin of most vertebrate organs. The <emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-4;class=Gene" role="_blank">pha-4</ulink></emphasis> locus (discussed below) is critical to specify pharyngeal identity, regardless of ancestry (<link linkend="bib90">Mango et al., 1994</link>). The mammalian orthologues of <emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-4;class=Gene" role="_blank">pha-4</ulink></emphasis> are the FoxA proteins, and, like <emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-4;class=Gene" role="_blank">pha-4</ulink></emphasis>, FoxA2 is essential for gut development in all organisms studied to date (<link linkend="bib29">Carlsson and Mahlapuu, 2002</link>).</para>
+</sect1>
+<sect1>
+<title>Anatomy of the pharynx</title>
+<para>We have a detailed knowledge of the anatomy of the pharynx, based on ultrastructural studies by Donna Albertson (<link linkend="bib2">Albertson and Thomson, 1976</link>). The pharynx is a bilobed, linear tube encased in a basement membrane. It can be subdivided into six sections, which are, from anterior to posterior, the buccal cavity, procorpus, metacorpus (anterior bulb), isthmus, terminal bulb and pharyngeal-intestinal valve (see <link linkend="figure1">Figure 1</link>). I define the pharynx as those cells of the foregut that express <ulink url="http://www.wormbase.org/db/get?name=PHA-4;class=Protein" role="_blank">PHA-4</ulink> and that are lost in <emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-4;class=Gene" role="_blank">pha-4</ulink></emphasis> mutants, which includes two additional types of cells not encompassed by the pharyngeal basement membrane (arcade cells, pharyngeal intestinal valve cells; <link linkend="bib59">Horner et al., 1998</link>; <link linkend="bib90">Mango et al., 1994</link>). These criteria identify 95 nuclei that can be subdivided into seven cell types: arcade cells, muscles, epithelia, neurons, glands, marginal cells and valves (<link linkend="bib2">Albertson and Thomson, 1976</link>). Along the longitudinal axis, there are eight sections of muscles and three sections of marginal cells; these make up the bulk of the pharynx (see <link linkend="figure2">Figure 2</link>). Radially, the muscles and marginal cells are organized with three-fold symmetry around the pharyngeal lumen. These cells have characteristics of epithelia, with adherens junctions and an apical surface that faces the lumen (<link linkend="bib2">Albertson and Thomson, 1976</link>). Posteriorly, a toroid of six valve cells connects pm8, the last pharyngeal muscle, to the intestine. Anteriorly, the pharynx attaches to the buccal cavity and exterior epidermis via nine arcade cells and nine epithelial cells, organized into three rings. Five gland cells and twenty neurons are embedded within the muscle/marginal cell epithelium. The neurons extend processes either dorsally or along the left and right subventral surfaces and synapse onto muscles or nerves. The gland cells contain processes that open into the pharyngeal lumen. The glands appear to secrete vesicles through these processes just before hatching, at each larval molt and during feeding. The nature of the secretions is unknown but may aid in degrading chitin and cuticle, and in digesting food. The pharyngeal lumen is lined with cuticle, which connects to the cuticle of the epidermis. Specialized fingers that project into the lumen of the terminal bulb may function as teeth or a sieve during feeding. For excellent images and an in-depth description of pharyngeal and epithelial morphology, see <ulink url="http://www.wormatlas.org/htm" role="_blank">Wormatlas</ulink> and the online <ulink url="http://www.wormbook.org/" role="_blank">WormBook</ulink>.</para>
+<literallayout></literallayout>
+		<mediaobject id="figure1" xreflabel="Figure 1">
+			<imageobject>
+				<imagedata entityref="fig1" width="5in" align="center"/>
+			</imageobject>
+			<textobject>
+				<phrase>figure 1</phrase>
+			</textobject> &fig1legend;</mediaobject>
+<literallayout></literallayout>
+		<mediaobject id="figure2" xreflabel="Figure 2">
+			<imageobject>
+				<imagedata entityref="fig2" width="6.5in" align="center"/>
+			</imageobject>
+			<textobject>
+				<phrase>figure 2</phrase>
+			</textobject> &fig2legend;</mediaobject>
+</sect1>
+<?newpage?>
+<sect1>
+<title>Early control of pharyngeal development-the <ulink url="http://www.wormbase.org/db/get?name=ABa;class=Cell" role="_blank">ABa</ulink> lineage</title>
+<para>The pharynx is generated polyclonally during embryogenesis: at the 4-cell stage, two blastomeres, <ulink url="http://www.wormbase.org/db/get?name=ABa;class=Cell" role="_blank">ABa</ulink> and <ulink url="http://www.wormbase.org/db/get?name=EMS;class=Cell" role="_blank">EMS</ulink>, contribute descendants to the pharynx, whereas their sisters do not (see <link linkend="figure3">Figure 3</link>). Prior to gastrulation at the 28-cell stage, most early blastomeres are pluripotent and give rise to multiple cell types. For example, <ulink url="http://www.wormbase.org/db/get?name=ABa;class=Cell" role="_blank">ABa</ulink> and <ulink url="http://www.wormbase.org/db/get?name=EMS;class=Cell" role="_blank">EMS</ulink> each produces both pharyngeal cells and non-pharyngeal cells such as epidermis or body wall muscle (<link linkend="bib134">Sulston et al., 1983</link>).</para>
+<literallayout></literallayout>
+		<mediaobject id="figure3" xreflabel="Figure 3">
+			<imageobject>
+				<imagedata entityref="fig3" width="7in" align="center"/>
+			</imageobject>
+			<textobject>
+				<phrase>figure 3</phrase>
+			</textobject> &fig3legend;</mediaobject>
+<para>The production of pharyngeal cells by <ulink url="http://www.wormbase.org/db/get?name=ABa;class=Cell" role="_blank">ABa</ulink> and <ulink url="http://www.wormbase.org/db/get?name=EMS;class=Cell" role="_blank">EMS</ulink> depends on at least two distinct molecular pathways. The <ulink url="http://www.wormbase.org/db/get?name=ABa;class=Cell" role="_blank">ABa</ulink> pathway is dependent on intercellular signaling between blastomeres and on the Notch receptor orthologue <emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink></emphasis> (see <link linkend="figure4">Figure 4</link> and <link linkend="table1">Table 1</link>; <link linkend="bib112">Priess et al., 1987</link>; <link linkend="bib112">Priess and Thomson, 1987</link>). <emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink></emphasis> RNA is donated to the embryo by the mother (i.e., maternally) and is selectively translated in <ulink url="http://www.wormbase.org/db/get?name=ABa;class=Cell" role="_blank">ABa</ulink> and its sister <ulink url="http://www.wormbase.org/db/get?name=ABp;class=Cell" role="_blank">ABp</ulink> (<link linkend="bib37">Evans et al., 1994</link>). Multiple events during embryogenesis depend on Notch signaling, and I focus only on those involved in pharyngeal development. An unidentified <ulink url="http://www.wormbase.org/db/get?name=GLP-1;class=Protein" role="_blank">GLP-1</ulink> ligand generated by <ulink url="http://www.wormbase.org/db/get?name=EMS;class=Cell" role="_blank">EMS</ulink> descendents activates the <ulink url="http://www.wormbase.org/db/get?name=LAG-1;class=Protein" role="_blank">LAG-1</ulink> transcription factor at the 12&#x2013;15-cell stage (<link linkend="bib32">Christensen et al., 1996</link>; <link linkend="bib61">Hutter and Schnabel, 1994</link>; <link linkend="bib75a">Lambie and Kimble, 1991</link>; <link linkend="bib90">Mango et al., 1994</link>; <link linkend="bib97a">Moskowitz et al., 1994</link>). <ulink url="http://www.wormbase.org/db/get?name=LAG-1;class=Protein" role="_blank">LAG-1</ulink> in turn activates the organ selector gene <emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-4;class=Gene" role="_blank">pha-4</ulink></emphasis> (<link linkend="bib129">Smith and Mango, 2006</link>), described below, and the <ulink url="http://www.wormbase.org/db/get?name=REF-1;class=Protein" role="_blank">REF-1</ulink> family of bHLH transcription factors (<link linkend="bib100">Neves and Priess, 2005</link>). The <ulink url="http://www.wormbase.org/db/get?name=REF-1;class=Protein" role="_blank">REF-1</ulink> family is comprised of six genes distantly related to the <emphasis>E(spl)</emphasis> family of repressors: <emphasis><ulink url="http://www.wormbase.org/db/get?name=ref-1;class=Gene" role="_blank">ref-1</ulink>, <ulink url="http://www.wormbase.org/db/get?name=hlh-25;class=Gene" role="_blank">hlh-25</ulink>, <ulink url="http://www.wormbase.org/db/get?name=hlh-26;class=Gene" role="_blank">hlh-26</ulink>, <ulink url="http://www.wormbase.org/db/get?name=hlh-27;class=Gene" role="_blank">hlh-27</ulink>, <ulink url="http://www.wormbase.org/db/get?name=hlh-28;class=Gene" role="_blank">hlh-28</ulink>, <ulink url="http://www.wormbase.org/db/get?name=hlh-29;class=Gene" role="_blank">hlh-29</ulink></emphasis>. Each gene contains two bHLH domains and a basic region. However, these factors lack other sequences typically found in <emphasis>E(spl)</emphasis> proteins, such as the Orange domain and the terminal W/YRPW sequence (<link linkend="bib100">Neves and Priess, 2005</link>). In other species, this motif mediates binding to co-repressors. Thus, it is uncertain how <ulink url="http://www.wormbase.org/db/get?name=REF-1;class=Protein" role="_blank">REF-1</ulink> family members recruit co-repressors such as <ulink url="http://www.wormbase.org/db/get?name=UNC-37;class=Protein" role="_blank">UNC-37</ulink>/groucho, although genetic evidence supports a repressor function (<link linkend="bib100">Neves and Priess, 2005</link>).</para>
+<?newpage?>
+<table id="table1" frame="all" rules="all" cellpadding="0" cellspacing="0" width="100%">
+<title><emphasis role="bold">Table 1. Summary of genes involved in pharynx development.</emphasis> Genes implicated in pharynx development are listed from earliest stages of specification to later events. Aph: anterior pharynx absent Daf: dauer defective, M/Z: maternal or zygotic contribution of RNA or protein, Pha: pharynx absent, pm: pharyngeal muscle, PPa: posterior pharynx absent, Pun: pharynx unattached, Rcp: receptor, TF: transcription factor, Zn: zinc, ?: unknown.</title>
+<tgroup cols="9">
+<colspec colname="c1" align="center" colwidth="0.6*"/>
+<colspec colname="c2" align="center" colwidth="0.7*"/>
+<colspec colname="c3" align="center" colwidth="0.4*"/>
+<colspec colname="c4" align="center" colwidth="0.7*"/>
+<colspec colname="c5" align="center" colwidth="0.7*"/>
+<colspec colname="c6" align="center" colwidth="0.6*"/>
+<colspec colname="c7" align="center" colwidth="0.8*"/>
+<colspec colname="c8" align="center" colwidth="0.7*"/>
+<colspec colname="c9" align="left" colwidth="1.2*"/>
+<thead>
+<row>
+<entry>Gene</entry>
+<entry>Homology</entry>
+<entry>M/Z</entry>
+<entry>Expression (initiation)</entry>
+<entry>Pha phenotype</entry>
+<entry>Targets</entry>
+<entry>Binding sequence</entry>
+<entry>Upstream genes</entry>
+<entry>References</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink></emphasis></entry>
+<entry>Notch Rcp</entry>
+<entry>M</entry>
+<entry>ABa&#x00040;4</entry>
+<entry>Aph</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=ref-1;class=Gene" role="_blank">ref-1</ulink> <ulink url="http://www.wormbase.org/db/get?name=pha-4;class=Gene" role="_blank">pha-4</ulink></emphasis></entry>
+<entry>N/A</entry>
+<entry>?</entry>
+<entry><link linkend="bib65">Kalb et al., 1998</link>; <link linkend="bib90">Mango et al., 1994</link>; <link linkend="bib112">Priess et al., 1987</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=lag-1;class=Gene" role="_blank">lag-1</ulink></emphasis></entry>
+<entry>Su(H) TF</entry>
+<entry>M</entry>
+<entry>Broadly</entry>
+<entry>Aph</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=ref-1;class=Gene" role="_blank">ref-1</ulink> <ulink url="http://www.wormbase.org/db/get?name=pha-4;class=Gene" role="_blank">pha-4</ulink></emphasis></entry>
+<entry>RTGGGAA</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink></emphasis></entry>
+<entry><link linkend="bib32">Christensen et al., 1996</link>; <link linkend="bib129">Smith and Mango, 2006</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=skn-1;class=Gene" role="_blank">skn-1</ulink></emphasis></entry>
+<entry>Zipper TF</entry>
+<entry>M</entry>
+<entry>EMS&#x00040;4</entry>
+<entry>Pha</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=ref-1;class=Gene" role="_blank">ref-1</ulink> <ulink url="http://www.wormbase.org/db/get?name=end-1;class=Gene" role="_blank">end-1</ulink></emphasis></entry>
+<entry>G/ATCAT &#x0002B; A/T</entry>
+<entry>?</entry>
+<entry><link linkend="bib24">Bowerman et al., 1992</link>; <link linkend="bib87">Maduro et al., 2005b</link>; <link linkend="bib90">Mango et al., 1994</link>; <link linkend="bib100">Neves and Priess, 2005</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=med-1;class=Gene" role="_blank">med-1</ulink>/<ulink url="http://www.wormbase.org/db/get?name=med-2;class=Gene" role="_blank">2</ulink></emphasis></entry>
+<entry>GATA-like Zn TF</entry>
+<entry>M, Z</entry>
+<entry>EMS&#x00040;4 and maternal</entry>
+<entry>Ppa</entry>
+<entry><emphasis>end-1/3 <ulink url="http://www.wormbase.org/db/get?name=hlh-25;class=Gene" role="_blank">hlh-25</ulink></emphasis></entry>
+<entry>RRRAGT- ATAC</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=skn-1;class=Gene" role="_blank">skn-1</ulink></emphasis></entry>
+<entry><link linkend="bib26">Broitman-Maduro et al., 2005</link>; <link linkend="bib89">Maduro et al., 2001</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=ref-1;class=Gene" role="_blank">ref-1</ulink></emphasis></entry>
+<entry>bHLH TF</entry>
+<entry>Z</entry>
+<entry>ABa&#x00040;26 ABp&#x00040;4 EMS&#x00040;24</entry>
+<entry>none</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=tbx-37;class=Gene" role="_blank">tbx-37</ulink> <ulink url="http://www.wormbase.org/db/get?name=tbx-2;class=Gene" role="_blank">tbx-2</ulink></emphasis></entry>
+<entry>CANNTG</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=lag-1;class=Gene" role="_blank">lag-1</ulink></emphasis></entry>
+<entry><link linkend="bib100">Neves and Priess, 2005</link>; <link linkend="bib129">Smith and Mango, 2006</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=tbx-37;class=Gene" role="_blank">tbx-37</ulink>/<ulink url="http://www.wormbase.org/db/get?name=tbx-38;class=Gene" role="_blank">38</ulink></emphasis></entry>
+<entry>T-box</entry>
+<entry>Z</entry>
+<entry>ABa&#x00040;24</entry>
+<entry>Aph</entry>
+<entry><emphasis>pha-4?</emphasis></entry>
+<entry>?</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=ref-1;class=Gene" role="_blank">ref-1</ulink></emphasis> in some cell types</entry>
+<entry><link linkend="bib47">Good et al., 2004</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-4;class=Gene" role="_blank">pha-4</ulink></emphasis></entry>
+<entry>FoxA</entry>
+<entry>Z</entry>
+<entry>ABa&#x00040;44 MS&#x00040;28</entry>
+<entry>Pha</entry>
+<entry><emphasis>many</emphasis></entry>
+<entry>TRTTKRY</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=lag-1;class=Gene" role="_blank">lag-1</ulink> <ulink url="http://www.wormbase.org/db/get?name=tbx-37;class=Gene" role="_blank">tbx-37</ulink>/<ulink url="http://www.wormbase.org/db/get?name=tbx-38;class=Gene" role="_blank">38</ulink> <ulink url="http://www.wormbase.org/db/get?name=med-1;class=Gene" role="_blank">med-1</ulink>/<ulink url="http://www.wormbase.org/db/get?name=med-2;class=Gene" role="_blank">2</ulink> <ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink></emphasis></entry>
+<entry><link linkend="bib44">Gaudet and Mango, 2002</link>; <link linkend="bib47">Good et al., 2004</link>; <link linkend="bib87">Maduro et al., 2005b</link>; <link linkend="bib90">Mango et al., 1994</link>; <link linkend="bib129">Smith and Mango, 2006</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=htz-1;class=Gene" role="_blank">htz-1</ulink></emphasis></entry>
+<entry>H2A.Z histone variant</entry>
+<entry>Z</entry>
+<entry>Broadly from the 28-cell stage</entry>
+<entry>Delayed activation</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=myo-2;class=Gene" role="_blank">myo-2</ulink>, <ulink url="http://www.wormbase.org/db/get?name=R07B1.9;class=Gene" role="_blank">R07B1.9</ulink></emphasis></entry>
+<entry>N/A</entry>
+<entry>?</entry>
+<entry><link linkend="bib138">Updike and Mango, 2006</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=tbx-2;class=Gene" role="_blank">tbx-2</ulink></emphasis></entry>
+<entry>T-box</entry>
+<entry>Z</entry>
+<entry>ABa&#x00040;8E</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ABa;class=Cell" role="_blank">ABa</ulink> muscles absent</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-4;class=Gene" role="_blank">pha-4</ulink> ceh-22?</emphasis></entry>
+<entry>?</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=ref-1;class=Gene" role="_blank">ref-1</ulink> in some cells tbx-37/38?</emphasis></entry>
+<entry><link linkend="bib118">Chowdhury et al., 2006</link>; <link linkend="bib129">Smith and Mango, 2006</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=ceh-22;class=Gene" role="_blank">ceh-22</ulink></emphasis></entry>
+<entry>Nkx2-5 Homeobox TF</entry>
+<entry>Z</entry>
+<entry>pm3-5, pm7</entry>
+<entry>Indistinct BM Around pharynx</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=myo-2;class=Gene" role="_blank">myo-2</ulink></emphasis></entry>
+<entry>CACTTAT</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-4;class=Gene" role="_blank">pha-4</ulink> <ulink url="http://www.wormbase.org/db/get?name=ceh-22;class=Gene" role="_blank">ceh-22</ulink> <ulink url="http://www.wormbase.org/db/get?name=ceh-2;class=Gene" role="_blank">ceh-2</ulink> <ulink url="http://www.wormbase.org/db/get?name=pha-2;class=Gene" role="_blank">pha-2</ulink></emphasis></entry>
+<entry><link linkend="bib65">Kalb et al., 1998</link>; <link linkend="bib90">Mango et al., 1994</link>; <link linkend="bib102">Okkema and Fire, 1994</link>; <link linkend="bib103">Okkema et al., 1997</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=peb-1;class=Gene" role="_blank">peb-1</ulink></emphasis></entry>
+<entry>FLYWCH Zn TF</entry>
+<entry>Z</entry>
+<entry>Broadly</entry>
+<entry>Glands distended</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=myo-2;class=Gene" role="_blank">myo-2</ulink></emphasis></entry>
+<entry>YDTGCCRW</entry>
+<entry>?</entry>
+<entry><link linkend="bib17">Beaster-Jones and Okkema, 2004</link>; <link linkend="bib136">Thatcher et al., 2001</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=daf-12;class=Gene" role="_blank">daf-12</ulink></emphasis></entry>
+<entry>NHR Zn TF</entry>
+<entry>Z</entry>
+<entry>Broadly</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Daf;class=Phenotype" role="_blank">Daf</ulink></entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=myo-2;class=Gene" role="_blank">myo-2</ulink> <ulink url="http://www.wormbase.org/db/get?name=ceh-22;class=Gene" role="_blank">ceh-22</ulink></emphasis></entry>
+<entry>AGTGCA</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=daf-9;class=Gene" role="_blank">daf-9</ulink></emphasis></entry>
+<entry><link linkend="bib5">Ao et al., 2004</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-1;class=Gene" role="_blank">pha-1</ulink></emphasis></entry>
+<entry>Novel</entry>
+<entry>Z</entry>
+<entry>Broadly</entry>
+<entry>Arrested diffn, loss of TF expression</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=ceh-22;class=Gene" role="_blank">ceh-22</ulink> <ulink url="http://www.wormbase.org/db/get?name=pha-4;class=Gene" role="_blank">pha-4</ulink></emphasis></entry>
+<entry>NA or ?</entry>
+<entry>?</entry>
+<entry><link linkend="bib39">Fay et al., 2004</link>; <link linkend="bib50">Granato et al., 1994</link>; <link linkend="bib122">Schnabel and Schnabel, 1990</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-2;class=Gene" role="_blank">pha-2</ulink></emphasis></entry>
+<entry>Homeobox</entry>
+<entry>Z</entry>
+<entry>Pm5, <ulink url="http://www.wormbase.org/db/get?name=I4;class=Cell" role="_blank">I4</ulink>, epi</entry>
+<entry>pm4, pm5, morph</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=ceh-22;class=Gene" role="_blank">ceh-22</ulink> <ulink url="http://www.wormbase.org/db/get?name=ceh-2;class=Gene" role="_blank">ceh-2</ulink></emphasis></entry>
+<entry/>
+<entry/>
+<entry><link linkend="bib8">Avery, 1993</link>; <link linkend="bib97">Morck et al., 2004</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=ast-1;class=Gene" role="_blank">ast-1</ulink></emphasis></entry>
+<entry>ETS</entry>
+<entry>Z</entry>
+<entry>Head</entry>
+<entry>Pun</entry>
+<entry>?</entry>
+<entry>?</entry>
+<entry>?</entry>
+<entry><link linkend="bib121">Schmid et al., 2006</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=myo-2;class=Gene" role="_blank">myo-2</ulink></emphasis></entry>
+<entry>Myosin Heavy chain</entry>
+<entry>Z</entry>
+<entry>pm1-pm8</entry>
+<entry/>
+<entry/>
+<entry>NA</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-4;class=Gene" role="_blank">pha-4</ulink> <ulink url="http://www.wormbase.org/db/get?name=ceh-22;class=Gene" role="_blank">ceh-22</ulink> <ulink url="http://www.wormbase.org/db/get?name=peb-1;class=Gene" role="_blank">peb-1</ulink> <ulink url="http://www.wormbase.org/db/get?name=daf-12;class=Gene" role="_blank">daf-12</ulink> <ulink url="http://www.wormbase.org/db/get?name=daf-3;class=Gene" role="_blank">daf-3</ulink></emphasis></entry>
+<entry><link linkend="bib5">Ao et al., 2004</link>; <link linkend="bib44">Gaudet and Mango, 2002</link>; <link linkend="bib90">Mango et al., 1994</link>; <link linkend="bib102">Okkema and Fire, 1994</link>; <link linkend="bib136">Thatcher et al., 2001</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-39;class=Gene" role="_blank">unc-39</ulink></emphasis></entry>
+<entry>six4/5</entry>
+<entry>Z</entry>
+<entry>Mesoderm Arc</entry>
+<entry>Pun metacorpus</entry>
+<entry>?</entry>
+<entry>?</entry>
+<entry>?</entry>
+<entry><link linkend="bib144">Yanowitz et al., 2004</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=eya-1;class=Gene" role="_blank">eya-1</ulink></emphasis></entry>
+<entry>Eyes absent</entry>
+<entry>Z</entry>
+<entry>Broadly <symbol role="symbolfont">&#x02265;</symbol> bean</entry>
+<entry>Thin, asymmetric</entry>
+<entry>?</entry>
+<entry>NA</entry>
+<entry>?</entry>
+<entry><link linkend="bib43">Furuya et al., 2005</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=ubc-9;class=Gene" role="_blank">ubc-9</ulink></emphasis></entry>
+<entry>E2 sumo ligase</entry>
+<entry>?</entry>
+<entry>?</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ABa;class=Cell" role="_blank">ABa</ulink> muscles absent</entry>
+<entry>?</entry>
+<entry>NA</entry>
+<entry>?</entry>
+<entry><link linkend="bib118">Chowdhury et al., 2006</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=gei-17;class=Gene" role="_blank">gei-17</ulink></emphasis></entry>
+<entry>E3 sumo ligase</entry>
+<entry>?</entry>
+<entry>?</entry>
+<entry>Thick isthmus</entry>
+<entry>?</entry>
+<entry>NA</entry>
+<entry>?</entry>
+<entry><link linkend="bib118">Chowdhury et al., 2006</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=ceh-24;class=Gene" role="_blank">ceh-24</ulink></emphasis></entry>
+<entry>Nkx TF</entry>
+<entry>Z</entry>
+<entry>pm8</entry>
+<entry>None</entry>
+<entry>?</entry>
+<entry>?</entry>
+<entry>?</entry>
+<entry><link linkend="bib53">Harfe et al., 1998</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=ceh-2;class=Gene" role="_blank">ceh-2</ulink></emphasis></entry>
+<entry>Homeobox ems, EMX</entry>
+<entry>Z</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=I3;class=Cell" role="_blank">I3</ulink>, NSM, <ulink url="http://www.wormbase.org/db/get?name=M3;class=Cell" role="_blank">M3</ulink>, pm2, e2</entry>
+<entry>Poor feeding, <ulink url="http://www.wormbase.org/db/get?name=M3;class=Cell" role="_blank">M3</ulink> defective</entry>
+<entry/>
+<entry>?</entry>
+<entry>?</entry>
+<entry><link linkend="bib7">Aspock et al., 2003</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=ceh-43;class=Gene" role="_blank">ceh-43</ulink></emphasis></entry>
+<entry>Distal-less homeobox</entry>
+<entry>Z</entry>
+<entry>Non-pha neurons, epidermis</entry>
+<entry>Pun, anterior leakage</entry>
+<entry/>
+<entry/>
+<entry/>
+<entry><link linkend="bib6">Aspock and Burglin, 2001</link>; <link linkend="bib27">Burglin and Aspock, 1999</link></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<para>One of the <ulink url="http://www.wormbase.org/db/get?name=REF-1;class=Protein" role="_blank">REF-1</ulink> downstream targets, direct or indirect, is a pair of T-box genes called <emphasis><ulink url="http://www.wormbase.org/db/get?name=tbx-37;class=Gene" role="_blank">tbx-37</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=tbx-38;class=Gene" role="_blank">tbx-38</ulink></emphasis>. <ulink url="http://www.wormbase.org/db/get?name=TBX-37;class=Protein" role="_blank">TBX-37</ulink> and <ulink url="http://www.wormbase.org/db/get?name=TBX-38;class=Protein" role="_blank">TBX-38</ulink> constitute a pair of closely related, redundant factors that are activated at the 24-cell stage in the eight <ulink url="http://www.wormbase.org/db/get?name=ABa;class=Cell" role="_blank">ABa</ulink> descendents and required for a subset of these cells to generate pharynx (<link linkend="bib47">Good et al., 2004</link>). Their restricted expression within these cells depends on repression by <ulink url="http://www.wormbase.org/db/get?name=REF-1;class=Protein" role="_blank">REF-1</ulink> family members, since inactivation of <ulink url="http://www.wormbase.org/db/get?name=REF-1;class=Protein" role="_blank">REF-1</ulink> family genes leads to widespread <ulink url="http://www.wormbase.org/db/get?name=TBX-37;class=Protein" role="_blank">TBX-37</ulink>/38 in blastomeres that normally would never normally express these genes (<link linkend="bib100">Neves and Priess, 2005</link>). Within ABa-derived cells destined to form the pharynx, initiation of <ulink url="http://www.wormbase.org/db/get?name=TBX-37;class=Protein" role="_blank">TBX-37</ulink>/38 expression precedes <ulink url="http://www.wormbase.org/db/get?name=REF-1;class=Protein" role="_blank">REF-1</ulink> activity, which explains why <ulink url="http://www.wormbase.org/db/get?name=GLP-1;class=Protein" role="_blank">GLP-1</ulink> activity does not block pharyngeal development in this subset of cells. The T-box family of transcription factors are defined by the T-box DNA binding domain, and can function as either activators or repressors (<link linkend="bib143">Wilson and Conlon, 2002</link>). There are at least 20 T-box transcription factors in the <emphasis>C. elegans</emphasis> genome and surprisingly, several of them function as redundant pairs e.g., <emphasis><ulink url="http://www.wormbase.org/db/get?name=tbx-37;class=Gene" role="_blank">tbx-37</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=tbx-38;class=Gene" role="_blank">tbx-38</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/get?name=tbx-8;class=Gene" role="_blank">tbx-8</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=tbx-9;class=Gene" role="_blank">tbx-9</ulink></emphasis> (<link linkend="bib4">Andachi, 2004</link>; <link linkend="bib47">Good et al., 2004</link>; <link linkend="bib109">Pocock et al., 2004</link>). The combination of Notch signaling and <ulink url="http://www.wormbase.org/db/get?name=TBX-37;class=Protein" role="_blank">TBX-37</ulink>/38 function activate the organ selector gene <emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-4;class=Gene" role="_blank">pha-4</ulink></emphasis>/FoxA to initiate pharyngeal development (<link linkend="bib47">Good et al., 2004</link>; <link linkend="bib65">Kalb et al., 1998</link>; <link linkend="bib90">Mango et al., 1994</link>). Thus, selectivity of <emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-4;class=Gene" role="_blank">pha-4</ulink></emphasis> activation within the <ulink url="http://www.wormbase.org/db/get?name=AB;class=Cell" role="_blank">AB</ulink> lineage depends on the co-incidence of two distinct cues-<ulink url="http://www.wormbase.org/db/get?name=GLP-1;class=Protein" role="_blank">GLP-1</ulink>/Notch and <ulink url="http://www.wormbase.org/db/get?name=TBX-37;class=Protein" role="_blank">TBX-37</ulink>/38. For additional discussion on Notch Signaling, see <ulink url="http://www.wormbook.org/chapters/www_notchembryo/notchembryo.html" role="_blank">Notch signaling in the <emphasis>C. elegans</emphasis> embryo</ulink>. For more information on transcription factors see chapters by Okkema and Krause, and Blackwell and Walker in the <ulink url="http://www.wormbook.org/toc_molecularbiology.html" role="_blank">Molecular biology</ulink> section of WormBook.</para>
+<literallayout></literallayout>
+		<mediaobject id="figure4" xreflabel="Figure 4">
+			<imageobject>
+				<imagedata entityref="fig4" width="5in" align="center"/>
+			</imageobject>
+			<textobject>
+				<phrase>figure 4</phrase>
+			</textobject> &fig4legend;</mediaobject>
+</sect1>
+<sect1>
+<title>Early control of pharyngeal development-the <ulink url="http://www.wormbase.org/db/get?name=EMS;class=Cell" role="_blank">EMS</ulink> lineage</title>
+<para>The <ulink url="http://www.wormbase.org/db/get?name=EMS;class=Cell" role="_blank">EMS</ulink> pathway of pharyngeal development does not require <emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink></emphasis> signals (see <link linkend="figure4">Figure 4</link>; <link linkend="bib47">Good et al., 2004</link>; <link linkend="bib112">Priess et al., 1987</link>; <link linkend="bib112">Priess and Thomson, 1987</link>). Rather, <ulink url="http://www.wormbase.org/db/get?name=EMS;class=Cell" role="_blank">EMS</ulink> depends on the activity of two other maternal genes to generate pharyngeal cells, namely <emphasis><ulink url="http://www.wormbase.org/db/get?name=skn-1;class=Gene" role="_blank">skn-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=pop-1;class=Gene" role="_blank">pop-1</ulink></emphasis> (<link linkend="bib24">Bowerman et al., 1992</link>; <link linkend="bib80">Lin et al., 1995</link>). <emphasis><ulink url="http://www.wormbase.org/db/get?name=skn-1;class=Gene" role="_blank">skn-1</ulink></emphasis> encodes an bZIP-related transcription factor that functions at the 4-8 cell stage to specify the <ulink url="http://www.wormbase.org/db/get?name=EMS;class=Cell" role="_blank">EMS</ulink> blastomere (<link linkend="bib23">Bowerman et al., 1993</link>; <link linkend="bib24">Bowerman et al., 1992</link>). In the absence of <emphasis><ulink url="http://www.wormbase.org/db/get?name=skn-1;class=Gene" role="_blank">skn-1</ulink></emphasis>, no pharynx is produced because <ulink url="http://www.wormbase.org/db/get?name=EMS;class=Cell" role="_blank">EMS</ulink> descendents are transformed into their cousin, the <ulink url="http://www.wormbase.org/db/cell/cell.cgi?name=C;class=Cell" role="_blank">C</ulink> blastomere, and <ulink url="http://www.wormbase.org/db/cell/cell.cgi?name=C;class=Cell" role="_blank">C</ulink> does not generate Notch ligands to signal to <ulink url="http://www.wormbase.org/db/get?name=ABa;class=Cell" role="_blank">ABa</ulink>. <emphasis><ulink url="http://www.wormbase.org/db/get?name=pop-1;class=Gene" role="_blank">pop-1</ulink></emphasis> encodes a Tcf/Lef-1 homolog that is enriched in the nucleus of a daughter of <ulink url="http://www.wormbase.org/db/get?name=EMS;class=Cell" role="_blank">EMS</ulink>, called <ulink url="http://www.wormbase.org/db/get?name=MS;class=Cell" role="_blank">MS</ulink>, by the action of the <emphasis>wingless</emphasis> signalling pathway and <emphasis><ulink url="http://www.wormbase.org/db/get?name=lit-1;class=Gene" role="_blank">lit-1</ulink></emphasis> kinase (<link linkend="bib80">Lin et al., 1995</link>; <link linkend="bib83">Lo et al., 2004</link>). When <emphasis><ulink url="http://www.wormbase.org/db/get?name=pop-1;class=Gene" role="_blank">pop-1</ulink></emphasis> activity is reduced, <ulink url="http://www.wormbase.org/db/get?name=MS;class=Cell" role="_blank">MS</ulink> develops like <ulink url="http://www.wormbase.org/db/cell/cell.cgi?name=E;class=Cell" role="_blank">E</ulink> and <ulink url="http://www.wormbase.org/db/get?name=MS;class=Cell" role="_blank">MS</ulink>-derived pharyngeal cells are lost (<link linkend="bib80">Lin et al., 1995</link>). <ulink url="http://www.wormbase.org/db/cell/cell.cgi?name=E;class=Cell" role="_blank">E</ulink> can produce pharyngeal-inducing cues and so the anterior pharynx is still made. The role of <ulink url="http://www.wormbase.org/db/get?name=POP-1;class=Protein" role="_blank">POP-1</ulink> in <ulink url="http://www.wormbase.org/db/get?name=MS;class=Cell" role="_blank">MS</ulink> is to repress genes that promote <ulink url="http://www.wormbase.org/db/cell/cell.cgi?name=E;class=Cell" role="_blank">E</ulink> fate (<link linkend="bib26">Broitman-Maduro et al., 2005</link>; <link linkend="bib28">Calvo et al., 2001</link>; <link linkend="bib88">Maduro et al., 2002</link>; <link linkend="bib125">Shetty et al., 2005</link>).</para>
+<para>The <ulink url="http://www.wormbase.org/db/get?name=MS;class=Cell" role="_blank">MS</ulink> and <ulink url="http://www.wormbase.org/db/cell/cell.cgi?name=E;class=Cell" role="_blank">E</ulink> blastomeres also express the GATA-like factors <emphasis><ulink url="http://www.wormbase.org/db/get?name=med-1;class=Gene" role="_blank">med-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=med-2;class=Gene" role="_blank">med-2</ulink></emphasis> at the 7-cell stage. The <emphasis>med</emphasis> gene products are contributed maternally (<link linkend="bib85">Maduro et al., 2006</link>) and are also activated by <ulink url="http://www.wormbase.org/db/get?name=SKN-1;class=Protein" role="_blank">SKN-1</ulink> (<link linkend="bib85">Maduro et al., 2006</link>; <link linkend="bib89">Maduro et al., 2001</link>). Loss of both <emphasis>med</emphasis> genes leads to conversion of <ulink url="http://www.wormbase.org/db/get?name=MS;class=Cell" role="_blank">MS</ulink> fate into that of <ulink url="http://www.wormbase.org/db/cell/cell.cgi?name=C;class=Cell" role="_blank">C</ulink>, leading to loss of the posterior pharynx (<link linkend="bib48">Goszczynski and McGhee, 2005</link>; <link linkend="bib85">Maduro et al., 2006</link>; <link linkend="bib89">Maduro et al., 2001</link>). There is currently debate regarding the contribution of the MED factors, with one report suggesting few embryos have an MS to C fate transformation (<link linkend="bib48">Goszczynski and McGhee, 2005</link>) and other studies suggesting a greater proportion of embryos are affected (<link linkend="bib85">Maduro et al., 2006</link>; <link linkend="bib89">Maduro et al., 2001</link>). The MED factors bind the consensus sequence RAGTATAC, which differs from the canonical GATA site WGATAR. Strikingly, a search of the genome for MED consensus sites accurately predicted many MED factor target genes. Among these targets were multiple transcription factors: <emphasis><ulink url="http://www.wormbase.org/db/get?name=tbx-35;class=Gene" role="_blank">tbx-35</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/get?name=sox-1;class=Gene" role="_blank">sox-1</ulink>, <ulink url="http://www.wormbase.org/db/get?name=hlh-25;class=Gene" role="_blank">hlh-25</ulink>, <ulink url="http://www.wormbase.org/db/get?name=hlh-27;class=Gene" role="_blank">hlh-27</ulink>, <ulink url="http://www.wormbase.org/db/get?name=hlh-28;class=Gene" role="_blank">hlh-28</ulink></emphasis>, and <emphasis><ulink url="http://www.wormbase.org/db/get?name=hlh-29;class=Gene" role="_blank">hlh-29</ulink></emphasis> (<link linkend="bib26">Broitman-Maduro et al., 2005</link>). One of these, <emphasis><ulink url="http://www.wormbase.org/db/get?name=tbx-35;class=Gene" role="_blank">tbx-35</ulink>,</emphasis> is expressed within <ulink url="http://www.wormbase.org/db/get?name=MS;class=Cell" role="_blank">MS</ulink> descendants, and is required to produce the bulk of body wall muscles and pharyngeal cells by <ulink url="http://www.wormbase.org/db/get?name=MS;class=Cell" role="_blank">MS</ulink> descendants (<link linkend="bib25">Broitman-Maduro et al., 2006</link>). Intriguingly, <emphasis><ulink url="http://www.wormbase.org/db/get?name=tbx-35;class=Gene" role="_blank">tbx-35</ulink></emphasis> is closely related to <emphasis><ulink url="http://www.wormbase.org/db/get?name=tbx-37;class=Gene" role="_blank">tbx-37</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=tbx-38;class=Gene" role="_blank">tbx-38</ulink></emphasis>, revealing a similar requirement for Tbox factors for both <ulink url="http://www.wormbase.org/db/get?name=ABa;class=Cell" role="_blank">ABa</ulink> and <ulink url="http://www.wormbase.org/db/get?name=MS;class=Cell" role="_blank">MS</ulink> pharyngeal development. A second target of <ulink url="http://www.wormbase.org/db/get?name=SKN-1;class=Protein" role="_blank">SKN-1</ulink> within <ulink url="http://www.wormbase.org/db/get?name=MS;class=Cell" role="_blank">MS</ulink> are <emphasis><ulink url="http://www.wormbase.org/db/get?name=ref-1;class=Gene" role="_blank">ref-1</ulink></emphasis> family members, which may repress <ulink url="http://www.wormbase.org/db/get?name=TBX-37;class=Protein" role="_blank">TBX-37</ulink>/38 in these cells (<link linkend="bib100">Neves and Priess, 2005</link>).</para>
+</sect1>
+<sect1>
+<title>The transition from maternal to zygotic control</title>
+<para><ulink url="http://www.wormbase.org/db/get?name=LAG-1;class=Protein" role="_blank">LAG-1</ulink>, <ulink url="http://www.wormbase.org/db/get?name=TBX-35;class=Protein" role="_blank">TBX-35</ulink>, <ulink url="http://www.wormbase.org/db/get?name=TBX-37;class=Protein" role="_blank">TBX-37</ulink>/<ulink url="http://www.wormbase.org/db/get?name=TBX-38;class=Protein" role="_blank">38</ulink> and the MED factors initiate the zygotic phase of pharyngeal development. The phenotypes associated with the zygotic regulators differ from those observed with the maternal genes. In <emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink>, <ulink url="http://www.wormbase.org/db/get?name=skn-1;class=Gene" role="_blank">skn-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=pop-1;class=Gene" role="_blank">pop-1</ulink></emphasis> embryos, all of the cell types that normally derive from a given blastomere are affected, not just pharyngeal cells. In these mutant embryos, <ulink url="http://www.wormbase.org/db/get?name=ABa;class=Cell" role="_blank">ABa</ulink> or <ulink url="http://www.wormbase.org/db/get?name=EMS;class=Cell" role="_blank">EMS</ulink> descendants follow the cell lineage and differentiation patterns characteristic of other early blastomeres (<link linkend="bib24">Bowerman et al., 1992</link>; <link linkend="bib61">Hutter and Schnabel, 1994</link>; <link linkend="bib80">Lin et al., 1995</link>; <link linkend="bib112">Priess et al., 1987</link>). These phenotypes suggest that early blastomeres acquire unique identities that are specified by maternal genes like <emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink>, <ulink url="http://www.wormbase.org/db/get?name=skn-1;class=Gene" role="_blank">skn-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=pop-1;class=Gene" role="_blank">pop-1</ulink></emphasis>. By contrast, later in development, cells that are destined to make the pharynx and that derive from different cell lineages, coordinate their development to form an integrated, functioning structure. The genes that function during these later processes have phenotypes that affect a specific tissue or organ rather than a cell lineage, for example, <emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-4;class=Gene" role="_blank">pha-4</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/get?name=ceh-22;class=Gene" role="_blank">ceh-22</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/get?name=tbx-2;class=Gene" role="_blank">tbx-2</ulink></emphasis> (<link linkend="bib118">Chowdhury et al., 2006</link>; <link linkend="bib90">Mango et al., 1994</link>; <link linkend="bib102">Okkema and Fire, 1994</link>; <link linkend="bib103">Okkema et al., 1997</link>; <link linkend="bib129">Smith and Mango, 2006</link>). <ulink url="http://www.wormbase.org/db/get?name=LAG-1;class=Protein" role="_blank">LAG-1</ulink>, <ulink url="http://www.wormbase.org/db/get?name=TBX-35;class=Protein" role="_blank">TBX-35</ulink>, <ulink url="http://www.wormbase.org/db/get?name=TBX-37;class=Protein" role="_blank">TBX-37</ulink>/38 and the MED factors contribute to the transition from maternal to zygotic control-their mutant phenotypes affect cell lineages, but their target genes, described below, are geared towards forming tissues and organs (<link linkend="bib25">Broitman-Maduro et al., 2006</link>; <link linkend="bib47">Good et al., 2004</link>; <link linkend="bib86">Maduro et al., 2005a</link>; <link linkend="bib129">Smith and Mango, 2006</link>).</para>
+<para>Whereas <ulink url="http://www.wormbase.org/db/get?name=ABa;class=Cell" role="_blank">ABa</ulink> and <ulink url="http://www.wormbase.org/db/get?name=EMS;class=Cell" role="_blank">EMS</ulink> are pluripotent, their descendants become lineally restricted (see <link linkend="figure3">Figure 3</link>). Around the 200 cell stage, <ulink url="http://www.wormbase.org/db/get?name=ABa;class=Cell" role="_blank">ABa</ulink> and <ulink url="http://www.wormbase.org/db/get?name=EMS;class=Cell" role="_blank">EMS</ulink> descendants are born that will produce either all pharyngeal cells or no pharyngeal cells (<link linkend="bib134">Sulston et al., 1983</link>). The lineage restriction seen at this time applies to pharyngeal fate generally, not to individual cell types found within the pharynx. For example, one particular pharyngeal precursor born at the 200-cell stage (<ulink url="http://www.wormbase.org/db/get?name=ABaraaapa;class=Cell" role="_blank">ABaraaapa</ulink>) divides twice to generate four pharyngeal cells: one muscle, one epithelial cell, one arcade cell and one marginal cell (<link linkend="bib134">Sulston et al., 1983</link>). This separation of pharyngeal and non-pharyngeal cell lineages was the first clue that cells acquire a general pharyngeal organ identity.</para>
+</sect1>
+<sect1>
+<title>The organ selector gene <emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-4;class=Gene" role="_blank">pha-4</ulink></emphasis></title>
+<para>The central regulator of pharynx development is <emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-4;class=Gene" role="_blank">pha-4</ulink>,</emphasis> a FoxA transcription factor (<link linkend="bib59">Horner et al., 1998</link>; <link linkend="bib65">Kalb et al., 1998</link>; <link linkend="bib90">Mango et al., 1994</link>). No pharyngeal primordium is formed in embryos lacking <emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-4;class=Gene" role="_blank">pha-4</ulink>,</emphasis> and at least a proportion of pharyngeal cells develop into ectoderm, which can be visualized by the ectodermal markers <ulink url="http://www.wormbase.org/db/get?name=LIN-26;class=Protein" role="_blank">LIN-26</ulink> and <ulink url="http://www.wormbase.org/db/get?name=ELT-3;class=Protein" role="_blank">ELT-3</ulink> (<link linkend="bib59">Horner et al., 1998</link>; <link linkend="bib75">Labouesse and Mango, 1999</link>; <link linkend="bib68">Kiefer et al., 2006</link>). Conversely, expression of <emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-4;class=Gene" role="_blank">pha-4</ulink></emphasis> throughout the embryo can induce pharyngeal fate in a subset of embryonic blastomeres (<link linkend="bib59">Horner et al., 1998</link>; <link linkend="bib75">Labouesse and Mango, 1999</link>). No zygotic gene besides <emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-4;class=Gene" role="_blank">pha-4</ulink></emphasis> has been found that can mutate to a pharynx-less phenotype (S. Mango, unpublished, J. Priess, pers. comm., J. Rothman, pers. comm.), suggesting that the maternal <ulink url="http://www.wormbase.org/db/get?name=ABa;class=Cell" role="_blank">ABa</ulink> and <ulink url="http://www.wormbase.org/db/get?name=MS;class=Cell" role="_blank">MS</ulink> pathways converge on <emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-4;class=Gene" role="_blank">pha-4</ulink></emphasis>. Thus, <emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-4;class=Gene" role="_blank">pha-4</ulink></emphasis> behaves as an organ selector gene (<link linkend="bib91">Mann and Carroll, 2002</link>) that specifies pharynx identity for both <ulink url="http://www.wormbase.org/db/get?name=ABa;class=Cell" role="_blank">ABa</ulink> and MS-derived blastomeres.</para>
+<para>Transcription of <emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-4;class=Gene" role="_blank">pha-4</ulink></emphasis> is activated at the 28-cell stage in <ulink url="http://www.wormbase.org/db/get?name=MS;class=Cell" role="_blank">MS</ulink> descendants, the 44-cell stage in <ulink url="http://www.wormbase.org/db/get?name=ABa;class=Cell" role="_blank">ABa</ulink> descendents (<link linkend="bib14">Baugh et al., 2003</link>; <link linkend="bib47">Good et al., 2004</link>; <link linkend="bib59">Horner et al., 1998</link>; <link linkend="bib129">Smith and Mango, 2006</link>) and continues to be expressed in all pharyngeal cells throughout life (<link linkend="bib3">Alder et al., 2003</link>; <link linkend="bib10">Azzaria et al., 1996</link>; <link linkend="bib59">Horner et al., 1998</link>; <link linkend="bib65">Kalb et al., 1998</link>). <emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-4;class=Gene" role="_blank">pha-4</ulink></emphasis> is also expressed in midgut and hindgut cells, at varying levels, and is required to generate anterior hindgut cells vir and rep (<link linkend="bib90">Mango et al., 1994</link>). In the pharynx, the timing of activation suggests that <emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-4;class=Gene" role="_blank">pha-4</ulink></emphasis> may be regulated directly by <ulink url="http://www.wormbase.org/db/get?name=LAG-1;class=Protein" role="_blank">LAG-1</ulink> and <ulink url="http://www.wormbase.org/db/get?name=TBX-37;class=Protein" role="_blank">TBX-37</ulink>/38 within <ulink url="http://www.wormbase.org/db/get?name=ABa;class=Cell" role="_blank">ABa</ulink> descendents at the 24-cell stage (<link linkend="bib47">Good et al., 2004</link>), and <ulink url="http://www.wormbase.org/db/get?name=TBX-35;class=Protein" role="_blank">TBX-35</ulink> in the <ulink url="http://www.wormbase.org/db/get?name=MS;class=Cell" role="_blank">MS</ulink> lineage (<link linkend="bib25">Broitman-Maduro et al., 2006</link>). However, it is likely that additional, undiscovered regulators exist.</para>
+</sect1>
+<sect1>
+<title>Commitment to pharyngeal fate</title>
+<para>When do embryonic cells commit to pharyngeal fate? Three observations suggest that embryonic cells are pluripotent up to the 4E stage (equivalent to 50-100 cells; embryos are staged by the number of endodermal or E cells), but subsequently lose their plasticity. First, at the 2E stage and earlier, individual blastomeres contribute to multiple cell types, as revealed by the <emphasis>C. elegans</emphasis> cell lineage (<link linkend="bib134">Sulston et al., 1983</link>). One cell division later (4E stage, 50-100 cells), many cells give rise to descendants that contribute to only a single tissue or organ. Second, blastomeres at the 2E and 4E stages can adopt alternate fates in response to forced ubiquitous expression of heterologous cell fate regulators (<link linkend="bib42">Fukushige and Krause, 2005</link>; <link linkend="bib59">Horner et al., 1998</link>; <link linkend="bib75">Labouesse and Mango, 1999</link>; <link linkend="bib147">Zhu et al., 1998</link>; <link linkend="bib68">Kiefer et al., 2006</link>). However, early blastomeres can no longer adopt alternate fates when challenged with an ectopic cell-fate regulator at <symbol role="symbolfont">&#x02265;</symbol>8E stage (<link linkend="bib75">Labouesse and Mango, 1999</link>; <link linkend="bib68">Kiefer et al., 2006</link>). Third, most genes required for cell identity are expressed by the 4-8E stage. These include <emphasis><ulink url="http://www.wormbase.org/db/get?name=skn-1;class=Gene" role="_blank">skn-1</ulink>, <ulink url="http://www.wormbase.org/db/get?name=pha-4;class=Gene" role="_blank">pha-4</ulink>, <ulink url="http://www.wormbase.org/db/get?name=med-1;class=Gene" role="_blank">med-1</ulink>/2, <ulink url="http://www.wormbase.org/db/get?name=tbx-35;class=Gene" role="_blank">tbx-35</ulink>, <ulink url="http://www.wormbase.org/db/get?name=tbx-37;class=Gene" role="_blank">tbx-37</ulink>/<ulink url="http://www.wormbase.org/db/get?name=tbx-38;class=Gene" role="_blank">38</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=tbx-2;class=Gene" role="_blank">tbx-2</ulink></emphasis> (<link linkend="bib24">Bowerman et al., 1992</link>; <link linkend="bib118">Chowdhury et al., 2006</link>; <link linkend="bib47">Good et al., 2004</link>; <link linkend="bib59">Horner et al., 1998</link>; <link linkend="bib112">Priess et al., 1987</link>; <link linkend="bib129">Smith and Mango, 2006</link>). Genes expressed later often have subtler phenotypes involving morphology or differentiation, (e.g., <emphasis><ulink url="http://www.wormbase.org/db/get?name=ceh-22;class=Gene" role="_blank">ceh-22</ulink>, <ulink url="http://www.wormbase.org/db/get?name=pha-1;class=Gene" role="_blank">pha-1</ulink>, <ulink url="http://www.wormbase.org/db/get?name=ceh-24;class=Gene" role="_blank">ceh-24</ulink></emphasis> (<link linkend="bib39">Fay et al., 2004</link>; <link linkend="bib53">Harfe et al., 1998</link>; <link linkend="bib102">Okkema and Fire, 1994</link>; <link linkend="bib103">Okkema et al., 1997</link>; <link linkend="bib122">Schnabel and Schnabel, 1990</link>). A temperature-sensitive configuration of <emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-4;class=Gene" role="_blank">pha-4</ulink></emphasis> (<link linkend="bib66">Kaltenbach et al., 2005</link>) revealed that reduction of <emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-4;class=Gene" role="_blank">pha-4</ulink></emphasis> before the 4E-stage led to loss of pharyngeal identity whereas inactivation of <emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-4;class=Gene" role="_blank">pha-4</ulink></emphasis> at later stages affected morphogenesis but not pharyngeal fate (<link linkend="bib68">Kiefer et al., 2006</link>). These observations suggest that cells transition from pluripotent to committed at approximately the 4-8E stage.</para>
+<para>Three strategies ensure that embryonic blastomeres develop into pharyngeal cells and do not stray towards another identity (see <link linkend="figure5">Figure 5</link>). The first is positive feedback loops between pairs of pharyngeal regulators. For example, a positive regulatory loop between <ulink url="http://www.wormbase.org/db/get?name=PHA-4;class=Protein" role="_blank">PHA-4</ulink> and <ulink url="http://www.wormbase.org/db/get?name=TBX-2;class=Protein" role="_blank">TBX-2</ulink> contributes to production of pharyngeal muscles. <ulink url="http://www.wormbase.org/db/get?name=TBX-2;class=Protein" role="_blank">TBX-2</ulink> expression initiates at the 8E stage and is required to maintain <ulink url="http://www.wormbase.org/db/get?name=PHA-4;class=Protein" role="_blank">PHA-4</ulink> expression within ABa-derived pharyngeal muscle precursors (<link linkend="bib118">Chowdhury et al., 2006</link>; <link linkend="bib129">Smith and Mango, 2006</link>). Loss of either <emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-4;class=Gene" role="_blank">pha-4</ulink></emphasis> or <emphasis><ulink url="http://www.wormbase.org/db/get?name=tbx-2;class=Gene" role="_blank">tbx-2</ulink></emphasis> leads to reduced expression of the other transcription factor and absence of ABa-derived pharyngeal muscles. In other animals, <ulink url="http://www.wormbase.org/db/get?name=TBX-2;class=Protein" role="_blank">TBX-2</ulink> orthologues function as repressors (<link linkend="bib99">Naiche et al., 2005</link>) and, in <emphasis>C. elegans</emphasis>, <ulink url="http://www.wormbase.org/db/get?name=TBX-2;class=Protein" role="_blank">TBX-2</ulink> interacts with components of the SUMO-conjugating pathway by yeast two hybrid (<link linkend="bib118">Chowdhury et al., 2006</link>). In other organisms, SUMO is a repressive mark for transcription (<link linkend="bib46">Gill, 2005</link>). Thus, it is unclear whether the positive regulatory loop between <ulink url="http://www.wormbase.org/db/get?name=PHA-4;class=Protein" role="_blank">PHA-4</ulink> and <ulink url="http://www.wormbase.org/db/get?name=TBX-2;class=Protein" role="_blank">TBX-2</ulink> reflects direct activation or indirect effects.</para>
+<literallayout></literallayout>
+		<mediaobject id="figure5" xreflabel="Figure 5">
+			<imageobject>
+				<imagedata entityref="fig5" width="6in" align="center"/>
+			</imageobject>
+			<textobject>
+				<phrase>figure 5</phrase>
+			</textobject> &fig5legend;</mediaobject>
+<para>A second strategy for cell fate commitment is auto-regulation (see <link linkend="figure5">Figure 5</link>). For example, <emphasis><ulink url="http://www.wormbase.org/db/get?name=ceh-22;class=Gene" role="_blank">ceh-22</ulink></emphasis> contains two enhancer elements, distal and proximal, which control initiation and maintenance of <emphasis><ulink url="http://www.wormbase.org/db/get?name=ceh-22;class=Gene" role="_blank">ceh-22</ulink></emphasis> expression, respectively (<link linkend="bib74">Kuchenthal et al., 2001</link>; <link linkend="bib140">Vilimas et al., 2004</link>). The proximal enhancer carries a <ulink url="http://www.wormbase.org/db/get?name=CEH-22;class=Protein" role="_blank">CEH-22</ulink> binding site that is necessary and sufficient for activity. Thus, maintenance of <emphasis><ulink url="http://www.wormbase.org/db/get?name=ceh-22;class=Gene" role="_blank">ceh-22</ulink></emphasis> transcription depends on positive autoregulation through the proximal enhancer, which likely contributes to robust, stable <emphasis><ulink url="http://www.wormbase.org/db/get?name=ceh-22;class=Gene" role="_blank">ceh-22</ulink></emphasis> expression and pharyngeal muscle fate.</para>
+<para>The third strategy for cell fate commitment is transcriptional repression, which is important to inhibit alternative cell fates (see <link linkend="figure5">Figure 5</link>). <emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-4;class=Gene" role="_blank">pha-4</ulink></emphasis> is necessary and sufficient to inhibit ectodermal fate, and inhibits expression of ectodermal genes such as <emphasis><ulink url="http://www.wormbase.org/db/get?name=lin-26;class=Gene" role="_blank">lin-26</ulink></emphasis> or <emphasis><ulink url="http://www.wormbase.org/db/get?name=elt-3;class=Gene" role="_blank">elt-3</ulink></emphasis> (<link linkend="bib59">Horner et al., 1998</link>; <link linkend="bib68">Kiefer et al., 2006</link>). The <emphasis><ulink url="http://www.wormbase.org/db/get?name=lin-26;class=Gene" role="_blank">lin-26</ulink></emphasis> locus contains the CISg regulatory element, which is peppered with consensus, conserved <ulink url="http://www.wormbase.org/db/get?name=PHA-4;class=Protein" role="_blank">PHA-4</ulink> sites (<link linkend="bib76">Landmann et al., 2004</link>), and which binds <ulink url="http://www.wormbase.org/db/get?name=PHA-4;class=Protein" role="_blank">PHA-4</ulink>::YFP within pharyngeal cells, suggesting repression by <ulink url="http://www.wormbase.org/db/get?name=PHA-4;class=Protein" role="_blank">PHA-4</ulink> could be direct (<link linkend="bib68">Kiefer et al., 2006</link>). Repression of ectodermal fate also requires the NuRD complex and the TRIM factor <ulink url="http://www.wormbase.org/db/get?name=TAM-1;class=Protein" role="_blank">TAM-1</ulink>, which associates with <ulink url="http://www.wormbase.org/db/get?name=PHA-4;class=Protein" role="_blank">PHA-4</ulink> in yeast two-hybrid assays (<link linkend="bib68">Kiefer et al., 2006</link>; <link linkend="bib79">Li et al., 2004</link>). Intriguingly, other proteins bearing a TRIM motif or RING finger domain mediate transcriptional repression via binding to the NuRD subunit Mi-2, suggesting a possible link between these factors (<link linkend="bib126">Shimono et al., 2003</link>).</para>
+</sect1>
+<sect1>
+<title>Downstream of <ulink url="http://www.wormbase.org/db/get?name=PHA-4;class=Protein" role="_blank">PHA-4</ulink>: patterning the pharynx primordium</title>
+<para>How are individual cell types generated within the pharynx? This question has been difficult to address because the phenotypes associated with loss of individual pharyngeal cells can be subtle. Moreover, there appears to be significant redundancy for the underlying molecular mechanisms. Redundancy can be at the level of gene duplication (e.g., the six <ulink url="http://www.wormbase.org/db/get?name=REF-1;class=Protein" role="_blank">REF-1</ulink> family members; <link linkend="bib100">Neves and Priess, 2005</link>) or at the level of pathways for non-homologous genes (e.g., <emphasis><ulink url="http://www.wormbase.org/db/get?name=ceh-22;class=Gene" role="_blank">ceh-22</ulink>/Nkx2.5</emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-1;class=Gene" role="_blank">pha-1</ulink></emphasis>/DUF1114 (<link linkend="bib103">Okkema et al., 1997</link>)). For these reasons, reverse genetics and genomic approaches will likely be very useful for deciphering the regulatory network that governs the latter stages of pharyngeal development (<link linkend="table2">Table 2</link>).</para>
+<table id="table2" frame="all" rules="all" cellpadding="0" cellspacing="0" width="100%">
+<title><emphasis role="bold">Table 2. Algorithms.</emphasis> Tools for genomic approaches to transcription control: Algorithms that can be used to identify potential regulatory sequences for known or novel transcription factors, to construct regulatory pathways or analyze microarrays.</title>
+<tgroup cols="4">
+<colspec colname="c1" align="center" colwidth="0.6*"/>
+<colspec colname="c2" align="center" colwidth="1.1*"/>
+<colspec colname="c3" align="center" colwidth="1*"/>
+<colspec colname="c4" align="left" colwidth="0.7*"/>
+<thead>
+<row>
+<entry>Name</entry>
+<entry>URL</entry>
+<entry>Use</entry>
+<entry>References</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>BioProspector</entry>
+<entry><ulink url="http://ai.stanford.edu/~xsliu/BioProspector/" role="_blank">http://ai.stanford.edu/~xsliu/ BioProspector/</ulink></entry>
+<entry>Find enriched sequence motifs via Gibbs sampling and Markov models</entry>
+<entry><link linkend="bib81">Liu et al., 2001</link></entry>
+</row>
+<row>
+<entry>BioTapestry</entry>
+<entry><ulink url="http://labs.systemsbiology.net/bolouri/software/BioTapestry/" role="_blank">http://labs.systemsbiology.net/ bolouri/software/BioTapestry/</ulink></entry>
+<entry>Visualization of gene regulatory networks</entry>
+<entry><link linkend="bib84">Longabaugh et al., 2005</link></entry>
+</row>
+<row>
+<entry>CisOrtho</entry>
+<entry><ulink url="http://dev.wormbase.org/CisOrtho/" role="_blank">http://dev.wormbase.org/CisOrtho/</ulink></entry>
+<entry>Identify conserved targets of worm transcription factors whose DNA binding specificity is known</entry>
+<entry><link linkend="bib19">Bigelow et al., 2004</link></entry>
+</row>
+<row>
+<entry>ClusterBuster</entry>
+<entry><ulink url="http://cagt.bu.edu/page/ClusterBuster_about" role="_blank">http://cagt.bu.edu/page/ ClusterBuster_about</ulink></entry>
+<entry>Identify clusters of pre-specified motifs in nucleotide sequences</entry>
+<entry><link linkend="bib41">Frith et al., 2003</link></entry>
+</row>
+<row>
+<entry>Co-Bind</entry>
+<entry><ulink url="http://ural.wustl.edu/software.html" role="_blank">http://ural.wustl.edu/software.html</ulink></entry>
+<entry>Identify target sites for cooperatively binding transcription factors</entry>
+<entry><link linkend="bib52">GuhaThakurta and Stormo, 2001</link></entry>
+</row>
+<row>
+<entry>Compare Prospector</entry>
+<entry><ulink url="http://ai.stanford.edu/~iliu/CompareProspector/index.html" role="_blank">http://ai.stanford.edu/~iliu/ CompareProspector/index.html</ulink></entry>
+<entry>Discover enriched sequence motifs conserved across species</entry>
+<entry><link linkend="bib82">Liu et al., 2004</link></entry>
+</row>
+<row>
+<entry>ConSite</entry>
+<entry><ulink url="http:/www.phylofoot.org/consite" role="_blank">http:/www.phylofoot.org/consite</ulink></entry>
+<entry>Discover enriched sequence motifs conserved across species</entry>
+<entry><link linkend="bib120">Sandelin et al., 2004</link></entry>
+</row>
+<row>
+<entry>Cytoscape</entry>
+<entry><ulink url="http://www.cytoscape.org/" role="_blank">http://www.cytoscape.org/</ulink></entry>
+<entry>Network data integration, visualization, and analysis</entry>
+<entry><link linkend="bib123">Shannon et al., 2003</link></entry>
+</row>
+<row>
+<entry>GSEA</entry>
+<entry><ulink url="http://www.broad.mit.edu/gsea/" role="_blank">http://www.broad.mit.edu/gsea/</ulink></entry>
+<entry>Determine whether a set of genes shows significant differences between two biological states</entry>
+<entry><link linkend="bib96">Mootha et al., 2003</link></entry>
+</row>
+<row>
+<entry>Improbizer</entry>
+<entry><ulink url="http://www.cse.ucsc.edu/~kent/improbizer/improbizer.html" role="_blank">http://www.cse.ucsc.edu/~kent/ improbizer/improbizer.html</ulink></entry>
+<entry>Identify statistically enriched sequences in DNA or RNA</entry>
+<entry><link linkend="bib5">Ao et al., 2004</link></entry>
+</row>
+<row>
+<entry>JASPAR</entry>
+<entry><ulink url="http://jaspar.genereg.net" role="_blank">http://jaspar.genereg.net</ulink></entry>
+<entry>Open-access repository for transcription factor binding site profiles</entry>
+<entry><link linkend="bib141">Vlieghe et al., 2006</link></entry>
+</row>
+<row>
+<entry>MEME/MAST</entry>
+<entry><ulink url="http://meme.sdsc.edu/meme/intro.html" role="_blank">http://meme.sdsc.edu/meme/ intro.html</ulink></entry>
+<entry>Motif Discovery and Search</entry>
+<entry><link linkend="bib12">Bailey and Elkan, 1994</link>; <link linkend="bib13">Bailey and Gribskov, 1998</link></entry>
+</row>
+<row>
+<entry>ModuleFinder</entry>
+<entry><ulink url="http://the_brain.bwh.harvard.edu/PSB2005MFSuppl/index.html" role="_blank">http://the_brain.bwh.harvard.edu/ PSB2005MFSuppl/index.html</ulink></entry>
+<entry>Evaluate the likelihood that a genomic region is a cis regulatory module for an input set of transcription factors according to: homotypic site clustering; heterotypic site clustering; and evolutionary conservation</entry>
+<entry><link linkend="bib108">Philippakis et al., 2005</link></entry>
+</row>
+<row>
+<entry>MultiFinder</entry>
+<entry><ulink url="http://the_brain.bwh.harvard.edu/multifinder.html" role="_blank">http://the_brain.bwh.harvard.edu/ multifinder.html</ulink></entry>
+<entry>Motif search using AlignACE, MDscan, BioProspector and MEME</entry>
+<entry><link linkend="bib60">Huber and Bulyk, 2006</link></entry>
+</row>
+<row>
+<entry>PAZAR</entry>
+<entry><ulink url="http://sourceforge.net/projects/pazar" role="_blank">http://sourceforge.net/projects/pazar</ulink></entry>
+<entry>A framework to allow multiple boutique databases to function independently within a larger system; a public repository for regulatory data</entry>
+<entry>Wasserman et al., unpublished</entry>
+</row>
+<row>
+<entry>RSAT</entry>
+<entry><ulink url="http://rsat.ulb.ac.be/rsat/" role="_blank">http://rsat.ulb.ac.be/rsat/</ulink></entry>
+<entry>Series of modular computer programs to detect regulatory signals</entry>
+<entry><link linkend="bib139">van Helden, 2003</link></entry>
+</row>
+<row>
+<entry>TRANSFAC</entry>
+<entry><ulink url="http://www.gene-regulation.com/pub/databases.html" role="_blank">http://www.gene-regulation.com/ pub/databases.html</ulink></entry>
+<entry>Database of eukaryotic transcription factors and their binding sites</entry>
+<entry><link linkend="bib69">Knuppel et al., 1994</link></entry>
+</row>
+<row>
+<entry>Worm Enhancer</entry>
+<entry><ulink url="http://wormenhancer.org/Main" role="_blank">http://wormenhancer.org/Main</ulink></entry>
+<entry>Find clusters of binding sites in the genome.</entry>
+<entry>Markstein, Markstein, Levine, unpublished</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</sect1>
+<sect1>
+<title>Temporal control during organogenesis</title>
+<para>Patterning the pharyngeal primordium depends on successive programs of gene expression. How is this achieved? One input is <ulink url="http://www.wormbase.org/db/get?name=PHA-4;class=Protein" role="_blank">PHA-4</ulink> itself (see <link linkend="figure6">Figure 6</link>). Promoter analyses suggest that <ulink url="http://www.wormbase.org/db/get?name=PHA-4;class=Protein" role="_blank">PHA-4</ulink> directly regulates many genes expressed in the pharynx, including genes active both early and late, (<link linkend="bib44">Gaudet and Mango, 2002</link>; <link linkend="bib45">Gaudet et al., 2004</link>; <link linkend="bib65">Kalb et al., 1998</link>; <link linkend="bib74">Kuchenthal et al., 2001</link>; <link linkend="bib129">Smith and Mango, 2006</link>; <link linkend="bib140">Vilimas et al., 2004</link>). The affinity of <ulink url="http://www.wormbase.org/db/get?name=PHA-4;class=Protein" role="_blank">PHA-4</ulink> for its binding sites contributes to the timing of target gene activation (<link linkend="bib44">Gaudet and Mango, 2002</link>; <link linkend="bib45">Gaudet et al., 2004</link>). Mutations that alter the affinity of <ulink url="http://www.wormbase.org/db/get?name=PHA-4;class=Protein" role="_blank">PHA-4</ulink> binding sites higher or lower shift the onset of target gene expression earlier or later, respectively. These temporal shifts occur in the context of the promoter, and are not an absolute predictor of transcriptional activation of target genes. Moreover, they depend on recruitment of the histone variant <ulink url="http://www.wormbase.org/db/get?name=HTZ-1;class=Protein" role="_blank">HTZ-1</ulink> for a subset of pharyngeal promoters (<link linkend="bib138">Updike and Mango, 2006</link>). Thus, <ulink url="http://www.wormbase.org/db/get?name=PHA-4;class=Protein" role="_blank">PHA-4</ulink> may function as a competence factor (<link linkend="bib146">Zaret, 2002</link>) that modulates chromatin to prime a promoter for activation.</para>
+<para>A second means for temporal control is feed-forward regulation (see <link linkend="figure6">Figure 6</link>). For example, <ulink url="http://www.wormbase.org/db/get?name=PHA-4;class=Protein" role="_blank">PHA-4</ulink> activates <emphasis><ulink url="http://www.wormbase.org/db/get?name=ceh-22;class=Gene" role="_blank">ceh-22</ulink>/Nkx2.5</emphasis> and both <ulink url="http://www.wormbase.org/db/get?name=PHA-4;class=Protein" role="_blank">PHA-4</ulink> and <ulink url="http://www.wormbase.org/db/get?name=CEH-22;class=Protein" role="_blank">CEH-22</ulink> activate <emphasis><ulink url="http://www.wormbase.org/db/get?name=myo-2;class=Gene" role="_blank">myo-2</ulink></emphasis>, which encodes a myosin heavy chain expressed in terminally-differentiating pharyngeal muscles (<link linkend="bib44">Gaudet and Mango, 2002</link>; <link linkend="bib65">Kalb et al., 1998</link>; <link linkend="bib90">Mango et al., 1994</link>; <link linkend="bib102">Okkema and Fire, 1994</link>; <link linkend="bib103">Okkema et al., 1997</link>). The involvement of <ulink url="http://www.wormbase.org/db/get?name=CEH-22;class=Protein" role="_blank">CEH-22</ulink> in <emphasis><ulink url="http://www.wormbase.org/db/get?name=myo-2;class=Gene" role="_blank">myo-2</ulink></emphasis> transcription helps explain why the <emphasis><ulink url="http://www.wormbase.org/db/get?name=myo-2;class=Gene" role="_blank">myo-2</ulink></emphasis> promoter fires late in embryogenesis, even though it possesses a high affinity <ulink url="http://www.wormbase.org/db/get?name=PHA-4;class=Protein" role="_blank">PHA-4</ulink> binding site. However, <ulink url="http://www.wormbase.org/db/get?name=CEH-22;class=Protein" role="_blank">CEH-22</ulink> is expressed by mid-embryogenesis (bean stage), whereas <emphasis><ulink url="http://www.wormbase.org/db/get?name=myo-2;class=Gene" role="_blank">myo-2</ulink></emphasis> transcription initiates later (two-fold stage), suggesting additional inputs are involved.</para>
+<para>Combinatorial regulation is the third means to control timing (see <link linkend="figure6">Figure 6</link>). A single <ulink url="http://www.wormbase.org/db/get?name=PHA-4;class=Protein" role="_blank">PHA-4</ulink> binding site, similar to what exists in most promoters, is not sufficient to activate expression (<link linkend="bib45">Gaudet et al., 2004</link>). Multiple <ulink url="http://www.wormbase.org/db/get?name=PHA-4;class=Protein" role="_blank">PHA-4</ulink> binding sites can activate transcription throughout the pharynx, but this configuration is rarely seen in natural promoters (<link linkend="bib45">Gaudet et al., 2004</link>). Bioinformatic searches for sequences over-represented in pharyngeal gene promoters led to the discovery of two motifs associated with early-expressed pharyngeal genes and two associated with late-expressed pharyngeal genes (<link linkend="bib45">Gaudet et al., 2004</link>). These early and late cis elements were tested for biological function in two ways. One was necessity: were the sequences required for expression of natural pharyngeal promoters? Mutation of the candidate sites revealed whether natural promoters required the sequences for normal expression. The second was sufficiency - could three copies of a candidate element introduced upstream of the <emphasis><ulink url="http://www.wormbase.org/db/get?name=pes-10;class=Gene" role="_blank">pes-10</ulink></emphasis> basal promoter activate GFP transcription? For these kinds of assays to succeed, GFP reporters were introduced into worms without vector sequences, which can contain cryptic pharyngeal enhancers (<link linkend="bib58">Hope, 1991</link>; <link linkend="bib145">Young and Hope, 1993</link>). In addition, low concentrations of reporter DNA (<symbol role="symbolfont">&#x02264;</symbol>2ng/ul) were used, as were more likely to recapitulate endogenous expression (<link linkend="bib44">Gaudet and Mango, 2002</link>; <link linkend="bib45">Gaudet et al., 2004</link>). In <link linkend="table2">Table 2</link> I list algorithms and databases that may be helpful for identifying transcription factor binding sites within groups of genes.</para>
+		<mediaobject id="figure6" xreflabel="Figure 6">
+			<imageobject>
+				<imagedata entityref="fig6" width="6.5in" align="center"/>
+			</imageobject>
+			<textobject>
+				<phrase>figure 6</phrase>
+			</textobject> &fig6legend;</mediaobject>
+</sect1>
+<sect1>
+<title>Cell-type regulation</title>
+<para>The mechanisms that establish individual pharyngeal cell types are best understood for pharyngeal muscles. The early events, during gastrulation, rely on <ulink url="http://www.wormbase.org/db/get?name=PHA-4;class=Protein" role="_blank">PHA-4</ulink> and the Tbox genes described above. Less is known about later differentiation of the pharyngeal muscles. A hallmark of pharyngeal muscle differentiation is transcription of <emphasis><ulink url="http://www.wormbase.org/db/get?name=myo-2;class=Gene" role="_blank">myo-2</ulink>/</emphasis>myosin exclusively within pharyngeal muscles. The <emphasis><ulink url="http://www.wormbase.org/db/get?name=myo-2;class=Gene" role="_blank">myo-2</ulink></emphasis> promoter has been analyzed extensively (<link linkend="bib5">Ao et al., 2004</link>; <link linkend="bib44">Gaudet and Mango, 2002</link>; <link linkend="bib102">Okkema and Fire, 1994</link>; <link linkend="bib104">Okkema et al., 1993</link>). Two cis-regulatory elements, B and C, are required for full activity of <emphasis><ulink url="http://www.wormbase.org/db/get?name=myo-2;class=Gene" role="_blank">myo-2</ulink></emphasis>. The B subelement binds <ulink url="http://www.wormbase.org/db/get?name=CEH-22;class=Protein" role="_blank">CEH-22</ulink>, which is expressed in a subset of pharyngeal muscles. The C subelement binds <ulink url="http://www.wormbase.org/db/get?name=PHA-4;class=Protein" role="_blank">PHA-4</ulink> and <ulink url="http://www.wormbase.org/db/get?name=PEB-1;class=Protein" role="_blank">PEB-1</ulink>, a FLYWCH zinc finger factor related to <emphasis>Mod(mdg4)</emphasis>, which is involved in insulator function in <emphasis>Drosophila</emphasis> (<link linkend="bib17">Beaster-Jones and Okkema, 2004</link>; <link linkend="bib64">Kalb et al., 2002</link>; <link linkend="bib136">Thatcher et al., 2001</link>). The nuclear hormone receptor <ulink url="http://www.wormbase.org/db/get?name=DAF-12;class=Protein" role="_blank">DAF-12</ulink> also activates <emphasis><ulink url="http://www.wormbase.org/db/get?name=myo-2;class=Gene" role="_blank">myo-2</ulink></emphasis> and mediates the modulation of <emphasis><ulink url="http://www.wormbase.org/db/get?name=myo-2;class=Gene" role="_blank">myo-2</ulink></emphasis> in response to nutrition (<link linkend="bib5">Ao et al., 2004</link>). Surprisingly, inactivation of the binding sites of each of these factors does not block <emphasis><ulink url="http://www.wormbase.org/db/get?name=myo-2;class=Gene" role="_blank">myo-2</ulink></emphasis> expression. Conversely, Mutation of <emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-4;class=Gene" role="_blank">pha-4</ulink></emphasis> binding sites leads to a delay in <emphasis><ulink url="http://www.wormbase.org/db/get?name=myo-2;class=Gene" role="_blank">myo-2</ulink></emphasis> activation (<link linkend="bib44">Gaudet and Mango, 2002</link>). <emphasis><ulink url="http://www.wormbase.org/db/get?name=ceh-22;class=Gene" role="_blank">ceh-22</ulink></emphasis> is required for isolated B element activity but endogenous <emphasis><ulink url="http://www.wormbase.org/db/get?name=myo-2;class=Gene" role="_blank">myo-2</ulink></emphasis> is still active in <emphasis><ulink url="http://www.wormbase.org/db/get?name=ceh-22;class=Gene" role="_blank">ceh-22</ulink></emphasis> mutants (<link linkend="bib103">Okkema et al., 1997</link>). <emphasis><ulink url="http://www.wormbase.org/db/get?name=peb-1;class=Gene" role="_blank">peb-1</ulink></emphasis> mutants die because they cannot shed their cuticle during molting, which may reflect feeding defects and/or additional functions of <emphasis><ulink url="http://www.wormbase.org/db/get?name=peb-1;class=Gene" role="_blank">peb-1</ulink></emphasis> (<link linkend="bib40">Fernandez et al., 2004</link>). Nevertheless, <emphasis><ulink url="http://www.wormbase.org/db/get?name=myo-2;class=Gene" role="_blank">myo-2</ulink></emphasis> expression appears normal. <emphasis><ulink url="http://www.wormbase.org/db/get?name=daf-12;class=Gene" role="_blank">daf-12</ulink></emphasis> mutations lower <emphasis><ulink url="http://www.wormbase.org/db/get?name=myo-2;class=Gene" role="_blank">myo-2</ulink></emphasis> reporter expression but do not obliterate it (<link linkend="bib5">Ao et al., 2004</link>). Thus, the organism uses multiple inputs to assure robust expression of pharyngeal myosin and no one factor is essential.</para>
+<para>Expression and specification of other pharyngeal cell types is less well understood. The Six family homeodomain protein <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-39;class=Gene" role="_blank">unc-39</ulink></emphasis> is expressed in the pharyngeal arcade cells. Mutants have a misshapen pharynx and sometimes arrest with a Pun (Pharynx UNattached) pharynx, however it is unclear if this phenotype represents loss of arcade cell identity or defective morphogenesis (<link linkend="bib144">Yanowitz et al., 2004</link>).</para>
+<para>Additional genomic-scale searches of pharyngeal promoters have identified potential new regulators (<link linkend="bib5">Ao et al., 2004</link>; <link linkend="bib51">GuhaThakurta et al., 2004</link>). Ao and colleagues used microarray analysis and TopoMap clustering to identify genes expressed in different pharyngeal cell types (<link linkend="bib5">Ao et al., 2004</link>). These cohorts of genes were then used to search for new cis-regulatory elements that dictate expression in muscle or epithelia. Conversely, using a yeast one-hybrid approach, Deplancke and colleagues discovered factors that bound digestive tract promoters (<link linkend="bib35">Deplancke et al., 2006</link>). The authors surveyed 112 gut promoters or regulatory elements for transcription factor binding using a yeast one-hybrid assay and discovered 283 interactions involving 72 promoters and 117 interacting factors (<link linkend="bib35">Deplancke et al., 2006</link>). Most factors interacted with a small number of genes and conversely most genes had multiple factors binding, an average of four. The factors discovered in this screen are presumably those that can bind as monomers or homomers in yeast, suggesting this is just the tip of the iceberg.</para>
+</sect1>
+<sect1>
+<title>Transcriptional strategies for organogenesis</title>
+<para>It is intriguing to compare the transcriptional strategies of cell fate specification and differentiation for the pharynx vs. the midgut, two very different organs. Pharynx development depends on <ulink url="http://www.wormbase.org/db/get?name=PHA-4;class=Protein" role="_blank">PHA-4</ulink>, which functions at multiple stages of development and in all pharyngeal cell types. To achieve diversity, pharyngeal promoters are regulated by a combinatorial mechanism. This strategy depends on transcription factors that are weak activators. For example, when expressed ectopically, <ulink url="http://www.wormbase.org/db/get?name=PHA-4;class=Protein" role="_blank">PHA-4</ulink> can change the fate of only a subset of embryonic cells to pharynx (<link linkend="bib59">Horner et al., 1998</link>). When introduced into yeast, <ulink url="http://www.wormbase.org/db/get?name=PHA-4;class=Protein" role="_blank">PHA-4</ulink> functions poorly as a transcriptional activator in one-hybrid assays (<link linkend="bib64">Kalb et al., 2002</link>). The configuration of pharyngeal promoters also dampens the effect of any one factor. Pharyngeal promoters typically contain multiple cis-regulatory sites (<link linkend="bib35">Deplancke et al., 2006</link>; <link linkend="bib45">Gaudet et al., 2004</link>), but individual sites are often suboptimal for binding a given transcription factor and are present in only 1-2 copies (<link linkend="bib44">Gaudet and Mango, 2002</link>). Thus, the input from any one transcription factor is minor, and promoter firing depends on multiple weak inputs at a promoter.</para>
+<para>The midgut, on the other hand, is a simple organ, composed of one cell type that derives from a single precursor, the E blastomere. This simplicity is mirrored at the transcriptional level. The midgut depends on tiers of GATA transcription factors that function for only 1-2 cell divisions and elicit a more homogeneous transcriptional response (<link linkend="bib86">Maduro et al., 2005a</link>). As a consequence, these regulatory GATA factors are more potent activators and probably do not rely heavily on combinatorial mechanisms to activate their target genes. For example, widespread expression of one of these GATA factors, <emphasis><ulink url="http://www.wormbase.org/db/get?name=end-1;class=Gene" role="_blank">end-1</ulink>,</emphasis> can convert the entire embryo into midgut (<link linkend="bib147">Zhu et al., 1998</link>) and another GATA factor, <emphasis><ulink url="http://www.wormbase.org/db/get?name=elt-2;class=Gene" role="_blank">elt-2</ulink>,</emphasis> is a potent activator in yeast one-hybrid assays (<link linkend="bib64">Kalb et al., 2002</link>). Surprisingly, these tiers of GATA factors are genetically redundant, and their individual contributions are just beginning to be understood (<link linkend="bib85">Maduro et al., 2006</link>). Analysis of <ulink url="http://www.wormbase.org/db/get?name=MED-1;class=Protein" role="_blank">MED-1</ulink>/2 target genes reveals a surprisingly simple code: two copies of the invariant sequence RRRAGTATAC in a 100bp stretch and within 2kb of the ATG start codon. These rules predicted 21 MED target genes of which at least 12/15 behaved as expected for a MED target (<link linkend="bib26">Broitman-Maduro et al., 2005</link>). Thus, the simplicity of the intestine is mirrored in a simpler transcriptional strategy: more potent transcription factors, less binding sequence heterogeneity and a simpler promoter architecture. It will be interesting, as more target genes emerge, to determine if these distinctions continue to hold true.</para>
+</sect1>
+<sect1>
+<title>Morphogenesis</title>
+<para>By mid-embryogenesis, gastrulation is finished, cell division is almost complete, and the pharyngeal primordium is visible as a ball of cells bordering the nascent midgut in the interior of the embryo (<link linkend="bib110">Portereiko and Mango, 2001</link>; <link linkend="bib134">Sulston et al., 1983</link>). The pharyngeal cells are attached to each other and to the midgut by adherens junctions (<link linkend="bib78">Leung et al., 1999</link>), but are not yet connected to the buccal cavity. Over the next sixty minutes, the pharyngeal cells shift their position and organization to form a linear tube that links the digestive tract to the exterior (<link linkend="bib110">Portereiko and Mango, 2001</link>). The initial event of morphogenesis is reorganization of the pharyngeal primordium. Pharyngeal epithelial cells reorient their apicobasal polarity from rostrocaudal to dorsoventral relative to the embryonic axes (see <link linkend="figure7">Figure 7A to B</link>). This rearrangement alters the morphology of the pharynx from a cyst, with the apical surfaces located internally, to a short tube that extends from the midgut to the anterior edge of the pharyngeal primordium. This movement aligns the pharyngeal epithelial cells with the arcade cells. Next, the arcade cells form adherens junctions that link the pharynx and epidermis, to form a continuous epithelium (see <link linkend="figure7">Figure 7B to C</link>). This event mechanically couples the buccal cavity to the pharynx and anterior epidermis. During the third stage of pharyngeal extension, cells of the pharynx, buccal cavity and epidermis appear to undergo a local contraction that pulls them tightly together (see <link linkend="figure7">Figure 7C to D</link>). The remainder of the pharynx is presumably dragged forward by virtue of its attachment to the anterior pharynx. Once connected the pharynx undergoes additional morphogenesis, to produce the bi-lobed structure of the mature pharynx.</para>
+		<mediaobject id="figure7" xreflabel="Figure 7">
+			<imageobject>
+				<imagedata entityref="fig7" width="4.8in" align="center"/>
+			</imageobject>
+			<textobject>
+				<phrase>figure 7</phrase>
+			</textobject> &fig7legend;</mediaobject>
+<table id="table3" frame="all" rules="all" cellpadding="0" cellspacing="0" width="100%">
+<title><emphasis role="bold">Table 3. Genes involved in pharyngeal morphogenesis.</emphasis> Genes that lead to a morphogenesis defect when mutaM/Z: maternal or zygotic contribution, phx: pharyngeal, Ref: references, ?: unknown.</title>
+<tgroup cols="7">
+<colspec colname="c1" align="center" colwidth="0.4*"/>
+<colspec colname="c2" align="center" colwidth="0.7*"/>
+<colspec colname="c3" align="center" colwidth="0.3*"/>
+<colspec colname="c4" align="center" colwidth="0.8*"/>
+<colspec colname="c5" align="center" colwidth="0.9*"/>
+<colspec colname="c6" align="center" colwidth="0.8*"/>
+<colspec colname="c7" align="left" colwidth="1*"/>
+<thead>
+<row>
+<entry>Gene</entry>
+<entry>Homology</entry>
+<entry>M/Z</entry>
+<entry>Cellular expression</entry>
+<entry>Localization</entry>
+<entry>Function</entry>
+<entry>References</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=cyk-4;class=Gene" role="_blank">cyk-4</ulink></emphasis></entry>
+<entry>MgcRacGAP RhoGAP</entry>
+<entry>M,Z</entry>
+<entry>Broadly</entry>
+<entry>?</entry>
+<entry>Apicobasal polarity</entry>
+<entry><link linkend="bib111">Portereiko et al., 2004</link>; <link linkend="bib62">Jenkins et al., 2006</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=zen-4;class=Gene" role="_blank">zen-4</ulink></emphasis></entry>
+<entry>MKLP1 kinesin</entry>
+<entry>M,Z</entry>
+<entry>Broadly</entry>
+<entry>?</entry>
+<entry>Apicobasal polarity</entry>
+<entry><link linkend="bib111">Portereiko et al., 2004</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=ast-1;class=Gene" role="_blank">ast-1</ulink></emphasis></entry>
+<entry>ETS</entry>
+<entry>Z</entry>
+<entry>Head</entry>
+<entry>N/C</entry>
+<entry>Pha attachment</entry>
+<entry><link linkend="bib121">Schmid et al., 2006</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=crp-1;class=Gene" role="_blank">crp-1</ulink></emphasis></entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=cdc-42;class=Gene" role="_blank">cdc-42</ulink></emphasis> related</entry>
+<entry>Z</entry>
+<entry>Muscles and non-phx epithelia</entry>
+<entry>Endosomes, trans-Golgi network</entry>
+<entry>Apical trafficking</entry>
+<entry><link linkend="bib63">Jenna et al., 2005</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=let-413;class=Gene" role="_blank">let-413</ulink></emphasis></entry>
+<entry>scribble</entry>
+<entry>Z</entry>
+<entry>Epithelia</entry>
+<entry>Basolateral</entry>
+<entry>Confinement of CeAJ</entry>
+<entry><link linkend="bib77">Legouis et al., 2000</link>; <link linkend="bib94">McMahon et al., 2001</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=die-1;class=Gene" role="_blank">die-1</ulink></emphasis></entry>
+<entry>Zinc finger TF</entry>
+<entry>Z</entry>
+<entry>Epithelia</entry>
+<entry>Nuclear</entry>
+<entry>Pha attachment</entry>
+<entry><link linkend="bib56">Heid et al., 2001</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=eff-1;class=Gene" role="_blank">eff-1</ulink></emphasis></entry>
+<entry>Novel</entry>
+<entry>Z</entry>
+<entry>Muscles, non-phx fusing epithelia</entry>
+<entry>Contact points</entry>
+<entry>Epithelial fusion</entry>
+<entry><link linkend="bib95">Mohler et al., 2002</link>; <link linkend="bib124">Shemer et al., 2004</link></entry>
+</row>
+<row>
+<entry><emphasis>elt-5/ <ulink url="http://www.wormbase.org/db/get?name=egl-18;class=Gene" role="_blank">egl-18</ulink></emphasis></entry>
+<entry>GATA TF</entry>
+<entry>Z</entry>
+<entry>Non-pha epidermis, neurons</entry>
+<entry>Nuclear</entry>
+<entry>Pha attachment</entry>
+<entry><link linkend="bib71">Koh et al., 2002</link>; <link linkend="bib72">Koh and Rothman, 2001</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=fbl-1;class=Gene" role="_blank">fbl-1</ulink></emphasis></entry>
+<entry>Fibulin</entry>
+<entry>Z</entry>
+<entry>Non-phx</entry>
+<entry>Basement membrane</entry>
+<entry>Pha morphology</entry>
+<entry><link linkend="bib98">Muriel et al., 2005</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=ham-2;class=Gene" role="_blank">ham-2</ulink></emphasis></entry>
+<entry>Zinc finger</entry>
+<entry>Z</entry>
+<entry>Embryo</entry>
+<entry>Nuclear</entry>
+<entry>Pha attachment</entry>
+<entry><link linkend="bib16">Baum et al., 1999</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=inx-3;class=Gene" role="_blank">inx-3</ulink></emphasis></entry>
+<entry>Innexin</entry>
+<entry>Z</entry>
+<entry>Broadly, epithelia</entry>
+<entry>Basal surface</entry>
+<entry>Pha attachment pha morphology</entry>
+<entry><link linkend="bib131">Starich et al., 2003</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-1;class=Gene" role="_blank">pha-1</ulink></emphasis></entry>
+<entry>DUF1114</entry>
+<entry>Z</entry>
+<entry>Ubiquitous</entry>
+<entry>Cytoplasmic</entry>
+<entry>Pha attachment pha differentiation</entry>
+<entry><link linkend="bib39">Fay et al., 2004</link>; <link linkend="bib50">Granato et al., 1994</link>; <link linkend="bib122">Schnabel and Schnabel, 1990</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=ubc-18;class=Gene" role="_blank">ubc-18</ulink></emphasis></entry>
+<entry>Ubiquitin conj ez</entry>
+<entry>?</entry>
+<entry>?</entry>
+<entry>?</entry>
+<entry>Pha attachment</entry>
+<entry><link linkend="bib38">Fay et al., 2003</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=ari-1;class=Gene" role="_blank">ari-1</ulink></emphasis></entry>
+<entry>Ariadne RING finger</entry>
+<entry>?</entry>
+<entry>Broadly</entry>
+<entry>?</entry>
+<entry>Pha attachment</entry>
+<entry><link linkend="bib114">Qiu and Fay, 2006</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=lin-35;class=Gene" role="_blank">lin-35</ulink></emphasis></entry>
+<entry>Rb repressor</entry>
+<entry>?</entry>
+<entry>Broadly</entry>
+<entry>Nuclear</entry>
+<entry>Pha attachment</entry>
+<entry><link linkend="bib38">Fay et al., 2003</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=sma-1;class=Gene" role="_blank">sma-1</ulink></emphasis></entry>
+<entry><symbol role="symbolfont">&#x003B2;</symbol>H-spectrin</entry>
+<entry>Z</entry>
+<entry>Epithelia</entry>
+<entry>Apical</entry>
+<entry>Pha elongation</entry>
+<entry><link linkend="bib93">McKeown et al., 1998</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=spc-1;class=Gene" role="_blank">spc-1</ulink></emphasis></entry>
+<entry><symbol role="symbolfont">&#x003B1;</symbol>-spectrin</entry>
+<entry>Z</entry>
+<entry>Epithelia</entry>
+<entry>Apical</entry>
+<entry>Pha elongation</entry>
+<entry><link linkend="bib101">Norman and Moerman, 2002</link></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<para>Many factors affect pharynx morphogenesis, based on loss-of-function phenotypes, but it is unclear if these phenotypes reflect cell fate, differentiation or morphogenesis. Deletion of the ETS homologue <emphasis><ulink url="http://www.wormbase.org/db/get?name=ast-1;class=Gene" role="_blank">ast-1</ulink></emphasis> leads to pharynx unattached (Pun) larvae that cannot feed (<link linkend="bib121">Schmid et al., 2006</link>). By time-lapse videomicroscopy, pharyngeal development proceeds normally to the 1.5 fold stage when pharyngeal cells fail to attach to the buccal cavity. <ulink url="http://www.wormbase.org/db/get?name=AST-1;class=Protein" role="_blank">AST-1</ulink>::GFP is expressed in the head, including a few unidentified pharyngeal cells. It is unclear whether the pharyngeal defects reflect a function for <ulink url="http://www.wormbase.org/db/get?name=AST-1;class=Protein" role="_blank">AST-1</ulink> in the pharynx or in surrounding head cells.</para>
+<literallayout></literallayout>
+		<mediaobject id="figure8" xreflabel="Figure 8">
+			<imageobject>
+				<imagedata entityref="fig8" width="5.5in" align="center"/>
+			</imageobject>
+			<textobject>
+				<phrase>figure 8</phrase>
+			</textobject> &fig8legend;</mediaobject>
+<para>The <emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-2;class=Gene" role="_blank">pha-2</ulink></emphasis> homeobox is important for isthmus morphogenesis (<link linkend="bib97">Morck et al., 2004</link>). Animals lacking <emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-2;class=Gene" role="_blank">pha-2</ulink></emphasis> have an abnormally thick pharyngeal isthmus, cells of the anterior bulb appear to mix with those of the isthmus, and <ulink url="http://www.wormbase.org/db/get?name=CEH-22;class=Protein" role="_blank">CEH-22</ulink>/Nkx2.5 is expressed inappropriately in pm5, which forms the isthmus (<link linkend="bib97">Morck et al., 2004</link>). These data suggest that <emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-2;class=Gene" role="_blank">pha-2</ulink></emphasis> is required to distinguish pm5 fate or morphology, distinct from the other pharyngeal muscles.</para>
+<para>The <emphasis><ulink url="http://www.wormbase.org/db/get?name=ceh-43;class=Gene" role="_blank">ceh-43</ulink>/distal-less</emphasis> homolog is not obviously expressed in the pharynx but loss of <emphasis><ulink url="http://www.wormbase.org/db/get?name=ceh-43;class=Gene" role="_blank">ceh-43</ulink></emphasis> activity by RNAi leads to a detached pharynx, possibly because of problems with the epidermal epithelium (<link linkend="bib6">Aspock and Burglin, 2001</link>). Similarly, loss of the GATA factor <emphasis>elt-5</emphasis> produces animals with Pun pharynges, likely due to epidermal defects (<link linkend="bib71">Koh et al., 2002</link>).</para>
+<para>The <emphasis><ulink url="http://www.wormbase.org/db/get?name=eya-1;class=Gene" role="_blank">eya-1</ulink></emphasis> locus is homologous to <emphasis>eyes absent</emphasis> and carries two HAD domains (<link linkend="bib43">Furuya et al., 2005</link>). In other animals, <emphasis>eyes absent</emphasis> is a phosphatase co-factor for the <emphasis>sine oculis</emphasis> transcription factor and part of the eye regulatory circuit (<link linkend="bib117">Rebay et al., 2005</link>). In worms, <emphasis><ulink url="http://www.wormbase.org/db/get?name=eya-1;class=Gene" role="_blank">eya-1</ulink></emphasis> mutants arrest at the L1 or L2 stage with a thin pharynx and reduced pumping rates (<link linkend="bib43">Furuya et al., 2005</link>). The pharyngeal bulb can be misshapen and the lumen stuffed with bacteria, suggesting a feeding defect. <emphasis><ulink url="http://www.wormbase.org/db/get?name=eya-1;class=Gene" role="_blank">eya-1</ulink></emphasis> is partially redundant with <emphasis><ulink url="http://www.wormbase.org/db/get?name=vab-3;class=Gene" role="_blank">vab-3</ulink>/pax-6</emphasis> suggesting that the regulatory circuit that controls eye development in other animals may have adopted a new function for anterior development in <emphasis>C. elegans</emphasis>, which lacks eyes (<link linkend="bib43">Furuya et al., 2005</link>).</para>
+<para><emphasis><ulink url="http://www.wormbase.org/db/get?name=die-1;class=Gene" role="_blank">die-1</ulink></emphasis> encodes a zinc finger transcription factor expressed in many epithelia including the pharynx (<link linkend="bib56">Heid et al., 2001</link>). <emphasis><ulink url="http://www.wormbase.org/db/get?name=die-1;class=Gene" role="_blank">die-1</ulink></emphasis> mutants can be detached from either the intestine or from the buccal cavity (<link linkend="bib56">Heid et al., 2001</link>). <ulink url="http://www.wormbase.org/db/get?name=DIE-1;class=Protein" role="_blank">DIE-1</ulink> is expressed in the pharynx, although the precise cells are unknown. <ulink url="http://www.wormbase.org/db/get?name=DIE-1;class=Protein" role="_blank">DIE-1</ulink> binds multiple genes by yeast one-hybrid analysis, including genes many genes implicated in transcription (<link linkend="bib35">Deplancke et al., 2006</link>).</para>
+<para><emphasis><ulink url="http://www.wormbase.org/db/get?name=sma-1;class=Gene" role="_blank">sma-1</ulink></emphasis> encodes <symbol role="symbolfont">&#x003B2;</symbol>H(heavy)-spectrin, which is essential for the elongated form of the pharynx (<link linkend="bib93">McKeown et al., 1998</link>). Mutants are viable but the procorpus and isthmus fail to elongate. Some of these defects may reflect the lack of body elongation rather than internal to the pharynx itself. Association of <ulink url="http://www.wormbase.org/db/get?name=SMA-1;class=Protein" role="_blank">SMA-1</ulink> to apical surfaces of epithelia depends on <symbol role="symbolfont">&#x003B1;</symbol>-spectrin (<link linkend="bib101">Norman and Moerman, 2002</link>).</para>
+<para>The transcriptional repressor <emphasis><ulink url="http://www.wormbase.org/db/get?name=lin-35;class=Gene" role="_blank">lin-35</ulink>/Rb</emphasis> and the ubiquitin conjugating enzyme <emphasis><ulink url="http://www.wormbase.org/db/get?name=ubc-18;class=Gene" role="_blank">ubc-18</ulink></emphasis> are required redundantly for the first stage of pharyngeal morphogenesis, Reorientation (<link linkend="bib38">Fay et al., 2003</link>). Inactivation of both genes leads to arrested Pun animals (<link linkend="bib38">Fay et al., 2003</link>). Similarly, inactivation of <emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-1;class=Gene" role="_blank">pha-1</ulink></emphasis> and either <emphasis><ulink url="http://www.wormbase.org/db/get?name=ubc-18;class=Gene" role="_blank">ubc-18</ulink></emphasis> or <emphasis><ulink url="http://www.wormbase.org/db/get?name=ari-1;class=Gene" role="_blank">ari-1</ulink>/Ariadne</emphasis> leads to an unattached pharynx phenotype (<link linkend="bib39">Fay et al., 2004</link>; <link linkend="bib114">Qiu and Fay, 2006</link>). One model to explain these complicated interactions is that over-expression of a factor "X" leads to a Pun phenotype. Transcriptional repression (e.g., <emphasis><ulink url="http://www.wormbase.org/db/get?name=lin-35;class=Gene" role="_blank">lin-35</ulink></emphasis>) and protein degradation (<emphasis><ulink url="http://www.wormbase.org/db/get?name=ubc-18;class=Gene" role="_blank">ubc-18</ulink></emphasis> or <emphasis><ulink url="http://www.wormbase.org/db/get?name=ari-1;class=Gene" role="_blank">ari-1</ulink></emphasis>) normally keep X in check. However, when both are inactivated, X excess inhibits pharyngeal morphogenesis. It is unclear what role the <emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-1;class=Gene" role="_blank">pha-1</ulink></emphasis> plays in this process. <emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-1;class=Gene" role="_blank">pha-1</ulink></emphasis> encodes a DUF1114 factor expressed in the cytoplasm (<link linkend="bib39">Fay et al., 2004</link>).</para>
+</sect1>
+<?newpage?>
+<sect1>
+<title>Epithelium formation-the pharyngeal arcade cells</title>
+<para><emphasis>C. elegans</emphasis> epithelia resemble those of other organisms, with apical and basolateral domains (<link linkend="bib70">Knust and Bossinger, 2002</link>). <ulink url="http://www.wormbase.org/db/get?name=LET-413;class=Protein" role="_blank">LET-413</ulink>/scribble is localized to the basolateral domain, where it restricts the spread of components of adherens junction and the apical domain (<link linkend="bib73">Koppen et al., 2001</link>; <link linkend="bib77">Legouis et al., 2000</link>; <link linkend="bib94">McMahon et al., 2001</link>), while the <ulink url="http://www.wormbase.org/db/get?name=PAR-3;class=Protein" role="_blank">PAR-3</ulink>/<ulink url="http://www.wormbase.org/db/get?name=PAR-6;class=Protein" role="_blank">PAR-6</ulink> complex is confined to the apical domain (<link linkend="bib78">Leung et al., 1999</link>). A single junction, the CeAJ, separates the apical and basolateral domains and has features of both adherens and tight junctions. For example, the CeAJ contains proteins that mediate adhesion such as <ulink url="http://www.wormbase.org/db/get?name=HMR-1;class=Protein" role="_blank">HMR-1</ulink>/cadherin, <ulink url="http://www.wormbase.org/db/get?name=HMP-1;class=Protein" role="_blank">HMP-1</ulink>/alpha-catenin, <ulink url="http://www.wormbase.org/db/get?name=HMP-2;class=Protein" role="_blank">HMP-2</ulink>/beta-catenin and <ulink url="http://www.wormbase.org/db/get?name=VAB-9;class=Protein" role="_blank">VAB-9</ulink>/claudin (<link linkend="bib33">Costa et al., 1998</link>; <link linkend="bib107">Pettitt et al., 1996</link>; <link linkend="bib128">Simske and Hardin, 2001</link>). Located slightly more basally but still within the CeAJ are <ulink url="http://www.wormbase.org/db/get?name=DLG-1;class=Protein" role="_blank">DLG-1</ulink>/discs large and the coiled-coil protein <ulink url="http://www.wormbase.org/db/get?name=AJM-1;class=Protein" role="_blank">AJM-1</ulink> (<link linkend="bib22">Bossinger et al., 2001</link>; <link linkend="bib73">Koppen et al., 2001</link>). The Fat subfamily cadherin <emphasis><ulink url="http://www.wormbase.org/db/get?name=cdh-3;class=Gene" role="_blank">cdh-3</ulink></emphasis> is expressed in the pharynx and would be predicted to localize to CeAJs (<link linkend="bib107">Pettitt et al., 1996</link>).</para>
+<para>What factors are required to build the pharynx epithelium? Surprisingly, many proteins implicated in the formation or maintenance of epithelia in other animals are apparently not essential in the <emphasis>C. elegans</emphasis> digestive tract. For example, homologues of Crumbs, cadherins, discs-large, ZO-1, <symbol role="symbolfont">&#x003B1;</symbol>- or <symbol role="symbolfont">&#x003B2;</symbol>-integrins do not give rise to obvious pharyngeal defects after being inactivated (<link linkend="bib15">Baum and Garriga, 1997</link>; <link linkend="bib33">Costa et al., 1998</link>; <link linkend="bib36">Drubin and Nelson, 1996</link>; <link linkend="bib107">Pettitt et al., 1996</link>; <link linkend="bib142">Williams and Waterston, 1994</link>). These data suggest <emphasis>C. elegans</emphasis> may rely on additional molecules to establish epithelia. Intriguingly, studies with other organisms suggest alternative routes for epithelium formation exist in these animals also (<link linkend="bib11">Baas et al., 2004</link>; <link linkend="bib20">Bilder et al., 2003</link>; <link linkend="bib54">Harris and Peifer, 2004</link>).</para>
+<para>The kinesin-like protein <emphasis><ulink url="http://www.wormbase.org/db/get?name=zen-4;class=Gene" role="_blank">zen-4</ulink></emphasis>/MKLP and its partner <emphasis><ulink url="http://www.wormbase.org/db/get?name=cyk-4;class=Gene" role="_blank">cyk-4</ulink></emphasis>/RhoGAP are required to polarize the arcade cells (<link linkend="bib111">Portereiko et al., 2004</link>). Apical and adherens junction proteins fail to accumulate at the cell surface of arcade cells from <emphasis><ulink url="http://www.wormbase.org/db/get?name=zen-4;class=Gene" role="_blank">zen-4</ulink></emphasis> mutants, even though these proteins are synthesized in the cell. Thus, <emphasis><ulink url="http://www.wormbase.org/db/get?name=zen-4;class=Gene" role="_blank">zen-4</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=cyk-4;class=Gene" role="_blank">cyk-4</ulink></emphasis> appear important to target polarity proteins to the apical surface and CeAJ during polarization. Recent studies suggest that <ulink url="http://www.wormbase.org/db/get?name=CYK-4;class=Protein" role="_blank">CYK-4</ulink> modulates cell polarity in other contexts by controlling RhoA activity and the contractile actomyosin cytoskeleton (<link linkend="bib62">Jenkins et al., 2006</link>); perhaps this regulatory pathway will hold true for the pharyngeal epithelium as well.</para>
+<para><ulink url="http://www.wormbase.org/db/get?name=LET-413;class=Protein" role="_blank">LET-413</ulink>, which contains a PDZ motif and leucine-rich repeats similar to <emphasis>Drosophila scribble</emphasis>, is localized to basolateral membranes of all epithelial cell types, including the pharynx (<link linkend="bib30">Chanal et al., 1997</link>; <link linkend="bib77">Legouis et al., 2000</link>). In epidermal cells lacking <emphasis><ulink url="http://www.wormbase.org/db/get?name=let-413;class=Gene" role="_blank">let-413</ulink>/scribble</emphasis>, apical proteins such as <ulink url="http://www.wormbase.org/db/get?name=PKC-3;class=Protein" role="_blank">PKC-3</ulink> are mislocalized, and CeAJ-associated proteins such as <ulink url="http://www.wormbase.org/db/get?name=DLG-1;class=Protein" role="_blank">DLG-1</ulink> and <ulink url="http://www.wormbase.org/db/get?name=AJM-1;class=Protein" role="_blank">AJM-1</ulink> remain along the lateral surface rather than becoming condensed into the junctional region as in wildtype (<link linkend="bib94">McMahon et al., 2001</link>). Thus, <ulink url="http://www.wormbase.org/db/get?name=LET-413;class=Protein" role="_blank">LET-413</ulink> may function after <ulink url="http://www.wormbase.org/db/get?name=ZEN-4;class=Protein" role="_blank">ZEN-4</ulink> and <ulink url="http://www.wormbase.org/db/get?name=CYK-4;class=Protein" role="_blank">CYK-4</ulink> to control adherens junction maturation and positioning.</para>
+</sect1>
+<sect1>
+<title>Is the pharynx a heart?</title>
+<para>There has been debate about a possible evolutionary relationship between the <emphasis>C. elegans</emphasis> pharynx and the vertebrate heart. Three observations suggest that the pharynx may be orthologous to the vertebrate heart. First, both the pharynx and heart are tubes that move material along their lumens using binucleate muscles (<link linkend="bib2">Albertson and Thomson, 1976</link>; <link linkend="bib67">Kellerman et al., 1992</link>). Both organs pump continuously, for the life of the organism. Second, both organs rely on similar electrical circuitry to control pumping. Contractions are synchronized by gap junctions that couple adjacent muscle cells, and contractions can continue in the absence of neuronal input (<link linkend="bib9">Avery and Horvitz, 1989</link>; <link linkend="bib18">Bernstein and Morley, 2006</link>; <link linkend="bib130">Starich et al., 1996</link>; <link linkend="bib131">Starich et al., 2003</link>). Contraction speed can be modulated by neurotransmitters that couple to GPCRs, including acetylcholine and serotonin (<link linkend="bib57">Hobson et al., 2003</link>; <link linkend="bib106">Penela et al., 2006</link>; <link linkend="bib132">Steger and Avery, 2004</link>). The pharynx and heart rely on some similar types of channels such as the LQT potassium channels and L-type voltage-gated calcium channels (<link linkend="bib9">Avery and Horvitz, 1989</link>; <link linkend="bib115">Raizen and Avery, 1994</link>; <link linkend="bib119">Salkoff et al., 2005</link>). Third, both organs rely on NKX transcription factors for their genesis: <emphasis><ulink url="http://www.wormbase.org/db/get?name=ceh-22;class=Gene" role="_blank">ceh-22</ulink></emphasis> for the pharynx and <emphasis>Nkx2.5</emphasis> for the zebrafish heart (<link linkend="bib31">Chen and Fishman, 1996</link>; <link linkend="bib102">Okkema and Fire, 1994</link>; <link linkend="bib103">Okkema et al., 1997</link>). Moreover, Nkx2.5 can activate the <ulink url="http://www.wormbase.org/db/get?name=CEH-22;class=Protein" role="_blank">CEH-22</ulink> target gene <emphasis><ulink url="http://www.wormbase.org/db/get?name=myo-2;class=Gene" role="_blank">myo-2</ulink></emphasis> when expressed in <emphasis>C. elegans</emphasis> body wall muscles, and Nkx2.5 can rescue <emphasis><ulink url="http://www.wormbase.org/db/get?name=ceh-22;class=Gene" role="_blank">ceh-22</ulink></emphasis> mutants when expressed under control of the <emphasis><ulink url="http://www.wormbase.org/db/get?name=ceh-22;class=Gene" role="_blank">ceh-22</ulink></emphasis> promoter (<link linkend="bib55">Haun et al., 1998</link>).</para>
+<para>Despite these similarities, three observations suggest that parallels between the pharynx and heart may represent convergent evolution rather than true homology. First, while the heart is a mesodermal organ, the pharynx appears to be ectodermal. Topologically, the pharynx is connected to the epidermis and, like the epidermis, is lined with cuticle (<link linkend="bib2">Albertson and Thomson, 1976</link>). Pharyngeal muscle is myoepithelial, displaying apical domains separated by adherens junctions from the basolateral surfaces, which contact a basal lamina (<link linkend="bib2">Albertson and Thomson, 1976</link>; <link linkend="bib110">Portereiko and Mango, 2001</link>). In <emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-4;class=Gene" role="_blank">pha-4</ulink></emphasis> mutant embryos, at least a portion of pharyngeal cells are transformed into ectodermal cell types, but not into mesodermal cell types (<link linkend="bib59">Horner et al., 1998</link>; <link linkend="bib68">Kiefer et al., 2006</link>). Second, the involvement of Nkx2.5 proteins for pharyngeal development may be misleading. In other organisms, Nkx2.5 factors are required for visceral muscle development as well as heart formation (e.g., <emphasis>tinman</emphasis> in <emphasis>Drosophila</emphasis> (<link linkend="bib21">Bodmer, 1993</link>). This observation may explain why <emphasis>Nkx2.5</emphasis>, which is normally restricted to myocardiocytes in zebrafish, can nevertheless rescue visceral muscle development in <emphasis>Drosophila Nkx/tinman</emphasis> mutants (<link linkend="bib105">Park et al., 1998</link>). Third, aspects of the electrical conductivity are different between the pharynx and heart. <emphasis>C. elegans</emphasis> lacks the voltage-gated sodium channel that typically initiates the action potential with a fast sodium <ulink url="http://www.wormbase.org/db/get?name=spike;class=Cell" role="_blank">spike</ulink> in the heart (L. Avery, pers. comm.). The pharynx is excited by motor neurons via nicotinic receptors, similar to mammalian skeletal muscle (<link linkend="bib92">McKay et al., 2004</link>; <link linkend="bib116">Raizen et al., 1995</link>; <link linkend="bib137">Towers et al., 2005</link>). The potassium channels that end the action potential are only distantly related between pharyngeal <emphasis><ulink url="http://www.wormbase.org/db/get?name=exp-2;class=Gene" role="_blank">exp-2</ulink></emphasis> and cardiac hERG (<link linkend="bib34">Davis et al., 1999</link>; <link linkend="bib127">Shtonda and Avery, 2005</link>). These differences suggest that similarities between the two organs may represent convergent evolution between two muscular pumps faced with similar biological roles.</para>
+</sect1>
+<sect1>
+<title>Conclusion</title>
+<para>To form the pharynx, <emphasis>C. elegans</emphasis> faces developmental challenges that are similar to those of more complex animals and uses conserved molecular pathways to meet those challenges. With the ability to visualize individual cells during organogenesis and the development of powerful tools (genomics, forward and reverse genetics, molecular biology), scientists have begun to discover the genes required for cell fate specification and morphogenesis. Our challenge for the future is to uncover the function of these genes and to dissect the regulatory networks that drive these processes.</para>
+</sect1>
+<sect1>
+<title>Acknowledgements</title>
+<para>Many thanks to Alex Schier for comments on the manuscript, Leon Avery for discussions regarding pharynx neurobiology and evolution, David Hall and Zeynep Altun for <link linkend="figure2">Figure 2</link>, Diana Lim for the illustrations, Jim Priess for the Aph panel in <link linkend="figure8">Figure 8</link> and all my lab, current and past, for discussions on pharyngeal development. S.E.M. is supported by R01 DK070184 and R01 GM056264 from the NIH. She receives institutional support from the Huntsman Cancer Institute and Department of Oncological Sciences.</para>
+</sect1>
+<sect1>
+		<title>References</title>
+		&organopharynx_Refs;
+		<para/>
+	</sect1>
+</article>

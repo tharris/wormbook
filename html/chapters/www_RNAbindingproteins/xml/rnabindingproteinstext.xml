@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY rnabindingproteins_Refs SYSTEM 'rnabindingproteinsrefs.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="rnabindingproteins_ArticleID">
+    <articleinfo>
+        <!--see DocBook's authorgroup element -->
+        <title>RNA-binding proteins<footnote>
+                <para>Edited by Thomas Blumenthal. Last revised February 8, 2005. Published April 18, 2006. This chapter should be cited as: Lee, M.-H. and Schedl, T. RNA-binding proteins (April 18, 2006), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.79.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+		<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2006 Min-Ho Lee and Tim Schedl. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+            </footnote>
+        </title>
+        <!--		<revhistory>
+			<revision>
+				<revnumber>1.0</revnumber>
+				<date>Last revised 2/8/05</date>
+			</revision>
+		</revhistory>
+-->
+        <author>
+            <othername>Min-Ho Lee<remark>
+												<footnote>
+													<para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:mhlee@albany.edu">mhlee@albany.edu</ulink> or <ulink url="mailto:ts@genetics.wustl.edu">ts@genetics.wustl.edu</ulink></para>
+                    </footnote>
+					<footnote><para>Current address: Department of Biological Sciences, University at Albany, SUNY, Albany, NY 12222 USA</para></footnote></remark>, Tim Schedl<remark><superscript>&#x000A7;</superscript></remark>
+			</othername>
+            <affiliation>
+                <address>Department of Genetics, Washington University School of Medicine, St. Louis, MO 63110 USA</address>
+            </affiliation>
+        </author>
+       </articleinfo>
+    <abstract>
+        <title><emphasis role="bold">Abstract</emphasis></title>
+        <para><emphasis role="bold">The</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">genome encodes many RNA-binding proteins (RBPs) with diverse functions
+            in development, indicative of extensive layers of post-transcriptional control of RNA
+            metabolism. A number of</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">RBPs have been identified by
+            forward or reverse genetics. They tend to display tissue-specific mutant phenotypes,
+            which underscore their functional importance. In addition, several RBPs that bind
+            regulatory sequences in the 3’untranslated regions of mRNAs have been identified
+            molecularly. Most</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">RBPs are conserved throughout
+            evolution, suggesting that their study in</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">may uncover
+            new conserved biological functions. In this review, we primarily discuss RBPs that are
+            associated with well-characterized mutant phenotypes in the germ line, the early embryo,
+            or in somatic tissues. We also discuss the identification of RNA targets of RBPs, which
+            is an important first step to understand how an RBP controls</emphasis> <emphasis><emphasis role="bold">C.
+            elegans</emphasis></emphasis> <emphasis role="bold">development. It is likely that most RBPs regulate multiple
+            RNA targets. Once multiple RNA targets are identified, specific features that distinguish target from
+            non-target RNAs and the type(s) of RNA metabolism that each RBP controls can be
+            determined. Furthermore, one can determine whether the RBP regulates all targets by the
+            same mechanism or different targets by distinct mechanisms. Such studies will provide
+            insights into how RBPs exert coordinate control of their RNA targets, thereby affecting development in a concerted fashion.</emphasis></para>
+    </abstract>
+<?newpage?>
+    <sect1>
+        <title>Overview</title>
+        <para>RNA-binding proteins (RBPs) play key roles in post-transcriptional control of RNAs,
+            which, along with transcriptional regulation, is a major way to regulate patterns of
+            gene expression during development. Post-transcriptional control can occur at many
+            different steps in RNA metabolism, including splicing, polyadenylation, mRNA stability,
+            mRNA localization and translation (<link linkend="bib9">Curtis et al., 1995</link><!-- PMID 7736569-->; <link linkend="bib77">Wickens et al., 2000</link>; <link linkend="bib10">de Moor and Richter, 2001</link><!-- PMID 11131527-->; <link linkend="bib29">Johnstone and Lasko, 2001</link><!-- PMID 11700288-->). In the <emphasis>C. elegans</emphasis> genome, approximately 500 genes are
+            annotated to encode RBPs (Wormbase), as they have one or more known RNA binding domains
+            such as the RNA Recognition Motif (RRM, also known as RBD or RNP domain), K Homology
+            (KH) domain, Zinc finger (mainly C-x8-C-x5-C-x3-H type), RGG box, DEAD/DEAH box,
+            Pumilio/FBF (PUF) domain, double-stranded RNA binding domain (DS-RBD),
+            Piwi/Argonaute/Zwille (PAZ) domain, Sm domain, etc. Many RBPs have one or more copies of
+            the same RNA binding domain while others have two or more distinct domains. Several RNA
+            binding domains are suggestive for the molecular function of the RBP; DEAD/DEAH box for
+            RNA helicase activity, PAZ domain for short single-stranded RNA binding in RNAi or
+            microRNAs (miRNA) processes, and Sm domain for snRNA binding in splicing and possibly in
+            tRNA processing. However, other domains only predict RNA binding and do not specifically
+            indicate in which aspect of RNA metabolism they may participate. The known function of
+            RBP homologues in other species can provide insights into RBP function in <emphasis>C.
+            elegans</emphasis>. In addition, functional studies of the <emphasis>C.
+            elegans</emphasis> RBPs may reveal unexpected roles for the conserved RBPs. For example,
+            mammalian Y14 is a component of the exon-junction complex that mediates
+            nonsense-mediated mRNA decay (NMD; <link linkend="bib32">Kataoka et al., 2000</link><!-- PMID 11030346-->; <link linkend="bib17">Fribourg et al., 2003</link><!-- PMID 12730685-->; <link linkend="bib63">Singh and Lykke-Andersen, 2003</link><!-- PMID 13678954-->). The
+                <emphasis>C. elegans</emphasis> homologue of Y14, RPN-4, does not appear to mediate
+            NMD, even though it is still preferentially associated with spliced mRNAs.
+            Interestingly, <emphasis>C. elegans</emphasis> Y14, RPN-4, controls germline sex,
+            suggesting that RPN-4 likely has other functions (<link linkend="bib33">Kawano et al., 2004</link><!-- PMID 14706697-->).</para>
+        <para>In <emphasis>C. elegans</emphasis>, many RBPs have been identified genetically,
+            which have tissue-specific mutant phenotypes caused by mutations in RBP genes. In
+            addition, several RBPs that bind regulatory sequences in the 3’untranslated regions
+            (3’UTRs) of mRNAs have been identified by molecular methods (<link linkend="bib80">Zhang et al., 1997</link><!-- PMID 9393998-->; <link linkend="bib26">Jan et al., 1999</link><!-- PMID 9878068-->; <link linkend="bib48">Marin and Evans, 2003</link><!-- PMID 12736207-->; <link linkend="bib52">Mootz et al., 2004</link><!-- PMID 15201219-->). Even though the mechanisms by which RBPs influence protein
+            expression patterns in their respective tissues are still poorly understood, the
+            association of many RBPs with mutant phenotypes underscores their importance in
+                <emphasis>C. elegans</emphasis> development (<link linkend="table1">Table 1</link>). In this review, we will
+            primarily limit our discussion to RBPs that are associated with well-characterized
+            mutant phenotypes.</para>
+        <para>Many RBPs have been identified as essential factors during germline and early embryo
+            development and RBPs with essential functions in the development of somatic tissues,
+            including neuron, muscle, hypodermis, and excretory cells, as well as in the timing of
+            development have been also identified (see <link linkend="table1">Table 1</link>). These findings indicate that RBPs
+            and post-transcriptional control are employed in most aspects of development. The recent
+            emergence of RBPs implicated in RNAi and miRNA processes, such as <ulink url="http://www.wormbase.org/db/seq/protein?name=DCR-1;class=protein" role="_blank">DCR-1</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=ALG-1;class=protein" role="_blank">ALG-1</ulink>/-2,
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=PPW-1;class=protein" role="_blank">PPW-1</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=RDE-1;class=protein" role="_blank">RDE-1</ulink>, and <ulink url="http://www.wormbase.org/db/seq/protein?name=RDE-4;class=protein" role="_blank">RDE-4</ulink>, further emphasizing the importance of RBPs and
+            the complexity of post-transcriptional control in <emphasis>C. elegans</emphasis>
+            development (<link linkend="bib2">Ambros, 2003</link><!-- PMID 12809598-->; <link linkend="bib4">Bartel, 2004</link><!-- PMID 14744438-->).</para>
+        <para>Even though many RBPs have been identified as having critical roles during the
+            development of various tissues in <emphasis>C. elegans</emphasis>, it is largely unclear
+            how such RBPs control development, primarily due to the difficulty in identifying their
+            RNA targets. Most RBPs likely have multiple RNA targets. Therefore, their mutant
+            phenotypes may result from the mis-regulation of many RNA targets, which makes it
+            difficult to identify individual RNA targets using classical genetic approaches. Nevertheless, it is essential to identify a majority of the
+            RNA targets of each RBP in order to fully understand the function of the RBP.
+            Furthermore, the identification of RBPs that bind to known regulatory sequences, such as
+            those defined by mutations, is crucial to understanding the mechanism of
+            post-transcriptional control mediated by such sequences.</para>
+<?newpage?>
+<table id="table1" frame="all" rules="all" cellpadding="0" cellspacing="0" width="100%">
+<title><emphasis role="bold">Table 1. RNA-binding proteins associated with characterized mutant phenotypes in</emphasis> <emphasis><emphasis role="bold">C. elegans.</emphasis></emphasis></title>
+<tgroup cols="6">
+<colspec colname="c1" align="left" colwidth="1*"/>
+<colspec colname="c2" align="left" colwidth="1.2*"/>
+<colspec colname="c3" align="left" colwidth="1.8*"/>
+<colspec colname="c4" align="left" colwidth="1.8*"/>
+<colspec colname="c5" align="left" colwidth="1.2*"/>
+<colspec colname="c6" align="left" colwidth="2*"/>
+<thead>
+<row>
+<entry>RBP gene</entry>
+<entry>RNA binding domain</entry>
+<entry>Developmental function</entry>
+<entry>Post-transcriptional function</entry>
+<entry>RNA targets<superscript>1</superscript></entry>
+<entry>References</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry namest="c1" nameend="c6" align="center"><emphasis role="bold">RBPs function during germline and early embryo development</emphasis></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gld-1" role="_blank">gld-1</ulink></emphasis></entry>
+<entry>Maxi-KH</entry>
+<entry>Female meiotic prophase progression, germline sex determination, entry of meiotic development, germ cell apoptosis</entry>
+<entry>Translational repressor</entry>
+<entry>Multiple</entry>
+<entry><link linkend="bib15">Francis et al., 1995a</link><!--: PMID 7713419-->; <link linkend="bib16">Francis et al., 1995b</link><!--: PMID 7713420-->; <link linkend="bib30">Jones and Schedl, 1995</link><!--: PMID 7601353-->; <link linkend="bib26">Jan et al., 1999</link><!--: PMID 9878068-->; <link linkend="bib7">Clifford et al., 2000</link><!--: PMID 11076749-->; <link linkend="bib43">Lee and Schedl, 2001</link><!--: PMID 11562350-->; <link linkend="bib44">2004</link><!--: PMID 15105376-->; <link linkend="bib78">Xu et al., 2001</link><!--: PMID 11729149-->; <link linkend="bib48">Marin and Evans, 2003</link><!--: PMID 12736207-->; <link linkend="bib52">Mootz et al., 2004</link><!--: PMID 15201219--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gld-3" role="_blank">gld-3</ulink></emphasis></entry>
+<entry>KH-like</entry>
+<entry>Gemline sex determination, germline survival, embryo development</entry>
+<entry>Translational activator?</entry>
+<entry>Unknown</entry>
+<entry><link linkend="bib14">Eckmann et al., 2002</link><!--: PMID 12431376-->; <link linkend="bib75">Wang et al., 2002</link><!--: PMID 12239571--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fbf-1" role="_blank">fbf-1</ulink>/-2<superscript>2</superscript></emphasis></entry>
+<entry>PUF</entry>
+<entry>Gemline sex determination, stem cell maintenance</entry>
+<entry>Translational repressor</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gld-1" role="_blank">gld-1</ulink></emphasis>, <emphasis>gld-3s</emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fbf-1" role="_blank">fbf-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fbf-2" role="_blank">fbf-2</ulink></emphasis></entry>
+<entry><link linkend="bib80">Zhang et al., 1997</link><!--: PMID 9393998-->; <link linkend="bib8">Crittenden et al., 2002</link><!--: PMID 12050669-->; <link linkend="bib13">Eckmann et al., 2004</link><!--: PMID 15454534-->; <link linkend="bib42">Lamont et al., 2004</link><!--: PMID 15525531--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=puf-3" role="_blank">puf-3</ulink></emphasis> to <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=puf-10" role="_blank">puf-10</ulink></emphasis><superscript>2</superscript></entry>
+<entry>PUF</entry>
+<entry>Meiotic division of primary spermatocytes (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=puf-8" role="_blank">puf-8</ulink></emphasis>)</entry>
+<entry>Unknown</entry>
+<entry>Unknown</entry>
+<entry><link linkend="bib43">Lee and Schedl, 2001</link><!--: PMID 11562350-->; <link linkend="bib76">Wickens et al., 2001</link><!--: PMID 12762036-->; <link linkend="bib67">Subramaniam and Seydoux, 2003</link><!--: PMID 12546787--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=nos-1" role="_blank">nos-1</ulink>/-2</emphasis></entry>
+<entry>Nanos RNA binding</entry>
+<entry>Germline survival (with <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=nos-3" role="_blank">nos-3</ulink></emphasis>?)</entry>
+<entry>Unknown</entry>
+<entry>Unknown</entry>
+<entry><link linkend="bib39">Kraemer et al., 1999</link><!--: PMID 10508609-->; <link linkend="bib66">Subramaniam and Seydoux, 1999</link><!--: PMID 10518502--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=nos-3" role="_blank">nos-3</ulink></emphasis></entry>
+<entry>Nanos RNA binding</entry>
+<entry>Gemline sex determination, entry of meiotic development</entry>
+<entry>Translational activator?</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gld-1" role="_blank">gld-1</ulink></emphasis>?</entry>
+<entry><link linkend="bib39">Kraemer et al., 1999</link><!--: PMID 10508609-->; <link linkend="bib24">Hansen et al., 2004</link><!--: PMID 14660440--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=daz-1" role="_blank">daz-1</ulink></emphasis></entry>
+<entry>RRM</entry>
+<entry>Female meiotic prophase progression</entry>
+<entry>Unknown</entry>
+<entry>Unknown</entry>
+<entry><link linkend="bib31">Karashima et al., 2000</link><!--: PMID 10662646--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=oma-1" role="_blank">oma-1</ulink>/-2</emphasis> (<emphasis>moe-1/-2</emphasis>)</entry>
+<entry>Zn-finger (C-x8-C-x5- C-x3-H type)</entry>
+<entry>Oocyte maturation</entry>
+<entry>Unknown</entry>
+<entry>Unknown</entry>
+<entry><link linkend="bib11">Detwiler et al., 2001</link><!--: PMID 11702779-->; <link linkend="bib62">Shimada et al., 2002</link><!--: PMID 12296824--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pgl-1" role="_blank">pgl-1</ulink></emphasis></entry>
+<entry>RGG box</entry>
+<entry>P-Granule maintenance, early germ cell proliferation/ differentiation</entry>
+<entry>Unknown</entry>
+<entry>Unknown</entry>
+<entry><link linkend="bib34">Kawasaki et al., 1998</link><!--: PMID 9741628--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glh-1" role="_blank">glh-1</ulink></emphasis> to <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glh-4" role="_blank">glh-4</ulink></emphasis></entry>
+<entry>DEAD/ DEAH box, Zinc knuckle (CCHC)</entry>
+<entry>Oogenesis and spermatogenesis (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glh-1" role="_blank">glh-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glh-4" role="_blank">glh-4</ulink></emphasis> redundantly)</entry>
+<entry>RNA helicase</entry>
+<entry>Unknown</entry>
+<entry><link linkend="bib23">Gruidl et al., 1996</link><!--: PMID 8943022-->; <link linkend="bib41">Kuznicki et al., 2000</link><!--: PMID 10851135--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pie-1" role="_blank">pie-1</ulink></emphasis></entry>
+<entry>Zn-finger (C-x8-C-x5- C-x3-H type)</entry>
+<entry>Embryonic germline specification and maintenance</entry>
+<entry>Translational activator?</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=nos-2" role="_blank">nos-2</ulink></emphasis>?</entry>
+<entry><link linkend="bib49">Mello et al., 1992</link><!--: PMID 1623520-->; <link linkend="bib50">Mello et al., 1996</link><!--: PMID 8751440-->; <link linkend="bib73">Tenenhaus et al., 2001</link><!--: PMID 11316796--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mex-3" role="_blank">mex-3</ulink></emphasis></entry>
+<entry>KH</entry>
+<entry>Specifying the fate of the germ line blastomere and control anterior blastomere in early embryo</entry>
+<entry>Translational repressor?</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pal-1" role="_blank">pal-1</ulink></emphasis></entry>
+<entry><link linkend="bib12">Draper et al., 1996</link><!--: PMID 8861905-->; <link linkend="bib25">Huang et al., 2002</link><!--: PMID 11830574-->; <link linkend="bib52">Mootz et al., 2004</link><!--: PMID 15201219--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mex-5" role="_blank">mex-5</ulink>/-6</emphasis></entry>
+<entry>Zn-finger (C-x8-C-x5- C-x3-H type)</entry>
+<entry>Soma/germline asymmetry in early embryo</entry>
+<entry>Unknown</entry>
+<entry>Unknown</entry>
+<entry><link linkend="bib61">Schubert et al., 2000</link><!--: PMID 10882103--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pos-1" role="_blank">pos-1</ulink></emphasis></entry>
+<entry>Zn-finger (C-x8-C-x5- C-x3-H type)</entry>
+<entry>Specifying the fate of the germline blastomere in early embryo</entry>
+<entry>Translational repressor</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis></entry>
+<entry><link linkend="bib68">Tabara et al., 1999a</link><!--: PMID 9834181-->; <link linkend="bib56">Ogura et al., 2003</link><!--: PMID 12702662--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=spn-4" role="_blank">spn-4</ulink></emphasis></entry>
+<entry>RRM</entry>
+<entry>Soma/germline asymmetry in early embryo</entry>
+<entry>Translational activator</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis></entry>
+<entry><link linkend="bib20">Gomes et al., 2001</link><!--: PMID 11684665-->; <link linkend="bib56">Ogura et al., 2003</link><!--: PMID 12702662--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fog-1" role="_blank">fog-1</ulink> (cpb-4)</emphasis></entry>
+<entry>RRM, Zn-finger (C2H2 type)</entry>
+<entry>Gemline sex determination</entry>
+<entry>Cytoplasmic poly(A) element binding?</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fog-1" role="_blank">fog-1</ulink></emphasis>?</entry>
+<entry><link linkend="bib46">Luitjens et al., 2000</link><!--: PMID 11040214-->; <link linkend="bib27">Jin et al., 2001a</link><!--: PMID 11150246-->; <link linkend="bib28">2001b</link><!--: PMID 11779801--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cpb-1" role="_blank">cpb-1</ulink></emphasis></entry>
+<entry>RRM, Zn-finger (C2H2 type)</entry>
+<entry>Spermatogenesis</entry>
+<entry>Cytoplasmic poly(A) element binding?</entry>
+<entry>Unknown</entry>
+<entry><link linkend="bib46">Luitjens et al., 2000</link><!--: PMID 11040214--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mog-1" role="_blank">mog-1</ulink>/-4/-5</emphasis></entry>
+<entry>DEAD/ DEAH box</entry>
+<entry>Gemline sex determination, embryo development</entry>
+<entry>RNA helicase</entry>
+<entry>Unknown</entry>
+<entry><link linkend="bib57">Puoti and Kimble, 1999</link><!--: PMID 10022905-->; <link linkend="bib58">Puoti and Kimble, 2000</link><!--: PMID 10737793--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rnp-4" role="_blank">rnp-4</ulink> (Ce-Y14)</emphasis></entry>
+<entry>RRM</entry>
+<entry>Gemline sex determination, embryo development</entry>
+<entry>Exon-junction complex?</entry>
+<entry>Unknown</entry>
+<entry><link linkend="bib33">Kawano et al., 2004</link><!--: PMID 14706697--></entry>
+</row>
+<row>
+<entry namest="c1" nameend="c6" align="center"><emphasis role="bold">RBPs function in RNAi/miRNA processes (germ line and soma)</emphasis></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=dcr-1" role="_blank">dcr-1</ulink></emphasis></entry>
+<entry>DEAD/ DEAH box, DS-RBD, PAZ</entry>
+<entry>Processing of pre-miRNA and long dsRNA, oogenesis</entry>
+<entry>RNase endonuclease</entry>
+<entry>Pre-miRNA, dsRNA</entry>
+<entry><link linkend="bib22">Grishok et al., 2001</link><!--: PMID 11461699-->; <link linkend="bib36">Ketting et al., 2001</link><!--: PMID 11641272-->; <link linkend="bib38">Knight and Bass, 2001</link><!--: PMID 11486053--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=alg-1" role="_blank">alg-1</ulink>/-2</emphasis></entry>
+<entry>PAZ</entry>
+<entry>miRNA dependent translational repression and RNAi</entry>
+<entry>RISC complex</entry>
+<entry>Short ssRNA</entry>
+<entry><link linkend="bib22">Grishok et al., 2001</link><!--: PMID 11461699--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rde-1" role="_blank">rde-1</ulink></emphasis></entry>
+<entry>PAZ</entry>
+<entry>miRNA dependent translational repression and RNAi</entry>
+<entry>RISC complex</entry>
+<entry>Short ssRNA</entry>
+<entry><link linkend="bib69">Tabara et al., 1999b</link><!--: PMID 10535731-->; <link linkend="bib70">Tabara et al., 2002</link><!--: PMID 12110183--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ppw-1" role="_blank">ppw-1</ulink></emphasis></entry>
+<entry>PAZ</entry>
+<entry>Germline RNAi</entry>
+<entry>RISC complex</entry>
+<entry>Short ssRNA</entry>
+<entry><link linkend="bib74">Tijsterman et al., 2002</link><!--: PMID 12225671--></entry>
+</row>
+<row>
+<entry namest="c1" nameend="c6" align="center"><emphasis role="bold">RBPs function in somatic development</emphasis></entry>
+</row>
+<row>
+<entry namest="c1" nameend="c6" align="center">RBP function in primary sex determination</entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fox-1" role="_blank">fox-1</ulink></emphasis></entry>
+<entry>RRM</entry>
+<entry>Somatic sex determination, X-chromosome counting</entry>
+<entry>Unknown</entry>
+<entry>Unknown</entry>
+<entry><link linkend="bib55">Nicoll et al., 1997</link><!--: PMID 9217163-->; <link linkend="bib64">Skipper et al., 1999</link><!--: PMID 9927456--></entry>
+</row>
+<row>
+<entry namest="c1" nameend="c6" align="center">RBPs function in neuromuscular system</entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-75" role="_blank">unc-75</ulink></emphasis></entry>
+<entry>RRM</entry>
+<entry>Fine tuning of synaptic transmission</entry>
+<entry>Putative splicing factor</entry>
+<entry>Unknown</entry>
+<entry><link linkend="bib45">Loria et al., 2003</link><!--: PMID 12906792--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=exc-7" role="_blank">exc-7</ulink></emphasis></entry>
+<entry>RRM</entry>
+<entry>Fine tuning of synaptic transmission</entry>
+<entry>Putative splicing factor</entry>
+<entry>Unknown</entry>
+<entry><link linkend="bib45">Loria et al., 2003</link><!--: PMID 12906792--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=etr-1" role="_blank">etr-1</ulink></emphasis></entry>
+<entry>RRM</entry>
+<entry>Muscle formation and function</entry>
+<entry>Unknown</entry>
+<entry>Unknown</entry>
+<entry><link linkend="bib51">Milne and Hodgkin, 1999</link><!--: PMID 10556089--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mec-8" role="_blank">mec-8</ulink></emphasis></entry>
+<entry>RRM</entry>
+<entry>Specific alternative splices of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-52" role="_blank">unc-52</ulink></emphasis> transcripts in hypodermis</entry>
+<entry>Putative splicing factor</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-52" role="_blank">unc-52</ulink></emphasis>?</entry>
+<entry><link linkend="bib47">Lundquist et al., 1996</link><!--: PMID 8625846-->; <link linkend="bib65">Spike et al., 2002</link><!--: PMID 12397108--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=msi-1" role="_blank">msi-1</ulink></emphasis></entry>
+<entry>RRM</entry>
+<entry>Male mating behavior</entry>
+<entry>Unknown</entry>
+<entry>Unknown</entry>
+<entry><link linkend="bib79">Yoda et al., 2000</link><!--: PMID 11122376--></entry>
+</row>
+<row>
+<entry namest="c1" nameend="c6" align="center">RBP function in excretory cells</entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=exc-7" role="_blank">exc-7</ulink></emphasis></entry>
+<entry>RRM</entry>
+<entry>Excretory canals development.</entry>
+<entry>Putative splicing factor</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sma-1" role="_blank">sma-1</ulink></emphasis></entry>
+<entry><link linkend="bib18">Fujita et al., 2003</link><!--: PMID 12679103--></entry>
+</row>
+<row>
+<entry namest="c1" nameend="c6" align="center">RBP function as a heterochronic regulator</entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-28" role="_blank">lin-28</ulink></emphasis></entry>
+<entry>Cold Shock Domain, Zinc knuckle (CCHC)</entry>
+<entry>A regulator of developmental timing in the first larval stage</entry>
+<entry>Unknown</entry>
+<entry>Unknown</entry>
+<entry><link linkend="bib53">Moss et al., 1997</link><!--: PMID 9054503-->; <link linkend="bib54">Moss and Tang, 2003</link><!--: PMID 12798299--></entry>
+</row>
+<row rowsep="0">
+<entry namest="c1" nameend="c6"><emphasis role="bold">Footnotes</emphasis></entry>
+</row>
+<row rowsep="0">
+<entry namest="c1" nameend="c6">Proteins known to bind RBPs and regulate RNA metabolism such as <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-2;class=protein" role="_blank">GLD-2</ulink> (<link linkend="bib75">Wang et al., 2002</link><!-- PMID 12239571-->; <link linkend="bib13">Eckmann et al., 2004</link><!-- PMID 15454534-->) and <ulink url="http://www.wormbase.org/db/seq/protein?name=ATX-2;class=protein" role="_blank">ATX-2</ulink> (<link linkend="bib37">Kiehl et al., 2000</link><!-- PMID 11303786-->; <link linkend="bib6">Ciosk et al., 2004</link><!-- PMID 15342467-->) are not included in this table.</entry>
+</row>
+<row rowsep="0">
+<entry namest="c1" nameend="c6"><superscript>1</superscript> Only characterized RNA targets are listed. However, most RBPs likely have additional RNA targets. RNA targets with “?” indicate that the direct relationship between RBPs and RNA targets has not yet been proven.</entry>
+</row>
+<row rowsep="0">
+<entry namest="c1" nameend="c6"><superscript>2</superscript> <emphasis>C. elegans</emphasis> has ~10 <emphasis>puf</emphasis> genes while <emphasis>Drosophila</emphasis> and mammals have fewer, suggesting that an expansion in the <emphasis>puf</emphasis> family has occurred in <emphasis>C. elegans</emphasis>. Each PUF may have unique function while different combinations of PUF proteins have redundant functions, suggesting that each PUF likely has its own RNA targets and some of the targets may be regulated by more than one PUF.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+    </sect1>
+    <sect1>
+        <title>RBPs function during germline and early embryo development</title>
+        <para>Many RBPs have essential functions during late germline and early embryo development
+            (<link linkend="table1">Table 1</link>) because post-transcriptional control of maternal mRNAs is a predominant
+            mechanism for temporal/spatial regulation of gene expression during this period (<link linkend="bib77">Wickens et al., 2000</link>; <link linkend="bib10">de Moor and Richter, 2001</link><!-- PMID 11131527-->; <link linkend="bib40">Kuersten and Goodwin, 2003</link><!-- PMID 12897774-->). In general, RBPs bind regulatory sequences that are usually located in 5’UTR
+            and/or 3’UTR of the mRNAs to exert post-transcriptional regulation. During meiotic
+            prophase progression, chromosomes become condensed at diakinesis, and the genome becomes
+            transcriptionally silent (<link linkend="bib19">Gibert et al., 1984</link><!-- PMID 6234041-->; <link linkend="bib60">Schisa et al., 2001</link><!-- PMID 11262230-->; <link linkend="bib35">Kelly et al., 2002</link><!-- PMID 11807039-->). Therefore, during the process of late
+            oogenesis (and late spermatogenesis), fertilization/ meiotic divisions, and early
+            embryogenesis, post-transcriptional control of pre-existing mRNAs, mainly through
+            localization and translational regulation, is the predominant mechanism regulating
+            protein expression. However, post-transcriptional control in the germline also occurs
+            during periods of active transcription (distal mitotic region through the pachytene
+            stage; <link linkend="bib8">Crittenden et al., 2002</link><!-- PMID 12050669-->; <link linkend="bib48">Marin and Evans, 2003</link><!-- PMID 12736207-->;
+            <link linkend="bib24">Hansen et al., 2004</link><!-- PMID 14660440-->; <link linkend="bib43">Lee and Schedl, 2001</link><!-- PMID 11562350-->, <link linkend="bib44">2004</link><!-- PMID 15105376-->).</para>
+        <para>As in other systems, RBP regulatory networks are beginning to be uncovered. For
+            example, <ulink url="http://www.wormbase.org/db/seq/protein?name=FBF-1;class=protein" role="_blank">FBF-1</ulink>/-2 are repressors while <ulink url="http://www.wormbase.org/db/seq/protein?name=NOS-3;class=protein" role="_blank">NOS-3</ulink> functions redundantly with a poly-A
+            polymerase, <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-2;class=protein" role="_blank">GLD-2</ulink>, as a putative direct activator of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gld-1" role="_blank">gld-1</ulink></emphasis> mRNA
+            translation (<link linkend="bib8">Crittenden et al., 2002</link><!-- PMID 12050669-->; <link linkend="bib24">Hansen et al., 2004</link><!-- PMID 14660440-->). <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> in turn is a putative repressor of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mex-3" role="_blank">mex-3</ulink></emphasis> mRNA
+            translation and <ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-3;class=protein" role="_blank">MEX-3</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> are spatially non-overlapping repressors of the
+            translation of the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pal-1" role="_blank">pal-1</ulink></emphasis> mRNA (<link linkend="bib52">Mootz et al., 2004</link><!-- PMID 15201219-->).
+            Interestingly, a number of RBPs and some specific mRNAs are localized, at least
+            transiently, to germline specific granules, P granules (<link linkend="bib60">Schisa et al., 2001</link><!-- PMID 11262230-->; <link linkend="bib3">Barbee et al., 2002</link><!-- PMID 12225665--> and references therein). However, the
+            function of these associations, particularly in regard to post-transcriptional control,
+            remains to be understood.</para>
+        <para>Germline sex determination and the proliferation vs. meiotic development decision
+            (stem cell maintenance) rely heavily on post-transcriptional mechanisms in the control
+            of these processes (<link linkend="table1">Table 1</link>). Interestingly, the RBPs, <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-3;class=protein" role="_blank">GLD-3</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=FBF-1;class=protein" role="_blank">FBF-1</ulink>/-2, and <ulink url="http://www.wormbase.org/db/seq/protein?name=NOS-3;class=protein" role="_blank">NOS-3</ulink>
+            function in both processes (<link linkend="bib15">Francis et al., 1995a</link><!-- PMID 7713419-->; <link linkend="bib16">Francis et al., 1995b</link><!-- PMID 7713420-->; <link linkend="bib30">Jones and Schedl, 1995</link><!-- PMID 7601353-->; <link linkend="bib80">Zhang et al., 1997</link><!-- PMID 9393998-->;
+            <link linkend="bib39">Kraemer et al., 1999</link><!-- PMID 10508609-->; <link linkend="bib8">Crittenden et al., 2002</link><!-- PMID 12050669-->; <link linkend="bib14">Eckmann et al., 2002</link><!-- PMID 12431376-->; <link linkend="bib24">Hansen et al., 2004</link><!-- PMID 14660440-->). It is unclear at this
+            time whether the observation that these RBPs function in both processes is due to (1) a
+            temporal/spatial regulatory coordination between the sex determination and the
+            proliferation vs. meiosis decisions or (2) the various RBPs having numerous mRNA
+            targets, and the sex determination and the proliferation vs. meiosis phenotypes are just
+            the processes that have been uncovered genetically so far. Other RBPs are known to
+            function in regulating the sex determination decision, such as <ulink url="http://www.wormbase.org/db/seq/protein?name=FOG-1;class=protein" role="_blank">FOG-1</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=MOG-1;class=protein" role="_blank">MOG-1</ulink>/-4/-5, and
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=RNP-4;class=protein" role="_blank">RNP-4</ulink> (Ce-Y14) (<link linkend="bib57">Puoti et al, 1999</link><!-- PMID 10022905-->, <link linkend="bib58">2000</link><!-- PMID 10737793-->; <link linkend="bib27">Jin et al., 2001a</link><!-- PMID 11150246-->; <link linkend="bib33">Kawano et al., 2004</link><!-- PMID 14706697-->). It is currently unknown if
+            they also function in the proliferation vs. meiotic development decision.</para>
+        <para>Several RBPs have been shown to function in meiotic prophase progression,
+            gametogenesis and oocyte maturation such as <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-3;class=protein" role="_blank">GLD-3</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=DAZ-1;class=protein" role="_blank">DAZ-1</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=OMA-1;class=protein" role="_blank">OMA-1</ulink>/-2, <ulink url="http://www.wormbase.org/db/seq/protein?name=PGL-1;class=protein" role="_blank">PGL-1</ulink>, and
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=GLH-1;class=protein" role="_blank">GLH-1</ulink>/-2/-3/-4. Others (<ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-3;class=protein" role="_blank">MEX-3</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=PIE-1;class=protein" role="_blank">PIE-1</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=POS-1;class=protein" role="_blank">POS-1</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=SPN-4;class=protein" role="_blank">SPN-4</ulink>) have also been implicated
+            in regulating aspects of early embryo development. These RBPs likely regulate the
+            temporal and spatial pattern of protein expression of subsets of maternal mRNAs, which
+            is crucial in the absence of <emphasis>de novo</emphasis> mRNA synthesis.</para>
+    </sect1>
+    <sect1>
+        <title>RBPs function in somatic development</title>
+        <para>Post-transcriptional control is also important in somatic development as a number of
+            RBPs that have somatic tissue-specific mutant phenotypes have been identified
+            genetically (<link linkend="table1">Table 1</link>). Unlike RBPs that function in germline and early embryo
+            development, several RBPs essential for somatic development are proposed to act as
+            splicing factors, presumably regulating tissue-specific alternative splicing of their
+            mRNA targets. For example, two RRM domain-containing RBPs, <ulink url="http://www.wormbase.org/db/seq/protein?name=MEC-8;class=protein" role="_blank">MEC-8</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=UNC-75;class=protein" role="_blank">UNC-75</ulink>, localize to
+            nuclear speckles in the hypodermis and nervous system, respectively (<link linkend="bib65">Spike et al., 2002</link><!-- PMID12397108-->; <link linkend="bib45">Loria et al., 2003</link><!-- PMID 12906792-->), consistent with a role in pre-mRNA
+            splicing. Furthermore, <ulink url="http://www.wormbase.org/db/seq/protein?name=MEC-8;class=protein" role="_blank">MEC-8</ulink> regulates the alternative splicing of
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-52" role="_blank">unc-52</ulink></emphasis> pre-mRNA primarily in the hyperdermis (<link linkend="bib65">Spike et al., 2002</link><!-- PMID 12397108-->). Although this regulation is likely direct, it has not yet been proved.
+            In addition, other <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mec-8" role="_blank">mec-8</ulink></emphasis> loss-of-function phenotypes are likely
+            independent of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-52" role="_blank">unc-52</ulink></emphasis> function, suggesting that <ulink url="http://www.wormbase.org/db/seq/protein?name=MEC-8;class=protein" role="_blank">MEC-8</ulink> regulates
+            additional pre-mRNAs. Another RRM domain-containing RBP, <ulink url="http://www.wormbase.org/db/seq/protein?name=EXC-7;class=protein" role="_blank">EXC-7</ulink>, is nuclear localized in
+            embryonic excretory canal cells and throughout the nervous system and is proposed to
+            regulate its mRNA targets through the control of splicing and/or stability (<link linkend="bib18">Fujita et al., 2003</link><!-- PMID 12679103-->; <link linkend="bib45">Loria et al., 2003</link><!-- PMID 12906792-->).</para>
+        <para>Somatic RBPs are not limited to regulating RNA processing in the nucleus, as two other
+            somatic RBPs, <ulink url="http://www.wormbase.org/db/seq/protein?name=MSI-1;class=protein" role="_blank">MSI-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-28;class=protein" role="_blank">LIN-28</ulink>, are enriched in the cytoplasm (<link linkend="bib53">Moss et al., 1997</link><!-- PMID 9054503-->; <link linkend="bib79">Yoda et al., 2000</link><!-- PMID 11122376-->). RNAi and miRNA dependent regulation occur
+            during both germline and somatic development and recent discoveries of RBPs functioning
+            in RNAi and miRNA processes, such as <ulink url="http://www.wormbase.org/db/seq/protein?name=DCR-1;class=protein" role="_blank">DCR-1</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=ALG-1;class=protein" role="_blank">ALG-1</ulink>/-2, <ulink url="http://www.wormbase.org/db/seq/protein?name=PPW-1;class=protein" role="_blank">PPW-1</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=RDE-1;class=protein" role="_blank">RDE-1</ulink>, and <ulink url="http://www.wormbase.org/db/seq/protein?name=RDE-4;class=protein" role="_blank">RDE-4</ulink> (<link linkend="table1">Table 1</link>),
+            has provided a glimpse into understanding this new mode of post-transcriptional control in <emphasis>C. elegans</emphasis> development.</para>
+    </sect1>
+    <sect1>
+        <title>RNA targets of RBPs</title>
+        <para>Several approaches have been taken to identify RNA targets of RBPs or to identify RBPs
+            that bind to known regulatory sequences (<link linkend="bib47">Lundquist et al., 1996</link><!-- PMID 8625846-->; <link linkend="bib80">Zhang et al., 1997</link><!-- PMID 9393998-->; <link linkend="bib26">Jan et al., 1999</link><!-- PMID 9878068-->; <link linkend="bib43">Lee and Schedl, 2001</link><!-- PMID 11562350-->; <link linkend="bib78">Xu et al., 2001</link><!-- PMID 11729149-->; <link linkend="bib18">Fujita et al., 2003</link><!-- PMID 12679103-->; <link linkend="bib48">Marin and Evans, 2003</link><!-- PMID 12736207-->; <link linkend="bib52">Mootz et al., 2004</link><!-- PMID 15201219-->). In general, genetic
+            analysis indicates that the RBPs must regulate multiple RNA targets because loss of an
+            RBP has more pleiotropic mutant phenotypes than mis-regulations of the known mRNA
+            targets. For example, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fbf-1" role="_blank">fbf-1</ulink>/-2</emphasis> loss-of-function phenotype suggests
+            that <ulink url="http://www.wormbase.org/db/seq/protein?name=FBF-1;class=protein" role="_blank">FBF-1</ulink>/-2 must bind to other mRNAs to maintain germline stem cells in addition to
+            binding <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink></emphasis> mRNA to regulate germline sex. Indeed, <ulink url="http://www.wormbase.org/db/seq/protein?name=FBF-1;class=protein" role="_blank">FBF-1</ulink>/-2 have
+            been shown to bind and repress the translation of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gld-1" role="_blank">gld-1</ulink></emphasis> mRNA to
+            regulate germline stem cell proliferation (<link linkend="bib8">Crittenden et al., 2002</link><!-- PMID 12050669-->).
+            These results support the view that a comprehensive understanding of how such RBPs
+            control development requires the identification of many or all of their mRNA targets.
+            The identification of multiple mRNA targets will allow one to identify sequences and/or
+            structures that distinguish target from non-target RNAs, as well to determine the type
+            of RNA metabolism the RBP controls.</para>
+        <para>RNA targets of RBPs have been identified by candidate gene approaches (“educated
+            guess”), as genes that encode putative targets that have similar (or opposite) mutant
+            phenotypes to that of RBP, and/or by studying the expression patterns of the RBPs and
+            the proteins of their putative mRNA targets. For example, 1) Mutations in
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mec-8" role="_blank">mec-8</ulink></emphasis> strongly enhance the phenotype of specific mutations in
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-52" role="_blank">unc-52</ulink></emphasis> and <ulink url="http://www.wormbase.org/db/seq/protein?name=MEC-8;class=protein" role="_blank">MEC-8</ulink> controls alternative splicing of
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-52" role="_blank">unc-52</ulink></emphasis> transcripts (<link linkend="bib47">Lundquist et al., 1996</link><!-- PMID 8625846-->; <link linkend="bib65">Spike et al., 2002</link><!-- PMID 12397108-->). 2) <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=exc-7" role="_blank">exc-7</ulink></emphasis> mutants exhibit synergistic
+            excretory canal defects with mutations in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sma-1" role="_blank">sma-1</ulink></emphasis> and <ulink url="http://www.wormbase.org/db/seq/protein?name=EXC-7;class=protein" role="_blank">EXC-7</ulink> binds to
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sma-1" role="_blank">sma-1</ulink></emphasis> mRNA (<link linkend="bib18">Fujita et al., 2003</link><!-- PMID 12679103-->). 3) <ulink url="http://www.wormbase.org/db/seq/protein?name=GLP-1;class=protein" role="_blank">GLP-1</ulink> is
+            mis-expressed in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pos-1" role="_blank">pos-1</ulink></emphasis> mutant embryos and <ulink url="http://www.wormbase.org/db/seq/protein?name=POS-1;class=protein" role="_blank">POS-1</ulink> binds to the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis>
+            3’UTR (<link linkend="bib56">Ogura et al., 2003</link><!-- PMID 12702662-->). 4) <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> is a cytoplasmic RNA binding protein
+            that represses the translation of several mRNA targets in the distal germline. It was
+            also known that <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mes-3" role="_blank">mes-3</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pal-1" role="_blank">pal-1</ulink></emphasis> mRNAs are
+            translationally repressed in the distal germ line. Therefore it was directly tested and
+            confirmed that <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> binds and represses the translation of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mes-3" role="_blank">mes-3</ulink>
+            </emphasis>and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pal-1" role="_blank">pal-1</ulink></emphasis> mRNAs (<link linkend="bib78">Xu et al., 2001</link><!-- PMID 11729149-->; <link linkend="bib52">Mootz et al., 2004</link><!-- PMID 15201219-->). Because indirect regulation by the RBP also fits the
+            criteria used to predict the candidate mRNA target, these approaches require the
+            experimental test of whether the RBP binds to the candidate mRNA target directly.</para>
+        <para>Gain-of-function mutations in the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink></emphasis> and the
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink></emphasis> 3’UTRs (<link linkend="bib1">Ahringer and Kimble, 1991</link><!-- PMID 1702880-->; <link linkend="bib21">Goodwin et al., 1993</link><!-- PMID 8402916-->), which result in deregulated expression, provided a starting
+            point for molecular identification of RBPs that function in translational repression of
+            these mRNAs. For example, <ulink url="http://www.wormbase.org/db/seq/protein?name=FBF-1;class=protein" role="_blank">FBF-1</ulink>/-2 were identified by the yeast three-hybrid system
+            using the 3’UTR of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink></emphasis> mRNA as a bait. <ulink url="http://www.wormbase.org/db/seq/protein?name=FBF-1;class=protein" role="_blank">FBF-1</ulink>/-2 bind to the 3’UTR
+            of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink></emphasis> to repress the male sexual fate in the <emphasis>C. elegans</emphasis> hermaphrodite germline (<link linkend="bib80">Zhang et al., 1997</link><!-- PMID 9393998-->). <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> was
+            found to bind to the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink></emphasis> 3’UTR, also by using the yeast
+            three-hybrid system (<link linkend="bib26">Jan et al., 1999</link><!-- PMID 9878068-->). <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> was also identified as
+            binding to the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis> 3’UTR biochemically (<link linkend="bib48">Marin and Evans, 2003</link><!-- PMID 12736207-->).</para>
+        <para>More direct methods to identify multiple endogenous RNAs associated with RBPs using
+            high-throughput gene array technologies have been described (<link linkend="bib71">Tenenbaum et al., 2000</link><!-- PMID 11121017-->, <link linkend="bib72">2002</link><!-- PMID 12054896-->; <link linkend="bib5">Brown et al., 2001</link><!-- PMID 11719188-->). They are based
+            on the isolation of endogenous RNA-protein complexes under optimized conditions mostly
+            by immunoprecipitation (IP). The isolated endogenous RNAs are then identified by
+            microarray analysis. This approach has the potential to identify most RNA targets of an
+            RPB without prior knowledge of mutant phenotypes or expression patterns. Mis-regulations
+            of such RNA targets may have small effects or contributions to phenotypes of the RBP.
+            This approach can also uncover mRNA targets from functionally redundant paralagous genes
+            that are co-regulated by an RBP (<link linkend="bib43">Lee and Schedl, 2001</link><!-- PMID 11562350-->, <link linkend="bib44">2004</link><!-- PMID 15105376-->).</para>
+        <para>Sixteen mRNA targets of <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> have been identified by a similar approach (<link linkend="bib43">Lee and Schedl, 2001</link><!-- PMID 11562350-->, <link linkend="bib44">2004</link><!-- PMID 15105376-->). Functional <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> was
+            immunoprecipitated from cytosol extracts. The isolated mRNAs were identified after
+            subtractive hybridization/cloning/sequencing. <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> represses the translation of
+            several targets through direct binding (<link linkend="bib43">Lee and Schedl, 2001</link><!-- PMID 11562350-->, <link linkend="bib44">2004</link><!-- PMID 15105376-->). Recently, an essentially identical experiment was performed with microarray
+            analysis to detect specifically enriched mRNAs in the <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> IP. This resulted in the
+            identification of significantly more mRNAs (129), which are enriched more than two fold
+            (p <symbol role="symbolfont">&#x003C;</symbol> 0.05) in the <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> IP over the
+            control IP (Lee, M.-H., Reinke, V., and Schedl, T., unpubl. data). Essentially, all
+            targets identified previously were identified again. These and other results indicate
+            that most of the 129 mRNA targets are likely to interact with <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> <emphasis>in
+            vivo</emphasis> and demonstrate that there is a significant increase in mRNA target
+            detection power with the microarray analysis compared with the subtractive
+            hybridization/cloning/sequencing strategy.</para>
+        <para>Several efforts are currently undertaken to identify <emphasis>in vivo</emphasis> mRNA targets of RBPs,
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=PIE-1;class=protein" role="_blank">PIE-1</ulink> (D'Agostino, I., Reinke, V., and Seydoux, G., pers. comm.), <ulink url="http://www.wormbase.org/db/seq/protein?name=DAZ-1;class=protein" role="_blank">DAZ-1</ulink> (Karashima, T.,
+            Sugioka, K., Uesugi, K, Kohara, Y., and Yamamoto, M., pers. comm.), and <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-28;class=protein" role="_blank">LIN-28</ulink> (Moss, E.
+            and Kemper, K., pers. comm.), or to identify <emphasis>in vivo</emphasis> mRNA targets
+            of a putative cytoplasmic poly-A polymerase, <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-2;class=protein" role="_blank">GLD-2</ulink>, that interacts with RBPs (Suh, N.
+            and Kimble, J, pers. comm.).</para>
+    </sect1>
+    <sect1>
+        <title>RNA binding specificity of RBPs</title>
+        <para>One of the important questions to understand the function of RBPs in <emphasis>C. elegans</emphasis> development is how RBPs distinguish their targets from non-targets <emphasis>in
+            vivo</emphasis>. In other words, how RBPs specifically recognize their RNA targets. RBPs
+            may recognize specific sequences, structures, or both, which are present in their RNA
+            targets. Understanding of RNA binding specificity of an RBP can be another way to
+            identify unknown targets that contain similar features, if they have enough information
+            to distinguish targets from non-targets computationally. It will also provide important
+            tools to find the molecular mechanism of the post-transcriptional process that the
+            RBP controls. RNA binding specificity of most RBPs is unknown because their RNA targets
+            are not identified yet. However, RNA binding specificity of <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=FBF-1;class=protein" role="_blank">FBF-1</ulink>/-2 in their
+            mRNA targets are beginning to emerge.</para>
+        <para><ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> has been shown to form a homodimer to bind to two close sites in a single TGE
+            (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink></emphasis>/GLI element) of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink></emphasis> 3’UTR <emphasis>in vitro</emphasis> where one site has a hexanucleotide
+            consensus (<link linkend="bib59">Ryder et al., 2004</link><!-- PMID 14718919-->). Among other mRNA targets of <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink>
+            identified in the <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> IP, thirteen independent <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> binding regions in seven targets
+            have been found where <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> binds 5’UTR, 3’UTR or in the open reading frame (ORF)
+            depending on the target (<link linkend="bib43">Lee and Schedl, 2001</link><!-- PMID11562350-->, <link linkend="bib44">2004</link><!-- PMID 15105376-->, unpubl.
+            data). Interestingly, many <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> binding regions have the hexanucleotide consensus,
+            suggesting it is likely important for <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> binding. However, several <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> binding
+            regions do not contain the hexanucleotide consensus, suggesting that other distinct
+            features that dictate <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> binding likely exist (Lee, M.-H., and Schedl, T., unpubl. data).</para>
+<?newpage?>
+        <para><ulink url="http://www.wormbase.org/db/seq/protein?name=FBF-1;class=protein" role="_blank">FBF-1</ulink>/-2 have been shown to bind to sites that carry crucial UGU(G/A) motif in the
+            3’UTRs of their mRNA targets (<link linkend="bib80">Zhang et al., 1997</link><!-- PMID 9393998-->; <link linkend="bib8">Crittenden et al., 2002</link><!-- PMID 12050669-->; <link linkend="bib13">Eckmann et al., 2004</link><!-- PMID 15454534-->; <link linkend="bib42">Lamont et al., 2004</link><!-- PMID 15525531-->).
+            It is interesting to note that <ulink url="http://www.wormbase.org/db/seq/protein?name=FBF-1;class=protein" role="_blank">FBF-1</ulink>/-2 do not bind to all potential sites that contain
+            UGU(G/A) motif in the 3’UTRs of their mRNA targets (<link linkend="bib13">Eckmann et al., 2004</link><!-- PMID 15454534-->;
+            <link linkend="bib42">Lamont et al., 2004</link><!-- PMID 15525531-->). This suggests that this motif alone is not
+            sufficient to be recognized by <ulink url="http://www.wormbase.org/db/seq/protein?name=FBF-1;class=protein" role="_blank">FBF-1</ulink>/-2 and other distinct features should exist.</para>
+    </sect1>
+    <sect1>
+        <title>Closing remarks</title>
+        <para>The <emphasis>C. elegans</emphasis> genome encodes many RBPs with diverse functions in development, revealing a
+            large layer of post-transcriptional control of RNA metabolism, which had not been
+            previously appreciated in the control of gene expression. Most RBPs with tissue-specific
+            functions are conserved throughout evolution, suggesting that their studies in <emphasis>C. elegans</emphasis> may uncover new conserved biological functions.</para>
+        <para>In general, RBPs likely regulate multiple RNA targets and the identification of many
+            or all RNA targets of RBPs will be an important first step in a comprehensive
+            understanding of how RBPs control <emphasis>C. elegans</emphasis> development. With multiple RNA targets, specific features that distinguish
+            target from non-target RNAs, as well as the type(s) of RNA metabolism that each RBP
+            controls can be determined. Furthermore, with the identity of multiple RNA targets, one
+            can determine whether the RBP regulates all targets by the same mechanism or different
+            targets by distinct mechanisms. Such studies will provide insights into how RBPs exert
+            coordinate control of their RNA targets, thereby affecting development in a concerted fashion.</para>
+    </sect1>
+    <sect1>
+        <title>Acknowledgements</title>
+        <para>We are grateful to Sudhir Nayak for providing information about genes that are
+            annotated to encode RNA-binding proteins in Wormbase and Dave Hansen and members of the
+            Schedl lab for comments on this review. TS is supported by NIH grant GM63310.</para>
+    </sect1>
+    <sect1>
+        <title>References</title>
+		<para/>
+		&rnabindingproteins_Refs;
+</sect1>
+</article>

@@ -1,0 +1,885 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY fig1 SYSTEM 'rtkrasfig1.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'rtkrasfig1leg.xml'>
+<!ENTITY fig2 SYSTEM 'rtkrasfig2.jpg' NDATA JPG>
+<!ENTITY fig2legend SYSTEM 'rtkrasfig2leg.xml'>
+<!ENTITY fig3 SYSTEM 'rtkrasfig3.jpg' NDATA JPG>
+<!ENTITY fig3legend SYSTEM 'rtkrasfig3leg.xml'>
+
+<!ENTITY rtkras_Refs SYSTEM 'rtkrasrefs.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="rtkras_ArticleID">
+    <articleinfo>
+        <!--see DocBook's authorgroup element -->
+        <title>RTK/Ras/MAPK signaling<footnote>
+                <para>Edited by Iva Greenwald. Last revised December 17, 2004. Published February 11, 2006. This chapter should be cited as: Sundaram, M. V. RTK/Ras/MAPK signaling (February 11, 2006), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.80.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+		<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2006 Meera V. Sundaram. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+            </footnote>
+        </title>
+        <!--		<revhistory>
+			<revision>
+				<revnumber>1.0</revnumber>
+				<date>Last revised 12/17/04</date>
+			</revision>
+		</revhistory>
+-->
+        <author>
+            <firstname>Meera V.</firstname>
+            <surname>Sundaram<remark>
+                    <footnote>
+                        <para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:sundaram@mail.med.upenn.edu">sundaram@mail.med.upenn.edu</ulink></para>
+                    </footnote>
+                </remark>
+            </surname>
+            <affiliation>
+                <address>Department of Genetics, University of Pennsylvania, Philadelphia PA 19104-6145 USA</address>
+            </affiliation>
+        </author>
+    </articleinfo>
+    <abstract>
+        <title><emphasis role="bold">Abstract</emphasis></title>
+        <para><emphasis role="bold">Receptor Tyrosine Kinase (RTK)/Ras GTPase/MAP kinase (MAPK) signaling pathways are
+            used repeatedly during metazoan development to control many different biological
+            processes. In the nematode</emphasis> <emphasis><emphasis role="bold">Caenorhabditis elegans</emphasis></emphasis>, <emphasis role="bold">two different RTKs (<ulink url="http://www.wormbase.org/db/seq/protein?name=LET-23;class=protein" role="_blank">LET-23</ulink>/EGFR and
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-15;class=protein" role="_blank">EGL-15</ulink>/FGFR) are known to stimulate <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-60;class=protein" role="_blank">LET-60</ulink>/Ras and a MAPK cascade consisting of the
+            kinases <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-45;class=protein" role="_blank">LIN-45</ulink>/Raf, <ulink url="http://www.wormbase.org/db/seq/protein?name=MEK-2;class=protein" role="_blank">MEK-2</ulink>/MEK and <ulink url="http://www.wormbase.org/db/seq/protein?name=MPK-1;class=protein" role="_blank">MPK-1</ulink>/ERK. This Ras/MAPK cascade is required for
+            multiple developmental events, including induction of vulval, uterine, spicule, <ulink url="http://www.wormbase.org/db/get?name=P12;class=Cell" role="_blank">P12</ulink> and
+            excretory duct cell fates, control of sex myoblast migration and axon guidance, and
+            promotion of germline meiosis. Studies in</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">have provided
+            much insight into the basic framework of this RTK/Ras/MAPK signaling pathway, its
+            regulation, how it elicits cell-type specific responses, and how it interacts with other
+            signaling pathways such as the Wnt and Notch pathways.</emphasis></para>
+    </abstract>
+    <sect1>
+        <title>Introduction</title>
+        <para>Receptor Tyrosine Kinase (RTK)/Ras GTPase/MAP kinase (MAPK) signaling pathways are
+            used repeatedly during metazoan development to control many different biological
+            processes (<link linkend="bib86">Schlessinger, 2000</link><!-- PMID 11057895-->). Mutations affecting RTK/Ras/MAPK
+            signaling cause many human syndromes and diseases, including cancer (<link linkend="bib68">Malumbres and Barbacid, 2002</link><!-- PMID 12778136-->). Studies in <emphasis>C. elegans</emphasis> have provided
+            much insight into the basic framework of this canonical type of Ras pathway, its
+            regulation, how it elicits cell-type specific responses, and how it interacts with other
+            signaling pathways (for recent reviews see <link linkend="bib72">Moghal and Sternberg, 2003</link><!-- PMID 12648474-->;
+            <link linkend="bib101">Sundaram, 2004</link><!-- PMID 15084301-->; <link linkend="bib102">Tan and Kim, 1999</link><!-- PMID 10203824-->; <link linkend="bib107">Wang and Sternberg, 2001</link><!-- PMID 11236714-->).</para>
+        <para><emphasis>C. elegans</emphasis> Ras is called <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-60;class=protein" role="_blank">LET-60</ulink> (<link linkend="bib40">Han and Sternberg, 1990</link><!-- PMID 2257629-->). <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-60;class=protein" role="_blank">LET-60</ulink> Ras acts downstream of at least two different RTKs, <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-23;class=protein" role="_blank">LET-23</ulink> (related to
+            the Epidermal Growth Factor Receptor or EGFR; <link linkend="bib1">Aroian et al., 1990</link><!-- PMID 1979659-->) and
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-15;class=protein" role="_blank">EGL-15</ulink> (related to the Fibroblast Growth Factor Receptor or FGFR; <link linkend="bib26">DeVore et al., 1995</link><!-- PMID 7585964-->). The only known role of <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-60;class=protein" role="_blank">LET-60</ulink> Ras is to stimulate a MAPK cascade
+            consisting of the kinases <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-45;class=protein" role="_blank">LIN-45</ulink> (Raf; <link linkend="bib39">Han et al., 1993</link><!-- PMID 8483497-->), <ulink url="http://www.wormbase.org/db/seq/protein?name=MEK-2;class=protein" role="_blank">MEK-2</ulink> (MEK;
+            <link linkend="bib21">Church et al., 1995</link><!-- PMID 7671816-->; <link linkend="bib62">Kornfeld et al., 1995</link><!-- PMID 7729691-->; <link linkend="bib109">Wu et al., 1995</link><!-- PMID 7729690-->) and <ulink url="http://www.wormbase.org/db/seq/protein?name=MPK-1;class=protein" role="_blank">MPK-1</ulink> (ERK/MAPK; <link linkend="bib64">Lackner et al., 1994</link><!-- PMID 8299936-->; <link linkend="bib108">Wu and Han, 1994</link><!-- PMID 8299935-->). <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-60;class=protein" role="_blank">LET-60</ulink> Ras signaling is required for multiple developmental
+            events, the best studied of which is vulval induction (see <ulink url="http://www.wormbook.org/chapters/www_vulvaldev/vulvaldev.html" role="_blank">Vulval development</ulink>). Genetic screens based on various <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-60" role="_blank">let-60</ulink></emphasis> mutant
+            phenotypes have identified many generally-acting “core” components of the Ras pathway as
+            well as numerous regulators or targets of the pathway (<xref linkend="figure1"/>; <link linkend="table1">Table 1</link>). Indeed, many important Ras pathway genes were first identified in the worm.</para>
+<literallayout></literallayout>
+    <mediaobject id="figure1" xreflabel="Figure 1">
+        <imageobject>
+            <imagedata entityref="fig1" align="center" width="6.2in"/>
+        </imageobject>
+        <textobject>
+			<phrase>figure 1</phrase>
+		</textobject> &fig1legend;</mediaobject>
+<table id="table1" frame="all" rules="all" cellpadding="0" cellspacing="0" width="100%">
+<title><emphasis role="bold">Table 1. Core components, regulators and targets of the</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">RTK/Ras/MAPK signaling pathway.</emphasis> Core components are shown in black, positive regulators or targets are shown in green, and negative regulators or targets are shown in red.</title>
+<tgroup cols="6">
+<colspec colname="c1" align="left" colwidth="0.8*"/>
+<colspec colname="c2" align="left" colwidth="1.6*"/>
+<colspec colname="c3" align="left" colwidth="1.1*"/>
+<colspec colname="c4" align="left" colwidth="1.6*"/>
+<colspec colname="c5" align="left" colwidth="1.5*"/>
+<colspec colname="c6" align="left" colwidth="1.5*"/>
+<thead>
+<row>
+<entry namest="c1" nameend="c2">Gene product</entry>
+<entry>Mammalian relative(s)</entry>
+<entry>Molecular function</entry>
+<entry>Ras-related phenotypes</entry>
+<entry>Reference(s)</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=ARK-1;class=protein" role="_blank">ARK-1</ulink></entry>
+<entry>Ack-Related Kinase</entry>
+<entry>Ack</entry>
+<entry>Tyrosine kinase</entry>
+<entry>~WT. Muv in combination with <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sli-1" role="_blank">sli-1</ulink></emphasis>, others.</entry>
+<entry><link linkend="bib46">Hopper et al., 2000</link><!--; PMID 10949028--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=CDF-1;class=protein" role="_blank">CDF-1</ulink></entry>
+<entry>Cation Diffusion Facilitator</entry>
+<entry>ZnT1</entry>
+<entry>Zinc transporter.</entry>
+<entry>~WT. Suppresses <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-60" role="_blank">let-60</ulink> ras(gf)</emphasis> Muv.</entry>
+<entry><link linkend="bib9">Bruinsma et al., 2002</link><!--; PMID 12015965-->; <link linkend="bib52">Jakubowski and Kornfeld, 1999</link><!--; PMID 10511554--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=CNK-1;class=protein" role="_blank">CNK-1</ulink></entry>
+<entry>Connector/eNhancer of Ksr</entry>
+<entry>CNK1,2,3</entry>
+<entry>Putative Raf-binding adaptor/scaffold.</entry>
+<entry>~WT. Suppresses <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-60" role="_blank">let-60</ulink></emphasis> ras(gf) Muv. Enhances Vul and rod-like lethal phenotypes of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-45" role="_blank">lin-45</ulink></emphasis>, others.</entry>
+<entry><link linkend="bib116">Rocheleau et al., 2005</link><!--PMID 16085714--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=DAB-1;class=protein" role="_blank">DAB-1</ulink></entry>
+<entry>DisABled homolog</entry>
+<entry>DAB2</entry>
+<entry>Adaptor. Required for <ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-17;class=protein" role="_blank">EGL-17</ulink> secretion.</entry>
+<entry>Abnormal sex myoblast positions.</entry>
+<entry><link linkend="bib56">Kamikura and Cooper, 2003</link><!--; PMID 14630941--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=DPY-22;class=protein" role="_blank">DPY-22</ulink>/ SOP-1</entry>
+<entry>DumPY/Suppressor Of Pal-1</entry>
+<entry>TRAP230</entry>
+<entry>Mediator subunit.</entry>
+<entry>~WT. Enhances <emphasis>let-23(gf)</emphasis> Muv.</entry>
+<entry><link linkend="bib71">Moghal and Sternberg, 2003</link><!--; PMID 12925583--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=DPY-23;class=protein" role="_blank">DPY-23</ulink></entry>
+<entry>DumPY</entry>
+<entry>AP-50</entry>
+<entry>Clathrin adaptor subunit</entry>
+<entry>~WT. Muv in combination with <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gap-1" role="_blank">gap-1</ulink></emphasis>.</entry>
+<entry><link linkend="bib113">Yoo et al., 2004</link><!--; PMID  14752159--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-5;class=protein" role="_blank">EGL-5</ulink></entry>
+<entry>EGg-Laying defects</entry>
+<entry>Hox9-13</entry>
+<entry>Hox transcription factor. Upregulated by Ras signaling.</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=P12;class=Cell" role="_blank">P12</ulink><symbol role="symbolfont">&#x02192;</symbol><ulink url="http://www.wormbase.org/db/get?name=P11;class=Cell" role="_blank">P11</ulink> fate transformations.</entry>
+<entry><link linkend="bib19">Chisholm, 1991</link><!--; PMID 1879361-->; <link linkend="bib53">Jiang and Sternberg, 1998</link><!--; PMID 9584132--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-18;class=protein" role="_blank">EGL-18</ulink></entry>
+<entry>EGg-Laying defects</entry>
+<entry>GATA4,5,6</entry>
+<entry>GATA transcription factor</entry>
+<entry>Partial Vul. Strong Vul in combination with <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=elt-6" role="_blank">elt-6</ulink></emphasis>.</entry>
+<entry><link linkend="bib60">Koh et al., 2002</link><!--; PMID 12399309-->; <link linkend="bib59">Koh et al., 2004</link><!--; PMID 14975731--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-15;class=protein" role="_blank">EGL-15</ulink></entry>
+<entry>EGg Laying defects</entry>
+<entry>FGFR</entry>
+<entry>Receptor tyrosine kinase</entry>
+<entry>Larval lethal. Abnormal sex myoblast positions. Axon guidance defects.</entry>
+<entry><link linkend="bib11">Bulow et al., 2004</link><!--; PMID 15134634-->; <link linkend="bib26">DeVore et al., 1995</link><!--; PMID 7585964-->; <link linkend="bib34">Goodman et al., 2003</link><!--; PMID 12835392-->; <link linkend="bib95">Stern and Horvitz 1991</link><!--; PMID 1821851--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-17;class=protein" role="_blank">EGL-17</ulink></entry>
+<entry>EGg-Laying defects</entry>
+<entry>FGF</entry>
+<entry>Ligand for <ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-15;class=protein" role="_blank">EGL-15</ulink> RTK</entry>
+<entry>Abnormal sex myoblast positions.</entry>
+<entry><link linkend="bib12">Burdine et al., 1997</link>;<!--  9122212--> <link linkend="bib95">Stern and Horvitz 1991</link><!--; PMID 1821851--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-19;class=protein" role="_blank">EGL-19</ulink></entry>
+<entry>Egg-Laying defects</entry>
+<entry>Cav1.2</entry>
+<entry>Alpha subunit of L-type voltage-gated calcium channel</entry>
+<entry>Suppresses <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-30" role="_blank">egl-30</ulink>(gf)</emphasis> effects on vulva</entry>
+<entry><link linkend="bib71">Moghal and Sternberg, 2003</link><!--; PMID 12925583--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-30;class=protein" role="_blank">EGL-30</ulink></entry>
+<entry>EGg-Laying defects</entry>
+<entry>G<symbol role="symbolfont">&#x003B1;</symbol>q/G<symbol role="symbolfont">&#x003B1;</symbol>11</entry>
+<entry>Galphaq subunit of heterotrimeric G protein</entry>
+<entry>gf allele suppresses <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-23" role="_blank">let-23</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-60" role="_blank">let-60</ulink>(dn)</emphasis> Vul</entry>
+<entry><link linkend="bib71">Moghal and Sternberg, 2003</link><!--; PMID 12925583--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=ELT-6;class=protein" role="_blank">ELT-6</ulink></entry>
+<entry>Erythroid-Like Transcription factor family</entry>
+<entry>GATA4,5,6</entry>
+<entry>GATA transcription factor</entry>
+<entry>~WT. Vul in combination with <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-18" role="_blank">egl-18</ulink></emphasis>.</entry>
+<entry><link linkend="bib60">Koh et al., 2002</link><!--; PMID 12399309-->; <link linkend="bib59">Koh et al., 2004</link><!--; PMID 14975731--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=EOR-1;class=protein" role="_blank">EOR-1</ulink></entry>
+<entry>Egl-1 suppressor/diO uptake defective/ Rafenhancer</entry>
+<entry>PLZF</entry>
+<entry>BTB/Zinc finger protein, probable transcriptional regulator</entry>
+<entry>Partial rod-like lethal and <ulink url="http://www.wormbase.org/db/get?name=P12;class=Cell" role="_blank">P12</ulink><symbol role="symbolfont">&#x02192;</symbol><ulink url="http://www.wormbase.org/db/get?name=P11;class=Cell" role="_blank">P11</ulink> fate changes. Strong rod-like lethal in combination with <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sur-2" role="_blank">sur-2</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-25" role="_blank">lin-25</ulink></emphasis> or <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-1" role="_blank">lin-1</ulink></emphasis>.</entry>
+<entry><link linkend="bib47">Howard and Sundaram, 2002</link><!--; PMID 12130541-->; <link linkend="bib84">Rocheleau et al., 2002</link><!--; PMID 12019228--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=EOR-2;class=protein" role="_blank">EOR-2</ulink></entry>
+<entry>Egl-1 suppressor/diO uptake defective/ Rafenhancer</entry>
+<entry>NP_079001.2</entry>
+<entry>Novel nuclear protein, functions with EOR-1.</entry>
+<entry>Partial rod-like lethal and <ulink url="http://www.wormbase.org/db/get?name=P12;class=Cell" role="_blank">P12</ulink><symbol role="symbolfont">&#x02192;</symbol><ulink url="http://www.wormbase.org/db/get?name=P11;class=Cell" role="_blank">P11</ulink> fate changes. Strong rod-like lethal in combination with <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sur-2" role="_blank">sur-2</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-25" role="_blank">lin-25</ulink></emphasis> or <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-1" role="_blank">lin-1</ulink></emphasis>.</entry>
+<entry><link linkend="bib47">Howard and Sundaram, 2002</link><!--; PMID 12130541-->; <link linkend="bib84">Rocheleau et al., 2002</link><!--; PMID 12019228--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=GAP-1;class=protein" role="_blank">GAP-1</ulink></entry>
+<entry>GTPase Activating Protein</entry>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=GAP-1;class=protein" role="_blank">GAP-1</ulink></entry>
+<entry>Ras GAP</entry>
+<entry>~WT. Suppresses <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-23" role="_blank">let-23</ulink></emphasis> Vul. Muv in combination with <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lip-1" role="_blank">lip-1</ulink></emphasis>, others.</entry>
+<entry><link linkend="bib38">Hajnal et al., 1997</link><!--; PMID 9334333--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=GAP-2;class=protein" role="_blank">GAP-2</ulink></entry>
+<entry>GTPase Activating Protein</entry>
+<entry>p120GAP</entry>
+<entry>Ras GAP</entry>
+<entry>~WT. Suppresses <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-23" role="_blank">let-23</ulink></emphasis> rod-like lethality.</entry>
+<entry><link linkend="bib42">Hayashizaki et al., 1998</link><!--; PMID 9619631--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=GPA-5;class=protein" role="_blank">GPA-5</ulink></entry>
+<entry>G-Protein, Alpha subunit</entry>
+<entry>GNAZ</entry>
+<entry>Ga</entry>
+<entry>Increased chemotaxis. Suppresses <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-60" role="_blank">let-60</ulink>(dn)</emphasis> Vul.</entry>
+<entry><link linkend="bib4">Battu et al, 2003</link><!--; PMID 12736202--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=KSR-1;class=protein" role="_blank">KSR-1</ulink></entry>
+<entry>Kinase Suppressor of Ras</entry>
+<entry>KSR1, 2</entry>
+<entry>Raf-related MEK-binding protein, scaffold for Raf/MEK/ERK</entry>
+<entry>Abnormal sex myoblast positions. Suppresses <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-60" role="_blank">let-60</ulink> ras(gf)</emphasis> Muv. Rod-like lethal and Vul in combination with <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ksr-2" role="_blank">ksr-2</ulink></emphasis>, others.</entry>
+<entry><link linkend="bib63">Kornfeld et al., 1995b</link><!--; PMID 8521514-->; <link linkend="bib99">Sundaram and Han, 1995</link><!--; PMID 8521513--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=KSR-2;class=protein" role="_blank">KSR-2</ulink></entry>
+<entry>Kinase Suppressor of Ras</entry>
+<entry>KSR1, 2</entry>
+<entry>Raf-related MEK-binding protein, scaffold for Raf/MEK/ERK</entry>
+<entry>Sterile. Rod-like lethal and Vul in combination with <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ksr-1" role="_blank">ksr-1</ulink></emphasis>.</entry>
+<entry><link linkend="bib80">Ohmachi et al., 2002</link><!--; PMID 11882296--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=LET-23;class=protein" role="_blank">LET-23</ulink></entry>
+<entry>LEThal</entry>
+<entry>EGFR</entry>
+<entry>Receptor tyrosine kinase</entry>
+<entry>Rod-like larval lethal, Vul, etc.</entry>
+<entry><link linkend="bib1">Aroian et al., 1990</link><!--; PMID 1979659--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=LET-60;class=protein" role="_blank">LET-60</ulink></entry>
+<entry>LEThal</entry>
+<entry>K-Ras</entry>
+<entry>Small GTPase</entry>
+<entry>Rod-like larval lethal, Vul, sterile, etc.</entry>
+<entry><link linkend="bib5">Beitel et al., 1990</link><!--; PMID 2123303-->; Han et al., 1990<!--; PMID 2076820-->; <link linkend="bib40">Han and Sternberg, 1990</link><!--; PMID 2257629--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=LET-92;class=protein" role="_blank">LET-92</ulink></entry>
+<entry>LEThal</entry>
+<entry>PPP2CB</entry>
+<entry>Catalytic subunit of Protein Phosphatase 2A</entry>
+<entry>Dominantly enhances <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-60" role="_blank">let-60</ulink>(dn)</emphasis> Vul</entry>
+<entry>Kao et al., 2004<!--; PMID 14724126--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=LET-756;class=protein" role="_blank">LET-756</ulink></entry>
+<entry>LEThal</entry>
+<entry>FGF9</entry>
+<entry>Ligand for <ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-15;class=protein" role="_blank">EGL-15</ulink> RTK</entry>
+<entry>Larval lethal. Axon guidance defects.</entry>
+<entry><link linkend="bib11">Bulow et al., 2004</link><!--; PMID 15134634-->; <link linkend="bib82">Popovici et al., 2004</link><!--; PMID 15199049-->; <link linkend="bib85">Roubin et al., 1999</link><!--; PMID 10597282--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-1;class=protein" role="_blank">LIN-1</ulink></entry>
+<entry>Abnormal cell LINeage</entry>
+<entry>Elk1</entry>
+<entry>Ets domain transcription factor. Target of MPK-1.</entry>
+<entry>Muv</entry>
+<entry><link linkend="bib6">Beitel et al., 1995</link><!--; PMID 8543158-->; <link linkend="bib50">Jacobs et al., 1998</link><!--; PMID 9691039--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-2;class=protein" role="_blank">LIN-2</ulink></entry>
+<entry>Abnormal cell LINeage</entry>
+<entry>CASK</entry>
+<entry>Membrane-associated Guanylate kinase, required for basal localization of <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-23;class=protein" role="_blank">LET-23</ulink></entry>
+<entry>Vul</entry>
+<entry>Hoskins et al., 1996<!--; PMID 8565857-->; <link linkend="bib55">Kaech et al., 1998</link><!--; PMID 9753323--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-3;class=protein" role="_blank">LIN-3</ulink></entry>
+<entry>Abnormal cell LINeage</entry>
+<entry>EGF</entry>
+<entry>Ligand for <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-23;class=protein" role="_blank">LET-23</ulink> RTK</entry>
+<entry>Rod-like larval lethal, Vul, etc.</entry>
+<entry><link linkend="bib44">Hill and Sternberg, 1992</link><!--; PMID 1641037-->; <link linkend="bib27">Dutt et al., 2004</link><!--; PMID 15455032--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-7;class=protein" role="_blank">LIN-7</ulink></entry>
+<entry>Abnormal cell LINeage</entry>
+<entry>Lin-7</entry>
+<entry>PDZ and PTB-domain protein, required for basal localization of <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-23;class=protein" role="_blank">LET-23</ulink></entry>
+<entry>Vul</entry>
+<entry><link linkend="bib55">Kaech et al., 1998</link><!--; PMID 9753323-->; <link linkend="bib92">Simske et al., 1996</link><!--; PMID 8612272--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-10;class=protein" role="_blank">LIN-10</ulink></entry>
+<entry>Abnormal cell LINeage</entry>
+<entry>Mint1, 2, 3</entry>
+<entry>PDZ protein, required for basal localization of <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-23;class=protein" role="_blank">LET-23</ulink></entry>
+<entry>Vul</entry>
+<entry><link linkend="bib55">Kaech et al., 1998</link><!--; PMID 9753323-->; Whitfield et al., 1999<!--; PMID 99287744--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-25;class=protein" role="_blank">LIN-25</ulink></entry>
+<entry>Abnormal cell LINeage</entry>
+<entry align="center" valign="middle">-</entry>
+<entry>Novel nuclear protein, functions with <ulink url="http://www.wormbase.org/db/seq/protein?name=SUR-2;class=protein" role="_blank">SUR-2</ulink></entry>
+<entry>Vul</entry>
+<entry><link linkend="bib78">Nilsson et al., 1998</link><!--; PMID 9806929-->; <link linkend="bib79">Nilsson et al., 2000</link><!--; PMID 11063686-->; <link linkend="bib106">Tuck and Greenwald, 1995</link><!--; PMID 7867931--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-31;class=protein" role="_blank">LIN-31</ulink></entry>
+<entry>Abnormal cell LINeage</entry>
+<entry>FoxB2</entry>
+<entry>Winged helix transcription factor. Target of MPK-1.</entry>
+<entry>Mixed Vul and Muv</entry>
+<entry><link linkend="bib69">Miller et al., 1993</link><!--; PMID 8504934-->; <link linkend="bib103">Tan et al., 1998</link><!--; PMID 9604932--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-39;class=protein" role="_blank">LIN-39</ulink></entry>
+<entry>Abnormal cell LINeage</entry>
+<entry>HoxB5</entry>
+<entry>Hox transcription factor. Upregulated by Ras signaling.</entry>
+<entry>Vul</entry>
+<entry><link linkend="bib23">Clark et al., 1993</link><!--; PMID 8101475-->; <link linkend="bib67">Maloof and Kenyon, 1998</link><!--; PMID 9486792--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-45;class=protein" role="_blank">LIN-45</ulink></entry>
+<entry>Abnormal cell LINeage</entry>
+<entry>B-Raf</entry>
+<entry>Serine/threonine kinase. Binds Ras-GTP, phosphorylates MEK.</entry>
+<entry>Sterile Vul (maternal rescue of rod-like lethal), etc.</entry>
+<entry><link linkend="bib39">Han et al., 1993</link><!--; PMID 8483497-->; <link linkend="bib48">Hsu et al., 2002</link><!--; PMID 11861555--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=LIP-1;class=protein" role="_blank">LIP-1</ulink></entry>
+<entry>Lateral signal Induced Phosphatase</entry>
+<entry>MKP1</entry>
+<entry>MAPK phosphatase</entry>
+<entry>Partial sterile. Muv in combination with <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gap-1" role="_blank">gap-1</ulink></emphasis>, others.</entry>
+<entry><link linkend="bib7">Berset et al., 2001</link><!--; PMID 11161219--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=LRP-1;class=protein" role="_blank">LRP-1</ulink></entry>
+<entry>Low-density Lipoprotein Receptor-related Protein</entry>
+<entry>LRP1</entry>
+<entry>Lipoprotein Receptor-related protein. Required for <ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-17;class=protein" role="_blank">EGL-17</ulink> secretion.</entry>
+<entry>Abnormal sex myoblast positions.</entry>
+<entry><link linkend="bib56">Kamikura and Cooper, 2003</link><!--; PMID 14630941--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=LST-1;class=protein" role="_blank">LST-1</ulink></entry>
+<entry>Lateral Signaling Target</entry>
+<entry align="center" valign="middle">-</entry>
+<entry>Novel <ulink url="http://www.wormbase.org/db/seq/protein?name=MPK-1;class=protein" role="_blank">MPK-1</ulink> binding protein</entry>
+<entry>WT. Muv in combination with <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gap-1" role="_blank">gap-1</ulink></emphasis>.</entry>
+<entry><link linkend="bib113">Yoo et al., 2004</link><!--; PMID  14752159--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=LST-2;class=protein" role="_blank">LST-2</ulink></entry>
+<entry>Lateral Signaling Target</entry>
+<entry>Zinc finger FYVE domain containing protein 28</entry>
+<entry>FYVE domain protein</entry>
+<entry>WT. Muv in combination with <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gap-1" role="_blank">gap-1</ulink></emphasis>.</entry>
+<entry><link linkend="bib113">Yoo et al., 2004</link><!--; PMID  14752159--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=LST-3;class=protein" role="_blank">LST-3</ulink></entry>
+<entry>Lateral Signaling Target</entry>
+<entry>CCAR1</entry>
+<entry>SAF-A/B, Acinus and PIAS domain protein</entry>
+<entry>WT. Muv in combination with <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gap-1" role="_blank">gap-1</ulink></emphasis>.</entry>
+<entry><link linkend="bib113">Yoo et al., 2004</link><!--; PMID  14752159--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=LST-4;class=protein" role="_blank">LST-4</ulink></entry>
+<entry>Lateral Signaling Target</entry>
+<entry>NM_153271</entry>
+<entry>Sorting nexin, may promote <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-23;class=protein" role="_blank">LET-23</ulink> degradation</entry>
+<entry>WT. Muv in combination with <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gap-1" role="_blank">gap-1</ulink></emphasis>.</entry>
+<entry><link linkend="bib113">Yoo et al., 2004</link><!--; PMID  14752159--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=MEK-2;class=protein" role="_blank">MEK-2</ulink></entry>
+<entry>Map kinase kinase or Erk Kinase</entry>
+<entry>MEK1, 2</entry>
+<entry>Dual specificity kinase, phosphorylates ERK</entry>
+<entry>Sterile Vul (maternal rescue of rod-like lethal), etc.</entry>
+<entry>Kornfeld et al., 1995a<!--; PMID 95247036-->; <link linkend="bib109">Wu et al, 1995</link><!--; PMID 7729690--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=MPK-1;class=protein" role="_blank">MPK-1</ulink>/ SUR-1</entry>
+<entry>MaP Kinase/ SUppressor of Ras</entry>
+<entry>ERK1, 2</entry>
+<entry>Serine/Threonine kinase</entry>
+<entry>Sterile Vul (maternal rescue of rod-like lethal), etc.</entry>
+<entry>Lackner and Kim, 1998<!--; PMID 9725833-->; <link linkend="bib64">Lackner et al., 1994</link><!--; PMID 94131270-->; <link linkend="bib108">Wu and Han, 1994</link><!--; PMID 8299935--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=PAR-1;class=protein" role="_blank">PAR-1</ulink></entry>
+<entry>Abnormal embryonic PARtitioning of cytoplasm</entry>
+<entry>MARK2/C- TAK1</entry>
+<entry>Serine/Threonine kinase</entry>
+<entry>Weak Muv. Reverses <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sur-6" role="_blank">sur-6</ulink></emphasis> suppressor phenotype.</entry>
+<entry>Kao et al., 2004<!--; PMID 14724126-->; <link linkend="bib112">Yoder et al., 2004</link><!--; PMID 14685271--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=PTP-2;class=protein" role="_blank">PTP-2</ulink></entry>
+<entry>Protein Tyrosine Phosphatase</entry>
+<entry>Shp-2</entry>
+<entry>Tyrosine phosphatase</entry>
+<entry>Sterile and maternal-effect lethal. Suppressed by <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-60" role="_blank">let-60</ulink> ras(gf)</emphasis>. Suppresses <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=clr-1" role="_blank">clr-1</ulink></emphasis>.</entry>
+<entry><link linkend="bib37">Gutch et al., 1998</link><!--; PMID 9472025-->; <link linkend="bib87">Schutzman et al., 2001</link><!--; PMID 11689700--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=ROM-1;class=protein" role="_blank">ROM-1</ulink></entry>
+<entry>RhOMboid-related</entry>
+<entry>RHBDL2</entry>
+<entry>7-pass transmemb- rane serine protease</entry>
+<entry>WT. Suppresses <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-60" role="_blank">let-60</ulink> ras(gf)</emphasis> Muv.</entry>
+<entry><link linkend="bib27">Dutt et al., 2004</link><!--; PMID 15455032--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=SEM-4;class=protein" role="_blank">SEM-4</ulink></entry>
+<entry>SEx Muscle abnormality</entry>
+<entry>Sal1</entry>
+<entry>C2H2 zinc finger transcription factor</entry>
+<entry>Partial Vul.</entry>
+<entry><link linkend="bib35">Grant et al., 2000</link><!--; PMID 10926783--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=SEM-5;class=protein" role="_blank">SEM-5</ulink></entry>
+<entry>SEx Muscle abnormality</entry>
+<entry>Grb2</entry>
+<entry>RTK-binding adaptor,</entry>
+<entry>Rod-like larval lethal, Vul, etc.</entry>
+<entry><link linkend="bib24">Clark et al., 1992</link><!--; PMID 1372395--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=SLI-1;class=protein" role="_blank">SLI-1</ulink></entry>
+<entry>Suppressor of LIneage defect</entry>
+<entry>Cbl</entry>
+<entry>E3 ubiquitin ligase, Involved in <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-23;class=protein" role="_blank">LET-23</ulink> endocytosis/ degradation</entry>
+<entry>WT. Muv in combination with <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-101" role="_blank">unc-101</ulink></emphasis>, others.</entry>
+<entry><link linkend="bib54">Jongeward et al., 1995</link><!--; PMID 7789760-->; <link linkend="bib114">Yoon et al., 1995</link><!--; PMID 7652556--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=SOC-1;class=protein" role="_blank">SOC-1</ulink></entry>
+<entry>Suppressor Of Clr-1</entry>
+<entry>Gab1</entry>
+<entry>RTK-binding adaptor, Promotes <ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-15;class=protein" role="_blank">EGL-15</ulink> signaling</entry>
+<entry>Scrawny. Suppresses <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=clr-1" role="_blank">clr-1</ulink></emphasis> lethality.</entry>
+<entry><link linkend="bib87">Schutzman et al., 2001</link><!--; PMID  11689700--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=SOS-1;class=protein" role="_blank">SOS-1</ulink>/ <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-341;class=protein" role="_blank">LET-341</ulink></entry>
+<entry>Son Of Sevenless/ LEThal</entry>
+<entry>Sos-1</entry>
+<entry>Guanine Nucleotide Exchange Factor</entry>
+<entry>Rod-like larval lethal, Vul, etc.</entry>
+<entry><link linkend="bib16">Chang et al., 2000</link><!--; PMID 10880441--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=SRA-13;class=protein" role="_blank">SRA-13</ulink></entry>
+<entry>Serpentine Receptor, A class</entry>
+<entry align="center" valign="middle">-</entry>
+<entry>G-protein coupled receptor</entry>
+<entry>Increased chemotaxis. Suppresses <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-60" role="_blank">let-60</ulink>(dn)</emphasis> Vul.</entry>
+<entry><link linkend="bib4">Battu et al., 2003</link><!--; PMID 12736202--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=SUR-2;class=protein" role="_blank">SUR-2</ulink></entry>
+<entry>SUppressor of Ras</entry>
+<entry>Sur-2</entry>
+<entry>Mediator subunit</entry>
+<entry>Vul.</entry>
+<entry><link linkend="bib94">Singh and Han, 1995</link><!--; PMID  7557379--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=SUR-5;class=protein" role="_blank">SUR-5</ulink></entry>
+<entry>SUppressor of Ras</entry>
+<entry>NM_023928</entry>
+<entry>Acetyl coenzyme A synthetase</entry>
+<entry>WT. Suppresses <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-60" role="_blank">let-60</ulink>(dn)</emphasis> Vul.</entry>
+<entry><link linkend="bib36">Gu et al., 1998</link><!--; PMID 9671465--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=SUR-6;class=protein" role="_blank">SUR-6</ulink></entry>
+<entry>SUppressor of Ras</entry>
+<entry>PPP2R2A</entry>
+<entry>PR55/B Regulatory subunit of Protein Phosphatase 2A</entry>
+<entry>Suppresses <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-60" role="_blank">let-60</ulink> ras(gf)</emphasis> Muv. Enhances Vul and rod-like lethal phenotypes of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-45" role="_blank">lin-45</ulink></emphasis> hypomorphs, others.</entry>
+<entry>Kao et al., 2004<!--; PMID 14724126-->; <link linkend="bib91">Sieburth et al., 1999</link><!--; PMID 10521400--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=SUR-7;class=protein" role="_blank">SUR-7</ulink></entry>
+<entry>SUppressor of Ras</entry>
+<entry align="center" valign="middle">-</entry>
+<entry>Zinc transporter</entry>
+<entry>Suppresses <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-60" role="_blank">let-60</ulink> ras(gf)</emphasis> Muv.</entry>
+<entry><link linkend="bib112">Yoder et al., 2004</link><!--; PMID 14685271--></entry>
+</row>
+<row>
+<entry>SUR-8/ <ulink url="http://www.wormbase.org/db/seq/protein?name=SOC-2;class=protein" role="_blank">SOC-2</ulink></entry>
+<entry>SUppressor of Ras, Suppressor Of Clr-1</entry>
+<entry>Sur-8</entry>
+<entry>Ras-binding Leucine-rich repeat protein</entry>
+<entry>Scrawny. Suppresses <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-60" role="_blank">let-60</ulink> ras(gf)</emphasis> Muv and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=clr-1" role="_blank">clr-1</ulink></emphasis> lethality. Enhances Vul and rod-like lethal phenotypes of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-45" role="_blank">lin-45</ulink></emphasis> hypomorphs, others.</entry>
+<entry><link linkend="bib88">Selfors et al., 1998</link><!--; PMID 98284030-->; <link linkend="bib90">Sieburth et al., 1998</link><!--; PMID 9674433--></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=UNC-101;class=protein" role="_blank">UNC-101</ulink></entry>
+<entry>UNCoordinated</entry>
+<entry>AP-47</entry>
+<entry>Clathrin adaptor subunit</entry>
+<entry>WT. Muv in combination with <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sli-1" role="_blank">sli-1</ulink></emphasis>, others.</entry>
+<entry><link linkend="bib65">Lee et al., 1994</link><!--; PMID 8288128--></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+    </sect1>
+    <sect1>
+        <title>Overview of the core RTK/Ras/MAPK signal transduction pathway</title>
+        <para>A general model for the core <emphasis>C. elegans</emphasis> RTK/Ras/MAPK signaling
+            pathway (and various tissue-specific variations) is shown in <xref linkend="figure1"/>
+            (<link linkend="bib72">Moghal and Sternberg, 2003</link><!-- PMID 12648474-->; <link linkend="bib86">Schlessinger, 2000</link><!-- PMID 11057895-->). Upon
+            growth factor binding, an RTK such as <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-23;class=protein" role="_blank">LET-23</ulink> or <ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-15;class=protein" role="_blank">EGL-15</ulink> dimerizes and autophosphorylates
+            its C-terminal region. The resulting phospho-tyrosine residues serve as docking sites
+            for adaptor proteins such as <ulink url="http://www.wormbase.org/db/seq/protein?name=SEM-5;class=protein" role="_blank">SEM-5</ulink> (Grb2) or <ulink url="http://www.wormbase.org/db/seq/protein?name=SOC-1;class=protein" role="_blank">SOC-1</ulink> (similar to Gab1). These adaptors
+            recruit the Guanine Nucleotide Exchange Factor <ulink url="http://www.wormbase.org/db/seq/protein?name=SOS-1;class=protein" role="_blank">SOS-1</ulink> to activate the small GTPase <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-60;class=protein" role="_blank">LET-60</ulink>
+            Ras. LET-60-GTP then binds to <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-45;class=protein" role="_blank">LIN-45</ulink> Raf and promotes its stable association with the
+            plasma membrane and/or endomembranes, where other events then activate <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-45;class=protein" role="_blank">LIN-45</ulink> kinase
+            activity (<link linkend="bib20">Chong et al., 2003</link><!-- PMID 12639709-->). The scaffold protein KSR may assist in
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-45;class=protein" role="_blank">LIN-45</ulink> activation, but also promotes further signal transmission by bringing together
+            different components of the MAPK cascade (<link linkend="bib73">Morrison and Davis, 2003</link><!-- PMID 14570565-->).
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-45;class=protein" role="_blank">LIN-45</ulink> phosphorylates and activates <ulink url="http://www.wormbase.org/db/seq/protein?name=MEK-2;class=protein" role="_blank">MEK-2</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=MEK-2;class=protein" role="_blank">MEK-2</ulink> phosphorylates and activates <ulink url="http://www.wormbase.org/db/seq/protein?name=MPK-1;class=protein" role="_blank">MPK-1</ulink>, and
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=MPK-1;class=protein" role="_blank">MPK-1</ulink> then phosphorylates and either activates or inactivates various target proteins.
+            In many cases <ulink url="http://www.wormbase.org/db/seq/protein?name=MPK-1;class=protein" role="_blank">MPK-1</ulink> may move into the nucleus to phosphorylate transcription factors
+            such as the Ets domain protein <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-1;class=protein" role="_blank">LIN-1</ulink>, thus leading to changes in gene
+        expression.</para>
+		<para>This model draws on a large body of data from multiple systems.
+            <emphasis>C. elegans</emphasis> genetics has been most useful for identifying the genes
+        involved in particular signaling events and determining their order of action and cellular
+        focus. In some cases, physical interactions and/or phosphorylation events have been
+        demonstrated for the worm proteins (e.g., <link linkend="bib51">Jacobs et al., 1999</link><!-- PMID 9925641-->; <link linkend="bib90">Sieburth et al., 1998</link><!-- PMID 9674433-->; <link linkend="bib109">Wu et al., 1995</link><!-- PMID 7729690-->), but in many cases such interactions are
+        inferred based on biochemical studies of related proteins in vertebrate cells. Because the
+        core Ras pathway (and much of its regulation) appears highly conserved between <emphasis>C.
+        elegans</emphasis> and vertebrates (<link linkend="table1">Table 1</link>), current models draw on the combined data from
+        these different systems.</para>
+	</sect1>
+    <sect1>
+        <title>Phenotypes of Ras pathway mutants</title>
+        <para>Ras signaling is not required for cellular viability in <emphasis>C.
+            elegans</emphasis> (<link linkend="bib111">Yochem et al., 1997</link><!-- PMID 9111342-->), but it is required for
+            organismal viability and for many different developmental processes. Because of the
+            widespread roles of Ras signaling during development, mutations affecting the Ras
+            pathway can cause many different pleiotropic defects (<xref linkend="figure2"/>).</para>
+    <mediaobject id="figure2" xreflabel="Figure 2">
+        <imageobject>
+            <imagedata entityref="fig2" align="center" width="3.7in"/>
+        </imageobject>
+        <textobject>
+			<phrase>figure 2</phrase>
+		</textobject> &fig2legend;</mediaobject>
+        <para><emphasis role="underline">Lethality</emphasis>: Ras signaling promotes the excretory
+            duct cell fate, and mosaic analysis suggested that loss of this one specific cell can
+            account for the zygotic lethality of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-60" role="_blank">let-60</ulink></emphasis> null mutants (<link linkend="bib111">Yochem et al., 1997</link><!-- PMID 9111342-->). The excretory duct cell is required for osmoregulation (<link linkend="bib76">Nelson and Riddle, 1984</link><!-- PMID 6470649-->). <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-60" role="_blank">let-60</ulink></emphasis> loss-of-function mutants,
+            which lack the excretory duct cell, die as “rod-like” larvae with a fluid-filled
+            appearance (<xref linkend="figure2"/>). <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-60" role="_blank">let-60</ulink></emphasis> gain-of-function
+            mutants sometimes have two excretory duct cells (<link linkend="bib111">Yochem et al., 1997</link><!-- PMID 9111342-->). Ras
+            signaling may have other (maternally-rescued) essential roles in addition to excretory
+            duct formation, since mutations in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-23" role="_blank">let-23</ulink></emphasis>/EGFR,
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-15" role="_blank">egl-15</ulink></emphasis>/FGFR and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ptp-2" role="_blank">ptp-2</ulink></emphasis>/SHP-2 cause distinct
+            “scrawny” and lethal defects that are rescued by constitutive forms of <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-60;class=protein" role="_blank">LET-60</ulink> Ras
+            (<link linkend="bib26">DeVore et al., 1995</link><!-- PMID 7585964-->; <link linkend="bib37">Gutch et al., 1998</link><!-- PMID 9472025-->; <link linkend="bib58">Koga and Ohshima, 1995</link><!-- PMID 7671826-->).</para>
+        <para>Hyperactivation of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-15" role="_blank">egl-15</ulink></emphasis>/FGFR or <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-60" role="_blank">let-60</ulink></emphasis>/Ras
+            can also lead to lethality with a “Clear”, fluid-filled appearance (<link linkend="bib61">Kokel et al., 1998</link><!-- PMID 9585503-->; <link linkend="bib87">Schutzman et al., 2001</link><!-- PMID 11689700-->). Mosaic analysis suggests that the
+            Clear phenotype is caused by hypodermal defects (<link linkend="bib49">Huang and Stern, 2004</link><!-- PMID 15115754-->).</para>
+        <para>
+            <emphasis role="underline">Vulval defects</emphasis>: Ras signaling cooperates with
+            Notch and Wnt signaling to promote hermaphrodite vulval development (see <ulink url="http://www.wormbook.org/chapters/www_vulvaldev/vulvaldev.html" role="_blank">Vulval development</ulink>). <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-60" role="_blank">let-60</ulink></emphasis> loss-of-function mutants lack a vulva (Vulvaless
+            or Vul phenotype; <xref linkend="figure2"/>) whereas <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-60" role="_blank">let-60</ulink></emphasis>
+            gain-of-function mutants have extra vulval tissue (Multivulva or Muv phenotype).</para>
+        <para>
+            <emphasis role="underline">Uterine defects</emphasis>: Ras signaling promotes the
+            uterine uv1 fate, which is important for establishing a proper vulval-uterine connection
+            (<link linkend="bib17">Chang et al., 1999</link><!-- PMID 10074449-->). In the absence of uv1, hermaphrodites cannot lay eggs.</para>
+        <para>
+            <emphasis role="underline"><ulink url="http://www.wormbase.org/db/get?name=P11;class=Cell" role="_blank">P11</ulink> and <ulink url="http://www.wormbase.org/db/get?name=P12;class=Cell" role="_blank">P12</ulink> ectoblast defects</emphasis>: Ras signaling
+            cooperates with Wnt signaling to promote the <ulink url="http://www.wormbase.org/db/get?name=P12;class=Cell" role="_blank">P12</ulink> ectoblast cell fate (<link linkend="bib32">Fixsen et al., 1985</link><!-- PMID 3868513-->; <link linkend="bib53">Jiang and Sternberg, 1998</link><!-- PMID 9584132-->). The <ulink url="http://www.wormbase.org/db/get?name=P11;class=Cell" role="_blank">P11</ulink> and <ulink url="http://www.wormbase.org/db/get?name=P12;class=Cell" role="_blank">P12</ulink> ectoblasts
+            are neighboring cells that give rise to slightly different types of hypodermal and
+            neuronal descendants (<link linkend="bib98">Sulston and Horvitz, 1977</link><!-- PMID 838129-->; <ulink url="http://www.wormbook.org/chapters/www_hermcellfate/hermcellfate.html" role="_blank">Hermaphrodite cell fate specification</ulink>). Reduced Ras signaling
+            causes P12-&gt; <ulink url="http://www.wormbase.org/db/get?name=P11;class=Cell" role="_blank">P11</ulink> cell fate transformations (<xref linkend="figure2"/>), while increased
+            signaling causes P11-&gt; <ulink url="http://www.wormbase.org/db/get?name=P12;class=Cell" role="_blank">P12</ulink> fate transformations.</para>
+        <para>
+            <emphasis role="underline">Male spicule defects</emphasis>: Ras signaling promotes male
+            spicule fates (<link linkend="bib15">Chamberlin and Sternberg, 1994</link><!-- PMID 7607066-->; <ulink url="http://www.wormbook.org/chapters/www_maledevelopment/maledevelopment.html" role="_blank">Male development</ulink>). Reduced Ras signaling causes spicule defects and prevents males from mating.</para>
+        <para>
+            <emphasis role="underline">Sex myoblast migration defects</emphasis>: Ras signaling
+            helps to specify the proper endpoint of sex myoblast migration (<link linkend="bib100">Sundaram et al., 1996</link><!-- PMID 8787756-->). In <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-60" role="_blank">let-60</ulink></emphasis> loss-of-function mutants, sex myoblasts
+            adopt a broadened range of final positions. This defect can affect egg-laying.</para>
+        <para>
+            <emphasis role="underline">Axon guidance defects</emphasis>: Ras signaling controls the
+            paths of certain ventral cord neurons relative to the ventral midline (<link linkend="bib11">Bulow et al., 2004</link><!-- PMID 15134634-->). Whereas in wild-type these neurons extend axons along one side of
+            the midline, in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-60" role="_blank">let-60</ulink></emphasis> loss-of-function mutants the neurons wander
+            across the midline.</para>
+        <para>
+            <emphasis role="underline">Sterility due to pachytene exit (Pex) defects</emphasis>: Ras
+            signaling is required for progression through the pachytene stage of meiosis (<link linkend="bib21">Church et al., 1995</link><!-- PMID 7671816-->; <ulink url="http://www.wormbook.org/chapters/www_somaticsexdeterm/somaticsexdeterm.html" role="_blank">Somatic sex determination</ulink>). <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-60" role="_blank">let-60</ulink></emphasis>
+            loss-of-function mutants are sterile because germ cells arrest in pachytene (<xref linkend="figure2"/>).</para>
+        <para>
+            <emphasis role="underline">Olfaction defects</emphasis>: Ras signaling is required for
+            sensitivity to volatile attractants (<link linkend="bib45">Hirotsu et al., 2000</link><!-- PMID 10749212-->). Whereas
+            wild-type <emphasis>C. elegans</emphasis> will chemotax toward volatile attractants such
+            as isoamylalcohol and diacetyl, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-60" role="_blank">let-60</ulink></emphasis> loss-of-function mutants
+            fail to chemotax towards such attractants.</para>
+        <para>
+            <emphasis role="underline">Resistance to Microbacterium nematophilum-induced
+            swelling</emphasis>: <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ksr-1" role="_blank">ksr-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-45" role="_blank">lin-45</ulink></emphasis>,
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mek-2" role="_blank">mek-2</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mpk-1" role="_blank">mpk-1</ulink></emphasis> are required for the swelling
+            response to infection by <emphasis>M. nematophilum</emphasis> (<link linkend="bib77">Nicholas and Hodgkin, 2004</link><!-- PMID 15268855-->). Interestingly, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-60" role="_blank">let-60</ulink></emphasis> does not appear to be
+            important for this response, suggesting that a bacterial toxin may directly activate the
+            Raf/MEK/ERK cascade.</para>
+<!--<literallayout></literallayout>-->
+    </sect1>
+    <sect1>
+        <title>Screens used to identify Ras pathway components</title>
+        <para>The vast majority of studies on RTK/Ras/MAPK signaling have focused on the role of the
+            Ras pathway in promoting vulval development (see <ulink url="http://www.wormbook.org/chapters/www_vulvaldev/vulvaldev.html" role="_blank">Vulval development</ulink>), and many known components of the pathway have been identified through forward
+            genetic screens for mutants with Vul or Muv mutant phenotypes (<link linkend="bib30">Ferguson and Horvitz, 1985</link><!-- PMID 3996896-->). Some components of the pathway have been identified based on other
+            mutant phenotypes such as sex myoblast migration defects (<link linkend="bib95">Stern and Horvitz, 1991</link><!-- PMID 1821851-->) or germline meiosis defects (<link linkend="bib21">Church et al., 1995</link><!-- PMID 7671816-->; <link linkend="bib80">Ohmachi et al., 2002</link><!-- PMID 11882296-->). Some have been identified through reverse genetic approaches (<link linkend="bib27">Dutt et al., 2004</link><!-- PMID 15455032-->; <link linkend="bib37">Gutch et al., 1998</link><!-- PMID 9472025-->; <link linkend="bib56">Kamikura and Cooper, 2003</link><!-- PMID 14630941-->; <link linkend="bib113">Yoo et al., 2004</link><!-- PMID 14752159-->). Finally, some core Ras pathway
+            components as well as a large set of other genes that influence Ras signaling have been
+            identified through genetic suppressor or enhancer screens (<link linkend="bib96">Sternberg and Han, 1998</link><!-- PMID 9825675-->). Many modifier genes have essentially wild-type null phenotypes (<link linkend="table1">Table 1</link>),
+            indicating a significant and surprising amount of redundancy amongst Ras pathway regulators.</para>
+        <para>One especially productive modifier screen involved looking for suppressors of the
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-60" role="_blank">let-60</ulink></emphasis> gain-of-function Muv phenotype. This screen identified
+            alleles of the downstream kinase genes <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-45" role="_blank">lin-45</ulink></emphasis>/Raf (<link linkend="bib48">Hsu et al., 2002</link><!-- PMID 11861555-->), <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mek-2" role="_blank">mek-2</ulink></emphasis>/MEK (<link linkend="bib62">Kornfeld et al., 1995</link><!-- PMID 7729691-->; <link linkend="bib109">Wu et al., 1995</link><!-- PMID 7729690-->) and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mpk-1" role="_blank">mpk-1</ulink></emphasis>/ERK (<link linkend="bib64">Lackner et al., 1994</link><!-- PMID 8299936-->; <link linkend="bib108">Wu and Han, 1994</link><!-- PMID 8299935-->), revealing that <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-60;class=protein" role="_blank">LET-60</ulink> Ras
+            signals through the MAPK cascade. This screen also identified numerous positive
+            regulators of this cascade such as <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cdf-1" role="_blank">cdf-1</ulink></emphasis> (<link linkend="bib52">Jakubowski and Kornfeld, 1999</link><!-- PMID 10511554-->), <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ksr-1" role="_blank">ksr-1</ulink></emphasis> (<link linkend="bib63">Kornfeld et al., 1995</link><!-- PMID 8521514-->;
+            <link linkend="bib99">Sundaram and Han, 1995</link><!--PMID 8521513-->), <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sur-6" role="_blank">sur-6</ulink></emphasis> (<link linkend="bib91">Sieburth et al., 1999</link><!-- PMID 10521400-->), <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sur-7" role="_blank">sur-7</ulink></emphasis> (<link linkend="bib112">Yoder et al., 2004</link><!-- PMID 14685271-->),
+            and <emphasis>sur-8</emphasis> (<link linkend="bib90">Sieburth et al., 1998</link><!-- PMID 9674433-->; see below), as
+            well as a key downstream factor, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sur-2" role="_blank">sur-2</ulink></emphasis> (<link linkend="bib94">Singh and Han, 1995</link><!-- PMID 7557379-->; see below). Another very productive type of screen has been to look for
+            enhancers of lethal or vulval defects in the background of a very mildly affected or
+            “phenotype-less” mutant. For example, screens for enhancers of
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-45" role="_blank">lin-45</ulink></emphasis> lethality identified the downstream factors
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=eor-1" role="_blank">eor-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=eor-2" role="_blank">eor-2</ulink></emphasis> (<link linkend="bib47">Howard and Sundaram, 2002</link><!-- PMID 12130541-->; <link linkend="bib84">Rocheleau et al., 2002</link><!-- PMID 12019228-->), while screens for enhancers of
+            the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gap-1" role="_blank">gap-1</ulink></emphasis> Muv phenotype identified the MAPK phosphatase
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lip-1" role="_blank">lip-1</ulink></emphasis> (<link linkend="bib7">Berset et al., 2001</link><!-- PMID 11161219-->). These types of genetic
+            modifier screens have allowed the identification of genes with very subtle null phenotypes.</para>
+        <para>The power of genetic screening approaches in <emphasis>C. elegans</emphasis> is
+            reflected in the large number of conserved genes whose involvement in RTK/Ras/MAPK
+            signaling was first discovered in the worm; these include <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ark-1" role="_blank">ark-1</ulink></emphasis>
+            (<link linkend="bib46">Hopper et al., 2000</link><!-- PMID 10949028-->), <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cdf-1" role="_blank">cdf-1</ulink>/ZnT1</emphasis> (<link linkend="bib52">Jakubowski and Kornfeld, 1999</link><!-- PMID 10511554-->), <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ksr-1" role="_blank">ksr-1</ulink></emphasis> (<link linkend="bib63">Kornfeld et al., 1995</link><!-- PMID 8521514-->; <link linkend="bib99">Sundaram and Han, 1995</link><!-- PMID 8521513-->), <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-2" role="_blank">lin-2</ulink></emphasis>/CASK,
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-7" role="_blank">lin-7</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-10" role="_blank">lin-10</ulink></emphasis>/Mint (<link linkend="bib30">Ferguson and Horvitz, 1985</link><!-- PMID 3996896-->), <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sem-5" role="_blank">sem-5</ulink></emphasis>/Grb2 (<link linkend="bib24">Clark et al., 1992</link><!-- PMID 1372395-->),
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sli-1" role="_blank">sli-1</ulink></emphasis>/Cbl (<link linkend="bib54">Jongeward et al., 1995</link><!-- PMID 7789760-->),
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sur-2" role="_blank">sur-2</ulink></emphasis> (<link linkend="bib94">Singh and Han, 1995</link><!-- PMID 7557379-->),
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sur-5" role="_blank">sur-5</ulink></emphasis> (<link linkend="bib36">Gu et al., 1998</link><!-- PMID 9671465-->), <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sur-7" role="_blank">sur-7</ulink></emphasis>
+            (<link linkend="bib112">Yoder et al., 2004</link><!-- PMID 14685271-->), and
+            <emphasis>sur-8</emphasis>/<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=soc-2" role="_blank">soc-2</ulink></emphasis> (<link linkend="bib88">Selfors et al., 1998</link><!-- PMID 9618511-->; <link linkend="bib90">Sieburth et al., 1998</link><!-- PMID 9674433-->).</para>
+    </sect1>
+    <sect1>
+        <title>Growth factors and RTKs that signal through Ras/MAPK</title>
+        <para>The <emphasis>C. elegans</emphasis> genome contains twenty-eight predicted RTKs
+            (<link linkend="bib83">Popovici et al., 1999</link><!-- PMID 10568743-->), only a few of which have been characterized
+            mutationally (see <ulink url="http://www.wormbook.org/chapters/www_genomicoverviewkinases/genomicoverviewkinases.html" role="_blank">Genomic overview of protein kinases</ulink>). Of these
+            characterized RTKs, only the EGF receptor <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-23;class=protein" role="_blank">LET-23</ulink> and the FGF receptor <ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-15;class=protein" role="_blank">EGL-15</ulink> are known
+            to signal positively through Ras/MAPK (see below). The ephrin receptor <ulink url="http://www.wormbase.org/db/seq/protein?name=VAB-1;class=protein" role="_blank">VAB-1</ulink> negatively
+            regulates MAPK activation during oocyte maturation (<link linkend="bib70">Miller et al., 2003</link><!-- PMID 12533508-->).
+            Notably, the insulin-like RTK <ulink url="http://www.wormbase.org/db/seq/protein?name=DAF-2;class=protein" role="_blank">DAF-2</ulink> does not appear to signal through Ras/MAPK (G.
+            Ruvkun, personal communication), but instead signals through a PI3-kinase/Akt pathway
+                (see <ulink url="http://www.wormbook.org/chapters/www_signalingimmuneresponse/signalingimmuneresponse.html" role="_blank">Signaling in the immune response</ulink>).</para>
+        <para>Signaling by the <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-23;class=protein" role="_blank">LET-23</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-15;class=protein" role="_blank">EGL-15</ulink> RTKs can account for many but not all <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-60;class=protein" role="_blank">LET-60</ulink>
+            Ras-dependent developmental events. The EGF-related ligand <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-3;class=protein" role="_blank">LIN-3</ulink> signals through
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-23;class=protein" role="_blank">LET-23</ulink>/EGFR and <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-60;class=protein" role="_blank">LET-60</ulink> to control specification of hermaphrodite vulval and uterine
+            fates, male spicule cell fates, the <ulink url="http://www.wormbase.org/db/get?name=P12;class=Cell" role="_blank">P12</ulink> ectoblast cell fate, and most likely the
+            excretory duct cell fate (<link linkend="bib2">Aroian and Sternberg, 1991</link><!-- PMID 2071015-->; <link linkend="bib17">Chang et al., 1999</link><!-- PMID 10074449-->; <xref linkend="figure1"/>A). The FGF-related ligand <ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-17;class=protein" role="_blank">EGL-17</ulink> signals
+            through <ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-15;class=protein" role="_blank">EGL-15</ulink>/FGFR and <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-60;class=protein" role="_blank">LET-60</ulink> to control sex myoblast migration (<xref linkend="figure1"/>B), while the FGF-related ligand <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-756;class=protein" role="_blank">LET-756</ulink> signals through <ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-15;class=protein" role="_blank">EGL-15</ulink> and
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-60;class=protein" role="_blank">LET-60</ulink> to promote axon guidance and viability (<link linkend="bib11">Bulow et al., 2004</link><!-- PMID 15134634-->;
+            <link linkend="bib12">Burdine et al., 1997</link><!-- PMID 9122212-->; <link linkend="bib26">DeVore et al., 1995</link><!-- PMID 7585964-->; <link linkend="bib34">Goodman et al., 2003</link><!-- PMID 12835392--><!-- PMID 15199049-->; <link linkend="bib85">Roubin et al., 1999</link><!-- PMID 10597282-->; <link linkend="bib100">Sundaram et al.,1996</link><!-- PMID 8787756-->). In addition, <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-60;class=protein" role="_blank">LET-60</ulink> acts independently of any known RTK to control
+            olfaction (<link linkend="bib45">Hirotsu et al., 2000</link><!-- PMID 10749212-->) and the progression of germline meiosis
+            (<link linkend="bib21">Church et al., 1995</link><!-- PMID 7671816-->; <xref linkend="figure1"/>C). Furthermore, <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-45;class=protein" role="_blank">LIN-45</ulink>,
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=MEK-2;class=protein" role="_blank">MEK-2</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=MPK-1;class=protein" role="_blank">MPK-1</ulink> act independently of known RTKs or <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-60;class=protein" role="_blank">LET-60</ulink> to mediate responses to
+            <emphasis>Microbacterium nematophilum</emphasis> infection (<link linkend="bib77">Nicholas and Hodgkin, 2004</link><!-- PMID 15268855-->).</para>
+        <para>In some cases the <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-23;class=protein" role="_blank">LET-23</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-15;class=protein" role="_blank">EGL-15</ulink> RTKs can also act through <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-60;class=protein" role="_blank">LET-60</ulink> Ras-independent
+            pathways. <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-3;class=protein" role="_blank">LIN-3</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-23;class=protein" role="_blank">LET-23</ulink> control oocyte maturation via PLC gamma and an inositol
+            polyphosphate signaling pathway (<link linkend="bib10">Bui and Sternberg, 2002</link><!-- PMID-->; <link linkend="bib22">Clandinin et al., 1998</link><!-- PMID 9491893-->; <link linkend="bib110">Yin et al., 2004</link><!-- PMID 15194811-->). <ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-17;class=protein" role="_blank">EGL-17</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-15;class=protein" role="_blank">EGL-15</ulink> may act through
+            additional, unknown pathways to control sex myoblast migration and osmoregulation
+            (<link linkend="bib26">DeVore et al., 1995</link><!-- PMID 7585964-->; <link linkend="bib87">Schutzman et al., 2001</link><!-- PMID 11689700-->; <link linkend="bib100">Sundaram et al., 1996</link><!-- PMID 8787756-->).</para>
+    </sect1>
+    <sect1>
+        <title>Regulators of <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-3;class=protein" role="_blank">LIN-3</ulink>/EGF and <ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-17;class=protein" role="_blank">EGL-17</ulink>/FGF</title>
+        <para>Reverse genetic approaches have identified several factors important for ligand
+            processing and secretion. The ligand <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-3;class=protein" role="_blank">LIN-3</ulink> exists in both trans-membrane
+            (locally-acting) and diffusible forms (<link linkend="bib44">Hill and Sternberg, 1992</link><!-- PMID 1641037-->; <link linkend="bib105">Thomas et al., 1990</link><!-- PMID 2401010-->); generation of the diffusible form in vulval cells appears to
+            require cleavage by the Rhomboid ortholog <ulink url="http://www.wormbase.org/db/seq/protein?name=ROM-1;class=protein" role="_blank">ROM-1</ulink> (<link linkend="bib27">Dutt et al., 2004</link><!-- PMID 15455032-->). The
+            ligand <ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-17;class=protein" role="_blank">EGL-17</ulink> is secreted via a mechanism that requires the lipoprotein receptor-related
+            proteins <ulink url="http://www.wormbase.org/db/seq/protein?name=LRP-1;class=protein" role="_blank">LRP-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=LRP-2;class=protein" role="_blank">LRP-2</ulink> and the Disabled-related adaptor <ulink url="http://www.wormbase.org/db/seq/protein?name=DAB-1;class=protein" role="_blank">DAB-1</ulink> (<link linkend="bib56">Kamikura and Cooper, 2003</link><!-- PMID 14630941-->).</para>
+    </sect1>
+    <sect1>
+        <title>Regulators and targets of <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-23;class=protein" role="_blank">LET-23</ulink>/EGFR and <ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-15;class=protein" role="_blank">EGL-15</ulink>/FGFR</title>
+        <para>Factors that regulate <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-23;class=protein" role="_blank">LET-23</ulink> RTK trafficking and localization are important modulators
+            of signaling strength. A complex consisting of three PDZ-domain proteins, <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-2;class=protein" role="_blank">LIN-2</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-7;class=protein" role="_blank">LIN-7</ulink>
+            and <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-10;class=protein" role="_blank">LIN-10</ulink>, positively regulates signaling by localizing <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-23;class=protein" role="_blank">LET-23</ulink> to the basolateral
+            membrane of vulval precursor cells, adjacent to the source of <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-3;class=protein" role="_blank">LIN-3</ulink> ligand (<link linkend="bib55">Kaech et al., 1998</link><!-- PMID 9753323-->; <link linkend="bib92">Simske et al., 1996</link><!-- PMID 8612272-->). The E3 ubiquitin ligase
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=SLI-1;class=protein" role="_blank">SLI-1</ulink> (Cbl; <link linkend="bib54">Jongeward et al., 1995</link><!-- PMID 7789760-->; <link linkend="bib114">Yoon et al., 1995</link><!-- PMID 7652556-->), the
+            clathrin adaptors <ulink url="http://www.wormbase.org/db/seq/protein?name=UNC-101;class=protein" role="_blank">UNC-101</ulink> (<link linkend="bib65">Lee et al., 1994</link><!-- PMID 8288128-->) and <ulink url="http://www.wormbase.org/db/seq/protein?name=DPY-23;class=protein" role="_blank">DPY-23</ulink> (<link linkend="bib113">Yoo et al., 2004</link><!-- PMID 14752159-->), and the sorting nexin <ulink url="http://www.wormbase.org/db/seq/protein?name=LST-4;class=protein" role="_blank">LST-4</ulink> (<link linkend="bib113">Yoo et al., 2004</link><!-- PMID 14752159-->) all
+            negatively regulate signaling, probably by promoting <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-23;class=protein" role="_blank">LET-23</ulink> endocytosis and/or degradation.</para>
+        <para>RTKs transduce signals by autophosphorylation and subsequent binding to
+            phospho-tyrosine binding adaptor proteins (<link linkend="bib86">Schlessinger, 2000</link><!-- PMID 11057895-->). <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-23;class=protein" role="_blank">LET-23</ulink>
+            seems to act primarily through the adaptor <ulink url="http://www.wormbase.org/db/seq/protein?name=SEM-5;class=protein" role="_blank">SEM-5</ulink> (<link linkend="bib24">Clark et al., 1992</link><!-- PMID 1372395-->),
+            while <ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-15;class=protein" role="_blank">EGL-15</ulink> acts through both <ulink url="http://www.wormbase.org/db/seq/protein?name=SEM-5;class=protein" role="_blank">SEM-5</ulink> and the adaptor <ulink url="http://www.wormbase.org/db/seq/protein?name=SOC-1;class=protein" role="_blank">SOC-1</ulink> (<link linkend="bib87">Schutzman et al., 2001</link><!-- PMID 11689700-->). Factors that regulate RTK phosphorylation status could obviously modulate
+            signaling strength. For example, the receptor tyrosine phosphatase <ulink url="http://www.wormbase.org/db/seq/protein?name=CLR-1;class=protein" role="_blank">CLR-1</ulink> negatively
+            regulates <ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-15;class=protein" role="_blank">EGL-15</ulink> RTK activity, most likely through direct dephosphorylation of key
+            tyrosine residues (<link linkend="bib61">Kokel et al., 1998</link><!-- PMID 9585503-->). On the other hand, the cytosolic
+            tyrosine phosphatase <ulink url="http://www.wormbase.org/db/seq/protein?name=PTP-2;class=protein" role="_blank">PTP-2</ulink> (Shp-2) positively regulates <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-23;class=protein" role="_blank">LET-23</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-15;class=protein" role="_blank">EGL-15</ulink> RTK signaling
+            (<link linkend="bib37">Gutch et al., 1998</link><!-- PMID 9472025-->; <link linkend="bib87">Schutzman et al., 2001</link><!-- PMID 11689700-->), and the
+            tyrosine kinase <ulink url="http://www.wormbase.org/db/seq/protein?name=ARK-1;class=protein" role="_blank">ARK-1</ulink> (Ack-related) negatively regulates <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-23;class=protein" role="_blank">LET-23</ulink> RTK signaling (<link linkend="bib46">Hopper et al., 2000</link><!-- PMID 10949028-->). The substrates and mechanisms of action of <ulink url="http://www.wormbase.org/db/seq/protein?name=PTP-2;class=protein" role="_blank">PTP-2</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=ARK-1;class=protein" role="_blank">ARK-1</ulink>
+            are still unclear, but these proteins can bind to the adaptors <ulink url="http://www.wormbase.org/db/seq/protein?name=SOC-1;class=protein" role="_blank">SOC-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=SEM-5;class=protein" role="_blank">SEM-5</ulink>,
+            respectively, and appear to act at a step immediately downstream of the RTKs.</para>
+    </sect1>
+<?newpage?>
+    <sect1>
+        <title>Regulators of Ras activity</title>
+        <para>As is the case for other small GTPases (see <ulink url="http://www.wormbook.org/chapters/www_smallGTPases/smallGTPases.html" role="_blank">Small GTPases</ulink>),
+            the activity of <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-60;class=protein" role="_blank">LET-60</ulink> Ras is controlled by Guanine Nucleotide Exchange Factors (GEFs),
+            which activate Ras by stimulating conversion of Ras-GDP to Ras-GTP, and by GTPase
+            activating proteins (GAPs), which inactivate Ras by stimulating conversion of Ras-GTP to
+            Ras-GDP (<xref linkend="figure3"/>). The GEF <ulink url="http://www.wormbase.org/db/seq/protein?name=SOS-1;class=protein" role="_blank">SOS-1</ulink> appears necessary for most
+            Ras-mediated developmental events (<link linkend="bib16">Chang et al., 2000</link><!-- PMID 10880441-->). The GAPs <ulink url="http://www.wormbase.org/db/seq/protein?name=GAP-1;class=protein" role="_blank">GAP-1</ulink>
+            and <ulink url="http://www.wormbase.org/db/seq/protein?name=GAP-2;class=protein" role="_blank">GAP-2</ulink> negatively regulate Ras signaling during vulval development and excretory duct
+            development, respectively (<link linkend="bib38">Hajnal et al., 1997</link><!-- PMID 9334333-->; <link linkend="bib42">Hayashizaki et al., 1998</link><!-- PMID 9619631-->). Another negative regulator of Ras is <ulink url="http://www.wormbase.org/db/seq/protein?name=SUR-5;class=protein" role="_blank">SUR-5</ulink>, a protein of unknown function
+            that resembles acetyl coenzyme A synthetases (<link linkend="bib36">Gu et al., 1998</link><!-- PMID 9671465-->).</para>
+<literallayout></literallayout>
+    <mediaobject id="figure3" xreflabel="Figure 3">
+        <imageobject>
+            <imagedata entityref="fig3" align="center" width="4in"/>
+        </imageobject>
+        <textobject>
+			<phrase>figure 3</phrase>
+		</textobject> &fig3legend;</mediaobject>
+    </sect1>
+    <sect1>
+        <title>Regulators of the Raf/MEK/ERK kinase cascade</title>
+        <para>Genetic modifier screens have identified a large set of genes that promote or inhibit
+            signaling through the MAPK cascade, but that are not individually required for normal
+            development in most tissues. In general, the roles of these genes can only be detected
+            as suppressor or enhancer effects in appropriate double mutant combinations. Raf/MEK/ERK
+            signaling is apparently subject to many different levels of regulation that individually
+            have modest effects on signaling strength.</para>
+        <para>Positively-acting gene products in this category include so-called “scaffold” proteins
+            - <ulink url="http://www.wormbase.org/db/seq/protein?name=CNK-1;class=protein" role="_blank">CNK-1</ulink> (<link linkend="bib116">Rocheleau et al., 2005</link>), <ulink url="http://www.wormbase.org/db/seq/protein?name=KSR-1;class=protein" role="_blank">KSR-1</ulink> (<link linkend="bib63">Kornfeld et al., 1995</link><!-- PMID 8521514-->;
+            <link linkend="bib99">Sundaram and Han, 1995</link><!-- PMID 8521513-->), <ulink url="http://www.wormbase.org/db/seq/protein?name=KSR-2;class=protein" role="_blank">KSR-2</ulink> (<link linkend="bib80">Ohmachi et al., 2002</link><!-- PMID 11882296-->), and
+            SUR-8/<ulink url="http://www.wormbase.org/db/seq/protein?name=SOC-2;class=protein" role="_blank">SOC-2</ulink> (<link linkend="bib88">Selfors et al., 1998</link><!-- PMID 9618511-->; <link linkend="bib90">Sieburth et al., 1998</link><!-- PMID 9674433-->) -
+            that bind to one or more core components of the signaling cascade and are thought to
+            bring different components together at the right place and time (<link linkend="bib73">Morrison and Davis, 2003</link><!-- PMID 14570565-->). <ulink url="http://www.wormbase.org/db/seq/protein?name=KSR-1;class=protein" role="_blank">KSR-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=KSR-2;class=protein" role="_blank">KSR-2</ulink> are individually required for some developmental
+            processes, but redundantly required for many others (<link linkend="bib80">Ohmachi et al., 2002</link><!-- PMID 11882296-->; <xref linkend="figure1"/>). Also in this category is <ulink url="http://www.wormbase.org/db/seq/protein?name=SUR-6;class=protein" role="_blank">SUR-6</ulink>, a PR55/B-type
+            regulatory subunit of Protein Phosphatase 2A (<link linkend="bib91">Sieburth et al., 1999</link><!-- PMID 10521400-->),
+            which has been suggested to dephosphorylate and activate both Raf and KSR (<link linkend="bib57">Kao et al., 2003</link><!-- PMID 14724126-->; <link linkend="bib81">Ory et al., 2003</link><!-- PMID 12932319-->). Finally, the zinc transporter
+            proteins <ulink url="http://www.wormbase.org/db/seq/protein?name=CDF-1;class=protein" role="_blank">CDF-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=SUR-7;class=protein" role="_blank">SUR-7</ulink> also positively regulate signaling, suggesting that high levels
+            of intracellular zinc inhibit Ras signaling (<link linkend="bib9">Bruinsma et al., 2002</link><!-- PMID 12015965-->; <link linkend="bib112">Yoder et al., 2004</link><!-- PMID 14685271-->).</para>
+        <para>Negatively acting gene products in this category include the G-protein coupled
+            receptor <ulink url="http://www.wormbase.org/db/seq/protein?name=SRA-13;class=protein" role="_blank">SRA-13</ulink> and its G<symbol role="symbolfont">&#x003B1;</symbol> target <ulink url="http://www.wormbase.org/db/seq/protein?name=GPA-5;class=protein" role="_blank">GPA-5</ulink>, which may modulate Ras signaling in response to
+            environmental conditions such as food availability (<link linkend="bib4">Battu et al., 2003</link><!-- PMID 12736202-->).
+            Also in this category are the kinase <ulink url="http://www.wormbase.org/db/seq/protein?name=PAR-1;class=protein" role="_blank">PAR-1</ulink> (which is thought to modulate KSR localization; <link linkend="bib57">Kao et al., 2003</link><!-- PMID 14724126-->; <link linkend="bib74">Muller et al., 2001</link><!-- PMID 11741534-->;
+            <link linkend="bib112">Yoder et al., 2004</link><!-- PMID 14685271-->), the MPK-1-binding protein <ulink url="http://www.wormbase.org/db/seq/protein?name=LST-1;class=protein" role="_blank">LST-1</ulink> (<link linkend="bib113">Yoo et al., 2004</link><!-- PMID 14752159-->), and the MAP kinase phosphatase <ulink url="http://www.wormbase.org/db/seq/protein?name=LIP-1;class=protein" role="_blank">LIP-1</ulink> (<link linkend="bib7">Berset et al., 2001</link><!-- PMID 11161219-->).</para>
+        <para>It is important to note that some regulatory proteins may influence Raf/MEK/ERK
+            signaling indirectly, by affecting neighboring cells. For example, the G<symbol role="symbolfont">&#x003B1;</symbol>q protein
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-30;class=protein" role="_blank">EGL-30</ulink> and the voltage-gated calcium channel <ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-19;class=protein" role="_blank">EGL-19</ulink> promote vulval induction, but
+            function in neurons and muscle, respectively (<link linkend="bib71">Moghal et al., 2003</link><!-- PMID 12925583-->).
+            Similarly, <ulink url="http://www.wormbase.org/db/seq/protein?name=SRA-13;class=protein" role="_blank">SRA-13</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=GPA-5;class=protein" role="_blank">GPA-5</ulink> influence vulval induction but it is unknown whether these
+            genes function in vulval cells or in neurons (<link linkend="bib4">Battu et al., 2003</link><!-- PMID 12736202-->). Also,
+            the zinc transporter <ulink url="http://www.wormbase.org/db/seq/protein?name=CDF-1;class=protein" role="_blank">CDF-1</ulink> can influence vulval induction when expressed in either the
+            vulva or the intestine (<link linkend="bib9">Bruinsma et al., 2002</link><!-- PMID 12015965-->). How tissues such as the
+            intestine, neurons and muscle can influence Raf/MEK/ERK activity in vulval cells is
+            still unclear.</para>
+    </sect1>
+    <sect1>
+        <title>Targets of <ulink url="http://www.wormbase.org/db/seq/protein?name=MPK-1;class=protein" role="_blank">MPK-1</ulink> ERK, and other factors influencing downstream responses</title>
+        <para>No single downstream target of <ulink url="http://www.wormbase.org/db/seq/protein?name=MPK-1;class=protein" role="_blank">MPK-1</ulink> can account for all of the effects of
+            RTK/Ras/MAPK signaling. Rather, different tissues seem to require different subsets of
+            potential targets, and the availability of certain targets may control tissue-specific responses.</para>
+        <para>One widely important <ulink url="http://www.wormbase.org/db/seq/protein?name=MPK-1;class=protein" role="_blank">MPK-1</ulink> target is the Ets domain transcription factor <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-1;class=protein" role="_blank">LIN-1</ulink> (<link linkend="bib6">Beitel et al., 1995</link><!-- PMID 8543158-->; <xref linkend="figure1"/>A). <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-1;class=protein" role="_blank">LIN-1</ulink> antagonizes Ras
+            signaling and appears to be negatively regulated by <ulink url="http://www.wormbase.org/db/seq/protein?name=MPK-1;class=protein" role="_blank">MPK-1</ulink> phosphorylation (<link linkend="bib50">Jacobs et al., 1998</link><!-- PMID 9691039-->). However, some evidence suggests an additional positive role in
+            Ras signaling (<link linkend="bib47">Howard and Sundaram, 2002</link><!-- PMID 12130541-->). Like other Ets domain factors
+            (<link linkend="bib115">Yordy and Muise-Helmericks, 2000</link><!-- PMID 11175366-->), <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-1;class=protein" role="_blank">LIN-1</ulink> may have both transcriptional
+            repressor and transcriptional activator functions.</para>
+        <para>Four widely important positive factors are the Mediator subunit <ulink url="http://www.wormbase.org/db/seq/protein?name=SUR-2;class=protein" role="_blank">SUR-2</ulink>, the BTB/Zinc
+            finger protein <ulink url="http://www.wormbase.org/db/seq/protein?name=EOR-1;class=protein" role="_blank">EOR-1</ulink>, and the novel nuclear proteins <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-25;class=protein" role="_blank">LIN-25</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=EOR-2;class=protein" role="_blank">EOR-2</ulink> (<link linkend="bib47">Howard and Sundaram, 2002</link><!-- PMID 12130541-->; <link linkend="bib94">Singh and Han, 1995</link><!-- PMID 7557379-->; <link linkend="bib106">Tuck and Greenwald, 1995</link><!-- PMID 7867931-->; <xref linkend="figure1"/>A). None of these proteins are known to be
+            direct targets of <ulink url="http://www.wormbase.org/db/seq/protein?name=MPK-1;class=protein" role="_blank">MPK-1</ulink>, but their functions are important for downstream cellular
+            responses. <ulink url="http://www.wormbase.org/db/seq/protein?name=SUR-2;class=protein" role="_blank">SUR-2</ulink> is a conserved component of the Mediator complex, which links certain
+            sequence-specific DNA binding proteins (such as Ets proteins) to the general RNA
+            Polyme<emphasis>ras</emphasis>e II transcriptional machinery (<link linkend="bib8">Boyer et al., 1999</link><!-- PMID 10353252-->; <link linkend="bib97">Stevens et al., 2002</link><!-- PMID 11934987-->). <ulink url="http://www.wormbase.org/db/seq/protein?name=SUR-2;class=protein" role="_blank">SUR-2</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-25;class=protein" role="_blank">LIN-25</ulink> appear to function
+            together, and they have strong effects on vulval development and weaker effects on
+            excretory duct and <ulink url="http://www.wormbase.org/db/get?name=P12;class=Cell" role="_blank">P12</ulink> development (<link linkend="bib78">Nilsson et al., 1998</link><!-- PMID 9806929-->; <link linkend="bib79">Nilsson et al., 2000</link><!-- PMID 11063686-->; <link linkend="bib94">Singh and Han, 1995</link><!-- PMID 7557379-->; <link linkend="bib106">Tuck and Greenwald, 1995</link><!-- PMID 7867931-->). <ulink url="http://www.wormbase.org/db/seq/protein?name=EOR-1;class=protein" role="_blank">EOR-1</ulink> is related to known transcriptional activators and repressors (<link linkend="bib3">Barna et al., 2002</link><!-- PMID 12408802-->; <link linkend="bib25">Collins et al., 2001</link><!-- PMID 11340155-->). <ulink url="http://www.wormbase.org/db/seq/protein?name=EOR-1;class=protein" role="_blank">EOR-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=EOR-2;class=protein" role="_blank">EOR-2</ulink> appear
+            to function together, and they have moderate effects on excretory duct and <ulink url="http://www.wormbase.org/db/get?name=P12;class=Cell" role="_blank">P12</ulink>
+            development and weaker effects on vulval development (<link linkend="bib47">Howard and Sundaram, 2002</link><!-- PMID 12130541-->). <ulink url="http://www.wormbase.org/db/seq/protein?name=EOR-1;class=protein" role="_blank">EOR-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=EOR-2;class=protein" role="_blank">EOR-2</ulink> appear to act redundantly with <ulink url="http://www.wormbase.org/db/seq/protein?name=SUR-2;class=protein" role="_blank">SUR-2</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-25;class=protein" role="_blank">LIN-25</ulink> (<link linkend="bib47">Howard and Sundaram, 2002</link><!-- PMID 12130541-->).</para>
+        <para>Several transcription factors are required for cell-type specific responses to
+            RTK/Ras/MAPK signaling, and are candidate <ulink url="http://www.wormbase.org/db/seq/protein?name=MPK-1;class=protein" role="_blank">MPK-1</ulink> targets. These include the forkhead
+            transcription factor <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-31;class=protein" role="_blank">LIN-31</ulink> (<link linkend="bib69">Miller et al., 1993</link><!-- PMID 8504934-->; <link linkend="bib103">Tan et al., 1998</link><!-- PMID 9604932-->), which both promotes and inhibits vulval development, the Hox protein <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-39;class=protein" role="_blank">LIN-39</ulink>
+            (<link linkend="bib23">Clark et al., 1993</link><!-- PMID 8101475-->; <link linkend="bib28">Eisenmann et al., 1998</link><!-- PMID 9716532-->; <link linkend="bib67">Maloof and Kenyon, 1998</link><!-- PMID 9486792-->), the zinc-finger protein <ulink url="http://www.wormbase.org/db/seq/protein?name=SEM-4;class=protein" role="_blank">SEM-4</ulink> (<link linkend="bib35">Grant et al., 2000</link><!-- PMID 10926783-->) and the GATA factors <ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-18;class=protein" role="_blank">EGL-18</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=ELT-6;class=protein" role="_blank">ELT-6</ulink> (<link linkend="bib59">Koh et al., 2004</link><!-- PMID 14975731-->; <link linkend="bib60">Koh et al., 2002</link><!-- PMID 12399309-->), which promote vulval development, and the Hox protein <ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-5;class=protein" role="_blank">EGL-5</ulink>
+            (<link linkend="bib19">Chisholm, 1991</link><!-- PMID 1879361-->; <link linkend="bib53">Jiang and Sternberg, 1998</link><!-- PMID 9584132-->), which promotes
+            <ulink url="http://www.wormbase.org/db/get?name=P12;class=Cell" role="_blank">P12</ulink> development. Ectopic expression of <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-31;class=protein" role="_blank">LIN-31</ulink> or <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-39;class=protein" role="_blank">LIN-39</ulink> can cause other tissues to adopt
+            vulval-like characteristics in response to RTK/Ras/MAPK signaling, suggesting that the
+            presence of these distinct transcription factors may be a key determinant of
+            tissue-specific responses to Ras signaling (<link linkend="bib67">Maloof and Kenyon, 1998</link><!-- PMID 9486792-->; <link linkend="bib103">Tan et al., 1998</link><!-- PMID 9604932-->).</para>
+        <para>Not all targets of <ulink url="http://www.wormbase.org/db/seq/protein?name=MPK-1;class=protein" role="_blank">MPK-1</ulink> need be transcription factors. For example, none of the
+            widely important transcriptional regulators seem to be involved in controlling germline
+            meiosis or sex myoblast migration (<link linkend="bib21">Church et al., 1995</link><!-- PMID 7671816-->; <link linkend="bib100">Sundaram et al., 1996</link><!-- PMID 8787756-->; R. Howard and M. Sundaram, unpublished observations; <xref linkend="figure1"/>B and C). It is likely that <ulink url="http://www.wormbase.org/db/seq/protein?name=MPK-1;class=protein" role="_blank">MPK-1</ulink> targets in these tissues include
+            factors more directly involved in meiosis and motility.</para>
+    </sect1>
+    <sect1>
+        <title>Interactions between the RTK/Ras/MAPK pathway and other signaling pathways</title>
+        <para>The RTK/Ras/MAPK pathway often interacts with other signaling pathways to control cell
+            fates. For example, the Ras pathway cooperates with a Wnt pathway (see <ulink url="http://www.wormbook.org/chapters/www_wntsignaling/wntsignaling.html">Wnt signaling</ulink>) to
+            specify <ulink url="http://www.wormbase.org/db/get?name=P12;class=Cell" role="_blank">P12</ulink> fates and vulval fates, possibly by convergent upregulation of common
+            targets such as Hox genes (<link linkend="bib28">Eisenmann et al., 1998</link><!-- PMID 9716532-->; <link linkend="bib33">Gleason et al., 2002</link><!-- PMID 12023306-->). During vulval development (see <ulink url="http://www.wormbook.org/chapters/www_vulvaldev/vulvaldev.html" role="_blank">Vulval development</ulink>), the Ras pathway also acts sequentially with a Notch pathway (see <ulink url="http://www.wormbook.org/chapters/www_lin12Notch/lin12notch.html" role="_blank">LIN-12/Notch signaling in <emphasis>C. elegans</emphasis></ulink>) to induce the proper pattern of vulval fates (<link linkend="bib93">Simske and Kim, 1995</link><!-- PMID 7753169-->; <link linkend="bib101">Sundaram, 2004</link><!-- PMID 15084301-->). Ras signaling affects Notch signaling in at
+            least two ways. First, Ras stimulates <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-12;class=protein" role="_blank">LIN-12</ulink>/Notch endocytosis to downregulate Notch
+            signaling in the same cell (<link linkend="bib89">Shaye and Greenwald, 2002</link><!-- PMID 12478297-->). Second, Ras
+            stimulates the transcription of Notch ligand genes to upregulate Notch signaling in
+            adjacent cells (<link linkend="bib18">Chen and Greenwald, 2004</link><!-- PMID 14960273-->). Notch signaling also
+            antagonizes Ras signaling by stimulating the transcription of various negative
+            regulators such as <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lip-1" role="_blank">lip-1</ulink></emphasis> and <emphasis>lst-1-4</emphasis> (<link linkend="bib7">Berset et al., 2001</link><!-- PMID 11161219-->; <link linkend="bib113">Yoo et al., 2004</link><!-- PMID 14752159-->).</para>
+        <para>RTK/Ras/MAPK signaling in both <ulink url="http://www.wormbase.org/db/get?name=P12;class=Cell" role="_blank">P12</ulink> and the vulva is antagonized by <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-35;class=protein" role="_blank">LIN-35</ulink> (Rb), <ulink url="http://www.wormbase.org/db/seq/protein?name=EFL-1;class=protein" role="_blank">EFL-1</ulink>
+            (E2F) and other “Synthetic Multivulva” (SynMuv) gene products (<link linkend="bib13">Ceol and Horvitz, 2001</link><!-- PMID 11463372-->; <link linkend="bib29">Fay and Han, 2000</link><!-- PMID 10748467-->; <link linkend="bib53">Jiang and Sternberg, 1998</link><!-- PMID 9584132-->; <link linkend="bib66">Lu and Horvitz, 1998</link><!-- PMID 9875852-->). There are three classes of SynMuv genes,
+            A, B and C, that function redundantly (<link linkend="bib14">Ceol and Horvitz, 2004</link><!-- PMID 15068795-->; <link linkend="bib31">Ferguson and Horvitz, 1989</link><!-- PMID 2806880-->). Many of these genes encode nuclear proteins with
+            apparent roles in chromatin remodeling and transcriptional regulation (<link linkend="bib29">Fay and Han, 2000</link><!-- PMID 10748467-->). Some SynMuv genes seem to function cell autonomously and could
+            antagonize Ras signaling at the level of downstream transcriptional output (<link linkend="bib104">Thomas and Horvitz, 1999</link><!-- PMID 10393123-->). However, other SynMuv genes (including
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-35" role="_blank">lin-35</ulink></emphasis>/Rb) appear to function cell non-autonomously in the
+            syncytial hypodermis hyp7, suggesting that hyp7-derived signals can influence <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-23;class=protein" role="_blank">LET-23</ulink> RTK
+            activity (<link linkend="bib43">Herman and Hedgecock, 1990</link><!-- PMID 2234080-->; <link linkend="bib75">Myers and Greenwald, 2005</link><!-- PMID-->).</para>
+    </sect1>
+    <sect1>
+        <title>Conclusions and future prospects</title>
+        <para>Although the basic framework of the RTK/Ras/MAPK pathway is well characterized, the
+            pathway is subject to complex regulation that we are only just beginning to understand.
+            A most surprising finding in <emphasis>C. elegans</emphasis> has been the large number
+            of regulatory proteins that have only modest individual effects on signaling.
+            Furthermore, some regulatory proteins (such as <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-2;class=protein" role="_blank">LIN-2</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-7;class=protein" role="_blank">LIN-7</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-10;class=protein" role="_blank">LIN-10</ulink>) have very cell-type
+            specific effects. Downstream targets of <ulink url="http://www.wormbase.org/db/seq/protein?name=MPK-1;class=protein" role="_blank">MPK-1</ulink> also appear to be cell-type specific, and
+            likely control how a particular cell responds to the same basic signaling pathway.
+            Although vulval development has been and will continue to be a powerful model for
+            studying RTK/Ras/MAPK signaling, ongoing studies of other Ras-mediated developmental
+            processes will surely reveal new and different types of regulatory mechanisms and targets.</para>
+    </sect1>
+    <sect1>
+        <title>Acknowledgements</title>
+		<para>My laboratory’s work on RTK/Ras/MAPK signaling is supported by NIH grants GM58540 and CA87512.</para>
+	</sect1>
+    <sect1>
+        <title>References</title>
+		<para/>
+		&rtkras_Refs;</sect1>
+</article>

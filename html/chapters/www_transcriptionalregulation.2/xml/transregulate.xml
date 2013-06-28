@@ -1,0 +1,813 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "docbookx.dtd"
+[
+<!ENTITY fig1 SYSTEM 'transregulate_fig1.jpg' NDATA JPG>
+<!ENTITY fig2 SYSTEM 'transregulate_fig2.jpg' NDATA JPG>
+<!ENTITY fig3 SYSTEM 'transregulate_fig3.jpg' NDATA JPG>
+<!ENTITY fig4 SYSTEM 'transregulate_fig4.jpg' NDATA JPG>
+<!ENTITY fig5 SYSTEM 'transregulate_fig5.jpg' NDATA JPG>
+<!ENTITY fig6 SYSTEM 'transregulate_fig6.jpg' NDATA JPG>
+<!ENTITY fig7 SYSTEM 'transregulate_fig7.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'transregulate_fig1leg.xml'>
+<!ENTITY fig2legend SYSTEM 'transregulate_fig2leg.xml'>
+<!ENTITY fig3legend SYSTEM 'transregulate_fig3leg.xml'>
+<!ENTITY fig4legend SYSTEM 'transregulate_fig4leg.xml'>
+<!ENTITY fig5legend SYSTEM 'transregulate_fig5leg.xml'>
+<!ENTITY fig6legend SYSTEM 'transregulate_fig6leg.xml'>
+<!ENTITY fig7legend SYSTEM 'transregulate_fig7leg.xml'>
+<!ENTITY transregulate_refs SYSTEM 'transregulate_ref.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="transregulate">
+<articleinfo>
+<title>Transcriptional regulation of gene expression in <emphasis>C. elegans</emphasis><footnote><para>Edited by: Thomas Blumenthal. Last revised March 28, 2012, Published June 4, 2013. This chapter should be cited as: Reinke et al. Transcriptional regulation of gene expression in <emphasis>C. elegans</emphasis> (June 4, 2013), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.45.2, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2013 Reinke et al. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+</footnote></title>
+<author><othername>Valerie Reinke<superscript>1&sect;</superscript>, Michael Krause<superscript>2</superscript><remark><footnote><para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:michaelkr@niddk.nih.gov">michaelkr@niddk.nih.gov</ulink>, or <ulink url="mailto:okkema@uic.edu">okkema@uic.edu</ulink></para></footnote></remark>, Peter Okkema<superscript>3&sect;</superscript></othername>
+
+<affiliation><orgname><superscript>1</superscript> Department of Genetics, Yale University, New Haven, CT 06520</orgname></affiliation>
+<affiliation><orgname><superscript>2</superscript>Laboratory of Molecular Biology, National Institute of Diabetes and Digestive and Kidney Diseases, National Institutes of Health, Bethesda, MD 20892</orgname></affiliation>
+<affiliation><orgname><superscript>3</superscript>Department of Biological Sciences, University of Illinois Chicago, Chicago, IL 60607</orgname></affiliation>
+</author>
+</articleinfo>
+<abstract>
+<title><emphasis role="bold">Abstract</emphasis></title>
+<para>Protein coding gene sequences are converted to mRNA by the highly regulated process of transcription. The precise temporal and spatial control of transcription for many genes is an essential part of development in metazoans. Thus, understanding the molecular mechanisms underlying transcriptional control is essential to understanding cell fate determination during embryogenesis, post-embryonic development, many environmental interactions, and disease-related processes. Studies of transcriptional regulation in <emphasis>C. elegans</emphasis> exploit its genomic simplicity and physical characteristics to define regulatory events with single-cell and minute-time-scale resolution. When combined with the genetics of the system, <emphasis>C. elegans</emphasis> offers a unique and powerful vantage point from which to study how chromatin-associated proteins and their modifications interact with transcription factors and their binding sites to yield precise control of gene expression through transcriptional regulation.</para>
+</abstract>
+<sect1 id="sec1">
+<title>Overview</title>
+<para>Every aspect of cellular function depends on the gene products expressed in that cell. The mechanisms regulating the expression of these gene products are diverse, and they can affect each of the steps necessary to make and maintain a steady-state level of functional RNA or protein. These mechanisms include those controlling RNA synthesis, processing, and stability, and, in the case of protein coding genes, protein translation, modification and degradation. Here we focus on the regulation of RNA transcription in <emphasis>C. elegans</emphasis>. Transcription is a necessary first step in gene expression, and transcriptional regulation plays a central role in organismal development and evolution (<link linkend="bib129">Levine and Tjian, 2003</link><!--: PMID 12853946-->; <link linkend="bib30">Chen and Rajewsky 2007</link><!--: PMID 17230196-->). Indeed, the number of specific proteins involved in transcription and its regulation increases with increasing organismal complexity (<link linkend="bib235">Vogel and Chothia, 2006</link><!--: PMID 16733546-->).</para>
+<para>Many of the general characteristics that make <emphasis>C. elegans</emphasis> an excellent model system (invariant lineage, simple anatomy, effectiveness of RNAi, etc.) also make it an excellent system to study transcriptional regulation. However, two specific characteristics uniquely facilitate transcriptional regulation studies in the worm. First, <emphasis>C. elegans</emphasis> is transparent throughout its entire life cycle making it an ideal system to use fluorescent protein reporter genes to monitor gene expression in live animals with single-cell resolution. Second, the relatively compact size of the <emphasis>C. elegans</emphasis> genome facilitates identification of cis-acting transcriptional regulatory elements (CREs) controlling gene expression. Examples of the success of studying transcriptional control in <emphasis>C. elegans</emphasis> are reviewed in WormBook and elsewhere, and they include the elucidation of the transcriptional cascade controlling specification and differentiation of the gut, nervous system, and pharynx (see <ulink url="http://dx.doi.org/10.1895/wormbook.1.133.1">The <emphasis>C. elegans</emphasis> intestine</ulink>; <ulink url="http://dx.doi.org/10.1895/wormbook.1.12.2">Neurogenesis in the nematode <emphasis>Caenorhabditis elegans</emphasis></ulink>; and <ulink url="http://dx.doi.org/10.1895/wormbook.1.129.1">The <emphasis>C. elegans</emphasis> pharynx: a model for organogenesis</ulink>). These two physical characteristics are augmented by facile forward and reverse genetics in the <emphasis>C. elegans</emphasis> system. Mutations affecting numerous transcription factors and even CREs have provided important insights into the transcriptional control of cell fate decisions during development, such as specifying which cells undergo apoptosis (<link linkend="bib35">Conradt and Xue, 2005</link><!--: PMID 18061982-->), while characterization of dosage compensation (<link linkend="bib155">Meyer, 2010</link><!--: PMID 20381335-->) and the synMuv mutants (<link linkend="bib56">Fay and Yochem, 2007</link><!--: PMID 17434473-->) have broadened our general understanding gene regulation at the chromatin level. These advantages have consistently provided novel mechanistic insights into the transcription regulation of gene expression.</para>
+<para>This chapter provides an overview of RNA Pol II transcription in <emphasis>C. elegans</emphasis>, focusing on what we have learned to date about gene expression in the somatic cells of the animal. Although much of the content of this review is also applicable to germline transcription, readers interested in germline gene expression are encouraged to see WormBook chapters <ulink url="http://dx.doi.org/10.1895/wormbook.1.74.1">Germline genomics</ulink> and <ulink url="http://dx.doi.org/10.1895/wormbook.1.73.1">Germline chromatin</ulink>, as important differences exist in the mechanisms controlling expression in these two tissue types. This chapter takes a broad-strokes approach to somatic transcription while providing references to serve as entry points for those wanting to explore particular topics in more detail. A brief introduction into the basics of gene organization and regulation sets the stage for those unfamiliar with <emphasis>C. elegans</emphasis> gene expression. This is followed by a discussion of transcription factor function, and the chapter ends with the known roles for chromatin in <emphasis>C. elegans</emphasis> gene regulation. Although some basic information may duplicate that found in previous reviews of transcriptional regulation (<ulink url="http://dx.doi.org/10.1895/wormbook.1.45.1">Transcriptional regulation</ulink>; <ulink url="http://dx.doi.org/10.1895/wormbook.1.121.1">Transcription mechanisms</ulink>; <link linkend="bib67">Gaudet and McGhee, 2010</link><!--: PMID 20175193-->; <link linkend="bib117">Krause, 1995</link><!--: PMID 8531739-->; <link linkend="bib149">McGhee and Krause, 1997</link>; <link linkend="bib231">Van Nostrand and Kim, 2011</link><!--: PMID 21963133-->), this review aims to augment rather than supersede these alternate overviews as each has valuable information and a unique perspective on transcriptional regulation.</para>
+</sect1>
+<sect1 id="sec2">
+<title>RNA Polymerase II and associated factors</title>
+<para>The regulation of RNA Polymerase II (Pol II)-mediated transcription in <emphasis>C. elegans</emphasis> can be described as typical for eucaryotes. Pol II appears to act in concert with TATA Binding Protein (TBP) and TBP-Associated Factors (TAFs) at the core promoter of protein coding genes (<link linkend="bib39">Dantonel et al., 2000</link><!--: PMID 11030350-->; <link linkend="bib101">Kaltenbach et al., 2000</link><!--: PMID 11030349-->; <link linkend="bib132">Lichtsteiner and Tjian, 1993</link><!--: PMID 8415761-->; <link linkend="bib240">Walker et al., 2004</link><!--: PMID 14726532-->; see also <ulink url="http://dx.doi.org/10.1895/wormbook.1.121.1">Transcription mechanisms</ulink>). As in other eucaryotyes, the large subunit of Pol II of <emphasis>C. elegans</emphasis>, encoded by the <emphasis><ulink url="http://www.wormbase.org/db/get?name=ama-1;class=Gene" role="_blank">ama-1</ulink></emphasis> gene (<link linkend="bib16">Bird and Riddle, 1989</link><!--: PMID 2586513-->), has an extended C-terminal domain (CTD) that likely serves as a binding site for protein complexes involved in co-transcriptional mRNA processing and histone modification (<link linkend="figure1">Figure 1</link>; from <link linkend="bib180">Phatnani and Greenleaf, 2006</link><!--: PMID 17079683-->). Active Pol II is phosphorylated on the CTD at serine 2 and 5 (Ser2P or Ser5P) of the conserved heptad repeat (YSTPSPS) and its variants, as it is in other eucaryotes (<link linkend="bib200">Seydoux and Dunn, 1997</link><!--: PMID 9187145-->; <link linkend="bib242">Wallenfang and Seydoux, 2002</link><!--: PMID 11960010-->; Zhang et al., 2003<!--: PMID 12651893-->). The levels of Ser2P increase while the Ser5P levels decrease with transcriptional elongation in eucaryotes (<link linkend="bib23">Buratowski, 2009</link><!--: PMID 19941815-->) and there is some evidence for the same in <emphasis>C. elegans</emphasis> (<link linkend="bib65">Garrido-Lecca and Blumenthal, 2010</link><!--: PMID 20498277-->). Interestingly, many of the antibodies used to distinguish these Pol II isoforms based on heptad repeat phosphorylation epitopes yield very similar patterns by chromatin immunoprecipitation (ChIP) in <emphasis>C. elegans</emphasis> (<link linkend="bib10">Baugh et al., 2009</link><!--: PMID 19251593-->; <link linkend="bib179">Pferdehirt et al., 2011</link><!--: PMID 21363964-->). The functions of many of the other core transcription factors are similarly conserved with one of the only major differences being the absence of the negative elongation factor NELF (reviewed in <ulink url="http://dx.doi.org/10.1895/wormbook.1.121.1">Transcription mechanisms</ulink>).</para>
+<mediaobject id="figure1" xreflabel="Figure 1">
+<imageobject>
+<imagedata entityref="fig1" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 1</phrase>
+</textobject> &fig1legend;</mediaobject>
+</sect1>
+<sect1 id="sec3">
+<title><emphasis>C. elegans</emphasis> gene organization and regulation</title>
+<para>Transcriptional regulation results from a complex organization of cis-acting sequences that serve as binding sites for a multitude of trans-acting factors that together determine if a gene will be active or silent. In higher eucaryotes, these cis-acting sequences are typically clustered into discrete functional modules, including the core promoter, extended proximal and downstream promoter regions, positive and negative enhancers, and insulators as diagramed in <link linkend="figure2">Figure 2</link> (<link linkend="bib129">Levine and Tjian, 2003</link><!--: PMID 12853946-->).</para>
+<mediaobject id="figure2" xreflabel="Figure 2">
+<imageobject>
+<imagedata entityref="fig2" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 2</phrase>
+</textobject> &fig2legend;</mediaobject>
+<sect2 id="sec3-1">
+<title>Proximal control regions</title>
+<para>The majority of protein-coding genes in <emphasis>C. elegans</emphasis> are within relatively gene-dense regions of the genome. Consequently, cis-acting regulatory regions are usually close to the coding region. In fact, a good rule of thumb for <emphasis>C. elegans</emphasis> is that the minimal set of cis-acting sequences sufficient to regulate proper gene expression is found within 2 kb upstream of the translational start codon. Often, another gene is present on the same or opposite strand and located less than 2 kb upstream of the gene of interest. Generally in these cases, one assumes the minimal promoter is restricted to the non-coding, intergenic region. There are notable exceptions to this compact view of cis-acting sequences. For example, <emphasis><ulink url="http://www.wormbase.org/db/get?name=egl-1;class=Gene" role="_blank">egl-1</ulink></emphasis> expression is controlled, in part, by elements located both upstream and more than 4 kb downstream of the coding region (<link linkend="bib226">Thellmann et al., 2003</link><!--: PMID 12874127-->; <link linkend="bib252">Winn et al., 2011</link><!--: PMID 21596899-->). For <emphasis><ulink url="http://www.wormbase.org/db/get?name=lin-39;class=Gene" role="_blank">lin-39</ulink></emphasis>, proper reporter gene expression required inclusion of &sim;30 kb of genomic DNA that extends long distances upstream and downstream of the protein coding region (<link linkend="bib238">Wagmaister et al., 2006</link><!--: PMID 16782085-->). Clearly <emphasis>C. elegans</emphasis> genes can have complex and distant control regions so the 2 kb rule of thumb should not be mistaken for dogma.</para>
+<para>It is important to remember that the minimal promoter region is not synonymous with the natural promoter. The natural promoter may span a much larger region due to redundancy in the function of regulatory elements that ensure proper and robust regulation of the endogenous gene. One common site of additional control elements is within the introns. Most <emphasis>C. elegans</emphasis> introns are small (e.g., &lt;100 bp; see <ulink url="http://dx.doi.org/10.1895/wormbook.1.65.1">Overview of gene structure</ulink>) and are thus unlikely to contain elements controlling expression. However, introns larger than several hundred base pairs do often have such elements (e.g., <link linkend="bib162">Nam et al., 2002</link><!--: PMID 11756550-->; <link linkend="bib170">Okkema et al., 1993</link><!--: PMID 8244003-->; <link linkend="bib115">Kostrouchova et al., 1998</link><!--: PMID 9521900-->). Therefore, intron size can provide a clue in searching for transcriptional control sequences.</para>
+</sect2>
+<sect2 id="sec3-2">
+<title>Distal control regions</title>
+<para>The relatively compact <emphasis>C. elegans</emphasis> genome may also underlie the apparent absence of long-range control mechanisms for gene regulation that are common to other metazoa. For example, CTCF in vertebrates and flies plays a key role in long-range chromatin organization and can block enhancer-stimulated gene expression, thus functioning as an insulator as shown in <link linkend="figure2">Figure 2</link> (<link linkend="bib241">Wallace and Felsenfeld, 2007</link><!--: PMID 17913488-->). To date, there is no evidence for an ortholog or functional equivalent of CTCF in <emphasis>C. elegans</emphasis>. Thus, both the local and global organization of genes in <emphasis>C. elegans</emphasis> appears to be relatively simple in comparison with other metazoans, presumably simplifying our understanding of transcriptional regulation.</para>
+</sect2>
+<sect2 id="sec3-3">
+<title>Transcriptional initiation and trans-splicing</title>
+<para>Another unusual aspect of the <emphasis>C. elegans</emphasis> system to note when considering transcriptional regulation is the occurrence of trans-splicing, a process that replaces the initial transcript 5&rsquo; untranslated region (5&rsquo; UTR) with a 22 nucleotide leader sequence (SL1) for the majority of Pol II messages (<link linkend="bib1">Allen et al., 2011</link><!--: PMID 21177958-->; <link linkend="bib120">Krause and Hirsh, 1987</link><!--: PMID 3581169-->; <ulink url="http://dx.doi.org/10.1895/wormbook.1.5.2">Trans-splicing and operons in <emphasis>C. elegans</emphasis></ulink>). Therefore, mapping the 5&rsquo; start site of the mature mRNA often only reveals the site of trans-splicing, not transcriptional initiation, complicating analyses that are commonplace in other systems. The ability to trans-splice messages also provides a processing mechanism for polycistronic messages, or operons, in <emphasis>C. elegans</emphasis> (<link linkend="bib214">Spieth et al., 1993</link><!--: PMID 8098272-->; reviewed in <ulink url="http://dx.doi.org/10.1895/wormbook.1.5.2">Trans-splicing and operons in <emphasis>C. elegans</emphasis></ulink>). The sequence of the spliced leader present on the mature message distinguishes the first gene of an operon (no SL or SL1 trans-spliced) versus internal messages of the operon (SL2 trans-spliced). Typically, the tightly clustered genes of an operon are co-regulated due to their polycistronic nature, although the use of different promoters upstream and within operons can result in independent transcriptional regulation of one or more of the mRNAs (<link linkend="bib1">Allen et al., 2011</link><!--: PMID 21177958-->; <link linkend="bib91">Huang et al., 2007</link><!--: PMID 17712020-->; <link linkend="bib257">Yin et al., 2010</link><!--: PMID 20565799-->; <link linkend="bib159">Morton and Blumenthal, 2011</link><!--: PMID 21156961-->; <ulink url="http://dx.doi.org/10.1895/wormbook.1.5.2">Trans-splicing and operons in <emphasis>C. elegans</emphasis></ulink>).</para>
+</sect2>
+<sect2 id="sec3-4">
+<title>Core promoter elements</title>
+<para>Ironically, the study of common sequences among messages trans-spliced provided the first systematic information on common promoter sequences (<link linkend="bib72">Graber et al., 2007</link><!--: PMID 17630324-->), revealing the presence of a consensus Kozak sequence regulating translational initiation (<link linkend="bib116">Kozak, 1981</link><!--: PMID 7301588-->). A more recent study of promoter sequences has extended this analysis to define the core promoter sequence elements typically present in <emphasis>C. elegans</emphasis> (<link linkend="bib74">Grishkevich et al., 2011</link><!--: PMID 21367940-->). The five elements commonly observed are an Sp1 like site (CNCCGCCC), T-blocks that correlate with nucleosome eviction and gene expression levels (TTTT[N/T]), TATA box (GTATA[TA][TA]AG), trans-splicing site (TTnCAG), and Kozak site that includes the translation initiation codon ([CA]AA[CA]ATG) (<link linkend="bib74">Grishkevich et al., 2011</link><!--: PMID 21367940-->) (<link linkend="figure3">Figure 3</link>). The sensitivity and depth of coverage of next-generation sequencing-based techniques will allow fine scale mapping of primary transcript start sites of outron-containing genes in the near future, aiding in our understanding of transcriptional initiation and requisite regulatory sequences in the near future.</para>
+<mediaobject id="figure3" xreflabel="Figure 3">
+<imageobject>
+<imagedata entityref="fig3" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 3</phrase>
+</textobject> &fig3legend;</mediaobject>
+</sect2>
+</sect1>
+<sect1 id="sec4">
+<title>Promoter complexity</title>
+<para>Two general types of promoter organization have been described in <emphasis>C. elegans</emphasis>, simple and complex. A simple promoter is defined here as one in which the cis-acting control elements necessary for proper expression are confined to a small region (a few hundreds of bp) of the genome. Housekeeping genes expressed in all tissues are good candidates for regulation by simple promoters, although few housekeeping genes in <emphasis>C. elegans</emphasis> have been well characterized. Among the best-characterized simple promoters are those of the <emphasis><ulink url="http://www.wormbase.org/db/get?name=hsp-16;class=Gene" role="_blank">hsp-16</ulink></emphasis> family of genes. This family consists of pairs of divergently transcribed genes with promoter regions sufficient for heat-regulated expression contained within the short (&sim;350 bp) intergenic regions (<link linkend="bib99">Jones et al., 1986</link><!--: PMID 3017958--> <link linkend="bib196">Russnak and Candido, 1985</link><!--: PMID 4033652-->; <link linkend="bib221">Stringham et al., 1992</link><!--: PMID 1550963-->). Despite these compact promoters, distinct tissue expression patterns are induced from different <emphasis><ulink url="http://www.wormbase.org/db/get?name=hsp-16;class=Gene" role="_blank">hsp-16</ulink></emphasis> promoters (<link linkend="bib221">Stringham et al., 1992</link><!--: PMID 1550963-->), suggesting the presence of multiple regulatory sites within these simple promoters. Another excellent example of simple promoters are in the vitellogenin (<emphasis>vit</emphasis>) genes, which exhibit stage-, tissue- and sex-specific expression controlled, in the case of <emphasis><ulink url="http://www.wormbase.org/db/get?name=vit-2;class=Gene" role="_blank">vit-2</ulink></emphasis>, by a 247 bp promoter (<link linkend="bib137">MacMorris et al., 1992</link><!--: PMID 1549118-->; <link linkend="bib138">MacMorris et al., 1994</link><!--: PMID 8264616-->). <emphasis><ulink url="http://www.wormbase.org/db/get?name=vit-2;class=Gene" role="_blank">vit-2</ulink></emphasis> promoter activity depends on GATA-factor binding sites and a novel VPE2 site (TGTCAAT) conserved in <emphasis>vit</emphasis> gene promoters in <emphasis>C. elegans</emphasis> and <emphasis>C. briggsae</emphasis> (<link linkend="bib215">Spieth et al., 1985</link><!--: PMID 4022780-->; Zucker-Aprison and Blumenthal, 1989<!--: PMID 2504925-->). Certain cell cycle promoters have also been shown to be remarkably simple. Analysis of several genes expressed only in proliferative cells and encoding <ulink url="http://www.wormbase.org/db/get?name=G1;class=Cell" role="_blank">G1</ulink> phase regulators (e.g., cyclin D) revealed that proper regulation required as little as 67 base pairs from the promoter (<link linkend="bib21">Brodigan et al., 2003</link><!--: PMID 12606285-->; <link linkend="bib175">Park and Krause, 1999</link><!--: PMID 10518501-->).</para>
+<para>In contrast to the simple promoters, complex promoters contain dispersed regulatory elements in which the overall pattern of gene expression is the result of the composite action of several dispersed elements, each influencing or contributing to the overall expression pattern. Complex promoters are often associated with regulatory genes controlling a key developmental decision. For example, the piecemeal organization of the regulatory regions for <emphasis><ulink url="http://www.wormbase.org/db/get?name=hlh-1;class=Gene" role="_blank">hlh-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=lin-26;class=Gene" role="_blank">lin-26</ulink></emphasis> reflect a need for these promoters to integrate a variety of different cell lineage inputs to control proper cell fate specification in the correct cells at the appropriate time during development (see previous version of this chapter, <ulink url="http://dx.doi.org/10.1895/wormbook.1.45.1">Trancriptional regulation</ulink>).</para>
+</sect1>
+<sect1 id="sec5">
+<title>Transcription factors</title>
+<para>Proper spatial and temporal regulation of gene expression depends on the binding of transcription factors to specific gene cis-regulatory sequences (<link linkend="bib129">Levine and Tjian, 2003</link><!--: PMID 12853946-->). A variety of <emphasis>C. elegans</emphasis> transcription factors are well characterized and have important developmental roles; however it remains a challenge to accurately catalog all the transcription factors encoded in the <emphasis>C. elegans</emphasis> genome. Automated searches for gene ontology terms associated with transcriptional regulation can result in inclusion of false positive hits for transcription factors (<link linkend="bib186">Reece-Hoyes et al., 2005</link><!--: PMID 16420670-->; <link linkend="bib232">Vaquerizas et al., 2009</link><!--: PMID 19274049-->). In some cases there is ambiguity as to whether a particular domain defines the protein as a DNA-binding factor. For example, various types of zinc finger domains can bind DNA but can also serve other functions, including RNA binding and protein-protein interactions (<link linkend="bib64">Gamsjaeger et al., 2007</link><!--: PMID 17210253-->; <link linkend="bib146">Matthews and Sunde, 2002</link><!--: PMID 12665246-->). Likewise, for factors that modify chromatin or participate in a transcription complex, the definition of a transcription factor often lies in the eyes of the investigator. Finally, gene annotations change as new information regarding gene structure is obtained and new classes of DNA-binding transcription factors are discovered. Thus any list of transcription factors must be manually curated and periodically updated to include the latest gene annotations.</para>
+<sect2 id="sec5-1">
+<title>Transcription factor resources</title>
+<para>Several groups have produced excellent catalogs of transcription factors in <emphasis>C. elegans</emphasis> using predictions based on gene ontology terms associated with transcription and DNA-binding domain assignments, followed by manual curation, to produce lists of transcription factor genes containing between 934 and 988 genes (<link linkend="bib9">Barrasa et al., 2007</link><!--: PMID 17233892-->; <link linkend="bib76">Haerty et al., 2008</link><!--: PMID 18752680-->; <link linkend="bib186">Reece-Hoyes et al., 2005</link><!--: PMID 16420670-->; <link linkend="bib250">Wilson et al., 2008</link><!--: PMID 18073188-->; <link linkend="bib187">Reece-Hoyes et al., 2011</link><!--: PMID 22037705-->). While these lists are largely overlapping, they are not identical, so it may be useful to scan each of these lists for your favorite genes (<ulink url="http://edgedb.umassmed.edu/">http://edgedb.umassmed.edu/</ulink>; <ulink url="http://www.macwormlab.net/ntfdb/index.php">http://www.macwormlab.net/ntfdb/index.php</ulink>; <ulink url="http://www.transcriptionfactor.org/index.cgi?Home">http://www.transcriptionfactor.org/index.cgi?Home</ulink>).</para>
+<para>The most recent catalog is wTF2.2 (<link linkend="bib187">Reece-Hoyes et al., 2011</link><!--: PMID 22037705-->), and we have updated and annotated this list with current gene names (link to Table 1. Catalog of transcription factors.). Fifty-three transcription factor genes were removed from wTF2.2 either due to reannotation of the genome, or because there was only weak evidence that motifs in these genes encoded DNA-binding domains [e.g., ZF - A20 (IPR002653), ZF - CCCH (IPR000571), ZF - DHHC (IPR001594), and ZF - MIZ(IPR004181)]. We have also added forty transcription factor genes that had been identified as DNA binding proteins in large scale yeast one-hybrid screens (<link linkend="bib46">Deplancke et al., 2006</link><!--: PMID 16777607-->; <link linkend="bib187">Reece-Hoyes et al., 2011</link><!--: PMID 22037705-->), or based on information from other transcription factor catalogs (<link linkend="bib76">Haerty et al., 2008</link><!--: PMID 18752680-->; <link linkend="bib250">Wilson et al., 2008</link><!--: PMID 18073188-->). Our catalog contains 924 transcription factor genes, which is &sim;4.6% of all protein coding genes (WS220). This number is slightly less than the frequency of transcription factor genes in the human genome (&sim;6% of the protein coding genes) (<link linkend="bib232">Vaquerizas et al., 2009</link><!--: PMID 19274049-->). Commercially available feeding RNAi clones targeting many of these genes are available (Table 1), facilitating functional analysis of <emphasis>C. elegans</emphasis> transcription factors.</para>
+</sect2>
+<sect2 id="sec5-2">
+<title>Transcription factor families</title>
+<para><emphasis>C. elegans</emphasis> contains representatives of most major transcription factor families found in other animals (Tables 1 and <link linkend="table2">2</link>), and 344 (37%) of the <emphasis>C. elegans</emphasis> transcription factor genes have been matched with clear human orthologs by reciprocal BLAST analysis or using orthology prediction programs (Table 1) (<link linkend="bib186">Reece-Hoyes et al., 2005</link><!--: PMID 16420670-->; <link linkend="bib202">Shaye and Greenwald, 2011</link><!--: PMID 21647448-->). Interestingly, some families of DNA-binding domains seem more highly conserved during animal evolution than others (<link linkend="figure4">Figure 4</link>). For example, 19 out of 19 (100%) MYB-like factors and 30 out of 41 bHLH factors (73%) have human orthologs. In comparison, only 6 out of 22 T-box genes (28%) and 0 out of 9 MADF-family genes (0%) have been conserved. As has been noted previously (<link linkend="bib186">Reece-Hoyes et al., 2005</link><!--: PMID 16420670-->; <link linkend="bib212">Sluder et al., 1999</link><!--: PMID 10022975-->), the number of likely nuclear hormone receptors (NHRs) has expanded greatly in <emphasis>C. elegans</emphasis> (272 members in <link linkend="table2">Table 2</link>) relative to humans (46 members; IPR001628; (<link linkend="bib232">Vaquerizas et al., 2009</link><!--: PMID 19274049-->)).</para>
+<mediaobject id="figure4" xreflabel="Figure 4">
+<imageobject>
+<imagedata entityref="fig4" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 4</phrase>
+</textobject> &fig4legend;</mediaobject>
+<table id="table2" frame="all" rules="all" cellpadding="0" cellspacing="0" width="75">
+<title>Table 2. DNA-binding families</title>
+<tgroup cols="2">
+<colspec colnum="1" colname="col1"/>
+<colspec colnum="2" colname="col2"/>
+<tbody>
+<row valign="bottom">
+<entry align="left">DNA-binding Domain</entry>
+<entry align="left">Total members</entry>
+</row>
+<row valign="top">
+<entry align="left">ZF - NHR</entry>
+<entry align="left">272</entry>
+</row>
+<row valign="top">
+<entry align="left">ZF - C2H2</entry>
+<entry align="left">217</entry>
+</row>
+<row valign="top">
+<entry align="left">HD</entry>
+<entry align="left">101</entry>
+</row>
+<row valign="top">
+<entry align="left">bHLH</entry>
+<entry align="left">41</entry>
+</row>
+<row valign="top">
+<entry align="left">novel</entry>
+<entry align="left">34</entry>
+</row>
+<row valign="top">
+<entry align="left">bZIP</entry>
+<entry align="left">33</entry>
+</row>
+<row valign="top">
+<entry align="left">AT Hook</entry>
+<entry align="left">29</entry>
+</row>
+<row valign="top">
+<entry align="left">T-box</entry>
+<entry align="left">22</entry>
+</row>
+<row valign="top">
+<entry align="left">MYB</entry>
+<entry align="left">19</entry>
+</row>
+<row valign="top">
+<entry align="left">WH - Fork Head</entry>
+<entry align="left">18</entry>
+</row>
+<row valign="top">
+<entry align="left">HMG box</entry>
+<entry align="left">16</entry>
+</row>
+<row valign="top">
+<entry align="left">ZF - GATA</entry>
+<entry align="left">14</entry>
+</row>
+<row valign="top">
+<entry align="left">MADF</entry>
+<entry align="left">11</entry>
+</row>
+<row valign="top">
+<entry align="left">ZF - DM</entry>
+<entry align="left">11</entry>
+</row>
+<row valign="top">
+<entry align="left">WH - ETS</entry>
+<entry align="left">10</entry>
+</row>
+<row valign="top">
+<entry align="left">CBF</entry>
+<entry align="left">9</entry>
+</row>
+<row valign="top">
+<entry align="left">ZF - BED</entry>
+<entry align="left">9</entry>
+</row>
+<row valign="top">
+<entry align="left">HTH</entry>
+<entry align="left">7</entry>
+</row>
+<row valign="top">
+<entry align="left">MH1</entry>
+<entry align="left">7</entry>
+</row>
+<row valign="top">
+<entry align="left">Paired Domain</entry>
+<entry align="left">7</entry>
+</row>
+<row valign="top">
+<entry align="left">ZF - THAP</entry>
+<entry align="left">6</entry>
+</row>
+<row valign="top">
+<entry align="left">ARID/BRIGHT</entry>
+<entry align="left">5</entry>
+</row>
+<row valign="top">
+<entry align="left">COLD BOX</entry>
+<entry align="left">5</entry>
+</row>
+<row valign="top">
+<entry align="left">AP-2</entry>
+<entry align="left">4</entry>
+</row>
+<row valign="top">
+<entry align="left">SAND</entry>
+<entry align="left">4</entry>
+</row>
+<row valign="top">
+<entry align="left">WH - TDP</entry>
+<entry align="left">4</entry>
+</row>
+<row valign="top">
+<entry align="left">ZF - FLYWCH</entry>
+<entry align="left">4</entry>
+</row>
+<row valign="top">
+<entry align="left">IPT/TIG</entry>
+<entry align="left">3</entry>
+</row>
+<row valign="top">
+<entry align="left">p53</entry>
+<entry align="left">3</entry>
+</row>
+<row valign="top">
+<entry align="left">TSC-22/dip/bun</entry>
+<entry align="left">3</entry>
+</row>
+<row valign="top">
+<entry align="left">WH - HSF</entry>
+<entry align="left">3</entry>
+</row>
+<row valign="top">
+<entry align="left">Brinker</entry>
+<entry align="left">2</entry>
+</row>
+<row valign="top">
+<entry align="left">GC-rich DNA-binding domain</entry>
+<entry align="left">2</entry>
+</row>
+<row valign="top">
+<entry align="left">MADS box</entry>
+<entry align="left">2</entry>
+</row>
+<row valign="top">
+<entry align="left">PUR</entry>
+<entry align="left">2</entry>
+</row>
+<row valign="top">
+<entry align="left">WH</entry>
+<entry align="left">2</entry>
+</row>
+<row valign="top">
+<entry align="left">ZF - NF-X1 - 10 domains</entry>
+<entry align="left">2</entry>
+</row>
+<row valign="top">
+<entry align="left"><ulink url="http://www.wormbase.org/db/get?name=CP2;class=Cell" role="_blank">CP2</ulink></entry>
+<entry align="left">1</entry>
+</row>
+<row valign="top">
+<entry align="left">p66 family</entry>
+<entry align="left">1</entry>
+</row>
+<row valign="top">
+<entry align="left">RNT</entry>
+<entry align="left">1</entry>
+</row>
+<row valign="top">
+<entry align="left">RPEL</entry>
+<entry align="left">1</entry>
+</row>
+<row valign="top">
+<entry align="left">STAT</entry>
+<entry align="left">1</entry>
+</row>
+<row valign="top">
+<entry align="left">TEA/ATTS</entry>
+<entry align="left">1</entry>
+</row>
+<row valign="top">
+<entry align="left">TRAP230 family</entry>
+<entry align="left">1</entry>
+</row>
+<row valign="top">
+<entry align="left">WH - DAC</entry>
+<entry align="left">1</entry>
+</row>
+<row valign="top">
+<entry align="left">WH - RFX</entry>
+<entry align="left">1</entry>
+</row>
+<row valign="top">
+<entry align="left">YL1 TF</entry>
+<entry align="left">1</entry>
+</row>
+<row valign="top">
+<entry align="left">ZF - C2CH</entry>
+<entry align="left">1</entry>
+</row>
+<row valign="top">
+<entry align="left">ZF - C2HC</entry>
+<entry align="left">1</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</sect2>
+<sect2 id="sec5-3">
+<title>Interspecies comparisons</title>
+<para>Genome sequencing of additional <emphasis>Caenorhabditis</emphasis> species allows a comparison of the <emphasis>C. elegans</emphasis> transcription factor gene family to those in other species (<link linkend="bib76">Haerty et al., 2008</link><!--: PMID 18752680-->). <emphasis>C. briggsae</emphasis> and <emphasis>C. remanei</emphasis> contain similar numbers of transcription factor genes to <emphasis>C. elegans</emphasis>, and approximately 72% of the <emphasis>C. elegans</emphasis> transcription factor genes have detectable orthologs in both <emphasis>C. briggsae</emphasis> and <emphasis>C. remanei</emphasis>. This proportion of orthology is higher than that found overall for protein coding genes, suggesting transcription factor genes are under strong selective pressure. Transcription factor genes are not uniformly distributed on the chromosomes in <emphasis>C. elegans</emphasis> or <emphasis>C. briggsae</emphasis>, and many genes are located in clusters that are enriched for transcription factor genes compared to non-transcription factor genes. Furthermore members of gene families such as NHR, HOX, and T-box are frequently clustered in tandem arrays (<link linkend="bib76">Haerty et al., 2008</link><!--: PMID 18752680-->).</para>
+</sect2>
+<sect2 id="sec5-4">
+<title>Transcription factor targets</title>
+<para>A major goal in studying transcription is to make the link between transcription factors and their target genes. These links have traditionally been made by identifying binding sites in experimentally verified targets of transcription factors by detailed promoter analyses. While this approach is still valuable, more recent techniques such as PCR based binding site selection, microarray analyses, yeast one-hybrid screens, and chromatin immunoprecipitation (ChIP) assays have expanded our ability to identify transcription factor binding sites and candidate target genes on a genome-wide scale (e.g., <link linkend="bib46">Deplancke et al., 2006</link><!--: PMID 16777607-->; <link linkend="bib147">McElwee et al., 2003</link><!--: PMID 12882324-->; <link linkend="bib166">Niu et al., 2011</link><!--: PMID 21177963-->; <link linkend="bib261">Zhong et al., 2010</link><!--: PMID 20174564-->). Our knowledge of transcription factor binding site specificity will continue to increase, but we provide references to find information about DNA binding site specificity and potential target genes for some <emphasis>C. elegans</emphasis> transcription factors (link to Table 3. Transcription factor targets.). As described more fully below (see <link linkend="sec7">Section 7</link>), data from many of these ChIP analyses is available at <ulink url="http://www.modencode.org/">modENCODE</ulink> and through <ulink url="http://www.wormbase.org/">WormBase</ulink>. Likewise candidate transcription factor binding sites predicted from published data and user generated position weight matrices can be visualized in the <ulink url="http://www.wormbase.org/tools/genome/gbrowse/c_elegans/">Genome Browser</ulink> at <ulink url="http://www.wormbase.org/">WormBase</ulink> and at <ulink url="http://www.modencode.org/">modENCODE</ulink> by accessing the <ulink url="http://data.modencode.org/?Organism=C.%20elegans">Sequence Motif track</ulink>.</para>
+</sect2>
+<sect2 id="sec5-5">
+<title>Transcription factor gene expression</title>
+<para>Transcription factor gene expression is often highly regulated, and understanding the spatial and temporal expression patterns of transcription factors is a key to determining their function. While a variety of transcription factors have been characterized individually using reporter genes, antibodies and in situ hybridizations (e.g., <emphasis><ulink url="http://www.wormbase.org/db/get?name=hlh-1;class=Gene" role="_blank">hlh-1</ulink>, <ulink url="http://www.wormbase.org/db/get?name=pha-4;class=Gene" role="_blank">pha-4</ulink>, <ulink url="http://www.wormbase.org/db/get?name=ceh-22;class=Gene" role="_blank">ceh-22</ulink>, <ulink url="http://www.wormbase.org/db/get?name=tbx-37;class=Gene" role="_blank">tbx-37</ulink>, <ulink url="http://www.wormbase.org/db/get?name=unc-86;class=Gene" role="_blank">unc-86</ulink>, <ulink url="http://www.wormbase.org/db/get?name=cnd-1;class=Gene" role="_blank">cnd-1</ulink>, <ulink url="http://www.wormbase.org/db/get?name=end-3;class=Gene" role="_blank">end-3</ulink></emphasis>) (<link linkend="bib57">Finney and Ruvkun, 1990</link><!--: PMID 2257628-->; <link linkend="bib71">Good et al., 2004</link><!--: PMID 15056620-->; <link linkend="bib78">Hallam et al., 2000</link><!--: PMID 10976055-->; <link linkend="bib89">Horner et al., 1998</link><!--: PMID 9649499-->; <link linkend="bib100">Kalb et al., 1998</link><!--: PMID 9584117-->; <link linkend="bib118">Krause et al., 1990</link><!--: PMID 2175254-->; <link linkend="bib139">Maduro et al., 2007</link><!--: PMID 16979152-->; <link linkend="bib169">Okkema and Fire, 1994</link><!--: PMID 7925019-->), high throughput techniques such as cell type-specific microarrays and SAGE analyses are providing genome-wide gene expression data (<link linkend="bib60">Fox et al., 2005</link><!--: PMID 15780142-->; <link linkend="bib151">McKay et al., 2003</link><!--: PMID 15338614-->; <link linkend="bib152">Meissner et al., 2009</link><!--: PMID 19557190-->; <link linkend="bib193">Roy et al., 2002</link><!--: PMID 12214599-->; <link linkend="bib213">Spencer et al., 2011</link><!--: PMID 21177967-->; <link linkend="bib236">Von Stetina et al., 2007</link><!--: PMID 17612406-->; Zhang et al., 2002<!--: PMID 12124626-->). This useful data is available for transcription factor genes (and all other genes) online through <ulink url="http://www.wormbase.org/">WormBase</ulink> and <ulink url="http://www.modencode.org/">modENCODE</ulink>, while additional analyses regarding tissue specificity are available at <ulink url="http://www.vanderbilt.edu/wormdoc/wormmap/Welcome.html">http://www.vanderbilt.edu/wormdoc/wormmap/Welcome.html</ulink> (<link linkend="bib213">Spencer et al., 2011</link><!--: PMID 21177967-->). In addition, automated analyses of fluorescent protein reporter gene expression are accelerating our knowledge of transcription factor gene expression during embryogenesis and in L1 larvae (<link linkend="bib136">Liu et al., 2009</link><!--: PMID 19879847-->; <link linkend="bib161">Murray et al., 2008</link><!--: PMID 18587405-->) (<link linkend="figure5">Figure 5</link>). Lineage-based gene expression data generated using these high throughput approaches can be accessed online through <ulink url="http://epic.gs.washington.edu/">EPIC</ulink> and <ulink url="http://www.computationalbio.com/Stanford/KimLab/wormDB/">WormDB</ulink>. This data is useful to investigators interested in specific transcription factors, but it also opens the exciting possibility of using computational approaches to overlay and identify correlations between gene expression patterns to understand how networks of transcription factors control development (<link linkend="figure5">Figure 5</link>).</para>
+<mediaobject id="figure5" xreflabel="Figure 5">
+<imageobject>
+<imagedata entityref="fig5" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 5</phrase>
+</textobject> &fig5legend;</mediaobject>
+</sect2>
+<sect2 id="sec5-6">
+<title>Post-transcriptional regulation of transcription factor function</title>
+<para>Covalent post-translational modifications also play important roles in regulating transcription factor function (<link linkend="bib228">Tootle and Rebay, 2005</link><!--: PMID 15714552-->), and a variety of <emphasis>C. elegans</emphasis> transcription factors are regulated by modifications including phosphorylation, proteolysis, ubiquitination, and SUMOylation. For example, nuclear localization and DNA-binding activity of the FoxO-family factor <ulink url="http://www.wormbase.org/db/get?name=DAF-16;class=Protein" role="_blank">DAF-16</ulink> is negatively regulated by the <ulink url="http://www.wormbase.org/db/get?name=DAF-2;class=Protein" role="_blank">DAF-2</ulink>/insulin like signaling pathway through phosphorylation at phylogenetically conserved sites (<link linkend="bib24">Cahill et al., 2001</link><!--: PMID 11124266-->; <link linkend="bib133">Lin et al., 2001</link><!--: PMID 11381260-->), whereas <ulink url="http://www.wormbase.org/db/get?name=DAF-16;class=Protein" role="_blank">DAF-16</ulink> protein stability is regulated by ubiquitination (<link linkend="bib131">Li et al., 2007</link><!--: PMID 17276341-->). Likewise the Gli family factor <ulink url="http://www.wormbase.org/db/get?name=TRA-1;class=Protein" role="_blank">TRA-1</ulink> activity is regulated by specific proteolytic cleavage and by ubiquitin mediated targeting to the proteosomal degradation pathway (<link linkend="bib199">Schvarzstein and Spence, 2006</link><!--: PMID 17084364-->; <link linkend="bib217">Starostina et al., 2007</link><!--: PMID 17609115-->). Both the ETS-family factor <ulink url="http://www.wormbase.org/db/get?name=LIN-1;class=Protein" role="_blank">LIN-1</ulink> and the T-box factor <ulink url="http://www.wormbase.org/db/get?name=TBX-2;class=Protein" role="_blank">TBX-2</ulink> require SUMOylation (<link linkend="bib128">Leight et al., 2005</link><!--: PMID 15689373-->; <link linkend="bib192">Roy Chowdhuri et al., 2006</link><!--: PMID 16701625-->), and at least 20 other transcription factors have been identified as possible SUMOylation targets (<link linkend="bib102">Kaminsky et al., 2009</link><!--: PMID 19922876-->). SUMOylation of <ulink url="http://www.wormbase.org/db/get?name=LIN-1;class=Protein" role="_blank">LIN-1</ulink> promotes interaction with <ulink url="http://www.wormbase.org/db/get?name=MEP-1;class=Protein" role="_blank">MEP-1</ulink>, a component of the NuRD (see <link linkend="sec6-1">Section 6.1</link>) transcriptional repression complex (<link linkend="bib128">Leight et al., 2005</link><!--: PMID 15689373-->). Transcription factor SUMOylation has also been shown to recruit <emphasis>Drosophila</emphasis> <ulink url="http://www.wormbase.org/db/get?name=MEP-1;class=Protein" role="_blank">MEP-1</ulink> and the NuRD complex, suggesting a conserved mechanism for SUMOylation dependent transcriptional repressors (<link linkend="bib218">Stielow et al., 2008</link><!--: PMID 18374648-->).</para>
+<para>Non-covalent interactions of transcriptional co-activators or co-repressors with DNA-bound transcription factors are also crucial for transcription factor function. The transcriptional co-activator p300/CBP is important for embryonic development (<link linkend="bib204">Shi and Mello, 1998</link><!--: PMID 9531533-->), while the co-repressors CtBP and <ulink url="http://www.wormbase.org/db/get?name=SIR-2.1;class=Protein" role="_blank">SIR-2.1</ulink> play important roles regulating life span (<link linkend="bib31">Chen et al., 2009</link><!--: PMID 19164523-->; <link linkend="bib227">Tissenbaum and Guarente, 2001</link><!--: PMID 11242085-->). The best-studied transcriptional co-repressor in <emphasis>C. elegans</emphasis> is the Groucho-family factor <ulink url="http://www.wormbase.org/db/get?name=UNC-37;class=Protein" role="_blank">UNC-37</ulink>, which was first characterized based on its interaction with the homeodomain factor <ulink url="http://www.wormbase.org/db/get?name=UNC-4;class=Protein" role="_blank">UNC-4</ulink> (<link linkend="bib253">Winnier et al., 1999</link><!--: PMID 10557206-->). Not surprisingly, <ulink url="http://www.wormbase.org/db/get?name=UNC-37;class=Protein" role="_blank">UNC-37</ulink>/Groucho has also been shown to function with a variety of transcription factors in <emphasis>C. elegans</emphasis>, including <ulink url="http://www.wormbase.org/db/get?name=POP-1;class=Protein" role="_blank">POP-1</ulink>, <ulink url="http://www.wormbase.org/db/get?name=COG-1;class=Protein" role="_blank">COG-1</ulink>, <ulink url="http://www.wormbase.org/db/get?name=REF-1;class=Protein" role="_blank">REF-1</ulink>, <ulink url="http://www.wormbase.org/db/get?name=RNT-1;class=Protein" role="_blank">RNT-1</ulink> <ulink url="http://www.wormbase.org/db/get?name=UNC-30;class=Protein" role="_blank">UNC-30</ulink>, and <ulink url="http://www.wormbase.org/db/get?name=MLS-1;class=Protein" role="_blank">MLS-1</ulink> (<link linkend="bib25">Calvo et al., 2001</link><!--: PMID 11742996-->; <link linkend="bib29">Chang et al., 2003</link><!--: PMID 12952888-->; <link linkend="bib157">Miller and Okkema, 2011</link><!--: PMID 21852953-->; <link linkend="bib165">Neves and Priess, 2005</link><!--: PMID 15935776-->; <link linkend="bib177">Peden et al., 2007</link><!--: PMID 18056429-->; <link linkend="bib254">Xia et al., 2007</link><!--: PMID 17706957-->). The number of transcription factors that function as <ulink url="http://www.wormbase.org/db/get?name=UNC-37;class=Protein" role="_blank">UNC-37</ulink> dependent repressors is likely to be larger, as potential Groucho-interaction motifs are found in many <emphasis>C. elegans</emphasis> transcription factors (<link linkend="bib36">Copley, 2005</link><!--: PMID 16309560-->).</para>
+</sect2>
+</sect1>
+<sect1 id="sec6">
+<title>Chromatin status and transcription</title>
+<para>The initiation, elongation, and termination of transcription is influenced by both local and chromosome-wide chromatin configuration, and vice versa. Many excellent reviews provide in depth treatments of this topic (<link linkend="bib14">Berger, 2010</link><!--:: PMID 21467136-->; <link linkend="bib258">Yun et al., 2011</link><!--:: PMID 21423274-->; and <link linkend="bib8">Bannister and Kouzarides, 2011</link><!--:: PMID 21321607-->). Here, basic information that is generally applicable across species is briefly summarized prior to a discussion of chromatin regulatory complexes in <emphasis>C. elegans</emphasis>.</para>
+<para>Nucleosomes, around which DNA is wound, are composed of a histone protein octamer (two each of H2A, H2B, H3, and H4) that can be post-translationally modified in a variety of ways. Typically, residues on the amino terminal tails of individual histones are modified by phosphorylation, methylation, acetylation, and ubiquitination. The specific amino acid residue of the histone protein that is targeted, the type of modification, and the location of the nucleosome relative to the gene body, can all have effects on transcription, or be altered by transcriptional events. These effects include altering nucleosome density and changing the level of chromatin compaction to either relax or condense a region, which has been predicted to facilitate or prohibit association of different transcriptional regulatory complexes. Additionally, histone modifications can provide specific recruitment sites for different transcriptional regulatory complexes. Moreover, the number of methyl groups modifying a particular residue can have distinct effects on gene expression. As one example, monomethylation of lysine 20 of histone H4 affects transcription, while dimethylation is associated with DNA repair, and trimethylation facilitates heterochromatin formation (<link linkend="bib7">Balakrishnan and Milavetz, 2010</link><!--: PMID 20735237-->). Finally, protein variants of histones, such as H2A.z or CENPA, can be incorporated into the core histone octamer, with differential effects on chromatin configuration and function as well, through regulating noncoding RNA transcription in centromeric regions (reviewed in <link linkend="bib220">Stimpson and Sullivan, 2010</link><!--:: PMID 20675111-->).</para>
+<para>Over the past several years, the role of histone modifications, histone variants, and histone modifying enzymes in regulating gene expression during <emphasis>C. elegans</emphasis> development has become clearer. Genome-wide studies of the distribution of individual chromatin marks provide a glimpse into the complex combinatorial &ldquo;codes&rdquo; that are possible and that are associated with gene expression (<link linkend="figure6">Figure 6</link>). Core chromatin regulatory complexes that have been studied in other organisms, such as NuRD (<link linkend="sec6-1">Section 6.1</link>), MLL/COMPASS (<link linkend="sec6-2">Section 6.2</link>), and PcG (<link linkend="sec6-2">Section 6.2</link>), are also present in recognizable form in <emphasis>C. elegans</emphasis>. An extensive review of germline chromatin is available as a separate chapter in WormBook (<ulink url="http://dx.doi.org/10.1895/wormbook.1.73.1">Germline chromatin</ulink>), so here we focus on somatic functions of these chromatin regulatory complexes.</para>
+<mediaobject id="figure6" xreflabel="Figure 6">
+<imageobject>
+<imagedata entityref="fig6" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 6</phrase>
+</textobject> &fig6legend;</mediaobject>
+<sect2 id="sec6-1">
+<title>The NuRD complex</title>
+<para>NuRD (<emphasis role="bold">Nu</emphasis>cleosome <emphasis role="bold">R</emphasis>emodeling and <emphasis role="bold">D</emphasis>eacetylase) is an evolutionarily conserved complex correlated with transcriptional repression that is required for proper development in mammals (reviewed in <link linkend="bib87">Ho and Crabtree, 2010</link><!--: PMID 20110991-->). The NuRD complex primarily targets lysine 9 of histone H3 for deacetylation, paving the way for a histone methyltransferase (HMT) to methylate the residue. Methylated lysine 9 is then bound by HP1 (<emphasis role="bold">h</emphasis>eterochromatin <emphasis role="bold">p</emphasis>rotein 1), which induces gene silencing (<link linkend="bib20">Brehm et al., 1998</link><!--: PMID 9468139-->). In <emphasis>C. elegans</emphasis>, NuRD consists of <ulink url="http://www.wormbase.org/db/get?name=HDA-1;class=Protein" role="_blank">HDA-1</ulink> (histone deacetylase), <ulink url="http://www.wormbase.org/db/get?name=LIN-53;class=Protein" role="_blank">LIN-53</ulink> (RbAp48), <ulink url="http://www.wormbase.org/db/get?name=LIN-40;class=Protein" role="_blank">LIN-40</ulink> (MTA), and one of two Mi2 subunits, either <ulink url="http://www.wormbase.org/db/get?name=LET-418;class=Protein" role="_blank">LET-418</ulink> (with <ulink url="http://www.wormbase.org/db/get?name=MEP-1;class=Protein" role="_blank">MEP-1</ulink>) or <ulink url="http://www.wormbase.org/db/get?name=CHD-3;class=Protein" role="_blank">CHD-3</ulink>. The combinatorial nature of NuRD complex components allows both target gene and tissue specificity for repression. In vulval development both complexes act redundantly (<link linkend="bib237">von Zelewsky et al., 2000</link><!--: PMID 11076750-->), whereas the complex containing <ulink url="http://www.wormbase.org/db/get?name=LET-418;class=Protein" role="_blank">LET-418</ulink> and <ulink url="http://www.wormbase.org/db/get?name=MEP-1;class=Protein" role="_blank">MEP-1</ulink> also acts to suppress the germline fate in somatic tissues (<link linkend="bib176">Passannante et al., 2010</link><!--: PMID 21060680-->; <link linkend="bib229">Unhavaithaya et al., 2002</link><!--: PMID 12507426-->). The histone methyltransferases that likely methylate the deacetylated lysine 9 residue are <ulink url="http://www.wormbase.org/db/get?name=MET-1;class=Protein" role="_blank">MET-1</ulink> and/or <ulink url="http://www.wormbase.org/db/get?name=MET-2;class=Protein" role="_blank">MET-2</ulink> (<link linkend="bib4">Andersen and Horvitz, 2007</link><!--: PMID 17634190-->).</para>
+</sect2>
+<sect2 id="sec6-2">
+<title>The MLL/COMPASS complex</title>
+<para>The MLL/COMPASS (<emphasis role="bold">M</emphasis>ixed <emphasis role="bold">L</emphasis>ineage <emphasis role="bold">L</emphasis>eukemia/<emphasis role="bold">Com</emphasis>plex <emphasis role="bold">P</emphasis>roteins <emphasis role="bold">A</emphasis>ssociated with <emphasis role="bold">S</emphasis>et1) complex is responsible for the methylation of lysine 4 of histone H3 (reviewed in <link linkend="bib205">Shilatifard, 2008</link><!--: PMID 18508253-->). In contrast to lysine 9, methylation of lysine 4 is correlated with active gene expression. This complex generally contains seven subunits, all of which are present in <emphasis>C. elegans</emphasis>, including two MLL-like histone methyltransferases (<emphasis><ulink url="http://www.wormbase.org/db/get?name=set-2;class=Gene" role="_blank">set-2</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=set-16;class=Gene" role="_blank">set-16</ulink></emphasis>), <emphasis><ulink url="http://www.wormbase.org/species/c_elegans/gene/WBGene00012458?query=ash-2#0-9e-3" role="_blank">ash-2</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/species/c_elegans/gene/WBGene00017683?query=rbbp-5#0-9e-3" role="_blank">rbbp-5</ulink></emphasis>, three WDR5-like proteins (<emphasis><ulink url="http://www.wormbase.org/species/c_elegans/gene/WBGene00006474?query=wdr-5.1#0-9e-3" role="_blank">wdr-5.1</ulink>, <ulink url="http://www.wormbase.org/species/c_elegans/gene/WBGene00010572#0-9e-3" role="_blank">.2</ulink>,</emphasis> and <emphasis><ulink url="http://www.wormbase.org/species/c_elegans/gene/WBGene00013862#0-9e-3" role="_blank">.3</ulink></emphasis>), <emphasis>cfp-1</emphasis>, and either <emphasis>wdr-82</emphasis> or <emphasis><ulink url="http://www.wormbase.org/db/get?name=dpy-30;class=Gene" role="_blank">dpy-30</ulink></emphasis> (<link linkend="bib130">Li and Kelly, 2011</link><!--: PMID 21455483-->). Various components have been implicated in dosage compensation (<link linkend="bib179">Pferdehirt et al., 2011</link><!--: PMID 21363964-->), vulval development (<link linkend="bib58">Fisher et al., 2010</link><!--: PMID 20188723-->), neuronal development (<link linkend="bib182">Poole et al., 2011</link><!--:: PMID 21698137-->), and aging (<link linkend="bib73">Greer et al., 2010</link><!--: PMID 20555324-->). This complex potentially functions antagonistically to NuRD/HP1 in certain aspects, such as growth and somatic gonad development (<link linkend="bib211">Simonet et al., 2007</link><!--: PMID 17967446-->). Whether NuRD/HP1 and MLL/COMPASS target the same genes or distinct genes in these various developmental processes is currently unknown.</para>
+</sect2>
+<sect2 id="sec6-3">
+<title>The Polycomb Group complex</title>
+<para>The Polycomb Group (PcG) of chromatin regulators were first uncovered in the classic studies of Edward B. Lewis in <emphasis>Drosophila</emphasis> because of their critical roles in maintaining the repressed state of homeotic (Hox) genes regulating segmentation (reviewed in <link linkend="bib160">Muller and Kassis, 2006</link><!--: PMID 16914306-->). Subsequent work by numerous groups over the years revealed that the PcG includes two types of complexes, PRC1 and PRC2. A major role for mammalian PRC2 is repression of Hox gene expression during development by promoting histone H3 lysine 27 methylation, a mark that is then bound by the silencing complex PRC1, which ubiquitylates histone H2A. The mechanism by which this modification leads to Hox gene silencing is not clear. In <emphasis>C. elegans</emphasis>, the PcG-related components were first identified in maternal effect sterile (MES) screens due to their role in the germline (<link linkend="bib26">Capowski et al., 1991</link><!--: PMID 1783292-->), a topic explored in detail in the WormBook chapter <ulink url="http://dx.doi.org/10.1895/wormbook.1.9.1" role="_blank">Specification of the germ line</ulink>. In the <emphasis>C. elegans</emphasis> soma, at least some PcG-related proteins of the PRC2 complex (<ulink url="http://www.wormbase.org/db/get?name=MES-2;class=Protein" role="_blank">MES-2</ulink> and <ulink url="http://www.wormbase.org/db/get?name=MES-6;class=Protein" role="_blank">MES-6</ulink>) appear to have a role in regulating Hox gene expression, as is observed in other animals (<link linkend="bib45">Deng et al., 2007</link><!--: PMID 17574230-->; <link linkend="bib189">Ross and Zarkower, 2003</link><!--: PMID 12791273-->). Moreover, <ulink url="http://www.wormbase.org/db/get?name=MES-2;class=Protein" role="_blank">MES-2</ulink> is required for restricting the developmental plasticity of embryos through global changes to the chromatin state (<link linkend="bib259">Yuzyuk et al., 2009</link><!--: PMID 19460346-->). Until recently, it was less clear whether <emphasis>C. elegans</emphasis> contained a PRC1-like complex. However, certain PRC1-related components are present including <ulink url="http://www.wormbase.org/db/get?name=MIG-32;class=Protein" role="_blank">MIG-32</ulink>/Bmi-1 and <ulink url="http://www.wormbase.org/db/get?name=SPAT-3;class=Protein" role="_blank">SPAT-3</ulink>/Ring1B, which were shown to be required for H2A ubiquitylation in the soma (<link linkend="bib103">Karakuzu et al., 2009</link><!--: PMID 19211678-->). Moreover, <emphasis><ulink url="http://www.wormbase.org/db/get?name=mig-32;class=Gene" role="_blank">mig-32</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=spat-3;class=Gene" role="_blank">spat-3</ulink></emphasis> mutants have somatic defects similar to <emphasis><ulink url="http://www.wormbase.org/db/get?name=mes-2;class=Gene" role="_blank">mes-2</ulink></emphasis>, suggesting that they act to regulate the same genes. Intriguingly, however, <emphasis><ulink url="http://www.wormbase.org/db/get?name=mig-32;class=Gene" role="_blank">mig-32</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=spat-3;class=Gene" role="_blank">spat-3</ulink></emphasis> do not share the germline defects of <emphasis><ulink url="http://www.wormbase.org/db/get?name=mes-2;class=Gene" role="_blank">mes-2</ulink></emphasis>, suggesting that the mechanism of PRC2 activity in the germline is distinct from that of the soma (<link linkend="bib103">Karakuzu et al., 2009</link><!--: PMID 19211678-->).</para>
+</sect2>
+<sect2 id="sec6-4">
+<title>The SynMuv pathway</title>
+<para>Genetic studies in <emphasis>C. elegans</emphasis> have also uncovered a series of intertwined, genetically-linked pathways involving chromatin modifications that affect developmental pathways called the SynMuv pathway (reviewed in <link linkend="bib56">Fay and Yochem, 2007</link><!--: PMID 17434473-->). Consisting of at least three genetically defined groups (A, B, and C), the SynMuv groups reveal the functional redundancy underlying gene regulation (<link linkend="figure7">Figure 7</link>). Under standard conditions, genes from at least two of the SynMuv groups must be disrupted by mutation before significant effects in development occur, typically and historically read out as defects in vulva formation in the hermaphrodite. All three groups contain genes that encode gene regulatory proteins, although the SynMuv A group is unique to <emphasis>C. elegans</emphasis> (<link linkend="bib40">Davison et al., 2011</link><!--: PMID 21196525-->). SynMuv C genes encode proteins of the TipA/HAT regulatory complex that is associated with H3K4 acetylation and active gene expression (<link linkend="bib28">Ceol and Horvitz, 2004</link><!--: PMID 15068795-->). The best-studied pathway, SynMuv B, includes members of the DRM complex (<link linkend="bib82">Harrison et al., 2006</link><!--: PMID 17075059-->), which is related to a repressor complex called dREAM in <emphasis>Drosophila</emphasis> (<link linkend="bib113">Korenjak et al., 2004</link><!--: PMID 15479636-->) and DREAM/Myb-MuvB/LINC in mammals (<link linkend="bib110">Knight et al., 2009</link><!--: PMID 19252525-->). In <emphasis>C. elegans</emphasis>, DRM includes the sequence-specific binding factor E2F called <ulink url="http://www.wormbase.org/db/get?name=EFL-1;class=Protein" role="_blank">EFL-1</ulink>, a pocket protein called <ulink url="http://www.wormbase.org/db/get?name=LIN-35;class=Protein" role="_blank">LIN-35</ulink> and other factors with less well-understood functions, but it does not contain a Myb-like protein as in other organisms (<link linkend="bib82">Harrison et al., 2006</link><!--: PMID 17075059-->). DRM potentially acts with the deacetylase NuRD complex to promote transcriptional repression, and indeed microarray studies of mutants in the SynMuv B group primarily show increased abundance of target transcripts (<link linkend="bib108">Kirienko and Fay, 2007</link><!--: PMID 17368442-->). DRM components are widely expressed and appear to play diverse roles in many tissues, although in most cases the function of the DRM complex is not solely essential for normal development. However, a second mutation that disrupts a tissue-specific regulatory protein along with a mutation in a DRM complex member can cause a tissue-specific phenotype. For instance, mutation of the C2H2 zinc finger gene <emphasis>slr-2</emphasis> in conjunction with <emphasis><ulink url="http://www.wormbase.org/db/get?name=lin-35;class=Gene" role="_blank">lin-35</ulink></emphasis> mutations disrupts intestinal function, while either mutation alone does not (<link linkend="bib109">Kirienko et al., 2008</link><!--: PMID 18437219-->). Additionally, a recent report indicates that one SynMuvB component, <ulink url="http://www.wormbase.org/db/get?name=LIN-61;class=Protein" role="_blank">LIN-61</ulink>, which binds methylated lysine 9 of H3 (<link linkend="bib111">Koester-Eiserfunke and Fischle, 2011</link><!--: PMID 21437264-->), can act as part of the DRM complex in vulval development but not in other processes, showing that this complex has tissue-specificity (<link linkend="bib83">Harrison et al., 2007</link><!--: PMID 17409073-->). Finally, environmental influences such as temperature can have an effect as well. <emphasis><ulink url="http://www.wormbase.org/db/get?name=lin-35;class=Gene" role="_blank">lin-35</ulink></emphasis>, and certain other components of the DRM complex, are required to suppress the germline fate in somatic tissues (<link linkend="bib243">Wang et al., 2005</link><!--: PMID 16049496-->), but only at higher temperatures is the onset of the germline fate sufficiently severe to lead to a larval arrest (<link linkend="bib178">Petrella et al., 2011</link><!--: PMID 21343362-->).</para>
+<mediaobject id="figure7" xreflabel="Figure 7">
+<imageobject>
+<imagedata entityref="fig7" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 7</phrase>
+</textobject> &fig7legend;</mediaobject>
+<para>As in other systems, the landscape of chromatin modifications and the complexes carrying them out are generally conserved in <emphasis>C. elegans</emphasis>. Thus, it is likely that information from any one experimental system will inform our general understanding of chromatin influences in all systems. In the future investigating how these different chromatin regulatory complexes interact at common target loci, and how they influence key sequence-specific transcription factors and the core transcriptional machinery, will be critical for understanding gene regulatory mechanisms. The molecular and genetic advantages of <emphasis>C. elegans</emphasis>, combined with a relatively simple and defined cell lineage, suggest that the worm will prove particularly important for understanding the role of chromatin in developmental processes.</para>
+</sect2>
+</sect1>
+<sect1 id="sec7">
+<title>Systematic genome-scale analysis of transcription regulation</title>
+<para>Genome-wide analyses complement detailed single-gene studies by providing a global overview that can be used to determine how broadly observations of transcriptional regulatory mechanisms at individual genes are applicable. Over the last decade microarray analysis of gene expression has been widely used to examine gene expression changes upon perturbation of various transcriptional components. However, one limitation to this type of analysis is the inability to distinguish direct from indirect effects. The more recent development of techniques such as chromatin immunoprecipitation (ChIP), which maps the binding events of a given factor throughout the genome, can overcome this limitation and provide important information about the direct activity of the factor. Chromatin fragments that immunoprecipitate with chromatin or transcriptional regulatory proteins are identified by either hybridization to a microarray (ChIP-chip) or by deep sequencing (ChIP-seq). This approach has proved to be a very powerful tool for investigating and discovering transcriptional mechanisms. In <emphasis>C. elegans</emphasis>, ChIP studies have been performed by individual labs focused on particular processes or factors including dosage compensation components (<link linkend="bib53">Ercan et al., 2007</link><!--: PMID 17293863-->; <link linkend="bib95">Jans et al., 2009</link><!--: PMID 19270160-->), the DRM complex component <ulink url="http://www.wormbase.org/db/get?name=LIN-54;class=Protein" role="_blank">LIN-54</ulink> (<link linkend="bib223">Tabuchi et al., 2011</link><!--: PMID 21589891-->), the histone variant <ulink url="http://www.wormbase.org/db/get?name=HTZ-1;class=Protein" role="_blank">HTZ-1</ulink> (<link linkend="bib249">Whittle et al., 2008</link><!--: PMID 18787694-->), and transcription factors such as <ulink url="http://www.wormbase.org/db/get?name=HLH-1;class=Protein" role="_blank">HLH-1</ulink> and <ulink url="http://www.wormbase.org/db/get?name=NFI-1;class=Protein" role="_blank">NFI-1</ulink> (<link linkend="bib127">Lei et al., 2010</link><!--: PMID 21209968-->; <link linkend="bib248">Whittle et al., 2009</link><!--: PMID 19584245-->).</para>
+<sect2 id="sec7-1">
+<title>The modENCODE project</title>
+<para>In addition to individual efforts, a large-scale effort by a multi-lab consortium has systematically utilized a genomics approach to exploring <emphasis>C. elegans</emphasis> gene expression. The modENCODE consortium (<emphasis role="bold">mod</emphasis>el organism <emphasis role="bold">Enc</emphasis>yclopedia <emphasis role="bold">o</emphasis>f <emphasis role="bold">D</emphasis>NA <emphasis role="bold">E</emphasis>lements), funded by the National Human Genome Research Institute (NHGRI), has in the last few years produced a wealth of genome-wide <emphasis>C. elegans</emphasis> datasets. These studies explore many aspects of transcriptional regulation such as transcription factor binding sites, chromatin modifications, and gene expression analysis of diverse RNAs, including small noncoding RNAs in addition to polyadenylated RNAs (<link linkend="bib68">Gerstein et al., 2010</link><!--: PMID 21177976-->). A similar effort to analyze the <emphasis>Drosophila melanogaster</emphasis> genome is ongoing as well (<link linkend="bib194">Roy et al., 2010</link><!--: PMID 21177974-->). The ultimate goal of these projects is to identify, as comprehensively as possible, all of the functional elements encoded in the DNA that are responsible for the regulation and formation of that organism.</para>
+<para>A major effort of modENCODE is to determine the binding sites of sequence-specific transcription factors genome wide. These elements direct the temporal and spatial control of transcription, which in turn dictates an organism&apos;s development, physiology and response to the environment. Identifying these elements provides an important first step toward understanding how DNA sequence is interpreted to form a three-dimensional body plan. At the beginning of the modENCODE project, almost nothing was known about the direct targets of transcription factors in <emphasis>C. elegans</emphasis>. By the time the project completed its fifth year in March 2012, the genome-wide binding profiles of over 120 factors from diverse families of transcriptional regulators were collected and released to the <emphasis>C. elegans</emphasis> community.</para>
+</sect2>
+<sect2 id="sec7-2">
+<title>modENCODE transcription factor ChIP studies</title>
+<para>To systematically identify binding sites, transgenic lines expressing GFP-tagged transcription factors were subjected to ChIP-seq using an antibody to GFP (<link linkend="bib261">Zhong et al., 2010</link><!--: PMID 20174564-->). The GFP expression patterns of these lines largely recapitulated known endogenous expression patterns, and all lines that were tested robustly rescued the mutant phenotype of that gene, indicating that the tagged transcription factors retain wild-type function. All of the detailed protocols and datasets are freely available at <ulink url="http://www.modencode.org/">http://www.modencode.org/</ulink>. Moreover, all the strains for which successful datasets have been produced are available in the Caenorhabditis Genetics Center (<ulink url="http://www.cbs.umn.edu/cgc">CGC</ulink>). So far, 77 completed datasets are available representing 46 transcription factors, some of which have been analyzed at multiple developmental stages (<link linkend="table4">Table 4</link>).</para>
+<table id="table4" frame="all" rules="all" cellpadding="0" cellspacing="0" width="75">
+<title><emphasis role="bold">Table 4. Expression of transcription factors.</emphasis></title>
+<tgroup cols="6">
+<colspec colnum="1" colname="col1"/>
+<colspec colnum="2" colname="col2"/>
+<colspec colnum="3" colname="col3"/>
+<colspec colnum="4" colname="col4"/>
+<colspec colnum="5" colname="col5"/>
+<colspec colnum="6" colname="col6"/>
+<tbody>
+<row valign="bottom" rowsep="1">
+<entry align="left">TF genes</entry>
+<entry align="left">stage(s)</entry>
+<entry align="left">Histone modifications</entry>
+<entry align="left">stage(s)</entry>
+<entry align="left">Chromatin proteins</entry>
+<entry align="left">stage(s)</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=alr-1;class=Gene" role="_blank">alr-1</ulink></emphasis></entry>
+<entry align="left">L2</entry>
+<entry align="left">total H3</entry>
+<entry align="left">EE, L3</entry>
+<entry align="left"><ulink url="http://www.wormbase.org/db/get?name=HPL-2;class=Protein" role="_blank">HPL-2</ulink></entry>
+<entry align="left">LE</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=aly-2;class=Gene" role="_blank">aly-2</ulink></emphasis></entry>
+<entry align="left">L1, L3</entry>
+<entry align="left">H3K27ac</entry>
+<entry align="left">EE, L3</entry>
+<entry align="left">LIN-15B</entry>
+<entry align="left">LE</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=ama-1;class=Gene" role="_blank">ama-1</ulink></emphasis></entry>
+<entry align="left">EE, LE, MxE, L1, starved L1, L2, L3, L4, L4/YA, YA</entry>
+<entry align="left">H3K27me1</entry>
+<entry align="left">EE, L3</entry>
+<entry align="left">pol2</entry>
+<entry align="left">EE, LE</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=blmp-1;class=Gene" role="_blank">blmp-1</ulink></emphasis></entry>
+<entry align="left">L1</entry>
+<entry align="left">H3K27me3</entry>
+<entry align="left">EE, L3</entry>
+<entry align="left"><ulink url="http://www.wormbase.org/db/get?name=ama-1;class=Gene" role="_blank">ama-1</ulink></entry>
+<entry align="left">MxE</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=C01B12.2;class=Gene" role="_blank">C01B12.2</ulink></emphasis></entry>
+<entry align="left">L2</entry>
+<entry align="left">H3K36me1</entry>
+<entry align="left">EE, L3</entry>
+<entry align="left"><ulink url="http://www.wormbase.org/db/get?name=HCP-3;class=Protein" role="_blank">HCP-3</ulink></entry>
+<entry align="left">EE, MxE</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=ceh-14;class=Gene" role="_blank">ceh-14</ulink></emphasis></entry>
+<entry align="left">L2</entry>
+<entry align="left">H3K36me2</entry>
+<entry align="left">EE</entry>
+<entry align="left">CBP</entry>
+<entry align="left">MxE</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=ceh-26;class=Gene" role="_blank">ceh-26</ulink></emphasis></entry>
+<entry align="left">LE</entry>
+<entry align="left">H3K36me3</entry>
+<entry align="left">EE, LE, L1, L2, L3, L4, YA</entry>
+<entry align="left"><ulink url="http://www.wormbase.org/db/get?name=HTZ-1;class=Protein" role="_blank">HTZ-1</ulink></entry>
+<entry align="left">MxE</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=ceh-30;class=Gene" role="_blank">ceh-30</ulink></emphasis></entry>
+<entry align="left">L3</entry>
+<entry align="left">H3K4me1</entry>
+<entry align="left">EE, L3</entry>
+<entry align="left"><ulink url="http://www.wormbase.org/db/get?name=DPY-26;class=Protein" role="_blank">DPY-26</ulink></entry>
+<entry align="left">MxE</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=ces-1;class=Gene" role="_blank">ces-1</ulink></emphasis></entry>
+<entry align="left">L1, L4</entry>
+<entry align="left">H3K4me2</entry>
+<entry align="left">EE, L3</entry>
+<entry align="left"><ulink url="http://www.wormbase.org/db/get?name=DPY-27;class=Protein" role="_blank">DPY-27</ulink></entry>
+<entry align="left">MxE, EE, L4</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=daf-12;class=Gene" role="_blank">daf-12</ulink></emphasis></entry>
+<entry align="left">L3, L4</entry>
+<entry align="left">H3K4me3</entry>
+<entry align="left">EE, LE, L1, L2, L3, L4, YA</entry>
+<entry align="left"><ulink url="http://www.wormbase.org/db/get?name=DPY-28;class=Protein" role="_blank">DPY-28</ulink></entry>
+<entry align="left">MxE</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=daf-16;class=Gene" role="_blank">daf-16</ulink></emphasis></entry>
+<entry align="left">L4</entry>
+<entry align="left">H3K79me1</entry>
+<entry align="left">MxE, L3</entry>
+<entry align="left"><ulink url="http://www.wormbase.org/db/get?name=LEM-2;class=Protein" role="_blank">LEM-2</ulink></entry>
+<entry align="left">MxE</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=dpl-1;class=Gene" role="_blank">dpl-1</ulink></emphasis></entry>
+<entry align="left">L1, YA</entry>
+<entry align="left">H3K79me2</entry>
+<entry align="left">EE, MxE, L3</entry>
+<entry align="left"><ulink url="http://www.wormbase.org/db/get?name=MES-4;class=Protein" role="_blank">MES-4</ulink></entry>
+<entry align="left">EE</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=dpy-27;class=Gene" role="_blank">dpy-27</ulink></emphasis></entry>
+<entry align="left">MxE</entry>
+<entry align="left">H3K79me3</entry>
+<entry align="left">EE, MxE, L3</entry>
+<entry align="left"><ulink url="http://www.wormbase.org/db/get?name=MIX-1;class=Protein" role="_blank">MIX-1</ulink></entry>
+<entry align="left">MxE</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=efl-1;class=Gene" role="_blank">efl-1</ulink></emphasis></entry>
+<entry align="left">L1, YA</entry>
+<entry align="left">H3K9me1</entry>
+<entry align="left">EE, L3</entry>
+<entry align="left"><ulink url="http://www.wormbase.org/db/get?name=MRG-1;class=Protein" role="_blank">MRG-1</ulink></entry>
+<entry align="left">EE</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=egl-27;class=Gene" role="_blank">egl-27</ulink></emphasis></entry>
+<entry align="left">L1</entry>
+<entry align="left">H3K9me2</entry>
+<entry align="left">EE, L3</entry>
+<entry/>
+<entry/>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=egl-5;class=Gene" role="_blank">egl-5</ulink></emphasis></entry>
+<entry align="left">L3</entry>
+<entry align="left">H3K9me3</entry>
+<entry align="left">EE, L3</entry>
+<entry/>
+<entry/>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=elt-3;class=Gene" role="_blank">elt-3</ulink></emphasis></entry>
+<entry align="left">L1</entry>
+<entry align="left">total H4</entry>
+<entry align="left">L3</entry>
+<entry/>
+<entry/>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=eor-1;class=Gene" role="_blank">eor-1</ulink></emphasis></entry>
+<entry align="left">L3</entry>
+<entry align="left">H4acTetra</entry>
+<entry align="left">EE</entry>
+<entry/>
+<entry/>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=F16B12.6;class=Gene" role="_blank">F16B12.6</ulink></emphasis></entry>
+<entry align="left">L1</entry>
+<entry align="left">H4K16ac</entry>
+<entry align="left">EE</entry>
+<entry/>
+<entry/>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=F45C12.2;class=Gene" role="_blank">F45C12.2</ulink></emphasis></entry>
+<entry align="left">L3</entry>
+<entry align="left">H4K20me1</entry>
+<entry align="left">EE, LE, L3</entry>
+<entry/>
+<entry/>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=fos-1;class=Gene" role="_blank">fos-1</ulink></emphasis></entry>
+<entry align="left">L1, L2</entry>
+<entry align="left">H4K8ac</entry>
+<entry align="left">EE, L3</entry>
+<entry/>
+<entry/>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=gei-11;class=Gene" role="_blank">gei-11</ulink></emphasis></entry>
+<entry align="left">L2, L4</entry>
+<entry/>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=hlh-1;class=Gene" role="_blank">hlh-1</ulink></emphasis></entry>
+<entry align="left">MxE</entry>
+<entry/>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=hlh-8;class=Gene" role="_blank">hlh-8</ulink></emphasis></entry>
+<entry align="left">L3</entry>
+<entry/>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=lin-11;class=Gene" role="_blank">lin-11</ulink></emphasis></entry>
+<entry align="left">L2</entry>
+<entry/>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=lin-13;class=Gene" role="_blank">lin-13</ulink></emphasis></entry>
+<entry align="left">MxE</entry>
+<entry/>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=lin-15B;class=Gene" role="_blank">lin-15B</ulink></emphasis></entry>
+<entry align="left">L3, L4</entry>
+<entry/>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=lin-39;class=Gene" role="_blank">lin-39</ulink></emphasis></entry>
+<entry align="left">L3</entry>
+<entry/>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=mab-5;class=Gene" role="_blank">mab-5</ulink></emphasis></entry>
+<entry align="left">L3</entry>
+<entry/>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=mdl-1;class=Gene" role="_blank">mdl-1</ulink></emphasis></entry>
+<entry align="left">L1</entry>
+<entry/>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=mef-2;class=Gene" role="_blank">mef-2</ulink></emphasis></entry>
+<entry align="left">L1</entry>
+<entry/>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=mep-1;class=Gene" role="_blank">mep-1</ulink></emphasis></entry>
+<entry align="left">MxE</entry>
+<entry/>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=nhr-105;class=Gene" role="_blank">nhr-105</ulink></emphasis></entry>
+<entry align="left">L3</entry>
+<entry/>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=nhr-111;class=Gene" role="_blank">nhr-111</ulink></emphasis></entry>
+<entry align="left">L2</entry>
+<entry/>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=nhr-28;class=Gene" role="_blank">nhr-28</ulink></emphasis></entry>
+<entry align="left">L3, L4</entry>
+<entry/>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=nhr-6;class=Gene" role="_blank">nhr-6</ulink></emphasis></entry>
+<entry align="left">L2</entry>
+<entry/>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=pes-1;class=Gene" role="_blank">pes-1</ulink></emphasis></entry>
+<entry align="left">L4</entry>
+<entry/>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=pha-4;class=Gene" role="_blank">pha-4</ulink></emphasis></entry>
+<entry align="left">MxE, LE, L1, starved L1, L2, YA</entry>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=pqm-1;class=Gene" role="_blank">pqm-1</ulink></emphasis></entry>
+<entry align="left">L3</entry>
+<entry/>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=R02D3.7;class=Gene" role="_blank">R02D3.7</ulink></emphasis></entry>
+<entry align="left">L2</entry>
+<entry/>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=sea-2;class=Gene" role="_blank">sea-2</ulink></emphasis></entry>
+<entry align="left">L3</entry>
+<entry/>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=skn-1;class=Gene" role="_blank">skn-1</ulink></emphasis></entry>
+<entry align="left">L1</entry>
+<entry/>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-130;class=Gene" role="_blank">unc-130</ulink></emphasis></entry>
+<entry align="left">L1</entry>
+<entry/>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-62;class=Gene" role="_blank">unc-62</ulink></emphasis></entry>
+<entry align="left">L1, L2, L3</entry>
+<entry/>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/species/c_elegans/gene/WBGene00021000#0-9e-3" role="_blank">W03F9.2</ulink></emphasis></entry>
+<entry align="left">L4/YA</entry>
+<entry/>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=zag-1;class=Gene" role="_blank">zag-1</ulink></emphasis></entry>
+<entry align="left">L1, L2, L3</entry>
+<entry/>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left" namest="col1" nameend="col6">EE = early embryo, LE= late embryo, MxE= mixed stage embryos, L1-L4 = larval stages 1-4, YA = young adult</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<para>This pipeline was first utilized on the FoxA transcription factor <ulink url="http://www.wormbase.org/db/get?name=PHA-4;class=Protein" role="_blank">PHA-4</ulink> that has important roles in both organ development and environmental responses (<link linkend="bib261">Zhong et al., 2010</link><!--: PMID 20174564-->). Subsequently, an analysis of the major characteristics of 22 transcription factors describes binding site features and correlations for this larger set, including a preliminary regulatory network analysis (<link linkend="bib166">Niu et al., 2011</link><!--: PMID 21177963-->). Most of these factors bind thousands of sites in the genome, and the majority of these binding sites near coding genes lie within 500 bp of the predicted transcript start site. A significant insight from the properties of these 22 transcription factors was the recognition that the genome contains hundreds of regions that are broadly permissive for non-specific binding by transcription factors (termed high-occupancy target, or &ldquo;HOT&rdquo;, regions) (<link linkend="bib68">Gerstein et al., 2010</link><!--: PMID 21177976-->). Recruitment to a HOT region does not require the sequence-specific binding property of the transcription factor, nor is binding correlated with the regulation of nearby genes. How transcription factors are recruited to HOT sites, and the possible role of chromatin or nuclear organization in this process, is unknown. For those interested in using these data to understand gene regulation by a specific transcription factor, HOT sites should be carefully distinguished from other binding sites that are either unique to or primarily bound by the factor of interest, which are more likely to result in direct regulatory events. Another limitation users should realize when interpreting the genome-wide transcription factor binding profiles is that almost all the experiments were performed in whole animals. Any binding profile for a broadly-expressed transcription factor will therefore be an amalgam of binding in multiple tissues. Currently, tissue-specific profiling techniques are being applied to circumvent this problem.</para>
+</sect2>
+<sect2 id="sec7-3">
+<title>modENCODE chromatin modification ChIP studies</title>
+<para>In addition to sequence-specific transcription factors, a second modENCODE project has focused on collecting genome-wide ChIP-chip datasets for various chromatin-associated factors as well as for histone modifications. Over 20 histone modifications and 14 factors have been analyzed to date. Unlike the transcription factor studies that analyzed transgenic GFP-tagged proteins these datasets were generated by using antibodies specific to each factor or modification to monitor their endogenous distribution; many of these antibodies are commercially available. This global analysis of chromatin states has yielded various insights, including the persistence of the germline-established chromatin state in the somatic tissues, highlighted by the existence of chromosomal domains enriched for repressive histone modifications that correlate with increased meiotic recombination rates (<link linkend="bib68">Gerstein et al., 2010</link><!--: PMID 21177976-->). Additionally, the X chromosome exhibits several distinctive features relative to autosomes, including increased monomethylation of H4K20 and H3K27, and increased nucleosome density (<link linkend="bib54">Ercan et al., 2011</link><!--: PMID 21177966-->; <link linkend="bib135">Liu et al., 2011</link><!--: PMID 21177964-->). Importantly, when the chromatin modification status was combined with transcription factor data in predictive algorithms for gene regulatory events, the accuracy of the resulting predictions was greatly improved compared to either alone (<link linkend="bib68">Gerstein et al., 2010</link><!--: PMID 21177976-->).</para>
+</sect2>
+<sect2 id="sec7-4">
+<title>modENCODE transcription studies</title>
+<para>All of these ChIP-based studies are complemented by modENCODE-based analysis of gene expression at many different developmental stages, tissues, and environmental conditions through the use of deep sequencing and tiling microarrays to monitor transcript identity and abundance. As of October 2011, more than 130 experiments have been analyzed and released to the community. These include analysis of both poly-A-selected RNAs as well as small RNAs. Most of these data have been primarily analyzed with the immediate goal of improving gene annotation, and have led to the identification of thousands of novel exons and splicing events, new small RNAs, including many microRNAs, and improved 5&rsquo; and 3&rsquo; UTR mapping (<link linkend="bib85">Hillier et al., 2009</link><!--: PMID 19181841-->; <link linkend="bib106">Kato et al., 2009</link><!--: PMID 19460142-->; <link linkend="bib145">Mangone et al., 2010</link><!--: PMID 20522740-->; see also <link linkend="bib94">Jan et al., 2011</link><!--: PMID 21085120-->). Improved gene models lead to improved assignment of regulatory events to the correct target genes. Moreover, as additional gene expression data is collected and analyzed, more conclusions will be drawn regarding correlations between regulatory factors and changes in gene expression levels across stages, tissues, and conditions.</para>
+<para>Countless biological discoveries are embedded in these deep and complex modENCODE datasets. The published global observations and analyses (<link linkend="bib68">Gerstein et al., 2010</link><!--: PMID 21177976-->) are just the beginning. Investigation of the data by the larger research community, with their specialized expertise in so many aspects of <emphasis>C. elegans</emphasis> biology, is essential to plumb the full possibilities of the data. To facilitate such endeavors by the <emphasis>C. elegans</emphasis> community, all modENCODE data, along with detailed descriptions of growth and collection conditions and protocols, are available at <ulink url="http://www.modencode.org/">http://www.modencode.org/</ulink>. The data are available for bulk download for large-scale analyses and comparisons, but the data for individual experiments or individual genes can be examined as well, for those with a particular focus on a single pathway or process. Data of interest can be selected as &ldquo;tracks&rdquo; for viewing on a genome browser as well. In the near future, additional changes will be made to the interface to improve selection and analysis of all interested users. Ultimately, all the data on the modENCODE website will be incorporated into <ulink url="http://www.wormbase.org/" role="_blank">WormBase</ulink>. Movement of these data to cloud-based storage to increase accessibility and facilitate downloads is also a likely possibility in the near future.</para>
+</sect2>
+</sect1>
+<sect1 id="sec8">
+<title>Future Prospects</title>
+<para>There is little doubt that the field of transcriptional regulation in <emphasis>C. elegans</emphasis> is in the midst of an information explosion. We are rapidly acquiring information concerning temporal and spatial patterns of gene expression using genome wide expression assays and automated analyses of fluorescent protein reporter expression. At the same time, we are identifying binding sites for transcription factors and chromatin regulatory factors throughout the genome, and recently developed techniques for isolating specific nuclei will enhance our ability for tissue specific chromatin profiling (<link linkend="bib43">Deal and Henikoff, 2010</link><!--: PMID 20627084-->). Still, we have only begun to explore other areas of transcriptional regulation. How does higher order organization within nuclei affect gene expression (<link linkend="bib153">Meister et al., 2010</link><!--: PMID 20395364-->; <link linkend="bib93">Ikegami et al., 2010</link><!--: PMID 21176223-->)? What impact do post-transcriptional and post-translational mechanisms have on transcription factor activity? Overall, it is an exciting time to study transcriptional regulation in <emphasis>C. elegans</emphasis>. Because of the relative simplicity of <emphasis>C. elegans</emphasis> gene promoters, we can reasonably make connections between transcription factors and their target genes. Understanding this information will help decipher how the information in the genome controls every aspect of <emphasis>C. elegans</emphasis> biology.</para>
+</sect1>
+<sect1 id="sec9">
+<title>Acknowledgements</title>
+<para>This work was supported, in part, by the NIDDK Intramural Research Program of the National Institutes of Health (NIH) (M. Krause), and extramural NIH support from the NHGRI (V. Reinke), and the NIGMS (P. Okkema).</para>
+</sect1>
+<sect1 id="sec10">
+<title>References</title>
+<para/>
+&transregulate_refs;
+</sect1>
+</article>

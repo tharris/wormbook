@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY fig1 SYSTEM 'gsdfig1.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'gsdfig1leg.xml'>
+<!ENTITY fig2 SYSTEM 'gsdfig2.jpg' NDATA JPG>
+<!ENTITY fig2legend SYSTEM 'gsdfig2leg.xml'>
+<!ENTITY fig3 SYSTEM 'gsdfig3.jpg' NDATA JPG>
+<!ENTITY fig3legend SYSTEM 'gsdfig3leg.xml'>
+<!ENTITY fig4 SYSTEM 'gsdfig4.jpg' NDATA JPG>
+<!ENTITY fig4legend SYSTEM 'gsdfig4leg.xml'>
+<!ENTITY fig5 SYSTEM 'gsdfig5.jpg' NDATA JPG>
+<!ENTITY fig5legend SYSTEM 'gsdfig5leg.xml'>
+<!ENTITY gsd_Refs SYSTEM 'gsdrefs.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="gsd_ArticleID">
+    <articleinfo>
+        <!--see DocBook's authorgroup element -->
+        <title>Sex determination in the germ line<footnote>
+                <para>Edited by Barbara J. Meyer. Last revised January 30, 2007. Originally published April 4, 2006. Published in this revised form March 5, 2007. This chapter should be cited as: Ellis, R. and Schedl, T. Sex determination in the germ line (March 5, 2007), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.82.2, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+		<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2007 Ronald Ellis and Tim Schedl. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+            </footnote>
+        </title>
+        <!--		<revhistory>
+			<revision>
+				<revnumber>1.0</revnumber>
+				<date>Last revised 3/29/05</date>
+			</revision>
+		</revhistory>
+-->
+        <author>
+            <firstname>Ronald</firstname>
+            <surname>Ellis<remark>
+                    <footnote>
+                        <para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:ron.ellis@umdnj.edu">ron.ellis@umdnj.edu</ulink> or <ulink url="mailto:ts@genetics.wustl.edu">ts@genetics.wustl.edu</ulink></para>
+                    </footnote>
+                </remark>
+            </surname>
+            <affiliation>
+                <address>Department of Molecular Biology, University of Medicine and Dentistry of New Jersey, School of Osteopathic Medicine, Stratford, NJ 08084 USA</address>
+            </affiliation>
+        </author>
+        <author>
+            <firstname>Tim</firstname>
+            <surname>Schedl<remark><superscript>&#x000A7;</superscript></remark></surname>
+            <affiliation>
+                <address>Department of Genetics, Washington University School of Medicine, St. Louis, MO 63110 USA</address>
+            </affiliation>
+        </author>
+    </articleinfo>
+<?newpage?>
+    <abstract>
+        <title><emphasis role="bold">Abstract</emphasis></title>
+        <para><emphasis role="bold">Sexual identity is one of a few basic parameters that specify how development should
+            proceed. Although sex determination has profound effects on many tissues, its most
+            ancient and fundamental role is ensuring that some germ cells become sperm, and others
+            become oocytes or eggs. Spermatocytes and oocytes are usually produced in male and
+            female animals, respectively, but</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">is uniquely suitable
+            for studying the control of these cell fates because both types of cells are made from a
+            common pool of progenitors in XX hermaphrodites. Extensive genetic and molecular studies
+            have shown that the sexual fate of germ cells in</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">is
+            controlled by the same genes that regulate sexual identity in other parts of the animal.
+            However, this regulatory pathway has additional features that are unique to the germ
+            line. First, several genes, like the three</emphasis> <emphasis><emphasis role="bold">fogs,</emphasis></emphasis> <emphasis role="bold">act only in germ cells. Second, the
+            three</emphasis> <emphasis><emphasis role="bold">fem</emphasis></emphasis> <emphasis role="bold">genes act in concert with targets of</emphasis> <emphasis><emphasis role="bold"><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-1" role="_blank">tra-1</ulink></emphasis></emphasis> <emphasis role="bold">to control
+            germ cell fates, but do not act this way in the soma. Third, translational repression of</emphasis>
+            <emphasis><emphasis role="bold"><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink></emphasis></emphasis> <emphasis role="bold">is essential for hermaphrodite spermatogenesis. Fourth,
+            translational repression of</emphasis> <emphasis><emphasis role="bold"><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink></emphasis></emphasis> <emphasis role="bold">is needed for oogenesis. In this
+            review, we present genetic and molecular models for how these processes work, and
+            summarize the evidence upon which they are built.</emphasis></para>
+    </abstract>
+    <sect1>
+        <title>Sex determination in germ cells</title>
+        <para>In <emphasis>C. elegans</emphasis> there are two sexes. Animals with two X chromosomes
+            (XX) and two sets of autosomes have a female soma and a hermaphrodite germ line, and so
+            are called hermaphrodites. Animals with a single X chromosome (XO) and two sets of
+            autosomes have a male soma and germline (see <ulink url="http://www.wormbook.org/chapters/www_somaticsexdeterm/somaticsexdeterm.html" role="_blank">Somatic sex determination</ulink>). Hermaphrodite self-fertility is achieved by a transient
+            period of spermatogenesis in the L3 stage followed by a switch to oogenesis in the L4.
+            Males begin spermatogenesis in the L3/L4 stage and this continues through adulthood.
+            Although one might expect that the regulation of sexual identity in germ cells would be
+            just like female/male choices in the soma, studies in both worms and flies show that it
+            is more complex. Several features that make the germ line unique might contribute to
+            this complexity. For example, the germ line is the most ancient tissue in animals, and
+            the only sexually dimorphic tissue common to all species. Thus, it has had a long
+            evolutionary history and many opportunities to accumulate new regulatory circuits. In
+            addition, oocytes or eggs need to be packed with regulatory molecules that will direct
+            early embryonic development, including sex determination, and some of these molecules must be
+            repressed so that they don’t affect the germ line itself. Finally, in species like
+                <emphasis>C. elegans</emphasis>, where the germline of a single individual can
+            produce both male and female germ cells, additional layers of regulation are required to
+            ensure plasticity in sexual fate.</para>
+        <para>The core pathway that regulates somatic sexual fate forms a central part of the
+            pathway that controls germline sexual fate (<xref linkend="figure1"/>; <link linkend="bib22">Goodwin and Ellis; 2002</link><!-- PMID 11839294-->; see <ulink url="http://www.wormbook.org/chapters/www_somaticsexdeterm/somaticsexdeterm.html" role="_blank">Somatic sex determination</ulink> and <ulink url="http://www.wormbook.org/chapters/www_dosagecomp/dosagecomp.html" role="_blank">X-chromosome dosage compensation</ulink>). It is composed of seven
+            genes that are each necessary for sexual identity in germ cells and somatic cells. These
+            genes function in a negative regulatory hierarchy to control <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> activity (<link linkend="bib31">Hodgkin, 1987</link><!-- PMID 3428597-->, see <ulink url="http://www.wormbook.org/chapters/www_somaticsexdeterm/somaticsexdeterm.html" role="_blank">Somatic sex determination</ulink>). However, <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> is not the
+            terminal regulator of sexual fate in the germ line, and germline specific genes and
+            regulatory interactions are superimposed on this core pathway to allow hermaphrodite
+            development. Below, we briefly describe the core pathway and then the additional genes
+            and layers of regulation that act in germline sex determination.</para>
+    <mediaobject id="figure1" xreflabel="Figure 1">
+        <imageobject>
+            <imagedata entityref="fig1" align="center" width="5in"/>
+        </imageobject>
+        <textobject>
+            <phrase> figure 1</phrase>
+        </textobject> &fig1legend;</mediaobject>
+    </sect1>
+    <sect1>
+        <title>The soma acts through <ulink url="http://www.wormbase.org/db/seq/protein?name=HER-1;class=protein" role="_blank">HER-1</ulink> to regulate the sexual fate of germ cells</title>
+        <para>The <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=her-1" role="_blank">her-1</ulink></emphasis> gene acts in XO animals to promote male somatic
+            development and continuous spermatogenesis (<link linkend="bib29">Hodgkin, 1980</link><!-- PMID 7262542-->). This
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=her-1" role="_blank">her-1</ulink></emphasis> activity is restricted to XO animals by the SDC (sex
+            determination and dosage compensation) genes, which repress <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=her-1" role="_blank">her-1</ulink></emphasis>
+            transcription in XX animals (<link linkend="bib11">Chu et al., 2002</link><!-- PMID 11937488-->; for details see <ulink url="http://www.wormbook.org/chapters/www_somaticsexdeterm/somaticsexdeterm.html" role="_blank">Somatic sex
+                determination</ulink> and <ulink url="http://www.wormbook.org/chapters/www_dosagecomp/dosagecomp.html" role="_blank">X-chromosome dosage compensation</ulink>). <ulink url="http://www.wormbase.org/db/seq/protein?name=HER-1;class=protein" role="_blank">HER-1</ulink> plays a pivotal
+            role in coordinating sexual fate throughout the animal, as several lines of evidence
+            indicate that <ulink url="http://www.wormbase.org/db/seq/protein?name=HER-1;class=protein" role="_blank">HER-1</ulink> transmits a masculinizing signal between cells. This evidence
+            includes sequence analyses indicating that <ulink url="http://www.wormbase.org/db/seq/protein?name=HER-1;class=protein" role="_blank">HER-1</ulink> is a small, secreted protein (<link linkend="bib62">Perry et al., 1993</link><!-- PMID 8436294-->), genetic mosaic analyses indicating that <ulink url="http://www.wormbase.org/db/seq/protein?name=HER-1;class=protein" role="_blank">HER-1</ulink> acts
+            non-autonomously (<link linkend="bib33">Hunter and Wood, 1992</link><!-- PMID 1741033-->), and ectopic expression of <ulink url="http://www.wormbase.org/db/seq/protein?name=HER-1;class=protein" role="_blank">HER-1</ulink>
+            in the muscle of XX animals, which masculinizes somatic tissues and causes germ cells to
+            become sperm (<link linkend="bib62">Perry et al., 1993</link><!-- PMID 8436294-->). Based on mosaic analysis, <ulink url="http://www.wormbase.org/db/seq/protein?name=HER-1;class=protein" role="_blank">HER-1</ulink>
+            activity in the intestine and somatic gonad exerts the greatest influence on germ cell
+            fates (<link linkend="bib33">Hunter and Wood, 1992</link><!-- PMID 1741033-->).</para>
+        <para><ulink url="http://www.wormbase.org/db/seq/protein?name=HER-1;class=protein" role="_blank">HER-1</ulink> promotes spermatogenesis by binding to and inactivating the transmembrane
+            protein <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-2;class=protein" role="_blank">TRA-2</ulink> (<link linkend="bib44">Kuwabara and Kimble, 1995</link><!-- PMID 7555725-->; <link linkend="bib45">Kuwabara et al., 1992</link><!-- PMID 1498366-->; <link linkend="bib60">Okkema and Kimble, 1991</link><!-- PMID 1703488-->). Likely <ulink url="http://www.wormbase.org/db/seq/protein?name=HER-1;class=protein" role="_blank">HER-1</ulink> sites required for this
+            interaction have been identified by X-ray analysis of <ulink url="http://www.wormbase.org/db/seq/protein?name=HER-1;class=protein" role="_blank">HER-1</ulink> crystals (<link linkend="bib28">Hamaoka et al., 2004</link><!-- PMID 15289613-->), and the <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-2;class=protein" role="_blank">TRA-2</ulink> receptor site by genetic analysis (<link linkend="bib43">Kuwabara, 1996</link><!-- PMID 8681790-->). <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-2;class=protein" role="_blank">TRA-2</ulink>, in turn, inactivates the FEM proteins (<link linkend="bib30">Hodgkin, 1986</link><!-- PMID 3770465-->).
+            The cytoplasmic domain of <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-2;class=protein" role="_blank">TRA-2</ulink> can bind <ulink url="http://www.wormbase.org/db/seq/protein?name=FEM-3;class=protein" role="_blank">FEM-3</ulink> (<link linkend="bib56">Mehra et al., 1999</link><!-- PMID 10364161-->).
+            Thus, a simple model is that <ulink url="http://www.wormbase.org/db/seq/protein?name=HER-1;class=protein" role="_blank">HER-1</ulink> binding to the extracellular domain of <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-2;class=protein" role="_blank">TRA-2</ulink> disrupts
+            the ability of the intracellular domain of <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-2;class=protein" role="_blank">TRA-2</ulink> to bind and inactivate <ulink url="http://www.wormbase.org/db/seq/protein?name=FEM-3;class=protein" role="_blank">FEM-3</ulink>. <ulink url="http://www.wormbase.org/db/seq/protein?name=FEM-1;class=protein" role="_blank">FEM-1</ulink>
+            contains ankyrin repeats, <ulink url="http://www.wormbase.org/db/seq/protein?name=FEM-2;class=protein" role="_blank">FEM-2</ulink> is a PP2C phosphatase, and <ulink url="http://www.wormbase.org/db/seq/protein?name=FEM-3;class=protein" role="_blank">FEM-3</ulink> is novel (<link linkend="bib2">Ahringer et al., 1992</link><!-- PMID 1376249-->; <link linkend="bib63">Pilgrim et al., 1995</link><!-- PMID 8534913-->; <link linkend="bib73">Spence et al., 1990</link><!-- PMID 2317869-->). <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> is a transcription factor related to the <emphasis>Drosophila</emphasis>
+            Ci and vertebrate GLI proteins (<link linkend="bib77">Zarkower and Hodgkin, 1992</link><!--: 1339311-->). The FEM proteins
+            inactivate <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> by a mechanism that is not yet understood.</para>
+        <para>In <emphasis>Drosophila</emphasis>, germ cell sexual fate is also controlled by
+            somatic signals, and these signals interact with processes intrinsic to the germ line
+            (reviewed by <link linkend="bib61">Oliver, 2002</link><!-- PMID 12211627-->). In flies, additional genes act only in the
+            germ line to control sexual fate, but the genetic pathways involved have been hard to
+            unravel. By contrast, several well-characterized regulatory circuits have been
+            identified in the nematode germ line; in general, these circuits modulate the activity
+            of sex-determination genes to allow for hermaphrodite spermatogenesis.</para>
+    </sect1>
+    <sect1>
+        <title>In germ cells, the sex determination pathway acts through <ulink url="http://www.wormbase.org/db/seq/protein?name=FOG-1;class=protein" role="_blank">FOG-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=FOG-3;class=protein" role="_blank">FOG-3</ulink></title>
+        <para>In both males and hermaphrodites, sperm production requires
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fog-1" role="_blank">fog-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fog-3" role="_blank">fog-3</ulink></emphasis> and the three <emphasis>fem</emphasis> genes (<link linkend="bib4">Barton and Kimble, 1990</link><!-- PMID 2341035-->; <link linkend="bib16">Doniach and Hodgkin, 1984</link><!-- PMID 6541600-->; <link linkend="bib18">Ellis and Kimble, 1995</link><!-- PMID 7713418-->; <link linkend="bib30">Hodgkin, 1986</link><!-- PMID 3770465-->). Mutations in any of these
+            genes cause all germ cells to differentiate as oocytes.</para>
+        <sect2>
+            <title>
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fog-1" role="_blank">fog-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fog-3" role="_blank">fog-3</ulink></emphasis>
+            </title>
+            <para>Two facts imply that <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fog-1" role="_blank">fog-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fog-3" role="_blank">fog-3</ulink></emphasis>
+                control sexual fate in germ cells and probably act at the end of the
+                sex-determination pathway. First, mutations in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fog-1" role="_blank">fog-1</ulink></emphasis> or
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fog-3" role="_blank">fog-3</ulink></emphasis> cause germ cells to differentiate as oocytes rather than
+                sperm, but have no effect on other parts of the body. Second, genetic analyses
+                indicate that mutations in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fog-1" role="_blank">fog-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fog-3" role="_blank">fog-3</ulink></emphasis> act downstream of
+                mutations in all other genes in the pathway (<xref linkend="figure2"/>). Thus, these
+                two genes might be directly responsible for initiating spermatogenesis.</para>
+            <para>The <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fog-1" role="_blank">fog-1</ulink></emphasis> gene produces two major transcripts (<link linkend="bib35">Jin et al., 2001</link><!-- PMID 11150246-->; <link linkend="bib50">Luitjens et al., 2000</link><!-- PMID 11040214-->). The large transcript
+                is necessary for <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fog-1" role="_blank">fog-1</ulink></emphasis> function and is sufficient to rescue
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fog-1" role="_blank">fog-1</ulink>(<ulink url="http://www.wormbase.org/db/get?name=q253;class=Variation" role="_blank">q253</ulink>)</emphasis> mutants, but the small one has no detectable
+                activity (<link linkend="bib35">Jin et al., 2001a</link><!-- PMID 11779801-->; <link linkend="bib36">Jin et al., 2001b</link><!-- PMID 11150246-->). Other
+                sex-determination genes, like <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=her-1" role="_blank">her-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-1" role="_blank">tra-1</ulink></emphasis>
+                and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink></emphasis>, also make minor transcripts of unknown function.
+                Here we discuss only the essential products of each gene.</para>
+            <mediaobject id="figure2" xreflabel="Figure 2">
+                <imageobject>
+                    <imagedata entityref="fig2" align="center" width="5in"/>
+                </imageobject>
+                <textobject>
+                    <phrase> figure 2</phrase>
+                </textobject> &fig2legend;</mediaobject>
+            <para>Sequence analysis reveals that <ulink url="http://www.wormbase.org/db/seq/protein?name=FOG-1;class=protein" role="_blank">FOG-1</ulink> is a Cytoplasmic Polyadenylation Element
+                Binding (CPEB) protein. All CPEB proteins contain two RNA Recognition Motifs (RRMs)
+                and a C-H domain that binds zinc and interacts with RNA (reviewed by <link linkend="bib57">Mendez and Richter, 2001</link><!-- PMID 11433366-->). Because other CPEB proteins regulate the translation
+                of specific messages, <ulink url="http://www.wormbase.org/db/seq/protein?name=FOG-1;class=protein" role="_blank">FOG-1</ulink> probably regulates the translation of mRNAs that control
+                sexual fate in the germ line. Interestingly, <ulink url="http://www.wormbase.org/db/seq/protein?name=FOG-1;class=protein" role="_blank">FOG-1</ulink> can bind the
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fog-1" role="_blank">fog-1</ulink></emphasis> message itself (<link linkend="bib35">Jin et al., 2001a</link><!-- PMID 11779801-->), so it
+                might be auto-regulatory. Other targets of <ulink url="http://www.wormbase.org/db/seq/protein?name=FOG-1;class=protein" role="_blank">FOG-1</ulink> have not yet been identified.</para>
+<?newpage?>
+            <para>Although three other CPEB proteins are also expressed in the germ line (<link linkend="bib50">Luitjens et al., 2000</link><!-- PMID 11040214-->), only <ulink url="http://www.wormbase.org/db/seq/protein?name=FOG-1;class=protein" role="_blank">FOG-1</ulink> regulates sexual fate. How is this
+                specificity achieved? Analyses of <ulink url="http://www.wormbase.org/db/seq/protein?name=FOG-1;class=protein" role="_blank">FOG-1</ulink> homologs from other <emphasis>Caenorhabditis</emphasis> species
+                show that <ulink url="http://www.wormbase.org/db/seq/protein?name=FOG-1;class=protein" role="_blank">FOG-1</ulink> has a conserved insertion in the C-H domain that is not found in
+                other CPEB proteins (<link linkend="bib10">Cho et al., 2004</link><!-- PMID 15231741-->); this domain might specify
+                FOG-1’s unique function. One possibility is that <ulink url="http://www.wormbase.org/db/seq/protein?name=FOG-1;class=protein" role="_blank">FOG-1</ulink> binds specific elements found
+                only in mRNAs that act in sex determination. Alternatively, <ulink url="http://www.wormbase.org/db/seq/protein?name=FOG-1;class=protein" role="_blank">FOG-1</ulink> might interact
+                with other proteins that confer the ability to regulate sexual fate.</para>
+            <para><ulink url="http://www.wormbase.org/db/seq/protein?name=FOG-3;class=protein" role="_blank">FOG-3</ulink> is a member of the Tob family of proteins (<link linkend="bib9">Chen et al., 2000</link><!-- PMID 10625537-->). These proteins are found in all animals, and share a common
+                amino-terminal domain of 115 amino acids. This family has been implicated in the
+                control of cell division and differentiation, but so far little is know about their
+                biochemical functions. Tob itself has both nuclear import and export signals in the
+                conserved amino terminus (<link linkend="bib38">Kawamura-Tsuzuku et al., 2004</link><!-- PMID 15235587-->; <link linkend="bib52">Maekawa et al., 2004</link><!-- PMID 15051490-->), and associates with several Smad transcription factors
+                during osteogenesis (<link linkend="bib75">Yoshida et al., 2000</link><!-- PMID 11163184-->), so perhaps <ulink url="http://www.wormbase.org/db/seq/protein?name=FOG-3;class=protein" role="_blank">FOG-3</ulink> also
+                regulates transcription.</para>
+            <para><ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> appears to control germ cell fate by regulating the transcription of
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fog-1" role="_blank">fog-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fog-3" role="_blank">fog-3</ulink></emphasis>. Each gene has three to
+                six potential <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> binding sites in its promoter; more than are found in any other
+                gene in the genome (<link linkend="bib8">Chen and Ellis, 2000</link><!-- PMID 0010862749-->; <link linkend="bib35">Jin et al., 2001</link><!-- PMID 11150246-->). Furthermore, the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fog-3" role="_blank">fog-3</ulink></emphasis> promoter can bind <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> in
+                gel shift assays, and this binding requires intact <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> sites (<link linkend="bib8">Chen and Ellis, 2000</link><!-- PMID 0010862749-->). However, analyses of promoter mutations show that some of
+                the <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> binding sites mediate activation of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fog-3" role="_blank">fog-3</ulink></emphasis> transgenes,
+                whereas studies of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fog-3" role="_blank">fog-3</ulink></emphasis> expression imply that at least one
+                site mediates repression. Furthermore, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-1" role="_blank">tra-1</ulink>(null)</emphasis> mutants
+                usually make sperm early in life and oocytes later on (<link linkend="bib31">Hodgkin, 1987</link><!-- PMID 3428597-->;
+                <link linkend="bib69">Schedl et al., 1989</link><!-- PMID 2612895-->). One explanation for these complex observations
+                is that <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> acts on the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fog-3" role="_blank">fog-3</ulink></emphasis> promoter to repress spermatogenesis in some
+                circumstances, and to activate it in others.</para>
+        </sect2>
+        <sect2>
+            <title>
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-1" role="_blank">fem-1</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=fem-2" role="_blank">fem-2</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink></emphasis></title>
+            <para>Just as in the soma, the <emphasis>fem</emphasis> genes regulate the activity of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-1" role="_blank">tra-1</ulink></emphasis> in germ cells.
+                For example, quantitative RT-PCR studies of <emphasis>fem</emphasis>; <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-1" role="_blank">tra-1</ulink></emphasis> double
+                mutants show that the FEM proteins act through <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> to control the level of
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fog-3" role="_blank">fog-3</ulink></emphasis> transcripts (<link linkend="bib8">Chen and Ellis, 2000</link><!-- PMID 0010862749-->).
+                However, these double mutants make oocytes instead of sperm, which shows that the
+                FEM proteins also act downstream of <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> (<xref linkend="figure2"/>, <link linkend="bib30">Hodgkin, 1986</link><!-- PMID 3770465-->). Perhaps the FEM proteins directly activate <ulink url="http://www.wormbase.org/db/seq/protein?name=FOG-1;class=protein" role="_blank">FOG-1</ulink> or <ulink url="http://www.wormbase.org/db/seq/protein?name=FOG-3;class=protein" role="_blank">FOG-3</ulink>, or
+                regulate an unknown target.</para>
+        </sect2>
+    </sect1>
+    <sect1>
+        <title>Special regulatory modules promote hermaphrodite spermatogenesis</title>
+        <para>How do hermaphrodites undergo a brief period of spermatogenesis, given that XX animals
+            do not express the <ulink url="http://www.wormbase.org/db/seq/protein?name=HER-1;class=protein" role="_blank">HER-1</ulink> masculinizing non-autonomous signal? Genetic screens have
+            revealed three regulatory modules that play a central role in this process.</para>
+        <sect2>
+            <title>Translational regulation of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink></emphasis> by <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=FOG-2;class=protein" role="_blank">FOG-2</ulink></title>
+            <para>Gain-of-function mutations in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink></emphasis> cause XX animals to make
+                only oocytes, but have little effect on males (<link linkend="bib15">Doniach, 1986</link><!-- PMID 3770471-->).
+                Sequence analysis showed that these <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink></emphasis><emphasis>(gf)</emphasis> mutations disrupt
+                sequences in the 3’ UTR known as TGEs (<link linkend="bib24">Goodwin et al., 1993</link><!-- PMID 8402916-->). In
+                wild-type animals, these elements bind a protein complex that includes <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink>
+                (<link linkend="bib24">Goodwin et al., 1993</link><!-- PMID 8402916-->; <link linkend="bib34">Jan et al., 1999</link><!-- PMID 9878068-->). Three
+                observations imply that <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> represses translation of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink></emphasis>
+                    (<xref linkend="figure3"/>). First, <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> is required for spermatogenesis in
+                hermaphrodites but not in males (<link linkend="bib19">Francis et al., 1995</link><!-- PMID 7713419-->; <link linkend="bib19">Francis et al.,1995</link><!-- PMID 7713420-->). Second, somatically expressed <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> can repress translation of
+                somatic transgene RNAs that contain TGEs (<link linkend="bib34">Jan et al., 1999</link><!-- PMID 9878068-->). Third,
+                <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-2;class=protein" role="_blank">TRA-2</ulink> levels are increased in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gld-1" role="_blank">gld-1</ulink></emphasis> null mutant germ lines, based on <emphasis>in situ</emphasis> antibody
+                staining (<link linkend="bib34">Jan et al., 1999</link><!-- PMID 9878068-->).</para>
+<literallayout></literallayout>
+            <mediaobject id="figure3" xreflabel="Figure 3">
+                <imageobject>
+                    <imagedata entityref="fig3" align="center" width="5in"/>
+                </imageobject>
+                <textobject>
+                    <phrase> figure 3</phrase>
+                </textobject> &fig3legend;</mediaobject>
+            <para><ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> is a member of the STAR family of proteins, which contain a maxi-KH RNA
+                binding domain and two other conserved domains, called QUA1 and QUA2 (<link linkend="bib37">Jones et al., 1996</link><!-- PMID 8948583-->). <emphasis>In vitro</emphasis> studies indicate that <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> acts as a dimer (<link linkend="bib68">Ryder et al., 2004</link><!-- PMID 14718919-->). Because <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> has pleiotropic roles in germline
+                development (<link linkend="bib19">Francis et al., 1995</link><!-- PMID 7713419-->; <link linkend="bib19">Francis et al., 1995</link><!-- PMID 7713420-->)
+                it must regulate other messages in addition to <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink></emphasis>. Some of
+                these mRNA targets have been identified (<link linkend="bib48">Lee and Schedl, 2001</link><!-- PMID 11562350-->; <link linkend="bib78">2004</link>; <link linkend="bib54">Marin and Evans, 2003</link><!-- PMID 12736207-->; <link linkend="bib58">Mootz et al., 2004</link><!-- PMID 15201219-->). Recently, <emphasis>in
+                vitro</emphasis> biochemical studies implicated a hexanucleotide sequence as part of the <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink>
+                binding site, at least for some RNA targets (<link linkend="bib68">Ryder et al., 2004</link><!-- PMID 14718919-->).</para>
+            <para><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fog-2" role="_blank">fog-2</ulink></emphasis> is required specifically for hermaphrodite
+                spermatogenesis (<link linkend="bib70">Schedl and Kimble, 1988</link><!-- PMID 3396865-->). <ulink url="http://www.wormbase.org/db/seq/protein?name=FOG-2;class=protein" role="_blank">FOG-2</ulink> binds <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> in the
+                yeast two-hybrid assay and <emphasis>in vitro</emphasis>, which implies that they interact to regulate
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink></emphasis> (<xref linkend="figure3"/>; <link linkend="bib14">Clifford et al., 2000</link><!-- PMID 0011076749-->). Genetic data support this model, since epistasis analyses place
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fog-2" role="_blank">fog-2</ulink></emphasis> upstream of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink></emphasis>, and loss of
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fog-2" role="_blank">fog-2</ulink></emphasis> activity causes the same phenotype as
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink>(gf)</emphasis> mutations (<link linkend="bib70">Schedl and Kimble, 1988</link><!-- PMID 3396865-->).
+                The C-terminus of <ulink url="http://www.wormbase.org/db/seq/protein?name=FOG-2;class=protein" role="_blank">FOG-2</ulink>, which mediates its interaction with <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink>, has been
+                evolving rapidly (<link linkend="bib59">Nayak et al., 2004</link><!-- PMID-->). The N-terminus of <ulink url="http://www.wormbase.org/db/seq/protein?name=FOG-2;class=protein" role="_blank">FOG-2</ulink> contains an
+                F-box (<link linkend="bib14">Clifford et al., 2000</link><!-- PMID 0011076749-->) and binds the Skp1-related protein
+                <ulink url="http://www.wormbase.org/db/seq/protein?name=SKR-1;class=protein" role="_blank">SKR-1</ulink> (<link linkend="bib59">Nayak et al., 2004</link><!-- PMID-->); in other proteins, this would imply an interaction
+                with the SCF ubiquitin ligase machinery. However, <ulink url="http://www.wormbase.org/db/seq/protein?name=FOG-2;class=protein" role="_blank">FOG-2</ulink> cannot target <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> for
+                degradation, since both promote spermatogenesis. Perhaps it recruits other proteins
+                to the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink></emphasis> 3’UTR to block translation.</para>
+            <para>Some data suggest that <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=laf-1" role="_blank">laf-1</ulink></emphasis> also regulates the translation of
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink></emphasis> messages (<link linkend="bib23">Goodwin et al., 1997</link><!-- PMID 9043090-->). However,
+                definitive tests of epistasis have not been possible, because <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=laf-1" role="_blank">laf-1</ulink></emphasis> alleles cause
+                recessive lethality as well as dominant feminization.</para>
+        </sect2>
+        <sect2>
+            <title>Direct interactions between <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-2;class=protein" role="_blank">TRA-2</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink></title>
+            <para>Several missense mutations in the intracellular domain of <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-2;class=protein" role="_blank">TRA-2</ulink> prevent
+                spermatogenesis in hermaphrodites but not in males (<link linkend="bib15">Doniach, 1986</link><!-- PMID 3770471-->;
+                <link linkend="bib46">Kuwabara et al., 1998</link><!-- PMID 9851857-->). Although this feminizing effect is dominant,
+                these mutations also cause recessive masculinization in the soma, so they were named
+                <emphasis>mixomorphic</emphasis> (<emphasis>mx</emphasis>) alleles. Surprisingly, these alleles alter a
+                region of <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-2;class=protein" role="_blank">TRA-2</ulink> that normally binds <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink>, and disrupt this interaction (<link linkend="bib51">Lum et al., 2000</link><!-- PMID 11124807-->; <link linkend="bib74">Wang and Kimble, 2001</link><!-- PMID 11250902-->). What remains unclear is
+                the purpose of this <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-2;class=protein" role="_blank">TRA-2</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> interaction. One possibility is that the <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-2;class=protein" role="_blank">TRA-2</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink>
+                complex directly promotes oogenesis and other female fates; this model is consistent
+                with the fact that <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink>(mx)</emphasis> alleles behave as if they cause
+                increased wild-type activity (<link linkend="bib15">Doniach, 1986</link><!-- PMID 3770471-->; <link linkend="bib70">Schedl and Kimble, 1988</link><!-- PMID 3396865-->). Alternatively, the <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-2;class=protein" role="_blank">TRA-2</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> complex might promote spermatogenesis,
+                as implied by the fact that blocking this interaction leads to oogenesis.</para>
+            <para>Since <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-2;class=protein" role="_blank">TRA-2</ulink> is a membrane protein, and <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> is a transcription factor, how do
+                they find each other? <link linkend="bib51">Lum et al. (2000)</link> showed that the intracellular portion of <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-2;class=protein" role="_blank">TRA-2</ulink> is
+                imported to the nucleus. Since <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink></emphasis>
+                requires <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-3" role="_blank">tra-3</ulink></emphasis> to promote female development, and
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-3" role="_blank">tra-3</ulink></emphasis> encodes a calpain protease (<link linkend="bib3">Barnes and Hodgkin, 1996</link><!-- PMID 8887539-->), <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-3;class=protein" role="_blank">TRA-3</ulink> might cleave <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-2;class=protein" role="_blank">TRA-2</ulink> to release this intracellular fragment. This
+                interaction has been confirmed <emphasis>in vitro</emphasis> (<link linkend="bib72">Sokol and Kuwabara, 2000</link><!-- PMID 10783162-->).
+                Although germ cells produce a small transcript, <emphasis>tra-2B</emphasis>, that
+                encodes a similar intracellular fragment, this transcript is associated with
+                oogenesis rather than spermatogenesis (<link linkend="bib46">Kuwabara et al., 1998</link><!-- PMID 9851857-->), and is
+                unlikely to act in this regulatory process.</para>
+        </sect2>
+        <sect2>
+            <title>Export of <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> from the nucleus</title>
+            <para>Since <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> is a transcription factor, it needs to be in the nucleus to control
+                cell fates. Surprisingly, <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> binds sequences in the 3’-UTR of
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink></emphasis> messages (<link linkend="bib27">Graves et al., 1999</link><!-- PMID 10391248-->).
+                Furthermore, a mutation in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink></emphasis> that blocks this interaction
+                increases the levels of nuclear <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> (<link linkend="bib71">Segal et al., 2001</link><!-- PMID 11703944-->). This
+                mutation also promotes oogenesis, though this effect is not unexpected since it
+                deletes both TGEs, which are needed for translational repression of
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink></emphasis>. Taken together, these results suggest that
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink></emphasis> messages might negatively regulate <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> activity. The
+                export of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink></emphasis> messages requires <ulink url="http://www.wormbase.org/db/seq/protein?name=CRM-1;class=protein" role="_blank">CRM-1</ulink>, as well as a group of
+                genes that prevent export by the alternative <ulink url="http://www.wormbase.org/db/seq/protein?name=NXF-1;class=protein" role="_blank">NXF-1</ulink> pathway (<link linkend="bib42">Kuersten et al., 2004</link><!-- PMID 15175155-->). Perhaps these complex interactions between
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink></emphasis> and <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> help modulate <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> activity during
+                hermaphrodite development.</para>
+        </sect2>
+    </sect1>
+    <sect1>
+        <title>Regulation of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink></emphasis> translation is required for hermaphrodite oogenesis</title>
+        <para>Hermaphrodites are only fertile if they eventually stop making sperm and begin to
+            produce oocytes. By the mid-L4 stage, all germ cells that will form sperm are in
+            pachytene (or later stages) and about the same number of cells have begun
+            oogenesis, based on expression of the yolk receptor transcript (<xref linkend="figure4"/>). Thus, the decision to switch from spermatogenesis to oogenesis
+            must have occurred at some earlier, yet to be determined, point. Three lines of evidence
+            suggest that a crucial factor for determining how long hermaphrodites make sperm is the
+            ratio of <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-2;class=protein" role="_blank">TRA-2</ulink> activity to <ulink url="http://www.wormbase.org/db/seq/protein?name=FEM-3;class=protein" role="_blank">FEM-3</ulink> activity. First, the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink></emphasis>
+            gain-of-function mutations described above increase the production of <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-2;class=protein" role="_blank">TRA-2</ulink>, which
+            causes XX animals to make oocytes instead of sperm (<link linkend="bib15">Doniach, 1986</link><!-- PMID 3770471-->).
+            Second, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink></emphasis> gain-of-function mutations increase the production of <ulink url="http://www.wormbase.org/db/seq/protein?name=FEM-3;class=protein" role="_blank">FEM-3</ulink>, which causes XX
+            animals to make sperm instead of oocytes (below, <link linkend="bib5">Barton et al., 1987</link><!-- PMID 3557107-->).
+            Third, these <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink>(gf)</emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink>(gf)</emphasis> mutations can mutually suppress each other, restoring production of both
+            sperm and oocytes (<link linkend="bib70">Schedl and Kimble, 1988</link><!-- PMID 3396865-->). Because germ cell fates are
+            so sensitive to the ratio of <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-2;class=protein" role="_blank">TRA-2</ulink> to <ulink url="http://www.wormbase.org/db/seq/protein?name=FEM-3;class=protein" role="_blank">FEM-3</ulink> activity, it is not surprising that
+            additional regulatory modules control the production of <ulink url="http://www.wormbase.org/db/seq/protein?name=FEM-3;class=protein" role="_blank">FEM-3</ulink> protein from <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink></emphasis> messenger RNAs.</para>
+<literallayout></literallayout>
+        <mediaobject id="figure4" xreflabel="Figure 4">
+            <imageobject>
+                <imagedata entityref="fig4" align="center" width="6in"/>
+            </imageobject>
+            <textobject>
+                <phrase> figure 4</phrase>
+            </textobject> &fig4legend;</mediaobject>
+        <sect2>
+            <title>Repression of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink></emphasis> translation by <ulink url="http://www.wormbase.org/db/seq/protein?name=FBF-1;class=protein" role="_blank">FBF-1</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=FBF-2;class=protein" role="_blank">FBF-2</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=NOS-3;class=protein" role="_blank">NOS-3</ulink></title>
+            <para>Hermaphrodites cannot switch from the production of sperm to that of oocytes
+                unless <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink></emphasis> activity is repressed by a “Point Mutation Element,” or PME, located in
+                the 3’UTR (<link linkend="bib1">Ahringer and Kimble, 1991</link><!-- PMID 1702880-->; <link linkend="bib2">Ahringer et al., 1992</link><!-- PMID 1376249-->; <link linkend="bib67">Rosenquist and Kimble, 1988</link><!-- PMID 3384333-->). Gain-of-function mutations in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink></emphasis> alter this PME, resulting in increased <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink></emphasis> activity and constitutive spermatogenesis. Since these mutations don’t
+                change the level of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink></emphasis> transcripts, but appear to increase the length of the poly(A) tail, they
+                probably increase <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink></emphasis> translation.</para>
+            <para>Using the yeast three-hybrid assay, <link linkend="bib76">Zhang et al. (1997<!-- PMID 9393998-->)</link> identified
+                two proteins, called <ulink url="http://www.wormbase.org/db/seq/protein?name=FBF-1;class=protein" role="_blank">FBF-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=FBF-2;class=protein" role="_blank">FBF-2</ulink>, that bind the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink></emphasis> PME. These proteins are remarkably similar in amino acid sequence, and
+                have overlapping functions. The gain-of-function mutations in the PME prevent the
+                FBF proteins from binding the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink></emphasis> 3’-UTR. Moreover, inactivation of the <emphasis>fbf</emphasis> genes by RNA-mediated
+                interference recapitulates the phenotype of these <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink>(gf)</emphasis> mutants — the XX animals produce sperm instead of oocytes. Thus,
+                <ulink url="http://www.wormbase.org/db/seq/protein?name=FBF-1;class=protein" role="_blank">FBF-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=FBF-2;class=protein" role="_blank">FBF-2</ulink> repress the translation of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink></emphasis> messages by binding the PME (<xref linkend="figure5"/>). Although <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fbf-1" role="_blank">fbf-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fbf-2" role="_blank">fbf-2</ulink></emphasis> single mutants are usually wild type,
+                recent results suggest that they are not completely redundant, but have slightly
+                different roles in the control of sexual fate and cell proliferation (<link linkend="bib47">Lamont et al., 2004</link><!-- PMID 15525531-->).</para>
+            <para>The FBF proteins are homologs of the <emphasis>Drosophila</emphasis>
+                translational regulator Pumilio, which interacts with Nanos to inhibit translation
+                of <emphasis>hunchback</emphasis> messages. Similarly, the <emphasis>C. elegans</emphasis> FBF proteins
+                bind <ulink url="http://www.wormbase.org/db/seq/protein?name=NOS-3;class=protein" role="_blank">NOS-3</ulink> in the yeast two-hybrid system and <emphasis>in vitro</emphasis> (<link linkend="bib41">Kraemer et al., 1999</link><!-- PMID 10508609-->). Furthermore, inactivation of <ulink url="http://www.wormbase.org/db/seq/protein?name=NOS-3;class=protein" role="_blank">NOS-3</ulink> and the two other NOS homologs by RNAi
+                causes many XX animals to produce sperm instead of oocytes (<link linkend="bib41">Kraemer et al., 1999</link><!-- PMID 10508609-->). Thus, <ulink url="http://www.wormbase.org/db/seq/protein?name=NOS-3;class=protein" role="_blank">NOS-3</ulink> is likely to act with the FBF proteins to repress
+                translation of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink></emphasis>.</para>
+<literallayout></literallayout>
+            <mediaobject id="figure5" xreflabel="Figure 5">
+                <imageobject>
+                    <imagedata entityref="fig5" width="5in" align="center"/>
+                </imageobject>
+                <textobject>
+                    <phrase> figure 5</phrase>
+                </textobject> &fig5legend;</mediaobject>
+            <para>The same yeast two-hybrid screen that identified <ulink url="http://www.wormbase.org/db/seq/protein?name=NOS-3;class=protein" role="_blank">NOS-3</ulink> also showed that the <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-3;class=protein" role="_blank">GLD-3</ulink>
+                protein interacts with <ulink url="http://www.wormbase.org/db/seq/protein?name=FBF-1;class=protein" role="_blank">FBF-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=FBF-2;class=protein" role="_blank">FBF-2</ulink> (<link linkend="bib17">Eckmann et al., 2002</link><!-- PMID 12431376-->). <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-3;class=protein" role="_blank">GLD-3</ulink>
+                is a homolog of Bicaudal-C from <emphasis>Drosophila</emphasis>. Mutant analysis
+                showed that <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-3;class=protein" role="_blank">GLD-3</ulink> plays several roles in germline development, one of which is the
+                promotion of spermatogenesis — in both <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gld-3" role="_blank">gld-3</ulink>(null)</emphasis> males and hermaphrodites, some
+                cells that should have become sperm instead develop as oocytes. This <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gld-3" role="_blank">gld-3</ulink></emphasis> phenotype
+                is suppressed by mutations in the <emphasis>fbf</emphasis> genes, which implies that <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-3;class=protein" role="_blank">GLD-3</ulink> negatively
+                regulates FBF activity (<xref linkend="figure5"/>).</para>
+        </sect2>
+        <sect2>
+            <title><emphasis>mogs</emphasis> and friends</title>
+            <para>The activity of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink></emphasis> mRNA is also controlled by a second group of genes. Recessive mutations
+                in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mog-1" role="_blank">mog-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mog-2" role="_blank">mog-2</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mog-3" role="_blank">mog-3</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mog-4" role="_blank">mog-4</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mog-5" role="_blank">mog-5</ulink></emphasis> or <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mog-6" role="_blank">mog-6</ulink></emphasis> cause hermaphrodites to make sperm
+                instead of oocytes, and also affect the size of the germ line and the viability of
+                embryos (<link linkend="bib25">Graham and Kimble, 1993</link><!-- PMID 8462850-->; <link linkend="bib26">Graham et al., 1993</link><!-- PMID 8111975-->).
+                By using reporter assays, <link linkend="bib21">Gallegos et al. (1998<!-- PMID 9799241-->)</link> showed that <emphasis>mog</emphasis> gene activity can also be
+                detected in the soma, where they act through the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink></emphasis> 3’UTR to repress reporter constructs. However,
+                mutations in the <emphasis>mog</emphasis> genes don’t cause masculinization of the soma in
+                hermaphrodites. One possible explanation is that maternal <emphasis>mog</emphasis> activity is sufficient
+                for normal development. Alternatively, the level of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink></emphasis> transcripts in the soma of hermaphrodites might be outside the range
+                that is responsive to repression by the <emphasis>mog</emphasis> genes.</para>
+            <para>Four of the <emphasis>mog</emphasis> genes have been cloned; <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mog-1" role="_blank">mog-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mog-4" role="_blank">mog-4</ulink></emphasis>, and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mog-5" role="_blank">mog-5</ulink></emphasis> encode DEAH-box
+                proteins that are similar in sequence to the yeast proteins PRP16, PRP2, and PRP22,
+                respectively (<link linkend="bib65">Puoti and Kimble, 1999</link><!-- PMID 10022905-->; <link linkend="bib66">Puoti and Kimble, 2000</link><!-- PMID 10737793-->), and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mog-6" role="_blank">mog-6</ulink></emphasis> encodes an unusual nuclear cyclophilin (<link linkend="bib7">Belfiore et al., 2004</link><!-- PMID 15151984-->). All four proteins bind the <ulink url="http://www.wormbase.org/db/seq/protein?name=MEP-1;class=protein" role="_blank">MEP-1</ulink> zinc-finger protein (<link linkend="bib6">Belfiore et al., 2002</link><!-- PMID 12088146-->; <link linkend="bib7">Belfiore et al., 2004</link><!-- PMID 15151984-->), which is also
+                located in the nucleus, but has essential functions not shared by the <emphasis>mog</emphasis> genes. At
+                this time, the manner in which the MOG complex controls target messages remains unknown.</para>
+            <para>Two other genes have similar phenotypes. First, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mag-1" role="_blank">mag-1</ulink></emphasis> is the homolog of the
+                <emphasis>Drosophila mago nashi</emphasis> gene, which regulates several aspects of
+                germline development. In <emphasis>C. elegans</emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mag-1" role="_blank">mag-1</ulink>(RNAi)</emphasis> causes
+                hermaphrodites to produce sperm instead of oocytes, and affects embryonic viability
+                (<link linkend="bib49">Li et al., 2000</link><!-- PMID 10656761-->). Although these phenotypes suggest that <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mag-1" role="_blank">mag-1</ulink></emphasis>
+                functions in the same process as the <emphasis>mog</emphasis> genes, the <emphasis>mag-1(RNAi)</emphasis> phenotype is
+                suppressed by mutations in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fog-2" role="_blank">fog-2</ulink></emphasis> (<link linkend="bib49">Li et al., 2000</link><!-- PMID 10656761-->), whereas the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mog-1" role="_blank">mog-1</ulink></emphasis> phenotype is not (<link linkend="bib25">Graham and Kimble, 1993</link><!-- PMID 8462850-->). Second, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=atx-2" role="_blank">atx-2</ulink>(RNAi)</emphasis> causes hermaphrodites to make sperm instead of
+                oocytes, in addition to numerous other defects in germline development (<link linkend="bib13">Ciosk et al., 2004</link><!-- PMID 15342467-->; <link linkend="bib53">Maine et al., 2004</link><!-- PMID 15514056-->).</para>
+        </sect2>
+    </sect1>
+    <sect1>
+        <title>Crucial questions for the future</title>
+        <para>Although this field has reached a mature stage, in which a genetic regulatory process
+            of great complexity has been identified and dissected into component steps, many new
+            lines of research have opened up in the past several years and some old questions remain unsolved.</para>
+        <sect2>
+            <title>How do hermaphrodites initiate the switch from spermatogenesis to oogenesis?</title>
+            <para>We suggested above that the crucial factor controlling whether germ cells become
+                sperm or oocytes is the ratio of <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-2;class=protein" role="_blank">TRA-2</ulink> activity to <ulink url="http://www.wormbase.org/db/seq/protein?name=FEM-3;class=protein" role="_blank">FEM-3</ulink> activity, and described
+                several regulatory pathways that influence these activities. However, we do not yet
+                know why hermaphrodites make sperm early in life, and oocytes later on, since we
+                don’t know which regulatory activities change at the appropriate time. For example,
+                <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=FOG-2;class=protein" role="_blank">FOG-2</ulink> are expressed in both larval and adult hermaphrodites, so it seems
+                unlikely that repression of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink></emphasis> ends when animals reach
+                sexual maturity, thus allowing the switch to oogenesis, although it remains possible
+                that the activity of a third factor, or a modification to either <ulink url="http://www.wormbase.org/db/seq/protein?name=FOG-2;class=protein" role="_blank">FOG-2</ulink> or <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink>,
+                might be responsible for the switch.</para>
+            <para>As proposed by <link linkend="bib22">Goodwin and Ellis (2002<!-- PMID 11839294-->)</link>, three explanations might
+                account for this puzzle. First, one of these regulatory proteins might be modified
+                to change its activity in a manner that could not be detected by RNA or protein
+                cytological analysis. Second, the switch might be caused by a change in the activity
+                of a gene that has not yet been discovered. Third, the increasing size and cell
+                number in the developing germ line might slowly change the relative activities of
+                the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink></emphasis> regulators, so that the ratio of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink></emphasis> to <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink></emphasis> activity automatically flips during late larval development.</para>
+        </sect2>
+        <sect2>
+            <title>How is the regulation of sexual fate integrated with the control of proliferation?</title>
+            <para>In theory, these two decisions might be completely independent, so that germ cells
+                entering meiosis merely check the status of the sex-determination pathway to learn
+                if they should begin spermatogenesis or oogenesis. However, many of the genes that
+                act in one pathway also regulate the other. For example, the FBF proteins and <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink>
+                control both processes. Furthermore, genes that control progression through the
+                pachytene stage of meiosis also promote spermatogenesis. Are these pleiotropic
+                effects accidental, resulting only because many genes have pleiotropic roles in
+                development? Or do these dual activities help coordinate the overall development of
+                the germ line? Furthermore, do these data shed any light on the developmental point
+                at which germ cells commit to one sexual fate or the other?</para>
+        </sect2>
+        <sect2>
+            <title>What other influences control germ cell fate?</title>
+            <para>The ablation of a single sheath/spermathecal precursor cell in the somatic gonad
+                can completely feminize the germ line in XX animals (<link linkend="bib55">McCarter et al., 1997</link><!-- PMID 9013925-->). This result suggests that a second somatic signal might influence germ
+                cell fates, since <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=her-1" role="_blank">her-1</ulink></emphasis> is not expressed in XX animals.
+                However, no ligand or receptor has been identified, and it is possible that these
+                ablations exert their influence indirectly, by reducing the size of the germ line.
+                Indeed, direct ablation of a subset of germ cells at the L2/L3 molt also completely
+                feminizes some XX animals (<link linkend="bib55">McCarter et al., 1997</link><!-- PMID 9013925-->).</para>
+            <para>There is also a potential signal transduction pathway that promotes
+                spermatogenesis, but whose mechanism of operation remains unknown. Genes of the ERK
+                MAP Kinase pathway are required for several different germ cell fates, including the
+                progression of cells through the pachytene stage of meiosis I (<link linkend="bib12">Church et al., 1995</link><!-- PMID 7671816-->; <link linkend="bib32">Hsu et al., 2002</link><!-- PMID 11861555-->). Partial loss of function of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-45" role="_blank">lin-45</ulink></emphasis>
+                Raf, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mek-2" role="_blank">mek-2</ulink></emphasis> MEK and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mpk-1" role="_blank">mpk-1</ulink></emphasis> ERK can causes hermaphrodites to make only oocytes instead
+                of sperm. Furthermore, complete inactivation of these genes causes germ cells to
+                arrest at the pachytene stage of meiosis and produce oocyte-specific transcripts,
+                even in males (M. Ohmachi, M. H. Lee, E. Lambie and T. Schedl, personal
+                communication). Thus, this pathway normally promotes spermatogenesis. However, the
+                source of the signal, or even whether these genes act in their familiar mode as
+                transducers of a signal, remains unknown.</para>
+        </sect2>
+        <sect2>
+            <title>How did this sex determination system evolve?</title>
+            <para>Genes that regulate sexual fate in germ cells also determine if XX animals develop
+                as females or hermaphrodites. Since new phylogenies show that hermaphroditism likely
+                has evolved independently in <emphasis>C. elegans</emphasis> and <emphasis>C. briggsae</emphasis> (<link linkend="bib10">Cho et al., 2004</link><!-- PMID 15231741--> <link linkend="bib40">Kiontke et al., 2004</link><!-- PMID 15184656-->), these nematodes provide an ideal
+                subject for comparative evolutionary studies. In particular, we need to know how the
+                sex-determination pathway is modified over time to create new mating systems (see <ulink url="http://www.wormbook.org/chapters/www_evolutionsexdetermin/evolutionsexdetermin.html" role="_blank">The evolution of nematode sex determination</ulink>).</para>
+        </sect2>
+        <sect2>
+            <title>Is <emphasis>C. elegans</emphasis> a good model for germline development in other animals?</title>
+            <para>Although we have a solid working model of sex-determination in the <emphasis>C.
+                elegans</emphasis> germ line, the picture from <emphasis>Drosophila</emphasis> and
+                mammals remains confusing. However, homologs of many genes that act in the
+                    <emphasis>C. elegans</emphasis> germ line are expressed in the germ cells of
+                other animals. Do any of these genes play conserved roles in germline development,
+                like <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-3" role="_blank">mab-3</ulink></emphasis> and <emphasis>doublesex</emphasis> do in the soma?</para>
+        </sect2>
+        <sect2>
+            <title>What technical innovations could revolutionize this field?</title>
+            <para>A major problem facing research on the <emphasis>C. elegans</emphasis> germ line
+                is the difficulty in making reliable reporter constructs. Often, transgenic
+                reporters are silenced in the germ line, while expression in the soma is not
+                disrupted. This problem is at least partially caused by the ability of the germ line
+                to shut down transcription of repetitive regions of the genome, such as are often
+                created by transgenes. Despite the use of high-complexity DNA (<link linkend="bib39">Kelly et al., 1997</link><!-- PMID 9136012-->) and particle bombardment (<link linkend="bib64">Praitis et al., 2001</link><!-- PMID 11238406-->) to
+                counter this problem, these transgenes generally take much more work to produce than
+                similar ones in somatic tissues. New methods to simplify this process, or the
+                identification of related nematodes with less stringent controls on expression in
+                the germ line, could revolutionize the field.</para>
+        </sect2>
+    </sect1>
+    <sect1>
+        <title>Acknowledgements</title>
+        <para>We thank Eric Moss, Barbara Meyer, David Zarkower and Betsy Goodwin for comments, and
+            Min Ho Lee for the photograph in Figure 4. R.E.E. was supported by American Cancer
+            Society grant RSG-97-172-01, and T.S. was supported by NIH grant R01 GM063310.</para>
+    </sect1>
+    <sect1>
+        <title>References</title>
+		&gsd_Refs;
+		<para/>
+		</sect1>
+</article>

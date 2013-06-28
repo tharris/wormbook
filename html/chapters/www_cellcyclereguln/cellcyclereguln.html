@@ -1,0 +1,1597 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Cell-cycle regulation</title>
+      <meta name="generator" content="DocBook XSL Stylesheets V1.67.2">
+      <link rel="start" href="#cellcycle_ArticleID" title="Cell-cycle regulation">
+      <link rel="next" href="#sec1_1" title="1.&nbsp;Overview">
+      <!--#include virtual="/ssi/header_article.html" -->
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<!--#include virtual="/ssi/boilerplate.html" -->
+<div class="html_to_pdf_link">
+	<a href="cellcyclereguln.pdf">Download PDF version</a>
+</div>
+      <div class="article" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h1 class="title"><a name="cellcycle_ArticleID"></a>Cell-cycle regulation<sup><a name="d0e8" href="#ftn.d0e8">*</a></sup></h1>
+               </div>
+               <div>
+                  <div class="author"><span class="author"><span class="firstname">Sander</span> <span class="surname">van den Heuvel<em><span class="remark"><sup><a name="d0e32" href="#ftn.d0e32">&sect;</a></sup></span></em></span><br></span><span class="affiliation"><span class="address">Massachusetts General Hospital Cancer Center, Harvard Medical School, Charlestown, MA 02129 USA
+                           <p></p></span></span></div>
+               </div>
+            </div>
+            <hr>
+         </div>
+         <div class="toc">
+
+	   <div id="section_locator"><a href="/toc_cellbiology.html">
+	         <b>This chapter is in WormBook section:</b><br />
+		       > Cell biology
+		</a></div><hr />
+<!--
+<a href="http://www.wormbase.org/forums/index.php?board=216.0" title="Discuss WormBook" target="_blank"><font color="#9932cc"><b>View/Add Comments</b></font></a><br/>
+<IFRAME  SRC="http://tazendra.caltech.edu/~acedb/cgi-bin/wormbook_comment.cgi?name=Cell+cycle+regulation" HEIGHT=50 WIDTH=180 FRAMEBORDER=0 SCROLLING=NO allowTransparency="true"></IFRAME>
+
+<hr /> -->
+
+            <p><b>Table of Contents</b></p>
+            <dl>
+               <dt><span class="sect1"><a href="#sec1_1">1. Overview</a></span></dt>
+               <dt><span class="sect1"><a href="#sec1_2">2. The paradigm of cell-cycle control</a></span></dt>
+               <dt><span class="sect1"><a href="#sec1_3">3. Regulators of the cell cycle</a></span></dt>
+               <dd>
+                  <dl>
+                     <dt><span class="sect2"><a href="#sec2_1">3.1. CDKs and cyclins</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec2_2">3.2. CDK inhibitory proteins</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec2_3">3.3. The Rb/E2F pathway</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec2_4">3.4. Positive and negative phosphorylation of CDKs</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec2_5">3.5. Protein degradation</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="sect1"><a href="#sec1_4">4. Cell-Cycle regulation in development</a></span></dt>
+               <dd>
+                  <dl>
+                     <dt><span class="sect2"><a href="#sec2_6">4.1. Cell-cycle variation</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec2_7">4.2. Checkpoint control</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec2_8">4.3. Cell-cycle entry and arrest</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="sect1"><a href="#sec1_5">5. Acknowledgments</a></span></dt>
+               <dt><span class="sect1"><a href="#d0e2656">6. References</a></span></dt>
+            </dl>
+         </div>
+         <div class="abstract">
+            <p class="title"><span class="bold"><strong>Abstract</strong></span></p>
+            <p><span class="bold"><strong>Cell-division control affects many aspects of development.</strong></span> <span class="emphasis"><em><span class="bold"><strong>Caenorhabditis elegans</strong></span></em></span> <span class="bold"><strong>cell-cycle genes have been identified over the past decade, including at least two distinct Cyclin-Dependent Kinases (CDKs),
+                     their cyclin partners, positive and negative regulators, and downstream targets. The balance between CDK activation and inactivation
+                                 determines whether cells proceed through G<sub>1</sub> into S phase, and from G<sub>2</sub> to M, through
+                                 regulatory mechanisms that are conserved in more complex eukaryotes. The challenge is to
+                                 expand our understanding of the basic cell cycle into a comprehensive regulatory network
+                                 that incorporates environmental factors and coordinates cell division with growth,
+                                 differentiation and tissue formation during development. Results from several studies
+                                 indicate a critical role for <a href="http://www.wormbase.org/db/seq/protein?name=CKI-1;class=protein" target="_blank">CKI-1</a>, a CDK inhibitor of the Cip/Kip family, in the
+                                 temporal control of cell division, potentially acting downstream of heterochronic genes
+                                 and dauer regulatory pathways.</strong></span></p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec1_1"></a>1.&nbsp;Overview
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Animal development from a single-cell zygote to fertile adult requires many rounds of
+                           cell division. During each division, cells complete an ordered series of events that
+                           collectively form the "cell cycle". This cycle includes accurate duplication of the
+                           genome during the DNA synthesis phase (<span class="bold"><strong>S phase</strong></span>), and segregation of complete sets of
+                           chromosomes to each of the daughter cells in <span class="bold"><strong>M phase</strong></span> (<a href="#figure1">Figure 1</a>A). The
+                           somatic cell cycle also contains "<span class="underline">G</span>ap" phases, known as <span class="bold"><strong>G<sub>1</sub></strong></span>, which connects the
+                           completion of M phase to initiation of S phase in the next cycle, and <span class="bold"><strong>G<sub>2</sub></strong></span>, which
+                           separates the S and M phases. Dependent on environmental and developmental signals,
+                           cells in G<sub>1</sub> may temporarily or permanently leave the cell cycle and enter a quiescent or
+                           arrested phase known as <span class="bold"><strong>G<sub>0</sub></strong></span>.
+            </p>
+            <div class="mediaobject" align="center"><a name="figure1"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="450">
+<tr>
+  <td align="center"><p><a href="cellcyclefig1.jpg"><img src="cellcyclefig1_s.jpg" border="2" align="middle" alt="Figure 1A, B and C"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 1. Simple representations of the cell cycle.&nbsp;</b>(A) a typical (somatic) cell cycle, which can be divided in four sequential phases:
+                                     G<sub>1</sub>, S, G<sub>2</sub> and M. M phase consist of
+                                 nuclear division (<span class="bold"><strong>mitosis</strong></span>) and cytoplasmic division
+                                     (<span class="bold"><strong>cytokinesis</strong></span>) (B) variant cell cycles in which
+                                 specific phases are omitted. (C) approximate time of activity for different combinations
+                                 of cyclins and CDKs, based on studies of mammalian cyclins and CDKs. <span class="emphasis"><em>C.
+                                           elegans</em></span> family members are indicated between brackets. Shapes outside the
+                                 cycle indicate increase and reduction of corresponding CDK/cyclin activity. 
+                  </p>
+               </div>
+            </div>
+            <p>During development, variations of this typical <span class="bold"><strong>somatic division cycle</strong></span> are used to
+                           fulfill specific requirements (<a href="#figure1">Figure 1</a>B). These include rapid
+                           <span class="bold"><strong>embryonic cell cycles</strong></span> that lack G<sub>1</sub> and G<sub>2</sub> phases, <span class="bold"><strong>meiotic cell cycles</strong></span> that allow
+                           formation of haploid gametes, and <span class="bold"><strong>endoreduplication</strong></span> (or: "endoreplication") <span class="bold"><strong>cycles</strong></span> in
+                           which S phases are not followed by mitosis. These variant cell cycles form part of the
+                           stereotypical pattern of cell divisions during <span class="emphasis"><em>C. elegans</em></span> development.
+            </p>
+            <p>Cell external signals and cell intrinsic information together determine whether cells
+                           enter a division cycle. In general, external signals affect this decision only until
+                           cells commit to go through the entire cycle, at a time in G<sub>1</sub> known as "START" in yeast
+                           and "Restriction point" in mammals. From there on, progression through the cell cycle is
+                           controlled intrinsically by the cell-cycle machinery. The basic components of this
+                           machinery are conserved in all eukaryotes. Consequently, findings based on genetics in
+                           yeast, biochemistry in frog eggs and tissue culture of mammalian cells have all come
+                           together and generated a substantial molecular understanding of cell-cycle regulation.
+            </p>
+            <p>The next level of questions include: how is cell division temporally and spatially
+                           controlled during development, and how is progression through the cycle coordinated with
+                           cell growth, differentiation, migration, and death? <span class="emphasis"><em>C. elegans</em></span> is well suited to study developmental control of cell division and to address how nutritional signals,
+                           differentiation factors, checkpoint controls, heterochronic genes, and dauer regulatory
+                           pathways act upon the cell-cycle machinery to affect cell-cycle entry and exit. Insights
+                           into the basic regulators of cell-cycle progression in <span class="emphasis"><em>C. elegans</em></span> form the foundation
+                           for such studies and are the focus of this chapter.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec1_2"></a>2.&nbsp;The paradigm of cell-cycle control
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>The collective results from studies in various eukaryotes have demonstrated that
+                           progression through the cell-division cycle is driven by activation and inactivation of
+                           cyclin-dependent kinases (CDKs), which trigger the transition to subsequent phases of
+                           the cycle. CDKs are small serine/threonine protein kinases that require association with
+                           a cyclin subunit for their activation. In yeast, a single CDK (p34<span class="emphasis"><em><sup>CDC28</sup></em></span> in <span class="emphasis"><em>Saccharomyces
+                                 cerevisiae</em></span> and p34<span class="emphasis"><em><sup>cdc2</sup></em></span> in <span class="emphasis"><em>Schizosaccharomyces pombe</em></span>) acts with different cyclins to
+                           promote progression through G<sub>1</sub>, S and G<sub>2</sub>/M. Metazoans, including <span class="emphasis"><em>C. elegans</em></span>, use not
+                           only a variety of cyclins but also multiple catalytic subunits (<a href="#figure1">Figure 1</a>C).
+            </p>
+            <p>Many levels of regulation impinge upon the CDKs to impose tight control over
+                           cell-cycle progression. Such regulation involves controlled expression and destruction
+                           of cyclins, activating and inhibitory phosphorylation and dephosphorylation of the CDKs,
+                           and expression and destruction of inhibitory proteins that associate with CDKs, or
+                           CDK/cyclin complexes (<a href="#figure2">Figure 2</a>).
+            </p>
+            <div class="mediaobject" align="center"><a name="figure2"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="360">
+<tr>
+  <td align="center"><p><a href="cellcyclefig2.jpg"><img src="cellcyclefig2_s.jpg" border="2" align="middle" alt=" figure 2"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 2. Model illustrating general aspects of CDK regulation.&nbsp;</b>CDK activation requires cyclin (CYC) expression and association. Cyclin/CDK complexes
+                                 are kept inactive through association with CDK-inhibitory proteins (CKIs) and inhibitory
+                                 phosphorylation by Wee1/Myt1 kinases (black circles). Activation requires
+                                 ubiquitin-dependent proteolysis of the CKI, phosphorylation of the CDK by a
+                                 CDK-activating kinase (CAK; red circle), and removal of the inhibitory phosphates by a
+                                 Cdc25 phosphatase. Cyclin destruction leads to inactivation. Ubiquitin-dependent
+                                 proteolysis of cell cycle regulators in late G<sub>1</sub> and S involves cullin-based E3 ligases
+                                 such as SCF, while in M phase and early G<sub>1</sub> the anaphase-promoting complex (APC) is
+                                 active. The exclamation figure denotes the active kinase complex, the large arrow
+                                 indicates time.
+                  </p>
+               </div>
+            </div>
+            <p>The paradigm for cell-cycle regulation through activation and inactivation of CDKs
+                           applies to all eukaryotes. However, differences do exist: certain control elements, such
+                           as the CDK inhibitory proteins (CKIs), show little resemblance between yeast and
+                           mammals. In addition, some regulators are absent in single cell eukaryotes, including
+                           the pRb and E2F families, and nearly all regulatory genes have expanded into subfamilies
+                           with multiple members in mammals. Studies over the last decade have shown that
+                           cell-cycle control in <span class="emphasis"><em>C. elegans</em></span> uses well-recognizable homologs of nearly all mammalian regulators, often represented by just a single member (<a href="#table1" title="Table 1. C. elegans cell-cycle mutants (for references: see text)">Table 1</a>). As an exception to the  rule, the pINK family of Cdk4/6 kinase inhibitors has not as yet been identified in <span class="emphasis"><em>C.
+                                 elegans</em></span>. Genetic studies have placed the <span class="emphasis"><em>C. elegans</em></span> cell-cycle genes into pathways that
+                           resemble those in mammals, and novel regulatory elements have been discovered.
+            </p>
+            <div class="table"><a name="table1"></a><p class="title">Table 1. <span class="emphasis"><em>C. elegans</em></span> cell-cycle mutants (for references: see text)
+               </p>
+               <table summary="Table 1. C. elegans cell-cycle mutants (for references: see text)" border="1">
+                  <colgroup>
+                     <col align="center">
+                     <col align="center">
+                     <col align="center">
+                     <col align="center">
+                     <col align="center">
+                  </colgroup>
+                  <thead>
+                     <tr>
+                        <th align="center">Gene name</th>
+                        <th align="center">Alternate</th>
+                        <th align="center">Homolog</th>
+                        <th align="center">Presumed function</th>
+                        <th align="center">Cell-cycle phenotype (loss of function)</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td colspan="5" align="left"><span class="bold"><strong>Cyclin-dependent kinases</strong></span></td>
+                     </tr>
+                     <tr>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdk-1" target="_blank">cdk-1</a></em></span></td>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=ncc-1" target="_blank">ncc-1</a></em></span></td>
+                        <td align="center">Cdk1</td>
+                        <td align="center">Promotes M phase entry/progression</td>
+                        <td align="center">G<sub>2</sub> arrest, starting in L1. RNAi: one-cell arrest
+                        </td>
+                     </tr>
+                     <tr>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdk-4" target="_blank">cdk-4</a></em></span></td>
+                        <td align="center">&nbsp;</td>
+                        <td align="center">Cdk4/Cdk6</td>
+                        <td align="center">Promotes Progression through G<sub>1</sub></td>
+                        <td align="center">G<sub>1</sub> arrest, starting late embryogenesis
+                        </td>
+                     </tr>
+                     <tr>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdk-7" target="_blank">cdk-7</a></em></span></td>
+                        <td align="center">&nbsp;</td>
+                        <td align="center">Cdk7</td>
+                        <td align="center">CDK activating kinase/Pol II CTD kinase</td>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdk-7" target="_blank">cdk-7</a></em></span>(<a href="http://www.wormbase.org/db/get?name=ax224;class=Variation" target="_blank">ax224</a><span class="emphasis"><em> RNAi</em></span>): one-cell arrest
+                        </td>
+                     </tr>
+                     <tr>
+                        <td colspan="5" align="left"><span class="bold"><strong>Cyclins</strong></span></td>
+                     </tr>
+                     <tr>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cyd-1" target="_blank">cyd-1</a></em></span></td>
+                        <td align="center">&nbsp;</td>
+                        <td align="center">Cyclin D1/D2/D3</td>
+                        <td align="center">G<sub>1</sub> Cyclin, promotes progression through G<sub>1</sub></td>
+                        <td align="center">G<sub>1</sub> arrest, starting late in embryogenesis
+                        </td>
+                     </tr>
+                     <tr>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cye-1" target="_blank">cye-1</a></em></span></td>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=evl-10" target="_blank">evl-10</a></em></span></td>
+                        <td align="center">Cyclin E1/E2</td>
+                        <td align="center">G<sub>1</sub>/S Cyclin
+                        </td>
+                        <td align="center">Late larval defects. (RNAi: 100-cell arrest)</td>
+                     </tr>
+                     <tr>
+                        <td colspan="5" align="left"><span class="bold"><strong>Inhibitors</strong></span></td>
+                     </tr>
+                     <tr>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cki-1" target="_blank">cki-1</a></em></span></td>
+                        <td align="center">&nbsp;</td>
+                        <td align="center">Kip1</td>
+                        <td align="center">Cip/Kip family CDK inhibitor. Inhibits G<sub>1</sub>/S transition.
+                        </td>
+                        <td align="center">Extra cell division (failure to arrest)</td>
+                     </tr>
+                     <tr>
+                        <td colspan="5" align="left"><span class="bold"><strong>CDK inhibitory phosphorylation</strong></span></td>
+                     </tr>
+                     <tr>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdc-25.1" target="_blank">cdc-25.1</a></em></span></td>
+                        <td align="center">&nbsp;</td>
+                        <td align="center">Cdc25</td>
+                        <td align="center">CDK activating dual specificity phosphatase</td>
+                        <td align="center">Sterile lavae (RNAi; early embryonic defects)</td>
+                     </tr>
+                     <tr>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=wee-1.3" target="_blank">wee-1.3</a></em></span></td>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=spe-37" target="_blank">spe-37</a></em></span></td>
+                        <td align="center">Myt1/Wee1</td>
+                        <td align="center">CDK inhibitory kinase</td>
+                        <td align="center">Embryonic and larval lethal</td>
+                     </tr>
+                     <tr>
+                        <td colspan="5" align="left"><span class="bold"><strong>Rb/E2F related</strong></span></td>
+                     </tr>
+                     <tr>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-35" target="_blank">lin-35</a></em></span></td>
+                        <td align="center">&nbsp;</td>
+                        <td align="center">pRb/p107</td>
+                        <td align="center">Co-repressor. Negative regulator G<sub>1</sub></td>
+                        <td align="center">Suppresses <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdk-4" target="_blank">cdk-4</a></em></span>/<span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cyd-1" target="_blank">cyd-1</a></em></span>, synthetic extra division
+                        </td>
+                     </tr>
+                     <tr>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=efl-1" target="_blank">efl-1</a></em></span></td>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=mex-2" target="_blank">mex-2</a></em></span></td>
+                        <td align="center">E2F4/5</td>
+                        <td align="center">Transcription factor. Negative regulator G<sub>1</sub></td>
+                        <td align="center">Similar to <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-35" target="_blank">lin-35</a></em></span> loss of function (but weaker)
+                        </td>
+                     </tr>
+                     <tr>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=dpl-1" target="_blank">dpl-1</a></em></span></td>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-55" target="_blank">lin-55</a></em></span>, <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=mex-4" target="_blank">mex-4</a></em></span></td>
+                        <td align="center">DP1</td>
+                        <td align="center">Transcription factor. Pos/Neg regulator G<sub>1</sub></td>
+                        <td align="center">Reduced cell division, but suppresses <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdk-4" target="_blank">cdk-4</a></em></span>/<span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cyd-1" target="_blank">cyd-1</a></em></span></td>
+                     </tr>
+                     <tr>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-36" target="_blank">lin-36</a></em></span></td>
+                        <td align="center">&nbsp;</td>
+                        <td align="center">unknown</td>
+                        <td align="center">Zn<sup>2+</sup> finger protein.
+                        </td>
+                        <td align="center">Similar to <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-35" target="_blank">lin-35</a></em></span> loss of function
+                        </td>
+                     </tr>
+                     <tr>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-9" target="_blank">lin-9</a></em></span></td>
+                        <td align="center">&nbsp;</td>
+                        <td align="center">Mip130/TWIT</td>
+                        <td align="center">Component pRb repressor complex</td>
+                        <td align="center">Weak suppression <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cyd-1" target="_blank">cyd-1</a></em></span>/<span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdk-4" target="_blank">cdk-4</a></em></span></td>
+                     </tr>
+                     <tr>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-15B" target="_blank">lin-15B</a></em></span></td>
+                        <td align="center">&nbsp;</td>
+                        <td align="center">unknown</td>
+                        <td align="center">&nbsp;</td>
+                        <td align="center">Synthetic extra division, suppresses <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdk-4" target="_blank">cdk-4</a></em></span>/<span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cyd-1" target="_blank">cyd-1</a></em></span></td>
+                     </tr>
+                     <tr>
+                        <td colspan="5" align="left"><span class="bold"><strong>SCF</strong></span></td>
+                     </tr>
+                     <tr>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cul-1" target="_blank">cul-1</a></em></span></td>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-19" target="_blank">lin-19</a></em></span></td>
+                        <td align="center">Cul1</td>
+                        <td align="center">Cullin subunit SCF. G<sub>1</sub> cyclin degradation
+                        </td>
+                        <td align="center">Hyperplasia, resulting from failure in cell-cycle exit</td>
+                     </tr>
+                     <tr>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-23" target="_blank">lin-23</a></em></span></td>
+                        <td align="center">&nbsp;</td>
+                        <td align="center">F box factor</td>
+                        <td align="center">SCF substrate specificity factor</td>
+                        <td align="center">Hyperplasia, resulting from failure in cell-cycle exit</td>
+                     </tr>
+                     <tr>
+                        <td colspan="5" align="left"><span class="bold"><strong>APC</strong></span></td>
+                     </tr>
+                     <tr>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=mat-1" target="_blank">mat-1</a></em></span></td>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=pod-5" target="_blank">pod-5</a></em></span></td>
+                        <td align="center">APC3, Cdc27</td>
+                        <td align="center">Component APC E3 Ubiquitin ligase</td>
+                        <td align="center">Arrest at metaphase-to-anaphase transition meiosis</td>
+                     </tr>
+                     <tr>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=mat-2" target="_blank">mat-2</a></em></span></td>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=pod-3" target="_blank">pod-3</a></em></span>, <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=evl-22" target="_blank">evl-22</a></em></span></td>
+                        <td align="center">APC1</td>
+                        <td align="center">Component APC E3 Ubiquitin ligase</td>
+                        <td align="center">Arrest at metaphase-to-anaphase transition meiosis</td>
+                     </tr>
+                     <tr>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=mat-3" target="_blank">mat-3</a></em></span></td>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=pod-4" target="_blank">pod-4</a></em></span></td>
+                        <td align="center">APC8, Cdc23</td>
+                        <td align="center">Component APC E3 Ubiquitin ligase</td>
+                        <td align="center">Arrest at metaphase-to-anaphase transition meiosis</td>
+                     </tr>
+                     <tr>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=emb-27" target="_blank">emb-27</a></em></span></td>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=pod-6" target="_blank">pod-6</a></em></span></td>
+                        <td align="center">APC6, Cdc16</td>
+                        <td align="center">Component APC E3 Ubiquitin ligase</td>
+                        <td align="center">Arrest at metaphase-to-anaphase transition meiosis</td>
+                     </tr>
+                     <tr>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=emb-30" target="_blank">emb-30</a></em></span></td>
+                        <td align="center">&nbsp;</td>
+                        <td align="center">APC4</td>
+                        <td align="center">Component APC E3 Ubiquitin ligase</td>
+                        <td align="center">Arrest at metaphase-to-anaphase transition</td>
+                     </tr>
+                     <tr>
+                        <td colspan="5" align="left"><span class="bold"><strong>DNA damage/DNA replication checkpoint</strong></span></td>
+                     </tr>
+                     <tr>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=mrt-2" target="_blank">mrt-2</a></em></span></td>
+                        <td align="center">&nbsp;</td>
+                        <td align="center">Rad1</td>
+                        <td align="center">DNA-damage checkpoint protein</td>
+                        <td align="center">Deficient in apoptosis in response to DNA damage</td>
+                     </tr>
+                     <tr>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=clk-2" target="_blank">clk-2</a></em></span></td>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=rad-5" target="_blank">rad-5</a></em></span></td>
+                        <td align="center">ScTel2p</td>
+                        <td align="center">DNA-damage checkpoint protein</td>
+                        <td align="center">Deficient in apoptosis in response to DNA damage</td>
+                     </tr>
+                     <tr>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=hus-1" target="_blank">hus-1</a></em></span></td>
+                        <td align="center">&nbsp;</td>
+                        <td align="center">Hus1</td>
+                        <td align="center">DNA-damage checkpoint protein</td>
+                        <td align="center">Deficient in apoptosis in response to DNA damage</td>
+                     </tr>
+                     <tr>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cep-1" target="_blank">cep-1</a></em></span></td>
+                        <td align="center">&nbsp;</td>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=p53" target="_blank">p53</a></em></span></td>
+                        <td align="center">Transcription factor DNA-damage checkpoint</td>
+                        <td align="center">Deficient in apoptosis in response to DNA damage</td>
+                     </tr>
+                     <tr>
+                        <td colspan="5" align="left"><span class="bold"><strong>Spindle assembly checkpoint</strong></span></td>
+                     </tr>
+                     <tr>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=mdf-1" target="_blank">mdf-1</a></em></span></td>
+                        <td align="center">&nbsp;</td>
+                        <td align="center">MAD1</td>
+                        <td align="center">Spindle assembly checkpoint protein</td>
+                        <td align="center">Mitotic arrest defective in nocodazole. Lethal, sterile</td>
+                     </tr>
+                     <tr>
+                        <td align="center"><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=san-1" target="_blank">san-1</a></em></span></td>
+                        <td align="center">&nbsp;</td>
+                        <td align="center">MAD3</td>
+                        <td align="center">Mitotic checkpoint kinase</td>
+                        <td align="center">Failure to arrest in metaphase in anoxic conditions</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec1_3"></a>3.&nbsp;Regulators of the cell cycle
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2_1"></a>3.1.&nbsp;CDKs and cyclins
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>The <span class="emphasis"><em>C. elegans</em></span> genome encodes multiple members of the cyclin-dependent kinase
+                                  (CDK) family. At least two CDKs, <a href="http://www.wormbase.org/db/seq/protein?name=CDK-1;class=protein" target="_blank">CDK-1</a> and <a href="http://www.wormbase.org/db/seq/protein?name=CDK-4;class=protein" target="_blank">CDK-4</a>, are essential for cell-cycle
+                                  progression (<a href="#bib7">Boxem et al., 1999</a>; <a href="#bib8">Boxem and van den Heuvel, 2001</a>; <a href="#bib48">Park and Krause, 1999</a>). These CDKs act at distinct times in
+                                  the cell cycle and use specific cyclin partners, similar to their mammalian
+                                  orthologs (<a href="#table1" title="Table 1. C. elegans cell-cycle mutants (for references: see text)">Table 1</a>).
+               </p>
+               <p><a href="http://www.wormbase.org/db/seq/protein?name=CDK-1;class=protein" target="_blank">CDK-1</a>, previously known as NCC-1 for <span class="underline">n</span>ematode <span class="underline">c</span>ell <span class="underline">c</span>ycle, was identified based on
+                                  its close similarity to the prototypical yeast CDK (<a href="#bib46">Mori et al., 1994</a>). In contrast to yeast, but similar to mammalian Cdk1, <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdk-1" target="_blank">cdk-1</a></em></span>/<span class="emphasis"><em>(<a href="http://www.wormbase.org/db/gene/gene?name=ncc-1" target="_blank">ncc-1</a>)</em></span> is
+                                  specifically required for G<sub>2</sub>/M progression and not for G<sub>1</sub> or S phase (<a href="#bib7">Boxem et al., 1999</a>). Maternal <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdk-1" target="_blank">cdk-1</a></em></span> product suffices for embryogenesis, and
+                                  candidate null mutant animals arrest cell division during L1 development. Several
+                                  observations indicate that the post-embryonic precursor cells in these mutants
+                                  arrest in G<sub>2</sub> phase: such cells show normal expression of the <span class="emphasis"><em>rnr</em></span>::<span class="emphasis"><em>GFP</em></span> reporter and
+                                  BrdU incorporation during S phase, but fail to proceed into mitosis (as indicated by
+                                  absence of chromosome condensation and nuclear envelope breakdown). Moreover,
+                                  endoreduplication cycles, which skip M phase, continue in <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdk-1" target="_blank">cdk-1</a></em></span> mutants and
+                                  intestinal nuclei accumulate the normal 32n DNA content. Following RNAi of <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdk-1" target="_blank">cdk-1</a></em></span> in
+                                  adult hermaphrodites, oocytes show delayed meiotic maturation, form an eggshell upon
+                                  fertilization, but neither align nor segregate homologous chromosomes. Thus, <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdk-1" target="_blank">cdk-1</a></em></span>
+                                  is required for meiotic as well as mitotic M phase.
+               </p>
+               <p><a href="http://www.wormbase.org/db/seq/protein?name=CDK-1;class=protein" target="_blank">CDK-1</a> likely acts with mitotic cyclins of the A and B subfamilies (<a href="#bib40">Kreutzer et al., 1995</a>). A single full-length cyclin A gene <span class="emphasis"><em>(<a href="http://www.wormbase.org/db/gene/gene?name=cya-1" target="_blank">cya-1</a>)</em></span> is expressed in
+                                  <span class="emphasis"><em>C. elegans</em></span>, as well as three typical B-type cyclins (<span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cyb-1" target="_blank">cyb-1</a></em></span>, <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cyb-2.1" target="_blank">cyb-2.1</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cyb-2.2" target="_blank">cyb-2.2</a></em></span>),
+                                  and a distinct member of the cyclin B3 subfamily <span class="emphasis"><em>(<a href="http://www.wormbase.org/db/gene/gene?name=cyb-3" target="_blank">cyb-3</a>)</em></span>. While <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cyb-1" target="_blank">cyb-1</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cyb-3" target="_blank">cyb-3</a></em></span> each
+                                  are individually required during embryonic development, simultaneous inactivation of
+                                  these mitotic cyclins causes a more severe phenotype: <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cyb-1" target="_blank">cyb-1</a>;cyb-3(RNAi)</em></span> embryos
+                                  arrest at the one-cell stage and resemble <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdk-1" target="_blank">cdk-1</a></em></span><span class="emphasis"><em>(RNAi)</em></span> embryos (our unpublished
+                                  results). These data support the notion that different mitotic cyclins have
+                                  functions that are partly distinct and partly overlapping.
+               </p>
+               <p>The <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdk-4" target="_blank">cdk-4</a></em></span> Cdk4/6 kinase and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cyd-1" target="_blank">cyd-1</a></em></span> D-type cyclin genes are required for progression
+                                  through G<sub>1</sub> phase during larval development (<a href="#bib8">Boxem and van den Heuvel, 2001</a>; <a href="#bib48">Park and Krause, 1999</a>). <a href="http://www.wormbase.org/db/seq/protein?name=CYD-1;class=protein" target="_blank">CYD-1</a> and <a href="http://www.wormbase.org/db/seq/protein?name=CDK-4;class=protein" target="_blank">CDK-4</a> likely act in
+                                  complex, as indicated by their direct interaction <span class="emphasis"><em>in vitro</em></span> and close similarity in
+                                  null phenotypes (<a href="#bib48">Park and Krause, 1999</a>). In contrast to larval
+                                  divisions, only a few very late embryonic divisions depend on <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cyd-1" target="_blank">cyd-1</a></em></span>/<span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdk-4" target="_blank">cdk-4</a></em></span> activity
+                                  (<a href="#bib8">Boxem and van den Heuvel, 2001</a>; <a href="#bib64">Yanowitz and Fire, 2005</a>). Possible explanations for this difference include that the early
+                                  embryonic divisions lack a G<sub>1</sub> phase and therefore will not need a G<sub>1</sub> cyclin or CDK.
+                                  Also, as one of its most important functions, <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cyd-1" target="_blank">cyd-1</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdk-4" target="_blank">cdk-4</a></em></span> act to antagonize the
+                                  transcriptional repressor <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-35" target="_blank">lin-35</a></em></span> Rb (see below; (<a href="#bib8">Boxem and van den Heuvel, 2001</a>). In the absence of <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cyd-1" target="_blank">cyd-1</a></em></span>/<span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdk-4" target="_blank">cdk-4</a></em></span> function, <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-35" target="_blank">lin-35</a></em></span> Rb may
+                                  inappropriately repress cell-cycle genes, but this cannot prevent divisions that are
+                                  driven by maternal products. Also, <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cyd-1" target="_blank">cyd-1</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdk-4" target="_blank">cdk-4</a></em></span> could primarily promote
+                                  growth, as in <span class="emphasis"><em>Drosophila</em></span> (<a href="#bib14">Datar et al., 2000</a>; <a href="#bib44">Meyer et al., 2000</a>), which is not incorporated in the embryonic divisions. However,
+                                  larval divisions arrest in G<sub>1</sub> while cells continue to grow in the mutants, and growth retardation occurs later (<a href="#bib8">Boxem and van den Heuvel, 2001</a>). Therefore, absence of G<sub>1</sub> phases and maternal contribution of DNA replication components likely explain the limited requirement for <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cyd-1" target="_blank">cyd-1</a></em></span>/<span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdk-4" target="_blank">cdk-4</a></em></span> during embryogenesis
+               </p>
+               <p>Taken together, <a href="http://www.wormbase.org/db/seq/protein?name=CDK-1;class=protein" target="_blank">CDK-1</a> and <a href="http://www.wormbase.org/db/seq/protein?name=CDK-4;class=protein" target="_blank">CDK-4</a> act in G<sub>2</sub>/M and G<sub>1</sub>, respectively, like their
+                                  mammalian orthologs Cdk-1 and Cdk4/6. It is currently not clear whether <span class="emphasis"><em>C. elegans</em></span>
+                                  also uses a Cdk2 ortholog, which acts subsequent to Cdk4/6 in mammals to promote
+                                  G<sub>1</sub>/S and S phase progression. The best candidate is <a href="http://www.wormbase.org/db/get?name=K03E5.3;class=Gene" target="_blank">K03E5.3</a>, which shares 43%
+                                  amino-acid identity with human Cdk2 (<a href="#bib7">Boxem et al., 1999</a>). Inhibition
+                                  of this gene by RNAi resulted in a variable phenotype, with animals arresting during
+                                  embryogenesis, during early or late larval development, and as sterile adults. 
+               </p>
+               <p>In other metazoans, Cdk2 acts with Cyclin E to promote S phase entry. <span class="emphasis"><em>C. elegans</em></span>
+                                  <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cye-1" target="_blank">cye-1</a></em></span> Cyclin E deletion animals show surprisingly normal development until the L3
+                                  stage, at which time the VPC divisions proceed slowly and incompletely (<a href="#bib21">Fay and Han, 2000</a>). This modest phenotype apparently depends on long lasting
+                                  maternal function, as RNAi results in embryonic lethality at approximately the
+                                  hundred-cell stage (<a href="#bib11">Brodigan et al., 2003</a>; <a href="#bib21">Fay and Han, 2000</a>). 
+               </p>
+               <p>Several other members of the Cdk superfamily are present in <span class="emphasis"><em>C. elegans</em></span>, including
+                                  a Cdk7/Mo15 ortholog (<a href="#bib7">Boxem et al., 1999</a>; <a href="#bib42">Liu and Kipreos, 2000</a>). Cdk7 was identified as CDK-activating kinase (CAK) in mammalian cells,
+                                  but also as part of the TFIIH transcription factor, responsible for phosphorylating
+                                  the C-terminal domain (CTD) of RNA polymerase II (<a href="#bib24">Fisher and Morgan, 1994</a>; <a href="#bib54">Shiekhattar et al., 1995</a>). The combination of a
+                                  temperature-sensitive mutation and RNAi of <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdk-7" target="_blank">cdk-7</a></em></span> resulted in one-cell arrest similar
+                                  to <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdk-1" target="_blank">cdk-1</a></em></span>(RNAi) embryos (<a href="#bib61">Wallenfang and Seydoux, 2002</a>). In addition,
+                                  partial inactivation of <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdk-7" target="_blank">cdk-7</a></em></span> interfered with transcription and phosphorylation of
+                                  the RNA polymerase CTD. These data support dual activities of <a href="http://www.wormbase.org/db/seq/protein?name=CDK-7;class=protein" target="_blank">CDK-7</a> as both
+                                  CDK-activating kinase (CAK) and CTD kinase <span class="emphasis"><em>in vivo</em></span>.
+               </p>
+               <p>Several other CDKs are likely to act independent of the cell cycle. <a href="http://www.wormbase.org/db/seq/protein?name=CDK-5;class=protein" target="_blank">CDK-5</a> is
+                                  remarkably close to human Cdk5, sharing 74% identity at the amino-acid level, which
+                                  has neuronal functions (<a href="#bib13">Cruz and Tsai, 2004</a>). Two other CDKs, <a href="http://www.wormbase.org/db/seq/protein?name=CDK-8;class=protein" target="_blank">CDK-8</a>
+                                  and <a href="http://www.wormbase.org/db/seq/protein?name=CDK-9;class=protein" target="_blank">CDK-9</a>, likely are involved specifically in regulating transcription (<a href="#bib42">Liu and Kipreos, 2000</a>; <a href="#bib55">Shim et al., 2002</a>).
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2_2"></a>3.2.&nbsp;CDK inhibitory proteins
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Association with small inhibitory proteins is a universal mechanism of CDK regulation (<a href="#bib53">Sherr and Roberts, 1999</a>), though the CKIs (Cyclin-dependent Kinase Inhibitors) involved are highly divergent between yeasts and metazoans. Three
+                  different proteins, p21<sup>Cip1</sup>, p27<sup>Kip1</sup> and p57<sup>Kip2</sup>, form the "CDK inhibitory Protein/Kinase Inhibitor protein" (Cip/Kip) family in mammals. The <span class="emphasis"><em>C. elegans</em></span> genome encodes two members of this family: <a href="http://www.wormbase.org/db/seq/protein?name=CKI-1;class=protein" target="_blank">CKI-1</a> and <a href="http://www.wormbase.org/db/seq/protein?name=CKI-2;class=protein" target="_blank">CKI-2</a> (<a href="#bib23">Feng et al., 1999</a>; <a href="#bib32">Hong et al., 1998</a>). Although both predicted proteins are similarly close in amino-acid sequence  to p21<sup>Cip1</sup> and p27<sup>Kip1</sup>, only <a href="http://www.wormbase.org/db/seq/protein?name=CKI-1;class=protein" target="_blank">CKI-1</a> appears to act generally in cell-cycle control (<a href="#bib8">Boxem and van den Heuvel, 2001</a>; <a href="#bib23">Feng et al., 1999</a>; <a href="#bib25">Fukuyama et al., 2003</a>; <a href="#bib32">Hong et al., 1998</a>).
+               </p>
+               <p>Several results have shown that <a href="http://www.wormbase.org/db/seq/protein?name=CKI-1;class=protein" target="_blank">CKI-1</a> acts to promote cell-cycle arrest throughout
+                                  development, analogous to p27<sup>Kip1</sup> in mammals and <span class="emphasis"><em>Dacapo</em></span>
+                                  in flies. Absence of <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cki-1" target="_blank">cki-1</a></em></span> as a result of the <span class="emphasis"><em>mnDf100</em></span> deletion results in embryonic
+                                  arrest with hyperplasia in multiple lineages, including the intestinal and
+                                  hypodermal lineages, as well as increased apoptosis and defects in morphogenesis
+                                  (<a href="#bib25">Fukuyama et al., 2003</a>). <span class="emphasis"><em>mnDf100</em></span> also eliminates <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cki-2" target="_blank">cki-2</a></em></span> and other genes, but <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cki-1" target="_blank">cki-1</a></em></span> genomic sequences partly suppress the phenotype. Moreover, similar
+                                  defects were observed in a fraction of <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cki-1" target="_blank">cki-1</a></em></span>(<span class="emphasis"><em>RNAi</em></span>) embryos. However, RNAi usually
+                                  causes incomplete inactivation of <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cki-1" target="_blank">cki-1</a></em></span> and predominantly gives rise to sterile
+                                  adults with extra divisions in the postembryonic lineages and extra gonad arms
+                                  (Shiva phenotype; <a href="#bib32">Hong et al., 1998</a>). Postembryonic precursor cells
+                                  in such <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cki-1" target="_blank">cki-1</a></em></span>(<span class="emphasis"><em>RNAi</em></span>) animals fail to arrest in G<sub>1</sub> and ectopically express the S phase
+                                  marker <span class="emphasis"><em> rnr</em></span>::<span class="emphasis"><em>gfp</em></span>. Thus, <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cki-1" target="_blank">cki-1</a></em></span> Kip1 function is rate limiting for S phase entry,
+                                  particularly in cells that enter a prolonged quiescent state before re-entering the
+                                  cell cycle. 
+               </p>
+               <p>Interestingly, loss of <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cki-1" target="_blank">cki-1</a></em></span> Kip1 also affects aspects of cell-fate determination,
+                                  as the extra distal tip cells (DTCs) in <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cki-1" target="_blank">cki-1</a></em></span>(<span class="emphasis"><em>RNAi</em></span>) animals are derived from a
+                                  different cell type and not from DTC duplication (<a href="#bib38">Kostic et al., 2003</a>).
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2_3"></a>3.3.&nbsp;The Rb/E2F pathway
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>The tumor suppressor pRb is a well-known transcriptional repressor of, among
+                                  others, genes involved in S phase progression such as cyclin E. Proteins of the pRb
+                                  family exert this role through association with transcription factors, primarily
+                                  with E2F/DP heterodimers (together referred to as "E2F"; <a href="#bib57">Stevaux and Dyson, 2002</a>). This association prevents "activating E2Fs" from promoting
+                                  transcription. In addition, to inhibit transcription, "repressive E2Fs" recruit pRb
+                                  family members and associated chromatin remodeling complexes such as the Nucleosome
+                                  Remodeling and Deacetylase (NuRD) complex.
+               </p>
+               <p>Several members of the Rb/E2F pathway in <span class="emphasis"><em>C. elegans</em></span> have been identified as class
+                                  B synthetic Multivulva (synMuv) genes (see <a href="http://www.wormbook.org/chapters/www_vulvaldev/vulvaldev.html" target="_blank">Vulval development</a>). As such, <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-35" target="_blank">lin-35</a></em></span> Rb, <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=efl-1" target="_blank">efl-1</a></em></span>
+                                  E2F4/5, <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=dpl-1" target="_blank">dpl-1</a></em></span> DP and several putative NuRD-complex components all act in a redundant
+                                  pathway to antagonize Ras-mediated induction of the vulval cell fate. The fact that
+                                  these genes have similar, rather than opposite, loss-of-function phenotypes provided
+                                  strong <span class="emphasis"><em>in vivo</em></span> evidence that E2F/DP can act as a transcriptional repressor, in
+                                  concert with pRb and NuRD. The contribution of <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-35" target="_blank">lin-35</a></em></span> Rb in vulval precursor cell
+                                  (VPC) determination is non cell-autonomous (<a href="#bib45">Myers and Greenwald, 2005</a>), and cannot be explained by lack of cell-cycle control in these cells.
+               </p>
+               <p>Homozygous <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-35" target="_blank">lin-35</a></em></span> Rb mutants do not display a prominent increase in cell division,
+                                  although a fraction of such animals form extra intestinal nuclei (<a href="#bib50">Saito et al., 2004</a>). However, the contribution of <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-35" target="_blank">lin-35</a></em></span> Rb to negative regulation
+                                  of G<sub>1</sub> progression became apparent in double mutant combinations. Inactivation of
+                                  <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-35" target="_blank">lin-35</a></em></span> substantially rescues the larval arrest of cell division in mutants that lack
+                                  the positive G<sub>1</sub> regulators <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cyd-1" target="_blank">cyd-1</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdk-4" target="_blank">cdk-4</a></em></span> (<a href="#bib8">Boxem and van den Heuvel, 2001</a>). In addition, <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-35" target="_blank">lin-35</a></em></span> inactivation synergistically increases the number of
+                                  extra cell divisions when combined with negative G<sub>1</sub> regulators, such as <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cki-1" target="_blank">cki-1</a></em></span>
+                                  Cip/Kip, <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdc-14" target="_blank">cdc-14</a></em></span> Cdc14 and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=fzr-1" target="_blank">fzr-1</a></em></span> Cdh1/FZR (<a href="#bib8">Boxem and van den Heuvel, 2001</a>; <a href="#bib22">Fay et al., 2002</a>; <a href="#bib50">Saito et al., 2004</a>).
+                                  Together, such results indicate that <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-35" target="_blank">lin-35</a></em></span> acts redundantly to inhibit G<sub>1</sub>
+                                  progression, likely downstream of <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cyd-1" target="_blank">cyd-1</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdk-1" target="_blank">cdk-1</a></em></span> and parallel of <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cki-1" target="_blank">cki-1</a></em></span>, <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=fzr-1" target="_blank">fzr-1</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdc-14" target="_blank">cdc-14</a></em></span> (<a href="#figure3">Figure 3</a>).
+               </p>
+               <p>Examination of additional double mutant combinations revealed that some of the
+                                  other synMuv class B genes also contribute to G<sub>1</sub> control (<a href="#bib9">Boxem and van den Heuvel, 2002</a>; <a href="#bib22">Fay et al., 2002</a>). Specifically, <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=efl-1" target="_blank">efl-1</a></em></span> E2F
+                                  negatively regulates cell-cycle entry, while <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=dpl-1" target="_blank">dpl-1</a></em></span> DP appears to act both as a
+                                  positive and negative regulator. In addition, a negative G<sub>1</sub> regulatory function was
+                                  identified for <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-9" target="_blank">lin-9</a></em></span> Mip130/TWIT, as well as <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-15B" target="_blank">lin-15B</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-36" target="_blank">lin-36</a></em></span>, which encode novel
+                                  proteins. Class A synMuv genes and class B genes that encode NURD components have
+                                  not been observed to affect the cell cycle.
+               </p>
+               <p>Candidate targets of Rb/E2F regulation in <span class="emphasis"><em>C. elegans</em></span> include <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cye-1" target="_blank">cye-1</a></em></span> Cyclin E and
+                                  <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=rnr-1" target="_blank">rnr-1</a></em></span>, which encodes the ribonucleotide reductase large subunit. These genes have
+                                  multiple E2F-binding sites within their promoter regions (<a href="#bib11">Brodigan et al., 2003</a>; <a href="#bib32">Hong et al., 1998</a>) and are regulated by E2F in other
+                                  species. Several genetic observations are also consistent with <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-35" target="_blank">lin-35</a></em></span> acting
+                                  upstream of <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cye-1" target="_blank">cye-1</a></em></span> to repress its transcription (<a href="#bib8">Boxem and van den Heuvel, 2001</a>; our unpublished observations).
+               </p>
+               <div class="mediaobject" align="center"><a name="figure3"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="360">
+<tr>
+  <td align="center"><p><a href="cellcyclefig3.jpg"><img src="cellcyclefig3_s.jpg" border="2" align="middle" alt=" figure 3"></a>
+  </td>
+</tr>
+                  </table>
+                  <div class="caption">
+                     <p><b>Figure 3.&nbsp;</b>Genetic interactions between regulators of G<sub>1</sub>/S progression,
+                                    indicating conserved mechanisms and pathways. See text for details.
+                     </p>
+                  </div>
+               </div>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2_4"></a>3.4.&nbsp;Positive and negative phosphorylation of CDKs
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>In all eukaryotes studied, CDKs are regulated by phosphorylation and
+                                  dephosphorylation of critical residues. Important targets of this regulation are the
+                                  neighboring threonine and tyrosine in the ATP-binding loop (GXG<span class="underline">TY</span>G, corresponding to
+                                  Thr14 and Tyr15 in fission yeast p34<span class="emphasis"><em><sup>cdc2</sup></em></span>).
+                                  Phosphorylation of these residues by the related Wee1 and Myt1 kinases prevents
+                                  activation of the CDK/cyclin complex. Members of the Cdc25 family of
+                                  dual-specificity phosphatases counteract Wee1/Myt1 phosphorylation and control the
+                                  appropriate timing of CDK activation (<a href="#figure2">Figure 2</a>).
+               </p>
+               <p>Inhibitory phosphorylation allows for developmental regulation of CDK activity, as demonstrated for the String and Twine phosphatases
+                  in <span class="emphasis"><em>Drosophila</em></span>. In <span class="emphasis"><em>C. elegans</em></span>, two
+                                  different Wee1/Myt1 kinases are expressed (<span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=wee-1.1" target="_blank">wee-1.1</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=wee-1.3" target="_blank">wee-1.3</a></em></span>), as are four phosphatases of the Cdc25 family (<span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdc-25.1" target="_blank">cdc-25.1</a></em></span> to <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdc-25.4" target="_blank">cdc-25.4</a></em></span>). Despite the multiplicity,
+                                  each family contains at least one essential member: homozygous <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=wee-1.3" target="_blank">wee-1.3</a></em></span> null mutants
+                                  are embryonic lethal and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdc-25.1" target="_blank">cdc-25.1</a></em></span> null mutants develop into sterile adults (<a href="#bib4">Ashcroft and Golden, 2002</a>; <a href="#bib41">Lamitina and L'Hernault, 2002</a>). In
+                                  the latter mutants, maternal product likely masks the embryonic function of
+                                  <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdc-25.1" target="_blank">cdc-25.1</a></em></span>, as RNAi studies have indicated roles for <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdc-25.1" target="_blank">cdc-25.1</a></em></span> during female meiosis
+                                  and embryonic divisions (<a href="#bib5">Ashcroft et al., 1999</a>; <a href="#bib12">Clucas et al., 2002</a>).
+               </p>
+               <p> For both <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdc-25.1" target="_blank">cdc-25.1</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=wee-1.3" target="_blank">wee-1.3</a></em></span>, gain-of-function mutants have been identified with surprising lineage-specific defects. Two independent dominant mutations
+                  in
+                                  <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdc-25.1" target="_top">cdc-25.1</a></em></span> induce extra divisions in the intestine (<a href="#bib12">Clucas et al., 2002</a>; <a href="#bib39">Kostic and Roy, 2002</a>). Gain-of-function alleles of
+                                  <a href="http://www.wormbase.org/db/gene/gene?name=spe-37" target="_blank">spe-37</a>/<span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=wee-1.3" target="_blank">wee-1.3</a></em></span> Myt1 cause spermatogenesis defects, resulting from G<sub>2</sub>/M arrest during
+                                  male meiosis (<a href="#bib41">Lamitina and L'Hernault, 2002</a>). The molecular
+                                  consequences of these mutations are not precisely known, but the phenotypes indicate
+                                  either a different CDK-activity threshold for specific developmental decisions, or
+                                  differential regulation of CDKs within certain lineages.
+               </p>
+               <p>Which CDKs are regulated by inhibitory phosphorylation in <span class="emphasis"><em>C. elegans</em></span>? The
+                                  ATP-binding sites of <a href="http://www.wormbase.org/db/seq/protein?name=CDK-1;class=protein" target="_blank">CDK-1</a> and <a href="http://www.wormbase.org/db/get?name=K03E5.3;class=Gene" target="_blank">K03E5.3</a> each contain adjoining threonine and tyrosine
+                                  residues, while <a href="http://www.wormbase.org/db/seq/protein?name=CDK-4;class=protein" target="_blank">CDK-4</a> contains alanine and tyrosine at the corresponding positions,
+                                  similar to vertebrate Cdk4/Cdk6. It is likely that the dominant <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=wee-1.3" target="_blank">wee-1.3</a></em></span> mutations
+                                  affect <a href="http://www.wormbase.org/db/seq/protein?name=CDK-1;class=protein" target="_blank">CDK-1</a>, while <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdc-25.1" target="_blank">cdc-25.1</a></em></span> gain of function may cause premature activation of a G<sub>1</sub>
+                                  CDK/Cyclin complex.
+               </p>
+               <p>In addition to inhibition, CDKs are also positively regulated by phosphorylation.
+                                  Activation of the CDK/Cyclin complex requires phosphorylation of a specific
+                                  threonine residue in the activation loop. Based on results in other species, <a href="http://www.wormbase.org/db/seq/protein?name=CDK-7;class=protein" target="_blank">CDK-7</a>
+                                  was examined as the candidate positive regulator (<a href="#bib61">Wallenfang and Seydoux, 2002</a>). Indeed, combined inactivation of <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdk-7" target="_blank">cdk-7</a></em></span> through a temperature-sensitive
+                                  mutation and RNAi resulted in a one-cell arrest, similar to <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdk-1" target="_blank">cdk-1</a></em></span>(<span class="emphasis"><em>RNAi</em></span>) embryos.
+                                  These results indicate strongly that <a href="http://www.wormbase.org/db/seq/protein?name=CDK-7;class=protein" target="_blank">CDK-7</a> kinase activity is required for <a href="http://www.wormbase.org/db/seq/protein?name=CDK-1;class=protein" target="_blank">CDK-1</a> activation (see also: <a href="#sec2_1" title="3.1.&nbsp;CDKs and cyclins">CDKs and cyclins</a>).
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2_5"></a>3.5.&nbsp;Protein degradation
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Protein degradation through ubiquitin-mediated proteolysis plays an important role
+                                  in cell-cycle regulation. In <span class="emphasis"><em>C. elegans</em></span>, this was first established through the characterization of <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-19" target="_blank">lin-19</a></em></span>/<span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cul-1" target="_blank">cul-1</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-23" target="_blank">lin-23</a></em></span>, which were originally defined in
+                                  screens for mutants with abnormal postembryonic cell lineages. Blast cells undergo excessive divisions in
+                  all post-embryonic lineages in <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-19" target="_blank">lin-19</a></em></span>/<span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cul-1" target="_blank">cul-1</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-23" target="_blank">lin-23</a></em></span>
+                                  loss-of-function mutants (<a href="#bib33">Kipreos et al., 2000</a>; <a href="#bib34">Kipreos et al., 1996</a>). Cells divide at the appropriate times in these mutants, but
+                                  additional cycles continue when cells should terminally differentiate. Thus, <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cul-1" target="_blank">cul-1</a></em></span>
+                                  and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-23" target="_blank">lin-23</a></em></span> act to promote cell-cycle exit.
+               </p>
+               <p><span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-19" target="_blank">lin-19</a></em></span> is the founding member of the conserved <span class="emphasis"><em>cullin</em></span> gene family and was renamed
+                                  "<span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cul-1" target="_blank">cul-1</a></em></span>" (<a href="#bib34">Kipreos et al., 1996</a>). <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-23" target="_blank">lin-23</a></em></span> encodes an F-box/WD-repeat
+                                  protein, most similar to MET30 in yeast, human <span class="symbol">&#946;</span>-TRCP and Slmb in <span class="emphasis"><em>Drosophila</em></span> (<a href="#bib33">Kipreos et al., 2000</a>). Based on the similar loss-of-function
+                                  phenotype and molecular identity, <a href="http://www.wormbase.org/db/seq/protein?name=CUL-1;class=protein" target="_blank">CUL-1</a> and <a href="http://www.wormbase.org/db/seq/protein?name=LIN-23;class=protein" target="_blank">LIN-23</a> probably encode components of a
+                                  <span class="underline">S</span>kp1-<span class="underline">C</span>ul1-<span class="underline">F</span> box (SCF) protein complex that acts as an E3 ubiquitin ligase and
+                                  targets proteins for degradation (see <a href="http://www.wormbook.org/chapters/www_ubiquitinpathways/ubiquitinpathways.html" target="_blank">Ubiquitin-mediated pathways in <span class="emphasis"><em>C. elegans</em></span> </a> ). This complex
+                                  likely promotes cell-cycle arrest during larval development by promoting destruction of positive G<sub>1</sub>/S regulators. <a href="http://www.wormbase.org/db/seq/protein?name=CYE-1;class=protein" target="_blank">CYE-1</a> Cyclin E is a candidate critical target of <a href="http://www.wormbase.org/db/seq/protein?name=CUL-1;class=protein" target="_blank">CUL-1</a>/<a href="http://www.wormbase.org/db/seq/protein?name=LIN-23;class=protein" target="_blank">LIN-23</a> SCF, analogous to the role of vertebrate Cul1 SCF.
+               </p>
+               <p>The cullin family is comprised of six different genes in <span class="emphasis"><em>C. elegans</em></span> and cell-cycle
+                                  related functions have also been reported for three additional members. Deletion of
+                                  <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cul-2" target="_blank">cul-2</a></em></span> results in G<sub>1</sub> arrest of germ-precursor cells, while <span class="emphasis"><em>cul-2(RNAi)</em></span> embryos show
+                                  defects in chromosome condensation and segregation (<a href="#bib23">Feng et al., 1999</a>) and are defective in progression through meiotic anaphase II (<a href="#bib43">Liu et al., 2004</a>; <a href="#bib56">Sonneville and Gonczy, 2004</a>). <a href="http://www.wormbase.org/db/seq/protein?name=CUL-3;class=protein" target="_blank">CUL-3</a> is
+                                  specifically required for degradation of <a href="http://www.wormbase.org/db/seq/protein?name=MEI-1;class=protein" target="_blank">MEI-1</a>, a subunit of a katanin complex that
+                                  severs microtubules and is essential for meiotic chromosome segregation (<a href="#bib26">Furukawa et al., 2003</a>; <a href="#bib49">Pintard et al., 2003</a>; <a href="#bib60">van den Heuvel, 2004</a>; <a href="#bib63">Xu et al., 2003</a>). Finally, <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cul-4" target="_blank">cul-4</a></em></span> is essential to
+                                  prevent re-replication of DNA, likely by promoting degradation of the replication
+                                  licencing factor <a href="http://www.wormbase.org/db/seq/protein?name=CDT-1;class=protein" target="_blank">CDT-1</a> (<a href="#bib65">Zhong et al., 2003</a>). These results
+                                  demonstrate the importance of various cullin-based ubiquitin ligases in cell-cycle
+                                  progression.
+               </p>
+               <p>The anaphase-promoting complex (APC) is another multi-subunit E3 ubiquitin ligase
+                                  that regulates cell-cycle transitions. As in other eukaryotes, <span class="emphasis"><em>C. elegans</em></span> APC
+                                  promotes sister chromosome separation in M phase. <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=emb-30" target="_blank">emb-30</a></em></span> is required for the
+                                  metaphase-to-anaphase transition in meiosis and mitosis and encodes the APC subunit
+                                  APC4 (<a href="#bib27">Furuta et al., 2000</a>). Moreover, a screen for
+                                  temperature-sensitive embryonic lethal mutations revealed a large number of
+                                  <span class="underline">m</span>etaphase-to-<span class="underline">a</span>naphase <span class="underline">t</span>ransition (<span class="emphasis"><em>mat</em></span>) mutants (<a href="#bib29">Golden et al., 2000</a>).
+                                  These <span class="emphasis"><em>mat</em></span> mutants arrest in metaphase of meiosis I and helped define five different
+                                  genes that all encode components of the APC (<a href="#table1" title="Table 1. C. elegans cell-cycle mutants (for references: see text)">Table 1</a>).
+               </p>
+               <p>In other species, the adaptor Cdc20/Fizzy recruits the APC to the substrate
+                                  securin. Degradation of securin releases separase, which cleaves cohesins and
+                                  triggers sister chromosome separation. Similar mechanisms are likely used in <span class="emphasis"><em>C.
+                                        elegans</em></span>, involving <a href="http://www.wormbase.org/db/seq/protein?name=FZY-1;class=protein" target="_blank">FZY-1</a> as the substrate specificity factor homologous to
+                                  Cdc20/Fizzy, the <span class="underline">i</span>nteractor of <span class="underline">F</span>Z<span class="underline">Y</span>-1, as candidate securin and <a href="http://www.wormbase.org/db/seq/protein?name=SEP-1;class=protein" target="_blank">SEP-1</a> as the <span class="emphasis"><em>C.
+                                        elegans</em></span> separase (<a href="#bib36">Kitagawa et al., 2002</a>). The APC uses another
+                                  substrate specificity factor, known as Cdh1p in yeast and Fizzy-related in
+                                  <span class="emphasis"><em>Drosophila</em></span>, in the destruction of mitotic cyclins. Loss of function of <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=fzr-1" target="_blank">fzr-1</a></em></span>, the <span class="emphasis"><em>C.
+                                        elegans</em></span> Cdh1/FZR ortholog, promotes hyperproliferation when combined with <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-35" target="_blank">lin-35</a></em></span> Rb
+                                  loss of function (<a href="#bib22">Fay et al., 2002</a>). This observation may indicate
+                                  that <a href="http://www.wormbase.org/db/seq/protein?name=FZR-1;class=protein" target="_blank">FZR-1</a> also contributes to G<sub>1</sub> cyclin degradation, or, alternatively, it may
+                                  counteract <a href="http://www.wormbase.org/db/seq/protein?name=CKI-1;class=protein" target="_blank">CKI-1</a> Kip1 degradation. The latter mechanism has been observed in human
+                                  cells, in which Cdh1/FZR promotes accumulation of p27<sup>Kip1</sup>
+                                  through degradation of the F box factor that targets
+                                  p27<sup>Kip1</sup> for destruction (<a href="#bib6">Bashir et al., 2004</a>; <a href="#bib62">Wei et al., 2004</a>).
+               </p>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec1_4"></a>4.&nbsp;Cell-Cycle regulation in development
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2_6"></a>4.1.&nbsp;Cell-cycle variation
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>As metazoans go through development, their cells progress through various types of
+                                  cell cycles. These include the embryonic cell cycle, somatic cell cycle,
+                                  endoreduplication cycle, and meiotic cell cycle. The cell-cycle machinery used in
+                                  each case is tailored towards the individual cycle and shows different requirements
+                                  for critical regulators. For instance, <span class="emphasis"><em>C. elegans</em></span> <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cyd-1" target="_blank">cyd-1</a></em></span> cyclin D and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdk-4" target="_blank">cdk-4</a></em></span> Cdk4/6
+                                  are not required for most of embryogenesis and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdk-1" target="_blank">cdk-1</a></em></span> is not needed for the
+                                  endoreduplication cycles (<a href="#bib7">Boxem et al., 1999</a>; <a href="#bib8">Boxem and van den Heuvel, 2001</a>; <a href="#bib48">Park and Krause, 1999</a>). Switching from
+                                  one division cycle to another involves important developmental decisions that remain
+                                  poorly understood.
+               </p>
+               <div class="sect3" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="sec3_1"></a>4.1.1.&nbsp;Embryonic cell cycles
+                           </h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p>As in other metazoans, early embryonic divisions in <span class="emphasis"><em>C. elegans</em></span> are fast and
+                                         cycle between S and M phases, apparently lacking the Gap phases G<sub>1</sub> and G<sub>2</sub> (<a href="#bib16">Edgar and McGhee, 1988</a>). In the initial division cycles, DNA synthesis,
+                                         nuclear division, and cytokinesis are completed within approximately 15-20
+                                         minutes. However, the exact division times vary, as even the first mitotic
+                                         division is asymmetric and generates daughter cells that are unequal and divide
+                                         asynchronously. Just a few hours into embryonic development, cells in different
+                                         lineages diverge greatly in cell-cycle profiles. Certain cells continue rapid
+                                         divisions, others divide after an extended interphase of two hours or more, yet
+                                         other cells become quiescent or post-mitotic (<a href="#bib59">Sulston et al., 1983</a>). Nearly all embryonic divisions are completed during the first half of
+                                         embryogenesis, within the proliferation phase that ends approximately 7 hours
+                                         after fertilization.
+                  </p>
+                  <p>Because of the variation in cell division profiles, <span class="emphasis"><em>C. elegans</em></span> embryogenesis
+                                         does not include a clear switch from cycles that consist solely of S and M
+                                         phases, to cycles that incorporate a G<sub>2</sub> phase, or a G<sub>1</sub> and G<sub>2</sub> phase. The time of
+                                         introduction of Gap phases depends on the lineage, with the endoderm precursors
+                                         <a href="http://www.wormbase.org/db/get?name=Ea;class=Cell" target="_blank">Ea</a> and <a href="http://www.wormbase.org/db/get?name=Ep;class=Cell" target="_blank">Ep</a> as the first cells to include a G<sub>2</sub> phase in their cycles at the
+                                         28-cell stage (<a href="#bib16">Edgar and McGhee, 1988</a>). These intestinal cells
+                                         complete S phase before they start inward migration during gastrulation and
+                                         divide approximately 1 hour later. When G<sub>1</sub> is first introduced is unclear. As
+                                         the final embryonic divisions of the intestinal and coelomocyte precursors fail
+                                         in <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cyd-1" target="_blank">cyd-1</a></em></span> mutants (<a href="#bib8">Boxem and van den Heuvel, 2001</a>; <a href="#bib64">Yanowitz and Fire, 2005</a>), these cycles most likely include G<sub>1</sub> phases.
+                  </p>
+               </div>
+               <div class="sect3" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="sec3_2"></a>4.1.2.&nbsp;Larval somatic cell cycles
+                           </h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p>The somatic nuclei of post-embryonic precursor cells appear to contain a 2n
+                                         DNA content at the time of hatching and go through a DNA synthesis phase before
+                                         initiating mitosis (<a href="#bib2">Albertson et al., 1978</a>; <a href="#bib30">Hedgecock and White, 1985</a>). These divisions generally depend on the function of G<sub>1</sub>/S
+                                         and G<sub>2</sub>/M control genes. Measurements of the time of DNA duplication in the
+                                         vulval precursor cells demonstrated that G<sub>1</sub>/G<sub>0</sub> extends from mid L1 until shortly
+                                         after the L2 molt, and that S phase is completed hours before mitosis initiates
+                                         (<a href="#bib20">Euling and Ambros, 1996b</a>). Similarly, S phase in the intestinal
+                                         nuclei occurs between 6 and 8 hours of L1 development, approximately 4 hours
+                                         before nuclear division (<a href="#bib8">Boxem and van den Heuvel, 2001</a>). Thus,
+                                         the precursor cells of the post-embryonic lineages and their descendents follow
+                                         canonical cell cycles in which the S and M phases are separated by G<sub>1</sub> and G<sub>2</sub> Gap
+                                         phases. As in embryogenesis, the length of interphase varies greatly between
+                                         different cell types. Divisions frequently follow each other within one hour,
+                                         but some cells remain quiescent for 20 hours, before dividing again two larval
+                                         stages later (<a href="#bib58">Sulston and Horvitz, 1977</a>).
+                  </p>
+               </div>
+               <div class="sect3" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="sec3_3"></a>4.1.3.&nbsp;Endoreduplication cycles
+                           </h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p>Endoreduplication cycles are characterized by a DNA synthesis phase that is
+                                         not followed by M phase, thus doubling the DNA ploidy with each additional
+                                         cycle. Such endoreduplication cycles take place in the intestine and hypodermis
+                                         during <span class="emphasis"><em>C. elegans</em></span> development (<a href="#bib30">Hedgecock and White, 1985</a>).
+                                         Fourteen of the twenty intestinal cells undergo a final nuclear division at the
+                                         end of the L1 stage. Subsequently, all intestinal nuclei go through an
+                                         endoreduplication cycle during each larval stage, which results in intestinal
+                                         nuclei with a 32n DNA content in adult animals.
+                  </p>
+                  <p>During the larval stages, divisions of the hypodermal seam cells generate
+                                         daughter seam cells as well as hypodermal cells that fuse with the major
+                                         hypodermal syncytium hyp7 (<a href="#bib58">Sulston and Horvitz, 1977</a>). The cells
+                                         that become part of hyp7 undergo an additional round of DNA replication just
+                                         before they join the syncytium (<a href="#bib30">Hedgecock and White, 1985</a>).
+                                         Consequently, the larval hyp7 syncytium contains a fixed number of diploid
+                                         embryonic nuclei and an increasing amount of tetraploid postembryonic
+                                     nuclei.
+                  </p>
+               </div>
+               <div class="sect3" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="sec3_4"></a>4.1.4.&nbsp;The meiotic cell cycle
+                           </h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p>In meiosis, DNA synthesis is followed by two subsequent rounds of chromosome
+                                         segregation, leading to the formation of haploid gametes (see <a href="http://www.wormbook.org/chapters/www_introgermline/introgermline.html" target="_blank"> Introduction to the germ line</a>).
+                                         Hermaphrodites temporarily produce male gametes during the third larval stage,
+                                         before switching to an oogenesis program. In adult animals, a proliferating
+                                         stem-cell population at the distal end of each gonad arm forms precursor germ
+                                         cells. These precursor cells go through S phase and enter a prolonged meiotic
+                                         prophase, in which homologous chromosomes pair, synapse and undergo
+                                         recombination in the pachytene stage. Oocytes complete development while in
+                                         diakinesis, and undergo maturation when reaching the spermatheca. The oocyte
+                                         pronucleus completes meiosis I and II upon fertilization. Meiosis is
+                                         described elsewhere (see <a href="http://www.wormbook.org/chapters/www_meiosis/meiosis.html" target="_blank">Meiosis</a>).
+                  </p>
+               </div>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2_7"></a>4.2.&nbsp;Checkpoint control
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Checkpoint controls prevent progression through cell-cycle transitions prior to
+                                  the completion of critical earlier events. For instance, the cell cycle is arrested
+                                  and cell death may be triggered in response to DNA damage, progress into mitosis is
+                                  halted when DNA replication is ongoing, and sister-chromatid separation is delayed
+                                  until all kinetochores are attached to the spindle. The DNA damage checkpoint,
+                                  replication checkpoint and spindle-assembly checkpoint, respectively, impose these
+                                  "brakes" on the cell cycle and couple the initiation of later events to completion
+                                  of earlier events. Recent studies in <span class="emphasis"><em>C. elegans</em></span> have demonstrated conservation of
+                                  these checkpoint pathways, identified novel components and revealed developmental
+                                  functions.
+               </p>
+               <div class="sect3" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="sec3_5"></a>4.2.1.&nbsp;DNA-damage induced checkpoint
+                           </h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p>While somatic cells show little developmental response to genotoxic stress,
+                                         DNA damage in the germline induces both cell-cycle arrest and apoptosis (<a href="#bib28">Gartner et al., 2000</a>). Cell-cycle arrest is restricted to the mitotically
+                                         active stem-cell population in the distal region of the gonad arms, while cell
+                                         death occurs only in the meiotic pachytene regions in adult hermaphrodites. As
+                                         in other eukaryotes, the <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=mrt-2" target="_blank">mrt-2</a></em></span> RAD1 and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=hus-1" target="_blank">hus-1</a></em></span> HUS1 genes are required for
+                                         checkpoint-induced arrest as well as apoptosis, together with the novel
+                                         checkpoint gene <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=clk-2" target="_blank">clk-2</a></em></span>/<span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=rad-5%20rad-5" target="_top">rad-5</a></em></span> (<a href="#bib1">Ahmed et al., 2001</a>). It is currently
+                                         unclear how damage triggers cell-cycle arrest in <span class="emphasis"><em>C. elegans</em></span>. Neither <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cki-1" target="_blank">cki-1</a></em></span> nor
+                                         <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cki-2" target="_blank">cki-2</a></em></span> Cip/Kip expression is induced in response to irradiation, which rules out
+                                         one of the mechanisms used in mammals (<a href="#bib31">Hofmann et al., 2002</a>).
+                                         Other conserved mechanisms involve inactivation of Cdc25 and activation of Wee1
+                                         family members, which may mediate the arrest in <span class="emphasis"><em>C. elegans</em></span>.
+                  </p>
+                  <p>As DNA damage induces apoptosis in metazoans but not in yeast, <span class="emphasis"><em>C. elegans</em></span>
+                                         provides an attractive genetic system to establish the molecular connections.
+                                         Importantly, a p53-related transcription factor (<a href="http://www.wormbase.org/db/seq/protein?name=CEP-1;class=protein" target="_blank">CEP-1</a>: <span class="emphasis"><em><span class="underline">C</span>. <span class="underline">e</span>legans</em></span> <span class="underline">p</span>53) acts to
+                                         promote checkpoint-induced apoptosis in <span class="emphasis"><em>C. elegans</em></span>, as in mammals (<a href="#bib15">Derry et al., 2001</a>; <a href="#bib51">Schumacher et al., 2001</a>). In response to
+                                         gamma irradiation, transcript levels of <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=egl-1" target="_blank">egl-1</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=ced-13" target="_blank">ced-13</a></em></span> are both induced in a
+                                         <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cep-1" target="_blank">cep-1</a></em></span> dependent fashion (<a href="#bib31">Hofmann et al., 2002</a>; <a href="#bib52">Schumacher et al., 2005</a>). <a href="http://www.wormbase.org/db/seq/protein?name=EGL-1;class=protein" target="_blank">EGL-1</a> and <a href="http://www.wormbase.org/db/seq/protein?name=CED-13;class=protein" target="_blank">CED-13</a> each encode pro-apoptotic proteins of the
+                                         BH3-only protein family, similar to the p53 targets Bax, Puma and Noxa in
+                                         mammals. These results highlight the evolutionary conservation of the
+                                         damage-induced apoptotic pathway (see <a href="http://www.wormbook.org/chapters/www_germlinesurvivalcelldeath/germlinesurvivalcelldeath.html" target="_blank">Germline survival and cell death </a>).
+                  </p>
+               </div>
+               <div class="sect3" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="sec3_6"></a>4.2.2.&nbsp;DNA-replication induced checkpoint
+                           </h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p>As in other eukaryotes, interference of DNA replication by Hydroxyurea (HU) or
+                                         mutation of replication components prevents progression into mitosis (<a href="#bib17">Encalada et al., 2000</a>; <a href="#bib20">Euling and Ambros, 1996b</a>).
+                                         Interestingly, the replication checkpoint responsible for this delay is also
+                                         active in early embryos, albeit less robustly (<a href="#bib10">Brauchle et al., 2003</a>). RNAi of the replication-checkpoint genes <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=atl-1" target="_blank">atl-1</a></em></span> ATR and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=chk-1" target="_blank">chk-1</a></em></span> CHK1 by
+                                         RNAi resulted in precocious and more synchronous division of the <a href="http://www.wormbase.org/db/get?name=AB;class=Cell" target="_blank">AB</a> and <a href="http://www.wormbase.org/db/get?name=P1;class=Cell" target="_blank">P1</a>
+                                         blastomeres. Thus, the replication checkpoint contributes to the normal and
+                                         lineage specific timing of cell division in early development.
+                  </p>
+               </div>
+               <div class="sect3" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="sec3_7"></a>4.2.3.&nbsp;Spindle-assembly checkpoint
+                           </h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p>Spindle checkpoint components were originally identified in yeast as "mitotic
+                                         arrest deficient" (<span class="emphasis"><em>mad</em></span>) and "budding uninhibited by benzimidazole" (<span class="emphasis"><em>bub</em></span>)
+                                         mutants. The <span class="emphasis"><em>C. elegans</em></span> gene <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=mdf-2" target="_blank">mdf-2</a></em></span> (<span class="underline">m</span>itotic <span class="underline">a</span>rrest <span class="underline">d</span>efective) was identified as
+                                         a homolog of MAD2 and shown to be able to substitute for its function (<a href="#bib37">Kitagawa and Rose, 1999</a>). <a href="http://www.wormbase.org/db/seq/protein?name=MDF-1;class=protein" target="_blank">MDF-1</a> was identified as a protein interacting
+                                         with <a href="http://www.wormbase.org/db/seq/protein?name=MDF-2;class=protein" target="_blank">MDF-2</a> that weakly resembles Mad1p and produces a similar range of
+                                         loss-of-function phenotypes as <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=mdf-2" target="_blank">mdf-2</a></em></span>, including embryonic lethality, larval
+                                         lethality, a Him phenotype and sterility. These results provided the first
+                                         indication that mitotic checkpoint genes are essential in metazoans.
+                  </p>
+                  <p>The existence of a functional spindle checkpoint was demonstrated by exposure
+                                         of the germline to the microtubule-depolymerizing drug nocodazole, which causes
+                                         accumulation of cells in mitosis (<a href="#bib37">Kitagawa and Rose, 1999</a>). Such
+                                         accumulation does not occur in <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=mdf-1" target="_blank">mdf-1</a></em></span> mutants, indicating that <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=mdf-1" target="_blank">mdf-1</a></em></span> is required
+                                         for mitotic arrest in response to spindle defects. This mitotic checkpoint is
+                                         also functional in early embryos, as defective mitotic spindles expand the time
+                                         in mitosis in a checkpoint dependent manner as early as the one- and two-cell
+                                         stage (<a href="#bib18">Encalada et al., 2005</a>).
+                  </p>
+                  <p>Other mitotic checkpoint proteins are also conserved in <span class="emphasis"><em>C. elegans</em></span>, including
+                                         orthologs of BUB1 and MAD3. Interestingly, <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=san-1" target="_blank">san-1</a></em></span> MAD3 was identified as a gene
+                                         required for an extreme form of developmental quiescence induced by absence of
+                                         oxygen (anoxia) (<a href="#bib47">Nystul et al., 2003</a>). This so-called "suspended
+                                         animation" coincides with mitotic metaphase arrest during embryogenesis. Not
+                                         only <a href="http://www.wormbase.org/db/seq/protein?name=SAN-1;class=protein" target="_blank">SAN-1</a> MAD3 but also <a href="http://www.wormbase.org/db/seq/protein?name=MDF-2;class=protein" target="_blank">MDF-2</a> MAD2 was found to be required for this arrest
+                                         induced by adverse conditions.
+                  </p>
+               </div>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2_8"></a>4.3.&nbsp;Cell-cycle entry and arrest
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>At present, there is only limited understanding of developmental regulation of
+                                  cell cycle entry and arrest in <span class="emphasis"><em>C. elegans</em></span>. Several environmental conditions and
+                                  mutations cause a global interruption of the reproducible pattern of cell division.
+                                  For instance, when eggs hatch in the absence of food, larvae arrest early in L1 and
+                                  do not initiate development and cell division until food is restored. Similarly,
+                                  entry into and exit from the dauer state coincide with arrest and re-initiation of
+                                  cell division. In addition, heterochronic mutations affect the timing of cell
+                                  division simultaneously in multiple postembryonic lineages.
+               </p>
+               <p>It is unclear how such developmental programs control the cell cycle and whether
+                                  systemic signals are involved. Most likely however, regulation occurs via the
+                                  cyclin/Cdk complexes. Inactivation of <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cyd-1" target="_blank">cyd-1</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdk-4" target="_blank">cdk-4</a></em></span> leads to G<sub>1</sub> arrest (see above,
+                                  CDKs and cyclins; <a href="#figure3">Figure 3</a>), and heat-shock induced expression of
+                                  <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cyd-1" target="_blank">cyd-1</a></em></span> plus <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdk-4" target="_blank">cdk-4</a></em></span> is sufficient to induce expression of the S phase marker <span class="emphasis"><em>rnr</em></span>::<span class="emphasis"><em>GFP</em></span>
+                                  in L1 animals arrested through starvation (<a href="#bib48">Park and Krause, 1999</a>).
+                                  Conversely, ectopic expression of the CDK inhibitor <a href="http://www.wormbase.org/db/seq/protein?name=CKI-1;class=protein" target="_blank">CKI-1</a> induces cell-cycle arrest
+                                  and prevents<span class="emphasis"><em> rnr</em></span>::<span class="emphasis"><em>gfp</em></span> expression, while <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cki-1" target="_blank">cki-1</a></em></span> loss-of-function results in extra cell
+                                  division (see: CDK inhibitory proteins). RNAi of <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cki-1" target="_blank">cki-1</a></em></span> induces<span class="emphasis"><em> rnr</em></span>::<span class="emphasis"><em>gfp</em></span> expression
+                                  and limited cell division even in starved L1 animals and arrested dauer larvae (<a href="#bib32">Hong et al., 1998</a>). Mutations in heterochronic genes that cause precocious or retarded patterns of cell division affect the time cells spend
+                  in G<sub>0</sub>/G<sub>1</sub>, probably
+                                  also acting upstream of the basic cell cycle machinery (<a href="#bib20">Euling and Ambros, 1996b</a>). Thus, both the normal developmental timing of cell division and
+                                  environmental, possibly systemic, regulation is likely accomplished through
+                                  regulators acting upstream of G<sub>1</sub> cyclin/CDK complexes.
+               </p>
+               <p>What then controls the proper timing of cell-cycle entry and arrest? Promoter
+                                  studies have shown that <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cyd-1" target="_blank">cyd-1</a></em></span>, <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdk-4" target="_blank">cdk-4</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cye-1" target="_blank">cye-1</a></em></span> all are transcriptionally induced in
+                                  dividing cells (<a href="#bib11">Brodigan et al., 2003</a>; <a href="#bib48">Park and Krause, 1999</a>). However, homozygous <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cye-1" target="_blank">cye-1</a></em></span> mutants show normal temporal control of cell
+                                  division during embryonic and early larval development, illustrating that zygotic
+                                  <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cye-1" target="_blank">cye-1</a></em></span> transcription does not drive lineage-specific timing of cell-cycle entry
+                                  (<a href="#bib11">Brodigan et al., 2003</a>; <a href="#bib21">Fay and Han, 2000</a>). In
+                                  contrast to <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cyd-1" target="_blank">cyd-1</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cye-1" target="_blank">cye-1</a></em></span>, the <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cki-1" target="_blank">cki-1</a></em></span> promoter region is large and complex, and
+                                  includes separate control elements for transcription in different lineages (<a href="#bib32">Hong et al., 1998</a>). Thus, transcription of <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cki-1" target="_blank">cki-1</a></em></span> likely contributes to timing
+                                  of cell cycle arrest.
+               </p>
+               <p>Another level of <a href="http://www.wormbase.org/db/seq/protein?name=CKI-1;class=protein" target="_blank">CKI-1</a> regulation may be mediated by phosphorylation. Just like
+                                  <a href="http://www.wormbase.org/db/seq/protein?name=CKI-1;class=protein" target="_blank">CKI-1</a>, the <a href="http://www.wormbase.org/db/seq/protein?name=CDC-14;class=protein" target="_blank">CDC-14</a> phosphatase is needed to maintain the vulval precursor cells
+                                  (VPCs) and other postembryonic precursor cells in a resting state (<a href="#bib50">Saito et al., 2004</a>). In genetic studies, <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdc-14" target="_blank">cdc-14</a></em></span> was found to act positively in a
+                                  <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cki-1" target="_blank">cki-1</a></em></span> pathway. Moreover, a <a href="http://www.wormbase.org/db/seq/protein?name=CKI-1;class=protein" target="_blank">CKI-1</a>::GFP fusion protein, expressed from a heterologous
+                                  promoter, failed to accumulate in the absence of <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdc-14" target="_blank">cdc-14</a></em></span> function. Based on analogy
+                                  with other systems, <a href="http://www.wormbase.org/db/seq/protein?name=CKI-1;class=protein" target="_blank">CKI-1</a> turn-over is likely promoted by phosphorylation and
+                                  ubiquitin-dependent proteolysis. <a href="http://www.wormbase.org/db/seq/protein?name=CDC-14;class=protein" target="_blank">CDC-14</a> phosphatase activity could contribute to
+                                  cell-cycle arrest by counteracting <a href="http://www.wormbase.org/db/seq/protein?name=CKI-1;class=protein" target="_blank">CKI-1</a> phosphorylation, thereby preventing <a href="http://www.wormbase.org/db/seq/protein?name=CKI-1;class=protein" target="_blank">CKI-1</a>
+                                  degradation.
+               </p>
+               <p>Most cells exit the cell cycle and differentiate appropriately in <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cki-1" target="_blank">cki-1</a></em></span> mutants,
+                                  and even in animals that lack both <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-35" target="_blank">lin-35</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cki-1" target="_blank">cki-1</a></em></span> function. Cell-cycle exit is
+                                  delayed in <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-23" target="_blank">lin-23</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cul-1" target="_blank">cul-1</a></em></span> mutants, but the smaller extra cells still differentiate
+                                  (<a href="#bib34">Kipreos et al., 1996</a>; <a href="#bib35">Kipreos and Pagano, 2000</a>). Thus,
+                                  cells can transit from G<sub>1</sub> to G<sub>0</sub> even when these negative regulators of G<sub>1</sub>
+                                  progression are missing, possibly because redundant mechanisms are in place.
+               </p>
+               <p>Differentiation is often surprisingly independent from cell division. Even in the
+                                  absence of larval divisions, <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cyd-1" target="_blank">cyd-1</a></em></span> mutants and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdk-1" target="_blank">cdk-1</a></em></span> mutant animals continue molting
+                                  cycles and form adult alae. These observations confirm earlier conclusions that
+                                  aspects of development and differentiation can continue in the absence of cell
+                                  division (<a href="#bib2">Albertson et al., 1978</a>). Vulval cells in <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cye-1" target="_blank">cye-1</a></em></span> mutants
+                                  undergo normal differentiation and morphogenesis of the vulva, despite delayed and
+                                  fewer division cycles (<a href="#bib21">Fay and Han, 2000</a>). Extra divisions of the VPCs, in <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cki-1" target="_blank">cki-1</a></em></span>(<span class="emphasis"><em>RNAi</em></span>) and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdc-14" target="_blank">cdc-14</a></em></span>(0) larvae, or extra vulval cells, in <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cul-1" target="_blank">cul-1</a></em></span> and
+                                  <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-23" target="_blank">lin-23</a></em></span> mutants, also does not prevent acquisition of a normal vulval fate or vulval
+                                  morphogenesis (<a href="#bib32">Hong et al., 1998</a>; <a href="#bib33">Kipreos et al., 2000</a>;
+                                  <a href="#bib34">Kipreos et al., 1996</a>; <a href="#bib50">Saito et al., 2004</a>).
+               </p>
+               <p>Despite this independence, receptiveness and response to cell-cell signaling does
+                                  include a cell-cycle component. The number of VPCs adopting a vulval fate is
+                                  somewhat increased in <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cye-1" target="_blank">cye-1</a></em></span> mutants, possibly because prolonged time in G<sub>1</sub> provides
+                                  greater opportunity for induction (<a href="#bib21">Fay and Han, 2000</a>). Different VPC
+                                  fates may use a different "window of opportunity" for <span class="emphasis"><em>lin-12</em></span>-mediated lateral
+                                  inhibition, with the 1<span class="symbol">&deg;</span> versus
+                                      2<span class="symbol">&deg;</span> decision requiring signaling
+                                  earlier than the 2<span class="symbol">&deg;</span> versus 3<span class="symbol">&deg;</span> decision (<a href="#bib3">Ambros, 1999</a>).
+                                  In precocious <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-28" target="_blank">lin-28</a></em></span> mutants, VPCs adopt vulval fates and initiate fate-specific
+                                  division patterns in L2. Dauer induction interrupts this pattern and arrests the VPC
+                                  daughter cells (<a href="#bib19">Euling and Ambros, 1996a</a>). Interestingly, these
+                                  arrested cells lose their lineage commitment and respond as multipotent VPCs to
+                                  vulval induction during post-dauer development. In all three examples, the time
+                                  spent in G<sub>1</sub> affects the VPC fate in response to signals.
+               </p>
+               <p>Developmental decisions and cell-cycle regulation interconnect at many levels and
+                                  much remains to be discovered. <a href="http://www.wormbook.org/chapters/www_germlineprolifcontrol/germlineprolifcontrol.html" target="_blank">Germline proliferation and its control </a> describes proliferation in the
+                                  germline, which involves some of the best characterized connections between
+                                  developmental signals and cell-division control.
+               </p>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec1_5"></a>5.&nbsp;Acknowledgments
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>I thank Mike Boxem, John Koreth and Jerome Korzelius for helpful comments and
+                           discussion, Edward Kipreos for critical reading and helpful suggestions, and the
+                           National Institutes of Health for support.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e2656"></a>6.&nbsp;References
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p></p>
+            <div class="bibliography">
+               <div class="bibliomixed"><a name="bib1"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Ahmed, S., Alpi, A., Hengartner, M.O., and Gartner, A. (2001). <span class="emphasis"><em>C. elegans</em></span> RAD-5/<a href="http://www.wormbase.org/db/seq/protein?name=CLK-2;class=protein" target="_blank">CLK-2</a> defines a new DNA damage checkpoint protein. Curr. Biol. <span class="emphasis"><em>11</em></span>, 1934&#8211;1944.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11747819&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0960-9822(01)00604-2" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib2"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Albertson, D.G., Sulston, J.E., and White, J.G. (1978). Cell cycling and DNA replication in a mutant blocked in cell division
+                        in the nematode <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Dev. Biol. <span class="emphasis"><em>63</em></span>, 165&#8211;178.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=631425&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/0012-1606(78)90122-7" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib3"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Ambros, V. (1999). Cell cycle-dependent sequencing of cell fate decisions in <span class="emphasis"><em>Caenorhabditis elegans</em></span> vulva precursor cells. Development <span class="emphasis"><em>126</em></span>, 1947&#8211;1956.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10101128&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib4"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Ashcroft, N., and Golden, A. (2002). <a href="http://www.wormbase.org/db/seq/protein?name=CDC-25.1;class=protein" target="_blank">CDC-25.1</a> regulates germline proliferation in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Genesis <span class="emphasis"><em>33</em></span>, 1&#8211;7.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12001064&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1002/gene.10083" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib5"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Ashcroft, N.R., Srayko, M., Kosinski, M.E., Mains, P.E., and Golden, A. (1999). RNA-mediated interference of a cdc25 homolog
+                        in <span class="emphasis"><em>Caenorhabditis elegans</em></span> results in defects in the embryonic cortical membrane, meiosis, and mitosis. Dev. Biol. <span class="emphasis"><em>206</em></span>, 15&#8211;32.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=9918692&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1006/dbio.1998.9135" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib6"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Bashir, T., Dorrello, N.V., Amador, V., Guardavaccaro, D., and Pagano, M. (2004). Control of the SCF(Skp2-Cks1) ubiquitin
+                        ligase by the APC/C(Cdh1) ubiquitin ligase. Nature <span class="emphasis"><em>428</em></span>, 190&#8211;193.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15014502&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nature02330" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib7"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Boxem, M., Srinivasan, D.G., and van den Heuvel, S. (1999). The <span class="emphasis"><em>Caenorhabditis elegans</em></span> gene <span class="emphasis"><em>ncc-1</em></span> encodes a cdc2-related kinase required for M phase in meiotic and mitotic cell divisions, but not for S phase. Development
+                        <span class="emphasis"><em>126</em></span>, 2227&#8211;2239.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10207147&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib8"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Boxem, M., and van den Heuvel, S. (2001). <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-35" target="_blank">lin-35</a></em></span> Rb and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cki-1" target="_blank">cki-1</a></em></span> Cip/Kip cooperate in developmental regulation of G<sub>1</sub> progression in <span class="emphasis"><em>C. elegans</em></span>. Development <span class="emphasis"><em>128</em></span>, 4349&#8211;4359.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11684669&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib9"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Boxem, M., and van den Heuvel, S. (2002). <span class="emphasis"><em>C. elegans</em></span> class B synthetic multivulva genes act in G(1) regulation. Curr. Biol. <span class="emphasis"><em>12</em></span>, 906&#8211;911.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12062054&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0960-9822(02)00844-8" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib10"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Brauchle, M., Baumer, K., and Gonczy, P. (2003). Differential activation of the DNA replication checkpoint contributes to
+                        asynchrony of cell division in <span class="emphasis"><em>C. elegans</em></span> embryos. Curr. Biol. <span class="emphasis"><em>13</em></span>, 819&#8211;827.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12747829&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0960-9822(03)00295-1" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib11"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Brodigan, T.M., Liu, J., Park, M., Kipreos, E.T., and Krause, M. (2003). Cyclin E expression during development in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Dev. Biol. <span class="emphasis"><em>254</em></span>, 102&#8211;115.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12606285&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0012-1606(02)00032-5" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib12"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Clucas, C., Cabello, J., Bussing, I., Schnabel, R., and Johnstone, I.L. (2002). Oncogenic potential of a <span class="emphasis"><em>C. elegans</em></span> <span class="emphasis"><em>cdc25</em></span> gene is demonstrated by a gain-of-function allele. EMBO J. <span class="emphasis"><em>21</em></span>, 665&#8211;674.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11847114&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1093/emboj/21.4.665" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib13"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Cruz, J.C., and Tsai, L.H. (2004). Cdk5 deregulation in the pathogenesis of Alzheimer's disease. Trends Mol. Med. <span class="emphasis"><em>10</em></span>, 452&#8211;458.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15350898&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.molmed.2004.07.001" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib14"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Datar, S.A., Jacobs, H.W., de la Cruz, A.F., Lehner, C.F., and Edgar, B.A. (2000). The <span class="emphasis"><em>Drosophila</em></span> cyclin D-Cdk4 complex promotes cellular growth. EMBO J. <span class="emphasis"><em>19</em></span>, 4543&#8211;4554.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10970848&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1093/emboj/19.17.4543" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib15"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Derry, W.B., Putzke, A.P., and Rothman, J.H. (2001). <span class="emphasis"><em>Caenorhabditis elegans</em></span> p53: role in apoptosis, meiosis, and stress resistance. Science <span class="emphasis"><em>294</em></span>, 591&#8211;595.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11557844&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1126/science.1065486" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib16"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Edgar, L.G., and McGhee, J.D. (1988). DNA synthesis and the control of embryonic gene expression in <span class="emphasis"><em>C. elegans</em></span>. Cell <span class="emphasis"><em>53</em></span>, 589&#8211;599.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=3131016&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/0092-8674(88)90575-2" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib17"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Encalada, S.E., Martin, P.R., Phillips, J.B., Lyczak, R., Hamill, D.R., Swan, K.A., and Bowerman, B. (2000). DNA replication
+                        defects delay cell division and disrupt cell polarity in early <span class="emphasis"><em>Caenorhabditis elegans</em></span> embryos. Dev. Biol. <span class="emphasis"><em>228</em></span>, 225&#8211;238.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11112326&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1006/dbio.2000.9965" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib18"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Encalada, S.E., Willis, J., Lyczak, R., and Bowerman, B. (2005). A spindle checkpoint functions during mitosis in the early
+                        <span class="emphasis"><em>Caenorhabditis elegans</em></span> embryo. Mol. Biol. Cell <span class="emphasis"><em>16</em></span>, 1056&#8211;1070.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15616189&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1091/mbc.E04-08-0712" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib19"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Euling, S., and Ambros, V. (1996a). Heterochronic genes control cell cycle progress and developmental competence of <span class="emphasis"><em>C. elegans</em></span> vulva precursor cells. Cell <span class="emphasis"><em>84</em></span>, 667&#8211;676.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8756295&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0092-8674(00)81045-4" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib20"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Euling, S., and Ambros, V. (1996b). Reversal of cell fate determination in <span class="emphasis"><em>Caenorhabditis elegans</em></span> vulval development. Development <span class="emphasis"><em>122</em></span>, 2507&#8211;2515.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8625405&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib21"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Fay, D.S., and Han, M. (2000). Mutations in <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cye-1" target="_blank">cye-1</a></em></span>, a <span class="emphasis"><em>Caenorhabditis elegans</em></span> cyclin E homolog, reveal coordination between cell-cycle control and vulval development. Development <span class="emphasis"><em>127</em></span>, 4049&#8211;4060.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10952902&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib22"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Fay, D.S., Keenan, S., and Han, M. (2002). <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=fzr-1" target="_blank">fzr-1</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-35" target="_blank">lin-35</a></em></span>/Rb function redundantly to control cell proliferation in <span class="emphasis"><em>C. elegans</em></span> as revealed by a nonbiased synthetic screen. Genes Dev. <span class="emphasis"><em>16</em></span>, 503&#8211;517.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11850412&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1101/gad.952302" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib23"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Feng, H., Zhong, W., Punkosdy, G., Gu, S., Zhou, L., Seabolt, E.K., and Kipreos, E.T. (1999). <a href="http://www.wormbase.org/db/seq/protein?name=CUL-2;class=protein" target="_blank">CUL-2</a> is required for the G<sub>1</sub>-to-S-phase transition and mitotic chromosome condensation in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Nat. Cell Biol. <span class="emphasis"><em>1</em></span>, 486&#8211;492.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10587644&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/70272" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib24"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Fisher, R.P., and Morgan, D.O. (1994). A novel cyclin associates with MO15/CDK7 to form the CDK-activating kinase. Cell <span class="emphasis"><em>78</em></span>, 713&#8211;724.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8069918&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/0092-8674(94)90535-5" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib25"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Fukuyama, M., Gendreau, S.B., Derry, W.B., and Rothman, J.H. (2003). Essential embryonic roles of the <a href="http://www.wormbase.org/db/seq/protein?name=CKI-1;class=protein" target="_blank">CKI-1</a> cyclin-dependent kinase inhibitor in cell-cycle exit and morphogenesis in <span class="emphasis"><em>C. elegans</em></span>. Dev. Biol. <span class="emphasis"><em>260</em></span>, 273&#8211;286.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12885569&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0012-1606(03)00239-2" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib26"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Furukawa, M., He, Y.J., Borchers, C., and Xiong, Y. (2003). Targeting of protein ubiquitination by BTB-Cullin 3-Roc1 ubiquitin
+                        ligases. Nat. Cell Biol. <span class="emphasis"><em>5</em></span>, 1001&#8211;1007.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=14528312&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/ncb1056" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib27"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Furuta, T., Tuck, S., Kirchner, J., Koch, B., Auty, R., Kitagawa, R., Rose, A.M., and Greenstein, D. (2000). <a href="http://www.wormbase.org/db/seq/protein?name=EMB-30;class=protein" target="_blank">EMB-30</a>: an APC4 homologue required for metaphase-to-anaphase transitions during meiosis and mitosis in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Mol. Biol. Cell <span class="emphasis"><em>11</em></span>, 1401&#8211;1419.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10749938&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib28"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Gartner, A., Milstein, S., Ahmed, S., Hodgkin, J., and Hengartner, M.O. (2000). A conserved checkpoint pathway mediates DNA
+                        damage--induced apoptosis and cell cycle arrest in <span class="emphasis"><em>C. elegans</em></span>. Mol. Cell <span class="emphasis"><em>5</em></span>, 435&#8211;443.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10882129&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S1097-2765(00)80438-4" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib29"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Golden, A., Sadler, P.L., Wallenfang, M.R., Schumacher, J.M., Hamill, D.R., Bates, G., Bowerman, B., Seydoux, G., and Shakes,
+                        D.C. (2000). Metaphase to anaphase (<span class="emphasis"><em>mat</em></span>) transition-defective mutants in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. J. Cell Biol. <span class="emphasis"><em>151</em></span>, 1469&#8211;1482.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11134076&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1083/jcb.151.7.1469" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib30"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Hedgecock, E.M., and White, J.G. (1985). Polyploid tissues in the nematode <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Dev. Biol. <span class="emphasis"><em>107</em></span>, 128&#8211;133.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=2578115&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/0012-1606(85)90381-1" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib31"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Hofmann, E.R., Milstein, S., Boulton, S.J., Ye, M., Hofmann, J.J., Stergiou, L., Gartner, A., Vidal, M., and Hengartner, M.O.
+                        (2002). <span class="emphasis"><em>Caenorhabditis elegans</em></span> <a href="http://www.wormbase.org/db/seq/protein?name=HUS-1;class=protein" target="_blank">HUS-1</a> is a DNA damage checkpoint protein required for genome stability and EGL-1-mediated apoptosis. Curr. Biol. <span class="emphasis"><em>12</em></span>, 1908&#8211;1918.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12445383&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0960-9822(02)01262-9" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib32"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Hong, Y., Roy, R., and Ambros, V. (1998). Developmental regulation of a cyclin-dependent kinase inhibitor controls postembryonic
+                        cell cycle progression in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Development <span class="emphasis"><em>125</em></span>, 3585&#8211;3597.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=9716524&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib33"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Kipreos, E.T., Gohel, S.P., and Hedgecock, E.M. (2000). The <span class="emphasis"><em>C. elegans</em></span> F-box/WD-repeat protein <a href="http://www.wormbase.org/db/seq/protein?name=LIN-23;class=protein" target="_blank">LIN-23</a> functions to limit cell division during development. Development <span class="emphasis"><em>127</em></span>, 5071&#8211;5082.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11060233&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib34"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Kipreos, E.T., Lander, L.E., Wing, J.P., He, W.W., and Hedgecock, E.M. (1996). <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cul-1" target="_blank">cul-1</a></em></span> is required for cell cycle exit in <span class="emphasis"><em>C. elegans</em></span> and identifies a novel gene family. Cell <span class="emphasis"><em>85</em></span>, 829&#8211;839.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8681378&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0092-8674(00)81267-2" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib35"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Kipreos, E.T., and Pagano, M. (2000). The F-box protein family. Genome Biol. 1, REVIEWS3002.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11178263&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib36"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Kitagawa, R., Law, E., Tang, L., and Rose, A.M. (2002). The Cdc20 homolog, <a href="http://www.wormbase.org/db/seq/protein?name=FZY-1;class=protein" target="_blank">FZY-1</a>, and its interacting protein, <a href="http://www.wormbase.org/db/seq/protein?name=IFY-1;class=protein" target="_blank">IFY-1</a>, are required for proper chromosome segregation in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Curr. Biol. <span class="emphasis"><em>12</em></span>, 2118&#8211;2123.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12498686&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0960-9822(02)01392-1" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib37"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Kitagawa, R., and Rose, A.M. (1999). Components of the spindle-assembly checkpoint are essential in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Nat. Cell Biol. <span class="emphasis"><em>1</em></span>, 514&#8211;521.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10587648&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/70309" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib38"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Kostic, I., Li, S., and Roy, R. (2003). <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cki-1" target="_blank">cki-1</a></em></span> links cell division and cell fate acquisition in the <span class="emphasis"><em>C. elegans</em></span> somatic gonad. Dev. Biol. <span class="emphasis"><em>263</em></span>, 242&#8211;252.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=14597199&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.ydbio.2003.07.001" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib39"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Kostic, I., and Roy, R. (2002). Organ-specific cell division abnormalities caused by mutation in a general cell cycle regulator
+                        in <span class="emphasis"><em>C. elegans</em></span>. Development <span class="emphasis"><em>129</em></span>, 2155&#8211;2165.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11959825&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib40"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Kreutzer, M.A., Richards, J.P., De Silva-Udawatta, M.N., Temenak, J.J., Knoblich, J.A., Lehner, C.F., and Bennett, K.L. (1995).
+                        <span class="emphasis"><em>Caenorhabditis elegans</em></span> cyclin A- and B-type genes: a cyclin A multigene family, an ancestral cyclin B3 and differential germline expression. J.
+                        Cell Sci. 108 (Pt 6), 2415-2424.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=7545687&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib41"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Lamitina, S.T., and L'Hernault, S.W. (2002). Dominant mutations in the <span class="emphasis"><em>Caenorhabditis elegans</em></span> Myt1 ortholog <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=wee-1.3" target="_blank">wee-1.3</a> </em></span>reveal a novel domain that controls M-phase entry during spermatogenesis. Development <span class="emphasis"><em>129</em></span>, 5009&#8211;5018.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12397109&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib42"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Liu, J., and Kipreos, E.T. (2000). Evolution of cyclin-dependent kinases (CDKs) and CDK-activating kinases (CAKs): differential
+                        conservation of CAKs in yeast and metazoa. Mol. Biol. Evol. <span class="emphasis"><em>17</em></span>, 1061&#8211;1074.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10889219&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib43"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Liu, J., Vasudevan, S., and Kipreos, E.T. (2004). <a href="http://www.wormbase.org/db/seq/protein?name=CUL-2;class=protein" target="_blank">CUL-2</a> and <a href="http://www.wormbase.org/db/seq/protein?name=ZYG-11;class=protein" target="_blank">ZYG-11</a> promote meiotic anaphase II and the proper placement of the anterior-posterior axis in <span class="emphasis"><em>C. elegans</em></span>. Development <span class="emphasis"><em>131</em></span>, 3513&#8211;3525.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15215209&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1242/dev.01245" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib44"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Meyer, C.A., Jacobs, H.W., Datar, S.A., Du, W., Edgar, B.A., and Lehner, C.F. (2000). <span class="emphasis"><em>Drosophila</em></span> Cdk4 is required for normal growth and is dispensable for cell cycle progression. EMBO J. <span class="emphasis"><em>19</em></span>, 4533&#8211;4542.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10970847&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1093/emboj/19.17.4533" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib45"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Myers, T.R., and Greenwald, I. (2005). <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-35" target="_blank">lin-35</a></em></span> Rb acts in the major hypodermis to oppose ras-mediated vulval induction in <span class="emphasis"><em>C. elegans</em></span>. Dev. Cell <span class="emphasis"><em>8</em></span>, 117&#8211;123.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15621535&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.devcel.2004.11.015" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib46"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Mori, H., Palmer, R.E., and Sternberg, P.W. (1994). The identification of a <span class="emphasis"><em>Caenorhabditis elegans</em></span> homolog of p34cdc2 kinase. Mol. Gen Genet. <span class="emphasis"><em>245</em></span>, 781&#8211;786.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=7830726&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1007/BF00297285" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib47"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Nystul, T.G., Goldmark, J.P., Padilla, P.A., and Roth, M.B. (2003). Suspended animation in <span class="emphasis"><em>C. elegans</em></span> requires the spindle checkpoint. Science <span class="emphasis"><em>302</em></span>, 1038&#8211;1041.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=14605367&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1126/science.1089705" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib48"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Park, M., and Krause, M.W. (1999). Regulation of postembryonic G(1) cell cycle progression in<span class="emphasis"><em>Caenorhabditis elegans</em></span> by a cyclin D/CDK-like complex. Development <span class="emphasis"><em>126</em></span>, 4849&#8211;4860.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10518501&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib49"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Pintard, L., Willis, J.H., Willems, A., Johnson, J.L., Srayko, M., Kurz, T., Glaser, S., Mains, P.E., Tyers, M., Bowerman,
+                        B. et al. (2003). The BTB protein <a href="http://www.wormbase.org/db/seq/protein?name=MEL-26;class=protein" target="_blank">MEL-26</a> is a substrate-specific adaptor of the <a href="http://www.wormbase.org/db/seq/protein?name=CUL-3;class=protein" target="_blank">CUL-3</a> ubiquitin-ligase. Nature <span class="emphasis"><em>425</em></span>, 311&#8211;316.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=13679921&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nature01959" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib50"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Saito, R.M., Perreault, A., Peach, B., Satterlee, J.S., and van den Heuvel, S. (2004). The <a href="http://www.wormbase.org/db/seq/protein?name=CDC-14;class=protein" target="_blank"><a href="http://www.wormbase.org/db/seq/protein?name=CDC-14;class=protein" target="_blank">CDC-14</a></a> phosphatase controls developmental cell-cycle arrest in <span class="emphasis"><em>C. elegans</em></span>. Nat. Cell Biol. <span class="emphasis"><em>6</em></span>, 777&#8211;783.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15247923&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/ncb1154" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib51"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Schumacher, B., Hofmann, K., Boulton, S., and Gartner, A. (2001). The <span class="emphasis"><em>C. elegans</em></span> homolog of the p53 tumor suppressor is required for DNA damage-induced apoptosis. Curr. Biol. <span class="emphasis"><em>11</em></span>, 1722&#8211;1727.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11696333&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0960-9822(01)00534-6" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib52"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Schumacher, B., Schertel, C., Wittenburg, N., Tuck, S., Mitani, S., Gartner, A., Conradt, B., and Shaham, S. (2005). <span class="emphasis"><em>C. elegans</em></span> <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=ced-13" target="_blank">ced-13</a></em></span> can promote apoptosis and is induced in response to DNA damage. Cell Death Differ <span class="emphasis"><em>12</em></span>, 153&#8211;161.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15605074&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/sj.cdd.4401539" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib53"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Sherr, C.J., and Roberts, J.M. (1999). CDK inhibitors: positive and negative regulators of G1-phase progression. Genes Dev.
+                        <span class="emphasis"><em>13</em></span>, 1501&#8211;1512.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10385618&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib54"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Shiekhattar, R., Mermelstein, F., Fisher, R.P., Drapkin, R., Dynlacht, B., Wessling, H.C., Morgan, D.O., and Reinberg, D.
+                        (1995). Cdk-activating kinase complex is a component of human transcription factor TFIIH. Nature <span class="emphasis"><em>374</em></span>, 283&#8211;287.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=7533895&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/374283a0" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib55"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Shim, E.Y., Walker, A.K., Shi, Y., and Blackwell, T.K. (2002). <a href="http://www.wormbase.org/db/seq/protein?name=CDK-9;class=protein" target="_blank">CDK-9</a>/cyclin T (P-TEFb) is required in two postinitiation pathways for transcription in the <span class="emphasis"><em>C. elegans</em></span> embryo. Genes Dev. <span class="emphasis"><em>16</em></span>, 2135&#8211;2146.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12183367&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1101/gad.999002" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib56"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Sonneville, R., and Gonczy, P. (2004). <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=zyg-11" target="_blank">zyg-11</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cul-2" target="_blank">cul-2</a></em></span> regulate progression through meiosis II and polarity establishment in <span class="emphasis"><em>C. elegans</em></span>. Development <span class="emphasis"><em>131</em></span>, 3527&#8211;3543.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15215208&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1242/dev.01244" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib57"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Stevaux, O., and Dyson, N.J. (2002). A revised picture of the E2F transcriptional network and RB function. Curr. Opin. Cell
+                        Biol. <span class="emphasis"><em>14</em></span>, 684&#8211;691.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12473340&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0955-0674(02)00388-5" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib58"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Sulston, J.E., and Horvitz, H.R. (1977). Post-embryonic cell lineages of the nematode,<span class="emphasis"><em>Caenorhabditis elegans</em></span>. Dev. Biol. <span class="emphasis"><em>56</em></span>, 110&#8211;156.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=838129&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/0012-1606(77)90158-0" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib59"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Sulston, J.E., Schierenberg, E., White, J.G., and Thomson, J.N. (1983). The embryonic cell lineage of the nematode <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Dev. Biol. <span class="emphasis"><em>100</em></span>, 64&#8211;119.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=6684600&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/0012-1606(83)90201-4" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib60"></a><p class="bibliomixed">
+                             <span class="bibliomisc">van den Heuvel, S. (2004). Protein degradation: <a href="http://www.wormbase.org/db/seq/protein?name=CUL-3;class=protein" target="_blank">CUL-3</a> and BTB--partners in proteolysis. Curr. Biol. <span class="emphasis"><em>14</em></span>, R59&#8211;R61.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=14738749&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0960-9822(03)00964-3" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib61"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Wallenfang, M.R., and Seydoux, G. (2002). <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=cdk-7" target="_blank">cdk-7</a></em></span> is required for mRNA transcription and cell cycle progression in <span class="emphasis"><em>Caenorhabditis elegans</em></span> embryos. Proc. Natl. Acad. Sci. USA <span class="emphasis"><em>99</em></span>, 5527&#8211;5532.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11960010&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1073/pnas.082618399" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib62"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Wei, W., Ayad, N.G., Wan, Y., Zhang, G.J., Kirschner, M.W., and Kaelin, W.G., Jr. (2004). Degradation of the SCF component
+                        Skp2 in cell-cycle phase <a href="http://www.wormbase.org/db/get?name=G1;class=Cell" target="_blank">G1</a> by the anaphase-promoting complex. Nature <span class="emphasis"><em>428</em></span>, 194&#8211;198.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15014503&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nature02381" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib63"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Xu, L., Wei, Y., Reboul, J., Vaglio, P., Shin, T.H., Vidal, M., Elledge, S.J., and Harper, J.W. (2003). BTB proteins are substrate-specific
+                        adaptors in an SCF-like modular ubiquitin ligase containing <a href="http://www.wormbase.org/db/seq/protein?name=CUL-3;class=protein" target="_blank">CUL-3</a>. Nature <span class="emphasis"><em>425</em></span>, 316&#8211;321.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=13679922&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nature01985" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib64"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Yanowitz, J., and Fire, A. (2005). Cyclin D involvement demarcates a late transition in <span class="emphasis"><em>C. elegans</em></span> embryogenesis. Dev. Biol. <span class="emphasis"><em>279</em></span>, 244&#8211;251.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15708572&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.ydbio.2004.12.022" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib65"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Zhong, W., Feng, H., Santiago, F.E., and Kipreos, E.T. (2003). <a href="http://www.wormbase.org/db/seq/protein?name=CUL-4;class=protein" target="_blank">CUL-4</a> ubiquitin ligase maintains genome stability by restraining DNA-replication licensing. Nature <span class="emphasis"><em>423</em></span>, 885&#8211;889.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12815436&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nature01747" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="footnotes"><br><hr width="100" align="left">
+            <div class="footnote">
+               <p><sup><a name="ftn.d0e8" href="#d0e8">*</a></sup>Edited by James M. Kramer and Donald G. Moerman. Last revised May 13, 2005. Published September 21, 2005. This chapter should
+                  be cited as: van den Heuvel, S. Cell-cycle regulation (September 21, 2005), <span class="emphasis"><em>WormBook</em></span>, ed. The <span class="emphasis"><em>C. elegans</em></span> Research Community, WormBook, doi/10.1895/wormbook.1.28.1, <a href="http://www.wormbook.org" target="_top">http://www.wormbook.org</a>.
+               </p>
+               <p><span class="bold"><strong>Copyright:</strong></span> &copy; 2005 Sander van den Heuvel. This is an open-access article distributed under the terms of the Creative Commons Attribution
+                  License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source
+                  are credited.
+               </p>
+            </div>
+            <div class="footnote">
+               <p><sup><a name="ftn.d0e32" href="#d0e32">&sect;</a></sup>To whom correspondence should be addressed. E-mail: <a href="mailto:heuvel@helix.mgh.harvard.edu" target="_top">heuvel@helix.mgh.harvard.edu</a></p>
+			   <p><img src="somerights20.gif" alt="Creative Commons License" align="middle" border="0"> All WormBook content, except where otherwise noted, is licensed under a <a href="http://creativecommons.org/licenses/by/2.5/" title="Creative Commons Attribution License" target="_blank">Creative Commons Attribution License</a>.</p>
+            </div>
+         </div>
+      </div>
+   <!--#include virtual="/ssi/footer.html" --></body>
+</html>
+
+
+

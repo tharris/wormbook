@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY microarray_Refs SYSTEM 'microarrayrefs.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="WMmicroarray_ArticleID">
+	<articleinfo>
+        <!--see DocBook's authorgroup element -->
+		<title>Profiling <emphasis>C. elegans</emphasis> gene expression with DNA microarrays<footnote>
+				<para>Edited by Oliver Hobert. WormMethods editor, Victor Ambros. Last revised May 3, 2005. Published January 20, 2006. This chapter should be cited as: Portman, D. S. Profiling <emphasis>C. elegans</emphasis> gene expression with DNA microarrays (January 20, 2006), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.104.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+		<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2006 Douglas S. Portman. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+			</footnote>	
+		</title>
+<!--		<revhistory>
+			<revision>
+				<revnumber>1.0</revnumber>
+				<date>Last revised 5/21/05</date>
+			</revision>
+		</revhistory>
+-->
+		<author>
+			<firstname>Douglas S.</firstname>
+			<surname>Portman<remark>
+					<footnote>
+						<para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:douglas.portman@rochester.edu">douglas.portman@rochester.edu</ulink></para>
+					</footnote>
+				</remark>
+			</surname>
+			<affiliation>
+				<address>Center for Aging and Developmental Biology, Department of Biomedical Genetics, University of Rochester School of Medicine and Dentistry, Rochester, NY 14642 USA</address>
+			</affiliation>
+		</author>
+</articleinfo>
+            <para>DNA microarrays, along with high-throughput RNAi screens, are the first fruits of the "functional genomics" movement available to <emphasis>C. elegans</emphasis> researchers. By immobilizing miniaturized DNA probes that span the genome, DNA microarrays allow the rapid and economical&#x02014;at least when compared with performing 20,000 Northern blots&#x02014;assessment of the level of expression of essentially every <emphasis>C. elegans</emphasis> gene. Microarrays have been successfully used by <emphasis>C. elegans</emphasis> researchers to probe gene expression in specific tissues including the germline (<link linkend="bib24">Reinke et al., 2000</link><!-- PMID 11030340-->), pharynx (<link linkend="bib9">Gaudet and Mango, 2002</link><!-- PMID 11823633-->), muscle (<link linkend="bib27">Roy et al., 2002</link><!-- PMID 12214599-->) and neurons (<link linkend="bib6">Cinar et al., 2005</link><!-- PMID 15723795-->; <link linkend="bib7">Colosimo et al., 2004</link><!-- PMID 15620651-->; <link linkend="bib8">Fox et al., 2005</link><!-- PMID 15780142-->; <link linkend="bib15">Kunitomo et al., 2005</link><!-- PMID 15693946-->; <link linkend="bib23">Portman and Emmons, 2004</link><!-- PMID 15183729-->), and to investigate changes in gene expression associated with development (<link linkend="bib11">Hill et al., 2000</link><!-- PMID 11052945-->; <link linkend="bib12">Jiang et al., 2001</link><!-- PMID 11134517-->), aging (<link linkend="bib10">Golden and Melov, 2004</link><!-- PMID 15153179-->; <link linkend="bib18">Lund et al., 2002</link><!-- PMID 12372248-->; <link linkend="bib19">McCarroll et al., 2004</link><!-- PMID 14730301-->; <link linkend="bib20">McElwee et al., 2004</link><!-- PMID 15308663-->; <link linkend="bib21">Murphy et al., 2003</link><!-- PMID 12845331-->) and other processes. For a very basic primer on microarray technology, see <ulink url="http://www.ncbi.nlm.nih.gov/About/primer/microarrays.html" role="_blank">http://www.ncbi.nlm.nih.gov/About/primer/microarrays.html</ulink>.</para>
+<para>At the same time, the seductive power of DNA microarrays can obscure their potential drawbacks. A successful DNA microarray experiment requires careful experimental design, a strategy for the validation of hits, and an underlying hypothesis. For most <emphasis>C. elegans</emphasis> microarray experiments, arrays themselves are merely the means to an end, namely, the identification of specific regulated genes. Beware the temptation to carry out a microarray study simply because it is possible: this is an excellent way to become mired in a sea of data without learning much about biology.</para>
+            <para>Because of their highly technical nature, microarray experiments are best done in collaboration with an on-site core facility or other group of experts. Most institutions now have functional genomics facilities that can provide the equipment and expertise needed. If satisfactory local facilities are not available, it is sometimes possible to "outsource" the work to another institution's facility. The choice of a group of collaborators is essential to the success of these experiments; be sure that the group you choose has the experience your studies will require before making a commitment.</para>
+            <para>Because the specific techniques necessary for microarray experiments will depend heavily on experimental design, the source of RNA and the microarray platform to be used, this section cannot be an exhaustive source for all methods. In some cases, readers are referred other relevant sources. In particular, close consultation with a core facility is advised before, during and after carrying out microarray work. Here we provide a discussion of the options for carrying out microarray experiments and offer some practical advice for experimental design and for dealing with <emphasis>C. elegans</emphasis>-specific issues of nematode culture and RNA isolation. For more general information on constructing, using and interpreting data generated by DNA microarrays, refer to one of the many recent texts on the subject.</para>
+    <sect1>
+            <title>Planning your experiment</title>
+            <sect2>
+                <title>Test a hypothesis</title>
+                <para>Not surprisingly, the most successful microarray experiments are those that are carefully designed and carried out with attention to detail. Ideally, microarray studies are undertaken to test a specific underlying hypothesis. A hypothesis along the lines of "We believe that specific patterns of gene expression are associated with X" may not seem especially fulfilling, but it's a good starting point. Only if the underlying biology of the system remains the top priority will a microarray experiment fulfill its potential, and only if a strategy exists for interpreting and following up on the data, whether this be at the individual-gene or genome-wide level, should it be considered. At the same time, it's important not to be blinded by a pre-existing hypothesis, as microarray experiments may point you in a direction you hadn't considered previously.</para>
+                <para>Resist the temptation to be too ambitious. Keep experimental design as simple as possible, ideally changing only one parameter. If your long-term goal is to carry out multivariate analysis&#x02014;for example, examining multiple environmental changes at multiple developmental stages in both sexes&#x02014;restrict your initial experiments to just one variable. Then vary another dimension while holding the first constant at some optimal value. Varying multiple conditions simultaneously will lead not only to the use of a huge number of arrays, it will excessively complicate data analysis.</para>
+            </sect2>
+            <sect2>
+                <title>Experimental paradigms</title>
+                <para>Two general paradigms have been used for gene expression profiling studies in <emphasis>C. elegans</emphasis> using DNA microarrays. In the first, organism-wide changes in gene expression resulting from developmental time, age, sex, environmental factors, or other experimental manipulations are examined. This general approach has been very successful for identifying changes in gene expression patterns without specific focus on one cell or tissue type. Note that this approach certainly does not prevent the identification of genes expressed tissue-specifically, but rather that the emphasis is at an organismal, rather than tissue-specific, level. In these experiments, cultures with sufficient numbers of animals to yield enough RNA for labeling and hybridization are grown. Particular attention must be given to ensuring that the only difference between the samples is the one that the experimenter intends, since very subtle differences in culture conditions, age and other factors can lead to an unacceptably high number of biologically false positives.</para>
+                <para>The second type of microarray experiment carried out by <emphasis>C. elegans</emphasis> biologists aims to identify patterns of gene expression associated with a specific cell or organ type. Because, with the exception of the germline, <emphasis>C. elegans</emphasis> tissues are not easily dissected out, and because of the very small amounts of RNA obtained from individual animals, it is not generally possible to isolate particular cell types from intact worms for transcript profiling. Unfortunately, efforts to dissociate cells from larvae or adults and purify specific cell types based on the expression of fluorescent markers have not been successful. Because of this, three alternatives can be considered to carry out these sorts of studies.</para>
+                <sect3>
+                    <title>Mutant comparison</title>
+					<para>mRNA profiles from intact animals can be compared between wild-type and mutant strains (or between two mutants) in which the tissue of interest is absent or otherwise affected. This approach has been successfully used to identify large numbers of genes expressed specifically in the <emphasis>C. elegans</emphasis> germline (<link linkend="bib24">Reinke et al., 2000</link><!-- PMID 11030340-->), pharynx (<link linkend="bib9">Gaudet and Mango, 2002</link><!-- PMID 11823633-->) and male tail rays (<link linkend="bib23">Portman and Emmons, 2004</link><!-- PMID 15183729-->), among others. This approach requires the availability of a viable mutant in which the cells of interest are specifically compromised but the rest of the animal is intact. An advantage of this strategy is that it does not require any complex experimental manipulations to obtain RNA. However, this approach is highly sensitive to any unexpected differences between the two samples (<link linkend="bib23">Portman and Emmons, 2004</link><!-- PMID 15183729-->) and to artifactual differences arising from slight differences in the developmental stage or culture conditions in two strains. Moreover, a mutation that affects the tissue of interest with sufficiently high specificity may not be available. Even if one is found, differences in small numbers of cells may be difficult or impossible to detect when set against a constant high background from the rest of the organism.</para>
+                </sect3>
+                <sect3>
+                    <title>Sorting cultured cells</title>
+                    <para>The recent development of embryonic primary cell culture techniques for <emphasis>C. elegans</emphasis> (<link linkend="bib5">Christensen et al., 2002</link><!-- PMID 11856526-->) provides an excellent opportunity to profile gene expression in specific cell types. The development of cells expressing specific differentiation markers for neurons and muscle cells has been observed <emphasis>in vitro</emphasis>, and the generation of other cell types may be possible under the appropriate conditions. By culturing cells isolated from transgenic embryos carrying a fluorescent marker expressed exclusively in the cell type of interest, FACS technology can be used to purify cells carrying the marker. RNA is then isolated from these cells, amplified, and used to produce microarray hybridization probes. This technique has recently been successfully used to profile patterns of gene expression in touch neurons (<link linkend="bib26">Zhang et al., 2002</link><!-- PMID 12124626-->), olfactory neurons (<link linkend="bib7">Colosimo et al., 2004</link><!-- PMID 15620651-->) and motor neurons (<link linkend="bib6">Cinar et al., 2005</link><!-- PMID 15723795-->; <link linkend="bib8">Fox et al., 2005</link><!-- PMID 15780142-->). Because of the complexity and continuing optimization of this strategy, specific protocols are not given here for cell culture or sorting; refer to the primary literature for guidance (<link linkend="bib5">Christensen et al., 2002</link><!-- PMID 11856526-->; <link linkend="bib6">Cinar et al., 2005</link><!-- PMID 15723795-->; <link linkend="bib7">Colosimo et al., 2004</link><!-- PMID 15620651-->; <link linkend="bib8">Fox et al., 2005</link><!-- PMID 15780142-->; <link linkend="bib26">Zhang et al., 2002</link><!-- PMID 12124626-->). The obvious advantage of this approach lies in its potential to identify a large number of specifically expressed genes with a relatively low rate of false positives. Drawbacks, however, include the technically intensive nature of primary cell culture, cell sorting, and the small amount of RNA that is obtained, necessitating amplification procedures that can introduce bias. Additionally, this approach necessitates the availability of a specifically-expressed marker, and requires that the cell type of interest can be efficiently generated in culture (post-embryonically derived cells, for example, do not generally arise in primary embryonic cell cultures; <link linkend="bib5">Christensen et al., 2002</link><!-- PMID 11856526-->).</para>
+                </sect3>
+                <sect3>
+                    <title>RNA immunopurification</title>
+                    <para>A third approach to profiling gene expression in a single cell type is the elegant strategy known as "mRNA-tagging." In this approach, cytoplasmic mRNA is epitope-tagged by expressing a FLAG-tagged RNA-binding protein (generally the poly-A binding protein <ulink url="http://www.wormbase.org/db/seq/protein?name=PAB-1;class=protein" role="_blank">PAB-1</ulink>) under the control of a cell-type-specific promoter. Animals carrying this transgene are then lysed; mRNAs present in the cell type of interest can be specifically immunopurified using antibodies against the epitope tag. This approach has been successfully used to identify a large number of muscle-specific transcripts (<link linkend="bib27">Roy et al., 2002<!-- PMID 12214599--></link>). Recently, this approach has also been productively applied to identify expression profiles in ciliated sensory neurons (<link linkend="bib15">Kunitomo et al., 2005</link><!-- PMID 15693946-->). Opportunities for increasing the specificity of mRNA-tagging may come from the use of improved epitope tags, the use of other RNA-binding or ribosomal proteins, and careful control over the expression levels of the tagged transgene.</para>
+                    <para>In principle, more complex experiments could be designed that incorporate features of both of these general paradigms for transcriptional profiling. For example, one can imagine an experimental strategy designed to detect changes in gene expression in a particular tissue type that occur with development, aging, or changes in environmental conditions. Clearly, the complexity of these experiments makes them significantly more technically challenging. Lastly, another potential use for DNA microarrays is in the study of DNA-protein interaction. DNA fragments isolated by chromatin immunoprecipitation (ChIP) can be hybridized to a whole-genome "tiling" array to determine the targets of a particular DNA-binding protein at a genomic level (<link linkend="bib4">Buck and Lieb, 2004</link><!-- PMID 14986705-->). A <emphasis>C. elegans</emphasis> tiling array is not yet available to the community, though this is an area in which we can expect future progress.</para>
+                </sect3>
+            </sect2>
+           <sect2>
+                    <title>Alternatives to DNA microarrays</title>
+                    <para>The time, cost, and effort involved in carrying out an array experiment makes the consideration of alternatives worthwhile in some cases.</para>
+                <sect3>
+                    <title>SAGE</title>s
+                    <para>This technique, "Serial Analysis of Gene Expression," is the primary competitor to DNA microarrays for the large-scale profiling of transcription patterns (<link linkend="bib25">Velculescu et al., 1995</link><!-- PMID 7570003-->). Rather than hybridizing cDNA to immobilized probes, fragments from the 3' ends of cDNAs are ligated together and the resulting concatamers are sequenced. These sequenced tags can then be mapped to infer the specific mRNA from which they arose. Detailed information about this technique is available at: <ulink url="http://www.sagenet.org" role="_blank">www.sagenet.org</ulink>. A large-scale SAGE project in <emphasis>C. elegans</emphasis> is currently underway at the Genome Sequence Centre in Vancouver (<link linkend="bib13">Jones et al., 2001</link><!-- PMID 11483575-->). Advantages to SAGE are that no special equipment other than high-throughput DNA sequencing apparatus is required, unannotated genes can be detected (whereas microarrays can only detect genes for which probes are present), and SAGE may be better at detecting low-abundance mRNAs. SAGE also allows direct quantitation of the relative expression levels of different genes. On the other hand, SAGE can be slower than other methods, since a great deal of sequencing may be required to achieve the coverage provided by a microarray experiment. Moreover, it is difficult to control for biological reproducibility in a SAGE experiment, since pairwise comparisons between biological replicates involve significant effort and have not yet been generally reported. In terms of cost, SAGE is flexible, since it allows control over the amount of sequence information that investigators wish to obtain.</para>
+                </sect3>
+                <sect3>
+                <title>Mine existing data</title>
+                        <para>Consider the possibility that data already generated by members of the <emphasis>C. elegans</emphasis> community might be able to answer some of your questions of interest. A great deal of microarray data is available publicly from the Stanford Microarray Database (<ulink url="http://genome-www5.stanford.edu" role="_blank">genome-www5.stanford.edu</ulink>), <ulink url="http://www.wormbase.org" role="_blank">Wormbase</ulink>, and directly from researchers who have performed these experiments. As discussed below, the abundance of data generated by a single array experiment is both a blessing and a curse, and it is virtually certain that creative analysis of existing datasets will reveal new information. It is quite possible that at least some of the answers you seek are already lurking in the dusty corners of someone else's data. Also, consider taking advantage of meta-analyses of array data, clustering approaches that can be helpful in identifying new genes whose expression patterns are related to those of interest (<link linkend="bib14">Kim et al., 2001</link><!-- PMID 11557892-->; <link linkend="bib17">Lee and Batzoglou, 2003</link><!-- PMID 14611662-->; <link linkend="bib22">Owen et al., 2003</link><!-- PMID 12902378-->).</para>
+                </sect3>
+            </sect2>
+            <sect2>
+                <title>Sources of arrays</title>
+                <para>The <emphasis>C. elegans</emphasis> community was introduced to microarrays through the efforts of Stuart Kim. His group at Stanford developed the first <emphasis>C. elegans</emphasis> arrays in the late 1990s, followed by whole-genome arrays shortly thereafter. With funding from NCRR, their facility generously provided hybridization and scanning services free of charge to the <emphasis>C. elegans</emphasis> community, a resource which was taken advantage of by many groups. Data from many of these early array experiments are available from the Stanford Microarray Database, (<ulink url="http://genome-www5.stanford.edu" role="_blank">genome-www5.stanford.edu</ulink>). Because of the evolution of array technology and the availability of arrays from other sources, the Stanford group no longer provides a no-cost service to the community at large. However, the Stanford Functional Genomics Facility continues to provide these arrays, as well as hybridization and data analysis services, for a fee; for more information on this option, consult their website, <ulink url="http://www.microarray.org/sfgf/jsp/home.jsp" role="_blank">http://www.microarray.org/sfgf/jsp/home.jsp</ulink>. In addition to this service, several alternative options exist for those who wish to take advantage of microarray technology.</para>
+                    <sect3>
+                        <title>Affymetrix</title>
+                        <para>This company, one of the pioneers of commercial microarrays, produces "GeneChips" for use with their proprietary hybridization and scanning equipment. The <emphasis>C. elegans</emphasis> gene chip, introduced in 2002, contains probes for over 22,500 transcripts, and the precise genomic location of each probe is available from Affymetrix online (<ulink url="http://www.affymetrix.com" role="_blank">www.affymetrix.com</ulink>). Several published works have resulted from the use of GeneChip technology (<link linkend="bib6">Cinar et al., 2005</link><!-- PMID 15723795-->; <link linkend="bib7">Colosimo et al., 2004</link><!-- PMID 15620651-->; <link linkend="bib8">Fox et al., 2005</link><!-- PMID 15780142-->; <link linkend="bib11">Hill et al., 2000</link><!-- PMID 11052945-->). The GeneChip platform takes advantage of technology whereby short oligos are directly synthesized <emphasis>in situ</emphasis> on a glass slide; by constructing a panel of short probe and control oligos for each gene, these arrays are thought to be able to sensitively discriminate between genuine hybridization signals and background noise. In addition, data from these arrays is highly quantitative. Affymetrix arrays are not used for the hybridization of dual-labeled probes on a single slide; rather, because of their high reproducibility, samples are compared between chips. A large user community and extensive experience with this platform at many facilities make the GeneChip a good choice for many users. Additionally, the company provides extensive protocols and software for data analysis. One downside is the cost; Affymetrix chips are not inexpensive and can be used only once and only for one sample. Specific protocols for using GeneChip arrays are not given here; refer to the Affymetrix web site and/or consult your local facility for more information.</para>
+                    </sect3>
+                    <sect3>
+                        <title>Printed long-oligo arrays</title>
+                        <para>Advances in oligonucleotide-synthesis technology have made long single-stranded oligos a popular choice for use as immobilized probes (<link linkend="bib1">Barczak et al., 2003</link><!-- PMID 12805270-->). A number of groups have printed long-oligo chips that are available for a fee to the <emphasis>C. elegans</emphasis> community. With support from NHGRI and HHMI, the Genome Sequencing Center at Washington University in St. Louis has produced long-oligo whole-genome <emphasis>C. elegans</emphasis> arrays that are available to academic researchers worldwide. While researchers' experience with these arrays is still limited, initial results have been quite promising. Arrays are supplied ready to use; cDNA labeling, hybridization and scanning are performed at the local user's facility-preferably in close consultation with staff that are familiar with the use of printed-oligo chips. Detailed labeling protocols (using Genisphere 3DNA technology) and instructions for hybridization are available from the GSC, though users are free to use the techniques of their choice. For more information on the GSC arrays and recommended protocols, consult their website at: <ulink url="http://genomeold.wustl.edu/projects/celegans/microarray/index.php" role="_blank">www.genome.wustl.edu/ projects/celegans/microarray/index.php</ulink>. For those that do not have a suitable on-site facility, the Microarray Core at Washington University will, for a fee, accept outside users' RNA samples and perform amplification, labeling, hybridization, scanning and data analysis using these arrays.</para>
+                        <para>In collaboration with Operon, the Microarray Laboratory at the Samuel Lunenfeld Research Institute of Mount Sinai Hospital in Toronto is also producing whole-genome long-oligo arrays. More information on the "<emphasis>C. elegans</emphasis> 20K array" and recommended protocols are available at: <ulink url="http://www.mshri.on.ca/microarray/" role="_blank">http://www.mshri.on.ca/microarray</ulink>. Initial results indicate that this chip performs quite well when compared side-by-side to other platforms. This facility will also perform array services to members of the academic community on a fee-for-service basis. As more institutions generate arrays, the resources available to the <emphasis>C. elegans</emphasis> research community is likely to grow.</para>
+                    </sect3>
+                    <sect3>
+                        <title>Homemade arrays</title>
+                        <para>It is also possible to construct your own microarrays in-house. This is of course not an insignificant undertaking; guidance for this option is well beyond the scope of this report. Currently, at least two commercial sources for premade long oligos covering the <emphasis>C. elegans</emphasis> genome exist: the oligos used in the Washington University array are available from Illumina (<ulink url="http://www.illumina.com" role="_blank">www.illumina.com</ulink>), and Operon (Qiagen) supplies the oligos used in the Samuel Lunenfeld Research Institute chip (<ulink url="http://www.operon.com/arrays/oligosets_elegans.php?" role="_blank">www.operon.com/arrays/oligosets_elegans.php?</ulink>). Given the availability of premade chips from several sources and the effort required to produce arrays in-house, the homebrew option seems ill-advised for most researchers. However, making one's own arrays does allow for the construction of a custom chip containing probes for genes (e.g., miRNAs) not represented on other arrays.</para>
+                    </sect3>
+            </sect2>
+            <sect2>
+                    <title>Determining the scale of your experiment</title>
+                        <sect3>
+                            <title>How many chips will I need to use?</title>
+                            <para>This is a question worth serious thought before undertaking a microarray experiment. Multiple chips are required in order to control for two sources of variability: biological variability arising between independently-prepared RNA samples, and technical variability. No simple answer can be given to the question of chip number since it depends on the design and goals of the experiment being undertaken as well as the array platform being used. The statistical power of the analysis increases with increasing numbers of arrays, as does the cost and amount of sample required. Consulting with your array facility about this the point at which one maximizes experimental value is essential. As a starting point, plan on using at least three arrays to replicate each biological sample; multiply this number by the number of conditions and biological replicates you plan to analyze. When doing two-color hybridizations, many workers also carry out dye-swap controls, as artifacts can arise from the fluorophores themselves; this doubles the number of chips necessary. Dye-swap controls are not necessary with Affymetrix chips&#x02014;since each chip is used for only one sample, the same dye can be used to label all cDNA samples. Therefore, experiments using single-channel GeneChips will require the same number of arrays as those using printed two-color arrays with dye-swap controls.</para>
+                        </sect3>
+                        <sect3>
+                            <title>How much RNA do I need?</title>
+                            <para>This issue also requires careful consideration. Generally, a single array hybridization will require approximately 2&#x02013;5<symbol role="symbolfont">&#x03BC;</symbol>g of total RNA. For more complex methods, such as cell-sorting or RNA tagging, it is difficult to predict the amount of RNA that will be obtained, but it will likely be small enough so that one or two rounds of amplification will be necessary; see below for more information about this technique.</para>
+                        </sect3>
+            </sect2>
+    </sect1>
+    <sect1>
+            <title>Protocols</title>
+            <sect2>
+                    <title>Large-scale <emphasis>C. elegans</emphasis> culture</title>
+                    <para>In general, this is a multi-step procedure. First, a culture containing large numbers of gravid hermaphrodites is grown either in liquid or on plates specially designed to support large populations. Next, worms are recovered from these cultures and treated with alkaline hypochlorite to isolate fertilized eggs; eggs are hatched in food-free medium and arrest as L1 larvae. Upon plating, worms recover from arrest, develop synchronously and are harvested for RNA isolation at the desired stage and under the appropriate conditions. Careful attention to the details of synchronous culture are essential; any small artifactual difference between the samples to be compared can lead to large numbers of false positives in the resulting data.</para>
+                        <procedure>
+                            <title>Large-scale liquid culture</title>
+                            <para>Liquid culture can be a difficult technique; worms grown in liquid are not generally as healthy or fertile as those grown on plates, and cultures are easily contaminated. Nevertheless, some researchers prefer this approach for growing large-scale cultures. Worms grown in liquid should not be used directly for array analysis because the large degree of variability in culture conditions can cause dramatic changes in gene expression patterns.</para>
+                            <para>(protocol adapted from Kim lab website)</para>
+                        <step>
+                            <para>Prepare a large quantity of <emphasis>E. coli</emphasis> NA22 (available from the CGC) using standard culture methods or a fermentor. Add a small amount of M9 or S-basal to the bacterial pellet to form a paste; this can be stored refrigerated or frozen until use. You can expect to obtain a mass of <emphasis>C. elegans</emphasis> of roughly half of the amount of bacteria used to feed the worm culture.</para>
+                        </step>
+                        <step>
+                            <para>Wash off worms from 5 to 10 100-mm plates approaching starvation. Transfer these to 500 mL of S-basal medium in a baffled flask and add 1 to 3 ml of bacterial paste. Shake at 20<symbol role="symbolfont">&#x00B0;</symbol>C at 240 rpm.</para>
+                        </step>
+                        <step>
+                            <para>Monitor the progress of the culture daily by removing a small aliquot to an unseeded plate. As the culture becomes less turbid, supplement with an additional 1 to 3 ml of bacterial paste. Adding too much food can cause the cultures to become oxygen-deprived; conversely, too little food will cause starvation, slow growth and dauer formation.</para>
+                        </step>
+                        <step>
+                            <para>As cultures grow, debris will accumulate in the form of small brown "pellets." Once a large number of gravid adults are present (generally 4-5 days), worms are ready to harvest.</para>
+                        </step>
+                        </procedure>
+                        <procedure>
+                        <title>Large-scale plate culture</title>
+                            <para>Plates prepared with an <emphasis>E. coli</emphasis>-egg yolk mixture can support the growth of large numbers of worms; however, large numbers of dauers can form under these conditions because of crowding. Nevertheless, the abundance of gravid hermaphrodites may make this an acceptable alternative to liquid culture.</para>
+                        <step>
+                            <para>Autoclave 50 ml of LB medium in a flask with a stirring bar and cool to ~60<symbol role="symbolfont">&#x00B0;</symbol>C (just cool enough to touch for a few seconds). Don gloves and rinse with ethanol. Rinse the outside of a supermarket-bought chicken egg with ethanol, crack it on the side of a sterile beaker, and transfer the yolk repeatedly between halves of the shell to remove the egg white while retaining the yolk. (The presence of too much egg white in the media causes the formation of debris that is difficult to remove.) Transfer the yolk to the LB while stirring and stir the mixture at ~60<symbol role="symbolfont">&#x00B0;</symbol>C for 10 min on a heating plate. Cool the mixture to 30<symbol role="symbolfont">&#x00B0;</symbol>C, add 5 ml of an overnight culture of <emphasis>E. coli</emphasis> NA22, and stir at room temperature for 15 min. Dispense 5 ml of this mixture onto each of 15 100-mm plates containing 2% Agar-NGM (to prevent burrowing). Allow the plates to dry in a sterile hood until still moist but not "runny".</para>
+                        </step>
+                        <step>
+                            <para>Seed each plate with washed worms from a nearly-starved 100 mm culture. Grow worms at 20<symbol role="symbolfont">&#x00B0;</symbol>C and monitor the status of the culture regularly. These plates should support the growth of at least one generation (~4 days); cultures can be supplemented with NA22 paste as necessary, but too much density can lead to unhealthy worms and dauer formation. Try to harvest once nearly all of the food is exhausted and the surface of the plate is a shimmering, writhing mass of worms. To harvest, rinse plates with M9 or S-basal and spin in a clinical centrifuge. This may need to be done several times to remove bacterial and egg debris.</para>
+                        </step>
+                        </procedure>
+            </sect2>
+            <sect2>
+                <title>Sucrose floatation</title>
+                        <procedure>
+                            <para>Depending on the cleanliness of the culture, worms may need to be cleaned from debris by sucrose floatation before isolating embryos.</para>
+                        <step>
+                            <para>Prepare 100 mM NaCl and 60% sucrose and chill to 4<symbol role="symbolfont">&#x00B0;</symbol>C.</para>
+                        </step>
+                        <step>
+                            <para>Spin down worms recovered from liquid or plate culture in a clinical centrifuge using 50 ml conical tubes. Generally 1-2 minutes at a moderate setting is sufficient to yield a pellet; the necessary spin time and speed can be assessed by determining whether significant numbers of gravid hermaphrodites remain in the supernatant.</para>
+                        </step>
+                        <step>
+                            <para>Resuspend pellets in 100 mM cold NaCl and consolidate to 1 or 2 tubes, spinning again if necessary to reduce volume below 15 mL total in each tube.</para>
+                        </step>
+                        <step>
+                            <para>Add cold 100 mM NaCl to each tube to bring volume to 22 mL. Mix to resuspend worms and let sit on ice 15 min.</para>
+                        </step>
+                        <step>
+                            <para>Add 22 mL cold 60% sucrose to each tube, invert to mix, and spin 5 min at the highest setting on the clinical centrifuge.</para>
+                        </step>
+                        <step>
+                            <para>With a wide-bore glass pipette (a flamed broken Pasteur pipette works well), carefully but immediately remove the light brown layer of worms floating at the top of the tube (prolonged exposure to 30% sucrose will damage worms). Transfer worms to a new 50 ml tube containing 35 ml cold 100 mM NaCl. Pellet worms by spinning 1 min. Wash with 100 mM NaCl two or three more times to remove residual sucrose.</para>
+                        </step>
+                        </procedure>
+            </sect2>
+            <sect2>
+                <title>Preparation of synchronous cultures</title>
+                <para>Pelleted gravid hermaphrodites can be treated with a solution of alkaline hypochlorite; all but the eggshell-protected embryos will be destroyed by this solution. Care must be taken to incubate long enough to destroy all larval and adult carcasses but not so long that embryos are damaged.</para>
+                        <procedure>
+                        <step>
+                            <para>Prepare alkaline hypochlorite solution by adding 20 ml of fresh supermarket bleach (4-6% NaOCl) to 50 ml of 1 N NaOH. This solution should be prepared freshly for each use.</para>
+                        </step>
+                        <step>
+                            <para>Add at least 2.5 volumes of alkaline hypochlorite solution to the pelleted worms. Disperse the pellet by pipetting and incubate at room temperature on a rocking platform. Transfer a sample to an unseeded plate with a Pasteur pipette every two or three minutes to monitor progress of treatment. By about 5 minutes, most carcasses should be nearly completely disintegrated; treatment can continue several minutes longer if necessary but eggs will become affected after about ten minutes.</para>
+                        </step>
+                        <step>
+                            <para>Spin 1 minute at high speed in a clinical centrifuge to recover eggs (a soft pale pellet). Wash 3 to 4 times with M9 or S-basal, consolidating eggs into one tube after first wash.</para>
+                        </step>
+                        <step>
+                            <para>Add resuspended, washed egg pellet to 100 ml of S-basal or M9 medium. Incubate on a rotary shaker for 18 to 24 hours at 20<symbol role="symbolfont">&#x00B0;</symbol>C with vigorous shaking to allow embryos to hatch and arrest in L1.</para>
+                        </step>
+                        <step>
+                            <para>Transfer culture to 50 ml tubes and spin down larvae in clinical centrifuge. Resuspend pellet in a small amount of S-basal or M9 medium and transfer to 100 mm OP50-seeded NGM or MYOB plates. Use one plate for each 50<symbol role="symbolfont">&#x03BC;</symbol>l of pelleted larvae. Grow cultures until ready to harvest for RNA isolation. Do not allow cultures to approach starvation; supplement with additional bacterial paste if necessary.</para>
+                        </step>
+                        </procedure>
+            </sect2>
+            <sect2>
+                        <title>RNA isolation</title>
+                        <para>Several methods have been used to isolate RNA from intact worms. The primary concerns are to disrupt the cuticle and solubilize RNAs rapidly while preventing degradation by endogenous RNAses. Older methods using guanidinium isothiocyanate solutions have been successful; today many researchers prefer the commercially available reagent Trizol, whose use is described here. Other kits, such as those sold by Qiagen, can also be used; however, worms must be efficiently lysed before RNA can be recovered. When working with RNA, be meticulous about the cleanliness of all reagents and equipment used to avoid degradation. Many researchers use DEPC-treated water to prevent RNAse contamination; however, if any residual DEPC remains after autoclaving, it can create more problems than it solves.</para>
+                 <procedure>
+                        <step>
+                            <para>Harvest worms by washing plates with room-temperature M9 medium, using 2-3 mL per plate. Swirl by hand to release worms from the bacterial lawn (check progress under a dissecting microscope) and transfer supernatant to 50 ml conical tubes. Spin down briefly in a clinical centrifuge and wash several times with room-temperature M9 to remove as much bacteria as possible. Because gene expression patterns are sensitive to environmental stresses, minimize the manipulations performed before RNA isolation and be sure that all samples are treated equivalently.</para>
+                        </step>
+                        <step>
+                            <para>Immediately add 5 to 10 volumes of Trizol per volume of pelleted worms. Vortex well to resuspend pellet. Lysis can be achieved either through grinding in liquid nitrogen or by freeze cracking.</para>
+                        </step>
+                        <step>
+                        <stepalternatives>
+                        <step>
+                            <title>Grinding</title>
+                            <para>Transfer Trizol suspension to an RNAse-free porcelain mortar of an appropriate size that has been chilled in a -80<symbol role="symbolfont">&#x00B0;</symbol>C freezer. Gently pour a small amount of liquid nitrogen into the mortar; once bubbling subsides, break up and grind the frozen suspension with a chilled pestle. Grind the suspension to a fine powder, adding liquid nitrogen to keep the powder cold, about 10 to 15 minutes. Scrape the frozen powder into a conical centrifuge tube and allow it to warm to room temperature.</para>
+                        </step>
+                        <step>
+                            <title>Freeze-cracking</title>
+                            <para>Freeze the Trizol suspension completely in liquid nitrogen; then transfer to a 37<symbol role="symbolfont">&#x00B0;</symbol>C water bath to thaw completely. Repeat this process several times. Though easier on the arms, this method may not solubilize RNA as effectively as the mortar-and-pestle method.</para>
+                        </step>
+                        </stepalternatives>
+                        </step>
+                        <step>
+                            <para>Vortex the suspension vigorously at room temperature for 30 sec; let rest 30 sec and repeat 5 times. Let the mixture stand at room temperature for 5 minutes to disrupt all RNA-protein complexes.</para>
+                        </step>
+                        <step>
+                            <para>Add 0.2 ml of chloroform for each 1ml of Trizol used. Shake tubes vigorously by hand for 15 sec; incubate at room temperature for 2-3 minutes. Spin tubes at 4<symbol role="symbolfont">&#x00B0;</symbol>C at either 10000-12000 g for 15 min or 2600 g for 30-60 min, depending on the properties of the tubes being used.</para>
+                        </step>
+                        <step>
+                            <para>Remove the aqueous (upper) phase containing the RNA; transfer to a new tube and add 0.5 ml isopropanol for each 1 ml of Trizol originally used. Mix and incubate at room temperature for 10 min. Centrifuge again as in step 4. The RNA will form a gel-like pellet on the side and bottom of the tube.</para>
+                        </step>
+                        <step>
+                            <para>Carefully remove the supernatant and wash the pellet with 75% ethanol, using 1 ml 75% ethanol per 1 ml of Trizol. Vortex the sample and spin at 4<symbol role="symbolfont">&#x00B0;</symbol>C at 7500 g for 5 minutes or 2500g for 15 minutes.</para>
+                        </step>
+                        <step>
+                            <para>Carefully remove the supernatant and air-dry the pellet until all traces of ethanol are removed. Do not vacuum-dry the pellet, as this denatures RNA and makes it difficult or impossible to resuspend. Dissolve the RNA pellet in RNAse-free water. Pipetting up and down and/or briefly incubating at 55<symbol role="symbolfont">&#x00B0;</symbol>C can aid in solubilizing the pellet.</para>
+                        </step>
+                        <step>
+                            <para>Assess the quality and quantity of RNA by running an agarose gel and taking spectrophotometric readings at 260 and 280 nm. RNA concentration can be quantitated by assuming that 1 OD corresponds to 40 <symbol role="symbolfont">&#x03BC;</symbol>g/ml. (Alternatively, the Agilent Bioanalyzer, owned by many nucleic acid core facilities, can quantitate and assess the quality of very small RNA samples.) Expected yields of total RNA are in the neighborhood of 1 to 4 mg RNA per gram of worms. On an agarose gel, 18S and 28S ribosomal RNA bands should be clear and crisp with little smearing. An OD<subscript>260/280</subscript> ratio of 1.8 to 2.0 indicates high-quality RNA; lower readings may indicate RNA unfit for array analysis. High-quality RNA is essential to the generation of high-quality microarray data. Store purified RNA in aliquots at -80<symbol role="symbolfont">&#x00B0;</symbol>C.</para>
+                        </step>
+                        </procedure>
+            </sect2>
+            <sect2>
+                    <title>Poly(A)<superscript>+</superscript> selection</title>
+                    <para>While not always necessary depending on the labeling method used, the purification of mRNA from total RNA can help to increase the specificity of microarray signals. Several commercial kits are available for this purpose (Ambion, Qiagen, etc.).</para>
+            </sect2>
+            <sect2>
+                    <title>RNA Amplification</title>
+                    <para>If only limited quantities of RNA are available (as in the cases of mRNA-tagging or cell sorting) amplification of RNA may be necessary. A number of commercial kits are available for this purpose from vendors such as Arcturus and Genisphere. Two rounds of amplification can provide enough material for array experiments from as little as picogram amounts of RNA. The primary concern associated with these techniques is that amplification can be biased; that is, that the relative ratios of mRNA species may not be preserved after amplification. For this reason, it is essential that all samples to be compared undergo identical amplification procedures starting with equivalent amounts of RNA.</para>
+            </sect2>
+            <sect2>
+                <title>Labeling and hybridization</title>
+                    <para>Because a variety of strategies for fluorescently labeling cDNA are available, specific methods are not given here. The choice of method depends on the platform of use (Affymetrix or spotted-oligo array) and the experience of your local facility. Consult with your local facility for guidance; often facilities will perform these manipulations themselves to ensure standardization. Recommended labeling protocols for spotted-oligo arrays produced by Washington University and the Samuel Lunenfeld Research Institute are available at their respective websites (<ulink url="http://genomeold.wustl.edu/projects/celegans/microarray/index.php" role="_blank">www.genome.wustl.edu/projects/celegans/microarray/index.php</ulink> and <ulink url="http://www.mshri.on.ca/microarray/" role="_blank">www.mshri.on.ca/microarray</ulink>).</para>
+         </sect2>
+     </sect1>
+     <sect1>
+                    <title>Following up</title>
+            <sect2>
+                    <title>Data analysis</title>
+                    <para>The analysis of microarray data is a continuously evolving field that occupies legions of statisticians. A detailed description of methods is beyond the scope of this section; fortunately, however, your local facility is likely to be able to provide you expertise in this area. The particulars of data analysis will depend on the platform you have used as well as the design of your experiment and the nature of the specific questions you would like to ask. A number published and on-line works are good starting points for appreciating the complexity of microarray data analysis, for example, (<link linkend="bib2">Bolstad et al., 2004</link><!-- PMID 15474586-->; <link linkend="bib26">Storey and Tibshirani, 2003</link><!-- PMID 12710672-->) and (<ulink url="http://discover.nci.nih.gov/microarrayAnalysis/Microarray.Home.jsp" role="_blank">discover.nci.nih.gov/microarrayAna lysis/Microarray.Home.jsp</ulink>). Several software packages,  including GenePix, QuantArray, ArrayPro, ArrayVision, are widely used for microarray data analysis; again; your facility can offer guidance, or may perform this analysis for you.</para>
+            </sect2>
+            <sect2>
+                    <title>Validation</title>
+                    <para>The avalanche of data that is supplied by a microarray experiment can be daunting to biologists used to thinking about individual genes. For this reason, it is imperative to have a strategy to deal with your data before you carry out your experiment.</para>
+                    <para>First, test the expression of control genes in your dataset. Are there genes already known to respond to the specific manipulations you are testing? If these genes do not emerge as significantly changed from an analysis of the data, it suggests that you may have many false negatives, or that your analysis is not sufficiently sensitive. Negative controls are also helpful: if housekeeping genes consistently arise as being significantly regulated, it may indicate a large number of false positives.</para>
+                    <para>Second, test on a gene-by-gene level the accuracy of some of the genes identified as highly significant. The ways to go about this will of course depend on the question you are asking; quantitative RT-PCR from independently-isolated RNA samples, or GFP reporters to determine cellular expression patterns, can be useful tools in validating hits from microarray analysis.</para>
+            </sect2>
+            <sect2>
+                    <title>Sharing data</title>
+                    <para>Making microarrays datasets public has become a precondition for publication for many journals; moreover, it is in keeping with the open-access spirit of the <emphasis>C. elegans</emphasis> community. Your data may be useful to others for reasons you may not have forseen, and powerful statistical meta-analyses can take advantage of multiple datasets to address genome-wide issues. The <ulink url="http://www.ncbi.nlm.nih.gov/geo" role="_blank">NCBI "Geo" database</ulink> accepts microarray data for deposition, and your local facility may have a means for making your data public. Additionally, several <emphasis>C. elegans</emphasis> investigators provide access to their data via laboratory web sites. Finally, <ulink url="http://www.wormbase.org" role="_blank">Wormbase</ulink> is an ideal repository for <emphasis>C. elegans</emphasis> array data across different platforms. Public databases may require that your data conform to the "MIAME" standard (<link linkend="bib3">Brazma et al., 2001</link><!-- PMID 11726920-->); your local facility can advise you on how to prepare your data for distribution to the rest of the scientific world.</para>
+            </sect2>
+            </sect1>
+    <sect1>
+                <title>References</title>
+				<para/>
+				&microarray_Refs;
+    </sect1>
+</article>

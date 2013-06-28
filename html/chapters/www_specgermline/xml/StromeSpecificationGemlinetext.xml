@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY fig1 SYSTEM 'final_1.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'specificationfig1leg.xml'>
+<!ENTITY fig2 SYSTEM 'final_2.jpg' NDATA JPG>
+<!ENTITY fig2legend SYSTEM 'specificationfig2leg.xml'>
+<!ENTITY fig3 SYSTEM 'final_3.jpg' NDATA JPG>
+<!ENTITY fig3legend SYSTEM 'specificationfig3leg.xml'>
+<!ENTITY fig4 SYSTEM 'final_4.jpg' NDATA JPG>
+<!ENTITY fig4legend SYSTEM 'specificationfig4leg.xml'>
+
+<!ENTITY specification_Refs SYSTEM 'specificationrefs.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="Specificationgermline_ArticleID">
+    <articleinfo>
+        <!--see DocBook's authorgroup element -->
+        <title>Specification of the germ line<footnote><para>Edited by Judith Kimble. Last revised July 8, 2005. Published July 28, 2005. This chapter should be cited as: Strome, S. Specification of the germ line (July 28, 2005), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.9.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2005 Susan Strome. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para></footnote>
+		</title>
+        <author>
+            <firstname>Susan</firstname>
+            <surname>Strome<remark><footnote><para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:sstrome@bio.indiana.edu">sstrome@bio.indiana.edu</ulink></para></footnote></remark></surname>
+            <affiliation>
+                <address>Department of Biology, Indiana University, Bloomington, IN 47405-3700 USA</address>
+            </affiliation>
+        </author>
+    </articleinfo>
+    <abstract>
+        <title><emphasis role="bold">Abstract</emphasis></title>
+        <para><emphasis role="bold">In</emphasis> <emphasis><emphasis role="bold">C. elegans,</emphasis></emphasis> <emphasis role="bold">the germ line is set apart from the soma early in embryogenesis. Several important themes have emerged in specifying and guiding the development of the nascent germ line. At early stages, the germline blastomeres are maintained in a transcriptionally silent state by the transcriptional repressor <ulink url="http://www.wormbase.org/db/seq/protein?name=PIE-1;class=protein" role="_blank">PIE-1</ulink>. When this silencing is lifted, it is postulated that correct patterns of germline gene expression are controlled, at least in part, by MES-mediated regulation of chromatin state. Accompanying transcriptional regulation by <ulink url="http://www.wormbase.org/db/seq/protein?name=PIE-1;class=protein" role="_blank">PIE-1</ulink> and the MES proteins, RNA metabolism in germ cells is likely to be regulated by perinuclear RNA-rich cytoplasmic granules, termed P granules. This chapter discusses the molecular nature and possible roles of these various germline regulators, and describes a recently discovered mechanism to protect somatic cells from following a germline fate.</emphasis></para>
+	</abstract>
+    <sect1>
+        <title>Overview</title>
+        <para>The germ line is set apart from the soma by the 16-24-cell stage of embryogenesis (see <ulink url="http://www.wormbook.org/chapters/www_asymcelldiv/asymcelldiv.html" role="_blank">Asymmetric cell division and axis formation in the embryo</ulink>). During early development of the embryo (<xref linkend="figure1"/>), through a series of
+            asymmetric partitioning events and cell divisions, the germline blastomeres
+            (<ulink url="http://www.wormbase.org/db/cell/cell.cgi?name=P0;class=Cell" role="_blank">P<subscript>0</subscript></ulink>, <ulink url="http://www.wormbase.org/db/cell/cell.cgi?name=P1;class=Cell" role="_blank">P<subscript>1</subscript></ulink>, <ulink url="http://www.wormbase.org/db/cell/cell.cgi?name=P2;class=Cell" role="_blank">P<subscript>2</subscript></ulink>, <ulink url="http://www.wormbase.org/db/cell/cell.cgi?name=P3;class=Cell" role="_blank">P<subscript>3</subscript></ulink>,
+            <ulink url="http://www.wormbase.org/db/cell/cell.cgi?name=P4;class=Cell" role="_blank">P<subscript>4</subscript></ulink>) inherit two unique regulatory systems: cytoplasmic RNA-rich
+            organelles called P granules, and transcriptional repression mediated by <ulink url="http://www.wormbase.org/db/seq/protein?name=PIE-1;class=protein" role="_blank">PIE-1</ulink>. In
+            addition, a chromatin-regulation system involving four MES proteins, although not
+            partitioned specifically to the germline blastomeres, is crucial for their subsequent
+            development. This chapter discusses the molecular nature and likely roles of P granules,
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=PIE-1;class=protein" role="_blank">PIE-1</ulink>, and the MES proteins in germline specification, and the proposed role of <ulink url="http://www.wormbase.org/db/seq/protein?name=MEP-1;class=protein" role="_blank">MEP-1</ulink> in
+            antagonizing germline fate in somatic cells.</para>
+    <mediaobject id="figure1" xreflabel="Figure 1">
+        <imageobject>
+            <imagedata width="4in" entityref="fig1" align="center"/>
+        </imageobject>
+        <textobject>
+            <phrase> figure 1</phrase>
+        </textobject> &fig1legend; </mediaobject>
+</sect1>
+	<sect1>
+        <title>
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pie-1" role="_blank">pie-1</ulink></emphasis> and transcriptional repression</title>
+        <para>The <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pie-1" role="_blank">pie-1</ulink></emphasis> gene was identified in a screen for maternal-effect
+            mutant embryos that produce too many pharyngeal and intestinal cells, hence the name pie
+            for "pharynx and intestine excess" (<link linkend="bib26">Mello et al., 1992</link><!-- PMID 1623520 -->). The excess of
+            specific somatic cell types in mutant embryos is due to transformation of the <ulink url="http://www.wormbase.org/db/cell/cell.cgi?name=P2;class=Cell" role="_blank">P<subscript>2</subscript></ulink>
+            germline blastomere into a somatic blastomere like its sister EMS (<link linkend="bib26">Mello et al., 1992</link><!-- PMID 1623520 -->). Thus, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pie-1" role="_blank">pie-1</ulink></emphasis> is required for <ulink url="http://www.wormbase.org/db/cell/cell.cgi?name=P2;class=Cell" role="_blank">P<subscript>2</subscript></ulink> to follow a germline
+            fate instead of a somatic fate. <ulink url="http://www.wormbase.org/db/seq/protein?name=PIE-1;class=protein" role="_blank">PIE-1</ulink> is a CCCH-type zinc finger
+            protein with a dynamic localization pattern in the early embryo (<link linkend="bib27">Mello et al., 1996</link>; <!-- PMID 8751440 --><xref linkend="figure1"/>). <ulink url="http://www.wormbase.org/db/seq/protein?name=PIE-1;class=protein" role="_blank">PIE-1</ulink> accumulates in the
+            oocyte and 1-cell embryo and during each of the initial four divisions becomes enriched
+            in the germline daughter (<xref linkend="figure2"/>B), by at least two mechanisms:
+            pre-division enrichment in the cytoplasm destined for the germline daughter cell, and
+            post-division degradation in the cytoplasm of the somatic daughter cell (<link linkend="bib32">Reese et al.,
+            2000</link><!-- PMID 10983990 -->; <link linkend="bib11">DeRenzo et al., 2003</link><!-- PMID 12894212 -->; see  <ulink url="http://www.wormbook.org/chapters/www_asymcelldiv/asymcelldiv.html" role="_blank">Asymmetric cell division and axis formation in the embryo</ulink>). The latter is accomplished by an elongin C/CUL-2 E3 ubiquitin ligase, which is targeted to <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pie-1" role="_blank">pie-1</ulink></emphasis> by a
+            bridging protein (<ulink url="http://www.wormbase.org/db/seq/protein?name=ZIF-1;class=protein" role="_blank">ZIF-1</ulink>) that interacts with both the E3 ligase complex and
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=PIE-1;class=protein" role="_blank">PIE-1</ulink>'s first zinc finger (<link linkend="bib11">DeRenzo et al., 2003</link><!-- PMID 12894212 -->).
+            The association of some <ulink url="http://www.wormbase.org/db/seq/protein?name=PIE-1;class=protein" role="_blank">PIE-1</ulink> with P granules (<xref linkend="figure2"/>B and see below) and centrosomes is not required for its segregation
+            to the germline blastomeres (<link linkend="bib32">Reese et al., 2000</link><!-- PMID 10983990 -->). Thus,
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=PIE-1;class=protein" role="_blank">PIE-1</ulink> is maternally provided, becomes enriched in each germline
+            blastomere, and is required to maintain germline fate.</para>
+
+        <para>Within each germline blastomere, <ulink url="http://www.wormbase.org/db/seq/protein?name=PIE-1;class=protein" role="_blank">PIE-1</ulink> becomes concentrated in
+            the nucleus (<xref linkend="figure1"/> and <xref linkend="figure2"/>), where it functions as a trancriptional repressor. The
+            initial clues for this repressor function came from three observations (<link linkend="bib37">Seydoux et al.,
+            1996</link><!-- PMID 8751441 -->): 1) In early wild-type embryos, newly transcribed RNAs are detected
+            in the somatic blastomeres but not in the germline blastomeres (<xref linkend="figure2"/>A). 2) In <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pie-1" role="_blank">pie-1</ulink></emphasis> mutant embryos, newly
+            transcribed RNAs are additionally detected in the germline blastomeres. 3) Driving
+            ectopic <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pie-1" role="_blank">pie-1</ulink></emphasis> expression in somatic cells represses embryonic
+            transcription. The mechanism of trancriptional repression has been elegantly dissected
+            (<link linkend="bib38">Seydoux and Dunn, 1997</link><!-- PMID 9187145 -->; <link linkend="bib3">Batchelder et al., 1999</link><!-- PMID 9925644 -->; <link linkend="bib48">Zhang et
+            al., 2003</link><!-- PMID 12651893 -->). Unexpectedly, instead of inhibiting transcriptional
+            initiation, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pie-1" role="_blank">pie-1</ulink></emphasis> appears to function at the level of
+            transcriptional elongation. The process of elongation requires phosphorylation by CDK9
+            (associated with cyclin T in the P-TEFb complex) of a repeated heptapeptide in the
+            carboxy-terminal domain (CTD) of RNA polymerase II. In transfected mammalian cells,
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pie-1" role="_blank">pie-1</ulink></emphasis> inhibits CDK9, through a <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pie-1" role="_blank">pie-1</ulink></emphasis> sequence
+            that is very similar to the repeated heptapepide sequence in the RNA pol CTD and that
+            apparently competes for CDK9 (<link linkend="bib48">Zhang et al., 2003</link><!-- PMID 12651893 -->). Thus, the current view
+            is that <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pie-1" role="_blank">pie-1</ulink></emphasis> protects germline fate by blocking transcriptional
+            elongation and preventing expression in the germline blastomeres of genes that promote
+            somatic differentiation.</para>
+<literallayout></literallayout>
+    <mediaobject id="figure2" xreflabel="Figure 2">
+        <imageobject>
+            <imagedata width="3in" entityref="fig2" align="center"/>
+        </imageobject>
+        <textobject>
+            <phrase> figure 2</phrase>
+        </textobject> &fig2legend; </mediaobject>
+
+        <para>The <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pie-1" role="_blank">pie-1</ulink></emphasis> story highlights two key features of early germline
+            specification: segregation of maternally provided factors to the germline blastomeres,
+            and protection of the germline blastomeres from somatic differentiation signals.
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pie-1" role="_blank">pie-1</ulink></emphasis> gene products are maternally provided to the 1-cell embryo
+            along with numerous gene products that encode somatic differentiation cues (e.g.,
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=skn-1" role="_blank">skn-1</ulink></emphasis> mRNA). <ulink url="http://www.wormbase.org/db/seq/protein?name=PIE-1;class=protein" role="_blank">PIE-1</ulink> protein is specifically
+            partitioned to the germline blastomeres (<xref linkend="figure1"/> and <xref linkend="figure2"/>B), while various somatic differentiation factors are delivered to
+            various subsets of blastomeres. <ulink url="http://www.wormbase.org/db/seq/protein?name=SKN-1;class=protein" role="_blank">SKN-1</ulink> illustrates the germline challenge. <ulink url="http://www.wormbase.org/db/seq/protein?name=SKN-1;class=protein" role="_blank">SKN-1</ulink> is a
+            transcription factor that functions in EMS to turn on genes required for E and MS
+            somatic cell fates, but <ulink url="http://www.wormbase.org/db/seq/protein?name=SKN-1;class=protein" role="_blank">SKN-1</ulink> is present in both EMS and its germline sister <ulink url="http://www.wormbase.org/db/cell/cell.cgi?name=P2;class=Cell" role="_blank">P<subscript>2</subscript></ulink>
+            (<link linkend="bib6">Bowerman et al., 1992</link><!-- PMID 1547503 -->; <link linkend="bib7">Bowerman et al., 1993</link><!-- PMID 8348611 -->; see <ulink url="http://www.wormbook.org/chapters/www_Ecellspecification/Ecellspecification.html" role="_blank">E cell specification</ulink>). One job of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pie-1" role="_blank">pie-1</ulink></emphasis> is to prevent
+            expression of <ulink url="http://www.wormbase.org/db/seq/protein?name=SKN-1;class=protein" role="_blank">SKN-1</ulink> target genes in <ulink url="http://www.wormbase.org/db/cell/cell.cgi?name=P2;class=Cell" role="_blank">P<subscript>2</subscript></ulink> (and presumably prevent expression of other
+            somatic differentiation genes in <ulink url="http://www.wormbase.org/db/cell/cell.cgi?name=P3;class=Cell" role="_blank">P<subscript>3</subscript></ulink> and
+            <ulink url="http://www.wormbase.org/db/cell/cell.cgi?name=P4;class=Cell" role="_blank">P<subscript>4</subscript></ulink>; <link linkend="bib26">Mello et al., 1992</link><!-- PMID 1623520 -->), and thereby protect
+            germline fate. <ulink url="http://www.wormbase.org/db/seq/protein?name=PIE-1;class=protein" role="_blank">PIE-1</ulink> levels drop shortly after the primordial germ
+            cell <ulink url="http://www.wormbase.org/db/cell/cell.cgi?name=P4;class=Cell" role="_blank">P<subscript>4</subscript></ulink> divides into <ulink url="http://www.wormbase.org/db/cell/cell.cgi?name=Z2;class=Cell" role="_blank">Z2</ulink> and <ulink url="http://www.wormbase.org/db/cell/cell.cgi?name=Z3;class=Cell" role="_blank">Z3</ulink> at the ~100-cell stage (<link linkend="bib27">Mello et al., 1996</link><!-- PMID 8751440 -->). Lifting of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pie-1" role="_blank">pie-1</ulink></emphasis> repression presumably
+            sets the stage for turn-on of expression in the nascent germ line of genes appropriate
+            for germline development.</para>
+
+	
+	    </sect1>
+
+    <sect1>
+        <title>The MES proteins and regulation of chromatin</title>
+        <para>The <emphasis>mes</emphasis> genes were discovered in screens for maternal-effect
+            sterile or "grandchildless" mutants (<link linkend="bib9">Capowski et al., 1991</link><!-- PMID 1783292 -->). Such genes
+            define factors that are maternally supplied and that function in development of the germ
+            line in offspring. Indeed, <emphasis>mes/mes</emphasis> mothers produce healthy-looking
+            hermaphrodite offspring whose germ line degenerates midway through larval development
+            (<link linkend="bib9">Capowski et al., 1991</link><!-- PMID 1783292 -->; <link linkend="bib30">Paulsen et al., 1995</link><!-- PMID 8601481 -->).
+            Interestingly, male offspring usually have a healthy germ line and are fertile (<link linkend="bib15">Garvin
+            et al., 1998</link><!-- PMID 9475730 -->; see below). The emerging model is that the MES system helps
+            specify the chromatin organization that the nascent germ line (i.e. <ulink url="http://www.wormbase.org/db/cell/cell.cgi?name=Z2;class=Cell" role="_blank">Z2</ulink> and <ulink url="http://www.wormbase.org/db/cell/cell.cgi?name=Z3;class=Cell" role="_blank">Z3</ulink>) inherits
+            and that participates in specifying patterns of gene expression once
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pie-1" role="_blank">pie-1</ulink></emphasis> repression is lifted.</para>
+        <para>Although the four <emphasis>mes</emphasis> genes have similar mutant phenotypes, they
+            appear to function in two distinct complexes. <ulink url="http://www.wormbase.org/db/seq/protein?name=MES-2;class=protein" role="_blank">MES-2</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=MES-3;class=protein" role="_blank">MES-3</ulink>, and
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=MES-6;class=protein" role="_blank">MES-6</ulink> are in a complex that resembles the Enhancer of zeste [E(z)]
+            complex in insects and vertebrates (<link linkend="bib46">Xu et al., 2001a</link><!-- PMID 11320248 -->). Like E(z), <ulink url="http://www.wormbase.org/db/seq/protein?name=MES-2;class=protein" role="_blank">MES-2</ulink>
+            has a SET domain, which functions in methylating histone tails (<link linkend="bib19">Holdeman et al., 1998</link><!-- PMID 9609829 -->; <link linkend="bib5">Bender et al., 2004</link><!-- PMID 15380065 -->). Both E(z) and <ulink url="http://www.wormbase.org/db/seq/protein?name=MES-2;class=protein" role="_blank">MES-2</ulink>, in their
+            respective complexes, methylate Lys27 of histone H3 (<link linkend="bib5">Bender et al., 2004</link><!-- PMID 15380065 -->;
+            <link linkend="bib8">Cao and Zhang, 2004</link><!-- PMID 15196462 -->). Trimethylated H3-Lys27 (abbreviated H3K27me3) is a "repressive" chromatin
+            mark - it causes chromatin to be organized into a silenced state (<link linkend="bib8">Cao and Zhang, 2004</link><!-- PMID 15196462 -->). <ulink url="http://www.wormbase.org/db/seq/protein?name=MES-4;class=protein" role="_blank">MES-4</ulink> is not in the <ulink url="http://www.wormbase.org/db/seq/protein?name=MES-2;class=protein" role="_blank">MES-2</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=MES-3;class=protein" role="_blank">3</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=MES-6;class=protein" role="_blank">6</ulink> complex (<link linkend="bib46">Xu et al., 2001a</link><!-- PMID 11320248 -->)
+            and likely functions with a unique set of partners that have not yet been identified.
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=MES-4;class=protein" role="_blank">MES-4</ulink> also has a SET domain (<link linkend="bib14">Fong et al., 2002</link><!-- PMID 12077420 -->) and so, like <ulink url="http://www.wormbase.org/db/seq/protein?name=MES-2;class=protein" role="_blank">MES-2</ulink>, is
+            predicted to methylate histone tails.</para>
+        <para> The distributions of the MES proteins figure prominently in modeling their probable
+            functions. <ulink url="http://www.wormbase.org/db/seq/protein?name=MES-4;class=protein" role="_blank">MES-4</ulink> associates with chromatin and shows a striking pattern in the germ line
+            and in early embryos (<xref linkend="figure3"/>B): it binds in a banded pattern along
+            the lengths of the 5 autosomes and is excluded from the X chromosomes (except the
+            leftmost tip; <link linkend="bib14">Fong et al., 2002</link><!-- PMID 12077420 -->; Carroll and Strome, unpublished). That
+            distribution is controlled by the <ulink url="http://www.wormbase.org/db/seq/protein?name=MES-2;class=protein" role="_blank">MES-2</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=MES-3;class=protein" role="_blank">3</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=MES-6;class=protein" role="_blank">6</ulink> complex, as <ulink url="http://www.wormbase.org/db/seq/protein?name=MES-4;class=protein" role="_blank">MES-4</ulink> binds along the length of
+            the X chromosomes in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mes-2" role="_blank">mes-2</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mes-3" role="_blank">mes-3</ulink></emphasis>, or
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mes-6" role="_blank">mes-6</ulink></emphasis> mutants (<link linkend="bib14">Fong et al., 2002</link><!-- PMID 12077420 -->; Carroll and
+            Strome, unpublished). <ulink url="http://www.wormbase.org/db/seq/protein?name=MES-2;class=protein" role="_blank">MES-2</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=MES-3;class=protein" role="_blank">MES-3</ulink>, and <ulink url="http://www.wormbase.org/db/seq/protein?name=MES-6;class=protein" role="_blank">MES-6</ulink> are concentrated in the nucleoplasm but not significantly on
+            chromatin (<xref linkend="figure3"/>A; <link linkend="bib19">Holdeman et al., 1998</link><!-- PMID 9609829 -->; <link linkend="bib23">Korf et
+            al., 1998</link><!-- PMID 9609830 -->; <link linkend="bib47">Xu et al., 2001b</link><!-- PMID 11729149 -->). Consequently, the binding
+            specificity of the <ulink url="http://www.wormbase.org/db/seq/protein?name=MES-2;class=protein" role="_blank">MES-2</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=MES-3;class=protein" role="_blank">3</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=MES-6;class=protein" role="_blank">6</ulink> complex is inferred largely from the distribution of the
+            chromatin mark (H3K27me) that is made by the complex. H3K27me3 is
+            concentrated on the X chromosomes and in addition lightly distributed in a banded
+            pattern along the autosomes (<link linkend="bib5">Bender et al., 2004</link><!-- PMID 15380065 -->). An appealing scenario
+            is that <ulink url="http://www.wormbase.org/db/seq/protein?name=MES-4;class=protein" role="_blank">MES-4</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=MES-2;class=protein" role="_blank">MES-2</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=MES-3;class=protein" role="_blank">3</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=MES-6;class=protein" role="_blank">6</ulink> bind to mutually exclusive chromatin
+            domains and differentially modify histone tails in those domains: the <ulink url="http://www.wormbase.org/db/seq/protein?name=MES-2;class=protein" role="_blank">MES-2</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=MES-3;class=protein" role="_blank">3</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=MES-6;class=protein" role="_blank">6</ulink> complex creates domains of repressed chromatin, while <ulink url="http://www.wormbase.org/db/seq/protein?name=MES-4;class=protein" role="_blank">MES-4</ulink>
+            may create domains of active or potentially activatable chromatin. Another possibility
+            for <ulink url="http://www.wormbase.org/db/seq/protein?name=MES-4;class=protein" role="_blank">MES-4</ulink> is that its main role is to exclude <ulink url="http://www.wormbase.org/db/seq/protein?name=MES-2;class=protein" role="_blank">MES-2</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=MES-3;class=protein" role="_blank">3</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=MES-6;class=protein" role="_blank">6</ulink> or other repressors from autosomal regions and thereby focus
+            repressor action on the X chromosomes (<link linkend="bib14">Fong et al., 2002</link><!-- PMID 12077420 -->).</para>
+
+    <mediaobject id="figure3" xreflabel="Figure 3">
+        <imageobject>
+            <imagedata width="5in" entityref="fig3" align="center"/>
+        </imageobject>
+        <textobject>
+            <phrase> figure 3</phrase>
+        </textobject> &fig3legend; </mediaobject>
+
+        <para>Based on the above and additional information, the working model is that the MES
+            system operates in the maternal germ line and during early embryogenesis (<link linkend="bib47">Xu et al.,
+            2001b</link><!-- PMID 11729149 -->) to epigenetically mark chromatin domains (or individual genes) and
+            in that way regulate patterns of gene expression in <ulink url="http://www.wormbase.org/db/cell/cell.cgi?name=Z2;class=Cell" role="_blank">Z2</ulink> and <ulink url="http://www.wormbase.org/db/cell/cell.cgi?name=Z3;class=Cell" role="_blank">Z3</ulink> and their descendants.
+            Genes to be kept in a silent state when <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pie-1" role="_blank">pie-1</ulink></emphasis> repression is lifted
+            and transcription commences in <ulink url="http://www.wormbase.org/db/cell/cell.cgi?name=Z2;class=Cell" role="_blank">Z2</ulink> and <ulink url="http://www.wormbase.org/db/cell/cell.cgi?name=Z3;class=Cell" role="_blank">Z3</ulink> are marked by <ulink url="http://www.wormbase.org/db/seq/protein?name=MES-2;class=protein" role="_blank">MES-2</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=MES-3;class=protein" role="_blank">3</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=MES-6;class=protein" role="_blank">6</ulink> with H3K27me3. As discussed in <ulink url="http://www.wormbook.org/chapters/www_germlinechromatin/germlinechromatin.html" role="_blank">Germline chromatin</ulink> and <ulink url="http://www.wormbook.org/chapters/www_germlinegenomics/germlinegenomics.html" role="_blank">Germline genomics</ulink>, both X chromosomes in hermaphrodites and the single X in males are maintained
+            in a silent state throughout most of germline development. The concentration of the
+            repressive H3K27me3 mark on the Xs is consistent with <ulink url="http://www.wormbase.org/db/seq/protein?name=MES-2;class=protein" role="_blank">MES-2</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=MES-3;class=protein" role="_blank">3</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=MES-6;class=protein" role="_blank">6</ulink> participating in silencing. As further support, the X
+            chromosomes acquire marks of active chromatin in hermaphrodite offspring of
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mes-2" role="_blank">mes-2</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mes-3" role="_blank">mes-3</ulink></emphasis>, and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mes-6" role="_blank">mes-6</ulink></emphasis>
+            mothers (<link linkend="bib14">Fong et al., 2002</link><!-- PMID 12077420 -->). The prediction is that X-linked genes are
+            desilenced in those animals. The two models for <ulink url="http://www.wormbase.org/db/seq/protein?name=MES-4;class=protein" role="_blank">MES-4</ulink> function, marking genes to be
+            expressed or alternatively participating indirectly in X-chromosome silencing, make
+            different predictions about gene expression patterns in the nascent germ line of
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mes-4" role="_blank">mes-4</ulink></emphasis> mutants. Those predictions are currently being tested.</para>
+	    
+        <para>The nascent germ line in males does not absolutely require the MES system (<link linkend="bib15">Garvin et
+            al., 1998</link><!-- PMID 9475730 -->). This suggests that an alternative system mediates X-chromosome
+            silencing in males (see <ulink url="http://www.wormbook.org/chapters/www_germlinechromatin/germlinechromatin.html">Germline chromatin</ulink>) and challenges the view that
+            the MES system serves an important role in regulating expression of autosomal genes in
+            the germ line. Interestingly, in the soma of males, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mes-2" role="_blank">mes-2</ulink></emphasis>,
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mes-3" role="_blank">mes-3</ulink></emphasis>, and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mes-6" role="_blank">mes-6</ulink></emphasis> are known to participate in
+            repressing gene expression from the autosomal Hox gene cluster (<link linkend="bib33">Ross and Zarkower, 2003</link><!-- PMID 12791273 -->).</para>
+
+    </sect1>
+	
+	
+    <sect1>
+        <title>P granules and regulation of RNA</title>
+        <para>RNA-rich cytoplasmic "germ granules" are a common feature of germ cells across species
+            and have been invoked for decades as germline "determinants" (reviewed in <link linkend="bib34">Saffman and
+            Lasko, 1999</link><!-- PMID 10442094 -->). At least some of the proteins associated with the worm
+            versions of these granules, called P granules, are indeed required for germline
+            development (e.g., <link linkend="bib21">Kawasaki et al., 1998</link><!-- PMID 9741628 -->; <link linkend="bib24">Kuznicki et al., 2000</link><!-- PMID 10851135 -->). The questions that have dominated P-granule investigations are: how are P
+            granules segregated to the germline blastomeres during early embryogenesis, what are
+            they made of, and what roles do they serve during germline development?</para>
+	    
+        <para>P granules are maternally loaded into the oocyte and progressively partitioned to
+            <ulink url="http://www.wormbase.org/db/cell/cell.cgi?name=P1;class=Cell" role="_blank">P<subscript>1</subscript></ulink>. <ulink url="http://www.wormbase.org/db/cell/cell.cgi?name=P2;class=Cell" role="_blank">P<subscript>2</subscript></ulink>, <ulink url="http://www.wormbase.org/db/cell/cell.cgi?name=P3;class=Cell" role="_blank">P<subscript>3</subscript></ulink>, and
+            finally <ulink url="http://www.wormbase.org/db/cell/cell.cgi?name=P4;class=Cell" role="_blank">P<subscript>4</subscript></ulink> (<xref linkend="figure1"/>) by a combination of
+            mechanisms (<link linkend="bib18">Hird et al., 1996</link>; <link linkend="bib10">Cheeks et al., 2004</link><!-- PMID 15186741 -->; see <ulink url="http://www.wormbook.org/chapters/www_asymcelldiv/asymcelldiv.html">Asymmetric cell division and axis formation in the embryo</ulink>): 1) posterior movement with bulk cytoplasmic flow, 2) hitching a ride on the nucleus to the future germline side of the
+            cell, and 3) destabilization of granules left behind in the somatic daughter's
+            cytoplasm. These mechanisms accomplish segregation of the majority of detectable
+            granules to <ulink url="http://www.wormbase.org/db/cell/cell.cgi?name=P4;class=Cell" role="_blank">P<subscript>4</subscript></ulink>. Once delivered to <ulink url="http://www.wormbase.org/db/cell/cell.cgi?name=P4;class=Cell" role="_blank">P<subscript>4</subscript></ulink>, P
+            granules become localized primarily around the outside of the nuclear envelope, and that
+            is their primary residence throughout the rest of germline development. When considering
+            what roles P granules are likely to serve, two possibilities seem likely: segregating P
+            granules to each P blastomere serves to deliver maternal proteins and RNAs to the
+            nascent germ line, and once there, nucleus-associated P granules regulate new
+            transcripts as they exit the nucleus (see below).</para>
+        <para>P granules contain RNA and numerous proteins, all of which are predicted to bind RNA
+            and several of which have been implicated in translational control (see <ulink url="http://www.wormbook.org/chapters/www_RNAbindingproteins/RNAbindingproteins.html" role="_blank">RNA-binding proteins</ulink> and <ulink url="http://www.wormbook.org/chapters/www_RNAregulationgermline/RNAregulationgermline.html" role="_blank">RNA regulation in the germline</ulink>). As shown in <link linkend="table1">Table 1</link>, protein components
+            include members of the PGL (RGG motif) family, members of the VASA-related GLH (DEAD box
+            helicase motif) family, the predicted RNA helicase <ulink url="http://www.wormbase.org/db/seq/protein?name=CGH-1;class=protein" role="_blank">CGH-1</ulink>, a cap-binding translation
+            initiation factor <ulink url="http://www.wormbase.org/db/seq/protein?name=IFE-1;class=protein" role="_blank">IFE-1</ulink>, Sm proteins (best known for their role in RNA splicing),
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=PIE-1;class=protein" role="_blank">PIE-1</ulink> (<xref linkend="figure2"/>B and see above) and other CCCH
+            finger proteins (<ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-1;class=protein" role="_blank">MEX-1</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=POS-1;class=protein" role="_blank">POS-1</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=OMA-1;class=protein" role="_blank">OMA-1</ulink>, and <ulink url="http://www.wormbase.org/db/seq/protein?name=OMA-2;class=protein" role="_blank">OMA-2</ulink>), the KH-domain proteins <ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-3;class=protein" role="_blank">MEX-3</ulink> and
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink>, and the <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-2;class=protein" role="_blank">GLD-2</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-3;class=protein" role="_blank">GLD-3</ulink> poly(A) polymerase. The only components known to be in
+            granules at all stages are the PGL and GLH proteins (<link linkend="bib21">Kawasaki et al., 1998</link><!-- PMID 9741628 -->; <link linkend="bib22">Kawasaki et al., 2004</link><!-- PMID 15238518 -->; <link linkend="bib16">Gruidl et al., 1996</link><!-- PMID 8943022 -->;
+            <link linkend="bib24">Kuznicki et al., 2000</link><!-- PMID 10851135 -->), leading to the hypothesis that they are important
+            for assembly/stability of P granules. Indeed, molecular epistasis studies suggest a
+            P-granule assembly pathway in which <ulink url="http://www.wormbase.org/db/seq/protein?name=GLH-1;class=protein" role="_blank">GLH-1</ulink> accumulation in granules is necessary for
+            efficient recruitment or retention of the PGL proteins (<link linkend="bib21">Kawasaki et al., 1998</link><!-- PMID 9741628 -->; <link linkend="bib22">Kawasaki et al., 2004</link><!-- PMID 15238518 -->; <link linkend="bib24">Kuznicki et al., 2000</link><!-- PMID 10851135 -->).
+            Interestingly, no one protein has been identified whose loss results in a total absence
+            of P granules.</para>
+        <para>The list of RNA components of P granules includes <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=nos-2" role="_blank">nos-2</ulink></emphasis>,
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pos-1" role="_blank">pos-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mex-1" role="_blank">mex-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mex-3" role="_blank">mex-3</ulink></emphasis>,
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=skn-1" role="_blank">skn-1</ulink></emphasis>, and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gld-1" role="_blank">gld-1</ulink></emphasis> (<link linkend="bib41">Subramaniam and Seydoux,
+            1999</link><!-- PMID 10518502 -->; <link linkend="bib35">Schisa et al., 2001</link><!-- PMID 11262230 -->). Basically, all of the six
+            developmentally regulated maternal mRNAs tested showed an accumulation in P granules,
+            while structural RNAs (5S, 5.8S, 18S, and 26S) and abundant housekeeping mRNAs (actin
+            and <symbol role="symbolfont">&#x03B2;</symbol>-tubulin) did not (<link linkend="bib35">Schisa et al.,
+            2001</link><!-- PMID 11262230 -->). Most of these studies were done in adult germ lines, where P
+            granules are perinuclear and in fact associated with clusters of nuclear pores (<link linkend="bib31">Pitt et
+            al., 2000</link><!-- PMID 10694425 -->). Even P granules dissociated from the nuclear envelope contain
+            nuclear-pore proteins and pore-like structures (<link linkend="bib31">Pitt et al., 2000</link><!-- PMID 10694425 -->). Thus,
+            a reasonable scenario is that many or most developmentally regulated maternal mRNAs pass
+            through and are transiently retained in P granules as they exit from nuclei. An
+            additional scenario is that P granules participate in delivering and then stabilizing
+            certain maternal mRNAs in the germline cells of embryos. Indeed, the
+            P-granule-associated mRNAs listed above all belong to the class of messengers that are
+            selectively retained in the germline blastomeres and degraded in the somatic blastomeres
+            (<link linkend="bib36">Seydoux and Fire, 1994</link><!-- PMID 7607073 -->; see <ulink url="http://www.wormbook.org/chapters/www_transctrlmaternalRNAs/transctrlmaternalRNAs.html">Translational control of maternal RNAs</ulink>).</para>
+<?newpage?>
+	    <table id="table1" frame="all"><title><emphasis role="bold">Table 1. Proteins present in P granules</emphasis></title>
+<tgroup cols="5">
+<colspec colname="c1" colwidth="0.5*" align="center" />
+<colspec colname="c2" colwidth="1.5*" align="center" />
+<colspec colname="c3" colwidth="0.4*" align="center" />
+<colspec colname="c4" colwidth="0.4*" align="center" />
+<colspec colname="c5" colwidth="0.8*" align="left" />
+<thead>
+    <row>
+    <entry morerows="1" valign="middle">Proteins</entry>
+    <entry morerows="1" valign="middle">Motifs/Functions</entry>
+    <entry namest="c3" nameend="c4">Associated with P granules in:</entry>
+    <entry morerows="1" valign="middle" align="center">References</entry>
+  </row>
+  <row>
+  <entry>Embryos</entry>
+  <entry>Adults</entry>
+  </row>
+ </thead>
+<tbody>
+  <row>
+    <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=PGL-1;class=protein" role="_blank">PGL-1</ulink></entry>
+    <entry>RGG box</entry>
+    <entry>Yes</entry>
+      <entry>Yes</entry>
+      <entry><link linkend="bib21">Kawasaki et al., 1998</link><!-- PMID 9741628 --></entry>
+  </row>
+    <row>
+    <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=PGL-2;class=protein" role="_blank">PGL-2</ulink></entry>
+    <entry>No recognizable motifs</entry>
+    <entry>No</entry>
+        <entry>Yes</entry>
+        <entry><link linkend="bib22">Kawasaki et al., 2004</link><!-- PMID 15238518  --></entry>
+    </row>
+    <row>
+    <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=PGL-3;class=protein" role="_blank">PGL-3</ulink></entry>
+    <entry>RGG box</entry>
+    <entry>Yes</entry>
+        <entry>Yes</entry>
+        <entry><link linkend="bib22">Kawasaki et al., 2004</link> <!-- PMID 15238518  --></entry>
+    </row>
+    <row>
+    <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=GLH-1;class=protein" role="_blank">GLH-1</ulink></entry>
+    <entry>DEAD-box helicase motifs, 4 CCHC fingers</entry>
+    <entry>Yes</entry>
+        <entry>Yes</entry>
+        <entry><link linkend="bib16">Gruidl et al., 1996</link><!-- PMID 8943022  --></entry>
+    </row>
+    <row>
+    <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=GLH-2;class=protein" role="_blank">GLH-2</ulink></entry>
+    <entry>DEAD-box helicase motifs, 6 CCHC fingers</entry>
+    <entry>Yes</entry>
+        <entry>Yes</entry>
+        <entry><link linkend="bib16">Gruidl et al., 1996</link><!-- PMID 8943022  --></entry>
+    </row>
+    <row>
+    <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=GLH-3;class=protein" role="_blank">GLH-3</ulink></entry>
+    <entry>DEAD-box helicase motifs, 2 CCHC fingers</entry>
+    <entry>Yes</entry>
+        <entry>Yes</entry>
+        <entry><link linkend="bib24">Kuznicki et al., 2000</link><!-- PMID 10851135  --></entry>
+    </row>
+    <row>
+    <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=GLH-4;class=protein" role="_blank">GLH-4</ulink></entry>
+    <entry>DEAD-box helicase motifs, 5 CCHC fingers</entry>
+    <entry>Yes</entry>
+        <entry>Yes</entry>
+        <entry><link linkend="bib24">Kuznicki et al., 2000</link><!-- PMID 10851135  --></entry>
+    </row>
+    <row>
+    <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=CGH-1;class=protein" role="_blank">CGH-1</ulink></entry>
+    <entry>DEAD-box helicase motifs</entry>
+    <entry>Yes</entry>
+        <entry>Yes</entry>
+        <entry><link linkend="bib28">Navarro et al., 2001</link><!-- PMID 11546739  --></entry>
+    </row>
+    <row>
+    <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=PIE-1;class=protein" role="_blank">PIE-1</ulink></entry>
+    <entry>2 CCCH fingers</entry>
+    <entry>Yes</entry>
+        <entry>No</entry>
+        <entry><link linkend="bib27">Mello et al., 1996</link><!-- PMID 8751440-->; <link linkend="bib32">Reese et al., 2000</link><!-- PMID 10983990  --></entry>
+    </row>
+    <row>
+    <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-1;class=protein" role="_blank">MEX-1</ulink></entry>
+    <entry>2 CCCH fingers</entry>
+    <entry>Yes</entry>
+        <entry>Yes<footnote id="t1f1"><para>in oocytes</para>
+			</footnote></entry>
+        <entry><link linkend="bib17">Guedes and Priess, 1997</link><!-- PMID 9043088-->; <link linkend="bib35">Schisa et al., 2001</link><!-- PMID 11262230 --></entry>
+    </row>
+    <row>
+    <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=POS-1;class=protein" role="_blank">POS-1</ulink></entry>
+    <entry>2 CCCH fingers</entry>
+    <entry>Yes</entry>
+        <entry>Yes<footnoteref linkend="t1f1"/></entry>
+        <entry><link linkend="bib42">Tabara et al., 1999</link><!-- PMID 9834181 -->; <link linkend="bib35">Schisa et al., 2001</link><!-- PMID 11262230  --></entry>
+    </row>
+    <row>
+    <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=OMA-1;class=protein" role="_blank">OMA-1</ulink><footnote id="t1f2"><para><ulink url="http://www.wormbase.org/db/seq/protein?name=OMA-1;class=protein" role="_blank">OMA-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=OMA-2;class=protein" role="_blank">OMA-2</ulink> were called MOE-1 and MOE-2, respectively, by <link linkend="bib39">Shimada et al., 2002</link></para>
+			</footnote></entry>
+    <entry>2 CCCH fingers</entry>
+    <entry>Yes</entry>
+        <entry>Yes<footnoteref linkend="t1f1" /></entry>
+        <entry><link linkend="bib39">Shimada et al., 2002</link><!-- PMID 12296824 -->; <link linkend="bib25">Lin, 2003</link><!-- PMID 12781695  --></entry>
+    </row>
+    <row>
+    <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=OMA-2;class=protein" role="_blank">OMA-2</ulink><footnoteref linkend="t1f2" /></entry>
+    <entry>2 CCCH fingers</entry>
+    <entry>Yes</entry>
+        <entry>Yes<footnoteref linkend="t1f1" /></entry>
+        <entry><link linkend="bib39">Shimada et al., 2002</link><!-- PMID 12296824 --></entry>
+    </row>
+    <row>
+    <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-3;class=protein" role="_blank">MEX-3</ulink></entry>
+    <entry>2 KH domains</entry>
+    <entry>Yes</entry>
+        <entry>Yes<footnoteref linkend="t1f1" /></entry>
+        <entry><link linkend="bib12">Draper et al., 1996</link><!-- PMID 8861905-->; <link linkend="bib35">Schisa et al., 2001</link><!-- PMID 11262230 --></entry>
+    </row>
+    <row>
+    <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink></entry>
+    <entry>KH domain; translational repressor</entry>
+    <entry>Yes</entry>
+        <entry>No</entry>
+        <entry><link linkend="bib20">Jones et al., 1996</link><!-- PMID 8948583 --></entry>
+    </row>
+    <row>
+    <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-2;class=protein" role="_blank">GLD-2</ulink></entry>
+    <entry>Cytoplasmic poly(A) polymerase (PAP)</entry>
+    <entry>Yes</entry>
+        <entry>No</entry>
+        <entry><link linkend="bib45">Wang et al., 2002</link><!-- PMID 12239571 --></entry>
+    </row>
+    <row>
+    <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-3;class=protein" role="_blank">GLD-3</ulink></entry>
+    <entry>KH-related domains; subunit of PAP</entry>
+    <entry>Yes</entry>
+        <entry>Moderate</entry>
+        <entry><link linkend="bib13">Eckmann et al., 2002</link><!-- PMID 12431376 --></entry>
+    </row>
+    <row>
+    <entry>Sm proteins</entry>
+    <entry>Splicing factors</entry>
+    <entry>Yes</entry>
+        <entry>Yes</entry>
+        <entry><link linkend="bib2">Barbee et al., 2002</link><!-- PMID 12225665 --></entry>
+    </row>
+    <row>
+    <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=SPN-4;class=protein" role="_blank">SPN-4</ulink></entry>
+    <entry>RNP motif</entry>
+    <entry>Yes</entry>
+        <entry>Unknown</entry>
+        <entry><link linkend="bib29">Ogura et al., 2003</link><!-- PMID 12702662 --></entry>
+    </row>
+    <row>
+    <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=IFE-1;class=protein" role="_blank">IFE-1</ulink></entry>
+    <entry>Translation initiation factor 4E</entry>
+    <entry>Unknown<footnote id="t1f3"><para>GFP-tagged IFE-1, driven by the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pie-1" role="_blank">pie-1</ulink></emphasis> promoter, associates with P granules in embryos.</para>
+			</footnote></entry>
+        <entry>Unknown<footnoteref linkend="t1f3" /></entry>
+        <entry><link linkend="bib1">Amiri et al., 2001</link><!-- PMID 11641215 --></entry>
+    </row>
+    </tbody>
+</tgroup>
+</table>
+	    <para>It is likely that P granules serve diverse functions at different times of
+            development. Most relevant to a discussion of germline specification is what roles
+            maternally contributed P granules serve in the nascent germ line. Mutants lacking
+            multiple PGL proteins offer some insights. The offspring from homozygous
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pgl-1" role="_blank">pgl-1</ulink></emphasis>; <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pgl-3" role="_blank">pgl-3</ulink></emphasis> double mutant mothers show severe
+            defects in germline proliferation and gametogenesis and develop into sterile adults
+            (<link linkend="bib22">Kawasaki et al., 2004</link><!-- PMID 15238518 -->; see <ulink url="http://www.wormbook.org/chapters/www_germlineprolifcontrol/germlineprolifcontrol.html" role="_blank">Germline proliferation and its control</ulink>). <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pgl-1" role="_blank">pgl-1</ulink></emphasis> single mutants show similar defects, but only at elevated temperature
+            (<link linkend="bib21">Kawasaki et al., 1998</link><!-- PMID 9741628 -->), suggesting that PGL-1 is required to maintain
+            P-granule integrity and function at elevated temperature, but that <ulink url="http://www.wormbase.org/db/seq/protein?name=PGL-3;class=protein" role="_blank">PGL-3</ulink> can serve this
+            role at low temperature. A similar situation appears to hold for <ulink url="http://www.wormbase.org/db/seq/protein?name=GLH-1;class=protein" role="_blank">GLH-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=GLH-4;class=protein" role="_blank">GLH-4</ulink>
+            (<link linkend="bib24">Kuznicki et al., 2000</link><!-- PMID 10851135 -->). We still do not understand the molecular causes
+            of the germline proliferation or gametogenesis defects observed in
+            <emphasis>pgl</emphasis> and <emphasis>glh</emphasis> mutants. Important directions for
+            future analysis are figuring out the roles of various P-granule proteins, when and how
+            various RNA components of P granules are regulated by their granule association, and how
+            such regulation impacts germline events.</para>
+    </sect1>
+<?newpage?>
+    <sect1>
+        <title><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mep-1" role="_blank">mep-1</ulink></emphasis> and avoiding germline specification</title>
+	
+        <para>Germline blastomeres are thought to be protected from following a somatic fate at least in part by <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pie-1" role="_blank">pie-1</ulink></emphasis>-mediated transcriptional repression, as discussed above. Recent studies suggest that the converse, somatic cells being protected from following a germline fate, may also occur. Members of the synMuv B class of chromatin regulators appear to play a crucial role, which was discovered through analysis of the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mep-1" role="_blank">mep-1</ulink></emphasis> gene. In <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mep-1" role="_blank">mep-1</ulink></emphasis> mutant embryos, somatic cells display germline traits (e.g., activate <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pgl-1" role="_blank">pgl-1</ulink></emphasis> and other P-granule genes) as well as somatic traits; mutants arrest as young larvae (<link linkend="bib44">Unhavaithaya et al., 2002</link><!-- PMID 12507426 -->; <link linkend="bib4">Belfiore et al., 2002</link><!-- PMID 12088146 -->). Surprisingly, loss of <emphasis>mes</emphasis> gene function suppresses the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mep-1" role="_blank">mep-1</ulink></emphasis> "ectopic P granules" and larval-arrest phenotypes; many <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mep-1" role="_blank">mep-1</ulink></emphasis>; <emphasis>mes</emphasis> double mutants develop into viable albeit sterile adults (<link linkend="bib44">Unhavaithaya et al., 2002</link><!-- PMID 12507426 -->). <ulink url="http://www.wormbase.org/db/seq/protein?name=MEP-1;class=protein" role="_blank">MEP-1</ulink> is in a complex with <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-418;class=protein" role="_blank">LET-418</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=HDA-1;class=protein" role="_blank">HDA-1</ulink>, two subunits of the nucleosome remodeling and histone deacetylase (NuRD) complex (see <ulink url="http://www.wormbook.org/chapters/www_germlinechromatin/germlinechromatin.html" role="_blank">Germline chromatin</ulink>). Intriguingly, <ulink url="http://www.wormbase.org/db/seq/protein?name=PIE-1;class=protein" role="_blank">PIE-1</ulink> appears to regulate the <ulink url="http://www.wormbase.org/db/seq/protein?name=MEP-1;class=protein" role="_blank">MEP-1</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=LET-418;class=protein" role="_blank">LET-418</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=HDA-1;class=protein" role="_blank">HDA-1</ulink> complex. In transfected vertebrate cells, <ulink url="http://www.wormbase.org/db/seq/protein?name=PIE-1;class=protein" role="_blank">PIE-1</ulink> interacts directly with <ulink url="http://www.wormbase.org/db/seq/protein?name=MEP-1;class=protein" role="_blank">MEP-1</ulink> and, perhaps through that interaction, inhibits the histone deacetylase activity of <ulink url="http://www.wormbase.org/db/seq/protein?name=HDA-1;class=protein" role="_blank">HDA-1</ulink>. Furthermore, ectopic expression of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pie-1" role="_blank">pie-1</ulink></emphasis> in <emphasis>C. elegans</emphasis> somatic cells mimics the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mep-1" role="_blank">mep-1</ulink></emphasis> mutant phenotype and causes larval arrest and ectopic expression of at least one P-granule protein (<link linkend="bib44">Unhavaithaya et al., 2002</link><!-- PMID 12507426 -->).</para>
+	
+        <para>A model that may explain the genetic interactions of <ulink url="http://www.wormbase.org/db/seq/protein?name=MEP-1;class=protein" role="_blank">MEP-1</ulink>,
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=PIE-1;class=protein" role="_blank">PIE-1</ulink>, and the MES proteins is shown in <xref linkend="figure4"/>
+            (<link linkend="bib44">Unhavaithaya et al., 2002</link><!-- PMID 12507426 -->; <link linkend="bib40">Shin and Mello, 2003</link><!-- PMID 14550409 -->). The MES
+            proteins establish and maintain a particular "germline state" of chromatin that is
+            required for germline patterns of gene expression. All cells of the early embryo inherit
+            that germline chromatin state from the oocyte and sperm (<xref linkend="figure1"/>). In
+            somatic cells, the <ulink url="http://www.wormbase.org/db/seq/protein?name=MEP-1;class=protein" role="_blank">MEP-1</ulink> complex remodels that chromatin
+            organization, to allow somatic patterns of gene expression and appropriate somatic
+            differentiation. In the germline blastomeres, <ulink url="http://www.wormbase.org/db/seq/protein?name=PIE-1;class=protein" role="_blank">PIE-1</ulink> antagonizes the
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=MEP-1;class=protein" role="_blank">MEP-1</ulink> complex, to protect the germline state of chromatin.
+            According to this model, loss of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mep-1" role="_blank">mep-1</ulink></emphasis> would cause the germline
+            chromatin state to persist in somatic cells, leading to defective somatic development.
+            Concomitant loss of the MES's would eliminate the germline chromatin state and make
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=MEP-1;class=protein" role="_blank">MEP-1</ulink> dispensable in somatic cells, restoring somatic development.
+            Loss of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pie-1" role="_blank">pie-1</ulink></emphasis> would allow <ulink url="http://www.wormbase.org/db/seq/protein?name=MEP-1;class=protein" role="_blank">MEP-1</ulink> to remodel the
+            germline chromatin state to a somatic state in the germline cells, leading to defective
+            germline development. Tests of this model will reveal whether <ulink url="http://www.wormbase.org/db/seq/protein?name=MEP-1;class=protein" role="_blank">MEP-1</ulink>
+            in the soma selectively represses germline fate or more generally regulates gene
+            expression patterns, and whether <ulink url="http://www.wormbase.org/db/seq/protein?name=PIE-1;class=protein" role="_blank">PIE-1</ulink> inhibits the
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=MEP-1;class=protein" role="_blank">MEP-1</ulink> complex in <emphasis>C. elegans</emphasis> embryos. Another area for investigation
+            is the essential role of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mep-1" role="_blank">mep-1</ulink></emphasis> during later germline development
+            (<link linkend="bib4">Belfiore et al., 2002</link><!-- PMID 12088146 -->).</para>
+    <mediaobject id="figure4" xreflabel="Figure 4">
+        <imageobject>
+            <imagedata width="4in" entityref="fig4" align="center"/>
+        </imageobject>
+        <textobject>
+            <phrase> figure 4</phrase>
+        </textobject> &fig4legend; </mediaobject>
+	    </sect1>
+
+    <sect1>
+        <title>Summary and future directions</title>
+        <para>Germline specification appears to involve: establishment of a particular chromatin
+            state in the parental germ line and transmission of that state to the early embryo (via
+            the MES system); preservation of that state specifically in the germline blastomeres
+            (via <ulink url="http://www.wormbase.org/db/seq/protein?name=PIE-1;class=protein" role="_blank">PIE-1</ulink> inhibition of <ulink url="http://www.wormbase.org/db/seq/protein?name=MEP-1;class=protein" role="_blank">MEP-1</ulink>);
+            transcriptional repression in the germline blastomeres (via <ulink url="http://www.wormbase.org/db/seq/protein?name=PIE-1;class=protein" role="_blank">PIE-1</ulink>);
+            and regulation of RNA metabolism in the primordial germ cells (via
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=PIE-1;class=protein" role="_blank">PIE-1</ulink> and P granules). An exciting frontier for investigation is
+            figuring out the epigenetic components of this regulation: what "chromatin states" are
+            established by the MES proteins, which genes or chromosomal domains are regulated in
+            this way, and whether and how the <ulink url="http://www.wormbase.org/db/seq/protein?name=MEP-1;class=protein" role="_blank">MEP-1</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=LET-418;class=protein" role="_blank">LET-418</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=HDA-1;class=protein" role="_blank">HDA-1</ulink> complex
+            "remodels" chromatin. <ulink url="http://www.wormbase.org/db/seq/protein?name=PIE-1;class=protein" role="_blank">PIE-1</ulink> is clearly a major germline player,
+            with nuclear functions that include blocking transcriptional elongation and perhaps
+            inhibiting <ulink url="http://www.wormbase.org/db/seq/protein?name=MEP-1;class=protein" role="_blank">MEP-1</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=LET-418;class=protein" role="_blank">LET-418</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=HDA-1;class=protein" role="_blank">HDA-1</ulink>, and cytoplasmic functions that
+            include regulation of mRNA stability and expression (<link linkend="bib43">Tenenhaus et al., 2001</link><!-- PMID 11316796 -->). One mRNA target of <ulink url="http://www.wormbase.org/db/seq/protein?name=PIE-1;class=protein" role="_blank">PIE-1</ulink> is <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=nos-2" role="_blank">nos-2</ulink></emphasis>
+            RNA, whose function promotes incorporation of <ulink url="http://www.wormbase.org/db/cell/cell.cgi?name=Z2;class=Cell" role="_blank">Z2</ulink> and <ulink url="http://www.wormbase.org/db/cell/cell.cgi?name=Z3;class=Cell" role="_blank">Z3</ulink> into the somatic gonad
+            (<link linkend="bib41">Subramaniam and Seydoux, 1999</link><!-- PMID 10518502 -->; see <ulink url="http://www.wormbook.org/chapters/www_transctrlmaternalRNAs/transctrlmaternalRNAs.html" role="_blank">Translational control of maternal RNAs</ulink>). Elucidating
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=PIE-1;class=protein" role="_blank">PIE-1</ulink>'s various functions and their relationships to one another is
+            a high priority. Finally, P granules, although known to exist for over 20 years, remain
+            relatively mysterious. Learning which mRNAs they regulate and whether regulation is at
+            the level of delivery, stability, processing, translation, or degradation will
+            significantly advance our understanding of these unique germline organelles.</para>
+    </sect1>
+    <sect1>
+        <title>References</title>
+		<para/>
+		&specification_Refs;
+	</sect1>
+</article>

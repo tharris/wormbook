@@ -1,0 +1,1571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY fig1 SYSTEM 'celldivisionfig1.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'celldivisionfig1leg.xml'>
+<!ENTITY fig2 SYSTEM 'celldivisionfig2.jpg' NDATA JPG>
+<!ENTITY fig2legend SYSTEM 'celldivisionfig2leg.xml'>
+<!ENTITY fig3 SYSTEM 'celldivisionfig3.jpg' NDATA JPG>
+<!ENTITY fig3legend SYSTEM 'celldivisionfig3leg.xml'>
+<!ENTITY fig4 SYSTEM 'celldivisionfig4.jpg' NDATA JPG>
+<!ENTITY fig4legend SYSTEM 'celldivisionfig4leg.xml'>
+<!ENTITY fig5 SYSTEM 'celldivisionfig5.jpg' NDATA JPG>
+<!ENTITY fig5legend SYSTEM 'celldivisionfig5leg.xml'>
+<!ENTITY fig6 SYSTEM 'celldivisionfig6.jpg' NDATA JPG>
+<!ENTITY fig6legend SYSTEM 'celldivisionfig6leg.xml'>
+<!ENTITY fig7 SYSTEM 'celldivisionfig7.jpg' NDATA JPG>
+<!ENTITY fig7legend SYSTEM 'celldivisionfig7leg.xml'>
+
+<!ENTITY celldivision_Refs SYSTEM 'celldivisionrefs.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="celldivision_ArticleID">
+    <articleinfo>
+        <!--see DocBook's authorgroup element -->
+        <title>Cell division<footnote>
+                <para>Edited by James M. Kramer and Donald G. Moerman. Last revised May 4, 2005. Published January 19, 2006. This chapter should be cited as: Oegema, K. and Hyman, A. A. Cell division (January 19, 2006), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.72.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+		<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2006 Karen Oegema and Anthony A. Hyman. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+            </footnote>
+        </title>
+        <!--		<revhistory>
+			<revision>
+				<revnumber>1.0</revnumber>
+				<date>Last revised 5/4/05</date>
+			</revision>
+		</revhistory>
+-->
+        <author>
+            <firstname>Karen</firstname>
+            <surname>Oegema<remark>
+                    <footnote>
+                        <para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:koegema@ucsd.edu">koegema@ucsd.edu</ulink> or <ulink url="mailto:hyman@mpi-cbg.de">hyman@mpi-cbg.de</ulink></para>
+                    </footnote>
+                </remark>
+            </surname>
+            <affiliation>
+                <address>Ludwig Institute for Cancer Research, Department of Cellular and Molecular Medicine, University of California, San Diego, La Jolla, CA 92093 USA</address>
+            </affiliation>
+        </author>
+        <author>
+            <firstname>Anthony A.</firstname>
+            <surname>Hyman</surname>
+            <affiliation>
+                <address>Max Planck Institute for Molecular Cell Biology and Genetics (MPI-CBG), Dresden 01307, Germany</address>
+            </affiliation>
+        </author>
+    </articleinfo>
+    <abstract>
+        <title><emphasis role="bold">Abstract</emphasis></title>
+        <para><emphasis role="bold">The</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">embryo is a powerful model system for studying the mechanics of
+            metazoan cell division. Its primary advantage is that the architecture of the syncytial
+            gonad makes it possible to use RNAi to generate oocytes whose cytoplasm is reproducibly
+            (typically <symbol role="symbolfont">&#x003E;</symbol>95%) depleted of targeted
+            essential gene products via a process that does not depend exclusively on intrinsic
+            protein turnover. The depleted oocytes can then be analyzed as they attempt their first
+            mitotic division following fertilization. Here we outline the characteristics that
+            contribute to the usefulness of the</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">embryo for cell division studies. We
+            provide a timeline for the first embryonic mitosis and highlight some of its key
+            features. We also summarize some of the recent discoveries made using this system,
+            particularly in the areas of nuclear envelope assembly/ dissassembly, centrosome
+            dynamics, formation of the mitotic spindle, kinetochore assembly, chromosome
+            segregation, and cytokinesis.</emphasis></para>
+    </abstract>
+    <sect1>
+        <title>The <emphasis>C. elegans</emphasis> embryo as a system to study cell division</title>
+        <para>The <emphasis>C. elegans</emphasis> embryo is a powerful model system for studying the mechanics of
+            metazoan cell division. Its primary advantage is that the syncytial gonad makes it
+            possible to use RNA interference (RNAi) to generate oocytes whose cytoplasm is
+            reproducibly (<symbol role="symbolfont">&#x003E;</symbol>95%) depleted of targeted
+            essential gene products.
+            Introduction of dsRNA rapidly catalyzes the destruction of the corresponding mRNA in
+            many different systems. However, depletion of pre-existing protein is generally a slow
+            process that depends on the half-life of the targeted protein. In contrast, in the <emphasis>C.
+            elegans</emphasis> gonad, the protein present when the dsRNA is introduced is depleted by the
+            continual packaging of maternal cytoplasm into oocytes (<xref linkend="figure1"/>).
+            Since depletion relies on the rate of embryo production instead of protein half-life,
+            the kinetics tend to be similar for different targets. By 36-48 hours after introduction
+            of the dsRNA, newly formed oocytes are typically <symbol role="symbolfont">&#x003E;</symbol>95% depleted of the target protein.</para>
+        <mediaobject id="figure1" xreflabel="Figure 1">
+            <imageobject>
+                <imagedata entityref="fig1" align="center" width="3.8in"/>
+            </imageobject>
+            <textobject>
+                <phrase> figure 1</phrase>
+            </textobject> &fig1legend;</mediaobject>
+        <para>Several additional advantages contribute to the usefulness of the <emphasis>C. elegans</emphasis> embryo as
+            a model system. Of particular importance is their rapid and highly stereotypical mitotic
+            divisions; the time between the onset of DNA condensation and the
+            completion of furrow ingression during cytokinesis is approximately 14 minutes. The
+            invariant nature of the first few divisions also facilitates the development of methods to
+            assess the consequences of molecular perturbations. Quantitative methods
+            have already been developed to monitor pronuclear migration (<xref linkend="figure4"/>;
+            see also <link linkend="bib1">Albertson, 1984</link><!--; PMID-->; <link linkend="bib100">O'Connell, 2000</link><!--; PMID 11005028-->), cortical flows (for
+            examples see <link linkend="bib15">Cheeks et al., 2004</link><!--; PMID 15186741-->; <link linkend="bib55">Hird and White, 1993</link><!--; PMID 8509454-->;
+            <link linkend="bib96">Munro et al., 2004</link><!--; PMID 15363415-->), chromosome segregation and spindle elongation during
+            anaphase (for examples see <link linkend="bib17">Cheeseman et al., 2004</link><!--; PMID 15371340-->; <link linkend="bib45">Grill et al., 2001</link><!--; PMID 11214323-->; <link linkend="bib71">Labbe et al., 2004</link><!--; PMID 15492042-->), and the asymmetric positioning of the
+            spindle within the embryo (for examples see <link linkend="bib22">Colombo et al., 2003</link><!--; PMID 12750478-->; <link linkend="bib71">Labbe et al., 2004</link><!--; PMID 15492042-->; <link linkend="bib149">Tsou et al., 2002</link><!--; PMID 12223405-->). Assay development has
+            been accelerated by the emergence of microparticle bombardment mediated transformation
+            (<link linkend="bib116">Praitis et al., 2001</link><!--; PMID 11238406-->) and the availability of vectors containing
+            regulatory sequences that direct efficient germline expression (<link linkend="bib144">Strome et al., 2001</link><!--; PMID 11408582-->), which together have led to the generation of a large number of strains
+            expressing fluorescent fusion proteins in the early embryo. Analysis of the mechanical
+            consequences of depleting essential cell division proteins is also facilitated by the
+            relatively weak DNA damage (<link linkend="bib10">Brauchle et al., 2003</link><!--; PMID 12747829-->) and spindle
+            checkpoints (<link linkend="bib32">Encalada et al., 2004</link><!--; PMID 15616189-->), which allow the embryo to proceed
+            through the cell cycle despite dramatic defects in nuclear structure, spindle assembly,
+            chromosome segregation and centrosome function.</para>
+        <para>Genetic and RNAi-based approaches have identified a large number of loci important for
+            cell division. Mutants in proteins required for cell division have been uncovered in
+            screens of collections of nonconditional maternal effect and temperature sensitive
+            mutations that result in embryonic lethality (for some examples see <link linkend="bib31">Encalada et al., 2000</link><!--; PMID 11112326-->; <link linkend="bib40">Golden et al., 2000</link><!--; PMID 11134076-->; <link linkend="bib44">G&#x000F6;nczy et al., 1999</link><!--; PMID 10085292-->; <link linkend="bib65">Kemphues et al., 1988</link><!--; PMID 3224814-->; <link linkend="bib102">O'Connell et al., 1998</link><!--; PMID 9649522-->).
+            The ability to reproducibly deplete oocytes of target proteins by RNAi, which can be
+            performed by feeding, soaking or injection of hermaphrodites (see <ulink url="http://www.wormbook.org/chapters/www_introreversegenetics/introreversegenetics.html" role="_blank">Reverse genetics</ulink>), has also led to a series of genome-wide screens that identified a
+            set of ~2100 genes required for embryonic viability (<link linkend="bib33">Fernandez et al., 2005</link><!--; PMID 15687288-->; <link linkend="bib35">Fraser et al., 2000</link><!--; PMID 11099033-->; <link linkend="bib42">G&#x000F6;nczy et al., 2000</link><!--; PMID 11099034-->; <link linkend="bib63">Kamath et al., 2003</link><!--; PMID 12529635-->; <link linkend="bib84">Maeda et al., 2001</link><!--; PMID 11231151-->; <link linkend="bib112">Piano et al., 2000</link><!--; PMID 11137018-->; <link linkend="bib123">Rual et al., 2004</link><!--; PMID 15489339-->; <link linkend="bib134">Simmer et al., 2003</link><!--; PMID 14551910-->; <link linkend="bib136">S&#x000F5;nnichsen et al., 2005</link><!--; PMID 15791247-->). Filming of embryos depleted of each of these
+            2100 gene products using differential interference contrast (DIC) microscopy has defined
+            a set of 660 genes whose inhibition results in detectable defects during the first two
+            cell divisions (<link linkend="bib42">G&#x000F6;nczy et al., 2000</link><!--; PMID 11099034-->; <link linkend="bib112">Piano et al., 2000</link><!--; PMID 11137018-->;
+            <link linkend="bib136">S&#x000F5;nnichsen et al., 2005</link><!--; PMID 15791247-->; <link linkend="bib157">Zipperlen et al., 2001</link><!--; PMID 11483502-->). Roughly
+            half of these genes are specifically required for cell division processes such as
+            chromosome segregation or cytokinesis, whereas the other half contributes to cell
+            maintenance, via roles in processes such as translation and mitochondrial function
+            (<link linkend="bib136">S&#x000F5;nnichsen et al., 2005</link>). The embryonic lethality resulting from RNAi of some of the
+            1440 genes for which no DIC defect was observed may be due to cell division defects that
+            remain undetected, either due to incomplete penetrance of the RNAi or failure to score
+            the resulting defects by DIC (for example subtle defects in chromosome segregation are
+            very difficult to detect using this assay). Alternatively, depletion of many of these
+            gene products may cause embryonic lethality due to developmental defects that preclude
+            hatching.</para>
+    </sect1>
+    <sect1>
+        <title>A timeline of events during the first mitotic division of the <emphasis>C. elegans</emphasis> embryo</title>
+        <para>Due to its accessibility to RNAi-based molecular perturbation, the first embryonic
+            division that ensues following fertilization has been the most intensively studied. In
+            this section, we provide a brief timeline for the events between fertilization and the
+            completion of the first cytokinesis (outlined schematically in <xref linkend="figure2"/>; for reviews see <link linkend="bib23">Cowan and Hyman, 2004</link><!--; PMID 15473847-->; <link linkend="bib110">Pelletier et al., 2004</link><!--; PMID-->;
+            <link linkend="bib127">Schneider and Bowerman, 2003</link><!--; PMID 14616061-->).</para>
+        <para>Prior to fertilization, <emphasis>C. elegans</emphasis> oocytes are arrested in meiotic prophase with
+            nuclei containing two copies of the diploid genome packaged into recombined bivalent
+            chromosomes. The two rounds
+            of meiotic chromosome segregation that generate the haploid oocyte pronucleus are
+            completed in the zygote after the oocytes are fertilized. During each meiotic division,
+            chromosome segregation is accomplished by a small acentriolar meiotic spindle that forms
+            in the embryo anterior. During anaphase of meiosis I and again in meiosis II, the
+            meiotic spindle associates with the cortex in an end-on fashion, and a highly asymmetric
+            cytokinesis-like event extrudes a polar body (<xref linkend="figure2"/>; <link linkend="bib2">Albertson and Thomson, 1993</link><!--; PMID 8143084-->; <link linkend="bib19">Clark-Maguire and Mains, 1994</link><!--; PMID 8027178-->; <link linkend="bib155">Yang et al., 2003</link><!--; PMID 12885567-->). In addition to the haploid pronucleus, the sperm brings a pair of
+            centrioles into the oocyte, which lacks centrioles due to their degradation during
+            oogenesis. As meiosis completes, the haploid oocyte and sperm-derived pronuclei, located
+            at opposite ends of the embryo increase in size, becoming visible by DIC microscopy.
+            After entering the oocyte, the sperm-derived centriole pair recruits pericentriolar
+            material and acquires the ability to nucleate microtubules (<link linkend="bib100">O'Connell, 2000</link><!--; PMID 11005028-->; <link linkend="bib110">Pelletier et al., 2004</link><!--; PMID-->). Subsequently, the two sperm-derived centrioles
+            separate, forming two centrosomes positioned on either side of the paternal pronucleus.
+            Coincident with chromosome condensation during mitotic prophase, the pronuclei migrate
+            towards each other. After the pronuclei meet, the nuclear-centrosome complex moves to
+            the center of the embryo and rotates to align with the long axis of the embryo
+            (<link linkend="bib1">Albertson, 1984</link><!--; PMID-->; <link linkend="bib58">Hyman and White, 1987</link><!--; PMID 3680373-->). The miotitc spindle begins
+            to move towards the embryo posterior during metaphase (<link linkend="bib71">Labbe et al., 2004</link><!--; PMID 15492042-->; <link linkend="bib105">Oegema et al., 2001</link><!--; PMID 11402065-->), and asymmetric elongation during anaphase
+            contributes to its posterior displacement (<link linkend="bib1">Albertson, 1984</link>; <link linkend="bib45">Grill et al., 2001</link>). Since
+            the cleavage furrow bisects the mitotic spindle, this displacement results in an
+            asymmetric first cleavage (For more on the mechanisms that generate this asymmetry see <ulink url="http://www.wormbook.org/chapters/www_asymcelldiv/asymcelldiv.html">Asymmetric cell division and axis formation in the embryo</ulink>).</para>
+        <mediaobject id="figure2" xreflabel="Figure 2">
+            <imageobject>
+                <imagedata entityref="fig2" align="center" width="5.7in"/>
+            </imageobject>
+            <textobject>
+                <phrase> figure 2</phrase>
+            </textobject> &fig2legend;</mediaobject>
+    </sect1>
+    <sect1>
+        <title>Nuclear envelope structure and dynamics</title>
+        <para>The <emphasis>C. elegans</emphasis> nuclear envelope is structurally similar to that of vertebrates,
+            consisting of two concentric membranes (outer and inner) enclosing a lumenal space,
+            nuclear pore complexes that mediate bidirectional transport between the cytoplasm and
+            the nucleus, and an underlying laminar network (<xref linkend="figure3"/>; <link linkend="bib21">Cohen et al., 2002</link><!--; PMID 12490171-->). The molecular composition of the <emphasis>C. elegans</emphasis> inner nuclear
+            membrane/lamina also resembles that in vertebrates (<link linkend="table1">Table 1</link>). <emphasis>C. elegans</emphasis> expresses a
+            single B-type lamin (<ulink url="http://www.wormbase.org/db/seq/protein?name=LMN-1;class=protein" role="_blank">LMN-1</ulink>; <link linkend="bib80">Liu et al., 2000</link><!--; PMID 11071918-->; <link linkend="bib120">Riemer et al., 1993</link><!--; PMID 7925480-->), that forms a meshwork of intermediate filaments beneath the inner nuclear
+            membrane (reviewed in <link linkend="bib47">Gruenbaum et al., 2005</link><!--; PMID 15688064-->). The <emphasis>C. elegans</emphasis> inner
+            nuclear membrane/lamina also contains three proteins, Ce-emerin, CeMAN-1, and CeLem2,
+            that contain a LEM domain, a defining 40 amino acid motif shared by a family of nuclear
+            envelope proteins (<link linkend="bib46">Gruenbaum et al., 2002</link><!--; PMID 11870211-->; <link linkend="bib73">Lee et al., 2000</link><!--; PMID 10982402-->; <link linkend="bib79">Lin et al., 2000</link><!--; PMID 10671519-->; <link linkend="bib81">Liu et al., 2003</link><!--; PMID 12684533-->). LEM family
+            proteins all bind to lamins (reviewed in <link linkend="bib75">Lee and Wilson, 2004</link><!--; PMID 15565891-->) and to the
+            small inner nuclear membrane associated protein BAF (<link linkend="bib130">Segura-Totten and Wilson, 2004</link><!--; PMID 15130582-->; <link linkend="bib156">Zheng et al., 2000</link><!--; PMID 10908652-->). Depletion of <ulink url="http://www.wormbase.org/db/seq/protein?name=LMN-1;class=protein" role="_blank">LMN-1</ulink>, Ce-BAF, or
+            simultaneous depletion of the LEM family proteins Ce-Emerin and Ce-MAN-1, results in a
+            similar spectrum of defects in nuclear structure, chromosome condensation, and
+            chromosome segregation (<link linkend="bib80">Liu et al., 2000</link><!--; PMID 11071918-->; <link linkend="bib81">Liu et al., 2003</link><!--; PMID 12684533-->; <link linkend="bib87">Margalit et al., 2005</link><!--; PMID 15728376-->; <link linkend="bib156">Zheng et al., 2000</link><!--; PMID 10908652-->).</para>
+<table id="table1" frame="all">
+<title>Table 1. Nuclear envelope proteins</title>
+				<tgroup cols="7">
+				<colspec colname="c1" align="left" colwidth="1*"/>
+				<colspec colname="c2" align="left" colwidth="1.1*"/>
+				<colspec colname="c3" align="left" colwidth="1*"/>
+				<colspec colname="c4" align="left" colwidth="1*"/>
+				<colspec colname="c5" align="left" colwidth="0.9*"/>
+				<colspec colname="c6" align="left" colwidth="2.5*"/>
+				<colspec colname="c7" align="left" colwidth="1.5*"/>
+                <thead>
+                    <row>
+                        <entry><emphasis>C. elegans</emphasis> protein</entry>
+                        <entry><emphasis>C. elegans</emphasis> gene</entry>
+                        <entry>Required for embryonic viability?</entry>
+                        <entry>Vertebrate orthologue</entry>
+                        <entry>TMR</entry>
+                        <entry>Summary of localization and functional analysis</entry>
+                        <entry>Selected references</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>Ce-lamin (<ulink url="http://www.wormbase.org/db/seq/protein?name=LMN-1;class=protein" role="_blank">LMN-1</ulink>)</entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lmn-1" role="_blank">lmn-1</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/gene/gene?name=DY3.2;class=CDS" role="_blank">DY3.2</ulink>)</entry>
+                        <entry>YES</entry>
+                        <entry>Lamin-B</entry>
+                        <entry>NO</entry>
+                        <entry>B-type lamin expressed in all cell types; localizes to the nuclear
+                            side of the nuclear envelope; required for nuclear morphology, nuclear
+                            pore complex distribution, chromosome segregation and the localization
+                            of Ce-emerin.</entry>
+                        <entry><link linkend="bib80">Liu, 2000</link>; <link linkend="bib46">Gruenbaum, 2002</link></entry>
+                    </row>
+                    <row>
+                        <entry>Ce-emerin (<ulink url="http://www.wormbase.org/db/seq/protein?name=EMR-1;class=protein" role="_blank">EMR-1</ulink>)</entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=emr-1" role="_blank">emr-1</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/gene/gene?name=M01D7.6;class=CDS" role="_blank">M01D7.6</ulink>)</entry>
+                        <entry>NO</entry>
+                        <entry>Emerin</entry>
+                        <entry>YES</entry>
+                        <entry>Integral component of the inner nuclear membrane; contains a LEM
+                            domain and interacts with Ce-Lamin; co-depletion with Ce-MAN-1 results
+                            in 100% embryonic lethality, chromosome condensation and segregation
+                            defects and mislocalization of Ce-BAF.</entry>
+                        <entry><link linkend="bib46">Gruenbaum, 2002</link>; <link linkend="bib81">Liu, 2003</link></entry>
+                    </row>
+                    <row>
+                        <entry>Ce-MAN1 (<ulink url="http://www.wormbase.org/db/seq/protein?name=LEM-2;class=protein" role="_blank">LEM-2</ulink>)</entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lem-2" role="_blank">lem-2</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/gene/gene?name=W01G7.5;class=CDS" role="_blank">W01G7.5</ulink>)</entry>
+                        <entry>PARTIAL Depletion gives 15% lethality</entry>
+                        <entry>LEM2 and MAN1</entry>
+                        <entry>YES</entry>
+                        <entry>Integral component of the inner nuclear membrane; contains a LEM
+                            domain and interacts with Ce-Lamin and Ce-BAF <emphasis>in vitro</emphasis>. May require
+                            Ce-Lamin for its localization.</entry>
+                        <entry><link linkend="bib81">Liu, 2003</link></entry>
+                    </row>
+                    <row>
+                        <entry>Ce-BAF</entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=baf-1" role="_blank">baf-1</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/gene/gene?name=B0464.7;class=CDS" role="_blank">B0464.7</ulink>)</entry>
+                        <entry>YES</entry>
+                        <entry>BAF</entry>
+                        <entry>NO</entry>
+                        <entry>10kDa soluble protein highly conserved among metazoans; localization
+                            to the NE requires emerin and MAN1; interacts with Ce-MAN1 <emphasis>in vitro</emphasis>;
+                            required for the proper organization of Ce-lamin, Ce-emerin and Ce-MAN1
+							on the nuclear envelope.</entry>
+                        <entry><link linkend="bib81">Liu, 2003</link>; <link linkend="bib87">Margalit, 2005</link></entry>
+                    </row>
+                    <row>
+                        <entry>Matefin <ulink url="http://www.wormbase.org/db/seq/protein?name=SUN-1;class=protein" role="_blank">SUN-1</ulink></entry>
+                        <entry><emphasis>mtf-1 <ulink url="http://www.wormbase.org/db/gene/gene?name=sun-1" role="_blank">sun-1</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/gene/gene?name=F57B1.2;class=CDS" role="_blank">F57 B1.2</ulink>)</entry>
+                        <entry>YES</entry>
+                        <entry>None</entry>
+                        <entry>NO</entry>
+                        <entry>Interacts with lamin, but its Localization to the nuclear envelope
+                            does not require lamin; expressed in all embryonic cells until
+                            mid-embryogenesis and thereafter only in germline cells; required for
+                            <ulink url="http://www.wormbase.org/db/seq/protein?name=ZYG-12;class=protein" role="_blank">ZYG-12</ulink> localization and the attachment of centrosomes to nuclei.</entry>
+                        <entry><link linkend="bib36">Fridkin, 2004</link>; <link linkend="bib86">Malone, 2003</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=ZYG-12;class=protein" role="_blank">ZYG-12</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=zyg-12" role="_blank">zyg-12</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/gene/gene?name=ZK546.1;class=CDS" role="_blank">ZK546.1</ulink>)</entry>
+                        <entry>YES</entry>
+                        <entry>SYNE</entry>
+                        <entry>YES/NO&#x0002A;</entry>
+                        <entry>Member of the Hook family of proteins; localizes to the nuclear
+                            envelope and accumulates around the centrosomes; required for the
+                            attachment of centrosomes to nuclei; &#x0002A; TMR present in some isoforms.</entry>
+                        <entry><link linkend="bib86">Malone, 2003</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=UNC-83;class=protein" role="_blank">UNC-83</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-83" role="_blank">unc-83</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/gene/gene?name=W01A11.3;class=CDS" role="_blank">W01A11.3</ulink>)</entry>
+                        <entry>NO</entry>
+                        <entry>?</entry>
+                        <entry>NO</entry>
+                        <entry>Requires <ulink url="http://www.wormbase.org/db/seq/protein?name=UNC-84;class=protein" role="_blank">UNC-84</ulink> for its localization to the nuclear envelope;
+                            mutations disrupt nuclear migration in migrating P cells, hyp7
+                            precursors, and the intestinal primordium.</entry>
+                        <entry><link linkend="bib140">Starr, 2001</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=UNC-84;class=protein" role="_blank">UNC-84</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-84" role="_blank">unc-84</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/gene/gene?name=F54B11.3;class=CDS" role="_blank">F54B11.3</ulink>)</entry>
+                        <entry>NO</entry>
+                        <entry>UNC84</entry>
+                        <entry>YES</entry>
+                        <entry>Integral nuclear envelope protein required for nuclear migration and
+                            anchorage; expressed after the 26-cell stage; localization requires
+                            lamin; required to target <ulink url="http://www.wormbase.org/db/seq/protein?name=UNC-83;class=protein" role="_blank">UNC-83</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=ANC-1;class=protein" role="_blank">ANC-1</ulink>, which function in nuclear
+                            migration and positioning, respectively, to the nuclear membrane; during
+                            nuclear positioning, may form a bridging complex with <ulink url="http://www.wormbase.org/db/seq/protein?name=ANC-1;class=protein" role="_blank">ANC-1</ulink> that spans
+                            the perinuclear space to connect the NE to actin cytoskeleton.</entry>
+                        <entry><link linkend="bib140">Starr, 2001</link>; <link linkend="bib85">Malone, 1999</link>; <link linkend="bib74">Lee, 2002</link>; <link linkend="bib139">Starr, 2002</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=ANC-1;class=protein" role="_blank">ANC-1</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=anc-1" role="_blank">anc-1</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/gene/gene?name=ZK973.6;class=CDS" role="_blank">ZK973.6</ulink>)</entry>
+                        <entry>NO</entry>
+                        <entry>Nesprin/ Nuance</entry>
+                        <entry>YES</entry>
+                        <entry>955kDa protein orthologous to vertebrate NUANCE proteins; connects
+                            the nuclear envelope to the actin cytoskeleton during nuclear
+                            positioning in a <ulink url="http://www.wormbase.org/db/seq/protein?name=UNC-84;class=protein" role="_blank">UNC-84</ulink>-dependent manner.</entry>
+                        <entry><link linkend="bib139">Starr, 2002</link></entry>
+                    </row>
+                </tbody>
+				</tgroup>
+            </table>
+        <para>The dynamics of nuclear envelope disassembly and reassembly during the first mitotic
+            division of the <emphasis>C. elegans</emphasis> embryo are illustrated in <xref linkend="figure3"/>. <ulink url="http://www.wormbase.org/db/seq/protein?name=LMN-1;class=protein" role="_blank">LMN-1</ulink>
+            leaves the nuclear envelope during prometaphase (<link linkend="bib73">Lee et al., 2000</link><!--; PMID 10982402-->; <link linkend="bib80">Liu et al., 2000</link><!--; PMID 11071918-->). In contrast, inner nuclear membranes containing Ce-emerin and
+            Ce-MAN-1 remain largely intact and surround the mitotic spindle everywhere except near
+            spindle poles during metaphase and early anaphase, disassembling fully only during
+            mid to late anaphase (<xref linkend="figure3"/>; <link linkend="bib73">Lee et al., 2000</link><!--; PMID 10982402-->; <link linkend="bib74">Lee et al., 2002</link><!--; PMID 11907270-->; V. Galy, P. Askjaer and I.W. Mattaj, personal communication).
+            As the remnants of the old nuclear envelopes disperse, the formation of new nuclear
+            envelopes around the segregated chromatin is detected beginning about 1 minute after
+            anaphase onset (<xref linkend="figure3"/>; V. Galy, P. Askjaer and I.W. Mattaj, personal
+            communication).</para>
+        <mediaobject id="figure3" xreflabel="Figure 3">
+            <imageobject>
+                <imagedata entityref="fig3" align="center" width="6.5in"/>
+            </imageobject>
+            <textobject>
+                <phrase> figure 3</phrase>
+            </textobject> &fig3legend;</mediaobject>
+        <para>The molecular composition of the nuclear pore complexes (NPCs) is also similar to that
+            in vertebrates. <emphasis>C. elegans</emphasis> orthologs of at least one component of each vertebrate NPC
+            sub-complex have been identified (<link linkend="bib38">Galy et al., 2003</link><!--; PMID 12937276-->; <link linkend="bib70">Kuznetsov et al., 2002</link><!--; PMID 12424524-->). 17 genes encoding 19 nucleoporins are essential for embryonic
+            viability. Depletion of 14 of these proteins results in defects in nuclear morphology
+            and, in some cases, to reduced nuclear size consistent with a defect in
+            nucleo-cytoplasmic transport (<link linkend="bib38">Galy et al., 2003</link><!--; PMID 12937276-->). Nuclear envelope
+            assembly also requires the small GTPase, Ran and the nuclear transport receptor
+            importin-<symbol role="symbolfont">&#x003B3;</symbol> (<ulink url="http://www.wormbase.org/db/seq/protein?name=IMB-1;class=protein" role="_blank">IMB-1</ulink>; <link linkend="bib3">Askjaer et al., 2002</link><!--; PMID 12475958-->; <link linkend="bib4">Bamba et al., 2002</link><!--; PMID 11909538-->; <link linkend="bib153">Walther et al., 2003</link><!--; PMID 12894213-->). High concentrations of RanGTP in the
+            vicinity of chromatin are thought to promote the dissociation of importin-<symbol role="symbolfont">&#x003B3;</symbol>  from
+            nucleoporins to trigger NPC assembly on the chromatin surface.</para>
+    </sect1>
+    <sect1>
+        <title>Pronuclear migration</title>
+        <para>The site of sperm entry defines the embryo posterior (<link linkend="bib41">Goldstein and Hird, 1996</link><!--; PMID 8625834-->). As the pronuclei become visible by DIC, the sperm-derived pronucleus and its
+            associated centrosome(s) sit on the posterior cortex. The oocyte-derived pronucleus
+            forms following two rounds of meiotic chromosome segregation, typically in the embryo
+            anterior. The two pronuclei migrate towards each other coincident with chromosome
+            condensation during the first mitotic prophase. Pronuclear migration consists of
+            movement of the oocyte pronucleus towards the sperm pronucleus and movement of the sperm
+            pronucleus away from the cortex towards the embryo center (<link linkend="bib1">Albertson, 1984</link><!--; PMID-->;
+            <link linkend="bib103">O'Connell et al., 2000</link><!--; PMID 10885746-->). Initially, the oocyte pronucleus moves ~ 12 &#x003BC;m
+            towards the posterior at a slow rate (~ 3.5 &#x003BC;m/min). As it approaches the sperm
+            pronucleus, the oocyte pronucleus accelerates, moving an additional 10 &#x003BC;m at ~5-10 times
+            its initial rate (<xref linkend="figure4"/>; <link linkend="bib1">Albertson, 1984</link><!--; PMID-->; <link linkend="bib103">O'Connell et al., 2000</link><!--; PMID 10885746-->). The sperm pronucleus begins its migration later than its female
+            counterpart and travels at a slow rate of ~ 3.5 &#x003BC;m/min till it meets the oocyte
+            pronucleus near the embryo center (~7 &#x003BC;m).</para>
+			<mediaobject id="figure4" xreflabel="Figure 4">
+                <imageobject>
+                    <imagedata entityref="fig4" align="center" width="3.5in"/>
+                </imageobject>
+                <textobject>
+                    <phrase> figure 4</phrase>
+                </textobject> &fig4legend;</mediaobject>
+        <para>Rapid movement of the oocyte pronucleus towards the sperm pronucleus and pronuclear
+            meeting, both require an intact microtubule cytoskeleton (<link linkend="bib145">Strome and Wood, 1983</link><!--; PMID 6684994-->). Two nuclear envelope proteins, <ulink url="http://www.wormbase.org/db/seq/protein?name=ZYG-12;class=protein" role="_blank">ZYG-12</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=SUN-1;class=protein" role="_blank">SUN-1</ulink> recruit dynein to pronuclei,
+            and are required for centrosomes to maintain their association with nuclei (<link linkend="table1">Table 1</link>;
+            <link linkend="bib86">Malone et al., 2003</link><!--; PMID 14697201-->). The centrosomes separate around the sperm
+            pronucleus in a dynein dependent manner (<link linkend="bib43">G&#x000F6;nczy et al., 1999</link><!--; PMID 10508861-->). As the
+            pronuclei move towards each other, dynein on the oocyte pronucleus is thought to come
+            into contact with microtubules emanating from the centrosomal asters associated with the
+            sperm pronucleus. The fast phase of pronuclear migration and pronuclear meeting is thus
+            mediated by nuclear envelope associated dynein pulling on the two centrosomal
+            microtubule asters (<link linkend="bib24">Cowan and Hyman, 2004</link><!--; PMID 15343338-->; <link linkend="bib43">G&#x000F6;nczy et al., 1999</link><!--; PMID 10508861-->; <link linkend="bib51">Hamill et al., 2002</link><!--; PMID 12431374-->; <link linkend="bib86">Malone et al., 2003</link><!--; PMID 14697201-->;
+            <link linkend="bib103">O'Connell et al., 2000</link><!--; PMID 10885746-->; <link linkend="bib125">Schmidt et al., 2005</link><!--; PMID 15616192-->).</para>
+        <para>In addition to the migration of the female pronucleus towards the male pronucleus, the
+            migration and centration of the male pronucleus within the embryo has also been analyzed
+            to distinguish between two possible models: (1) a “pushing mechanism,” in which the male
+            pronucleus is pushed away from the cortex by the polymerization of astral microtubules
+            and, (2) a “pulling mechanism” in which the male pronucleus is pulled by
+            minus-end-directed motors anchored throughout the cytoplasm. Comparisons between
+            simulations and actual migration indicate that the second “pulling” model is the primary
+            mechanism (<link linkend="bib67">Kimura and Onami, 2005</link>). Although microtubule-based mechanisms for pronuclear
+            movement are the best characterized, some slow pronuclear movement is still observed in
+            embryos in which the microtubule cytoskeleton is compromised, or which lack centrosomes
+            or fail to recruit dynein to nuclei (<link linkend="bib24">Cowan and Hyman, 2004</link><!--; PMID 15343338-->; <link linkend="bib43">G&#x000F6;nczy et al., 1999</link><!--; PMID 10508861-->; <link linkend="bib51">Hamill et al., 2002</link><!--; PMID 12431374-->; <link linkend="bib86">Malone et al., 2003</link><!--; PMID 14697201-->; <link linkend="bib103">O'Connell et al., 2000</link><!--; PMID 10885746-->; <link linkend="bib125">Schmidt et al., 2005</link><!--; PMID 15616192-->).
+            Consistent with these observations, correlative evidence suggests that cortical flows
+            may also contribute to the slow phase of pronuclear migration (<link linkend="bib55">Hird and White, 1993</link><!--; PMID 8509454-->).</para>
+    </sect1>
+    <sect1>
+        <title>Centrosome assembly and duplication</title>
+        <para>Centrosomes consist of a single centriole or centriole pair surrounded by
+            pericentriolar material that nucleates and anchors microtubules. Like the centrioles in
+           <emphasis>Drosophila</emphasis> embryos (<link linkend="bib12">Callaini and Riparbelli, 1990</link><!--; PMID 2127418-->), <emphasis>C. elegans</emphasis> centrioles
+            are composed of nine singlet microtubules symmetrically positioned around a central tube
+                (<xref linkend="figure5"/>B; <link linkend="bib1">Albertson, 1984</link><!--; PMID-->; <link linkend="bib68">Kirkham et al., 2003</link><!--; PMID 12600319-->; <link linkend="bib101">O'Connell et al., 2001</link><!--; PMID-->; <link linkend="bib154">Wolf et al., 1978</link><!--; PMID 671581-->). Each
+            cylindrical centriole is approximately 200– 250 nm in length and 175 nm in diameter. In
+            contrast, vertebrate centrioles typically have nine triplet microtubules (<link linkend="bib88">Marshall, 2001</link><!--; PMID 11448793-->; <link linkend="bib117">Preble et al., 2000</link><!--; PMID 11005020-->). Consistent with this
+            structural difference, the <emphasis>C. elegans</emphasis> genome lacks homologs of delta- and
+            epsilon-tubulin, two tubulin family members required for the formation of triplet
+            microtubules (<link linkend="bib30">Dutcher, 2003</link><!--; PMID 14662361-->).</para>
+        <mediaobject id="figure5" xreflabel="Figure 5">
+            <imageobject>
+                <imagedata entityref="fig5" align="center" width="3.4in"/>
+            </imageobject>
+            <textobject>
+                <phrase> figure 5</phrase>
+            </textobject> &fig5legend;</mediaobject>
+        <para>During fertilization, the amoeboid sperm brings a pair of centrioles into the egg.
+            After entering the egg, the centrioles recruit pericentriolar material and separate
+            around the sperm-derived nucleus, forming two centrosomal microtubule asters (<xref linkend="figure5"/>; <link linkend="bib100">O'Connell, 2000</link><!--; PMID 11005028-->; <link linkend="bib110">Pelletier et al., 2004</link><!--; PMID-->).
+            After they separate, a new daughter centriole begins to form adjacent to each sperm
+            centriole. The centrosomes recruit additional pericentriolar material as the embryo
+            enters mitosis in a process called centrosome maturation, increasing about 5 fold in
+            size and nucleating capacity by metaphase (<link linkend="bib52">Hannak et al., 2001</link><!--; PMID 11748251-->).
+            Coincident with the recruitment of additional PCM, the daughter centrioles elongate,
+            reaching full length by metaphase. In late anaphase/telophase the centriole pairs split.
+            Concurrent with cytokinesis, the mitotic PCM disassembles, releasing two small
+            centrosomes into each daughter cell.</para>
+        <para>Pericentriolar material is thought to consist of a proteinacious matrix, called the
+            “centromatrix”, that recruits other PCM components (<link linkend="bib9">Bornens, 2002</link><!--; PMID 11792541-->;
+            <link linkend="bib108">Palazzo et al., 2000</link><!--; PMID 11005031-->). Three centrosomal proteins, <ulink url="http://www.wormbase.org/db/seq/protein?name=SPD-5;class=protein" role="_blank">SPD-5</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=SPD-2;class=protein" role="_blank">SPD-2</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=AIR-1;class=protein" role="_blank">AIR-1</ulink>
+            (Aurora-A kinase), are required for the assembly of pericentriolar material (see <link linkend="table2">Table 2</link>
+            for a list of <emphasis>C. elegans</emphasis> centrosome/centriole components). <ulink url="http://www.wormbase.org/db/seq/protein?name=SPD-5;class=protein" role="_blank">SPD-5</ulink> is a coiled-coil
+            protein thought to be a component of the centromatrix. In <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=spd-5" role="_blank">spd-5</ulink></emphasis> embryos, no PCM forms
+            around the centrioles, and no centrosomal microtubule asters are observed (<link linkend="bib51">Hamill et al., 2002</link><!--; PMID 12431374-->). Severe defects in PCM assembly are also observed when <ulink url="http://www.wormbase.org/db/seq/protein?name=SPD-2;class=protein" role="_blank">SPD-2</ulink>
+            or the aurora A kinase homolog <ulink url="http://www.wormbase.org/db/seq/protein?name=AIR-1;class=protein" role="_blank">AIR-1</ulink> are inhibited (<link linkend="bib52">Hannak et al., 2001</link><!--; PMID 11748251-->;
+            <link linkend="bib64">Kemp et al., 2004</link><!--; PMID 15068791-->; <link linkend="bib103">O'Connell et al., 2000</link><!--; PMID 10885746-->; <link linkend="bib110">Pelletier et al., 2004</link><!--; PMID 15186742-->; <link linkend="bib129">Schumacher et al., 1998</link><!--; PMID 9778499-->). In these embryos,
+            centrosomal microtubule asters form, but are very small, and additional PCM fails to
+            accumulate around the centrioles during mitotic entry.</para>
+            <table id="table2" frame="all">
+                <title>Table 2. Centrosome proteins</title>
+                <tgroup cols="6">
+				<colspec colname="c1" align="left" colwidth="1*"/>
+				<colspec colname="c2" align="left" colwidth="1*"/>
+				<colspec colname="c3" align="left" colwidth="1*"/>
+				<colspec colname="c4" align="left" colwidth="1*"/>
+				<colspec colname="c5" align="left" colwidth="2.5*"/>
+				<colspec colname="c6" align="left" colwidth="1.5*"/>
+                <thead>
+                    <row>
+                        <entry><emphasis>C. elegans</emphasis> protein</entry>
+                        <entry><emphasis>C. elegans</emphasis> gene</entry>
+                        <entry>Required for embryonic viability?</entry>
+                        <entry>Vertebrate orthologue</entry>
+                        <entry>Summary of localization and functional analysis</entry>
+                        <entry>Selected references</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=SAS-4;class=protein" role="_blank">SAS-4</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sas-4" role="_blank">sas-4</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/gene/gene?name=F10E9.8;class=CDS" role="_blank">F10E9.8</ulink>)</entry>
+                        <entry>YES</entry>
+                        <entry>CPAP</entry>
+                        <entry>Centriole protein required for centriole assembly; incorporated into
+                            centrioles during their assembly and does not subsequently exchange with
+                            the cytoplasmic pool; partial depletion leads to the formation of
+                            defective centrioles that recruit less than wild-type levels of PCM.</entry>
+                        <entry><link linkend="bib68">Kirkham, 2003</link>; <link linkend="bib77">Leidel, 2003</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=SAS-5;class=protein" role="_blank">SAS-5</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sas-5" role="_blank">sas-5</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/gene/gene?name=F35B12.5;class=CDS" role="_blank">F35B12.5</ulink>)</entry>
+                        <entry>YES</entry>
+                        <entry>?</entry>
+                        <entry>Centriole protein required for centriole assembly; physically
+                            interacts with <ulink url="http://www.wormbase.org/db/seq/protein?name=SAS-6;class=protein" role="_blank">SAS-6</ulink>; centriolar <ulink url="http://www.wormbase.org/db/seq/protein?name=SAS-5;class=protein" role="_blank">SAS-5</ulink> shuttles continuously between
+                            centrioles and the cytoplasm; requires <ulink url="http://www.wormbase.org/db/seq/protein?name=ZYG-1;class=protein" role="_blank">ZYG-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=SAS-6;class=protein" role="_blank">SAS-6</ulink>, but not <ulink url="http://www.wormbase.org/db/seq/protein?name=SAS-4;class=protein" role="_blank">SAS-4</ulink> to
+                            localize to centrioles; required for the localization of <ulink url="http://www.wormbase.org/db/seq/protein?name=SAS-4;class=protein" role="_blank">SAS-4</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=SAS-6;class=protein" role="_blank">SAS-6</ulink>
+                            to centrioles. Like <ulink url="http://www.wormbase.org/db/seq/protein?name=SAS-4;class=protein" role="_blank">SAS-4</ulink>, partial depletion of <ulink url="http://www.wormbase.org/db/seq/protein?name=SAS-5;class=protein" role="_blank">SAS-5</ulink> leads to the
+                            formation of defective centrioles that recruit less than wild-type
+                            levels of PCM.</entry>
+                        <entry><link linkend="bib27">Delattre, 2004</link>; <link linkend="bib25">Dammermann, 2004</link>; <link linkend="bib76">Leidel, 2005</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=SAS-6;class=protein" role="_blank">SAS-6</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sas-6" role="_blank">sas-6</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/gene/gene?name=Y45F10D.9;class=CDS" role="_blank">Y45F10D.9</ulink>)</entry>
+                        <entry>YES</entry>
+                        <entry>HsSAS-6; DKFZP761 A078</entry>
+                        <entry>Centriole protein required for centriole assembly; like <ulink url="http://www.wormbase.org/db/seq/protein?name=SAS-4;class=protein" role="_blank">SAS-4</ulink>, is
+                            recruited to centrioles once per cell cycle and does not subsequently
+                            exchange; physically interacts with <ulink url="http://www.wormbase.org/db/seq/protein?name=SAS-5;class=protein" role="_blank">SAS-5</ulink>; requires <ulink url="http://www.wormbase.org/db/seq/protein?name=ZYG-1;class=protein" role="_blank">ZYG-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=SAS-5;class=protein" role="_blank">SAS-5</ulink>, but
+                            not <ulink url="http://www.wormbase.org/db/seq/protein?name=SAS-4;class=protein" role="_blank">SAS-4</ulink> to be recruited to centrioles; required for the localization
+                            of <ulink url="http://www.wormbase.org/db/seq/protein?name=SAS-4;class=protein" role="_blank">SAS-4</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=SAS-5;class=protein" role="_blank">SAS-5</ulink>. Like <ulink url="http://www.wormbase.org/db/seq/protein?name=SAS-4;class=protein" role="_blank">SAS-4</ulink>, partial depletion of <ulink url="http://www.wormbase.org/db/seq/protein?name=SAS-5;class=protein" role="_blank">SAS-5</ulink> leads to the
+                            formation of defective centrioles that recruit less than wild-type
+                            levels of PCM. The human homolog of <ulink url="http://www.wormbase.org/db/seq/protein?name=SAS-6;class=protein" role="_blank">SAS-6</ulink> localizes to centrioles and is
+                            required for centriole duplication.</entry>
+                        <entry><link linkend="bib25">Dammermann, 2004</link>; <link linkend="bib76">Leidel, 2005</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=ZYG-1;class=protein" role="_blank">ZYG-1</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=zyg-1" role="_blank">zyg-1</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/gene/gene?name=F59E12.2;class=CDS" role="_blank">F59E12.2</ulink>)</entry>
+                        <entry>YES</entry>
+                        <entry>?</entry>
+                        <entry>Centriole protein required for centriole assembly; localizes to
+                            centrioles throughout the cell cycle, but in contrast to SAS-4-6 is not
+                            detected on centrioles in sperm; required to target <ulink url="http://www.wormbase.org/db/seq/protein?name=SAS-4;class=protein" role="_blank">SAS-4</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=SAS-5;class=protein" role="_blank">SAS-5</ulink> and
+                            <ulink url="http://www.wormbase.org/db/seq/protein?name=SAS-6;class=protein" role="_blank">SAS-6</ulink> to centrioles; atypical protein kinase that autophosphorylates in
+                            vitro, but <emphasis>in vivo</emphasis> substrates remain unknown; <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=zyg-1" role="_blank">zyg-1</ulink></emphasis> mutation interacts
+                            genetically with a mutation in spd-2.</entry>
+                        <entry><link linkend="bib101">O&apos;Connell, 2001</link>; <link linkend="bib64">Kemp, 2004</link>; <link linkend="bib27">Delattre, 2004</link>; <link linkend="bib25">Dammermann, 2004</link>
+                       </entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=SPD-2;class=protein" role="_blank">SPD-2</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=spd-2" role="_blank">spd-2</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/gene/gene?name=F32H2.3;class=CDS" role="_blank">F32H2.3</ulink>)</entry>
+                        <entry>YES</entry>
+                        <entry>FLJ10352</entry>
+                        <entry>Bi-functional protein required for new centriole formation and for
+                            the assembly of the PCM around the centrioles; localizes to both
+                            centrioles and the PCM; <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=spd-2" role="_blank">spd-2</ulink></emphasis> mutation interacts genetically with
+                            mutations in both <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=zyg-1" role="_blank">zyg-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=spd-5" role="_blank">spd-5</ulink></emphasis>; the <ulink url="http://www.wormbase.org/db/seq/protein?name=SPD-2;class=protein" role="_blank">SPD-2</ulink> domain shares homology to
+                            the ASP protein family.</entry>
+                        <entry><link linkend="bib100">O'Connell, 2000</link>; <link linkend="bib64">Kemp, 2004</link>; <link linkend="bib110">Pelletier, 2004</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=SPD-5;class=protein" role="_blank">SPD-5</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=spd-5" role="_blank">spd-5</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/gene/gene?name=F56A3.4;class=CDS" role="_blank">F56A3.4</ulink>)</entry>
+                        <entry>YES</entry>
+                        <entry/>
+                        <entry>PCM component required for PCM assembly; required to recruit all
+                            tested PCM proteins; in <ulink url="http://www.wormbase.org/db/seq/protein?name=SPD-5;class=protein" role="_blank">SPD-5</ulink> depleted embryos centrosomal microtubule
+                            asters are absent and spindle assembly fails; depleted embryos also
+                            exhibit a severe defect in new centriole assembly, possibly due to
+                            failure to recruit gamma-tubulin to promote the formation of centriolar
+                            microtubules; a <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=spd-5" role="_blank">spd-5</ulink></emphasis> mutation interacts genetically with mutations in
+                            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=spd-2" role="_blank">spd-2</ulink></emphasis> and dynein heavy chain.</entry>
+                        <entry><link linkend="bib51">Hamill, 2002</link>; <link linkend="bib64">Kemp, 2004</link>; <link linkend="bib25">Dammermann, 2004</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=AIR-1;class=protein" role="_blank">AIR-1</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=air-1" role="_blank">air-1</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/gene/gene?name=K07C11.2;class=CDS" role="_blank">K07C11.2</ulink>)</entry>
+                        <entry>YES</entry>
+                        <entry>Aurora A</entry>
+                        <entry>PCM component required for PCM assembly; localization appears more
+                            peripheral than that of gamma-tubulin, extending out along centrosomal
+                            microtubules; required to recruit additional PCM during centrosome
+                            maturation; in depleted embryos centrosomes remain small and spindle
+                            assembly fails.</entry>
+                        <entry><link linkend="bib129">Schumacher, 1998</link>; <link linkend="bib52">Hannak, 2001</link></entry>
+                    </row>
+                    <row>
+                        <entry>gamma- tubulin</entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tbg-1" role="_blank">tbg-1</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/gene/gene?name=F58A4.8;class=CDS" role="_blank">F58A4.8</ulink>)</entry>
+                        <entry>YES</entry>
+                        <entry>gamma- tubulin</entry>
+                        <entry>Normal levels of <ulink url="http://www.wormbase.org/db/seq/protein?name=SPD-5;class=protein" role="_blank">SPD-5</ulink> are observed in depleted embryos indicating
+                            that it is not required for PCM formation; in depleted embryos,
+                            centrosomal microtubule asters fail to form during interphase, but
+                            robust asters assemble as embryos enter mitosis; although unknown
+                            mechanisms support partial assembly of mitotic centrosomal asters, the
+                            rate of centrosomal microtubule nucleation is severely compromised in
+                            depleted embryos indicating that the kinetically dominant pathway for
+                            the nucleation of centrosomal microtubules is gamma-tubulin dependent;
+                            depleted embryos also exhibit a severe defect in new centriole assembly.</entry>
+                        <entry><link linkend="bib8">Bobbinec, 2000</link>; <link linkend="bib144">Strome, 2001</link>; <link linkend="bib53">Hannak, 2002</link></entry>
+                    </row>
+                    <row>
+                        <entry>CeGrip-1</entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gip-1" role="_blank">gip-1</ulink></emphasis> (H04J21.3)</entry>
+                        <entry>YES</entry>
+                        <entry>GCP3</entry>
+                        <entry>PCM component; orthologues form a heterotrimeric complex with
+                            gamma-tubulin in <emphasis>Xenopus</emphasis>, <emphasis>Drosophila</emphasis>, and <emphasis>S. cerevisiae</emphasis>; depletion
+                            prevents recruitment of gamma-tubulin to centrosomes; depletion
+                            phenotype is essentially identical to that observed in gamma tubulin
+                            depleted embryos.</entry>
+                        <entry><link linkend="bib53">Hannak, 2002</link></entry>
+                    </row>
+                    <row>
+                        <entry>CeGrip-2</entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gip-2" role="_blank">gip-2</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/gene/gene?name=C45G3.3;class=CDS" role="_blank">C45G3.3</ulink>)</entry>
+                        <entry>YES</entry>
+                        <entry>GCP2</entry>
+                        <entry>PCM component; orthologues form a heterotrimeric complex with
+                            gamma-tubulin in <emphasis>Xenopus</emphasis>, <emphasis>Drosophila</emphasis>, and <emphasis>S. cerevisiae</emphasis>; depletion
+                            prevents recruitment of gamma-tubulin to centrosomes; depletion
+                            phenotype is essentially identical to that observed in gamma tubulin
+                            depleted embryos.</entry>
+                        <entry><link linkend="bib53">Hannak, 2002</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=ZYG-9;class=protein" role="_blank">ZYG-9</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=zyg-9" role="_blank">zyg-9</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/gene/gene?name=F22B5.7;class=CDS" role="_blank">F22B5.7</ulink>)</entry>
+                        <entry>YES</entry>
+                        <entry>XMAP-215</entry>
+                        <entry>PCM component; physically interacts with <ulink url="http://www.wormbase.org/db/seq/protein?name=TAC-1;class=protein" role="_blank">TAC-1</ulink>; this interaction is
+                            required for the efficient localization of the <ulink url="http://www.wormbase.org/db/seq/protein?name=ZYG-9;class=protein" role="_blank">ZYG-9</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=TAC-1;class=protein" role="_blank">TAC-1</ulink> complex to
+                            centrosomes; important regulator of microtubule dynamics; depletion
+                            phenotype is similar to that resulting from treatment of embryos with
+                            low doses of nocodozole which destabilize microtubules, pronuclear
+                            migration fails and a short spindle forms in the embryo posterior.</entry>
+                        <entry><link linkend="bib89">Matthews, 1998</link>; <link linkend="bib72">Le Bot, 2003</link>; <link linkend="bib138">Srayko, 2003</link>; <link linkend="bib5">Bellanger, 2003</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=TAC-1;class=protein" role="_blank">TAC-1</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tac-1" role="_blank">tac-1</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/gene/gene?name=Y54E2A.3;class=CDS" role="_blank">Y54E2A.3</ulink>)</entry>
+                        <entry>YES</entry>
+                        <entry>TACC-1, 2, 3</entry>
+                        <entry>PCM component; physically interacts with <ulink url="http://www.wormbase.org/db/seq/protein?name=ZYG-9;class=protein" role="_blank">ZYG-9</ulink>; <ulink url="http://www.wormbase.org/db/seq/protein?name=TAC-1;class=protein" role="_blank">TAC-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=ZYG-9;class=protein" role="_blank">ZYG-9</ulink> are
+                            dependent on each another for their localization to the centrosome.
+                            Depletion phenotype is similar to that resulting from treatment of
+                            embryos with low doses of nocodozole which destabilize microtubules,
+                            pronuclear migration fails and a short spindle forms in the embryo
+                            posterior.</entry>
+                        <entry><link linkend="bib72">Le Bot, 2003</link>; <link linkend="bib138">Srayko, 2003</link>; <link linkend="bib5">Bellanger, 2003</link></entry>
+                    </row>
+                </tbody>
+				</tgroup>
+            </table>
+        <para>Several PCM proteins are required for the activity rather than the assembly of the
+            PCM. The microtubule nucleating activity of the pericentriolar material requires the
+            centrosomal tubulin isoform gamma-tubulin, and two gamma-tubulin associated proteins,
+            CeGrip-1 and CeGrip-2. Embryos depleted of any of these proteins fail to form
+            centrosomal microtubule asters during interphase (<link linkend="bib53">Hannak et al., 2002</link><!--; PMID 12011109-->).
+            As depleted embryos enter mitosis, relatively robust microtubule asters form around the
+            centrosomes, suggesting that a gamma-tubulin independent pathway contributes to their
+            assembly (<link linkend="bib144">Strome et al., 2001</link><!--; PMID 11408582-->). However, chill and rewarm experiments
+            reveal that the rate of centrosomal microtubule nucleation is highly compromised in
+            gamma-tubulin depleted embryos and spindle assembly fails (<link linkend="bib53">Hannak et al., 2002</link><!--; PMID 12011109-->; <link linkend="bib144">Strome et al., 2001</link><!--; PMID 11408582-->). <ulink url="http://www.wormbase.org/db/seq/protein?name=ZYG-9;class=protein" role="_blank">ZYG-9</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=TAC-1;class=protein" role="_blank">TAC-1</ulink> are two conserved PCM
+            proteins that associate to form a complex that promotes microtubule growth. Embryos
+            depleted of either protein exhibit defects in pronuclear migration, presumably because
+            centrosomal microtubules are too short to capture the oocyte pronucleus, and small
+            spindles form around the sperm chromatin in the embryo posterior (<link linkend="bib5">Bellanger and G&#x000F6;nczy, 2003</link><!--; PMID 12956950-->; <link linkend="bib72">Le Bot et al., 2003</link><!--; PMID 12956951-->; <link linkend="bib89">Matthews et al., 1998</link><!--; PMID 9606208-->; <link linkend="bib138">Srayko et al., 2003</link><!--; PMID 12956952-->).</para>
+        <para>Seven <emphasis>C. elegans</emphasis> proteins have been shown to contribute to new centriole assembly.
+            Four of these, <ulink url="http://www.wormbase.org/db/seq/protein?name=SAS-4;class=protein" role="_blank">SAS-4</ulink> (<link linkend="bib68">Kirkham et al., 2003</link><!--; PMID 12600319-->; <link linkend="bib77">Leidel and G&#x000F6;nczy, 2003</link><!--; PMID 12636923-->), <ulink url="http://www.wormbase.org/db/seq/protein?name=SAS-5;class=protein" role="_blank">SAS-5</ulink> (<link linkend="bib25">Dammermann et al., 2004</link><!--; PMID 15572125-->; <link linkend="bib27">Delattre et al., 2004</link><!--; PMID 15232593-->; <link linkend="bib126">Schmutz and Spang, 2005</link><!--; PMID 15724817-->), <ulink url="http://www.wormbase.org/db/seq/protein?name=SAS-6;class=protein" role="_blank">SAS-6</ulink> (<link linkend="bib25">Dammermann et al., 2004</link><!--; PMID 15572125-->; <link linkend="bib76">Leidel et al., 2005</link><!--; PMID 15665853-->), and the atypical protein kinase <ulink url="http://www.wormbase.org/db/seq/protein?name=ZYG-1;class=protein" role="_blank">ZYG-1</ulink>
+            (<link linkend="bib101">O'Connell et al., 2001</link><!--; PMID-->), localize to centrioles and are specifically required for
+            centriole formation. Depletion of any of these proteins by RNAi results in specific
+            failure of centrosome duplication. In this characteristic phenotype (<link linkend="bib101">O'Connell et al., 2001</link><!--; PMID-->), the two sperm centrioles separate after fertilization (as in wild-type) and
+            organize the two centrosomes that form the poles of an apparently normal spindle during
+            the first mitotic division. However, since daughter centrioles fail to form adjacent to
+            each of the sperm centrioles, only one centriole instead of the normal two are released
+            into each daughter cell when the centrosomes break down in telophase. Since each
+            daughter cell contains only one centriole, it can form only one centrosome, and
+            monopolar spindles are observed in both cells at the two-cell stage. <ulink url="http://www.wormbase.org/db/seq/protein?name=SPD-2;class=protein" role="_blank">SPD-2</ulink> is a
+            bi-functional protein that localizes to centrioles as well as the PCM and is required
+            for centriole assembly in addition to its role in PCM recruitment (<link linkend="bib64">Kemp et al., 2004</link><!--; PMID 15068791-->; <link linkend="bib110">Pelletier et al., 2004</link><!--; PMID 15186742-->). Embryos depleted of two
+            pericentriolar material proteins, <ulink url="http://www.wormbase.org/db/seq/protein?name=SPD-5;class=protein" role="_blank">SPD-5</ulink> and gamma-tubulin, also exhibit severe defects
+            in centriole assembly, leading to the idea that the PCM contributes to centriole
+            assembly by recruiting gamma-tubulin, which may promote the assembly of the microtubules
+            that make up the centriolar cylinders, as well as those nucleated by the PCM (<link linkend="bib25">Dammermann et al., 2004</link><!--; PMID 15572125-->).</para>
+    </sect1>
+<?newpage?>
+    <sect1>
+        <title>Formation of mitotic chromosomes</title>
+        <para>The formation of mitotic chromosomes begins when cohesin is loaded onto chromosomes
+            and establishes cohesion between the duplicated chromosomes (sister chromatids) during
+            DNA replication in S phase. Proteolytic cleavage of one of the cohesin subunits later in
+            the cell cycle is thought to release the linkage between the sister chromatids to allow
+            their segregation during anaphase (<link linkend="bib49">Haering and Nasmyth, 2003</link><!--; PMID 14635253-->). The
+            components of the <emphasis>C. elegans</emphasis> cohesin complex have been identified and depletion has
+            revealed roles in mitotic chromosome segregation and the pairing of homologous
+            chromosomes during meiosis (<link linkend="table3">Table 3</link>; <link linkend="bib13">Chan et al., 2003</link><!--; PMID 12827206-->; <link linkend="bib92">Mito et al., 2003</link><!--; PMID 12808038-->; <link linkend="bib109">Pasierbek et al., 2003</link><!--; PMID 14499625-->).</para>
+            <table id="table3" frame="all">
+                <title>Table 3. Mitotic chromosome proteins</title>
+                <tgroup cols="6">
+<colspec colname="c1" align="left" colwidth="1*"/>
+<colspec colname="c2" align="left" colwidth="1.1*"/>
+<colspec colname="c3" align="left" colwidth="0.9*"/>
+<colspec colname="c4" align="left" colwidth="1*"/>
+<colspec colname="c5" align="left" colwidth="2.5*"/>
+<colspec colname="c6" align="left" colwidth="1.5*"/>
+                <thead>
+                    <row>
+                        <entry><emphasis>C. elegans</emphasis> protein</entry>
+                        <entry><emphasis>C. elegans</emphasis> gene</entry>
+                        <entry>Required for embryonic viability?</entry>
+                        <entry>Vertebrate orthologue</entry>
+                        <entry>Summary of localization and functional analysis</entry>
+                        <entry>Selected references</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=HIM-1;class=protein" role="_blank">HIM-1</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=him-1" role="_blank">him-1</ulink></emphasis>; <emphasis>smc-1</emphasis>; (<ulink url="http://www.wormbase.org/db/gene/gene?name=F28B3.7;class=CDS" role="_blank">F28B3.7</ulink>)</entry>
+                        <entry>YES</entry>
+                        <entry>SMC-1</entry>
+                        <entry>Component of the cohesin complex; concentrated in the nucleus during
+                            interphase; by the metaphase to anaphase transition levels in the vicinity
+                            of the chromatin are reduced and protein appears excluded from the
+                            compacted chromatin.</entry>
+                        <entry><link linkend="bib13">Chan, 2003</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=SMC-3;class=protein" role="_blank">SMC-3</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=smc-3" role="_blank">smc-3</ulink></emphasis>; (<ulink url="http://www.wormbase.org/db/gene/gene?name=Y47D3A.26;class=CDS" role="_blank">Y47D3A.26</ulink>)</entry>
+                        <entry>YES</entry>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=SMC-3;class=protein" role="_blank">SMC-3</ulink></entry>
+                        <entry>Component of the cohesin complex; concentrated in the nucleus during
+                            interphase; by the metaphase to anaphase transition levels in the vicinity
+                            of the chromatin are reduced and protein appears excluded from the
+                            compacted chromatin.</entry>
+                        <entry><link linkend="bib13">Chan, 2003</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=SCC-1;class=protein" role="_blank">SCC-1</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=scc-1" role="_blank">scc-1</ulink></emphasis>; (<ulink url="http://www.wormbase.org/db/gene/gene?name=F10G7.4;class=CDS" role="_blank">F10G7.4</ulink>)</entry>
+                        <entry>YES</entry>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=SCC-1;class=protein" role="_blank">SCC-1</ulink></entry>
+                        <entry>Component of the cohesin complex; concentrated in the nucleus during
+                            interphase; by the metaphase to anaphase transition levels in the vicinity
+                            of the chromatin are reduced and protein appears to be excluded from the
+                            compacted chromatin; depletion results in a defect in mitotic chromosome
+                            segregation; the severity of the chromosome segregation defects is
+                            enhanced by simultaneous RNAi of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=him-1" role="_blank">him-1</ulink></emphasis>.</entry>
+                        <entry><link linkend="bib13">Chan, 2003</link>; <link linkend="bib92">Mito, 2003</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=SCC-3;class=protein" role="_blank">SCC-3</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=scc-3" role="_blank">scc-3</ulink></emphasis>; (<ulink url="http://www.wormbase.org/db/gene/gene?name=F18E2.3;class=CDS" role="_blank">F18E2.3</ulink>)</entry>
+                        <entry>YES</entry>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=SCC-3;class=protein" role="_blank">SCC-3</ulink></entry>
+                        <entry>Component of the cohesin complex; concentrated in the nucleus during
+                            interphase; by the metaphase to anaphase transition levels in the vicinity
+                            of the chromatin are reduced and protein appears to be excluded from the
+                            compacted chromatin; depletion results in defects in chromosome
+                            segregation during mitosis and homologous pairing during meiosis.</entry>
+                        <entry><link linkend="bib13">Chan, 2003</link>; <link linkend="bib109">Pasierbek, 2003</link>; <link linkend="bib95">Moore, 2005</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=TIM-1;class=protein" role="_blank">TIM-1</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tim-1" role="_blank">tim-1</ulink></emphasis>; <emphasis>csg-5</emphasis>; (<ulink url="http://www.wormbase.org/db/gene/gene?name=Y75B8A.22;class=CDS" role="_blank">Y75B8A.22</ulink>)</entry>
+                        <entry>YES</entry>
+                        <entry>mTim1</entry>
+                        <entry>Component of the cohesin complex; concentrated in the nucleus during
+                            interphase; by the metaphase to anaphase transition levels in the vicinity
+                            of the chromatin are reduced and protein appears excluded from the
+                            compacted chromatin; RNAi of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tim-1" role="_blank">tim-1</ulink></emphasis> in conjunction with <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=him-1" role="_blank">him-1</ulink></emphasis> results in
+                            more severe defects in chromosome segregation than either alone;
+                            required to recruit non-SMC cohesin subunits to chromatin before or
+                            during pre-meiotic S phase and to stabilize homologous chromosome
+                            associations during synapsis and sister chromatid cohesion in
+                            diplotene/ diakinesis.</entry>
+                        <entry><link linkend="bib13">Chan, 2003</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=MIX-1;class=protein" role="_blank">MIX-1</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mix-1" role="_blank">mix-1</ulink></emphasis>; (<ulink url="http://www.wormbase.org/db/gene/gene?name=M106.1;class=CDS" role="_blank">M106.1</ulink>)</entry>
+                        <entry>YES</entry>
+                        <entry>SMC-2</entry>
+                        <entry>Component of the condensin complex; required for mitotic chromosome
+                            condensation; chromosomal localization does not require kinetochore
+                            assembly; depletion results in severe chromatin bridging during
+                            anaphase; required for X-chromosome dosage compensation (repression).</entry>
+                        <entry><link linkend="bib78">Lieb, 1998</link>; <link linkend="bib50">Hagstrom, 2002</link>; <link linkend="bib62">Kaitna, 2002</link>; <link linkend="bib14">Chan, 2004</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=SMC-4;class=protein" role="_blank">SMC-4</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=smc-4" role="_blank">smc-4</ulink></emphasis>; (<ulink url="http://www.wormbase.org/db/gene/gene?name=F35G12.8;class=CDS" role="_blank">F35G12.8</ulink>)</entry>
+                        <entry>YES</entry>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=SMC-4;class=protein" role="_blank">SMC-4</ulink></entry>
+                        <entry>Component of the condensin complex; required for mitotic chromosome
+                            condensation; chromosomal localization does not require kinetochore
+                            assembly; depletion leads to severe chromatin bridging during anaphase.</entry>
+                        <entry><link linkend="bib50">Hagstrom, 2002</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=HCP-6;class=protein" role="_blank">HCP-6</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=hcp-6" role="_blank">hcp-6</ulink></emphasis>; (<ulink url="http://www.wormbase.org/db/gene/gene?name=Y110A7A.1;class=CDS" role="_blank">Y110A7A.1</ulink>)</entry>
+                        <entry>YES</entry>
+                        <entry>CAP-D3, Heat (IIA)</entry>
+                        <entry>Component of the condensin complex; required for mitotic chromosome
+                            condensation; chromosomal localization requires kinetochore assembly
+                            (fails to localize in CeCENP-C RNAi); required for mitotic chromosome
+                            condensation; depletion leads to severe chromatin bridging during
+                            anaphase.</entry>
+                        <entry><link linkend="bib142">Stear and Roth, 2002</link>; <link linkend="bib14">Chan, 2004</link></entry>
+                    </row>
+                    <row>
+                        <entry/>
+                        <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F55C5.4;class=CDS" role="_blank">F55C5.4</ulink></entry>
+                        <entry>YES</entry>
+                        <entry>CAP-G2; Heat (IIB)</entry>
+                        <entry>Predicted component of the condensin complex based on sequence
+                            homology; no published localization or detailed depletion data.</entry>
+                        <entry><link linkend="bib106">Ono, 2003</link></entry>
+                    </row>
+                    <row>
+                        <entry>KLE-2</entry>
+                        <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C29E4.2;class=CDS" role="_blank">C29E4.2</ulink></entry>
+                        <entry>YES</entry>
+                        <entry>CAP-H2; Kleisin <symbol role="symbolfont">&#x003B3;</symbol>  (IIC)</entry>
+                        <entry>Component of the condensin complex; required for mitotic chromosome
+                            condensation; depletion leads to severe chromatin bridging during
+                            anaphase.</entry>
+                        <entry>Schleiffer, 2003</entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=AIR-2;class=protein" role="_blank">AIR-2</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=air-2" role="_blank">air-2</ulink></emphasis>; <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-603" role="_blank">let-603</ulink></emphasis>; <emphasis>stu-7</emphasis>; <emphasis>cyk-6</emphasis>; (<ulink url="http://www.wormbase.org/db/gene/gene?name=B0207.4;class=CDS" role="_blank">B0207.4</ulink>)</entry>
+                        <entry>YES</entry>
+                        <entry>Aurora B</entry>
+                        <entry>Aurora/Ip11- related serine/threonine protein kinase; chromosomal
+                            passenger protein, localizes to chromosomes between prophase and
+                            telophase and to microtubule bundles in the spindle midzone between
+                            anaphase and telophase; forms a complex with <ulink url="http://www.wormbase.org/db/seq/protein?name=BIR-1;class=protein" role="_blank">BIR-1</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=ICP-1;class=protein" role="_blank">ICP-1</ulink>, and <ulink url="http://www.wormbase.org/db/seq/protein?name=CSC-1;class=protein" role="_blank">CSC-1</ulink> and
+                            requires all three to localize to chromosomes; required for histone H3
+                            phosphorylation, chromosome alignment and segregation, formation of the
+                            spindle midzone and cytokinesis.</entry>
+                        <entry><link linkend="bib129">Schumacher, 1998</link>; <link linkend="bib57">Hsu et al., 2000</link>; <link linkend="bib61">Kaitna, 2000</link>; <link linkend="bib132">Severson, 2000</link>;
+                            <link linkend="bib105">Oegema, 2001</link>; <link linkend="bib121">Rogers 2002</link>; <link linkend="bib62">Kaitna, 2002</link>; <link linkend="bib122">Romano, 2003</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=ICP-1;class=protein" role="_blank">ICP-1</ulink>, CeINCENP</entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=icp-1" role="_blank">icp-1</ulink></emphasis>; (<ulink url="http://www.wormbase.org/db/gene/gene?name=Y39G10AR.13;class=CDS" role="_blank">Y39G10A R.13</ulink>)</entry>
+                        <entry>YES</entry>
+                        <entry>INCENP</entry>
+                        <entry>Chromosomal passenger protein, localizes to chromosomes between
+                            prophase and telophase and microtubule bundles in the spindle midzone
+                            between anaphase and telophase; required for chromosome alignment and
+                            segregation, formation of the spindle midzone and cytokinesis;
+                            chromosomal localization requires <ulink url="http://www.wormbase.org/db/seq/protein?name=BIR-1;class=protein" role="_blank">BIR-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=CSC-1;class=protein" role="_blank">CSC-1</ulink>, but not AIR-2.
+                            Kinetochore assembly does not require <ulink url="http://www.wormbase.org/db/seq/protein?name=ICP-1;class=protein" role="_blank">ICP-1</ulink> and inhibiting kinetochore
+                            assembly by depletion of CENP-A (<ulink url="http://www.wormbase.org/db/seq/protein?name=HCP-3;class=protein" role="_blank">HCP-3</ulink>) does not
+                            block the recruitment of <ulink url="http://www.wormbase.org/db/seq/protein?name=ICP-1;class=protein" role="_blank">ICP-1</ulink> to chromosomes.</entry>
+                        <entry><link linkend="bib61">Kaitna, 2000</link>; <link linkend="bib62">Kaitna, 2002</link>; <link linkend="bib105">Oegema, 2001</link>; <link linkend="bib122">Romano, 2003</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=BIR-1;class=protein" role="_blank">BIR-1</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=bir-1" role="_blank">bir-1</ulink></emphasis>; (<ulink url="http://www.wormbase.org/db/gene/gene?name=T27F2.3;class=CDS" role="_blank">T27F2.3</ulink>)</entry>
+                        <entry>YES</entry>
+                        <entry>Survivin</entry>
+                        <entry>Chromosomal passenger protein, localizes to chromosomes between
+                            prophase and telophase and microtubule bundles in the spindle midzone
+                            between anaphase and telophase; chromosomal localization requires <ulink url="http://www.wormbase.org/db/seq/protein?name=CSC-1;class=protein" role="_blank">CSC-1</ulink>
+                            and <ulink url="http://www.wormbase.org/db/seq/protein?name=ICP-1;class=protein" role="_blank">ICP-1</ulink>, but not <ulink url="http://www.wormbase.org/db/seq/protein?name=AIR-2;class=protein" role="_blank">AIR-2</ulink>; required for chromosome alignment and
+                            segregation, formation of the spindle midzone and cytokinesis.</entry>
+                        <entry><link linkend="bib34">Fraser, 1999</link>; <link linkend="bib61">Kaitna, 2000</link>; <link linkend="bib137">Speliotes, 2000</link>; <link linkend="bib105">Oegema, 2001</link>; <link linkend="bib122">Romano, 2003</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=KLP-19;class=protein" role="_blank">KLP-19</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=klp-19" role="_blank">klp-19</ulink></emphasis></entry>
+                        <entry>YES</entry>
+                        <entry>kinesin-4; Kif4</entry>
+                        <entry>Localizes to the chromatin between the kinetochores; depletion
+                            results in aberrant chromosome motions during prometaphase, chromosome
+                            misalignment and the formation of multiple chromatin bridges during
+                            anaphase; thought to reduce the frequency with which individual diffuse
+                            kinetochores become attached to microtubules emanating from both spindle
+                            poles (merotelic attachment) by interacting with microtubules to
+                            stabilize an orientation in which the two kinetochores directly face the
+                            spindle poles.</entry>
+                        <entry><link linkend="bib115">Powers, 2004</link></entry>
+                    </row>
+                </tbody>
+				</tgroup>
+            </table>
+        <para>Two additional protein complexes, condensin and the chromosomal passenger complex,
+            also have critical roles in the formation and segregation of mitotic chromosomes. In
+            contrast to vertebrates, which have two complexes, condensins I and II, that mediate
+            spatially distinct aspects of condensation (<link linkend="bib54">Hirano, 2004</link><!--; PMID 14657659-->), <emphasis>C. elegans</emphasis> has
+            only condensin II (<link linkend="table3">Table 3</link>, <link linkend="bib50">Hagstrom et al., 2002</link><!--; PMID 11914278-->; <link linkend="bib106">Ono et al., 2003</link><!--; PMID 14532007-->). Chromosome condensation is delayed in condensin depleted embryos, but DNA
+            compaction is ultimately achieved, indicating the existence of condensin-independent
+            mechanisms that can compact mitotic chromatin. However, sister chromatid pairs formed in
+            the absence of condensin are structurally defective and cannot be efficiently separated
+            from each other by the mitotic spindle (<link linkend="bib50">Hagstrom et al., 2002</link><!--; PMID 11914278-->; <link linkend="bib62">Kaitna et al., 2002</link><!--; PMID 12015116-->; <link linkend="bib14">Chan et al., 2004</link><!--; PMID 15557118-->). Concurrent with, but
+            largely independent of condensation, kinetochores assemble to create chromosomal
+            attachment sites for spindle microtubules (described in greater detail below). Like
+            condensin, the chromosomal passenger protein complex (including the aurora B kinase,
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=AIR-2;class=protein" role="_blank">AIR-2</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=BIR-1;class=protein" role="_blank">BIR-1</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=ICP-1;class=protein" role="_blank">ICP-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=CSC-1;class=protein" role="_blank">CSC-1</ulink>) is recruited to mitotic chromosomes as they form and is
+            required for their proper segregation, (<link linkend="bib128">Schumacher et al., 1998</link><!--; PMID 9852156-->; <link linkend="bib132">Severson et al., 2000</link><!--; PMID 11050384-->; <link linkend="bib61">Kaitna, 2000</link><!--; PMID 11050385-->; <link linkend="bib105">Oegema, 2001</link><!--; 11402065-->; <link linkend="bib62">Kaitna et al., 2002</link><!--; PMID 12015116-->; <link linkend="bib121">Rogers 2002</link><!--; PMID; 11940606-->; Romano 2004<!--; PMID12707312-->;
+            <link linkend="bib57">Hsu et al., 2000</link><!--; PMID 10975519-->). Although it does not appear to be required for
+            kinetochore assembly in <emphasis>C. elegans</emphasis>, the passenger complex plays important roles in
+            chromosome structure and likely functions to correct aberrant kinetochore-microtubule
+            attachments (reviewed in <link linkend="bib150">Vagnarelli and Earnshaw, 2004</link><!--; PMID 15351889-->).</para>
+    </sect1>
+    <sect1>
+        <title>Kinetochore assembly</title>
+        <para>Eukaryotes can be divided into two groups based on the architecture of their mitotic
+            chromosomes. Monocentric organisms assemble kinetochores on a single localized
+            chromosomal site defined by the presence of dedicated centromeric chromatin. In
+            contrast, holocentric organisms, including <emphasis>C. elegans</emphasis>, assemble diffuse kinetochores
+            along the entire poleward face of each sister chromatid (<xref linkend="figure6"/>A).
+            Holocentric chromosome architecture is present in widely divergent and highly successful
+            metazoan lineages (including nematodes, hemipteran insects, and lower plants) that
+            constitute a large part of the earth’s biomass, and <emphasis>C. elegans</emphasis> has emerged as an
+            important model system for studying holocentric chromosome architecture (reviewed in
+            <link linkend="bib28">Dernburg, 2001</link><!--; PMID 11402076-->; <link linkend="bib83">Maddox et al., 2004</link><!--; PMID 15289669-->).</para>
+        <para>Despite differences in the extent of the chromosomal length occupied by the
+            kinetochore, the molecular composition of kinetochores in <emphasis>C. elegans</emphasis> and monocentric
+            organisms is very similar (<link linkend="table4">Table 4</link>). Importantly, mitotic kinetochores in both
+            monocentric and holocentric organisms assemble on a base of specialized centromeric
+            chromatin defined by the presence of nucleosomes containing the histone H3 variant
+            CENP-A (<link linkend="bib11">Buchwitz et al., 1999</link><!--; PMID 10524621-->; <link linkend="bib146">Sullivan, 2001</link><!--; PMID 11250142-->). Depletion
+            of the <emphasis>C. elegans</emphasis> homolog of CENP-A leads to a characteristic “kinetochore-null”
+            phenotype in which chromosomes fail to distribute over the spindle equator and to
+            segregate (<link linkend="bib105">Oegema et al., 2001</link><!--; PMID 11402065-->). This defect results from the failure to
+            assemble kinetochores that can interact with spindle microtubules. To date only 4
+            proteins have been identified whose depletion gives a kinetochore-null defect:
+                CENP-A<ulink url="http://www.wormbase.org/db/seq/protein?name=HCP-3;class=protein" role="_blank"><superscript>HCP-3</superscript></ulink>, CENP-C<ulink url="http://www.wormbase.org/db/seq/protein?name=HCP-4;class=protein" role="_blank"><superscript>HCP-4</superscript></ulink>,
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=KNL-3;class=protein" role="_blank">KNL-3</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=KNL-1;class=protein" role="_blank">KNL-1</ulink>, which can be placed in a linear assembly hierarchy (<xref linkend="figure6"/>B) with CENP-A<ulink url="http://www.wormbase.org/db/seq/protein?name=HCP-3;class=protein" role="_blank"><superscript>HCP-3</superscript></ulink> at the top (<link linkend="bib94">Moore and Roth, 2001</link><!--; PMID 11402064-->; <link linkend="bib105">Oegema et al., 2001</link><!--; PMID 11402065-->; <link linkend="bib29">Desai et al., 2003</link><!--; PMID 14522947-->; <link linkend="bib17">Cheeseman et al., 2004</link><!--; PMID 15371340-->). <ulink url="http://www.wormbase.org/db/seq/protein?name=KNL-3;class=protein" role="_blank">KNL-3</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=KNL-1;class=protein" role="_blank">KNL-1</ulink> are components of
+            a 10-protein complex that is critical to forming the outer domains of the kinetochore
+            that interact with spindle microtubules (<xref linkend="figure6"/>B; <link linkend="bib17">Cheeseman et al., 2004</link><!--; PMID 15371340-->; <link linkend="bib29">Desai et al., 2003</link><!--; PMID 14522947-->). A number of other kinetochore
+            proteins have been identified whose depletion results in less severe chromosome
+            segregation defects (for examples see <link linkend="bib56">Howe et al., 2001</link><!--; PMID 11402066-->; <link linkend="bib93">Moore et al., 1999</link><!--; PMID 10545493-->; for a detailed summary see <link linkend="table4">Table 4</link>). The reproducible phenotypes
+            obtained following protein depletion have been useful in grouping proteins that function
+            together in the context of the kinetochore (<xref linkend="figure6"/>B; <link linkend="bib17">Cheeseman et al., 2004</link><!--; PMID 15371340-->).</para>
+        <mediaobject id="figure6" xreflabel="Figure 6">
+            <imageobject>
+                <imagedata entityref="fig6" align="center" width="5.8in"/>
+            </imageobject>
+            <textobject>
+                <phrase> figure 6</phrase>
+            </textobject> &fig6legend;</mediaobject>
+            <table id="table4" frame="all">
+                <title>Table 4. Kinetochore proteins</title>
+                <tgroup cols="6">
+				<colspec colname="c1" align="left" colwidth="1*"/>
+				<colspec colname="c2" align="left" colwidth="1.1*"/>
+				<colspec colname="c3" align="left" colwidth="0.9*"/>
+				<colspec colname="c4" align="left" colwidth="1*"/>
+				<colspec colname="c5" align="left" colwidth="2.5*"/>
+				<colspec colname="c6" align="left" colwidth="1.5*"/>
+                <thead>
+                    <row>
+                        <entry><emphasis>C. elegans</emphasis> protein</entry>
+                        <entry><emphasis>C. elegans</emphasis> gene</entry>
+                        <entry>Required for embryonic viability?</entry>
+                        <entry>Vertebrate orthologue</entry>
+                        <entry>Summary of localization and functional analysis</entry>
+                        <entry>Selected references</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>CeCENP-A, <ulink url="http://www.wormbase.org/db/seq/protein?name=HCP-3;class=protein" role="_blank">HCP-3</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=hcp-3" role="_blank">hcp-3</ulink></emphasis>; (<ulink url="http://www.wormbase.org/db/gene/gene?name=F58A4.3;class=CDS" role="_blank">F58A4.3</ulink>)</entry>
+                        <entry>YES</entry>
+                        <entry>CENP-A</entry>
+                        <entry>Histone H3-variant; thought to localize to chromatin throughout the
+                            cell cycle; found in nuclear foci during interphase and concentrated on
+                            the chromatin in a stripe that runs along the poleward face of each
+                            sister chromatid during mitosis; CeCENP-A is required for the
+                            localization of all other kinetochore components that have been tested;
+                            depletion results in failure to align and segregate mitotic chromosomes
+                            and premature spindle elongation due to the inability of the
+                            kinetochores to attach to spindle microtubules; a highly homologous gene
+                            (<ulink url="http://www.wormbase.org/db/gene/gene?name=F54C8.2;class=CDS" role="_blank">F54C8.2</ulink>) is likely also targeted by dsRNAs generated against CeCENP-A.
+                            The relative abundance of CeCENP-A versus <ulink url="http://www.wormbase.org/db/gene/gene?name=F54C8.2;class=CDS" role="_blank">F54C8.2</ulink> is not known. <emphasis>C.
+                            briggsae</emphasis> does not have 2 genes encoding CENP-A like proteins, suggesting
+                            that <ulink url="http://www.wormbase.org/db/gene/gene?name=F54C8.2;class=CDS" role="_blank">F54C8.2</ulink> may have arisen from a recent duplication.</entry>
+                        <entry><link linkend="bib11">Buchwitz, 1999</link>; <link linkend="bib105">Oegema, 2001</link></entry>
+                    </row>
+                    <row><entry>CeCENP-C, <ulink url="http://www.wormbase.org/db/seq/protein?name=HCP-4;class=protein" role="_blank">HCP-4</ulink></entry> <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=hcp-4" role="_blank">hcp-4</ulink></emphasis>; (<ulink url="http://www.wormbase.org/db/gene/gene?name=T03F1.9;class=CDS" role="_blank">T03F1.9</ulink>)</entry> <entry>YES</entry> <entry>CENP-C</entry> <entry>Kinetochore localization
+                        (prophase to telophase) requires CeCENP-A; CeCENP-C is required for the
+                        localization of all kinetochore proteins except CeCENP-A; associates with
+                        the <ulink url="http://www.wormbase.org/db/seq/protein?name=KNL-1;class=protein" role="_blank">KNL-1</ulink>/3 complex and may act as an adaptor to connect centromeric
+                        chromatin to the outer kinetochore; plays a role in the resolution of
+                        CeCENP-A chromatin into two paired “lines” on the replicated chromosome;
+                        depletion results in failure to align and segregate mitotic chromosomes and
+                        premature spindle elongation.</entry> <entry><link linkend="bib94">Moore, 2001</link>; <link linkend="bib105">Oegema, 2001</link>; <link linkend="bib29">Desai, 2003</link>;
+                            <link linkend="bib17">Cheeseman, 2004</link></entry> </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=KNL-3;class=protein" role="_blank">KNL-3</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=knl-3" role="_blank">knl-3</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/gene/gene?name=T10B5.6;class=CDS" role="_blank">T10B5.6</ulink>)
+                       </entry>
+                        <entry>YES</entry>
+                        <entry>?</entry>
+                        <entry>Kinetochore localization (prophase to telophase) requires CeCENP-A and CeCENP-C; <ulink url="http://www.wormbase.org/db/seq/protein?name=KNL-3;class=protein" role="_blank">KNL-3</ulink> levels at the kinetochore are reduced in embryos depleted of <ulink url="http://www.wormbase.org/db/seq/protein?name=MIS-12;class=protein" role="_blank">MIS-12</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=KBP-1;class=protein" role="_blank">KBP-1</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=KBP-2;class=protein" role="_blank">KBP-2</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=KNL-1;class=protein" role="_blank">KNL-1</ulink>; depletion results in failure to align and segregate mitotic chromosomes and premature spindle elongation; component of the 10-protein <ulink url="http://www.wormbase.org/db/seq/protein?name=KNL-1;class=protein" role="_blank">KNL-1</ulink>/3 complex required to assemble an outer kinetochore that can make microtubule attachments.</entry>
+                        <entry><link linkend="bib17">Cheeseman, 2004</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=KNL-1;class=protein" role="_blank">KNL-1</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=knl-1" role="_blank">knl-1</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/gene/gene?name=C02F5.1;class=CDS" role="_blank">C02F5.1</ulink>)
+                       </entry>
+                        <entry>YES</entry>
+                        <entry>AF15q14</entry>
+                        <entry>Kinetochore localization (prophase to telophase) requires CeCENP-A, CeCENP-C and <ulink url="http://www.wormbase.org/db/seq/protein?name=KNL-3;class=protein" role="_blank">KNL-3</ulink>; <ulink url="http://www.wormbase.org/db/seq/protein?name=KNL-1;class=protein" role="_blank">KNL-1</ulink> levels at the kinetochores are reduced in embryos depleted of <ulink url="http://www.wormbase.org/db/seq/protein?name=NDC-80;class=protein" role="_blank">NDC-80</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=HIM-10;class=protein" role="_blank">HIM-10</ulink>; depletion results in failure to align and segregate mitotic chromosomes and premature spindle elongation. Component of the 10-protein <ulink url="http://www.wormbase.org/db/seq/protein?name=KNL-1;class=protein" role="_blank">KNL-1</ulink>/3 complex required to assemble an outer kinetochore that can make microtubule attachments.</entry>
+                        <entry><link linkend="bib29">Desai, 2003</link>
+                            <link linkend="bib17">Cheeseman, 2004</link>
+                       </entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=MIS-12;class=protein" role="_blank">MIS-12</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mis-12" role="_blank">mis-12</ulink></emphasis>
+                            (<ulink url="http://www.wormbase.org/db/gene/gene?name=Y47G6A.24;class=CDS" role="_blank">Y47G6A.24</ulink>)
+                       </entry>
+                        <entry>YES</entry>
+                        <entry>Mis12</entry>
+                        <entry>Kinetochore localization (prophase to telophase) requires <ulink url="http://www.wormbase.org/db/seq/protein?name=KNL-3;class=protein" role="_blank">KNL-3</ulink> but not <ulink url="http://www.wormbase.org/db/seq/protein?name=KNL-1;class=protein" role="_blank">KNL-1</ulink>; relatively weak chromosome missegregation phenotype seen in depleted embryos consistent with a delay in the formation of chromosome- spindle attachments; identified by sequence homology to human and fission yeast Mis12 and as a component of the <ulink url="http://www.wormbase.org/db/seq/protein?name=KNL-1;class=protein" role="_blank">KNL-1</ulink>/3 complex.</entry>
+                        <entry><link linkend="bib17">Cheeseman, 2004</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=KBP-1;class=protein" role="_blank">KBP-1</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=kbp-1" role="_blank">kbp-1</ulink></emphasis>
+                            (<ulink url="http://www.wormbase.org/db/gene/gene?name=R13F6.1;class=CDS" role="_blank">R13F6.1</ulink>)
+                       </entry>
+                        <entry>YES</entry>
+                        <entry>?</entry>
+                        <entry>Localizes to kinetochores from prophase to telophase; relatively weak chromosome missegregation phenotype seen in depleted embryos consistent with a delay in the formation of chromosome- spindle attachments; identified as a component of the <ulink url="http://www.wormbase.org/db/seq/protein?name=KNL-1;class=protein" role="_blank">KNL-1</ulink>/3 complex.</entry>
+                        <entry><link linkend="bib17">Cheeseman, 2004</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=KBP-2;class=protein" role="_blank">KBP-2</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=kbp-2" role="_blank">kbp-2</ulink></emphasis>
+                            (<ulink url="http://www.wormbase.org/db/gene/gene?name=F26F4.13;class=CDS" role="_blank">F26F4.13</ulink>)
+                       </entry>
+                        <entry>YES</entry>
+                        <entry>?</entry>
+                        <entry>Localizes to kinetochores from prophase to telophase; relatively weak chromosome missegregation phenotype seen in depleted embryos consistent with a delay in the formation of chromosome- spindle attachments; identified as a component of the <ulink url="http://www.wormbase.org/db/seq/protein?name=KNL-1;class=protein" role="_blank">KNL-1</ulink>/3 complex.</entry>
+                        <entry><link linkend="bib17">Cheeseman, 2004</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=NDC-80;class=protein" role="_blank">NDC-80</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ndc-80" role="_blank">ndc-80</ulink></emphasis>
+                            (W01B6.9.1)
+                       </entry>
+                        <entry>YES</entry>
+                        <entry>Ndc80/
+                            HEC
+                       </entry>
+                        <entry>Localizes to kinetochores from prophase to telophase; kinetochore localization requires <ulink url="http://www.wormbase.org/db/seq/protein?name=KNL-1;class=protein" role="_blank">KNL-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=HIM-10;class=protein" role="_blank">HIM-10</ulink> in addition to chromatin- proximal components; depletion results in chromosome missegregation and premature spindle elongation; phenotype is less severe than a kinetochore-null but more severe than that of <ulink url="http://www.wormbase.org/db/seq/protein?name=MIS-12;class=protein" role="_blank">MIS-12</ulink>, suggests defect in the ability to form microtubule attachments that can withstand tension; member of the <ulink url="http://www.wormbase.org/db/seq/protein?name=NDC-80;class=protein" role="_blank">NDC-80</ulink> subcomplex, which is part of the larger <ulink url="http://www.wormbase.org/db/seq/protein?name=KNL-1;class=protein" role="_blank">KNL-1</ulink>/3 complex.</entry>
+                        <entry><link linkend="bib29">Desai, 2003</link>
+                            <link linkend="bib17">Cheeseman, 2004</link>
+                       </entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=HIM-10;class=protein" role="_blank">HIM-10</ulink>
+                            Nuf2<ulink url="http://www.wormbase.org/db/seq/protein?name=HIM-10;class=protein" role="_blank"><superscript>HIM-10</superscript></ulink>
+                       </entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=him-10" role="_blank">him-10</ulink></emphasis>
+                            (<ulink url="http://www.wormbase.org/db/gene/gene?name=R12B2.4;class=CDS" role="_blank">R12B2.4</ulink>)
+                       </entry>
+                        <entry>YES</entry>
+                        <entry>Nuf2</entry>
+                        <entry>Localizes to kinetochores from prophase to telophase; kinetochore localization requires <ulink url="http://www.wormbase.org/db/seq/protein?name=KNL-1;class=protein" role="_blank">KNL-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=NDC-80;class=protein" role="_blank">NDC-80</ulink>, in addition to chromatin- proximal components.  Depletion disrupts kinetochore ultrastructure, resulting in chromosome missegregation and premature spindle elongation; phenotype is less severe than a kinetochore-null but more severe than that of <ulink url="http://www.wormbase.org/db/seq/protein?name=MIS-12;class=protein" role="_blank">MIS-12</ulink>, suggests defect in the ability to form microtubule attachments that can withstand tension; member of the <ulink url="http://www.wormbase.org/db/seq/protein?name=NDC-80;class=protein" role="_blank">NDC-80</ulink> subcomplex, which is part of the larger <ulink url="http://www.wormbase.org/db/seq/protein?name=KNL-1;class=protein" role="_blank">KNL-1</ulink>/3 complex.</entry>
+                        <entry><link linkend="bib56">Howe, 2001</link>
+                            <link linkend="bib29">Desai, 2003</link>
+                            <link linkend="bib17">Cheeseman, 2004</link>
+                       </entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=KBP-3;class=protein" role="_blank">KBP-3</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=kbp-3" role="_blank">kbp-3</ulink></emphasis>
+                            (<ulink url="http://www.wormbase.org/db/gene/gene?name=F26H11.1;class=CDS" role="_blank">F26H11.1</ulink>)
+                       </entry>
+                        <entry>YES</entry>
+                        <entry>Spc25</entry>
+                        <entry>Localizes to kinetochores from prophase to telophase; depletion results in chromosome missegregation and premature spindle elongation; phenotype is less severe than a kinetochore-null but more severe than that of <ulink url="http://www.wormbase.org/db/seq/protein?name=MIS-12;class=protein" role="_blank">MIS-12</ulink>, suggests defect in the ability to form microtubule attachments that can withstand tension; member of the <ulink url="http://www.wormbase.org/db/seq/protein?name=NDC-80;class=protein" role="_blank">NDC-80</ulink> subcomplex, which is part of the larger <ulink url="http://www.wormbase.org/db/seq/protein?name=KNL-1;class=protein" role="_blank">KNL-1</ulink>/3 complex.</entry>
+                        <entry><link linkend="bib17">Cheeseman, 2004</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=KBP-4;class=protein" role="_blank">KBP-4</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=kbp-4" role="_blank">kbp-4</ulink></emphasis>
+                            (<ulink url="http://www.wormbase.org/db/gene/gene?name=Y92C3B.1;class=CDS" role="_blank">Y92C3B.1</ulink>)
+                       </entry>
+                        <entry>YES</entry>
+                        <entry>?</entry>
+                        <entry>Localizes to kinetochores from prophase to telophase. Depletion results in chromosome missegregation and premature spindle elongation; phenotype is less severe than a kinetochore-null but more severe than that of <ulink url="http://www.wormbase.org/db/seq/protein?name=MIS-12;class=protein" role="_blank">MIS-12</ulink>, suggests defect in the ability to form microtubule attachments that can withstand tension; identified as a <ulink url="http://www.wormbase.org/db/seq/protein?name=KNL-1;class=protein" role="_blank">KNL-1</ulink>/3-associated protein.</entry>
+                        <entry><link linkend="bib17">Cheeseman, 2004</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=KBP-5;class=protein" role="_blank">KBP-5</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=kbp-5" role="_blank">kbp-5</ulink></emphasis>
+                            (<ulink url="http://www.wormbase.org/db/gene/gene?name=C34B2.2;class=CDS" role="_blank">C34B2.2</ulink>)
+                       </entry>
+                        <entry>NO</entry>
+                        <entry>?</entry>
+                        <entry>Localizes to kinetochores from prophase to telophase. Identified as a <ulink url="http://www.wormbase.org/db/seq/protein?name=KNL-1;class=protein" role="_blank">KNL-1</ulink>/3-associated protein.</entry>
+                        <entry><link linkend="bib17">Cheeseman, 2004</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=HCP-1;class=protein" role="_blank">HCP-1</ulink>
+                            <ulink url="http://www.wormbase.org/db/seq/protein?name=HCP-2;class=protein" role="_blank">HCP-2</ulink>
+                       </entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=hcp-1" role="_blank">hcp-1</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/gene/gene?name=ZK1055.1;class=CDS" role="_blank">ZK1055.1</ulink>)
+                            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=hcp-2" role="_blank">hcp-2</ulink></emphasis>
+                            (<ulink url="http://www.wormbase.org/db/gene/gene?name=T06E4.1;class=CDS" role="_blank">T06E4.1</ulink>)
+                       </entry>
+                        <entry>YES&#x0002A; &#x0002A;When co-depleted</entry>
+                        <entry>CENP-F?</entry>
+                        <entry>Functionally redundant proteins that localize to the region of the mitotic spindle and to kinetochores between late prometaphase and early anaphase; kinetochore localization requires CeCENP-A/C, <ulink url="http://www.wormbase.org/db/seq/protein?name=KNL-1;class=protein" role="_blank">KNL-1</ulink>, and <ulink url="http://www.wormbase.org/db/seq/protein?name=BUB-1;class=protein" role="_blank">BUB-1</ulink>, but not the <ulink url="http://www.wormbase.org/db/seq/protein?name=NDC-80;class=protein" role="_blank">NDC-80</ulink> subcomplex; depletion perturbs chromosome alignment and segregation. <ulink url="http://www.wormbase.org/db/seq/protein?name=HCP-1;class=protein" role="_blank">HCP-1</ulink> and 2 physically associate with CLASP<ulink url="http://www.wormbase.org/db/seq/protein?name=CLS-2;class=protein" role="_blank"><superscript>CLS-2</superscript></ulink>.</entry>
+                        <entry><link linkend="bib93">Moore, 1999</link>;
+                            <link linkend="bib29">Desai, 2003</link>;
+                            <link linkend="bib143">Stear, 2004</link>;
+                            <link linkend="bib32">Encalada, 2004</link>;
+                            <link linkend="bib16">Cheeseman, 2005</link>
+                       </entry>
+                    </row>
+                    <row>
+                        <entry>CLASP<ulink url="http://www.wormbase.org/db/gene/gene?name=cls-2" role="_blank"><superscript>cls-2</superscript></ulink>
+                            (<ulink url="http://www.wormbase.org/db/seq/protein?name=CLS-2;class=protein" role="_blank">CLS-2</ulink>)
+                       </entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cls-2" role="_blank">cls-2</ulink></emphasis>
+                            (<ulink url="http://www.wormbase.org/db/gene/gene?name=R107.6;class=CDS" role="_blank">R107.6</ulink>)
+                       </entry>
+                        <entry>YES</entry>
+                        <entry>CLASP</entry>
+                        <entry>Microtubule- associated protein that localizes to spindle poles, the region of the miotic spindle and kinetochores; prominent kinetochore localization is seen at metaphase. Kinetochore localization requires <ulink url="http://www.wormbase.org/db/seq/protein?name=KNL-1;class=protein" role="_blank">KNL-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=HCP-1;class=protein" role="_blank">HCP-1</ulink>/2, but not the <ulink url="http://www.wormbase.org/db/seq/protein?name=NDC-80;class=protein" role="_blank">NDC-80</ulink> subcomplex. Depletion perturbs chromosome alignment and segregation. CLASP<ulink url="http://www.wormbase.org/db/seq/protein?name=CLS-2;class=protein" role="_blank"><superscript>CLS-2</superscript></ulink> associates with <ulink url="http://www.wormbase.org/db/seq/protein?name=HCP-1;class=protein" role="_blank">HCP-1</ulink>/2.</entry>
+                        <entry><link linkend="bib29">Desai, 2003</link>;
+                            <link linkend="bib16">Cheeseman, 2005</link>
+                       </entry>
+                    </row>
+                    <row>
+                        <entry>CeMCAK
+                            (<ulink url="http://www.wormbase.org/db/seq/protein?name=KLP-7;class=protein" role="_blank">KLP-7</ulink>)
+                       </entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=klp-7" role="_blank">klp-7</ulink></emphasis>
+                            (K11D9.1)
+                       </entry>
+                        <entry>YES</entry>
+                        <entry>MCAK</entry>
+                        <entry>Kinesin-13 microtubule depolymerase that localizes to kinetochores between early prometaphase and telophase, and to spindle poles throughout mitosis; kinetochore localization requires CeCENP-A and CeCENP-C, but not <ulink url="http://www.wormbase.org/db/seq/protein?name=KNL-1;class=protein" role="_blank">KNL-1</ulink> or <ulink url="http://www.wormbase.org/db/seq/protein?name=KNL-3;class=protein" role="_blank">KNL-3</ulink>; depletion results in snapping of the anaphase spindle, suggesting excessive astral pulling forces or a defect in spindle midzone formation/ stability.</entry>
+                        <entry><link linkend="bib105">Oegema, 2001</link>;
+                            <link linkend="bib45">Grill, 2001</link>;
+                            <link linkend="bib29">Desai, 2003</link>;
+                            <link linkend="bib115">Powers, 2004</link>
+                       </entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=LIS-1;class=protein" role="_blank">LIS-1</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lis-1" role="_blank">lis-1</ulink></emphasis>
+                            (<ulink url="http://www.wormbase.org/db/gene/gene?name=T03F6.5;class=CDS" role="_blank">T03F6.5</ulink>)
+                       </entry>
+                        <entry>YES</entry>
+                        <entry>LIS1</entry>
+                        <entry>Microtubule associated protein that localizes to the cell cortex, nuclear periphery, kinetochores, and microtubule asters; kinetochore localization requires CeCENP-C, but not dynein; depletion results in multiple defects in spindle positioning, pronuclear migration, and centrosome separation, leading to gross missegregation of chromosomes.</entry>
+                        <entry><link linkend="bib20">Cockell, 2004</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=CZW-1;class=protein" role="_blank">CZW-1</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=czw-1" role="_blank">czw-1</ulink></emphasis>
+                            (<ulink url="http://www.wormbase.org/db/gene/gene?name=F20D12.4;class=CDS" role="_blank">F20D12.4</ulink>)
+                       </entry>
+                        <entry>YES</entry>
+                        <entry>Zw10</entry>
+                        <entry>Predicted kinetochore protein based on sequence homology; partial depletion results in chromosome missegregation; penetrant depletion results in sterility</entry>
+                        <entry><link linkend="bib141">Starr, 1998</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=ROD-1;class=protein" role="_blank">ROD-1</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rod-1" role="_blank">rod-1</ulink></emphasis>
+                            (<ulink url="http://www.wormbase.org/db/gene/gene?name=F55G1.4;class=CDS" role="_blank">F55G1.4</ulink>)
+                       </entry>
+                        <entry>YES</entry>
+                        <entry>Rod</entry>
+                        <entry>Predicted kinetochore protein based on sequence homology; depletion results in chromosome missegregation.</entry>
+                        <entry><link linkend="bib124">Scaerou, 2001</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=BUB-1;class=protein" role="_blank">BUB-1</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=bub-1" role="_blank">bub-1</ulink></emphasis>
+                            (<ulink url="http://www.wormbase.org/db/gene/gene?name=R06C7.8;class=CDS" role="_blank">R06C7.8</ulink>)
+                       </entry>
+                        <entry>YES</entry>
+                        <entry>Bub1</entry>
+                        <entry>Mitotic checkpoint pathway serine/threonine protein kinase; kinetochore localization (prophase to metaphase) requires CeCENP-A, CeCENP-C, and <ulink url="http://www.wormbase.org/db/seq/protein?name=KNL-1;class=protein" role="_blank">KNL-1</ulink>; depletion results in misalignment and missegregation of chromosomes.</entry>
+                        <entry><link linkend="bib105">Oegema, 2001</link>;
+                            <link linkend="bib29">Desai, 2003</link>;
+                            <link linkend="bib32">Encalada, 2004</link>
+                       </entry>
+                    </row>
+                    <row>
+                        <entry>BUB-3</entry>
+                        <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y54G9A.6;class=CDS" role="_blank">Y54G9A.6</ulink></entry>
+                        <entry>NO</entry>
+                        <entry>Bub3</entry>
+                        <entry>Predicted mitotic checkpoint pathway protein based on sequence homology.</entry>
+                        <entry></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=MDF-1;class=protein" role="_blank">MDF-1</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mdf-1" role="_blank">mdf-1</ulink></emphasis>
+                            (<ulink url="http://www.wormbase.org/db/gene/gene?name=C50F4.11;class=CDS" role="_blank">C50F4.11</ulink>)
+                       </entry>
+                        <entry>NO</entry>
+                        <entry>Mad1</entry>
+                        <entry>Mitotic checkpoint pathway protein based on sequence homology; mutant worms fail to thrive due to accumulated chromosomal abnormalities; required to delay the embryonic cell cycle in response to spindle defects.</entry>
+                        <entry><link linkend="bib69">Kitagawa, 1999</link>;
+                            <link linkend="bib32">Encalada, 2004</link>
+                       </entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=MDF-2;class=protein" role="_blank">MDF-2</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mdf-2" role="_blank">mdf-2</ulink></emphasis> (Y69A2AR. 30)</entry>
+                        <entry>NO</entry>
+                        <entry>Mad2</entry>
+                        <entry>Mitotic checkpoint pathway protein with similar functions as <ulink url="http://www.wormbase.org/db/seq/protein?name=MDF-1;class=protein" role="_blank">MDF-1</ulink>; depletion of <ulink url="http://www.wormbase.org/db/seq/protein?name=MDF-2;class=protein" role="_blank">MDF-2</ulink> also overrides the mitotic arrest induced by anoxia, suggesting that survival under very low oxygen levels is promoted by activation of the mitotic checkpoint.</entry>
+                        <entry><link linkend="bib69">Kitagawa, 1999</link>;
+                            <link linkend="bib98">Nystul, 2003</link>;
+                            <link linkend="bib32">Encalada, 2004</link>
+                       </entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=SAN-1;class=protein" role="_blank">SAN-1</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=san-1" role="_blank">san-1</ulink></emphasis>
+                            (<ulink url="http://www.wormbase.org/db/gene/gene?name=ZC328.4;class=CDS" role="_blank">ZC328.4</ulink>)
+                       </entry>
+                        <entry>NO</entry>
+                        <entry>BubR1</entry>
+                        <entry>Mitotic checkpoint pathway protein that localizes to kinetochores after nuclear envelope breakdown. <ulink url="http://www.wormbase.org/db/seq/protein?name=SAN-1;class=protein" role="_blank">SAN-1</ulink> is the homologue of budding yeast MAD3 protein (their vertebrate orthologue, BubR1, has a serine/threonine kinase domain fused to the Mad3 homology region). <ulink url="http://www.wormbase.org/db/seq/protein?name=SAN-1;class=protein" role="_blank">SAN-1</ulink> was identified in a genetic screen for anoxia-sensitive mutants, highlighting a link between survival under very low oxygen levels and mitotic arrest mediated by the mitotic checkpoint pathway.</entry>
+                        <entry><link linkend="bib99">Nystul, 2004</link></entry>
+                    </row>
+                </tbody>
+				</tgroup>
+            </table>
+        <para>In addition to its role in directing kinetochore assembly, CENP-C has also been
+            implicated in sister kinetochore resolution, the process by which the kinetochores on
+            the two sister chromatids resolve from one another, coming to rest on opposite sides of
+            the mitotic chromosome (<link linkend="bib94">Moore and Roth, 2001</link><!--; PMID 11402064-->). Defects in sister
+            kinetochore resolution in CENP-C depleted embryos can be suppressed by RNAi or mutation
+            of cohesin subunits suggesting that resolution of the sister kinetochores during the
+            assembly of mitotic chromosomes is normally facilitated by loss of cohesion between the
+            sister centromeres (<link linkend="bib95">Moore et al., 2005</link><!--; PMID 15767665-->). In addition to
+            kinetochore-localized proteins, the chromokinesin <ulink url="http://www.wormbase.org/db/seq/protein?name=KLP-19;class=protein" role="_blank">KLP-19</ulink>, which localizes to the
+            chromatin between the diffuse kinetochores, is also critical for chromosome segregation.
+            Interactions between <ulink url="http://www.wormbase.org/db/seq/protein?name=KLP-19;class=protein" role="_blank">KLP-19</ulink> and spindle microtubules are postulated to generate a
+            pushing force that rotates chromosomes to orient the sister kinetochores to face
+            opposite spindle poles (<link linkend="table3">Table 3</link>; <link linkend="bib115">Powers et al., 2004</link><!--; PMID 15452142-->), thereby reducing
+            the possibility that a single kinetochore will become incorrectly attached to
+            microtubules coming from both spindle poles.</para>
+    </sect1>
+    <sect1>
+        <title>Assembly of the mitotic spindle</title>
+        <para>In vertebrates and <emphasis>Drosophila</emphasis>, spindle assembly results from the superposition of two
+            distinct mechanisms: (1) an inside out chromatin-based mechanism in which Ran-GTP
+            produced in proximity to chromatin activates factors that promote the assembly and
+            self-organization of microtubules to form a bipolar spindle, and (2) an outside in
+            mechanism in which centrosomal microtubule asters reinforce spindle bipolarity and
+            position the spindle within the cell (<link linkend="bib37">Gadde and Heald, 2004</link><!--; PMID 15380094-->). In
+            contrast, <emphasis>C. elegans</emphasis> appears to lack a significant inside out pathway and primarily
+            utilizes an outside in centrosome-based mechanism to form its spindles. Consistent with
+            this idea, Eg5, a mitotic kinesin that promotes anti-parallel microtubule sliding and
+            plays an essential role in the chromatin-based pathway in vertebrates and <emphasis>Drosophila</emphasis>, is
+            not required for spindle assembly in <emphasis>C. elegans</emphasis> (<link linkend="bib6">Bishop et al., 2005</link><!--; PMID 15548597-->).
+            Conversely, whereas centrosomes are not essential for spindle assembly in <emphasis>Drosophila</emphasis> or
+            vertebrates (<link linkend="bib66">Khodjakov et al., 2000</link><!--; PMID 10662665-->; <link linkend="bib90">Megraw et al., 1999</link><!--; PMID 10357928-->;
+            <link linkend="bib119">Rebollo et al., 2004</link><!--; PMID 14758368-->; <link linkend="bib151">Vaizel-Ohayon and Schejter, 1999</link><!--; PMID 10469591-->),
+            spindles fail to form in <emphasis>C. elegans</emphasis> embryos that lack functional centrosomes (<link linkend="bib51">Hamill et al., 2002</link><!--; PMID 12431374-->; <link linkend="bib64">Kemp et al., 2004</link><!--; PMID 15068791-->; <link linkend="bib110">Pelletier et al., 2004</link><!--; PMID 15186742-->) and the majority of characterized <emphasis>C. elegans</emphasis> proteins that are required for
+            spindle assembly (<link linkend="bib136">S&#x000F5;nnichsen et al., 2005</link><!--; PMID 15791247-->) are known centrosome
+            components. Interestingly, essentially perfect “half spindles” form in embryos that have
+            a single centrosome instead of the normal two (<link linkend="bib68">Kirkham et al., 2003</link><!--; PMID 12600319-->;
+            <link linkend="bib101">O'Connell et al., 2001</link><!--; PMID-->), indicating that the mechanisms that regulate spindle
+            length in the <emphasis>C. elegans</emphasis> embryo are largely independent of bipolarity. Experiments in
+            which the size of mitotic centrosomes is modulated by varying the levels of centriole
+            components have also revealed an interesting positive correlation between half-spindle
+            length and centrosome size (<link linkend="bib27">Delattre et al., 2004</link><!--; PMID 15232593-->; <link linkend="bib68">Kirkham et al., 2003</link><!--; PMID 12600319-->).</para>
+        <para>Concomitant with nuclear envelope break down, centrosomal microtubules penetrate the
+            nuclear space and begin to interact with chromosomes. Spindle assembly is completed in
+            the subsequent ~2.5 minute period between nuclear envelope breakdown and anaphase onset
+            (see <xref linkend="figure2"/>). Tomographic reconstruction of a <emphasis>C.elegans</emphasis> mitotic
+            spindle from electron micrographs indicates that <emphasis>C. elegans</emphasis> mitotic spindles consist
+            primarily of microtubules that connect centrosomes to kinetochores. These kinetochore
+            microtubules do not form bundles that resemble the kinetochore fibers present in
+            vertebrate and <emphasis>Drosophila</emphasis> cells, probably because of the holocentric nature of <emphasis>C.
+            elegans</emphasis> chromosomes (<link linkend="bib104">O'Toole et al., 2003</link><!--; PMID 14610052-->). Assembly of a stable mitotic
+            spindle requires kinetochores that can form stable bipolar microtubule attachments. In
+            the absence of functional kinetochores, the two spindle poles are abruptly pulled apart
+            at a time that corresponds to the onset of cortical pulling forces on the two
+            centrosomes that normally asymmetrically position the spindle within the embryo (<link linkend="bib105">Oegema et al., 2001</link><!--; PMID 11402065-->). The abrupt separation of the spindle poles in the absence
+            of functional kinetochores is similar to that brought about by severing the spindle with
+            a UV microbeam (<link linkend="bib45">Grill et al., 2001</link><!--; PMID 11214323-->), confirming the critical role of
+            kinetochores in maintaining spindle integrity.</para>
+    </sect1>
+    <sect1>
+        <title>Chromosome segregation</title>
+        <para>Chromosome segregation typically consists of two components: (1) anaphase A, in which
+            the chromosomes move towards the spindle poles and, (2) anaphase B in which the spindle
+            poles separate from each other with the chromosomes in tow. In <emphasis>C. elegans</emphasis> the majority
+            of chromosome movement is due to anaphase B (<link linkend="bib105">Oegema et al., 2001</link><!--; PMID 11402065-->),
+            powered by a combination of cortical forces that pull on the centrosomal microtubule
+            asters to separate them, and pushing forces generated by the array of overlapping
+            microtubules, called the central spindle, that forms between the separating chromosomes.
+            If the mitotic spindle is severed during anaphase using a UV micro beam, the two spindle
+            poles separate with increased velocity (<link linkend="bib45">Grill et al., 2001</link><!--; PMID 11214323-->). This
+            experiment demonstrates the existence of pulling forces during the first mitotic
+            division and suggests that the central spindle normally acts to limit the rate of pole
+            separation. However, in embryos in which G protein signaling that mediates cortical
+            pulling forces is disrupted, spindles still elongate (<link linkend="bib22">Colombo et al., 2003</link><!--; PMID 12750478-->) albeit at a slower rate, indicating that other spindle intrinsic forces
+            contribute to anaphase spindle elongation.</para>
+    </sect1>
+    <sect1>
+        <title>Cytokinesis</title>
+        <para>During cytokinesis, signals from the anaphase spindle trigger the assembly of an
+            equatorial cortical contractile ring enriched in actin and myosin II. Constriction of
+            the contractile ring changes the shape of the cell to facilitate cell division (reviewed
+            in <link linkend="bib39">Glotzer, 2005</link><!--; PMID 15774750-->). The components of the microtubule and actin
+            cytoskeletons that are known to contribute to cytokinesis in the <emphasis>C. elegans</emphasis> embryo can
+            be partitioned into three classes (<link linkend="table5">Table 5</link>). The first class consists of proteins
+            required for cortical acto-myosin contractility (<xref linkend="figure7"/>). Embryos
+            depleted of proteins in this class have defects in all cortical contractile events
+            including: polar body extrusion, anterior cortical ruffling, pseudocleavage, and the
+            initiation of a furrow during cytokinesis. This class includes the small GTPase <ulink url="http://www.wormbase.org/db/seq/protein?name=RHO-1;class=protein" role="_blank">RHO-1</ulink>
+            (<link linkend="bib60">Jantsch-Plunger et al., 2000</link><!--; PMID 10871280-->) and its activating GEF (<ulink url="http://www.wormbase.org/db/seq/protein?name=LET-21;class=protein" role="_blank">LET-21</ulink>; <link linkend="bib26">Dechant and Glotzer, 2003</link><!--; PMID 12636915-->), which are thought to be at the top of the signaling
+            cascade that regulates cortical contractility (<link linkend="bib39">Glotzer, 2005</link><!--; PMID 15774750-->). Downstream
+            are proteins that regulate the assembly of the contractile ring and its constriction in
+            response to activated Rho. <ulink url="http://www.wormbase.org/db/seq/protein?name=CYK-1;class=protein" role="_blank">CYK-1</ulink> (<link linkend="bib131">Severson et al., 2002</link><!--; PMID 12498681-->; <link linkend="bib147">Swan et al., 1998</link><!--; PMID 9645949-->), a member of the formin family of proteins, is a Rho effector that
+            promotes the assembly of actin filaments. The assembly and contractility of non-muscle
+            myosin II (<ulink url="http://www.wormbase.org/db/seq/protein?name=NMY-2;class=protein" role="_blank">NMY-2</ulink>; <link linkend="bib48">Guo and Kemphues, 1996</link><!--; PMID 8684486-->), the motor that powers
+            acto-myosin contractility, is regulated by phosphorylation of its regulatory light
+            chain, <ulink url="http://www.wormbase.org/db/seq/protein?name=MLC-4;class=protein" role="_blank">MLC-4</ulink> (<link linkend="bib133">Shelton et al., 1999</link><!--; PMID 10427096-->). Phosphorylation of <ulink url="http://www.wormbase.org/db/seq/protein?name=MLC-4;class=protein" role="_blank">MLC-4</ulink> activates
+            myosin II, allowing it to form bi-polar filaments that can interact with actin to
+            generate cortical ingression (<link linkend="bib18">Citi and Kendrick-Jones, 1987</link><!--; PMID 3318821-->). One of the
+            Rho effectors that regulates <ulink url="http://www.wormbase.org/db/seq/protein?name=MLC-4;class=protein" role="_blank">MLC-4</ulink> phosphorylation during cytokinesis is the Rho kinase
+            homolog <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-502;class=protein" role="_blank">LET-502</ulink> (for details see <link linkend="table5">Table 5</link>; <link linkend="bib113">Piekny and Mains, 2002</link><!--; PMID 12006612-->).</para>
+            <table id="table5" frame="all">
+                <title>Table 5. Cytoskeletal proteins required for cytokinesis</title>
+                <tgroup cols="6">
+				<colspec colname="c1" align="left" colwidth="1*"/>
+				<colspec colname="c2" align="left" colwidth="1*"/>
+				<colspec colname="c3" align="left" colwidth="1*"/>
+				<colspec colname="c4" align="left" colwidth="1*"/>
+				<colspec colname="c5" align="left" colwidth="2.5*"/>
+				<colspec colname="c6" align="left" colwidth="1.5*"/>
+                <thead>
+                    <row>
+                        <entry><emphasis>C. elegans</emphasis> protein</entry>
+                        <entry><emphasis>C. elegans</emphasis> gene</entry>
+                        <entry>Required for embryonic viability?</entry>
+                        <entry>Vertebrate orthologue</entry>
+                        <entry>Summary of localization and functional analysis</entry>
+                        <entry>Selected references</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=NMY-2;class=protein" role="_blank">NMY-2</ulink></entry>
+                        <entry></entry>
+                        <entry>YES</entry>
+                        <entry>non-muscle myosin II</entry>
+                        <entry>Localizes to the contractile ring during cytokinesis as well as to other cortical contractile structures; motor that powers contraction by moving towards the barbed end of actin filaments; all cortical contractile events fail in depleted embryos including polar body formation, ruffling, and cleavage furrow ingression. <ulink url="http://www.wormbase.org/db/seq/protein?name=NMY-2;class=protein" role="_blank">NMY-2</ulink> is also required for the establishment of polarity.</entry>
+                        <entry><link linkend="bib48">Guo, 1996</link>;
+<link linkend="bib96">Munro, 2004</link>
+</entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=MLC-4;class=protein" role="_blank">MLC-4</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mlc-4" role="_blank">mlc-4</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/gene/gene?name=C56G7.1;class=CDS" role="_blank">C56G7.1</ulink>)</entry>
+                        <entry>YES</entry>
+                        <entry>non-muscle myosin II regulatory light chain</entry>
+                        <entry>Regulates the ability of myosin II to form filaments and interact with actin; localizes to the cortical contractile ring during cytokinesis as well as to other cortical contractile structures; activated by phosphorylation; all cortical contractile events fail in depleted embryos including polar body formation, ruffling, and cleavage furrow ingression; <ulink url="http://www.wormbase.org/db/seq/protein?name=MLC-4;class=protein" role="_blank">MLC-4</ulink> is also required for the establishment of polarity.</entry>
+                        <entry><link linkend="bib133">Shelton, 1999</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=LET-502;class=protein" role="_blank">LET-502</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-502" role="_blank">let-502</ulink></emphasis>
+(<ulink url="http://www.wormbase.org/db/gene/gene?name=C10H11.9;class=CDS" role="_blank">C10H11.9</ulink>)
+</entry>
+                        <entry>YES</entry>
+                        <entry>Rho-binding kinase (ROK)</entry>
+                        <entry>Rho-binding serine/threonine kinase that localizes to the contractile ring; promotes myosin II contractility by increasing the phosphorylation of <ulink url="http://www.wormbase.org/db/seq/protein?name=MLC-4;class=protein" role="_blank">MLC-4</ulink>; based on work in other systems, it is thought to do this by both directly phosphorylating <ulink url="http://www.wormbase.org/db/seq/protein?name=MLC-4;class=protein" role="_blank">MLC-4</ulink> and also by phosphorylating and inactivating myosin phosphatase; inhibition of Rho-kinase slows the rate of furrow ingression but does not prevent furrow assembly or ingression, suggesting the existence of redundant <ulink url="http://www.wormbase.org/db/seq/protein?name=MLC-4;class=protein" role="_blank">MLC-4</ulink> kinases; failed cell divisions occur apparently at random in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-502" role="_blank">let-502</ulink></emphasis> embryos, with many divisions being normal.</entry>
+                        <entry><link linkend="bib113">Piekny, 2002</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=MEL-11;class=protein" role="_blank">MEL-11</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mel-11" role="_blank">mel-11</ulink></emphasis>
+(<ulink url="http://www.wormbase.org/db/gene/gene?name=C06C3.1;class=CDS" role="_blank">C06C3.1</ulink>)
+</entry>
+                        <entry>YES</entry>
+                        <entry>Myosin phosphatase
+targeting subunit (MYPT)
+</entry>
+                        <entry>Regulatory subunit of myosin phosphatase; inhibits cortical contraction by de-phosphory- lating the regulatory light chain of myosin II; mutations in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mel-11" role="_blank">mel-11</ulink></emphasis> result in ectopic furrowing and faster furrow ingression; <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-502;class=protein" role="_blank">LET-502</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=MEL-11;class=protein" role="_blank">MEL-11</ulink> co-localize in cleavage furrows and their mutations alleviate one another’s effects.</entry>
+                        <entry><link linkend="bib113">Piekny, 2002</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=RHO-1;class=protein" role="_blank">RHO-1</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rho-1" role="_blank">rho-1</ulink></emphasis>
+(<ulink url="http://www.wormbase.org/db/gene/gene?name=Y51H4A.3;class=CDS" role="_blank">Y51H4A.3</ulink>)
+</entry>
+                        <entry>YES</entry>
+                        <entry>RhoA</entry>
+                        <entry>Small GTPase thought to connect signaling by the anaphase spindle to assembly and ingression of a cortical contractile ring; all cortical contractile events fail in depleted embryos including polar body formation, ruffling, and cleavage furrow ingression; has not been localized in <emphasis>C. elegans</emphasis> but active Rho has been localized to the contractile ring in other systems.</entry>
+                        <entry><link linkend="bib60">Jantsch-Plunger, 2000</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=LET-21;class=protein" role="_blank">LET-21</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-21" role="_blank">let-21</ulink></emphasis>
+(T19E10.1)</entry>
+                        <entry>YES</entry>
+                        <entry>Ect2</entry>
+                        <entry>Guanine nucleotide exchange factor that activates <ulink url="http://www.wormbase.org/db/seq/protein?name=RHO-1;class=protein" role="_blank">RHO-1</ulink>; all cortical contractile events fail in depleted embryos including polar body formation, ruffling, and cleavage furrow ingression; has not been localized in <emphasis>C. elegans</emphasis>, but in other systems has been localized to microtubule bundles in the central spindle and to the contractile ring.</entry>
+                        <entry><link linkend="bib26">Dechant, 2003</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=CYK-1;class=protein" role="_blank">CYK-1</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cyk-1" role="_blank">cyk-1</ulink></emphasis>
+(<ulink url="http://www.wormbase.org/db/gene/gene?name=F11H8.4;class=CDS" role="_blank">F11H8.4</ulink>)
+</entry>
+                        <entry>YES</entry>
+                        <entry>formins</entry>
+                        <entry>A member of the formin family of proteins thought to promote actin assembly in response to activation of Rho family GTPases; localizes to the cleavage furrow and is required to initiate furrow ingression.</entry>
+                        <entry><link linkend="bib147">Swan, 1998</link>;
+<link linkend="bib131">Severson, 2002</link>
+</entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=PFN-1;class=protein" role="_blank">PFN-1</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pfn-1" role="_blank">pfn-1</ulink></emphasis>
+(<ulink url="http://www.wormbase.org/db/gene/gene?name=Y18D10A.20;class=CDS" role="_blank">Y18D10A. 20</ulink>)
+</entry>
+                        <entry>YES</entry>
+                        <entry>profillin</entry>
+                        <entry>One of three <emphasis>C. elegans</emphasis> homologs of the actin binding protein profilin; the only <emphasis>C. elegans</emphasis> profilin that is required in the early embryo; depleted embryos exhibit defects in furrow ingression and the establishment of polarity; thought to function together with <ulink url="http://www.wormbase.org/db/seq/protein?name=CYK-1;class=protein" role="_blank">CYK-1</ulink> to promote actin assembly in response to activation by Rho family GTPases.</entry>
+                        <entry><link linkend="bib131">Severson, 2002</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=ANI-1;class=protein" role="_blank">ANI-1</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ani-1" role="_blank">ani-1</ulink></emphasis>
+(<ulink url="http://www.wormbase.org/db/gene/gene?name=Y49E10.19;class=CDS" role="_blank">Y49E10.19</ulink>)
+</entry>
+                        <entry>YES</entry>
+                        <entry>Anillin</entry>
+                        <entry>One of three <emphasis>C. elegans</emphasis> homologs of the actin-binding protein anillin; the only anillin homolog that appears to have a role in cortical events in the early embryo; localizes to the contractile ring, as well as to other cortical contractile structures, and is required for the septins to concentrate in the furrow; not essential for embryonic cytokinesis, but required for polar body extrusion, cortical ruffling, and pseudocleavage.</entry>
+                        <entry><link linkend="bib82">Maddox, 2005</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=UNC-59;class=protein" role="_blank">UNC-59</ulink>;
+<ulink url="http://www.wormbase.org/db/seq/protein?name=UNC-61;class=protein" role="_blank">UNC-61</ulink>
+</entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-59" role="_blank">unc-59</ulink></emphasis>
+(<ulink url="http://www.wormbase.org/db/gene/gene?name=W09C5.2;class=CDS" role="_blank">W09C5.2</ulink>);
+<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-61" role="_blank">unc-61</ulink></emphasis>
+(<ulink url="http://www.wormbase.org/db/gene/gene?name=Y50E8A.4;class=CDS" role="_blank">Y50E8A.4</ulink>)
+</entry>
+                        <entry>NO</entry>
+                        <entry>septins</entry>
+                        <entry>The only <emphasis>C. elegans</emphasis> homologs of the septins, small GTPases that form heteromeric complexes that polymerize to form filaments; <ulink url="http://www.wormbase.org/db/seq/protein?name=UNC-59;class=protein" role="_blank">UNC-59</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=UNC-61;class=protein" role="_blank">UNC-61</ulink> are interdependent for their localization to the cortex and for their localization to the contractile ring; require <ulink url="http://www.wormbase.org/db/seq/protein?name=ANI-1;class=protein" role="_blank">ANI-1</ulink> to become enriched in the contractile ring, but are not required for the targeting of <ulink url="http://www.wormbase.org/db/seq/protein?name=ANI-1;class=protein" role="_blank">ANI-1</ulink>; neither is essential for embryonic cytokinesis.</entry>
+                        <entry><link linkend="bib97">Nguyen, 2000</link>; <link linkend="bib82">Maddox, 2005</link></entry>
+                    </row>
+                    <row>
+                        <entry>UNC-60A</entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-60" role="_blank">unc-60</ulink></emphasis>
+(<ulink url="http://www.wormbase.org/db/gene/gene?name=C38C3.5;class=CDS" role="_blank">C38C3.5</ulink>)
+</entry>
+                        <entry>YES</entry>
+                        <entry>cofilin</entry>
+                        <entry>Promotes actin turnover; concentrates in the cleavage furrow during cytokinesis; depleted embryos frequently exhibit cytokinesis defects; the <ulink url="http://www.wormbase.org/db/gene/gene?name=unc-60" role="_blank">unc-60</ulink> gene generates two ADF/cofilins, UNC-60A and UNC-60B, by alternative splicing that have different functions. UNC-60B is expressed not it embryos, but in somatic/adult tissues.</entry>
+                        <entry><link linkend="bib106">Ono, 2003</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=ZEN-4;class=protein" role="_blank">ZEN-4</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=zen-4" role="_blank">zen-4</ulink></emphasis>
+(<ulink url="http://www.wormbase.org/db/gene/gene?name=M03D4.1;class=CDS" role="_blank">M03D4.1</ulink>)
+</entry>
+                        <entry>YES</entry>
+                        <entry>kinesin-6 family member MKLP1</entry>
+                        <entry>Kinesin that physically associates with <ulink url="http://www.wormbase.org/db/seq/protein?name=CYK-4;class=protein" role="_blank">CYK-4</ulink>, a GAP for Rho family GTPases, to form a two protein complex called Centralspindlin; localizes to microtubule bundles in the spindle midzone and midbody; required for assembly of the spindle midzone and for the completion of cytokinesis, but not to form a furrow or initiate ingression.</entry>
+                        <entry><link linkend="bib118">Raich, 1998</link>; <link linkend="bib114">Powers, 1998</link>; <link linkend="bib132">Severson, 2000</link>; <link linkend="bib91">Mishima, 2002</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=CYK-4;class=protein" role="_blank">CYK-4</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cyk-4" role="_blank">cyk-4</ulink></emphasis>
+(<ulink url="http://www.wormbase.org/db/gene/gene?name=K08E3.6;class=CDS" role="_blank">K08E3.6</ulink>)
+</entry>
+                        <entry>YES</entry>
+                        <entry>MgcRacGAP</entry>
+                        <entry>A GTPase activating protein (GAP), an inhibitor for Rho family GTPases; associates with <ulink url="http://www.wormbase.org/db/seq/protein?name=ZEN-4;class=protein" role="_blank">ZEN-4</ulink> to form a protein complex called Centralspindlin; localizes to microtubule bundles in the central spindle and midbody; required for assembly of the central spindle and for the completion of cytokinesis, but not to form a furrow or initiate ingression.</entry>
+                        <entry><link linkend="bib60">Jantsch-Plunger, 2000</link>; <link linkend="bib91">Mishima, 2002</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=AIR-2;class=protein" role="_blank">AIR-2</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=air-2" role="_blank">air-2</ulink></emphasis>
+<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-603" role="_blank">let-603</ulink></emphasis>
+<emphasis>stu-7</emphasis>
+<emphasis>cyk-6</emphasis>
+(<ulink url="http://www.wormbase.org/db/gene/gene?name=B0207.4;class=CDS" role="_blank">B0207.4</ulink>)
+</entry>
+                        <entry>YES</entry>
+                        <entry>Aurora B</entry>
+                        <entry>Mitotic serine/threonine kinase; component of a four-protein chromosomal passenger protein complex that localizes to chromosomes during mitosis and to microtubule bundles in the central spindle and midbody during anaphase/ telophase; required for assembly of the central spindle/midbody and for the completion of cytokinesis, but not to form a furrow or initiate ingression; also required for chromosome segregation (see <link linkend="table3">Table 3</link>).</entry>
+                        <entry><link linkend="bib129">Schumacher, 1998</link>; <link linkend="bib61">Kaitna, 2000</link>; <link linkend="bib132">Severson, 2000</link></entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=ICP-1;class=protein" role="_blank">ICP-1</ulink>
+CeINCENP
+</entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=icp-1" role="_blank">icp-1</ulink></emphasis>
+(<ulink url="http://www.wormbase.org/db/gene/gene?name=Y39G10AR.13;class=CDS" role="_blank">Y39G10AR. 13</ulink>)
+</entry>
+                        <entry>YES</entry>
+                        <entry>INCENP</entry>
+                        <entry>Component of a four-protein chromosomal passenger protein complex that localizes to chromosomes during mitosis and to microtubule bundles in the central spindle and midbody during anaphase/ telophase; phosphorylated by <ulink url="http://www.wormbase.org/db/seq/protein?name=AIR-2;class=protein" role="_blank">AIR-2</ulink> and stimulates <ulink url="http://www.wormbase.org/db/seq/protein?name=AIR-2;class=protein" role="_blank">AIR-2</ulink> kinase activity; required for assembly of the central spindle/midbody and for the completion of cytokinesis, but not to form a furrow or initiate ingression; also required for chromosome segregation (see <link linkend="table3">Table 3</link>).</entry>
+                        <entry><link linkend="bib61">Kaitna, 2000</link>; <link linkend="bib105">Oegema, 2001</link>; <link linkend="bib7">Bishop, 2002</link>; Romano, 2004</entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=BIR-1;class=protein" role="_blank">BIR-1</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=bir-1" role="_blank">bir-1</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/gene/gene?name=T27F2.3;class=CDS" role="_blank">T27F2.3</ulink>)</entry>
+                        <entry>YES</entry>
+                        <entry>Survivin</entry>
+                        <entry>Component of a four-protein chromosomal passenger protein complex that localizes to chromosomes during mitosis and to microtubule bundles in the central spindle and midbody during anaphase/ telophase; required for assembly of the central spindle/midbody and for the completion of cytokinesis, but not to form a furrow or initiate ingression; also required for chromosome segregation (see <link linkend="table3">Table 3</link>).</entry>
+                        <entry><link linkend="bib34">Fraser, 1999</link>; <link linkend="bib61">Kaitna, 2000</link>; <link linkend="bib137">Speliotes, 2000</link>; Romano, 2004</entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=CSC-1;class=protein" role="_blank">CSC-1</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=csc-1" role="_blank">csc-1</ulink></emphasis>
+(<ulink url="http://www.wormbase.org/db/gene/gene?name=Y48E1B.12;class=CDS" role="_blank">Y48E1B.12</ulink>)
+</entry>
+                        <entry>YES</entry>
+                        <entry>Borealin, Dasra A/B</entry>
+                        <entry>Component of a four-protein chromosomal passenger protein complex that localizes to chromosomes during mitosis and to microtubule bundles in the central spindle and midbody during anaphase/ telophase; required for assembly of the central spindle/midbody and for the completion of cytokinesis, but not to form a furrow or initiate ingression; also required for chromosome segregation (see <link linkend="table3">Table 3</link>).</entry>
+                        <entry>Romano, 2004</entry>
+                    </row>
+                    <row>
+                        <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=SPD-1;class=protein" role="_blank">SPD-1</ulink></entry>
+                        <entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=spd-1" role="_blank">spd-1</ulink></emphasis>
+(<ulink url="http://www.wormbase.org/db/gene/gene?name=Y34D9A.4;class=CDS" role="_blank">Y34D9A.4</ulink>)
+</entry>
+                        <entry>YES</entry>
+                        <entry>PRC1</entry>
+                        <entry>Localizes to microtubule bundles in the spindle midzone and midbody and to nuclei, as well as to short segments along the length of astral microtubules; required to form microtubule bundles in the central spindle; not required for the cytokinesis up to the four-cell stage, but cytokinesis often fails in <ulink url="http://www.wormbase.org/db/get?name=EMS;class=Cell" role="_blank">EMS</ulink> in depleted embryos.</entry>
+                        <entry><link linkend="bib152">Verbrugghe, 2004</link></entry>
+                    </row>
+                    </tbody>
+					</tgroup>
+				</table>
+        <para>A second group of proteins is required for the formation of the spindle midzone, an
+            array of microtubule bundles that forms between the separating chromosomes during
+            anaphase (<link linkend="bib39">Glotzer, 2005</link><!--; PMID 15774750-->). As cytokinesis progresses, the microtubule
+            bundles in the central spindle compact to form a single structure called the midbody.
+            The cleavage furrow constricts around the midbody, which is thought to promote membrane
+            fusion to complete cytokinesis and generate the two topologically distinct daughter
+            cells (reviewed in <link linkend="bib39">Glotzer, 2005</link><!--; PMID 15774750-->). During cytokinesis in embryos depleted
+            of proteins required for central spindle assembly, a furrow initiates between the two
+            asters, but cytokinesis fails to complete because the midbody is absent, and the furrow
+            ultimately regresses. Depleted embryos also have defects in polar body extrusion (highly
+            asymmetric cytokineses that bisect the midbodies of the small meiosis I and II
+            spindles), but are able to form cortical ruffles that concentrate in the embryo anterior
+            during polarity establishment and a pseudocleavage furrow. The microtubule bundles in
+            the spindle midzone are also thought to function early in cytokinesis to signal to the
+            cortex to promote assembly of the contractile ring. Disruption of the spindle midzone
+            does not prevent furrow formation because this midzone-based signal is redundant with
+            signals from the microtubule asters. In embryos in which the astral signaling mechanism
+            is blocked, the spindle midzone becomes essential for furrow ingression (<link linkend="bib26">Dechant and Glotzer, 2003</link><!--; PMID 12636915-->). Proteins required to form the central spindle include:
+            (1) a two protein complex called centralspindlin that includes the kinesin <ulink url="http://www.wormbase.org/db/seq/protein?name=ZEN-4;class=protein" role="_blank">ZEN-4</ulink> and
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=CYK-4;class=protein" role="_blank">CYK-4</ulink>, a GAP for Rho family GTPases (<link linkend="bib60">Jantsch-Plunger et al., 2000</link><!--; PMID 10871280-->;
+            <link linkend="bib91">Mishima et al., 2002</link><!--; PMID 11782313-->; <link linkend="bib114">Powers et al., 1998</link><!--; PMID 9778533-->; <link linkend="bib118">Raich et al., 1998</link><!--; PMID 9693365-->; <link linkend="bib132">Severson et al., 2000</link><!--; PMID 11050384-->), and (2) the 4 protein
+            chromosomal passenger protein complex containing the <emphasis>C. elegans</emphasis> homolog of the aurora B
+            kinase, <ulink url="http://www.wormbase.org/db/seq/protein?name=AIR-2;class=protein" role="_blank">AIR-2</ulink> (<link linkend="bib7">Bishop and Schumacher, 2002</link><!--; PMID 12048181-->; <link linkend="bib34">Fraser et al., 1999</link><!--; PMID 10209096-->; <link linkend="bib61">Kaitna et al., 2000</link><!--; PMID 11050385-->; <link linkend="bib105">Oegema et al., 2001</link><!--; PMID 11402065-->; <link linkend="bib122">Romano et al., 2003</link><!--; PMID 12707312-->; <link linkend="bib129">Schumacher et al., 1998</link><!--; PMID 9852156-->; <link linkend="bib137">Speliotes et al., 2000</link><!--; PMID 10983970-->).</para>
+        <mediaobject id="figure7" xreflabel="Figure 7">
+            <imageobject>
+                <imagedata entityref="fig7" align="center" width="4.5in"/>
+            </imageobject>
+            <textobject>
+                <phrase> figure 7</phrase>
+            </textobject> &fig7legend;</mediaobject>
+        <para>A final protein, currently in a class of its own is <ulink url="http://www.wormbase.org/db/seq/protein?name=SPD-1;class=protein" role="_blank">SPD-1</ulink> (<link linkend="bib152">Verbrugghe and White, 2004</link><!--; PMID 15458647-->). Like the six proteins listed above, <ulink url="http://www.wormbase.org/db/seq/protein?name=SPD-1;class=protein" role="_blank">SPD-1</ulink> is also required for the
+            formation of microtubule bundles in the spindle midzone. However, in <ulink url="http://www.wormbase.org/db/seq/protein?name=SPD-1;class=protein" role="_blank">SPD-1</ulink> depleted
+            embryos the first cytokinesis does not fail (although later embryonic cytokineses often
+            do). It is not yet clear if this result indicates that the midbody is less compromised
+            in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=spd-1" role="_blank">spd-1</ulink></emphasis> embryos than it is in embryos depleted of or mutant for the other six proteins
+            required for midbody formation—or if centralspindlin and the chromosomal passengers have
+            a separate role in the completion of cytokinesis that is independent of their role in
+            assembling the central spindle/midbody. Three additional proteins, dynamin (<link linkend="bib148">Thompson et al., 2002</link><!--; PMID 12498685-->), RAB-11 (<link linkend="bib135">Skop et al., 2001</link><!--; PMID 11378383-->) and syntaxin 4
+            (<ulink url="http://www.wormbase.org/db/seq/protein?name=SYN-4;class=protein" role="_blank">SYN-4</ulink>; <link linkend="bib59">Jantsch-Plunger and Glotzer, 1999</link><!--; PMID 10421575-->), have been implicated in
+            membrane fusion during abscission, which generates the two topologically distinct
+            daughter cells, however their precise roles in this process remain to be
+        elucidated.</para>
+    </sect1>
+<?newpage?>
+<sect1>
+	<title>Acknowledgements</title>
+	<para>The authors would like to thank Arshad Desai for critical reading of the manuscript and Amy Shaub Maddox, Susan Kline-Smith, Vincent Galy, Carrie Cowan, Eva Hannak and Stephan Grill for their contributions to the figures.  Paul Maddox, Laurence Pelletier, Alexander Dammermann, Vincent Galy and Susan Kline-Smith provided invaluable assistance in constructing and referencing the tables. K.O. is a Pew Scholar in the Biomedical Sciences and is supported by funding from the Ludwig Institute for Cancer Research.</para>
+</sect1>
+<sect1>
+        <title>References</title>
+		<para/>
+		&celldivision_Refs;</sect1>
+</article>

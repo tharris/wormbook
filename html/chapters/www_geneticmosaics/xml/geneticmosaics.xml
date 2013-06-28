@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY fig1 SYSTEM 'geneticmosaicsfig1.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'geneticmosaicsfig1leg.xml'>
+<!ENTITY fig2 SYSTEM 'geneticmosaicsfig2.jpg' NDATA JPG>
+<!ENTITY fig2legend SYSTEM 'geneticmosaicsfig2leg.xml'>
+
+<!ENTITY geneticmosaics_Refs SYSTEM 'geneticmosaicsrefs.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="geneticmosaics_ArticleID">
+    <articleinfo>
+        <!--see DocBook's authorgroup element -->
+        <title>Genetic mosaics<footnote>
+                <para>Edited by Jonathan Hodgkin and Philip Anderson. Last revised March 14, 2005. Published December 27, 2005. This chapter should be cited as: Yochem, J. and Herman, R. K. Genetic mosaics (December 27, 2005), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.58.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+		<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2005 John Yochem and Robert K. Herman. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+            </footnote>
+        </title>
+        <!--		<revhistory>
+			<revision>
+				<revnumber>1.0</revnumber>
+				<date>Last revised 3/14/05</date>
+			</revision>
+		</revhistory>
+-->
+        <author>
+            <othername>John Yochem<remark>
+                    <footnote>
+                        <para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:yoche001@umn.edu">yoche001@umn.edu</ulink></para>
+                    </footnote>
+                </remark>, Robert K. Herman</othername>
+            <affiliation>
+                <address>Department of Genetics, Cell Biology, and Development, University of Minnesota, Minneapolis, MN 55455 USA</address>
+            </affiliation>
+        </author>
+    </articleinfo>
+    <abstract>
+        <title><emphasis role="bold">Abstract</emphasis></title>
+        <para><emphasis role="bold">Genetic mosaics can be used to gain insight into the cell specificity of gene
+            function. How</emphasis> <emphasis><emphasis role="bold">Caenorhabditis elegans</emphasis></emphasis> <emphasis role="bold">mosaics are typically
+            generated is reviewed, and several examples with relevance to developmental studies are
+            mentioned. One example is</emphasis> <emphasis><emphasis role="bold"><ulink url="http://www.wormbase.org/db/gene/gene?name=mpk-1" role="_blank">mpk-1</ulink>,</emphasis></emphasis> <emphasis role="bold">which encodes a member of the
+            Ras-MAP-kinase pathway.</emphasis> <emphasis><emphasis role="bold"><ulink url="http://www.wormbase.org/db/gene/gene?name=mpk-1" role="_blank">mpk-1</ulink></emphasis></emphasis> <emphasis role="bold">mosaics have been a means of studying
+            the distinct cells that require the gene for distinct fates during development. The gene</emphasis>
+            <emphasis><emphasis role="bold"><ulink url="http://www.wormbase.org/db/gene/gene?name=bre-5" role="_blank">bre-5</ulink></emphasis></emphasis> <emphasis role="bold">is used as an example of the usefulness of mosaic analysis
+            for non-developmental studies. Potential problems with mosaic analysis are discussed,
+            and the power of combining mosaic analysis with cell- or tissue-specific promoters is
+            mentioned.</emphasis></para>
+    </abstract>
+    <sect1>
+        <title>Overview</title>
+        <para>A genetic mosaic is an individual in which different cells have different genotypes.
+            In <emphasis>Caenorhabditis elegans</emphasis>, genetic mosaics have been generated,
+            identified, and analyzed for the purpose of defining where in the animal a gene of
+            interest must be expressed to cause a particular phenotypic effect. Most <emphasis>C.
+            elegans</emphasis> mosaics that have been studied were homozygous mutant for a recessive
+            mutation in all cells and carried additionally, in some cells, one or more copies of the
+            wild-type allele of the same gene on an extrachromosomal element. Before mosaic analysis
+            is undertaken, a mutant phenotype corresponding to the absence of the wild-type gene
+            from all cells is analyzed and described. Some mutant phenotypes are described in
+            whole-animal terms, such as uncoordinated movement, longer-than-normal lifespan,
+            abnormal body shape, or inviability. Such traits can be analyzed in mosaic animals. The
+            overall phenotypes are recorded for mosaic animals in which it is known which cells
+            carry the wild-type gene and which do not, with the goal of establishing which cells
+            must carry the wild-type gene to prevent the appearance of the mutant phenotype. The
+            responsible cell or group of cells is referred to as the anatomical focus of the action
+            of the gene with respect to the phenotype under study.</para>
+        <para>In a second class of mutants, it is known at the outset that particular cells—specific
+            nerve or muscle cells, for example—exhibit an abnormality, which is generally detected
+            microscopically. Mosaic animals can then be used to ask whether or not the cellular
+            focus of action with respect to this phenotype is in the very cell or cells that exhibit
+            the abnormality; this is equivalent to asking whether or not the gene acts cell
+            autonomously with respect to the cellular phenotype. When a gene acts cell autonomously,
+            the phenotype of a cell is determined solely by the genotype of that cell and not by the
+            genotypes of neighboring or other cells. A gene is said to act cell nonautonomously when
+            a genotypically homozygous mutant cell exhibits a wild-type phenotype or when a cell
+            carrying a wild-type allele exhibits a mutant phenotype. Cell non-autonomy is caused by
+            intercellular interactions, and mosaic analysis can help elucidate the nature of the
+            interaction. For example, a gene that produces a ligand that must be recognized by a
+            receptor on a second cell could act cell nonautonomously with respect to a phenotypic
+            effect in the receiving cell.</para>
+    </sect1>
+    <sect1>
+        <title>How worm genetic mosaics are generated</title>
+        <para>The generation, identification, and analysis of genetic mosaics in <emphasis>C.
+            elegans</emphasis> have recently been reviewed (<link linkend="bib3">Herman, 1995</link><!--: PMID 8531723-->; <link linkend="bib17">Yochem et
+            al., 2000</link><!--: PMID 10791339-->; <link linkend="bib16">Yochem and Herman, 2003</link><!--: PMID 12952898-->). Also, a few of the
+            technical details concerning mosaics are mentioned elsewhere in WormBook (see <ulink
+                url="http://www.wormbook.org/chapters/www_nomarskianatomymosaic/nomarskianatomymosaic.html" role="_blank">Nomarski images for learning the anatomy, with tips for mosaic
+                analysis</ulink>). Thus, these issues shall only be briefly mentioned here. Worm
+            genetic mosaics have usually been generated from zygotes that were homozygous mutant for
+            the gene under study and carried the wild-type allele of the same gene on an
+            extrachromosomal element—either an extrachromosomal array or a free duplication of part
+            of a chromosome—that was subject to spontaneous mitotic loss. If the extrachromosomal
+            element is present in all cells, the animal exhibits a wild-type phenotype. But if the
+            extrachromosomal element fails to be transmitted to a daughter cell during the
+            development of the animal, all of the descendants of that cell, a clone, will lack the
+            wild-type allele and be homozygous mutant. The extrachromosomal element should carry a
+            second gene that behaves cell autonomously and can be scored to track which cells carry
+            the extrachromosomal element and which do not. The well-described and nearly invariant
+            cell lineage (<link linkend="bib12">Sulston et al., 1983</link><!--: PMID 6684600-->) is a great aid in determining where in
+            the lineage the extrachromosomal element was lost. This allows one to determine
+            precisely, without scoring every cell, the genotypes of essentially every cell in the
+            mosaic animal. Although the primary method has been described above, <emphasis>C.
+            elegans</emphasis> mosaics have also been generated by other methods (<link linkend="bib3">Herman, 1995</link><!--:
+           PMID 8531723-->), and chimeric partial embryos have been formed <emphasis>in
+            vitro</emphasis> from <ulink url="http://www.wormbase.org/db/get?name=EMS;class=Cell" role="_blank">EMS</ulink> and P<subscript>2</subscript> blastomeres for genetic studies
+            of Wnt signaling during early development (<link linkend="bib13">Thorpe et al., 1997</link><!--: PMID 9288749-->; <link linkend="bib10">Schlesinger
+            et al., 1999</link><!--: PMID 10444600-->).</para>
+    </sect1>
+    <sect1>
+        <title>A few examples of mosaic analysis in worms</title>
+        <para>Over 75 genes have been analyzed in <emphasis>C. elegans</emphasis> genetic mosaics.
+            Several examples of how mosaic analysis has contributed important insights into worm
+            development were recently reviewed (<link linkend="bib17">Yochem et al., 2000</link><!--: PMID 10791339-->; <link linkend="bib16">Yochem and
+            Herman, 2003</link><!--: PMID 12952898-->). Included were genes implicated in cell-to-cell signaling,
+            with the functions of some genes assigned to the signaling cell and the functions of
+            others assigned to the signal-receiving cell. Other examples in which anatomical foci
+            were determined included genes affecting whole-animal phenotypes such as uncoordination,
+            body size, and lifespan. A few additional examples are noted here.</para>
+        <para>Mutations that confer uncoordinated movement often affect the body-wall muscles or the
+            nervous system. The nature of the cell lineage makes it possible quickly to distinguish
+            these candidate cell types: all of the body neurons, except for two, descend from <ulink url="http://www.wormbase.org/db/get?name=AB;class=Cell" role="_blank">AB</ulink>, a
+            daughter of the zygote; and all of the body-wall muscles, with the exception of one,
+            descend from P<subscript>1</subscript>, the other daughter of the zygote (<link linkend="bib12">Sulston et
+            al., 1983</link><!--: PMID 6684600-->; <link linkend="figure1">Figure 1</link>). A thorough analysis of mosaics is,
+            or course, required for rigorous determination of the actual focus of activity of the
+            gene, which could be in a cell type other than muscle or neuron. In a recent analysis,
+            the anatomical focus of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-122" role="_blank">unc-122</ulink></emphasis> has been traced to muscle (<link linkend="bib8">Loria et
+            al., 2004</link><!--: PMID 14999070-->). The <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-71" role="_blank">unc-71</ulink></emphasis> gene, which regulates both
+            motor-axon guidance and sex-myoblast migration, is thought to act cell nonautonomously
+            for both functions. The gene is required in both neurons and epidermis for proper
+            motor-axon guidance (<link linkend="bib5">Huang et al., 2003</link><!--: PMID 12783787-->).</para>
+        <mediaobject id="figure1" xreflabel="Figure 1">
+            <imageobject>
+                <imagedata entityref="fig1" width="4in" align="center"/>
+            </imageobject>
+            <textobject>
+                <phrase>The early embryo figure 1</phrase>
+            </textobject> &fig1legend;</mediaobject>
+        <para>A problem for developmental studies is the use of signal-transduction molecules in
+            several distinct processes. In some cases, later requirements for such molecules can be
+            masked by a critical requirement for the molecules earlier in development. Mosaics can
+            in some cases uncover the foci of activity of the gene in these various processes. A
+            good example is <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mpk-1" role="_blank">mpk-1</ulink></emphasis>, which encodes an ERK2-type MAP-kinase known
+            to affect vulval development (<link linkend="bib7">Lackner et al., 1994</link><!--: PMID 8299936-->; <link linkend="bib15">Wu and Han, 1994</link><!--:
+            PMID 8299935-->). For proper vulval development, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mpk-1" role="_blank">mpk-1</ulink></emphasis> is required in
+            the vulval precursor cells (<link linkend="bib7">Lackner et al., 1994</link><!--: PMID 8299936-->).
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mpk-1" role="_blank">mpk-1</ulink></emphasis> is also known to affect the exit of germ nuclei from the
+            pachytene stage of meiosis, and in this case, the focus is the germ line itself (<link linkend="bib1">Church
+            et al., 1995</link><!--: PMID 7671816-->). The focus of a vital function for <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mpk-1" role="_blank">mpk-1</ulink></emphasis>
+            has now been shown to be hyp7, the large syncytium that composes most of the skin of the
+            animal (<link linkend="bib4">Huang and Stern, 2004</link><!--: PMID 15115754-->).</para>
+        <para>Illustrating the power of mosaics for non-developmental studies is
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=bre-5" role="_blank">bre-5</ulink></emphasis>, mutation of which confers resistance to a toxin from
+            <emphasis>Bacillus thuringiensis</emphasis> (<link linkend="bib2">Griffitts et al., 2001</link><!--: PMID 11486087-->). Animals expressing the
+            dominant wild-type gene (conferring sensitivity to toxin) in the intestine were
+            sensitive to the toxin, whereas 67 mosaics that were resistant to the toxin were always
+            homozygous mutant in all of the cells of the intestine (<link linkend="figure2">Figure 2</link>). The
+            bacterial toxin appears to be harmful to <emphasis>C. elegans</emphasis> only if it can
+            be ingested, which may require binding to a carbohydrate expressed by the intestinal
+            cells. <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=bre-5" role="_blank">bre-5</ulink></emphasis>, which encodes a <symbol
+            role="symbolfont">&#x03B2;</symbol>-1,3-galactosyltransferase, may be required for
+            synthesis of the carbohydrate (<link linkend="bib2">Griffitts et al., 2001</link><!--: PMID 11486087-->).</para>
+    <mediaobject id="figure2" xreflabel="Figure 2">
+        <imageobject>
+            <imagedata entityref="fig2" width="5in" align="center"/>
+        </imageobject>
+        <textobject>
+            <phrase>Mosaics for non-developmental studies figure 2</phrase>
+        </textobject> &fig2legend;</mediaobject>
+    </sect1>
+    <sect1>
+        <title>Potential problems</title>
+        <para>Potential problems with mosaic analysis have been mentioned in more detail in the
+            recent reviews cited above and are only briefly mentioned here. Perhaps the foremost
+            problem with mosaic analysis in <emphasis>C. elegans</emphasis> is that it requires
+            detailed knowledge of the anatomy and cell lineage. Another problem is the potential for
+            a cell that fails to inherit a wild-type gene carried by an extrachromosomal element
+            nonetheless to receive some wild-type gene product made earlier in a progenitor cell
+            that inherited the wild-type gene. Such perdurance of the gene product might weaken the
+            expected mutant phenotype even when the cells that constitute the anatomical focus do
+            not contain the wild-type gene.</para>
+        <para>A potential complication for mosaic analysis derives from the nature of the worm cell
+            lineage. This is generally not a problem when investigating a cellular phenotype because
+            mosaics can usually be identified in which the cell under investigation is genotypically
+            different from cells that are candidates for interaction. The cell lineage can be
+            limiting, however, when a focus of action of a gene is diffuse and distributed among
+            cells of disparate lineage. The fully mutant phenotype may then only be apparent in
+            mosaic animals when the duplication or array is lost by a progenitor of all or nearly
+            all of the responsible cells, in which case it may be difficult to pinpoint the
+            responsible cell types. A particularly difficult tissue is hyp7, a syncytium formed by
+            the fusion of many mononucleate cells that descend from both <ulink url="http://www.wormbase.org/db/get?name=AB;class=Cell" role="_blank">AB</ulink> and
+            P<subscript>1</subscript>, the daughters of the very first embryonic cleavage (<link linkend="bib12">Sulston
+            et al., 1983</link><!--: PMID 6684600-->); therefore, no mosaic animal can contain a single, completely
+            mutant hyp7 clone. Mosaic analyses have nonetheless been used to implicate hyp7 as the
+            focus of action for several genes. Recent examples are <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-52" role="_blank">unc-52</ulink></emphasis>
+            (<link linkend="bib11">Spike et al., 2002</link><!--: PMID 12397108-->); <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mpk-1" role="_blank">mpk-1</ulink></emphasis>, which was mentioned
+            above (<link linkend="bib4">Huang and Stern, 2004</link><!--: PMID 15115754-->); genes of the TGF<symbol
+            role="symbolfont">&#x03B2;</symbol> pathway (<link linkend="bib14">Wang et al., 2002</link><!--: PMID 12397107-->); and
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tsp-15" role="_blank">tsp-15</ulink></emphasis>, which encodes a tetraspanin that affects epidermal
+            morphology (<link linkend="bib9">Moribe et al., 2004</link><!--: PMID 15454573-->).</para>
+        <para>The activity of a gene in a particular cell or tissue may be missed if the gene
+            functions redundantly with another gene in that cell or tissue (see <ulink
+                url="http://www.wormbook.org/chapters/www_geneticenhancers/geneticenhancers.html" role="_blank">Genetic enhancers</ulink> and <ulink url="http://wormbook.org/chapters/www_geneduplication/geneduplication.html"
+                role="_blank">Gene duplications and genetic redundancy in <emphasis>C. elegans</emphasis></ulink>). One may be suspicious if a GFP or other reporter construct indicates
+            expression in a particular cell but genetic mosaics do not support an actual function.
+            Of course, a reporter construct can give spurious results, if, for instance,
+            <emphasis>cis</emphasis>-acting negative regulators are missing from the construct, and
+            bona fide expression of a gene in a particular cell does not establish that the gene
+            actually functions in that cell. If a redundant gene is identified, mosaic analysis can
+            be performed in a background that is mutant for the redundant gene and vice versa. We
+            are not aware that such analyses have yet been done in <emphasis>C. elegans</emphasis>,
+            but in principle, they should be possible. An intriguing possibility is that two genes
+            that redundantly affect a structure or function will have different foci with respect to
+            that structure or function.</para>
+        <para>Mosaic analysis can also be difficult if the phenotype of a mutation is not completely
+            penetrant. The question then arises whether a mosaic lacking the mutant phenotype is
+            rescued in the appropriate cell type or is simply an escaper that has coincidental
+            mosaicism. Analysis of a leaky mutation therefore requires caution and many mosaics.</para>
+    </sect1>
+    <sect1>
+        <title>The continued importance of mosaic analysis</title>
+        <para>In expression studies, some have no doubt encountered the situation in which a
+            reporter construct rescued the mutant phenotype, but expression of the reporter gene could not be reliably detected. In some cases, antibodies against the reporter can provide increased
+            sensitivity, but the concern remains that expression of a reporter construct gives
+            spurious results, as mentioned above. Mosaic analysis, on the other hand, provides a
+            functional test of the gene that does not depend on the ability to detect a reporter.
+            Although there are potential limitations, as discussed above, mosaic analysis in many
+            cases can provide an unbiased analysis of the activity of a gene, and the analysis can
+            provide insight into the function of genes that are not easily amenable to
+            immunocytochemical and other studies, because they are expressed at low levels in only a
+            few cells.</para>
+        <para>A maternal contribution of a gene can be assessed when germ-line clones are generated
+            following the loss of an extrachromosomal element in P<subscript>1</subscript>,
+            P<subscript>2</subscript>, P<subscript>3</subscript>, or P<subscript>4</subscript>, the
+            precursors of the germ cells (<link linkend="bib12">Sulston et al., 1983</link><!--: PMID 6684600-->). A maternal
+            contribution is evident when the progeny of a germ-line mosaic have a more severe
+            phenotype than progeny that segregate from a mother who is heterozygous for the gene
+            (for an example, see <link linkend="bib3">Herman, 1995</link><!--: PMID 8531723-->). A full-fledged mosaic analysis is not
+            necessary for an analysis of germ-line clones. They can be seen in the course of
+            maintaining lines rescued by an extrachromosomal element. If many individuals are put
+            one to a plate, a few of the plates may have received a germ-line mosaic. For a gene
+            with a completely penetrant phenotype, all of the progeny will have a mutant phenotype.
+            A maternal contribution can also be assessed with RNA interference (RNAi),
+            although the potential for cross-interference and for incomplete depletion of gene
+            product should be kept in mind.</para>
+        <para>Another method for asking about the anatomical focus of the activity of a gene is to
+            introduce transgenic copies of the wild-type gene controlled by cell- or tissue-specific
+            promoters into otherwise homozygous mutant animals. Rescue of a mutant defect by a
+            particular transgene indicates that expression in the indicated cell type can provide
+            the needed function. There are, however, some concerns when using this approach. One is
+            the fidelity of expression of such transgenes, especially from arrays that contain
+            multiple copies of the engineered gene and other heterologous DNA. Also, a bit of gene
+            cloning is involved, because a new construct must be made for each promoter under study.
+            The formal possibility also remains that rescue by expression (or overexpression) from a
+            transgene does not prove that the wild-type gene normally acts in the same cell type or
+            tissue. Nevertheless, this approach, especially in combination with mosaic analysis, is
+            very powerful, as recent examples demonstrate (<link linkend="bib19">Zhen and Jin, 1999</link><!--: PMID 10517634-->; <link linkend="bib6">Inoue
+            and Thomas, 2000</link><!--: PMID 10625546-->; <link linkend="bib18">Zhen et al., 2000</link><!--: PMID 10839353-->; <link linkend="bib14">Wang et al., 2002</link><!--:
+            PMID 12397107-->; <link linkend="bib5">Huang et al., 2003</link><!--: PMID 12783787-->; <link linkend="bib4">Huang and Stern, 2004</link><!--: PMID 15115754-->;
+            <link linkend="bib8">Loria et al., 2004</link><!--: PMID 14999070-->). Such combined analyses should continue to provide
+            some of the most convincing insight into the cell specificity of gene function in
+                <emphasis>C. elegans</emphasis>.</para>
+    </sect1>
+    <sect1>
+        <title>References</title>
+		<para/>
+		&geneticmosaics_Refs;</sect1>
+</article>

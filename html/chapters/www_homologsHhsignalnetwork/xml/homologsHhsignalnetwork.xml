@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY fig1 SYSTEM 'hhsignallingfig1.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'hhsignallingfig1leg.xml'>
+<!ENTITY fig2 SYSTEM 'hhsignallingfig2.jpg' NDATA JPG>
+<!ENTITY fig2legend SYSTEM 'hhsignallingfig2leg.xml'>
+<!ENTITY fig3 SYSTEM 'hhsignallingfig3.jpg' NDATA JPG>
+<!ENTITY fig3legend SYSTEM 'hhsignallingfig3leg.xml'>
+<!ENTITY fig4 SYSTEM 'hhsignallingfig4.jpg' NDATA JPG>
+<!ENTITY fig4legend SYSTEM 'hhsignallingfig4leg.xml'>
+<!ENTITY fig5 SYSTEM 'hhsignallingfig5.jpg' NDATA JPG>
+<!ENTITY fig5legend SYSTEM 'hhsignallingfig5leg.xml'>
+<!ENTITY hhsignalling_Refs SYSTEM 'hhsignallingrefs.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="hhsignalling_ArticleID">
+    <articleinfo>
+        <!--see DocBook's authorgroup element -->
+        <title>Homologs of the Hh signalling network in <emphasis>C. elegans</emphasis><footnote>
+                <para>Edited by Iva Greenwald. Last revised February 16, 2005. Published January 28, 2006. This chapter should be cited as: B&#x00FC;rglin, T. R. and Kuwabara, P. E. Homologs of the Hh signalling network in <emphasis>C. elegans</emphasis> (January 28, 2006), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.76.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+		<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2006 Thomas R. B&#x00FC;rglin and Patricia E. Kuwabara. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+            </footnote>
+        </title>
+        <!--		<revhistory>
+			<revision>
+				<revnumber>1.0</revnumber>
+				<date>Last revised 2/16/05</date>
+			</revision>
+		</revhistory>
+-->
+        <author>
+            <firstname>Thomas R.</firstname>
+            <surname>B&#x00FC;rglin</surname>
+            <affiliation>
+                <address>Department of Biosciences and Nutrition and Center for Genomics and Bioinformatics, Karolinska Institutet and Life Sciences, S&#x000F6;dert&#x000F6;rns University College, Huddinge, Sweden</address>
+            </affiliation>
+        </author>
+        <author>
+            <firstname>Patricia E.</firstname>
+            <surname>Kuwabara<remark>
+                    <footnote>
+                        <para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:p.kuwabara@bristol.ac.uk">p.kuwabara@bristol.ac.uk</ulink></para>
+                    </footnote>
+                </remark>
+            </surname>
+            <affiliation>
+                <address>Department of Biochemistry, University of Bristol, Bristol, UK BS8 1TD</address>
+            </affiliation>
+        </author>
+    </articleinfo>
+    <abstract>
+        <title><emphasis role="bold">Abstract</emphasis></title>
+        <para><emphasis role="bold">In</emphasis> <emphasis><emphasis role="bold">Drosophila</emphasis></emphasis> <emphasis role="bold">and vertebrates, Hedgehog (Hh) signalling is
+            mediated by a cascade of genes, which play essential roles in cell proliferation and
+            survival, and in patterning of the embryo, limb buds and organs. In</emphasis> <emphasis><emphasis role="bold">C. elegans,</emphasis></emphasis> <emphasis role="bold">this pathway has undergone considerable evolutionary divergence;
+            genes encoding homologues of key pathway members, including Hh, Smoothened, Cos2, Fused
+            and Suppressor of Fused, are absent. Surprisingly, over sixty proteins (i.e. WRT, GRD, GRL, and QUA), encoded by a set of genes collectively referred to as the Hh-related
+            genes, and two co-orthologs (<ulink url="http://www.wormbase.org/db/seq/protein?name=PTC-1;class=protein" role="_blank">PTC-1</ulink>,-3) of fly Patched, a Hh receptor, are present in</emphasis>
+                <emphasis><emphasis role="bold">C. elegans.</emphasis></emphasis> <emphasis role="bold">Several of the Hh-related proteins are bipartite
+            and all can potentially generate peptides with signalling activity, although none of
+            these peptides shares obvious sequence similarity with Hh. In addition, the</emphasis>
+            <emphasis><emphasis role="bold">ptc</emphasis></emphasis><emphasis role="bold">-related (</emphasis><emphasis><emphasis role="bold">ptr</emphasis></emphasis><emphasis role="bold">) genes, which are present in
+            a single copy in</emphasis> <emphasis><emphasis role="bold">Drosophila</emphasis></emphasis> <emphasis role="bold">and vertebrates and encode proteins
+            closely related to Patched, have undergone an expansion in number in nematodes. A number
+            of functions, including roles in molting, have been attributed to the</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">Hh-related, PTC and PTR proteins; most of these functions involve
+            processes that are associated with the trafficking of proteins, sterols or
+            sterol-modified proteins. Genes encoding other components of the Hh signalling pathway
+            are also found in</emphasis> <emphasis><emphasis role="bold">C. elegans,</emphasis></emphasis> <emphasis role="bold">but their functions remain to be elucidated.</emphasis></para>
+    </abstract>
+    <sect1>
+        <title>Introduction</title>
+        <para>The <emphasis>Drosophila hedgehog (hh)</emphasis> mutant was identified by N&#x000FC;sslein-Volhard and Wieschaus in their classic
+            genetic screen that led to the identification of key embryonic segment polarity genes
+                (<link linkend="bib47">N&#x000FC;sslein-Volhard and Wieschaus, 1980</link><!-- PMID 6776413-->). Subsequently, the single <emphasis>Drosophila</emphasis> and the multiple
+            vertebrate Hh proteins, Sonic Hedgehog (Shh), Indian Hedgehog (Ihh) and Desert Hedgehog
+            (Dhh), have collectively proven to be key effectors in patterning the embryo, limb buds
+            and neural tube, organ formation, cell proliferation, axon guidance and cell survival
+            (for reviews, see <link linkend="bib25">Ingham and McMahon, 2001</link><!-- PMID 11731473-->; <link linkend="bib35">Lum and Beachy, 2004</link><!-- PMID 15205520-->). Mutations in genes constituting the Hh signalling pathway are also implicated
+            in various human syndromes and cancers (<link linkend="bib4">Bale, 2002</link><!-- PMID 12142354-->; <link linkend="bib6">Beachy et al., 2004</link><!-- PMID 15549094-->; <link linkend="bib49">Pasca di Magliano and Hebrok, 2003</link><!-- PMID 14737121-->; <link linkend="bib58">Taipale and Beachy, 2001</link><!-- PMID 11357142-->). Details of the pathway are summarised in <xref linkend="figure1"/>
+            (<link linkend="bib25">Ingham and McMahon, 2001</link><!-- PMID 11731473-->; <link linkend="bib35">Lum and Beachy, 2004</link><!-- PMID 15205520-->). The
+            various proteins involved in the Hh and Ptc signalling pathway, including those present
+            in <emphasis>C. elegans</emphasis>, are listed in <link linkend="table1">Table 1</link>.</para>
+               <literallayout></literallayout>
+    <mediaobject id="figure1" xreflabel="Figure 1">
+        <imageobject>
+            <imagedata entityref="fig1" align="center" width="6in"/>
+        </imageobject>
+        <textobject>
+            <phrase> figure 1</phrase>
+        </textobject> &fig1legend;</mediaobject>
+    </sect1>
+<?newpage?>
+    <sect1>
+        <title>Hh pathway components in <emphasis>C. elegans</emphasis>
+        </title>
+        <para>What role does the Hh/Ptc signalling pathway play in <emphasis>C. elegans</emphasis>
+            development? To address this question, it is first reasonable to ask whether the major
+            proteins of the pathway are encoded by the <emphasis>C. elegans</emphasis> genome, a
+            task that is simplified by the availability of the complete genome sequence (<link linkend="table1">Table 1</link>; <link linkend="bib14"><emphasis>C. elegans</emphasis> Sequencing Consortium, 1998</link><!-- PMID 9851916-->). Surprisingly, genes encoding recognisable Hh and Smo
+            proteins are absent. In addition, homologs for Cos2, Fu and Su(fu), which transduce the
+            Hh signal from Smo to Ci, are absent. The Ci homolog itself, <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink>, is not essential for
+            embryonic pattern formation, but continues to act at the transcriptional level to
+            control sexual cell fate decisions and male gonadal development (<link linkend="bib22">Hodgkin, 1983</link><!-- PMID 6866126-->; <link linkend="bib38">Mathies et al., 2004</link><!-- PMID 15294864-->), although there is no evidence that the
+            nuclear localisation or activity of <ulink url="http://www.wormbase.org/db/seq/protein?name=TRA-1;class=protein" role="_blank">TRA-1</ulink> is controlled in the same manner as Ci
+            (<link linkend="bib30">Kuwabara et al., 2000</link><!-- PMID 10921907-->; <link linkend="bib64">Zarkower and Hodgkin, 1992</link><!-- PMID 1339311-->). It has
+            been speculated that the <emphasis>C. elegans</emphasis> sex determination pathway could
+            be evolutionarily related to the Hh/Ptc pathway because additional similarities have
+            also been noted between the two pathways (<link linkend="bib31">Kuwabara et al., 1992</link><!-- PMID 1498366-->).</para>
+
+<table id="table1" frame="all" rules="all" cellpadding="0" cellspacing="0" width="100%">
+<title><emphasis role="bold">Table 1. Components of the Hh signaling network.</emphasis> Note: the function of many of the <emphasis>C. elegans</emphasis> components is not clear and may be different from that in <emphasis>Drosophila</emphasis> and/or mammals. The abbreviations used for the hh pathway in <link linkend="figure1">Figure 1</link> are highlighted in yellow in this table. Slashes separate synonymous gene names, parentheses contain the abbreviations of the full gene names, comas separate paralogs.</title>
+<tgroup cols="4">
+<colspec colname="c1" align="center" colwidth="1*"/>
+<colspec colname="c2" align="center" colwidth="1*"/>
+<colspec colname="c3" align="center" colwidth="1*"/>
+<colspec colname="c4" align="center" colwidth="1*"/>
+<thead>
+<row>
+<entry>Role</entry>
+<entry><emphasis>C. elegans</emphasis></entry>
+<entry><emphasis>Drosophila</emphasis></entry>
+<entry>Mammals</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry namest="c1" nameend="c4" align="left"><emphasis role="bold">Signal</emphasis></entry>
+</row>
+<row>
+<entry>Hint and associated domains</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=qua-1" role="_blank">qua-1</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=wrt-1" role="_blank">wrt-1</ulink> - <ulink url="http://www.wormbase.org/db/gene/gene?name=wrt-10" role="_blank">wrt-10</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=grd-1" role="_blank">grd-1</ulink> - <ulink url="http://www.wormbase.org/db/gene/gene?name=grd-17" role="_blank">grd-17</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=grl-1" role="_blank">grl-1</ulink> - <ulink url="http://www.wormbase.org/db/gene/gene?name=grl-32" role="_blank">grl-32</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=hog-1" role="_blank">hog-1</ulink></emphasis></entry>
+<entry><emphasis>hedgehog (hh)</emphasis></entry>
+<entry><emphasis>Sonic hedgehog (Shh), Indian hedgehog (Ihh), Desert hedgehog (Dhh)</emphasis></entry>
+</row>
+<row>
+<entry>Palmitoylation, membrane bound O-acyl transferase, MBOAT</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=Y57G11C.17;class=CDS" role="_blank">Y57G11C.17</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=ZC101.3;class=CDS" role="_blank">ZC101.3</ulink></emphasis></entry>
+<entry><emphasis>rasp/skinny hedgehog (ski)/sightless</emphasis></entry>
+<entry><emphasis>Ski1/Skn/HHAT</emphasis></entry>
+</row>
+<row>
+<entry>12-Pass TM, SSD</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=che-14" role="_blank">che-14</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=ptd-2" role="_blank">ptd-2</ulink></emphasis></entry>
+<entry><emphasis>dispatched (disp)</emphasis></entry>
+<entry><emphasis>DISP</emphasis></entry>
+</row>
+<row>
+<entry namest="c1" nameend="c4" align="left"><emphasis role="bold">Signal modulators</emphasis></entry>
+</row>
+<row>
+<entry>Hip module (homologs in plants, bacteria)</entry>
+<entry>&#x02013;</entry>
+<entry>&#x02013;</entry>
+<entry><emphasis>Hedgehog interacting protein (Hip1/Hip)</emphasis></entry>
+</row>
+<row>
+<entry>GPI-anchored external plasma membrane glyco-protein (growth arrest when overexpressed)</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=phg-1" role="_blank">phg-1</ulink></emphasis></entry>
+<entry>&#x02013;</entry>
+<entry><emphasis>Growth arrest specific 1 (Gas1)</emphasis></entry>
+</row>
+<row>
+<entry>Low density lipoprotein receptor family</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lrp-1" role="_blank">lrp-1</ulink></emphasis></entry>
+<entry/>
+<entry><emphasis>Megalin/gp330/LRP2</emphasis></entry>
+</row>
+<row>
+<entry morerows="2">Glycosyltransferases involved in Heparan sulfate proteoglycan (HSPG) synthesis, exostosin domain</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rib-1" role="_blank">rib-1</ulink></emphasis> (lacks C-term. putative catalytic region with DXD motif)</entry>
+<entry><emphasis>tout-velu (ttv)</emphasis></entry>
+<entry><emphasis>EXT1</emphasis></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rib-2" role="_blank">rib-2</ulink></emphasis></entry>
+<entry><emphasis>brother of tout-velu (botv)</emphasis></entry>
+<entry><emphasis>EXTL3</emphasis></entry>
+</row>
+<row>
+<entry>&#x02013;</entry>
+<entry><emphasis>sister of tout-velu (sotv)</emphasis></entry>
+<entry><emphasis>EXT2</emphasis></entry>
+</row>
+<row>
+<entry>Glypican: heparan sulfate proteoglycan anchored to the cell membrane by a GPI-anchor</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gpn-1" role="_blank">gpn-1</ulink></emphasis></entry>
+<entry><emphasis>dally-like (dlp/dly)</emphasis></entry>
+<entry><emphasis>Glypican-6</emphasis></entry>
+</row>
+<row>
+<entry namest="c1" nameend="c4" align="left"><emphasis role="bold">Receptor</emphasis></entry>
+</row>
+<row>
+<entry>12-Pass TM, SSD</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ptc-1" role="_blank">ptc-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ptc-3" role="_blank">ptc-3</ulink></emphasis></entry>
+<entry><emphasis>patched (ptc)</emphasis></entry>
+<entry><emphasis>PTCH1, PTCH2</emphasis></entry>
+</row>
+<row>
+<entry namest="c1" nameend="c4" align="left"><emphasis role="bold">Signal transduction</emphasis></entry>
+</row>
+<row>
+<entry>7TM serpentine receptors</entry>
+<entry>&#x02013;</entry>
+<entry><emphasis>smoothened (smo)</emphasis></entry>
+<entry><emphasis>SMO</emphasis></entry>
+</row>
+<row>
+<entry>Serine/threonine kinase (homologs in plants)</entry>
+<entry>&#x02013;</entry>
+<entry><emphasis>fused (fu)</emphasis></entry>
+<entry><emphasis>FU</emphasis></entry>
+</row>
+<row>
+<entry>Sufu domain (homologs in bacteria)</entry>
+<entry>&#x02013;</entry>
+<entry><emphasis>Suppressor of fused (Su(fu))</emphasis></entry>
+<entry><emphasis>SUFU</emphasis></entry>
+</row>
+<row>
+<entry>Kinesin-like</entry>
+<entry>&#x02013;</entry>
+<entry><emphasis>costal 2/costa (cos)</emphasis></entry>
+<entry><emphasis>KIF27, KIF7</emphasis></entry>
+</row>
+<row>
+<entry>Zinc finger transcription factor</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-1" role="_blank">tra-1</ulink></emphasis></entry>
+<entry><emphasis>cubitus interruptus (ci)</emphasis></entry>
+<entry><emphasis>Gli1, Gli2, Gli3</emphasis></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+        <para>The <emphasis>C. elegans</emphasis> genome encodes an abundance of what will be
+            collectively referred to as Hh-related (Hh-r) proteins, three Patched proteins and 24
+            Patched-related proteins (PTR). Four Frizzled receptor homologues (see <ulink url="http://www.wormbook.org/chapters/www_wntsignaling/wntsignaling.html" role="_blank">Wnt signaling</ulink>), as well as a series of molecules participating in the early stages of
+            Hh signalling are also present. Given our current understanding of the Hh/Ptc signal
+            transduction pathway in other organisms, the presence of multiple <emphasis>C.
+            elegans</emphasis> Hh-r, PTC and PTR proteins and the absence of Hh, Smo and other
+            components is unexpected and raises a number of questions about the evolution and the
+            function of these genes in <emphasis>C. elegans</emphasis>.</para>
+
+    </sect1>
+    <sect1>
+        <title>Hh-r genes, the structure</title>
+        <para>The Hh proteins are composed of an N-terminal signalling domain, Hh-N, and a
+            C-terminal autoprocessing domain, Hh-C. Hh-C has autoproteolytic activity, which cleaves
+            Hh and subsequently attaches a cholesterol moiety to the Hh-N C-terminus (see scheme
+                <xref linkend="figure2"/>A; <link linkend="bib32">Lee et al., 1994</link><!-- PMID 7985023-->; <link linkend="bib51">Porter et al., 1996</link><!-- PMID 8824192-->). Hh-C shares sequence similarity with the self-splicing inteins; hence, this region was named Hint (<link linkend="bib15">Dalgaard et al., 1997</link><!-- PMID 9228618-->; <link linkend="bib18">Hall et al., 1997</link><!-- PMID 9335337-->; <link linkend="bib28">Koonin, 1995</link><!-- PMID 7770912-->). The 60 terminal residues of Hh-C are named the
+            sterol recognition region (SRR) because they are required for adding cholesterol to Hh-N
+                (<xref linkend="figure2"/>A; <link linkend="bib5">Beachy et al., 1997</link><!-- PMID 9598352-->). Here, we refer to
+            the combined Hint-SRR domain as the Hog domain.</para>
+        <para>Surprisingly, early database searches uncovered eight distinct <emphasis>C.
+            elegans</emphasis> ORFs sharing similarity to Hh (<link linkend="bib8">B&#x000FC;rglin, 1996</link><!-- PMID 8805384-->; <link linkend="bib51">Porter et al., 1996</link><!-- PMID 8689684-->). Further investigation revealed that the sequence similarity shared by Hh
+            and these ORFs was confined only to the Hog domain. Analyses of the N-terminal regions
+            revealed several new motifs (<link linkend="bib8">B&#x000FC;rglin, 1996</link><!-- PMID 8805384-->; <link linkend="bib51">Porter et al., 1996</link><!-- PMID 8689684-->), which were also found in other
+            ORFs that lacked Hog domains. In mimicry of the bipartite “Hedge-hog” structure, the
+            three new gene families were named, <emphasis>warthog (wrt)</emphasis>, <emphasis>groundhog (grd)</emphasis> and <emphasis>ground-like (grl)</emphasis> and
+            the protein domains found at their respective N-terminal regions were called Wart, Ground and Ground-like (<link linkend="bib3">Asp&#x000F6;ck et al., 1999</link><!-- PMID 10523520-->; <link linkend="bib8">B&#x00FC;rglin, 1996</link><!-- PMID 8805384-->). The final additions to the nomenclature are two previously unnamed single copy
+            genes, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=qua-1" role="_blank">qua-1</ulink></emphasis> for <emphasis>quahog</emphasis> (<ulink url="http://www.wormbase.org/db/gene/gene?name=T05C12.10;class=CDS" role="_blank">T05C12.10</ulink>/<ulink url="http://www.wormbase.org/db/seq/clone?name=M110;class=Clone" role="_blank">M110</ulink>, <link linkend="bib66">Hao et al., 2006b</link>), and an ORF consisting only of the Hog domain, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=hog-1" role="_blank">hog-1</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/gene/gene?name=W06B11.4;class=CDS" role="_blank">W06B11.4</ulink>). The structural organization of Hh and the Hh-r
+            genes is shown in <xref linkend="figure2"/>B.</para>
+        <para>Over 60 Hh-r genes have been identified in <emphasis>C. elegans</emphasis>, most of
+            which are expressed, although a few appear to be pseudogenes (e.g., <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=grd-17" role="_blank">grd-17</ulink></emphasis>; <xref linkend="figure2"/>B). Many of these genes share a
+            one to one orthology to <emphasis>C. briggsae</emphasis> genes, although several have
+            arisen through recent duplications within the <emphasis>C. elegans</emphasis> lineage.
+            Preliminary searches of the ongoing <emphasis>Brugia malayi</emphasis> genome project reveal that
+            representatives of the different <emphasis>C. elegans</emphasis> families are also
+            present (<xref linkend="figure2"/>B). This clearly demonstrates that these Hh-r gene
+            families were already present in the last common ancestor of <emphasis>C.
+            elegans</emphasis> and <emphasis>B. malayi</emphasis> more than 300 million years ago.</para>
+        <para>The Wart, Ground, Ground-like and Qua domain each have a characteristic pattern of
+            conserved cysteine residues (<xref linkend="figure2"/>C). The Ground and Ground-like
+            domains differ in their arrangement of these conserved cysteine residues (<link linkend="bib3">Asp&#x000F6;ck et al., 1999</link><!-- PMID 10523520-->). In some
+            instances, it has been possible to predict likely disulfide bond arrangements because of
+            pairwise cysteine substitutions (<xref linkend="figure2"/>C; <link linkend="bib3">Asp&#x000F6;ck et al., 1999</link><!-- PMID 10523520-->). The Wart domain
+            is about twice the size of the Ground and Ground-like domain; however, the C-terminal
+            half of the Wart domain has a cysteine arrangement similar to that of the Ground domain
+            and both share a short conserved motif similarly positioned between cysteine residues
+            (FDøI, FEøV, respectively, <xref linkend="figure2"/>C; <link linkend="bib3">Asp&#x000F6;ck et al., 1999</link><!-- PMID 10523520-->). Thus, it is
+            likely that the C-terminal part of the Wart domain and the Ground domain was derived
+            from the same ancestral domain. The short conserved FDøV “core” motif is also present in
+            the Hh-N core, although its position relative to the cysteine residues is different
+                (<xref linkend="figure2"/>C; <link linkend="bib3">Asp&#x000F6;ck
+            et al., 1999</link><!-- PMID 10523520-->).</para>
+    <mediaobject id="figure2" xreflabel="Figure 2">
+        <imageobject>
+            <imagedata entityref="fig2" align="center" width="3.9in"/>
+        </imageobject>
+        <textobject>
+            <phrase> figure 2</phrase>
+        </textobject> &fig2legend;</mediaobject>
+    </sect1>
+    <sect1>
+        <title>Modification and function of Hh-r genes</title>
+        <para>All Hh-r genes in <emphasis>C. elegans</emphasis>, apart from
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=hog-1" role="_blank">hog-1</ulink></emphasis>, are predicted to encode secreted molecules. <link linkend="bib51">Porter et al. (1996)</link> have shown that <ulink url="http://www.wormbase.org/db/seq/protein?name=WRT-1;class=protein" role="_blank">WRT-1</ulink>, similar to Hh, undergoes autoprocessing; thus it is
+            expected that other Hh-r proteins with a Hog domain will also have autocatalytic
+            properties. However, it remains unclear whether the Hh-r proteins can bind cholesterol
+            or other sterols, because the region corresponding to the SRR of Hh is slightly
+            different in the Hh-r proteins (see <xref linkend="figure1"/>A in <link linkend="bib3">Asp&#x000F6;ck et al., 1999</link>).</para>
+        <para>An expression survey of <emphasis>wrt</emphasis> and <emphasis>grd</emphasis> genes revealed that they are expressed primarily in
+            ectodermal tissues, particularly the hypodermis and <emphasis>seam</emphasis> cells, but can also be found in
+            neurons, neuron-associated cells and gland cells (<link linkend="bib3">Asp&#x000F6;ck et al., 1999</link><!-- PMID 10523520-->).
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=qua-1" role="_blank">qua-1</ulink></emphasis> is also expressed in the hypodermis (<link linkend="bib66">Hao et al., 2006b</link>).
+            An internal deletion in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=qua-1" role="_blank">qua-1</ulink></emphasis> results in severe molting defects (<link linkend="bib66">Hao et al., 2006b</link>). Functional studies of other wrt genes are in progress and
+            preliminary results indicate that they also play important roles in development. For example, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=wrt-5" role="_blank">wrt-5</ulink></emphasis> functions in the hypodermis during embryogenesis (<link linkend="bib65">Hao et al., 2006a</link>). At present it is still unclear how Hh-r molecules function, and whether their activity could relate to the function of the PTC and PTR proteins.</para>
+        <para>In <emphasis>Drosophila</emphasis>, Hh is further modified by Skinny hedgehog (Ski), which palmitoylates the N-terminus of Hh-N, an essential process for Hh function
+            (<link linkend="bib10">Chamoun et al., 2001</link><!-- PMID 11486055-->). <emphasis>C. elegans</emphasis> has two
+            co-orthologs, <ulink url="http://www.wormbase.org/db/gene/gene?name=Y57G11C.17;class=CDS" role="_blank">Y57G11C.17</ulink> and <ulink url="http://www.wormbase.org/db/gene/gene?name=ZC101.3;class=CDS" role="_blank">ZC101.3</ulink> (T.R. B&#x000FC;rglin, unpublished), but large-scale RNAi
+            experiments have not uncovered any associated mutant phenotype. Modified Hh is secreted
+            with the help of Dispatched; <emphasis>C. elegans</emphasis> has two Disp homologs, <ulink url="http://www.wormbase.org/db/seq/protein?name=CHE-14;class=protein" role="_blank">CHE-14</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=PTD-2;class=protein" role="_blank">PTD-2</ulink> (see below).</para>
+        <para>Secreted Hh forms a multimeric complex that moves through the extracellular matrix
+            space. Heparan sulphate proteoglycans (HSPG) play an important role in Hh signal
+            transduction. Three <emphasis>Drosophila</emphasis> genes, <emphasis>tout-velu
+            (ttv)</emphasis>, <emphasis>sister of tout-velu (sotv)</emphasis>, and <emphasis>brother
+                of tout-velu (botv)</emphasis> encode glycosyltransferases of the EXT family that
+            are required for the biosynthesis of heparan sulfate and are essential for the movement
+            of N-Hh (<link linkend="bib19">Han et al., 2004a</link><!-- PMID 14998928-->; <link linkend="bib59">Takei et al., 2004</link><!-- PMID 14645127-->). One target
+            for these enzymes is Dally-like (Dlp), a glypican of the HSPG family that is also
+            essential for Hh signalling (<link linkend="bib16">Desbordes and Sanson, 2003</link><!-- PMID 14602684-->; <link linkend="bib20">Han et al., 2004b</link><!-- PMID 14729575-->; <link linkend="bib36">Lum et al., 2003</link><!-- PMID 12663920-->). <emphasis>C. elegans</emphasis>
+            has two EXT family members, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rib-1" role="_blank">rib-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rib-2" role="_blank">rib-2</ulink></emphasis>
+            (for review, see <link linkend="bib7">Berninsone and Hirschberg, 2002</link><!-- PMID 12975612-->).
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rib-1" role="_blank">rib-1</ulink></emphasis> is orthologous to ttv and EXT1, and
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rib-2" role="_blank">rib-2</ulink></emphasis> is ortholgous to <emphasis>botv</emphasis> and EXTL3;
+            however, orthologs of other EXT members are absent (<xref linkend="figure3"/>). The EXT
+            proteins have two domains: the exostosin domain and a 300 amino acid C-terminal region
+            that is highly conserved between members and probably corresponds to the catalytic
+            transferase domain, which is missing in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rib-1" role="_blank">rib-1</ulink></emphasis>. Homozygous
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rib-2" role="_blank">rib-2</ulink></emphasis> animals show delayed larval growth and reduced life span, while their progeny display more than 90% early embryonic lethality (<link linkend="bib44">Morio et al., 2003</link><!-- PMID 12565862-->). The <emphasis>C. elegans</emphasis> Dally-like gene ortholog, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gpn-1" role="_blank">gpn-1</ulink></emphasis>, shows no phenotype in large-scale RNAi screens.</para>
+        <para>Two other molecules that bind and restrict the availability and range of N-Hh are Hip
+            and Growth arrest specific 1 (GAS1; for review, see <link linkend="bib13">Cohen, 2003</link><!-- PMID 14556242-->). Hip is
+            absent in both <emphasis>Drosophila</emphasis> and <emphasis>C. elegans</emphasis>. GAS1
+            is a GPI-linked protein identified by its ability to arrest cell cycle progression when
+            overexpressed. The <emphasis>C. elegans</emphasis> ortholog
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=phg-1" role="_blank">phg-1</ulink>/phas-1</emphasis> is expressed in the pharynx and may play a similar
+            role in mitotic cell cycle regulation (<link linkend="bib1">Agostoni et al., 2002</link><!-- PMID 11955608-->). Megalin, a
+            member of the family of low-density lipoprotein receptors, is a third protein that binds
+            to N-Hh (see <link linkend="bib13">Cohen, 2003</link>). The <emphasis>C. elegans</emphasis> homolog
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lrp-1" role="_blank">lrp-1</ulink></emphasis> is expressed in the hypodermis; mutations in
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lrp-1" role="_blank">lrp-1</ulink></emphasis> produce molting defects (<link linkend="bib63">Yochem et al., 1999</link>).</para>
+    <mediaobject id="figure3" xreflabel="Figure 3">
+        <imageobject>
+            <imagedata entityref="fig3" align="center" width="4in"/>
+        </imageobject>
+        <textobject>
+            <phrase> figure 3</phrase>
+        </textobject> &fig3legend;</mediaobject>
+    </sect1>
+    <sect1>
+        <title>SSD Proteins: PTC and PTC-related proteins</title>
+        <para>Three <emphasis>ptc</emphasis> genes, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ptc-1" role="_blank">ptc-1</ulink></emphasis>,<emphasis>-2</emphasis>,<emphasis>-3</emphasis> have been
+            identified in <emphasis>C. elegans</emphasis>, although <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ptc-2" role="_blank">ptc-2</ulink></emphasis> is absent in <emphasis>C.
+            briggsae</emphasis> and is likely to be a pseudogene arising from a recent duplication
+            of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ptc-1" role="_blank">ptc-1</ulink></emphasis>. In addition, 24 genes have been identified that encode
+            proteins sharing both sequence and topological similarities to PTC; these proteins have
+            been named PTR (for Patched-related; <xref linkend="figure4"/>).</para>
+           <para><emphasis>Drosophila</emphasis>, human and mouse are each predicted to encode a single
+            PTR protein; thus the PTR family appears to have undergone an expansion in <emphasis>C.
+            elegans</emphasis> (<link linkend="bib30">Kuwabara et al., 2000</link><!-- PMID 10921907-->). Moreover, all 24
+            <emphasis>ptr</emphasis> genes are present in <emphasis>C. briggsae</emphasis> and share
+            a one to one orthology with <emphasis>C. elegans</emphasis>.</para>
+    <mediaobject id="figure4" xreflabel="Figure 4">
+        <imageobject>
+            <imagedata entityref="fig4" align="center" width="5in"/>
+        </imageobject>
+        <textobject>
+            <phrase> figure 4</phrase>
+        </textobject> &fig4legend;</mediaobject>
+        <para>The <emphasis>C. elegans</emphasis> PTC and PTR proteins share characteristics common
+            to all known Ptc proteins. The PTC and PTR proteins are predicted to have 12-membrane
+            spanning domains with cytoplasmic N- and C-termini. The membrane domains can be further
+            sub-divided into two cassettes of 1+5, which are separated by a large intracellular
+            loop. Each cassette contains a large extracellular loop predicted to facilitate Hh
+            binding (<xref linkend="figure5"/>). Carried within the first set of TM domains is a
+            sterol-sensing domain (SSD), which was first identified in SCAP, a protein involved in
+            cholesterol homeostasis (<link linkend="bib53">Radhakrishnan et al., 2004</link><!-- PMID 15260976-->).</para>
+               <literallayout></literallayout>
+    <mediaobject id="figure5" xreflabel="Figure 5">
+        <imageobject>
+            <imagedata entityref="fig5" align="center" width="2.5in"/>
+        </imageobject>
+        <textobject>
+            <phrase> figure 5</phrase>
+        </textobject> &fig5legend;</mediaobject>
+    </sect1>
+<sect1>
+        <title>Role of PTC proteins in <emphasis>C. elegans</emphasis></title>
+        <para>
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ptc-1" role="_blank">ptc-1</ulink></emphasis> is the first member of the <emphasis>ptc</emphasis> and <emphasis>ptr</emphasis> family to be analysed
+            in detail (<link linkend="bib30">Kuwabara et al., 2000</link><!-- PMID 10921907-->). Surprisingly, it was found that
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ptc-1" role="_blank">ptc-1</ulink></emphasis> plays a crucial role in germline cytokinesis. Elimination of
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ptc-1" role="_blank">ptc-1</ulink></emphasis> activity either by RNAi or mutation produces sterile adults
+            that carry multinucleate oocytes and sperm. In other respects, development of a
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ptc-1" role="_blank">ptc-1</ulink></emphasis> mutant is essentially wild type. <emphasis>In situ</emphasis> hybridization 
+            reveals that <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ptc-1" role="_blank">ptc-1</ulink></emphasis> mRNA is maternally provided, and becomes
+            enriched in <ulink url="http://www.wormbase.org/db/get?name=P4;class=Cell" role="_blank">P4</ulink>, the germ line precursor. Immunocytochemistry performed using a
+            polyclonal antibody capable of detecting <ulink url="http://www.wormbase.org/db/seq/protein?name=PTC-1;class=protein" role="_blank">PTC-1</ulink> protein in wild type adult hermaphrodites
+            reveals that <ulink url="http://www.wormbase.org/db/seq/protein?name=PTC-1;class=protein" role="_blank">PTC-1</ulink> protein is enriched in the plasma membrane of mitotic germ cells
+            undergoing proliferation, or in membranes undergoing rapid expansions, such as oocytes.
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=PTC-1;class=protein" role="_blank">PTC-1</ulink> protein is particularly enriched in vesicles at the apex of the membrane furrows
+            separating individual germ nuclei.</para>
+        <para>An analysis of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ptc-1" role="_blank">ptc-1</ulink></emphasis> mutants further revealed that the absence of
+            cytokinesis generated membrane furrows leads to a loss of cell autonomous development in
+            the germline syncytium, as evidenced by the presence of clusters of nuclei in M-phase
+            (<link linkend="bib30">Kuwabara et al., 2000</link><!-- PMID 10921907-->). The involvement of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ptc-1" role="_blank">ptc-1</ulink></emphasis> in
+            cytokinesis has led to the hypothesis that <ulink url="http://www.wormbase.org/db/seq/protein?name=PTC-1;class=protein" role="_blank">PTC-1</ulink> could play a role in the transport of
+            lipids, proteins or lipoproteins to the cleavage furrow. Importantly, a proteomic survey
+            of proteins involved in mammalian cytokinesis reveals that Ptc-1 is a component of the
+            mid-body (<link linkend="bib55">Skop et al., 2004</link><!-- PMID 15166316-->). Hence, the involvement of <ulink url="http://www.wormbase.org/db/seq/protein?name=PTC-1;class=protein" role="_blank">PTC-1</ulink> in
+            cytokinesis is likely to highlight an ancestral function for Ptc proteins, which is
+            apparently independent of Smoothened.</para>
+        <para>A mutation has also been obtained for <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ptc-3" role="_blank">ptc-3</ulink></emphasis>. Preliminary
+            phenotypic characterisation indicates that <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ptc-3" role="_blank">ptc-3</ulink></emphasis> is an essential
+            gene; mutants arrest in late embryogenesis (P.E.K., unpublished; <link linkend="bib68">Zugasti et al., 2005</link><!--: PMID 16204193-->). A survey of the other
+            <emphasis>ptr</emphasis> genes by RNAi reveals that many have roles in molting, but also affect growth and
+            morphogenesis (<link linkend="bib68">Zugasti et al., 2005</link><!--: PMID 16204193-->). It has also been demonstrated that <emphasis>C. elegans <ulink url="http://www.wormbase.org/db/gene/gene?name=daf-6" role="_blank">daf-6</ulink></emphasis> encodes a Patched-related protein required for lumen formation (<link linkend="bib67">Perens and Shaham, 2005</link><!--: PMID 15935778-->).</para>
+		</sect1>
+        <sect1>
+        <title>Other SSD proteins provide clues to PTC and PTR function</title>
+        <para>Another clue to the function of <ulink url="http://www.wormbase.org/db/seq/protein?name=PTC-1;class=protein" role="_blank">PTC-1</ulink> in worms is provided by the presence of an SSD
+            and its connections to sterols and protein transport. The SSD of SCAP, the first
+            identified SSD protein, is capable of binding directly to cholesterol (<link linkend="bib53">Radhakrishnan et al., 2004</link><!-- PMID 15260976-->; <xref linkend="figure4"/>). Other SSD protein families that
+            are closely related to PTC are the Dispatched family, which includes <ulink url="http://www.wormbase.org/db/seq/protein?name=CHE-14;class=protein" role="_blank">CHE-14</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=PTD-2;class=protein" role="_blank">PTD-2</ulink>, and the Niemann-Pick Type C family, which includes the <ulink url="http://www.wormbase.org/db/seq/protein?name=NCR-1;class=protein" role="_blank">NCR-1</ulink>, -2 proteins in
+                <emphasis>C. elegans</emphasis> (<link linkend="bib29">Kuwabara and Labouesse, 2002</link><!-- PMID 11932020-->).
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=che-14" role="_blank">che-14</ulink></emphasis> was first identified in a screen for animals that were
+            defective in dye-filling (<link linkend="bib50">Perkins et al., 1986</link><!-- PMID 2428682-->). Subsequent work
+            demonstrated that <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=che-14" role="_blank">che-14</ulink></emphasis> promotes apical sorting in epithelial
+            cells. <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=che-14" role="_blank">che-14</ulink></emphasis> mutants accumulate vesicles that are trapped near the
+            apical surface, indicative of problems in protein secretion (<link linkend="bib42">Michaux et al., 2000</link><!-- PMID 10996790-->). The phenotype of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=che-14" role="_blank">che-14</ulink></emphasis> mutants reveals that the problem
+            is more likely to be associated with defects in exocytosis, rather than in endocytosis.
+            The presence of an SSD in <ulink url="http://www.wormbase.org/db/seq/protein?name=CHE-14;class=protein" role="_blank">CHE-14</ulink> led the authors to speculate that <ulink url="http://www.wormbase.org/db/seq/protein?name=CHE-14;class=protein" role="_blank">CHE-14</ulink> might be
+            involved in the secretion of proteins containing sterol or GPI adducts. Similarly, Disp
+            promotes the exocytosis of Hh away from the cells from which it was synthesised (<link linkend="bib9">Burke et al., 1999</link><!-- PMID 10619433-->). A protein transported by <ulink url="http://www.wormbase.org/db/seq/protein?name=CHE-14;class=protein" role="_blank">CHE-14</ulink> might be <ulink url="http://www.wormbase.org/db/seq/protein?name=WRT-6;class=protein" role="_blank">WRT-6</ulink>, which is
+            expressed in sensory socket cells (<link linkend="bib3">Asp&#x000F6;ck et al., 1999</link><!-- PMID 10523520-->).</para>
+<?newpage?>
+        <para>Niemann-Pick disease type C1 (NPC1) is a neurodegenerative disease associated with
+            defects in cholesterol storage/transport. In <emphasis>C. elegans</emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ncr-1" role="_blank">ncr-1</ulink>; <ulink url="http://www.wormbase.org/db/gene/gene?name=ncr-2" role="_blank">ncr-2</ulink></emphasis> double mutants are hypersensitive to cholesterol
+            deprivation and inappropriately form dauers under favourable food conditions, a
+            dauer-constitutive (Daf-c) phenotype (<link linkend="bib56">Sym et al., 2000</link><!-- PMID 10801441-->). Recent studies
+            further show that <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ncr-1" role="_blank">ncr-1</ulink></emphasis> is hypersensitive to progesterone, a known
+            inhibitor of cholesterol trafficking (<link linkend="bib34">Li et al., 2004</link><!-- PMID 15509773-->). Hence, in
+                <emphasis>C. elegans</emphasis> there is a strong link between SSD proteins and the
+            transport of sterols, sterol modified proteins or in the case of dauer formation, a
+            sterol modified hormone.</para>
+        <para><emphasis>C. elegans</emphasis> are cholesterol auxotrophs, requiring exogenous
+            cholesterol for growth and survival (<link linkend="bib12">Chitwood, 1999</link><!-- PMID 10517647-->; <link linkend="bib21">Hieb and Rothstein, 1968</link><!-- PMID 4869093-->). Sterols are involved in at least two processes in the worm: the
+            decision to enter diapause, which is mediated by a sterol-derived hormone, and molting, which is impaired by sterol depletion (<link linkend="bib39">Matyash et al., 2004</link><!-- PMID 15383841-->). Animals
+            depleted for cholesterol arrest in the second generation during early larval stages
+            (<link linkend="bib40">Matyash et al., 2001</link><!-- PMID 11408580-->; <link linkend="bib41">Merris et al., 2003</link><!-- PMID 12518036-->). These L2
+            arrested larvae became dauer-like and fail to complete molting (<link linkend="bib39">Matyash et al., 2004</link>).</para>
+        <para>Because worms require so relatively little cholesterol, it has been postulated that cholesterol
+            is unlikely to be an essential architectural component of membranes and could play a
+            more important role in signalling (<link linkend="bib40">Matyash et al., 2001</link><!-- PMID 11408580-->). Mutations in
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lrp-1" role="_blank">lrp-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=qua-1" role="_blank">qua-1</ulink></emphasis> and RNAi inhibition of most
+            <emphasis>ptr</emphasis> genes, and post-embryonic RNAi of <emphasis>ptc</emphasis> gene
+            activity all lead to defects in molting (<link linkend="bib63">Yochem et al., 1999</link>; <link linkend="bib68">Zugasti et al., 2005<!--: PMID 16204193--></link>; <link linkend="bib66">Hao et al., 2006b</link><!-- PMID 9876188-->). Thus, taken
+            together, it is speculated that the PTC and PTR proteins could promote the transport of
+            sterols or sterol-modified proteins, possibly including sterol-modified Hh-r proteins.</para>
+    </sect1>
+        <sect1>
+        <title>Evolution</title>
+        <para>
+            <emphasis>C. elegans</emphasis> lacks the typical Hh signal transduction cascade found
+            in flies and vertebrates that is composed of Smo, Fu, Su(fu), and Cos2. Since homologs
+            of Fu and Su(fu) are found in plants and bacteria (T.R.B., unpublished), it follows that
+            this part of the pathway was lost in nematodes. Concomitantly, we have observed a large
+            increase in the number of <emphasis>C. elegans</emphasis> Hh-r and <emphasis>ptr</emphasis> genes. Several
+            lines of evidence point towards the Hh-r expansion being nematode specific: 1) Homologs
+            of the Hh-r genes have so far not been identified outside of the nematodes. 2)
+            Conversely, Hh is present in both arthropods and vertebrates and only missing in
+            nematodes. 3) Phylogenetic analyses of the Hog domain and motif similarity shared by the
+            Wrt and Grd domains indicate that the <emphasis>wrt</emphasis>, <emphasis>grd</emphasis>
+            and <emphasis>grl</emphasis> gene families are derived from a single ancestral gene
+                (<link linkend="bib3">Asp&#x000F6;ck et al., 1999</link><!-- PMID 10523520-->);
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=qua-1" role="_blank">qua-1</ulink></emphasis> may also be derived from the same ancestral gene, as its Hog
+            domain is also more similar to those of the Wrt and Grd proteins than to that of Hh. 4)
+                <emphasis>C. briggsae</emphasis> has fewer Hh-r genes than <emphasis>C.
+            elegans</emphasis>, and <emphasis>B. malayi</emphasis> even fewer, which underscores the
+            capacity of these genes to expand. The expansion of the <emphasis>ptr</emphasis> genes
+            is likewise nematode specific, since <emphasis>Drosophila</emphasis> and humans have
+            only a single copy.</para>
+        <para>There is a running debate whether or not nematodes should be classified as ecdysozoa.
+            If nematodes are indeed ecdysozoa, or group at least within the protostome branch of
+            ecdysozoa and lophotrochozoa (see chapter on evolution), then the loss, expansion and
+            diversification of various Hh pathway components, which have been described here, are
+            most parsimoniously explained by postulating that a <emphasis>C. elegans</emphasis> Hh
+            signalling pathway did exist, but was disrupted at some unknown time in early nematode
+            evolution. It also implies that the Hh-r genes were derived from Hh. On the other hand, if nematodes are an outgroup to coelomata, then one of several alternatives is that a
+            complete Hh signalling pathway was never acquired.</para>
+    </sect1>
+    <sect1>
+        <title>Summary</title>
+        <para>It is clear that the Hh and Ptc homologs in <emphasis>C. elegans</emphasis> have
+            undergone considerable evolutionary divergence when compared to their
+            <emphasis>Drosophila</emphasis> and vertebrate counterparts. Studies in <emphasis>C.
+            elegans</emphasis> are providing insights into the roles and mechanisms underlying the
+            control of the Hh-r, PTC and PTC-related proteins and have established that these
+            proteins can function independently of Smo. The involvement of Hh-r and <emphasis>ptr</emphasis> genes in
+            molting suggests that at least some of the Hh-r and <emphasis>ptr</emphasis> genes can participate in similar
+            pathways. Thus, it will be of particular interest to determine whether the Hh-r proteins
+            and the PTC and PTR proteins have maintained a ligand/receptor relationship that could
+            potentially mediate cell-cell signalling.</para>
+    </sect1>
+<?newpage?>
+    <sect1>
+        <title>Acknowledgements</title>
+        <para>TRB would like to thank the Swedish Foundation for Strategic Research (SSF) for
+            support. PEK thanks the MRC (UK) for funding. The authors would like to thank David
+            Fitch for constructive discussions related to nematode phylogeny.</para>
+    </sect1>
+    <sect1>
+        <title>References</title>
+		<para/>
+		&hhsignalling_Refs;</sect1>
+</article>

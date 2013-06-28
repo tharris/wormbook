@@ -1,0 +1,2237 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Transgenic solutions for the germline</title>
+      <meta name="generator" content="DocBook XSL Stylesheets V1.67.2">
+      <link rel="start" href="#merritt_Articleid" title="Transgenic solutions for the germline&#xA;">
+      <link rel="next" href="#sec1" title="1.&nbsp;Introduction">
+      <!--#include virtual="/ssi/header_article.html" -->
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<!--#include virtual="/ssi/boilerplate.html" -->
+   <div class="html_to_pdf_link"> 
+       <a href="transgenic.pdf">Download PDF version</a>
+   </div>
+
+      <div class="article" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h1 class="title"><a name="merritt_Articleid"></a>Transgenic solutions for the germline<sup><a name="d0e6" href="#ftn.d0e6">*</a></sup>
+                     
+                  </h1>
+               </div>
+               <div>
+                  <div class="author"><span class="author"><span class="othername">Christopher Merritt, Christopher M. Gallo, Dominique Rasoloson, and Geraldine Seydoux<em><span class="remark"><sup><a name="d0e28" href="#ftn.d0e28">&sect;</a></sup></span></em></span><br></span><span class="affiliation"><span class="orgname">Department of Molecular Biology and Genetics, Howard Hughes Medical Institute, and Center for Cell Dynamics, Johns Hopkins
+                           School of Medicine; </span><span class="address">725 N. Wolfe St., PCTB 706, Baltimore, MD 21205, USA
+                           <p></p></span></span></div>
+               </div>
+            </div>
+            <hr>
+         </div>
+         <div class="toc">
+
+	   <div id="section_locator"><a href="/toc_wormmethods.html">
+	         <b>This chapter is in WormBook section:</b><br />
+		       > WormMethods
+		</a></div><hr />
+<a href="http://www.wormbase.org/forums/index.php?board=331.0" title="Discuss WormBook" target="_blank"><font color="#9932cc"><b>View/Add Comments</b></font></a><br/>
+<IFRAME  SRC="http://tazendra.caltech.edu/~acedb/cgi-bin/wormbook_comment.cgi?name=Transgenic+solutions+for+the+germline" HEIGHT=50 WIDTH=180 FRAMEBORDER=0 SCROLLING=NO allowTransparency="true"></IFRAME>
+
+<hr />
+
+            <p><b>Table of Contents</b></p>
+            <dl>
+               <dt><span class="sect1"><a href="#sec1">1. Introduction</a></span></dt>
+               <dt><span class="sect1"><a href="#sec2">2. The germline challenge</a></span></dt>
+               <dt><span class="sect1"><a href="#sec3">3. Transgene construction by modular cloning: the Multisite Gateway<sup>&reg;</sup> System</a></span></dt>
+               <dt><span class="sect1"><a href="#sec4">4. Considerations when designing entry clones.</a></span></dt>
+               <dd>
+                  <dl>
+                     <dt><span class="sect2"><a href="#sec4_1">4.1. Choosing the promoter</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec4_2">4.2. Choosing the ORF</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec4_3">4.3. Choosing the 3'UTR</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec4_4">4.4. Consideration when assembling a transformation-ready transgene</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec4_5">4.5. Where to put the start and stop codon?</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec4_6">4.6. Other linker issue</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="sect1"><a href="#sec5">5. Choosing a destination vector</a></span></dt>
+               <dt><span class="sect1"><a href="#sec6">6. Non-Multisite Gateway<sup>&reg;</sup> vectors</a></span></dt>
+               <dd>
+                  <dl>
+                     <dt><span class="sect2"><a href="#sec6_1">6.1. Traditional cloning vectors</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec6_2">6.2. Single site Gateway<sup>&reg;</sup> vectors</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="sect1"><a href="#sec7">7. Protocols</a></span></dt>
+               <dd>
+                  <dl>
+                     <dt><span class="sect2"><a href="#sec7_1">7.1. Gateway&reg; cloning</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec7_2">7.2. Oligo design/PCR</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec7_3">7.3. BP Reaction</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec7_4">7.4. BP Reaction Transformation</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec7_5">7.5. Multisite LR Reaction</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec7_6">7.6. Multisite LR Reaction Transformation</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec7_7">7.7. Bombardment Protocol</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="sect1"><a href="#d0e2984">8. References</a></span></dt>
+            </dl>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec1"></a>1.&nbsp;Introduction
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>One of the most thrilling experiments in biology is to introduce a gene of one's own design into a favorite animal and examine
+               the effect in the transgenic progeny. Methods to construct, transform and monitor transgenes have been available to worm breeders
+               since the pioneering work of Andy Fire and Craig Mello (<a href="#bib4">Fire, 1986</a>; <a href="#bib14">Mello and Fire, 1995</a>) and the introduction of green fluorescent protein (GFP) by Marty Chalfie (<a href="#bib1">Chalfie et al., 1994</a>). Sadly, for many years, the thrill of &#8220;seeing green&#8221; was denied to worm breeders working on the germline, as transgenes
+               stubbornly refused to express in germ cells. In 1997, Bill Kelly and Andy Fire showed that transgene silencing in the germline
+               is a copy-number driven process (<a href="#bib10">Kelly et al., 1997</a>). Multi-copy transgenes are expressed in the soma but silenced in the germline; in contrast, low-copy transgenes are expressed
+               in both. Today, new transformation methods make it possible to routinely obtain low copy transgenes inserted in the genome.
+               In this chapter, we review these methods and give practical advice for designing and transforming &#8220;germline-ready&#8221; transgenes.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec2"></a>2.&nbsp;The germline challenge
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>The experiments of Kelly and Fire showed that unlike somatic cells, germ cells are very efficient at silencing genes present
+               in multi-copy. In some cases, multi-copy transgenes have also been observed to silence the corresponding endogenous locus
+               and phenocopy a loss-of-function mutation (co-suppression) (<a href="#bib19">Robert et al., 2004</a>). Silencing affects transgene expression not only in all germ cells, but also in the blastomeres of early embryos, which
+               depend primarily on maternal mRNAs and proteins synthesized during oogenesis.
+            </p>
+            <p>Three methods have been described to obtain low-copy transgenes. The first, developed by Kelly and Fire, involve diluting
+               the transgene with genomic DNA prior to injection to make a &#8220;complex array&#8221; (<a href="#bib10">Kelly et al., 1997</a>). Complex arrays, however, are difficult to obtain and prone to silencing over time. Two other methods yield transgenes that
+               are inserted in the genome, either at random sites [gene-gun transformation (<a href="#bib17">Praitis et al., 2001</a>; <a href="#bib22">Wilm et al., 1999</a>)] or at a pre-selected site [Mos1-mediated Single Copy Insertion (MosSCI) (<a href="#bib5">Frokjaer-Jensen et al., 2008</a>)]. These methods yield stable lines that can express in the germline for many generations.
+            </p>
+            <p>Besides silencing, gene expression in the germline presents two other unique challenges. First, unlike in the soma where promoters
+               do the lion's share of gene regulation, in the germline, 3'UTRs often (but not always) specify expression patterns (<a href="#bib15">Merritt et al., 2008</a>). Second, most of germline development occurs in a syncytium, where germ cells in different developmental stages are connected
+               to a common central cytoplasm (rachis) (<a href="#bib7">Hubbard and Greenstein, 2005</a>). Diffusion into the rachis means that transgenic proteins, in particular small reporters like GFP, can end up far from the
+               site of synthesis (<a href="#figure1">Figure 1</a>).
+            </p>
+            <div class="literallayout">
+               <p></p>
+            </div>
+            <div class="mediaobject" align="center"><a name="figure1"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="432">
+<tr>
+  <td align="center"><p><a href="transgenic_fig1.jpg"><img src="transgenic_fig1_s.jpg" border="2" align="middle" alt="figure 1"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 1: The choice of the ORF can affect the final observed pattern.&nbsp;</b>Comparison of three types of GFP fusions. Each fusion is driven by the <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></em></span> promoter and the indicated 3'UTR (<span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=mex-5;class=Gene" target="_blank">mex-5</a></em></span> or <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=fbf-2;class=Gene" target="_blank">fbf-2</a></em></span>). GFP:ORF is an amino-terminal fusion between GFP and the indicated ORF (<span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=mex-5;class=Gene" target="_blank">mex-5</a></em></span> or <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=fbf-2;class=Gene" target="_blank">fbf-2</a></em></span>) (<a href="#bib15">Merritt et al., 2008</a>). GFP:H2B is an amino-terminal fusion between GFP and histone H2B. GFP is GFP alone. The GFP alone fusion gives the least
+                     accurate/specific pattern, due to diffusion through the rachis (C.M., <span class="emphasis"><em>unpublished</em></span>). The GFP:H2B pattern reflects regulation by the 3'UTR only. The GFP:ORF pattern gives a pattern most similar to the endogenous
+                     pattern. Inclusion of the ORF is particularly important for the proper distribution of maternal proteins in embryos, which
+                     often depend on ORF sequences for segregation during early cleavages.
+                  </p>
+               </div>
+            </div>
+            <p>For these reasons, when designing germline transgenes, all components (promoter, tag, ORF and 3'UTR) must be considered carefully.
+               Short cuts commonly used in somatic tissues, such as relying on simple promoter fusions (<span class="emphasis"><em>promoter</em></span>::GFP::<span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=unc-54;class=Gene" target="_blank">unc-54</a> 3'UTR</em></span>) to determine expression patterns (<a href="#bib8">Hunt-Newbury et al., 2007</a>), cannot be used in the germline. The methods presented in this chapter are designed to facilitate the cloning and mix-and-matching
+               of different gene sequences to give the Worm Breeder maximum control over transgene design. The methods here are also compatible
+               with the use of clones from publicly available collections, such as the promoterome (<a href="#bib3">Dupuy et al., 2004</a>), the ORFeome (<a href="#bib11">Lamesch et al., 2004</a>), and 3'UTRome (<a href="#bib13">Mangone et al., 2008</a>).
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec3"></a>3.&nbsp;Transgene construction by modular cloning: the Multisite Gateway<sup>&reg;</sup> System
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Modular cloning replaces traditional restriction-enzyme cloning with recombinational cloning, which allows users to rapidly
+               recombine different parts (promoter, ORF and 3'UTR) of the transgene at will. Modular cloning is becoming more and more popular
+               as collections of systematically-cloned promoters, ORFs, and 3'UTRs are becoming available. The method we describe in detail
+               here is based on the Multisite Gateway<sup>&reg;</sup> System from Invitrogen. The Multisite Gateway<sup>&reg;</sup> system allows for rapid mix-and-match cloning of up to three DNA fragments in two steps:
+            </p>
+            <p><span class="emphasis"><em>Step 1: Construction of Entry Clones</em></span></p>
+            <p>Each element (i.e. promoter, ORF and 3' sequence) is cloned into a Donor Vector to create an Entry clone (<a href="#figure2">Figure 2</a>). There are three Donor Vectors, each corresponding to the specific position (5', middle, or 3') that the insert will occupy
+               in the final clone (transformation-ready transgene). Typically promoters are cloned in the 5' position, ORFs in the middle,
+               and 3'UTRs in the 3' position. Cloning is done by:
+               
+            </p>
+            <div class="orderedlist">
+               <ol type="1">
+                  <li>
+                     <p>PCR amplification of the desired fragment using oligos that contain sequences complementary to the insert as well as sequences
+                        for cloning by recombination
+                     </p>
+                  </li>
+                  <li>
+                     <p>recombination cloning (BP reaction) into one of the three Gateway<sup>&reg;</sup> Donor Vectors:
+                        
+                     </p>
+                     <table class="simplelist" border="0" summary="Simple list">
+                        <tr>
+                           <td>5' POSITION: pDONRP4-P1R, MIDDLE POSITION: pDONR201/221 (either can be used),</td>
+                        </tr>
+                        <tr>
+                           <td>3' POSITION: pDONRP2-P3</td>
+                        </tr>
+                     </table>
+                     <p>
+                        
+                     </p>
+                  </li>
+                  <li>
+                     <p>sequence verification of the resulting Entry clone to ensure that no mistakes were introduced during the PCR amplification.</p>
+                  </li>
+               </ol>
+            </div>
+            <div class="literallayout">
+               <p></p>
+            </div>
+            <div class="mediaobject" align="center"><a name="figure2"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="198">
+<tr>
+  <td align="center"><p><a href="transgenic_fig2.jpg"><img src="transgenic_fig2_s.jpg" border="2" align="middle" alt="figure 2"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 2: Step 1: Assembly of Entry Clone (BP reaction).&nbsp;</b>The desired fragment is PCR amplified using oligos that contain <span class="emphasis"><em>att</em></span>B sequences. Recombination with a Gateway<sup>&reg;</sup> Donor Vector gives rise to an Entry clone.
+                  </p>
+               </div>
+            </div>
+            <p><span class="emphasis"><em>Step 2: Assembly of transformation-ready transgene</em></span></p>
+            <p>Three Entry clones are recombined in a single cloning reaction (LR reaction) with the Destination vector (<a href="#figure3">Figure 3</a>). The Destination vector contains the marker(s) used for transformation into worms (for example: pCG150, which contains the
+               <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=unc-119;class=Gene" target="_blank">unc-119</a></em></span> rescuing fragment). The resulting final construct is the transgene ready for transformation.
+            </p>
+            <div class="literallayout">
+               <p></p>
+            </div>
+            <div class="mediaobject" align="center"><a name="figure3"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="311">
+<tr>
+  <td align="center"><p><a href="transgenic_fig3.jpg"><img src="transgenic_fig3_s.jpg" border="2" align="middle" alt="figure 3"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 3: Step 2: Assembly of transformation-ready transgene (LR reaction).&nbsp;</b>Three Entry clones are recombined in a single reaction with the Destination vector to give rise to the final construct (transformation-ready
+                     transgene). The Destination vector contains the marker used for transformation into worms (<span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=unc-119;class=Gene" target="_blank">unc-119</a></em></span> in this example).
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec4"></a>4.&nbsp;Considerations when designing entry clones.
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>For general instructions on how to design entry clones, please consult the Multisite Gateway<sup>&reg;</sup> Technology (Invitrogen) website (<a href="http://www.invitrogen.com/site/us/en/home/Products-and-Services/Applications/Cloning/Gateway-Cloning/MultiSite-Gateway-Technology.html" target="_top">http://www.invitrogen.com/site/us/en/home/Products-and-Services/Applications/Cloning/Gateway-Cloning/MultiSite -Gateway-Technology.html</a>) and manual (note: DO NOT use the Multisite Gateway<sup>&reg;</sup> &#8220;PRO&#8221; manual). See the Protocols section in this chapter for additional instructions/tips.
+            </p>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec4_1"></a>4.1.&nbsp;Choosing the promoter
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p><span class="underline">- Promoter of gene of interest</span>: this choice is recommended when the goal is to design a transgene that will most closely approximate the expression pattern
+                  of the gene of interest (in which case all parts of the gene (promoter, ORF and 3'UTR) must be used). Typically, the intergenic
+                  sequence from the end/start of the upstream ORF to the start codon of the gene of interest is sufficient. Large introns can
+                  also be included.
+               </p>
+               <p>- <span class="emphasis"><em><span class="underline"><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></span></em></span> <span class="underline">promoter</span>: this promoter is suitable for expression in all germ cells from the late L1 stage to the adult stage (<a href="#bib15">Merritt et al., 2008</a>). When combined with GFP:Histone H2B and tubulin 3'UTR, expression is first detected in the late L1 stage and is maintained
+                  in all germ cells through spermatogenesis and oogenesis. Maternal expression persists in embryos with declining levels after
+                  the 100-cell stage. More restricted expression can be obtained by combining the <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></em></span> promoter with specific 3'UTRs, see below.
+               </p>
+               <p>- <span class="emphasis"><em><span class="underline"><a href="http://www.wormbase.org/db/get?name=spe-11;class=Gene" target="_blank">spe-11</a> promoter</span>:</em></span> this promoter is active specifically during spermatogenesis in both hermaphrodites and males (<a href="#bib15">Merritt et al., 2008</a>). When combined with GFP:Histone H2B and tubulin 3'UTR, expression is first detected in late pachytene and is maintained
+                  through spermatogenesis.
+               </p>
+               <p>- <span class="emphasis"><em><span class="underline">hsp promoter</span>:</em></span> for heat-inducible expression. CAUTION: These promoters are not germline-specific, they express in most somatic cells. In
+                  the germline, expression is first seen weakly in late pachytene of spermatogenesis and oogenesis (C. M. unpublished) several
+                  hours (usually, &gt; 4 hrs) after heat-shock.
+               </p>
+               <p>(See <a href="#table1a" title="Table 1: Selected Entry Clones">Table 1A</a> for some useful 5' Entry Clones containing promoters.)
+               </p>
+               <div class="table"><a name="table1a"></a><p class="title"><span class="bold">Table 1: Selected Entry Clones</span></p>
+                  <table summary="Table 1: Selected Entry Clones" border="1">
+                     <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                     </colgroup>
+                     <thead>
+                        <tr valign="top">
+                           <th colspan="5" align="left" valign="top">A. 5&#8217; Entry Clones</th>
+                        </tr>
+                        <tr valign="top">
+                           <th align="center" valign="top"><span class="bold"><strong>Element</strong></span></th>
+                           <th align="center" valign="top"><span class="bold"><strong>Application</strong></span>
+                              <span class="bold"><strong>(to drive expression)</strong></span></th>
+                           <th align="center" valign="top"><span class="bold"><strong>Description</strong></span>
+                              &nbsp;
+                           </th>
+                           <th align="center" valign="top"><span class="bold"><strong>Entry Clone</strong></span>
+                              <span class="bold"><strong>(reference)</strong></span></th>
+                           <th align="center" valign="top"><span class="bold"><strong>Distributed by</strong></span></th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr valign="top">
+                           <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></em></span> promoter
+                           </td>
+                           <td align="left" valign="top">throughout the germline</td>
+                           <td align="left" valign="top">Contains promoter + large intron from <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></em></span> locus (3.0kb total in length)
+                           </td>
+                           <td align="left" valign="top">pCG142 (<a href="#bib15">Merritt et al., 2008</a>)
+                           </td>
+                           <td align="left" valign="top">Addgene (<a href="http://www.addgene.org/pgvec1" target="_top">http://www.addgene.org/pgvec1</a>)
+                           </td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></em></span> promoter (short)
+                           </td>
+                           <td align="left" valign="top">throughout the germline</td>
+                           <td align="left" valign="top">smaller <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></em></span> promoter (1.1 kb) lacking repetitive sequences (which are thought to be problematic with MosSCI)
+                           </td>
+                           <td align="left" valign="top">pCM1.58 (C.M. unpublished)</td>
+                           <td align="left" valign="top">Addgene (<a href="http://www.addgene.org/pgvec1" target="_top">http://www.addgene.org/pgvec1</a>)
+                           </td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></em></span> promoter (short, no ATG)
+                           </td>
+                           <td align="left" valign="top">throughout the germline</td>
+                           <td align="left" valign="top">smaller <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></em></span> promoter (1.1 kb) with no start codon. Avoids attB1-encoded amino-acids in fusion protein. ATG must be included in middle
+                              cassette (see <a href="#figure4">Figure 4C</a>).
+                           </td>
+                           <td align="left" valign="top">pCM1.127 (C.M. unpublished)</td>
+                           <td align="left" valign="top">Addgene (<a href="http://www.addgene.org/pgvec1" target="_top">http://www.addgene.org/pgvec1</a>)
+                           </td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=spe-11;class=Gene" target="_blank">spe-11</a></em></span> promoter
+                           </td>
+                           <td align="left" valign="top">in sperm</td>
+                           <td align="left" valign="top">272 bp <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=spe-11;class=Gene" target="_blank">spe-11</a></em></span> promoter.
+                           </td>
+                           <td align="left" valign="top">pCM1.41 (<a href="#bib15">Merritt et al., 2008</a>)
+                           </td>
+                           <td align="left" valign="top">Addgene (<a href="http://www.addgene.org/pgvec1" target="_top">http://www.addgene.org/pgvec1</a>)
+                           </td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=spe-11;class=Gene" target="_blank">spe-11</a></em></span> promoter (no ATG)
+                           </td>
+                           <td align="left" valign="top">in sperm</td>
+                           <td align="left" valign="top">272 bp <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=spe-11;class=Gene" target="_blank">spe-11</a></em></span> promoter with no start codon. Avoids attB1-encoded AAs in final fusion protein. ATG must be included in middle cassette (see
+                              <a href="#figure4">Figure 4C</a>).
+                           </td>
+                           <td align="left" valign="top">pCM1.128 (C.M. unpublished)</td>
+                           <td align="left" valign="top">Addgene (<a href="http://www.addgene.org/pgvec1" target="_top">http://www.addgene.org/pgvec1</a>)
+                           </td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="left" valign="top">hsp16-2/hsp16-41</td>
+                           <td align="left" valign="top">heat-inducible</td>
+                           <td align="left" valign="top">heatshock promoters commonly used for heat-inducible expression. Cloned from vectors created by Andy Fire.</td>
+                           <td align="left" valign="top">pCM1.56/1.57 (C.M. unpublished)</td>
+                           <td align="left" valign="top">Addgene (<a href="http://www.addgene.org/pgvec1" target="_top">http://www.addgene.org/pgvec1</a>)
+                           </td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="left" valign="top">Other germline promoters (Seydoux lab)</td>
+                           <td align="left" valign="top">throughout the germline</td>
+                           <td align="left" valign="top">many other germline promoters ranging in length from 400bp to 3000bp (see <a href="#bib15">Merritt et al., 2008</a> - Table S5).
+                           </td>
+                           <td align="left" valign="top">various (<a href="#bib15">Merritt et al., 2008</a>)
+                           </td>
+                           <td align="left" valign="top">Addgene (<a href="http://www.addgene.org/pgvec1" target="_top">http://www.addgene.org/pgvec1</a>)
+                           </td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="left" valign="top"><span class="emphasis"><em>C. elegans</em></span> Promoterome library (Vidal lab)
+                           </td>
+                           <td align="left" valign="top">specific (somatic) cell-types</td>
+                           <td align="left" valign="top">These clones contain up to 2 kb of intergenic sequence upstream of the ATG. They contain ATGs and are cloned as shown in <a href="#figure4">Figure 4B</a>.
+                           </td>
+                           <td align="left" valign="top">various (<a href="#bib3">Dupuy et al., 2004</a>)
+                           </td>
+                           <td align="left" valign="top">Geneservice (<a href="http://www.geneservice.co.uk/products/clones/Celegans_Prom.jsp" target="_top">http://www.geneservice.co.uk/products/clones/Celegans_Prom.jsp</a>)
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <div class="table"><a name="table1b"></a><p class="title"></p>
+                  <table summary="" border="1">
+                     <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                     </colgroup>
+                     <thead>
+                        <tr valign="top">
+                           <th colspan="5" align="left" valign="top">B. Middle Entry Clones</th>
+                        </tr>
+                        <tr valign="top">
+                           <th align="center" valign="top"><span class="bold"><strong>Element</strong></span></th>
+                           <th align="center" valign="top"><span class="bold"><strong>Application</strong></span></th>
+                           <th align="center" valign="top"><span class="bold"><strong>Description</strong></span></th>
+                           <th align="center" valign="top"><span class="bold"><strong>Entry Clone (REF)</strong></span></th>
+                           <th align="center" valign="top"><span class="bold"><strong>Distributed by</strong></span></th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr valign="top">
+                           <td align="left" valign="top">GFP</td>
+                           <td align="left" valign="top">tag ORF with GFP</td>
+                           <td align="left" valign="top">GFP with 3 synthetic introns (from Andy Fire)</td>
+                           <td align="left" valign="top">pCM1.53 (<a href="#bib15">Merritt et al., 2008</a>)
+                           </td>
+                           <td align="left" valign="top">Addgene (<a href="http://www.addgene.org/pgvec1" target="_top">http://www.addgene.org/pgvec1</a>)
+                           </td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="left" valign="top">mCherry</td>
+                           <td align="left" valign="top">tag ORF with mCherry</td>
+                           <td align="left" valign="top">mCherry with <span class="emphasis"><em>C. elegans</em></span> codon preferences and 3 synthetic introns (created by Chris Gallo; Seydoux lab)
+                           </td>
+                           <td align="left" valign="top">pCG144 (<a href="#bib15">Merritt et al., 2008</a>)
+                           </td>
+                           <td align="left" valign="top">Addgene (<a href="http://www.addgene.org/pgvec1" target="_top">http://www.addgene.org/pgvec1</a>)
+                           </td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="left" valign="top">GFP:histone H2B</td>
+                           <td align="left" valign="top">reporter</td>
+                           <td valign="top">&nbsp;</td>
+                           <td align="left" valign="top">pCM1.35 (<a href="#bib15">Merritt et al., 2008</a>)
+                           </td>
+                           <td align="left" valign="top">Addgene (<a href="http://www.addgene.org/pgvec1" target="_top">http://www.addgene.org/pgvec1</a>)
+                           </td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="left" valign="top">mCherry:histone H2B</td>
+                           <td align="left" valign="top">reporter</td>
+                           <td valign="top">&nbsp;</td>
+                           <td align="left" valign="top">pCM1.151 (<a href="#bib15">Merritt et al., 2008</a>)
+                           </td>
+                           <td align="left" valign="top">Addgene (<a href="http://www.addgene.org/pgvec1" target="_top">http://www.addgene.org/pgvec1</a>)
+                           </td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="left" valign="top"><span class="emphasis"><em>C. elegans</em></span> ORFeome library (Vidal lab)
+                           </td>
+                           <td align="left" valign="top">express ORF</td>
+                           <td align="left" valign="top">these ORFs do not contain start or stop codons and thus must be added in flanking cassettes</td>
+                           <td align="left" valign="top">various (<a href="http://worfdb.dfci.harvard.edu" target="_top">http://worfdb .dfci.harvard.edu</a>; <a href="#bib3">Dupuy et al., 2004</a>)
+                           </td>
+                           <td align="left" valign="top">Geneservice (<a href="http://www.geneservice.co.uk/products/cdna/Celegans_ORF.jsp" target="_top">http://www.geneservice.co.uk/products/cdna/Celegans_ORF.jsp</a>)
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <div class="table"><a name="table1c"></a><p class="title"></p>
+                  <table summary="" border="1">
+                     <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                     </colgroup>
+                     <thead>
+                        <tr valign="top">
+                           <th colspan="5" align="left" valign="top">C. 3' Entry Clones</th>
+                        </tr>
+                        <tr valign="top">
+                           <th align="center" valign="top"><span class="bold"><strong>Element</strong></span></th>
+                           <th align="center" valign="top"><span class="bold"><strong>Application (to drive expression)</strong></span></th>
+                           <th align="center" valign="top"><span class="bold"><strong>Description</strong></span></th>
+                           <th align="center" valign="top"><span class="bold"><strong>Entry Clone (REF)</strong></span></th>
+                           <th align="center" valign="top"><span class="bold"><strong>Distributed by</strong></span></th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr valign="top">
+                           <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=tbb-2;class=Gene" target="_blank">tbb-2</a> 3'UTR</em></span></td>
+                           <td align="left" valign="top">in all cell types</td>
+                           <td align="left" valign="top">3'UTR permissive for expression throughout the germline</td>
+                           <td align="left" valign="top">pCM1.36 (<a href="#bib15">Merritt et al., 2008</a>)
+                           </td>
+                           <td align="left" valign="top">Addgene (<a href="http://www.addgene.org/pgvec1" target="_top">http://www.addgene.org/pgvec1</a>)
+                           </td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a> 3'UTR</em></span></td>
+                           <td align="left" valign="top">in oocytes and embryos</td>
+                           <td align="left" valign="top">3'UTR with highest expression in oocytes and early embryos</td>
+                           <td align="left" valign="top">pCM5.47 (<a href="#bib15">Merritt et al., 2008</a>)
+                           </td>
+                           <td align="left" valign="top">Addgene (<a href="http://www.addgene.org/pgvec1" target="_top">http://www.addgene.org/pgvec1</a>)
+                           </td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=unc-54;class=Gene" target="_blank">unc-54</a> 3'UTR</em></span></td>
+                           <td align="left" valign="top">in all cell types</td>
+                           <td align="left" valign="top">3'UTR permissive for expression in all cells (Fire vectors)</td>
+                           <td align="left" valign="top">pCM5.37 (<a href="#bib15">Merritt et al., 2008</a>)
+                           </td>
+                           <td align="left" valign="top">Addgene (<a href="http://www.addgene.org/pgvec1" target="_top">http://www.addgene.org/pgvec1</a>)
+                           </td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="left" valign="top"><span class="emphasis"><em>C. elegans</em></span> UTRome library (Piano lab)
+                           </td>
+                           <td align="left" valign="top">to drive expression in various cell types</td>
+                           <td align="left" valign="top">Last 30 bases of ORF sequence + STOP codon + 3'UTR sequence to polyA</td>
+                           <td align="left" valign="top">various (UTRome.org; <a href="#bib13">Mangone et al., 2008</a>))
+                           </td>
+                           <td align="left" valign="top"><span class="emphasis"><em>not yet determined</em></span></td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="left" valign="top">Other germline 3'UTRs (Seydoux lab)</td>
+                           <td align="left" valign="top">to drive expression in different germline cell types</td>
+                           <td valign="top">&nbsp;</td>
+                           <td align="left" valign="top">various (see <a href="#table2" title="Table 2: 3'UTRs with different expression patterns in the germline">Table 2</a>) (<a href="#bib15">Merritt et al., 2008</a>)
+                           </td>
+                           <td align="left" valign="top">Addgene (<a href="http://www.addgene.org/pgvec1" target="_top">http://www.addgene.org/pgvec1</a>)
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec4_2"></a>4.2.&nbsp;Choosing the ORF
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>- <span class="underline">ORF of gene of interest</span>: this choice is recommended when the goal is to design a transgene that will most closely approximate the expression pattern
+                  of the gene of interest. Different proteins will have different turnover rates and diffusion patterns in the germline.
+               </p>
+               <p>- <span class="underline">GFP, mCherry, and other fluorescent proteins</span> can be used in germ cells as has been described for somatic transgenes (see <a href="http://dx.doi.org/10.1895/wormbook.1.106.1" target="_top">Reporter gene fusions</a>). Note that since most germ cells are connected to each other through the rachis (with the exception of developing sperm),
+                  small proteins such as GFP can diffuse from cell to cell through most of the gonad (<a href="#figure1">Figure 1</a>).
+               </p>
+               <p>- <span class="underline">GFP:H2B</span> (histone H2B) localizes efficiently to chromatin. This reporter is a good choice when the goal is to 1) concentrate the GFP
+                  signal to a small area to boost detection, 2) limit protein diffusion through the rachis, and 3) test the ability of a promoter
+                  or 3'UTR to restrict expression to specific stages (<a href="#bib15">Merritt et al., 2008</a>). Note that the rate of H2B turnover during germline development is not known and could in theory artificially extend or
+                  shorten an expression pattern.
+               </p>
+               <p>(See <a href="#table1b" title="">Table 1B</a> for some useful 5' Entry Clones containing ORFs)
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec4_3"></a>4.3.&nbsp;Choosing the 3'UTR
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>- <span class="underline">3'UTR of gene of interest</span>: Many genes in the germline are regulated post-transcriptionally using sequences in the 3'UTRs (<a href="#bib15">Merritt et al., 2008</a>). Using the 3'UTR of the gene of interest is ESSENTIAL when the goal is to design a transgene that will most closely approximate
+                  the expression pattern of the gene of interest. See <a href="#table1c" title="">Table 1C</a> and <a href="#table2" title="Table 2: 3'UTRs with different expression patterns in the germline">Table 2</a> for 3'UTRs with defined expression patterns.
+               </p>
+               <p>- <span class="underline"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=tbb-2;class=Gene" target="_blank">tbb-2</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=unc-54;class=Gene" target="_blank">unc-54</a></em></span> 3'UTRs</span> are compatible with expression in all germ cells (<a href="#bib15">Merritt et al., 2008</a>). See <a href="#table1c" title="">Tables 1C</a> and <a href="#table2" title="Table 2: 3'UTRs with different expression patterns in the germline">2</a> for some useful 3' Entry Clones containing 3'UTRs.
+               </p>
+               <div class="table"><a name="table2"></a><p class="title"><span class="bold">Table 2: 3'UTRs with different expression patterns in the germline</span></p>
+                  <table summary="Table 2: 3'UTRs with different expression patterns in the germline" border="1">
+                     <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                     </colgroup>
+                     <thead>
+                        <tr valign="top">
+                           <th valign="top">&nbsp;</th>
+                           <th valign="top">&nbsp;</th>
+                           <th colspan="2" align="center" valign="top"><span class="bold"><strong>progenitors</strong></span></th>
+                           <th colspan="2" align="center" valign="top"><span class="bold"><strong>pachytene</strong></span></th>
+                           <th align="center" valign="top"><span class="bold"><strong>loop</strong></span></th>
+                           <th colspan="3" align="center" valign="top"><span class="bold"><strong>oocytes</strong></span></th>
+                           <th colspan="2" align="center" valign="top"><span class="bold"><strong>embryos (C.M. unpublished)</strong></span></th>
+                        </tr>
+                        <tr valign="top">
+                           <th align="center" valign="top"><span class="bold"><strong>3'UTR</strong></span></th>
+                           <th align="center" valign="top"><span class="bold"><strong>Entry</strong></span></th>
+                           <th align="center" valign="top"><span class="bold"><strong>distal</strong></span></th>
+                           <th align="center" valign="top"><span class="bold"><strong>proximal</strong></span></th>
+                           <th align="center" valign="top"><span class="bold"><strong>distal</strong></span></th>
+                           <th align="center" valign="top"><span class="bold"><strong>proximal</strong></span></th>
+                           <th valign="top">&nbsp;</th>
+                           <th align="center" valign="top"><span class="bold"><strong>distal</strong></span></th>
+                           <th align="center" valign="top"><span class="bold"><strong>medial</strong></span></th>
+                           <th align="center" valign="top"><span class="bold"><strong>proximal</strong></span></th>
+                           <th align="center" valign="top"><span class="bold"><strong>early</strong></span></th>
+                           <th align="center" valign="top"><span class="bold"><strong>late</strong></span></th>
+                        </tr>
+                     </thead>
+                     <tfoot>
+                        <tr valign="top">
+                           <th colspan="12" align="justify" valign="top">Germline expression of GFP:H2B when driven by the given 3'UTR (<a href="#bib15">Merritt et al., 2008</a>). Gonadal regions are listed distally to proximally, from left to right. ++ indicates strongest domain(s) of GFP:H2B expression,
+                              + indicates weaker domain(s) of GFP expression, and - indicates no GFP expression. Other 3'UTRs that provide similar expression
+                              patterns: <sup>1</sup><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=mes-2;class=Gene" target="_blank">mes-2</a></em></span>, <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=par-5;class=Gene" target="_blank">par-5</a></em></span>, <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=fog-2;class=Gene" target="_blank">fog-2</a></em></span>, <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=spe-11;class=Gene" target="_blank">spe-11</a></em></span>, <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=spe-38;class=Gene" target="_blank">spe-38</a></em></span>, <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=spe-41;class=Gene" target="_blank">spe-41</a></em></span>, <sup>2</sup><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=fbf-2;class=Gene" target="_blank">fbf-2</a></em></span>, <sup>3</sup><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=lip-1;class=Gene" target="_blank">lip-1</a></em></span>, and <sup>4</sup><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=mes-3;class=Gene" target="_blank">mes-3</a></em></span>.
+                           </th>
+                        </tr>
+                     </tfoot>
+                     <tbody>
+                        <tr valign="bottom">
+                           <td align="center" valign="bottom"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=tbb-2;class=Gene" target="_blank">tbb-2</a></em></span><sup>1</sup></td>
+                           <td align="center" valign="bottom">pCM1.36</td>
+                           <td align="center" valign="bottom">+</td>
+                           <td align="center" valign="bottom">+</td>
+                           <td align="center" valign="bottom">++</td>
+                           <td align="center" valign="bottom">++</td>
+                           <td align="center" valign="bottom">++</td>
+                           <td align="center" valign="bottom">++</td>
+                           <td align="center" valign="bottom">++</td>
+                           <td align="center" valign="bottom">++</td>
+                           <td align="center" valign="bottom">++</td>
+                           <td align="center" valign="bottom">++</td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="center" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pgl-1;class=Gene" target="_blank">pgl-1</a></em></span></td>
+                           <td align="center" valign="top">pCM5.30</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="center" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=nos-3;class=Gene" target="_blank">nos-3</a></em></span></td>
+                           <td align="center" valign="top">pCM5.35</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="center" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=glp-1;class=Gene" target="_blank">glp-1</a></em></span></td>
+                           <td align="center" valign="top">pCM5.40</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">++</td>
+                        </tr>
+                        <tr valign="bottom">
+                           <td align="center" valign="bottom"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=fbf-1;class=Gene" target="_blank">fbf-1</a></em></span><sup>2</sup></td>
+                           <td align="center" valign="bottom">pCM5.33</td>
+                           <td align="center" valign="bottom">++</td>
+                           <td align="center" valign="bottom">++</td>
+                           <td align="center" valign="bottom">+</td>
+                           <td align="center" valign="bottom">+</td>
+                           <td align="center" valign="bottom">+</td>
+                           <td align="center" valign="bottom">&#8722;</td>
+                           <td align="center" valign="bottom">&#8722;</td>
+                           <td align="center" valign="bottom">&#8722;</td>
+                           <td align="center" valign="bottom">&#8722;</td>
+                           <td align="center" valign="bottom">+ (posterior)</td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="center" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=daz-1;class=Gene" target="_blank">daz-1</a></em></span></td>
+                           <td align="center" valign="top">pCM5.43</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="center" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pgl-3;class=Gene" target="_blank">pgl-3</a></em></span></td>
+                           <td align="center" valign="top">pCM5.46</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="center" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=gld-1;class=Gene" target="_blank">gld-1</a></em></span></td>
+                           <td align="center" valign="top">pCM5.36</td>
+                           <td align="center" valign="top">&#8722;</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">&#8722;</td>
+                           <td align="center" valign="top">+ (posterior)</td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="center" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=him-3;class=Gene" target="_blank">him-3</a></em></span></td>
+                           <td align="center" valign="top">pCM5.52</td>
+                           <td align="center" valign="top">&#8722;</td>
+                           <td align="center" valign="top">&#8722;</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                        </tr>
+                        <tr valign="bottom">
+                           <td align="center" valign="bottom"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=rme-2;class=Gene" target="_blank">rme-2</a></em></span><sup>3</sup></td>
+                           <td align="center" valign="bottom">pCM5.51</td>
+                           <td align="center" valign="bottom">&#8722;</td>
+                           <td align="center" valign="bottom">&#8722;</td>
+                           <td align="center" valign="bottom">+</td>
+                           <td align="center" valign="bottom">++</td>
+                           <td align="center" valign="bottom">++</td>
+                           <td align="center" valign="bottom">++</td>
+                           <td align="center" valign="bottom">++</td>
+                           <td align="center" valign="bottom">++</td>
+                           <td align="center" valign="bottom">++</td>
+                           <td align="center" valign="bottom">++</td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="center" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=mex-5;class=Gene" target="_blank">mex-5</a></em></span></td>
+                           <td align="center" valign="top">pCM5.48</td>
+                           <td align="center" valign="top">&#8722;</td>
+                           <td align="center" valign="top">&#8722;</td>
+                           <td align="center" valign="top">&#8722;</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="center" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=puf-5;class=Gene" target="_blank">puf-5</a></em></span></td>
+                           <td align="center" valign="top">pCM5.64</td>
+                           <td align="center" valign="top">&#8722;</td>
+                           <td align="center" valign="top">&#8722;</td>
+                           <td align="center" valign="top">&#8722;</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="center" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pal-1;class=Gene" target="_blank">pal-1</a></em></span></td>
+                           <td align="center" valign="top">pCM5.49</td>
+                           <td align="center" valign="top">&#8722;</td>
+                           <td align="center" valign="top">&#8722;</td>
+                           <td align="center" valign="top">&#8722;</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">++</td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="center" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=spn-4;class=Gene" target="_blank">spn-4</a></em></span></td>
+                           <td align="center" valign="top">pCM5.50</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">&#8722;</td>
+                           <td align="center" valign="top">&#8722;</td>
+                           <td align="center" valign="top">&#8722;</td>
+                           <td align="center" valign="top">&#8722;</td>
+                           <td align="center" valign="top">&#8722;</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="center" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></em></span></td>
+                           <td align="center" valign="top">pCM5.47</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="center" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pos-1;class=Gene" target="_blank">pos-1</a></em></span></td>
+                           <td align="center" valign="top">pCM5.66</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                        </tr>
+                        <tr valign="bottom">
+                           <td align="center" valign="bottom"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=cye-1;class=Gene" target="_blank">cye-1</a></em></span><sup>4</sup></td>
+                           <td align="center" valign="bottom">pCM5.54</td>
+                           <td align="center" valign="bottom">++</td>
+                           <td align="center" valign="bottom">++</td>
+                           <td align="center" valign="bottom">+</td>
+                           <td align="center" valign="bottom">+</td>
+                           <td align="center" valign="bottom">++</td>
+                           <td align="center" valign="bottom">++</td>
+                           <td align="center" valign="bottom">++</td>
+                           <td align="center" valign="bottom">++</td>
+                           <td align="center" valign="bottom">++</td>
+                           <td align="center" valign="bottom">++</td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="center" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=cep-1;class=Gene" target="_blank">cep-1</a></em></span></td>
+                           <td align="center" valign="top">pCM5.44</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="center" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=mex-3;class=Gene" target="_blank">mex-3</a></em></span></td>
+                           <td align="center" valign="top">pCM5.45</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">&#8722;</td>
+                           <td align="center" valign="top">&#8722;</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">++</td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="center" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=fog-1;class=Gene" target="_blank">fog-1</a></em></span></td>
+                           <td align="center" valign="top">pCM5.60</td>
+                           <td align="center" valign="top">&#8722;</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">++</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                           <td align="center" valign="top">+</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec4_4"></a>4.4.&nbsp;Consideration when assembling a transformation-ready transgene
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>The main advantage of Gateway<sup>&reg;</sup> cloning is the ability to use pre-made Entry clones and thus reduce the number of clones that must be made <span class="emphasis"><em>de novo</em></span> by the user. In general, the design of a transformation-ready transgene will be dictated by whatever pre-made Entry clones
+                  are available and the purpose of the transgene. For example, if the goal is simply to tag a protein under endogenous control,
+                  one could consider cloning the promoter in the first position, the tag in the second position, and the ORF + 3'UTR in the
+                  third position (amplified as a single unit from genomic DNA or cDNA) (<a href="#figure4">Figure 4B</a>). In this way, the user can take advantage of several pre-made middle Entry clones containing different tags (<a href="#table1b" title="">Table 1B</a>) to rapidly create and test different tagged versions of the protein of interest.
+               </p>
+               <div class="literallayout">
+                  <p></p>
+               </div>
+               <div class="mediaobject" align="center"><a name="figure4"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="540">
+<tr>
+  <td align="center"><p><a href="transgenic_fig4.jpg"><img src="transgenic_fig4_s.jpg" border="2" align="middle" alt="figure 4"></a>
+  </td>
+</tr>
+                  </table>
+                  <div class="caption">
+                     <p><b>Figure 4: <span class="emphasis"><em>att</em></span>B sites in final constructs.&nbsp;</b></p>
+                     <p><b>&nbsp;</b>A. The frame usage of <span class="emphasis"><em>att</em></span>B sites must be considered for final constructs. These reading frames are suggested by Invitrogen and are used for all clones
+                        listed in Table 1. Extra nucleotides flanking the <span class="emphasis"><em>att</em></span>B sites (in red) must be added for proper reading frame usage.
+                     </p>
+                     <p><b>&nbsp;</b>B. Example of a construct with the start codon in the 5' cassette and a stop codon in the 3' cassette. In the 5' cassette
+                        (containing a promoter) an A (in red) is added after the ATG so that the <span class="emphasis"><em>att</em></span>B1 sequences will be in frame. In the middle cassette (containing GFP) CA (in red) is added 5' of the GFP coding sequence
+                        and an A (in red) is added after the final GFP codon to maintain frame through the attB2 site. In the 3' cassette (containing
+                        ORF::3'UTR) GA (in red) is added before the ORF coding sequence to maintain frame through the ORF. In this strategy, an available
+                        promoter can be used in the 5' cassette (Table 1A) and an available fluorescent tag can be used in the middle cassette (Table
+                        1B). The 3' cassette containing ORF::3'UTR is the only entry clone that needs to be created by the researcher. We typically
+                        clone the ORF::3'UTR (with introns) directly from a genomic DNA template, but a cDNA template can also be used.
+                     </p>
+                     <p><b>&nbsp;</b>C. Example of a construct with the start codon and stop codon in the middle cassette. This strategy avoids the inclusion of
+                        attB sequences in the final ORF. Available promoters (lacking ATG) (Table 1A) and 3'UTRs (Table 1C) can be used in the 5'
+                        and 3' cassettes. The middle cassette must contain the ORF and fluorescent tag fused by fusion PCR.
+                     </p>
+                  </div>
+               </div>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec4_5"></a>4.5.&nbsp;Where to put the start and stop codon?
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Placement of the start and stop codons will determine whether the final protein fusion will contain amino acids coded by the
+                  <span class="emphasis"><em>att</em></span> recombination sites used in cloning. Ideally the start and stop codons should flank the ORF directly to avoid adding any
+                  extensions to the transgenic protein (<a href="#figure4">Figure 4C</a>). In practice though, if using clones from available libraries, you may be forced to consider a different strategy.
+               </p>
+               <div class="sect3" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="sec4_4_1"></a>4.5.1.&nbsp;- ATG in promoter
+                           </h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p>Some promoter entry clones contain ATGs (pCG142, pCM1.41, Vidal promoters), while others do not (pCM1.127, pCM1.128). If the
+                     ATG is included with the promoter in the first position clone, and the ORF is in the middle position, then 1) the ORF must
+                     be cloned so as to be in frame (this is typically done by adding 2 N's to the 5' end) and 2) the ORF will be extended at its
+                     5' end by 9 amino acids encoded by the attB site (<a href="#figure4">Figure 4B</a>).
+                  </p>
+               </div>
+               <div class="sect3" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="sec4_4_2"></a>4.5.2.&nbsp;- STOP codon in ORF
+                           </h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p>If the STOP codon is included in the ORF (middle position) and the 3'UTR is in the third position, then the 3'UTR will be
+                     extended at its 5' end by the <span class="emphasis"><em>attB</em></span> site sequence. In our experience (<a href="#bib15">Merritt et al., 2008</a>), this is an acceptable compromise that does not appear to create problems.
+                  </p>
+               </div>
+               <div class="sect3" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="sec4_4_3"></a>4.5.3.&nbsp;- STOP codon NOT in ORF
+                           </h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p>Some ORF clones (Vidal collection) do not contain STOP codons, in which case the STOP codon must be included with the 3'UTR.
+                     If the ORF is in the Middle position and the STOP+3'UTR are in the third position, the transgenic protein will be extended
+                     at its 3' end by 9 amino acids encoded by the attB site.
+                  </p>
+               </div>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec4_6"></a>4.6.&nbsp;Other linker issue
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>We have also found that placing the <span class="emphasis"><em>att</em></span>B1 linker between GFP and ORF sequences can interfere with chromatin localization in germline pachytene nuclei. We have not
+                  observed this problem with the <span class="emphasis"><em>attB2</em></span> linker (<a href="#figure5">Figure 5</a>).
+               </p>
+               <div class="literallayout">
+                  <p></p>
+               </div>
+               <div class="mediaobject" align="center"><a name="figure5"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="405">
+<tr>
+  <td align="center"><p><a href="transgenic_fig5.jpg"><img src="transgenic_fig5_s.jpg" border="2" align="middle" alt="figure 5"></a>
+  </td>
+</tr>
+                  </table>
+                  <div class="caption">
+                     <p><b>Figure 5: Inclusion of attB1 linker between GFP and ORF can affect distribution of fusion protein.&nbsp;</b>The <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></em></span> promoter and <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=tbb-2;class=Gene" target="_blank">tbb-2</a></em></span> 3'UTR drive expression in all germ cells. However depending on the configuration of the <span class="emphasis"><em>att</em></span>B sites, the fusion protein will behave differently. If the <span class="emphasis"><em>att</em></span>B1 site is placed between GFP and H2B, the resulting fusion protein is unstable in pachytene nuclei (B). The <span class="emphasis"><em>att</em></span>B2 site, however, does not cause this problem (A).
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec5"></a>5.&nbsp;Choosing a destination vector
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Choice of destination vector will depend on the choice of transformation method to be used. There are currently two recommended
+               transformation methods for germline transgenes: bombardment and Mos1-mediated Single Copy Insertion (MosSCI).
+            </p>
+            <p>Bombardment does not require injection, but requires many worms (approximately 200,000 adults per construct) and is relatively
+               slow (&#8764;1 month), although hands-on time is low. Insertions are random throughout the genome. Expression levels are remarkably
+               similar from line to line, and generally lower than endogenous levels (Seydoux lab, unpublished; <a href="#bib21">Tenlen et al., 2008</a>). Bombardment uses Destination Vector pCG150, which contains the <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=unc-119;class=Gene" target="_blank">unc-119</a></em></span> minimal rescue fragment. See the bombardment protocol below for directions on how to use this marker effectively to obtain
+               low copy insertions.
+            </p>
+            <p>Mos1-mediated Single Copy Insertion (MosSCI) yields single-copy transgenes inserted at a pre-selected site. This method uses
+               the standard injection method and does not require a gene gun. Stable lines can be obtained in less than 2 weeks. MosSCI uses
+               Destination Vector PCFJ150. See <a href="#bib5">Frokjaer-Jensen et al., 2008</a> and <a href="http://sites.google.com/site/jorgensenmossci/Home" target="_top">http://sites.google.com/site/jorgensenmossci/Home</a> for protocols.
+            </p>
+            <p>Destination Vectors MUST BE grown in DB3.1 bacteria. DB3.1 bacteria can carry plasmids with the <span class="emphasis"><em>ccd</em></span>B &#8220;death gene&#8221; that is used as a negative selectable marker for Gateway<sup>&reg;</sup> cloning. Destination vectors should be selected on ampicillin (Amp) and chloramphenicol (Cm).
+            </p>
+            <div class="table"><a name="table3"></a><p class="title"><span class="bold">Table 3: Selected Destination Vectors</span></p>
+               <table summary="Table 3: Selected Destination Vectors" border="1">
+                  <colgroup>
+                     <col>
+                     <col>
+                     <col>
+                     <col>
+                  </colgroup>
+                  <thead>
+                     <tr valign="top">
+                        <th align="center" valign="top"><span class="bold"><strong>Destination Vector (reference)</strong></span></th>
+                        <th align="center" valign="top"><span class="bold"><strong>Selectable Marker</strong></span></th>
+                        <th align="center" valign="top"><span class="bold"><strong>Description</strong></span></th>
+                        <th align="center" valign="top"><span class="bold"><strong>Distributed by</strong></span></th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr valign="top">
+                        <td align="left" valign="top">pDESTR4-R3</td>
+                        <td align="center" valign="top"><span class="emphasis"><em>none</em></span></td>
+                        <td align="left" valign="top">original Destination Vector for Multisite Gateway<sup>&reg;</sup> cloning
+                        </td>
+                        <td align="left" valign="top">Invitrogen</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top">pCG150 (<a href="#bib15">Merritt et al., 2008</a>)
+                        </td>
+                        <td align="center" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=unc-119;class=Gene" target="_blank">unc-119</a></em></span></td>
+                        <td align="left" valign="top">pDESTR4-R3 Destination Vector with a 2.2 kb <span class="emphasis"><em>C. elegans <a href="http://www.wormbase.org/db/get?name=unc-119;class=Gene" target="_blank">unc-119</a></em></span> rescuing fragment (with cDNA as ORF) cloned into the vector backbone.
+                        </td>
+                        <td align="left" valign="top">Addgene (<a href="http://www.addgene.org/pgvec1" target="_top">http://www.addgene.org/pgvec1</a>)
+                        </td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top">pCFJ150 (<a href="#bib5">Frokjaer-Jensen et al., 2008</a>)
+                        </td>
+                        <td align="center" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=unc-119;class=Gene" target="_blank">unc-119</a></em></span></td>
+                        <td align="left" valign="top">MosSCI Destination Vector. Contains 2.1 kb <span class="emphasis"><em>C. briggsae <a href="http://www.wormbase.org/db/get?name=unc-119;class=Gene" target="_blank">unc-119</a></em></span> rescuing fragment and Multisite Gateway<sup>&reg;</sup> cassette flanked by Mos1 site sequences for insertion at Mos1 site by homologous recombination.
+                        </td>
+                        <td align="left" valign="top">Addgene (<a href="http://www.addgene.org/pgvec1" target="_top">http://www.addgene.org/pgvec1</a>)
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec6"></a>6.&nbsp;Non-Multisite Gateway<sup>&reg;</sup> vectors
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec6_1"></a>6.1.&nbsp;Traditional cloning vectors
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p><a href="#table4" title="Table 4: Traditional cloning vectors for embryonic expression">Table 4</a> shows commonly used vectors that use restriction enzyme cloning methods. These vectors contain <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></em></span> promoter and <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></em></span> 3' sequences, and therefore are best suited for expression in oocytes and early embryos (maternal expression).
+               </p>
+               <div class="table"><a name="table4"></a><p class="title"><span class="bold">Table 4: Traditional cloning vectors for embryonic expression</span></p>
+                  <table summary="Table 4: Traditional cloning vectors for embryonic expression" border="1">
+                     <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                     </colgroup>
+                     <thead>
+                        <tr valign="top">
+                           <th align="center" valign="top"><span class="bold"><strong>Vector (reference)</strong></span></th>
+                           <th align="center" valign="top"><span class="bold"><strong>Selectable Marker</strong></span></th>
+                           <th align="center" valign="top"><span class="bold"><strong>Vector components</strong></span></th>
+                           <th align="center" valign="top"><span class="bold"><strong>Description</strong></span></th>
+                           <th align="center" valign="top"><span class="bold"><strong>Distributed by</strong></span></th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr valign="top">
+                           <td align="left" valign="top">pJH4.52 (<a href="#bib20">Strome et al., 2001</a>)
+                           </td>
+                           <td align="center" valign="top"><span class="emphasis"><em>none</em></span></td>
+                           <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></em></span> promoter::GFP::<span class="bold"><strong>(SpeI) H2B (SpeI)</strong></span>::<span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></em></span> 3'
+                           </td>
+                           <td align="left" valign="top">Replace Histone H2B with ORF of interest using flanking SpeI sites</td>
+                           <td align="left" valign="top">Geraldine Seydoux <a href="mailto:gseydoux@jhmi.edu" target="_top">gseydoux@jhmi.edu</a></td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="left" valign="top">pAZ132 (<a href="#bib17">Praitis, et al 2001</a>)
+                           </td>
+                           <td align="center" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=unc-119;class=Gene" target="_blank">unc-119</a></em></span></td>
+                           <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></em></span> promoter::GFP::<span class="bold"><strong>(SpeI) H2B (SpeI)</strong></span>::<span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></em></span> 3'
+                           </td>
+                           <td align="left" valign="top">Replace Histone H2B with ORF of interest using flanking SpeI sites</td>
+                           <td align="left" valign="top">Vida Praitis <a href="mailto:praitis@grinnell.edu" target="_top">praitis@grinnell.edu</a></td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="left" valign="top">pIC26 (<a href="http://jura.wi.mit.edu/cheeseman/Plasmids.php" target="_top">http://jura.wi.mit.edu/cheeseman/Plasmids.php</a>)
+                           </td>
+                           <td align="center" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=unc-119;class=Gene" target="_blank">unc-119</a></em></span></td>
+                           <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></em></span> promoter::GFP::TEV::S-peptide::<span class="bold"><strong>(SpeI)</strong></span>::<span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></em></span> 3'
+                           </td>
+                           <td align="left" valign="top">Worm LAP construct (with GFP), clone ORF of interest into SpeI site</td>
+                           <td align="left" valign="top">Iain Cheeseman <a href="mailto:icheese@wi.mit.edu" target="_top">icheese@wi.mit.edu</a></td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="left" valign="top">pAA65 (<a href="http://jura.wi.mit.edu/cheeseman/Plasmids.php" target="_top">http://jura.wi.mit.edu/cheeseman/Plasmids.php</a>)
+                           </td>
+                           <td align="center" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=unc-119;class=Gene" target="_blank">unc-119</a></em></span></td>
+                           <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></em></span> promoter::mCherry::TEV::S-peptide::<span class="bold"><strong>(SpeI)</strong></span>::<span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></em></span> 3'
+                           </td>
+                           <td align="left" valign="top">Worm LAP construct (with mCherry), clone ORF of interest into SpeI site</td>
+                           <td align="left" valign="top">Iain Cheeseman <a href="mailto:icheese@wi.mit.edu" target="_top">icheese@wi.mit.edu</a></td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="left" valign="top">pSO26 (<a href="#bib16">O'Rourke et al., 2007</a>)
+                           </td>
+                           <td align="center" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=unc-119;class=Gene" target="_blank">unc-119</a></em></span></td>
+                           <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></em></span> promoter::GFP::TEV::S-peptide::<span class="bold"><strong>MCS(6)</strong></span>::<span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></em></span> 3'
+                           </td>
+                           <td align="left" valign="top">Worm LAP construct (with GFP) derived from pIC26 (above), contains 6 restriction sites (MCS) in place of SpeI.</td>
+                           <td align="left" valign="top">Bruce Bowerman <a href="mailto:bbowerman@molbio.uoregon.edu" target="_top">bbowerman@molbio.uoregon.edu</a></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <p>Other vectors only include a multiple cloning site and the transformation marker:</p>
+               <p>pDP#MM016b contains large genomic copy of the <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=unc-119;class=Gene" target="_blank">unc-119</a></em></span>-rescuing fragment and pDP#MM051 contains a smaller copy of the <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=unc-119;class=Gene" target="_blank">unc-119</a></em></span>-rescuing fragment (cDNA sequences instead of genomic sequences for the <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=unc-119;class=Gene" target="_blank">unc-119</a></em></span> ORF) (<a href="#bib12">Maduro and Pilgrim, 1995</a>). In our hands, there is no difference in the rescuing ability of these <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=unc-119;class=Gene" target="_blank">unc-119</a></em></span>-rescuing fragments.
+               </p>
+               <p>pCFJ150 and pCFJ151 are two MCS-containing vectors that can be used for Mos1 mediated Single Copy Insertion (MosSCI) (<a href="#bib5">Frokjaer-Jensen et al., 2008</a>). These vectors contain the small <span class="emphasis"><em>C. briggsae <a href="http://www.wormbase.org/db/get?name=unc-119;class=Gene" target="_blank">unc-119</a></em></span> rescuing fragment and an MCS flanked by Mos1 site sequences for insertion at Mos1 site by homologous recombination.
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec6_2"></a>6.2.&nbsp;Single site Gateway<sup>&reg;</sup> vectors
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p><a href="#table5" title="Table 5">Table 5</a> shows some commonly used single site Gateway<sup>&reg;</sup> vectors for embryonic expression. These vectors contain a Gateway<sup>&reg;</sup> cassette that is capable of accepting ORF sequences cloned into pDONR201/221 (equivalent to the middle Entry Clone in the
+                  Multisite Gateway<sup>&reg;</sup> system) These vectors all contain <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></em></span> promoter and <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></em></span> 3' sequences to drive expression in oocytes and embryos.
+               </p>
+               <div class="table"><a name="table5"></a><p class="title"><span class="bold">Table 5</span></p>
+                  <table summary="Table 5" border="1">
+                     <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                     </colgroup>
+                     <thead>
+                        <tr valign="top">
+                           <th align="center" valign="top"><span class="bold"><strong>Vector (reference)</strong></span></th>
+                           <th align="center" valign="top"><span class="bold"><strong>Selectable Marker</strong></span></th>
+                           <th align="center" valign="top"><span class="bold"><strong>Vector components</strong></span></th>
+                           <th align="center" valign="top"><span class="bold"><strong>Description</strong></span></th>
+                           <th align="center" valign="top"><span class="bold"><strong>Distributed by</strong></span></th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr valign="top">
+                           <td align="left" valign="top">pKR2.40 (<a href="#bib18">Reese et al., 2000</a>)
+                           </td>
+                           <td align="center" valign="top"><span class="emphasis"><em>none</em></span></td>
+                           <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></em></span> promoter::GFP::[<span class="bold"><strong>Gateway<sup>&reg;</sup> Cassette]</strong></span>::<span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></em></span> 3'
+                           </td>
+                           <td align="left" valign="top">To GFP tag ORF, does not contain <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=unc-119;class=Gene" target="_blank">unc-119</a></em></span> rescuing fragment
+                           </td>
+                           <td align="left" valign="top">Geraldine Seydoux <a href="mailto:gseydoux@jhmi.edu" target="_top">gseydoux@jhmi.edu</a></td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="left" valign="top">pID2.02 (<a href="#bib2">D'Agostino et al., 2006</a>)
+                           </td>
+                           <td align="center" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=unc-119;class=Gene" target="_blank">unc-119</a></em></span></td>
+                           <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></em></span> promoter::[<span class="bold"><strong>Gateway<sup>&reg;</sup> Cassette]</strong></span>::<span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></em></span> 3'
+                           </td>
+                           <td align="left" valign="top">To drive ORF, ORF must be fused with tag by researcher if desired</td>
+                           <td align="left" valign="top">Geraldine Seydoux <a href="mailto:gseydoux@jhmi.edu" target="_top">gseydoux@jhmi.edu</a></td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="left" valign="top">pID3.01 (<a href="#bib2">D'Agostino et al., 2006</a>)
+                           </td>
+                           <td align="center" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=unc-119;class=Gene" target="_blank">unc-119</a></em></span></td>
+                           <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></em></span> promoter::GFP::[<span class="bold"><strong>Gateway<sup>&reg;</sup> Cassette]</strong></span>::<span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></em></span> 3'
+                           </td>
+                           <td align="left" valign="top">To GFP tag ORF</td>
+                           <td align="left" valign="top">Geraldine Seydoux <a href="mailto:gseydoux@jhmi.edu" target="_top">gseydoux@jhmi.edu</a></td>
+                        </tr>
+                        <tr valign="top">
+                           <td align="left" valign="top">pCM2.03 (<a href="#bib15">Merritt et al., 2008</a>)
+                           </td>
+                           <td align="center" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=unc-119;class=Gene" target="_blank">unc-119</a></em></span></td>
+                           <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></em></span> promoter::GFP::[<span class="bold"><strong>Gateway<sup>&reg;</sup> Cassette]</strong></span></td>
+                           <td align="left" valign="top">To GFP tag ORF under the control of any 3'UTR. 3'UTR sequences must also be included downstream of ORF.</td>
+                           <td align="left" valign="top">Geraldine Seydoux <a href="mailto:gseydoux@jhmi.edu" target="_top">gseydoux@jhmi.edu</a></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec7"></a>7.&nbsp;Protocols
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec7_1"></a>7.1.&nbsp;Gateway&reg; cloning
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>The following protocols are modified from Invitrogen's protocols. Original protocols can be found on Invitrogen's website
+                  (<a href="http://www.invitrogen.com/site/us/en/home.html" target="_top">http://www.invitrogen.com/site/us/en/home.html</a>).
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec7_2"></a>7.2.&nbsp;Oligo design/PCR
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>To clone an insert into an Entry Vector, PCR primers must contain the flanking <span class="emphasis"><em>att</em></span>B sites:
+               </p>
+               <p><span class="underline">For pDONRP4-P1R (5' Entry Clones) add:</span></p>
+               <table class="simplelist" border="0" summary="Simple list">
+                  <tr>
+                     <td><span class="emphasis"><em>Forward - att</em></span>B4: 5'-GGGG ACA ACT TTG TAT AGA AAA GTT GNN
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><span class="emphasis"><em>Reverse - att</em></span>B1r: 5'-GGGG AC TGC TTT TTT GTA CAA ACT TGN
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>(where N's put coding sequences in frame)</td>
+                  </tr>
+               </table>
+               <p><span class="underline">For pDONR201/221 (Middle Entry Clones) add:</span></p>
+               <table class="simplelist" border="0" summary="Simple list">
+                  <tr>
+                     <td><span class="emphasis"><em>Forward - att</em></span>B1: 5'-GGGG ACA AGT TTG TAC AAA AAA GCA GGC TNN
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><span class="emphasis"><em>Reverse - att</em></span>B2: 5'-GGGG AC CAC TTT GTA CAA GAA AGC TGG GTN
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>(where N's put coding sequences in frame)</td>
+                  </tr>
+               </table>
+               <p><span class="underline">For pDONRP2R-P3 (3' Entry Clones) add:</span></p>
+               <table class="simplelist" border="0" summary="Simple list">
+                  <tr>
+                     <td><span class="emphasis"><em>Forward - att</em></span>B2r: 5'-GGGG ACA GCT TTC TTG TAC AAA GTG GNN
+                     </td>
+                  </tr>
+               </table>
+               <p><span class="emphasis"><em><span class="underline">Note:</span> The MultiSite Gateway<sup>&reg;</sup> Three-Fragment Vector Construction Kit Manual, Version E, 16 August 2007 has the INCORRECT sequence of this oligo: GGGG ACA
+                        GCT TTC TTG TAT AGA AAA GTT GNN instead of the CORRECT sequence (above) that can be found in the manual Version G, 8 September
+                        2008.</em></span></p>
+               <table class="simplelist" border="0" summary="Simple list">
+                  <tr>
+                     <td><span class="emphasis"><em>Reverse- att</em></span>B3: 5'-GGGG AC AAC TTT GTA TAA TAA AGT TGN
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>(where N's put coding sequences in frame)</td>
+                  </tr>
+               </table>
+               <p>Some examples:</p>
+               <div class="orderedlist">
+                  <ol type="1">
+                     <li>
+                        <p>To clone a promoter <span class="underline">with</span> its ATG into pDONRP4-P1R:
+                        </p>
+                        <table class="simplelist" border="0" summary="Simple list">
+                           <tr>
+                              <td>Forward oligo - includes <span class="bold"><strong><span class="emphasis"><em>att</em></span>B4 (sense)</strong></span> :: 5' end of promoter sequence (sense):
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>5'-<span class="bold"><strong>GGGG ACA ACT TTG TAT AGA AAA GTT G</strong></span> NNNNNN-3'
+                              </td>
+                           </tr>
+                        </table>
+                        <table class="simplelist" border="0" summary="Simple list">
+                           <tr>
+                              <td>Reverse oligo&#8212;includes <span class="bold"><strong><span class="emphasis"><em>att</em></span>B1r (antisense)</strong></span> :: 3' end of promoter sequence (antisense):
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>5'-<span class="bold"><strong>GGGG AC TGC TTT TTT GTA CAA ACT TG</strong></span><span class="underline">T</span> <span class="underline">CAT</span> NNNNNN-3'
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>(where <span class="underline">CAT</span> is the start codon (antisense of ATG), and <span class="underline">T</span> puts <span class="emphasis"><em>att</em></span>B1r sequences in frame)
+                              </td>
+                           </tr>
+                        </table>
+                     </li>
+                     <li>
+                        <p>To clone a promoter <span class="underline">without</span> its ATG into pDONRP4-P1R:
+                        </p>
+                        <table class="simplelist" border="0" summary="Simple list">
+                           <tr>
+                              <td>Forward oligo - includes <span class="bold"><strong><span class="emphasis"><em>att</em></span>B4 (sense)</strong></span> :: 5' end of promoter sequence (sense):
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>5'-<span class="bold"><strong>GGGG ACA ACT TTG TAT AGA AAA GTT G</strong></span> NNNNNN-3'
+                              </td>
+                           </tr>
+                        </table>
+                        <table class="simplelist" border="0" summary="Simple list">
+                           <tr>
+                              <td>Reverse oligo&#8212;includes <span class="bold"><strong><span class="emphasis"><em>att</em></span>B1r (antisense)</strong></span> :: 3' end of promoter sequence (antisense):
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>5'-<span class="bold"><strong>GGGG AC TGC TTT TTT GTA CAA ACT TG</strong></span><span class="underline">AT</span> NNNNNN-3'
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>(where <span class="underline">AT</span> is the first two bases of the start codon (antisense))
+                              </td>
+                           </tr>
+                        </table>
+                     </li>
+                     <li>
+                        <p>To clone an ORF (incuding ATG and STOP codons) into pDONR201/221:</p>
+                        <table class="simplelist" border="0" summary="Simple list">
+                           <tr>
+                              <td>Forward oligo - includes <span class="bold"><strong><span class="emphasis"><em>att</em></span>B1 (sense)</strong></span> :: 5' end of ORF sequence (sense):
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>5'-<span class="bold"><strong>GGGG ACA AGT TTG TAC AAA AAA GCA GGC T</strong></span><span class="underline">CA</span> <span class="underline">ATG</span> NNN-3'
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>(where <span class="underline">CA</span> puts <span class="emphasis"><em>att</em></span>B1 sequences in frame, and <span class="underline">ATG</span> is the start codon)
+                              </td>
+                           </tr>
+                        </table>
+                        <p><span class="emphasis"><em>Note: We now clone all of ORFs with an additional AAA (Lys) codon upstream of the ATG. The oligos are designed in this manner
+                                 (where <span class="underline">AAA</span> is the additional codon):</em></span> 5'-<span class="bold"><strong>GGGG ACA AGT TTG TAC AAA AAA GCA GGC T</strong></span><span class="underline">CA</span> <span class="underline">AAA</span> ATG NNN-3'
+                        </p>
+                        <p><span class="emphasis"><em>This is useful when using a promoter construct that doesn't include an ATG (see <a href="#figure3">Figure 3C</a>) as the stretch of A's helps in ATG selection (Marc Perry, personal communication).</em></span> <span class="emphasis"><em>This construct can also be used with a promoter construct that has an ATG.</em></span></p>
+                        <table class="simplelist" border="0" summary="Simple list">
+                           <tr>
+                              <td>Reverse oligo&#8212;includes <span class="bold"><strong><span class="emphasis"><em>att</em></span>B2(antisense)</strong></span> :: 3' end of ORF sequence (antisense):
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>5'-<span class="bold"><strong>GGGG AC CAC TTT GTA CAA GAA AGC TGG GT</strong></span> <span class="underline">TTA</span> NNN-3'
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>(where <span class="underline">TTA</span> is the stop codon (antisense))
+                              </td>
+                           </tr>
+                        </table>
+                     </li>
+                     <li>
+                        <p>To clone a 3'UTR in to pDONRP2R-P3:</p>
+                        <table class="simplelist" border="0" summary="Simple list">
+                           <tr>
+                              <td>Forward oligo - includes <span class="bold"><strong><span class="emphasis"><em>att</em></span>B2r (sense)</strong></span> :: 5' end of 3'UTR sequence (sense):
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>5'-<span class="bold"><strong>GGGG ACA GCT TTC TTG TAC AAA GTG G</strong></span><span class="underline">GA</span> <span class="underline">TAA</span> NNN-3'
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>(where <span class="underline">GA</span> puts the <span class="underline">TAA</span> stop codon in frame, creating a <span class="bold"><strong>G</strong></span><span class="underline">GA</span> (Ala) codon)
+                              </td>
+                           </tr>
+                        </table>
+                        <p><span class="emphasis"><em>Note: You need not include the stop codon if the ORF has one already. If the ORF has no stop codon (as in the Vidal ORFeome)
+                                 including the STOP in the 3'UTR will add the attB2R sequence to your ORF.</em></span></p>
+                        <table class="simplelist" border="0" summary="Simple list">
+                           <tr>
+                              <td>Reverse oligo&#8212;includes <span class="bold"><strong><span class="emphasis"><em>att</em></span>B3 (antisense)</strong></span> :: 3' end of 3'UTR sequence (antisense):
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>5'-<span class="bold"><strong>GGGG AC AAC TTT GTA TAA TAA AGT TG</strong></span> NNNNNN-3'
+                              </td>
+                           </tr>
+                        </table>
+                     </li>
+                  </ol>
+               </div>
+               <p>A few notes about PCR:</p>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p>We typically PCR amplify with a high-fidelity polymerase (<span class="emphasis"><em>i.e.</em></span> Phusion High Fidelity DNA Polymerase, Finnzymes). The template can be from any source (genomic DNA, cDNA, plasmid DNA, <span class="emphasis"><em>etc.</em></span>).
+                        </p>
+                     </li>
+                     <li>
+                        <p>We typically perform a 50 &#956;l PCR reaction and gel purify half of the reaction with the QIAquick Gel Extraction Kit (Qiagen).
+                           We typically elute the DNA from the column with 30 &#956;l of H<sub>2</sub>O and use 1-7 &#956;l of this purified PCR for the BP reaction.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec7_3"></a>7.3.&nbsp;BP Reaction
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="orderedlist">
+                  <ol type="1">
+                     <li>
+                        <p>For each reaction mix at RT in 1.5 mL tube:
+                           
+                        </p>
+                        <div class="itemizedlist">
+                           <ul type="bull">
+                              <li style="list-style-type: bull">
+                                 <p>gel purified PCR in H<sub>2</sub>O (&#8764;15-150 ng, or 1-7 &#956;l of purified PCR - see above, add more PCR product for larger PCR inserts)
+                                 </p>
+                              </li>
+                              <li style="list-style-type: bull">
+                                 <p>pDONR Vector (&#8764;150 ng/&#956;l) (typically add 1 &#956;l of miniprepped pDONR vector)</p>
+                              </li>
+                              <li style="list-style-type: bull">
+                                 <p>TE (pH 8) to 8 &#956;l</p>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li>
+                        <p>Thaw BP Clonase II enzyme mix on ice.</p>
+                        <p><span class="emphasis"><em>Note: BP Clonase II enzyme mix includes the buffer!, the original BP Clonase enzyme mix (without the &#8220;II&#8221; in the name) did
+                                 not contain the buffer and was added separately.</em></span></p>
+                     </li>
+                     <li>
+                        <p>Add 2 &#956;l of BP Clonase II enzyme mix (immediately return enzyme mix to freezer). Mix by vortexing, then microcentrifuge briefly.</p>
+                     </li>
+                     <li>
+                        <p>Incubate at 25&deg;C for 1 hour or overnight (we typically do overnight incubations for larger inserts or if there is very little
+                           PCR product)
+                        </p>
+                     </li>
+                     <li>
+                        <p>Add 1 &#956;l of the Proteinase K solution. Mix by vortexing, then microcentrifuge briefly.</p>
+                     </li>
+                     <li>
+                        <p>Incubate samples at 37&deg;C for 10 minutes.</p>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec7_4"></a>7.4.&nbsp;BP Reaction Transformation
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="orderedlist">
+                  <ol type="1">
+                     <li>
+                        <p>Transform 2 &#956;l of each BP reaction into 50 &#956;l of Max Efficiency or Library Efficiency DH5&#945; cells (DH5&#945; cells with a transformation
+                           efficiency of 10<sup>8</sup>) (Subcloning Efficiency DH5&#945; cells can be used for highly efficient BP reactions, i.e. very small inserts).
+                        </p>
+                        <p><span class="emphasis"><em>Note: DH5</em></span>&#945; <span class="emphasis"><em>cells MUST be used for transformation. The success of the BP reaction depends on negative selection against the ccdB gene
+                                 to select against &#8220;empty&#8221; pDONR vectors. Not all E. coli strains are sensitive to ccdB, for example DB3.1 the strain used
+                                 to grow pDONR Vector, can tolerate ccdB. We have seen that XL1 Blue cells also tolerate ccdB.</em></span></p>
+                     </li>
+                     <li>
+                        <p>Incubate on ice for 30 minutes.</p>
+                     </li>
+                     <li>
+                        <p>Heat-shock cells at 42&deg;C for 30 seconds.</p>
+                     </li>
+                     <li>
+                        <p>Incubate on ice for 2 minutes.</p>
+                     </li>
+                     <li>
+                        <p>Add 280 &#956;l of S.O.C. Medium (2% tryptone, 0.5% yeast extract, 10 mM sodium chloride, 2.5 mM potassium chloride, 10 mM magnesium
+                           chloride, 10 mM magnesium sulfate, 20 mM glucose) and shake at 37&deg;C for 1 hour.
+                        </p>
+                        <p>Note: use of S.O.C (available from Invitrogen), instead of LB, will result in many more colonies.</p>
+                     </li>
+                     <li>
+                        <p>Plate 30 &#956;l and 300 &#956;l of each transformation onto Kanamycin plates (50 &#956;g/ml) (NOT ampicillin!!)</p>
+                     </li>
+                     <li>
+                        <p>Incubate at 37&deg;C overnight.</p>
+                     </li>
+                     <li>
+                        <p>Miniprep 2-4 colonies and roughly verify proper insert by restriction digest, PCR, or running of uncut DNA on gel (<a href="#figure6">Figure 6</a>). Confirm candidate preps by sequencing.
+                        </p>
+                     </li>
+                  </ol>
+               </div>
+               <div class="literallayout">
+                  <p></p>
+               </div>
+               <div class="mediaobject" align="center"><a name="figure6"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="270">
+<tr>
+  <td align="center"><p><a href="transgenic_fig6.jpg"><img src="transgenic_fig6_s.jpg" border="2" align="middle" alt="figure 6"></a>
+  </td>
+</tr>
+                  </table>
+                  <div class="caption">
+                     <p><b>Figure 6. Troubleshooting the BP reaction when using large or low-yield PCR products.&nbsp;</b></p>
+                     <p><b>&nbsp;</b>A. Most BP reactions yield the desired Entry clone with insert. Empty pDONR plasmids resulting from an internal recombination
+                        reaction are obtained at a low frequency (C.M. unpublished) and are usually rare enough not to be a problem. Empty pDONRs
+                        can, however, become a nuisance (be more common) if the BP is performed with very small amounts of PCR insert or with a very
+                        long PCR insert (&#8764;6 kb or greater).
+                     </p>
+                     <p><b>&nbsp;</b>B. To help screen out empty pDONRs, DNA from a transformed colony is run directly on a gel to verify that the approximate
+                        size plasmid is present (for protocol see: &#8220;Rapid Screening by Direct Electrophoresis&#8221; section in Chapter 19 of <a href="http://www.springerprotocols.com/BookToc/doi/10.1385/1592594093?uri=/Full/doi/10.1385/1-59259-409-3:169" target="_top">E. coli Plasmid Vectors: Methods and Applications</a>). Minipreps are then performed only on those colonies that contain the larger super-coiled plasmids. In this specific example,
+                        the BP reaction was done with a very low quantity (&lt;15 ng) of a 4 kb PCR product. The colony on the far left contains the
+                        pDONR vector with the 4kb insert, while the next 6 colonies are all empty pDONRs.
+                     </p>
+                  </div>
+               </div>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec7_5"></a>7.5.&nbsp;Multisite LR Reaction
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="orderedlist">
+                  <ol type="1">
+                     <li>
+                        <p>For each reaction mix at RT in 1.5 ml tube:
+                           
+                        </p>
+                        <div class="itemizedlist">
+                           <ul type="bull">
+                              <li style="list-style-type: bull">
+                                 <p>3 Entry Clones (&#8764;10 fmoles each, typically just add 0.5 &#956;l of miniprep)</p>
+                              </li>
+                              <li style="list-style-type: bull">
+                                 <p>Destination Vector (&#8764;20 fmoles, typically just add 1 &#956;l of miniprep)</p>
+                              </li>
+                              <li style="list-style-type: bull">
+                                 <p>TE (pH 8) to 8 &#956;l</p>
+                              </li>
+                           </ul>
+                        </div>
+                        <p><span class="emphasis"><em>Note: We typically do a negative control also - we remove one of the three Entry Clones from the reaction (and get &#8764;0 colonies)</em></span></p>
+                     </li>
+                     <li>
+                        <p>Thaw LR Clonase II Plus enzyme mix on ice.</p>
+                     </li>
+                     <li>
+                        <p>Add 2 &#956;l of LR Clonase II Plus enzyme mix (immediately return enzyme mix to freezer). Mix by vortexing, then microcentrifuge
+                           briefly.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Incubate at 25&deg;C overnight.</p>
+                     </li>
+                     <li>
+                        <p>Add 1 &#956;l of the Proteinase K solution. Mix by vortexing, then microcentrifuge briefly.</p>
+                     </li>
+                     <li>
+                        <p>Incubate samples at 37&deg;C for 10 minutes.</p>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec7_6"></a>7.6.&nbsp;Multisite LR Reaction Transformation
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="orderedlist">
+                  <ol type="1">
+                     <li>
+                        <p>Transform 2 &#956;l of LR as described above for BP reaction BUT select on ampicillin (100 &#956;g/ml) instead of Kanamycin!!</p>
+                     </li>
+                     <li>
+                        <p>Miniprep 2-4 colonies and verify proper construct by restriction digest.</p>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec7_7"></a>7.7.&nbsp;Bombardment Protocol
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>The bombardment technique can produce stable, low copy transgenes (1-3 copies, <a href="#bib17">Praitis et al., 2001</a>) that will not be silenced in the germline. Identification of transformed worms by bombardment is typically done by rescuing
+                  <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=unc-119;class=Gene" target="_blank">unc-119</a></em></span> mutants with a wild-type copy of <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=unc-119;class=Gene" target="_blank">unc-119</a></em></span> present on the bombardment plasmid. Bombardment has a very low frequency of successful transformation per adult bombarded,
+                  so a large number of worms must be bombarded (approximately 200,000 adults per construct). To select for transformed worms,
+                  worms are plated on several plates after bombardment and allowed to starve for several days. Over this time, the <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=unc-119;class=Gene" target="_blank">unc-119</a></em></span>-rescued worms have a selective advantage over the non-transformed <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=unc-119;class=Gene" target="_blank">unc-119</a></em></span> worms, which cannot form dauers and have difficulty surviving starvation (<a href="#bib17">Praitis et al., 2001</a>).
+               </p>
+               <p>Several bombardment protocols have been published elsewhere (examples: <a href="#bib6">Green et al., 2008</a>; <a href="#bib17">Praitis et al., 2001</a>). The following protocol was created by the Seydoux lab and is adapted from Shai Shaham, personal communication, and <a href="#bib17">Praitis et al., 2001</a>. This protocol is for bombarding 3 different constructs.
+               </p>
+               <table class="simplelist" border="0" summary="Simple list">
+                  <tr>
+                     <td><span class="underline">Reagents</span>:
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>Biolistic PDS-1000/He particle delivery system #165-2257 Bio-Rad</td>
+                  </tr>
+                  <tr>
+                     <td>Hepta adapter, biolistic shock wave splitter #165-2225 Bio-Rad</td>
+                  </tr>
+                  <tr>
+                     <td>Biolistic Microcarriers #165-2335 Bio-Rad</td>
+                  </tr>
+                  <tr>
+                     <td>1 &#956;M gold beads #165-2263 Bio-Rad</td>
+                  </tr>
+                  <tr>
+                     <td>Rupture discs #165-2333 (1550psi) Bio-Rad</td>
+                  </tr>
+                  <tr>
+                     <td>Hepta stopping screen #165-2226 Bio-Rad</td>
+                  </tr>
+                  <tr>
+                     <td>Spermidine (tissue culture grade) S-4139 (5g) Sigma-Aldrich<sup>&reg;</sup></td>
+                  </tr>
+                  <tr>
+                     <td>Nystatin N1638 (100 mls) Sigma-Aldrich<sup>&reg;</sup></td>
+                  </tr>
+               </table>
+               <p>You will need &#8764;160 large EP with Nystatin (NEP) plates spread with NA22 bacteria to bombard 3 constructs.</p>
+               <table class="simplelist" border="0" summary="Simple list">
+                  <tr>
+                     <td><span class="underline">Enriched Peptone Plates with Nystatin (NEP) Recipe (1 Liter):</span></td>
+                  </tr>
+                  <tr>
+                     <td>1.2 g sodium chloride</td>
+                  </tr>
+                  <tr>
+                     <td>20 g peptone</td>
+                  </tr>
+                  <tr>
+                     <td>25 g agar</td>
+                  </tr>
+                  <tr>
+                     <td>H<sub>2</sub>O to 1 liter
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>autoclave- cool to 55&deg;C- then add STERILE:</td>
+                  </tr>
+                  <tr>
+                     <td>1 ml cholesterol (5 mg/ml in EtOH)</td>
+                  </tr>
+                  <tr>
+                     <td>1 ml 1 M MgSO4</td>
+                  </tr>
+                  <tr>
+                     <td>25 ml 1 M potassium phosphate (pH 6.0)</td>
+                  </tr>
+                  <tr>
+                     <td>10 ml Nystatin suspension (10,000 units/ml)</td>
+                  </tr>
+               </table>
+               <div class="sect3" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="sec7_7_1"></a>7.7.1.&nbsp;Many days prior to bombardment: Growing up worms
+                           </h4>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="sect4" lang="en">
+                     <div class="titlepage">
+                        <div>
+                           <div>
+                              <h5 class="title"><a name="sec7_7_1_1"></a>7.7.1.1.&nbsp;Master plates
+                              </h5>
+                           </div>
+                        </div>
+                     </div>
+                     <p>Starting from an almost starved <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=unc-119;class=Gene" target="_blank">unc-119</a></em></span> <span class="emphasis"><em>(ed3 or 4)</em></span> plate, take &#8764;10 piles of adult <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=unc-119;class=Gene" target="_blank">unc-119</a></em></span> worms (<span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=unc-119;class=Gene" target="_blank">unc-119</a></em></span> worms form piles when starved) and place onto one small NGM plate with OP50 (see <a href="http://dx.doi.org/10.1895/wormbook.1.101.1" target="_top">Maintenance of <span class="emphasis"><em>C. elegans</em></span></a>, for NGM plate recipe). Repeat for one other NGM plate for a total of two plates. Let the worms grow at 25&deg;C until food is
+                        gone and worms form piles.
+                     </p>
+                  </div>
+                  <div class="sect4" lang="en">
+                     <div class="titlepage">
+                        <div>
+                           <div>
+                              <h5 class="title"><a name="sec7_7_1_2"></a>7.7.1.2.&nbsp;Amplify worms to 6 plates
+                              </h5>
+                           </div>
+                        </div>
+                     </div>
+                     <p>Resuspend the 2 plates in 6 ml M9 buffer total. Spread 1 ml of supernatant to one large NEP plates with NA22 bacteria spread
+                        evenly over the entire plate. Repeat for a total of 6 plates. Let the worms grow at 25&deg;C to starved L1s or nearly starved
+                        adults (see below).
+                     </p>
+                     <p><span class="emphasis"><em>Note: Worms can be grown at any temperature throughout the protocol (except after bombardment, where we recommend 25</em></span><span class="emphasis"><em>&deg;C to encourage GFP expression). Grow at temperatures that are most convenient for you (from 15-25&deg;C). The scheme above for
+                              initially growing up the worms does not have to be followed strictly. In the end, you just need several large plates (6 with
+                              newly starved L1s, or 12 with gravid adults).</em></span></p>
+                  </div>
+               </div>
+               <div class="sect3" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="sec7_7_2"></a>7.7.2.&nbsp;2-4 days prior to bombardment: Final amplification of worms to 60 plates
+                           </h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p><span class="emphasis"><em>The goal of the final amplification is to seed 60 plates with synchronized L1s (approx 20,000 L1s/plate) and grow them to
+                           fairly synchronized adults that can be bombarded.</em></span></p>
+                  <div class="sect4" lang="en">
+                     <div class="titlepage">
+                        <div>
+                           <div>
+                              <h5 class="title"><a name="sec7_7_2_1"></a>7.7.2.1.&nbsp;If starting with starved L1s:
+                              </h5>
+                           </div>
+                        </div>
+                     </div>
+                     <p>Resuspend each plate of freshly-starved L1 in 10 ml of M9 buffer (total 60 ml). Plate 1 ml of worm suspension onto a new large
+                        plate (60 total plates). Incubate the plates of L1s until they become young adults.
+                     </p>
+                     <p><span class="emphasis"><em>Note: USE ONLY FRESHLY-STARVED L1s. Plates that are over-starved will contain dead L1s and will yield fewer worms for bombardment.
+                              Drop a little M9 on the worm piles to make sure they contain healthy (wiggly) L1s.</em></span></p>
+                     <p><span class="emphasis"><em>If the plates contain many older worms as well as L1s, you must enrich for L1s by washing all of the plates off with M9 into
+                              a 50 mL conical tube and letting the worms sit on the bench for about a minute, letting the large worms sink to the bottom.
+                              Pipet the supernatant (enriched with L1s) into a new 50mL conical and use these to spread to 60 plates.</em></span></p>
+                  </div>
+                  <div class="sect4" lang="en">
+                     <div class="titlepage">
+                        <div>
+                           <div>
+                              <h5 class="title"><a name="sec7_7_2_2"></a>7.7.2.2.&nbsp;If starting with nearly starved (gravid) adults:
+                              </h5>
+                           </div>
+                        </div>
+                     </div>
+                     <p>Collect adults in M9, precipitate and resuspend in bleach mixture (1 part 10N NaOH, 1 part Chlorox bleach, 8 parts M9). Rock
+                        worms for 7 minutes, spin, wash in M9. Amplify each plate of bleached eggs to 10 plates (total of 60 plates). Incubate the
+                        plates until worms become young adults.
+                     </p>
+                     <p><span class="emphasis"><em>Note: For best synchronization, eggs can be hatched overnight in M9 before plating on the 60 plates. If worms are hatched
+                              in M9 overnight, it is easy to count L1s. Ideally, &#8764;20,000 L1 should be plated per large NEP plate. With this number of worms,
+                              the plates will not starve completely before the worms reach adulthood, but will have low enough food to facilitate washing
+                              off the worms. Typically, 6 plates of adults with eggs are sufficient to collect enough L1s for 60 plates. To be safe, we
+                              often bleach more that 6 plates (12+ plates) to ensure that we obtain enough L1s for bombardment.</em></span></p>
+                  </div>
+               </div>
+               <div class="sect3" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="sec7_7_3"></a>7.7.3.&nbsp;Bombardment Day:
+                           </h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p>Autoclave Hepta adaptor, microcarrier holder, microcarriers, mesh stopping screens and forceps.</p>
+                  <div class="sect4" lang="en">
+                     <div class="titlepage">
+                        <div>
+                           <div>
+                              <h5 class="title"><a name="sec7_7_3_1"></a>7.7.3.1.&nbsp;Worm preparation
+                              </h5>
+                           </div>
+                        </div>
+                     </div>
+                     <p>Make sure most worms are YOUNG ADULTS (hermaphrodites with single row of embryos).</p>
+                     <p>Wash worms from the 60 plates with M9 into a 50 ml tube. WATCH FOR CONTAMINATION. Spin at low speed for 1 minute at room temperature;
+                        wash worms until M9 solution becomes clear and finally transfer worms to a 15 ml tube. Spin at low speed, you should end up
+                        with a 3-4 ml pellet of packed adult worms. Remove liquid and resuspend worms in M9 to a total volume of 12 ml.
+                     </p>
+                     <p>Using a Pasteur pipette, spread worms onto the surface of a dry enriched peptone plate with NA22. Add them drop-wise starting
+                        at the center and then spiraling around until you reach the edge of the plate. Repeat until all worms are plated (6 plates).
+                     </p>
+                     <p>Leave the covers off the plates to evaporate the liquid. This should take no more than 15 min.</p>
+                     <p>While the plates dry, prepare the gene gun. We use the Bio-Rad Biolistic PDS-1000/He particle delivery system with Hepta adaptor.
+                        This adaptor saves an enormous amount of time and effort. You can find the illustrations and definitions of the various jargon
+                        terms (microcarriers and microcarrier holder) in the Bio-Rad manual. Read this manual to be familiar with the procedures described
+                        below.
+                     </p>
+                     <p>Wipe down the bombardment chamber and chamber door with 70% EtOH. Unscrew the helium pressure gauge and immerse in isopropanol
+                        for 15 min. or longer. Screw back the helium pressure gauge.
+                     </p>
+                  </div>
+                  <div class="sect4" lang="en">
+                     <div class="titlepage">
+                        <div>
+                           <div>
+                              <h5 class="title"><a name="sec7_7_3_2"></a>7.7.3.2.&nbsp;DNA preparation
+                              </h5>
+                           </div>
+                        </div>
+                     </div>
+                     <p>Weigh 35&#8212;50 mg of 1 &#956;M gold beads (Bio-Rad) into siliconized 1.5 ml eppendorf tube.</p>
+                     <p><span class="emphasis"><em>Note:</em></span> <span class="emphasis"><em>tungsten beads have also been used successfully</em></span> (<a href="#bib9">Jadhav et al., 2008</a>)
+                     </p>
+                     <table class="simplelist" border="0" summary="Simple list">
+                        <tr>
+                           <td>Add 1 ml 70% EtOH. Vortex 5min. Soak for 15 min. Pellet and remove supernatant</td>
+                        </tr>
+                        <tr>
+                           <td>Add 1 ml sterile water. Vortex 1min. Soak for 1 min. Pellet and remove supernatant</td>
+                        </tr>
+                        <tr>
+                           <td>Add 1 ml sterile water. Vortex 1min. Soak for 1 min. Pellet and remove supernatant</td>
+                        </tr>
+                        <tr>
+                           <td>Add 1 ml sterile water. Vortex 1min. Soak for 1 min. Pellet and remove supernatant</td>
+                        </tr>
+                     </table>
+                     <p>Resuspend in 500 &#956;l sterile 50% glycerol. This bead stock can be used for 2 weeks (or more and should be stored at 4&deg;C).</p>
+                     <p>Vortex mix for 5min. Remove immediately 100 &#956;l of bead suspension and place into a siliconized eppendorf tube. Repeat twice
+                        for a total of 3 tubes. Make sure to keep the gold beads in suspension. One tube will be used for each construct.
+                     </p>
+                     <p>To each tube, add in order <span class="underline">while</span> vortexing on medium speed:
+                     </p>
+                     <table class="simplelist" border="0" summary="Simple list">
+                        <tr>
+                           <td>10 &#956;g DNA (typically, 30-50 &#956;l of miniprep, or 10 &#956;l of 1 &#956;g/&#956;l midi)</td>
+                        </tr>
+                        <tr>
+                           <td>100 &#956;l 2.5M CaCl<sub>2</sub></td>
+                        </tr>
+                        <tr>
+                           <td>40 &#956;l 0.1M spermidine</td>
+                        </tr>
+                     </table>
+                     <p>Vortex 2min. Soak for 1min. Pellet and remove supernatant.</p>
+                     <table class="simplelist" border="0" summary="Simple list">
+                        <tr>
+                           <td>Add 280 &#956;l 70%EtOH. Flick tube to mix. Pellet and remove supernatant.</td>
+                        </tr>
+                        <tr>
+                           <td>Add 280 &#956;l 100%EtOH. Flick tube to mix. Pellet and remove sup. Add 100 &#956;l 100%EtOH and resuspend by gently flicking tube.
+                              This is your prepped DNA.
+                           </td>
+                        </tr>
+                     </table>
+                  </div>
+                  <div class="sect4" lang="en">
+                     <div class="titlepage">
+                        <div>
+                           <div>
+                              <h5 class="title"><a name="sec7_7_3_3"></a>7.7.3.3.&nbsp;Bombardment
+                              </h5>
+                           </div>
+                        </div>
+                     </div>
+                     <p>Open vacuum port, turn on gene gun. Open helium tank valve (check to make sure the He tank pressure is &gt;2200psi). Close door.</p>
+                     <div class="orderedlist">
+                        <ol type="1">
+                           <li>
+                              <p>Vortex your DNA preparation at medium speed with cap closed. Stop and quickly transfer 7 &#956;l of beads onto the middle of a
+                                 microcarrier. Repeat for 14 microcarriers total. Let ethanol evaporate (this only takes a few minutes).
+                              </p>
+                           </li>
+                           <li>
+                              <p>Place 7 microcarriers (with dried DNA-gold beads) onto the Hepta adaptor microcarrier holder using forceps and tighten up
+                                 with the special tool.
+                              </p>
+                           </li>
+                           <li>
+                              <p>Place a rupture disk soaked in isopropanol in the retaining cap and tighten. Place stopping screen and microcarrier holder
+                                 in chamber as described in the manual. Place uncovered worm plate (taped to the sample holder using a rolled piece of adhesive
+                                 tape to create double sided tape) onto second rung in bombardment chamber.
+                              </p>
+                           </li>
+                           <li>
+                              <p>Pull vacuum to 27 In. of Hg. Press Fire button until disk ruptures. Release vacuum (Vent position), and remove plate.</p>
+                           </li>
+                           <li>
+                              <p>Repeat 1-4 for with the next 7 microcarriers and a new plate of worms.</p>
+                           </li>
+                           <li>
+                              <p>Repeat 1-5 for the next two DNA preparations (each construct is bombarded onto two plates)</p>
+                           </li>
+                           <li>
+                              <p>Turn off vacuum. Close helium tank valve. Make sure no pressure is left in the line. Turn the gene gun power OFF.</p>
+                           </li>
+                        </ol>
+                     </div>
+                  </div>
+                  <div class="sect4" lang="en">
+                     <div class="titlepage">
+                        <div>
+                           <div>
+                              <h5 class="title"><a name="sec7_7_3_4"></a>7.7.3.4.&nbsp;Plating worms
+                              </h5>
+                           </div>
+                        </div>
+                     </div>
+                     <p>Resuspend each plate of bombarded worms in 13 ml of M9 (repeat for each of the 6 plates). Plate 1 ml of worms onto each fresh
+                        NEP plate (approximately 8,000 bombarded worms per plate). For each construct, you will have 26 plates or 78 plates for all
+                        three constructs.
+                     </p>
+                     <p><span class="emphasis"><em>Note: To reduce contamination at this step, add 2.5 &#956;g/ml Fungizone (amphotericin B) and 20 &#956;g/ml tetracycline to the M9 to
+                              inhibit fungal and bacterial growth.</em></span></p>
+                     <p>Let plates dry on the bench and incubate at 25&deg;C for &#8764;2 weeks. The worms should starve no sooner than Day 3 (if kept at 25&deg;C).
+                        If they starve earlier, you may not obtain stable integrants. It is very important to plate the bombarded worms at a low enough
+                        density to avoid starvation in the first 3 days.
+                     </p>
+                  </div>
+               </div>
+               <div class="sect3" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="sec7_7_4"></a>7.7.4.&nbsp;2 weeks after bombardment:
+                           </h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p>Scan plates for wild-type worms.</p>
+                  <p><span class="emphasis"><em>Note: You can continue to scan for wild-type worms for 2 additional weeks.</em></span></p>
+                  <p>From each plate with wild-type worms, pick 3-5 worms and transfer them to one small NGM plate. Place the plates at 25&deg;C for
+                     4 days, and then examine the progeny for GFP expression. You can clone out at this point (pick a single GFP positive worm
+                     from one plate to start the line). Make sure the lines are stable (do not segregate Uncs). Lines that segregate Uncs tend
+                     to loose germline expression over time. Keep the lines at 25&deg;C to maintain GFP (not all lines need to be kept at 25&deg;C but
+                     many do).
+                  </p>
+                  <p>In our hands, GFP expression in the germline is observed in 10-50% of independent <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=unc-119;class=Gene" target="_blank">unc-119</a></em></span> rescued lines (lines are considered &#8220;independent&#8221; when isolated from different plates). We typically bombard the same transgene
+                     twice, on different days, to increase the likelihood of getting a line that expresses in the germline (transformation success
+                     can vary from day to day). If 20 or more <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=unc-119;class=Gene" target="_blank">unc-119</a></em></span> rescued lines (stable) are obtained and none express in the germline, it may be helpful to bombard in parallel a construct
+                     known to express well (examples: pCM1.34 (<span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></em></span> promoter::GFP::histone H2B::<span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=tbb-2;class=Gene" target="_blank">tbb-2</a></em></span> 3'UTR) or pCM4.09 (<span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></em></span> promoter::GFP::<span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></em></span> ORF::<span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=pie-1;class=Gene" target="_blank">pie-1</a></em></span> 3'UTR (<a href="#bib15">Merritt et al., 2008</a>) to verify the technique is working.
+                  </p>
+                  <p><span class="emphasis"><em>Final note: In the end, there are several key steps to a successful bombardment:</em></span>
+                     
+                  </p>
+                  <div class="orderedlist">
+                     <ol type="1">
+                        <li>
+                           <p><span class="emphasis"><em>Start with synchronized worms</em></span></p>
+                        </li>
+                        <li>
+                           <p><span class="emphasis"><em>Bombard adults with no more than 1 row of eggs</em></span></p>
+                        </li>
+                        <li>
+                           <p><span class="emphasis"><em>Bombard &#8764;0.5mL of packed adults per plate</em></span></p>
+                        </li>
+                        <li>
+                           <p><span class="emphasis"><em>After bombardment, plate worms onto new plates so they starve in &#8764;3 days, NOT EARLIER!</em></span></p>
+                        </li>
+                        <li>
+                           <p><span class="emphasis"><em>Avoid contamination!!</em></span></p>
+                        </li>
+                        <li>
+                           <p><span class="emphasis"><em>Keep lines at 25&deg;</em></span><span class="emphasis"><em>C.</em></span></p>
+                        </li>
+                     </ol>
+                  </div>
+                  <p>
+                     
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e2984"></a>8.&nbsp;References
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <div class="bibliography">
+               <div class="bibliomixed"><a name="bib1"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Chalfie, M., Tu, Y., Euskirchen, G., Ward, W., and Prasher, D.C. (1994). Green fluorescent protein as a marker for gene expression.
+                        Science <span class="emphasis"><em>263</em></span>, 802-805.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8303295&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1126/science.8303295" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib2"></a><p class="bibliomixed">
+                     <span class="bibliomisc">D'Agostino, I., Merritt, C., Chen, P.L., Seydoux, G., and Subramaniam, K. (2006). Translational repression restricts expression
+                        of the <span class="emphasis"><em>C. elegans</em></span> Nanos homolog <a href="http://www.wormbase.org/db/get?name=NOS-2;class=Protein" target="_blank">NOS-2</a> to the embryonic germline. Dev. Biol. <span class="emphasis"><em>292</em></span>, 244-252.</span>
+                     
+                     <a href="http://dx.doi.org/10.1016/j.ydbio.2005.11.046" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib3"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Dupuy, D., Li, Q.R., Deplancke, B., Boxem, M., Hao, T., Lamesch, P., Sequerra, R., Bosak, S., Doucette-Stamm, L., Hope, I.A.<span class="emphasis"><em>, et al.</em></span> (2004). A first version of the <span class="emphasis"><em>Caenorhabditis</em></span> <span class="emphasis"><em>elegans</em></span> Promoterome. Genome Res. <span class="emphasis"><em>14</em></span>, 2169-2175.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15489340&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1101/gr.2497604" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib4"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Fire, A. (1986). Integrative transformation of <span class="emphasis"><em>C. elegans</em></span>. EMBO J. <span class="emphasis"><em>5</em></span>, 2673-2680.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=16453714&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib5"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Fr&oslash;kjaer-Jensen, C., Davis, M.W., Hopkins, C.E., Newman, B.J., Thummel, J.M., Olesen, S.P., Grunnet, M., and Jorgensen, E.M.
+                        (2008). Single-copy insertion of transgenes in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Nat. Genet. <span class="emphasis"><em>40</em></span>, 1375-1383.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=18953339&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/ng.248" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib6"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Green, R.A., Audhya, A., Pozniakovsky, A., Dammermann, A., Pemble, H., Monen, J., Portier, N., Hyman, A., Desai, A., and Oegema,
+                        K. (2008). Expression and imaging of fluorescent proteins in the <span class="emphasis"><em>C. elegans</em></span> gonad and early embryo. Methods Cell Biol. <span class="emphasis"><em>85</em></span>, 179-218.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=18155464&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0091-679X(08)85009-1" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib7"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Hubbard, E.J., and Greenstein, D. (2005). Introduction to the germ line. <span class="emphasis"><em>WormBook</em></span>, ed. The <span class="emphasis"><em>C. elegans</em></span> Research Community, WormBook, doi/10.1895/wormbook.1.18.1, http://www.wormbook.org.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=18050415&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1895/wormbook.1.18.1" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib8"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Hunt-Newbury, R., Viveiros, R., Johnsen, R., Mah, A., Anastas, D., Fang, L., Halfnight, E., Lee, D., Lin, J., Lorch, A.<span class="emphasis"><em>, et al.</em></span> (2007). High-throughput in vivo analysis of gene expression in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. PLoS Biol. <span class="emphasis"><em>5</em></span>, e237.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=17850180&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1371/journal.pbio.0050237" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib9"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Jadhav, S., Rana, M., and Subramaniam, K. (2008). Multiple maternal proteins coordinate to restrict the translation of <span class="emphasis"><em>C. elegans nanos-2</em></span> to primordial germ cells. Development <span class="emphasis"><em>135</em></span>, 1803-1812.</span>
+                     
+                     <a href="http://dx.doi.org/10.1242/dev.013656" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib10"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Kelly, W.G., Xu, S., Montgomery, M.K., and Fire, A. (1997). Distinct requirements for somatic and germline expression of a
+                        generally expressed <span class="emphasis"><em>Caernorhabditis elegans</em></span> gene. Genetics <span class="emphasis"><em>146</em></span>, 227-238.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=9136012&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib11"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Lamesch, P., Milstein, S., Hao, T., Rosenberg, J., Li, N., Sequerra, R., Bosak, S., Doucette-Stamm, L., Vandenhaute, J., Hill,
+                        D.E.<span class="emphasis"><em>, et al.</em></span> (2004). <span class="emphasis"><em>C. elegans</em></span> ORFeome version 3.1: increasing the coverage of ORFeome resources with improved gene predictions. Genome Res. <span class="emphasis"><em>14</em></span>, 2064-2069.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15489327&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1101/gr.2496804" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib12"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Maduro, M., and Pilgrim, D. (1995). Identification and cloning of <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=unc-119;class=Gene" target="_blank">unc-119</a></em></span>, a gene expressed in the <span class="emphasis"><em>Caenorhabditis elegans</em></span> nervous system. Genetics <span class="emphasis"><em>141</em></span>, 977-988.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8582641&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib13"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Mangone, M., Macmenamin, P., Zegar, C., Piano, F., and Gunsalus, K.C. (2008). UTRome.org: a platform for 3'UTR biology in
+                        <span class="emphasis"><em>C. elegans.</em></span> Nucleic Acids Res. <span class="emphasis"><em>36</em></span>, D57-62.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=17986455&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1093/nar/gkm946" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib14"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Mello, C., and Fire, A. (1995). DNA transformation. Methods Cell Biol. <span class="emphasis"><em>48</em></span>, 451-482.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8531738&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0091-679X(08)61399-0" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib15"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Merritt, C., Rasoloson, D., Ko, D., and Seydoux, G. (2008). 3'UTRs are the primary regulators of gene expression in the <span class="emphasis"><em>C. elegans</em></span> germline. Curr. Biol. <span class="emphasis"><em>18</em></span>, 1476-1482.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=18818082&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib16"></a><p class="bibliomixed">
+                     <span class="bibliomisc">O'Rourke, S.M., Dorfman, M.D., Carter, J.C., and Bowerman, B. (2007). Dynein modifiers in <span class="emphasis"><em>C. elegans</em></span>: light chains suppress conditional heavy chain mutants. PLoS Genet. <span class="emphasis"><em>3</em></span>, e128.</span>
+                     
+                     <a href="http://dx.doi.org/10.1371/journal.pgen.0030128" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib17"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Praitis, V., Casey, E., Collar, D., and Austin, J. (2001). Creation of low-copy integrated transgenic lines in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Genetics <span class="emphasis"><em>157</em></span>, 1217-1226.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11238406&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib18"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Reese, K.J., Dunn, M.A., Waddle, J.A., and Seydoux, G. (2000). Asymmetric segregation of <a href="http://www.wormbase.org/db/get?name=PIE-1;class=Protein" target="_blank">PIE-1</a> in <span class="emphasis"><em>C. elegans</em></span> is mediated by two complementary mechanisms that act through separate <a href="http://www.wormbase.org/db/get?name=PIE-1;class=Protein" target="_blank">PIE-1</a> protein domains. Mol. Cell <span class="emphasis"><em>6</em></span>, 445-455.</span>
+                     
+                     <a href="http://dx.doi.org/10.1016/S1097-2765(00)00043-5" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib19"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Robert, V.J., Vastenhouw, N.L., and Plasterk, R.H. (2004). RNA interference, transposon silencing, and cosuppression in the
+                        <span class="emphasis"><em>Caenorhabditis elegans</em></span> germ line: similarities and differences. Cold Spring Harb. Symp. Quant. Biol. <span class="emphasis"><em>69</em></span>, 397-402.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=16117673&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib20"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Strome, S., Powers, J., Dunn, M., Reese, K., Malone, C.J., White, J., Seydoux, G., and Saxton, W. (2001). Spindle dynamics
+                        and the role of gamma-tubulin in early <span class="emphasis"><em>Caenorhabditis</em></span> <span class="emphasis"><em>elegans</em></span> embryos. Mol. Biol. Cell <span class="emphasis"><em>12</em></span>, 1751-1764.</span>
+                     
+                     
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib21"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Tenlen, J.R., Molk, J.N., London, N., Page, B.D., and Priess, J.R. (2008). <a href="http://www.wormbase.org/db/get?name=MEX-5;class=Protein" target="_blank">MEX-5</a> asymmetry in one-cell C. elegans embryos requires PAR-4- and PAR-1-dependent phosphorylation. Development <span class="emphasis"><em>135</em></span>, 3665-3675.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=18842813&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1242/dev.027060" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib22"></a><p class="bibliomixed">
+                     <span class="bibliomisc">Wilm, T., Demel, P., Koop, H.U., Schnabel, H., and Schnabel, R. (1999). Ballistic transformation of <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Gene <span class="emphasis"><em>229</em></span>, 31-35.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10095101&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0378-1119(99)00043-8" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+            </div>
+            <p></p>
+         </div>
+         <div class="footnotes"><br><hr width="100" align="left">
+            <div class="footnote">
+               <p><sup><a name="ftn.d0e6" href="#d0e6">*</a></sup>Edited by Oliver Hobert and Susan Mango. Last revised July 1, 2009. Published February 8, 2010. This chapter should be cited 
+                  as: Merritt, C., et al. Transgenic solutions for the germline (February 8, 2010), <span class="emphasis"><em>WormBook</em></span>, ed. The <span class="emphasis"><em>C. elegans</em></span> Research Community, WormBook, doi/10.1895/wormbook.1.148.1, <a href="http://www.wormbook.org" target="_top">http://www.wormbook.org</a>.
+               </p>
+               <p><span class="bold"><strong>Copyright:</strong></span> &copy; 2010 Christopher Merritt et al. This is an open-access article distributed under the terms of the Creative
+                  Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original
+                  author and source are credited.
+               </p>
+            </div>
+            <div class="footnote">
+               <p><sup><a name="ftn.d0e28" href="#d0e28">&sect;</a></sup>To whom correspondence should be addressed. E-mail: <a href="mailto:gseydoux@jhmi.edu" target="_top">gseydoux@jhmi.edu</a></p>
+			   <p><img src="somerights20.gif" alt="Creative Commons License" align="middle" border="0"> All WormBook content, except where otherwise noted, is licensed under a <a href="http://creativecommons.org/licenses/by/2.5/" title="Creative Commons Attribution License" target="_blank">Creative Commons Attribution License</a>.</p>
+            </div>
+         </div>
+      </div>
+   <!--#include virtual="/ssi/footer.html" --></body>
+</html>

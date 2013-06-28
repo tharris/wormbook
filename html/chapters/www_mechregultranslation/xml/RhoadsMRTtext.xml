@@ -1,0 +1,880 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY % local.notation.class '| MOV'>
+<!NOTATION MOV SYSTEM 'MOV'>
+<!ENTITY fig1 SYSTEM 'RhoadsMRTfig1.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'RhoadsMRTfig1leg.xml'>
+<!ENTITY fig2 SYSTEM 'RhoadsMRTfig2.jpg' NDATA JPG>
+<!ENTITY fig2legend SYSTEM 'RhoadsMRTfig2leg.xml'>
+<!ENTITY fig3 SYSTEM 'RhoadsMRTfig3.jpg' NDATA JPG>
+<!ENTITY fig3legend SYSTEM 'RhoadsMRTfig3leg.xml'>
+
+<!ENTITY RhoadsMRT_Refs SYSTEM 'RhoadsMRTrefs.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="RhoadsMRT_ArticleID">
+	<articleinfo>
+        <!--see DocBook's authorgroup element -->
+		<title>Mechanism and regulation of translation in <emphasis>C. elegans</emphasis>
+			<footnote><para>Edited by Thomas Blumenthal. Last revised January 12, 2005. Published January 28, 2006. This chapter should be cited as: Rhoads, R. E. et al. Mechanism and regulation of translation in <emphasis>C. elegans</emphasis> (January 28, 2006), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.63.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+		<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2006 Robert E. Rhoads et al. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+			</footnote>
+		</title>
+<!--		<revhistory>
+			<revision>
+				<revnumber>1.0</revnumber>
+				<date>Last revised 6/10/05</date>
+			</revision>
+		</revhistory>
+-->
+		<author>
+			<othername>Robert E. Rhoads<remark>
+					<footnote>
+						<para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:rrhoad@lsuhsc.edu">rrhoad@lsuhsc.edu</ulink></para>
+					</footnote>
+				</remark>, Tzvetanka D. Dinkova<remark>
+					<footnote>
+						<para>Current address: Departamento de Bioquimica, Facultad de Quimica, Universidad Nacional Autonoma de Mexico, 04510, Mexico DF, Mexico</para>
+					</footnote>
+				</remark>, Nadejda L. Korneeva</othername>
+			<affiliation>
+				<address>Department of Biochemistry and Molecular Biology, Louisiana State University Health Sciences Center, Shreveport, Louisiana, 71130-3932 USA</address>
+			</affiliation>
+		</author>
+	</articleinfo>
+	<abstract>
+        <title><emphasis role="bold">Abstract</emphasis></title>
+		<para><emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">represents a favorable system to study the extraordinarily complicated process of eukaryotic protein synthesis, which involves over 100 RNAs and over 200 polypeptides just for the core machinery. Initial research in protein synthesis relied on fractionated mammalian and plant systems, but in the mid-1970s, the powerful genetics of</emphasis> <emphasis><emphasis role="bold">Saccharomyces cerevisiae</emphasis></emphasis> <emphasis role="bold">began to yield new insights for translation in all eukaryotes.</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">has many features of higher eukaryotes that are not shared by yeast. This allows protein synthesis researchers to combine biochemistry, cell biology, developmental biology, genetics, and genomics to study regulation of gene expression at the translational level. Most components of the core translational machinery have been identified in</emphasis> <emphasis><emphasis role="bold">C. elegans,</emphasis></emphasis> <emphasis role="bold">including rRNAs, 5S RNA, tRNAs, ribosomal proteins, and aminoacyl tRNA synthetases.</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">has amino acid sequence homologs for 56 of the known initiation, elongation, and release factor polypeptides, but few of these have been isolated, functionally identified, or studied at the biochemical level. Similarly,</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">has homologs for 22 components of the major signal transduction pathways implicated in control of protein synthesis. The translational efficiency of individual mRNAs relies on</emphasis> <emphasis><emphasis role="bold">cis</emphasis></emphasis><emphasis role="bold">-regulatory elements that include either a 7-methylguanosine- or 2,2,7-trimethylguanosine-containing cap, the 5'-terminal spliced leader, sequence elements in the 3'-untranslated regions, and the 3'-terminal poly(A) tract. Several key developmental pathways in</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">are predominantly governed by translational mechanisms. Some evidence has been presented that well described regulatory mechanisms in other organisms, including covalent modification of translation factors, sequestration of translation factors, and mRNA-specific changes in poly(A) length, also occur in</emphasis> <emphasis><emphasis role="bold">C. elegans.</emphasis></emphasis> <emphasis role="bold">The most interesting unexplored questions may involve changes in the translation of individual mRNAs during development, in response to physiological changes, or after genetic manipulations. Given the highly developed state of</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">genomics, it can be expected that future application of computational tools, including data visualization, will help detect new instances of translational control.</emphasis></para>
+	</abstract>
+	<sect1>
+		<title>Introduction</title>
+			<para>Although "gene expression" is often used synonymously with "transcription", the steady-state levels of proteins in eukaryotic cells are also strongly dependent on translational regulatory mechanisms. Two very different types of translational control occur: global and mRNA-specific. Global control generally involves alterations in the levels, intrinsic activities, or availability of translation factors, whereas mRNA-specific control involves proteins or RNAs that interact with a subset of mRNAs. The overall rate of protein synthesis as well as the translational efficiencies of individual mRNAs are regulated in response to nutritional, hormonal, cellular stress, and developmental signals (<link linkend="bib83">Sonenberg et al., 2000</link>).</para>
+			<para><emphasis>C. elegans</emphasis> represents an especially favorable system to study the extraordinarily complicated process of eukaryotic protein synthesis, which involves over 100 RNAs and over 200 polypeptides just for the core machinery. The first decades of research in eukaryotic protein synthesis relied on fractionated mammalian and plant systems, with little or no input of genetics. This began to change in the 1970's when the powerful genetics of <emphasis>Saccharomyces cerevisiae</emphasis> was brought to bear on central questions in protein synthesis. From this research came important new insights for translation in all eukaryotes, including discovery of the initiation codon scanning mechanism (<link linkend="bib82">Sherman and Stewart, 1975</link>), new protein synthesis factors and regulatory kinases (<link linkend="bib37">Hinnebusch, 1997</link><!--; PMID 9268289-->), previously unknown interactions among initiation factors (<link linkend="bib7">Asano et al., 2000</link><!--; PMID 11018020-->), the core structure of eIF3, the most complex of the initiation factors (<link linkend="bib74">Phan et al., 1998</link><!--; PMID 9671501-->), and new regulatory pathways for the control of protein synthesis (<link linkend="bib38">Hinnebusch and Fink, 1983</link><!--; PMID 6351059-->). <emphasis>C. elegans</emphasis>, however, has many features of higher eukaryotes that are <emphasis>not</emphasis> shared by yeast, <emphasis>e.g.</emphasis>, tissues, organs, muscles, a nervous system, developmental stages, cell lineages, <emphasis>etc</emphasis>., which involve processes regulated at the translational level. Furthermore, signaling pathways leading to protein synthesis are considerably more similar between <emphasis>C. elegans</emphasis> and humans than between yeast and humans. Thus, <emphasis>C. elegans</emphasis> allows protein synthesis researchers to combine biochemistry, cell biology, genetics, and genomics to understand fundamental questions about the regulation of gene expression at the translational level.</para>
+	</sect1>  
+	<sect1>
+		<title>The Translational machinery</title>
+            <sect2>
+                <title>Mechanism of translation in eukaryotes</title>
+                <para>From studies in mammals, yeasts, and plants, it is known that the three steps of protein synthesis are catalyzed by three groups of proteins: initiation, elongation, and release factors (<link linkend="bib36">Hershey and Merrick, 2000</link>). A different class of initiation factors (eIF1, eIF2, etc.) catalyzes each step of initiation (<xref linkend="figure1"/>). [A uniform nomenclature system for translation factors is used here (<link linkend="bib14">Clark et al., 1996</link><!--; PMID 9150893-->)]. A ternary complex of eIF2&#x02022;GTP&#x02022;Met-tRNA<subscript>i</subscript> binds to the 40S ribosomal subunit to form the 43S initiation complex. Recruitment of mRNA to the 43S initiation complex to form the 48S initiation complex requires eIF3, the poly(A)-binding protein (PABP), and the eIF4 proteins. eIF3 is a ~800-kDa multimer that is also required for Met-tRNA<subscript>i</subscript> binding to the 40S subunit (molecular masses refer to the mammalian factors). PABP is a 70-kDa protein that specifically binds poly(A) and homo-oligomerizes. The eIF4 factors consist of: eIF4A, a 46-kDa RNA helicase; eIF4B, a 70-kDa RNA-binding and RNA-annealing protein; eIF4H, a 25-kDa protein that acts with eIF4B to stimulate eIF4A helicase activity; eIF4E, a 25-kDa cap-binding protein; and eIF4G, a 185-kDa protein that specifically binds to and co-localizes all of the other proteins involved in mRNA recruitment on the 40S subunit.</para>
+<literallayout></literallayout>
+                <mediaobject id="figure1" xreflabel="Figure 1">
+					<imageobject>
+						<imagedata entityref="fig1" width="6.2in" align="center"/>
+					</imageobject>
+					<textobject>
+						<phrase>WormBook Mechanism and Regulation of Translation in <emphasis>C. elegans</emphasis> figure 1</phrase>
+					</textobject> &fig1legend;</mediaobject>
+                <para>The 48S complex consists of the eIF4 factors plus PABP, eIF1, eIF1A, eIF3, eIF5, and the eIF2&#x02022;GTP&#x02022;Met-tRNA<subscript>i</subscript> ternary complex bound to the 40S subunit (<xref linkend="figure2"/>). It scans until the first AUG in good sequence context is encountered. Scanning requires ATP hydrolysis by eIF4A and the presence of eIF1 and eIF1A. Then eIF5 and eIF5B stimulate GTP hydrolysis by eIF2, followed by 60S joining to form the 80S complex. The released eIF2&#x02022;GDP is recycled to eIF2&#x02022;GTP  by the guanine nucleotide exchange factor eIF2B. The first elongator aminoacyl-tRNA is brought to the ribosomal A-site by eEF1, after which the first peptide bond is formed. This is followed by a cycle of GTP hydrolysis and exchange. Translocation is catalyzed by eEF2 with another cycle of GTP hydrolysis and exchange. When the ribosome reaches a termination codon, the release factor eRF1 catalyzes termination, and then the GTPase eRF3 ejects eRF1 from the ribosome.</para>
+<literallayout></literallayout>
+                <mediaobject id="figure2" xreflabel="Figure 2">
+					<imageobject>
+						<imagedata width="3.3in" entityref="fig2" align="center"/>
+					</imageobject>
+					<textobject>
+						<phrase>WormBook Mechanism and Regulation of Translation in <emphasis>C. elegans</emphasis> figure 2</phrase>
+					</textobject> &fig2legend;</mediaobject>
+            </sect2>
+            <sect2>
+                <title>Ribosomes, tRNA, and aminoacyl tRNA synthetases</title>
+                <para>Many components of the translational machinery have been identified in <emphasis>C. elegans</emphasis>, including rRNAs (<link linkend="bib3">Albertson, 1984</link><!--; PMID 6378619-->; <link linkend="bib22">Ellis et al., 1986</link><!--; PMID 3960722-->; <link linkend="bib25">Files and Hirsh, 1981</link><!--; PMID 7310881-->), ribosomal proteins (<link linkend="bib47">Jones and Candido, 1993</link><!--; PMID 7690036-->; <link linkend="bib99">Zorio et al., 1994</link><!--; PMID 7969472-->; <link linkend="bib29">Gonczy et al., 2000</link><!--; PMID 11099034-->), 5S RNA (<link linkend="bib69">Nelson and Honda, 1985</link><!--; PMID 4065574-->), tRNA (<link linkend="bib77">Schaller et al., 1991</link><!--; PMID 1999292-->; <link linkend="bib90">Tranquilla et al., 1982</link><!--; PMID 6761649-->; <link linkend="bib50">Khosla and Honda, 1989</link><!--; PMID 2526778-->; <link linkend="bib57">Lee et al., 1990</link><!--; PMID 2139169-->), and aminoacyl tRNA synthetases (<link linkend="bib4">Amaar and Baillie, 1993</link><!--; PMID 8414990-->; <link linkend="bib26">Gabius et al., 1983</link><!--; PMID 6832143-->; <link linkend="bib29">Gonczy et al., 2000</link><!--; PMID 11099034-->).</para>
+            </sect2>
+            <sect2>
+                <title>Translation factors</title>
+                <para>Of the 56 initiation factor (eIF), elongation factor (eEF), and release factor (eRF) polypeptides that we and others have identified (<link linkend="table1">Table 1</link>), only ~10% have been isolated and characterized. In the following overview, information not explicitly cited is taken from WormBase, release WS138.</para>
+                <table id="table1" frame='all'>
+                        <title><emphasis role="bold">Table 1.</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">translational initiation, elongation, and termination factors</emphasis></title>
+                    <tgroup cols='6' align='center' colsep='1' rowsep='1'>
+                    <colspec colname='c1' colwidth='0.9*'/>
+                    <colspec colname='c2' colwidth='0.9*'/>
+                    <colspec colname='c3' colwidth='0.9*'/>
+                    <colspec colname='c4' colwidth='1.3*'/>
+                    <colspec colname='c5' colwidth='1*'/>
+                    <colspec colname='c6' colwidth='1*'/>
+                    <thead>
+                    <row>
+                      <entry>Predicted translation factor</entry>
+                      <entry>Transcript (splice variants)</entry>
+                      <entry>CGC/ Other names</entry>
+                      <entry>Predicted identity or function</entry>
+                      <entry>Number of amino acids</entry>
+                      <entry>Identity to <emphasis>C. briggsae</emphasis>/<emphasis>H. sapiens</emphasis> homologs (%)</entry>
+                    </row>
+                    </thead>
+                    <tbody>
+                    <row>
+                      <entry namest="c1" nameend="c6" align="left"><emphasis role="bold">Initiation factors</emphasis></entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF1</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=T27F7.3b;class=CDS" role="_blank">T27F7.3b</ulink></entry>
+                      <entry>-/PIG-B</entry>
+                      <entry>Similar to SUI1</entry>
+                      <entry>109</entry>
+                      <entry>100/65</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF1A</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=H06H21.3;class=CDS" role="_blank">H06H21.3</ulink></entry>
+                      <entry>&#x02013;</entry>
+                      <entry>Translation initiation factor 1A</entry>
+                      <entry>216</entry>
+                      <entry>72/65</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF2A</emphasis></entry>
+                      <entry>E04D5.1 (a, b)</entry>
+                      <entry>&#x02013;</entry>
+                      <entry>Contains similarity to translation initiation factor eIF2A</entry>
+                      <entry>618, 225</entry>
+                      <entry>96/34</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF2<symbol role="symbolfont">&#x03B1;</symbol></emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y37E3.10;class=CDS" role="_blank">Y37E3.10</ulink></entry>
+                      <entry>&#x02013;</entry>
+                      <entry>Translation initiation factor 2, <symbol role="symbolfont">&#x03B1;</symbol> subunit</entry>
+                      <entry>342</entry>
+                      <entry>88/47</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF2<symbol role="symbolfont">&#x03B1;</symbol></emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=K04G2.1;class=CDS" role="_blank">K04G2.1</ulink></entry>
+                      <entry>&#x02013;</entry>
+                      <entry>Translation initiation factor 2, <symbol role="symbolfont">&#x03B1;</symbol> subunit</entry>
+                      <entry>250</entry>
+                      <entry>82/58</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF2<symbol role="symbolfont">&#x03B3;</symbol></emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y39G10AR.8;class=CDS" role="_blank">Y39G10AR.8</ulink></entry>
+                      <entry>&#x02013;</entry>
+                      <entry>Translation initiation factor 2, <symbol role="symbolfont">&#x03B3;</symbol> subunit</entry>
+                      <entry>469</entry>
+                      <entry>97/72</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF2B</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C01G10.9;class=CDS" role="_blank">C01G10.9</ulink></entry>
+                      <entry>&#x02013;</entry>
+                      <entry>Translation initiation factor related to eIF-2B,<symbol role="symbolfont">&#x03B1;</symbol>/<symbol role="symbolfont">&#x003B2;</symbol>/<symbol role="symbolfont">&#x03B4;</symbol> subunits</entry>
+                      <entry>366</entry>
+                      <entry>84/43</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF2B<symbol role="symbolfont">&#x03B1;</symbol></emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=ZK1098.4;class=CDS" role="_blank">ZK1098.4</ulink></entry>
+                      <entry>&#x02013;</entry>
+                      <entry>eIF-2B,<symbol role="symbolfont">&#x03B1;</symbol> subunit/GCN3</entry>
+                      <entry>305</entry>
+                      <entry>94/42</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF2B<symbol role="symbolfont">&#x003B2;</symbol></emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y47H9C.7;class=CDS" role="_blank">Y47H9C.7</ulink></entry>
+                      <entry>&#x02013;</entry>
+                      <entry>eIF-2B,<symbol role="symbolfont">&#x003B2;</symbol> subunit</entry>
+                      <entry>340</entry>
+                      <entry>99.7/25</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF2B<symbol role="symbolfont">&#x03B5;</symbol></emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=D2085.3;class=CDS" role="_blank">D2085.3</ulink></entry>
+                      <entry>&#x02013;</entry>
+                      <entry>eIF-2B<symbol role="symbolfont">&#x03B5;</symbol> subunit/ GCD6</entry>
+                      <entry>666</entry>
+                      <entry>99.8/23</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF2B<symbol role="symbolfont">&#x03B3;</symbol></emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C15F1.4;class=CDS" role="_blank">C15F1.4</ulink></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=PPP-1;class=protein" role="_blank">PPP-1</ulink></entry>
+                      <entry>Translation initiation factor 2B, <symbol role="symbolfont">&#x03B3;</symbol> subunit/ pyrophosphorylase family</entry>
+                      <entry>404</entry>
+                      <entry>79/29</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF2C-1</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?nam22B3.2;class=CDS" role="_blank">T22B3.2</ulink> (a, b)</entry>
+                      <entry>&#x02013;</entry>
+                      <entry>Translation initiation factor 2C and related proteins</entry>
+                      <entry>1032, 1035</entry>
+                      <entry>99.9/36</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF2C-2</emphasis></entry>
+                      <entry>ZK757.3 (a, b, c)</entry>
+                      <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=TAG-76;class=protein" role="_blank">TAG-76</ulink></entry>
+                      <entry>Translation initiation factor 2C and related proteins</entry>
+                      <entry>1040, 1037, 55</entry>
+                      <entry>99.9/42</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF2C-3</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=R09A1.1;class=CDS" role="_blank">R09A1.1</ulink></entry>
+                      <entry>&#x02013;</entry>
+                      <entry>Translation initiation factor 2C</entry>
+                      <entry>1121</entry>
+                      <entry>98/27</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF3a</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C27D11.1;class=CDS" role="_blank">C27D11.1</ulink></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-45;class=protein" role="_blank">EGL-45</ulink>/eif-3.A</entry>
+                      <entry>Homologs to eIF3a</entry>
+                      <entry>1076</entry>
+                      <entry>72/37</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF3a</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F55H2.6;class=CDS" role="_blank">F55H2.6</ulink></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=CLU-1;class=protein" role="_blank">CLU-1</ulink></entry>
+                      <entry>Involved in mitochondrial morphology/ distribution</entry>
+                      <entry>1247</entry>
+                      <entry>80/40</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF3b</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y54E2A.11a;class=CDS" role="_blank">Y54E2A.11a</ulink></entry>
+                      <entry>EIF-3.B</entry>
+                      <entry>Translation initiation factor 3, subunit b</entry>
+                      <entry>725</entry>
+                      <entry>89/34</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF3c</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=T23D8.4;class=CDS" role="_blank">T23D8.4</ulink></entry>
+                      <entry>EIF-3.C</entry>
+                      <entry>Translation initiation factor 3, subunit c</entry>
+                      <entry>898</entry>
+                      <entry>89/39</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF3d</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=R08D7.3;class=CDS" role="_blank">R08D7.3</ulink></entry>
+                      <entry>EIF-3.D</entry>
+                      <entry>Translation initiation factor 3, subunit d</entry>
+                      <entry>570</entry>
+                      <entry>94/45</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF3e</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=B0511.10;class=CDS" role="_blank">B0511.10</ulink></entry>
+                      <entry>EIF-3.E</entry>
+                      <entry>Translation initiation factor 3, subunit e</entry>
+                      <entry>432</entry>
+                      <entry>74/49</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF3f</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=D2013.7;class=CDS" role="_blank">D2013.7</ulink></entry>
+                      <entry>EIF-3.F</entry>
+                      <entry>Translation initiation factor 3, subunit f</entry>
+                      <entry>294</entry>
+                      <entry>61/35</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF3g</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/misc/gene/gene=F22B5.2;class=CDS" role="_blank">F22B5.2</ulink></entry>
+                      <entry>EIF-3.G</entry>
+                      <entry>Translation initiation factor 3, subunit g</entry>
+                      <entry>256</entry>
+                      <entry>90/31</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF3h</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C41D11.2;class=CDS" role="_blank">C41D11.2</ulink></entry>
+                      <entry>EIF-3.H</entry>
+                      <entry>Translation initiation factor 3, subunit h</entry>
+                      <entry>365</entry>
+                      <entry>97/39</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF3i</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y74C10AR.1;class=CDS" role="_blank">Y74C10AR.1</ulink></entry>
+                      <entry>EIF-3.I</entry>
+                      <entry>Translation initiation factor 3, subunit i</entry>
+                      <entry>327</entry>
+                      <entry>93/43</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF3j</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y40B1B.5;class=CDS" role="_blank">Y40B1B.5</ulink></entry>
+                      <entry>&#x02013;</entry>
+                      <entry>Translation initiation factor eIF3, p35 subunit</entry>
+                      <entry>212</entry>
+                      <entry>69/20</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF3k</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=T16G1.11;class=CDS" role="_blank">T16G1.11</ulink></entry>
+                      <entry>EIF-3.K/<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pqn-69" role="_blank">pqn-69</ulink></emphasis></entry>
+                      <entry>Eukaryotic initiation factor 3, p25 subunit</entry>
+                      <entry>240</entry>
+                      <entry>89/35</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF3l</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C17G10.9;class=CDS" role="_blank">C17G10.9</ulink> (a.1, a.2, b)</entry>
+                      <entry>&#x02013;</entry>
+                      <entry>RNA polymerase I-associated factor - PAF67</entry>
+                      <entry>535-537</entry>
+                      <entry>99/41</entry>
+                      </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF4A</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F57B9.6;class=CDS" role="_blank">F57B9.6</ulink></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=INF-1;class=protein" role="_blank">INF-1</ulink></entry>
+                      <entry>Protein with high similarity to eukaryotic initiation factor 4A</entry>
+                      <entry>402</entry>
+                      <entry>97/72 to eIF4A-2, 71 to eIF4A-1</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF4A</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F57B9.3;class=CDS" role="_blank">F57B9.3</ulink></entry>
+                      <entry>&#x02013;</entry>
+                      <entry>Translation initiation factor 4F, helicase subunit (eIF4A) and related helicases</entry>
+                      <entry>363</entry>
+                      <entry>62/52 to eIF4A-1, 51 to eIF4A-2</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF4A-3</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y65B4A.6;class=CDS" role="_blank">Y65B4A.6</ulink></entry>
+                      <entry>&#x02013;</entry>
+                      <entry>ATP-dependent RNA helicase FAL1, involved in rRNA maturation</entry>
+                      <entry>399</entry>
+                      <entry>93/82 to eIF4A-3, 66 to eIF4A-2, 61 to eIF4A-1</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF4A-3</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F33D11.10;class=CDS" role="_blank">F33D11.10</ulink></entry>
+                      <entry>&#x02013;</entry>
+                      <entry>ATP-dependent RNA helicase FAL1, involved in rRNA maturation</entry>
+                      <entry>399</entry>
+                      <entry>94/81 to eIF4A-3, 66 to eIF4A-2, 62 to eIF4A-1</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF4A-p56</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C07H6.5;class=CDS" role="_blank">C07H6.5</ulink></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=CGH-1;class=protein" role="_blank">CGH-1</ulink></entry>
+                      <entry>Conserved germline helicase</entry>
+                      <entry>430</entry>
+                      <entry>97/71 to DDX6 (p56); 40 to eIF4A-1</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF4A-47</emphasis></entry>
+                      <entry>C26D10.2 (a, b)</entry>
+                      <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=HEL-1;class=protein" role="_blank">HEL-1</ulink></entry>
+                      <entry>ATP-dependent RNA helicase</entry>
+                      <entry>425/268</entry>
+                      <entry>97/78 to nuclear BAT1 (p47)</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF4A-DDX47</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=T26G10.1;class=CDS" role="_blank">T26G10.1</ulink></entry>
+                      <entry>&#x02013;</entry>
+                      <entry>ATP-dependent RNA helicase</entry>
+                      <entry>489</entry>
+                      <entry>-/61 to DDX47</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF4A-DDX19</emphasis></entry>
+                      <entry>T07D4.4  (a, b, c)</entry>
+                      <entry>&#x02013;</entry>
+                      <entry>ATP-dependent RNA helicase</entry>
+                      <entry>1022, 638, 613</entry>
+                      <entry>99.8/49 to DDX19</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF4A-Prp5</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F53H1.1;class=CDS" role="_blank">F53H1.1</ulink>  (a, b)</entry>
+                      <entry>&#x02013;</entry>
+                      <entry>RNA helicase</entry>
+                      <entry>970, 747</entry>
+                      <entry>99.9/46 to Prp5</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF4B</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y73B6BL.33;class=CDS" role="_blank">Y73B6BL.33</ulink></entry>
+                      <entry>f3</entry>
+                      <entry>Splicing factor hnRNP-F and related RNA-binding proteins</entry>
+                      <entry>610</entry>
+                      <entry>62/31</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF4E-1</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F53A2.6;class=CDS" role="_blank">F53A2.6</ulink></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=IFE-1;class=protein" role="_blank">IFE-1</ulink></entry>
+                      <entry>mRNA cap-binding protein</entry>
+                      <entry>212</entry>
+                      <entry>95/40</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF4E-2</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=R04A9.4;class=CDS" role="_blank">R04A9.4</ulink></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=IFE-2;class=protein" role="_blank">IFE-2</ulink></entry>
+                      <entry>mRNA cap-binding protein</entry>
+                      <entry>228</entry>
+                      <entry>98/40</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF4E-3</emphasis></entry>
+                      <entry>B0348.6  (a, b, c)</entry>
+                      <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=IFE-3;class=protein" role="_blank">IFE-3</ulink></entry>
+                      <entry>mRNA cap-binding protein</entry>
+                      <entry>248, 251, 250</entry>
+                      <entry>99/47</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF4E-4</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C05D9.5;class=CDS" role="_blank">C05D9.5</ulink></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=IFE-4;class=protein" role="_blank">IFE-4</ulink></entry>
+                      <entry>mRNA cap-binding protein</entry>
+                      <entry>212</entry>
+                      <entry>95/30 to eIF4E and 48% to 4E-HP</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF4E-5</emphasis></entry>
+                      <entry>Y57A10A.30 (a, b)</entry>
+                      <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=IFE-5;class=protein" role="_blank">IFE-5</ulink></entry>
+                      <entry>mRNA cap-binding protein</entry>
+                      <entry>240,201</entry>
+                      <entry>80/40</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF4G</emphasis></entry>
+                      <entry>M110.4 (a, b)</entry>
+                      <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=IFG-1;class=protein" role="_blank">IFG-1</ulink></entry>
+                      <entry>Translation initiation factor 4F, ribosome/ mRNA-bridging subunit</entry>
+                      <entry>1155, 1156</entry>
+                      <entry>99/27</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF4H</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=T12D8.2;class=CDS" role="_blank">T12D8.2</ulink></entry>
+                      <entry>&#x02013;</entry>
+                      <entry>mRNA cleavage and polyadenylation factor I complex, subunit RNA15</entry>
+                      <entry>207</entry>
+                      <entry>74/33</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF5</emphasis></entry>
+                      <entry>C37C3.2 (a, b, c)</entry>
+                      <entry>&#x02013;</entry>
+                      <entry>Translation initiation factor 5</entry>
+                      <entry>436, 402, 413</entry>
+                      <entry>99/48</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF5A</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F54C9.1;class=CDS" role="_blank">F54C9.1</ulink></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=IFF-2;class=protein" role="_blank">IFF-2</ulink></entry>
+                      <entry>Translation initiation factor 5 homolog</entry>
+                      <entry>161</entry>
+                      <entry>99/61</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF5A</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=T05G5.10;class=CDS" role="_blank">T05G5.10</ulink></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=IFF-1;class=protein" role="_blank">IFF-1</ulink></entry>
+                      <entry>Translation initiation factor 5 homolog</entry>
+                      <entry>161</entry>
+                      <entry>99/57</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eIF5B</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y54F10BM.2;class=CDS" role="_blank">Y54F10BM.2</ulink></entry>
+                      <entry>&#x02013;</entry>
+                      <entry>Translation initiation factor 5B</entry>
+                      <entry>1173</entry>
+                      <entry>82/48</entry>
+                    </row>
+                    <row>
+                      <entry namest="c1" nameend="c6" align="left"><emphasis role="bold">Elongation factors</emphasis></entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eEF1A</emphasis></entry>
+                      <entry>F31E3.5</entry>
+                      <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=EFT-3;class=protein" role="_blank">EFT-3</ulink></entry>
+                      <entry>Translation elongation factor 1<symbol role="symbolfont">&#x03B1;</symbol></entry>
+                      <entry>436</entry>
+                      <entry>99.8/83</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eEF1A</emphasis></entry>
+                      <entry>R03G5.1 (a, b, c, d)</entry>
+                      <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=EFT-4;class=protein" role="_blank">EFT-4</ulink></entry>
+                      <entry>Translation elongation factor 1<symbol role="symbolfont">&#x03B1;</symbol></entry>
+                      <entry>463, 77, 267, 429</entry>
+                      <entry>99.8/84</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eEF1B</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y41E3.10;class=CDS" role="_blank">Y41E3.10</ulink></entry>
+                      <entry>&#x02013;</entry>
+                      <entry>Elongation factor 1 <symbol role="symbolfont">&#x003B2;</symbol>/<symbol role="symbolfont">&#x03B4;</symbol> chain</entry>
+                      <entry>285</entry>
+                      <entry>50.5/40</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eEF1B</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F54H12.6;class=CDS" role="_blank">F54H12.6</ulink></entry>
+                      <entry>&#x02013;</entry>
+                      <entry>Elongation factor 1 <symbol role="symbolfont">&#x003B2;</symbol>/<symbol role="symbolfont">&#x03B4;</symbol> chain</entry>
+                      <entry>213</entry>
+                      <entry>99.5/38</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eEF2</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F25H5.4;class=CDS" role="_blank">F25H5.4</ulink></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=EFT-2;class=protein" role="_blank">EFT-2</ulink></entry>
+                      <entry>Homolog of translation elongation factor 2</entry>
+                      <entry>852</entry>
+                      <entry>89/76</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eEF2</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=ZK328.2;class=CDS" role="_blank">ZK328.2</ulink></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=EFT-1;class=protein" role="_blank">EFT-1</ulink></entry>
+                      <entry>Elongation factor 2</entry>
+                      <entry>974</entry>
+                      <entry>99/38</entry>
+                    </row>
+                    <row>
+                      <entry namest="c1" nameend="c6" align="left"><emphasis role="bold">Termination factors</emphasis></entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eRF1</emphasis></entry>
+                      <entry>T05H4.6(a, b)</entry>
+                      <entry>&#x02013;</entry>
+                      <entry>Peptide chain release factor 1</entry>
+                      <entry>443, 559</entry>
+                      <entry>99.8/80</entry>
+                    </row>
+                    <row>
+                      <entry><emphasis role="bold">eRF3</emphasis></entry>
+                      <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=H19N07.1;class=CDS" role="_blank">H19N07.1</ulink></entry>
+                      <entry>&#x02013;</entry>
+                      <entry>Peptide chain release factor 3</entry>
+                      <entry>532</entry>
+                      <entry>99.8/63</entry>
+                    </row>
+                    </tbody>
+                    </tgroup>
+                    </table>
+                <para><emphasis>eIF2 factors</emphasis>. Both eIF2 and eIF2A catalyze the binding of Met-tRNA<subscript>i</subscript> to the 40S ribosomal subunit, the former requiring GTP and the latter, an AUG codon (<link linkend="bib98">Zoll et al., 2002</link><!--; PMID 12133843-->). eIF2 is composed of three subunits, <symbol role="symbolfont">&#x03B1;</symbol>, <symbol role="symbolfont">&#x003B2;</symbol>, and <symbol role="symbolfont">&#x03B3;</symbol>. eIF2<symbol role="symbolfont">&#x003B2;</symbol> has also been reported to bind mRNA and contributes, together with eIF2<symbol role="symbolfont">&#x03B3;</symbol>, to GTP and Met-tRNA<subscript>i</subscript> binding. Inactivation of either of these genes is lethal. Surprisingly, eIF2<symbol role="symbolfont">&#x03B1;</symbol> deletion mutants are viable but have defects in growth and larval development. Yeast eIF2A is not an essential protein, but deletion of <emphasis>C. elegans</emphasis> eIF2A is embryonically lethal. eIF2B is a heteropentameric complex that is essential in yeast and mammalian cells. In <emphasis>C. elegans</emphasis>, inactivation of either the <symbol role="symbolfont">&#x003B2;</symbol>, <symbol role="symbolfont">&#x03B3;</symbol> (<link linkend="bib53">Kuwabara and Shah, 1994</link><!--; PMID 7971272-->), or <symbol role="symbolfont">&#x03B5;</symbol> subunits causes growth defects, larval arrest, or embryonic lethality.</para>
+                <para><emphasis>eIF4 factors</emphasis>. Two splice-variants of eIF4G, encoded by <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ifg-1" role="_blank">ifg-1</ulink></emphasis>, have been identified in <emphasis>C. elegans</emphasis> (<link linkend="bib60">Long et al., 2002</link><!--; PMID 12225660-->; <link linkend="bib48">Kamath et al., 2003</link><!--; PMID 12529635-->). Although <ulink url="http://www.wormbase.org/db/seq/protein?name=IFG-1;class=protein" role="_blank">IFG-1</ulink> shows low identity to human eIF4G, its role as a translation factor was confirmed by its retention on m<superscript>7</superscript>GTP-Sepharose (Keiper and Rhoads, unpublished data) and by its presence in 48S initiation complexes (<link linkend="bib18">Dinkova et al., 2005</link><!--; PMID 15601834-->). <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ifg-1" role="_blank">ifg-1</ulink></emphasis> inactivation results in developmental arrest and embryonic lethality (<link linkend="bib60">Long et al., 2002</link><!--; PMID 12225660-->).</para>
+                <para>eIF4E is encoded by five genes in <emphasis>C. elegans</emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ife-1" role="_blank">ife-1</ulink></emphasis> through <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ife-5" role="_blank">ife-5</ulink></emphasis> (<link linkend="bib43">Jankowska-Anyszka et al., 1998</link><!--; PMID 9553113-->; <link linkend="bib49">Keiper et al., 2000</link><!--; PMID 10744754-->; <xref linkend="figure3"/>). The five proteins can be grouped into three classes based on amino acid sequence identity, cap-binding specificity, and knockout phenotype (<link linkend="table2">Table 2</link>). Some isoforms bind both 2,2,7-trimethylguanosine (TMG)-containing caps as well as 7-methylguanosine (MMG)-containing caps, whereas other isoforms bind only the latter. Cap selectivity is determined by the dimensions and flexibility of the cap-binding pocket (<link linkend="bib66">Miyoshi et al., 2002</link><!--; PMID 12198170-->). <ulink url="http://www.wormbase.org/db/seq/protein?name=IFE-1;class=protein" role="_blank">IFE-1</ulink> is bound to P granules through an interaction with <ulink url="http://www.wormbase.org/db/seq/protein?name=PGL-1;class=protein" role="_blank">PGL-1</ulink> and is required for spermatogenesis (<link linkend="bib5">Amiri et al., 2001</link><!--; PMID 11641215-->). In the case of <ulink url="http://www.wormbase.org/db/seq/protein?name=IFE-4;class=protein" role="_blank">IFE-4</ulink>, inactivation of the gene produces an Egl phenotype, low brood size, and a defect in food sensation (<link linkend="bib18">Dinkova et al., 2005</link><!--; PMID 15601834-->). The translational efficiency (polysomal distribution) of only ~1% of mRNAs is affected by <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ife-4" role="_blank">ife-4</ulink></emphasis> deletion, but diminished levels of the encoded proteins are consistent with the complex phenotype.</para>
+                        <table id="table2" frame='all'>
+						<title><emphasis role="bold">Table 2. Properties of five</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">isoforms of eIF4E</emphasis></title>
+                        <tgroup cols="7">
+                        <colspec colname="c1" align="left" colwidth="0.8*"/>
+                        <colspec colname="c2" align="left" colwidth="0.7*"/>
+                        <colspec colname="c3" align="left" colwidth="1.3*"/>
+                        <colspec colname="c4" align="left" colwidth="1*"/>
+                        <colspec colname="c5" align="left" colwidth="1*"/>
+                        <colspec colname="c6" align="left" colwidth="1*"/>
+                        <colspec colname="c7" align="left" colwidth="1.8*"/>
+                            <thead>
+                        <row>
+                          <entry>Class</entry>
+                          <entry>eIF4E isoform</entry>
+                          <entry>Cap-binding specificity</entry>
+                          <entry>RNAi phenotype</entry>
+                          <entry>Tissue distribution</entry>
+                          <entry>Knockout mutant phenotype</entry>
+                          <entry>Postulated physiological role</entry>
+                        </row>
+                        </thead>
+                            <tbody>
+                        <row>
+                          <entry><emphasis role="bold">A</emphasis></entry>
+                          <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=IFE-3;class=protein" role="_blank">IFE-3</ulink></entry>
+                          <entry>MMG</entry>
+                          <entry>Lethal</entry>
+                          <entry>Soma Germ line</entry>
+                          <entry>Emb</entry>
+                          <entry>General translation</entry>
+                        </row>
+                            <row>
+                          <entry morerows="2" valign="middle"><emphasis role="bold">B</emphasis></entry>
+                                <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=IFE-1;class=protein" role="_blank">IFE-1</ulink></entry>
+                                <entry><simplelist>
+                                                <member>MMG</member>
+                                                <member>TMG</member>
+                                        </simplelist></entry>
+                                <entry><simplelist>
+                                                <member>Viable<footnote id='viable'><para>The combination of RNAi for all three IFEs from Class B is lethal.</para></footnote></member>
+                                                <member>Spe</member>
+                                        </simplelist></entry>
+                                <entry>Germ line</entry>
+                                <entry>Spe</entry>
+                                <entry>Regulation of P granules mRNA translation</entry>
+                                          </row>
+                              <row>
+                                <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=IFE-2;class=protein" role="_blank">IFE-2</ulink></entry>
+                                <entry><simplelist>
+                                                <member>MMG</member>
+                                                <member>TMG</member>
+                                        </simplelist></entry>
+                                <entry>Viable<footnoteref linkend='viable'/></entry>
+                                <entry>Soma</entry>
+                                <entry>Unknown</entry>
+                                <entry>Unknown</entry>
+                              </row>
+                              <row>
+                                <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=IFE-5;class=protein" role="_blank">IFE-5</ulink></entry>
+                                <entry><simplelist>
+                                                <member>MMG</member>
+                                                <member>TMG</member>
+                                        </simplelist></entry>
+                                <entry>Viable<footnoteref linkend='viable'/></entry>
+                                <entry>Unknown</entry>
+                                <entry>Unknown</entry>
+                                <entry>Unknown</entry>
+                              </row>
+                            <row>
+                          <entry><emphasis role="bold">C</emphasis></entry>
+                          <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=IFE-4;class=protein" role="_blank">IFE-4</ulink></entry>
+                          <entry>MMG</entry>
+                          <entry><simplelist>
+                                          <member>Viable</member>
+                                          <member>Egl</member>
+                                    </simplelist></entry>
+                          <entry><simplelist>
+                                          <member>Neurons</member>
+                                          <member>Muscle</member>
+                                    </simplelist></entry>
+                          <entry>Egl</entry>
+                          <entry>Specific mRNA translation during development</entry>
+                        </row>
+                            <row>
+                          <entry>References</entry>
+                          <entry></entry>
+                          <entry><link linkend="bib43">Jankowska- Anyszka et al., 1998</link><!--; PMID 9553113-->; <link linkend="bib49">Keiper et al., 2000</link><!--; PMID 10744754-->; <link linkend="bib66">Miyoshi et al., 2002</link><!--; PMID 12198170-->; <link linkend="bib85">Stachelska et al., 2002</link><!--; PMID 12422237--></entry>
+                          <entry><link linkend="bib49">Keiper et al., 2000</link><!--; PMID 10744754-->; <link linkend="bib5">Amiri et al., 2001</link><!--; PMID 11641215-->; <link linkend="bib18">Dinkova et al., 2005</link><!--; PMID 15601834--></entry>
+                          <entry><link linkend="bib5">Amiri et al., 2001</link><!--; PMID 11641215-->; <link linkend="bib18">Dinkova et al., 2005</link><!--; PMID 15601834--></entry>
+                          <entry><link linkend="bib5">Amiri et al., 2001</link><!--; PMID 11641215-->; <link linkend="bib18">Dinkova et al., 2005</link><!--; PMID 15601834--></entry>
+                          <entry><link linkend="bib5">Amiri et al., 2001</link><!--; PMID 11641215-->; <link linkend="bib18">Dinkova et al., 2005</link><!--; PMID 15601834-->; <link linkend="bib91">Trutschl et al., 2005</link></entry>
+                        </row>
+                        </tbody>
+                        </tgroup>
+                        </table>
+<literallayout></literallayout>
+                <mediaobject id="figure3" xreflabel="Figure 3">
+					<imageobject>
+						<imagedata width="4.2in" entityref="fig3" align="center"/>
+					</imageobject>
+					<textobject>
+						<phrase>WormBook Mechanism and Regulation of Translation in<emphasis>C. elegans</emphasis> figure 3</phrase>
+					</textobject> &fig3legend;</mediaobject>
+                <para>Nine <emphasis>C. elegans</emphasis> gene products are homologous to eIF4A (<link linkend="table1">Table 1</link>; <link linkend="bib76">Roussell and Bennett, 1992</link><!--; PMID 1641346-->; <link linkend="bib29">Gonczy et al., 2000</link><!--; PMID 11099034-->). The products of <ulink url="http://www.wormbase.org/db/gene/gene?name=F57B9.6;class=CDS" role="_blank">F57B9.6</ulink> and <ulink url="http://www.wormbase.org/db/gene/gene?name=F57B9.3;class=CDS" role="_blank">F57B9.3</ulink> are the most homologous to mammalian eIF4A-1 and eIF4A-2. Others (<ulink url="http://www.wormbase.org/db/gene/gene?name=Y65B4A.6;class=CDS" role="_blank">Y65B4A.6</ulink> and <ulink url="http://www.wormbase.org/db/gene/gene?name=F33D11.10;class=CDS" role="_blank">F33D11.10</ulink>) may be involved in splicing or nonsense-mediated decay, similar to mammalian eIF4A-3. Some may play a specific role in germline cells (<ulink url="http://www.wormbase.org/db/gene/gene?name=C07H6.5;class=CDS" role="_blank">C07H6.5</ulink>) or in nuclear export (C26D10.2, <ulink url="http://www.wormbase.org/db/gene/gene?name=T26G10.1;class=CDS" role="_blank">T26G10.1</ulink>, T07D4.4, and <ulink url="http://www.wormbase.org/db/gene/gene?name=F53H1.1;class=CDS" role="_blank">F53H1.1</ulink>). Knockout of any eIF4A-like gene except T07D4.4 causes reproductive defects or embryonic lethality.</para>
+                <para><emphasis>Other initiation factors and interacting proteins.</emphasis>  eIF1, eIF3, and eIF5 form a multifactor complex in yeast that is required for assembly of the 43S initiation complex. <emphasis>C. elegans</emphasis> eIF5 and eIF1 are essential for growth and embryonic development. There are <emphasis>C. elegans</emphasis> homologs for all 12 eIF3 subunits present in higher eukaryotes (<link linkend="bib8">Asano et al., 1997</link><!--; PMID 9341143-->), whereas yeast eIF3 has only five subunits. Loss of eIF3a (<ulink url="http://www.wormbase.org/db/gene/gene?name=C27D11.1;class=CDS" role="_blank">C27D11.1</ulink>) produces an Egl phenotype (<link linkend="bib17">Desai and Horvitz, 1989</link><!--; PMID 2721931-->). Both eIF3a and eIF3d are involved in meiotic divisions (<link linkend="bib29">Gonczy et al., 2000</link><!--; PMID 11099034-->). Another eIF3a homolog (<ulink url="http://www.wormbase.org/db/gene/gene?name=F55H2.6;class=CDS" role="_blank">F55H2.6</ulink>) is possibly involved in mitochondrial morphology and distribution. Inactivation of eIF5B results in larval arrest and sterility (<link linkend="bib62">Maeda et al., 2001</link><!--; PMID 11231151-->). <emphasis>C. elegans</emphasis> contains three PABP homologs. <ulink url="http://www.wormbase.org/db/seq/protein?name=PAB-2;class=protein" role="_blank">PAB-2</ulink> (F18H3.3) has the highest similarity to human cytoplasmic PABP. <ulink url="http://www.wormbase.org/db/seq/protein?name=PAB-1;class=protein" role="_blank">PAB-1</ulink> (Y106G6H.2) is essential for gonad development, and <ulink url="http://www.wormbase.org/db/seq/protein?name=PAB-2;class=protein" role="_blank">PAB-2</ulink> is apparently important for somatic development (<link linkend="bib13">Ciosk et al., 2004</link><!--; PMID 15342467-->). <ulink url="http://www.wormbase.org/db/seq/protein?name=PAB-3;class=protein" role="_blank">PAB-3</ulink> (<ulink url="http://www.wormbase.org/db/gene/gene?name=C17E4.5;class=CDS" role="_blank">C17E4.5</ulink>) is more similar to human nuclear PABP and is probably not involved in translation.</para>
+                <para><emphasis>Elongation and termination factors C. elegans</emphasis> has two identical eEF1A homologs that are products of different genes, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=eft-3" role="_blank">eft-3</ulink></emphasis> (<link linkend="bib80">Seydoux and Fire, 1994</link><!--; PMID 7607073-->) and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=eft-4" role="_blank">eft-4</ulink></emphasis> (<link linkend="bib48">Kamath et al., 2003</link><!--; PMID 12529635-->). <ulink url="http://www.wormbase.org/db/seq/protein?name=EFT-3;class=protein" role="_blank">EFT-3</ulink> is required for embryonic viability, fertility, and germline maintenance. There are two homologs of eEF1B, one of which (<ulink url="http://www.wormbase.org/db/gene/gene?name=F54H12.6;class=CDS" role="_blank">F54H12.6</ulink>) is essential for viability while the other (<ulink url="http://www.wormbase.org/db/gene/gene?name=Y41E3.10;class=CDS" role="_blank">Y41E3.10</ulink>) is not. The two eEF2 homologs, <ulink url="http://www.wormbase.org/db/seq/protein?name=EFT-1;class=protein" role="_blank">EFT-1</ulink> (<link linkend="bib73">Ofulue and Candido, 1992</link><!--; PMID 1739435-->) and <ulink url="http://www.wormbase.org/db/seq/protein?name=EFT-2;class=protein" role="_blank">EFT-2</ulink> (<link linkend="bib72">Ofulue and Candido, 1991</link><!--; PMID 1930695-->; <link linkend="bib71">Nollen et al., 2004</link><!--; PMID 15084750-->), are expressed during all stages and are encoded by essential genes. eRF1 has two splice variants whereas eRF3 has only one. Both genes are essential for embryonic and larval development, growth, and locomotion.</para>
+            </sect2>
+        </sect1>
+        <sect1>
+                <title>Structural features of mRNA that affect translational efficiency</title>
+                <para>A distinctive feature of <emphasis>C. elegans</emphasis> is the presence of polycistronic pre-mRNA transcribed from operons (<link linkend="bib11">Blumenthal and Gleason, 2003</link><!--; PMID 12560808-->). Translational control of individual mRNAs relies on <emphasis>cis</emphasis>-regulatory elements that include the cap, the 5'-terminal spliced leader (SL), and additional sequence elements in 5'- and 3'-untranslated regions (UTRs).</para>
+                <sect2>
+                    <title>5'-terminal structures</title>
+                    <para><emphasis>Spliced leaders.</emphasis> A SL is added to mature mRNA via <emphasis>trans</emphasis>-splicing in nematodes and some other metazoans (<link linkend="bib9">Bektesh et al., 1988</link><!--; PMID 3203906-->; <link linkend="bib24">Evans et al., 1994</link><!--; PMID 8168128-->; <link linkend="bib86">Stover and Steele, 2001</link><!--; PMID 11331766-->). The SL consists of a conserved 22-nt sequence (<link linkend="bib15">Conrad et al., 1991</link><!--; PMID 1848665-->; <link linkend="bib12">Blumenthal and Steward, 1997</link>). In <emphasis>C. elegans</emphasis>, either SL1 or SL2 (or a variant such as SL3, SL4, <emphasis>etc</emphasis>.) is added to 70% of pre-mRNAs (<link linkend="bib11">Blumenthal and Gleason, 2003</link><!--; PMID 12560808-->). SL1 is usually <emphasis>trans</emphasis>-spliced to mRNAs transcribed from the first cistron in an operon or to monocistronic mRNAs, whereas SL2 and its variants are <emphasis>trans</emphasis>-spliced to products of downstream cistrons.</para>
+                    <para><emphasis>Caps.</emphasis>  Those mRNAs that undergo <emphasis>trans</emphasis>-splicing carry a TMG-cap and SL, whereas those that undergo only. <emphasis>cis</emphasis>-splicing carry an MMG-cap and no SL (<link linkend="bib92">Van Doren and Hirsh, 1990</link><!--; PMID 1690851-->). The small nuclear RNA that donates the SL contains a TMG-cap (<link linkend="bib99">Zorio et al., 1994</link><!--; PMID 7969472-->; <link linkend="bib23">Evans et al., 1997</link><!--; PMID 9275196-->). MMG- and TMG-caps are recognized by some but not all eIF4E isoforms (<link linkend="table2">Table 2</link>).</para>
+                    <para><emphasis>5'UTR.</emphasis> Regulatory features of the 5'UTRs of mRNAs in general involve length, secondary structure, upstream open-reading frames, and specific sequences that interact with RNA binding proteins (<link linkend="bib27">Gingras et al., 1999</link><!--; PMID 10872469-->). The <emphasis>trans</emphasis>-splicing processing of many <emphasis>C. elegans</emphasis> mRNAs results in a relatively short 5'UTR in which the SL is located near the AUG codon (<link linkend="bib12">Blumenthal and Steward, 1997</link>). A few <emphasis>C. elegans</emphasis> mRNAs, e.g., <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gna-2" role="_blank">gna-2</ulink></emphasis>, contain long 5'UTRs that harbor upstream open-reading frames (<link linkend="bib58">Lee and Schedl, 2004</link><!--; PMID 15105376-->), which have a profound effect on translation efficiency in other organisims (<link linkend="bib67">Morris and Geballe, 2000</link><!--; PMID 11073965-->).</para>
+                    <para><emphasis>Effects of 5'-terminal structures on translational efficiency.</emphasis>  Mechanisms of regulation mediated by 5'-terminal structures remain largely unknown for <emphasis>C. elegans</emphasis>. Both MMG- and TMG-containing mRNAs are found on polysomes (<link linkend="bib59">Liou and Blumenthal, 1990</link><!--; PMID 2157142-->). In <emphasis>Ascaris lumbricoides</emphasis>, mutations in the SL1 sequence alter efficiency of translation (<link linkend="bib64">Maroney et al., 1995</link><!--; PMID 7585256-->). TMG-capped mRNAs are poorly translated in mammalian cell-free translational systems (<link linkend="bib16">Darzynkiewicz et al., 1988</link><!--; PMID 3174438-->), but a TMG-cap and SL stimulate translation in an <emphasis>Ascaris suum</emphasis> translation system (<link linkend="bib55">Lall et al., 2004</link><!--; PMID 15322127-->). Interestingly, an optimal distance from SL to AUG for translational efficiency can be demonstrated in this system. The translational synergism between cap and poly(A) is greater for TMG than MMG. The well described translational regulator <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> also interacts with 5'UTR sequences (<link linkend="bib58">Lee and Schedl, 2004</link><!--; PMID 15105376-->).</para>
+                </sect2>
+                <sect2>
+                    <title>3'-terminal structures</title>
+                    <para><emphasis>3'UTR.</emphasis>  Translational regulatory elements at the 3'UTR play important roles in <emphasis>C. elegans</emphasis> mRNA expression (see WormBook chapters on <ulink url="http://www.wormbook.org/chapters/www_transctrlmaternalRNAs/transctrlmaternalRNAs.html" role="_blank">Translational control of maternal RNAs</ulink> and <ulink url="http://www.wormbook.org/chapters/www_RNAbindingproteins/RNAbindingproteins.html" role="_blank">RNA-binding proteins</ulink>). The elements first described as DREs (direct repeat elements; <link linkend="bib30">Goodwin et al., 1993</link><!--; PMID 8402916-->) and later re-named TGEs (<emphasis>tra</emphasis> GLI elements; <link linkend="bib42">Jan et al., 1997</link><!--; PMID 9321409-->) are found within the 3'UTR of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink></emphasis> mRNA and negatively regulate its expression in germ line and somatic cells. The <emphasis>trans</emphasis>-acting factor for TGEs was identified as <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> (<link linkend="bib41">Jan et al., 1999</link><!--; PMID 9878068-->). A 5-nucleotide sequence element in the 3'UTR of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink></emphasis> mRNA, cuUCUUGu, also exerts translational regulation (<link linkend="bib6">Anderson and Kimble, 1997</link>). Another kind of 3'UTR element that represses translation is the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-4" role="_blank">lin-4</ulink></emphasis> complementary element (LCE) found in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-14" role="_blank">lin-14</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-28" role="_blank">lin-28</ulink></emphasis> mRNAs (<link linkend="bib96">Wightman et al., 1993</link><!--; PMID 8252622-->; <link linkend="bib79">Seggerson et al., 2002</link><!--; PMID 11884032-->). This element is bound by the microRNA <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-4" role="_blank">lin-4</ulink></emphasis> (<link linkend="bib68">Moss et al., 1997</link><!--; PMID 9415965-->; see <ulink url="http://www.wormbook.org/chapters/www_microRNA/microRNAs.html" role="_blank"><emphasis>C. elegans</emphasis> microRNAs</ulink>). Mutations in these 3'UTR elements disrupt the translational regulation of their mRNAs (see WormBook chapters referenced above).</para>
+                    <para><emphasis>poly(A)</emphasis> The poly(A) tract is added by a poly(A) polymerase after specific cleavage during mRNA splicing. The nuclear polyadenylation signal consists of an AAUAAA sequence 20-30 nt upstream of the cleavage site (<link linkend="bib10">Blumenthal, 1995</link><!--; PMID 7732590-->; <link linkend="bib32">Hajarnavis et al., 2004</link><!--; PMID 15247332-->). In <emphasis>C. elegans</emphasis>, <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-2;class=protein" role="_blank">GLD-2</ulink> is a putative catalytic subunit of cytoplasmic poly(A) polymerase that is likely recruited to mRNAs by interaction with RNA binding proteins such as <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-3;class=protein" role="_blank">GLD-3</ulink> (<link linkend="bib95">Wang et al., 2002</link><!--; PMID 12239571-->). Cytoplasmic polyadenylation also requires a cytoplasmic polyadenylation element (CPE), located upstream of the polyadenylation site, which is recognized by specific proteins (CPEBs).</para>
+                    <para><emphasis>Effects of 3'-terminal structures on tranlational efficiency.</emphasis>  Although there are many instances in which specific structures in the 3'UTR have been shown to affect translational efficiency in <emphasis>C. elegans</emphasis> and other organisms (<link linkend="bib52">Kuersten and Goodwin, 2003</link><!--; PMID 12897774-->), the molecular interactions responsible for these effects are only partially understood. In <emphasis>Xenopus</emphasis> oocytes, CPEB binds and sequesters eIF4E through an intermediary protein, Maskin (<link linkend="bib65">Mendez and Richter, 2001</link><!--; PMID 11433366-->). In <emphasis>Drosophila</emphasis> embryos, there is a similar interaction between the 3'UTR-binding factor Smaug and eIF4E, mediated by another protein, Cup (<link linkend="bib70">Nelson et al., 2004</link><!--; PMID 14685270-->). However, in <emphasis>C. elegans</emphasis> the translational component(s) involved in GLD-1-mediated regulation remain unknown (<link linkend="bib41">Jan et al., 1999</link><!--; PMID 9878068-->; <link linkend="bib63">Marin and Evans, 2003</link><!--; PMID 12736207-->; <link linkend="bib58">Lee and Schedl, 2004</link><!--; PMID 15105376-->). The other 3'-terminal element, the poly(A) tract, increases the rate of translational initiation in yeast and plants due to the binding of PABP to a specific site near the N-terminus of eIF4G (<link linkend="bib88">Tarun and Sachs, 1996</link><!--; PMID 9003792-->; <link linkend="bib56">Le et al., 1997</link><!--; PMID 9195926-->; see <link linkend="figure2">Figure 2</link>). Poly(A) stabilizes the PABP&#x02022;eIF4G&#x02022;eIF4E complex, which in turn leads to enhanced translational re-initiation (<link linkend="bib94">Wakiyama et al., 2000</link><!--; PMID 10996799-->). As discussed below, there are several regulatory mechanisms in <emphasis>C. elegans</emphasis> that involve changing the poly(A) length.</para>
+                </sect2>
+        </sect1>
+        <sect1>
+                    <title>Regulation of Translation</title>
+                    <para>Many of the translational mechanisms that have been well described and characterized in other organisms (<link linkend="bib83">Sonenberg et al., 2000</link>) have not yet been demonstrated in <emphasis>C. elegans</emphasis>. These can be divided into two broad classes, modification of translation factors and modification of mRNA structure. However, the existence of homologous translation factors (<link linkend="table1">Table 1</link>) and signal transduction components (<link linkend="table3">Table 3</link>) suggests that previously discovered mechanisms operate in <emphasis>C. elegans</emphasis> as well.</para>
+                    <table id="table3" frame='all'>
+                        <title><emphasis role="bold">Table 3. Components of signal transduction pathways implicated in translational control</emphasis></title>
+                        <tgroup cols="4" align="center">
+                        <colspec colname="c1" colwidth="0.8*"/>
+                        <colspec colname="c2" colwidth="0.6*"/>
+                        <colspec colname="c3" colwidth="0.6*"/>
+                        <colspec colname="c4" colwidth="1.5*"/>
+                            <thead>
+                        <row>
+                          <entry>Predicted signal transduction component</entry>
+                          <entry>Transcript (splice variants)</entry>
+                          <entry>CGC/ Other names</entry>
+                          <entry>Predicted identity or function (WormBase, release WS138)</entry>
+                        </row>
+                        </thead>
+                            <tbody>
+                        <row>
+                          <entry><emphasis role="bold">P70S6K</emphasis></entry>
+                          <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y47D3A.4;class=CDS" role="_blank">Y47D3A.4</ulink></entry>
+                          <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=CKU-70;class=protein" role="_blank">CKU-70</ulink></entry>
+                          <entry>DNA-binding subunit of a DNA-dependent protein kinase </entry>
+                        </row>
+                            <row>
+                          <entry><emphasis role="bold">TAP42</emphasis></entry>
+                          <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y71H2B.3;class=CDS" role="_blank">Y71H2B.3</ulink></entry>
+                          <entry></entry>
+                          <entry>Protein phosphatase 2A-associated protein </entry>
+                        </row>
+                            <row>
+                          <entry><emphasis role="bold">TIP41</emphasis></entry>
+                          <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=ZK688.9;class=CDS" role="_blank">ZK688.9</ulink></entry>
+                          <entry></entry>
+                          <entry>Uncharacterized conserved protein </entry>
+                        </row>
+                            <row>
+                          <entry><emphasis role="bold">SIT4.1</emphasis></entry>
+                          <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y75B8A.30;class=CDS" role="_blank">Y75B8A.30</ulink></entry>
+                          <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=PPH-4.1;class=protein" role="_blank">PPH-4.1</ulink></entry>
+                          <entry>Serine/threonine-specific protein phosphatase involved in glycogen accumulation</entry>
+                        </row>
+                            <row>
+                          <entry><emphasis role="bold">SIT4.2</emphasis></entry>
+                          <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y49E10.3a;class=CDS" role="_blank">Y49E10.3a</ulink></entry>
+                          <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=PPH-4.2;class=protein" role="_blank">PPH-4.2</ulink></entry>
+                          <entry>Serine/threonine-specific protein phosphatase involved in glycogen accumulation</entry>
+                        </row>
+                            <row>
+                          <entry><emphasis role="bold">Akt</emphasis></entry>
+                          <entry>C12D8.10 (a, b, c)</entry>
+                          <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=AKT-1;class=protein" role="_blank">AKT-1</ulink></entry>
+                          <entry>Ortholog of serine/threonine kinase Akt/PKB</entry>
+                        </row>
+                            <row>
+                          <entry><emphasis role="bold">PERK</emphasis></entry>
+                          <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F46C3.1;class=CDS" role="_blank">F46C3.1</ulink></entry>
+                          <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=PEK-1;class=protein" role="_blank">PEK-1</ulink></entry>
+                          <entry>Human PERK kinase homolog</entry>
+                        </row>
+                            <row>
+                          <entry><emphasis role="bold">PEK</emphasis></entry>
+                          <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y38E10A.8;class=CDS" role="_blank">Y38E10A.8</ulink></entry>
+                          <entry></entry>
+                          <entry>eIF2<symbol role="symbolfont">&#x003B1;</symbol> kinase PEK/EIF2AK3</entry>
+                        </row>
+                            <row>
+                          <entry><emphasis role="bold">MKK7/JNKK2</emphasis></entry>
+                          <entry>K08A8.1</entry>
+                          <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=MEK-1;class=protein" role="_blank">MEK-1</ulink>/ <ulink url="http://www.wormbase.org/db/seq/protein?name=KIN-17;class=protein" role="_blank">KIN-17</ulink></entry>
+                          <entry>MKK7/JNKK2</entry>
+                              </row>
+                            <row>
+                          <entry><emphasis role="bold">MKK7/JNKK2</emphasis></entry>
+                          <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F35C8.3;class=CDS" role="_blank">F35C8.3</ulink></entry>
+                          <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=JKK-1;class=protein" role="_blank">JKK-1</ulink></entry>
+                          <entry>JNK Kinase</entry>
+                        </row>
+                            <row>
+                          <entry><emphasis role="bold">MKK4</emphasis></entry>
+                          <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F42G10.2;class=CDS" role="_blank">F42G10.2</ulink></entry>
+                          <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=MKK-4;class=protein" role="_blank">MKK-4</ulink></entry>
+                          <entry>MKK (MAP kinase kinase) homolog</entry>
+                        </row>
+                            <row>
+                          <entry><emphasis role="bold">MAPK7/ERK5</emphasis></entry>
+						<entry>W06B3.2</entry>
+                          <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=SMA-5;class=protein" role="_blank">SMA-5</ulink></entry>
+                          <entry>MAPK7/ERK5</entry>
+                        </row>
+                            <row>
+                          <entry><emphasis role="bold">MAPK7</emphasis></entry>
+                          <entry>C04G6.1</entry>
+                          <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=MAP-2;class=protein" role="_blank">MAP-2</ulink></entry>
+                          <entry>Mitogen-activated protein kinase 7, isoform 1</entry>
+                        </row>
+                            <row>
+                          <entry><emphasis role="bold">MAPK7</emphasis></entry>
+                          <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F09C12.2;class=CDS" role="_blank">F09C12.2</ulink></entry>
+                          <entry></entry>
+                          <entry>Mitogen-activated protein kinase</entry>
+                        </row>
+                            <row>
+                          <entry><emphasis role="bold">MAP2K</emphasis></entry>
+                          <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y54E10BL.6;class=CDS" role="_blank">Y54E10BL.6</ulink></entry>
+                          <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=MEK-2;class=protein" role="_blank">MEK-2</ulink>/ <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-537;class=protein" role="_blank">LET-537</ulink>/ GLV-1</entry>
+                          <entry>MAP kinase kinase or ERK kinase</entry>
+                        </row>
+                            <row>
+                          <entry><emphasis role="bold">ERN1/IRE1</emphasis></entry>
+                          <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C41C4.4;class=CDS" role="_blank">C41C4.4</ulink></entry>
+                          <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=IRE-1;class=protein" role="_blank">IRE-1</ulink></entry>
+                          <entry>IRE1 kinase related</entry>
+                        </row>
+                            <row>
+                          <entry><emphasis role="bold">TOR</emphasis></entry>
+                          <entry>B0261.2</entry>
+                          <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=LET-363;class=protein" role="_blank">LET-363</ulink></entry>
+                          <entry>Ortholog of <emphasis>S. cerevisiae</emphasis> Tor1p and Tor2p and human FRAP1 </entry>
+                        </row>
+                            <row>
+                          <entry><emphasis role="bold">PI3K</emphasis></entry>
+                          <entry>C46B6.6</entry>
+                          <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=SMG-1;class=protein" role="_blank">SMG-1</ulink>/ MAB-1</entry>
+                          <entry>PI-3-kinase-related kinase <ulink url="http://www.wormbase.org/db/seq/protein?name=SMG-1;class=protein" role="_blank">SMG-1</ulink> isoform 2</entry>
+                        </row>
+                            <row>
+                          <entry><emphasis role="bold">PI3K like</emphasis></entry>
+                          <entry>T06E4.3</entry>
+                          <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=ATL-1;class=protein" role="_blank">ATL-1</ulink></entry>
+                          <entry>ATM (ataxia telangectasia mutated)-like</entry>
+                        </row>
+                            <row>
+                          <entry><emphasis role="bold">PI4K</emphasis></entry>
+                          <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=ZC8.6;class=CDS" role="_blank">ZC8.6</ulink></entry>
+                          <entry></entry>
+                          <entry>Phosphatidylinositol 4-kinase</entry>
+                        </row>
+                            <row>
+                          <entry><emphasis role="bold">PI4K</emphasis></entry>
+                          <entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C56A3.8;class=CDS" role="_blank">C56A3.8</ulink></entry>
+                          <entry></entry>
+                          <entry>Phosphatidylinositol 4-kinase</entry>
+                        </row>
+                            <row>
+                          <entry><emphasis role="bold">Raptor</emphasis></entry>
+                          <entry>C10C5.6 (a, b)</entry>
+                          <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=DAF-15;class=protein" role="_blank">DAF-15</ulink></entry>
+                          <entry>Abnormal dauer formation</entry>
+                        </row>
+                            </tbody>
+                        </tgroup>
+                 </table>
+                <sect2>
+                    <title>Mechanisms involving translation factor modification</title>
+                    <para><emphasis>Covalent modification of a translation factor.</emphasis>  The unfolded protein response (UPR) is a transcriptional and translational signaling pathway activated by the accumulation of unfolded proteins in the endoplasmic reticulum (ER; <link linkend="bib97">Zhang and Kaufman, 2004</link><!--; PMID 15070890-->). This involves activation of an eIF2<symbol role="symbolfont">&#x003B1;</symbol> kinase, PEK, causing global inhibition of translation initiation and allowing time to remedy the folding problem. <emphasis>C. elegans</emphasis> <ulink url="http://www.wormbase.org/db/seq/protein?name=PEK-1;class=protein" role="_blank">PEK-1</ulink> was expressed in yeast and found to inhibit growth by hyperphosphorylation of eIF2<symbol role="symbolfont">&#x03B1;</symbol> and inhibition of eIF2B (<link linkend="bib84">Sood et al., 2000</link>). UPR gene transcription and survival upon ER stress also requires <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ire-1" role="_blank">ire-1</ulink></emphasis>-mediated splicing of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=xbp-1" role="_blank">xbp-1</ulink></emphasis> mRNA (<link linkend="bib81">Shen et al., 2001</link><!--; PMID 11779465-->). <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ire-1" role="_blank">ire-1</ulink>/<ulink url="http://www.wormbase.org/db/gene/gene?name=xbp-1" role="_blank">xbp-1</ulink></emphasis> acts with <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pek-1" role="_blank">pek-1</ulink></emphasis> in complementary pathways that are essential for worm development, survival, and ER homeostasis. Furthermore, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pek-1" role="_blank">pek-1</ulink></emphasis> mutants have shortened life spans (<link linkend="bib35">Harding et al., 2003</link><!--; PMID 12667446-->).</para>
+                    <para><emphasis>Sequestration of a translation factor.</emphasis> TOR is a highly conserved protein kinase that controls cell growth and division in eukaryotes. In mammals, mTOR regulates translation by phosphorylation of p70 S6 kinase (S6K) and the eIF4E-binding protein 4E-BP1 (<link linkend="bib28">Gingras et al., 2001</link><!--; PMID 11297505-->). The latter event releases eIF4E from a sequestered form, making it available to bind eIF4G (<xref linkend="figure2" />). Raptor is a mTOR-binding protein that is necessary for the mTOR-catalyzed phosphorylation of 4E-BP1 and S6K (<link linkend="bib34">Hara et al., 2002</link><!--; PMID 12150926-->). In yeast, TOR also regulates translation through eIF4E by a mechanism involving the phosphatases Sit4 and PP2A and the phosphatase-binding protein Tap42 (<link linkend="bib45">Jiang and Broach, 1999</link><!--; PMID 10329624-->). Tip41 negatively regulates TOR by binding and inhibiting Tap42 (<link linkend="bib40">Jacinto et al., 2001</link><!--; PMID 11741537-->).</para>
+                    <para>In <emphasis>C. elegans</emphasis>, cTOR (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-363" role="_blank">let-363</ulink></emphasis>) deficiency causes developmental arrest and intestinal atrophy (<link linkend="bib60">Long et al., 2002</link><!--; PMID 12225660-->). The phenotype resembles that of RNAi knockdown of eIF4G, eIF2<symbol role="symbolfont">&#x003B1;</symbol>, and eIF2<symbol role="symbolfont">&#x003B2;</symbol>, but not S6K, Tip41, or Tap42. RNAi of Raptor (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=daf-15" role="_blank">daf-15</ulink></emphasis>) yields an array of phenotypes resembling those of cTOR knockout. Deficiency of both <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-363" role="_blank">let-363</ulink></emphasis> (<link linkend="bib93">Vellai et al., 2003</link><!--; PMID 14668850-->) and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=daf-15" role="_blank">daf-15</ulink></emphasis> (<link linkend="bib44">Jia et al., 2004</link><!--; PMID 15253933-->) extends adult lifespan, while mutations in either gene result in dauer-like larval arrest (<link linkend="bib44">Jia et al., 2004</link><!--; PMID 15253933-->). To date, a <emphasis>C. elegans</emphasis> 4E-BP1 homolog has not been identified. The protein phas-1 (WP:CE30964; <link linkend="bib1">Agostoni et al., 2002</link><!--; PMID 11955608-->; another name for 4E-BP1 is PHAS-I) is unrelated to mammalian and <emphasis>Drosophila</emphasis> 4E-BP1.</para>
+                    <para>The presence of <ulink url="http://www.wormbase.org/db/seq/protein?name=IFE-1;class=protein" role="_blank">IFE-1</ulink> in P granules (<link linkend="bib5">Amiri et al., 2001</link><!--; PMID 11641215-->) and its absence from initiation complexes (<link linkend="bib18">Dinkova et al., 2005</link><!--; PMID 15601834-->) may represent another regulatory mechanism involving sequestration of a translation factor. A number of mRNAs have been found in P granules, some of which have been shown to be translationally controlled (<link linkend="bib78">Schisa et al., 2001</link><!--; PMID 11262230-->). P granules also contain four GLH RNA helicases similar to eIF4A (<link linkend="bib31">Gruidl et al., 1996</link><!--; PMID 8943022-->; <link linkend="bib54">Kuznicki et al., 2000</link><!--; PMID 10851135-->). In <emphasis>Drosophila</emphasis>, VASA is a germline-specific ATP-dependent RNA helicase, homologous to the GLH proteins, that is required for translation of at least two mRNAs, <emphasis>gurken</emphasis> and <emphasis>nanos</emphasis>, through interaction with eIF5B (<link linkend="bib87">Styhler et al., 1998</link><!--; PMID 9521895-->; <link linkend="bib46">Johnstone and Lasko, 2004</link><!--; PMID 15280213-->). Also, eIF5A is required for <ulink url="http://www.wormbase.org/db/seq/protein?name=PGL-1;class=protein" role="_blank">PGL-1</ulink> localization (<link linkend="bib33">Hanazawa et al., 2004</link><!--; PMID 15003625-->). The presence of all these translational components in P granules may signify regulation of germline-specific mRNA translation.</para>
+                </sect2>
+                <sect2>
+                    <title>Mechanisms involving mRNA modification</title>
+                    <para>The translation of some <emphasis>C. elegans</emphasis> mRNAs is regulated by 3'UTR-binding proteins that alter poly(A) length (<link linkend="bib52">Kuersten and Goodwin, 2003</link><!--; PMID 12897774-->). There are four CPEB homologs, <ulink url="http://www.wormbase.org/db/seq/protein?name=CBP-1;class=protein" role="_blank">CBP-1</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=CPB-2;class=protein" role="_blank">CPB-2</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=CPB-3;class=protein" role="_blank">CPB-3</ulink>, and <ulink url="http://www.wormbase.org/db/seq/protein?name=FOG-1;class=protein" role="_blank">FOG-1</ulink> (<link linkend="bib61">Luitjens et al., 2000</link><!--; PMID 11040214-->). <ulink url="http://www.wormbase.org/db/seq/protein?name=CPB-1;class=protein" role="_blank">CPB-1</ulink> is essential for progression through meiosis and is present in germ cells just before spermatogenesis. <ulink url="http://www.wormbase.org/db/seq/protein?name=CPB-1;class=protein" role="_blank">CPB-1</ulink> physically interacts with FBF, another RNA-binding protein and 3' UTR regulator. Similarities between <ulink url="http://www.wormbase.org/db/seq/protein?name=FOG-1;class=protein" role="_blank">FOG-1</ulink> and the CPEB proteins of <emphasis>Xenopus</emphasis> and <emphasis>Drosophila</emphasis> suggest that <ulink url="http://www.wormbase.org/db/seq/protein?name=FOG-1;class=protein" role="_blank">FOG-1</ulink> controls germ cell fates by regulating the translation of specific messenger RNAs.</para>
+                    <para>A specific mRNA that undergoes regulated changes in poly(A) length is <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tra-2" role="_blank">tra-2</ulink></emphasis> mRNA, whose translation must be repressed for male development. A possible mechanism of action is suggested by the observation that TGEs control the length of the poly(A) tract in a <emphasis>Xenopus</emphasis> system (<link linkend="bib89">Thompson et al., 2000</link><!--; PMID 10688659-->). Similarly, a 5-nt element in the 3'UTR of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink></emphasis> mRNA controls the length of the poly(A) tract (<link linkend="bib2">Ahringer and Kimble, 1991</link><!--; PMID 1702880-->). <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink></emphasis> must be downregulated to allow the switch from spermatogenesis to oogenesis. FBF and Nanos-3 interact with each other and repress translation of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink></emphasis> mRNA (<link linkend="bib51">Kraemer et al., 1999</link><!--; PMID 10508609-->). <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-3;class=protein" role="_blank">GLD-3</ulink> also physically interacts with FBF to interfere with FBF binding to the 3'UTR of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fem-3" role="_blank">fem-3</ulink></emphasis> mRNA (<link linkend="bib20">Eckmann et al., 2002</link><!--; PMID 12431376-->). <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-3;class=protein" role="_blank">GLD-3</ulink> promotes the transition from mitosis to meiosis together with the putative <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-2;class=protein" role="_blank">GLD-2</ulink> poly(A) polymerase. FBF also binds specifically to elements in the 3'UTR of <emphasis>gld-3S</emphasis> mRNA and regulates <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gld-3" role="_blank">gld-3</ulink></emphasis> expression (<link linkend="bib21">Eckmann et al., 2004</link><!--; PMID 15454534-->).</para>
+                </sect2>
+<?newpage?>
+                <sect2>
+                    <title>Known instances of translational regulation that occur but through unknown mechanisms</title>
+                    <para>The translation of several other mRNAs is known to be regulated through the 3'UTR, but this cannot yet be explained within the framework of known translational control mechanisms. A 34-nucleotide region of the 3'UTR of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis> mRNA contains two regulatory elements, one that represses translation in germ cells and posterior cells of the early embryo, and one that inhibits repressor activity to promote translation in the embryo (<link linkend="bib63">Marin and Evans, 2003</link><!--; PMID 12736207-->). <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> binds to this repressor element. <ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-3;class=protein" role="_blank">MEX-3</ulink> is also expressed in anterior blastomere cells and is required for repression of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pal-1" role="_blank">pal-1</ulink></emphasis> mRNA translation (<link linkend="bib39">Hunter and Kenyon, 1996</link><!--; PMID 8861906-->; <link linkend="bib19">Draper et al., 1996</link><!--; PMID 8861905-->).</para>
+                    <para>A different type of 3'UTR regulation is seen with the heterochronic genes, which are temporally controlled to specify the timing of developmental events. <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-14" role="_blank">lin-14</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-28" role="_blank">lin-28</ulink></emphasis> encode proteins that are required for temporal execution of cell lineages during larval development. <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-14" role="_blank">lin-14</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-28" role="_blank">lin-28</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-42" role="_blank">lin-42</ulink></emphasis>, and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=daf-12" role="_blank">daf-12</ulink></emphasis> mRNAs contain a conserved element in the 3'UTR, the loss of which causes a gain of function (<link linkend="bib79">Seggerson et al., 2002</link><!--; PMID 11884032-->). <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-7" role="_blank">let-7</ulink></emphasis> encodes a temporally regulated 21-nucleotide RNA that is complementary to elements in heterochonic mRNA 3'UTRs and regulates their translation (<link linkend="bib75">Reinhart et al., 2000</link><!--; PMID 10706289-->). A second regulatory RNA, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-4" role="_blank">lin-4</ulink></emphasis>, negatively regulates <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-14" role="_blank">lin-14</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-28" role="_blank">lin-28</ulink></emphasis> through RNA-RNA interactions with their 3'UTR (<link linkend="bib68">Moss et al., 1997</link><!--; PMID 9415965-->). <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-28" role="_blank">lin-28</ulink></emphasis> is repressed during normal development by a mechanism that acts on its mRNA after translation initiation (<link linkend="bib79">Seggerson et al., 2002</link><!--; PMID 11884032-->).</para>
+                </sect2>
+                <sect2>
+                    <title>Future directions for protein synthesis research in <emphasis>C. elegans</emphasis></title>
+                    <para>As illustrated throughout this chapter, several key developmental pathways in <emphasis>C. elegans</emphasis> are predominantly governed by translational mechanism. However, translation <emphasis>per se</emphasis> has received little attention. Even though one can find <emphasis>C. elegans</emphasis> homologs for most of the RNAs and proteins that make up the translational machinery (<link linkend="table1">Table 1</link>), few of these have been isolated, functionally identified, or studied at the biochemical level. This deficiency obscures the molecular mechanisms responsible for well characterized physiological processes. Another shortcoming is the absence of a cell-free translation system, although such systems have been developed in two other nematodes, <emphasis>Ascaris lumbricoides</emphasis> (<link linkend="bib64">Maroney et al., 1995</link><!--; PMID 7585256-->) and <emphasis>Ascaris suum</emphasis> (<link linkend="bib55">Lall et al., 2004</link><!--; PMID 15322127-->). The most interesting unexplored questions may involve changes in the translation of individual mRNAs in various physiological conditions or after genetic manipulations. Given the highly developed state of <emphasis>C. elegans</emphasis> genomics, it can be expected that future application of computational tools, including data visualization (<link linkend="bib91">Trutschl et al., 2005</link>), will help detect new instances of translational control.</para>
+                </sect2>
+       </sect1>
+       <sect1>
+            <title>Acknowledgements</title>
+            <para>This work was supported by Grant GM20818 from the National Institutes of Health. We thank Brett Keiper for sharing preliminary data and for helpful discussions, Aaron Lefebvre for protein sequence alignments and construction of Figure 3, and Lisa Whittington for editorial assistance.</para>
+        </sect1>
+	<sect1>
+		<title>References</title>
+		<para/>
+		&RhoadsMRT_Refs;
+	</sect1>
+</article>

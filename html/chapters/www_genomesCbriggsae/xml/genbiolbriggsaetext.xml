@@ -1,0 +1,852 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY fig1 SYSTEM 'genbiolbriggsaefig1.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'genbiolbriggsaefig1leg.xml'>
+<!ENTITY fig2 SYSTEM 'genbiolbriggsaefig2.jpg' NDATA JPG>
+<!ENTITY fig2legend SYSTEM 'genbiolbriggsaefig2leg.xml'>
+<!ENTITY fig3 SYSTEM 'genbiolbriggsaefig3.jpg' NDATA JPG>
+<!ENTITY fig3legend SYSTEM 'genbiolbriggsaefig3leg.xml'>
+<!ENTITY genbiolbriggsae_Refs SYSTEM 'genbiolbriggsaerefs.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="genbiolbriggsae_ArticleID">
+	<articleinfo>
+		<!--see DocBook's authorgroup element -->
+		<title>Genomics and biology of the nematode <emphasis>Caenorhabditis briggsae</emphasis><footnote>
+			<para>Edited by Jonathan Hodgkin. Last revised January 10, 2007. Published May 3, 2007. This chapter should be cited as: Gupta, B.P., et al. Genomics and biology of the nematode <emphasis>Caenorhabditis briggsae</emphasis> (May 3, 2007), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.136.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+			<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2007 Bhagwati P. Gupta, et al. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+			</footnote>
+		</title>
+		<author>
+			<othername>Bhagwati P. Gupta<superscript>1</superscript><remark><footnote><para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:guptab@mcmaster.ca">guptab@mcmaster.ca</ulink></para></footnote></remark>, Robert Johnsen<superscript>2</superscript>, Nansheng Chen<superscript>2</superscript></othername>
+			<affiliation><orgname><superscript>1</superscript>Department of Biology, McMaster University</orgname><address>Hamilton, ON L8S 4K1, Canada</address></affiliation>
+			<affiliation><orgname><superscript>2</superscript>Department of Molecular Biology and Biochemistry</orgname><address>Simon Fraser University, Burnaby, BC V5A 1S6, Canada</address></affiliation>
+		</author>
+	</articleinfo>
+	<abstract>
+<title><emphasis role="bold">Abstract</emphasis></title>
+<para><emphasis role="bold">The soil nematode</emphasis> <emphasis><emphasis role="bold">Caenorhabditis briggsae</emphasis></emphasis> <emphasis role="bold">is an attractive model system for studying evolution of both animal development and behavior. Being a close relative of</emphasis> <emphasis><emphasis role="bold">C. elegans, C. briggsae</emphasis></emphasis> <emphasis role="bold">is frequently used in comparative studies to infer species-specific function of the orthologous genes and also for studying the dynamics of chromosome evolution. The genome sequence of</emphasis> <emphasis><emphasis role="bold">C. briggsae</emphasis></emphasis> <emphasis role="bold">is valuable in reverse genetics and genome-wide comparative studies. This review discusses resources and tools, which are currently available, to facilitate study of</emphasis> <emphasis><emphasis role="bold">C. briggsae</emphasis></emphasis> <emphasis role="bold">in order to unravel mechanisms of gene function that confer morphological and behavioral diversity.</emphasis></para>
+</abstract>
+<sect1 id="sec1">
+<title>Introduction</title>
+<para><emphasis>C. briggsae</emphasis> is a natural companion to <emphasis>C. elegans</emphasis> for research because of the similarities in morphology, hermaphroditic life style and ease of cultivation. The two species diverged from a common ancestor roughly 100 million years ago (see <link linkend="sec2_4">Section 2.4</link>; <link linkend="bib46">Stein et al., 2003</link><!--; PMID 14624247-->) yet appear almost identical in morphology and behavior. The phylogenetic relationships of <emphasis>Caenorhabditis</emphasis> nematodes reveals that <emphasis>C. briggsae</emphasis> and <emphasis>C. elegans</emphasis> are not sibling species and that <emphasis>C. remanei</emphasis>, a gonochoristic species, is the closest relative of <emphasis>C. briggsae</emphasis> (see <ulink url="http://www.wormbook.org/chapters/www_phylogrhabditids/phylorhab.html" role="_blank">The phylogenetic relationships of <emphasis>Caenorhabditis</emphasis> and other rhabditids</ulink>). The seemingly identical morphology of the two nematodes permits straightforward interpretation of results involving conserved genes and pathways. The majority of the currently available genetic and reverse genetic tools in <emphasis>C. elegans</emphasis> can be used in <emphasis>C. briggsae</emphasis> with no major modification. These together with its whole genome sequence make <emphasis>C. briggsae</emphasis> an ideal model for comparative studies.</para>
+</sect1>
+<sect1 id="sec2">
+<title>Overview of the <emphasis>C. briggsae</emphasis> genome</title>
+<para>The whole genome sequencing project (<link linkend="bib46">Stein et al., 2003</link><!--; PMID 14624247-->) revealed that the genomes of <emphasis>C. briggsae</emphasis> and <emphasis>C. elegans</emphasis> have much in common (Summarized in <link linkend="table1">Table 1</link>). For example, both worms have the same number of chromosomes (six chromosomes each), similar genome size, and similar numbers of protein coding and non-protein coding genes. Further analysis demonstrated that about 62% of the protein coding genes in <emphasis>C. briggsae</emphasis> have orthologs in <emphasis>C. elegans</emphasis>. Nevertheless, many interesting species-specific features including species-specific genes exist, which serve as the foundation for comparative analysis. In the following subsections, we will describe the <emphasis>C. briggsae</emphasis> genome and compare it with the <emphasis>C. elegans</emphasis> genome. Data described here are all available at <ulink url="http://www.wormbase.org" role="_blank">WormBase</ulink> (<link linkend="bib6">Chen et al., 2005</link><!--; PMID 15608221-->).</para>
+<sect2 id="sec2_1">
+<title>Genome sequencing</title>
+<para>A hybrid approach combining whole-genome assembly with whole-genome shotgun sequencing (WGS) was adopted to sequence the <emphasis>C. briggsae</emphasis> genome (<link linkend="bib46">Stein et al., 2003</link><!--; PMID 14624247-->). The <emphasis>C. briggsae</emphasis> strain <ulink url="http://www.wormbase.org/db/get?name=AF16;class=Strain" role="_blank">AF16</ulink> was targeted for physical map construction (<link linkend="bib33">Marra et al., 1997</link><!--; PMID 9371743-->) and whole genome sequencing. A total number of 2.068 million reads, representing an approximately 10-fold coverage of the entire genome, were assembled into 5,341 contigs and linked together into 889 gapped supercontigs containing 105.6 Mbp of DNA sequence. This assembly (named cb25.agp8) consists of 463 sequence superconfigs placed into 142 FPCs and covers 102,431,873 bp and is publicly available at the <ulink url="ftp://ftp.wormbase.org/pub/wormbase/genomes/briggsae/genome_assembly/cb25.agp8" role="_blank">WormBase FTP site</ulink>. This assembly is estimated to cover 98% of the entire <emphasis>C. briggsae</emphasis> genome with a sequencing accuracy of approximately 99.98%. Therefore the <emphasis>C. briggsae</emphasis> genome size is approximately 104 Mbp, a size similar to but slightly larger than that of the <emphasis>C. elegans</emphasis> genome (102 Mbp, according to WormBase WS160). Recently, the construction of a genetic map using single nucleotide polymorphic (SNP) markers has positioned 100 Mb along the six chromosomes and refined the sequence map (<link linkend="bib21">Hillier et al., 2005</link><!--; PMID 16339362-->).</para>
+<?newpage?>
+<table id="table1" frame="all" rules="all" cellpadding="0" cellspacing="0" width="75%">
+<title><emphasis role="bold">Table 1. Comparison between genomes of</emphasis> <emphasis><emphasis role="bold">C. briggsae</emphasis></emphasis> <emphasis role="bold">and</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> (primarily based on <link linkend="bib46">Stein et al. (2003)</link>)</title>
+<tgroup cols="4">
+<colspec colname="c1" align="left" colwidth="0.6*"/>
+<colspec colname="c2" align="left" colwidth="0.8*"/>
+<colspec colname="c3" align="center" colwidth="1*"/>
+<colspec colname="c4" align="center" colwidth="1*"/>
+<thead>
+<row>
+<entry namest="c1" nameend="c2" align="center">Species</entry>
+<entry><emphasis>C. briggsae</emphasis></entry>
+<entry><emphasis>C. elegans</emphasis></entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry namest="c1" nameend="c2">Genome size</entry>
+<entry>104 Mb</entry>
+<entry>102 Mb</entry>
+</row>
+<row>
+<entry namest="c1" nameend="c2">Sequencing approach</entry>
+<entry>Combined physical mapping and WGS</entry>
+<entry>Entirely clone-based</entry>
+</row>
+<row>
+<entry namest="c1" nameend="c2">Reads</entry>
+<entry>2.068</entry>
+<entry>-</entry>
+</row>
+<row>
+<entry namest="c1" nameend="c2">Most recent assembly</entry>
+<entry>Cb25.agp8</entry>
+<entry>WormBase WS160</entry>
+</row>
+<row>
+<entry namest="c1" nameend="c2">Assembly</entry>
+<entry>142 FPCs</entry>
+<entry>6 chromosomes</entry>
+</row>
+<row>
+<entry namest="c1" nameend="c2">Coming assembly</entry>
+<entry>6 chromosomes</entry>
+<entry>-</entry>
+</row>
+<row>
+<entry namest="c1" nameend="c2">Repetitive elements content</entry>
+<entry>22.4&#x00025;</entry>
+<entry>16.5&#x00025;</entry>
+</row>
+<row valign="middle">
+<entry morerows="5">Protein-coding genes<superscript>&#x0002A;</superscript></entry>
+<entry>Number of genes</entry>
+<entry>19,507</entry>
+<entry>20,621</entry>
+</row>
+<row>
+<entry>Exons</entry>
+<entry>114,339</entry>
+<entry>125,702</entry>
+</row>
+<row>
+<entry>Introns</entry>
+<entry>94,832</entry>
+<entry>105,081</entry>
+</row>
+<row>
+<entry>Median length</entry>
+<entry>1.90 kbp</entry>
+<entry>1.83 kbp</entry>
+</row>
+<row>
+<entry>Summed length</entry>
+<entry>55.7 Mbp</entry>
+<entry>55.6 Mbp</entry>
+</row>
+<row>
+<entry>Gene density</entry>
+<entry>5.4 kbp per gene</entry>
+<entry>4.9 kbp per gene</entry>
+</row>
+<row valign="middle">
+<entry morerows="15">Non-coding genes</entry>
+<entry>tRNA</entry>
+<entry>777 (181)</entry>
+<entry>609 (210)</entry>
+</row>
+<row>
+<entry>5S rRNA</entry>
+<entry>7</entry>
+<entry>15</entry>
+</row>
+<row>
+<entry>5.8S rRNA</entry>
+<entry>0</entry>
+<entry>1</entry>
+</row>
+<row>
+<entry>18S rRNA</entry>
+<entry>0 (3)</entry>
+<entry>2 (1)</entry>
+</row>
+<row>
+<entry>26S rRNA</entry>
+<entry>0 (7)</entry>
+<entry>1 (1)</entry>
+</row>
+<row>
+<entry>SRP</entry>
+<entry>4</entry>
+<entry>5</entry>
+</row>
+<row>
+<entry>U3 snoRNA</entry>
+<entry>4</entry>
+<entry>6</entry>
+</row>
+<row>
+<entry>U1</entry>
+<entry>11</entry>
+<entry>12</entry>
+</row>
+<row>
+<entry>U2</entry>
+<entry>15</entry>
+<entry>20</entry>
+</row>
+<row>
+<entry>U4</entry>
+<entry>5</entry>
+<entry>5</entry>
+</row>
+<row>
+<entry>U5</entry>
+<entry>10</entry>
+<entry>15</entry>
+</row>
+<row>
+<entry>U6</entry>
+<entry>40</entry>
+<entry>23</entry>
+</row>
+<row>
+<entry>miRNA</entry>
+<entry>70</entry>
+<entry>105</entry>
+</row>
+<row>
+<entry>RNAaseP</entry>
+<entry>1</entry>
+<entry>1</entry>
+</row>
+<row>
+<entry>SL1</entry>
+<entry>0</entry>
+<entry>0</entry>
+</row>
+<row>
+<entry>SL2</entry>
+<entry>18</entry>
+<entry>18</entry>
+</row>
+<row>
+<entry namest="c1" nameend="c4">Notes: tRNA pseudogene predictions and other fragmentary matches are indicated in parentheses. rRNA genes and SL1 were found in tandemly duplicated arrays that were largely excluded from the genomic assembly.</entry>
+</row>
+<row>
+<entry namest="c1" nameend="c4">&#x0002A;Protein-coding genes are &#x0201C;hybrid&#x0201D; genes that were predicted using four gene prediction programs (Genefinder, Fgenesh, Twinscan, and Ensembl pipeline).</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<para>An interesting difference between the genomes of <emphasis>C. briggsae</emphasis> and <emphasis>C. elegans</emphasis>, which was revealed by comparative genomic analysis, is that the difference in the genome size is mainly due to the larger non-genic repetitive DNA content in <emphasis>C. briggsae</emphasis>&apos;s genome, which accounts for 22.4% (or 23.3 Mbp) of the <emphasis>C. briggsae</emphasis> genome compared to 16.5% (or 16.5 Mbp) of the <emphasis>C. elegans</emphasis> genome (see <link linkend="table1">Table 1</link>). Notably, a single <emphasis>C. briggsae</emphasis> repeat family, Cb000047, is present more than 20,000 times and covers 4.7 Mbp of the <emphasis>C. briggsae</emphasis> genome, while it is present only a few hundred times in the <emphasis>C. elegans</emphasis> genome. Despite the striking similarities between the genomes and coding sequences of <emphasis>C. briggsae</emphasis> and <emphasis>C. elegans</emphasis> as summarized in <link linkend="table1">Table 1</link>, only a few orthologous repetitive elements were identified between these two sister species, suggesting that essentially all extant dispersed repeat elements postdate the divergence of these two species.</para>
+</sect2>
+<sect2 id="sec2_2">
+<title>Protein-coding genes</title>
+<para>Before a detailed description of the comparative analysis between <emphasis>C. briggsae</emphasis> and <emphasis>C. elegans</emphasis> protein-coding genes are made, some caveats should be pointed out. First, while the <emphasis>C. briggsae</emphasis> genome is still at a draft stage, the <emphasis>C. elegans</emphasis> genome sequencing is complete. Second, while the <emphasis>C. briggsae</emphasis> gene set was generated entirely by computational gene finding, the <emphasis>C. elegans</emphasis> gene set was generated by computational gene finding, followed by extensive manual curation with various experimental evidences including ESTs, OSTs, and full length cDNAs. Third, while only a small number of laboratories use <emphasis>C. briggsae</emphasis> as a major experimental organism, a significantly larger number of laboratories use <emphasis>C. elegans</emphasis>, which not only provides more data for accurately curating <emphasis>C. elegans</emphasis> gene modes, but also creates a strong pressure to establish a high-quality <emphasis>C. elegans</emphasis> gene set. In fact, the <emphasis>C. briggsae</emphasis> gene set (the "hybrid" gene set) remained the same for three years following the publication of the <emphasis>C. briggsae</emphasis> genome analysis paper (<link linkend="bib46">Stein et al., 2003</link><!--; PMID 14624247-->) until recently when WormBase started to curate <emphasis>C. briggsae</emphasis> genes (WormBase Consortium, personal communication). In the meantime, the <emphasis>C. elegans</emphasis> gene set has been improved and updated in WormBase in each of its tri-weekly releases.</para>
+<para>As shown in <link linkend="table1">Table 1</link>, there are similar numbers of protein-coding genes in the genomes of <emphasis>C. briggsae</emphasis> and <emphasis>C. elegans</emphasis>. The unspliced lengths of protein-coding genes and the total length of the protein-coding genes, including the length of their introns, are roughly the same between the two species, further suggesting that the larger size of the <emphasis>C. briggsae</emphasis> genome is not contributed by the number or size of the protein-coding genes. The <emphasis>C. briggsae</emphasis> genome has contributed to the improved predictions of <emphasis>C. elegans</emphasis> protein-coding genes. Notably, <emphasis>C. briggsae</emphasis> gene prediction has helped to predict 1,275 new <emphasis>C. elegans</emphasis> genes (<link linkend="bib46">Stein et al., 2003</link><!--; PMID 14624247-->). So far, about 300 genes of these have been confirmed by OSTs of the ORFeome project. Despite the similarity of the number of genes shared by the two species, <emphasis>C. briggsae</emphasis> has about 800 genes that have not be found in <emphasis>C. elegans</emphasis>, while <emphasis>C. elegans</emphasis> has 1,061 genes that have not been found in <emphasis>C. briggsae</emphasis> (<link linkend="bib46">Stein et al., 2003</link><!--; PMID 14624247-->).</para>
+</sect2>
+<sect2 id="sec2_3">
+<title>Orthologs between <emphasis>C. briggsae</emphasis> and <emphasis>C. elegans</emphasis></title>
+<para>One way <emphasis>C. briggsae</emphasis> and <emphasis>C. elegans</emphasis> orthologs were identified was by searching for <emphasis>C. briggsae</emphasis>/<emphasis>C. elegans</emphasis> pairs that were each other&apos;s best BLASTP (<link linkend="bib1">Altschul et al., 1997</link><!--; PMID 9254694-->) match in the opposite species. Synteny was subsequently used as a criterion to search for more orthologous pairs. These combined approaches produced altogether 12,155 ortholog pairs, or 62% of the <emphasis>C. briggsae</emphasis> gene set or 65% of the <emphasis>C. elegans</emphasis> gene set (<link linkend="bib46">Stein et al., 2003</link><!--; PMID 14624247-->). After the publication of the initial <emphasis>C. briggsae</emphasis> genome analysis paper, a recently developed program <ulink url="http://inparanoid.cgb.ki.se/" role="_blank">InParanoid</ulink> (<link linkend="bib38">O&apos;Brien et al., 2005</link><!--; PMID 15608241-->) was applied to identify orthologs between <emphasis>C. briggsae</emphasis> and <emphasis>C. elegans</emphasis>. The InParanoid database (April 2005 release), using a recent <emphasis>C. elegans</emphasis> gene set, lists 12,858 <emphasis>C. briggsae</emphasis> and <emphasis>C. elegans</emphasis> ortholog pairs. Therefore the numbers of orthologs obtained by these two different approaches agree well with each other. However, the number of identified orthologs will change over time as the genome assembly and gene annotation, especially for <emphasis>C. briggsae</emphasis>, improve.</para>
+<para>Currently the <emphasis>C. elegans</emphasis> ortholog of a <emphasis>C. briggsae gene</emphasis> is displayed in the Homology section on its gene page in WormBase and <emphasis>vice versa</emphasis>. Users can follow the link to the gene page of the <emphasis>C. elegans</emphasis> ortholog of a <emphasis>C. briggsae</emphasis> gene. Right next to this ortholog link, there is another link termed &#x0201C;syntenic alignment&#x0201D;, which directs users to a corresponding &#x0201C;Synteny Browser&#x0201D; page (see <link linkend="figure1">Figure 1</link>). The Synteny Browser provides a comparative view of two genomic regions, a <emphasis>C. elegans</emphasis> genomic region that contains the <emphasis>C. elegan</emphasis> ortholog of the <emphasis>C. briggsae</emphasis> gene, a <emphasis>C. briggsae</emphasis> genomic region that is syntenic to the <emphasis>C. elegans</emphasis> region. The <emphasis>C. briggsae</emphasis> genomic region contains the <emphasis>C. briggsae</emphasis> ortholog of the <emphasis>C. elegans</emphasis> gene (see <link linkend="figure1">Figure 1</link>). Users can browse along the genomic sequences by modifying the genomic coordinates.</para>
+<literallayout></literallayout>
+		<mediaobject id="figure1" xreflabel="Figure 1">
+			<imageobject>
+				<imagedata entityref="fig1" width="7in" align="center"/>
+			</imageobject>
+			<textobject>
+				<phrase>figure 1</phrase>
+			</textobject> &fig1legend;</mediaobject>
+</sect2>
+<sect2 id="sec2_4">
+<title>Evolutionary distance between <emphasis>C. briggsae</emphasis> and <emphasis>C. elegans</emphasis></title>
+<para>Before the <emphasis>C. briggsae</emphasis> genome sequencing project, the divergence of <emphasis>C. elegans</emphasis> and <emphasis>C. briggsae</emphasis> had been estimated to be 20&#x02013;120 MYA (million years ago; <link linkend="bib9">Coghlan and Wolfe, 2002</link><!--; PMID 12045140-->; <link linkend="bib19">Heschl and Baillie, 1990</link><!--; PMID 2116528-->; <link linkend="bib25">Kennedy et al., 1993</link><!--; PMID 8445654-->; <link linkend="bib31">Lee et al., 1992</link><!--; PMID 1446820-->; <link linkend="bib40">Prasad and Baillie, 1989</link><!--; PMID 2793177-->). The <emphasis>C. briggsae</emphasis> genome sequencing project helped to refine the divergence date to 80&#x02013;110 MYA (<link linkend="bib46">Stein et al., 2003</link><!--; PMID 14624247-->). The new estimation, based on 338 sets of orthologs, is more precise because of the large gene sample size and improved <emphasis>C. briggsae</emphasis> gene predictions and ortholog assignments.</para>
+</sect2>
+<sect2 id="sec2_5">
+<title>Intron evolution</title>
+<para>There are more introns per gene in <emphasis>C. elegans</emphasis> than in <emphasis>C. briggsae</emphasis> (see <link linkend="table1">Table 1</link>). Comparative analysis, by aligning orthologous protein-coding genes between <emphasis>C. briggsae</emphasis> and <emphasis>C. elegans</emphasis>, revealed 6,579 species-specific introns among the 60,775 introns in the orthologous pairs of protein-coding genes. Roughly two-thirds (4,379) are <emphasis>C. elegans</emphasis>-specific, while one-third (2,200) are <emphasis>C. briggsae</emphasis>-specific, which suggest rates of intron gains or losses of about 0.5 per gene in the 80&#x02013;110 million years since the split between <emphasis>C. briggsae</emphasis> and <emphasis>C. elegans</emphasis>. This rate is dramatically higher than that of mouse and human, which is 0.01 intron gains or losses per gene in 75 million years. Active intron gains and losses have also been observed by comparing many smaller gene sets in <emphasis>C. elegans</emphasis> and <emphasis>C. briggsae</emphasis>, for example, the chemosensory gene families (<link linkend="bib41">Robertson, 1998</link><!--; PMID 9582190-->; <link linkend="bib42">Robertson, 2000</link><!--; PMID 10673277-->; <link linkend="bib43">Robertson, 2001</link><!--; PMID 11238245-->), a sets of five genes (four <emphasis>CPEB</emphasis> genes and <emphasis><ulink url="http://www.wormbase.org/db/get?name=fog-3;class=Gene" role="_blank">fog-3</ulink></emphasis>; <link linkend="bib8">Cho et al., 2004</link><!--; PMID 15231741-->), and another set of five genes (SSU rDNA, LSU rDNA, part of <emphasis>RNAP2</emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/get?name=par-6;class=Gene" role="_blank">par-6</ulink></emphasis>, and <emphasis><ulink url="http://www.wormbase.org/db/get?name=pkc-3;class=Gene" role="_blank">pkc-3</ulink></emphasis>; <link linkend="bib29">Kiontke et al., 2004</link><!--; PMID 15184656-->). These studies demonstrated dramatically higher rates of intron gain and loss in <emphasis>C. briggsae</emphasis> and <emphasis>C. elegans</emphasis> compared to that in mammals, and furthermore, significantly higher rates of intron loss compared to intron gain, which happen only rarely. Recently, a study identified 81 introns gained in <emphasis>C. elegans</emphasis> and 41 in <emphasis>C. briggsae</emphasis> (<link linkend="bib10">Coghlan and Wolfe, 2004</link><!--; PMID 15243155-->). Among these 122 new introns, twenty-eight show significant DNA sequence similarity to other introns in the same genomes, including three that are similar to other introns in the same gene, suggesting that some of the introns were gained via reverse splicing of preexisting intron.</para>
+</sect2>
+<?newpage?>
+<sect2 id="sec2_6">
+<title>Genomic sequence alignment and colinearity analysis</title>
+<para>Whole genome sequence alignment of <emphasis>C. briggsae</emphasis> and <emphasis>C. elegans</emphasis>, using the pair-wise alignment tool WABA (<link linkend="bib26">Kent and Zahler, 2000</link><!--; PMID-->), revealed that 50.1% of the <emphasis>C. briggsae</emphasis> genome aligns to 52.3% of the <emphasis>C. elegans</emphasis> genome (<link linkend="bib46">Stein et al., 2003</link><!--; PMID 14624247-->). Merged WABA alignments, 4,837 in total, cover 84.6% of the <emphasis>C. briggsae</emphasis> genome and 80.8% of the <emphasis>C. elegans</emphasis> genome. Classification of these WABA alignments by searching for different types of breakpoints, which are defined as junctions between adjacent colinear blocks with <emphasis>C. briggsae</emphasis> supercontigs, resulted in 1,384 putative inversion events, 244 putative translocation events, and 2,735 putative transposition events between <emphasis>C. briggsae</emphasis> and <emphasis>C. elegans</emphasis> genomes. By examining <emphasis>C. elegans</emphasis> sequences, matching each end of the breakpoint junctions on <emphasis>C. briggsae</emphasis> supercontigs we found a clear bias toward rearrangements being within the same ancestral chromosome (see <link linkend="table2">Table 2</link>).</para>
+<table id="table2" frame="all" rules="all" cellpadding="0" cellspacing="0" width="100%">
+<title><emphasis role="bold">Table 2. Chromosomal partners at colinearity breakpoints</emphasis></title>
+<tgroup cols="7">
+<colspec colname="c1" align="center" colwidth="1*"/>
+<colspec colname="c2" align="center" colwidth="1*"/>
+<colspec colname="c3" align="center" colwidth="1*"/>
+<colspec colname="c4" align="center" colwidth="1*"/>
+<colspec colname="c5" align="center" colwidth="1*"/>
+<colspec colname="c6" align="center" colwidth="1*"/>
+<colspec colname="c7" align="center" colwidth="1*"/>
+<thead>
+<row>
+<entry/>
+<entry>I</entry>
+<entry>II</entry>
+<entry>III</entry>
+<entry>IV</entry>
+<entry>V</entry>
+<entry>X</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>I</entry>
+<entry>610</entry>
+<entry>77</entry>
+<entry>92</entry>
+<entry>123</entry>
+<entry>111</entry>
+<entry>52</entry>
+</row>
+<row>
+<entry>II</entry>
+<entry/>
+<entry>503</entry>
+<entry>90</entry>
+<entry>126</entry>
+<entry>131</entry>
+<entry>68</entry>
+</row>
+<row>
+<entry>III</entry>
+<entry/>
+<entry/>
+<entry>469</entry>
+<entry>138</entry>
+<entry>122</entry>
+<entry>45</entry>
+</row>
+<row>
+<entry>IV</entry>
+<entry/>
+<entry/>
+<entry/>
+<entry>526</entry>
+<entry>165</entry>
+<entry>74</entry>
+</row>
+<row>
+<entry>V</entry>
+<entry/>
+<entry/>
+<entry/>
+<entry/>
+<entry>732</entry>
+<entry>83</entry>
+</row>
+<row>
+<entry>X</entry>
+<entry/>
+<entry/>
+<entry/>
+<entry/>
+<entry/>
+<entry>229</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</sect2>
+<sect2 id="sec2_7">
+<title>Operons, neighboring genes, and overlapping genes</title>
+<para>Essentially all (96%) of the approximately 1,000 identified trans-spliced operons in <emphasis>C. elegans</emphasis> (<link linkend="bib4">Blumenthal and Gleason, 2003</link><!--; PMID 12560808-->) are conserved in <emphasis>C. briggsae</emphasis> (<link linkend="bib46">Stein et al., 2003</link><!--; PMID 14624247-->), suggesting that operons are under strong purifying selection pressure. Recent high throughput functional genomic projects including microarray analysis (<link linkend="bib27">Kim et al., 2001</link><!--; PMID 11557892-->) and SAGE (serial analysis of gene expression; <link linkend="bib34">McKay et al., 2003</link><!--; PMID 15338614-->) have demonstrated that genes within operons in <emphasis>C. elegans</emphasis> have positively correlated gene expression (<link linkend="bib7">Chen and Stein, 2006</link><!--; PMID 16606698-->; <link linkend="bib32">Lercher et al., 2003</link><!--; PMID 12566401-->). Whether genes within operons in <emphasis>C. briggsae</emphasis> are positively correlated in gene expression remains to be examined.</para>
+<para>Correlation of gene expression is not limited to genes within operons. Recently, we have demonstrated that expression of neighboring genes is also positively correlated (<link linkend="bib7">Chen and Stein, 2006</link><!--; PMID 16606698-->). Using tissue-specific SAGE libraries generated by the <emphasis>C. elegans</emphasis> Gene Expression Consortium, Chen and Stein (<link linkend="bib7">Chen and Stein, 2006</link><!--; PMID 16606698-->) found that divergent neighboring gene pairs and parallel neighboring gene pairs are positively correlated in gene expression, while convergent neighboring gene pairs show a greatly reduced correlation in gene expression that is lower than the background correlation (see <link linkend="figure2">Figure 2</link>; <link linkend="bib7">Chen and Stein, 2006</link><!--; PMID 16606698-->). All of these correlations are dependent on the distances between neighboring gene pairs, the correlations approach background as the distances become longer than 10kbp (see <link linkend="figure2">Figure 2</link>). As extreme examples of neighboring genes, we analyzed genes that physically overlap in their gene models (introns, exons and UTRs). Nested gene pairs and convergent gene pairs demonstrated lack of correlation in gene expression, while piggyback gene pairs showed positive correlation in gene expression. Since no large-scale functional genomics projects such as microarray analysis or SAGE have been carried out in <emphasis>C. briggsae</emphasis>, correlation of gene expression for its neighboring genes and overlapping genes are unknown. However, similar types and extends of correlation in gene expression likely exist in <emphasis>C. briggsae</emphasis> because overlapping genes are well conserved between the two nematodes (<link linkend="bib7">Chen and Stein, 2006</link><!--; PMID 16606698-->).</para>
+</sect2>
+<sect2 id="sec2_8">
+<title>Non-coding RNAs</title>
+<para>There are similar numbers of program-predicted non-coding RNA genes in <emphasis>C. briggsae</emphasis> (962 and 191 fragmentary matches) and <emphasis>C. elegans</emphasis> (838 and 212 fragmentary matches). A detailed list of various types of RNA genes is included in <link linkend="table1">Table 1</link>, which shows that both species have similar number of each type of non-coding RNAs. For example, both species have exactly 18 SL2 spliced leader genes, and 70 out of 105 identified <emphasis>C. elegans</emphasis> miRNAs have close homologs in <emphasis>C. briggsae</emphasis>.</para>
+<literallayout></literallayout>
+		<mediaobject id="figure2" xreflabel="Figure 2">
+			<imageobject>
+				<imagedata entityref="fig2" width="5in" align="center"/>
+			</imageobject>
+			<textobject>
+				<phrase>figure 2</phrase>
+			</textobject> &fig2legend;</mediaobject>
+</sect2>
+<sect2 id="sec2_9">
+<title>Gene families</title>
+<para>Most gene families have similar sizes between <emphasis>C. briggsae</emphasis> and <emphasis>C. elegans</emphasis>, as suggested by TRIBE-MCL clustering analysis (<link linkend="bib46">Stein et al., 2003</link><!--; PMID 14624247-->). However, there are exceptions in that some gene families are larger in <emphasis>C. briggsae</emphasis> than in <emphasis>C. elegans</emphasis> and vice versa. For example, there are many more putative chemosensory genes in <emphasis>C. elegans</emphasis> than in <emphasis>C. briggsae</emphasis> (<link linkend="bib5">Chen et al., 2005</link><!--; PMID 15618405-->; <link linkend="bib46">Stein et al., 2003</link><!--; PMID 14624247-->). Breaking down the putative chemosensory superfamily into smaller families, shows that some families have similar sizes in <emphasis>C. briggsae</emphasis> and <emphasis>C. elegans</emphasis>, while others, including the <emphasis>srab</emphasis> family (<link linkend="bib5">Chen et al. 2005b</link>) and the <emphasis>srz</emphasis> family (<link linkend="bib48">Thomas et al., 2005</link><!--; PMID 15761060-->), have twice as many genes in <emphasis>C. elegans</emphasis> than in <emphasis>C. briggsae</emphasis>. Such gene family size differences resulted largely from massive tandem duplications of individual genes in the <emphasis>C. elegans</emphasis> genome. Tandem duplication were also observed in <emphasis>C. briggsae</emphasis> but both the ratio and frequency of expansion was not as dramatic in <emphasis>C. briggsae</emphasis> as in <emphasis>C. elegans</emphasis> (<link linkend="bib5">Chen et al., 2005</link><!--; PMID 15618405-->). Altogether, TRIBE-MCL clustering analysis demonstrated that for gene clusters with five or more <emphasis>C. briggsae</emphasis> and <emphasis>C. elegans</emphasis> genes, there were 202 clusters (corresponding to gene families) with gene number differences of at least 2-fold between <emphasis>C. briggsae</emphasis> and <emphasis>C. elegans</emphasis> (<link linkend="bib46">Stein et al., 2003</link><!--; PMID 14624247-->).</para>
+</sect2>
+</sect1>
+<sect1 id="sec3">
+<title>Evolutionary studies</title>
+<para>Morphologically <emphasis>C. briggsae</emphasis> is almost identical to <emphasis>C. elegans</emphasis>. However, as described above, a comparison of the genome sequences between the two species has revealed a significant number of species-specific genes (~2,000 in total; <link linkend="bib46">Stein et al., 2003</link><!--; PMID 14624247-->). Hence, an obvious question is: why are these changes not reflected in significant morphological or behavioral differences? Perhaps such features are under strong selective pressure and have resulted in compensatory changes in the genome. Alternatively, it is possible that the two species exhibit differences in other developmental and physiological processes that have yet to be revealed. In the following subsections we summarize studies focusing on known differences between <emphasis>C. briggsae</emphasis> and <emphasis>C. elegans</emphasis> (as well as other <emphasis>Caenorhabditis</emphasis> nematodes). With increasing research into nematode evolution, future studies are expected to reveal additional differences and the roles of species-specific genes in mediating some of these changes.</para>
+<sect2 id="sec3_1">
+<title>Development of the excretory duct cell</title>
+<para>The excretory system in <emphasis>C. elegans</emphasis> plays a critical role in osmoregulation. It is made up of just three cells: the canal cell, the duct cell and the pore cell. The duct and pore cells connect the canal to the outside world and help eliminate excess body fluid. In <emphasis>C. briggsae</emphasis> the excretory system looks morphologically identical, however <emphasis>C. briggsae</emphasis> animals have more anterior duct opening than <emphasis>C. elegans</emphasis> (<link linkend="bib50">Wang and Chamberlin, 2002</link><!--; PMID 12231624-->). This difference in the placement of duct opening is the result of the altered expression of <emphasis><ulink url="http://www.wormbase.org/db/get?name=lin-48;class=Gene" role="_blank">lin-48</ulink></emphasis>, a <emphasis>Drosophila ovo</emphasis> family member (<link linkend="bib50">Wang and Chamberlin, 2002</link><!--; PMID 12231624-->). In <emphasis>C. elegans</emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/get?name=lin-48;class=Gene" role="_blank">lin-48</ulink></emphasis> is expressed in the excretory duct cell, a subset of the hindgut cells and a few neurons. In contrast, <emphasis>C. briggsae <ulink url="http://www.wormbase.org/db/get?name=lin-48;class=Gene" role="_blank">lin-48</ulink></emphasis> does not express in the duct cell due to an evolutionary change in the regulation of <emphasis>Cbr-lin-48</emphasis>. This demonstrates that evolutionary changes in the regulation of <emphasis>C. briggsae</emphasis> genes (or <emphasis>C. elegans</emphasis> genes) can give rise to morphological differences.</para>
+</sect2>
+<sect2 id="sec3_2">
+<title>Sex determination</title>
+<para>Regulation of sex-specific developmental programs is of prime importance for the propagation and diversity of multicellular organisms. Experimental findings in metazoans have revealed that, in spite of their critical role, many sex determination genes and genetic pathways have rapidly evolved. Because of their morphological diversity and two different modes of reproduction (hermaphroditic, e.g., <emphasis>C. briggsae</emphasis> and <emphasis>C. elegans</emphasis>, and gonochoristic, e.g., <emphasis>C. remanei, C. japonica</emphasis> and <emphasis>C. sp.CB5161</emphasis>), nematodes provide excellent opportunity to study the molecular basis of sexual differentiation and evolution. In this respect, the <emphasis>C. briggsae</emphasis> genome has facilitated identification of the sex-determination genes and study of their functional differences. Given that hermaphroditism has evolved independently in <emphasis>C. elegans</emphasis> and <emphasis>C. briggsae</emphasis> (<link linkend="bib29">Kiontke et al., 2004</link><!--; PMID 15184656-->), it is conceivable that the underlying regulatory mechanisms have diverged between the two species. A survey of the <emphasis>C. elegans</emphasis> sex pathway genes in <emphasis>C. briggsae</emphasis> genome has revealed significant sequence divergence in some genes suggesting functional differences in the mode of sex determination. Consistent with this observation, <ulink url="http://www.wormbase.org/db/get?name=FEM-3;class=Protein" role="_blank">FEM-3</ulink> (novel) and <ulink url="http://www.wormbase.org/db/get?name=TRA-2;class=Protein" role="_blank">TRA-2</ulink> (transmembrane domain) proteins have rapidly evolved in <emphasis>C. briggsae</emphasis> and <emphasis>C. remanei</emphasis> (<link linkend="bib17">Haag and Ackerman, 2005</link><!--; PMID 15780968-->; <link linkend="bib18">Haag et al., 2002</link><!--; PMID 12477393-->). In <emphasis>C. elegans</emphasis>, the two proteins are known to physically interact with each other (<link linkend="bib35">Mehra et al., 1999</link><!--; PMID-->). While this interaction appears to be conserved in <emphasis>C. briggsae</emphasis>, the two proteins function in strictly species-specific manners. Furthermore, RNA interference (RNAi)-mediated inactivation of the <emphasis><ulink url="http://www.wormbase.org/db/get?name=fem-1;class=Gene" role="_blank">fem-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=fem-2;class=Gene" role="_blank">fem-2</ulink></emphasis> genes in <emphasis>C. briggsae</emphasis> reveal functional differences from <emphasis>C. elegans</emphasis> (<link linkend="bib47">Stothard and Pilgrim, 2003</link><!--; PMID-->). In a separate study, <emphasis><ulink url="http://www.wormbase.org/db/get?name=fog-2;class=Gene" role="_blank">fog-2</ulink></emphasis>, which is required for hermaphrodite spermatogenesis in <emphasis>C. elegans</emphasis>, has been shown to be absent in <emphasis>C. briggsae</emphasis> (<link linkend="bib37">Nayak et al., 2005</link><!--; PMID 15630478-->). Hence, the genome sequence of <emphasis>C. briggsae</emphasis> promises new understanding of the evolution of sex-determination pathways.</para>
+</sect2>
+<sect2 id="sec3_3">
+<title>Development of the vulva</title>
+<para>Nematode vulval development is an established model for comparative developmental biology. In <emphasis>C. elegans</emphasis>, six vulval precursor cells (VPCs) (Pn.p, where n=3&#x02013;8) respond to a spatially graded inductive signal from the gonadal anchor cell (AC) and give rise to a 3&#x000B0;-3&#x000B0;-2&#x000B0;-1&#x000B0;-2&#x000B0;-3&#x000B0; cell fate pattern. While the 1&#x000B0; and 2&#x000B0; VPCs divide to give rise to vulval tissue, the 3&#x000B0; lineage cells fuse into the surrounding hypodermal syncytial cell (hyp7). The cell ablation experiments have shown that all six VPCs are equally capable of adopting 1&#x000B0; and 2&#x000B0; fates (<link linkend="bib23">Horvitz and Sternberg, 1991</link><!--; PMID 1646401-->). For example, ablation of all VPCs but the <ulink url="http://www.wormbase.org/db/get?name=P3.p;class=Cell" role="_blank">P3.p</ulink>, allows it to generate vulval progeny although it does not do so in an intact animal. By contrast, in <emphasis>C. briggsae</emphasis> <ulink url="http://www.wormbase.org/db/get?name=P3.p;class=Cell" role="_blank">P3.p</ulink> does not appear to be competent by this assay (<link linkend="bib12">Delattre and Felix, 2001</link><!--; PMID 11369226-->). However, in certain multivulva mutants of <emphasis>C. briggsae</emphasis> <ulink url="http://www.wormbase.org/db/get?name=P3.p;class=Cell" role="_blank">P3.p</ulink> is capable of being induced and give rise to vulval progeny suggesting that negative regulation may restrict the fate of <ulink url="http://www.wormbase.org/db/get?name=P3.p;class=Cell" role="_blank">P3.p</ulink> in wild-type animals (B. Gupta, unpublished). Thus, the competence of <ulink url="http://www.wormbase.org/db/get?name=P3.p;class=Cell" role="_blank">P3.p</ulink> appears to have evolved between the two species.</para>
+<para>Rudel and Kimble (<link linkend="bib44">Rudel and Kimble, 2001</link><!--; PMID-->; <link linkend="bib45">Rudel and Kimble, 2002</link><!--; PMID-->) have examined evolution of Notch-family members, <emphasis><ulink url="http://www.wormbase.org/db/get?name=lin-12;class=Gene" role="_blank">lin-12</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink></emphasis>, in <emphasis>Caenorhabditis</emphasis> nematodes (<emphasis>C. elegans</emphasis>, <emphasis>C. briggsae</emphasis> and <emphasis>C. remanei)</emphasis>. Their results suggest that in <emphasis>C. briggsae</emphasis> <emphasis><ulink url="http://www.wormbase.org/db/get?name=lin-12;class=Gene" role="_blank">lin-12</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink></emphasis> have acquired novel functions. Furthermore, there appears to be two <emphasis><ulink url="http://www.wormbase.org/db/get?name=lin-12;class=Gene" role="_blank">lin-12</ulink></emphasis>-like genes in <emphasis>C. briggsae</emphasis> compared to only one in <emphasis>C. elegans</emphasis>. In <emphasis>C. elegans</emphasis> <ulink url="http://www.wormbase.org/db/get?name=LIN-12;class=Protein" role="_blank">LIN-12</ulink> and <ulink url="http://www.wormbase.org/db/get?name=GLP-1;class=Protein" role="_blank">GLP-1</ulink> are functionally interchangeable and in wild-type animals perform some overlapping functions, but they are uniquely required in some tissues (see <ulink url="http://www.wormbook.org/chapters/www_lin12Notch/lin12notch.html" role="_blank">LIN-12/Notch signaling in <emphasis>C. elegans</emphasis></ulink>). <ulink url="http://www.wormbase.org/db/get?name=GLP-1;class=Protein" role="_blank">GLP-1</ulink> is necessary during early embryogenesis and later in the development and proliferation of the germline whereas <ulink url="http://www.wormbase.org/db/get?name=LIN-12;class=Protein" role="_blank">LIN-12</ulink>, but not <ulink url="http://www.wormbase.org/db/get?name=GLP-1;class=Protein" role="_blank">GLP-1</ulink>, is required during lateral signaling events in some somatic tissues such as the vulva. In <emphasis>C. elegans</emphasis> loss of function alleles of <emphasis><ulink url="http://www.wormbase.org/db/get?name=lin-12;class=Gene" role="_blank">lin-12</ulink></emphasis> exhibit protruding vulva (Pvul) phenotype as a result of the fate conversion of the 2&#x000B0; lineage cells <ulink url="http://www.wormbase.org/db/get?name=P5.p;class=Cell" role="_blank">P5.p</ulink> and <ulink url="http://www.wormbase.org/db/get?name=P7.p;class=Cell" role="_blank">P7.p</ulink> into the 1&#x000B0; type cell lineage (see <ulink url="http://www.wormbook.org/chapters/www_lin12Notch/lin12notch.html" role="_blank">LIN-12/Notch signaling in <emphasis>C. elegans</emphasis></ulink>). <emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink></emphasis> loss of function alleles, on the other hand, do not affect vulval development. However, in <emphasis>C. briggsae</emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink></emphasis> is required for vulval development. <emphasis>Cbr-glp-1</emphasis>(RNAi) animals exhibit a multivulva phenotype suggesting that wild-type <emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink></emphasis> functions to regulate the competence of the VPCs. Likewise examination of the role of <emphasis><ulink url="http://www.wormbase.org/db/get?name=lin-12;class=Gene" role="_blank">lin-12</ulink></emphasis> revealed that, unlike <emphasis><ulink url="http://www.wormbase.org/db/get?name=lin-12;class=Gene" role="_blank">lin-12</ulink></emphasis> in <emphasis>C. elegans</emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/get?name=lin-12;class=Gene" role="_blank">lin-12</ulink></emphasis> in <emphasis>C. briggsae</emphasis> is essential for larval viability. <emphasis>Cbr-lin-12</emphasis>(RNAi) animals arrest during L<subscript>1</subscript> larval stage, a phenotype that is not observed in <emphasis>Cel-lin-12</emphasis>(RNAi) animals. Functional differences between <emphasis><ulink url="http://www.wormbase.org/db/get?name=lin-12;class=Gene" role="_blank">lin-12</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink></emphasis> in <emphasis>C. elegans</emphasis> and <emphasis>C. briggsae</emphasis> are supported by the low level of amino acid conservation (68% and 61% identities, respectively) and may result from evolutionary changes in protein-protein interactions.</para>
+<?newpage?>
+<para>In a separate study, Kirouac and Sternberg (<link linkend="bib30">Kirouac and Sternberg, 2003</link><!--; PMID-->) have examined regulation of the three orthologs that are expressed in vulval cells (<emphasis><ulink url="http://www.wormbase.org/db/get?name=egl-17;class=Gene" role="_blank">egl-17</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/get?name=zmp-1;class=Gene" role="_blank">zmp-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=cdh-3;class=Gene" role="_blank">cdh-3</ulink></emphasis>) in <emphasis>C. briggsae</emphasis> and have identified many key regulatory elements that are conserved between the two species. In spite of this conservation, the dynamics of the expression of these genes in vulval cells have evolved. Hence, for example, the <emphasis>C. elegans</emphasis> <emphasis><ulink url="http://www.wormbase.org/db/get?name=egl-17;class=Gene" role="_blank">egl-17</ulink>::GFP</emphasis> reporter, which is always expressed in vulC and vulD cell types in <emphasis>C. elegans</emphasis>, often fails to express in the same set of cells in <emphasis>C. briggsae</emphasis>. The expression pattern of the <emphasis><ulink url="http://www.wormbase.org/db/get?name=cdh-3;class=Gene" role="_blank">cdh-3</ulink>::GFP</emphasis> reporter, on the other hand, is significantly diverged in <emphasis>C. briggsae</emphasis> (<link linkend="bib30">Kirouac and Sternberg, 2003</link><!--; PMID-->). This finding is somewhat similar to the regulatory differences reported for the <emphasis><ulink url="http://www.wormbase.org/db/get?name=pes-1;class=Gene" role="_blank">pes-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=fkh-2;class=Gene" role="_blank">fkh-2</ulink></emphasis> forkhead family members (<link linkend="bib36">Molin et al., 2000</link><!--; PMID 11044397-->). While both these genes are functionally redundant in <emphasis>C. elegans</emphasis> and <emphasis>C. briggsae</emphasis> embryogenesis, <emphasis>C. briggsae <ulink url="http://www.wormbase.org/db/get?name=fkh-2;class=Gene" role="_blank">fkh-2</ulink></emphasis> has acquired additional novel function.</para>
+</sect2>
+<sect2 id="sec3_4">
+<title>Development of the male tail</title>
+<para>The male tail, involved in copulation, exhibits considerable differences in morphology among the Rhabditidae family (including <emphasis>C. elegans</emphasis> and <emphasis>C. briggsae</emphasis>). This variability is one criteria used by researchers to distinguish between and classify various nematodes (<link linkend="bib13">Fitch, 1997</link><!--; PMID-->). <emphasis>C. briggsae</emphasis>&apos;s male tail has a subtle difference, relative to <emphasis>C. elegans</emphasis>, in its pattern of ray morphology, specifically there is a tendency of ray 3 to fuse with ray 4. Baird and colleagues (<link linkend="bib2">Baird et al., 2005</link><!--; PMID 15634358-->) have used recombinant inbred lines (RILs) to map at least two loci (linked to <emphasis>Cbr-unc-22</emphasis>) that appear to play a role in this morphological variation.</para>
+</sect2>
+<sect2 id="sec3_5">
+<title>Thermal sensitivity</title>
+<para>Studies focusing on the ability of nematodes to survive in different environmental conditions have shown evolutionary differences between <emphasis>C. elegans</emphasis> and <emphasis>C. briggsae</emphasis>. Examination of the thermal sensitivity of <emphasis>C. elegans</emphasis> has revealed significant reduction in the brood size at temperatures above 25&#x000B0;C and almost complete sterility above 27&#x000B0;C (M. Ailion and J. Thomas, personal communication; B. Gupta, unpublished). By contrast, <emphasis>C. briggsae</emphasis> grows well at 27.5&#x000B0;C with no significant reduction in brood size (<ulink url="http://www.wormbase.org/db/get?name=AF16;class=Strain" role="_blank">AF16</ulink>: 200 +/<symbol role="symbolfont">&#x02212;</symbol> 35 compared to 234 +/<symbol role="symbolfont">&#x02212;</symbol> 25 at 20&#x000B0;C; <link linkend="bib14">Fodor et al., 1983</link><!--; PMID-->). In fact, <emphasis>C. briggsae</emphasis> can grow and develop to adulthood at 30&#x000B0;C (M. Ailion and J. Thomas, personal communication; RJ, unpublished). These studies have been done using multiple isolates of <emphasis>C. elegans</emphasis> and <emphasis>C. briggsae</emphasis> and all isolates of each species behave similarly. The formation of dauer larva, a developmentally arrested diapause stage, is another temperature-dependent trait that exhibits differences between <emphasis>C. briggsae</emphasis> and other <emphasis>Caenorhabditis</emphasis> nematodes (M. Ailion and J. Thomas, personal communication; T. Inoue and P. Sternberg, personal communication). <emphasis>C. elegans</emphasis> when grown at temperature above 25&#x000B0;C forms dauers even when well-fed, and analysis of mutants show these temperatures to be a strong dauer-inducing condition. In contrast, well-fed <emphasis>C. briggsae</emphasis> does not form dauers at these temperatures and analysis of mutants have failed to detect temperature-induced dauer induction at temperatures above 25&#x000B0;C (T. Inoue, personal communication).</para>
+</sect2>
+<sect2 id="sec3_6">
+<title>Specification of neural asymmetry</title>
+<para>In multicellular organisms many cells and tissues exhibit morphological and functional asymmetries. <emphasis>C. elegans</emphasis> has been successfully used to study function of some of the genes that confer asymmetry on neural cells (<link linkend="bib22">Hobert et al., 2002</link><!--; PMID 12154364-->). Ortiz and colleagues (<link linkend="bib39">Ortiz et al., 2006</link><!--; PMID 16547101-->) have carried out a detailed study of the sequence and expression pattern of the guanylyl cyclase (<emphasis>gcy</emphasis>) genes in <emphasis>C. elegans</emphasis> and <emphasis>C. briggsae</emphasis>. A total of 23 (out of 33) <emphasis>C. briggsae gcy</emphasis> genes have clear one-to-one orthologs in <emphasis>C. elegans</emphasis> whereas the non-orthologous family members (10 in <emphasis>C. briggsae</emphasis> and 11 in <emphasis>C. elegans</emphasis>) appear to have arisen as a result of species-specific gene duplication events. The expression patterns of two <emphasis>gcy</emphasis> genes (<emphasis><ulink url="http://www.wormbase.org/db/get?name=gcy-4;class=Gene" role="_blank">gcy-4</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=gcy-19;class=Gene" role="_blank">gcy-19</ulink></emphasis>) in <emphasis>C. briggsae</emphasis> ASE neurons (<ulink url="http://www.wormbase.org/db/get?name=ASEL;class=Cell" role="_blank">ASEL</ulink> and <ulink url="http://www.wormbase.org/db/get?name=ASER;class=Cell" role="_blank">ASER</ulink>) show striking evolutionary differences that resulted from changes in <emphasis>cis</emphasis>-acting elements and <emphasis>trans</emphasis>-acting factors. Since the <emphasis>C. elegans</emphasis> ASE neurons exhibit functional left/right asymmetry and express distinct set of <emphasis>gcy</emphasis> genes, the mechanism controlling regulation of the ASE laterality appears to have evolved in <emphasis>C. briggsae</emphasis>.</para>
+</sect2>
+</sect1>
+<sect1 id="sec4">
+<title>Genetic approach to study functions of <emphasis>C. briggsae</emphasis> genes</title>
+<para>The developmental and behavioral differences between <emphasis>C. briggsae</emphasis> and <emphasis>C. elegans</emphasis> summarized above are just the beginning. With increasing number of laboratories focusing on <emphasis>briggsae-elegans</emphasis> comparative studies, many more differences are likely to be revealed in future. This argues for a need to develop resources and tools to facilitate experimental studies in <emphasis>C. briggsae</emphasis>.</para>
+<para>Given the availability of the <emphasis>C. briggsae</emphasis> genome sequence, RNAi could be one approach to examine the role of known genes in a given biological process. The success of the RNAi approach in <emphasis>C. elegans</emphasis> has made it a method of choice for large-scale functional studies in other nematodes. However, it should be pointed out that while RNAi-based screen is likely to identify some of the functional genes, factors such as weak RNAi penetrance, pleotropy and genetic redundancy might not reveal function of many genes. If there is a difference in the RNAi phenotype of a gene it is unclear if it is a quantitative difference in the use of that gene, or in its susceptibility to RNAi. In this respect, genetic approaches promise success. Studies of genetic mutations have revealed a spectrum of phenotypes associated with hypomorphic (loss-of-function), hypermorphic (gain-of-function) and neomorphic (novel) alleles. Achieving these types of results are not possible by using standard RNAi or gene knock-out screens. Highly evolving genes (e.g., GPCR family, sex-determination genes) may have acquired novel functions that can best be identified by isolating genetic mutations, then studying their phenotypes and genetic interactions. To facilitate forward genetic experiments in <emphasis>C. briggsae</emphasis>, mutations with visible phenotypes such as <ulink url="http://www.wormbase.org/db/get?name=Unc;class=Phenotype" role="_blank">Unc</ulink> (Uncoordinated), <ulink url="http://www.wormbase.org/db/get?name=Dpy;class=Phenotype" role="_blank">Dpy</ulink> (Dumpy) and <ulink url="http://www.wormbase.org/db/get?name=Rol;class=Phenotype" role="_blank">Rol</ulink> (Roller) have been isolated in different laboratories (B. Gupta, P. Sternberg and D. Baillie, unpublished; <link linkend="table3">Table 3</link>; <ulink url="http://wormlab.caltech.edu/briggsae" role="_blank">the <emphasis>C. briggsae</emphasis> website</ulink>). A number of these have been mapped leading to the definition of six independent linkage groups (see <link linkend="figure3">Figure 3</link>; <ulink url="http://wormlab.caltech.edu/briggsae" role="_blank">the <emphasis>C. briggsae</emphasis> website</ulink>). The linkage map will facilitate genetic analysis of the <emphasis>C. briggsae</emphasis> genes. Some of the studies that are currently ongoing involve development of the vulva (B. Gupta, unpublished), sex determination (<link linkend="bib20">Hill et al., 2006</link><!--; PMID 16580997-->), ray pattern formation (<link linkend="bib2">Baird et al., 2005</link><!--; PMID 15634358-->), and the excretory system features and salt tolerance behavior (H. Chamberlin, personal communication).</para>
+<table id="table3" frame="all" rules="all" cellpadding="0" cellspacing="0" width="100%">
+<title><emphasis role="bold">Table 3. The list of genetically characterized mutations in</emphasis> <emphasis><emphasis role="bold">C. briggsae</emphasis></emphasis></title>
+<tgroup cols="6">
+<colspec colname="c1" align="center" colwidth="1*"/>
+<colspec colname="c2" align="center" colwidth="0.7*"/>
+<colspec colname="c3" align="center" colwidth="0.4*"/>
+<colspec colname="c4" align="center" colwidth="1.1*"/>
+<colspec colname="c5" align="center" colwidth="0.7*"/>
+<colspec colname="c6" align="left" colwidth="2*"/>
+<thead>
+<row>
+<entry>Locus</entry>
+<entry>AKA</entry>
+<entry>LG</entry>
+<entry>Reference allele</entry>
+<entry>Alleles</entry>
+<entry>Phenotype</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry><emphasis>bli(sy5259)</emphasis></entry>
+<entry/>
+<entry>II</entry>
+<entry><emphasis>sy5259</emphasis></entry>
+<entry>1</entry>
+<entry>Blister along the entire body, symmetrical</entry>
+</row>
+<row>
+<entry><emphasis>Cbr-daf-3</emphasis></entry>
+<entry/>
+<entry>X</entry>
+<entry><emphasis>sy5417</emphasis></entry>
+<entry>1</entry>
+<entry>daf-d</entry>
+</row>
+<row>
+<entry><emphasis>Cbr-daf-4</emphasis></entry>
+<entry><emphasis>dau-1</emphasis></entry>
+<entry>III</entry>
+<entry><emphasis>sa973</emphasis></entry>
+<entry>1</entry>
+<entry>ts for small size and dauer (daf-c) at 27&#x000B0;C</entry>
+</row>
+<row>
+<entry><emphasis>dpy(<ulink url="http://www.wormbase.org/db/get?name=s1281;class=Variation" role="_blank">s1281</ulink>)</emphasis></entry>
+<entry><emphasis>cby-1</emphasis></entry>
+<entry>III</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=s1281;class=Variation" role="_blank">s1281</ulink></emphasis></entry>
+<entry>3</entry>
+<entry>Strong <ulink url="http://www.wormbase.org/db/get?name=Dpy;class=Phenotype" role="_blank">Dpy</ulink></entry>
+</row>
+<row>
+<entry><emphasis>dpy(s1282)</emphasis></entry>
+<entry><emphasis>cby-2</emphasis></entry>
+<entry>X</entry>
+<entry><emphasis>s1282</emphasis></entry>
+<entry>1</entry>
+<entry>Strong <ulink url="http://www.wormbase.org/db/get?name=Dpy;class=Phenotype" role="_blank">Dpy</ulink>, slightly paralyzed</entry>
+</row>
+<row>
+<entry><emphasis>dpy(sy5039)</emphasis></entry>
+<entry><emphasis>cby-3</emphasis></entry>
+<entry>X</entry>
+<entry><emphasis>sy5039</emphasis></entry>
+<entry>1</entry>
+<entry>Strong <ulink url="http://www.wormbase.org/db/get?name=Dpy;class=Phenotype" role="_blank">Dpy</ulink></entry>
+</row>
+<row>
+<entry><emphasis>dpy(s1272)</emphasis></entry>
+<entry><emphasis>cby-4</emphasis></entry>
+<entry>III</entry>
+<entry><emphasis>s1272</emphasis></entry>
+<entry>19</entry>
+<entry>Strong <ulink url="http://www.wormbase.org/db/get?name=Dpy;class=Phenotype" role="_blank">Dpy</ulink></entry>
+</row>
+<row>
+<entry><emphasis>dpy(s1286)</emphasis></entry>
+<entry><emphasis>cby-5</emphasis></entry>
+<entry>IV</entry>
+<entry><emphasis>s1286</emphasis></entry>
+<entry>1</entry>
+<entry>Medium <ulink url="http://www.wormbase.org/db/get?name=Dpy;class=Phenotype" role="_blank">Dpy</ulink></entry>
+</row>
+<row>
+<entry><emphasis>dpy(sy5027)</emphasis></entry>
+<entry><emphasis>cby-7</emphasis></entry>
+<entry>IV</entry>
+<entry><emphasis>sy5027</emphasis></entry>
+<entry>2</entry>
+<entry>Medium <ulink url="http://www.wormbase.org/db/get?name=Dpy;class=Phenotype" role="_blank">Dpy</ulink>, weak roller</entry>
+</row>
+<row>
+<entry><emphasis>dpy(sy5017)</emphasis></entry>
+<entry><emphasis>cby-8</emphasis></entry>
+<entry>IV</entry>
+<entry><emphasis>sy5017</emphasis></entry>
+<entry>4</entry>
+<entry>Medium <ulink url="http://www.wormbase.org/db/get?name=Dpy;class=Phenotype" role="_blank">Dpy</ulink>, slow moving</entry>
+</row>
+<row>
+<entry><emphasis>dpy(sy5048)</emphasis></entry>
+<entry><emphasis>cby-9; <ulink url="http://www.wormbase.org/db/get?name=rot-1;class=Gene" role="_blank">rot-1</ulink></emphasis></entry>
+<entry>X</entry>
+<entry><emphasis>sy5048</emphasis></entry>
+<entry>2</entry>
+<entry>Medium <ulink url="http://www.wormbase.org/db/get?name=Dpy;class=Phenotype" role="_blank">Dpy</ulink>, Adults are weak rollers</entry>
+</row>
+<row>
+<entry><emphasis>dpy(sy5064)</emphasis></entry>
+<entry><emphasis>cby-10</emphasis></entry>
+<entry>II</entry>
+<entry><emphasis>sy5064</emphasis></entry>
+<entry>2</entry>
+<entry>Strong <ulink url="http://www.wormbase.org/db/get?name=Dpy;class=Phenotype" role="_blank">Dpy</ulink>, very slow and often sick</entry>
+</row>
+<row>
+<entry><emphasis>dpy(sy5057)</emphasis></entry>
+<entry><emphasis>cby-12</emphasis></entry>
+<entry>X</entry>
+<entry><emphasis>sy5057</emphasis></entry>
+<entry>1</entry>
+<entry>Medium <ulink url="http://www.wormbase.org/db/get?name=Dpy;class=Phenotype" role="_blank">Dpy</ulink></entry>
+</row>
+<row>
+<entry><emphasis>dpy(sy5005)</emphasis></entry>
+<entry><emphasis>cby-13</emphasis></entry>
+<entry/>
+<entry><emphasis>sy5005</emphasis></entry>
+<entry>3</entry>
+<entry>Strong <ulink url="http://www.wormbase.org/db/get?name=Dpy;class=Phenotype" role="_blank">Dpy</ulink>, weakly <ulink url="http://www.wormbase.org/db/get?name=Egl;class=Phenotype" role="_blank">Egl</ulink>, weakly <ulink url="http://www.wormbase.org/db/get?name=Rol;class=Phenotype" role="_blank">Rol</ulink> when backing</entry>
+</row>
+<row>
+<entry><emphasis>dpy(sy5076)</emphasis></entry>
+<entry><emphasis>cby-14</emphasis></entry>
+<entry/>
+<entry><emphasis>sy5076</emphasis></entry>
+<entry>5</entry>
+<entry>Medium <ulink url="http://www.wormbase.org/db/get?name=Dpy;class=Phenotype" role="_blank">Dpy</ulink></entry>
+</row>
+<row>
+<entry><emphasis>dpy(sy5025)</emphasis></entry>
+<entry><emphasis>cby-16</emphasis></entry>
+<entry/>
+<entry><emphasis>sy5025</emphasis></entry>
+<entry>1</entry>
+<entry>Strong <ulink url="http://www.wormbase.org/db/get?name=Dpy;class=Phenotype" role="_blank">Dpy</ulink></entry>
+</row>
+<row>
+<entry><emphasis>dpy(sy5075)</emphasis></entry>
+<entry><emphasis>cby-17</emphasis></entry>
+<entry/>
+<entry><emphasis>sy5075</emphasis></entry>
+<entry>2</entry>
+<entry>Strong <ulink url="http://www.wormbase.org/db/get?name=Dpy;class=Phenotype" role="_blank">Dpy</ulink>, poor moving</entry>
+</row>
+<row>
+<entry><emphasis>dpy(sa971)</emphasis></entry>
+<entry/>
+<entry>X</entry>
+<entry><emphasis>sa971</emphasis></entry>
+<entry>1</entry>
+<entry>Strong <ulink url="http://www.wormbase.org/db/get?name=Dpy;class=Phenotype" role="_blank">Dpy</ulink></entry>
+</row>
+<row>
+<entry><emphasis>dpy(sa995)</emphasis></entry>
+<entry/>
+<entry>X</entry>
+<entry><emphasis>sa995</emphasis></entry>
+<entry>1</entry>
+<entry>Medium <ulink url="http://www.wormbase.org/db/get?name=Dpy;class=Phenotype" role="_blank">Dpy</ulink></entry>
+</row>
+<row>
+<entry><emphasis>dpy(sa996)</emphasis></entry>
+<entry/>
+<entry>IV</entry>
+<entry><emphasis>sa996</emphasis></entry>
+<entry>1</entry>
+<entry>Medium <ulink url="http://www.wormbase.org/db/get?name=Dpy;class=Phenotype" role="_blank">Dpy</ulink></entry>
+</row>
+<row>
+<entry><emphasis>dpy(nm3)</emphasis></entry>
+<entry/>
+<entry>X</entry>
+<entry><emphasis>nm3</emphasis></entry>
+<entry>1</entry>
+<entry>Strong <ulink url="http://www.wormbase.org/db/get?name=Dpy;class=Phenotype" role="_blank">Dpy</ulink></entry>
+</row>
+<row>
+<entry><emphasis>dpy(nm4)</emphasis></entry>
+<entry/>
+<entry>II</entry>
+<entry><emphasis>nm4</emphasis></entry>
+<entry>1</entry>
+<entry>Strong <ulink url="http://www.wormbase.org/db/get?name=Dpy;class=Phenotype" role="_blank">Dpy</ulink></entry>
+</row>
+<row>
+<entry><emphasis>lev(sy5436)</emphasis></entry>
+<entry/>
+<entry>I</entry>
+<entry><emphasis>sy5436</emphasis></entry>
+<entry>1</entry>
+<entry>Resistant to 1mM levamisole, <ulink url="http://www.wormbase.org/db/get?name=Unc;class=Phenotype" role="_blank">Unc</ulink></entry>
+</row>
+<row>
+<entry><emphasis>lev(sy5437)</emphasis></entry>
+<entry/>
+<entry>I</entry>
+<entry><emphasis>sy5437</emphasis></entry>
+<entry>3</entry>
+<entry>Resistant to 1mM levamisole, <ulink url="http://www.wormbase.org/db/get?name=Unc;class=Phenotype" role="_blank">Unc</ulink></entry>
+</row>
+<row>
+<entry><emphasis>lev(<ulink url="http://www.wormbase.org/db/get?name=sy5440;class=Variation" role="_blank">sy5440</ulink>)</emphasis></entry>
+<entry/>
+<entry>I</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=sy5440;class=Variation" role="_blank">sy5440</ulink></emphasis></entry>
+<entry>1</entry>
+<entry>Resistant to 1mM levamisole, <ulink url="http://www.wormbase.org/db/get?name=Unc;class=Phenotype" role="_blank">Unc</ulink></entry>
+</row>
+<row>
+<entry><emphasis>Cbr-lin-11</emphasis></entry>
+<entry/>
+<entry>I</entry>
+<entry><emphasis>sy5336</emphasis></entry>
+<entry>2</entry>
+<entry>Pvul, <ulink url="http://www.wormbase.org/db/get?name=Egl;class=Phenotype" role="_blank">Egl</ulink></entry>
+</row>
+<row>
+<entry><emphasis>lin(sy5216)</emphasis></entry>
+<entry/>
+<entry>IV</entry>
+<entry><emphasis>sy5216</emphasis></entry>
+<entry>2</entry>
+<entry>Multivulva</entry>
+</row>
+<row>
+<entry><emphasis>lin(sy5342)</emphasis></entry>
+<entry/>
+<entry>II</entry>
+<entry><emphasis>sy5342</emphasis></entry>
+<entry>2</entry>
+<entry>Multivulva</entry>
+</row>
+<row>
+<entry><emphasis>lon(sy5227)</emphasis></entry>
+<entry/>
+<entry>X</entry>
+<entry><emphasis>sy5227</emphasis></entry>
+<entry>1</entry>
+<entry>Thin and long, males mate poorly</entry>
+</row>
+<row>
+<entry><emphasis>Cbr-pry-1</emphasis></entry>
+<entry/>
+<entry>I</entry>
+<entry><emphasis>sy5353</emphasis></entry>
+<entry>2</entry>
+<entry>Multivulva</entry>
+</row>
+<row>
+<entry><emphasis>rol(sy5143)</emphasis></entry>
+<entry><emphasis>rot-2</emphasis></entry>
+<entry>X</entry>
+<entry><emphasis>sy5143</emphasis></entry>
+<entry>1</entry>
+<entry>Right-handed roller</entry>
+</row>
+<row>
+<entry><emphasis>rol(sy5412)</emphasis></entry>
+<entry/>
+<entry/>
+<entry><emphasis>sy5412</emphasis></entry>
+<entry>1</entry>
+<entry>All stages right-handed roller</entry>
+</row>
+<row>
+<entry><emphasis>Cbr-sma-6</emphasis></entry>
+<entry><emphasis>cby-15</emphasis></entry>
+<entry>II</entry>
+<entry><emphasis>sy5148</emphasis></entry>
+<entry>1</entry>
+<entry>Strong <ulink url="http://www.wormbase.org/db/get?name=Dpy;class=Phenotype" role="_blank">Dpy</ulink>, Small size, fairly active</entry>
+</row>
+<row>
+<entry><emphasis>sma(sa985)</emphasis></entry>
+<entry/>
+<entry/>
+<entry><emphasis>sa985</emphasis></entry>
+<entry>1</entry>
+<entry>Small size, active</entry>
+</row>
+<row>
+<entry><emphasis>sma(sy5002)</emphasis></entry>
+<entry/>
+<entry/>
+<entry><emphasis>sy5002</emphasis></entry>
+<entry>2</entry>
+<entry>Small size, active</entry>
+</row>
+<row>
+<entry><emphasis>sma(sy5159)</emphasis></entry>
+<entry/>
+<entry>X</entry>
+<entry><emphasis>sy5159</emphasis></entry>
+<entry/>
+<entry>Small size</entry>
+</row>
+<row>
+<entry><emphasis>unc(<ulink url="http://www.wormbase.org/db/get?name=s1270;class=Variation" role="_blank">s1270</ulink>)</emphasis></entry>
+<entry><emphasis>mip-1</emphasis></entry>
+<entry>IV</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=s1270;class=Variation" role="_blank">s1270</ulink></emphasis></entry>
+<entry>11</entry>
+<entry>Twicher, thin</entry>
+</row>
+<row>
+<entry><emphasis>unc(ge19)</emphasis></entry>
+<entry><emphasis>mip-3</emphasis></entry>
+<entry>IV</entry>
+<entry><emphasis>ge19</emphasis></entry>
+<entry>1</entry>
+<entry>Almost paralyzed, tends to coil</entry>
+</row>
+<row>
+<entry><emphasis>unc(sy5077)</emphasis></entry>
+<entry><emphasis>mip-5</emphasis></entry>
+<entry>X</entry>
+<entry><emphasis>sy5077</emphasis></entry>
+<entry>1</entry>
+<entry>almost paralyzed, kinker</entry>
+</row>
+<row>
+<entry><emphasis>unc(sy5019)</emphasis></entry>
+<entry><emphasis>mip-6</emphasis></entry>
+<entry>IV</entry>
+<entry><emphasis>sy5019</emphasis></entry>
+<entry>1</entry>
+<entry>A coiler, weak kinker, paralyzed</entry>
+</row>
+<row>
+<entry><emphasis>unc(sa984)</emphasis></entry>
+<entry><emphasis>mip-10</emphasis></entry>
+<entry>IV</entry>
+<entry><emphasis>sa984</emphasis></entry>
+<entry>1</entry>
+<entry>Slow moving, weak <ulink url="http://www.wormbase.org/db/get?name=Dpy;class=Phenotype" role="_blank">Dpy</ulink></entry>
+</row>
+<row>
+<entry><emphasis>Cbr-unc-4</emphasis></entry>
+<entry/>
+<entry>II</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=sy5341;class=Variation" role="_blank">sy5341</ulink></emphasis></entry>
+<entry>1</entry>
+<entry>Active, fails to back when touched</entry>
+</row>
+<row>
+<entry><emphasis>unc(sa972)</emphasis></entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=csp-1;class=Gene" role="_blank">csp-1</ulink></emphasis></entry>
+<entry>III</entry>
+<entry><emphasis>sa972</emphasis></entry>
+<entry>1</entry>
+<entry>Slow moving, defective in backward movement, slightly smaller than wild-type</entry>
+</row>
+<row>
+<entry><emphasis>unc(sa986)</emphasis></entry>
+<entry/>
+<entry>V</entry>
+<entry><emphasis>sa986</emphasis></entry>
+<entry>1</entry>
+<entry>kinker, slight curler</entry>
+</row>
+<row>
+<entry><emphasis>unc(sa987)</emphasis></entry>
+<entry/>
+<entry>IV</entry>
+<entry><emphasis>sa987</emphasis></entry>
+<entry>1</entry>
+<entry>Medium <ulink url="http://www.wormbase.org/db/get?name=Dpy;class=Phenotype" role="_blank">Dpy</ulink></entry>
+</row>
+<row>
+<entry><emphasis>unc(sa988)</emphasis></entry>
+<entry/>
+<entry>X</entry>
+<entry><emphasis>sa988</emphasis></entry>
+<entry>1</entry>
+<entry>Kinker, weak <ulink url="http://www.wormbase.org/db/get?name=Dpy;class=Phenotype" role="_blank">Dpy</ulink></entry>
+</row>
+<row>
+<entry><emphasis>unc(sa997)</emphasis></entry>
+<entry/>
+<entry>V</entry>
+<entry><emphasis>sa997</emphasis></entry>
+<entry>1</entry>
+<entry>Slightly thin, slow movement in adults</entry>
+</row>
+<row>
+<entry><emphasis>unc(sy5094)</emphasis></entry>
+<entry/>
+<entry>V</entry>
+<entry><emphasis>sy5094</emphasis></entry>
+<entry>1</entry>
+<entry>Kinker, curler</entry>
+</row>
+<row>
+<entry><emphasis>unc(sy5329)</emphasis></entry>
+<entry/>
+<entry>X</entry>
+<entry><emphasis>sy5329</emphasis></entry>
+<entry>1</entry>
+<entry>Medium <ulink url="http://www.wormbase.org/db/get?name=Unc;class=Phenotype" role="_blank">Unc</ulink>, poor in backward movement</entry>
+</row>
+<row>
+<entry><emphasis>unc(sy5422)</emphasis></entry>
+<entry/>
+<entry>III</entry>
+<entry><emphasis>sy5422</emphasis></entry>
+<entry>1</entry>
+<entry>Strong <ulink url="http://www.wormbase.org/db/get?name=Unc;class=Phenotype" role="_blank">Unc</ulink>, small size, does not form dauer</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</sect1>
+<sect1 id="sec5">
+<title>Tools for genetic studies</title>
+<para>Several tools are currently available to study evolutionary changes in the function of <emphasis>C. briggsae</emphasis> genes and carry out <emphasis>C. briggsae</emphasis>-<emphasis>C. elegans</emphasis> comparative studies.</para>
+<sect2 id="sec5_1">
+<title>RNAi</title>
+<para>Among different approaches to deliver double-stranded RNA (dsRNA) to intact <emphasis>C. elegans</emphasis> cells, RNAi by feeding (systemic RNAi) is a rapid method to study gene function (<link linkend="bib49">Timmons et al., 2001</link><!--; PMID 11223248-->). While the RNAi by microinjection technique has been successfully used to examine function of some of the genes in <emphasis>C. briggsae</emphasis> (<link linkend="bib47">Stothard and Pilgrim, 2003</link><!--; PMID-->), wild-type <emphasis>C. briggsae</emphasis> <ulink url="http://www.wormbase.org/db/get?name=AF16;class=Strain" role="_blank">AF16</ulink> is resistant to systemic RNAi. This is due to the lack of a functional <emphasis><ulink url="http://www.wormbase.org/db/get?name=sid-2;class=Gene" role="_blank">sid-2</ulink></emphasis> gene since the <ulink url="http://www.wormbase.org/db/get?name=AF16;class=Strain" role="_blank">AF16</ulink> worms expressing <emphasis>C. elegans</emphasis> <emphasis><ulink url="http://www.wormbase.org/db/get?name=sid-2;class=Gene" role="_blank">sid-2</ulink></emphasis> (<emphasis>Cel-sid-2</emphasis>) are susceptible to systemic RNAi (C. Hunter, personal communication). Hence, a <emphasis>C. briggsae</emphasis> transgenic strain carrying integrated <emphasis>Cel-sid-2</emphasis> array can be used in functional genomic studies.</para>
+<literallayout></literallayout>
+		<mediaobject id="figure3" xreflabel="Figure 3">
+			<imageobject>
+				<imagedata entityref="fig3" width="5in" align="center"/>
+			</imageobject>
+			<textobject>
+				<phrase>figure 3</phrase>
+			</textobject> &fig3legend;</mediaobject>
+</sect2>
+<sect2 id="sec5_2">
+<title>Mutant strains</title>
+<para>To facilitate genetic studies of <emphasis>C. briggsae</emphasis>, a large collection of mutant strains (more than 200) is freely available to the community (see <link linkend="table3">Table 3</link>). These strains not only allow genetic and molecular analysis of the involved loci but also serve as useful markers in phenotypic analyses and linkage mapping of new mutants. While most of these are curated in three different laboratories (B. Gupta, P. Sternberg and D. Baillie), some of the strains are available at the <ulink url="http://wormbase.org/db/gene/strain" role="_blank"><emphasis>Caenorhabditis</emphasis> Genetics Center</ulink> for centralized distribution. A comprehensive list of the mutants can be found at the <ulink url="http://wormlab.caltech.edu/briggsae" role="_blank"><emphasis>C. briggsae</emphasis> website</ulink>.</para>
+</sect2>
+<sect2 id="sec5_3">
+<title>Genetic linkage maps</title>
+<para>The phenotypic marker-based genetic linkage map is currently under construction (see <link linkend="figure3">Figure 3</link>; also see <ulink url="http://wormlab.caltech.edu/briggsae" role="_blank">the <emphasis>C. briggsae</emphasis> website</ulink>; B. Gupta, T. Inoue, RJ, A. Mah, D. Ballie and P. Sternberg, unpublished). This has involved standard 2 and 3-factor genetic mapping of mutations that exhibit visible phenotypes and cloning of some of the loci. In parallel, R. Waterston and colleagues (personal communication) are working to construct a single nucleotide polymorphism (SNP)-based <ulink url="http://snp.wustl.edu/snp-research/c-briggsae/" role="_blank">genetic linkage map of <emphasis>C. briggsae</emphasis></ulink>. This approach involves careful mapping of SNPs identified by partial sequencing of two <emphasis>C. briggsae</emphasis> isolates <ulink url="http://www.wormbase.org/db/get?name=HK104;class=Strain" role="_blank">HK104</ulink> and <ulink url="http://www.wormbase.org/db/get?name=VT847;class=Strain" role="_blank">VT847</ulink>. The current version of the SNP-based genetic linkage map (v3.1) is based on the 248 genotyped SNPs that are roughly equally distributed over the six chromosomes. Integration of the SNP-based and mutant-based maps, which is ongoing (B. Gupta and R. Miller, unpublished), will allow researchers to place their gene of interest on different linkage groups, examine synteny with <emphasis>C. elegans</emphasis>, carry out epistasis and genetic interaction experiments. This will facilitate cloning of the <emphasis>C. briggsae</emphasis> genes, in particular those with the novel mutant phenotypes i.e., ones for which there are no candidate genes proposed from our knowledge of <emphasis>C. elegans</emphasis>, and study evolutionary changes in gene function.</para>
+</sect2>
+<sect2 id="sec5_4">
+<title>Mos1 mutagenesis</title>
+<para>Mos1 is a <emphasis>Drosophila</emphasis> transposon that has been successfully used in <emphasis>C. elegans</emphasis> to generate mutations (<link linkend="bib3">Bessereau et al., 2001</link><!--; PMID 11544527-->). The advantage of this system is that it can be used as a sequence tag to rapidly identify the mutated gene by PCR and therefore circumvent the need for time-consuming genetic mapping and gene cloning experiments. Dr. Marie-Anne Felix has tested the applicability of the system in <emphasis>C. briggsae</emphasis> and successfully recovered mutations in three genes (<ulink url="http://snp.wustl.edu/snp-research/c-briggsae/mos-mutagenesis.html" role="_blank">http://snp.wustl.edu/snp-research/c-briggsae/mos-mutagenesis.html</ulink>). While the experimental protocol is in the early phase of development in <emphasis>C. briggsae</emphasis>, it has potential of rapidly isolating alleles of the <emphasis>C. elegans</emphasis> orthologs (M.-A. Felix, personal communication; B. Gupta, unpublished).</para>
+</sect2>
+<sect2 id="sec5_5">
+<title>Collection of wild isolates and recombinant inbred lines</title>
+<para>The wild populations of <emphasis>C. briggsae</emphasis> and <emphasis>C. elegans</emphasis> serve as useful resources for studies involving natural variation and ecology of the species. Comparison of the genomic DNA sequences in these strains has shown greater nucleotide diversity in <emphasis>C. briggsae</emphasis> compared to <emphasis>C. elegans</emphasis> (<link linkend="bib15">Graustein et al., 2002</link><!--; PMID 12019226-->; <link linkend="bib24">Jovelin et al., 2003</link><!--; PMID 12694294-->). Currently more than 60 wild isolates of <emphasis>C. briggsae</emphasis> are available, they have been collected from various regions of the world (S. Baird and M.-A. Felix, personal communications). These include 57 new isolates that are part of a recent study looking at the pattern of polymorphisms in 63 strains across the three continents (Asia, Europe and America; <link linkend="bib11">Cutter et al., 2006</link><!--; PMID-->). In addition, a large number of recombinant inbred lines (RILs) have been generated. These are derived from two sets of crosses between <ulink url="http://www.wormbase.org/db/get?name=AF16;class=Strain" role="_blank">AF16</ulink>, <ulink url="http://www.wormbase.org/db/get?name=HK104;class=Strain" role="_blank">HK104</ulink> and <ulink url="http://www.wormbase.org/db/get?name=VT847;class=Strain" role="_blank">VT847</ulink> (set 1: <ulink url="http://www.wormbase.org/db/get?name=AF16;class=Strain" role="_blank">AF16</ulink> and <ulink url="http://www.wormbase.org/db/get?name=HK104;class=Strain" role="_blank">HK104</ulink>, set 2: <ulink url="http://www.wormbase.org/db/get?name=AF16;class=Strain" role="_blank">AF16</ulink> and <ulink url="http://www.wormbase.org/db/get?name=VT847;class=Strain" role="_blank">VT847</ulink>; S. Baird, personal communication). Besides their use in mapping quantitative trait loci (QTLs), the RILs are playing key role in construction of the SNP-based genetic linkage map (R. Miller and S. Baird, personal communications).</para>
+</sect2>
+<sect2 id="sec5_6">
+<title>Genomic clones</title>
+<para>The genomic clones of <emphasis>C. briggsae</emphasis> (in the form of BAC and fosmid clones) were generated to construct a high resolution physical map to help assemble the sequenced genome. The BAC clones are available from the <ulink url="http://bacpac.chori.org/library.php?id=26" role="_blank">Children&apos;s Hospital Oakland Research Institute</ulink>.</para>
+</sect2>
+</sect1>
+<sect1 id="sec6">
+<title>Acknowledgements</title>
+<para>We are grateful to David Baillie, Marie-Anne Felix, Craig Hunter, Raymond Miller, Scott Baird, Helen Chamberlin, Michael Ailion, James Thomas, Takao Inoue and Robert Waterston for sharing their unpublished work. We thank David Baillie for sharing his ideas and reviewing the manuscript. B. Gupta is a tier II Canada Research Chair and supported by grants from NSERC and NIH. NC is supported by a grant from NSERC, a faculty startup fund from Simon Fraser University, and the Simon Fraser University President&apos;s Research Grants Fund. RJ is supported by NSERC and CIHR.</para>
+</sect1>
+<sect1>
+<title>Bibliography</title>
+&genbiolbriggsae_Refs;
+<para/>
+</sect1>
+</article>

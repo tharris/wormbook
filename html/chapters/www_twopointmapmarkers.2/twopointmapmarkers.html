@@ -1,0 +1,269 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Genetic mapping and manipulation: Chapter 2-Two-point mapping with genetic markers
+         		
+      </title>
+      <meta name="generator" content="DocBook XSL Stylesheets V1.67.2">
+      <link rel="start" href="#WMgm2pmch2_ArticleID" title="Genetic mapping and manipulation: Chapter 2-Two-point mapping with genetic markers&#xA;">
+      <link rel="next" href="#d0e47" title="1.&nbsp;The basics">
+      <script language="javascript" type="text/javascript" src="/js/history_list.js"></script>
+      <!--#include virtual="/ssi/header_article.html" -->
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<!--#include virtual="/ssi/boilerplate.html" -->
+	<div class="html_to_pdf_link">
+		<a href="twopointmapmarkers.pdf">Download PDF version</a>
+	</div>
+      <div class="article" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h1 class="title"><a name="WMgm2pmch2_ArticleID"></a>Genetic mapping and manipulation: Chapter 2-Two-point mapping with genetic markers<sup><a name="d0e8" href="#ftn.d0e8">*</a></sup>
+                     		
+                  </h1>
+               </div>
+               <div>
+                  <div class="author"><span class="author"><span class="firstname">David</span> <span class="surname">Fay<em><span class="remark">
+                                 					<sup><a name="d0e35" href="#ftn.d0e35">&sect;</a></sup>
+                                 				</span></em>
+                           			</span><br></span><span class="affiliation"><span class="address">Department of Molecular Biology, University of Wyoming, Laramie, Wyoming 82071-3944 USA
+                           <p></p></span></span></div>
+               </div>
+            </div>
+            <hr>
+         </div>
+         <div class="toc">
+
+	   <div id="section_locator"><a href="/toc_wormmethods.html">
+	         <b>This chapter is in WormBook section:</b><br />
+		       > WormMethods<br />>> Forward genetics and genetic mapping<br />>>> Genetic mapping and manipulation
+		</a></div><hr />
+<a href="http://www.wormbase.org/forums/index.php?board=290.0" title="Discuss WormBook" target="_blank"><font color="#9932cc"><b>View/Add Comments</b></font></a><br/>
+<IFRAME  SRC="http://tazendra.caltech.edu/~acedb/cgi-bin/wormbook_comment.cgi?name=2-point+mapping+with+genetic+markers" HEIGHT=50 WIDTH=180 FRAMEBORDER=0 SCROLLING=NO allowTransparency="true"></IFRAME>
+
+<hr />
+
+          <p><a style="color:blue;cursor:pointer" onclick="return kadabra('history');" title="click to expand ..." >Publication History</a></p>
+           <ul id="history" style="display:none">
+            <li><a href="/chapters/www_twopointmapmarkers/twopointmapmarkers.html">version 1</a></li>
+            <li><a href="/chapters/www_twopointmapmarkers.2/twopointmapmarkers.html">latest version</a></li>
+           </ul>
+
+            <p><b>Table of Contents</b></p>
+            <dl>
+               <dt><span class="sect1"><a href="#d0e47">1. The basics</a></span></dt>
+               <dt><span class="sect1"><a href="#d0e218">2. Calculating map distances</a></span></dt>
+               <dt><span class="sect1"><a href="#d0e520">3. Other considerations</a></span></dt>
+               <dt><span class="sect1"><a href="#d0e619">4. References</a></span></dt>
+            </dl>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e47"></a>1.&nbsp;The basics
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>The basics. Two-point mapping, wherein a mutation in the gene of interest is mapped against a marker mutation, is primarily
+               used to assign mutations to individual chromosomes. It can also give at least a rough indication of distance between the mutation
+               and the markers used. On the surface, the concept of two-point mapping to determine chromosomal linkage is relatively straightforward.
+               It can, however, be the source of some confusion when it comes to processing the actual data based on phenotypic frequencies
+               to accurately determine genetic distances. It is also worth noting that most researchers don't bother much with exhaustive
+               two-point mapping anymore. Once we've assigned our mutation to a linkage group, it's generally off to the races with three-point
+               and SNP mapping methods, as these will almost always be necessary to clone our genes anyway. It is worth noting, however,
+               that high-throughput methods for two-point mapping using SNPs (also see below) have been used successfully by some groups
+               and can provide a very precise map position for mutations. These methods may even (in some cases) allow for the molecular
+               cloning of mutations in the absence of further three-point or SNP mapping (<a href="#bib2">Wicks et al., 2001</a>; <a href="#bib1">Swan et al., 2002</a>). Nevertheless, the vast majority of researchers still use the standard tiered cloning progression for which two-point mapping
+               is simply step one.
+            </p>
+            <p>In carrying out two-point mapping, one can use either genetic or <a href="http://www.wormbook.org/chapters/www_SNPsintrotwopointmap/SNPsintrotwopointmap.html" target="_blank">SNP markers</a>. For the purpose of this section, we will cover the use of genetic markers, as the principals are the same and may be somewhat
+               easier to grasp. Often we will carry out traditional two-point mapping using strains that contain two adjacent chromosomal
+               markers, as the strains generated by these crosses can potentially be used later for three-point genetic mapping.
+            </p>
+            <p>The two most basic outcomes for two-point mapping are shown in (<a href="#figure1">Figure 1</a>). In outcome #1, the chromosomal position of the affected gene (mutation) happens to be on the same/homologous chromosome
+               as the markers being tested. In this case, the mutation is actually flanked by the markers to produce a reasonably well-balanced
+               strain. The genotypes of the progeny are indicated along with the ratios (or fractions) of their occurrences. Three genotypes
+               are generated (<span class="emphasis"><em><span class="bold"><strong>m/a b</strong></span></em></span>, <span class="emphasis"><em><span class="bold"><strong>m/m</strong></span></em></span>, <span class="emphasis"><em><span class="bold"><strong>a b/a b</strong></span></em></span>) with three corresponding phenotypes (wild type, M, A B). In this situation we essentially never see the appearance of the
+               triple mutant phenotype <span class="bold"><strong>MAB</strong></span>, as this would require an exceedingly rare double-recombination event to take place. Furthermore, if we were to pick animals
+               of phenotype <span class="bold"><strong>M</strong></span> and examine their self-progeny, we would never see <span class="bold"><strong>M A B</strong></span> animals. Likewise, <span class="bold"><strong>A B</strong></span> animals will also fail to segregate <span class="bold"><strong>M A B</strong></span> progeny. Finally, wild-type animals will always throw both <span class="bold"><strong>M</strong></span> and <span class="bold"><strong>A B</strong></span> along with wild-type animals. Seeing segregation patterns of this type tells us that <span class="emphasis"><em><span class="bold"><strong>m</strong></span></em></span> and <span class="emphasis"><em><span class="bold"><strong>a b</strong></span></em></span> reside on the same chromosome and also that <span class="emphasis"><em><span class="bold"><strong>m</strong></span></em></span> resides close to or in between the markers <span class="emphasis"><em><span class="bold"><strong>a</strong></span></em></span> and <span class="emphasis"><em><span class="bold"><strong>b</strong></span></em></span>. In the circumstance that the <span class="bold"><strong>M</strong></span> phenotype is lethal, this may be a useful strain for maintaining <span class="emphasis"><em><span class="bold"><strong>m</strong></span></em></span> as a balanced heterozygote. Namely, by isolating wild-type segregants at each generation, we can propagate the mutation with
+               relative ease. In addition, this strain can be used for <a href="http://www.wormbook.org/chapters/www_threepointmapmarkers/threepointmapmarkers.html" target="_blank">three-point mapping</a>.
+            </p>
+            <div class="literallayout">
+               <p></p>
+            </div>
+            <div class="mediaobject" align="center"><a name="figure1"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="360">
+<tr>
+  <td align="center"><p><a href="gm2pmfigch2-1.jpg"><img src="gm2pmfigch2-1_s.jpg" border="2" align="middle" alt="two-point mapping with genetic markers Figure 2-1"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 1.&nbsp;</b></p>
+               </div>
+            </div>
+            <p>In contrast, the situation depicted in scheme #2 shows <span class="emphasis"><em><span class="bold"><strong>m</strong></span></em></span> and <span class="emphasis"><em><span class="bold"><strong>a b</strong></span></em></span> on distinct chromosomes. In the first generation, we therefore already expect to see 1/16 of the progeny displaying the triple-mutant
+               phenotype <span class="bold"><strong>M A B</strong></span>. In addition, if we specifically pick <span class="bold"><strong>A B</strong></span> animals from this generation, 2/3 will throw <span class="bold"><strong>M A B</strong></span> progeny. If necessary, draw out all the possible genotypes and corresponding phenotypes to convince yourself that these numbers
+               are correct. Observing these kinds of segregation patterns indicates that the mutation and the markers are on different chromosomes.
+               Another possibility is that the mutation resides on one of the ends of the chromosome (see below). If necessary, these two
+               possibilities can usually be resolved by scoring more animals. <span class="emphasis"><em>In general, basing linkage designation on a small number of data points (fewer than 20) should be avoided.</em></span></p>
+            <p>The genetic patterns described above are for the ideal situation where there is no ambiguity in the determination of chromosomal
+               location. But what happens when the mutation lies to one side of the markers, perhaps at some distance? As shown in <a href="#figure2">Figure 2</a>, if the mutation lies to one side, a cross over may occur that will lead to the creation of the two recombinant chromosomes
+               shown. One recombinant chromosome will now contain all three mutations in cis, whereas the other is completely wild type.
+               Also shown are the genotypes occurring when such a recombinant chromosome is paired with one of the parental chromosomes.
+               Now we have a situation where an animal of phenotype <span class="bold"><strong>M</strong></span> or <span class="bold"><strong>AB</strong></span> can throw <span class="bold"><strong>MAB</strong></span> animals. In addition, a wild-type animal can now fail to throw both <span class="bold"><strong>M</strong></span> and <a href="http://www.wormbase.org/db/get?name=AB;class=Cell" target="_blank">AB</a> animals. In thinking about this, keep in mind that these "rare" recombinant chromosomes will usually - by chance - wind up
+               paired with one of the non-recombinant parental chromosomes in a fertilized zygote. Of course, the farther the mutation is
+               from the markers, the higher the proportion of recombinant chromosomes in the pool, and the greater the possibility that any
+               two recombinant chromosomes may end up together in a zygote.
+            </p>
+            <div class="literallayout">
+               <p></p>
+            </div>
+            <div class="mediaobject" align="center"><a name="figure2"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="270">
+<tr>
+  <td align="center"><p><a href="gm2pmfigch2-2.jpg"><img src="gm2pmfigch2-2_s.jpg" border="2" align="middle" alt="two-point mapping with genetic markers Figure 2-2"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 2.&nbsp;</b></p>
+               </div>
+            </div>
+            <p>In these situations we must be careful not to hastily conclude that the presence of such genotypes automatically means that
+               <span class="emphasis"><em><span class="bold"><strong>m</strong></span></em></span> and <span class="emphasis"><em><span class="bold"><strong>a b</strong></span></em></span> are on separate chromosomes. The question is more one of frequency. For example, if <span class="emphasis"><em><span class="bold"><strong>m</strong></span></em></span> and <span class="emphasis"><em><span class="bold"><strong>a b</strong></span></em></span> are 10.0 map units apart, this means that 10% of the gametes produced by the heterozygote will contain a chromosome that
+               experienced a recombination event in this region. Worms are of course diploid, and progeny therefore have a chance to receive
+               such a recombinant chromosome from either the sperm or the oocyte. Given this distance, the frequency with which progeny will
+               inherit two non-recombinant (also called parental) chromosomes is 0.9 <span class="symbol">&times;</span> 0.9 = 0.81 or 81%. The chance of progeny receiving two recombinant chromosomes will be quite small, in this case 0.1 <span class="symbol">&times;</span> 0.1 = 1%. However, the frequency of progeny receiving one recombinant and one non-recombinant chromosome is 100 - 81 - 1
+               = 18%. A significant fraction!
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e218"></a>2.&nbsp;Calculating map distances
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>How then do we determine if a mutation is really on the same chromosome as the markers, and if so, what is the distance? This
+               depends in part on how we are doing the mapping. Let us consider one specific example of mapping a sterile (<span class="emphasis"><em><span class="bold"><strong>ste</strong></span></em></span>) mutation relative to an <span class="emphasis"><em><span class="bold"><strong>unc</strong></span></em></span> mutation. In the example given in <a href="#figure3">Figure 3</a>, the <span class="emphasis"><em><span class="bold"><strong>ste</strong></span></em></span> and <span class="emphasis"><em><span class="bold"><strong>unc</strong></span></em></span> mutations are 10.0 map units apart. Again, this means that 90% of the gamete chromosomes will be of the parental type and
+               10% will be recombinant. As just stated, the chance of a progeny receiving two non-recombinant chromosomes will be 81% (<a href="#figure3">Figure 3</a>A), two recombinant chromosomes will be 1% (<a href="#figure3">Figure 3</a>B), and one recombinant plus one non-recombinant chromosome will be 18% (<a href="#figure3">Figure 3</a>C).
+            </p>
+            <div class="mediaobject" align="center"><a name="figure3"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="495">
+<tr>
+  <td align="center"><p><a href="gm2pmfigch2-3.jpg"><img src="gm2pmfigch2-3_s.jpg" border="2" align="middle" alt="two-point mapping with genetic markers Figure 2-3"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 3.&nbsp;</b></p>
+               </div>
+            </div>
+            <p>Of the recombinant chromosomes, one-half (5% of total chromosomes) will be <span class="emphasis"><em><span class="bold"><strong>ste unc</strong></span></em></span> and one-half (5%) will be wild type (+ +). Each recombinant chromosome has an equal chance of pairing with either of the
+               two parental chromosomes. Therefore, for the animals that contain one recombinant and one non-recombinant chromosome, one-fourth
+               will be <span class="emphasis"><em><span class="bold"><strong>ste unc/unc</strong></span></em></span>, one-fourth <span class="emphasis"><em><span class="bold"><strong>ste unc/ste</strong></span></em></span>, one-fourth +/<span class="emphasis"><em><span class="bold"><strong>unc</strong></span></em></span>, and one-fourth +/<span class="emphasis"><em><span class="bold"><strong>ste</strong></span></em></span>. These genotypes will therefore be present at a frequency of 0.25 <span class="symbol">&times;</span> 0.18 = 0.045 or 4.5% each (<a href="#figure3">Figure 3</a>C).
+            </p>
+            <p>Now consider mapping in the following way. From plates where the parent is <span class="emphasis"><em><span class="bold"><strong>ste/unc</strong></span></em></span>, we clone <span class="bold"><strong>Unc</strong></span> progeny. We want to determine the frequency at which such <span class="bold"><strong>Unc</strong></span> animals throw <span class="bold"><strong>Ste Unc</strong></span> versus <span class="bold"><strong>Unc</strong></span> only progeny. We therefore look for the presence of <span class="bold"><strong>Ste Unc</strong></span> animals in the next generation. We know that there will be two genotypic possibilities for animals with an <span class="bold"><strong>Unc</strong></span> phenotype, <span class="emphasis"><em><span class="bold"><strong>unc/unc</strong></span></em></span>, where both chromosomes are parental, and <span class="emphasis"><em><span class="bold"><strong>ste unc/unc</strong></span></em></span>, where we have one of each. The percentage of animals with the <span class="emphasis"><em><span class="bold"><strong>unc/unc</strong></span></em></span> genotype is 0.81 <span class="symbol">&times;</span> 0.25 = 0.2025 (20.25%), as 81% will have only parental chromosomes and of these, one-fourth will receive two <span class="emphasis"><em><span class="bold"><strong>unc</strong></span></em></span> chromosomes. The percentage with a <span class="emphasis"><em><span class="bold"><strong>ste unc/unc</strong></span></em></span> genotype will be 0.18 <span class="symbol">&times;</span> 0.25 = 0.045 (4.5%), as 18% of progeny will have one recombinant and one parental chromosome and there is a 25% chance of
+               receiving both the <span class="emphasis"><em><span class="bold"><strong>ste unc</strong></span></em></span> and the <span class="emphasis"><em><span class="bold"><strong>unc</strong></span></em></span> chromosome (0.5 <span class="symbol">&times;</span> 0.5 = 0.25). The overall percentage of animals with an <span class="bold"><strong>Unc</strong></span> phenotype will therefore be 4.5 + 20.25 = 24.75%. Finally, the percentage of <span class="bold"><strong>Unc</strong></span> animals with a <span class="emphasis"><em><span class="bold"><strong>ste unc/unc</strong></span></em></span> genotype will be 4.5/24.75 = 18.2%.
+            </p>
+            <p>The above determination tells us that if our mutation and marker(s) are 10.0 map units apart, we should expect to see about
+               18% of the cloned <span class="bold"><strong>Uncs</strong></span> throwing <span class="bold"><strong>Ste Unc</strong></span> progeny. Similar calculations can be carried out for various genetic distances. To facilitate these determinations, the formula
+               (1-p)(1-p)/4 (where p is the map distance expressed as a fraction; e.g., 10 map units = 0.1) can be used to calculate the
+               predicted fraction of <span class="emphasis"><em><span class="bold"><strong>unc/unc</strong></span></em></span> animals, whereas the fraction of <span class="emphasis"><em><span class="bold"><strong>ste unc/unc</strong></span></em></span> animals can be calculated using the formula 2p(1-p)/4. The total sum of these two products will give the fraction of all
+               <span class="bold"><strong>Unc</strong></span> animals, and the relative percentage of recombinant genotypes (<span class="emphasis"><em><span class="bold"><strong>ste unc/unc</strong></span></em></span>) can be obtained by dividing the fraction of <span class="emphasis"><em><span class="bold"><strong>ste unc/unc</strong></span></em></span> animals from the total sum. For example, if the marker and mutation are 1.0 map unit apart, we will see <span class="bold"><strong>Ste Unc</strong></span> animals appearing from ~ 2% of the cloned <span class="bold"><strong>Uncs</strong></span>. At 5.0 map units apart, it will be ~ 9.5%; at 25.0 map units, ~40%. The general rule is that when mapping by this strategy,
+               the frequency of animals containing the recombinant chromosome will be about double that of the map distance between the marker
+               and the mutation. As the distance between the mutation and marker increases, this frequency decreases.
+            </p>
+            <p>Interestingly, by the time we get to 50.0 map units, 67% or 2/3 of <span class="bold"><strong>Unc</strong></span> animals will throw <span class="bold"><strong>Ste Unc</strong></span> progeny. This latter number should sound familiar; it's the same percentage you would get if the <span class="emphasis"><em><span class="bold"><strong>ste</strong></span></em></span> and <span class="emphasis"><em><span class="bold"><strong>unc</strong></span></em></span> mutations were on separate chromosomes. <span class="bold"><strong>In fact, at 50.0 map units or greater, two mutations will appear to be unlinked</strong></span>. This usually is not an issue because we tend to carry out two-point mapping with markers at the chromosome center, guaranteeing
+               distances no greater than about 25.0 map units.
+            </p>
+            <p>There are often multiple ways to carry out two-point mapping using the same set of markers. For example, in the previously
+               described cross we could have picked wild-type rather than <span class="bold"><strong>Unc</strong></span> animals and looked for the absence of either <span class="bold"><strong>Unc</strong></span> or <span class="bold"><strong>Ste</strong></span> animals in their progeny, signifying a + + or wild-type recombinant chromosome. If the marker and mutation are 10.0 map units
+               apart, we will predict to have 0.81 <span class="symbol">&times;</span> 0.5 = 40.5% of animals with an <span class="emphasis"><em><span class="bold"><strong>unc/ste genotype</strong></span></em></span>. We will also have 0.18 <span class="symbol">&times;</span> 0.5 = 9% of animals with either an <span class="emphasis"><em><span class="bold"><strong>unc</strong></span></em></span>/+ or <span class="emphasis"><em><span class="bold"><strong>ste</strong></span></em></span>/+ genotype (4.5% each). Thus we predict that 9.0/49.5 = 18.2% of the wild-type animals we pick will fail to segregate either
+               <span class="bold"><strong>Unc</strong></span> or <span class="bold"><strong>Ste</strong></span> progeny. These numbers are identical to those previously calculated for picking <span class="bold"><strong>Unc</strong></span> progeny and looking for <span class="bold"><strong>Ste Unc</strong></span> in the next generation.
+            </p>
+            <p>Consider this final case however. Imagine you are trying to map an embryonic lethal mutation (<span class="emphasis"><em><span class="bold"><strong>emb</strong></span></em></span>) relative to a known <span class="emphasis"><em><span class="bold"><strong>unc</strong></span></em></span>. The easiest way to do this would be to pick wild-type animals from an <span class="emphasis"><em><span class="bold"><strong>emb/unc</strong></span></em></span> parent and then look for the absence of <span class="bold"><strong>Unc</strong></span> animals in the progeny (embryonic lethals are usually difficult to score directly by their plate phenotype). If the <span class="emphasis"><em><span class="bold"><strong>unc</strong></span></em></span> and <span class="emphasis"><em><span class="bold"><strong>emb</strong></span></em></span> are on the same chromosome and close, very few phenotypically wild-type animals will fail to throw <span class="bold"><strong>Unc</strong></span> (as well as <span class="bold"><strong>Emb</strong></span>) progeny. To calculate the map distance, however, we must realize that using our methods, <span class="emphasis"><em><span class="bold"><strong>unc</strong></span></em></span>/+ animals will not be among those counted as "recombinants" (those wild-type animals that fail to throw Uncs). Thus, if the
+               distance between the <span class="emphasis"><em><span class="bold"><strong>unc</strong></span></em></span> and <span class="emphasis"><em><span class="bold"><strong>emb</strong></span></em></span> is 10.0 map units, we predict to have 0.81 <span class="symbol">&times;</span> 0.5 = 40.5% animals of genotype <span class="emphasis"><em><span class="bold"><strong>emb/unc</strong></span></em></span>. We will also have 0.18 <span class="symbol">&times;</span> 0.25 = 4.5% of animals with an <span class="emphasis"><em><span class="bold"><strong>emb</strong></span></em></span>/+ genotype and 4.5% with an <span class="emphasis"><em><span class="bold"><strong>unc</strong></span></em></span>/+ genotype. Therefore, when picking among the phenotypically wild-type animals, the frequency of <span class="emphasis"><em><span class="bold"><strong>emb</strong></span></em></span>/+ animals will be 4.5/(40.5+4.5+4.5) = 9.1% (and not 18.2%) of the total. <span class="bold"><strong>Being aware of these factors and, as always, drawing out the cross carefully will prevent interpretive errors.</strong></span> For a discussion of additional two-point mapping strategies as well as potentially useful formulas for correlating map distances
+               with phenotypes, see <a href="#bib3">Hodgkin (1999)</a>.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e520"></a>3.&nbsp;Other considerations
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>A question of strategy: To map all chromosomes at once or to do so sequentially? This may depend on several factors such as
+               time constraints and competitive pressures. Everything being equal, mapping sequentially is the most efficient allocation
+               of time because once one has positively identified a chromosomal location, one need not check all the other chromosomes. In
+               practice though, we often want to map our mutants as quickly as possible and will test multiple chromosomes at once. In addition,
+               the presence of clear negative data can strengthen conclusions when the mutation lies at some distance from the markers. Along
+               these lines, it is worth noting that a number of strains containing markers for multiple chromosomes have been generated for
+               the express purpose of enhancing mapping efficiency. For example, strain MT464 contains the markers <span class="emphasis"><em><span class="bold"><strong><a href="http://www.wormbase.org/db/gene/gene?name=unc-5" target="_blank">unc-5</a></strong></span></em></span>, <span class="emphasis"><em><span class="bold"><strong><a href="http://www.wormbase.org/db/gene/gene?name=dpy-11" target="_blank">dpy-11</a></strong></span></em></span>, and <span class="emphasis"><em><span class="bold"><strong><a href="http://www.wormbase.org/db/gene/gene?name=lon-2" target="_blank">lon-2</a></strong></span></em></span>, thereby permitting the simultaneous mapping of chromosomes IV, V, and X, respectively.
+            </p>
+            <p>It is also worth pointing out that <span class="emphasis"><em>an observant experimentalist can often get a good sneak peak at what the three-point data will ultimately confirm during the
+                     two-point mapping process!</em></span> In fact, this is another good reason to carry out two-point mapping using adjacent markers. To reiterate, we already know
+               that if the mutation (<span class="emphasis"><em><span class="bold"><strong>m</strong></span></em></span>) happens to be on the same chromosome as the markers <span class="emphasis"><em><span class="bold"><strong>a</strong></span></em></span> and <span class="emphasis"><em><span class="bold"><strong>b</strong></span></em></span>, then the large majority of <span class="bold"><strong>M</strong></span> animals coming from the heterozygous parent (<span class="emphasis"><em><span class="bold"><strong>m/a b</strong></span></em></span>) will fail to throw <span class="bold"><strong>A B</strong></span> progeny. Because of recombination, however, you may observe a small percentage of <span class="bold"><strong>M</strong></span> animals throwing either <span class="bold"><strong>M A, M B</strong></span>, or <span class="bold"><strong>M A B</strong></span> animals. For example, if you happened to observe three plates (out of 25) with <span class="bold"><strong>M A B</strong></span> animals and one plate with <span class="bold"><strong>M A</strong></span> animals, that would suggest that <span class="emphasis"><em><span class="bold"><strong>m</strong></span></em></span> lies to right of <span class="emphasis"><em><span class="bold"><strong>b</strong></span></em></span> and is at some distance from the markers. In contrast, if you were to only observe several plates with <span class="bold"><strong>M A</strong></span> animals, <span class="emphasis"><em><span class="bold"><strong>m</strong></span></em></span> would be likely to lie to the right of <span class="emphasis"><em><span class="bold"><strong>b</strong></span></em></span> but close to the markers (or perhaps between them and just to the left of <span class="emphasis"><em><span class="bold"><strong>b</strong></span></em></span>). If <span class="bold"><strong>M A B</strong></span> animals are never observed but there are a small percentage of <span class="bold"><strong>M A</strong></span> and <span class="bold"><strong>M B</strong></span> animals, then <span class="emphasis"><em><span class="bold"><strong>m</strong></span></em></span> must lie between the markers. If this reasoning is not yet clear, read over the three-point mapping chapter and then come
+               back and draw this out to confirm the predictions. This bonus gift of two-point mapping can be a real time saver.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e619"></a>4.&nbsp;References
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <div class="bibliography">
+               <div class="bibliomixed"><a name="bib1"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Swan, K.A., Curtis, D.E., McKusick, K.B., Voinov, A.V., Mapa, F.A., and Cancilla, M.R. (2002). High-throughput gene mapping
+                        in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Genome Res. <span class="emphasis"><em>7</em></span>, 1100&#8211;1105.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12097347&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1101/gr.208902" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib2"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Wicks, S.R., Yeh, R.T., Gish, W.R., Waterston, R.H., and Plasterk, R.H. (2001). Rapid gene mapping in <span class="emphasis"><em>Caenorhabditis elegans</em></span> using a high density polymorphism map. Nat. Genet. <span class="emphasis"><em>2</em></span>, 160&#8211;164.</span>
+                     <a href="http://dx.doi.org/10.1038/88878" target="_blank">Article</a>
+                     	
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib3"></a><p class="bibliomixed">
+                     		<span class="bibliomisc">Hodgkin, J. (1999). Conventional genetics. In: <span class="emphasis"><em>C. elegans: A Practical Approach</em></span>. I.A. Hope, ed. (Oxford University Press), pp. 245&#8211;270.</span>
+                     	
+                  </p>
+               </div>
+            </div>
+            <p></p>
+         </div>
+         <div class="footnotes"><br><hr width="100" align="left">
+            <div class="footnote">
+               <p><sup><a name="ftn.d0e8" href="#d0e8">*</a></sup>Edited by Victor Ambros. Last revised April 30, 2005. Published June 14, 2006. This chapter should be cited as: Fay, D. Genetic
+                  mapping and manipulation: Chapter 2-Two-point mapping with genetic markers (June 14, 2006), <span class="emphasis"><em>WormBook</em></span>, ed. The <span class="emphasis"><em>C. elegans</em></span> Research Community, WormBook, doi/10.1895/wormbook.1.91.2, <a href="http://www.wormbook.org" target="_top">http://www.wormbook.org</a>.
+               </p>
+               <p><span class="bold"><strong>Copyright:</strong></span> &copy; 2006 David Fay. This is an open-access article distributed under the terms of the Creative Commons Attribution License,
+                  which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are
+                  credited.
+               </p>
+            </div>
+            <div class="footnote">
+               <p><sup><a name="ftn.d0e35" href="#d0e35">&sect;</a></sup>To whom correspondence should be addressed. E-mail: <a href="mailto:davidfay@uwyo.edu" target="_top">davidfay@uwyo.edu</a>
+                  						
+               </p>
+			   <p><img src="somerights20.gif" alt="Creative Commons License" align="middle" border="0"> All WormBook content, except where otherwise noted, is licensed under a <a href="http://creativecommons.org/licenses/by/2.5/" title="Creative Commons Attribution License" target="_blank">Creative Commons Attribution License</a>.</p>
+            </div>
+         </div>
+      </div>
+   <!--#include virtual="/ssi/footer.html" --></body>
+</html>
+

@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY fig1 SYSTEM 'maternalfig1.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'maternalfig1leg.xml'>
+<!ENTITY fig2 SYSTEM 'maternalfig2.jpg' NDATA JPG>
+<!ENTITY fig2legend SYSTEM 'maternalfig2leg.xml'>
+<!ENTITY fig3 SYSTEM 'maternalfig3.jpg' NDATA JPG>
+<!ENTITY fig3legend SYSTEM 'maternalfig3leg.xml'>
+<!ENTITY maternal_Refs SYSTEM 'maternalrefs.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="maternal_ArticleID">
+    <articleinfo>
+        <!--see DocBook's authorgroup element -->
+         <!--Changes in PDF style sheet
+         <xsl:attribute-set name="normal.para.spacing">
+                  <xsl:attribute name="space-before.optimum">1.3em</xsl:attribute>
+                  <xsl:attribute name="space-before.minimum">1.2em</xsl:attribute>
+                  <xsl:attribute name="space-before.maximum">1.4em</xsl:attribute>
+                  <xsl:attribute name="text-indent">24pt</xsl:attribute> 
+                </xsl:attribute-set>
+                
+                <xsl:attribute-set name="table.cell.padding">
+                  <xsl:attribute name="padding-left">4pt</xsl:attribute>
+                  <xsl:attribute name="padding-right">4pt</xsl:attribute>
+                  <xsl:attribute name="padding-top">6pt</xsl:attribute>
+                  <xsl:attribute name="padding-bottom">2pt</xsl:attribute>
+        </xsl:attribute-set> -->
+        
+        <!-- Created to remove first line indent of footnote, modified from fo/block.xsl START
+<xsl:attribute-set name="footnote.simpara.spacing">
+  <xsl:attribute name="space-before.optimum">1.3em</xsl:attribute>
+  <xsl:attribute name="space-before.minimum">1.2em</xsl:attribute>
+  <xsl:attribute name="space-before.maximum">1.4em</xsl:attribute>
+  <xsl:attribute name="text-indent">0pt</xsl:attribute> 
+</xsl:attribute-set>
+<xsl:template match="footnote/simpara">
+  <fo:block xsl:use-attribute-sets="footnote.simpara.spacing">
+    <xsl:apply-templates/>
+  </fo:block>
+</xsl:template>
+remove first line indent of footnote, modified from fo/block.xsl END -->
+
+        <title>Translational control of maternal RNAs<footnote><para>Edited by James R. Priess and Geraldine Seydoux. Last revised November 07, 2005. Published November 10, 2005. This chapter should be cited as: Evans, T.C. and Hunter, C.P. Translational control of maternal RNAs (November 10, 2005), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.34.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+		<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2005 Thomas C. Evans and Craig P. Hunter. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+</footnote></title>
+        <!--		<revhistory>
+			<revision>
+				<revnumber>1.0</revnumber>
+				<date>Last revised 3/4/05</date>
+			</revision>
+		</revhistory> 
+-->
+        <author>
+        <firstname>Thomas C.</firstname>
+            <surname>Evans<remark><footnote><para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:tom.evans@uchsc.edu">tom.evans@uchsc.edu</ulink> or <ulink url="mailto:hunter@mcb.harvard.edu">hunter@mcb.harvard.edu</ulink></para></footnote></remark></surname>
+            <affiliation>
+            <address>Department of Cell and Developmental Biology, University of Colorado School of Medicine, Aurora, CO 80045 USA</address>
+                </affiliation>
+                </author>
+                <author>
+            <firstname>Craig P.</firstname>
+            <surname>Hunter<superscript>&#x000A7;</superscript></surname>
+            <affiliation>
+            <address>Department of Molecular and Cellular Biology, Harvard University, Cambridge, MA 02138 USA</address>
+                </affiliation>
+        </author>
+    </articleinfo>
+    <abstract>
+        <title><emphasis role="bold">Abstract</emphasis></title>
+        <para><emphasis role="bold">Early development of many species depends on the temporal and spatial control of maternal gene products. This review discusses the control of maternal mRNAs that encode
+            regulators of</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">embryogenesis. In the</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">embryo, maternal mRNA regulation is crucial to the patterning of early cell fates. Translational control of key mRNAs spatially organizes cell signaling
+            pathways, localizes transcription factor activities, and controls germ cell precursor
+            development. From the few mRNAs studied thus far, some themes are beginning to emerge.
+            Control of maternal mRNA translation begins in the hermaphrodite germ line. Distinct
+            regulatory systems keep mRNAs silent during different stages of oogenesis, and lead to
+            precise temporal and spatial patterns of translation in the embryo. In the embryo, cell
+            polarity factors control the localization of translational regulators. Each maternal
+            mRNA contains multiple elements in its 3' untranslated region (3' UTR) that specify the
+            timing and localization of translation. A relatively small number of RNA-binding
+            proteins likely control many mRNAs through these 3' UTR elements. Therefore, the
+            combination of RNA elements and the regulatory complexes recruited to them specify
+            unique patterns of translation for different mRNAs. The mechanisms of translational
+            control are only beginning to be explored, but are likely to regulate diverse
+            developmental and cellular events in metazoans.</emphasis></para>
+    </abstract>
+    
+    <sect1>
+        <title>Introduction</title>
+        <para>Early development of <emphasis>C. elegans</emphasis> embryos requires the localization
+            of maternal gene products to specific cells at specific times. Three general mechanisms
+            have been described for localizing maternal regulators in the embryo; directed movement
+            or local trapping of maternal proteins, localized stabilization of maternal proteins,
+            and localized translation and stability of maternal mRNAs (see <ulink url="http://www.wormbook.org/chapters/www_asymcelldiv/asymcelldiv.html" role="_blank">Asymmetric cell division and axis formation in the embryo</ulink>).
+            This chapter reviews the translational regulation of maternal mRNAs that encode key
+            regulators of early embryonic cell fates. We discuss how a few well-studied mRNAs are
+            controlled, and how their control is connected to germ cell development and early
+            embryonic polarity. We define "translational control" loosely, as control of protein
+            accumulation by elements within the mRNA, even though the translation process itself may
+            not be the primary target of regulation. In eukaryotes, translational control factors
+            regulate a diverse array of developmental and cellular processes, thus studies of <emphasis>C. elegans</emphasis> maternal mRNAs will likely illustrate general mechanisms and principles (<link linkend="bib20">Kuersten and Goodwin, 2003</link><!-- PMID 12897774 -->; <link linkend="bib44">Wilkie et al., 2003</link><!-- PMID 12713901 -->).</para>
+    </sect1>
+    <sect1>
+        <title>Control of maternal mRNA translation begins in the hermaphrodite germ line</title>
+        <para>Most maternal mRNAs destined for the embryo are transcribed by germ cell nuclei in
+            mitosis or early stages of meiosis. These germ nuclei not only make maternal mRNAs but
+            must also proceed through meiosis and oogenesis (see <ulink url="http://www.wormbook.org/chapters/www_introgermline/introgermline.html" role="_blank">Introduction to the germ line</ulink>). Perhaps it
+            is not surprising then that the translation of many maternal mRNAs is repressed during
+            female gamete development (<link linkend="table1">Table 1</link>). This tight regulation is likely necessary to
+            prevent interference with oocyte development and is essential to allow specific patterns
+            of protein accumulation to arise in the embryo. We limit our discussion to mRNAs that
+            function in the embryo. For discussion of the regulation of other classes of germline RNAs, see <link linkend="bib20">Kuersten and Goodwin (2003<!-- PMID 12897774 -->)</link>.</para>
+        <sect2>
+            <title>Control of <ulink url="http://www.wormbase.org/db/get?name=pal-1;class=Gene" role="_blank"><emphasis>pal-1</emphasis></ulink> mRNA and its regulators during oogenesis </title>
+            <para><ulink url="http://www.wormbase.org/db/seq/protein?name=PAL-1;class=protein" role="_blank">PAL-1</ulink> is the <emphasis>C. elegans</emphasis> caudal homolog and patterns posterior
+                embryonic development (<link linkend="bib11">Edgar et al., 2001</link><!-- PMID 11133155 -->; <link linkend="bib17">Hunter and Kenyon, 1996</link><!-- PMID 8861906 -->). Translation of maternal <emphasis><ulink url="http://www.wormbase.org/db/get?name=pal-1;class=Gene" role="_blank">pal-1</ulink></emphasis> mRNA is repressed
+                in the germ line and early embryo until the four-cell stage when <ulink url="http://www.wormbase.org/db/seq/protein?name=PAL-1;class=protein" role="_blank">PAL-1</ulink> protein
+                accumulates rapidly in the two posterior cells (<link linkend="bib17">Hunter and Kenyon, 1996</link><!-- PMID 8861906 -->). In the germ line, the KH domain proteins <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-3;class=protein" role="_blank">MEX-3</ulink> repress <ulink url="http://www.wormbase.org/db/seq/protein?name=PAL-1;class=protein" role="_blank">PAL-1</ulink>
+                translation (<link linkend="bib29">Mootz et al., 2004</link><!-- PMID 15201219 -->). <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> has been implicated in the
+                regulation of many maternal mRNAs while <emphasis><ulink url="http://www.wormbase.org/db/get?name=pal-1;class=Gene" role="_blank">pal-1</ulink></emphasis> remains the only
+                known target of <ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-3;class=protein" role="_blank">MEX-3</ulink> (see <ulink url="http://www.wormbook.org/chapters/www_RNAbindingproteins/RNAbindingproteins.html" role="_blank">RNA-binding proteins</ulink>). These two proteins are
+                reciprocally localized in the germ line; <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> is restricted to early stage meiotic
+                germ cells of the distal germ line, and <ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-3;class=protein" role="_blank">MEX-3</ulink> is restricted to differentiating
+                oocytes of the proximal germ line (<link linkend="bib10">Draper et al., 1996</link><!-- PMID 8861905 -->; <link linkend="bib19">Jones et al., 1996</link><!-- PMID 8948583 -->). Therefore, repression of <emphasis><ulink url="http://www.wormbase.org/db/get?name=pal-1;class=Gene" role="_blank">pal-1</ulink></emphasis> must be
+                transferred from general <emphasis><ulink url="http://www.wormbase.org/db/get?name=gld-1;class=Gene" role="_blank">gld-1</ulink></emphasis> control to more specific
+                <emphasis><ulink url="http://www.wormbase.org/db/get?name=mex-3;class=Gene" role="_blank">mex-3</ulink></emphasis> control during oogenesis.</para>
+            <para><ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-3;class=protein" role="_blank">MEX-3</ulink> function via the <emphasis><ulink url="http://www.wormbase.org/db/get?name=pal-1;class=Gene" role="_blank">pal-1</ulink></emphasis> 3' UTR to repress
+                translation (<link linkend="bib17">Hunter and Kenyon, 1996</link><!-- PMID 8861906 -->; <link linkend="bib29">Mootz et al., 2004</link><!-- PMID 15201219 -->). Two broad regions of the 3' UTR effect repression in the distal germ line
+                and one of these contains an element referred to as the germline repression element
+                (GRE). The GRE efficiently represses translation in the distal germ line and this
+                repression requires <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink>, which also directly or indirectly binds to the GRE (<link linkend="bib29">Mootz et al., 2004</link><!-- PMID 15201219 -->). Interestingly, RNAi depletion of
+                <emphasis><ulink url="http://www.wormbase.org/db/get?name=gld-1;class=Gene" role="_blank">gld-1</ulink></emphasis> does not result in strong <ulink url="http://www.wormbase.org/db/seq/protein?name=PAL-1;class=protein" role="_blank">PAL-1</ulink> expression in the distal
+                germ line, but does cause high distal expression of <ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-3;class=protein" role="_blank">MEX-3</ulink>. Double RNAi of
+                <emphasis><ulink url="http://www.wormbase.org/db/get?name=gld-1;class=Gene" role="_blank">gld-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=mex-3;class=Gene" role="_blank">mex-3</ulink></emphasis> results in strong
+                accumulation of <ulink url="http://www.wormbase.org/db/seq/protein?name=PAL-1;class=protein" role="_blank">PAL-1</ulink> throughout the gonad. Therefore, <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> patterns germline
+                repression of <ulink url="http://www.wormbase.org/db/seq/protein?name=PAL-1;class=protein" role="_blank">PAL-1</ulink> by both repressing <emphasis><ulink url="http://www.wormbase.org/db/get?name=pal-1;class=Gene" role="_blank">pal-1</ulink></emphasis> mRNA and the
+                <emphasis><ulink url="http://www.wormbase.org/db/get?name=pal-1;class=Gene" role="_blank">pal-1</ulink></emphasis> regulator <ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-3;class=protein" role="_blank">MEX-3</ulink>. Additional elements also contribute to
+                <emphasis><ulink url="http://www.wormbase.org/db/get?name=pal-1;class=Gene" role="_blank">pal-1</ulink></emphasis> repression in the germ line (<link linkend="bib29">Mootz et al., 2004</link><!-- PMID 15201219 -->).</para>
+            <para>
+                <emphasis><ulink url="http://www.wormbase.org/db/get?name=pal-1;class=Gene" role="_blank">pal-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=mex-3;class=Gene" role="_blank">mex-3</ulink></emphasis> mRNAs co-sediment with
+                polysomes in sucrose gradients even when <ulink url="http://www.wormbase.org/db/seq/protein?name=PAL-1;class=protein" role="_blank">PAL-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-3;class=protein" role="_blank">MEX-3</ulink> proteins are undetectable
+                (<link linkend="bib29">Mootz et al., 2004</link><!-- PMID 15201219 -->). This result suggests that <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> represses these
+                mRNAs after initiation of translation. <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> may inhibit translation elongation or
+                termination, or may promote degradation of nascent polypeptides on these mRNAs
+                before they are released. Consistent with the idea of stalled translation is the
+                apparent partial translation of a GFP::Histone fusion protein during GRE-mediated
+                repression. In the distal germ line, where <emphasis>gfp::his-11</emphasis>::GRE mRNA
+                is repressed, mature GFP is detected at low levels in the cytoplasm (<link linkend="bib29">Mootz et al., 2004</link><!-- PMID 15201219 -->). In the proximal germ line, where
+                <emphasis>gfp::his-11</emphasis>::GRE mRNA is active, the fusion protein is abundant
+                and nuclear. Because GFP folds slowly and <ulink url="http://www.wormbase.org/db/seq/protein?name=HIS-11;class=protein" role="_blank">HIS-11</ulink> efficiently localizes to nuclei,
+                these observations indicate that translation and release of these fusion proteins
+                are considerably slowed in the distal germ line. In addition, GLD-1-dependent
+                repression protects mRNA with premature stop codons from nonsense-mediated decay,
+                consistent with suppression prior to the completion of translation termination (<link linkend="bib22">Lee
+                and Schedl, 2004</link><!-- PMID 15105376 -->). MicroRNA-mediated repression of heterochronic
+                mRNAs may occur by a similar post-initiation mechanism in larvae (<link linkend="bib31">Olsen and Ambros, 1999</link><!-- PMID 10642801 -->; <link linkend="bib37">Seggerson et al., 2002</link><!-- PMID 11884032 -->). Indeed, we find that
+                components of the microRNA pathway are required for repression of GRE-regulated
+                reporters and that the <emphasis><ulink url="http://www.wormbase.org/db/get?name=pal-1;class=Gene" role="_blank">pal-1</ulink></emphasis> GRE contains conserved potential
+                microRNA binding domains (Mootz Ph.D Thesis, 2002; J. Brooks and C.P. Hunter, in
+                preparation; C.P.H. unpublished). The rapidity of early embryonic development
+                provides a <emphasis>raison d'&#x000EA;tre</emphasis> for
+                post-initiation repression, which bypasses the often rate-limiting step of
+                translation initiation.</para>
+        </sect2>
+        <sect2>
+            <title>Control of Notch translation during oogenesis</title>
+            <para>The mRNA encoding the Notch membrane receptor, <ulink url="http://www.wormbase.org/db/seq/protein?name=GLP-1;class=protein" role="_blank">GLP-1</ulink>, is also tightly regulated
+                during oogenesis. Like <emphasis><ulink url="http://www.wormbase.org/db/get?name=pal-1;class=Gene" role="_blank">pal-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink></emphasis> mRNA
+                translation is repressed in both the distal and proximal germ line by sequences in
+                its 3' UTR (<link linkend="bib12">Evans et al., 1994</link><!-- PMID 8168128 -->; <link linkend="bib26">Marin and Evans, 2003</link><!-- PMID 12736207 -->).
+                At least two separate RNA elements contribute to <emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink></emphasis>
+                repression during oogenesis. One element, also called the GRE, represses translation
+                during early gamete development, but contributes only weakly to repression during
+                later stages of oogenesis (<link linkend="bib26">Marin and Evans, 2003</link><!-- PMID 12736207 -->). A second distinct
+                element is required for repression in oocytes of the proximal germ line (<link linkend="bib12">Evans et al., 1994</link><!-- PMID 8168128 -->). Once again, the key regulator for distal germ line
+                repression is the KH domain protein <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink>. <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> is required for
+                <emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink></emphasis> repression in early meiotic prophase, binds directly to
+                <emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink></emphasis> RNA, and both <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> binding and repression are
+                specifically dependent on five nucleotides of the <emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink></emphasis> GRE RNA
+                sequence (<link linkend="bib26">Marin and Evans, 2003</link><!-- PMID 12736207 -->). The <emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink></emphasis> GRE
+                is probably directly contacted by <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink>, since these 5 nucleotides were independently
+                predicted to reside in a "relaxed consensus" <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> binding site (<link linkend="bib35">Ryder et al., 2004</link><!-- PMID 14718919 -->). The <emphasis><ulink url="http://www.wormbase.org/db/get?name=pal-1;class=Gene" role="_blank">pal-1</ulink></emphasis> GRE also contains potential relaxed
+                consensus <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> sites that are similar but not identical to the
+                <emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink></emphasis> GRE. During late oogenesis, <emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink></emphasis>
+                mRNA repression requires the <emphasis>pumilio</emphasis>-like RNA-binding proteins
+                <ulink url="http://www.wormbase.org/db/seq/protein?name=PUF-5;class=protein" role="_blank">PUF-5</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=PUF-6;class=protein" role="_blank">PUF-6</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=PUF-7;class=protein" role="_blank">PUF-7</ulink>, and <ulink url="http://www.wormbase.org/db/seq/protein?name=PUF-10;class=protein" role="_blank">PUF-10</ulink>, although it is not known if these proteins act
+                directly or indirectly (A. Lublin and T. Evans, unpublished). Interestingly, <ulink url="http://www.wormbase.org/db/seq/protein?name=PUF-5;class=protein" role="_blank">PUF-5</ulink>
+                expression is restricted to the proximal germ line, and this restriction may be
+                mediated by <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink>, which binds to and possibly represses <emphasis><ulink url="http://www.wormbase.org/db/get?name=puf-5;class=Gene" role="_blank">puf-5</ulink></emphasis>
+                and <emphasis><ulink url="http://www.wormbase.org/db/get?name=puf-6;class=Gene" role="_blank">puf-6</ulink>/</emphasis><emphasis><ulink url="http://www.wormbase.org/db/get?name=puf-7;class=Gene" role="_blank">7</ulink>/</emphasis><emphasis><ulink url="http://www.wormbase.org/db/get?name=puf-10;class=Gene" role="_blank">10</ulink></emphasis> mRNAs in the distal germ line (<link linkend="bib21">Lee and Schedl, 2001</link><!-- PMID 11562350 -->). Therefore, like <emphasis><ulink url="http://www.wormbase.org/db/get?name=pal-1;class=Gene" role="_blank">pal-1</ulink></emphasis>, the translational
+                repression of <emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink></emphasis> mRNA during oogenesis requires two distinct
+                regulatory systems that are spatially and temporally segregated in the germ line. For
+                <emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink></emphasis>, these two systems may function through distinct 3' UTR
+                elements. Neither <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> nor <ulink url="http://www.wormbase.org/db/seq/protein?name=PUF-5;class=protein" role="_blank">PUF-5</ulink> are expressed in the most proximal oocyte or in
+                the one-cell zygote (<link linkend="bib19">Jones et al., 1996</link><!-- PMID 8948583 -->; A. Lublin and T. Evans,
+                unpublished). Yet, <emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink></emphasis> mRNA is tightly repressed through
+                these stages suggesting that a third regulatory system functions after oocyte
+                maturation and fertilization to keep <emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink></emphasis> silent until the two-cell stage (<link linkend="bib12">Evans et al., 1994</link><!-- PMID 8168128 -->).</para>
+        </sect2>
+        <sect2>
+            <title>Control of other maternal mRNAs in the germ line</title>
+            <para>Several other maternal mRNAs encoding key embryonic regulators are known or are
+                likely to be repressed during oogenesis (<link linkend="table1">Table 1</link>). Although the control mechanism is
+                not known for most of these genes, at least <emphasis><ulink url="http://www.wormbase.org/db/get?name=nos-2;class=Gene" role="_blank">nos-2</ulink></emphasis> repression
+                requires 3' UTR elements (K. Subramaniam and G. Seydoux, personal comm.). In
+                addition, <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> is necessary for distal repression of several maternal mRNAs (e.g.,
+                <emphasis><ulink url="http://www.wormbase.org/db/get?name=mex-3;class=Gene" role="_blank">mex-3</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/get?name=spn-4;class=Gene" role="_blank">spn-4</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/get?name=oma-1;class=Gene" role="_blank">oma-1</ulink></emphasis>,
+                and <emphasis><ulink url="http://www.wormbase.org/db/get?name=oma-2;class=Gene" role="_blank">oma-2</ulink></emphasis>), and others are predicted to contain <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> binding
+                sites (<link linkend="bib22">Lee and Schedl, 2004</link><!-- PMID 15105376 -->; <link linkend="bib29">Mootz et al., 2004</link><!-- PMID 15201219 -->; <link linkend="bib35">Ryder et al., 2004</link><!-- PMID 14718919 -->). Therefore, it seems likely that most of these maternal
+                RNAs are subject to translational repression, and <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> probably regulates many of
+                them in early oogenesis.</para>
+<?newpage?>
+         <table id="table1" frame="all">
+                    <title>Table 1. Summary of maternal mRNA control in the germ line and embryo</title>
+                    <tgroup cols='7' align='center' colsep='1' rowsep='1'>
+                <colspec colname="c1" colwidth="0.3*" align="center" />
+                <colspec colname="c2" colwidth="0.6*" align="center" />
+                <colspec colname="c3" colwidth="0.7*" align="center" />
+                <colspec colname="c4" colwidth="0.6*" align="center" />
+                <colspec colname="c5" colwidth="0.5*" align="left" />
+                <colspec colname="c6" colwidth="0.5*" align="left" />
+                <colspec colname="c7" colwidth="0.7*" align="left" />
+                <thead>
+                 <row valign="middle">
+                <entry morerows="1" valign="middle">mRNA</entry>
+                <entry namest="c2" nameend="c3" align="center">Translation in the distal germ line<footnote id='fnrex1a' label="a"><para>"Translation in the Distal Germ line" refers only to the meiotic region of the distal arm. However, <emphasis><ulink url="http://www.wormbase.org/db/get?name=gld-1;class=Gene" role="_blank">gld-1</ulink></emphasis> and maybe other mRNAs are further controlled within the mitotic region near the distal tip; <emphasis><ulink url="http://www.wormbase.org/db/get?name=gld-1;class=Gene" role="_blank">gld-1</ulink></emphasis> is repressed in mitotic germ cells by the PUF proteins <ulink url="http://www.wormbase.org/db/seq/protein?name=FBF-1;class=protein" role="_blank">FBF-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=FBF-2;class=protein" role="_blank">FBF-2</ulink> (<link linkend="bib6">Crittenden et al., 2002</link><!-- PMID 12050669 -->).</para>
+               </footnote>
+                </entry>
+                <entry namest="c4" nameend="c5" align="center">Translation in the proximal germ line</entry>
+                <entry namest="c6" nameend="c7" align="center">Translation in the early embryo</entry>
+                </row>
+                <row valign="middle">
+                <entry>Activity<footnote id='fnrex1b' label="b"><para>Regulation of translation by RNA elements has only been shown for a few mRNAs. Some maternal proteins could be regulated after translation, particularly in the embryo (see text).</para></footnote></entry>
+                <entry>Regulators<footnote id='fnrex1c' label="c"><simpara>Regulators may act directly or indirectly; direct interactions with RNAs have been shown in only a few cases.</simpara>
+               <simpara> ?  –Some suggestive support but data is incomplete to varying extents.  ?? – Regulators or activity is unknown.</simpara>
+              <simpara>References: <superscript>1</superscript><link linkend="bib7">Crittenden et al. (1994<!-- PMID 7607080 -->)</link>, <superscript>2</superscript><link linkend="bib26">Marin and Evans (2003<!-- PMID 12736207 -->)</link>, <superscript>3</superscript><link linkend="bib12">Evans et al. (1994<!-- PMID 8168128 -->)</link>, <superscript>4</superscript>Lublin and Evans (in prep.), <superscript> 5</superscript><link linkend="bib30">Ogura et al. (2003<!-- PMID 12702662 -->)</link>, <superscript>6</superscript><link linkend="bib36">Schubert et al. (2000<!-- PMID 10882103 -->)</link>, <superscript>7</superscript><link linkend="bib17">Hunter and Kenyon (1996<!-- PMID 8861906 -->)</link>, <superscript>8</superscript><link linkend="bib29">Mootz et al. (2004<!-- PMID 15201219 -->)</link>, <superscript>9</superscript><link linkend="bib16">Huang et al. (2002<!-- PMID 11830574 -->)</link>, <superscript>10</superscript><link linkend="bib28">Mickey et al. (1996<!-- PMID 8674418 -->)</link>, <superscript>11</superscript><link linkend="bib39">Subramaniam and Seydoux (1999<!-- PMID 10518502 -->)</link>, <superscript>12</superscript><link linkend="bib35">Ryder et al. (2004<!-- PMID 14718919 -->)</link>, <superscript>13</superscript><link linkend="bib40">Tabara et al. (1999<!-- PMID 9834181 -->)</link>, <superscript>14</superscript><link linkend="bib42">Tenenhaus et al. (2001<!-- PMID 11316796 -->)</link>, <superscript>15</superscript><link linkend="bib41">Tenenhaus et al. (1998<!-- PMID 9705228 -->)</link>, <superscript>16</superscript><link linkend="bib34">Reese et al. (2000<!-- PMID 10983990 -->)</link>, <superscript>17</superscript><link linkend="bib19">Jones et al. (1996<!-- PMID 8948583 -->)</link>, <superscript> 18</superscript><link linkend="bib15">Hansen et al. (2004<!-- PMID 14660440 -->)</link>, <superscript> 19</superscript><link linkend="bib10">Draper et al. (1996<!-- PMID 8861905 -->)</link>, <superscript>20</superscript><link linkend="bib4">Bowerman et al. (1993<!-- PMID 8348611 -->)</link>, <superscript>21</superscript><link linkend="bib23">Lin et al. (1995<!-- PMID 7585963 -->)</link>, <superscript>22</superscript><link linkend="bib9">Detwiler et al. (2001<!-- PMID 11702779 -->)</link>, <superscript>23</superscript><link linkend="bib22">Lee and Schedl (2004<!-- PMID 15105376 -->)</link></simpara></footnote></entry>
+                            <entry>Activity<superscript>b</superscript></entry>
+                            <entry>Regulators<superscript>c</superscript></entry>
+                            <entry>Activity<superscript>b</superscript></entry>
+                            <entry>Regulators<superscript>c</superscript></entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row valign="middle">
+                            <entry>
+                                <emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink></emphasis>
+                            </entry>
+                            <entry>Repressed<superscript>1</superscript>
+                            </entry>
+                            <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink><superscript>2</superscript>
+                            </entry>
+                            <entry>Repressed<superscript>1,3</superscript>
+                            </entry>
+                            <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=PUF-5;class=protein" role="_blank">PUF-5</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=PUF-6;class=protein" role="_blank">PUF-6</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=PUF-7;class=protein" role="_blank">PUF-7</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=PUF-10;class=protein" role="_blank">PUF-10</ulink><superscript>4</superscript>
+                            </entry>
+                            <entry>Localized in anterior<superscript>3</superscript>
+                            </entry>
+                            <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink><superscript>2</superscript>,
+                            <ulink url="http://www.wormbase.org/db/seq/protein?name=POS-1;class=protein" role="_blank">POS-1</ulink><superscript>5</superscript>,
+                            <ulink url="http://www.wormbase.org/db/seq/protein?name=SPN-4;class=protein" role="_blank">SPN-4</ulink><superscript>5</superscript>, <ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-5;class=protein" role="_blank">MEX-5</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-6;class=protein" role="_blank">MEX-6</ulink><superscript>6</superscript>
+                            </entry>
+                        </row>
+                        <row valign="middle">
+                            <entry>
+                                <emphasis><ulink url="http://www.wormbase.org/db/get?name=pal-1;class=Gene" role="_blank">pal-1</ulink></emphasis>
+                            </entry>
+                            <entry>Repressed<superscript>7</superscript>
+                            </entry>
+                            <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink><superscript>8</superscript>
+                            </entry>
+                            <entry>Repressed<superscript>7</superscript>
+                            </entry>
+                            <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-3;class=protein" role="_blank">MEX-3</ulink><superscript>7</superscript>
+                            </entry>
+                            <entry>Localized in posterior</entry>
+                            <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-3;class=protein" role="_blank">MEX-3</ulink><superscript>7</superscript>, <ulink url="http://www.wormbase.org/db/seq/protein?name=SPN-4;class=protein" role="_blank">SPN-4</ulink><superscript>9</superscript>, <ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-5;class=protein" role="_blank">MEX-5</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-6;class=protein" role="_blank">MEX-6</ulink><superscript>9</superscript>
+                            </entry>
+                        </row>
+                        <row valign="middle">
+                            <entry>
+                                <emphasis><ulink url="http://www.wormbase.org/db/get?name=apx-1;class=Gene" role="_blank">apx-1</ulink></emphasis>
+                            </entry>
+                            <entry>Repressed<superscript>10</superscript>
+                            </entry>
+                            <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink><superscript>12</superscript>?</entry>
+                            <entry>Repressed<superscript>10</superscript>
+                            </entry>
+                            <entry>??</entry>
+                            <entry>Localized in <ulink url="http://www.wormbase.org/db/get?name=P2;class=Cell" role="_blank">P2</ulink><superscript>10</superscript>?</entry>
+                            <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=POS-1;class=protein" role="_blank">POS-1</ulink><superscript>13</superscript>
+                            </entry>
+                        </row>
+                        <row valign="middle">
+                            <entry>
+                                <emphasis><ulink url="http://www.wormbase.org/db/get?name=nos-2;class=Gene" role="_blank">nos-2</ulink></emphasis>
+                            </entry>
+                            <entry>??</entry>
+                            <entry>??</entry>
+                            <entry>Repressed<superscript>11</superscript>
+                            </entry>
+                            <entry>??</entry>
+                            <entry>Localized in PGC<superscript>11</superscript>
+                            </entry>
+                            <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=PIE-1;class=protein" role="_blank">PIE-1</ulink><superscript>14</superscript>
+                            </entry>
+                        </row>
+                        <row valign="middle">
+                            <entry>
+                                <emphasis><ulink url="http://www.wormbase.org/db/get?name=pie-1;class=Gene" role="_blank">pie-1</ulink></emphasis>
+                            </entry>
+                            <entry>Repressed<superscript>15</superscript>
+                            </entry>
+                            <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink><superscript>12</superscript>?</entry>
+                            <entry>Active<superscript>15</superscript>
+                            </entry>
+                            <entry>??</entry>
+                            <entry>Active in all cells<superscript>16</superscript>
+                            </entry>
+                            <entry>??</entry>
+                        </row>
+                        <row valign="middle">
+                            <entry>
+                            <emphasis><ulink url="http://www.wormbase.org/db/get?name=gld-1;class=Gene" role="_blank">gld-1</ulink></emphasis>
+                            </entry>
+                            <entry>Active<superscript>a,17</superscript>
+                            </entry>
+                            <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=NOS-3;class=protein" role="_blank">NOS-3</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-2;class=protein" role="_blank">GLD-2</ulink><footnoteref linkend='fnrex1a'/><superscript>,18</superscript></entry>
+                            <entry>Repressed<superscript>17</superscript>
+                            </entry>
+                            <entry>??</entry>
+                            <entry>Localized in posterior<superscript>17</superscript>
+                            </entry>
+                            <entry>??</entry>
+                        </row>
+                        <row valign="middle">
+                            <entry>
+                                <emphasis><ulink url="http://www.wormbase.org/db/get?name=mex-3;class=Gene" role="_blank">mex-3</ulink></emphasis>
+                            </entry>
+                            <entry>Repressed<superscript>19</superscript>
+                            </entry>
+                            <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink><superscript>8</superscript>
+                            </entry>
+                            <entry>Active<superscript>19</superscript>
+                            </entry>
+                            <entry>??</entry>
+                            <entry>Localized in anterior<superscript>18</superscript>
+                            </entry>
+                            <entry>??</entry>
+                        </row>
+                        <row valign="middle">
+                            <entry>
+                                <emphasis><ulink url="http://www.wormbase.org/db/get?name=spn-4;class=Gene" role="_blank">spn-4</ulink></emphasis>
+                            </entry>
+                            <entry>Repressed<superscript>5,8</superscript>
+                            </entry>
+                            <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink><superscript>8</superscript>
+                            </entry>
+                            <entry>Active<superscript>5,8</superscript>
+                            </entry>
+                            <entry>??</entry>
+                            <entry>Localized in posterior?<superscript>5,8</superscript>
+                            </entry>
+                            <entry>??</entry>
+                        </row>
+                        <row valign="middle">
+                            <entry>
+                                <emphasis><ulink url="http://www.wormbase.org/db/get?name=pos-1;class=Gene" role="_blank">pos-1</ulink></emphasis>
+                            </entry>
+                            <entry>Repressed<superscript>13</superscript>
+                            </entry>
+                            <entry>??</entry>
+                            <entry>Repressed<superscript>13</superscript>
+                            </entry>
+                            <entry>??</entry>
+                            <entry>Active in all cells?<superscript>16</superscript>
+                            </entry>
+                            <entry>??</entry>
+                        </row>
+                        <row valign="middle">
+                            <entry>
+                                <emphasis><ulink url="http://www.wormbase.org/db/get?name=mex-5;class=Gene" role="_blank">mex-5</ulink> <ulink url="http://www.wormbase.org/db/get?name=mex-6;class=Gene" role="_blank">mex-6</ulink></emphasis>
+                            </entry>
+                            <entry>Repressed<superscript>6</superscript>
+                            </entry>
+                            <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink><superscript>8</superscript>
+                            </entry>
+                            <entry>Active<superscript>6</superscript>
+                            </entry>
+                            <entry>??</entry>
+                            <entry>Localized in anterior?<superscript>6</superscript>
+                            </entry>
+                            <entry>??</entry>
+                        </row>
+                        <row valign="middle">
+                            <entry>
+                                <emphasis><ulink url="http://www.wormbase.org/db/get?name=skn-1;class=Gene" role="_blank">skn-1</ulink></emphasis>
+                            </entry>
+                            <entry>Repressed<superscript>20</superscript>
+                            </entry>
+                            <entry>??</entry>
+                            <entry>Active<superscript>20</superscript>
+                            </entry>
+                            <entry>??</entry>
+                            <entry>Localized in posterior?<superscript>20</superscript>
+                            </entry>
+                            <entry>??</entry>
+                        </row>
+                        <row valign="middle">
+                            <entry>
+                                <emphasis><ulink url="http://www.wormbase.org/db/get?name=pop-1;class=Gene" role="_blank">pop-1</ulink></emphasis>
+                            </entry>
+                            <entry>Repressed<superscript>21</superscript>
+                            </entry>
+                            <entry>??</entry>
+                            <entry>Active<superscript>21</superscript>
+                            </entry>
+                            <entry>??</entry>
+                            <entry>Active in all cells?<superscript>21</superscript>
+                            </entry>
+                            <entry>??</entry>
+                        </row>
+                        <row valign="middle">
+                            <entry>
+                                <emphasis><ulink url="http://www.wormbase.org/db/get?name=oma-1;class=Gene" role="_blank">oma-1</ulink></emphasis>
+                                <emphasis><ulink url="http://www.wormbase.org/db/get?name=oma-2;class=Gene" role="_blank">oma-2</ulink></emphasis>
+                            </entry>
+                            <entry>Repressed<superscript>22</superscript>
+                            </entry>
+                            <entry><ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink><superscript>23</superscript>
+                            </entry>
+                            <entry>Active<superscript>22</superscript>
+                            </entry>
+                            <entry>??</entry>
+                            <entry>Repressed?<superscript>22</superscript>
+                            </entry>
+                            <entry>??</entry>
+                       </row>
+                    </tbody> 
+                    </tgroup>
+                    </table>
+                    </sect2>
+                    <?newpage?>
+    </sect1>
+    <sect1>
+        <title>Control of maternal mRNAs in the embryo</title>
+        <para>Maternal RNAs that have been silenced in the germ line are translated in specific
+            spatial and temporal patterns in the early embryo (<xref linkend="figure1"/>; <link linkend="table1">Table 1</link>).
+            Because early cell cycles are rapid and polarity cues are established in the first one
+            or two cycles, maternal mRNA controls must be precise and efficient. Several putative
+            RNA binding proteins that are required for maternal RNA translation patterns have been
+            identified. However, many of these proteins regulate multiple processes, including those
+            that establish or maintain embryonic polarity. Thus, identification of their direct RNA
+            targets, their protein partners, and their mechanisms of control will be necessary to
+            disentangle the complex networks that control early embryogenesis.</para>
+        <literallayout></literallayout>
+        <mediaobject id="figure1" xreflabel="Figure 1">
+            <imageobject>
+                <imagedata entityref="fig1" width="2.5in" align="center"/>
+            </imageobject>
+            <textobject>
+                <phrase> figure 1</phrase>
+            </textobject> &fig1legend; </mediaobject>
+        <sect2>
+            <title>Translational control of the Notch signaling pathway in the early embryo</title>
+            <para>In the early <emphasis>C. elegans</emphasis> embryo, Notch signaling between
+                posterior and anterior blastomeres regulates the specification of anterior cell
+                lineages (<xref linkend="figure1"/>; <link linkend="bib25">Mango et al., 1994</link><!-- PMID 7925031 -->; <link linkend="bib27">Mello et al., 1994</link><!-- PMID 8156602 -->; <link linkend="bib33">Priess et al., 1987</link><!-- PMID 3677169 -->). Expression of the Notch
+                receptor <ulink url="http://www.wormbase.org/db/seq/protein?name=GLP-1;class=protein" role="_blank">GLP-1</ulink> begins at the 2-cell stage, but is restricted to anterior cells
+                (<link linkend="bib12">Evans et al., 1994</link><!-- PMID 8168128 -->). In contrast, the Notch ligand <ulink url="http://www.wormbase.org/db/seq/protein?name=APX-1;class=protein" role="_blank">APX-1</ulink> is localized
+                to a single posterior blastomere at the 2- and 4-cell stages (<link linkend="bib28">Mickey et al., 1996</link><!-- PMID 8674418 -->). The localization of these membrane proteins is critical to spatially
+                constrain Notch signaling to specific anterior cells at specific times, which
+                controls patterning of anterior fates (<link linkend="bib25">Mango et al., 1994</link><!-- PMID 7925031 -->; <link linkend="bib27">Mello et al., 1994</link><!-- PMID 8156602 -->; <link linkend="bib38">Shelton and Bowerman, 1996</link><!-- PMID 8681785 -->). Their reciprocal
+                expression patterns may be regulated by common components.</para>
+            <para><ulink url="http://www.wormbase.org/db/seq/protein?name=GLP-1;class=protein" role="_blank">GLP-1</ulink> localization is achieved by translational control through a small region of
+                the <emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink></emphasis> 3' UTR (<link linkend="bib12">Evans et al., 1994</link><!-- PMID 8168128 -->; <link linkend="bib26">Marin and Evans, 2003</link><!-- PMID 12736207 -->). The same GRE element that represses distal germ line
+                translation also represses translation in posterior blastomeres of the embryo (<link linkend="bib26">Marin and Evans, 2003</link><!-- PMID 12736207 -->). Indeed, <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink>, expressed anew in the embryo,
+                mediates at least part of this repression but it does not act alone (<link linkend="bib19">Jones et al., 1996</link><!-- PMID 8948583 -->; <link linkend="bib26">Marin and Evans, 2003</link><!-- PMID 12736207 -->). The posteriorly localized
+                CCCH finger protein <ulink url="http://www.wormbase.org/db/seq/protein?name=POS-1;class=protein" role="_blank">POS-1</ulink> is also necessary for posterior repression of
+                <emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink></emphasis>, and interacts with a region of the
+                <emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink></emphasis> 3' UTR containing the GRE (<link linkend="bib30">Ogura et al., 2003</link><!-- PMID 12702662 -->). <emphasis>In vitro</emphasis>, <ulink url="http://www.wormbase.org/db/seq/protein?name=POS-1;class=protein" role="_blank">POS-1</ulink> binds directly to <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink>, and together these proteins form
+                a complex with <emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink></emphasis> RNA (V. Marin and T. Evans, unpublished).
+                Thus, <ulink url="http://www.wormbase.org/db/seq/protein?name=POS-1;class=protein" role="_blank">POS-1</ulink> may function as an embryo-specific co-repressor with <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink>. These and
+                other <emphasis>in vitro</emphasis> experiments suggest that <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> is the key
+                determinant of RNA-binding specificity for some <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> targets (<link linkend="bib18">Jan et al., 1999</link><!-- PMID 9878068 -->; <link linkend="bib21">Lee and Schedl, 2001</link><!-- PMID 11562350 -->; <link linkend="bib26">Marin and Evans, 2003</link><!-- PMID 12736207 -->; <link linkend="bib35">Ryder et al., 2004</link><!-- PMID 14718919 -->). Perhaps, in these cases, <ulink url="http://www.wormbase.org/db/seq/protein?name=POS-1;class=protein" role="_blank">POS-1</ulink> and
+                other <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> co-factors modify RNA binding specificity or modulate general
+                translation factors that are recruited to the mRNA.</para>
+            <para><ulink url="http://www.wormbase.org/db/seq/protein?name=POS-1;class=protein" role="_blank">POS-1</ulink> is also required to activate <ulink url="http://www.wormbase.org/db/seq/protein?name=APX-1;class=protein" role="_blank">APX-1</ulink> expression in the posterior (<link linkend="bib40">Tabara et al., 1999</link><!-- PMID 9834181 -->). It is not known if <ulink url="http://www.wormbase.org/db/seq/protein?name=POS-1;class=protein" role="_blank">POS-1</ulink> acts directly on
+                <emphasis><ulink url="http://www.wormbase.org/db/get?name=apx-1;class=Gene" role="_blank">apx-1</ulink></emphasis> mRNA, or whether <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> also functions in this process.
+                This finding suggests the spatial organization of Notch signaling in the embryo may
+                be coordinated by a common translational control system. How <ulink url="http://www.wormbase.org/db/seq/protein?name=POS-1;class=protein" role="_blank">POS-1</ulink> can directly or
+                indirectly mediate both repression and activation in the same cell is a mystery.</para>
+                <?newpage?>
+            <para> How is <emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink></emphasis> translation localized in the embryo? Although
+                both <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=POS-1;class=protein" role="_blank">POS-1</ulink> are progressively localized to posterior blastomeres, the
+                answer is not so simple as posterior restriction of repressors (<link linkend="bib19">Jones et al., 1996</link><!-- PMID 8948583 -->; <link linkend="bib40">Tabara et al., 1999</link><!-- PMID 9834181 -->). Translation of
+                <emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink></emphasis> mRNA must be activated in the anterior. Within the
+                <emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink></emphasis> 3' UTR lies an element called the GDE that is directly
+                adjacent to the GRE and promotes translation by inhibiting repression (<link linkend="bib26">Marin and Evans, 2003</link><!-- PMID 12736207 -->). This suggests that a de-repression factor binds the GDE
+                to inhibit <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=POS-1;class=protein" role="_blank">POS-1</ulink> function. A candidate for this de-repression factor is the
+                RRM RNA-binding protein <ulink url="http://www.wormbase.org/db/seq/protein?name=SPN-4;class=protein" role="_blank">SPN-4</ulink> (<link linkend="bib30">Ogura et al., 2003</link><!-- PMID 12702662 -->). Genetic
+                experiments show that <ulink url="http://www.wormbase.org/db/seq/protein?name=SPN-4;class=protein" role="_blank">SPN-4</ulink> promotes <ulink url="http://www.wormbase.org/db/seq/protein?name=GLP-1;class=protein" role="_blank">GLP-1</ulink> expression by inhibiting <ulink url="http://www.wormbase.org/db/seq/protein?name=POS-1;class=protein" role="_blank">POS-1</ulink> function.
+                <ulink url="http://www.wormbase.org/db/seq/protein?name=SPN-4;class=protein" role="_blank">SPN-4</ulink> binds directly to <ulink url="http://www.wormbase.org/db/seq/protein?name=POS-1;class=protein" role="_blank">POS-1</ulink> <emphasis>in vitro</emphasis> and can bind the
+                <emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink></emphasis> 3' UTR, however it seems to prefer sequences outside of
+                the GRE/GDE region. Other candidate derepression factors are the anterior-localized
+                redundant proteins <ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-5;class=protein" role="_blank">MEX-5</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-6;class=protein" role="_blank">MEX-6</ulink>, which are required for
+                <emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink></emphasis> activation in anterior cells (<link linkend="bib36">Schubert et al., 2000</link><!-- PMID 10882103 -->). Regardless of regulator composition, these studies suggest that
+                localization of Notch translation involves localization of repressors to posterior
+                cells and inhibition of residual repressor activity in anterior cells (<xref linkend="figure2"/>).</para>
+            <literallayout></literallayout>
+            <mediaobject id="figure2" xreflabel="Figure 2">
+                <imageobject>
+                    <imagedata entityref="fig2" width="3.8in" align="center"/>
+                </imageobject>
+                <textobject>
+                    <phrase> figure 2</phrase>
+                </textobject> &fig2legend; </mediaobject>
+        </sect2>
+        <sect2>
+            <title>Control of <ulink url="http://www.wormbase.org/db/get?name=pal-1;class=Gene" role="_blank"><emphasis>pal-1</emphasis></ulink> in the embryo</title>
+            <para>The activity of the homeodomain protein <ulink url="http://www.wormbase.org/db/seq/protein?name=PAL-1;class=protein" role="_blank">PAL-1</ulink> is targeted to the somatic
+                descendants of the posterior blastomere <ulink url="http://www.wormbase.org/db/get?name=P2;class=Cell" role="_blank">P2</ulink> where it initiates a
+                transcription-regulatory network that specifies the C and D blastomere lineages
+                (<link linkend="bib17">Hunter and Kenyon, 1996</link><!-- PMID 8861906 -->; <link linkend="bib3">Baugh et al., 2005</link><!-- PMID -->). <ulink url="http://www.wormbase.org/db/seq/protein?name=PAL-1;class=protein" role="_blank">PAL-1</ulink> translation
+                is repressed in oocytes and early embryos until the four-cell stage when <ulink url="http://www.wormbase.org/db/seq/protein?name=PAL-1;class=protein" role="_blank">PAL-1</ulink>
+                accumulates in the two posterior cells (<xref linkend="figure1"/>). A key factor
+                that regulates this pattern of expression is the KH-domain protein <ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-3;class=protein" role="_blank">MEX-3</ulink>, which acts
+                through the <emphasis><ulink url="http://www.wormbase.org/db/get?name=pal-1;class=Gene" role="_blank">pal-1</ulink></emphasis> 3' UTR to repress <ulink url="http://www.wormbase.org/db/seq/protein?name=PAL-1;class=protein" role="_blank">PAL-1</ulink> expression and whose
+                localization in oocytes and early embryos is reciprocal to that of <ulink url="http://www.wormbase.org/db/seq/protein?name=PAL-1;class=protein" role="_blank">PAL-1</ulink>. Mutations
+                in the <emphasis>par</emphasis> genes, which explicitly disrupt embryonic polarity (see <ulink url="http://www.wormbook.org/chapters/www_asymcelldiv/asymcelldiv.html" role="_blank">Asymmetric cell division and axis formation in the embryo</ulink>), reveal complexities in <ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-3;class=protein" role="_blank">MEX-3</ulink> control of <emphasis><ulink url="http://www.wormbase.org/db/get?name=pal-1;class=Gene" role="_blank">pal-1</ulink></emphasis> (<link linkend="bib16">Huang et al., 2002</link><!-- PMID 11830574 -->; <link linkend="bib17">Hunter and Kenyon, 1996</link><!-- PMID 8861906 -->). Embryos mutant
+                for <emphasis><ulink url="http://www.wormbase.org/db/get?name=par-1;class=Gene" role="_blank">par-1</ulink></emphasis> or <emphasis><ulink url="http://www.wormbase.org/db/get?name=par-4;class=Gene" role="_blank">par-4</ulink></emphasis> maintain uniform <ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-3;class=protein" role="_blank">MEX-3</ulink>
+                levels in anterior and posterior blastomeres and fail to express <ulink url="http://www.wormbase.org/db/seq/protein?name=PAL-1;class=protein" role="_blank">PAL-1</ulink>. Because <emphasis><ulink url="http://www.wormbase.org/db/get?name=par-1;class=Gene" role="_blank">par-1</ulink>;</emphasis>
+                <emphasis><ulink url="http://www.wormbase.org/db/get?name=mex-3;class=Gene" role="_blank">mex-3</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=par-4;class=Gene" role="_blank">par-4</ulink>;</emphasis>
+                <emphasis><ulink url="http://www.wormbase.org/db/get?name=mex-3;class=Gene" role="_blank">mex-3</ulink></emphasis> double mutant embryos express <ulink url="http://www.wormbase.org/db/seq/protein?name=PAL-1;class=protein" role="_blank">PAL-1</ulink> in oocytes and all
+                early embryonic blastomeres, mislocalized <ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-3;class=protein" role="_blank">MEX-3</ulink> is active in
+                <emphasis><ulink url="http://www.wormbase.org/db/get?name=par-1;class=Gene" role="_blank">par-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=par-4;class=Gene" role="_blank">par-4</ulink></emphasis> single mutants. In
+                contrast, embryos mutant for <emphasis><ulink url="http://www.wormbase.org/db/get?name=par-3;class=Gene" role="_blank">par-3</ulink></emphasis> similarly cause uniform
+                <ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-3;class=protein" role="_blank">MEX-3</ulink> localization, but <ulink url="http://www.wormbase.org/db/seq/protein?name=PAL-1;class=protein" role="_blank">PAL-1</ulink> is expressed in some blastomeres beginning at the
+                4-cell stage. Therefore, the mere presence of <ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-3;class=protein" role="_blank">MEX-3</ulink> is insufficient to maintain
+                repression. </para>
+            <para><ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-5;class=protein" role="_blank">MEX-5</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-6;class=protein" role="_blank">MEX-6</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=SPN-4;class=protein" role="_blank">SPN-4</ulink> were identified as <ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-3;class=protein" role="_blank">MEX-3</ulink> binding proteins that are also required
+                for repression of <ulink url="http://www.wormbase.org/db/seq/protein?name=PAL-1;class=protein" role="_blank">PAL-1</ulink> (<link linkend="bib16">Huang et al., 2002</link><!-- PMID 11830574 -->). <ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-5;class=protein" role="_blank">MEX-5</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-6;class=protein" role="_blank">MEX-6</ulink> are
+                homologous CCCH Zn-finger proteins required for embryonic polarity (<link linkend="bib8">Cuenca et al., 2003</link><!-- PMID 12588843 -->; <link linkend="bib32">Page et al., 2001</link><!-- PMID 11463371 -->; <link linkend="bib36">Schubert et al., 2000</link><!-- PMID 10882103 -->). RNAi of <emphasis><ulink url="http://www.wormbase.org/db/get?name=mex-5;class=Gene" role="_blank">mex-5</ulink>/<ulink url="http://www.wormbase.org/db/get?name=mex-6;class=Gene" role="_blank">6</ulink></emphasis> causes loss of <ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-3;class=protein" role="_blank">MEX-3</ulink> from anterior
+                as well as posterior blastomeres and <ulink url="http://www.wormbase.org/db/seq/protein?name=PAL-1;class=protein" role="_blank">PAL-1</ulink> is derepressed in all four blastomeres
+                (<link linkend="bib16">Huang et al., 2002</link><!-- PMID 11830574 -->; <link linkend="bib36">Schubert et al., 2000</link><!-- PMID 10882103 -->; <xref linkend="figure3"/>). <ulink url="http://www.wormbase.org/db/seq/protein?name=SPN-4;class=protein" role="_blank">SPN-4</ulink> is an RRM protein required for a variety of
+                posterior-specific events (<link linkend="bib13">Gomes et al., 2001</link><!-- PMID 11684665 -->; <link linkend="bib16">Huang et al., 2002</link><!-- PMID 11830574 -->; <link linkend="bib30">Ogura et al., 2003</link><!-- PMID 12702662 -->). <ulink url="http://www.wormbase.org/db/seq/protein?name=SPN-4;class=protein" role="_blank">SPN-4</ulink> also controls the
+                localization of <ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-3;class=protein" role="_blank">MEX-3</ulink> (<link linkend="bib16">Huang et al., 2002</link><!-- PMID 11830574 -->). Therefore, both <ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-5;class=protein" role="_blank">MEX-5</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-6;class=protein" role="_blank">MEX-6</ulink>
+                and <ulink url="http://www.wormbase.org/db/seq/protein?name=SPN-4;class=protein" role="_blank">SPN-4</ulink> regulate <emphasis><ulink url="http://www.wormbase.org/db/get?name=pal-1;class=Gene" role="_blank">pal-1</ulink></emphasis> translation indirectly by controlling
+                <ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-3;class=protein" role="_blank">MEX-3</ulink> expression. These factors probably control <ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-3;class=protein" role="_blank">MEX-3</ulink> stability since separate
+                <ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-3;class=protein" role="_blank">MEX-3</ulink> domains, when fused to GFP, can confer <emphasis><ulink url="http://www.wormbase.org/db/get?name=mex-5;class=Gene" role="_blank">mex-5</ulink>/<ulink url="http://www.wormbase.org/db/get?name=mex-6;class=Gene" role="_blank">mex-6</ulink></emphasis> and
+                <emphasis><ulink url="http://www.wormbase.org/db/get?name=spn-4;class=Gene" role="_blank">spn-4</ulink></emphasis>-dependent stability and instability on GFP (N. Huang and  C. Hunter in preparation). Analysis of <ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-3;class=protein" role="_blank">MEX-3</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=PAL-1;class=protein" role="_blank">PAL-1</ulink> localization in various
+                double RNAi embryos is consistent with multiple parallel processes acting on <ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-3;class=protein" role="_blank">MEX-3</ulink>
+                localization, which in turn affects <ulink url="http://www.wormbase.org/db/seq/protein?name=PAL-1;class=protein" role="_blank">PAL-1</ulink> accumulation (<xref linkend="figure3"/>; <link linkend="bib16">Huang et al., 2002</link><!-- PMID 11830574 -->).</para>
+            
+                <literallayout></literallayout>
+                <mediaobject id="figure3" xreflabel="Figure 3">
+                <imageobject>
+                   <imagedata entityref="fig3" width="5in" align="center"/>
+                </imageobject>
+                <textobject>
+                    <phrase> figure 3</phrase>
+                </textobject> &fig3legend; </mediaobject>
+        </sect2>
+        <sect2>
+            <title>Regulation of maternal mRNAs and germ cell specification in the embryo</title>
+            <para>During early embryogenesis, the germ cell precursors are generated by a series of
+                asymmetric cell divisions (see <ulink url="http://www.wormbook.org/chapters/www_specgermline/specgermline.html" role="_blank">Specification of the germ line</ulink>). The control of maternal
+                mRNAs is likely to be essential to germ cell specification, since general
+                transcription is silenced in germ cell precursors and several putative RNA-binding
+                proteins are localized to them (see <ulink url="http://www.wormbook.org/chapters/www_specgermline/specgermline.html" role="_blank">Specification of the germ line</ulink>). Among these factors
+                include our old friends <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=POS-1;class=protein" role="_blank">POS-1</ulink>, and <ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-3;class=protein" role="_blank">MEX-3</ulink>, several other CCCH finger proteins
+                including <ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-1;class=protein" role="_blank">MEX-1</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=OMA-1;class=protein" role="_blank">OMA-1</ulink>, and <ulink url="http://www.wormbase.org/db/seq/protein?name=PIE-1;class=protein" role="_blank">PIE-1</ulink>, the RNA helicase GLH proteins, and the RGG
+                protein <ulink url="http://www.wormbase.org/db/seq/protein?name=PGL-1;class=protein" role="_blank">PGL-1</ulink> (see <ulink url="http://www.wormbook.org/chapters/www_specgermline/specgermline.html" role="_blank">Specification of the germ line</ulink>). <ulink url="http://www.wormbase.org/db/seq/protein?name=PIE-1;class=protein" role="_blank">PIE-1</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-1;class=protein" role="_blank">MEX-1</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=MEX-3;class=protein" role="_blank">MEX-3</ulink>, and
+                <ulink url="http://www.wormbase.org/db/seq/protein?name=POS-1;class=protein" role="_blank">POS-1</ulink> are essential for regulating germ cell fate, and the GLH proteins and <ulink url="http://www.wormbase.org/db/seq/protein?name=PGL-1;class=protein" role="_blank">PGL-1</ulink>
+                control aspects of germ cell development (see <ulink url="http://www.wormbook.org/chapters/www_specgermline/specgermline.html" role="_blank">Specification of the germ line</ulink>). One maternal mRNA that
+                is controlled in the germ cell precursors is <emphasis><ulink url="http://www.wormbase.org/db/get?name=nos-2;class=Gene" role="_blank">nos-2</ulink></emphasis>, a worm
+                homolog of fly <emphasis>nanos</emphasis> (<link linkend="bib39">Subramaniam and Seydoux, 1999</link><!-- PMID 10518502 -->). <ulink url="http://www.wormbase.org/db/seq/protein?name=NOS-2;class=protein" role="_blank">NOS-2</ulink> is
+                expressed only after the penultimate primordial germ cell (PGC) is produced, and at
+                least part of this specificity depends on <emphasis><ulink url="http://www.wormbase.org/db/get?name=nos-2;class=Gene" role="_blank">nos-2</ulink></emphasis> 3' UTR elements
+                (K. Subramaniam and G. Seydoux, personal comm.). <ulink url="http://www.wormbase.org/db/seq/protein?name=PIE-1;class=protein" role="_blank">PIE-1</ulink> is necessary for
+                <emphasis><ulink url="http://www.wormbase.org/db/get?name=nos-2;class=Gene" role="_blank">nos-2</ulink></emphasis> activation, independent of its role in transcriptional
+                silencing, and thus could act as a translational activator (<link linkend="bib42">Tenenhaus et al., 2001</link><!-- PMID 11316796 -->). Furthermore, <ulink url="http://www.wormbase.org/db/seq/protein?name=NOS-1;class=protein" role="_blank">NOS-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=NOS-2;class=protein" role="_blank">NOS-2</ulink> proteins are needed for germ cell
+                migration and proliferation, and Nanos proteins themselves are implicated in mRNA
+                regulation (<link linkend="bib24">Macdonald, 2001</link><!-- PMID 11343903 -->; <link linkend="bib39">Subramaniam and Seydoux, 1999</link><!-- PMID 10518502 -->). Indeed, several PUF proteins may function as partners with <ulink url="http://www.wormbase.org/db/seq/protein?name=NOS-2;class=protein" role="_blank">NOS-2</ulink> and/or
+                <ulink url="http://www.wormbase.org/db/seq/protein?name=NOS-1;class=protein" role="_blank">NOS-1</ulink> to regulate as yet unidentified mRNAs (<link linkend="bib39">Subramaniam and Seydoux, 1999</link><!-- PMID 10518502 -->). Therefore, early germ cell specification and control in the embryo may
+                involve cascades of RNA regulation.</para>
+        </sect2>
+    </sect1>
+    <sect1>
+        <title>Conclusions and perspectives</title>
+        <para>From the limited studies on maternal RNA regulation that have been done to date, some
+            common themes are beginning to emerge:</para>
+        <para>First, regulation of maternal mRNA translation begins in the germ line, where spatial
+            organization of oogenesis mirrors spatial patterning of maternal RNA control. This early
+            translational repression may be as important to meiosis and oogenesis as it is to
+            allowing spatial and temporal patterns of embryonic expression to emerge after
+            fertilization. For each maternal RNA, distinct factors assemble onto RNA elements in
+            different spatiotemporal domains of the gonad, apparently to manage message specific
+            expression patterns in the embryo.</para>
+        <para>Second, regulated maternal mRNAs generally contain multiple elements within their
+            3' UTRs. Some elements are redundant while others have unique functions. These elements
+            act combinatorially to create specific patterns of translation.</para>
+
+        <para>Third, a relatively small collection of regulators may control many different mRNAs
+            (see <link linkend="table1">Table 1</link>; see also <ulink url="http://www.wormbook.org/chapters/www_RNAbindingproteins/RNAbindingproteins.html" role="_blank">RNA-binding proteins</ulink>). <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> mediates translational
+            repression of many mRNAs in the distal germ line while apparently more specific factors
+            control translation in late stage oocytes and early embryos. However, even these
+            "specific" factors probably have multiple mRNA targets. Remarkably, some regulators can
+            simultaneously promote or repress translation of different mRNAs, even within the same
+            cell. These conflicting functions could be indirect (e.g., activation could be due to
+            repression of repressor expression). Alternatively, some regulatory factors may exist in
+            distinct complexes that have different activities. To achieve a specific pattern of
+            translation, each mRNA may recruit a specific combination of complexes to its RNA
+            elements, which then results in translation in a specific cell and at a specific stage.</para>
+            
+            <para>The mechanisms of translational control are poorly understood. Polysome analysis of
+            <emphasis><ulink url="http://www.wormbase.org/db/get?name=pal-1;class=Gene" role="_blank">pal-1</ulink></emphasis> suggests a post-initiation repression mechanism, which might be poised for rapid derepression in the embryo (<link linkend="bib29">Mootz et al., 2004</link><!-- PMID 15201219 -->). This mechanism may be similar to microRNA-mediated regulation in worms, and may be common to other organisms as well (<link linkend="bib5">Clark et al., 2000</link><!-- PMID 11069116 -->; <link linkend="bib31">Olsen and Ambros, 1999</link><!-- PMID 10642801 -->; <link linkend="bib37">Seggerson et al., 2002</link><!-- PMID 11884032 -->). In addition, various observations suggest that control of translation initiation and polyA tail regulation does occur for some <emphasis>C. elegans</emphasis> mRNAs (<link linkend="bib1">Ahringer and Kimble, 1991</link><!-- PMID 1702880 -->; <link linkend="bib2">Ahringer et al., 1992</link><!-- PMID 1376249 -->; <link linkend="bib14">Goodwin et al., 1993</link><!-- PMID 8402916-->; <link linkend="bib43">Wang et al., 2002</link><!-- PMID 12239571 -->). Beyond this little is known.</para>
+        <para>Many questions remain to be answered. For example, how can RNAs like
+            <emphasis><ulink url="http://www.wormbase.org/db/get?name=pal-1;class=Gene" role="_blank">pal-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=glp-1;class=Gene" role="_blank">glp-1</ulink></emphasis> be translationally repressed
+            by <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> in the germ line but translated in opposing patterns in the embryo? What is the
+            composition of translational control complexes? Do they contain small RNAs? How do these
+            complexes recognize their targets and how do they communicate with the translation
+            machinery and other general factors? How are translational control activities spatially
+            and temporally regulated in the embryo? These questions will provide the fuel for
+            exciting research in the future.</para>
+    </sect1>
+    <sect1>
+        <title>Acknowledgements</title>
+        <para>We would like to thank K. Subramaniam and G. Seydoux for providing unpublished
+            information. Work in T.C.E's laboratory was supported by grants from NSF (9982944,
+            0345386), U. Colo. Cancer Center and ACS, and NIH (GM20599-03). C.P.H. gratefully
+            acknowledges NIH (GM616677) for support to study translational control mechanisms.</para>
+    </sect1>
+    <sect1>
+        <title>References</title>
+        <para/>
+		&maternal_Refs;
+        </sect1>
+</article>

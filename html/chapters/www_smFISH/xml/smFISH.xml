@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "docbookx.dtd"
+[
+<!ENTITY fig1 SYSTEM 'WormBook_Ji_smFISH_fig01.jpg' NDATA JPG>
+<!ENTITY fig2 SYSTEM 'WormBook_Ji_smFISH_fig02.jpg' NDATA JPG>
+<!ENTITY fig3 SYSTEM 'WormBook_Ji_smFISH_fig03.jpg' NDATA JPG>
+<!ENTITY fig4 SYSTEM 'WormBook_Ji_smFISH_fig04.jpg' NDATA JPG>
+<!ENTITY fig5 SYSTEM 'WormBook_Ji_smFISH_fig05.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'WormBook_Ji_smFISH_fig1leg.xml'>
+<!ENTITY fig2legend SYSTEM 'WormBook_Ji_smFISH_fig2leg.xml'>
+<!ENTITY fig3legend SYSTEM 'WormBook_Ji_smFISH_fig3leg.xml'>
+<!ENTITY fig4legend SYSTEM 'WormBook_Ji_smFISH_fig4leg.xml'>
+<!ENTITY fig5legend SYSTEM 'WormBook_Ji_smFISH_fig5leg.xml'>
+<!ENTITY WormBook_Ji_smFISH_refs SYSTEM 'smFISH_ref.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="Miller_and_Chin-Sang_Ephsignaling_id">
+<articleinfo>
+<title>Single molecule fluorescent <emphasis>in situ</emphasis> hybridization (smFISH) of <emphasis>C. elegans</emphasis> worms and embryos<footnote><para>Edited by Oliver Hobert. Last revised May 24, 2012. Published December 13, 2012. This chapter should be cited as: Ji N. and van Oudenaarden A. Single molecule fluorescent <emphasis>in situ</emphasis> hybridization (smFISH) of <emphasis>C. elegans</emphasis> worms and embryos (December 13, 2012), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.153.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2012 Ni Ji and Alexander van Oudenaarden. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+</footnote></title>
+<author><othername>Ni Ji<superscript>1</superscript> and Alexander van Oudenaarden<superscript>2</superscript><remark><footnote><para>To whom correspondence should be addressed. E-mail: <ulink url="a.vanoudenaarden@hubrecht.eu">a.vanoudenaarden@hubrecht.eu.</ulink></para></footnote></remark></othername>
+<affiliation><orgname><superscript>1</superscript>Department of Brain and Cognitive Sciences, Massachusetts Institute of Technology, Cambridge, MA 02139 USA</orgname></affiliation>
+<affiliation><orgname><superscript>2</superscript>Department of Biology, Massachusetts Institute of Technology, Cambridge, MA 02139 USA, Hubrecht Institute, Royal Netherlands Academy of Arts and Science and University Medical Center Utrecht, Uppsalalaan 8, 3584 CT, Utrecht, The Netherlands</orgname></affiliation></author>
+</articleinfo>
+<sect1 id="sec1">
+<title>Introduction</title>
+<para>In <emphasis>C. elegans</emphasis>, the expression pattern of a gene provides important clues to understanding its biological function. To accurately depict endogenous transcriptional activity, a highly sensitive method is required to measure transcript levels in the intact tissue across various developmental stages. Conventional RNA <emphasis>in situ</emphasis> hybridization methods using hapten- (biotin or digoxygenin) labeled RNA probes rely on antibody binding for visualization, and are thus only semi-quantitative at best (<link linkend="bib8">Raap <emphasis>et al.</emphasis> 1995</link><!--PMID: 7633400-->; <link linkend="bib5">Levsky <emphasis>et al.</emphasis> 2003</link><!--PMID: 12808017-->). Additionally, hapten-labeled probes are prone to diffuse localization (when conjugated with alkaline phosphatase), low sensitivity (when conjugated with fluorescent molecules), and non-specific probe binding. Here, we introduce a recently developed mRNA <emphasis>in situ</emphasis> hybridization method (<link linkend="bib11">Raj <emphasis>et al.</emphasis> 2008</link><!--PMID: 18806792-->) that circumvents the above difficulties to give single molecule resolution of transcript detection.</para>
+<para>The single molecule fluorescent <emphasis>in situ</emphasis> hybridization (smFISH) method differs from conventional approaches by using many short (about 20 base pairs long) oligonucleotide probes to target different regions of the same mRNA transcript (<link linkend="bib11">Raj <emphasis>et al.</emphasis> 2008</link><!--PMID: 18806792-->; <link linkend="bib1">Femino <emphasis>et al.</emphasis> 1998</link><!--PMID: 9554849-->). Each oligo is conjugated with only one fluorophore and thus faintly visible by itself. Binding of multiple oligos to the same transcript yields a bright spot, indicative of a single mRNA transcript. Since mis-bound probes are unlikely to co-localize, this method effectively reduces false-positive signal from non-specific probe binding. The small oligo size allows the probes to efficiently penetrate through target tissue, yielding robust detection of even low-abundant transcripts. Subsequently, the total number of fluorescent spots within a single cell or region can be unambiguously counted and compared across different developmental stages and genetic backgrounds.</para>
+<para>Given its many advantages, the smFISH method is a powerful tool to study transcriptional regulation. Its high sensitivity allows accurate characterization of the spatio-temporal patterns of endogenous gene expression. Its single-molecule resolution enables precise quantification of gene expression levels. Such quantitative information can in turn be used to assess, for example: 1) tissue-specific correlations in gene expression, 2) similarity and difference in gene expression across strains, 3) variability in gene expression, and 4) tissue-specific signaling dynamics. To date, smFISH has been successfully applied to study a variety of questions in <emphasis>C. elegans</emphasis> biology (<link linkend="bib9">Raj <emphasis>et al.</emphasis> 2010</link><!--PMID: 20164922-->; <link linkend="bib3">Harterink <emphasis>et al.</emphasis> 2011</link><!--PMID: 21653614-->; <link linkend="bib4">Korzelius <emphasis>et al.</emphasis> 2011</link><!--PMID: 22102824-->; <link linkend="bib7">Middelkoop <emphasis>et al.</emphasis> 2012</link><!--PMID: 22074987-->; <link linkend="bib13">Saffer <emphasis>et al.</emphasis> 2011</link><!--PMID: 22242000-->; <link linkend="bib14">Seidel <emphasis>et al.</emphasis> 2011</link><!--PMID: 21814493-->; <link linkend="bib15">Topalidou <emphasis>et al.</emphasis> 2011</link><!--PMID: 21368126-->). Here we provide the necessary technical details to set up and perform smFISH, from sample preparation to data analysis.</para>
+</sect1>
+<sect1 id="sec2">
+<title>Protocols</title>
+<para>The following protocol covers the 5 major steps of smFISH: <emphasis role="bold">A.</emphasis> Probe design and synthesis, <emphasis role="bold">B.</emphasis> Fixation of <emphasis>C. elegans</emphasis> worms and embryos, <emphasis role="bold">C.</emphasis> Hybridization, <emphasis role="bold">D.</emphasis> Image acquisition, <emphasis role="bold">E.</emphasis> Data analysis. This protocol is largely adapted from the general smFISH protocol detailed in <link linkend="bib10">Raj and Tyagi (2010</link><!--PMID: 20580972-->), with notes and modifications specific to <emphasis>C. elegans</emphasis>. Unless otherwise noted, all reagents listed can be made in bulk ahead of time and stored at room temperature (RT).</para>
+<sect2 id="sec2-1">
+<title>Probe design and synthesis</title>
+<sect3 id="sec2-1-1">
+<title>Design</title>
+<para>smFISH probes are DNA oligonucleotide probes designed according to the follow criteria:</para>
+<orderedlist numeration="arabic">
+<listitem><para>Probe length: 17-22 base pairs</para></listitem>
+<listitem><para>Probe spacing: no less than 2 base pairs</para></listitem>
+<listitem><para>Probe GC content: ideally around 45% to ensure uniform binding efficiency</para></listitem>
+<listitem><para>Number of probes: ideally between 30 and 96 depending on target transcript length. Typically 48 probes are used to ensure good signal quality, while as few as 20 have yielded satisfactory signal (e.g., <link linkend="figure1">Figure 1</link> illustrates the result from 27 probes designed to target <emphasis><ulink url="http://www.wormbase.org/db/get?name=mab-5;class=Gene" role="_blank">mab-5</ulink></emphasis> mRNA). To increase effective target length, part or all of the 3&#x2019;UTR sequences can be combined with the cDNA sequence for probe design.</para></listitem>
+</orderedlist>
+<literallayout></literallayout>
+<mediaobject id="figure1" xreflabel="Figure 1">
+<imageobject>
+<imagedata entityref="fig1" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 1</phrase>
+</textobject> &fig1legend;</mediaobject>
+<para>A web-based probe design software developed by <link linkend="bib11">Raj <emphasis>et al.</emphasis> (2008</link><!--PMID: 18806792-->) is available free of charge at: <ulink url="http://www.biosearchtech.com/stellarisdesigner/">http://www.biosearchtech.com/stellarisdesigner/</ulink>. By supplying the target RNA sequence and the above criteria, one obtains a list of probe sequences with optimized GC contents. These sequences can then be directly submitted for probe synthesis.</para>
+</sect3>
+<sect3 id="sec2-1-2">
+<title>Synthesis, coupling and purification.</title>
+<para><emphasis role="bold">Synthesis:</emphasis> Based on the designed oligonucleotide sequences, smFISH probes are generated en masse using a 96-well DNA synthesizer. Biosearch Technologies (Novato, CA) offers synthesizing service for custom-designed smFISH probes. The probes can be ordered in both coupled and uncoupled forms. While ordering coupled probes minimizes the work involved in probe preparation, obtaining uncoupled probes allows the flexibility to choose fluorophores that are optimally compatible with the researcher&#x0027;s microscope setup (e.g., filter cubes) and other experimental needs. Furthermore, coupled probes are delivered as a mix, which precludes the option of using subsets of the probe library to 1) selectively target different parts of the transcript, or 2) perform negative controls using deletion mutants (see additional comment in the following section and details of suggested controls in the Controls and Troubleshooting section). In the following section, we further suggest a list of factors to consider when deciding whether to pursue in-house coupling.</para>
+<para>Given the small amount of probes needed for each hybridization experiment, synthesis can be carried out at a small scale (Biosearch now delivers 5 nmol of each probe per custom order. This amount is typically sufficient for hundreds of experiments). When ordering uncoupled probes, the oligonucleotide probes should be synthesized with a 3&#x2019;amine group to allow subsequent oligo-fluorophore conjugation. Additionally the oligos should be desalted and resuspended in water as opposed to Tris EDTA (TE), which can interfere with subsequent amine-coupling reactions.</para>
+<para><emphasis role="bold">Coupling:</emphasis></para>
+<para><emphasis>Note: When deciding whether to perform in-house coupling or order readily coupled probes, we suggest considering the following:</emphasis></para>
+<orderedlist numeration="arabic">
+<listitem><para><emphasis>Is it clear which fluorophore to choose? This could vary depending on probe set and the optical setup.</emphasis></para></listitem>
+<listitem><para><emphasis>Is it necessary to split the probe sets to target different parts of a transcript? Pre-coupling requires mixing of all probes in a library, thus excluding the possibility of alternative probe combinations.</emphasis></para></listitem>
+<listitem><para><emphasis>Is in-house coupling feasible? Is there access to a nearby HPLC facility?</emphasis></para></listitem>
+<listitem><para><emphasis>Does experimental schedule allow an additional 3-4 days of probe preparation?</emphasis></para></listitem>
+<listitem><para><emphasis>Is budget a concern? A single probe set of 10 nmol quantity can be coupled to multiple fluorophores (up to 3-4 coupling per probe set is possible), avoiding the need to purchase multiple libraries.</emphasis></para></listitem>
+</orderedlist>
+<para>Prior to coupling, one needs to decide on the desired type of fluorophore. The current protocol uses succinimidyl ester derivatives to couple to the 3&#x2019; end of the oligonucleotide probes. Three types of commercially available fluorophores are commonly used: Cy5 (GE Amersham), Alexa 594 (Molecular Probes, Invitrogen), and tetramethylrhodamine (TMR) (Molecular Probes, Invitrogen). Biosearch also offers equivalent fluorophores (Quasar 670, and CAL Fluor 610 and 590) for their couple probe sets. In general we have found that using fluorophores with shorter emission wavelengths (such as Alexa 488) does not yield reliable signal due to high cellular autofluorescence. <link linkend="table1">Table 1</link> summarizes the strengths and weaknesses of each of the fluorophores as observed in our hands.</para>
+<table id="table1" frame="all" rules="all" cellpadding="0" cellspacing="0" width="75">
+<title><emphasis role="bold">Table 1. Strengths and weaknesses of fluorophores commonly used in smFISH.</emphasis></title>
+<tgroup cols="6">
+<colspec colnum="1" colname="col1"/>
+<colspec colnum="2" colname="col2"/>
+<colspec colnum="3" colname="col3"/>
+<colspec colnum="4" colname="col4"/>
+<colspec colnum="5" colname="col5"/>
+<colspec colnum="6" colname="col6"/>
+<thead>
+<row valign="bottom" rowsep="1">
+<entry align="center"/>
+<entry align="center">Peak Excitation/Emission Wavelength</entry>
+<entry align="center">Photostability</entry>
+<entry align="center">Autofluorescence level</entry>
+<entry align="center">RFP compatible</entry>
+<entry align="center">GFP compatible</entry>
+</row>
+</thead>
+<tbody>
+<row rowsep="1">
+<entry align="left"><emphasis role="bold">Cy5</emphasis></entry>
+<entry align="left">649/670 nm</entry>
+<entry align="left">Low</entry>
+<entry align="left">Low</entry>
+<entry align="left">Yes</entry>
+<entry align="left">Yes</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis role="bold">Alexa 594</emphasis></entry>
+<entry align="left">590/617 nm</entry>
+<entry align="left">High</entry>
+<entry align="left">Medium</entry>
+<entry align="left">Affected</entry>
+<entry align="left">Yes</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis role="bold">TMR</emphasis></entry>
+<entry align="left">564/570 nm</entry>
+<entry align="left">High</entry>
+<entry align="left">High</entry>
+<entry align="left">No</entry>
+<entry align="left">Yes</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<para>For multiplexing assays, we have obtained good results with combinations of all three dyes (provided that each probe set works well when assayed on its own). We generally prefer to pair Cy5 with Alexa 594, as the two fluorophores tend to give better signal quality than TMR. For initial testing, it is important to compare results from multiplex and single-fluorophore assays to ensure consistency. Also keep an eye out for &#x201C;suspiciously similar&#x201D; spot patterns accross channels, which is indicative of cross-talk between fluorescent channels.</para>
+<para><emphasis role="underline">Reagents for coupling:</emphasis></para>
+<itemizedlist>
+<listitem><para>DMSO (if coupling to TMR)</para></listitem>
+<listitem><para>&ast;0.1 M Sodium Bicarbonate (in RNase free water, pH 8.0)</para></listitem>
+<listitem><para>&ast;1 M Sodium Bicarbonate (in RNase free water, pH 8.0)</para></listitem>
+<listitem><para>Ethanol (&gt;95% pure)</para></listitem>
+<listitem><para>3 M Sodium Acetate, pH 5.2</para></listitem>
+<listitem><para>Fluorophore with succinimidyl ester group</para></listitem>
+</itemizedlist>
+<para>&ast;Note: it is desirable to make sodium bicarbonate fresh, or check before use to make sure the pH level is correct.</para>
+<para><emphasis role="underline">Day 1:</emphasis></para>
+<orderedlist numeration="arabic">
+<listitem><para>From the uncoupled probe stock, combine 1 nmol (e.g., 10 &#x03BC;l from a 100 &#x03BC;M stock) of each probe into a single microcentrifuge tube.</para></listitem>
+<listitem><para>Add 0.11 volumes 1 M sodium bicarbonate to give a final concentration of 0.1 M. If the total volume at this stage is &lt; 0.3 mL, add some 0.1 M sodium bicarbonate to bring total volume to 0.3 mL.</para></listitem>
+<listitem><para>Dissolve a small amount (roughly 0.2 mg) of dye into 50 &#x03BC;l of 0.1 M sodium bicarbonate.</para>
+<orderedlist numeration="loweralpha">
+<listitem><para>Note: TMR can be hard to dissolve in aqueous solution, so one must first dissolve it in a small volume (&lt;5 &#x03BC;l) of DMSO before adding 50 &#x03BC;l of 0.1 M sodium bicarbonate.</para></listitem>
+</orderedlist></listitem>
+<listitem><para>Add the dissolved fluorophore to the oligos.</para></listitem>
+<listitem><para>Cover the tube in foil to prevent photo-bleaching and let the reaction proceed overnight at room temperature with gentle rocking.</para></listitem>
+</orderedlist>
+<para><emphasis role="underline">Day 2:</emphasis></para>
+<orderedlist numeration="arabic" continuation="restarts">
+<listitem><para>In the morning, precipitate the oligos by adding 10% volume/volume of 3M sodium acetate and then adding 2.5 volumes of 100% EtOH. Store at &minus;70&#x00B0;C for at least 1 hour (up to overnight).</para></listitem>
+<listitem><para>Spin down the sample in a 4&#x00B0;C microcentrifuge for at least 15 minutes at maximum speed (~16K RCF).</para></listitem>
+<listitem><para>After centrifugation, one should see a small colored pellet at the bottom of the tube. Aspirate away the fluorescent supernatant (containing uncoupled dye molecules) as completely as possible. If purification is not performed right away, the pellet is stable and can be stored at &minus;20&#x00B0;C.</para></listitem>
+</orderedlist>
+<para><emphasis role="bold">Purification:</emphasis> The pellet obtained from the coupling steps contains a mixture of coupled and uncoupled oligonucleotides. To separate the two species, we take advantage of the fact that coupled probes experience a large increase in hydrophobicity compared to the uncoupled ones. High-pressure liquid chromatography (HPLC) can thus be used to enrich for coupled probes.</para>
+<para><emphasis role="underline">Reagents and equipments for purification:</emphasis></para>
+<itemizedlist>
+<listitem><para>0.1 M Triethylammonium acetate, pH 6.5, filtered and degassed (Buffer A)</para></listitem>
+<listitem><para>Acetonitrile for HPLC (Buffer B)</para></listitem>
+<listitem><para>HPLC with a dual wavelength detector to measure both DNA and fluorophore absorbtion</para></listitem>
+<listitem><para>C18 Column for HPLC, 218TP104</para></listitem>
+<listitem><para>SpeedVac rated for acetonitrile</para></listitem>
+</itemizedlist>
+<para><emphasis role="underline">Day 2 (if continued immediately after coupling step 8):</emphasis></para>
+<orderedlist numeration="arabic">
+<listitem><para>Resuspend pellet in appropriate volume (0.1&#x2192;0.5 mL nuclease free water, depending on your HPLC)</para></listitem>
+<listitem><para>Inject coupled probe into HPLC and run a program in which the percentage of buffer B varies from 7% to 30% over the course of around 30 minutes with a flow rate of 1 mL/minute.</para>
+<itemizedlist>
+<listitem><para>Note: Set the detector to monitor DNA absorption (260 nm) and the absorption of the coupled fluorophore (e.g., 555 nm for TMR).</para></listitem>
+</itemizedlist></listitem>
+<listitem><para>One will observe two broad peaks. The first contains uncoupled probes and will only show a peak in the 260 nm channel. The second contains pure coupled probes and will show peaks in both channels. The two peaks will typically be separated by a few minutes of time or longer, with TMR having narrowly separated peaks and Cy5 having broadly separated peaks. With a series of microcentrifuge tubes, collect the entire second peak as soon as the signal begins rise and until it drops back to baseline.</para></listitem>
+</orderedlist>
+<para><emphasis role="underline">Day 3:</emphasis></para>
+<orderedlist numeration="arabic" continuation="restarts">
+<listitem><para>Dry the purified probes in a SpeedVac vacuum concentrator (~ 3-5 hours for 0.5 mL).</para>
+<itemizedlist>
+<listitem><para>Note: Be sure to prevent any light from hitting the probes during the drying process to prevent photobleaching, especially for photolabile dyes such as Cy5.</para></listitem>
+</itemizedlist></listitem>
+<listitem><para>Resuspend all tubes together in a total of 50-100 &#x03BC;l of TE, pH 8.0 (equivalent to roughly 0.1&ndash;1 &#x03BC;M). This is the concentrated probe stock.</para></listitem>
+<listitem><para>(Optional) Dilute this probe 1:10, 1:20, 1:50 and 1:100 in TE to make working stocks for testing probe concentration.</para></listitem>
+</orderedlist>
+<para>At this point, probe synthesis is complete. Probes can be stored in TE at &minus;20&#x00B0;C for years.</para>
+</sect3>
+</sect2>
+<sect2 id="sec2-2">
+<title>Fixation of <emphasis>C. elegans</emphasis> worms and embryos</title>
+<para><emphasis role="underline">Reagents for fixation:</emphasis></para>
+<orderedlist numeration="arabic">
+<listitem><para>Fixation solution: 4% paraformaldehyde (PFA) in 1x PBS</para></listitem>
+<listitem><para>Bleaching solution for embryos (per 40 mL, store at 4&#x00B0;C):</para>
+<itemizedlist>
+<listitem><para>40 mL distilled water</para></listitem>
+<listitem><para>7.2 mL 5 N NaOH</para></listitem>
+<listitem><para>4.5 mL 6% NaHOCl</para></listitem>
+</itemizedlist></listitem>
+<listitem><para>M9 buffer (per 1L):</para>
+<itemizedlist>
+<listitem><para>5.8 g Na<subscript>2</subscript>HPO4</para></listitem>
+<listitem><para>3.0 g KH<subscript>2</subscript>PO4</para></listitem>
+<listitem><para>0.5 g NaCl</para></listitem>
+<listitem><para>1.0 g NH<subscript>4</subscript>Cl</para></listitem>
+<listitem><para>Dissolve in distilled water (dH<subscript>2</subscript>O) to 1 L final volume</para></listitem>
+</itemizedlist></listitem>
+</orderedlist>
+<para><emphasis role="underline">Fixation protocol for worms (larvae and adult):</emphasis></para>
+<orderedlist numeration="arabic">
+<listitem><para>Grow worms on plates seeded with OP50. Synchronize worms to the desired stage if needed.</para>
+<itemizedlist>
+<listitem><para>Note: The appropriate number of plates may vary depending on need, with the minimum requirements that 1) there will be enough worms to form a visible pellet in a microcentrifuge tube, and 2) each plate is not too crowded.</para></listitem>
+</itemizedlist></listitem>
+<listitem><para>Add 3-5 mL M9 buffer to the plate and swirl to release worms from surface, then transfer worms to a 15 mL conical centrifuge tube.</para>
+<itemizedlist>
+<listitem><para>Note: Distilled or deionized water may be used instead of M9 in this and subsequent steps.</para></listitem>
+</itemizedlist></listitem>
+<listitem><para>Spin down to form a pellet and aspirate the supernatant.</para></listitem>
+<listitem><para>Wash and spin down with 3-5 mL M9 buffer to rinse away bacteria and other debris.</para></listitem>
+<listitem><para>Resuspend in 1 mL fixation solution and transfer to microcentrifuge tube. Keep rotating at room temperature for 45 min.</para>
+<itemizedlist>
+<listitem><para>Note: Since autofluorescence levels increase with fixation time, incubation in fixation solution should be kept short. This is especially important for older worms where tissue autofluorescence is relatively strong.</para></listitem>
+</itemizedlist></listitem>
+<listitem><para>Wash twice with 1 mL 1x PBS.</para></listitem>
+<listitem><para>Resuspend in 1 mL of 70% EtOH. Keep rotating for overnight (or longer) at 4&#x00B0;C. Store at 4&#x00B0;C for up to a month.</para></listitem>
+</orderedlist>
+<para><emphasis role="underline">Fixation protocol for embryos:</emphasis></para>
+<orderedlist numeration="arabic">
+<listitem><para>Grow worms on OP50 plates till there are plenty of gravid hermaphrodites.</para></listitem>
+<listitem><para>Wash worms off the plates with M9 into a 15 mL conical centrifuge tube.</para>
+<itemizedlist>
+<listitem><para>Note: Distilled or deionized water may be used instead of M9 in this and subsequent steps.</para></listitem>
+</itemizedlist></listitem>
+<listitem><para>Spin down and resuspend in bleaching solution. Vortex or shake rigorously for 4-8 minutes until worms disappear and only embryos remain.</para></listitem>
+<listitem><para>Spin down and aspirate. Then wash twice with M9 buffer.</para></listitem>
+<listitem><para>Resuspend in 1 mL fixation solution and transfer to a microcentrifuge tube. Keep rotating at room temperature for 15 minutes.</para></listitem>
+<listitem><para>Vortex and then immediately submerge tube in liquid nitrogen for 1 minute to freeze crack the eggshells.</para></listitem>
+<listitem><para>Thaw in water at room temperature.</para></listitem>
+<listitem><para>Once thawed, vortex and place on ice for 20 minutes.</para></listitem>
+<listitem><para>Wash twice with 1 mL of 1x PBS.</para></listitem>
+<listitem><para>Resuspend in 1 mL of 70% EtOH and keep rotating for overnight or longer at 4&#x00B0;C. Embryos can be hybridized up to a week following fixation.</para></listitem>
+</orderedlist>
+</sect2>
+<sect2 id="sec2-3">
+<title>Hybridization</title>
+<para><emphasis role="underline">Reagents for hybridization:</emphasis></para>
+<orderedlist numeration="arabic">
+<listitem><para>Hybridization buffer (per 10 mL, store at &minus;20&#x00B0;C freezer):</para>
+<itemizedlist>
+<listitem><para>&ast;1 g dextran sulfate</para></listitem>
+<listitem><para>10 mg <emphasis>Escherichia coli</emphasis> tRNA</para></listitem>
+<listitem><para>100 &#x03BC;l 200 mM vanadyl ribonucleoside complex (New England Biolabs, Inc.)</para></listitem>
+<listitem><para>40 &#x03BC;l 50 mg/mL RNase free BSA (Ambion)</para></listitem>
+<listitem><para>&ast;&ast;Formamide (deionized, Ambion)</para></listitem>
+<listitem><para>Add nuclease free (NF) water (Ambion) to 10 mL final volume</para></listitem>
+</itemizedlist>
+<para>&ast; Note: Dextran sulfate is viscous and hard to dissolve at room temperature. One solution is to mix dextran sulfate with 4 mL NF water, then sonicate till no clumps are visible.</para>
+<para>&ast;&ast; Note: Determine the amount based on the desired formamide concentration, e.g., 1 mL for 10% final concentration. Higher concentration yields higher probe binding stringency.</para></listitem>
+<listitem><para>Wash buffer (per 50 mL):</para>
+<itemizedlist>
+<listitem><para>Formamide (deionized, Ambion), use same concentration as determined for hybridization buffer</para></listitem>
+<listitem><para>5 mL 20x SSC (RNase free, Ambion)</para></listitem>
+<listitem><para>Add NF water (Ambion) to 50 mL final volume</para></listitem>
+</itemizedlist></listitem>
+<listitem><para>DAPI stain: Prepare working stock of 5 ng/mL in RNase free water, store in the freezer.</para></listitem>
+<listitem><para>2x SSC: Prepare from 20x SSC (RNase free, Ambion) in RNase free water (Ambion).</para></listitem>
+<listitem><para>Antifade buffer (to be made fresh)</para>
+<orderedlist numeration="arabic">
+<listitem><para>Glox buffer (per 50 mL):</para>
+<itemizedlist>
+<listitem><para>2 mL 10% glucose in NF water</para></listitem>
+<listitem><para>250 &#x03BC;l 2M Tris-HCl, pH 8.0</para></listitem>
+<listitem><para>5 mL 20x SSC (RNase free, Ambion)</para></listitem>
+</itemizedlist></listitem>
+<listitem><para>Glycosidase stock: Dilute commercial Glox (glucose oxidase, Sigma-Aldrich) in 50 mM sodium acetate to working stock of 3.7 mg/mL, adjust to pH 5.0. Aliquot to 100 &#x03BC;l units and store at &minus;20&#x00B0;C.</para></listitem>
+<listitem><para>Catalase (Sigma-Aldrich): store at 4&#x00B0;C.</para>
+<para>Prior to imaging, mix 1 &#x03BC;l each of the glycosidase stock and catalase into 100 &#x03BC;l of Glox buffer. Each 100 &#x03BC;l antifade mix is enough for 1&ndash;2 hybridization samples.</para></listitem>
+</orderedlist></listitem>
+</orderedlist>
+<para><emphasis role="underline">Day 1:</emphasis></para>
+<orderedlist numeration="arabic">
+<listitem><para>Prepare the hybridization solution: to 100 &#x03BC;l of hybridization buffer, add 1 &#x03BC;l of each probe at the appropriate concentration, then vortex and centrifuge.</para>
+<itemizedlist>
+<listitem><para>Note: For the initial test of probe concentration, one may perform four parallel hybridizations with probes diluted at 1:10, 1:20, 1:50 and 1:100 in TE. In our hands, 1:20 works well for Cy5 coupled probes and 1:50 appears sufficient for Alexa 594 coupled probes.</para></listitem>
+</itemizedlist></listitem>
+<listitem><para>Centrifuge the fixed sample and aspirate away the ethanol.</para></listitem>
+<listitem><para>Resuspend in 1 mL wash buffer that contains the same concentration of formamide as the hybridization buffer. Let stand for 2&#x2013;5 min.</para></listitem>
+<listitem><para>Centrifuge sample and aspirate away the wash buffer.</para></listitem>
+<listitem><para>Add the hybridization solution prepared in step 1. Incubate overnight at 30&#x00B0;C in the dark.</para>
+<itemizedlist>
+<listitem><para>Note: The modified protocol on the Biosearch website now recommends 4 hour incubation at 37&#x00B0;C. We plan to try out this modification and compare the results carefully with our existing data sets. The result will be included in a future edition of this protocol.</para></listitem>
+</itemizedlist></listitem>
+</orderedlist>
+<para><emphasis role="underline">Day 2:</emphasis></para>
+<orderedlist numeration="arabic">
+<listitem><para>In the morning, add 1 mL wash buffer to the sample. Vortex, spin down and aspirate.</para></listitem>
+<listitem><para>Resuspend in another 1 mL wash buffer and incubate at 30&#x00B0;C for 30 min.</para></listitem>
+<listitem><para>Spin down and aspirate. Resuspend in 1 mL wash buffer</para></listitem>
+<listitem><para>Add 1.5 &#x03BC;l DAPI stain (5 ng/mL) for nuclear counterstaining. Vortex and incubate at 30&#x00B0;C for 30 min.</para></listitem>
+<listitem><para>Spin down and aspirate the wash buffer. Resuspend in 2x SSC, vortex, spin down and aspirate.</para></listitem>
+<listitem><para>If imaging without glox antifade solution (possible for Alexa 594 and TMR), resuspend in a small amount (enough the cover the samples) of 2x SSC and proceed to imaging.</para></listitem>
+<listitem><para>If imaging with the antifade solution, resuspend in a small amount of glox buffer and proceed to imaging.</para>
+<itemizedlist>
+<listitem><para>Note: While hybridized samples can be stored temporarily in 2x SSC at 4&#x00B0;C. Prolonged storage increases the risk of signal degradation. It is thus advisable to image immediately following hybridization.</para></listitem>
+<listitem><para>Note: The hybridization protocol posted by Biosearch (<ulink url="http://www.biosearchtech.com/assets/bti_custom_stellaris_celegans_protocol.pdf">http://www.biosearchtech.com/assets/bti_custom_stellaris_c<emphasis>elegans</emphasis>_protocol.pdf</ulink>) differs from ours in the following: 1) omission of the blocking reagents (tRNA and BSA) from the hybridization buffer; 2) hybridize at 37&#x00B0;C (instead of 30&#x00B0;C) for 4 hours (instead of overnight). At the moment, we have not tried or systematically compared their protocol with our results. We plan to do so and will report our results in a future edition of this protocol.</para></listitem>
+</itemizedlist></listitem>
+</orderedlist>
+</sect2>
+<sect2 id="sec2-4">
+<title>Imaging</title>
+<para><emphasis role="bold">Microscopy equipment:</emphasis></para>
+<orderedlist numeration="arabic">
+<listitem><para>Microscope: Standard wide-field fluorescence microscope (e.g., Nikon TE2000 or Ti, Zeiss Axiovert).</para>
+<itemizedlist>
+<listitem><para>Note: Confocal microscopes, while excellent in spatial precision, use high light intensity and cause rapid bleaching of smFISH signals. They are especially problematic when taking multiple z sections and are thus not recommended for smFISH imaging.</para></listitem>
+</itemizedlist></listitem>
+<listitem><para>Light source: A strong light source is essential for spot detection. Mercury or metal-halide lamp (e.g., ExFo Excite, Prior Lumen 200) are both good candidates. The metal-halide lamps are generally brighter and thus ideally suited for far-red dyes such as Cy5.</para>
+<itemizedlist>
+<listitem><para>Note: With a metal-halide lamp, the exposure time we use for smFISH signal detection is generally around 1-2s, while only 100&ndash;200 ms is needed for GFP and DAPI.</para></listitem>
+</itemizedlist></listitem>
+<listitem><para>Filter sets: Three filters, excitation, dichroic, and emission filters, are needed for each fluorescent channel. Choice of filters should be made based on the optical features of the corresponding fluorophores used (see <link linkend="table2">Table 2</link> for a list of the filters we use).</para></listitem>
+<listitem><para>Camera: Standard cooled CCD camera optimized for low-light level imaging rather than speed (preferably with 13 mm pixel size or less; e.g., CoolSNAP HQ from Pixis, Princeton Instruments).</para></listitem>
+<listitem><para>High numerical aperture (NA&gt; 1.3) 100x DIC objective (be sure to check transmission properties when using far red dyes such as Cy5 or Cy5.5). We have also seen spots using an oil-immersion 60x objective, but the reduced spatial resolution makes the spots somewhat more difficult to identify computationally.</para></listitem>
+</orderedlist>
+<table id="table2" frame="all" rules="all" cellpadding="0" cellspacing="0" width="75">
+<title><emphasis role="bold">Table 2. Examples of optical filter sets compatible with multiplex mRNA detection</emphasis></title>
+<tgroup cols="5">
+<colspec colnum="1" colname="col1"/>
+<colspec colnum="2" colname="col2"/>
+<colspec colnum="3" colname="col3"/>
+<colspec colnum="4" colname="col4"/>
+<colspec colnum="5" colname="col5"/>
+<thead>
+<row valign="bottom" rowsep="1">
+<entry align="center"/>
+<entry align="center">Excitation</entry>
+<entry align="center">Dichroic</entry>
+<entry align="center">Emission</entry>
+<entry align="center">Supplier</entry>
+</row>
+</thead>
+<tbody>
+<row rowsep="1">
+<entry align="left"><emphasis role="bold">Cy5</emphasis></entry>
+<entry align="left">HQ620/60x</entry>
+<entry align="left">Q660LP</entry>
+<entry align="left">HQ700/75m</entry>
+<entry align="left">Chroma</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis role="bold">Alexa 594</emphasis></entry>
+<entry align="left">590DF10</entry>
+<entry align="left">610DRLP</entry>
+<entry align="left">620DF30</entry>
+<entry align="left">Omega</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis role="bold">TMR</emphasis></entry>
+<entry align="left">546DF10</entry>
+<entry align="left">555DRLP</entry>
+<entry align="left">580DF30</entry>
+<entry align="left">Omega</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<para><emphasis role="bold">Software:</emphasis> Standard microscopy software capable of memorizing sample positions and imaging through z optical stacks. We currently use MetaMorph (Molecular Devices), which offers easily programmable user interface.</para>
+<para><emphasis role="bold">Imaging chamber</emphasis>: There are two purposes of the imaging chamber: 1) to affix the sample in a small region and prevent drying and 2) to minimize the thickness of the sample by flattening, thereby reducing out of focus light. To assemble the chamber:</para>
+<orderedlist numeration="arabic">
+<listitem><para>Pipette 2-5 &#x03BC;l of the sample in antifade solution onto a clean 8mm round cover glass (Electron Microscopy Sciences, &num;1.5 thickness).</para></listitem>
+<listitem><para>Gently tap a clean 22 &times; 22 mm square cover glass (VWR, &num;1 thickness) onto the drop of sample solution. This will cause the round cover glass to quickly adhere to the square glass.</para>
+<itemizedlist>
+<listitem><para>Optional: Clean cover glasses before hand by rinsing with 70% EtOH and let dry.</para></listitem>
+</itemizedlist></listitem>
+<listitem><para>Immediately flip the square glass so that the round glass is on top. Let sit for half a minute or so while covered in dark.</para></listitem>
+<listitem><para>While waiting, adhere a square Silicone Isolator (Grace Biolabs, 20 mm diameter &times; 0.5 depth) to a regular microscope slide.</para></listitem>
+<listitem><para>Gently remove excess antifade solution from the rim of the round cover glass with a Kimwipes wiper.</para></listitem>
+<listitem><para>Adhere the square cover glass to the Silicone Isolator with the round cover glass facing towards the microscope slide. Press down on the edges of the square glass to create a tight seal. This constitutes the imaging chamber.</para></listitem>
+<listitem><para>Affix the imaging chamber to the microscope stage. Make sure to position the microscope slide correctly so that the imaging chamber faces the objective. Proceed to locate individual worms or embryos.</para></listitem>
+</orderedlist>
+<para><emphasis role="bold">What to expect:</emphasis> A successful hybridization and sample preparation should yield clear fluorescent spots roughly 200-500 nm in size. These spots are so called &#x201C;diffraction limited spots&#x201D; based on the fact that the size of an mRNA molecule (nm) is far below the optical limit of the widefield microscope (&#x03BC;m). On a digitally acquired smFISH image, spot intensities usually vary within 2 fold of one another (for the same gene detected in the same fluorescent channel), with the exception of transcription centers in the nuclei (where large amounts of nascent transcripts accumulate), which can be much brighter. Optimal smFISH signal should be more than 1.5 times in intensity above the tissue background. When viewed on an image, the spots should be distinct in shape (i.e., not blurred) and readily identifiable by eye. <link linkend="figure2">Figure 2</link> illustrates two smFISH experiments, one probing <emphasis><ulink url="http://www.wormbase.org/db/get?name=elt-2;class=Gene" role="_blank">elt-2</ulink></emphasis> (a transcription factor involved in specifying the future intestine, <link linkend="bib2">Fukushige <emphasis>et al.</emphasis> 1998</link><!--PMID: 9659934-->) in embryos (from <link linkend="bib9">Raj <emphasis>et al.</emphasis> 2010</link><!--PMID: 20164922-->), the other staining three Wnt ligands expressed in the posterior body of the L1 larvae (from <link linkend="bib3">Harterink <emphasis>et al.</emphasis> 2011</link><!--PMID: 21653614-->).</para>
+<literallayout></literallayout>
+<mediaobject id="figure2" xreflabel="Figure 2">
+<imageobject>
+<imagedata entityref="fig2" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 2</phrase>
+</textobject> &fig2legend;</mediaobject>
+</sect2>
+<sect2 id="sec2-5">
+<title>Data analysis</title>
+<para>Successful smFISH experiments can simultaneously provide high quality information on the location, abundance, and transcriptional states of multiple mRNA species. To extract this wealth of information in an efficient and unbiased way, we recommend analyzing smFISH data using custom written computer software. While the exact analysis procedure may vary depending on experimental goals, we suggest the following analysis streamline (<link linkend="figure3">Figure 3</link>) and briefly outline its implementation:</para>
+<literallayout></literallayout>
+<mediaobject id="figure3" xreflabel="Figure 3">
+<imageobject>
+<imagedata entityref="fig3" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 3</phrase>
+</textobject> &fig3legend;</mediaobject>
+<orderedlist numeration="arabic">
+<listitem><para><emphasis role="bold">Image conversion:</emphasis> Common imaging softwares such as MetaMorph and NIH-image save images in .tiff or .stk format. These files are not directly analyzable in computing software such as MATLAB, and must be converted to a readable format.</para>
+<itemizedlist>
+<listitem><para>&ast;Note: A MATLAB code that reads data from .tiff files is available online at MATLAB Central: <ulink url="http://www.mathworks.com/matlabcentral/fileexchange/10298">http://www.mathworks.com/matlabcentral/fileexchange/10298</ulink></para></listitem>
+</itemizedlist></listitem>
+<listitem><para><emphasis role="bold">Image segmentation:</emphasis> Image segmentation is a useful step in localizing mRNA expression to specific cell or tissue-types. Oftentimes, it is possible to take advantage of DAPI staining (for demarcating the body axes and major tissue groups, i.e., body wall muscles, ventral nerve cord, intestinal cells, etc.), GFP reporter systems, and smFISH signals (by staining for genes previously known to be expressed in a given cell or tissue) to accurately assign smFISH spots to their tissue of origin. Computational software can facilitate this process by overlaying images from multiple channels (e.g., Cy5, Alexa 594, GFP and DAPI), followed by manual or automatic annotation of the relevant spatial landmarks. These annotations can later be overlaid onto the smFISH images to allow tissue-specific transcript quantification. Additional analysis, such as measurement of tissue length or size, can also be performed computationally at this step. If performing segmentation using computational software (e.g., MATLAB), the resulting traces and annotations can be saved as a standalone data file and used for region-specific spot counting (step 5) later.</para></listitem>
+<listitem><para><emphasis role="bold">Image sharpening:</emphasis> To facilitate subsequent automatic spot detection, it is useful to first enhance the signal-to-noise contrast of the smFISH images. This can be done by convolving each image file (i.e., a matrix consisting of individual pixel values) with two mathematical functions (kernels), a Gaussian followed by a Laplacian. In practice the two functions can be convolved first to form a computational filter called the Laplacian of Gaussian (LoG). As shown in <link linkend="figure4">Figure 4</link>, the effect of convolving the original image with the LoG filter is twofold: 1) the Gaussian filter smoothens the background to reduce small speckles that could be confused with real spots, 2) the Laplacian filter then performs edge detection by amplifying the contrast between adjacent dim and bright pixels. The width of the Gaussian filter should be picked to resemble the size of a typical spot. Alternatively, this can be done by trial and error (we recommend starting around 1.5) by visually comparing the filtered and original images. The following is an example of MATLAB code used for image sharpening:
+<literallayout>
+H = -fspecial('log',15,1.2); % H is the LoG filter with a standard deviation of 1.2 and width around 5
+g = imfilter(im,H);    % im is the original smFISH image</literallayout></para></listitem>
+<listitem><para><emphasis role="bold">Spot detection and semi-automated threshold picking:</emphasis> Since smFISH signals are significantly brighter than the background, individual spots are detected by identifying regions in the image with pixel values higher than a pre-specified threshold. One way of determining this threshold is to systematically screen threshold values in incremental steps from the minimum to the maximum pixel intensities. For each threshold value tested, the software identifies filled regions (or &#x201C;connected objects&#x201D;) wherein all pixel values are above threshold. The total number of filled regions is then summed up to yield the total spot count corresponding to the given threshold.</para>
+<para>After spot detection and counting has been carried out for all thresholds, a plot can be generated showing total spot counts as a function of different threshold values. With high quality imaging data this curve is expected to start high and drop rapidly to reach a brief plateau, before it finally approaches zero (<link linkend="figure5">Figure 5</link>). The observed plateau corresponds to all threshold values above the background auto-fluorescence and below the real signal intensity. The total spot count is approximately constant in this range and corresponds reliably to the number of actual smFISH spots. Seemingly convenient, automatic detection of this plateau is sometimes difficult (since the size and flatness of this plateau varies from image to image). Especially during initial testing of the software, we recommend to manually pick the threshold, and plot the computationally detected spots over the original image to ensure that no over- or under-counting has occurred.</para></listitem>
+<listitem><para><emphasis role="bold">Region-specific spot counting:</emphasis> Spot quantification within a specific cell or tissue can be conveniently achieved by aligning the results from image segmentation and spot detection. Computationally this can be done by generating a binary map for the region of interest (ROI) and using this map to filter out detected spots that are outside the ROI. MATLAB&#x0027;s Image Processing Toolbox provides many built-in functions that can greatly facilitate the image analysis steps described here. A sample of such MATLAB based software is available at the Arjun Raj lab website <ulink url="http://rajlab.seas.upenn.edu/pdfs/raj_nat_meth_2008_software.zip">http://rajlab.seas.upenn.edu/pdfs/raj_nat_meth_2008_software.zip</ulink>. Additional details for using MATLAB to perform image processing and single-molecule identification can be found in a recent paper by <link linkend="bib12">Scott Rifkin (2011</link><!--PMID: 22065448-->). Other programming platforms, e.g., Python and Image J, also hold great promise in generating fast and accurate analysis software.</para></listitem>
+</orderedlist>
+<literallayout></literallayout>
+<mediaobject id="figure4" xreflabel="Figure 4">
+<imageobject>
+<imagedata entityref="fig4" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 4</phrase>
+</textobject> &fig4legend;</mediaobject>
+<literallayout></literallayout>
+<mediaobject id="figure5" xreflabel="Figure 5">
+<imageobject>
+<imagedata entityref="fig5" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 5</phrase>
+</textobject> &fig5legend;</mediaobject>
+</sect2>
+<sect2 id="sec2-6">
+<title>Controls and troubleshooting</title>
+<para>As the power of smFISH method lies in the accurate detection of single mRNA molecules, it is important to perform proper controls for each new smFISH probe library generated. Here we outline a number of control experiments that address common concerns regarding smFISH results. Additionally, while the smFISH protocols described here worked robustly for many <emphasis>C. elegans</emphasis> genes (including Wnt and Notch pathway genes, endoderm specification genes, etc., in both worms and embryos), we did notice a number of technical factors that can affect data quality. We thus provide a list of troubleshooting tips below to facilitate further optimization of the protocols.</para>
+<para><emphasis role="bold">Recommended controls:</emphasis></para>
+<orderedlist numeration="arabic">
+<listitem><para><emphasis>Does a single smFISH spot represent a single mRNA molecule?</emphasis></para>
+<itemizedlist>
+<listitem><para>Solution 1: To confirm single molecule resolution, one may randomly sample the peak pixel intensities of individual smFISH molecules within a given series of images (a process automatable by computer software). The spot intensities should then be plotted on a histogram. The resulting distribution is expected to be unimodal with one narrow peak (this would not be the case if mRNA molecules frequently occur as groups of two or more) (<link linkend="bib16">Vargas <emphasis>et al.</emphasis> 2005</link><!--PMID: 16284251-->). Large mRNA aggregates in the nucleus or specialized organelles (as in the case of transcription centers, P bodies and stress granules) are often many-fold brighter and can be easily excluded from analysis by pixel thresholding. To control for the rare case where mRNA of the same species dimerize (an example being the <emphasis>Drosophila</emphasis> <emphasis>bicoid</emphasis> mRNA, <link linkend="bib17">Wagner <emphasis>et al.</emphasis> 2004</link><!--PMID: 14607826-->), one may proceed to perform quantitative reverse-transcription PCR (qRT-PCR) as described below.</para></listitem>
+<listitem><para>Solution 2: To independently check mRNA level, a control qRT-PCR experiment can be performed on bulk collected <emphasis>C. elegans</emphasis> tissue. As it is currently difficult to enrich for particular tissue or cell types in a bulk collection (with the exception of dissected gonads), this approach would only apply to whole worm or embryo measurement. qRT-PCR measurement from bulk collected tissue then needs to be normalized by the estimated total number of worms or embryos. The obtained average expression level per animal can then be compared to average smFISH measurements, and the two are expected to be largely consistent.</para></listitem>
+</itemizedlist></listitem>
+<listitem><para><emphasis>Are we robustly detecting all mRNA transcripts of a given species?</emphasis> (Positive control)</para>
+<itemizedlist>
+<listitem><para>Solution 1: Separate the uncoupled probe library into two halves containing non-overlapping sets of probes. Couple these two probe sets respectively with two different fluorophores and hybridize both probe sets to the same sample. If the majority of mRNA transcripts are reliably detected, most spots should appear double labeled, and the overall degree of co-localization should be high. We have consistently detected around 85% co-localization, suggesting the majority of the mRNA transcripts are being detected by smFISH. Additionally, it is recommended to partition the probe library in a way that allows probes with one fluorophore to interleave probes with the other fluorophore. Compared with having the two sets of probes targeting two different regions of the endogenous mRNA, this approach avoids differences in probe binding efficiency along different parts of the mRNA. A potential weakness is that this approach is non-robust for mRNAs that are inaccessible by the smFISH protocol (e.g., mRNAs that are localized in specialized organelles or embodied by protein complexes). The following approach provides an independent and complementary assessment of total mRNA quantity.</para></listitem>
+<listitem><para>Solution 2: To determine whether the number of transcripts detected by smFISH is accurate, one may perform, in parallel, quantitative reverse-transcription PCR (qRT-PCR) on a known number of synchronized worms. The total and average number of transcripts should agree between the two approaches. However this approach may not work well when transcript number within a specific tissue or region is of interest. qRT-PCR measurement is also subject to imperfect worm synchronization and may yield average counts that are lower or higher than the smFISH result (<link linkend="bib16">Vargas <emphasis>et al.</emphasis> 2005</link><!--PMID: 16284251-->, <link linkend="bib11">Raj <emphasis>et al.</emphasis> 2008</link><!--PMID: 18806792-->).</para></listitem>
+</itemizedlist></listitem>
+<listitem><para><emphasis>Are we detecting mRNA transcripts other than the species of interest?</emphasis> (Negative control)</para>
+<itemizedlist>
+<listitem><para>Solution: If possible, obtain a mutant strain with a large deletion in the coding sequence. Design probes that specifically target the deleted region, and hybridize the same probe set to both the wild-type strain and the mutant. While the probe should yield detectable signal in wild-type worms, no spots should be detected for the mutant. If a deletion allele is not available or the deletion is too short, consider using a strain harboring a nonsense mutation. Confirm first by RT-PCR that the mRNA is greatly reduced compared to the wild-type (likely resulting from nonsense-mediated decay). Then perform smFISH to confirm that similar reduction in transcripts is observed in the mutant.</para></listitem>
+<listitem><para>General note: When designing probes, it is good practice to blast the probe library against the <emphasis>C. elegans</emphasis> genome to ensure that majority of the targeted sequences are unique (especially important when multiple paralogs exist in the genome). It is also important to keep the GC content of the probes around below 70% as GC rich probes are more prone to non-specific binding.</para></listitem>
+</itemizedlist></listitem>
+<listitem><para><emphasis>How do we differentiate smFISH spots from auto-fluorescent speckles?</emphasis> (Negative control)</para>
+<itemizedlist>
+<listitem><para>Solution 1: Auto-fluorescent speckles tend to show up in multiple fluorescent channels while smFISH spots light up only in the channel determined by the coupled fluorophore. Overlay images from different fluorescent channels to differentiate auto-fluorescence from the real signal.</para></listitem>
+<listitem><para>Solution 2: If auto-fluorescence is a strong concern, one may perform the hybridization procedure without adding the coupled probes. In the unlikely case that many fluorescent spots show up in the image, we know for sure that there is significant interfering signal from auto-fluorescence.</para></listitem>
+</itemizedlist></listitem>
+<listitem><para><emphasis>Is there bleed-through between channels (in the case of multi-color smFISH)?</emphasis></para>
+<itemizedlist>
+<listitem><para>Solution: Bleed through between channels can happen when a signal in one channel is extremely strong. This is the case with intra-nuclear transcription centers, densely-packed transcripts (sometimes localized in organelles), and highly-over-expressed transgenes. To check for bleed-through, one may check if the spots detected in different channels (expected to represent two different transcript species) are highly co-localized. Alternatively, one may perform single-color FISH to see if spots are detected outside the expected channel. To avoid bleed-through choose channels that are as far apart in emission wavelength as possible and choose optical filters that separate well between the channels (<link linkend="table2">Table 2</link>).</para></listitem>
+</itemizedlist></listitem>
+</orderedlist>
+<para><emphasis role="bold">Troubleshooting tips:</emphasis></para>
+<orderedlist numeration="arabic">
+<listitem><para><emphasis>Low signal intensity or no signal</emphasis></para>
+<para>Whenever possible, use a previously tested probe set (coupled to the same fluorophore) as positive control to make sure all equipment (light source, camera, software, etc.) are working properly. For issues specific to the particular probe set, consider checking the following:</para>
+<itemizedlist>
+<listitem><para>1) <emphasis>Probe concentration</emphasis>. Test higher concentrations (e.g., start with one order of magnitude higher) to see if the signal quality improves. Based on experience, we recommend diluting in TE 1:20 for Cy5 coupled probes, 1:50 for Alexa, and 1:10 for TMR, followed by 1:100 dilution in hybridization buffer.</para></listitem>
+<listitem><para>2) <emphasis>Tissue penetration</emphasis>. Make sure the sample has been incubated in EtOH for ample time (e.g., 24 hours).</para></listitem>
+<listitem><para>3) <emphasis>Hybridization stringency</emphasis>. Formamide concentration of the hybridization buffer directly controls binding efficiency. While 10% formamide generally works well for all <emphasis>C. elegans</emphasis> stages, one may try decreasing the concentration to see if signal improves. One should be cautious with this approach as low formamide concentration also ups the chance of non-specific binding.</para></listitem>
+</itemizedlist></listitem>
+<listitem><para><emphasis>High fluorescent background</emphasis></para>
+<para>Multiple causes are likely:</para>
+<itemizedlist>
+<listitem><para>1) <emphasis>Unhealthy worms</emphasis>. Starvation and over-crowded culture lead to high auto-fluorescence in the worm tissue. This is the most common cause of high background and should be avoided by proper worm culture maintenance.</para></listitem>
+<listitem><para>2) <emphasis>Over-fixation</emphasis>. The second common cause and especially problematic for older worms. Keep fixation time under an hour and adjust fixation duration to troubleshoot. Also make sure to thoroughly wash off the fixative with 1x PBS to terminate fixation.</para></listitem>
+<listitem><para>3) <emphasis>High probe concentration or insufficient washing</emphasis>. This can be checked by testing lower dilutions and incubating longer during the two wash steps.</para></listitem>
+<listitem><para>4) <emphasis>Low probe binding stringency</emphasis>. This could be a result of either low formamide concentration or high probe GC content. In both cases, probes bind non-specifically leading to increased background fluorescence. Unlike tissue auto-fluorescence, this phenomenon should be specific to the channel of the fluorophore whereas auto-fluorescence affects all channels.</para></listitem>
+<listitem><para>5) <emphasis>Out-of-focus light</emphasis>. Real FISH signals that are outside the focal plane appear as diffuse background fluorescence in the focal plane. This problem is often dramatically improved by sucking away any excess fluid in the imaging chamber and maximally flattening the sample.</para></listitem>
+</itemizedlist></listitem>
+<listitem><para><emphasis>Nonspecific signal (due to auto-fluorescence or bleed-through)</emphasis></para>
+<para>First make sure that the sample is collected from a clean, healthy batch of worms to reduce overall background. Sometimes, signal in the Alexa 594 channel can bleed into the Cy5 channel if the two optical filters are not optimally separated in spectrum. Extremely high signal intensity (often in the case of over-expressed transgenes) in one channel can also broadly show up as &#x201C;pseudo-spots&#x201D; in multiple other channels. To check, test each probe set in a separate hybridization to see if problem persists.</para></listitem>
+<listitem><para><emphasis>Irregular or diffuse spot morphology interfering with spot identification and counting</emphasis></para>
+<para>Successful smFISH experiment should yield spots circular in 2D and with sizes similar to one another. However liquid between the sample and the objective can obscure the expected optical properties of the spots. In such case, try to maximally flatten the sample to reduce sample thickness and out-of-focus light. Additionally, highly local spot density (which occurs with highly expressed genes or transgenes) can lead to inevitable difficulty in resolving individual spots. When processing through computational software, try to identify local maxima in addition to &#x201C;connected regions&#x201D;. This allows sub-diffraction detection of the (in principal) exact location of the mRNA transcript and thereby enhances the resolution of the smFISH signal.</para></listitem>
+</orderedlist>
+</sect2>
+</sect1>
+<sect1 id="sec3">
+<title>References</title>
+<para/>
+&WormBook_Ji_smFISH_refs;
+</sect1>
+</article>

@@ -1,0 +1,1340 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Transposons in C. elegans</title>
+      <meta name="generator" content="DocBook XSL Stylesheets V1.67.2">
+      <link rel="start" href="#transposons_ArticleID" title="Transposons in C. elegans&#xA;            &#xA;        ">
+      <link rel="next" href="#d0e121" title="1.&nbsp;&#xA;            C. elegans transposons, the catalog">
+      <!--#include virtual="/ssi/header_article.html" -->
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<!--#include virtual="/ssi/boilerplate.html" -->
+<div class="html_to_pdf_link">
+	<a href="transposons.pdf">Download PDF version</a>
+</div>
+      <div class="article" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h1 class="title"><a name="transposons_ArticleID"></a>Transposons in <span class="emphasis"><em>C. elegans</em></span>
+                                 <sup><a name="d0e11" href="#ftn.d0e11">*</a></sup>
+                             
+                  </h1>
+               </div>
+               <div>
+                  <div class="author"><span class="author"><span class="firstname">Jean-Louis</span> <span class="surname">Bessereau<em><span class="remark">
+                                                     <sup><a name="d0e41" href="#ftn.d0e41">&sect;</a></sup>
+                                                 </span></em>
+                                       </span><br></span><span class="affiliation"><span class="address">ENS, Biologie Cellulaire de la Synapse, Paris, F-75005 France; Inserm, U497, Paris, F-75005 France
+                           <p></p></span></span></div>
+               </div>
+            </div>
+            <hr>
+         </div>
+         <div class="toc">
+
+	   <div id="section_locator"><a href="/toc_geneticsgenomics.html">
+	         <b>This chapter is in WormBook section:</b><br />
+		       > Genetics and genomics<br />>> Genomics
+		</a></div><hr />
+
+<a href="http://www.wormbase.org/forums/index.php?board=197.0" title="Discuss WormBook" target="_blank"><font color="#9932cc"><b>View/Add Comments</b></font></a><br/>
+<IFRAME  SRC="http://tazendra.caltech.edu/~acedb/cgi-bin/wormbook_comment.cgi?name=Transposons+in+C.+elegans" HEIGHT=50 WIDTH=180 FRAMEBORDER=0 SCROLLING=NO allowTransparency="true"></IFRAME>
+
+<hr />
+
+            <p><b>Table of Contents</b></p>
+            <dl>
+               <dt><span class="sect1"><a href="#d0e121">1. 
+                                    <span class="emphasis"><em>C. elegans</em></span> transposons, the catalog</a></span></dt>
+               <dd>
+                  <dl>
+                     <dt><span class="sect2"><a href="#d0e184">1.1. The Tc1 and Tc3 transposons</a></span></dt>
+                     <dt><span class="sect2"><a href="#d0e296">1.2. Other active transposons</a></span></dt>
+                     <dt><span class="sect2"><a href="#d0e417">1.3. Transposons with no detected activity:</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="sect1"><a href="#d0e566">2. Mechanisms of Tc1 and Tc3 transposition</a></span></dt>
+               <dt><span class="sect1"><a href="#d0e729">3. Transposon insertion target</a></span></dt>
+               <dt><span class="sect1"><a href="#d0e797">4. Repair of the excision site</a></span></dt>
+               <dt><span class="sect1"><a href="#d0e904">5. Regulation of transposition</a></span></dt>
+               <dt><span class="sect1"><a href="#d0e1060">6. Transposon-based tools for <span class="emphasis"><em>C. elegans</em></span> research</a></span></dt>
+               <dd>
+                  <dl>
+                     <dt><span class="sect2"><a href="#d0e1066">6.1. Gene identification in forward genetic screens</a></span></dt>
+                     <dt><span class="sect2"><a href="#d0e1145">6.2. Targeted gene inactivation</a></span></dt>
+                     <dt><span class="sect2"><a href="#d0e1173">6.3. Site-directed mutagenesis</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="sect1"><a href="#d0e1227">7. Acknowledgments</a></span></dt>
+               <dt><span class="sect1"><a href="#d0e1232">8. References</a></span></dt>
+            </dl>
+         </div>
+         <div class="abstract">
+            <p class="title"><span class="bold"><strong>Abstract</strong></span></p>
+            <p><span class="bold"><strong>Transposons are discrete segments of DNA capable of moving through the genome of their
+                                 host via an RNA intermediate in the case of class I retrotransposon or via a
+                                 "cut-and-paste" mechanism for class II DNA transposons. Since transposons take advantage
+                                 of their host's cellular machinery to proliferate in the genome and enter new hosts,
+                                 transposable elements can be viewed as parasitic or "selfish DNA". However, transposons
+                                 may have been beneficial for their hosts as genome evolution drivers, thus providing an
+                                 example of molecular mutualism. Interactions between transposon and</strong></span> <span class="emphasis"><em><span class="bold"><strong>C.
+                                       elegans</strong></span></em></span> <span class="bold"><strong>research were undoubtedly mutualistic, leading to the advent of
+                                 needed genomic tools to drive</strong></span> <span class="emphasis"><em><span class="bold"><strong>C. elegans</strong></span></em></span> <span class="bold"><strong>research while providing
+                                 insights into the transposition field. Tc1, the first</strong></span> <span class="emphasis"><em><span class="bold"><strong>C. elegans</strong></span></em></span>
+                           <span class="bold"><strong>transposon to be identified, turned out to be the founding member of a widespread family
+                                 of mobile elements: the Tc1/</strong></span><span class="emphasis"><em><span class="bold"><strong>mariner</strong></span></em></span> <span class="bold"><strong>superfamily. The investigation
+                                 into transposition regulation in</strong></span> <span class="emphasis"><em><span class="bold"><strong>C. elegans</strong></span></em></span> <span class="bold"><strong>has uncovered an
+                                 unforeseen link between transposition, genome surveillance and RNA interference.
+                                 Conversely, transposons were utilized soon after their identification to inactivate and
+                                 clone genes, providing some of the first molecular identities of</strong></span> <span class="emphasis"><em><span class="bold"><strong>C.
+                                       elegans</strong></span></em></span> <span class="bold"><strong>genes. Recent results suggest that transposons might provide a means
+                                 to engineer site-directed mutations into the</strong></span> <span class="emphasis"><em><span class="bold"><strong>C. elegans</strong></span></em></span> <span class="bold"><strong>genome.
+                                 This article describes the different transposons present in the</strong></span> <span class="emphasis"><em><span class="bold"><strong>C.
+                                       elegans</strong></span></em></span> <span class="bold"><strong>genome with a specific emphasis on the ones that proved to be mobile
+                                 under laboratory conditions. Mechanisms and control of transposition are discussed
+                                 briefly. Some tools based on the use of transposons for</strong></span> <span class="emphasis"><em><span class="bold"><strong>C. elegans</strong></span></em></span>
+                           <span class="bold"><strong>research are presented at the end of this review.</strong></span></p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e121"></a>1.&nbsp;
+                                    <span class="emphasis"><em>C. elegans</em></span> transposons, the catalog
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Analysis of the <span class="emphasis"><em>C. elegans</em></span> genome sequence indicates that
+                           approximately 12 <span class="symbol">%</span> of the <span class="emphasis"><em>C. elegans</em></span>
+                           genome is derived from transposable elements (<a href="#bib17"><span class="emphasis"><em>C. elegans</em></span> Sequencing Consortium, 1998</a>; <a href="#bib76">Sijen and Plasterk, 2003</a>; <a href="#bib77">Stein et al., 2003</a>). However, most of these
+                           sequences are fossil remnants that are no longer mobile but can be used by molecular archeologists to trace back
+               the interactions between parasitic "selfish DNA" (<a href="#bib62">Orgel and Crick, 1980</a>) and a host genome (for review see <a href="#bib8">Brookfield, 2005</a>; <a href="#bib40">Kazazian, 2004</a>). In this section, I will mostly
+                           describe elements that can transpose under laboratory conditions (<a href="#figure1">Figure 1</a>). Other elements will be mentioned only briefly.
+            </p>
+            <div class="mediaobject" align="center"><a name="figure1"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="585">
+<tr>
+  <td align="center"><p><a href="transposonsfig1.jpg"><img src="transposonsfig1_s.jpg" border="2" align="middle" alt=" Transposable elements figure 1"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 1. Active transposons in <span class="emphasis"><em>C. elegans</em></span>.&nbsp;</b>The structure of the transposons that proved to be mobile are depicted in the left
+                                 panel. They all are class II DNA tranposons flanked by Terminal Inverted Repeats (boxes)
+                                 and containing one open reading frame (arrows) encoding the transposase enzyme.
+                                 Distribution of the different transposons in the genome of the <span class="emphasis"><em>C. elegans</em></span> Bristol N2
+                                 strain is represented in the right panel using the same color code as on the right (Tc7
+                                 are in light blue; however, as represented on the left panel, 36 of the 38 outer bp of
+                                 Tc7 are identical to the one of Tc1) The sizes of the chromosomes are in Mb. Reprinted
+                                 from <a href="#bib27">Fischer et al. (2003)</a>. Copyright &copy; 2003 the Genetics Society of America.
+                  </p>
+               </div>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e184"></a>1.1.&nbsp;The Tc1 and Tc3 transposons
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Tc1 and Tc3 are the most active and best characterized transposons in <span class="emphasis"><em>C.
+                                        elegans</em></span>. The article of Anderson, Emmons and Moerman (1992) describes how
+                                  circulating information between laboratories conducting simultaneous molecular and
+                                  genetics approaches lead to the identification of the first transposable element in
+                                      <span class="emphasis"><em>C. elegans</em></span>, Tc1. Tc1 was isolated as a repeated sequence
+                                  responsible for polymorphism among different strains (<a href="#bib25">Emmons et al., 1983</a>; <a href="#bib50">Liao et al., 1983</a>; <a href="#bib70">Rosenzweig et al., 1983</a>).
+                                  Analysis of spontaneous and reversible mutations of the myosin heavy-chain
+                                  <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=unc-54" target="_blank">unc-54</a></em></span> demonstrated the mobile nature of Tc1 (<a href="#bib22">Eide and Anderson, 1985</a>; <a href="#bib23">Eide and Anderson, 1988</a>). This feature
+                                  was used to clone another muscle gene <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=unc-22" target="_blank">unc-22</a></em></span> by transposon
+                                  tagging (<a href="#bib56">Moerman et al., 1986</a>; <a href="#bib57">Moerman and Waterston, 1984</a>). The subsequent characterization of additional spontaneous <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=unc-22" target="_blank">unc-22</a></em></span> mutations
+                                  lead to the identification of Tc3 (<a href="#bib13">Collins et al., 1989</a>).
+               </p>
+               <p>Tc1 is 1,610 bp long and contains two 54-bp terminal inverted repeats (TIRs; <a href="#bib70">Rosenzweig et al., 1983</a>). Tc3 is an element of 2,335 bp with 462 bp
+                                  TIRs. The genome of the Bristol N2 strain contains 31 and 22 copies of Tc1 and Tc3,
+                                  respectively (<a href="#bib27">Fischer et al., 2003</a>). These numbers are strain
+                                  dependent. In some strain isolates such as Bergerac, Tc1 transposition is active in
+                                  the germ line and each haploid genome contains up to 300-500 Tc1 copies (<a href="#bib21">Egilmez et al., 1995</a>; <a href="#bib25">Emmons et al., 1983</a>; <a href="#bib50">Liao et al., 1983</a>).
+               </p>
+               <p>Tc1 and Tc3 are part of a superfamily of transposable elements which is named
+                                  after its two best-studied members: Tc1 and the related transposon
+                                  <span class="emphasis"><em>mariner</em></span> which was identified in 1986 in <span class="emphasis"><em>Drosophila
+                                        mauritiana</em></span> (<a href="#bib38">Jacobson et al., 1986</a>).
+                                  Tc1/<span class="emphasis"><em>mariner</em></span> elements are probably the most widespread DNA
+                                  transposons in nature and can be found in fungi, plants, ciliates and animals
+                                  including ecdysozoans and vertebrates (for review see <a href="#bib65">Plasterk et al., 1999</a>). These transposons are about 1,300-2,400 bp in length, are flanked at
+                                  either end by TIR and contain a single open reading frame that encodes a transposase
+                                  enzyme. Tc1/<span class="emphasis"><em>mariner</em></span> transposases all contain a triad of acidic
+                                  residues (DDE or DDD) with a characteristic spacing which is shared by a superfamily
+                                  of endonucleases (review in <a href="#bib36">Haren et al., 1999</a>, see below). Primary
+                                  sequence conservation of the Tc1/<span class="emphasis"><em>mariner</em></span> transposases is
+                                  relatively low (about 15 <span class="symbol">%</span> identity
+                                  among the superfamily) but phylogenetic analysis suggests that all
+                                  Tc1/<span class="emphasis"><em>mariner</em></span> were derived from a common ancestor and might all
+                                  transpose through similar mechanisms.
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e296"></a>1.2.&nbsp;Other active transposons
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>The Tc2 element was initially identified as a polymorphism marker (<a href="#bib48">Levitt and Emmons, 1989</a>). It is 2,074 bp in length and has perfect terminal
+                                  inverted repeats of 24 bp (<a href="#bib74">Ruvolo et al., 1992</a>). There are 4
+                                  full-length Tc2 copies in the N2 genome, each flanked by a TA dinucleotide at either
+                                  end. In addition, up to 300 copies of remnant Tc2 elements have been detected in the
+                                  genome (<a href="#bib20">Duret et al., 2000</a>). Although not tested experimentally, gene
+                                  prediction algorithms suggest that Tc2 encodes a 477 aa protein containing a DNA
+                                  binding domain and a catalytic domain related to the DDE endonuclease superfamily.
+                                  Transposition of Tc2 has been documented in the offspring of interstrain crosses
+                                  between Bristol N2 and Bergerac BO or in a <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=mut-2" target="_blank">mut-2</a></em></span> background
+                                  (<a href="#bib29">Francis et al., 1995</a>; <a href="#bib48">Levitt and Emmons, 1989</a>).
+               </p>
+               <p>The first Tc4 element was identified as a mutagenic insertion in the gene
+                                  <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=unc-86" target="_blank">unc-86</a></em></span> (<a href="#bib96">Yuan et al., 1991</a>). It is a fold-back
+                                  element of 1.6 kb which contains almost perfect terminal inverted repeats of 774 bp
+                                  with a 57-bp unique internal sequence. No open reading frame can be detected within
+                                  Tc4. Five such Tc4 copies are present in N2 Bristol. A variant class of Tc4 (Tc4v, 5
+                                  copies in the N2 genome) contains a 2,343 bp sequence which replaces 477 bp in one
+                                  of the inverted repeats (<a href="#bib49">Li and Shaw, 1993</a>). A transcript from Tc4v
+                                  has been detected. It may encode a 537-aa protein which resembles transposases of
+                                  the DDE superfamily. Tc4v might provide in <span class="emphasis"><em>trans</em></span> the transposase required to
+                                  mobilize all Tc4 elements. These elements duplicate a 3-bp target sequence TNA upon
+                                  integration and are mobile in <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=mut-2" target="_blank">mut-2</a> </em></span> (<a href="#bib96">Yuan et al., 1991</a>) and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=mut-7" target="_blank">mut-7</a></em></span> (<a href="#bib42">Ketting et al., 1999</a>)
+                                  <span class="emphasis"><em>mutator</em></span> (<span class="emphasis"><em>mut</em></span>) backgrounds.
+               </p>
+               <p>The Tc5 element is present in four copies per haploid genome (<a href="#bib15">Collins and Anderson, 1994</a>). It is 3,171 bp long and has 491 bp long terminal
+                                  inverted repeats. Tc5 and Tc4v share common features. Tc5 encodes a putative 532
+                                  amino acid transposase which is overall 33 <span class="symbol">%</span> identical to the Tc4v transposase, Tc4 and
+                                  Tc5 TIRs share a few short nucleotide sequences, and integration of Tc5 causes
+                                  duplication of the same TNA trinucleotide sequence. Tc5 elements are mobile only in
+                                  <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=mut-2" target="_blank">mut-2</a></em></span> (<a href="#bib15">Collins and Anderson, 1994</a>) and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=mut-7" target="_blank">mut-7</a></em></span>
+                                  (<a href="#bib42">Ketting et al., 1999</a>) backgrounds.
+               </p>
+               <p>Tc7 is a 921 bp element that uses the Tc1A transposase for transposition
+                                  (<a href="#bib67">Rezsohazy et al., 1997</a>). It is made up of two 345 bp inverted repeats
+                                  separated by a unique sequence that does not contain an ORF. 36 of the 38 outer bp
+                                  of Tc7 are identical to the ones of Tc1. Forced expression of Tc1A in somatic cells
+                                  causes transposition of Tc7. Furthermore, Tc7 is mobile in the germ line in the same
+                                  backgrounds as Tc1 such as <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=mut-6" target="_blank">mut-6</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=mut-7" target="_blank">mut-7</a></em></span>
+                                  lines.
+               </p>
+               <p>CemaT1 elements were identified in a genome search as a clade of transposons
+                                  intermediate between <span class="emphasis"><em>mariner</em></span> and Tc1 (<a href="#bib12">Claudianos et al., 2002</a>). They are 1,281 bp long and are flanked by two perfect 26 bp inverted
+                                  repeats. 12 copies are present per haploid genome, of which 8 contain a single ORF
+                                  encoding a putative 336 amino acid transposase. These elements can be excised in
+                                  somatic cells and might possibly transpose in the germ line of TR403 strains
+                                  (<a href="#bib10">Brownlie and Whyard, 2004</a>).
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e417"></a>1.3.&nbsp;Transposons with no detected activity:
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>The genome of <span class="emphasis"><em>C. elegans</em></span> contains several class II
+                                  transposons that are not mobile under laboratory conditions. Tc3-CeIIa and CeIIb
+                                  are closely related to Tc3 (<a href="#bib83">Tu and Shao, 2002</a>), Tc6 is a fold-back
+                                  element (<a href="#bib18">Dreyfus and Emmons, 1991</a>; <a href="#bib19">Dreyfus and Gelfand, 1999</a>), Tc8 is related to the plant Tourist transposon (<a href="#bib47">Le et al., 2001</a>), Tc9 and Tc10 are related to Tc4(v) (<a href="#bib27">Fischer et al., 2003</a>),
+                                  and the <span class="emphasis"><em>mariner</em></span>-like element <span class="emphasis"><em>mle-1</em></span> is more
+                                  closely related to the fly <span class="emphasis"><em>mariner</em></span> elements than to the
+                                      <span class="emphasis"><em>C. elegans</em></span> Tc1 (<a href="#bib69">Robertson and Lampe, 1995</a>;
+                                  <a href="#bib75">Sedensky et al., 1994</a>). In addition, up to 2 <span class="symbol">%</span> of the <span class="emphasis"><em>C. elegans</em></span>
+                                  genome is made up from MITEs (miniature inverted-repeat transposable elements).
+                                  MITEs are small non-autonomous elements that derive from transposons and are
+                                  identified based on the presence of target site duplications and terminal inverted
+                                  repeats (<a href="#bib60">Oosumi et al., 1995</a>; <a href="#bib61">Oosumi et al., 1996</a>;
+                                  <a href="#bib78">Surzycki and Belknap, 2000</a>).
+               </p>
+               <p>The genome of <span class="emphasis"><em>C. elegans</em></span> also contains class I
+                                  retrotransposons. These elements are subclassified into Long Terminal Repeat (LTR)
+                                  retrotransposons that resemble retroviruses but usually lack the gene encoding the
+                                  envelop protein and non-LTR retrotransposons. 124 sequences derived from
+                                  <span class="emphasis"><em>Cer</em></span> LTR retrotransposons, including 20 full-length elements,
+                                  have been identified in the genome sequence of N2 (<a href="#bib6">Bowen and McDonald, 1999</a>; <a href="#bib7">Britten, 1995</a>; <a href="#bib28">Frame et al., 2001</a>; <a href="#bib32">Ganko et al., 2001</a>). They can be grouped in 19 families related either to the
+                                  <span class="emphasis"><em>gypsy</em></span> or <span class="emphasis"><em>Bel</em></span> clades of retrotransposons. These LTR retrotransposons constitute 0.4
+                                      <span class="symbol">%</span> of the <span class="emphasis"><em>C.
+                                        elegans</em></span> genome (<a href="#bib31">Ganko et al., 2003</a>). A thousand sequences
+                                  derived from non-LTR retrotransposons can be detected in the genome and grouped into
+                                  the 4 families: <span class="emphasis"><em>Rte</em></span> (<a href="#bib95">Youngman et al., 1996</a>),
+                                  <span class="emphasis"><em>NeSL</em></span> (<a href="#bib53">Malik and Eickbush, 2000</a>),
+                                  <span class="emphasis"><em>Sam</em></span> and <span class="emphasis"><em>Frodo</em></span> (<a href="#bib54">Marin et al., 1998</a>). These elements only constitute 0.2 <span class="symbol">%</span> of the <span class="emphasis"><em>C. elegans</em></span>
+                                  genome (<a href="#bib97">Zagrobelny et al., 2004</a>) suggesting that retrotransposons
+                                  have been altogether strongly counterselected in this compact genome as compared to
+                                  other species such as <span class="emphasis"><em>Homo sapiens</em></span> in which more than 40
+                                      <span class="symbol">%</span> of the genome is composed of
+                                  retroelement sequences. The <span class="emphasis"><em>C. elegans</em></span> genome contains full
+                                  length LTR and non-LTR elements but no retrotransposition events have been
+                                  documented so far under laboratory conditions.
+               </p>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e566"></a>2.&nbsp;Mechanisms of Tc1 and Tc3 transposition
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Tc1/<span class="emphasis"><em>mariner</em></span> transposons move via a "cut-and-paste" mechanism:
+                           transposase binds the TIRs, catalyses excision and subsequent reinsertion into target
+                           DNA in a TA dinucleotide and leaves behind a double-strand DNA break which is repaired
+                           by the cellular machinery.
+            </p>
+            <p>The Tc1A transposase is the only factor required in trans to mediate Tc1
+                           transposition: forced expression of Tc1A in Bristol N2 enhances somatic transposition of
+                           Tc1 (<a href="#bib91">Vos et al., 1993</a>) and recombinant transposase purified from <span class="emphasis"><em>E. coli</em></span>
+                           is capable of performing the entire transposition reaction <span class="emphasis"><em>in vitro</em></span>
+                           (<a href="#bib89">Vos et al., 1996</a>). Similar evidence has been obtained for the Tc3A
+                           transposase (<a href="#bib84">van Luenen et al., 1993</a>; <a href="#bib85">van Luenen et al., 1994</a>). The Tc1A and Tc3A transposases are 343 and 329 acid long, respectively. They
+                           contain a bipartite N-terminal DNA-binding domain similar to the paired domains found in
+                           some transcription factors (<a href="#bib86">van Pouderoyen et al., 1997</a>; <a href="#bib92">Watkins et al., 2004</a>). This domain binds in a sequence-specific manner to bases located
+                           at the terminal part of the inverted repeats (position 7 to 26 in Tc1; <a href="#bib16">Colloms et al., 1994</a>; <a href="#bib90">Vos and Plasterk, 1994</a>; <a href="#bib91">Vos et al., 1993</a>). A non-specific DNA-binding domain located in more C-terminal regions of the
+                           transposase might interact with the first four bases of the TIR and the flanking TA
+                           dinucleotide, thus bringing the catalytic domain of the transposase in close proximity
+                           to the cleavage site.
+            </p>
+            <p>Tc1A and Tc3A share a common catalytic triad of acidic residues with transposases and
+                           integrases and also with more distant enzymes that promote phosphoryltransfer reactions
+                           such as RNaseH (for review, see <a href="#bib36">Haren et al., 1999</a>). In these proteins
+                           the D,DX<span class="underline">35</span>E motif (two aspartates and a glutamate 35 residues away) was shown to be part
+                           of a catalytic pocket in which the acidic residues coordinate one or two magnesium or
+                           manganese ions that play a key role during transesterification reactions. Mutation of
+                           any of the DDE residues in Tc1A or Tc3A inactivate the transposase activity (<a href="#bib85">van Luenen
+                              et al., 1994</a>; <a href="#bib90">Vos and Plasterk, 1994</a>). Terminal inverted
+                           repeats are necessary and sufficient <span class="emphasis"><em>in vitro</em></span> and <span class="emphasis"><em>in
+                                 vivo</em></span> for transposition as long as transposase is provided in
+                           <span class="emphasis"><em>trans</em></span>. Within the TIRs, the first four bases of the transposon and
+                           the transposase binding sites located immediately downstream are strictly required for
+                           excision (<a href="#bib85">van Luenen et al., 1994</a>; <a href="#bib90">Vos and Plasterk, 1994</a>).
+                           However, an element only containing the 26 terminal nucleotides of Tc1 is mobilized
+                               <span class="emphasis"><em>in vitro</em></span> ten times less efficiently than an element with full
+                           length TIRs (<a href="#bib89">Vos et al., 1996</a>), suggesting that the transposase binding
+                           sites contained in this terminal fragment are not sufficient for fully efficient
+                           transposition. First, additional internal sequence might be required in
+                           <span class="emphasis"><em>cis</em></span>. Second, the distance between the two TIRs might be important
+                           since insertion of foreign DNA into Tc1 causes an exponential decrease of transposition
+                           frequency (<a href="#bib26">Fischer et al., 1999</a>). A similar phenomenon has been described
+                           in related transposons such as <span class="emphasis"><em>Sleeping Beauty</em></span> (<a href="#bib37">Izsvak et al., 2000</a>), <span class="emphasis"><em>Himar1</em></span> (<a href="#bib46">Lampe et al., 1998</a>) and
+                           <span class="emphasis"><em>Mos1</em></span> (<a href="#bib51">Lohe and Hartl, 2002</a>) but its molecular basis
+                           is not known.
+            </p>
+            <p>Transposon excision results from a pair of double-strand breaks at the ends of the
+                           inverted repeats (<a href="#figure2">Figure 2</a>). Coordination of cleavage at the ends of a
+                           transposon is presumably mediated by the formation of a "synaptic complex" in which the
+                           two transposon ends on the same molecule are brought together via transposase-mediated
+                           oligomerization. In Tc1 and Tc3, the 5' end is cleaved two bases from the end of the
+                           transposon and the 3' cut occurs at the junction of the transposon with the flanking
+                           DNA, resulting in a two-base pair 3'-hydroxyl overhang at each termini. Following
+                           excision, the transposon then integrates 5' of a thymidine nucleotide at a TA target
+                           sequence using the free 3' hydroxyl as a nucleophile. Repair of the resulting
+                           single-strand gaps causes a duplication of the TA dinucleotide at each transposon end.
+                           In vitro experiments demonstrated that the transposase was sufficient to catalyze
+                           excision and insertion reactions (<a href="#bib45">Lampe et al., 1996</a>; <a href="#bib82">Tosi and Beverley, 2000</a>; <a href="#bib89">Vos et al., 1996</a>). However,
+                           Tc1/<span class="emphasis"><em>mariner</em></span> transposases can interact with cellular factors such as
+                           the DNA-bending protein HMGB1 which might affect the efficiency of transposition
+                               <span class="emphasis"><em>in vivo</em></span> (<a href="#bib98">Zayed et al., 2003</a>).
+            </p>
+            <div class="mediaobject" align="center"><a name="figure2"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="315">
+<tr>
+  <td align="center"><p><a href="transposonsfig2.jpg"><img src="transposonsfig2_s.jpg" border="2" align="middle" alt=" Transposon excision figure 2"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 2. Mechanism of Tc3 transposition.&nbsp;</b>Tc3, a member of the Tc1/mariner transposon superfamily, is mobilized by a
+                                 "cut-and-paste" mechanism. The transposase excises the transposon by causing
+                                 double-strand breaks at the end of the transposon (arrow heads). The DNA cut is
+                                 staggered, resulting in a two-base pair 3'-hydroxyl overhang at each termini. Following
+                                 excision, transposons then integrates 5' of a thymidine nucleotide at a TA target
+                                 sequence using the free 3' hydroxyl as a nucleophile. Repair of the resulting
+                                 single-strand gaps causes a duplication of the TA dinucleotide at each transposon end.
+                                 Adapted from <a href="#bib85">van Luenen et al., 1994</a>.
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e729"></a>3.&nbsp;Transposon insertion target
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Tc1, Tc3 and Tc7 always integrate into the TA sequence and Tc4 and Tc5 integrate into
+                           TNA sites. Since intron sequences are AT-rich, this may explain why such elements have a
+                           higher probability of inserting into introns rather than into coding sequences (<a href="#bib55">Martin et al., 2002</a>). However, all TA dinucleotides do not represent equivalent
+                           targets. First, the difference between insertion "hot spots" and "cold spots" depends on
+                           the target sequence since <span class="emphasis"><em>in vitro</em></span> transposition using naked DNA
+                           and purified Tc1A transposase mostly recapitulates Tc1 insertion preferences (<a href="#bib41">Ketting et al., 1997</a>; <a href="#bib89">Vos et al., 1996</a>). The comparison of Tc1 and Tc3
+                           insertion sites reveals a weak consensus limited to 4 nucleotides on each side
+                           suggesting that the transposase interacts directly with the TA dinucleotide and less
+                           specifically with surrounding bases. Second, there are regional differences in insertion
+                           preferences. For example, the gene <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=unc-22" target="_blank">unc-22</a></em></span> is hit about a 100 times
+                           more frequently than <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=unc-54" target="_blank">unc-54</a></em></span> although its coding sequence is only
+                           3.5 times larger (<a href="#bib22">Eide and Anderson, 1985</a>; <a href="#bib57">Moerman and Waterston, 1984</a>). Part of these differences might arise from the fact that transposons such
+                           as Tc1 have a preference for local reinsertion into the same chromosome from which they
+                           were excised (<a href="#bib27">Fischer et al., 2003</a>). However, <span class="emphasis"><em>Mos1</em></span>,
+                           a <span class="emphasis"><em>drosophila</em></span> transposon from the Tc1/<span class="emphasis"><em>mariner</em></span>
+                           family was recently mobilized in <span class="emphasis"><em>C. elegans</em></span> from an
+                           extrachromosomal array (<a href="#bib5">Bessereau et al., 2001</a>). Analysis of random
+                           insertions indicates the presence of a 4 kb hot-spot at the right end of chromosome I
+                           which cannot be explained by local transposition (<a href="#bib33">Granger et al., 2004</a>).
+                           Third, transposon sequences are not evenly distributed in the genome and a correlation
+                           has been observed between the density of DNA transposons but not retrotransposons and
+                           the regions of higher chromosomal recombination rate (<a href="#bib20">Duret et al., 2000</a>;
+                           <a href="#bib68">Rizzon et al., 2003</a>). Whether these two features are mechanistically
+                           linked or indirectly reflect another parameter such as differences in chromatin
+                           structure remains to be established.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e797"></a>4.&nbsp;Repair of the excision site
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Upon excision, Tc1/<span class="emphasis"><em>mariner</em></span> transposons leave behind a DNA double
+                           strand break. Such breaks are repaired by the cellular machinery using two general types
+                           of repair: non homologous end joining (NHEJ) and repair by homologous recombination (for
+                           a review on DSB repair, see <a href="#bib35">Haber, 2000</a>; <a href="#figure3">Figure 3</a>).
+                           The decision to use one or another mechanism depends on tissue type and cell-cycle
+                           stage. During NHEJ, DNA ends are joined after little or no trimming. Since Tc1 and Tc3
+                           excision leaves behind the duplicated TA and non complementary two nucleotide 5'
+                           overhangs, NHEJ generates short footprints ranging from 4 base pair insertion with TA
+                           duplications to a few base pair deletion. Occasionally, wild type sequence can be
+                           regenerated at the site of excision. NHEJ is active in <span class="emphasis"><em>C. elegans</em></span>
+                           somatic cells but is also used in the germ line (<a href="#bib23">Eide and Anderson, 1988</a>;
+                           <a href="#bib24">Emmons and Yesner, 1984</a>; <a href="#bib25">Emmons et al., 1983</a>; <a href="#bib63">Plasterk, 1991</a>; <a href="#bib71">Ruan and Emmons, 1987</a>; <a href="#bib85">van Luenen et al., 1994</a>).
+            </p>
+            <div class="mediaobject" align="center"><a name="figure3"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="585">
+<tr>
+  <td align="center"><p><a href="transposonsfig3.jpg"><img src="transposonsfig3_s.jpg" width="700" border="2" align="middle" alt=" DNA bouble strand break repair figure 3"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 3. Repair at the excision site.&nbsp;</b>Excision of a Tc1/mariner transposon generates a double-strand break in the chromosome
+                                 <span class="emphasis"><em>(blue)</em></span>. In this example, the homologous chromosome <span class="emphasis"><em>(red)</em></span> is homozygous for the Tc
+                                 insertion. The double-strand break is repaired by the cellular machinery using different
+                                 possible pathways. Ends can be resected, resulting in 3' single-stranded ends that can
+                                 engage a recombination process. If the homologous chromosome (or the sister chromatid)
+                                 is used as a template, the repair process regenerates an intact copy of the transposon
+                                 at the site of excision <span class="emphasis"><em>(left panel)</em></span>. If resection exposes complementary strands of
+                                 homologous sequences on the same chromosome <span class="emphasis"><em>(dotted ellipse)</em></span>, repair can occur by
+                                 single-strand annealing and generates variable deletions of the sequence flanking the
+                                 site of excision <span class="emphasis"><em>(middle panel)</em></span>. Alternatively, repair can be achieved by non-homologous
+                                 end-joining (NHEJ)<span class="emphasis"><em>(right panel)</em></span>. In that case, ends are processed and repair leaves
+                                 short footprints <span class="emphasis"><em>(dotted rectangle)</em></span>. For Tc1 and Tc3, one of the most common footprints
+                                 contain two nucleotides from the transposon end <span class="emphasis"><em>(dark blue)</em></span> and the duplicated TA.
+                  </p>
+               </div>
+            </div>
+            <p>DSB repair by homologous recombination first involves the 5' to 3' resection of the
+                           DSB ends to produce long 3'-ended single-stranded DNA tails. Several pathways can be
+                           used for repair that will generate different class of final products. In some cases,
+                           resection exposes complementary sequences allowing single-strand annealing and
+                           subsequent deletion of the segments located between these sequences. Such deletions were
+                           noticed in revertants of an <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=unc-22" target="_blank">unc-22</a></em></span> Tc1 reversion allele (<a href="#bib43">Kiff et al., 1988</a>). Zwaal et al. (<a href="#bib99">Zwaal et al., 1993</a>) demonstrated
+                           that such deletions could be isolated among the progeny of most Tc1 mutants and could be
+                           used in a reverse genetic approach to generate deletion alleles in genes of interest.
+                           Alternatively, recombination can occur with the sister chromatid or the homologous
+                           chromosome. This latter mechanism seems preferentially used for Tc1 repair in the
+                           germ line. If the animal is heterozygous for the Tc1 insertion, gene conversion will
+                           revert the broken locus to wild-type. If the animal is homozygous for the Tc1 insertion,
+                           repair will regenerate a Tc1 insertion at the excision site (<a href="#bib63">Plasterk, 1991</a>). Interestingly, analysis of Tc1 sequence polymorphisms suggest that the repair
+                           machinery can switch from allelic Tc1 template to Tc1 elements located elsewhere in the
+                           genome, resulting in chimeric Tc1 elements (<a href="#bib27">Fischer et al., 2003</a>).
+                           Occasionally, repair can be imperfect and generate partial deletions of the transposon
+                           (<a href="#bib27">Fischer et al., 2003</a>; <a href="#bib52">Lohe et al., 2000</a>).
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e904"></a>5.&nbsp;Regulation of transposition
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>All <span class="emphasis"><em>C. elegans</em></span> strains contain numerous transposons prone to be
+                           mobilized. However, in most strains such as the reference isolate Bristol N2,
+                           transposition is only detected in somatic cells but is completely silenced in the
+                           germ line (<a href="#bib24">Emmons and Yesner, 1984</a>). In some natural isolates such as the
+                           strain Bergerac BO which was isolated in Bergerac, France (<a href="#bib59">Nigon and Dougherty, 1949</a>), Tc1 transposons are active in the germ line (<a href="#bib21">Egilmez et al., 1995</a>; <a href="#bib22">Eide and Anderson, 1985</a>; <a href="#bib34">Greenwald, 1985</a>; <a href="#bib56">Moerman et al., 1986</a>). Bergerac individuals exhibit a mutator phenotype due to
+                           spontaneous mutations caused by <span class="emphasis"><em>de novo</em></span> Tc1 insertions. Strikingly,
+                           EMS-induced mutations of single loci such as <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=mut-2" target="_blank">mut-2</a></em></span> (<a href="#bib14">Collins et al., 1987</a>) or <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=mut-7" target="_blank">mut-7</a></em></span> (<a href="#bib42">Ketting et al., 1999</a>;
+                           <a href="#bib79">Tabara et al., 1999</a>) are able to globally activate the transposition of
+                           multiple Tc families including Tc1, Tc3, Tc4 and Tc5. Therefore, the germ line of
+                               <span class="emphasis"><em>C. elegans</em></span> is permissive for transposition but a
+                           defense-mechanism exists to protect the genome from heritable defects caused by
+                           transposon jumps.
+            </p>
+            <p>Transposition silencing in the germ line involves an RNA interference (RNAi)-related
+                           mechanism. This notion emerged after the realization that a set of mutants including
+                           <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=rde-2" target="_blank">rde-2</a>/<a href="http://www.wormbase.org/db/gene/gene?name=mut-8" target="_blank">mut-8</a></em></span>, <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=rde-3" target="_blank">rde-3</a>/<a href="http://www.wormbase.org/db/gene/gene?name=mut-2" target="_blank">mut-2</a></em></span>,
+                           <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=mut-7" target="_blank">mut-7</a></em></span>, <span class="emphasis"><em>-14</em></span>, <span class="emphasis"><em>-15</em></span> and
+                           <span class="emphasis"><em>-16</em></span> are defective for both RNAi and germ-line silencing of
+                           transposition (<a href="#bib11">Chen et al., 2005</a>; <a href="#bib14">Collins et al., 1987</a>; <a href="#bib42">Ketting et al., 1999</a>; <a href="#bib79">Tabara et al., 1999</a>; <a href="#bib80">Tijsterman et al., 2002</a>; <a href="#bib81">Tops et al., 2005</a>; <a href="#bib87">Vastenhouw et al., 2003</a>; for a complete review, see <a href="#bib88">Vastenhouw and Plasterk, 2004</a>). In a
+                           simplified model of RNAi, a double-stranded RNA (dsRNA) molecule is cleaved into 21-24
+                           nucleotide-long short-interfering RNAs (siRNAs) by the RNAse III-like enzyme <a href="http://www.wormbase.org/db/seq/protein?name=DCR-1;class=protein" target="_blank">DCR-1</a> of
+                           the dicer family. siRNAs are loaded into the RNA-induced silencing complex (RISC) and
+                           used for specific cleavage of target RNAs. dsRNAs derived from Tc1, Tc3 and Tc5 Terminal
+                           Inverted Repeats are indeed detected in Bristol N2 animals that might arise from the
+                           fold-back of transcripts encompassing entire Tc elements. siRNAs corresponding to Tc1
+                           and other transposons are produced in the N2 strain (<a href="#bib1">Ambros et al., 2003</a>;
+                           <a href="#bib76">Sijen and Plasterk, 2003</a>). These siRNAs seem to be functional in the
+                           germ line since a Tc1 TIR fused to gfp causes silencing of GFP expression, at least in
+                           part, by post-transcriptional silencing of the transgene in the germ line (<a href="#bib76">Sijen and Plasterk, 2003</a>). Therefore, in a simple model, RNAi might repress
+                           transposition by causing the degradation of tranposon-derived mRNA in the germ line,
+                           hence preventing the expression of any Tc transposase. In other tissues,
+                           transposon-induced RNAi might be less efficient, hence enabling somatic excision.
+                           However, mutator strains exist that are not RNAi deficient. In
+                           <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=mut-4" target="_blank">mut-4</a></em></span>, <span class="emphasis"><em>-5</em></span> and <span class="emphasis"><em>-6</em></span> mutant
+                           backgrounds, transposition of Tc1 but not of other Tcs is specifically derepressed (<a href="#bib58">Mori et al., 1988</a>). These loci have not been identified at the molecular level
+                           but they have been proposed to correspond to specific Tc1 copies. For example, truncated
+                           Tc1 elements might produce transcripts which lack a sequence targeted by the RNAi
+                           surveillance system but could still produce a functional transposase. Alternatively,
+                           these elements might be full-length Tc1 elements inserted in genomic regions that lead
+                           to very efficient transcription of these copies in the germ line, hence allowing some
+                           transcripts to escape degradation. In addition to Tc1-specific mutators, a number of
+                           genes are required for global silencing of transposition but not for RNAi (<a href="#bib42">Ketting et al., 1999</a>; <a href="#bib87">Vastenhouw et al., 2003</a>). It is not clear at
+                           the moment if these genes act in a specific branch of an RNAi-dependent process or if
+                           they are involved in an RNAi-independent control of transposition.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e1060"></a>6.&nbsp;Transposon-based tools for <span class="emphasis"><em>C. elegans</em></span> research
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e1066"></a>6.1.&nbsp;Gene identification in forward genetic screens
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Insertional mutagenesis with transposons generates mutant alleles that are tagged
+                                  by the presence of a transposon. This molecular tag can subsequently be used to
+                                  identify the mutated gene. Mutator strains and Tc1 gene tagging was used early in
+                                  forward genetic screens to identify mutated-genes before the genome project reagents
+                                  were available (<a href="#bib34">Greenwald, 1985</a>; <a href="#bib56">Moerman et al., 1986</a>)
+                                  (for review see <a href="#bib2">Anderson, 1995</a>; <a href="#bib66">Plasterk and van Luenen, 1997</a>).
+                                  Nowadays, Tc elements can be used in combination with PCR to amplify the genomic
+                                  sequence that flank a mutagenic insertion and identify the mutated gene without
+                                  genetic mapping (<a href="#bib93">Wicks et al., 2000</a>). However, using Tc elements as
+                                  mutagens has some major drawbacks. First, the mobilization of Tc transposons is not
+                                  restricted to a single class of elements in mutator strains. Second, there are
+                                  several copies of each transposons in the genome which complicate the identification
+                                  of the mutagenic insertion. Third, in the mutator strains that are used,
+                                  transposition is not controlled. Some Tc insertions are poorly mutagenic either
+                                  because they are in introns, or because they are removed from the mature mRNA by
+                                  aberrant splicing (<a href="#bib72">Rushforth and Anderson, 1996</a>; <a href="#bib73">Rushforth et al., 1993</a>). Spontaneous re-excision can generate mutagenic footprints that generate a
+                                  stronger phenotype but can no longer be detected in a transposon tagging strategy.
+                                  These limitations have been circumvented by mobilizing the Mos1 transposon in the
+                                  germ line of <span class="emphasis"><em>C. elegans</em></span> (<a href="#bib5">Bessereau et al., 2001</a>). <span class="emphasis"><em>Mos1</em></span> is a member of the
+                                  Tc1/<span class="emphasis"><em>mariner</em></span> family and was isolated from <span class="emphasis"><em>Drosophila
+                                        mauritiana</em></span> (<a href="#bib38">Jacobson et al., 1986</a>). The
+                                  <span class="emphasis"><em>Mos1</em></span> element is absent from the <span class="emphasis"><em>C. elegans</em></span>
+                                  genome and controlled mobilization of <span class="emphasis"><em>Mos1</em></span> is achieved by
+                                  conditional expression of the <span class="emphasis"><em>Mos1</em></span> transposase.
+                                  <span class="emphasis"><em>Mos1</em></span> mutagenesis is 10 times less efficient than chemical
+                                  mutagens but the cloning of mutated genes is extremely fast since
+                                  <span class="emphasis"><em>Mos1</em></span> insertions represent rare tags that are easy to localize
+                                  in the genome (<a href="#bib30">Gally et al., 2004</a>; <a href="#bib94">Williams et al., 2005</a>).
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e1145"></a>6.2.&nbsp;Targeted gene inactivation
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Tc1 can be used to target the inactivation of a selected gene. In such approaches,
+                                  Tc1 are mobilized randomly in a mutator background and independent lines are
+                                  subsequently screened by PCR for the presence of a Tc1 insertion in the gene of
+                                  interest (<a href="#bib73">Rushforth et al., 1993</a>). Then, deletions can be generated at low
+                                  frequency by imprecise repair of double-strand breaks caused by Tc1 re-excision. The
+                                  line containing the Tc1 insertion in the gene to inactivate is propagated in a
+                                  mutator background. PCR analysis of the progeny can identify animals that have lost
+                                  that Tc1 insertion plus a variable amount of flanking DNA (<a href="#bib99">Zwaal et al., 1993</a>). This strategy has been widely used initially, but more recent protocols of
+                                  gene inactivation utilize chemical mutagens to generate random deletions in the
+                                      <span class="emphasis"><em>C. elegans</em></span> genome (<a href="#bib39">Jansen et al., 1997</a>).
+                                  However, transposon targeted gene inactivation can still be useful when these other
+                                  strategies fail or if a transposon has already been identified in the gene to
+                                  inactivate (<a href="#bib44">Korswagen et al., 1996</a>; <a href="#bib55">Martin et al., 2002</a>).
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e1173"></a>6.3.&nbsp;Site-directed mutagenesis
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Gene targeting techniques based on homologous recombination, such as those used in
+                                  mice and yeast, are difficult in <span class="emphasis"><em>C. elegans</em></span> (<a href="#bib4">Berezikov et al.,
+                                     2004</a>; <a href="#bib9">Broverman et al., 1993</a>). Transposons might
+                                  represent an interesting alternative to engineer specific mutations in the genome.
+                                  In 1992, Plasterk and Groenen (<a href="#bib64">Plasterk and Groenen, 1992</a>)
+                                  demonstrated that a transgene containing a fragment of the
+                                  <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=unc-22" target="_blank">unc-22</a></em></span> gene could be used as a template to repair a
+                                  double-strand break caused by Tc1 excision out of the <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=unc-22" target="_blank">unc-22</a></em></span>
+                                  locus in a <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=mut-6" target="_blank">mut-6</a></em></span> background (<a href="#bib64">Plasterk and Groenen, 1992</a>). Point mutations contained in the transgene were copied in the genome
+                                  during the repair process. Therefore, transgene-instructed gene conversion provides
+                                  a strategy to engineer mutations or introduce exogenous sequence in the genome.
+                                  However, such events were rare (2.10-5 event per meiosis), thus preventing this
+                                  technique from being widely utilized in <span class="emphasis"><em>C. elegans</em></span>. Recently, a
+                                  similar strategy was tried in different mutator backgrounds to engineer deletions
+                                  and introduce GFP in the genome (<a href="#bib3">Barrett et al., 2004</a>).
+                                  Transgene-instructed gene conversion was found to be 10 times more frequent than
+                                  previously reported, thus providing an efficient technique to engineer custom
+                                  alleles in a reverse genetic approach. Efforts to generate libraries containing
+                                  transposon insertions in most <span class="emphasis"><em>C. elegans</em></span> genes would expand the
+                                  use of this method (<a href="#bib33">Granger et al., 2004</a>; <a href="#bib55">Martin et al., 2002</a>).
+               </p>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e1227"></a>7.&nbsp;Acknowledgments
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>I thank V. Robert and R. Weimer for critical reading of the manuscript and M. Augustin
+                           for stimulating interactions. This work was funded by an AVENIR grant from the Institut
+                           National de la Sante et de la Recherche M&eacute;dicale, and by a European Union grant (6th
+                           Framework program, code NEMAGETAG).
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e1232"></a>8.&nbsp;References
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p></p>
+            <div class="bibliography">
+               <div class="bibliomixed"><a name="bib1"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Ambros, V., Lee, R.C., Lavanway, A., Williams, P.T., and Jewell, D. (2003). MicroRNAs and other tiny endogenous RNAs in <span class="emphasis"><em>C. elegans</em></span>. Curr. Biol. <span class="emphasis"><em>13</em></span>, 807&#8211;818.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12747828&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0960-9822(03)00287-2" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib2"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Anderson, P. (1995). Mutagenesis. Methods Cell. Biol. <span class="emphasis"><em>48</em></span>, 31&#8211;58.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8531732&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib3"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Barrett, P.L., Fleming, J.T., and Gobel, V. (2004). Targeted gene alteration in <span class="emphasis"><em>Caenorhabditis elegans</em></span> by gene conversion. Nat. Genet <span class="emphasis"><em>36</em></span>, 1231&#8211;1237.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15502826&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/ng1459" target="_blank"> Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib4"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Berezikov, E., Bargmann, C.I., and Plasterk, R.H. (2004). Homologous gene targeting in <span class="emphasis"><em>Caenorhabditis elegans</em></span> by biolistic transformation. Nucleic Acids Res. 32, e40.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=14982959&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1093/nar/gnh033" target="_blank"> Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib5"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Bessereau, J.L., Wright, A., Williams, D.C., Schuske, K., Davis, M.W., and Jorgensen, E.M. (2001). Mobilization of a <span class="emphasis"><em>Drosophila</em></span> transposon in the <span class="emphasis"><em>Caenorhabditis elegans</em></span> germ line. Nature <span class="emphasis"><em>413</em></span>, 70&#8211;74.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11544527&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/35092567" target="_blank"> Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib6"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Bowen, N.J., and McDonald, J.F. (1999). Genomic analysis of <span class="emphasis"><em>Caenorhabditis elegans</em></span> reveals ancient families of retroviral-like elements. Genome Res. <span class="emphasis"><em>9</em></span>, 924&#8211;935.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10523521&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1101/gr.9.10.924" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib7"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Britten, R.J. (1995). Active <span class="emphasis"><em>gypsy/Ty3</em></span> retrotransposons or retroviruses in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Proc. Natl. Acad. Sci. USA <span class="emphasis"><em>92</em></span>, 599&#8211;601.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=7530364&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib8"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Brookfield, J.F. (2005). The ecology of the genome - mobile DNA elements and their hosts. Nat. Rev. Genet. <span class="emphasis"><em>6</em></span>, 128&#8211;136.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15640810&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nrg1524" target="_blank"> Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib9"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Broverman, S., MacMorris, M., and Blumenthal, T. (1993). Alteration of <span class="emphasis"><em>Caenorhabditis elegans</em></span> gene expression by targeted transformation. Proc. Natl. Acad. Sci. USA <span class="emphasis"><em>90</em></span>, 4359&#8211;4363.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8506273&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib10"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Brownlie, J.C., and Whyard, S. (2004). CemaT1 is an active transposon within the <span class="emphasis"><em>Caenorhabditis elegans</em></span> genome. Gene <span class="emphasis"><em>338</em></span>, 55&#8211;64.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15302406&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.gene.2004.05.011" target="_blank"> Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib11"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Chen, C.-C.-G., Simard, M.J., Tabara, H., Brownell, D.R., McCollough, J.A., and Mello, C.C. (2005). A member of the polymerase
+                        beta nucleotidyltransferase superfamily is required for RNA interference in <span class="emphasis"><em>C. elegans</em></span>. Curr. Biol. in press.</span>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib12"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Claudianos, C., Brownlie, J., Russell, R., Oakeshott, J., and Whyard, S. (2002). <span class="emphasis"><em>maT</em></span>--a clade of transposons intermediate between <span class="emphasis"><em>mariner</em></span> and Tc1. Mol. Biol. Evol. <span class="emphasis"><em>19</em></span>, 2101&#8211;2109.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12446802&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib13"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Collins, J., Forbes, E., and Anderson, P. (1989). The Tc3 family of transposable genetic elements in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Genetics <span class="emphasis"><em>121</em></span>, 47&#8211;55.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=2537252&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib14"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Collins, J., Saari, B., and Anderson, P. (1987). Activation of a transposable element in the germ line but not the soma of
+                        <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Nature <span class="emphasis"><em>328</em></span>, 726&#8211;728.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=3039378&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/328726a0" target="_blank"> Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib15"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Collins, J.J., and Anderson, P. (1994). The Tc5 family of transposable elements in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Genetics <span class="emphasis"><em>137</em></span>, 771&#8211;781.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8088523&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib16"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Colloms, S.D., van Luenen, H.G., and Plasterk, R.H. (1994). DNA binding activities of the <span class="emphasis"><em>Caenorhabditis elegans</em></span> Tc3 transposase. Nucleic Acids Res. <span class="emphasis"><em>22</em></span>, 5548&#8211;5554.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=7838706&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib17"></a><p class="bibliomixed">
+                             <span class="bibliomisc"><span class="emphasis"><em>C. elegans</em></span> Sequencing Consortium. (1998). Genome sequence of the nematode <span class="emphasis"><em>C. elegans</em></span>: a platform for investigating biology. Science <span class="emphasis"><em>282</em></span>, 2012&#8211;2018.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=9851916&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1126/science.282.5396.2012" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib18"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Dreyfus, D.H., and Emmons, S.W. (1991). A transposon-related palindromic repetitive sequence from <span class="emphasis"><em>C. elegans</em></span>. Nucleic Acids Res. <span class="emphasis"><em>19</em></span>, 1871&#8211;1877.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=1674369&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib19"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Dreyfus, D.H., and Gelfand, E.W. (1999). Comparative analysis of invertebrate Tc6 sequences that resemble the vertebrate V(D)J
+                        recombination signal sequences (RSS). Mol. Immunol. <span class="emphasis"><em>36</em></span>, 481&#8211;488.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10449100&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0161-5890(99)00034-6" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib20"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Duret, L., Marais, G., and Biemont, C. (2000). Transposons but not retrotransposons are located preferentially in regions
+                        of high recombination rate in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Genetics <span class="emphasis"><em>156</em></span>, 1661&#8211;1669.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11102365&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib21"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Egilmez, N.K., Ebert, R.H., II, and Shmookler Reis, R.J. (1995). Strain evolution in <span class="emphasis"><em>Caenorhabditis elegans</em></span>: transposable elements as markers of interstrain evolutionary history. J. Mol. Evol. <span class="emphasis"><em>40</em></span>, 372&#8211;381.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=7769614&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1007/BF00164023" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib22"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Eide, D., and Anderson, P. (1985). Transposition of Tc1 in the nematode <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Proc. Natl. Acad. Sci. USA <span class="emphasis"><em>82</em></span>, 1756&#8211;1760.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=2984668&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib23"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Eide, D., and Anderson, P. (1988). Insertion and excision of <span class="emphasis"><em>Caenorhabditis elegans</em></span> transposable element Tc1. Mol. Cell Biol. <span class="emphasis"><em>8</em></span>, 737&#8211;746.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=2832734&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib24"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Emmons, S.W., and Yesner, L. (1984). High-frequency excision of transposable element Tc 1 in the nematode <span class="emphasis"><em>Caenorhabditis elegans</em></span> is limited to somatic cells. Cell <span class="emphasis"><em>36</em></span>, 599&#8211;605.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=6321037&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/0092-8674(84)90339-8" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib25"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Emmons, S.W., Yesner, L., Ruan, K.S., and Katzenberg, D. (1983). Evidence for a transposon in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Cell <span class="emphasis"><em>32</em></span>, 55&#8211;65.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=6297788&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/0092-8674(83)90496-8" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib26"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Fischer, S.E., van Luenen, H.G., and Plasterk, R.H. (1999). <span class="emphasis"><em>Cis</em></span> requirements for transposition of Tc1-like transposons in <span class="emphasis"><em>C. elegans</em></span>. Mol. Gen. Genet <span class="emphasis"><em>262</em></span>, 268&#8211;274.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10517322&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1007/s004380051083" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib27"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Fischer, S.E., Wienholds, E., and Plasterk, R.H. (2003). Continuous exchange of sequence information between dispersed Tc1
+                        transposons in the <span class="emphasis"><em>Caenorhabditis elegans</em></span> genome. Genetics <span class="emphasis"><em>164</em></span>, 127&#8211;134.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12750326&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib28"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Frame, I.G., Cutfield, J.F., and Poulter, R.T. (2001). New <span class="emphasis"><em>BEL</em></span>-like LTR-retrotransposons in <span class="emphasis"><em>Fugu rubripes</em></span>, <span class="emphasis"><em>Caenorhabditis elegans</em></span>, and <span class="emphasis"><em>Drosophila melanogaster</em></span>. Gene <span class="emphasis"><em>263</em></span>, 219&#8211;230.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11223261&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0378-1119(00)00567-9" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib29"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Francis, R., Barton, M.K., Kimble, J., and Schedl, T. (1995). <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=gld-1" target="_blank">gld-1</a></em></span>, a tumor suppressor gene required for oocyte development in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Genetics <span class="emphasis"><em>139</em></span>, 579&#8211;606.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=7713419&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib30"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Gally, C., Eimer, S., Richmond, J.E., and Bessereau, J.L. (2004). A transmembrane protein required for acetylcholine receptor
+                        clustering in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Nature <span class="emphasis"><em>431</em></span>, 578&#8211;582.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15457263&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nature02893" target="_blank"> Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib31"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Ganko, E.W., Bhattacharjee, V., Schliekelman, P., and McDonald, J.F. (2003). Evidence for the contribution of LTR retrotransposons
+                        to <span class="emphasis"><em>C. elegans</em></span> gene evolution. Mol. Biol. Evol. <span class="emphasis"><em>20</em></span>, 1925&#8211;1931.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12885961&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1093/molbev/msg200" target="_blank"> Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib32"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Ganko, E.W., Fielman, K.T., and McDonald, J.F. (2001). Evolutionary history of <span class="emphasis"><em>Cer</em></span> elements and their impact on the <span class="emphasis"><em>C. elegans</em></span> genome. Genome Res. <span class="emphasis"><em>11</em></span>, 2066&#8211;2074.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11731497&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1101/gr.196201" target="_blank"> Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib33"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Granger, L., Martin, E., and Segalat, L. (2004). <span class="emphasis"><em>Mos</em></span> as a tool for genome-wide insertional mutagenesis in <span class="emphasis"><em>Caenorhabditis elegans</em></span>: results of a pilot study. Nucleic Acids Res. 32, e117.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15310838&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1093/nar/gnh111" target="_blank"> Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib34"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Greenwald, I. (1985). <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=lin-12" target="_blank">lin-12</a></em></span>, a nematode homeotic gene, is homologous to a set of mammalian proteins that includes epidermal growth factor. Cell <span class="emphasis"><em>43</em></span>, 583&#8211;590.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=3000611&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/0092-8674(85)90230-2" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib35"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Haber, J.E. (2000). Partners and pathwaysrepairing a double-strand break. Trends Genet. <span class="emphasis"><em>16</em></span>, 259&#8211;264.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10827453&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0168-9525(00)02022-9" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib36"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Haren, L., Ton-Hoang, B., and Chandler, M. (1999). Integrating DNA: transposases and retroviral integrases. Annu. Rev. Microbiol.
+                        <span class="emphasis"><em>53</em></span>, 245&#8211;281.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10547692&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1146/annurev.micro.53.1.245" target="_blank"> Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib37"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Izsvak, Z., Ivics, Z., and Plasterk, R.H. (2000). Sleeping Beauty, a wide host-range transposon vector for genetic transformation
+                        in vertebrates. J. Mol. Biol. <span class="emphasis"><em>302</em></span>, 93&#8211;102.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10964563&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1006/jmbi.2000.4047" target="_blank"> Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib38"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Jacobson, J.W., Medhora, M.M., and Hartl, D.L. (1986). Molecular structure of a somatically unstable transposable element
+                        in <span class="emphasis"><em>Drosophila</em></span>. Proc. Natl. Acad. Sci. USA <span class="emphasis"><em>83</em></span>, 8684&#8211;8688.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=3022302&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib39"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Jansen, G., Hazendonk, E., Thijssen, K.L., and Plasterk, R.H. (1997). Reverse genetics by chemical mutagenesis in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Nat. Genet. <span class="emphasis"><em>17</em></span>, 119&#8211;121.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=9288111&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/ng0997-119" target="_blank"> Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib40"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Kazazian, H.H., Jr., (2004). Mobile elements: drivers of genome evolution. Science <span class="emphasis"><em>303</em></span>, 1626&#8211;1632.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15016989&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1126/science.1089670" target="_blank"> Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib41"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Ketting, R.F., Fischer, S.E., and Plasterk, R.H. (1997). Target choice determinants of the Tc1 transposon of <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Nucleic Acids Res. <span class="emphasis"><em>25</em></span>, 4041&#8211;4047.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=9321655&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1093/nar/25.20.4041" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib42"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Ketting, R.F., Haverkamp, T.H., van Luenen, H.G., and Plasterk, R.H. (1999). Mut-7 of <span class="emphasis"><em>C. elegans</em></span>, required for transposon silencing and RNA interference, is a homolog of Werner syndrome helicase and RNaseD. Cell <span class="emphasis"><em>99</em></span>, 133&#8211;141.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10535732&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0092-8674(00)81645-1" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib43"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Kiff, J.E., Moerman, D.G., Schriefer, L.A., and Waterston, R.H. (1988). Transposon-induced deletions in <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=unc-22" target="_blank">unc-22</a></em></span> of <span class="emphasis"><em>C. elegans</em></span> associated with almost normal gene activity. Nature <span class="emphasis"><em>331</em></span>, 631&#8211;633.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=2829031&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/331631a0" target="_blank"> Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib44"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Korswagen, H.C., Durbin, R.M., Smits, M.T., and Plasterk, R.H. (1996). Transposon Tc1-derived, sequence-tagged sites in <span class="emphasis"><em>Caenorhabditis elegans</em></span> as markers for gene mapping. Proc. Natl. Acad. Sci. USA <span class="emphasis"><em>93</em></span>, 14680&#8211;14685.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8962114&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1073/pnas.93.25.14680" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib45"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Lampe, D.J., Churchill, M.E., and Robertson, H.M. (1996). A purified <span class="emphasis"><em>mariner</em></span> transposase is sufficient to mediate transposition <span class="emphasis"><em>in vitro</em></span>. EMBO J. <span class="emphasis"><em>15</em></span>, 5470&#8211;5479.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8895590&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib46"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Lampe, D.J., Grant, T.E., and Robertson, H.M. (1998). Factors affecting transposition of the <span class="emphasis"><em>Himar1 mariner</em></span> transposon <span class="emphasis"><em>in vitro</em></span>. Genetics <span class="emphasis"><em>149</em></span>, 179&#8211;187.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=9584095&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib47"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Le, Q.H., Turcotte, K., and Bureau, T. (2001). Tc8, a Tourist-like transposon in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Genetics <span class="emphasis"><em>158</em></span>, 1081&#8211;1088.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11454757&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib48"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Levitt, A., and Emmons, S.W. (1989). The Tc2 transposon in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Proc. Natl. Acad. Sci. USA <span class="emphasis"><em>86</em></span>, 3232&#8211;3236.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=2541437&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib49"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Li, W., and Shaw, J.E. (1993). A variant Tc4 transposable element in the nematode <span class="emphasis"><em>C. elegans</em></span> could encode a novel protein. Nucleic Acids Res. <span class="emphasis"><em>21</em></span>, 59&#8211;67.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8382791&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib50"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Liao, L.W., Rosenzweig, B., and Hirsh, D. (1983). Analysis of a transposable element in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Proc. Natl. Acad. Sci. USA <span class="emphasis"><em>80</em></span>, 3585&#8211;3589.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=6304721&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib51"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Lohe, A.R., and Hartl, D.L. (2002). Efficient mobilization of <span class="emphasis"><em>mariner in vivo</em></span> requires multiple internal sequences. Genetics <span class="emphasis"><em>160</em></span>, 519&#8211;526.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11861558&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib52"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Lohe, A.R., Timmons, C., Beerman, I., Lozovskaya, E.R., and Hartl, D.L. (2000). Self-inflicted wounds, template-directed gap
+                        repair and a recombination hotspot. Effects of the <span class="emphasis"><em>mariner</em></span> transposase. Genetics <span class="emphasis"><em>154</em></span>, 647&#8211;656.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10655218&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib53"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Malik, H.S., and Eickbush, T.H. (2000). <span class="emphasis"><em>NeSL-1</em></span>, an ancient lineage of site-specific non-LTR retrotransposons from <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Genetics <span class="emphasis"><em>154</em></span>, 193&#8211;203.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10628980&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib54"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Marin, I., Plata-Rengifo, P., Labrador, M., and Fontdevila, A. (1998). Evolutionary relationships among the members of an
+                        ancient class of non-LTR retrotransposons found in the nematode <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Mol. Biol. Evol. <span class="emphasis"><em>15</em></span>, 1390&#8211;1402.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12572603&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib55"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Martin, E., Laloux, H., Couette, G., Alvarez, T., Bessou, C., Hauser, O., Sookhareea, S., Labouesse, M., and Segalat, L. (2002).
+                        Identification of 1088 new transposon insertions of <span class="emphasis"><em>Caenorhabditis elegans</em></span>: a pilot study toward large-scale screens. Genetics <span class="emphasis"><em>162</em></span>, 521&#8211;524.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12242258&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib56"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Moerman, D.G., Benian, G.M., and Waterston, R.H. (1986). Molecular cloning of the muscle gene <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=unc-22" target="_blank">unc-22</a></em></span> in <span class="emphasis"><em>Caenorhabditis elegans</em></span> by Tc1 transposon tagging. Proc. Natl. Acad. Sci. USA <span class="emphasis"><em>83</em></span>, 2579&#8211;2583.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=3010313&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib57"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Moerman, D.G., and Waterston, R.H. (1984). Spontaneous unstable <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=unc-22" target="_blank">unc-22</a></em></span> IV mutations in <span class="emphasis"><em>C. elegans</em></span> var. <span class="emphasis"><em>Bergerac</em></span>. Genetics <span class="emphasis"><em>108</em></span>, 859&#8211;877.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=6096205&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib58"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Mori, I., Moerman, D.G., and Waterston, R.H. (1988). Analysis of a mutator activity necessary for germline transposition and
+                        excision of Tc1 transposable elements in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Genetics <span class="emphasis"><em>120</em></span>, 397&#8211;407.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=2848746&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib59"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Nigon, V., and Dougherty, E.C. (1949). Reproductive patterns and attempts at reciprocal crossing of <span class="emphasis"><em>Rhabditis elegans</em></span> Maupas, 1900, and <span class="emphasis"><em>Rhabditis briggsae</em></span> Dougherty and Nigon, 1949 (Nematoda: <span class="emphasis"><em>Rhabditidae</em></span>). J. Exp. Zool. <span class="emphasis"><em>112</em></span>, 485&#8211;503.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15404785&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1002/jez.1401120307" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib60"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Oosumi, T., Garlick, B., and Belknap, W.R. (1995). Identification and characterization of putative transposable DNA elements
+                        in solanaceous plants and <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Proc. Natl. Acad. Sci. USA <span class="emphasis"><em>92</em></span>, 8886&#8211;8890.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=7568037&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib61"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Oosumi, T., Garlick, B., and Belknap, W.R. (1996). Identification of putative nonautonomous transposable elements associated
+                        with several transposon families in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. J. Mol. Evol. <span class="emphasis"><em>43</em></span>, 11&#8211;18.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8660424&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib62"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Orgel, L.E., and Crick, F.H. (1980). Selfish DNA: the ultimate parasite. Nature <span class="emphasis"><em>284</em></span>, 604&#8211;607.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=7366731&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/284604a0" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib63"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Plasterk, R.H. (1991). The origin of footprints of the Tc1 transposon of <span class="emphasis"><em>Caenorhabditis elegans</em></span>. EMBO J. <span class="emphasis"><em>10</em></span>, 1919&#8211;1925.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=1646714&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib64"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Plasterk, R.H., and Groenen, J.T. (1992). Targeted alterations of the <span class="emphasis"><em>Caenorhabditis elegans</em></span> genome by transgene instructed DNA double strand break repair following Tc1 excision. EMBO J. <span class="emphasis"><em>11</em></span>, 287&#8211;290.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=1740110&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib65"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Plasterk, R.H., Izsvak, Z., and Ivics, Z. (1999). Resident aliens: the Tc1/<span class="emphasis"><em>mariner</em></span> superfamily of transposable elements. Trends Genet. <span class="emphasis"><em>15</em></span>, 326&#8211;332.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10431195&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0168-9525(99)01777-1" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib66"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Plasterk, R.H.A., and van Luenen, H.G.A.M. (1997). Transposons. In <span class="emphasis"><em>C. elegans</em></span> II,D.L. Riddle, T. Blumenthal, B.J. Meyer, and J.R. Priess, eds. (New York: Cold Spring Harbor Laboratory Press), pp. 97&#8211;116.</span>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib67"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Rezsohazy, R., van Luenen, H.G., Durbin, R.M., and Plasterk, R.H. (1997). Tc7, a Tc1-hitch hiking transposon in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Nucleic Acids Res. <span class="emphasis"><em>25</em></span>, 4048&#8211;4054.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=9321656&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1093/nar/25.20.4048" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib68"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Rizzon, C., Martin, E., Marais, G., Duret, L., Segalat, L., and Biemont, C. (2003). Patterns of selection against transposons
+                        inferred from the distribution of Tc1, Tc3 and Tc5 insertions in the <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=mut-7" target="_blank">mut-7</a></em></span> line of the nematode <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Genetics <span class="emphasis"><em>165</em></span>, 1127&#8211;1135.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=14668370&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib69"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Robertson, H.M., and Lampe, D.J. (1995). Recent horizontal transfer of a <span class="emphasis"><em>mariner</em></span> transposable element among and between Diptera and Neuroptera. Mol. Biol. Evol. <span class="emphasis"><em>12</em></span>, 850&#8211;862.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=7476131&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib70"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Rosenzweig, B., Liao, L.W., and Hirsh, D. (1983). Sequence of the <span class="emphasis"><em>C. elegans</em></span> transposable element Tc1. Nucleic Acids Res. <span class="emphasis"><em>11</em></span>, 4201&#8211;4209.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=6306578&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib71"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Ruan, K.S., and Emmons, S.W. (1987). Precise and imprecise somatic excision of the transposon Tc1 in the nematode <span class="emphasis"><em>C. elegans</em></span>. Nucleic Acids Res. <span class="emphasis"><em>15</em></span>, 6875&#8211;6881.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=2821484&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib72"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Rushforth, A.M., and Anderson, P. (1996). Splicing removes the <span class="emphasis"><em>Caenorhabditis elegans</em></span> transposon Tc1 from most mutant pre-mRNAs. Mol. Cell. Biol. <span class="emphasis"><em>16</em></span>, 422&#8211;429.</span>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib73"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Rushforth, A.M., Saari, B., and Anderson, P. (1993). Site-selected insertion of the transposon Tc1 into a <span class="emphasis"><em>Caenorhabditis elegans</em></span> myosin light chain gene. Mol. Cell Biol. <span class="emphasis"><em>13</em></span>, 902&#8211;910.</span>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib74"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Ruvolo, V., Hill, J.E., and Levitt, A. (1992). The Tc2 transposon of <span class="emphasis"><em>Caenorhabditis elegans</em></span> has the structure of a self-regulated element. DNA Cell Biol. <span class="emphasis"><em>11</em></span>, 111&#8211;122.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=1312336&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib75"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Sedensky, M.M., Hudson, S.J., Everson, B., and Morgan, P.G. (1994). Identification of a <span class="emphasis"><em>mariner</em></span>-like repetitive sequence in <span class="emphasis"><em>C. elegans</em></span>. Nucleic Acids Res. <span class="emphasis"><em>22</em></span>, 1719&#8211;1723.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8202377&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib76"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Sijen, T., and Plasterk, R.H. (2003). Transposon silencing in the <span class="emphasis"><em>Caenorhabditis elegans</em></span> germ line by natural RNAi. Nature <span class="emphasis"><em>426</em></span>, 310&#8211;314.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=14628056&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nature02107" target="_blank"> Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib77"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Stein, L.D., Bao, Z., Blasiar, D., Blumenthal, T., Brent, M.R., Chen, N., Chinwalla, A., Clarke, L., Clee, C., Coghlan, A.,
+                        et al. (2003). The genome sequence ofss <span class="emphasis"><em>Caenorhabditis briggsae</em></span>: a platform for comparative genomics. PLoS. Biol. 1, E45.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=14624247&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1371/journal.pbio.0000045" target="_blank"> Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib78"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Surzycki, S.A., and Belknap, W.R. (2000). Repetitive-DNA elements are similarly distributed on <span class="emphasis"><em>Caenorhabditis elegans</em></span> autosomes. Proc. Natl. Acad. Sci. USA <span class="emphasis"><em>97</em></span>, 245&#8211;249.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10618403&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1073/pnas.97.1.245" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib79"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Tabara, H., Sarkissian, M., Kelly, W.G., Fleenor, J., Grishok, A., Timmons, L., Fire, A., and Mello, C.C. (1999). The <span class="emphasis"><em><a href="http://www.wormbase.org/db/gene/gene?name=rde-1" target="_blank">rde-1</a></em></span> gene, RNA interference, and transposon silencing in <span class="emphasis"><em>C. elegans</em></span>. Cell <span class="emphasis"><em>99</em></span>, 123&#8211;132.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10535731&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0092-8674(00)81644-X" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib80"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Tijsterman, M., Ketting, R.F., Okihara, K.L., Sijen, T., and Plasterk, R.H. (2002). RNA helicase MUT-14-dependent gene silencing
+                        triggered in <span class="emphasis"><em>C. elegans</em></span> by short antisense RNAs. Science <span class="emphasis"><em>295</em></span>, 694&#8211;697.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11809977&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1126/science.1067534" target="_blank"> Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib81"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Tops, B.B., Tabara, H., Sijen, T., Simmer, F., Mello, C.C., Plasterk, R.H., and Ketting, R.F. (2005). <a href="http://www.wormbase.org/db/seq/protein?name=RDE-2;class=protein" target="_blank">RDE-2</a> interacts with <a href="http://www.wormbase.org/db/seq/protein?name=MUT-7;class=protein" target="_blank">MUT-7</a> to mediate RNA interference in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Nucleic Acids Res. <span class="emphasis"><em>33</em></span>, 347&#8211;355.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15653635&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1093/nar/gki183" target="_blank"> Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib82"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Tosi, L.R., and Beverley, S.M. (2000). <span class="emphasis"><em>cis</em></span> and <span class="emphasis"><em>trans</em></span> factors affecting<span class="emphasis"><em> Mos1</em></span> <span class="emphasis"><em>mariner</em></span> evolution and transposition <span class="emphasis"><em>in vitro</em></span>, and its potential for functional genomics. Nucleic Acids Res. <span class="emphasis"><em>28</em></span>, 784&#8211;790.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10637331&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1093/nar/28.3.784" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib83"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Tu, Z., and Shao, H. (2002). Intra- and inter-specific diversity of Tc3-like transposons in nematodes and insects and implications
+                        for their evolution and transposition. Gene <span class="emphasis"><em>282</em></span>, 133&#8211;142.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11814685&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0378-1119(01)00841-1" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib84"></a><p class="bibliomixed">
+                             <span class="bibliomisc">van Luenen, H.G., Colloms, S.D., and Plasterk, R.H. (1993). Mobilization of quiet, endogenous Tc3 transposons of <span class="emphasis"><em>Caenorhabditis elegans</em></span> by forced expression of Tc3 transposase. EMBO J. <span class="emphasis"><em>12</em></span>, 2513&#8211;2520.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8389698&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib85"></a><p class="bibliomixed">
+                             <span class="bibliomisc">van Luenen, H.G., Colloms, S.D., and Plasterk, R.H. (1994). The mechanism of transposition of Tc3 in <span class="emphasis"><em>C. elegans</em></span>. Cell <span class="emphasis"><em>79</em></span>, 293&#8211;301.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=7954797&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/0092-8674(94)90198-8" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib86"></a><p class="bibliomixed">
+                             <span class="bibliomisc">van Pouderoyen, G., Ketting, R.F., Perrakis, A., Plasterk, R.H., and Sixma, T.K. (1997). Crystal structure of the specific
+                        DNA-binding domain of Tc3 transposase of <span class="emphasis"><em>C. elegans</em></span> in complex with transposon DNA. EMBO J. <span class="emphasis"><em>16</em></span>, 6044&#8211;6054.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=9312061&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1093/emboj/16.19.6044" target="_blank"> Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib87"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Vastenhouw, N.L., Fischer, S.E., Robert, V.J., Thijssen, K.L., Fraser, A.G., Kamath, R.S., Ahringer, J., and Plasterk, R.H.
+                        (2003). A genome-wide screen identifies 27 genes involved in transposon silencing in <span class="emphasis"><em>C. elegans</em></span>. Curr. Biol. <span class="emphasis"><em>13</em></span>, 1311&#8211;1316.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12906791&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/S0960-9822(03)00539-6" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib88"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Vastenhouw, N.L., and Plasterk, R.H. (2004). RNAi protects the <span class="emphasis"><em>Caenorhabditis elegans</em></span> germline against transposition. Trends Genet <span class="emphasis"><em>20</em></span>, 314&#8211;319.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15219396&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.tig.2004.04.011" target="_blank"> Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib89"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Vos, J.C., De Baere, I., and Plasterk, R.H. (1996). Transposase is the only nematode protein required for <span class="emphasis"><em>in vitro</em></span> transposition of Tc1. Genes Dev. <span class="emphasis"><em>10</em></span>, 755&#8211;761.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8598301&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib90"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Vos, J.C., and Plasterk, R.H. (1994). Tc1 transposase of <span class="emphasis"><em>Caenorhabditis elegans</em></span> is an endonuclease with a bipartite DNA binding domain. EMBO J. <span class="emphasis"><em>13</em></span>, 6125&#8211;6132.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=7813449&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib91"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Vos, J.C., van Luenen, H.G., and Plasterk, R.H. (1993). Characterization of the <span class="emphasis"><em>Caenorhabditis elegans</em></span> Tc1 transposase <span class="emphasis"><em>in vivo</em></span> and <span class="emphasis"><em>in vitro</em></span>. Genes Dev. <span class="emphasis"><em>7</em></span>, 1244&#8211;1253.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8391505&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib92"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Watkins, S., van Pouderoyen, G., and Sixma, T.K. (2004). Structural analysis of the bipartite DNA-binding domain of Tc3 transposase
+                        bound to transposon DNA. Nucleic Acids Res. <span class="emphasis"><em>32</em></span>, 4306&#8211;4312.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15304566&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1093/nar/gkh770" target="_blank"> Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib93"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Wicks, S.R., de Vries, C.J., van Luenen, H.G., and Plasterk, R.H. (2000). <a href="http://www.wormbase.org/db/seq/protein?name=CHE-3;class=protein" target="_blank">CHE-3</a>, a cytosolic dynein heavy chain, is required for sensory cilia structure and function in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Dev. Biol. <span class="emphasis"><em>221</em></span>, 295&#8211;307.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10790327&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1006/dbio.2000.9686" target="_blank"> Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib94"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Williams, D.C., Boulin, T., Ruaud, A.F., Jorgensen, E.M., and Bessereau, J.L. (2005). Characterization of <span class="emphasis"><em>Mos1</em></span> Mediated Mutagenesis in <span class="emphasis"><em>C. elegans</em></span>: A Method for the Rapid Identification of Mutated Genes. Genetics.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15654093&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1534/genetics.104.038265" target="_blank"> Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib95"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Youngman, S., van Luenen, H.G., and Plasterk, R.H. (1996). <span class="emphasis"><em>Rte-1</em></span>, a retrotransposon-like element in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. FEBS Lett. <span class="emphasis"><em>380</em></span>, 1&#8211;7.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8603714&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/0014-5793(95)01525-6" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib96"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Yuan, J.Y., Finney, M., Tsung, N., and Horvitz, H.R. (1991). Tc4, a <span class="emphasis"><em>Caenorhabditis elegans</em></span> transposable element with an unusual fold-back structure. Proc. Natl. Acad. Sci. USA <span class="emphasis"><em>88</em></span>, 3334&#8211;3338.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=1849651&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib97"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Zagrobelny, M., Jeffares, D.C., and Arctander, P. (2004). Differences in non-LTR retrotransposons within <span class="emphasis"><em>C. elegans</em></span> and <span class="emphasis"><em>C. briggsae</em></span> genomes. Gene <span class="emphasis"><em>330</em></span>, 61&#8211;66.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15087124&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.gene.2004.01.003" target="_blank"> Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib98"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Zayed, H., Izsvak, Z., Khare, D., Heinemann, U., and Ivics, Z. (2003). The DNA-bending protein HMGB1 is a cellular cofactor
+                        of Sleeping Beauty transposition. Nucleic Acids Res. <span class="emphasis"><em>31</em></span>, 2313&#8211;2322.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12711676&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1093/nar/gkg341" target="_blank">Article</a>
+                         
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib99"></a><p class="bibliomixed">
+                             <span class="bibliomisc">Zwaal, R.R., Broeks, A., van Meurs, J., Groenen, J.T., and Plasterk, R.H. (1993). Target-selected gene inactivation in <span class="emphasis"><em>Caenorhabditis elegans</em></span> by using a frozen transposon insertion mutant bank. Proc. Natl. Acad. Sci. USA <span class="emphasis"><em>90</em></span>, 7431&#8211;7435.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8395047&amp;dopt=Abstract" target="_blank">Abstract</a>
+                         
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="footnotes"><br><hr width="100" align="left">
+            <div class="footnote">
+               <p><sup><a name="ftn.d0e11" href="#d0e11">*</a></sup>Edited by Jonathan Hodgkin and Philip Anderson. Last revised April 5, 2005. Published January 18, 2006. This chapter should
+                  be cited as: Bessereau, J.-L. Transposons in <span class="emphasis"><em>C. elegans</em></span> (January 18, 2006), <span class="emphasis"><em>WormBook</em></span>, ed. The <span class="emphasis"><em>C. elegans</em></span> Research Community, WormBook, doi/10.1895/wormbook.1.70.1, <a href="http://www.wormbook.org" target="_top">http://www.wormbook.org</a>.
+               </p>
+               <p><span class="bold"><strong>Copyright:</strong></span> &copy; 2006 Jean-Louis Bessereau. This is an open-access article distributed under the terms of the Creative Commons Attribution
+                  License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source
+                  are credited.
+               </p>
+            </div>
+            <div class="footnote">
+               <p><sup><a name="ftn.d0e41" href="#d0e41">&sect;</a></sup>To whom correspondence should be addressed. E-mail: <a href="mailto:jlbesse@biologie.ens.fr" target="_top">jlbesse@biologie.ens.fr</a></p>
+			   <p><img src="somerights20.gif" alt="Creative Commons License" align="middle" border="0"> All WormBook content, except where otherwise noted, is licensed under a <a href="http://creativecommons.org/licenses/by/2.5/" title="Creative Commons Attribution License" target="_blank">Creative Commons Attribution License</a>.</p>
+            </div>
+         </div>
+      </div>
+   <!--#include virtual="/ssi/footer.html" --></body>
+</html>
+

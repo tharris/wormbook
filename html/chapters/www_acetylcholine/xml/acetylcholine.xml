@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY fig1 SYSTEM 'cholinefig1.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'cholinefig1leg.xml'>
+<!ENTITY fig2 SYSTEM 'cholinefig2.jpg' NDATA JPG>
+<!ENTITY fig2legend SYSTEM 'cholinefig2leg.xml'>
+<!ENTITY fig3 SYSTEM 'cholinefig3.jpg' NDATA JPG>
+<!ENTITY fig3legend SYSTEM 'cholinefig3leg.xml'>
+<!ENTITY choline_Refs SYSTEM "cholinerefs.xml">
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="choline_ArticleID">
+	<articleinfo>
+		<!--see DocBook's authorgroup element -->
+		<title>Acetylcholine<footnote>
+			<para>Edited by Erik M. Jorgensen and Joshua M. Kaplan. Last revised December 5, 2006. Published January 30, 2007. This chapter should be cited as: Rand, J.B. Acetylcholine (January 30, 2007), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.131.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+			<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2007 James B. Rand. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+			</footnote>
+		</title>
+		<author>
+			<firstname>James</firstname>
+			<surname>B. Rand<remark><footnote><para>To whom correspondence should be addressed. Tel: 405 271-7681. E-mail: <ulink url="mailto:James-Rand@omrf.ouhsc.edu">James-Rand@omrf.ouhsc.edu</ulink></para></footnote></remark></surname>
+			<affiliation><address>Program in Molecular, Cell and Developmental Biology, Oklahoma Medical Research Foundation, Oklahoma City, OK 73104 USA</address>
+			</affiliation>
+		</author>
+<keywordset>
+<keyword>cha-1</keyword>
+<keyword>cho-1</keyword>
+<keyword>ace-1</keyword>
+<keyword>ace-2</keyword>
+<keyword>ace-3</keyword>
+<keyword>unc-17</keyword>
+<keyword>unc-29</keyword>
+<keyword>acr-16</keyword>
+<keyword>acetylcholine</keyword>
+<keyword>ACh</keyword>
+<keyword>choline acetyltransferase</keyword>
+<keyword>ChAT</keyword>
+<keyword>vesicular acetylcholine transporter</keyword>
+<keyword>VAChT</keyword>
+<keyword>choline transporter</keyword>
+<keyword>ChT</keyword>
+<keyword>acetylcholinesterase</keyword>
+<keyword>AChE</keyword>
+<keyword>acetylcholine receptor</keyword>
+<keyword>AChR</keyword>
+<keyword>aldicarb</keyword>
+<keyword>levamisole</keyword>
+<keyword>Caenorhabditis elegans</keyword>
+</keywordset>
+	</articleinfo>
+	<abstract>
+<title><emphasis role="bold">Abstract</emphasis></title>
+<para><emphasis role="bold">Acetylcholine is the major excitatory neurotransmitter at nematode neuromuscular junctions, and more than a third of the cells in the</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">nervous system release acetylcholine. Through a combination of forward genetics, drug-resistance selections, and genomic analysis, mutants have been identified for all of the steps specifically required for cholinergic function. These include two enzymes, two transporters, and a bewildering assortment of receptors. Cholinergic transmission is involved, directly or indirectly, in many</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">behaviors, including locomotion, egg laying, feeding, and male mating.</emphasis></para>
+</abstract>
+<sect1 id="sec1">
+<title>Introduction to cholinergic metabolism</title>
+<para>Acetylcholine (ACh) was the first substance proven to be a neurotransmitter (<link linkend="bib55">Loewi, 1921</link>). It was identified in <emphasis>Ascaris</emphasis> and other nematodes in 1955 by Helen Mellanby (<link linkend="bib58">Mellanby, 1955</link><!--: PMID 13280270-->), and was subsequently shown to be an excitatory transmitter at nematode neuromuscular junctions (<link linkend="bib19">del Castillo et al., 1963</link><!--: PMID 14097308-->; <link linkend="bib20">del Castillo et al., 1967</link><!--: PMID 6033994-->).</para>
+<para>As shown in <link linkend="figure1">Figure 1</link>, ACh is synthesized by choline acetyltransferase (ChAT), and is loaded into synaptic vesicles by the vesicular acetylcholine transporter (VAChT). The synaptic vesicle lumen is acidified by the action of an ATP-dependent proton pump located in the synaptic vesicle membrane. The pH gradient between the vesicle lumen and the cytoplasm provides the driving force for ACh transport; the VAChT essentially &#x0201C;exchanges&#x0201D; ACh for protons. The docking and priming of synaptic vesicles, and their calcium-stimulated fusion with the cell membrane are all general processes that are independent of the neurotransmitter contained in the vesicles (and are described elsewhere in this volume). Following synaptic vesicle fusion and transmitter release, the ACh diffuses within the synaptic cleft and activates acetylcholine receptors (AChRs), usually located on post-synaptic cells. For most other neurotransmitters (e.g., GABA, dopamine, serotonin), the action of the transmitter is terminated by transporter- mediated removal of the transmitter from the synaptic cleft. The action of acetylcholine, however, is terminated by direct enzymatic hydrolysis of the neurotransmitter in the synaptic cleft by acetylcholinesterase (AChE). The resulting choline is then transported back into the presynaptic neuron by a high affinity choline transporter (HAChT, or ChT); this choline is then available for the synthesis of additional ACh.</para>
+<para>In subsequent sections, each of these steps will be described, along with properties and subcellular localization of the proteins, their expression pattern, and mutant phenotypes. I then discuss ACh-mediated behaviors, and some additional aspects of cholinergic biology.</para>
+</sect1>
+<sect1 id="sec2">
+<title>Cholinergic pharmacology and drug-resistant mutants</title>
+<sect2 id="sec2_1">
+<title>Background</title>
+<para>Sydney Brenner first reported the isolation of drug-resistant mutants of <emphasis>C. elegans</emphasis>; the drugs he tested were the cholinesterase inhibitor lannate and the acetylcholine receptor agonist tetramisole (<link linkend="bib10">Brenner, 1974</link><!--: PMID 4366476-->). Since then, the use of cholinergic drugs for mutant isolation has been extremely useful. Many of the mutations identified by drug resistance turned out to be alleles of genes previously identified as Uncs (e.g., <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-17;class=Gene" role="_blank">unc-17</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-29;class=Gene" role="_blank">unc-29</ulink></emphasis>), yet a significant number of the drug resistance mutations were in previously unidentified loci (e.g., <emphasis><ulink url="http://www.wormbase.org/db/get?name=snt-1;class=Gene" role="_blank">snt-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/get?name=ric-8;class=Gene" role="_blank">ric-8</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/get?name=lev-1;class=Gene" role="_blank">lev-1</ulink></emphasis>).</para>
+<literallayout></literallayout>
+		<mediaobject id="figure1" xreflabel="Figure 1">
+			<imageobject>
+				<imagedata entityref="fig1" width="5.2in" align="center"/>
+			</imageobject>
+			<textobject>
+				<phrase>figure 1</phrase>
+			</textobject> &fig1legend;</mediaobject>
+<para>Mutations in a large number of genes can confer resistance, and for many of these genes, null alleles are viable; thus mutant screens and selections have been quite productive (<link linkend="bib53">Lewis et al., 1980b</link><!--: PMID 7203008-->; <link linkend="bib65">Nguyen et al., 1995</link><!--: PMID 7498734-->; <link linkend="bib59">Miller et al., 1996</link><!--: PMID 8901627-->). Many cholinergic drugs (some of which are mentioned in subsequent sections) have been used in the analysis of specific mutants and behaviors; however, the two that have had the most significant impact on <emphasis>C. elegans</emphasis> neurobiology are aldicarb and levamisole.</para>
+</sect2>
+<sect2 id="sec2_2">
+<title>Aldicarb and Ric mutants</title>
+<para>Although lannate was initially used for such studies (<link linkend="bib10">Brenner, 1974</link><!--: PMID 4366476-->), and trichlorfon has also been used (<link linkend="bib38">Hosono et al., 1989</link>), the carbamate acetylcholinesterase inhibitor aldicarb (see <link linkend="figure2">Figure 2</link>) has become the reagent of choice for evaluation of the &#x0201C;Ric&#x0201D; phenotype (for <emphasis role="bold">R</emphasis>esistance to <emphasis role="bold">I</emphasis>nhibitors of <emphasis role="bold">C</emphasis>holinesterase). There are more than 50 genes known which can mutate to confer a Ric phenotype. The direct consequence of inhibiting AChE is a buildup of synaptic ACh, and since ACh is the excitatory transmitter at neuromuscular junctions, the excess ACh causes a hypercontracted paralysis. In principle, there should be two major gene classes which can mutate to confer aldicarb resistance. A mutation which disrupts ACh reception or any portion of the postsynaptic response to ACh would be expected to confer resistance (the muscle wouldn't &#x0201C;know&#x0201D; or &#x0201C;care&#x0201D; that there was excess ACh on its doorstep). In addition, however, any mutation which disrupted ACh synthesis, vesicular loading or release would lead to less ACh being released by the motor neurons, so there wouldn't be as much ACh to build up in the first place. A third possibility, mutation of an acetylcholinesterase subunit, would presumably require a very specific gain-of-function mutation, and is expected to be extremely rare.</para>
+<literallayout></literallayout>
+		<mediaobject id="figure2" xreflabel="Figure 2">
+			<imageobject>
+				<imagedata entityref="fig2" width="3in" align="center"/>
+			</imageobject>
+			<textobject>
+				<phrase>figure 2</phrase>
+			</textobject> &fig2legend;</mediaobject>
+<para>Operationally, there are two strategies to determine/assess resistance to aldicarb. One can measure behavioral impairment following &#x0201C;acute&#x0201D; exposure to aldicarb, for example, the percent of animals totally paralyzed after 4 hrs as a function of aldicarb concentration (<link linkend="bib66">Nonet et al., 1993</link><!--: PMID 8391930-->), or the percent of animals totally paralyzed as a function of time at, e.g., 2 mM aldicarb (<link linkend="bib83">Schade et al., 2005</link><!--: PMID 15489510-->). An alternative is to measure growth and development in the presence of aldicarb, i.e., &#x0201C;chronic&#x0201D; exposure (<link linkend="bib65">Nguyen et al., 1995</link><!--: PMID 7498734-->; <link linkend="bib61">Miller et al., 1999</link><!--: PMID 10571227-->). Most mutageneses have employed a selection scheme based on growth and reproduction in the presence of aldicarb.</para>
+<para>Although a few of the Ric mutations clearly affect cholinergic targets (e.g., <emphasis><ulink url="http://www.wormbase.org/db/get?name=cha-1;class=Gene" role="_blank">cha-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-17;class=Gene" role="_blank">unc-17</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/get?name=ric-3;class=Gene" role="_blank">ric-3</ulink></emphasis>, described in subsequent sections), most of them are in genes involved in the release of all neurotransmitters. Thus, for example, the first mutations in <emphasis><ulink url="http://www.wormbase.org/db/get?name=snt-1;class=Gene" role="_blank">snt-1</ulink></emphasis> (synaptotagmin), <emphasis><ulink url="http://www.wormbase.org/db/get?name=snb-1;class=Gene" role="_blank">snb-1</ulink></emphasis> (synaptobrevin), and <emphasis><ulink url="http://www.wormbase.org/db/get?name=ric-8;class=Gene" role="_blank">ric-8</ulink></emphasis> (synembryn) were isolated in large-scale selections for aldicarb resistance (<link linkend="bib66">Nonet et al., 1993</link><!--: PMID 8391930-->; <link linkend="bib67">Nonet et al., 1998</link><!--: PMID 9412487-->; <link linkend="bib60">Miller et al., 2000</link><!--: PMID 10985349-->). As a result, aldicarb resistance in <emphasis>C. elegans</emphasis> is often equated with decreased neurotransmitter release, an unfortunate oversimplification. Nevertheless, a number of successful forward genetic screens have identified many important presynaptic components (<link linkend="bib65">Nguyen et al., 1995</link><!--: PMID 7498734-->; <link linkend="bib59">Miller et al., 1996</link><!--: PMID 8901627-->; <link linkend="bib102">Yook et al., 2001</link><!--: PMID 11333231-->), and a recent genome-scale reverse genetic approach using aldicarb to identify genes affecting synaptic function has been described (<link linkend="bib85">Sieburth et al., 2005</link><!--: PMID 16049479-->).</para>
+</sect2>
+<sect2 id="sec2_3">
+<title>Aldicarb, Hic mutants, and G-protein pathways</title>
+<para>In contrast to the Ric phenotype, mutants have been described with the opposite &#x0201C;Hic&#x0201D; phenotype (<emphasis role="bold">H</emphasis>ypersensitivity to <emphasis role="bold">I</emphasis>nhibitors of <emphasis role="bold">C</emphasis>holinesterase); and while many mutants with reductions in transmitter release are associated with aldicarb resistance, a number of mutants with apparent elevated release of acetylcholine are characterized by hypersensitivity to aldicarb (<link linkend="bib49">Lackner et al., 1999</link><!--: PMID 10571228-->; <link linkend="bib61">Miller et al., 1999</link><!--: PMID 10571227-->; <link linkend="bib68">Nurrish et al., 1999</link><!--: PMID 10677040-->; <link linkend="bib60">Miller and Rand, 2000</link><!--: PMID 11102364-->; <link linkend="bib80">Reynolds et al., 2005</link><!--: PMID 15489511-->; <link linkend="bib83">Schade et al., 2005</link><!--: PMID 15489510-->).</para>
+<para>A particularly fruitful use of aldicarb mutants has been in the elaboration of a G-protein-coupled regulatory network that regulates ACh release from the ventral cord motor neurons (see <ulink url="http://www.wormbook.org/chapters/www_heterotrimericGproteins/heterotrimericGproteins.html" role="_blank">Heterotrimeric G proteins in <emphasis>C. elegans</emphasis></ulink>). A core pathway in this network includes <ulink url="http://www.wormbase.org/db/get?name=RIC-8;class=Protein" role="_blank">RIC-8</ulink>, G<symbol role="symbolfont">&#x003B1;</symbol><subscript>q</subscript> (<ulink url="http://www.wormbase.org/db/get?name=EGL-30;class=Protein" role="_blank">EGL-30</ulink>) and phospholipase C<symbol role="symbolfont">&#x003B2;</symbol> (<ulink url="http://www.wormbase.org/db/get?name=EGL-8;class=Protein" role="_blank">EGL-8</ulink>) and leads to production of DAG, which stimulates transmitter release; loss-of-function mutations in these components lead to decreased locomotion, decreased egg laying, and aldicarb resistance (<link linkend="bib61">Miller et al., 1999</link><!--: PMID 10571227-->; <link linkend="bib49">Lackner et al., 1999</link><!--: PMID 10571228-->; <link linkend="bib60">Miller et al., 2000</link><!--: PMID 10985349-->; <link linkend="bib80">Reynolds et al., 2005</link><!--: PMID 15489511-->). Conversely, gain-of-function mutations in this core pathway lead to the opposite phenotypes: hyperactive locomotion and egg laying, and hypersensitivity to aldicarb. Negative regulators of this pathway include G<symbol role="symbolfont">&#x003B1;</symbol><subscript>0</subscript> (<ulink url="http://www.wormbase.org/db/get?name=GOA-1;class=Protein" role="_blank">GOA-1</ulink>) and DAG kinase (<ulink url="http://www.wormbase.org/db/get?name=DGK-1;class=Protein" role="_blank">DGK-1</ulink>), which reduce DAG levels and reduce transmitter release; loss-of-function mutations in such negative regulators lead to hyperactivity and aldicarb hypersensitivity (<link linkend="bib68">Nurrish et al., 1999</link><!--: PMID 10677040-->). Many of the mutants that defined this signaling network were either isolated on the basis of altered response to aldicarb, or their response to aldicarb provided critical data for the interpretation of their function(s).</para>
+</sect2>
+<sect2 id="sec2_4">
+<title>Levamisole and Lev mutants</title>
+<para>Levamisole (see <link linkend="figure2">Figure 2</link>) is a potent cholinergic agonist, and is often used as a pesticide. It leads to a hypercontracted paralysis of wild-type nematodes, usually followed by relaxation and death (<link linkend="bib53">Lewis et al., 1980b</link><!--: PMID 7203008-->). Levamisole has been shown to bind specifically to one of the two receptor types present in body-wall muscle, and has therefore been an extremely valuable tool in the molecular and physiological analysis of <emphasis>C. elegans</emphasis> AChR subunits (see <ulink url="http://www.wormbook.org/chapters/www_behavior/behavior.html" role="_blank">Behavior</ulink> section of WormMethods)
+. Operationally, the sensitivity or resistance of a given strain may be determined by monitoring either the time-course of paralysis or the extent of body-shortening due to muscle hypercontraction. The majority of levamisole-resistance genes were identified in several large-scale mutageneses by Jim Lewis (<link linkend="bib53">Lewis et al., 1980b</link><!--: PMID 7203008-->; <link linkend="bib52">Lewis et al., 1980a</link><!--: PMID 7402460-->). Mutations in several genes conferred strong resistance to levamisole, and also a mild uncoordinated phenotype: the AChR subunit-encoding genes <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-29;class=Gene" role="_blank">unc-29</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-38;class=Gene" role="_blank">unc-38</ulink></emphasis>, and <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-63;class=Gene" role="_blank">unc-63</ulink></emphasis>, and the accessory protein encoding genes <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-50;class=Gene" role="_blank">unc-50</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-74;class=Gene" role="_blank">unc-74</ulink></emphasis> (<link linkend="bib53">Lewis et al., 1980b</link><!--: PMID 7203008-->). There were also mutations conferring mild resistance to levamisole and normal locomotion; these identified the receptor subunit-encoding genes <emphasis><ulink url="http://www.wormbase.org/db/get?name=lev-1;class=Gene" role="_blank">lev-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=lev-8;class=Gene" role="_blank">lev-8</ulink></emphasis>, and the accessory protein encoding gene <emphasis><ulink url="http://www.wormbase.org/db/get?name=lev-10;class=Gene" role="_blank">lev-10</ulink></emphasis>. These genes are all described below in <link linkend="sec6">Sections 6</link> and <link linkend="sec8">8</link>.</para>
+</sect2>
+</sect1>
+<sect1 id="sec3">
+<title>Acetylcholine synthesis and vesicular loading</title>
+<sect2 id="sec3_1">
+<title>The ChAT (<ulink url="http://www.wormbase.org/db/get?name=CHA-1;class=Protein" role="_blank">CHA-1</ulink>) protein</title>
+<para>Choline acetyltransferase catalyzes the acetylation of choline by acetyl-Coenzyme A (see <link linkend="figure1">Figure 1</link>). The <emphasis>C. elegans</emphasis> enzyme has been partially purified and characterized (<link linkend="bib79">Rand and Russell, 1985</link><!--: PMID 3964827-->); it is similar to the vertebrate and <emphasis>Drosophila</emphasis> ChAT proteins. Immunolocalization studies indicate that most of the ChAT protein is synaptic, but some immunoreactivity appears to be generally cytoplasmic (J. Duerr and J. Rand, unpublished). The synaptic protein is associated with a vesicular compartment, most likely synaptic vesicles, because it was mislocalized in <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-104;class=Gene" role="_blank">unc-104</ulink></emphasis> mutants. Both the synaptic and the cytoplasmic staining were decreased in particular <emphasis><ulink url="http://www.wormbase.org/db/get?name=cha-1;class=Gene" role="_blank">cha-1</ulink></emphasis> mutant strains and increased in transgenic lines which overexpress ChAT (J. Duerr and J. Rand, unpublished).</para>
+</sect2>
+<sect2 id="sec3_2">
+<title>The VAChT (<ulink url="http://www.wormbase.org/db/get?name=UNC-17;class=Protein" role="_blank">UNC-17</ulink>) protein</title>
+<para>The vesicular acetylcholine transporter was first cloned and characterized in <emphasis>C. elegans</emphasis> (<link linkend="bib1">Alfonso et al., 1993</link><!--: PMID 8342028-->), where it was shown to be the product of the <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-17;class=Gene" role="_blank">unc-17</ulink></emphasis> gene. Structurally, the <ulink url="http://www.wormbase.org/db/get?name=UNC-17;class=Protein" role="_blank">UNC-17</ulink> (VAChT) protein has 12 transmembrane domains, with cytoplasmic (i.e., extravesicular) N- and C-termini, and is closely related to the vesicular monoamine transporters (VMATs). Immunoreactivity with anti-UNC-17 antibody preparations in wild-type animals is punctate and colocalizes with the synaptic vesicle protein synaptotagmin, suggesting that <ulink url="http://www.wormbase.org/db/get?name=UNC-17;class=Protein" role="_blank">UNC-17</ulink> is associated with synaptic vesicles (<link linkend="bib1">Alfonso et al., 1993</link><!--: PMID 8342028-->). This punctate staining is mislocalized in <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-104;class=Gene" role="_blank">unc-104</ulink></emphasis> mutants, providing additional support to the conclusion that <ulink url="http://www.wormbase.org/db/get?name=UNC-17;class=Protein" role="_blank">UNC-17</ulink> is an integral membrane protein of synaptic vesicles.</para>
+</sect2>
+<sect2 id="sec3_3">
+<title>Expression of ChAT and VAChT</title>
+<para>Although there are several formal criteria used by neurobiologists to determine if a neuron is cholinergic, the unofficial criterion is expression of ChAT. Operationally, this means either immunolocalization of ChAT or expression of a cholinergic reporter (discussed below). By such criteria, approximately 120 neurons in the <emphasis>C. elegans</emphasis> hermaphrodite are cholinergic. The majority of these cells are motor neurons. These include the AS, DA, DB, VA, VB, and VC motor neuron classes of the ventral nerve cord, the sublateral motor neuron classes SAA, SAB, SIA, SIB, SMB, and SMD (<link linkend="bib77">Rand and Nonet, 1997</link>), and the HSN cells (<link linkend="bib21">Duerr et al., 2001</link><!--: PMID 11350757-->).</para>
+</sect2>
+<sect2 id="sec3_4">
+<title>The cholinergic locus</title>
+<para>Genetic and molecular studies showed that <emphasis><ulink url="http://www.wormbase.org/db/get?name=cha-1;class=Gene" role="_blank">cha-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-17;class=Gene" role="_blank">unc-17</ulink></emphasis> were part of a complex gene locus and transcription unit, with the <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-17;class=Gene" role="_blank">unc-17</ulink></emphasis> gene nested in the long first intron of <emphasis><ulink url="http://www.wormbase.org/db/get?name=cha-1;class=Gene" role="_blank">cha-1</ulink></emphasis> (see <link linkend="figure3">Figure 3</link>; <link linkend="bib76">Rand, 1989</link><!--: PMID 2731735-->; <link linkend="bib2">Alfonso et al., 1994a</link><!--: PMID 8057385-->). Thus, the sequential steps of acetylcholine synthesis and vesicle-loading are encoded by different genes within a single, complex transcription unit. Subsequent studies demonstrated that a similar nested structure of these genes is present in mammals and insects (<link linkend="bib23">Erickson et al., 1994</link><!--: PMID 8071310-->; <link linkend="bib47">Kitamoto et al., 1998</link><!--: PMID 9446576-->). This is now commonly called the cholinergic gene locus, or CGL, and is present in all metazoans thus far examined (<link linkend="bib22">Eiden, 1998</link><!--: PMID 9603187-->). It is noteworthy that the genes encoding enzymes and transporters for other neurotransmitters are not organized in a comparable way.</para>
+		<mediaobject id="figure3" xreflabel="Figure 3">
+			<imageobject>
+				<imagedata entityref="fig3" width="6.5in" align="center"/>
+			</imageobject>
+			<textobject>
+				<phrase>figure 3</phrase>
+			</textobject> &fig3legend;</mediaobject>
+<para>As described below, the <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-17;class=Gene" role="_blank">unc-17</ulink></emphasis> promoter regulates the expression of both genes, and may therefore be considered as a &#x0201C;cholinergic&#x0201D; promoter.</para>
+</sect2>
+<sect2 id="sec3_5">
+<title><emphasis><ulink url="http://www.wormbase.org/db/get?name=cha-1;class=Gene" role="_blank">cha-1</ulink> and <ulink url="http://www.wormbase.org/db/get?name=unc-17;class=Gene" role="_blank">unc-17</ulink></emphasis> mutants</title>
+<para><emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-17;class=Gene" role="_blank">unc-17</ulink></emphasis> mutants were first described by Brenner (<link linkend="bib10">Brenner, 1974</link><!--: PMID 4366476-->), and <emphasis><ulink url="http://www.wormbase.org/db/get?name=cha-1;class=Gene" role="_blank">cha-1</ulink></emphasis> mutants were described 10 years later (<link linkend="bib78">Rand and Russell, 1984</link><!--: PMID 6698395-->). More than a dozen <emphasis><ulink url="http://www.wormbase.org/db/get?name=cha-1;class=Gene" role="_blank">cha-1</ulink></emphasis> alleles and more than 20 <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-17;class=Gene" role="_blank">unc-17</ulink></emphasis> alleles have now been described (<link linkend="bib10">Brenner, 1974</link><!--: PMID 4366476-->; <link linkend="bib78">Rand and Russell, 1984</link><!--: PMID 6698395-->; <link linkend="bib37">Hosono et al., 1985</link><!--: PMID 4056699-->; <link linkend="bib76">Rand, 1989</link><!--: PMID 2731735-->; <link linkend="bib1">Alfonso et al., 1993</link><!--: PMID 8342028-->; <link linkend="bib2">Alfonso et al., 1994a</link><!--: PMID 8057385-->; <link linkend="bib3">Alfonso et al., 1994b</link><!--: PMID 8158270-->; <link linkend="bib104">Zhao and Nonet, 2000</link><!--: PMID 10683178-->; <link linkend="bib105">Zhu et al., 2001</link><!--: PMID 11551909-->). Hypomorphic <emphasis><ulink url="http://www.wormbase.org/db/get?name=cha-1;class=Gene" role="_blank">cha-1</ulink></emphasis> mutants (including animals homozygous for the reference <emphasis><ulink url="http://www.wormbase.org/db/get?name=p1152;class=Variation" role="_blank">p1152</ulink></emphasis> allele) are coily, uncoordinated, and jerky in reverse; they are also small, slow-growing, and resistant to aldicarb (<link linkend="bib78">Rand and Russell, 1984</link><!--: PMID 6698395-->). Null alleles of <emphasis><ulink url="http://www.wormbase.org/db/get?name=cha-1;class=Gene" role="_blank">cha-1</ulink></emphasis> are lethal - the animals hatch, but they are essentially immobile, and do not grow or feed (<link linkend="bib76">Rand, 1989</link><!--: PMID 2731735-->; <link linkend="bib1">Alfonso et al., 1993</link><!--: PMID 8342028-->). In general, the phenotypes of hypomorphic <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-17;class=Gene" role="_blank">unc-17</ulink></emphasis> mutants (including animals homozygous for the <emphasis><ulink url="http://www.wormbase.org/db/get?name=e245;class=Variation" role="_blank">e245</ulink></emphasis> reference allele) are similar to those of <emphasis><ulink url="http://www.wormbase.org/db/get?name=cha-1;class=Gene" role="_blank">cha-1</ulink></emphasis>: animals are small, slow-growing, coiling Uncs, jerky in reverse, and resistant to cholinesterase inhibitors (<link linkend="bib10">Brenner, 1974</link><!--: PMID 4366476-->; <link linkend="bib78">Rand and Russell, 1984</link><!--: PMID 6698395-->). Null <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-17;class=Gene" role="_blank">unc-17</ulink></emphasis> mutants are lethal, with a phenotype quite similar to <emphasis><ulink url="http://www.wormbase.org/db/get?name=cha-1;class=Gene" role="_blank">cha-1</ulink></emphasis> null mutants (<link linkend="bib1">Alfonso et al., 1993</link><!--: PMID 8342028-->). The lethality of <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-17;class=Gene" role="_blank">unc-17</ulink></emphasis> null mutants and the similarity of their phenotype to <emphasis><ulink url="http://www.wormbase.org/db/get?name=cha-1;class=Gene" role="_blank">cha-1</ulink></emphasis> nulls argue that vesicular loading is an obligatory step in ACh release.</para>
+<para>The molecular analysis of the region has helped to explain some genetic anomalies. Even though in general, <emphasis><ulink url="http://www.wormbase.org/db/get?name=cha-1;class=Gene" role="_blank">cha-1</ulink></emphasis> mutations and <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-17;class=Gene" role="_blank">unc-17</ulink></emphasis> mutations behaved as two discrete complementation groups, there were a few mutations that failed to complement both <emphasis><ulink url="http://www.wormbase.org/db/get?name=cha-1;class=Gene" role="_blank">cha-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-17;class=Gene" role="_blank">unc-17</ulink></emphasis> alleles (<link linkend="bib78">Rand and Russell, 1984</link><!--: PMID 6698395-->). These fell into two classes, termed <symbol role="symbolfont">&#x003B1;</symbol> and <symbol role="symbolfont">&#x003B2;</symbol>. Fine-structure genetic mapping indicated that the single <symbol role="symbolfont">&#x003B1;</symbol> allele mapped between <emphasis><ulink url="http://www.wormbase.org/db/get?name=cha-1;class=Gene" role="_blank">cha-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-17;class=Gene" role="_blank">unc-17</ulink></emphasis>, but the two <symbol role="symbolfont">&#x003B2;</symbol> alleles mapped well to the right of both loci (<link linkend="bib76">Rand, 1989</link><!--: PMID 2731735-->). Subsequent molecular analysis revealed that the <symbol role="symbolfont">&#x003B1;</symbol> allele corresponds to a small deletion between <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-17;class=Gene" role="_blank">unc-17</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=cha-1;class=Gene" role="_blank">cha-1</ulink></emphasis> (<link linkend="bib2">Alfonso et al., 1994a</link><!--: PMID 8057385-->), and the <symbol role="symbolfont">&#x003B2;</symbol> mutations are in the promoter region upstream of the <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-17;class=Gene" role="_blank">unc-17</ulink></emphasis> coding sequence (D. Frisby and J. Rand, unpublished). The observed noncomplementation between the <symbol role="symbolfont">&#x003B2;</symbol> mutations and <emphasis><ulink url="http://www.wormbase.org/db/get?name=cha-1;class=Gene" role="_blank">cha-1</ulink></emphasis> alleles confirms that the promoter region upstream of <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-17;class=Gene" role="_blank">unc-17</ulink></emphasis> drives both <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-17;class=Gene" role="_blank">unc-17</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=cha-1;class=Gene" role="_blank">cha-1</ulink></emphasis> transcription (see <link linkend="figure3">Figure 3</link>).</para>
+</sect2>
+</sect1>
+<sect1 id="sec4">
+<title>Choline transport</title>
+<sect2 id="sec4_1">
+<title>The <ulink url="http://www.wormbase.org/db/get?name=CHO-1;class=Protein" role="_blank">CHO-1</ulink> choline transporter</title>
+<para>Like the vesicular acetylcholine transporter, the plasma membrane choline transporter was first cloned and characterized in <emphasis>C. elegans</emphasis> (<link linkend="bib70">Okuda et al., 2000</link><!--: PMID 10649566-->). The ChT protein (<ulink url="http://www.wormbase.org/db/get?name=CHO-1;class=Protein" role="_blank">CHO-1</ulink>) is a member of a class of sodium-dependent transporters with substrates such as glucose (SGLT1) and inositol (SMIT1). It is best modeled as a 13-transmembrane domain protein, with a short N-terminus oriented extracellularly, and an extended, C-terminus oriented into the cytoplasm (<link linkend="bib4">Apparsundaram et al., 2000</link><!--: PMID 11027560-->; <link linkend="bib97">Wang et al., 2001</link><!--: PMID 11368908-->). Assays performed in embryonic cell culture showed that the <emphasis>C. elegans</emphasis> <ulink url="http://www.wormbase.org/db/get?name=CHO-1;class=Protein" role="_blank">CHO-1</ulink> transporter was sodium- and chloride-dependent, with an apparent K<subscript>m</subscript> for choline of 0.66 <symbol role="symbolfont">&#x003BC;</symbol>M, comparable to mammalian transporters (<link linkend="bib56">Matthies et al., 2006</link><!--: PMID 16763028-->).</para>
+<para>Reporter studies indicate that <emphasis><ulink url="http://www.wormbase.org/db/get?name=cho-1;class=Gene" role="_blank">cho-1</ulink></emphasis> is expressed in most or all cholinergic neurons (<link linkend="bib56">Matthies et al., 2006</link><!--: PMID 16763028-->). Within these neurons, a CHO-1-GFP fusion protein was localized to synaptic regions and was associated with a vesicular compartment, because its localization was dependent on <ulink url="http://www.wormbase.org/db/get?name=UNC-104;class=Protein" role="_blank">UNC-104</ulink> (<link linkend="bib56">Matthies et al., 2006</link><!--: PMID 16763028-->). This is consistent with results from mammalian systems demonstrating that the choline transporter is localized to apparent synaptic vesicles (<link linkend="bib24">Ferguson et al., 2003</link><!--: PMID 14585997-->).</para>
+</sect2>
+<sect2 id="sec4_2">
+<title>The <emphasis><ulink url="http://www.wormbase.org/db/get?name=cho-1;class=Gene" role="_blank">cho-1</ulink></emphasis> gene and mutants</title>
+<para>The reference allele, <emphasis><ulink url="http://www.wormbase.org/db/get?name=tm373;class=Variation" role="_blank">tm373</ulink></emphasis>, is a precise 1695 bp deletion which eliminates more than half of the <emphasis><ulink url="http://www.wormbase.org/db/get?name=cho-1;class=Gene" role="_blank">cho-1</ulink></emphasis> coding sequence; it is almost certainly a null allele. Animals homozygous for <emphasis><ulink url="http://www.wormbase.org/db/get?name=tm373;class=Variation" role="_blank">tm373</ulink></emphasis> are viable, and their growth and development appear to be normal. However, although <emphasis><ulink url="http://www.wormbase.org/db/get?name=cho-1;class=Gene" role="_blank">cho-1</ulink></emphasis> mutants have little difficulty crawling on agar, they swim somewhat more slowly that wild-type animals, and become paralyzed (&#x0201C;fatigued&#x0201D;) more quickly than wild-type animals during prolonged swimming in liquid (<link linkend="bib56">Matthies et al., 2006</link><!--: PMID 16763028-->). It is tempting to speculate that there is enough endogenous choline and/or low-affinity choline uptake activity (see below) in the <emphasis><ulink url="http://www.wormbase.org/db/get?name=cho-1;class=Gene" role="_blank">cho-1</ulink></emphasis> mutant nerve terminals to support some ACh synthesis even without any high-affinity reuptake activity, and that this level of ACh synthesis is sufficient for locomotion in a calm environment. However, this level of ACh is not adequate to support the increased demands of vigorous swimming, and the <emphasis><ulink url="http://www.wormbase.org/db/get?name=cho-1;class=Gene" role="_blank">cho-1</ulink></emphasis> motor neurons appear to become depleted of transmitter. This provides genetic-based evidence for a functional coupling of choline transport and ACh synthesis, and supports previous models based on other methods (<link linkend="bib44">Jope and Jenden, 1980</link><!--: PMID 7452263-->; <link linkend="bib12">Collier, 1988</link><!--: PMID 3335848-->; <link linkend="bib11">Bussiere et al., 2001</link><!--: PMID 11574076-->).</para>
+</sect2>
+<sect2 id="sec4_3">
+<title>Sources of choline</title>
+<para>If choline is indeed rate-limiting for acetylcholine synthesis under some circumstances, what determines the availability of choline? In <emphasis>C. elegans</emphasis>, choline is synthesized in the form of phosphocholine through progressive N-methylation of phosphoethanolamine by the <ulink url="http://www.wormbase.org/db/get?name=PMT-1;class=Protein" role="_blank">PMT-1</ulink> and <ulink url="http://www.wormbase.org/db/get?name=PMT-2;class=Protein" role="_blank">PMT-2</ulink> methyltransferases (<link linkend="bib71">Palavalli et al., 2006</link><!--: PMID 16681378-->). Choline may also be produced through cleavage of phosphatidylcholine by phospholipase D (<ulink url="http://www.wormbase.org/db/get?name=PLD-1;class=Protein" role="_blank">PLD-1</ulink>). Choline is thus a product of lipid metabolism and lipid turnover. The activities of these enzymes have not been analyzed in cholinergic neurons.</para>
+</sect2>
+<sect2 id="sec4_4">
+<title>Other choline transporters</title>
+<para><ulink url="http://www.wormbase.org/db/get?name=SNF-6;class=Protein" role="_blank">SNF-6</ulink> is a post-synaptic choline/acetylcholine transporter (<link linkend="bib45">Kim et al., 2004</link><!--: PMID 15318222-->). It is a member of the family of plasma membrane transporters which includes the serotonin transporter (<ulink url="http://www.wormbase.org/db/get?name=MOD-5;class=Protein" role="_blank">MOD-5</ulink>), the dopamine transporter (<ulink url="http://www.wormbase.org/db/get?name=DAT-1;class=Protein" role="_blank">DAT-1</ulink>), and the GABA transporter (<ulink url="http://www.wormbase.org/db/get?name=SNF-11;class=Protein" role="_blank">SNF-11</ulink>). The only two substrates identified for <ulink url="http://www.wormbase.org/db/get?name=SNF-6;class=Protein" role="_blank">SNF-6</ulink> were choline and acetylcholine; both substrates had comparable K<subscript>m</subscript> values, but the V<subscript>max</subscript> for choline was about seven times the V<subscript>max</subscript> for acetylcholine (<link linkend="bib45">Kim et al., 2004</link><!--: PMID 15318222-->). This appears to be a nematode-specific transport activity. The <ulink url="http://www.wormbase.org/db/get?name=SNF-6;class=Protein" role="_blank">SNF-6</ulink> protein is expressed in muscles, and is preferentially localized to neuromuscular junctions. <emphasis><ulink url="http://www.wormbase.org/db/get?name=snf-6;class=Gene" role="_blank">snf-6</ulink></emphasis> mutants are somewhat uncoordinated and mildly hypersensitive to aldicarb. This transport activity may provide a mechanism for rapid clearance of synaptic ACh and/or choline during periods of high transmitter release.</para>
+<para>Most species (and apparently <emphasis>C. elegans</emphasis> as well) also express several &#x0201C;low-affinity&#x0201D; choline transport activities with broad tissue distributions. The CTL proteins in mammals (corresponding to the <emphasis>chtl-1</emphasis> gene product) are sodium-independent transporters of choline and other organic cations (<link linkend="bib69">O&apos;Regan et al., 2000</link><!--: PMID 10677542-->). There is also a family of at least five organic cation transport (OCT) proteins in mammals with broad, overlapping substrate specificities (including choline; <link linkend="bib29">Friedrich et al., 2001</link><!--: PMID 11406107-->). <emphasis>C. elegans</emphasis> members of this family include <ulink url="http://www.wormbase.org/db/get?name=OCT-1;class=Protein" role="_blank">OCT-1</ulink> (<link linkend="bib100">Wu et al., 1999</link><!--: PMID 10209228-->), <ulink url="http://www.wormbase.org/db/get?name=OCT-2;class=Protein" role="_blank">OCT-2</ulink> (listed in WormBase with no data), plus 3 or 4 others in WormPep which are mostly uncharacterized. The involvement, if any, of these transport activities in cholinergic function is unknown.</para>
+</sect2>
+</sect1>
+<sect1 id="sec5">
+<title>Acetylcholinesterases</title>
+<sect2 id="sec5_1">
+<title>AChE proteins</title>
+<para>Biochemical analysis of <emphasis>C. elegans</emphasis> homogenates led to a complicated assortment of AChE forms with different molecular weights, subunit composition, and hydrophobicity; however, three classes of AChE activity (A, B, and C) could be distinguished on the basis of substrate affinity, inhibitor specificities, and detergent sensitivities (<link linkend="bib42">Johnson and Russell, 1983</link><!--: PMID 6864228-->; <link linkend="bib48">Kolson and Russell, 1985</link><!--: PMID 4020535-->). Vertebrates express two families of cholinesterase activity, the &#x0201C;true&#x0201D; acetylcholinesterases and the &#x0201C;pseudo&#x0201D; or butyrylcholinesterases. However, the three <emphasis>C. elegans</emphasis> AChE activity classes do not correspond in any clear way to the vertebrate enzyme classes (<link linkend="bib42">Johnson and Russell, 1983</link><!--: PMID 6864228-->). The active site-containing subunits associated with the A, B, and C classes have been shown to be the gene products of the <emphasis><ulink url="http://www.wormbase.org/db/get?name=ace-1;class=Gene" role="_blank">ace-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/get?name=ace-2;class=Gene" role="_blank">ace-2</ulink></emphasis>, and <emphasis><ulink url="http://www.wormbase.org/db/get?name=ace-3;class=Gene" role="_blank">ace-3</ulink></emphasis> genes, respectively (<link linkend="bib40">Johnson et al., 1981</link><!--: PMID 7274654-->; <link linkend="bib18">Culotti et al., 1981</link><!--: PMID 7274655-->; <link linkend="bib48">Kolson and Russell, 1985</link><!--: PMID 4020535-->; <link linkend="bib13">Combes et al., 2000</link><!--: PMID 10891266-->). A fourth gene, <emphasis><ulink url="http://www.wormbase.org/db/get?name=ace-4;class=Gene" role="_blank">ace-4</ulink></emphasis>, has been described, but the protein it encodes appears not to be enzymatically active (see below).</para>
+<para>The three AChE classes were subsequently shown to include a number of forms with different association states. Class A (<ulink url="http://www.wormbase.org/db/get?name=ACE-1;class=Protein" role="_blank">ACE-1</ulink>) subunits self-associate, forming amphiphilic tetramers; these tetramers may also bind to a hydrophobic noncatalytic subunit which is poorly characterized (<link linkend="bib13">Combes et al., 2000</link><!--: PMID 10891266-->). Class B (<ulink url="http://www.wormbase.org/db/get?name=ACE-2;class=Protein" role="_blank">ACE-2</ulink>) and Class C (<ulink url="http://www.wormbase.org/db/get?name=ACE-3;class=Protein" role="_blank">ACE-3</ulink>) subunits form glycolipid-anchored homodimers (<link linkend="bib13">Combes et al., 2000</link><!--: PMID 10891266-->). The Class C AChE activity represents only a few percent of the total <emphasis>C. elegans</emphasis> AChE activity (<link linkend="bib48">Kolson and Russell, 1985</link><!--: PMID 4020535-->), yet it is noteworthy in several ways. Its apparent K<subscript>m</subscript> of 16-18 nM is approximately 3 to 4 orders of magnitude lower than K<subscript>m</subscript> values for Classes A and B, as well as vertebrate AChEs (<link linkend="bib42">Johnson and Russell, 1983</link><!--: PMID 6864228-->; <link linkend="bib48">Kolson and Russell, 1985</link><!--: PMID 4020535-->). The Class C activity is also quite resistant to cholinesterase inhibitors (<link linkend="bib48">Kolson and Russell, 1985</link><!--: PMID 4020535-->). Class C-like AChE activity with these properties has been identified in other nematode species, but is not present in vertebrates (<link linkend="bib48">Kolson and Russell, 1985</link><!--: PMID 4020535-->; <link linkend="bib84">Selkirk et al., 2005</link>).</para>
+</sect2>
+<sect2 id="sec5_2">
+<title>AChE expression and localization</title>
+<para>The three classes of AChE have quite different tissue and cellular expression patterns. Mosaic analysis was initially used to determine that <emphasis><ulink url="http://www.wormbase.org/db/get?name=ace-1;class=Gene" role="_blank">ace-1</ulink></emphasis> was expressed in muscles, and not (or very little) in neurons (<link linkend="bib36">Herman and Kari, 1985</link><!--: PMID 3971421-->). Subsequent studies with reporter genes demonstrated expression in all body muscle cells, as well as the anal sphincter muscle, the four vm1 vulval muscles, the three pm5 pharyngeal muscles, and six neurons (2 <ulink url="http://wormbase.org/db/misc/etree?name=OLL;class=Anatomy_name" role="_blank">OLL</ulink> and 4 <ulink url="http://wormbase.org/db/misc/etree?name=CEP;class=Anatomy_name" role="_blank">CEP</ulink>; <link linkend="bib16">Culetto et al., 1999</link><!--: PMID 10438595-->). Histochemical methods showed that the <ulink url="http://www.wormbase.org/db/get?name=ACE-1;class=Protein" role="_blank">ACE-1</ulink> enzymatic activity was localized in or near the nerve ring and nerve cords and was presumably postsynaptic at neuromuscular junctions (<link linkend="bib18">Culotti et al., 1981</link><!--: PMID 7274655-->).</para>
+<para>Reporter analysis using an <emphasis><ulink url="http://www.wormbase.org/db/get?name=ace-2;class=Gene" role="_blank">ace-2</ulink></emphasis> promoter indicated expression in a number of neurons in head (including the 12 <ulink url="http://wormbase.org/db/cell/cell.cgi?name=IL;class=Cell" role="_blank">IL</ulink> cells and others), neurons in the tail (<ulink url="http://wormbase.org/db/cell/cell.cgi?name=PVC;class=Cell" role="_blank">PVC</ulink>, <ulink url="http://wormbase.org/db/cell/cell.cgi?name=PVQ;class=Cell" role="_blank">PVQ</ulink>, and <ulink url="http://www.wormbase.org/db/get?name=PDA;class=Cell" role="_blank">PDA</ulink>), the pm5 pharyngeal muscles, and hypodermal cells near the tip of the tail (<ulink url="http://www.wormbase.org/db/get?name=hyp8;class=Cell" role="_blank">hyp8</ulink>, <ulink url="http://wormbase.org/db/cell/cell.cgi?name=hyp9;class=Cell" role="_blank">9</ulink>, <ulink url="http://wormbase.org/db/cell/cell.cgi?name=hyp10;class=Cell" role="_blank">10</ulink>, <ulink url="http://wormbase.org/db/cell/cell.cgi?name=hyp11;class=Cell" role="_blank">11</ulink>; <link linkend="bib14">Combes et al., 2003</link><!--: PMID 12911746-->). Histochemical methods showed that the <ulink url="http://www.wormbase.org/db/get?name=ACE-2;class=Protein" role="_blank">ACE-2</ulink> enzymatic activity was localized near the nerve ring and nerve cords, and also near the pharyngeointestinal valve, although the cells contributing to this pattern were not identified (<link linkend="bib18">Culotti et al., 1981</link><!--: PMID 7274655-->; <link linkend="bib14">Combes et al., 2003</link><!--: PMID 12911746-->).</para>
+<para>Expression of an <emphasis><ulink url="http://www.wormbase.org/db/get?name=ace-3;class=Gene" role="_blank">ace-3</ulink></emphasis> reporter was observed in a few neurons in the head, a few neurons in the tail (probably <ulink url="http://www.wormbase.org/db/get?name=PQR;class=Cell" role="_blank">PQR</ulink> and <ulink url="http://www.wormbase.org/db/get?name=PDA;class=Cell" role="_blank">PDA</ulink>), the two lateral CAN cells, as well as in the pm3, pm4, pm5, and pm7 pharyngeal muscles. A dorsal row of body-wall muscle cells (the 2 dorso-medial hemiquadrants) was intensely labeled in larval stages but no longer detected in adults (<link linkend="bib14">Combes et al., 2003</link><!--: PMID 12911746-->). Immunolocalization of Class C revealed staining in the nerve ring and CAN cells (there was also apparent artifactual staining of the pharyngeointestinal valve; <link linkend="bib88">Stern, 1986</link>). The CAN staining in the cell processes was of a comparable intensity to the cell body, consistent with the enzyme activity being uniformly distributed in or along the plasma membrane.</para>
+<para>It is noteworthy that although the three activities are expressed in different cell types (with the exception that all three classes are expressed in the pm5 pharyngeal muscles), all three are localized in or near the nerve ring and Classes A and B are localized in or near the ventral and dorsal nerve cords.</para>
+</sect2>
+<sect2 id="sec5_3">
+<title><emphasis>ace</emphasis> genes and mutants</title>
+<para>The three <emphasis>ace</emphasis> genes were mapped by genetic methods and are unlinked (<link linkend="bib40">Johnson et al., 1981</link><!--: PMID 7274654-->; <link linkend="bib18">Culotti et al., 1981</link><!--: PMID 7274655-->; <link linkend="bib41">Johnson et al., 1988</link><!--: PMID 3272166-->). Subsequently, by comparing the acetylcholinesterase homologs in the genome to the known map positions of the three <emphasis>ace</emphasis> loci, it was possible to clone each of the <emphasis>ace</emphasis> genes, analyze their transcripts and expression patterns, and characterize the available mutations (<link linkend="bib5">Arpagaus et al., 1994</link><!--: PMID 8144590-->; <link linkend="bib33">Grauso et al., 1998</link><!--: PMID 9539167-->; <link linkend="bib13">Combes et al., 2000</link><!--: PMID 10891266-->; <link linkend="bib14">Combes et al., 2003</link><!--: PMID 12911746-->). Surprisingly, in the region predicted to encode <emphasis><ulink url="http://www.wormbase.org/db/get?name=ace-3;class=Gene" role="_blank">ace-3</ulink></emphasis> there were 2 AChE-encoding genes arranged in a two-gene operon (<link linkend="bib33">Grauso et al., 1998</link><!--: PMID 9539167-->; <link linkend="bib14">Combes et al., 2003</link><!--: PMID 12911746-->). Sequencing of an <emphasis><ulink url="http://www.wormbase.org/db/get?name=ace-3;class=Gene" role="_blank">ace-3</ulink></emphasis> mutation revealed that it was in the downstream gene; although the upstream gene (now known as <emphasis><ulink url="http://www.wormbase.org/db/get?name=ace-4;class=Gene" role="_blank">ace-4</ulink></emphasis>) is transcribed, the encoded protein appears to be catalytically inactive (<link linkend="bib13">Combes et al., 2000</link><!--: PMID 10891266-->).</para>
+<para>Mutations have been described for <emphasis><ulink url="http://www.wormbase.org/db/get?name=ace-1;class=Gene" role="_blank">ace-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/get?name=ace-2;class=Gene" role="_blank">ace-2</ulink></emphasis>, and <emphasis><ulink url="http://www.wormbase.org/db/get?name=ace-3;class=Gene" role="_blank">ace-3</ulink></emphasis> (<link linkend="bib40">Johnson et al., 1981</link><!--: PMID 7274654-->; <link linkend="bib18">Culotti et al., 1981</link><!--: PMID 7274655-->; <link linkend="bib41">Johnson et al., 1988</link><!--: PMID 3272166-->). Each of the single mutants is essentially wild-type, although <emphasis><ulink url="http://www.wormbase.org/db/get?name=ace-2;class=Gene" role="_blank">ace-2</ulink></emphasis> animals are hypersensitive to aldicarb. The <emphasis><ulink url="http://www.wormbase.org/db/get?name=ace-2;class=Gene" role="_blank">ace-2</ulink>; <ulink url="http://www.wormbase.org/db/get?name=ace-3;class=Gene" role="_blank">ace-3</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=ace-3;class=Gene" role="_blank">ace-3</ulink>; <ulink url="http://www.wormbase.org/db/get?name=ace-1;class=Gene" role="_blank">ace-1</ulink></emphasis> double mutants are also essentially wild-type (although <emphasis><ulink url="http://www.wormbase.org/db/get?name=ace-2;class=Gene" role="_blank">ace-2</ulink>; <ulink url="http://www.wormbase.org/db/get?name=ace-3;class=Gene" role="_blank">ace-3</ulink></emphasis> animals are hypersensitive to aldicarb); however, <emphasis><ulink url="http://www.wormbase.org/db/get?name=ace-2;class=Gene" role="_blank">ace-2</ulink>; <ulink url="http://www.wormbase.org/db/get?name=ace-1;class=Gene" role="_blank">ace-1</ulink></emphasis> animals are quite uncoordinated (<link linkend="bib18">Culotti et al., 1981</link><!--: PMID 7274655-->). The <emphasis><ulink url="http://www.wormbase.org/db/get?name=ace-2;class=Gene" role="_blank">ace-2</ulink>; <ulink url="http://www.wormbase.org/db/get?name=ace-3;class=Gene" role="_blank">ace-3</ulink>; <ulink url="http://www.wormbase.org/db/get?name=ace-1;class=Gene" role="_blank">ace-1</ulink></emphasis> triple mutant is lethal - its embryonic development is apparently normal, but many of the animals do not hatch, and those that do hatch are paralyzed and developmentally arrested (<link linkend="bib41">Johnson et al., 1988</link><!--: PMID 3272166-->). A potential caveat to this phenotypic analysis is that the <emphasis><ulink url="http://www.wormbase.org/db/get?name=ace-3;class=Gene" role="_blank">ace-3</ulink></emphasis> allele that was used was <emphasis><ulink url="http://www.wormbase.org/db/get?name=dc2;class=Variation" role="_blank">dc2</ulink></emphasis>, which was subsequently shown to be associated with a deletion disrupting both the <emphasis><ulink url="http://www.wormbase.org/db/get?name=ace-3;class=Gene" role="_blank">ace-3</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=ace-4;class=Gene" role="_blank">ace-4</ulink></emphasis> genes (<link linkend="bib13">Combes et al., 2000</link><!--: PMID 10891266-->); thus the lethal phenotype is in reality associated with the quadruple <emphasis><ulink url="http://www.wormbase.org/db/get?name=ace-2;class=Gene" role="_blank">ace-2</ulink>; <ulink url="http://www.wormbase.org/db/get?name=ace-3;class=Gene" role="_blank">ace-3</ulink>; <ulink url="http://www.wormbase.org/db/get?name=ace-4;class=Gene" role="_blank">ace-4</ulink>; <ulink url="http://www.wormbase.org/db/get?name=ace-1;class=Gene" role="_blank">ace-1</ulink></emphasis> genotype. However, since the <emphasis><ulink url="http://www.wormbase.org/db/get?name=ace-4;class=Gene" role="_blank">ace-4</ulink></emphasis> gene does not appear to produce a functional protein, it is likely the <emphasis><ulink url="http://www.wormbase.org/db/get?name=ace-2;class=Gene" role="_blank">ace-2</ulink>; <ulink url="http://www.wormbase.org/db/get?name=ace-3;class=Gene" role="_blank">ace-3</ulink>; <ulink url="http://www.wormbase.org/db/get?name=ace-1;class=Gene" role="_blank">ace-1</ulink></emphasis> triple mutant would have the reported lethal phenotype.</para>
+</sect2>
+<sect2 id="sec5_4">
+<title>Regulation of <emphasis>ace</emphasis> expression</title>
+<para>There does not appear to be any coordinated or compensatory regulation of the <emphasis>ace</emphasis> genes. In each of the three single <emphasis>ace</emphasis> mutants and each of the three double <emphasis>ace</emphasis> mutants, the remaining cholinesterase activities are present at their wild-type levels, and are not elevated (<link linkend="bib41">Johnson et al., 1988</link><!--: PMID 3272166-->).</para>
+</sect2>
+</sect1>
+<sect1 id="sec6">
+<title>ACh receptors - ligand gated sodium channels</title>
+<para>The &#x0201C;standard&#x0201D; vertebrate nicotinic type of AChR is a pentameric ligand-gated anion channel. The ACh-binding <symbol role="symbolfont">&alpha;</symbol> subunits may associate into homomeric structures, or they may associate with closely related non-<symbol role="symbolfont">&alpha;</symbol> subunits.</para>
+<para>The initial group of <emphasis>C. elegans</emphasis> receptor subunits was identified by mutations conferring resistance to levamisole (<link linkend="bib52">Lewis et al., 1980a</link><!--: PMID 7402460-->; <link linkend="bib25">Fleming et al., 1997</link><!--: PMID 9221782-->), but the majority of receptor subunits have now been identified by genomic sequence analysis (<link linkend="bib63">Mongan et al., 1998</link><!--: PMID 10100329-->; <link linkend="bib43">Jones and Sattelle, 2004</link><!--: PMID 14696039-->). A review has been published recently (<link linkend="bib43">Jones and Sattelle, 2004</link><!--: PMID 14696039-->), and <link linkend="table1">Table 1</link> summarizes the current status of this field.</para>
+<table id="table1" frame="all" rules="all" cellpadding="0" cellspacing="0" width="100%">
+<title><emphasis role="bold">Table 1.</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">acetylcholine receptor subunits.</emphasis></title>
+<tgroup cols="7">
+<colspec colname="c1" align="center" colwidth="0.7*"/>
+<colspec colname="c2" align="center" colwidth="0.6*"/>
+<colspec colname="c3" align="center" colwidth="0.4*"/>
+<colspec colname="c4" align="center" colwidth="1.3*"/>
+<colspec colname="c5" align="center" colwidth="0.7*"/>
+<colspec colname="c6" align="center" colwidth="0.9*"/>
+<colspec colname="c7" align="left" colwidth="1.3*"/>
+<thead>
+<row>
+<entry>AChR subunit</entry>
+<entry>Group<superscript>a</superscript></entry>
+<entry>Type</entry>
+<entry>Cellular expression<superscript>b</superscript></entry>
+<entry>Mutant phenotype</entry>
+<entry>Comments</entry>
+<entry>Citations</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ACR-7;class=Protein" role="_blank">ACR-7</ulink></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ACR-16;class=Protein" role="_blank">ACR-16</ulink></entry>
+<entry><symbol role="symbolfont">&#x003B1;</symbol></entry>
+<entry/>
+<entry/>
+<entry/>
+<entry><link linkend="bib63">Mongan et al., 1998</link></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ACR-9;class=Protein" role="_blank">ACR-9</ulink></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ACR-16;class=Protein" role="_blank">ACR-16</ulink></entry>
+<entry>Non-<symbol role="symbolfont">&#x003B1;</symbol></entry>
+<entry/>
+<entry/>
+<entry/>
+<entry><link linkend="bib63">Mongan et al., 1998</link></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ACR-10;class=Protein" role="_blank">ACR-10</ulink></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ACR-16;class=Protein" role="_blank">ACR-16</ulink></entry>
+<entry><symbol role="symbolfont">&#x003B1;</symbol></entry>
+<entry/>
+<entry/>
+<entry/>
+<entry><link linkend="bib63">Mongan et al., 1998</link></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ACR-11;class=Protein" role="_blank">ACR-11</ulink></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ACR-16;class=Protein" role="_blank">ACR-16</ulink></entry>
+<entry><symbol role="symbolfont">&#x003B1;</symbol></entry>
+<entry/>
+<entry/>
+<entry/>
+<entry><link linkend="bib63">Mongan et al., 1998</link></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ACR-14;class=Protein" role="_blank">ACR-14</ulink></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ACR-16;class=Protein" role="_blank">ACR-16</ulink></entry>
+<entry>Non-<symbol role="symbolfont">&#x003B1;</symbol></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=DA;class=Cell" role="_blank">DA</ulink>, <ulink url="http://www.wormbase.org/db/get?name=DB;class=Cell" role="_blank">DB</ulink>, <ulink url="http://www.wormbase.org/db/get?name=VB;class=Cell" role="_blank">VB</ulink>, <ulink url="http://www.wormbase.org/db/get?name=AS;class=Cell" role="_blank">AS</ulink>, <ulink url="http://www.wormbase.org/db/get?name=DD;class=Cell" role="_blank">DD</ulink>, <ulink url="http://www.wormbase.org/db/get?name=HSN;class=Cell" role="_blank">HSN</ulink>, <ulink url="http://www.wormbase.org/db/get?name=VC4;class=Cell" role="_blank">VC4</ulink>/<ulink url="http://www.wormbase.org/db/get?name=VC5;class=Cell" role="_blank">5</ulink>, <ulink url="http://www.wormbase.org/db/get?name=AIY;class=Cell" role="_blank">AIY</ulink>, head neurons, muscle, intestine</entry>
+<entry/>
+<entry/>
+<entry><link linkend="bib63">Mongan et al., 1998</link>; <link linkend="bib27">Fox et al., 2005</link></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ACR-15;class=Protein" role="_blank">ACR-15</ulink></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ACR-16;class=Protein" role="_blank">ACR-16</ulink></entry>
+<entry><symbol role="symbolfont">&#x003B1;</symbol></entry>
+<entry/>
+<entry/>
+<entry/>
+<entry><link linkend="bib63">Mongan et al., 1998</link></entry>
+</row>
+<row>
+<entry><emphasis role="bold"><ulink url="http://www.wormbase.org/db/get?name=ACR-16;class=Protein" role="_blank">ACR-16</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ACR-16;class=Protein" role="_blank">ACR-16</ulink></entry>
+<entry><symbol role="symbolfont">&#x003B1;</symbol></entry>
+<entry>Body muscles, some neurons</entry>
+<entry>NonUnc; but synthetic severe <ulink url="http://www.wormbase.org/db/get?name=Unc;class=Phenotype" role="_blank">Unc</ulink> with <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-29;class=Gene" role="_blank">unc-29</ulink></emphasis> or <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-63;class=Gene" role="_blank">unc-63</ulink></emphasis></entry>
+<entry>Nicotine- sensitive receptor subunit</entry>
+<entry><link linkend="bib7">Ballivet et al., 1996</link>; <link linkend="bib28">Francis et al., 2005</link>; <link linkend="bib93">Touroutine et al., 2005</link></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ACR-19;class=Protein" role="_blank">ACR-19</ulink></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ACR-16;class=Protein" role="_blank">ACR-16</ulink></entry>
+<entry><symbol role="symbolfont">&#x003B1;</symbol></entry>
+<entry/>
+<entry/>
+<entry/>
+<entry><link linkend="bib64">Mongan et al., 2002</link></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ACR-21;class=Protein" role="_blank">ACR-21</ulink></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ACR-16;class=Protein" role="_blank">ACR-16</ulink></entry>
+<entry><symbol role="symbolfont">&#x003B1;</symbol></entry>
+<entry/>
+<entry/>
+<entry/>
+<entry><link linkend="bib64">Mongan et al., 2002</link></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=EAT-2;class=Protein" role="_blank">EAT-2</ulink></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ACR-16;class=Protein" role="_blank">ACR-16</ulink></entry>
+<entry>Non-<symbol role="symbolfont">&#x003B1;</symbol></entry>
+<entry>Pharyngeal muscles</entry>
+<entry>Slow pumping</entry>
+<entry/>
+<entry><link linkend="bib57">McKay et al., 2004</link></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ACR-6;class=Protein" role="_blank">ACR-6</ulink></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=UNC-38;class=Protein" role="_blank">UNC-38</ulink></entry>
+<entry><symbol role="symbolfont">&#x003B1;</symbol></entry>
+<entry/>
+<entry/>
+<entry/>
+<entry><link linkend="bib63">Mongan et al., 1998</link></entry>
+</row>
+<row>
+<entry><emphasis role="bold"><ulink url="http://www.wormbase.org/db/get?name=UNC-38;class=Protein" role="_blank">UNC-38</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=UNC-38;class=Protein" role="_blank">UNC-38</ulink></entry>
+<entry><symbol role="symbolfont">&#x003B1;</symbol></entry>
+<entry>Body and vulval muscles, many neurons</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Unc;class=Phenotype" role="_blank">Unc</ulink>, <ulink url="http://www.wormbase.org/db/get?name=Lev;class=Phenotype" role="_blank">Lev</ulink></entry>
+<entry>Levamisole- sensitive receptor subunit</entry>
+<entry><link linkend="bib25">Fleming et al., 1997</link>; <link linkend="bib32">Gottschalk et al., 2005</link></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=UNC-63;class=Protein" role="_blank">UNC-63</ulink></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=UNC-38;class=Protein" role="_blank">UNC-38</ulink></entry>
+<entry><symbol role="symbolfont">&#x003B1;</symbol></entry>
+<entry>Body and vulval muscles, many neurons</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Unc;class=Phenotype" role="_blank">Unc</ulink>, <ulink url="http://www.wormbase.org/db/get?name=Lev;class=Phenotype" role="_blank">Lev</ulink>; synthetic severe <ulink url="http://www.wormbase.org/db/get?name=Unc;class=Phenotype" role="_blank">Unc</ulink> with <emphasis><ulink url="http://www.wormbase.org/db/get?name=acr-16;class=Gene" role="_blank">acr-16</ulink></emphasis></entry>
+<entry>Levamisole- sensitive receptor subunit</entry>
+<entry><link linkend="bib15">Culetto et al., 2004</link>; <link linkend="bib93">Touroutine et al., 2005</link>; <link linkend="bib82">Ruaud and Bessereau, 2006</link></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ACR-2;class=Protein" role="_blank">ACR-2</ulink></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=UNC-29;class=Protein" role="_blank">UNC-29</ulink></entry>
+<entry>Non-<symbol role="symbolfont">&#x003B1;</symbol></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=VA;class=Cell" role="_blank">VA</ulink>, <ulink url="http://www.wormbase.org/db/get?name=DA;class=Cell" role="_blank">DA</ulink>, <ulink url="http://www.wormbase.org/db/get?name=VB;class=Cell" role="_blank">VB</ulink>, <ulink url="http://www.wormbase.org/db/get?name=DB;class=Cell" role="_blank">DB</ulink>, <ulink url="http://www.wormbase.org/db/get?name=IL1;class=Cell" role="_blank">IL1</ulink>, <ulink url="http://www.wormbase.org/db/get?name=RMD;class=Cell" role="_blank">RMD</ulink>, and <ulink url="http://www.wormbase.org/db/get?name=PVQ;class=Cell" role="_blank">PVQ</ulink></entry>
+<entry/>
+<entry>Possible operon with <emphasis><ulink url="http://www.wormbase.org/db/get?name=acr-3;class=Gene" role="_blank">acr-3</ulink></emphasis></entry>
+<entry><link linkend="bib86">Squire et al., 1995</link>; <link linkend="bib35">Hallam et al., 2000</link>; Y. Jin, cited in <link linkend="bib68">Nurrish et al., 1999</link></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ACR-3;class=Protein" role="_blank">ACR-3</ulink></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=UNC-29;class=Protein" role="_blank">UNC-29</ulink></entry>
+<entry>Non-<symbol role="symbolfont">&#x003B1;</symbol></entry>
+<entry/>
+<entry/>
+<entry>Possible operon with <emphasis><ulink url="http://www.wormbase.org/db/get?name=acr-2;class=Gene" role="_blank">acr-2</ulink></emphasis></entry>
+<entry><link linkend="bib9">Baylis et al., 1997</link></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=LEV-1;class=Protein" role="_blank">LEV-1</ulink></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=UNC-29;class=Protein" role="_blank">UNC-29</ulink></entry>
+<entry>Non-<symbol role="symbolfont">&#x003B1;</symbol></entry>
+<entry>Body muscles, some neurons in ventral cord</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Unc;class=Phenotype" role="_blank">Unc</ulink>, <ulink url="http://www.wormbase.org/db/get?name=Lev;class=Phenotype" role="_blank">Lev</ulink></entry>
+<entry>Levamisole- sensitive receptor subunit</entry>
+<entry><link linkend="bib25">Fleming et al., 1997</link>; <link linkend="bib15">Culetto et al., 2004</link></entry>
+</row>
+<row>
+<entry><emphasis role="bold"><ulink url="http://www.wormbase.org/db/get?name=UNC-29;class=Protein" role="_blank">UNC-29</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=UNC-29;class=Protein" role="_blank">UNC-29</ulink></entry>
+<entry>Non-<symbol role="symbolfont">&#x003B1;</symbol></entry>
+<entry>Body muscles, some neurons</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Unc;class=Phenotype" role="_blank">Unc</ulink>, <ulink url="http://www.wormbase.org/db/get?name=Lev;class=Phenotype" role="_blank">Lev</ulink>; synthetic severe <ulink url="http://www.wormbase.org/db/get?name=Unc;class=Phenotype" role="_blank">Unc</ulink> with <emphasis><ulink url="http://www.wormbase.org/db/get?name=acr-16;class=Gene" role="_blank">acr-16</ulink></emphasis></entry>
+<entry>Levamisole- sensitive receptor subunit</entry>
+<entry><link linkend="bib25">Fleming et al., 1997</link>; <link linkend="bib28">Francis et al., 2005</link></entry>
+</row>
+<row>
+<entry><emphasis role="bold"><ulink url="http://www.wormbase.org/db/get?name=ACR-8;class=Protein" role="_blank">ACR-8</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ACR-8;class=Protein" role="_blank">ACR-8</ulink></entry>
+<entry><symbol role="symbolfont">&#x003B1;</symbol></entry>
+<entry>Body muscles, a few neurons in head and tail</entry>
+<entry/>
+<entry/>
+<entry><link linkend="bib63">Mongan et al., 1998</link>; <link linkend="bib93">Touroutine et al., 2005</link>; <link linkend="bib32">Gottschalk et al., 2005</link></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ACR-12;class=Protein" role="_blank">ACR-12</ulink></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ACR-8;class=Protein" role="_blank">ACR-8</ulink></entry>
+<entry><symbol role="symbolfont">&#x003B1;</symbol></entry>
+<entry>Exclusively in neurons, including ventral cord neurons</entry>
+<entry/>
+<entry/>
+<entry><link linkend="bib63">Mongan et al., 1998</link>; <link linkend="bib32">Gottschalk et al., 2005</link></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=LEV-8;class=Protein" role="_blank">LEV-8</ulink></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ACR-8;class=Protein" role="_blank">ACR-8</ulink></entry>
+<entry><symbol role="symbolfont">&#x003B1;</symbol></entry>
+<entry>Body muscles, uv1 and uv2 uterine muscles, <ulink url="http://www.wormbase.org/db/get?name=PVT;class=Cell" role="_blank">PVT</ulink>, <ulink url="http://www.wormbase.org/db/get?name=ALA;class=Cell" role="_blank">ALA</ulink>, many ventral cord cells including all DD cells, many head neurons, IL and OL socket cells</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Lev;class=Phenotype" role="_blank">Lev</ulink></entry>
+<entry>=ACR-13; levamisole- sensitive receptor subunit</entry>
+<entry><link linkend="bib63">Mongan et al., 1998</link>; <link linkend="bib94">Towers et al., 2005</link></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ACR-5;class=Protein" role="_blank">ACR-5</ulink></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=DEG-3;class=Protein" role="_blank">DEG-3</ulink></entry>
+<entry><symbol role="symbolfont">&#x003B1;</symbol></entry>
+<entry>DB, VB motor neurons; other neurons in head and tail</entry>
+<entry/>
+<entry/>
+<entry><link linkend="bib63">Mongan et al., 1998</link>; <link linkend="bib99">Winnier et al., 1999</link></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ACR-17;class=Protein" role="_blank">ACR-17</ulink></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=DEG-3;class=Protein" role="_blank">DEG-3</ulink></entry>
+<entry><symbol role="symbolfont">&#x003B1;</symbol></entry>
+<entry/>
+<entry/>
+<entry/>
+<entry><link linkend="bib64">Mongan et al., 2002</link></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ACR-18;class=Protein" role="_blank">ACR-18</ulink></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=DEG-3;class=Protein" role="_blank">DEG-3</ulink></entry>
+<entry><symbol role="symbolfont">&#x003B1;</symbol></entry>
+<entry/>
+<entry/>
+<entry/>
+<entry><link linkend="bib64">Mongan et al., 2002</link></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ACR-20;class=Protein" role="_blank">ACR-20</ulink></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=DEG-3;class=Protein" role="_blank">DEG-3</ulink></entry>
+<entry><symbol role="symbolfont">&#x003B1;</symbol></entry>
+<entry/>
+<entry/>
+<entry/>
+<entry><link linkend="bib64">Mongan et al., 2002</link></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ACR-23;class=Protein" role="_blank">ACR-23</ulink></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=DEG-3;class=Protein" role="_blank">DEG-3</ulink></entry>
+<entry><symbol role="symbolfont">&#x003B1;</symbol></entry>
+<entry/>
+<entry/>
+<entry/>
+<entry><link linkend="bib64">Mongan et al., 2002</link></entry>
+</row>
+<row>
+<entry><emphasis role="bold"><ulink url="http://www.wormbase.org/db/get?name=DEG-3;class=Protein" role="_blank">DEG-3</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=DEG-3;class=Protein" role="_blank">DEG-3</ulink></entry>
+<entry><symbol role="symbolfont">&#x003B1;</symbol></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=IL2;class=Cell" role="_blank">IL2</ulink>, <ulink url="http://www.wormbase.org/db/get?name=PVD;class=Cell" role="_blank">PVD</ulink>, <ulink url="http://www.wormbase.org/db/get?name=PVC;class=Cell" role="_blank">PVC</ulink>, <ulink url="http://www.wormbase.org/db/get?name=AVG;class=Cell" role="_blank">AVG</ulink>, <ulink url="http://www.wormbase.org/db/get?name=FLP;class=Cell" role="_blank">FLP</ulink>, touch cells</entry>
+<entry/>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=deg-3;class=Gene" role="_blank">deg-3</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=des-2;class=Gene" role="_blank">des-2</ulink></emphasis> in operon; better response to Ch than ACh</entry>
+<entry><link linkend="bib95">Treinin and Chalfie, 1995</link>; <link linkend="bib96">Treinin et al., 1998</link>; <link linkend="bib101">Yassin et al., 2001</link></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=DES-2;class=Protein" role="_blank">DES-2</ulink></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=DEG-3;class=Protein" role="_blank">DEG-3</ulink></entry>
+<entry><symbol role="symbolfont">&#x003B1;</symbol></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=IL2;class=Cell" role="_blank">IL2</ulink>, <ulink url="http://www.wormbase.org/db/get?name=PVD;class=Cell" role="_blank">PVD</ulink>, <ulink url="http://www.wormbase.org/db/get?name=PVC;class=Cell" role="_blank">PVC</ulink>, <ulink url="http://www.wormbase.org/db/get?name=AVG;class=Cell" role="_blank">AVG</ulink>, <ulink url="http://www.wormbase.org/db/get?name=FLP;class=Cell" role="_blank">FLP</ulink>, touch cells</entry>
+<entry/>
+<entry>=ACR-4; <emphasis><ulink url="http://www.wormbase.org/db/get?name=deg-3;class=Gene" role="_blank">deg-3</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=des-2;class=Gene" role="_blank">des-2</ulink></emphasis> in operon; better response to Ch than ACh</entry>
+<entry><link linkend="bib96">Treinin et al., 1998</link></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F11C7.1;class=Gene" role="_blank">F11C7.1</ulink></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=DEG-3;class=Protein" role="_blank">DEG-3</ulink></entry>
+<entry>Non-<symbol role="symbolfont">&#x003B1;</symbol></entry>
+<entry/>
+<entry/>
+<entry>Predicted, no ESTs, no data</entry>
+<entry/>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Y44A6E.1;class=Gene" role="_blank">Y44A6E.1</ulink></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=DEG-3;class=Protein" role="_blank">DEG-3</ulink></entry>
+<entry>Non-<symbol role="symbolfont">&#x003B1;</symbol></entry>
+<entry/>
+<entry/>
+<entry>Several ESTs</entry>
+<entry/>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Y73F8A.30;class=Gene" role="_blank">Y73F8A.30</ulink></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=DEG-3;class=Protein" role="_blank">DEG-3</ulink></entry>
+<entry><symbol role="symbolfont">&#x003B1;</symbol></entry>
+<entry/>
+<entry/>
+<entry>Predicted, no ESTs, no data</entry>
+<entry/>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=GAR-1;class=Protein" role="_blank">GAR-1</ulink></entry>
+<entry namest="c2" nameend="c3" align="center">GPCR</entry>
+<entry>Sensory neurons in head, <ulink url="http://www.wormbase.org/db/get?name=PVM;class=Cell" role="_blank">PVM</ulink></entry>
+<entry/>
+<entry/>
+<entry><link linkend="bib50">Lee et al., 1999</link>; <link linkend="bib51">Lee et al., 2000</link></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=GAR-2;class=Protein" role="_blank">GAR-2</ulink></entry>
+<entry namest="c2" nameend="c3" align="center">GPCR</entry>
+<entry>Sensory neurons in head, ventral cord motor neurons, <ulink url="http://www.wormbase.org/db/get?name=HSN;class=Cell" role="_blank">HSN</ulink></entry>
+<entry/>
+<entry/>
+<entry><link linkend="bib51">Lee et al., 2000</link>; <link linkend="bib27">Fox et al., 2005</link></entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=GAR-3;class=Protein" role="_blank">GAR-3</ulink></entry>
+<entry namest="c2" nameend="c3" align="center">GPCR</entry>
+<entry>Pharyngeal muscles, <ulink url="http://www.wormbase.org/db/get?name=DA;class=Cell" role="_blank">DA</ulink> and/or <ulink url="http://www.wormbase.org/db/get?name=SAB;class=Cell" role="_blank">SAB</ulink> and/or <ulink url="http://www.wormbase.org/db/get?name=I5;class=Cell" role="_blank">I5</ulink></entry>
+<entry/>
+<entry>=ACM-3</entry>
+<entry><link linkend="bib72">Park et al., 2003</link>; <link linkend="bib87">Steger and Avery, 2004</link>; <link linkend="bib27">Fox et al., 2005</link></entry>
+</row>
+<row>
+<entry>ACC-1</entry>
+<entry namest="c2" nameend="c3" align="center">Ligand-gated chloride channel</entry>
+<entry/>
+<entry/>
+<entry/>
+<entry><link linkend="bib74">Putrenko et al., 2005</link></entry>
+</row>
+<row>
+<entry>ACC-2</entry>
+<entry namest="c2" nameend="c3" align="center">Ligand-gated chloride channel</entry>
+<entry/>
+<entry/>
+<entry/>
+<entry><link linkend="bib74">Putrenko et al., 2005</link></entry>
+</row>
+<row>
+<entry>ACC-3</entry>
+<entry namest="c2" nameend="c3" align="center">Ligand-gated chloride channel</entry>
+<entry/>
+<entry/>
+<entry/>
+<entry><link linkend="bib74">Putrenko et al., 2005</link></entry>
+</row>
+<row>
+<entry>ACC-4</entry>
+<entry namest="c2" nameend="c3" align="center">Ligand-gated chloride channel</entry>
+<entry/>
+<entry/>
+<entry/>
+<entry><link linkend="bib74">Putrenko et al., 2005</link></entry>
+</row>
+<row>
+<entry namest="c1" nameend="c7" align="left"><superscript>a</superscript>The five groups of nicotinic AChR subunits are based on <link linkend="bib63">Mongan et al. (1998)</link> and <link linkend="bib43">Jones and Sattelle (2004)</link>.</entry>
+</row>
+<row>
+<entry namest="c1" nameend="c7" align="left"><superscript>b</superscript>This is an incomplete list; it is likely that for many of these genes, there are additional expressing cells not listed.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<sect2 id="sec6_1">
+<title>AChR subunits</title>
+<para>It is striking that the <emphasis>C. elegans</emphasis> genome is extraordinarily rich in genes encoding nicotinic-type receptor subunits (<link linkend="bib63">Mongan et al., 1998</link><!--: PMID 10100329-->; <link linkend="bib43">Jones and Sattelle, 2004</link><!--: PMID 14696039-->). Whereas mammals and birds have fewer than 20 AChR subunit genes, genetic and genomic analysis of <emphasis>C. elegans</emphasis> has thus far confirmed the transcription of 27 genes (<link linkend="table1">Table 1</link>). For some of these genes, heterologous expression individually and in combination (usually in <emphasis>Xenopus</emphasis> oocytes) has provided information about the properties of the receptor subunits; for other genes, the identity of the ligand is merely inferred. In addition, there are about 20 genes encoding putative ionotropic receptor subunits that have not been fully characterized, but could include additional AChR subunits.</para>
+<para>Five classes of protein subunits have been identified, based on sequence similarity (see <link linkend="table1">Table 1</link>): <ulink url="http://www.wormbase.org/db/get?name=UNC-29;class=Protein" role="_blank">UNC-29</ulink>, <ulink url="http://www.wormbase.org/db/get?name=UNC-38;class=Protein" role="_blank">UNC-38</ulink>, <ulink url="http://www.wormbase.org/db/get?name=ACR-8;class=Protein" role="_blank">ACR-8</ulink>, <ulink url="http://www.wormbase.org/db/get?name=ACR-16;class=Protein" role="_blank">ACR-16</ulink>, and <ulink url="http://www.wormbase.org/db/get?name=DEG-3;class=Protein" role="_blank">DEG-3</ulink> (<link linkend="bib63">Mongan et al., 1998</link><!--: PMID 10100329-->; <link linkend="bib64">Mongan et al., 2002</link><!--: PMID 11967372-->; <link linkend="bib43">Jones and Sattelle, 2004</link><!--: PMID 14696039-->). Each class contains three to nine members, and some of the classes contain both <symbol role="symbolfont">&#x003B1;</symbol> and non-<symbol role="symbolfont">&#x003B1;</symbol> type subunits. The <ulink url="http://www.wormbase.org/db/get?name=UNC-38;class=Protein" role="_blank">UNC-38</ulink> class contains three <symbol role="symbolfont">&#x003B1;</symbol> subunits, and is most similar to insect a subunits. The <ulink url="http://www.wormbase.org/db/get?name=UNC-29;class=Protein" role="_blank">UNC-29</ulink> class contains four non-<symbol role="symbolfont">&#x003B1;</symbol> subunits; these proteins are similar to vertebrate skeletal muscle non-<symbol role="symbolfont">&#x003B1;</symbol> and insect non-<symbol role="symbolfont">&#x003B1;</symbol> subunits. The <ulink url="http://www.wormbase.org/db/get?name=ACR-16;class=Protein" role="_blank">ACR-16</ulink> class consists of nine members (<symbol role="symbolfont">&#x003B1;</symbol> and non-<symbol role="symbolfont">&#x003B1;</symbol>), and its members resemble vertebrate <symbol role="symbolfont">&#x003B1;</symbol>7 subunits. The <ulink url="http://www.wormbase.org/db/get?name=ACR-8;class=Protein" role="_blank">ACR-8</ulink> class is <symbol role="symbolfont">&#x003B1;</symbol> nematode specific grouping, and contains three <symbol role="symbolfont">&#x003B1;</symbol> subunits. The <ulink url="http://www.wormbase.org/db/get?name=DEG-3;class=Protein" role="_blank">DEG-3</ulink> class is also nematode specific, and consists of eight verified <symbol role="symbolfont">&#x003B1;</symbol> and non-<symbol role="symbolfont">&#x003B1;</symbol> subunits (there are also two genes, one <symbol role="symbolfont">&#x003B1;</symbol> and one non-<symbol role="symbolfont">&#x003B1;</symbol>, predicted to be in this class, but for which there are neither ESTs nor any expression data).</para>
+<para>The best characterized <emphasis>C. elegans</emphasis> AChRs, based on electrophysiological recording and reconstitution in heterologous systems, are at neuromuscular junctions. The muscles of the body wall express two major types of ACh receptors: one type responds to levamisole and the other type responds to nicotine, but not levamisole (<link linkend="bib81">Richmond and Jorgensen, 1999</link><!--: PMID 10461217-->). The levamisole-sensitive receptors on the body muscles appear to be heteromeric, and contain three essential subunits: <ulink url="http://www.wormbase.org/db/get?name=UNC-29;class=Protein" role="_blank">UNC-29</ulink>, <ulink url="http://www.wormbase.org/db/get?name=UNC-38;class=Protein" role="_blank">UNC-38</ulink>, and <ulink url="http://www.wormbase.org/db/get?name=UNC-63;class=Protein" role="_blank">UNC-63</ulink> (<link linkend="bib25">Fleming et al., 1997</link><!--: PMID 9221782-->; <link linkend="bib81">Richmond and Jorgensen, 1999</link><!--: PMID 10461217-->; <link linkend="bib15">Culetto et al., 2004</link><!--: PMID 15280391-->). <ulink url="http://www.wormbase.org/db/get?name=LEV-1;class=Protein" role="_blank">LEV-1</ulink> and <ulink url="http://www.wormbase.org/db/get?name=LEV-8;class=Protein" role="_blank">LEV-8</ulink> are also subunits, but they are either non-essential for the response to levamisole, or else they are only present in a subset of the receptors (<link linkend="bib25">Fleming et al., 1997</link><!--: PMID 9221782-->; <link linkend="bib94">Towers et al., 2005</link><!--: PMID 15773900-->). The nicotine-sensitive receptors appear to be homomeric, containing only the <ulink url="http://www.wormbase.org/db/get?name=ACR-16;class=Protein" role="_blank">ACR-16</ulink> <symbol role="symbolfont">&alpha;</symbol> subunit (<link linkend="bib28">Francis et al., 2005</link><!--: PMID 15944127-->; <link linkend="bib93">Touroutine et al., 2005</link><!--: PMID 15917232-->).</para>
+<?newpage?>
+<para>For about half of the AChR subunits, expression data from reporter studies and/or antibody localization data have been reported; in general, the different subunits appear to have complex and overlapping patterns of expression. This information is presented in <link linkend="table1">Table 1</link>.</para>
+</sect2>
+<sect2 id="sec6_2">
+<title>AChR genes and mutants</title>
+<para>As might be expected, loss-of-function mutations in any of the five subunits which comprise the muscle levamisole-sensitive receptor (described above) lead to levamisole resistance (<link linkend="bib53">Lewis et al., 1980b</link><!--: PMID 7203008-->). However, loss-of-function mutations in <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-29;class=Gene" role="_blank">unc-29</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-38;class=Gene" role="_blank">unc-38</ulink></emphasis>, and <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-63;class=Gene" role="_blank">unc-63</ulink></emphasis> confer strong levamisole resistance and a mild uncoordinated phenotype, while mutations in <emphasis><ulink url="http://www.wormbase.org/db/get?name=lev-1;class=Gene" role="_blank">lev-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=lev-8;class=Gene" role="_blank">lev-8</ulink></emphasis> lead to mild levamisole resistance and almost normal locomotion (<link linkend="bib53">Lewis et al., 1980b</link><!--: PMID 7203008-->). In addition, <emphasis><ulink url="http://www.wormbase.org/db/get?name=acr-16;class=Gene" role="_blank">acr-16</ulink></emphasis> mutations, which eliminate the function of the muscle nicotine-sensitive receptor, have essentially wild-type locomotion (<link linkend="bib28">Francis et al., 2005</link><!--: PMID 15944127-->; <link linkend="bib93">Touroutine et al., 2005</link><!--: PMID 15917232-->). Thus, eliminating the function of either the levamisole-sensitive receptor or the nicotine-sensitive receptor does not have profound behavioral consequences. However, eliminating the function of both receptors (e.g., an <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-29;class=Gene" role="_blank">unc-29</ulink>; <ulink url="http://www.wormbase.org/db/get?name=acr-16;class=Gene" role="_blank">acr-16</ulink></emphasis> double mutant or an <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-63;class=Gene" role="_blank">unc-63</ulink>;<ulink url="http://www.wormbase.org/db/get?name=acr-16;class=Gene" role="_blank">acr-16</ulink></emphasis> double mutant) leads to a synthetic severe uncoordinated phenotype (<link linkend="bib28">Francis et al., 2005</link><!--: PMID 15944127-->; <link linkend="bib93">Touroutine et al., 2005</link><!--: PMID 15917232-->).</para>
+<para>The <emphasis><ulink url="http://www.wormbase.org/db/get?name=deg-3;class=Gene" role="_blank">deg-3</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=des-2;class=Gene" role="_blank">des-2</ulink></emphasis> genes are in an operon and encode similar AChR subunits (<link linkend="bib96">Treinin et al., 1998</link><!--: PMID 9860996-->). There are rare dominant mutations in <emphasis><ulink url="http://www.wormbase.org/db/get?name=deg-3;class=Gene" role="_blank">deg-3</ulink></emphasis> that cause neuronal degeneration (presumably by hyperactivation of the channel); these mutations are suppressed by loss-of-function mutations in either <emphasis><ulink url="http://www.wormbase.org/db/get?name=des-2;class=Gene" role="_blank">des-2</ulink></emphasis> or <emphasis><ulink url="http://www.wormbase.org/db/get?name=deg-3;class=Gene" role="_blank">deg-3</ulink></emphasis> (<link linkend="bib95">Treinin and Chalfie, 1995</link><!--: PMID 7718248-->). The <ulink url="http://www.wormbase.org/db/get?name=DEG-3;class=Protein" role="_blank">DEG-3</ulink> and <ulink url="http://www.wormbase.org/db/get?name=DES-2;class=Protein" role="_blank">DES-2</ulink> subunits can associate with each other to form a functional receptor <emphasis>in vitro</emphasis> (and presumably <emphasis>in vivo</emphasis>; <link linkend="bib96">Treinin et al., 1998</link><!--: PMID 9860996-->). This heteromeric receptor responds more strongly to choline than acetylcholine (<link linkend="bib101">Yassin et al., 2001</link><!--: PMID 11273652-->). The two genes are expressed in sensory neurons, and the <ulink url="http://www.wormbase.org/db/get?name=DEG-3;class=Protein" role="_blank">DEG-3</ulink> protein is enriched in the sensory endings of these cells (<link linkend="bib101">Yassin et al., 2001</link><!--: PMID 11273652-->). This suggested that the <ulink url="http://www.wormbase.org/db/get?name=DEG-3;class=Protein" role="_blank">DEG-3</ulink>/<ulink url="http://www.wormbase.org/db/get?name=DES-2;class=Protein" role="_blank">DES-2</ulink> receptor might play a role in sensory transduction, and <emphasis><ulink url="http://www.wormbase.org/db/get?name=deg-3;class=Gene" role="_blank">deg-3</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=des-2;class=Gene" role="_blank">des-2</ulink></emphasis> mutants have been shown to be deficient in chemotaxis to choline (<link linkend="bib101">Yassin et al., 2001</link><!--: PMID 11273652-->).</para>
+</sect2>
+</sect1>
+<sect1 id="sec7">
+<title>Other ACh receptors</title>
+<para>Two additional types of ACh receptors have been identified in <emphasis>C. elegans</emphasis>: G-protein coupled receptors (similar to vertebrate muscarinic receptors), and ligand-gated chloride channels (which are not found in vertebrates).</para>
+<sect2 id="sec7_1">
+<title>GAR proteins - G-protein coupled ACh receptors</title>
+<para>The apparent existence of muscarinic-type ACh receptors in <emphasis>C. elegans</emphasis> was first reported in 1983 (<link linkend="bib17">Culotti and Klein, 1983</link><!--: PMID 6822867-->), and subsequently verified through analysis of the <emphasis><ulink url="http://www.wormbase.org/db/get?name=gar-1;class=Gene" role="_blank">gar-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/get?name=gar-2;class=Gene" role="_blank">gar-2</ulink></emphasis>, and <emphasis><ulink url="http://www.wormbase.org/db/get?name=gar-3;class=Gene" role="_blank">gar-3</ulink></emphasis> genes. The primary transcripts from all three of the <emphasis>gar</emphasis> genes undergo alternative splicing (<link linkend="bib73">Park et al., 2000</link><!--: PMID 10679207-->; <link linkend="bib90">Suh et al., 2001</link><!--: PMID 11700045-->; <link linkend="bib72">Park et al., 2003</link><!--: PMID 12927813-->), leading to considerable protein diversity. Pharmacological profiles indicate that the <ulink url="http://www.wormbase.org/db/get?name=GAR-3;class=Protein" role="_blank">GAR-3</ulink> isoforms are the most similar to &#x0201C;conventional&#x0201D; vertebrate muscarinic receptors, and bind the antagonist scopolamine and the agonist carbachol (<link linkend="bib39">Hwang et al., 1999</link><!--: PMID 10635059-->; <link linkend="bib72">Park et al., 2003</link><!--: PMID 12927813-->). The <ulink url="http://www.wormbase.org/db/get?name=GAR-1;class=Protein" role="_blank">GAR-1</ulink> isoforms are somewhat different, and bind atropine, but not scopolamine (<link linkend="bib50">Lee et al., 1999</link><!--: PMID 9886054-->), while <ulink url="http://www.wormbase.org/db/get?name=GAR-2;class=Protein" role="_blank">GAR-2</ulink> binds neither atropine nor scopolamine (<link linkend="bib51">Lee et al., 2000</link><!--: PMID 11032868-->). Complete expression profiles for these receptors have not been reported. However, GFP constructs indicated that <emphasis><ulink url="http://www.wormbase.org/db/get?name=gar-1;class=Gene" role="_blank">gar-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=gar-2;class=Gene" role="_blank">gar-2</ulink></emphasis> are expressed in neurons, including some sensory neurons in the head, <ulink url="http://www.wormbase.org/db/get?name=PVM;class=Cell" role="_blank">PVM</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=gar-1;class=Gene" role="_blank">gar-1</ulink></emphasis> only), motor neurons in the ventral cord (<emphasis><ulink url="http://www.wormbase.org/db/get?name=gar-2;class=Gene" role="_blank">gar-2</ulink></emphasis>), and HSN (<emphasis><ulink url="http://www.wormbase.org/db/get?name=gar-2;class=Gene" role="_blank">gar-2</ulink></emphasis>) (<link linkend="bib51">Lee et al., 2000</link><!--: PMID 11032868-->). <emphasis><ulink url="http://www.wormbase.org/db/get?name=gar-3;class=Gene" role="_blank">gar-3</ulink></emphasis> is expressed in pharyngeal muscle (<link linkend="bib87">Steger and Avery, 2004</link><!--: PMID 15238517-->).</para>
+</sect2>
+<sect2 id="sec7_2">
+<title>ACC proteins - ACh-gated chloride channels</title>
+<para>The four ACC proteins are most closely related to the <emphasis>C. elegans</emphasis> <ulink url="http://www.wormbase.org/db/get?name=MOD-1;class=Protein" role="_blank">MOD-1</ulink> serotonin-gated chloride channel, and have no orthologs in vertebrate or <emphasis>Drosophila</emphasis> genomes (<link linkend="bib74">Putrenko et al., 2005</link><!--: PMID 15579462-->). ACC-1 can form a homomeric ACh-gated chloride channel with an EC<subscript>50</subscript> of 0.26 <symbol role="symbolfont">&#x003BC;</symbol>M, or a heteromeric channel together with ACC-3, with an EC<subscript>50</subscript> of 39.6 <symbol role="symbolfont">&#x003BC;</symbol>M (<link linkend="bib74">Putrenko et al., 2005</link><!--: PMID 15579462-->). ACC-2 can also form homomeric channels, with an EC<subscript>50</subscript> of 9.54 <symbol role="symbolfont">&#x003BC;</symbol>M. Nothing has yet been reported about the expression patterns of these proteins, or mutant phenotypes.</para>
+</sect2>
+</sect1>
+<sect1 id="sec8">
+<title>Cholinergic receptor-associated proteins and genes</title>
+<para>Several proteins have been described that seem to be associated with cholinergic function and are required for the expression, maturation, trafficking, and/or localization of particular ACh receptor subunits.</para>
+<para><ulink url="http://www.wormbase.org/db/get?name=RIC-3;class=Protein" role="_blank">RIC-3</ulink> (a protein containing two transmembrane domains followed by three coiled-coil regions) is required for maturation of at least four types of ACh receptor: the EAT-2-containing pharyngeal AChR, the <ulink url="http://www.wormbase.org/db/get?name=DEG-3;class=Protein" role="_blank">DEG-3</ulink>/<ulink url="http://www.wormbase.org/db/get?name=DES-2;class=Protein" role="_blank">DES-2</ulink> neuronal AChR, the UNC-29-containing levamisole-sensitive muscle AChR, and the ACR-16-containing nicotine-sensitive muscle AChR (<link linkend="bib34">Halevi et al., 2002</link><!--: PMID 11867529-->). <ulink url="http://www.wormbase.org/db/get?name=RIC-3;class=Protein" role="_blank">RIC-3</ulink> is expressed in pharyngeal and body wall muscles, and in most or all neurons, and is localized to cell bodies. <emphasis><ulink url="http://www.wormbase.org/db/get?name=ric-3;class=Gene" role="_blank">ric-3</ulink></emphasis> mutants are <ulink url="http://www.wormbase.org/db/get?name=Unc;class=Phenotype" role="_blank">Unc</ulink>, Ric, and Lev (<link linkend="bib65">Nguyen et al., 1995</link><!--: PMID 7498734-->; <link linkend="bib59">Miller et al., 1996</link><!--: PMID 8901627-->).</para>
+<para><ulink url="http://www.wormbase.org/db/get?name=LEV-10;class=Protein" role="_blank">LEV-10</ulink> (a transmembrane protein containing five extracellular CUB domains) is required for the clustering of post-synaptic UNC-29-containing AChRs (<link linkend="bib30">Gally et al., 2004</link><!--: PMID 15457263-->). Consistent with this role, <ulink url="http://www.wormbase.org/db/get?name=LEV-10;class=Protein" role="_blank">LEV-10</ulink> is expressed in body muscle, and is localized to post-synaptic cholinergic neuromuscular junctions (<link linkend="bib30">Gally et al., 2004</link><!--: PMID 15457263-->).</para>
+<para><ulink url="http://www.wormbase.org/db/get?name=EAT-18;class=Protein" role="_blank">EAT-18</ulink> (a small transmembrane protein) is somehow required for proper function of pharyngeal AChRs containing the <ulink url="http://www.wormbase.org/db/get?name=EAT-2;class=Protein" role="_blank">EAT-2</ulink> non-<symbol role="symbolfont">&alpha;</symbol> subunit, and apparently other pharyngeal nicotinic receptors as well (<link linkend="bib57">McKay et al., 2004</link><!--: PMID 15020415-->). Surprisingly, the <emphasis><ulink url="http://www.wormbase.org/db/get?name=eat-18;class=Gene" role="_blank">eat-18</ulink></emphasis> gene and promoter are nested within the first intron of <emphasis><ulink url="http://www.wormbase.org/db/get?name=lev-10;class=Gene" role="_blank">lev-10</ulink></emphasis> (<link linkend="bib30">Gally et al., 2004</link><!--: PMID 15457263-->). <emphasis><ulink url="http://www.wormbase.org/db/get?name=eat-18;class=Gene" role="_blank">eat-18</ulink></emphasis> mutants resemble <emphasis><ulink url="http://www.wormbase.org/db/get?name=eat-2;class=Gene" role="_blank">eat-2</ulink></emphasis> mutants, demonstrating the importance of <ulink url="http://www.wormbase.org/db/get?name=EAT-18;class=Protein" role="_blank">EAT-18</ulink> for <ulink url="http://www.wormbase.org/db/get?name=EAT-2;class=Protein" role="_blank">EAT-2</ulink> function (<link linkend="bib57">McKay et al., 2004</link><!--: PMID 15020415-->).</para>
+<para><ulink url="http://www.wormbase.org/db/get?name=CAM-1;class=Protein" role="_blank">CAM-1</ulink> (a Ror receptor tyrosine kinase) is required for the localization and clustering of ACR-16-containing nicotine-sensitive muscle AChRs (<link linkend="bib28">Francis et al., 2005</link><!--: PMID 15944127-->), and also plays a role in the localization or function of the levamisole-sensitive receptors, but it is not involved in the localization or function of GABA receptors (<link linkend="bib32">Gottschalk et al., 2005</link><!--: PMID 15990870-->). <ulink url="http://www.wormbase.org/db/get?name=CAM-1;class=Protein" role="_blank">CAM-1</ulink> is expressed in muscles and is enriched in the muscle arms and especially at neuromuscular junctions. <ulink url="http://www.wormbase.org/db/get?name=CAM-1;class=Protein" role="_blank">CAM-1</ulink> is also expressed in many neurons, including ventral cord cholinergic motor neurons. Analysis of <emphasis><ulink url="http://www.wormbase.org/db/get?name=cam-1;class=Gene" role="_blank">cam-1</ulink></emphasis> mutants shows that the protein is also involved in cell migration and axon guidance (<link linkend="bib26">Forrester et al., 1999</link><!--: PMID 10476968-->).</para>
+<para>Neither <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-50;class=Gene" role="_blank">unc-50</ulink></emphasis> nor <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-74;class=Gene" role="_blank">unc-74</ulink></emphasis> encodes an AChR subunit, yet mutations in these two genes lead to strong resistance to levamisole (<link linkend="bib53">Lewis et al., 1980b</link><!--: PMID 7203008-->). Therefore, the <ulink url="http://www.wormbase.org/db/get?name=UNC-50;class=Protein" role="_blank">UNC-50</ulink> and <ulink url="http://www.wormbase.org/db/get?name=UNC-74;class=Protein" role="_blank">UNC-74</ulink> proteins must be required in some way for receptor response to levamisole (<link linkend="bib52">Lewis et al., 1980a</link><!--: PMID 7402460-->). Although molecular analysis of neither <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-50;class=Gene" role="_blank">unc-50</ulink></emphasis> nor <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-74;class=Gene" role="_blank">unc-74</ulink></emphasis> has been reported directly, indirect reports indicate that the <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-50;class=Gene" role="_blank">unc-50</ulink></emphasis> gene encodes a novel type of transmembrane protein with identifiable mammalian and plant homologs.</para>
+<para>There are also some proteins that clearly contribute to the stability, trafficking, and/or clustering of AChR subunits, but to a lesser extent than the gene products described above, and whose loss-of-function phenotypes are associated with partial reduction in the abundance of localized receptors. For example, NRA-1 is a copine localized to plasma membranes necessary for high-level expression of <ulink url="http://www.wormbase.org/db/get?name=UNC-38;class=Protein" role="_blank">UNC-38</ulink> and <ulink url="http://www.wormbase.org/db/get?name=LEV-1;class=Protein" role="_blank">LEV-1</ulink> (<link linkend="bib32">Gottschalk et al., 2005</link><!--: PMID 15990870-->).</para>
+</sect1>
+<sect1 id="sec9">
+<title>ACh-mediated behaviors</title>
+<sect2 id="sec9_1">
+<title>Locomotion</title>
+<para>This is the most important acetylcholine-mediated behavior, involving by far the greatest number of cholinergic neurons. Locomotion (both crawling on surfaces and swimming in liquid) requires the ability to generate smooth, sinusoidal waves (at variable propagation rates) of either anterior-directed or posterior-directed body muscle contractions. The involvement of ACh in locomotion includes not only neuromuscular transmission, but also nerve-nerve transmission (which is poorly characterized). Thus, for example, ventral nerve cord cholinergic motor neurons express the <ulink url="http://www.wormbase.org/db/get?name=ACR-2;class=Protein" role="_blank">ACR-2</ulink> and <ulink url="http://www.wormbase.org/db/get?name=ACR-5;class=Protein" role="_blank">ACR-5</ulink> AChR subunits (<link linkend="bib99">Winnier et al., 1999</link><!--: PMID 10557206-->; <link linkend="bib35">Hallam et al., 2000</link><!--: PMID 10976055-->), while GABAergic motor neurons express <ulink url="http://www.wormbase.org/db/get?name=LEV-8;class=Protein" role="_blank">LEV-8</ulink> (<link linkend="bib94">Towers et al., 2005</link><!--: PMID 15773900-->). In addition, ACh appears to be involved in the regulation of the oscillator circuit controlling the rate of wave initiation: in addition to their uncoordinated movement, cholinergic (i.e., <emphasis><ulink url="http://www.wormbase.org/db/get?name=cha-1;class=Gene" role="_blank">cha-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-17;class=Gene" role="_blank">unc-17</ulink></emphasis>) mutants have a dramatically reduced rate of wave initiation.</para>
+</sect2>
+<sect2 id="sec9_2">
+<title>Egg laying</title>
+<para>Egg laying behavior involves the action of several neurotransmitters (see <ulink url="http://www.wormbook.org/chapters/www_egglaying/egglaying.html" role="_blank">Egg-Laying</ulink>), and ACh appears to affect egg laying through multiple mechanisms. The major effect of ACh appears to be an inhibition of egg laying, because animals deficient in cholinergic release (e.g., <emphasis><ulink url="http://www.wormbase.org/db/get?name=cha-1;class=Gene" role="_blank">cha-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-17;class=Gene" role="_blank">unc-17</ulink></emphasis> mutants) are constitutive for egg-laying, and retain very few embryos (<link linkend="bib8">Bany et al., 2003</link><!--: PMID 12954868-->). However, levamisole can stimulate egg laying (<link linkend="bib46">Kim et al., 2001</link><!--: PMID 11290716-->), suggesting a possible stimulatory cholinergic mechanism operating through levamisole-sensitive receptors on muscles.</para>
+<para>The egg-laying muscles are innervated by the HSN and VC cells; the VC cells also make synapses onto the HSNs (<link linkend="bib98">White et al., 1986</link>). A plausible model is that ACh is released by VC cells onto the presynaptic terminals of the HSN cells, and interacts with inhibitory <ulink url="http://www.wormbase.org/db/get?name=GAR-2;class=Protein" role="_blank">GAR-2</ulink> (and perhaps other) cholinergic receptors (<link linkend="bib8">Bany et al., 2003</link><!--: PMID 12954868-->). This leads to decreased HSN release of serotonin. This model is complicated somewhat by the apparent multi-transmitter phenotype of both the HSNs and <ulink url="http://www.wormbase.org/db/get?name=VC4;class=Cell" role="_blank">VC4</ulink>/<ulink url="http://www.wormbase.org/db/get?name=VC5;class=Cell" role="_blank">VC5</ulink> (<link linkend="bib21">Duerr et al., 2001</link><!--: PMID 11350757-->).</para>
+</sect2>
+<sect2 id="sec9_3">
+<title>Pharyngeal pumping</title>
+<para>The MC neuron is cholinergic and stimulates the pharynx muscle (via the <ulink url="http://www.wormbase.org/db/get?name=EAT-2;class=Protein" role="_blank">EAT-2</ulink> receptor) to control pharyngeal pumping rate (<link linkend="bib57">McKay et al., 2004</link><!--: PMID 15020415-->). Wild-type animals pump >250/min; pumping for animals ablated for MC is ~ 45/min (<link linkend="bib6">Avery and Horvitz, 1989</link><!--: PMID 2642006-->; <link linkend="bib75">Raizen et al., 1995</link><!--: PMID 8601480-->). It is likely that the slow growth rates of <emphasis><ulink url="http://www.wormbase.org/db/get?name=cha-1;class=Gene" role="_blank">cha-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-17;class=Gene" role="_blank">unc-17</ulink></emphasis> mutants (<link linkend="bib78">Rand and Russell, 1984</link><!--: PMID 6698395-->) are related to their reduced rate of pharyngeal pumping.</para>
+<para>In addition, a number of other ACh receptor types are expressed on pharyngeal cells, and appear to mediate several aspects of pharynx function. For example, the muscarinic <ulink url="http://www.wormbase.org/db/get?name=GAR-3;class=Protein" role="_blank">GAR-3</ulink> receptor, signaling through <ulink url="http://www.wormbase.org/db/get?name=EGL-30;class=Protein" role="_blank">EGL-30</ulink> and <ulink url="http://www.wormbase.org/db/get?name=GPB-2;class=Protein" role="_blank">GPB-2</ulink>, is involved in control of pharyngeal muscle membrane potential (<link linkend="bib87">Steger and Avery, 2004</link><!--: PMID 15238517-->).</para>
+</sect2>
+<sect2 id="sec9_4">
+<title>Defecation cycling</title>
+<para>Mutations in <emphasis><ulink url="http://www.wormbase.org/db/get?name=cha-1;class=Gene" role="_blank">cha-1</ulink></emphasis> (<link linkend="bib92">Thomas, 1990</link><!--: PMID 2323555-->) and <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-17;class=Gene" role="_blank">unc-17</ulink></emphasis> (J. Rand, unpublished) cause dramatically longer and variable defecation cycle periods. However, when defecation does occur, it appears to be normal (<link linkend="bib92">Thomas, 1990</link><!--: PMID 2323555-->). It is not known which cholinergic neurons are responsible for regulating this periodic behavior.</para>
+</sect2>
+<sect2 id="sec9_5">
+<title>Male mating</title>
+<para>Several distinct cholinergic pathways in the male tail have been described that are involved in male mating behavior (see <ulink url="http://www.wormbook.org/chapters/www_malematingbehavior/malematingbehavior.html" role="_blank">Male mating behavior</ulink>). The PCB and PCC sensory neurons of the postcloacal sensilla are cholinergic, and together with the anal depressor and some still unidentified cells, mediate periodic contractions (&#x0201C;prodding&#x0201D; behavior) of the protractor muscles (<link linkend="bib54">Liu and Sternberg, 1995</link><!--: PMID 7826644-->; <link linkend="bib31">Garcia et al., 2001</link><!--: PMID 11747813-->). The subsequent spicule insertion requires prolonged contraction of the protractor muscles, mediated by the cholinergic SPC motor neurons. Protractor contraction (both the periodic prodding and the prolonged contraction) is severely deficient in <emphasis><ulink url="http://www.wormbase.org/db/get?name=cha-1;class=Gene" role="_blank">cha-1</ulink></emphasis> mutants, and is potentiated in wild-type animals by aldicarb; the cholinergic signaling is mediated by multiple receptors, including distinct levamisole-, nicotine-, and arecoline-sensitive receptors (<link linkend="bib31">Garcia et al., 2001</link><!--: PMID 11747813-->).</para>
+</sect2>
+</sect1>
+<sect1 id="sec10">
+<title>Additional aspects of cholinergic biology</title>
+<sect2 id="sec10_1">
+<title>Transmitter coexpression</title>
+<para>Although we are used to thinking that each neuron releases a single neurotransmitter, this turns out to be an oversimplification. For example, the four motor neurons with significant output to the egg-laying muscles, <ulink url="http://www.wormbase.org/db/get?name=HSNL;class=Cell" role="_blank">HSNL</ulink>/R and <ulink url="http://www.wormbase.org/db/get?name=VC4;class=Cell" role="_blank">VC4</ulink>/5 appear to release both ACh and serotonin (<link linkend="bib21">Duerr et al., 2001</link><!--: PMID 11350757-->). It is not known if the two transmitters are colocalized in the same vesicles, or if they are released from the same synapses.</para>
+</sect2>
+<sect2 id="sec10_2">
+<title>Role in protein turnover</title>
+<para>One of the consequences of starvation is the triggering of protein degradation in muscles. This may be monitored as the disappearance of muscle reporter expression in response to starvation (<link linkend="bib103">Zdinak et al., 1997</link><!--: PMID 9328848-->). The starvation-dependent proteolysis is negatively regulated by cholinergic input to the muscles (<link linkend="bib91">Szewczyk et al., 2000</link>). For example, mutants deficient in ACh release or reception (e.g., <emphasis><ulink url="http://www.wormbase.org/db/get?name=cha-1;class=Gene" role="_blank">cha-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-17;class=Gene" role="_blank">unc-17</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-13;class=Gene" role="_blank">unc-13</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-38;class=Gene" role="_blank">unc-38</ulink></emphasis>) have enhanced starvation-induced protein turnover, while the cholinergic agonist levamisole completely prevents starvation-induced turnover in muscle cells (<link linkend="bib91">Szewczyk et al., 2000</link><!--: PMID 10806111-->).</para>
+</sect2>
+<sect2 id="sec10_3">
+<title>Cholinergic regulation of developmental timing</title>
+<para><link linkend="bib82">Ruaud and Bessereau (2006)</link><!--: PMID 16672334--> have reported that application of the nicotinic receptor agonist DMPP slowed overall <emphasis>C. elegans</emphasis> development during the L2 stage but did not affect the molt timing, so that the L2/L3 molt occurred before the L3 cuticle was ready, and the animals died. This suggests the uncoupling of a &#x0201C;developmental timer&#x0201D; apparently regulated by cholinergic signaling from a &#x0201C;molting timer&#x0201D;. The action of the drug was not due to general toxicity, but rather was specific and was mediated through <ulink url="http://www.wormbase.org/db/get?name=UNC-63;class=Protein" role="_blank">UNC-63</ulink>-containing receptors, because <emphasis><ulink url="http://www.wormbase.org/db/get?name=unc-63;class=Gene" role="_blank">unc-63</ulink></emphasis> mutants were partially resistant to the stage-specific lethality of DMPP. However, the DMPP sensitivity was not mediated by the muscle levamisole-sensitive receptors, but rather by neuronal <ulink url="http://www.wormbase.org/db/get?name=UNC-63;class=Protein" role="_blank">UNC-63</ulink>-containing receptors. The specific neuronal pathways mediating this effect have not yet been determined.</para>
+</sect2>
+</sect1>
+<sect1 id="sec11">
+<title>Acknowledgement</title>
+<para>The author&apos;s research has been supported by grants from the National Institute of General Medical Sciences.</para>
+</sect1>
+<sect1>
+<title>Bibliography</title>
+&choline_Refs;
+<para/>
+</sect1>
+</article>

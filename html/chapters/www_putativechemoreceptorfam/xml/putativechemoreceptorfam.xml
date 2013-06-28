@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY fig1 SYSTEM 'chemorecepfig1.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'chemorecepfig1leg.xml'>
+<!ENTITY fig2 SYSTEM 'chemorecepfig2.jpg' NDATA JPG>
+<!ENTITY fig2legend SYSTEM 'chemorecepfig2leg.xml'>
+<!ENTITY fig3 SYSTEM 'chemorecepfig3.jpg' NDATA JPG>
+<!ENTITY fig3legend SYSTEM 'chemorecepfig3leg.xml'>
+<!ENTITY fig4 SYSTEM 'chemorecepfig4.jpg' NDATA JPG>
+<!ENTITY fig4legend SYSTEM 'chemorecepfig4leg.xml'>
+
+<!ENTITY chemorecep_Refs SYSTEM 'chemoreceprefs.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="chemorecep_ArticleID">
+    <articleinfo>
+        <!--see DocBook's authorgroup element -->
+        <title>The putative chemoreceptor families of <emphasis>C. elegans</emphasis>
+            <footnote>
+                <para>Edited by Iva Greenwald. Last revised April 13, 2005. Published January 06, 2006. This chapter should be cited as: Robertson, H. M. and Thomas, J. H. The putative chemoreceptor families of <emphasis>C. elegans</emphasis> (January 06, 2006), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.66.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+		<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2006 Hugh M. Robertson and James H. Thomas. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+            </footnote>
+        </title>
+        <!--		<revhistory>
+			<revision>
+				<revnumber>1.0</revnumber>
+				<date>Last revised 4/13/05</date>
+			</revision>
+		</revhistory>
+-->
+        <author>
+            <firstname>Hugh M.</firstname>
+            <surname>Robertson<remark>
+                    <footnote>
+                        <para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:hughrobe@uiuc.edu">hughrobe@uiuc.edu</ulink> or <ulink url="mailto:jht@u.washington.edu">jht@u.washington.edu</ulink></para>
+                    </footnote>
+                </remark>
+            </surname>
+            <affiliation>
+                <address>Department of Entomology, University of Illinois at Urbana-Champaign, Urbana, IL 61801 USA</address>
+            </affiliation>
+        </author>
+        <author>
+            <firstname>James H.</firstname>
+            <surname>Thomas</surname>
+            <affiliation>
+                <address>Department of Genome Sciences, University of Washington, Seattle, WA 98195-7360 USA</address>
+            </affiliation>
+        </author>
+    </articleinfo>
+    <abstract>
+        <title><emphasis role="bold">Abstract</emphasis></title>
+        <para><emphasis role="bold">Chemoreception of environmental stimuli is a major sensory system in small soil
+            nematodes like</emphasis> <emphasis role="bold-italic">C. elegans.</emphasis> <emphasis role="bold">As in other animals, chemoreception is
+            mediated in</emphasis> <emphasis role="bold-italic">C. elegans</emphasis> <emphasis role="bold">by members of the seven-transmembrane
+            G-protein-coupled receptor class (7TM GPCRs). We summarize the many large putative
+            chemoreceptor gene families, including the</emphasis> <emphasis><emphasis role="bold">str</emphasis></emphasis> <emphasis role="bold">family (which includes</emphasis>
+            <emphasis><emphasis role="bold"><ulink url="http://www.wormbase.org/db/gene/gene?name=odr-10" role="_blank">odr-10</ulink>,</emphasis></emphasis> <emphasis role="bold">the only receptor with an identified ligand), and the</emphasis>
+            <emphasis><emphasis role="bold">sra, srab, srb, srbc, srd, sre, srg, srh, sri, srj, srm, srr, srsx, srt, sru</emphasis>,</emphasis>
+            <emphasis><emphasis role="bold">srv, srw, srx, srxa,</emphasis></emphasis> <emphasis role="bold">and</emphasis> <emphasis><emphasis role="bold">srz</emphasis></emphasis> <emphasis role="bold">families. Together these comprise <symbol
+            role="symbolfont">&#x00B1;</symbol>1280 apparently intact genes and <symbol
+            role="symbolfont">&#x00B1;</symbol>420 apparent pseudogenes, about 7% of the total
+            gene count of</emphasis> <emphasis><emphasis role="bold">C. elegans.</emphasis></emphasis> <emphasis role="bold">These genes are unusually clustered on
+            chromosomes, both within and between families, and are enigmatically concentrated on the
+            large chromosome V. Comparative studies with</emphasis> <emphasis><emphasis role="bold">C. briggsae</emphasis></emphasis> <emphasis role="bold">have
+            revealed extraordinary divergence of the chemoreceptor repertoire between the two
+            species, including frequent amplifications of subfamilies in</emphasis> <emphasis><emphasis role="bold">C.
+            elegans</emphasis></emphasis> <emphasis role="bold">and positive selection in the</emphasis> <emphasis><emphasis role="bold">srz</emphasis></emphasis> <emphasis role="bold">family. The
+            size and complexity of the chemoreceptor gene families also facilitate studies of
+            promoter elements using paralogous and orthologous comparisons, as well as other aspects
+            of gene family and genome evolution.</emphasis></para>
+    </abstract>
+    <sect1>
+        <title>Introduction</title>
+        <para>Chemoperception is a central sense of soil nematodes like <emphasis>Caenorhabditis
+            elegans</emphasis>, as it is for most other animals (reviewed in <link linkend="bib28">Mori, 1999</link><!--:
+            PMID10690413-->; <link linkend="bib36">Sengupta, 1997</link><!--: PMID15001091-->; <link linkend="bib3">Bargmann, 1997</link><!--: PMID?-->). Following the
+            Nobel-Prize-winning discovery of olfactory receptors (ORs) in mammals (<link linkend="bib6">Buck and Axel,
+            1991</link><!--: PMID1840504-->) as members of the rhodopsin superfamily of G-protein-coupled
+            receptors (GPCRs) with seven transmembrane domains (7TM), Troemel et al. identified a
+            series of disparate GPCRs as candidate olfactory receptors in <emphasis>C.
+            elegans</emphasis> (<link linkend="bib43">Troemel et al., 1995</link><!--: PMID7585938-->). These identifications were made
+            from some of the earliest sequences reported by the genome project and proved to be the
+            tip of the iceberg. The genes were classified into small gene families and given names
+            starting with sr for serpentine receptor (<emphasis>sra</emphasis>,
+            <emphasis>srb</emphasis>, <emphasis>srd</emphasis>, <emphasis>sre</emphasis>, and
+            <emphasis>sro</emphasis>). Their probable chemosensory function was based on transgene
+            expression patterns in one or more known pairs of chemosensory neurons. Subsequently,
+            Sengupta et al. used a genetic screen to identify <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=odr-10" role="_blank">odr-10</ulink></emphasis>, which
+            they showed encodes a GPCR that mediates olfactory response to diacetyl (<link linkend="bib37">Sengupta et
+            al., 1996</link><!--: PMID8601313-->). With completion of the genome sequence it became possible to
+            flesh out the true extent of these and related gene families encoding GPCRs that are
+            candidate chemoreceptors. Robertson (<link linkend="bib31">Robertson, 1998</link><!--: PMID9582190-->; <link linkend="bib33">Robertson, 2001</link><!--:
+            PMID11238245-->) worked up the relatives of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=odr-10" role="_blank">odr-10</ulink></emphasis> as the large <emphasis>str</emphasis>
+            family along with the related <emphasis>sri</emphasis> and <emphasis>srj</emphasis>
+            families, and then also worked up the large related <emphasis>srh</emphasis> family (<link linkend="bib32">Robertson, 2000</link><!--:
+            PMID 10673277-->). Annotation and naming of the smaller <emphasis>sra</emphasis> family was
+            completed by HMR as part of the comparison with <emphasis>C. briggsae</emphasis> (<link linkend="bib38">Stein
+            et al., 2003</link><!--: PMID14624247-->), while Chen et al. described the related
+            <emphasis>srab</emphasis> family (<link linkend="bib7">Chen et al., 2005</link><!--: PMID15618405-->), and Thomas et al.
+            described the <emphasis>srz</emphasis> family (<link linkend="bib42">Thomas et al., 2005</link><!--: PMID15761060-->) and
+            the <emphasis>srt</emphasis> family (<link linkend="bib46">Thomas, 2006</link> [in press]). A decade after their first recognition, we describe here
+            all the remaining families and relate them in a series of superfamilies that comprise a
+            remarkable array of roughly 1300 potentially functional candidate chemoreceptor genes,
+            along with about 400 apparent pseudogenes. Together they comprise roughly 7% of the gene
+            complement of this tiny animal, more than any other sequenced genome. This large genetic
+            investment might result from an extreme dependence on chemosensory abilities in the
+            absence of visual and auditory systems. On the basis of genetic complexity, this system
+            probably constitutes the bulk of signal transduction that occurs in <emphasis>C. elegans</emphasis>.</para>
+        <para>We first discuss these families below in superfamily groupings, loosely defined as
+            consisting of readily recognizable groupings based on protein sequence similarity, as
+            well as sometimes shared intron locations in their genes. We then discuss various
+            aspects of their biology, including new expression pattern results that support their
+            likely function as chemoreceptors. For the rest of this chapter, while fully
+            acknowledging the formal status of all but <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=odr-10" role="_blank">odr-10</ulink></emphasis> as putative or
+            candidate chemoreceptors, we will refer to them as chemoreceptors. Genetic analysis of
+            sensory-neuron specific G proteins indicates that olfaction, nociception, and pheromone
+            responses are mediated predominantly by GPCRs (e.g., <link linkend="bib16">Hilliard et al., 2004</link><!--: PMID14988722-->;
+            <link linkend="bib17">Jansen et al., 1999</link><!--: PMID10192394-->; <link linkend="bib18">Jansen et al., 2002</link><!--: PMID11867526-->; <link linkend="bib30">Roayaie et al.,
+            1998</link><!--: PMID9459442-->) and it is difficult to see what else these huge families might
+            generally mediate. Nevertheless, it seems likely that some of the genes have been
+            subsequently recruited to other roles such as monitoring of internal chemistry, so the
+            function of any specific gene should be interpreted with caution.</para>
+    </sect1>
+    <sect1>
+        <title>Summary of the chemoreceptor families</title>
+        <para><link linkend="table1">Table 1</link> lists the named chemoreceptor families by superfamily group with the numbers
+            of apparently intact genes and of apparent pseudogenes in each. Annotation of the genes
+            is not nearly as straightforward as for mammalian olfactory receptors, because the
+                <emphasis>C. elegans</emphasis> genes have complex gene structures with 1&#x02013;8 introns
+            each, and the intron locations are commonly different between gene families. EST data
+            are of little assistance due to uniformly low expression levels (e.g., of ~160,000 ESTs
+            on WS138, only 81 were from chemoreceptor genes). In the absence of functional
+            information it is not possible to be confident of the functionality of any specific
+            gene, but each has been annotated to encode a seemingly intact full-length protein that
+            aligns well with other family members. It is always possible that particular amino acid
+            changes or small in-frame insertions or deletions might inactivate an otherwise
+            apparently intact receptor. On the other hand, amongst the apparent pseudogenes from N2
+            is a subset with probable functional alleles in other wild strains of <emphasis>C.
+            elegans</emphasis> (<link linkend="bib39">Stewart et al., 2005</link>). In part because of this we have
+            chosen to name both genes and pseudogenes in these families. We have arbitrarily chosen
+            to ignore gene fragments that encode less than 50% of the amino acid length typical for
+            a gene family. The curated annotations and gene names for all families should be correct
+            in WormBase release WS141, though ongoing studies will undoubtedly refine their structure.</para>
+<table id="table1" frame="all" rules="all" cellpadding="0" cellspacing="0" width="100%">
+<title>Table 1. Gene and pseudogene numbers in chemoreceptor families and superfamilies</title>
+<tgroup cols="6">
+<colspec colname="c1" align="left" colwidth="1*"/>
+<colspec colname="c2" align="left" colwidth="1*"/>
+<colspec colname="c3" align="left" colwidth="1*"/>
+<colspec colname="c4" align="left" colwidth="1*"/>
+<colspec colname="c5" align="left" colwidth="1*"/>
+<colspec colname="c6" align="left" colwidth="1*"/>
+<thead>
+<row>
+<entry>Superfamily</entry>
+<entry>Family</entry>
+<entry>Genes</entry>
+<entry>Pseudogenes</entry>
+<entry>% Pseudo</entry>
+<entry>Total loci</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Str</entry>
+<entry><emphasis>srh</emphasis></entry>
+<entry>217</entry>
+<entry>91</entry>
+<entry>30</entry>
+<entry>308</entry>
+</row>
+<row>
+<entry/>
+<entry><emphasis>str</emphasis></entry>
+<entry>192</entry>
+<entry>75</entry>
+<entry>28</entry>
+<entry>267</entry>
+</row>
+<row>
+<entry/>
+<entry><emphasis>sri</emphasis></entry>
+<entry>60</entry>
+<entry>18</entry>
+<entry>23</entry>
+<entry>78</entry>
+</row>
+<row>
+<entry/>
+<entry><emphasis>srd</emphasis></entry>
+<entry>64</entry>
+<entry>12</entry>
+<entry>16</entry>
+<entry>76</entry>
+</row>
+<row>
+<entry/>
+<entry><emphasis>srj</emphasis></entry>
+<entry>39</entry>
+<entry>18</entry>
+<entry>32</entry>
+<entry>57</entry>
+</row>
+<row>
+<entry/>
+<entry><emphasis>srm</emphasis></entry>
+<entry>5</entry>
+<entry>1</entry>
+<entry>17</entry>
+<entry>6</entry>
+</row>
+<row>
+<entry/>
+<entry><emphasis>srn</emphasis></entry>
+<entry>1</entry>
+<entry>0</entry>
+<entry>0</entry>
+<entry>1</entry>
+</row>
+<row>
+<entry/>
+<entry>all Str</entry>
+<entry>578</entry>
+<entry>215</entry>
+<entry>27</entry>
+<entry>793</entry>
+</row>
+<row>
+<entry>Sra</entry>
+<entry><emphasis>sre</emphasis></entry>
+<entry>51</entry>
+<entry>5</entry>
+<entry>9</entry>
+<entry>56</entry>
+</row>
+<row>
+<entry/>
+<entry><emphasis>sra</emphasis></entry>
+<entry>32</entry>
+<entry>7</entry>
+<entry>18</entry>
+<entry>39</entry>
+</row>
+<row>
+<entry/>
+<entry><emphasis>srab</emphasis></entry>
+<entry>22</entry>
+<entry>5</entry>
+<entry>19</entry>
+<entry>27</entry>
+</row>
+<row>
+<entry/>
+<entry><emphasis>srb</emphasis></entry>
+<entry>14</entry>
+<entry>5</entry>
+<entry>26</entry>
+<entry>19</entry>
+</row>
+<row>
+<entry/>
+<entry>all Sra</entry>
+<entry>119</entry>
+<entry>22</entry>
+<entry>16</entry>
+<entry>141</entry>
+</row>
+<row>
+<entry>Srg</entry>
+<entry><emphasis>srx</emphasis></entry>
+<entry>94</entry>
+<entry>44</entry>
+<entry>32</entry>
+<entry>138</entry>
+</row>
+<row>
+<entry/>
+<entry><emphasis>srt</emphasis></entry>
+<entry>59</entry>
+<entry>15</entry>
+<entry>20</entry>
+<entry>74</entry>
+</row>
+<row>
+<entry/>
+<entry><emphasis>srg</emphasis></entry>
+<entry>59</entry>
+<entry>9</entry>
+<entry>13</entry>
+<entry>68</entry>
+</row>
+<row>
+<entry/>
+<entry><emphasis>sru</emphasis></entry>
+<entry>39</entry>
+<entry>9</entry>
+<entry>19</entry>
+<entry>48</entry>
+</row>
+<row>
+<entry/>
+<entry><emphasis>srv</emphasis></entry>
+<entry>30</entry>
+<entry>6</entry>
+<entry>17</entry>
+<entry>36</entry>
+</row>
+<row>
+<entry/>
+<entry><emphasis>srxa</emphasis></entry>
+<entry>17</entry>
+<entry>2</entry>
+<entry>11</entry>
+<entry>19</entry>
+</row>
+<row>
+<entry/>
+<entry>all Srg</entry>
+<entry>298</entry>
+<entry>85</entry>
+<entry>22</entry>
+<entry>383</entry>
+</row>
+<row>
+<entry>Solo</entry>
+<entry><emphasis>srw</emphasis></entry>
+<entry>100</entry>
+<entry>45</entry>
+<entry>31</entry>
+<entry>145</entry>
+</row>
+<row>
+<entry>Solo</entry>
+<entry><emphasis>srz</emphasis></entry>
+<entry>64</entry>
+<entry>39</entry>
+<entry>38</entry>
+<entry>103</entry>
+</row>
+<row>
+<entry>Solo</entry>
+<entry><emphasis>srbc</emphasis></entry>
+<entry>71</entry>
+<entry>13</entry>
+<entry>15</entry>
+<entry>84</entry>
+</row>
+<row>
+<entry>Solo</entry>
+<entry><emphasis>srsx</emphasis></entry>
+<entry>37</entry>
+<entry>3</entry>
+<entry>8</entry>
+<entry>40</entry>
+</row>
+<row>
+<entry>Solo</entry>
+<entry><emphasis>srr</emphasis></entry>
+<entry>9</entry>
+<entry>1</entry>
+<entry>10</entry>
+<entry>10</entry>
+</row>
+<row>
+<entry>All family totals:</entry>
+<entry/>
+<entry>1276</entry>
+<entry>423</entry>
+<entry>25</entry>
+<entry>1699</entry>
+</row>
+<row>
+<entry namest="c1" nameend="c6">Pseudogenes and functional genes are distinguished by the presence of apparent defects in coding potential (mostly deletions, stop codons, and frameshifts) and are occasionally subjective; these numbers should be taken as current best estimates. The <emphasis>srbc</emphasis> and <emphasis>srsx</emphasis> families are probably distantly related to each other and perhaps to the <emphasis>srx</emphasis> family (JHT, unpublished), but these relationship are not yet sufficiently clear to justify inclusion in the table. An additional ~150 seven-pass receptors may also function as chemoreceptors, but they are either in very small families or are unique in the genome and their status is unclear.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+        <sect2>
+            <title>The Str superfamily</title>
+            <para>The Str superfamily consists of the <emphasis>str</emphasis>,
+                <emphasis>srd</emphasis>, <emphasis>srh</emphasis>, <emphasis>sri</emphasis>,
+                <emphasis>srj</emphasis>, <emphasis>srm</emphasis>, and <emphasis>srn</emphasis>
+                genes, with a total of 795 genes and pseudogenes. The superfamily includes the <emphasis>str</emphasis>
+                and <emphasis>srh</emphasis> families, which are the two largest gene families in <emphasis>C.
+                elegans</emphasis>. Robertson was able to extract considerable information about
+                gene family, intron, and chromosomal evolution from studies of these large families
+                (<link linkend="bib31">Robertson, 1998</link><!--: PMID9582190-->; <link linkend="bib32">Robertson, 2000</link><!--: PMID10673277-->; <link linkend="bib33">Robertson, 2001</link><!--:
+                PMID11238245-->). Similar analysis has subsequently been extended to all of the other
+                families. The high frequency of pseudogenes in these families was novel at the time
+                for <emphasis>C. elegans</emphasis>, but is now more commonly recognized in the
+                genome (e.g., <link linkend="bib29">Mounsey et al., 2002</link><!--: PMID11997343-->). Rampant gain and loss of introns
+                was inferred from phylogenetic analysis and has been confirmed by genome-wide and
+                comparative analyses with <emphasis>C. briggsae</emphasis> (e.g., <link linkend="bib10">Coghlan and Wolfe,
+                2004</link><!--: PMID15243155-->; <link linkend="bib22">Kiontke et al., 2004</link><!--: PMID15184656-->). Processes of genome flux
+                have moved these genes around a lot, although somewhat mysteriously retaining most
+                of them on the large chromosome V, which might reflect functional clustering with
+                each other and other chemoreceptor genes, similar to that inferred for several other
+                gene classes (e.g., <link linkend="bib27">Miller et al., 2004</link><!--: PMID15268860-->). Comparisons across the entire
+                superfamily show that the srd family is a highly divergent and basal family (<xref
+                linkend="figure1"/>), with just one intron location ancestrally shared in the family
+                and across the entire superfamily. A few genes and pseudogenes have been added to
+                the larger of these families since their original description with completion of the
+                genome sequence.</para>
+            <mediaobject id="figure1" xreflabel="Figure 1">
+                <imageobject>
+                    <imagedata entityref="fig1" align="center" width="6in"/>
+                </imageobject>
+                <textobject>
+                    <phrase>figure 1</phrase>
+                </textobject> &fig1legend;</mediaobject>
+        </sect2>
+        <sect2>
+            <title>The Sra superfamily</title>
+            <para>The Sra superfamily consists of the <emphasis>sra</emphasis>,
+                <emphasis>srab</emphasis>, <emphasis>srb</emphasis>, and <emphasis>sre</emphasis>
+                families, totaling 141 genes and pseudogenes. Comparison of the
+                <emphasis>sra</emphasis> and <emphasis>srab</emphasis> families with their homologs
+                in <emphasis>C. briggsae</emphasis> revealed that these families are considerably
+                expanded in <emphasis>C. elegans</emphasis> (<link linkend="bib7">Chen et al., 2005</link><!--: PMID15618405-->; <link linkend="bib38">Stein
+                et al., 2003</link><!--: PMID14624247-->), something that appears to be true for many of the
+                chemoreceptor gene families. Using computational gene-building methods, Chen et al.
+                (<link linkend="bib7">Chen et al., 2005</link><!--: PMID15618405-->) did not note any pseudogenes in the
+                <emphasis>srab</emphasis> family in <emphasis>C. elegans</emphasis>, although they
+                did note them in the <emphasis>srab</emphasis> family in <emphasis>C.
+                briggsae</emphasis> and the <emphasis>sra</emphasis> family in both species. Chen
+                and HMR have reevaluated this family in <emphasis>C. elegans</emphasis>, and now
+                recognize four pseudogenes and added one gene. Phylogenetic analysis of the
+                superfamily reveals that the <emphasis>sre</emphasis> family is the most divergent,
+                with the <emphasis>sra</emphasis>, <emphasis>srab</emphasis>, and
+                <emphasis>srb</emphasis> families being clustered together. The last three named
+                members of the <emphasis>sra</emphasis> family (<emphasis>sra</emphasis>-37-39,
+                T21H8.2-4) cluster with the <emphasis>srb</emphasis> family in some analyses, but
+                are best left in the <emphasis>sra</emphasis> family with this caveat.</para>
+        </sect2>
+        <sect2>
+            <title>The Srg superfamily</title>
+            <para>The Srg superfamily consists of the <emphasis>srg</emphasis>,
+                <emphasis>srt</emphasis>, <emphasis>sru</emphasis>, <emphasis>srv</emphasis>,
+                <emphasis>srx</emphasis>, and <emphasis>srxa</emphasis> families, totaling 310 genes
+                and pseudogenes, with the latter being the most divergent. Evolutionary analysis of
+                these families has been limited, and virtually nothing is known about their specific
+                functions, though expression patterns are consistent with a role in chemosensation
+                (<link linkend="table2">Table 2</link>).</para>
+<table id="table2" frame="all" rules="all" cellpadding="0" cellspacing="0" width="100%">
+<title>Table 2. Summaries of known GFP-fusion expression patterns for chemoreceptors</title>
+<tgroup cols="9">
+<colspec colname="c1" align="left" colwidth="1*"/>
+<colspec colname="c2" align="left" colwidth="1*"/>
+<colspec colname="c3" align="left" colwidth="1*"/>
+<colspec colname="c4" align="left" colwidth="1*"/>
+<colspec colname="c5" align="left" colwidth="1*"/>
+<colspec colname="c6" align="left" colwidth="1*"/>
+<colspec colname="c7" align="left" colwidth="1*"/>
+<colspec colname="c8" align="left" colwidth="1*"/>
+<colspec colname="c9" align="left" colwidth="1*"/>
+<thead>
+<row>
+<entry>Family</entry>
+<entry>Expressed</entry>
+<entry>Unexpr- essed</entry>
+<entry>Sensory</entry>
+<entry>Amphid</entry>
+<entry>Phasmid</entry>
+<entry>Other sensory</entry>
+<entry>Other neurons</entry>
+<entry>Non- neuronal</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry><emphasis>sra</emphasis></entry>
+<entry>10</entry>
+<entry>3</entry>
+<entry>7/10</entry>
+<entry>5</entry>
+<entry>1</entry>
+<entry>3</entry>
+<entry>4</entry>
+<entry>2</entry>
+</row>
+<row>
+<entry><emphasis>srab</emphasis></entry>
+<entry>5</entry>
+<entry>0</entry>
+<entry>5/5</entry>
+<entry>3</entry>
+<entry>1</entry>
+<entry>1</entry>
+<entry>1</entry>
+<entry>0</entry>
+</row>
+<row>
+<entry><emphasis>srd</emphasis></entry>
+<entry>5</entry>
+<entry>4</entry>
+<entry>4/5</entry>
+<entry>4</entry>
+<entry>1</entry>
+<entry>1</entry>
+<entry>1</entry>
+<entry>0</entry>
+</row>
+<row>
+<entry><emphasis>srg</emphasis></entry>
+<entry>4</entry>
+<entry>0</entry>
+<entry>3/4</entry>
+<entry>2</entry>
+<entry>1</entry>
+<entry>0</entry>
+<entry>0</entry>
+<entry>1</entry>
+</row>
+<row>
+<entry><emphasis>srh/sri</emphasis></entry>
+<entry>15</entry>
+<entry>1</entry>
+<entry>12/15</entry>
+<entry>12</entry>
+<entry>1</entry>
+<entry>3</entry>
+<entry>3</entry>
+<entry>8</entry>
+</row>
+<row>
+<entry><emphasis>str/srj</emphasis></entry>
+<entry>16</entry>
+<entry>1</entry>
+<entry>10/16</entry>
+<entry>10</entry>
+<entry>0</entry>
+<entry>0</entry>
+<entry>7</entry>
+<entry>2</entry>
+</row>
+<row>
+<entry>other</entry>
+<entry>8</entry>
+<entry>5</entry>
+<entry>7/8</entry>
+<entry>7</entry>
+<entry>1</entry>
+<entry>1</entry>
+<entry>2</entry>
+<entry>1</entry>
+</row>
+<row>
+<entry>total</entry>
+<entry>63</entry>
+<entry>14</entry>
+<entry>48/63</entry>
+<entry>43</entry>
+<entry>6</entry>
+<entry>9</entry>
+<entry>18</entry>
+<entry>14</entry>
+</row>
+<row>
+<entry namest="c1" nameend="c9">Some genes are expressed in more than one listed tissue. Data were gathered from <link linkend="bib5">Battu et al., 2003</link><!--: PMID12736202-->; <link linkend="bib7">Chen et al., 2005</link><!--: PMID15618405-->; <link linkend="bib24">McCarroll et al., 2005</link>; <link linkend="bib37">Sengupta et al., 1996</link><!--: PMID8601313-->; <link linkend="bib43">Troemel et al., 1995</link><!--: PMID7585938-->; <link linkend="bib44">Wenick and Hobert, 2004</link><!--: PMID15177025-->, and generous personal communications from Cori Bargmann and Piali Sengupta.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+        </sect2>
+        <sect2>
+            <title>The <emphasis>srw </emphasis>family</title>
+            <para>The <emphasis>srw</emphasis> family of 145 genes and pseudogenes is unusual among
+                the candidate chemoreceptors because its origins from another family of otherwise
+                conserved GPCRs can be recognized. This family of highly divergent genes and many
+                pseudogenes is related to families of apparent FMRFamide and other peptide
+                receptors, which have relatives in vertebrates and insects (e.g., <link linkend="bib13">Egerod et al.,
+                2003</link><!--: PMID12907701-->; <link linkend="bib25">Meeusen et al., 2002</link><!--: PMID12438685-->; <link linkend="bib26">Mertens et al., 2004</link><!--:
+                PMID15327975-->; <xref linkend="figure2"/>). The candidate FMRFamide/peptide receptors
+                are dispersed in the genome, but almost 90% of <emphasis>srw</emphasis> genes are on
+                chromosome V, most in large clusters on the chromosomal arms (<xref
+                linkend="figure3"/>B). Given the similarities of their gene family evolution to that
+                of the other families, and their common genomic organization, we hypothesize that
+                the <emphasis>srw</emphasis> family represents a novel origin of chemoreceptors within the nematode
+                lineage, perhaps serving as environmental peptide receptors.</para>
+        <mediaobject id="figure2" xreflabel="Figure 2">
+            <imageobject>
+                <imagedata entityref="fig2" align="center" width="6.5in"/>
+            </imageobject>
+            <textobject>
+                <phrase>figure 2</phrase>
+            </textobject> &fig2legend;</mediaobject>
+        <mediaobject id="figure3" xreflabel="Figure 3">
+            <imageobject>
+                <imagedata entityref="fig3" align="center" width="6in"/>
+            </imageobject>
+            <textobject>
+                <phrase>figure 3</phrase>
+            </textobject> &fig3legend;</mediaobject>
+        </sect2>
+    </sect1>
+    <sect1>
+        <title>Gene expansions</title>
+        <para>An unusual characteristic of the chemoreceptor families is their highly dynamic gene
+            number, reflected within <emphasis>C. elegans</emphasis> by frequent duplications and
+            gene loss. Systematic comparisons with <emphasis>C. briggsae</emphasis> are only
+            beginning, but evidence thus far indicates that the familiar concept of orthology is
+            largely useless for these families due to their dynamic evolution. <xref
+            linkend="figure4"/> shows a phylogenetic tree of two of the three families for which a
+            completed <emphasis>C. briggsae</emphasis> annotation is available (<link linkend="bib7">Chen et al., 2005</link><!--:
+            PMID15618405-->). Several large expansions in gene number in <emphasis>C.
+            elegans</emphasis> are apparent and only 7 pairs of genes are convincing one-to-one
+            orthologs. Several additional reciprocal best match pairs (marked "a") are substantially
+            more divergent in protein sequence, which probably indicates that they duplicated well
+            before <emphasis>elegans-briggsae</emphasis> speciation (followed by loss of one copy in
+            both species) and are not orthologs in the strict sense. Similar dynamics are even more
+            extreme in the <emphasis>srz</emphasis> family (<link linkend="bib42">Thomas et al., 2005</link><!--: PMID15761060-->) and
+            the <emphasis>srh</emphasis> families (JHT, unpublished).</para>
+        <mediaobject id="figure4" xreflabel="Figure 4">
+            <imageobject>
+                <imagedata entityref="fig4" align="center" width="5.5in"/>
+            </imageobject>
+            <textobject>
+                <phrase>figure 4</phrase>
+            </textobject> &fig4legend;</mediaobject>
+        <para>Much work remains to be completed, but the broad picture is that the chemoreceptor
+            gene families are in a dynamic state, with fixation of new gene duplicates approximately
+            balancing gene loss (reflected in the large number of defective genes, and in the
+            evidence for ultimate deletion of many genes entirely). Over relatively short periods
+            this dynamic is probably near equilibrium, resulting in a stable number of genes.
+            However, over longer periods unknown factors can change the relative rates of gene gain
+            and gene loss, giving rise to the dramatically different gene numbers in <emphasis>C.
+            elegans</emphasis> and <emphasis>C. briggsae</emphasis>. This pattern is strikingly
+            reminiscent of recent findings in mammalian odorant and vomeronasal gene families, in
+            which gene duplications, gene loss, and lineage specific expansions are common (<link linkend="bib12">Del
+            Punta et al., 2000</link><!--: PMID11116090-->; <link linkend="bib14">Glusman et al., 2001</link><!--: PMID11337468-->; <link linkend="bib23">Matsunami et al.,
+            2000</link><!--: PMID10766242-->). It will be interesting to determine the chemosensory gene
+            distributions for the other <emphasis>Caenorhabditis</emphasis> species currently in the
+            genome sequencing pipeline.</para>
+    </sect1>
+    <sect1>
+        <title>Gene clusters</title>
+        <para>The putative chemosensory genes are strongly clustered in the genome (<xref
+            linkend="figure3"/>). Most families are heavily enriched on chromosome V, and
+            significant enrichment is also found on chromosomes II and IV. Furthermore, the
+            positions of genes on all of these chromosomes are strongly biased toward the chromosome
+            arms (as defined by increased recombination frequency; <link linkend="bib5">Barnes et al., 1995</link><!--:
+            PMID8536965-->). In addition to these broad patterns of gene clustering, there is a strong
+            tendency for closely related genes to be physically close in the genome (<link linkend="bib7">Chen et al.,
+            2005</link><!--: PMID15618405-->; <link linkend="bib32">Robertson, 2000</link><!--: PMID10673277-->; <link linkend="bib31">Robertson, 2001</link><!--: PMID11238245-->). These
+            patterns are likely attributable to patterns of gene duplication in <emphasis>C.
+            elegans</emphasis>. New duplications are almost always local, often tandem or inverted
+            repeats with little or no intervening sequence between the duplicates (<link linkend="bib20">Katju and Lynch, 2003</link><!--:
+            PMID14704166-->; <link linkend="bib35">Semple and Wolfe, 1999</link><!--: PMID10198121-->). The current gene positions are
+            consistent with a history of frequent local gene duplication and rare large chromosomal
+            rearrangements, which occasionally break up clusters of local related genes. These large
+            rearrangements are rarely if ever interchromosomal translocations; we suspect that most
+            are inversions.</para>
+        <para>Detailed analysis of the distribution of <emphasis>srh</emphasis> and <emphasis>str</emphasis> genes not on chromosome V showed
+            that small interchromosomal transposition events occur occasionally (<link linkend="bib31">Robertson, 1998</link><!--:
+            PMID9582190-->; <link linkend="bib32">Robertson, 2000</link><!--: PMID10673277-->; <link linkend="bib33">Robertson, 2001</link><!--: PMID11238245-->). These events
+            are followed in some cases by a duplication and diversification process in the new
+            genomic location. As with chromosome V, residence on other chromosomal arms seems to
+            favor the duplication process. The mechanisms underlying this pattern are not known, but
+            are likely to involve the higher frequency of complex DNA repeats found on almost every
+            autosomal arm.</para>
+    </sect1>
+    <sect1>
+        <title>Function and expression patterns</title>
+        <para>Analysis of the function of <emphasis>C. elegans</emphasis> chemoreceptors has been
+            remarkably resistant to genetic methods. Only <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=odr-10" role="_blank">odr-10</ulink></emphasis> has been
+            identified in classical forward genetic screens (<link linkend="bib37">Sengupta et al., 1996</link><!--: PMID8601313-->) and
+            the fraction of genes assigned gross phenotypes in the initial global RNAi screen is
+            close to zero (<link linkend="bib19">Kamath et al., 2003</link><!--: PMID12529635-->). This resistance may result from a
+            combination of the expected narrow phenotype range for the genes (and a relative paucity
+            of genetic screens directed toward this) and genetic redundancy among closely related
+            receptors. A few additional chemoreceptor genes have more limited phenotypic
+            information. Deletion or overexpression of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sra-13" role="_blank">sra-13</ulink> </emphasis>affects olfactory
+            response to isoamyl alcohol and also affects vulval induction, probably as part of a
+            sensory response to starvation (<link linkend="bib5">Battu et al., 2003</link><!--: PMID12736202-->). One sign of hope is
+            that about 25 chemoreceptor genes were identified as affecting fat accumulation in a
+            global RNAi screen testing specifically for this phenotype (<link linkend="bib2">Ashrafi et al., 2003</link><!--:
+            PMID12529643-->). In addition, RNAi knockdown of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=str-2" role="_blank">str-2</ulink></emphasis> is reported to
+            extend lifespan, though the effect is small (<link linkend="bib1">Alcedo and Kenyon, 2004</link><!--: PMID14715134-->).
+            These RNAi results are uncorroborated by other approaches, but it is possible that
+            environmental chemoperception or internal physiological monitoring by chemoreceptors
+            plays a prominent role in energy resource allocation.</para>
+        <para>The cellular expression patterns of the putative chemosensory receptor genes are of
+            interest for two reasons. First, their classification as chemosensory receptors is
+            currently best assessed by testing whether expression is predominantly in chemosensory
+            neurons. Second, because of the large set of genes, their patterns of expression provide
+            a remarkable opportunity to study the relationship between cell fate, transcription
+            factors, and <emphasis>cis</emphasis> regulatory sequences. Only one gene in the entire
+            SR class has been rigorously shown to function as a chemosensory receptor (<link linkend="bib37">Sengupta et
+            al., 1996</link><!--: PMID8601313-->; <link linkend="bib45">Zhang et al., 1997</link><!--: PMID9342380-->). Are the other ~1,300 genes
+            really chemosensory receptors, or are they a mixture of chemoreceptors and other types
+            of receptors? Transgenic GFP-fusion expression data bearing on this question are
+            summarized in <link linkend="table2">Table 2</link>. Though the coverage of the superfamily is insufficient to draw
+            detailed inferences, a broad picture can be painted. Many genes are expressed only in
+            chemosensory neurons, consistent with a strictly chemosensory function. There are also exceptions to this rule, which might result from real function in other types
+            of neurons and non-neuronal tissue or from transgenic misexpression in ectopic tissues,
+            possibilities that it is currently not possible to distinguish. In addition to GFP
+            fusion data, one study used microarrays to examine gene expression from cell-sorted AWB
+            neurons (<link linkend="bib11">Colosimo et al., 2004</link><!--: PMID15620651-->), a method that is likely to gain
+            importance in the future. SR genes were prominent among the genes identified, including
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=str-220" role="_blank">str-220</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=srd-16" role="_blank">srd-16</ulink></emphasis>,
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=srd-23" role="_blank">srd-23</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sru-38" role="_blank">sru-38</ulink></emphasis>, and
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=srsx-5" role="_blank">srsx-5</ulink></emphasis>. Analysis of SR expression by microarray studies using total
+            worm mRNA is problematic because of their generally low abundance transcript levels;
+            though some genes were assigned to expression mountains (<link linkend="bib21">Kim et al., 2001</link><!--:
+            PMID11557892-->), these assignments should be viewed with some skepticism because absolute
+            expression levels are typically at or close to noise levels.</para>
+        <para>A final method that shows promise in assigning expression patterns to SR genes is
+            identification and analysis of specific promoter sequence motifs that may be binding
+            sites for transcription factors. Using this approach, one study identified a
+            well-defined E-box motif in the promoters of about 200 SR genes, mostly from the <emphasis>srh</emphasis> and
+            <emphasis>sri</emphasis> families (<link linkend="bib24">McCarroll et al., 2005</link>). It was further
+            shown that the E-box is correlated with expression in the ADL chemosensory neuron, and
+            that it was sufficient to direct expression of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=odr-10" role="_blank">odr-10</ulink></emphasis> in ADL.</para>
+    </sect1>
+    <sect1>
+        <title>Acknowledgements</title>
+        <para>HMR thanks Kim Walden (<emphasis>sru</emphasis>, <emphasis>srv</emphasis>,
+            <emphasis>srx</emphasis> families), Kim Ly (<emphasis>srxa</emphasis> and
+            <emphasis>srz</emphasis> families), Colin Stoetzner (<emphasis>srb</emphasis> and
+            <emphasis>srbc</emphasis> families), Lindsey Schmidt (<emphasis>srw</emphasis> family),
+            and Greg New (<emphasis>srx</emphasis> family) for assistance with annotation of some of
+            the gene families, all the WormBase annotators and Jonathan Hodgkin for their assistance
+            over the past decade, and Cori Bargmann for her enthusiastic support. JHT annotated the
+            <emphasis>srt</emphasis> family and thanks Mary Stewart, Emily Rocke, Evan Galloway, and Joanna Kelley for
+            assistance. HMR was supported by NSF grant IBN-96-04095 and NIH grant 1AI056081; JHT was
+            supported by NIH grant RO1GM48700.</para>
+<para>&#x000A0;</para>
+    </sect1>
+    <sect1>
+        <title>References</title>
+		<para/>
+		&chemorecep_Refs;</sect1>
+</article>

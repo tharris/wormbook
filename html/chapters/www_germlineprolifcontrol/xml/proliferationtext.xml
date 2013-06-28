@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY fig1 SYSTEM 'proliferationfig1.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'proliferationfig1leg.xml'>
+<!ENTITY fig2 SYSTEM 'proliferationfig2.jpg' NDATA JPG>
+<!ENTITY fig2legend SYSTEM 'proliferationfig2leg.xml'>
+
+<!ENTITY proliferation_Refs SYSTEM 'proliferationrefs.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="Proliferationinthegermline_ArticleID">
+    <articleinfo>
+        	<!-- Style_PDF.xsl : text-indent added to indent first line of each para : Set as 0.8, 0.6, 1.0, 24pt -->
+
+        <title>Germline proliferation and its control<footnote><para>Edited by Susan Strome. Last revised July 25, 2005. Published August 15, 2005. This chapter should be cited as: Kimble, J. and Crittenden, S.L. Germline proliferation and its control (August 15, 2005), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.13.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+		<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2005 Judith Kimble and Sarah L. Crittenden. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+</footnote></title>
+        <author>
+            <othername>Judith Kimble<remark><footnote><para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:jekimble@wisc.edu">jekimble@wisc.edu</ulink></para></footnote></remark>, Sarah L. Crittenden</othername>
+            <affiliation>
+                <address>Howard Hughes Medical Institute, Department of Biochemistry, University of Wisconsin, Madison, WI 53706 USA</address>
+            </affiliation>
+        </author>
+    </articleinfo>
+    <abstract>
+	<title><emphasis role="bold">Abstract</emphasis></title>
+        <para><emphasis role="bold">The</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">germ line proliferates from one
+            primordial germ cell (PGC) set aside in the early embryo to over a thousand cells in the
+            adult. Most germline proliferation is controlled by the somatic distal tip cell, which
+            provides a stem cell niche at the distal end of the adult gonad. The distal tip cell
+            signals to the germ line via the Notch signaling pathway, which in turn controls a
+            network of RNA regulators. The <ulink url="http://www.wormbase.org/db/seq/protein?name=FBF-1;class=protein" role="_blank">FBF-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=FBF-2;class=protein" role="_blank">FBF-2</ulink> RNA-binding proteins promote continued
+            mitoses in germ cells located close to the distal tip cell, while the <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-2;class=protein" role="_blank">GLD-2</ulink>,
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-3;class=protein" role="_blank">GLD-3</ulink>, and <ulink url="http://www.wormbase.org/db/seq/protein?name=NOS-3;class=protein" role="_blank">NOS-3</ulink> RNA regulators promote entry into meiosis as germ cells leave the stem
+            cell niche. In addition to these key regulators, many other genes affect germline proliferation.</emphasis></para>
+    </abstract>
+<?newpage?>
+    <sect1>
+        <title>Overview</title>
+        <para>The <emphasis>C. elegans</emphasis> germ line proliferates from one primordial germ
+            cell (PGC) set aside in the early embryo to over a thousand cells in the adult. Early
+            PGCs are incorporated into the gonadal primordium during embryogenesis, and only begin
+            active proliferation after hatching. Continued germline mitoses take place in a somatic
+            gonadal 'niche', which is both necessary and sufficient for proliferation; once germ
+            cells have left this niche, they embark on the path to differentiation (entry into
+            meiosis, progression through meiosis and gametogenesis). The location of the niche
+            creates polarity within the maturing germ line, such that mitotic cells reside at one
+            end (the distal end) and meiotic cells are more proximal. This chapter reviews the
+            course of germline proliferation, its control by Notch signaling and a molecular network
+            of RNA regulators, and ends with a brief summary of additional genes that affect
+            germline proliferation. Two figures are provided to help visualize key aspects of
+            germline proliferation. <xref linkend="figure1"/> summarizes germline proliferation
+            graphically in wild-type animals and selected mutants defective in germline
+            proliferation. <xref linkend="figure2"/> shows mitotic germline cells near the somatic
+            stem cell niche and meiotic cells extending proximally away from that niche; it also
+            provides a rough idea of where key regulators are expressed in the germ line and a
+            simplified diagram of the regulatory circuit controlling the mitosis/meiosis decision.</para>
+            <literallayout></literallayout>
+        <mediaobject id="figure1" xreflabel="Figure 1">
+            <imageobject>
+                <imagedata width="5in" entityref="fig1" align="center"/>
+            </imageobject>
+            <textobject>
+                <phrase> figure 1</phrase>
+            </textobject> &fig1legend; </mediaobject>
+        <mediaobject id="figure2" xreflabel="Figure 2">
+            <imageobject>
+                <imagedata width="4.5in" entityref="fig2" align="center"/>
+            </imageobject>
+            <textobject>
+                <phrase> figure 2</phrase>
+            </textobject> &fig2legend; </mediaobject>
+    </sect1>
+    <sect1>
+        <title>Course of germline proliferation</title>
+        <para>The germ line is established in the early embryo with birth of <ulink url="http://www.wormbase.org/db/get?name=P4;class=Cell" role="_blank">P<subscript>4</subscript></ulink>, the first
+            primordial germ cell (PGC). After moving into the embryo during early gastrulation, <ulink url="http://www.wormbase.org/db/get?name=P4;class=Cell" role="_blank">P<subscript>4</subscript></ulink>
+            divides to generate two PGCs, called <ulink url="http://www.wormbase.org/db/get?name=Z2;class=Cell" role="_blank">Z2</ulink> and <ulink url="http://www.wormbase.org/db/get?name=Z3;class=Cell" role="_blank">Z3</ulink>, which do not divide further until after
+            hatching (<link linkend="bib88">Sulston et al., 1983</link><!-- PMID 6684600 -->). About halfway through the first larval
+            stage, <ulink url="http://www.wormbase.org/db/get?name=Z2;class=Cell" role="_blank">Z2</ulink> and <ulink url="http://www.wormbase.org/db/get?name=Z3;class=Cell" role="_blank">Z3</ulink> begin to divide; these postembryonic divisions only begin when the
+            nutritional environment is favorable. When hatched in buffer, all postembryonic blast
+            cells arrest, including the PGCs. Once they begin, postembryonic germline divisions are
+            not oriented in a reproducible manner and placement of daughter cells is variable
+            (<link linkend="bib53">Kimble and Hirsh, 1979</link><!-- PMID 478167 -->). The number of germ cells increases exponentially
+            for the first two larval stages (<xref linkend="figure1"/>); then, during the third
+            larval stage, the most proximal germline nuclei enter meiosis, which removes them from
+            the pool of actively dividing cells and establishes polarity in the germline.
+            Thereafter, mitotic divisions are limited to the distal germ line, and meiotic prophase
+            to more proximal regions. Germline proliferation arrests if larvae enter the dauer
+            stage of development and resumes when dauers reenter the normal life cycle. The PGCs
+            are cellular in the first larval stage, but the proliferating germ line becomes
+            syncytial by the second larval stage. The "cells" within the germline syncytium do not
+            divide synchronously at any time during the course of germline proliferation and
+            therefore appear to behave autonomously; that autonomy may reflect the partial enclosure
+            of each nucleus and its surrounding cytoplasm by a plasma membrane (<link linkend="bib42">Hirsh et al., 1976</link><!-- PMID 943344 -->). The course of proliferation is similar in the two sexes, but hermaphrodites
+            produce a total of ~2000 germline descendants partitioned into two gonadal arms, and
+            males produce ~1000 germline descendants in a single arm (<link linkend="bib55">Kimble and White, 1981</link><!-- PMID 7202837 -->).</para>
+        <para>The adult germ line possesses a "mitotic region" at its distal end, and a "transition
+            zone" more proximally (<xref linkend="figure2"/>A). Germ cells in the mitotic region
+            serve as stem cells that both self-renew and produce differentiating gametes. In young
+            adults (24 hours past L4), the mitotic region is composed of ~225&#x02013;250 germ cells, and it
+            extends about 20 germ cell diameters along the distal-proximal axis (<link linkend="bib16">Crittenden et al., 1994</link><!-- PMID 7607080 -->; <link linkend="bib20">Eckmann et al., 2004</link><!-- PMID 15454534 -->; <link linkend="bib39">Hansen et al., 2004</link><!-- PMID 15063172 -->; <link linkend="bib60">Lamont et al., 2004</link><!-- PMID 15525531 -->). The transition zone is the region
+            where germline nuclei make the transition into early stages of meiotic prophase:
+            chromosomes begin to pair and nuclear chromatin assumes a crescent-shaped morphology
+            (<link linkend="bib18">Dernburg et al., 1998</link><!-- PMID 9708740 -->; <link linkend="bib26">Francis et al., 1995</link><!-- PMID 7713419 -->). The mechanism
+            by which germ cells are controlled to continue mitoses in the distal region and enter
+            meiosis as they move into the transition zone is summarized in the next two sections.</para>
+    </sect1>
+    <sect1>
+        <title>Control of germline proliferation by Notch signaling and the somatic gonad</title>
+        <sect2>
+            <title>The DTC and Notch signaling promote germline stem cells</title>
+            <para>The distal tip cells (DTCs) control germline proliferation during larval
+                development and control germline mitoses in the adult. Removal of DTCs by laser
+                ablation causes germ cells to leave the mitotic cell cycle and enter meiosis (<link linkend="bib55">Kimble and White, 1981</link><!-- PMID 7202837 -->), and duplication or movement of DTCs promotes germline
+                stem cells in the new DTC location (<link linkend="bib24">Feng et al., 1999</link><!-- PMID 10587644 -->; <link linkend="bib55">Kimble and White, 1981</link><!-- PMID 7202837 -->). Therefore, DTCs are both necessary and sufficient for
+                germline proliferation during larval development and for maintenance of germline
+                mitoses in the adult. The germ cells located in the adult mitotic region replenish
+                themselves and also continuously generate differentiated gametes. Therefore, they
+                satisfy the two essential criteria for stem cells (self-renewal and generation of
+                differentiated progeny; <link linkend="bib93">Watt and Hogan, 2000</link><!-- PMID 10688781 -->). The DTC serves as the
+                stem cell niche for these adult germline stem cells.</para>
+            <para>Notch signaling controls germline proliferation during larval development and
+                maintains germline stem cells in the adult (<link linkend="bib15">Crittenden et al., 2003</link><!-- PMID 14511482 -->;
+                <link linkend="bib54">Kimble and Simpson, 1997</link><!-- PMID 9442877 -->; <link linkend="bib81">Seydoux and Schedl, 2001</link><!-- PMID 11131515 -->; see <ulink url="http://www.wormbook.org/chapters/www_notchembryo/notchembryo.html" role="_blank">Notch signaling in the <emphasis>C. elegans</emphasis> embryo</ulink>). The core components of the Notch signaling
+                pathway include a signaling ligand (<ulink url="http://www.wormbase.org/db/seq/protein?name=LAG-2;class=protein" role="_blank">LAG-2</ulink>), receptor (<ulink url="http://www.wormbase.org/db/seq/protein?name=GLP-1;class=protein" role="_blank">GLP-1</ulink>), and pathway-dedicated
+                transcription factors (<ulink url="http://www.wormbase.org/db/seq/protein?name=LAG-1;class=protein" role="_blank">LAG-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=LAG-3;class=protein" role="_blank">LAG-3</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=SEL-8;class=protein" role="_blank">SEL-8</ulink>). Upon depletion of any of these core
+                pathway components, germ cells leave the mitotic cell cycle and enter meiosis
+                (<link linkend="bib2">Austin and Kimble, 1987</link><!-- PMID 3677168 -->; <link linkend="bib19">Doyle et al., 2000</link><!-- PMID 10884418 -->; <link linkend="bib59">Lambie and Kimble, 1991</link><!-- PMID 1769331 -->; <link linkend="bib74">Petcherski and Kimble, 2000</link><!-- PMID 10830967 -->). By contrast,
+                unregulated <ulink url="http://www.wormbase.org/db/seq/protein?name=LAG-2;class=protein" role="_blank">LAG-2</ulink> ligand or <ulink url="http://www.wormbase.org/db/seq/protein?name=GLP-1;class=protein" role="_blank">GLP-1</ulink> receptor leads to unregulated germline mitoses and
+                generation of a germline tumor (<link linkend="bib6">Berry et al., 1997</link><!-- PMID 9043073 -->; <link linkend="bib25">Fitzgerald and Greenwald, 1995</link><!-- PMID 8575327 -->; <link linkend="bib40">Henderson et al., 1997</link><!-- PMID 9307971 -->; <link linkend="bib72">Pepper et al., 2003</link><!-- PMID 12586701 -->). The use of Notch signaling to promote stem cell proliferation
+                appears to be conserved (e.g., <link linkend="bib9">Calvi et al., 2003</link><!-- PMID 14574413 -->; <link linkend="bib30">Gaiano and Fishell, 2002</link><!-- PMID 12052917 -->).</para>
+            <para>Localized Notch signaling controls the distal location of germline mitoses. This
+                localized signaling is accomplished by expression of the signaling ligand, <ulink url="http://www.wormbase.org/db/seq/protein?name=LAG-2;class=protein" role="_blank">LAG-2</ulink>, in
+                the DTC (<link linkend="bib41">Henderson et al., 1994</link><!-- PMID 7607081 -->). Furthermore, ligand activity is
+                tethered by the <ulink url="http://www.wormbase.org/db/seq/protein?name=LAG-2;class=protein" role="_blank">LAG-2</ulink> transmembrane domain - if the <ulink url="http://www.wormbase.org/db/seq/protein?name=LAG-2;class=protein" role="_blank">LAG-2</ulink> extracellular domain is
+                expressed without its transmembrane domain, ectopic germline mitoses ensue
+                (<link linkend="bib25">Fitzgerald and Greenwald, 1995</link><!-- PMID 8575327 -->; <link linkend="bib40">Henderson et al., 1997</link><!-- PMID 9307971 -->).
+                In contrast to <ulink url="http://www.wormbase.org/db/seq/protein?name=LAG-2;class=protein" role="_blank">LAG-2</ulink>, the <ulink url="http://www.wormbase.org/db/seq/protein?name=GLP-1;class=protein" role="_blank">GLP-1</ulink> receptor is expressed in the germ line, where it
+                receives the <ulink url="http://www.wormbase.org/db/seq/protein?name=LAG-2;class=protein" role="_blank">LAG-2</ulink> signal and promotes mitosis at the expense of meiosis (<link linkend="bib2">Austin and Kimble, 1987</link><!-- PMID 3677168 -->; <link linkend="bib16">Crittenden et al., 1994</link><!-- PMID 7607080 -->).
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis> mRNA is present throughout the germ line, but
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis> protein is restricted to the mitotic region (<link linkend="bib16">Crittenden et al., 1994</link><!-- PMID 7607080 -->). This restriction is accomplished, in part, by <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink>
+                translational repression of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis> mRNA as germ cells enter
+                meiosis. Consistent with this idea, <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> binds directly to the
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis> 3'UTR and translationally represses
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis> mRNA in the embryo and meiotic region of the germ line
+                (<link linkend="bib67">Marin and Evans, 2003</link><!-- PMID 12736207 -->; see <ulink url="http://www.wormbook.org/chapters/www_RNAbindingproteins/RNAbindingproteins.html" role="_blank">RNA-binding proteins</ulink> and <ulink url="http://www.wormbook.org/chapters/www_transctrlmaternalRNAs/transctrlmaternalRNAs.html" role="_blank">Translational control of maternal RNAs</ulink>). In addition, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis>
+                protein is high in proximal regions of germ lines with reduced
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gld-1" role="_blank">gld-1</ulink></emphasis> (<link linkend="bib16">Crittenden et al., 1994</link><!-- PMID 7607080 -->; <link linkend="bib67">Marin and Evans, 2003</link><!-- PMID 12736207 -->). The importance of <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> repression to the mitosis/meiosis
+                switch remains in question, however, because germ cells can enter meiosis in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gld-1" role="_blank">gld-1</ulink></emphasis><emphasis>(0)</emphasis> mutants, despite high levels of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis>
+                protein (discussed in <link linkend="bib39">Hansen et al., 2004</link><!-- PMID 15063172 -->; <link linkend="bib67">Marin and Evans, 2003</link><!-- PMID 12736207 -->).</para>
+        </sect2>
+        <sect2>
+            <title>Control of germline proliferation by other cells in the developing gonad</title>
+            <para>Proliferation in the early larval germ line is controlled not only by the DTCs but
+                also by two AC/VU precursor cells (<link linkend="bib73">Pepper et al., 2003</link><!-- PMID 12871705 -->). These AC/VU
+                precursors make <ulink url="http://www.wormbase.org/db/seq/protein?name=LAG-2;class=protein" role="_blank">LAG-2</ulink> (<link linkend="bib97">Wilkinson et al., 1994</link><!-- PMID 8001154 -->) and promote germline
+                proliferation by Notch signaling (<link linkend="bib73">Pepper et al., 2003</link><!-- PMID 12871705 -->). At the
+                transition from L2 to L3, the somatic gonadal cells are rearranged to generate the
+                somatic gonadal primordium, and one of the two AC/VU precursors adopts the anchor
+                cell (AC) fate (<link linkend="bib53">Kimble and Hirsh, 1979</link><!-- PMID 478167 -->). The AC continues to express <ulink url="http://www.wormbase.org/db/seq/protein?name=LAG-2;class=protein" role="_blank">LAG-2</ulink> (<link linkend="bib97">Wilkinson et al., 1994</link><!-- PMID 8001154 -->), but in normal gonads, it does not contact
+                germ cells (<link linkend="bib53">Kimble and Hirsh, 1979</link><!-- PMID 478167 -->; <link linkend="bib82">Seydoux et al., 1990</link><!-- PMID 2350786 -->).
+                However, if intervening somatic gonadal cells are removed, the AC can promote
+                germline proliferation (<link linkend="bib82">Seydoux et al., 1990</link><!-- PMID 2350786 -->).</para>
+            <para>The sheath/spermathecal (SS) precursor cells or their descendants are required for
+                robust germline proliferation (<link linkend="bib68">McCarter et al., 1997</link><!-- PMID 9013925 -->). Removal of the
+                SS precursors can reduce the number of adult germ cells by as much as 80%, yet a
+                mitotic region persists in SS-ablated gonads. The <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pro-1" role="_blank">pro-1</ulink></emphasis> gene
+                has recently been implicated in SS control of germline development (<link linkend="bib52">Killian and Hubbard, 2004</link><!-- PMID 14973273 -->).</para>
+        </sect2>
+    </sect1>
+    <sect1>
+        <title>Control of the mitosis/meiosis decision</title>
+        <para>The decision between continued mitotic division and entry into the meiotic cell cycle
+            is controlled, at least in part, by a network of RNA regulatory proteins (<xref
+            linkend="figure2"/>). <xref linkend="figure2"/>D diagrams a simplified view of the logic
+            of this network. Briefly, the FBF RNA-binding protein represses mRNAs encoding
+            regulators in each of two downstream branches of control, and Notch signaling has been
+            linked to the RNA regulatory network by transcriptional regulation of
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fbf-2" role="_blank">fbf-2</ulink></emphasis>. This simplified view is certainly not complete: Notch
+            signaling must control other regulators than FBF, and the RNA regulatory network cannot
+            fully control the mitosis/meiosis decision. These unknowns are represented by "X" in
+                <xref linkend="figure2"/>D. Although other regulators have been identified, their
+            roles in the pathway have not been established to date. It should be noted that many of
+            the regulators that control the mitosis/meiosis decision also control the sperm/oocyte
+            decision (see <ulink url="http://www.wormbook.org/chapters/www_sexgermline/sexgermline.html" role="_blank">Sex-determination in the germ line</ulink>). Therefore, growth regulation is tightly coupled to the control of sex
+            determination by use of the same regulators in both processes.</para>
+        <sect2>
+            <title>FBF promotes mitosis</title>
+            <para>Two nearly identical proteins, called <ulink url="http://www.wormbase.org/db/seq/protein?name=FBF-1;class=protein" role="_blank">FBF-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=FBF-2;class=protein" role="_blank">FBF-2</ulink>, are required for continued
+                mitotic divisions in late larval and adult animals, including maintenance of adult
+                germline stem cells (<link linkend="bib14">Crittenden et al., 2002</link><!-- PMID 12050669 -->). In <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fbf-1" role="_blank">fbf-1</ulink> </emphasis>
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fbf-2" role="_blank">fbf-2</ulink></emphasis> double mutants, germline proliferation ceases during the
+                fourth larval stage, and all germ cells enter meiosis and differentiate into sperm.
+                Therefore, FBF is a key regulator of adult germline stem cells.</para>
+            <para><ulink url="http://www.wormbase.org/db/seq/protein?name=FBF-1;class=protein" role="_blank">FBF-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=FBF-2;class=protein" role="_blank">FBF-2</ulink> are sequence-specific RNA binding proteins, and their binding
+                activities are indistinguishable <emphasis>in vitro</emphasis> (<link linkend="bib5">Bernstein et al., 2005</link>; <link linkend="bib99">Zhang et al., 1997</link><!-- PMID 9393998 -->). Collectively <ulink url="http://www.wormbase.org/db/seq/protein?name=FBF-1;class=protein" role="_blank">FBF-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=FBF-2;class=protein" role="_blank">FBF-2</ulink> are
+                called FBF. FBF belongs to the Puf protein family (for <emphasis role="underline">Pu</emphasis>milio and <emphasis role="underline">F</emphasis>BF; <link linkend="bib96">Wickens et al., 2002</link><!-- PMID 11858839 -->; <link linkend="bib99">Zhang et al., 1997</link><!-- PMID 9393998 -->; link to RNA binding
+                proteins). FBF binds regulatory elements in the 3' untranslated regions (3'UTRs) of
+                target mRNAs, and represses target mRNAs as do its homologs in yeast and
+                <emphasis>Drosophila</emphasis> (<link linkend="bib96">Wickens et al., 2002</link><!-- PMID 11858839 -->). </para>
+            <para>Several FBF target mRNAs are known. Two targets are the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gld-1" role="_blank">gld-1</ulink></emphasis>
+                and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gld-3" role="_blank">gld-3</ulink></emphasis> mRNAs (<link linkend="bib14">Crittenden et al., 2002</link><!-- PMID 12050669 -->; <link linkend="bib20">Eckmann et al., 2004</link><!-- PMID 15454534 -->), both encoding regulators that promote meiosis (see
+                below). Two other targets are the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fbf-1" role="_blank">fbf-1</ulink></emphasis> and
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fbf-2" role="_blank">fbf-2</ulink></emphasis> mRNAs themselves. This FBF autoregulation maintains FBF
+                levels at a relatively low level in the wild-type germ line (<link linkend="bib60">Lamont et al., 2004</link><!-- PMID 15525531 -->).</para>
+            <para><ulink url="http://www.wormbase.org/db/seq/protein?name=FBF-2;class=protein" role="_blank">FBF-2</ulink> appears to be a direct downstream target of Notch signaling (<link linkend="bib60">Lamont et al., 2004</link><!-- PMID 15525531 -->). Consistent with this idea, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fbf-2" role="_blank">fbf-2</ulink></emphasis> mRNA and
+                <ulink url="http://www.wormbase.org/db/seq/protein?name=FBF-2;class=protein" role="_blank">FBF-2</ulink> protein are localized to the distal-most germ line, <ulink url="http://www.wormbase.org/db/seq/protein?name=FBF-2;class=protein" role="_blank">FBF-2</ulink> expression is
+                responsive to Notch signaling, and the 5' flanking region of the
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fbf-2" role="_blank">fbf-2</ulink></emphasis> gene possesses four <ulink url="http://www.wormbase.org/db/seq/protein?name=LAG-1;class=protein" role="_blank">LAG-1</ulink> binding sites. However, this
+                direct link between Notch signaling and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fbf-2" role="_blank">fbf-2</ulink></emphasis> expression is not
+                sufficient to explain Notch control of germline proliferation, and additional Notch
+                target genes must exist.</para>
+            <para>
+                <ulink url="http://www.wormbase.org/db/seq/protein?name=FBF-1;class=protein" role="_blank">FBF-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=FBF-2;class=protein" role="_blank">FBF-2</ulink> have distinct effects on the size of the mitotic region (<link linkend="bib60">Lamont et al., 2004</link><!-- PMID 15525531 -->). Wild-type germ lines possess
+                ~225&#x02013;250 cells in the mitotic region (<link linkend="bib20">Eckmann et al., 2004</link><!-- PMID 15454534 -->; <link linkend="bib39">Hansen et al., 2004</link><!-- PMID 15063172 -->; <link linkend="bib60">Lamont et al., 2004</link><!-- PMID 15525531 -->). By contrast, germ lines
+                lacking <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fbf-1" role="_blank">fbf-1</ulink></emphasis> activity have smaller mitotic regions with only
+                ~200 cells, and germ lines lacking <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fbf-2" role="_blank">fbf-2</ulink></emphasis> activity have larger
+                mitotic regions with ~400 cells. This difference can be explained, at least in part,
+                by the differential regulation of the two <emphasis>fbf</emphasis> genes. Thus, the
+                size of the mitotic region is determined by <ulink url="http://www.wormbase.org/db/seq/protein?name=FBF-2;class=protein" role="_blank">FBF-2</ulink> in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fbf-1" role="_blank">fbf-1</ulink></emphasis>
+                single mutants, and <ulink url="http://www.wormbase.org/db/seq/protein?name=FBF-2;class=protein" role="_blank">FBF-2</ulink> is spatially limited to the distal-most region. By
+                contrast, the size of the mitotic region is determined by <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fbf-1" role="_blank">fbf-1</ulink></emphasis>
+                in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fbf-2" role="_blank">fbf-2</ulink></emphasis> single mutants, where the distribution of
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fbf-1" role="_blank">fbf-1</ulink></emphasis> expands. Therefore, these duplicated genes have distinct
+                roles in controlling the number of cells within the mitotic region.</para>
+        </sect2>
+        <sect2>
+            <title><ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-2;class=protein" role="_blank">GLD-2</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-3;class=protein" role="_blank">GLD-3</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=NOS-3;class=protein" role="_blank">NOS-3</ulink> control entry into meiosis</title>
+            <para>Four key regulators control entry into meiosis: <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-2;class=protein" role="_blank">GLD-2</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-3;class=protein" role="_blank">GLD-3</ulink> (for <emphasis
+                role="underline">g</emphasis>erm <emphasis role="underline">l</emphasis>ine
+                    <emphasis role="underline">d</emphasis>evelopment) and <ulink url="http://www.wormbase.org/db/seq/protein?name=NOS-3;class=protein" role="_blank">NOS-3</ulink> (for <emphasis
+                    role="underline">N</emphasis>an<emphasis role="underline">os</emphasis>; <link linkend="bib20">Eckmann et al., 2004</link><!-- PMID 15454534 -->; <link linkend="bib39">Hansen et al., 2004</link><!-- PMID 15063172 -->; <link linkend="bib38">Hansen et al., 2004</link><!-- PMID 14660440 -->; <link linkend="bib48">Kadyk and Kimble, 1998</link><!-- PMID 9550713 -->). <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-2;class=protein" role="_blank">GLD-2</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-3;class=protein" role="_blank">GLD-3</ulink>
+                and <ulink url="http://www.wormbase.org/db/seq/protein?name=NOS-3;class=protein" role="_blank">NOS-3</ulink> are all RNA regulators that control multiple steps in germline
+                development. Here, we briefly summarize their molecular identities and focus on how
+                each fits into the regulatory network controlling germline proliferation.</para>
+		
+            <para>The RNA regulators that promote entry into meiosis fall into two major branches of
+                regulation: <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=NOS-3;class=protein" role="_blank">NOS-3</ulink> act together in one branch, while <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-2;class=protein" role="_blank">GLD-2</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-3;class=protein" role="_blank">GLD-3</ulink> act
+                together in the other branch (<xref linkend="figure2"/>B). Null mutants for any one
+                of these key regulators enter meiosis normally, but double mutants that remove
+                activities from both branches virtually abolish entry into meiosis. For example,
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gld-1" role="_blank">gld-1</ulink></emphasis> single mutant germ lines enter meiosis normally (<link linkend="bib26">Francis et al., 1995</link><!-- PMID 7713419 -->), but <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gld-1" role="_blank">gld-1</ulink></emphasis>
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gld-2" role="_blank">gld-2</ulink></emphasis> double mutants do not (<link linkend="bib48">Kadyk and Kimble, 1998</link><!-- PMID 9550713 -->). <link linkend="bib39">Hansen et al. (2004)</link><!-- PMID 15063172 --> have recently noted that a few germ cells can enter meiosis in animals lacking activities from both branches, suggesting the existence of an additional minor branch that can promote entry into meiosis (<xref linkend="figure1"/>D).</para>
+		
+            <itemizedlist mark="bullet">
+                <listitem><para><ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> belongs to the STAR/KH family of RNA-binding proteins (<link linkend="bib47">Jones and Schedl, 1995</link><!-- PMID 7601353 -->); it is a sequence-specific RNA-binding protein (<link linkend="bib79">Ryder et al., 2004</link><!-- PMID 14718919 -->) and functions as a translational repressor (<link linkend="bib45">Jan et al., 1999</link><!-- PMID 9878068 -->; <link linkend="bib61">Lee et al., 2001</link><!-- PMID 11473126 -->). <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> is likely to repress the activity of mRNAs that encode proteins critical for germline mitoses. Consistent with this idea, <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> represses the activity of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis> mRNA, which encodes the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis>/Notch receptor (<link linkend="bib67">Marin and Evans, 2003</link><!-- PMID 12736207 -->). Other <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> targets relevant to the mitosis/meiosis decision have not been identified.
+		</para>
+		</listitem>
+		
+                <listitem><para> <ulink url="http://www.wormbase.org/db/seq/protein?name=NOS-3;class=protein" role="_blank">NOS-3</ulink> belongs to the Nanos family of zinc finger proteins and has been implicated in translational repression (<link linkend="bib56">Kraemer et al., 1999</link><!-- PMID 10508609 -->). The mechanism of <ulink url="http://www.wormbase.org/db/seq/protein?name=NOS-3;class=protein" role="_blank">NOS-3</ulink> control over entry into meiosis appears to involve activation of <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> (<link linkend="bib38">Hansen et al., 2004</link><!-- PMID 14660440 -->); that activation might involve repression of a repressor or a novel molecular mechanism for <ulink url="http://www.wormbase.org/db/seq/protein?name=NOS-3;class=protein" role="_blank">NOS-3</ulink>. </para></listitem>
+		
+		<listitem><para><ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-2;class=protein" role="_blank">GLD-2</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-3;class=protein" role="_blank">GLD-3</ulink> function together to promote entry into meiosis (<link linkend="bib20">Eckmann et al., 2004</link><!-- PMID 15454534 -->). The <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-2;class=protein" role="_blank">GLD-2</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-3;class=protein" role="_blank">GLD-3</ulink> proteins bind to each other in
+                    vitro, and co-immunoprecipitate with each other from worm extracts. <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-2;class=protein" role="_blank">GLD-2</ulink> is the
+                    catalytic subunit of a cytoplasmic poly(A) polymerase (PAP; <link linkend="bib92">Wang et al., 2002</link><!-- PMID 12239571 -->); its targets are not known. <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-3;class=protein" role="_blank">GLD-3</ulink> is a homolog of the Bicaudal-C
+                    RNA-binding protein; it possesses five KH motifs and promotes <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-2;class=protein" role="_blank">GLD-2</ulink> PAP activity
+                    (<link linkend="bib21">Eckmann et al., 2002</link><!-- PMID 12431376 -->; <link linkend="bib92">Wang et al., 2002</link><!-- PMID 12239571 -->). The
+                    <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-2;class=protein" role="_blank">GLD-2</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-3;class=protein" role="_blank">GLD-3</ulink> poly(A) polymerase has been proposed to promote entry into meiosis
+                    by activating the activity of meiosis-promoting mRNAs.</para></listitem>
+            </itemizedlist>
+	    	   
+	  <para> 
+	   <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-2;class=protein" role="_blank">GLD-2</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=NOS-3;class=protein" role="_blank">NOS-3</ulink> all act downstream of FBF genetically, and
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gld-1" role="_blank">gld-1</ulink></emphasis> mRNA is a direct target of FBF repression (<link linkend="bib14">Crittenden et al., 2002</link><!-- PMID 12050669 -->; <link linkend="bib20">Eckmann et al., 2004</link><!-- PMID 15454534 -->; <link linkend="bib38">Hansen et al., 2004</link><!-- PMID 14660440 -->). <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-3;class=protein" role="_blank">GLD-3</ulink> acts largely downstream of FBF to promote meiosis, and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gld-3" role="_blank">gld-3</ulink></emphasis> mRNA
+            also appears to be a direct target of FBF repression (<link linkend="bib20">Eckmann et al., 2004</link><!-- PMID 15454534 -->). However, <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-3;class=protein" role="_blank">GLD-3</ulink> protein interferes with FBF binding activity (<link linkend="bib21">Eckmann et al., 2002</link><!-- PMID 12431376 -->), and genetic analyses suggest that <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-3;class=protein" role="_blank">GLD-3</ulink> may feedback
+            negatively on FBF activity (<link linkend="bib20">Eckmann et al., 2004</link><!-- PMID 15454534 -->).
+	   </para> 
+	    </sect2>
+    </sect1>
+    <sect1>
+        <title>Other genes affecting germline proliferation</title>
+        <para>In this section, we briefly describe additional genes that affect normal germline
+            proliferation. As mentioned earlier, the simplified regulatory pathway presented in
+                <xref linkend="figure2"/>D is certainly not complete. Additional regulators are
+            clearly required (e.g., <link linkend="bib39">Hansen et al., 2004</link><!-- PMID 15063172 -->; <link linkend="bib38">Hansen et al., 2004</link><!-- PMID 14660440 -->; <link linkend="bib60">Lamont et al., 2004</link><!-- PMID 15525531 -->). The "X" in <xref linkend="figure2"/>D
+            may represent one or more additional branches of regulation that work together with the
+            RNA regulatory network to control proliferation and the mitosis/meiosis decision. The
+            identification of many of these genes as RNA regulatory proteins is striking.</para>
+<?newpage?>
+        <sect2>
+            <title>Genes associated with Notch signaling</title>
+            <sect3>
+                <title>
+                    <emphasis>ego</emphasis> genes (for <emphasis role="underline">e</emphasis>nhancer of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank"><emphasis role="underline">g</emphasis>lp-<emphasis role="underline">1</emphasis></ulink></emphasis>).</title>
+		    
+		    <para>Five <emphasis>ego</emphasis> genes were identified as enhancers of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis>; in addition, alleles of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lag-1" role="_blank">lag-1</ulink> </emphasis>and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-4" role="_blank">glp-4</ulink></emphasis> were found in the same screen (<link linkend="bib77">Qiao et al., 1995</link><!-- PMID 8647392 -->). <ulink url="http://www.wormbase.org/db/seq/protein?name=EGO-1;class=protein" role="_blank">EGO-1</ulink> is related to RNA-directed RNA polymerase and is also critical for RNAi (<link linkend="bib84">Smardon et al., 2000</link><!-- PMID 0010704412 -->). This finding implicates RNA interference, and perhaps micro RNAs, in control of
+                germline proliferation, although no candidates have been found to date. An
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ego-1" role="_blank">ego-1</ulink></emphasis> null mutant has a number of germline defects, including
+                early meiotic progression and gametogenesis (<link linkend="bib84">Smardon et al., 2000</link><!-- PMID 0010704412 -->).
+		</para>
+		
+                    <para>An additional enhancer of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis> is
+                    <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=epn-1" role="_blank">epn-1</ulink></emphasis>, which encodes the <emphasis>C. elegans</emphasis>
+                    homolog of epsin (<link linkend="bib91">Tian et al., 2004</link><!-- PMID 15539484 -->). Epsin is an intregral
+                    component of the endocytotic machinery (<link linkend="bib10">Chen et al., 1998</link><!-- PMID 9723620 -->) and
+                    appears to be critical for generation or function of the DTC ligand (<link linkend="bib91">Tian et al., 2004</link><!-- PMID 15539484 -->).</para>
+            </sect3>
+            <sect3>
+                <title>
+                    <emphasis>sog</emphasis> genes (<emphasis
+                    role="underline">s</emphasis>uppressors <emphasis role="underline">o</emphasis>f
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank"><emphasis role="underline">g</emphasis>lp-1</ulink></emphasis>)</title> 
+		
+		<para>Six <emphasis>sog</emphasis> genes were
+                identified as suppressors of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis> (<link linkend="bib66">Maine and Kimble, 1993</link><!-- PMID 8307319 -->); these genes have no phenotype on their own and have not been pursued.
+                Several morphogenetic mutants are also <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis> suppressors (<link linkend="bib65">Maine and Kimble, 1989</link><!-- PMID 2627884 -->) as well as <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=emb-5" role="_blank">emb-5</ulink></emphasis> suppressors
+                (<link linkend="bib69">Nishiwaki and Miwa, 1998</link><!-- PMID 9738874 -->). These morphogenetic suppressors encode
+                collagens (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=dpy-2" role="_blank">dpy-2</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=dpy-3" role="_blank">dpy-3</ulink>/<ulink url="http://www.wormbase.org/db/gene/gene?name=dpy-9" role="_blank">dpy-9</ulink></emphasis>,
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=dpy-10" role="_blank">dpy-10</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sqt-1" role="_blank">sqt-1</ulink></emphasis>), suggesting either a
+                possible link between extracellular matrix and Notch signaling or a link between
+                chaperones and the efficiency of Notch signaling.</para></sect3>
+            <sect3>
+                <title>
+                    <emphasis>sel</emphasis> genes (<emphasis
+                    role="underline">s</emphasis>uppressors and <emphasis
+                    role="underline">e</emphasis>nhancers of the <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-12;class=protein" role="_blank"><emphasis role="underline">L</emphasis>IN-12</ulink>/Notch receptor).</title>
+		    <para>
+                    Several<emphasis> sel</emphasis> genes also affect the
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis>/Notch receptor and its control of germline proliferation
+                (<link linkend="bib89">Sundaram and Greenwald, 1993</link><!-- PMID 8293978 -->; <link linkend="bib90">Tax et al., 1997</link><!-- PMID 9409830 -->). These
+                are detailed in the section on signaling by <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-12;class=protein" role="_blank">LIN-12</ulink> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis>
+                receptors (see <ulink url="http://www.wormbook.org/chapters/www_lin12Notch/lin12notch.html" role="_blank">LIN-12/Notch signaling in <emphasis>C. elegans</emphasis></ulink>). Briefly, they include <ulink url="http://www.wormbase.org/db/seq/protein?name=SEL-1;class=protein" role="_blank">SEL-1</ulink>, a negative regulator that may participate in
+                receptor turnover (<link linkend="bib34">Grant and Greenwald, 1996</link><!-- PMID 8722778 -->; <link linkend="bib35">Grant and Greenwald, 1997</link><!-- PMID 9043078 -->); <ulink url="http://www.wormbase.org/db/seq/protein?name=SEL-5;class=protein" role="_blank">SEL-5</ulink>, a kinase that facilitates signaling (<link linkend="bib22">Fares and Greenwald, 1999</link><!-- PMID 10581273 -->); <ulink url="http://www.wormbase.org/db/seq/protein?name=SEL-7;class=protein" role="_blank">SEL-7</ulink>, a novel nuclear protein that promotes <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-12;class=protein" role="_blank">LIN-12</ulink> activity
+                (<link linkend="bib11">Chen et al., 2004</link><!-- PMID 15020414 -->); <ulink url="http://www.wormbase.org/db/seq/protein?name=SEL-9;class=protein" role="_blank">SEL-9</ulink>, a p24 ortholog implicated in receptor
+                trafficking (<link linkend="bib94">Wen and Greenwald, 1999</link><!-- PMID 10366590 -->); <ulink url="http://www.wormbase.org/db/seq/protein?name=SEL-10;class=protein" role="_blank">SEL-10</ulink>, an F-box protein that
+                negatively regulates receptor activity (<link linkend="bib44">Hubbard et al., 1997</link><!-- PMID 9389650 -->; <link linkend="bib70">Oberg et al., 2001</link><!-- PMID 11461910 -->; <link linkend="bib98">Wu et al., 1998</link><!-- PMID 9861048 -->); <ulink url="http://www.wormbase.org/db/seq/protein?name=SEL-12;class=protein" role="_blank">SEL-12</ulink>, an ortholog of human
+                presenilin that mediates receptor cleavage (<link linkend="bib17">De Strooper et al., 1999</link><!-- PMID 10206645 -->;
+                <link linkend="bib62">Levitan and Greenwald, 1995</link><!-- PMID 7566091 -->); and <ulink url="http://www.wormbase.org/db/seq/protein?name=SUP-17;class=protein" role="_blank">SUP-17</ulink>, an ADAM metalloprotease that
+                cleaves the receptor constitutively (<link linkend="bib90">Tax et al., 1997</link><!-- PMID 9409830 -->; <link linkend="bib95">Wen et al., 1997</link><!-- PMID 9428412 -->; see <ulink url="http://www.wormbook.org/chapters/www_lin12Notch/lin12notch.html" role="_blank">LIN-12/Notch signaling in <emphasis>C. elegans</emphasis></ulink>).
+		</para>
+		</sect3>
+            <sect3>
+                <title>
+                    <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=emb-5" role="_blank">emb-5</ulink></emphasis> (for <emphasis role="underline">emb</emphasis>ryonic
+                lethal).</title>
+		
+		<para><ulink url="http://www.wormbase.org/db/seq/protein?name=EMB-5;class=protein" role="_blank">EMB-5</ulink> was identified in a yeast two-hybrid screen using <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-12;class=protein" role="_blank">LIN-12</ulink>
+                ankyrin repeats as bait (<link linkend="bib43">Hubbard et al., 1996</link><!-- PMID 8658178 -->). <ulink url="http://www.wormbase.org/db/seq/protein?name=EMB-5;class=protein" role="_blank">EMB-5</ulink> protein is
+                similar to a yeast chromatin protein, called Spt6p, which may have a role in
+                controlling chromatin structure. <ulink url="http://www.wormbase.org/db/seq/protein?name=EMB-5;class=protein" role="_blank">EMB-5</ulink> acts downstream of <ulink url="http://www.wormbase.org/db/seq/protein?name=GLP-1;class=protein" role="_blank">GLP-1</ulink> and is required
+                continuously for germline proliferation (<link linkend="bib43">Hubbard et al., 1996</link><!-- PMID 8658178 -->). The
+                effect of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=emb-5" role="_blank">emb-5</ulink></emphasis> is suppressed by some
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis> suppressors (see above section on
+                <emphasis>sog</emphasis> genes).
+		</para>
+		</sect3>
+        </sect2>
+        <sect2>
+            <title>P-granule components</title>
+            <para>Several P-granule components are critical for normal germline proliferation as
+                well as for other aspects of germline development and early embryogenesis (see <ulink url="http://www.wormbook.org/chapters/www_specgermline/specgermline.html" role="_blank">Specification of the germ line</ulink>). We also note that <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-2;class=protein" role="_blank">GLD-2</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-3;class=protein" role="_blank">GLD-3</ulink> are associated with P
+                granules (<link linkend="bib21">Eckmann et al., 2002</link><!-- PMID 12431376 -->; <link linkend="bib46">Jones et al., 1996</link><!-- PMID 8948583 -->; <link linkend="bib92">Wang et al., 2002</link><!-- PMID 12239571 -->), but these three RNA regulators are discussed above.</para>
+            <orderedlist>
+                <listitem><para>PGL family proteins. PGL (for <emphasis role="underline">P</emphasis>&#x000A0;<emphasis role="underline">g</emphasis>ranu<emphasis role="underline">l</emphasis>e defective) proteins are critical
+                    for germline proliferation (<link linkend="bib50">Kawasaki et al., 2004</link><!-- PMID 15238518 -->; <link linkend="bib51">Kawasaki et al., 1998</link><!-- PMID 9741628 -->). <ulink url="http://www.wormbase.org/db/seq/protein?name=PGL-1;class=protein" role="_blank">PGL-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=PGL-3;class=protein" role="_blank">PGL-3</ulink> possess RGG-box domains and are likely
+                    to bind RNA. <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pgl-1" role="_blank">pgl-1</ulink></emphasis> single mutants have underproliferated
+                    germ lines, and animals depleted for <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pgl-1" role="_blank">pgl-1</ulink></emphasis> and
+                    <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pgl-3" role="_blank">pgl-3</ulink></emphasis> are more severely affected.</para></listitem>
+		    
+                <listitem><para>GLH family proteins and their interacting partners. GLH (for <emphasis role="underline">g</emphasis>erm <emphasis role="underline">l</emphasis>ine <emphasis role="underline">h</emphasis>elicase) proteins are the <emphasis>C. elegans</emphasis> counterparts of the VASA DEAD-box helicase, and are called <ulink url="http://www.wormbase.org/db/seq/protein?name=GLH-1;class=protein" role="_blank">GLH-1</ulink> - <ulink url="http://www.wormbase.org/db/seq/protein?name=GLH-4;class=protein" role="_blank">GLH-4</ulink> (<link linkend="bib36">Gruidl et al., 1996</link><!-- PMID 8943022 -->; <link linkend="bib58">Kuznicki et al., 2000</link><!-- PMID 10851135 -->; <link linkend="bib78">Roussell and Bennett, 1993</link><!-- PMID 8415696 -->). Two GLH proteins are critical for germline proliferation (<link linkend="bib58">Kuznicki et al., 2000</link><!-- PMID 10851135 -->). In addition, two GLH-interacting proteins are also
+                    critical for normal germline proliferation: <ulink url="http://www.wormbase.org/db/seq/protein?name=CSN-5;class=protein" role="_blank">CSN-5</ulink>, which is closely related to
+                    subunit 5 of COP9 signalosomes, and <ulink url="http://www.wormbase.org/db/seq/protein?name=KGB-1;class=protein" role="_blank">KGB-1</ulink>, a putative JNK MAP kinase (<link linkend="bib85">Smith et al., 2002</link><!-- PMID 12435362 -->).</para></listitem>
+		    
+		    <listitem><para>IFF family proteins. The <ulink url="http://www.wormbase.org/db/seq/protein?name=IFF-1;class=protein" role="_blank">IFF-1</ulink> (for <emphasis role="underline">i</emphasis>nitiation <emphasis role="underline">f</emphasis>actor <emphasis role="underline">f</emphasis>ive) protein is the <emphasis>C. elegans</emphasis> counterpart
+                of eukaryotic initiation factor 5A. Animals depleted for <ulink url="http://www.wormbase.org/db/seq/protein?name=IFF-1;class=protein" role="_blank">IFF-1</ulink> have an
+                underproliferated germ line, perhaps because <ulink url="http://www.wormbase.org/db/seq/protein?name=PGL-1;class=protein" role="_blank">PGL-1</ulink> is not recruited normally to P
+                granules (<link linkend="bib37">Hanazawa et al., 2004</link><!-- PMID 15003625 -->).
+		</para></listitem>
+		
+		</orderedlist>
+
+        </sect2>
+        <sect2>
+            <title><emphasis>mog</emphasis> genes</title>
+            <para>The <emphasis>mog</emphasis> genes (for <emphasis role="underline">m</emphasis>asculinization <emphasis role="underline">o</emphasis>f the <emphasis role="underline">g</emphasis>erm line) promote both proliferation
+                and oogenesis (<link linkend="bib32">Graham and Kimble, 1993</link><!-- PMID 8462850 -->; <link linkend="bib33">Graham et al., 1993</link><!-- PMID 8111975 -->). Animals depleted for any of six <emphasis>mog</emphasis> genes have an underproliferated
+                germ line. The <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mog-1" role="_blank">mog-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mog-4" role="_blank">mog-4</ulink></emphasis> and
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mog-5" role="_blank">mog-5</ulink></emphasis> genes encode putative DEAH-box RNA helicases that are the
+                single <emphasis>C. elegans</emphasis> homologs of PRP16, PRP2 and PRP22
+                respectively (<link linkend="bib75">Puoti and Kimble, 1999</link><!-- PMID 10022905 -->, <link linkend="bib76">2000</link><!-- PMID 10737793 -->). These PRP proteins have been implicated in splicing in yeast (<link linkend="bib80">Schwer
+                and Guthrie, 1991</link><!-- PMID 1825134 -->), but do not appear to affect splicing in nematodes
+                (<link linkend="bib75">Puoti and Kimble, 1999</link><!-- PMID 10022905 -->). The <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mog-6" role="_blank">mog-6</ulink></emphasis> gene encodes
+                a cyclophilin homolog (<link linkend="bib4">Belfiore et al., 2004</link><!-- PMID 15151984 -->). These MOG proteins are
+                all nuclear and affect a reporter transgene harboring an FBF regulated 3'UTR. Their
+                mechanism of action remains unknown.</para>
+            <para>Double mutants that lack both one <emphasis>mog</emphasis> gene as well as
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gld-3" role="_blank">gld-3</ulink></emphasis> have germline tumors (<link linkend="bib4">Belfiore et al., 2004</link><!-- PMID 15151984 -->). Therefore, the <emphasis>mog</emphasis> genes may operate in the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gld-1" role="_blank">gld-1</ulink>/<ulink url="http://www.wormbase.org/db/gene/gene?name=nos-3" role="_blank">nos-3</ulink></emphasis> branch described above or may define a separate regulatory branch.</para>
+        </sect2>
+        <sect2>
+            <title><emphasis>nos</emphasis> genes</title>
+            <para>Nanos (NOS) proteins are critical for several aspects of germline development:
+                proliferation (this section), sex determination (see <ulink url="http://www.wormbook.org/chapters/www_sexgermline/sexgermline.html" role="_blank">Sex-determination in the germ line</ulink>), germline survival and cell death (see <ulink url="http://www.wormbook.org/chapters/www_germlinesurvivalcelldeath/germlinesurvivalcelldeath.html" role="_blank">Germline survival and cell death</ulink>). <ulink url="http://www.wormbase.org/db/seq/protein?name=NOS-3;class=protein" role="_blank">NOS-3</ulink> is a key regulator required for entry into meiosis and is discussed above. In addition,
+                <ulink url="http://www.wormbase.org/db/seq/protein?name=NOS-1;class=protein" role="_blank">NOS-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=NOS-2;class=protein" role="_blank">NOS-2</ulink> have important effects on germline proliferation and survival
+                (<link linkend="bib56">Kraemer et al., 1999</link><!-- PMID 10508609 -->; <link linkend="bib87">Subramaniam and Seydoux, 1999</link><!-- PMID 10518502 -->).
+                Specifically, in wild-type animals, <ulink url="http://www.wormbase.org/db/seq/protein?name=NOS-1;class=protein" role="_blank">NOS-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=NOS-2;class=protein" role="_blank">NOS-2</ulink> promote mitotic arrest in the
+                early germ line: <ulink url="http://www.wormbase.org/db/get?name=Z2;class=Cell" role="_blank">Z2</ulink> and <ulink url="http://www.wormbase.org/db/get?name=Z3;class=Cell" role="_blank">Z3</ulink> divide prematurely in animals depleted of <emphasis>nos</emphasis> activity.
+                Furthermore, later in larval development, the three <emphasis>nos</emphasis> genes have overlapping
+                functions required for normal germline proliferation and survival.</para>
+        </sect2>
+        <sect2>
+            <title>Cell cycle regulators</title>
+            <para>The basic cell cycle machinery controls virtually all somatic cell divisions, and
+                hence controls generation of somatic gonadal cells that promote germline
+                proliferation; these genes may also have roles within the germ line. Cell cycle
+                regulators that appear to function in the germ line include: <ulink url="http://www.wormbase.org/db/seq/protein?name=NCC-1;class=protein" role="_blank">NCC-1</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=CDK-1;class=protein" role="_blank">CDK-1</ulink> (<link linkend="bib7">Boxem et al., 1999</link><!-- PMID 10207147 -->), <ulink url="http://www.wormbase.org/db/seq/protein?name=CYE-1;class=protein" role="_blank">CYE-1</ulink> (<link linkend="bib8">Brodigan et al., 2003</link><!-- PMID 12606285 -->; <link linkend="bib23">Fay and Han, 2000</link><!-- PMID 10952902 -->), <ulink url="http://www.wormbase.org/db/seq/protein?name=CUL-2;class=protein" role="_blank">CUL-2</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=CUL-4;class=protein" role="_blank">CUL-4</ulink> (<link linkend="bib24">Feng et al., 1999</link><!-- PMID 10587644 -->; <link linkend="bib100">Zhong et al., 2003</link><!-- PMID 12815436 -->), <ulink url="http://www.wormbase.org/db/seq/protein?name=CDC25.1;class=protein" role="_blank">CDC25.1</ulink> (<link linkend="bib1">Ashcroft and Golden, 2002</link><!-- PMID 12001064 -->), and APC/C
+                subunits: <ulink url="http://www.wormbase.org/db/seq/protein?name=EMB-30;class=protein" role="_blank">EMB-30</ulink> (<link linkend="bib29">Furuta et al., 2000</link><!-- PMID 10749938 -->), <ulink url="http://www.wormbase.org/db/seq/protein?name=EMB-27;class=protein" role="_blank">EMB-27</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=MAT-1;class=protein" role="_blank">MAT-1</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=MAT-2;class=protein" role="_blank">MAT-2</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=MAT-3;class=protein" role="_blank">MAT-3</ulink>
+                (<link linkend="bib31">Golden et al., 2000</link><!-- PMID 0011134076 -->; <link linkend="bib83">Shakes et al., 2003</link><!-- PMID 12620985 -->; see <ulink url="http://www.wormbook.org/chapters/www_cellcyclereguln/cellcyclereguln.html" role="_blank">Cell cycle regulation</ulink>)</para> </sect2>
+        <sect2>
+            <title>Other genes</title>
+            <itemizedlist mark="bullet">
+                <listitem><para>
+                    <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-3" role="_blank">glp-3</ulink></emphasis>/<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=eft-3" role="_blank">eft-3</ulink></emphasis> and
+                    <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-4" role="_blank">glp-4</ulink></emphasis>. The <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-3" role="_blank">glp-3</ulink></emphasis> and
+                    <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-4" role="_blank">glp-4</ulink></emphasis> genes are both critical for germline proliferation
+                    (<link linkend="bib3">Beanan and Strome, 1992</link><!-- PMID 1289064 -->; <link linkend="bib48">Kadyk and Kimble, 1998</link><!-- PMID 9550713 -->;
+                    <link linkend="bib63">Maciejowski et al., 2005</link><!-- PMID 15687263 -->). In <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-3" role="_blank">glp-3</ulink></emphasis> and
+                    <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-4" role="_blank">glp-4</ulink></emphasis> mutants, germ cell mitotic divisions are severely
+                    reduced, but continue into adulthood (<link linkend="bib3">Beanan and Strome, 1992</link><!-- PMID 1289064 -->;
+                    <link linkend="bib49">Kadyk et al., 1997</link><!-- PMID 9017394 -->). The only one of these genes cloned to date is
+                    <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-3" role="_blank">glp-3</ulink></emphasis>, which encodes a homolog of elongation factor 1-<symbol role="symbolfont">&#x03B1;</symbol> (<link linkend="bib63">Maciejowski et al., 2005</link><!-- PMID 15687263 -->).</para></listitem>
+                <listitem><para>
+                    <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pab-1" role="_blank">pab-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rpl-11.1" role="_blank">rpl-11.1</ulink></emphasis>. Two genes required
+                    for early germline proliferation include <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pab-1" role="_blank">pab-1</ulink></emphasis> and
+                    <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rpl-11.1" role="_blank">rpl-11.1</ulink></emphasis> (<link linkend="bib12">Ciosk et al., 2004</link><!-- PMID 15342467 -->; <link linkend="bib63">Maciejowski et al., 2005</link><!-- PMID 15687263 -->). The <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pab-1" role="_blank">pab-1</ulink></emphasis> gene encodes one of two
+                    poly(A) binding proteins encoded by the genome. <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rpl-11.1" role="_blank">rpl-11.1</ulink></emphasis>
+                    encodes the L11 protein of the large ribosomal subunit. <ulink url="http://www.wormbase.org/db/seq/protein?name=PAB-1;class=protein" role="_blank">PAB-1</ulink> has also been
+                    linked to the control of germline proliferation by studies with <ulink url="http://www.wormbase.org/db/seq/protein?name=ATX-2;class=protein" role="_blank">ATX-2</ulink> (see below).</para></listitem>
+                <listitem><para><ulink url="http://www.wormbase.org/db/seq/protein?name=ATX-2;class=protein" role="_blank">ATX-2</ulink>. <ulink url="http://www.wormbase.org/db/seq/protein?name=ATX-2;class=protein" role="_blank">ATX-2</ulink> is the <emphasis>C. elegans</emphasis> counterpart of
+                    mammalian <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=atx-2" role="_blank">atx-2</ulink></emphasis>, a protein that binds poly(A) binding
+                    protein (PAB; <link linkend="bib12">Ciosk et al., 2004</link><!-- PMID 15342467 -->; <link linkend="bib64">Maine et al., 2004</link><!-- PMID 15514056 -->). Depletion of <ulink url="http://www.wormbase.org/db/seq/protein?name=ATX-2;class=protein" role="_blank">ATX-2</ulink> from <emphasis>C. elegans</emphasis> reduces
+                    germ cell number and also masculinizes the germ line. One explanation of these
+                    effects is an increase in <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> expression in <emphasis>atx-2</emphasis>(<emphasis>RNAi</emphasis>) animals as well as an
+                    alteration in <ulink url="http://www.wormbase.org/db/seq/protein?name=GLD-1;class=protein" role="_blank">GLD-1</ulink> activity (<link linkend="bib12">Ciosk et al., 2004</link><!-- PMID 15342467 -->).</para></listitem>
+                <listitem><para> <ulink url="http://www.wormbase.org/db/seq/protein?name=MRG-1;class=protein" role="_blank">MRG-1</ulink>. <ulink url="http://www.wormbase.org/db/seq/protein?name=MRG-1;class=protein" role="_blank">MRG-1</ulink> is the <emphasis>C. elegans</emphasis> counterpart of the
+                    human mortality factor-related gene 4 product (MRG-15), which contains a
+                    chromodomain. <ulink url="http://www.wormbase.org/db/seq/protein?name=MRG-1;class=protein" role="_blank">MRG-1</ulink> is required maternally for post-embryonic proliferation of
+                    the germ line (<link linkend="bib27">Fujita et al., 2002</link><!-- PMID 12175490 -->; <link linkend="bib28">Fujita et al., 2003</link>).</para></listitem>
+                <listitem><para><ulink url="http://www.wormbase.org/db/seq/protein?name=PRG-1;class=protein" role="_blank">PRG-1</ulink>. <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=prg-1" role="_blank">prg-1</ulink>(RNAi)</emphasis> animals have decreased germline
+                    proliferation, and <ulink url="http://www.wormbase.org/db/seq/protein?name=PRG-1;class=protein" role="_blank">PRG-1</ulink> is a PIWI-related protein (<link linkend="bib13">Cox et al., 1998</link><!-- PMID 9851978 -->). PIWI and its homologs are central components of the RISC complex
+                    and have been implicated in the "slicing activity" of this complex (<link linkend="bib71">Parker et al., 2004</link><!-- PMID 15565169 -->, and references therein; <link linkend="bib86">Song et al., 2004</link><!-- PMID 15284453 -->). This finding therefore complements the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ego-1" role="_blank">ego-1</ulink></emphasis>
+                    data (<link linkend="bib84">Smardon et al., 2000</link><!-- PMID 0010704412 -->) to link controls of germline
+                    proliferation and RNA interference.</para></listitem>
+		    <listitem><para>
+		    <ulink url="http://www.wormbase.org/db/seq/protein?name=SPK-1;class=protein" role="_blank">SPK-1</ulink>. <ulink url="http://www.wormbase.org/db/seq/protein?name=SPK-1;class=protein" role="_blank">SPK-1</ulink> is an SR protein kinase-related gene product. <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=spk-1" role="_blank">spk-1</ulink>(RNAi)</emphasis> animals have small germ lines and few gametes (<link linkend="bib57">Kuroyanagi et al., 2000</link><!-- PMID 11091073 -->).</para></listitem>
+		</itemizedlist>
+        </sect2>
+    </sect1>
+    <sect1>
+        <title>References</title>
+		<para/>
+		&proliferation_Refs;</sect1>
+</article>

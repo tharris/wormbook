@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY fig1 SYSTEM 'GFPRfig1.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'GFPRfig1leg.xml'>
+<!ENTITY fig2 SYSTEM 'GFPRfig2.jpg' NDATA JPG>
+<!ENTITY fig2legend SYSTEM 'GFPRfig2leg.xml'>
+<!ENTITY fig3 SYSTEM 'GFPRfig3.jpg' NDATA JPG>
+<!ENTITY fig3legend SYSTEM 'GFPRfig3leg.xml'>
+<!ENTITY fig4 SYSTEM 'GFPRfig4.jpg' NDATA JPG>
+<!ENTITY fig4legend SYSTEM 'GFPRfig4leg.xml'>
+<!ENTITY fig5 SYSTEM 'GFPRfig5.jpg' NDATA JPG>
+<!ENTITY fig5legend SYSTEM 'GFPRfig5leg.xml'>
+<!ENTITY fig6 SYSTEM 'GFPRfig6.jpg' NDATA JPG>
+<!ENTITY fig6legend SYSTEM 'GFPRfig6leg.xml'>
+<!ENTITY fig7 SYSTEM 'GFPRfig7.jpg' NDATA JPG>
+<!ENTITY fig7legend SYSTEM 'GFPRfig7leg.xml'>
+<!ENTITY fig8 SYSTEM 'GFPRfig8.jpg' NDATA JPG>
+<!ENTITY fig8legend SYSTEM 'GFPRfig8leg.xml'>
+<!ENTITY fig9 SYSTEM 'GFPRfig9.jpg' NDATA JPG>
+<!ENTITY fig9legend SYSTEM 'GFPRfig9leg.xml'>
+<!ENTITY fig10 SYSTEM 'GFPRfig10.jpg' NDATA JPG>
+<!ENTITY fig10legend SYSTEM 'GFPRfig10leg.xml'>
+<!ENTITY fig11 SYSTEM 'GFPRfig11.jpg' NDATA JPG>
+<!ENTITY fig11legend SYSTEM 'GFPRfig11leg.xml'>
+<!ENTITY WMGFPR_Refs SYSTEM 'GFPRrefs.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="WMGFPReporter_ArticleID">
+	<articleinfo>
+ <!--see DocBook's authorgroup element -->
+		<title>Reporter gene fusions
+			<footnote>
+				<para>Edited by Victor Ambros. Last revised April 18, 2005. Published April 5, 2006. This chapter should be cited as: Boulin, T. et al. Reporter gene fusions (April 5, 2006), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.106.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+		<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2006 Thomas Boulin et al. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+			</footnote>
+		</title>
+<!--		<revhistory>
+			<revision>
+				<revnumber>1.0</revnumber>
+				<date>Last revised 5/21/05</date>
+			</revision>
+		</revhistory>
+-->
+		<author>
+			<othername>Thomas Boulin<remark><superscript>&#x000A7;</superscript></remark>, John F. Etchberger<remark>
+					<footnote>
+						<para>Both of these authors contributed equally</para>
+					</footnote>
+				</remark>, Oliver Hobert<remark>
+					<footnote>
+						<para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:or38@columbia.edu">or38@columbia.edu</ulink></para>
+					</footnote>
+				</remark>
+			</othername>
+					<affiliation>
+				<address>Howard Hughes Medical Institute, Department of Biochemistry and Molecular Biophysics, Center for Neurobiology and Behavior, Columbia University, New York, NY 10032 USA</address>
+		</affiliation>
+	</author>
+</articleinfo>
+<sect1>
+        <title>General considerations</title>
+        <sect2>
+            <title>Introduction</title>
+            <para><emphasis>C. elegans</emphasis> has distinguishing characteristics that predestine this organism for the visualization of gene expression patterns using the reporter genes green fluorescent protein (GFP; <link linkend="bib2">Chalfie et al., 1994</link>) and <symbol role="symbolfont">&#x03B2;</symbol>GAL (LacZ; <link linkend="bib6">Fire et al., 1990</link>). The transparency of <emphasis>C. elegans</emphasis> allows for microscopic analysis <emphasis>in vivo</emphasis> without animal dissection. In addition, the relative thinness of animals (approximately 75 <symbol role="symbolfont">&#x03BC;</symbol>m cross-section) often alleviates the need for high-powered confocal microscopy. Finally, germline transformation techniques allow for the rapid generation of transgenic animals.</para>
+            <para>The <emphasis>E. coli</emphasis> gene <emphasis>LacZ</emphasis>, encoding <symbol role="symbolfont">&#x03B2;</symbol>-galactosidase, was first used for single-cell gene expression analysis in <emphasis>C. elegans</emphasis> in 1990 (<link linkend="bib6">Harrison et al., 1990</link>) and was the reporter gene of choice until the introduction of GFP in 1994 (<link linkend="bib2">Chalfie et al., 1994</link>). The primary advantage of GFP over LacZ is the ability to visualize reporter gene expression in live animals rather than in fixed preparations. Therefore, GFP can be more easily used for a variety of purposes including (1) expression pattern analysis, (2) dissection of <emphasis>cis</emphasis>-regulatory sequences, (3) protein localization, (4) visualization of cellular anatomy (e.g., neuroanatomy), (5) cell identification, and (6) visualization of cellular and physiological processes (<link linkend="bib2">Chalfie et al., 1994</link>; <link linkend="bib27">Hobert and Loria, 2005</link>). For these reasons, GFP reporter transgenes have become the primary tool for gene expression analysis in <emphasis>C. elegans</emphasis>. We will focus on GFP from now on, keeping in mind that in many cases LacZ could substitute for GFP. In this chapter, we describe protocols for the generation of GFP reporter constructs and provide several technical considerations.</para>
+        </sect2>
+        <sect2>
+            <title>Categories of reporter gene constructs</title>
+            <para>A crucial aspect of gene expression studies is choosing an adequate type of reporter for the purposes of the experiment. Each reporter differs in the amount of information it provides about the expression of a gene. The three general types of reporter gene constructs are: 1) transcriptional reporters, 2) translational reporters, and 3) "<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=smg-1" role="_blank">smg-1</ulink></emphasis>-based" transcriptional reporters (<xref linkend="figure1"/>).</para>
+            <para><emphasis><emphasis role="bold">Transcriptional reporters</emphasis></emphasis> consist of a promoter fragment from a gene of interest driving GFP (<xref linkend="figure1"/>A). Typically, promoter fragments of a few kilobases immediately upstream of the start codon contain a significant portion of the <emphasis>cis</emphasis>-regulatory information necessary to provide a tentative expression pattern of the endogenous gene under study.</para>
+<literallayout></literallayout>
+                <mediaobject id="figure1" xreflabel="Figure 1">
+                    <imageobject>
+                        <imagedata entityref="fig1" width="5in" align="center"/>
+                    </imageobject>
+                <textobject><phrase>Architecture of reporter gene constructs figure 1</phrase></textobject> &fig1legend;
+                </mediaobject>
+            <para><emphasis><emphasis role="bold">Translational reporters</emphasis></emphasis> are in-frame gene fusions between GFP and a gene of interest (<xref linkend="figure1"/>B). Ideally, a translational reporter includes the entire genomic locus of a gene (5<symbol role="symbolfont">&#x02032;</symbol> upstream region, exons, introns, 3<symbol role="symbolfont">&#x02032;</symbol> UTR). GFP can be inserted at any point in the open reading frame, preferably at a site that does not disrupt protein function or topology.</para>
+            <para><emphasis><emphasis role="bold"><ulink url="http://www.wormbase.org/db/gene/gene?name=smg-1" role="_blank">smg-1</ulink></emphasis>-</emphasis><emphasis role="bold">based reporters</emphasis> are transcriptional reporters that aim to include all <emphasis>cis</emphasis>-regulatory information of a gene. GFP, including its stop codon, is inserted between the promoter and the first exon (<xref linkend="figure1"/>C). Hence, the transcription of the transgene is controlled by the <emphasis>cis</emphasis>-regulatory sequences found upstream, intronically or downstream of the gene of interest, yet only GFP is translated. However, inclusion of the GFP stop codon targets the produced mRNA for nonsense-mediated mRNA decay (<link linkend="bib21">Pulak and Anderson, 1993</link>; <link linkend="bib25">Wilkinson et al., 1994</link>; <link linkend="bib16">Mango, 2001</link>). Therefore, these reporters need to be injected into a genetic background deficient for nonsense-mediated mRNA decay, such as <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=smg-1" role="_blank">smg-1</ulink></emphasis> (<link linkend="bib16">Mango, 2001</link>).</para>
+        </sect2>
+        <sect2>
+            <title>Sequences to be included in reporter constructs</title>
+            <para>The <emphasis>C. elegans</emphasis> genome is very compact. Most <emphasis>cis</emphasis>-regulatory information lies within several kilobases immediately upstream of a gene. However, there is a growing number of examples for which crucial  <emphasis>cis</emphasis>-regulatory sequences have been found within introns (especially genes containing large introns; <link linkend="bib23">Wenick and Hobert, 2004</link>) or the 3<symbol role="symbolfont">&#x02032;</symbol> UTR (<link linkend="bib24">Wightman et al., 1993</link>). Rarer yet, <emphasis>cis</emphasis>-regulatory sequences have been found at unusually long distances (beyond upstream or downstream flanking genes) from the gene of interest (<link linkend="bib3">Conradt and Horvitz, 1999</link>; <link linkend="bib23">Wenick and Hobert, 2004</link>).</para>
+            <para>Setting aside extreme examples, the most common reporter gene constructs simply include a large portion of the 5<symbol role="symbolfont">&#x02032;</symbol> intergenic sequence (transcriptional reporter). Ideally,  reporters should contain as much <emphasis>cis</emphasis>-regulatory sequence, from upstream to downstream gene, as technically possible (translational and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=smg-1" role="_blank">smg-1</ulink></emphasis>-based reporters).</para>
+            <sidebar><note>
+                <para>Over the past decade, it has become clear that microRNAs play an important role in post-transcriptional gene regulation (via the 3<symbol role="symbolfont">&#x02032;</symbol> UTR; <link linkend="bib1">Ambros, 2004</link>). Therefore, transcriptional reporters, which do not include the endogenous 3<symbol role="symbolfont">&#x02032;</symbol> UTR, may not accurately represent the expression patterns of genes regulated by microRNAs.</para>
+            </note></sidebar>
+            </sect2>
+        <sect2>
+            <title>Genome-wide gene expression projects</title>
+            <para>Given the availability of the full <emphasis>C. elegans</emphasis> genome sequence, several groups have undertaken genome-wide gene expression projects. Three groups are systematically generating promoter::GFP fusions and documenting the resulting expression patterns. Results and additional information are available through their respective websites:</para>
+            <para>Promoterome project: <ulink url="http://vidal.dfci.harvard.edu/promoteromedb/">http://vidal.dfci.harvard.edu/promoteromedb/</ulink></para>
+            <para>BC <emphasis>C. elegans</emphasis> Gene Expression Consortium: <ulink url="http://elegans.bcgsc.ca/home/ge_consortium.html">http://elegans.bcgsc.ca/home/ge_consortium.html</ulink></para>
+            <para>Hope Lab Expression Patten Database: <ulink url="http://bgypc059.leeds.ac.uk/~web/">http://bgypc059.leeds.ac.uk/~web/</ulink></para>
+ <para><emphasis>C. elegans</emphasis> Promoter/Marker Database: <ulink url="http://www.grs.nig.ac.jp/c.elegans/promoter/index.jsp?lang=english">http://www.grs.nig.ac.jp/c.elegans/promoter/index.jsp?lang=english</ulink></para>
+</sect2>
+        <sect2>
+            <title>Technical considerations</title>
+            <sect3>
+                <title>Comments on different reporter types</title>
+                <para><emphasis><emphasis role="bold">Transcriptional reporters</emphasis></emphasis> can be used to rapidly establish a tentative expression pattern for a gene of interest. Fusing 5<symbol role="symbolfont">&#x02032;</symbol> upstream sequences to GFP can be done in a number of ways and usually presents no technical challenge. Compared to translational and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=smg-1" role="_blank">smg-1</ulink></emphasis>-based reporters, however, promoter fusions may not give a complete representation of the real expression pattern of a gene, both spatially and temporally.</para>
+                <para><emphasis><emphasis role="bold">Translational reporters</emphasis></emphasis> can provide a faithful representation of a gene&apos;s expression pattern because additional regulatory information that may be present in introns or 3<symbol role="symbolfont">&#x02032;</symbol>UTRs is included in such reporter constructs. When mutants are available, translational reporters can be used in rescue experiments. Successfull rescue of the mutant phenotype lends support for the functional relevance of the resulting expression patterns. In addition, translational gene fusions can also provide information about subcellular localization and the temporal aspects of gene regulation. Translational fusions may appear less bright than transcriptional fusions due to the intrinsic instability of the protein fused to GFP. However, insertion of GFP intragenically can sometimes disrupt protein function or even lead to toxicity of the chimeric product. Finally, translational reporters that exhibit subcellular localization can make cell type identification more difficult because the shape of the cell may not be visible (especially for neurons).</para>
+                <para><emphasis><emphasis role="bold"><ulink url="http://www.wormbase.org/db/gene/gene?name=smg-1" role="_blank">smg-1</ulink>-based reporters</emphasis></emphasis> represent expression patterns as accurately as translational reporters. GFP produced by these reporters is not localized which can facilitate cell type identification. The major disadvantage of  <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=smg-1" role="_blank">smg-1</ulink></emphasis>-based reporters is that they require a <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=smg-1" role="_blank">smg-1</ulink></emphasis> mutation in the genetic background.</para>
+            </sect3>
+            <sect3>
+                <title>Vector backbones</title>
+                <para>A large number of vector backbones and reporter gene derivatives are available from the Fire Vector Kit constructed by <ulink url="http://genome-www.stanford.edu/group/fire/">Andrew Fire&apos;s lab</ulink>. In addition to the basic structural elements of the expression vectors (Multiple Cloning Site, artificial intron, reporter gene, 3<symbol role="symbolfont">&#x02032;</symbol> UTR; see Cloning) some vectors have been engineered to contain nuclear localization, membrane targeting or mitochondrial targeting signals. The vectors, their sequence files, detailed descriptions and instructions for using these vectors are available at: <ulink url="http://www.addgene.org/pgvec1?f=c&amp;cmd=showcol&amp;colid=1">http://www.addgene.org/pgvec1?f=c&amp;cmd=showcol&amp;colid=1</ulink> or <ulink url="ftp://ftp.wormbase.org/pub/wormbase/datasets/fire_vectors">ftp://ftp.wormbase.org/pub/wormbase/datasets/fire_vectors</ulink>. Some of the most useful vectors from the Fire Vector Kit are listed in <link linkend="table1">Table 1</link>.</para>
+<para>
+                        <table id="table1" frame='all'>
+                            <title><emphasis role="bold">Table 1. Useful vector backbones: GFP/LacZ/DsRed reporter variants</emphasis></title>
+                        <tgroup cols='3' align='center' colsep='1' rowsep='1'>
+                        <colspec colname='c1'/>
+                        <colspec colname='c2'/>
+                        <colspec colname='c3'/>
+                        <thead>
+                        <row>
+                          <entry>Vector</entry>
+                          <entry>Description</entry>
+                          <entry>Localization</entry>
+                        </row>
+                        </thead>
+                        <tbody>
+                        <row>
+                          <entry>pPD95.75 (L2463)</entry>
+                          <entry>GFP [S65C]</entry>
+                          <entry>None</entry>
+                        </row>
+                        <row>
+                          <entry>pPD16.43</entry>
+                          <entry>LacZ; 1xNLS</entry>
+                          <entry>Nucleus</entry>
+                        </row>
+                        <row>
+                          <entry>pDsRed</entry>
+                          <entry>DsRed; Clontech</entry>
+                          <entry>-</entry>
+                        </row>
+                        <row>
+                          <entry>pDsRed2</entry>
+                          <entry>DsRed2; Clontech</entry>
+                          <entry>-</entry>
+                        </row>
+                        <row>
+                          <entry>pPD135.83 (L4796)</entry>
+                          <entry>GFP [S65C]; 2xSV40-NLS</entry>
+                          <entry>Nucleolus and Nucleus</entry>
+                        </row>
+                        <row>
+                          <entry>pPD136.15 (L4809)</entry>
+                          <entry>GFP [S65C]; 3xSV40-NLS</entry>
+                          <entry>Nucleolus &gt; Nucleus</entry>
+                        </row>
+                        <row>
+                          <entry>pPD133.48 (L4663)</entry>
+                          <entry>CFP[Y66W, N146I, M153T, V163A]; 1xSV40-NLS</entry>
+                          <entry>Nucleus &gt; Cytoplasm</entry>
+                        </row>
+                        <row>
+                          <entry>pPD133.45 (L4660)</entry>
+                          <entry>CFP [Y66W, N146I, M153T, V163A]::lacZ; 1xSV40-NLS</entry>
+                          <entry>Nucleus only</entry>
+                        </row>
+                        <row>
+                          <entry>pPD132.112 (L4643)</entry>
+                          <entry>YFP [S65G V68A S72A T203Y]; 1xSV40-NLS</entry>
+                          <entry>Nucleus &gt; Cytoplasm</entry>
+                        </row>
+                        <row>
+                          <entry>pPD133.63 (L4671)</entry>
+                          <entry>YFP [S65G V68A S72A T203Y]::lacZ; 1xSV40-NLS</entry>
+                          <entry>Nucleus only</entry>
+                        </row>
+                        <row>
+                          <entry>pPD122.39 (L4058)</entry>
+                          <entry>PAT-3-GFP[S65C]; <ulink url="http://www.wormbase.org/db/seq/protein?name=PAT-3;class=protein" role="_blank">PAT-3</ulink> transmembrane domain</entry>
+                          <entry>Plasma membrane</entry>
+                        </row>
+                        <row>
+                          <entry>pPD133.54 (L4665)</entry>
+                          <entry>Mt::CFP[Y66W, N146I, M153T, V163A]</entry>
+                          <entry>Mitochondria</entry>
+                        </row>
+                        <row>
+                          <entry>pPD133.60 (L4667)</entry>
+                          <entry>Mt::YFP [S65G V68A S72A T203Y]</entry>
+                          <entry>Mitochondria</entry>
+                        </row>
+                        </tbody>
+                        </tgroup>
+                        </table></para>
+						<sidebar><note>
+                        <para>The Fire Vector Kit does not include red fluorescent protein variants, but DsRed and DsRed2 from Clontech have been successfully substituted for GFP in reporter transgenes in <emphasis>C. elegans</emphasis> (e.g., <link linkend="bib23">Wenick and Hobert, 2004</link>).</para>
+                        </note></sidebar>
+                </sect3>
+        </sect2>
+<?newpage?>
+        <sect2>
+            <title>Multicolor GFP expression systems</title>
+            <para>The availability of GFP variants with non-overlapping emission spectra (Cyan-FP, Yellow-FP) has opened the possibility for multi-color labeling of <emphasis>C. elegans</emphasis> cells <emphasis>in vivo</emphasis>. CFP and YFP variants can be separated using appropriate filter sets (<link linkend="bib20">Miller et al., 1999</link>). Recently, triple color combinations (CFP, YFP, DsRed) have been used successfully to label separate classes of neurons (<link linkend="bib13">Hutter, 2003</link>).</para>
+        </sect2>
+        <sect2>
+            <title>Common artifacts</title>
+            <para>Of little consequence to the experimentalist, yet fascinating in its own right, is the autofluorescence exhibited by the gut granules and nucleoli of hypodermal cells in <emphasis>C. elegans</emphasis>. These phenomena are not a result of aberrant reporter transgene expression, but occur naturally in <emphasis>C. elegans</emphasis>.</para>
+            <para>In contrast to non-GFP-related autofluorescence, GFP reporters can sometimes induce non-specific fluorescence in posterior gut cells. This observed effect is thought to be an indirect consequence of the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-54" role="_blank">unc-54</ulink></emphasis> 3<symbol role="symbolfont">&#x02032;</symbol> UTR, which is used in most vectors from the Fire Kit (see <ulink url="http://www.addgene.org/pgvec1?f=c&amp;cmd=showcol&amp;colid=1">http://www.addgene.org/pgvec1?f=c&amp;cmd=showcol&amp;colid=1</ulink> or <ulink url="ftp://ftp.wormbase.org/pub/wormbase/datasets/fire_vectors">ftp://ftp.wormbase.org/pub/wormbase/datasets/fire_vectors</ulink>).</para>
+        </sect2>
+        <sect2>
+            <title>Fluorophore maturation of fluorescent proteins</title>
+            <para>Temporal gene regulation studies rely on the ability to detect gene expression fluctuations within a narrow time window. A drawback to using fluorescent proteins for such experiments is the time required for the maturation of the fluorophore.</para>
+            <para>Studies performed in <emphasis>E.coli</emphasis> have found the  t<subscript>0.5</subscript> for maturation to be 27 minutes for the S65T variant of GFP (used in pPD95.75 and its derivatives; <link linkend="bib10">Heim et al., 1995</link>). Evidence from <emphasis>C. elegans</emphasis> experiments suggests that GFP S65T matures at a similar rate in the worm, as do CFP and YFP variants. The red fluorescent proteins, DsRed and DsRed2, mature significantly slower. However, new variants of DsRed have been generated that are brigther, mature faster (<link linkend="bib22">Shaner et al., 2004</link>) and fluoresce in <emphasis>C. elegans</emphasis> (Etchberger, unpublished).</para>
+            <para>Sometimes expression from weak promoters may require a prolonged accumulation of protein before a fluorescent signal is detectable <emphasis>in vivo</emphasis>. In these cases, antibody staining can reveal expression of the fluorescent protein before a detectable fluorescent signal is achieved.</para>
+        </sect2>
+        <sect2>
+            <title>Coinjection markers</title>
+            <para>A number of standard coinjection markers are available to label reporter gene-containing extrachromosomal arrays in <emphasis>C. elegans</emphasis>. The most commonly used marker is <emphasis>rol-6(<ulink url="http://www.wormbase.org/db/get?name=su1006;class=Variation" role="_blank">su1006</ulink>)</emphasis> (<link linkend="bib14">Kramer et al., 1990</link>). <emphasis>rol-6(<ulink url="http://www.wormbase.org/db/get?name=su1006;class=Variation" role="_blank">su1006</ulink>)</emphasis> is a dominant allele that can be used to label arrays in most genetic backgrounds, allowing for easy selection and maintenance of transgenic lines. Alternative injection markers that do require specific mutants background include: <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pha-1" role="_blank">pha-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=dpy-20" role="_blank">dpy-20</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-4" role="_blank">unc-4</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-15" role="_blank">lin-15</ulink></emphasis> (see WormMethods section: <ulink url="http://www.wormbook.org/chapters/www_transformationmicroinjection/transformationmicroinjection.html">Transformation and microinjection</ulink>). Notably, GFP reporters, such as <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ceh-22" role="_blank">ceh-22</ulink></emphasis>::<emphasis>gfp</emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-122" role="_blank">unc-122</ulink></emphasis>::<emphasis>gfp</emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=elt-2" role="_blank">elt-2</ulink></emphasis>::<emphasis>gfp</emphasis>, and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ttx-3" role="_blank">ttx-3</ulink></emphasis>::<emphasis>gfp</emphasis> have been used as injection markers in their own right.</para>
+        </sect2>
+        <sect2>
+            <title>Concluding remark</title>
+            <para>Reporter transgenes may not represent the complete expression pattern for a gene, but still provide testable hypotheses about the site of gene function. It has become standard to supplement these hypotheses with cell-type specific rescue experiments, mosaic analysis and antibody staining. For early embryo studies, <emphasis>in situ</emphasis> hybridization can also be informative.</para>
+			<sect3>
+				<title>Links</title>
+				<para>Fire Lab Vector Kit: <ulink url="http://www.addgene.org/pgvec1?f=c&amp;cmd=showcol&amp;colid=1">http://www.addgene.org/pgvec1?f=c&amp;cmd=showcol&amp;colid=1</ulink> or <ulink url="ftp://ftp.wormbase.org/pub/wormbase/datasets/fire_vectors">ftp://ftp.wormbase.org/pub/wormbase/datasets/fire_vectors</ulink></para>
+			</sect3>
+        </sect2>
+</sect1>
+<?newpage?>
+<sect1>
+    <title>Protocols</title>
+    <sect2>
+            <title>Protocol 1: Generating GFP reporter constructs using standard cloning techniques</title>
+            <sect3>
+                <title>Introduction</title>
+                <para>The most common approach for generating reporter genes in <emphasis>C. elegans</emphasis> is to clone/subclone DNA fragments into reporter gene vectors. A large array of vectors have been made by <ulink url="http://genome-www.stanford.edu/group/fire/">Andrew Fire&apos;s lab</ulink>. The &#x02018;Fire Vector Kit&#x02019; contains many vector variants used to study <emphasis>C. elegans</emphasis> gene expression (see <ulink url="http://www.addgene.org/pgvec1?f=c&amp;cmd=showcol&amp;colid=1">http://www.addgene.org/pgvec1?f=c&amp;cmd=showcol&amp;colid=1</ulink> or <ulink url="ftp://ftp.wormbase.org/pub/wormbase/datasets/fire_vectors">ftp://ftp.wormbase.org/pub/wormbase/datasets/fire_vectors</ulink>). All vectors have a backbone based on the pUC19 plasmid and contain the <emphasis>E.coli</emphasis> ampicilin resistance gene (AmpR) and origin of replication (<link linkend="bib6">Fire et al., 1990</link>). They also have convenient multiple cloning sites (MCS) and provide a number of useful reporter gene variants. In addition to the Fire Vector Kit, many expression vectors are available in the <emphasis>C. elegans</emphasis> community.</para>
+                    <itemizedlist mark='bullet'>
+                         <title>Pros of using standard cloning techniques:</title>
+                         <listitem>
+                        <para>Creation of reusable reagents</para>
+                        </listitem>
+                        <listitem>
+                        <para>Availability of large sets of compatible vectors</para>
+                        </listitem>
+                        <listitem>
+                        <para>Verification of cloned DNA by sequencing</para>
+                        </listitem>
+                    </itemizedlist>
+                    <itemizedlist mark='bullet'>
+                        <title>Cons of using standard cloning techniques:</title>
+                        <listitem>
+                        <para>Time intensive: minimum 2-3 days</para>
+                        </listitem>
+                        <listitem>
+                        <para>Dependence on restriction sites</para>
+                        </listitem>
+                        <listitem>
+                        <para>Size limits for DNA insert</para>
+                        </listitem>
+                        <listitem>
+                        <para>Toxicity to bacteria in rare cases</para>
+                        </listitem>
+                    </itemizedlist>
+                    <sidebar><note>
+                    <para>The reader is expected to be familiar with standard molecular cloning techniques. Protocols will be focusing on specific aspects relating to <emphasis>C. elegans</emphasis> reagents.</para>
+                    </note></sidebar>
+            </sect3>
+            <sect3>
+                <title>Choosing vector backbone</title>
+                <para>The first step in designing GFP reporter constructs is to choose an adequate vector backbone. Many vectors are available in the Fire Kit. Presented in <xref linkend="figure2"/> is the structure of pPD95.75, a vector that serves as an archetype for most Fire vectors. In addition, a variety of specialized vectors are listed in <link linkend="table1">Table 1</link>.</para>
+                    <mediaobject id="figure2" xreflabel="Figure 2">
+                    <imageobject>
+                        <imagedata entityref="fig2" width="6in" align="center"/>
+                    </imageobject>
+                    <textobject><phrase>Description of pPD95.75 figure 2</phrase></textobject> &fig2legend;
+                    </mediaobject>
+            </sect3>
+            <sect3>
+                <title>Description of pPD95.75</title>
+                <sect4>
+                    <title><emphasis>Multiple cloning site (MCS)</emphasis></title>
+                     <itemizedlist mark='bullet'>
+                        <listitem>
+                        <para>The multiple cloning site of pPD95.75 stretches from HindIII to MlsI (<xref linkend="figure2"/>).</para>
+                        </listitem>
+                        <listitem>
+                        <para>Cloning a PCR amplified promoter: adapted restriction sites can be added to facilitate directional cloning.</para>
+                        </listitem>
+                        <listitem>
+                        <para>Generating a C-terminal translational fusion: the sequence of interest has to be cloned into the proper reading frame. The reading frame of pPD95.75 is indicated by alternating gray and red boxes in <xref linkend="figure2"/>. Vectors with shifted reading frames are also available (pPD95.77, pPD95.79).</para>
+                        </listitem>
+                        </itemizedlist>
+                </sect4>
+                <sect4>
+                    <title>gfp <emphasis>ORF</emphasis></title>
+                    <para>The reporter gene in pPD95.75 is a S65C variant of GFP that includes artificial introns for enhanced expression (Fire Vector Kit, 1995). Other reporter genes are listed in <link linkend="table1">Table 1</link>.</para>
+                </sect4>
+                <sect4>
+                    <title><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-54" role="_blank">unc-54</ulink> 3<symbol role="symbolfont">&#x02032;</symbol> UTR</emphasis></title>
+                    <para>The 3<symbol role="symbolfont">&#x02032;</symbol> UTR in pPD95.75 is derived from the muscle myosin heavy chain gene <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-54" role="_blank">unc-54</ulink></emphasis> and ensures efficient processing of transcripts. Some recent Fire Vectors contain an alternative 3<symbol role="symbolfont">&#x02032;</symbol> UTR from <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-858" role="_blank">let-858</ulink></emphasis>.</para>
+                </sect4>
+            </sect3>
+            <sect3>
+                <title>Discussion</title>
+                <para>The primary advantage of standard cloning approaches is the generation of a reusable reporter gene construct. Plasmids can be repeatedly amplified in bacteria and stored for long periods of time. In addition, constructs can be subjected to further sub-cloning steps for <emphasis>cis</emphasis>-regulatory analysis (promoter bashing) and/or functional analysis. Finally, cloned reagents can be used as a DNA source in other GFPs fusion methods.</para>
+            </sect3>
+<?newpage?>
+            <sect3>
+                <title>Links</title>
+                <para>Vector Kit: <ulink url="http://www.addgene.org/pgvec1?f=c&amp;cmd=showcol&amp;colid=1">http://www.addgene.org/pgvec1?f=c&amp;cmd=showcol&amp;colid=1</ulink> or <ulink url="ftp://ftp.wormbase.org/pub/wormbase/datasets/fire_vectors">ftp://ftp.wormbase.org/pub/wormbase/datasets/fire_vectors</ulink></para>
+                <para>Fire Lab: <ulink url="http://genome-www.stanford.edu/group/fire/">http://genome-www.stanford.edu/group/fire/</ulink></para>
+            </sect3>
+      </sect2>
+       <sect2>
+                <title>Protocol 2: Generating GFP reporters using a PCR fusion approach</title>
+                <sect3>
+                        <title>Introduction</title>
+                        <para>Traditional cloning strategies involving PCR-amplified DNA fragments and GFP expression vectors are time consuming and limited by the size of DNA inserts. Current cloning/subcloning protocols require at least 2-3 days to obtain a final construct ready for use. To obtain reporter constructs more quickly and circumvent the challenge of cloning large DNA fragments, DNA sequences can be fused to GFP via the polymerase chain reaction (PCR) and injected into the <emphasis>C. elegans</emphasis> gonad in a linear form (<link linkend="bib11">Hobert, 2002</link>). This approach is referred to as PCR fusion. For more details, see <link linkend="figure3">Figure 3</link> and <link linkend="bib11">Hobert (2002)</link>.
+                            <itemizedlist mark='bullet'>
+                                <title>Pros of using the PCR fusion approach:</title>
+                                <listitem>
+                                <para>Rapid generation of reporter constructs</para></listitem>
+                                <listitem>
+                                <para>Adaptable to any vector backbone</para>
+                             </listitem>
+                              <listitem>
+                              <para>Independent of presence/absence of restriction sites</para>
+                             </listitem>
+                            </itemizedlist>
+                            <itemizedlist mark='bullet'>
+                                <title>Cons of using the PCR fusion approach:</title>
+                                <listitem>
+                                <para>PCR products are a depletable resource</para>
+                                </listitem>
+                                <listitem>
+                                <para>Sequencing validation of reporter construct impractical</para>
+                                </listitem>
+                            </itemizedlist>
+                            </para>
+                 </sect3>
+                 <sect3>
+                         <title>Protocol</title>
+                         <para>PCR fusions generate a single amplicon from two fragments that contain a small overlapping region of sequence homology (~24 bp; <xref linkend="figure3"/>). The overlap is engineered into the fragments by the primers. By this method, a sequence of interest can be fused to any reporter gene.</para>
+                 <sect4>
+                         <title>Choosing an appropriate reporter gene</title>
+                         <para>Many derivatives of GFP expression vectors currently exist (Fire Vector Kit). Choose a reporter gene vector that suits the needs of the experiment. pPD95.75 is a commonly used vector for PCR fusion. However, in some cases, a vector containing a localized reporter gene or 3<symbol role="symbolfont">&#x02032;</symbol>UTR variant may be needed (<link linkend="table1">Table 1</link>). Remember that primer design depends upon the sequence of the reporter gene vector.</para>
+                </sect4>
+                <sect4>
+                        <title>Designing the primers</title>
+                        <para>The following guidelines for primer design correspond to situtations where GFP is fused to the 3<symbol role="symbolfont">&#x02032;</symbol> end of a DNA fragment (e.g., promoter or genomic locus). Gene-specific primers are used to amplify the promoter and/or gene of interest (<xref linkend="figure3"/>: primers A, A*, B; A* is nested relative to A; <link linkend="table2">Table 2</link>). Likewise, vector-specific primers are used to amplify the expression vector of choice, encompassing the reporter gene and 3<symbol role="symbolfont">&#x02032;</symbol> UTR (<xref linkend="figure3"/>: primers C, D, D*; D* is nested relative to D; <link linkend="table2">Table 2</link>). The primer requiring the most careful design is the 3<symbol role="symbolfont">&#x02032;</symbol> gene-specific primer (<xref linkend="figure3"/>: primer B). This primer contains a linking sequence that overlaps with the reporter gene amplicon. The gene-specific primer linker should be at least 24 bp long and complementary to the MCS of the expression vector or to the coding region of the reporter gene.</para>
+<?newpage?>
+                    <table id="table2" frame='all'>
+                                <title><emphasis role="bold">Table 2. Primer sequences used with pPD95.75</emphasis></title>
+                            <tgroup cols='2' align='center' colsep='1' rowsep='1'>
+                            <colspec colname='c1' colwidth="1*"/>
+                            <colspec colname='c2' colwidth="2*"/>
+                            <tbody>
+                            <row>
+                               <entry>Primer A</entry>
+                               <entry>Gene-specific 5' 'outside' primer</entry>
+                            </row>
+                            <row>
+                              <entry>Primer A*</entry>
+                              <entry>Gene-specific 5' 'nested' primer</entry>
+                            </row>
+                            <row>
+                              <entry>Primer B</entry>
+                              <entry>5<symbol role="symbolfont">&#x02032;</symbol>-AGTCGACCTGCAGGCATGCAAGCT-Gene-specific sequence-3<symbol role="symbolfont">&#x02032;</symbol></entry>
+                            </row>
+                            <row>
+                              <entry>Primer C</entry>
+                              <entry>5<symbol role="symbolfont">&#x02032;</symbol>-AGCTTGCATGCCTGCAGGTCG-3<symbol role="symbolfont">&#x02032;</symbol></entry>
+                            </row>
+                            <row>
+                              <entry>Primer D</entry>
+                              <entry>5<symbol role="symbolfont">&#x02032;</symbol>-AAGGGCCCGTACGGCCGACTA-3<symbol role="symbolfont">&#x02032;</symbol></entry>
+                            </row>
+                            <row>
+                              <entry>Primer D*</entry>
+                              <entry>5<symbol role="symbolfont">&#x02032;</symbol>-GGAAACAGTTATGTTTGGTATA-3<symbol role="symbolfont">&#x02032;</symbol></entry>
+                            </row>
+                            </tbody>
+                            </tgroup>
+                            </table>
+                       <sidebar><note>
+                           <para>Transcriptional reporters: Fusing a promoter to the MCS of a pPD95.75-type expression vector ensures that the intron between the MCS and reporter gene is included. Inclusion of this intron greatly enhances reporter gene expression.</para>
+                             <para>Translational reporters: For translational reporters, the 3<symbol role="symbolfont">&#x02032;</symbol> gene-specific primer (<xref linkend="figure3"/>: Primer B) must be in frame with the reporter gene.</para>
+                        </note></sidebar>
+<literallayout></literallayout>
+                            <mediaobject id="figure3" xreflabel="Figure 3">
+                            <imageobject>
+                                <imagedata entityref="fig3" width="5in" align="center"/>
+                            </imageobject>
+                            <textobject><phrase>Generating a C-terminal translational PCR fusion figure 3</phrase></textobject> &fig3legend;
+                            </mediaobject>
+<?newpage?>
+						<para><emphasis role="bold">Steps:</emphasis></para>
+                    <procedure>
+                           <step>
+                                    <title>PCR amplification of genomic DNA and reporter gene</title>
+                                <substeps>
+                                    <step>
+                                        <para>Amplify DNA fragment with gene-specific primers (Primers A and B) from a genomic DNA preparation, worm lysate, cosmid or other source.</para>
+                                    </step>
+                                    <step>
+                                        <para>Amplify reporter gene from expression vector with vector-specific primers (for pPD95.75 Primers C and D).</para>
+                                    </step>
+                                    <step>
+                                        <para>Estimate DNA concentration of PCR products by agarose gel electrophoresis.</para>
+                                    </step>
+                                </substeps>
+                           </step>
+                           <step>
+                                   <title>Fusion PCR</title>
+                                <substeps>
+                                    <step>
+                                        <para>Fuse products from Step 1 (1-50 ng each per reaction) using nested primers (Primer A*; for pPD95.75 Primer D*).</para>
+                                    </step>
+                                    <step>
+                                        <para>Estimate DNA concentration of PCR product by agarose gel electrophoresis.</para>
+                                    </step>
+                                </substeps>
+                            </step>
+                            <step>
+                                    <title>Sample preparation and injection</title>
+                                <substeps>
+                                    <step>
+                                        <para>The PCR reaction from Step 2 can be used directly for injection if the expected size fusion product is present in sufficient quantity. If yield is low, the DNA sample can be concentrated by standard methods. Usually, reporters are injected at concentrations ranging from 10 to 50 ng/<symbol role="symbolfont">&#x03BC;</symbol>L.</para>
+                                     </step>
+                                </substeps>
+                            </step>
+                        </procedure>
+                </sect4>
+				</sect3>
+                <sect3>
+                    <title>Discussion</title>
+                    <para>PCR fusion technology is a good supplement to other strategies for the generation of reporter gene constructs. The primary advantage to the PCR fusion approach is speed. The time required to make a PCR fusion product from start to finish is shorter than traditional cloning approaches. In addition, many reactions can be carried out in parallel. However, PCR fusion technology is not to replace all traditional cloning strategies. Most significantly, PCR fusion products are not amplifiable in bacteria. Furthermore, additive rounds of PCR reactions increase the chances of acquiring point mutations in the amplicon. This problem can be reduced by pooling independent fusion reactions.</para>
+                </sect3>
+        </sect2>
+        <sect2>
+        <title>Protocol 3: Generating GFP reporters using <emphasis>in vivo</emphasis> recombination</title>
+            <sect3>
+                <title>Introduction</title>
+                <para>Reporter gene constructs for specific genomic loci can be extremely long (&gt;20kb). The manipulation of large genomic fragments containing complete or partial open reading frames as well as 5<symbol role="symbolfont">&#x02032;</symbol> and 3<symbol role="symbolfont">&#x02032;</symbol> intergenic regions can be difficult with current cloning or PCR approaches. To circumvent these limitations, DNA fragments with overlapping sequence homology can be coinjected and will undergo homologous recombination <emphasis>in vivo</emphasis> to produce a long linear fragment (<link linkend="bib19">Mello et al., 1991</link>; <link linkend="bib18">Maryon et al., 1996</link>; <link linkend="bib28">Tsalik et al., 2003</link>). This approach is termed <emphasis>in vivo</emphasis> recombination. Reporter transgenes made in this manner eliminate the time required for conventional cloning techniques and bypass limitations associated with the PCR-mediated amplification of long DNA fragments.
+                    <itemizedlist mark='bullet'>
+                    <title>Pros of using <emphasis>in vivo</emphasis> recombination:</title>
+                        <listitem>
+                        <para>Generation of large reporter transgenes</para>
+                        </listitem>
+                    </itemizedlist>
+                    <itemizedlist mark='bullet'>
+                    <title>Cons of using <emphasis>in vivo</emphasis> recombination:</title>
+                        <listitem>
+                        <para>Validation of reporter transgene sequence difficult</para>
+                        </listitem>
+                        <listitem>
+                        <para>Multiple control injections required</para>
+                        </listitem>
+                    </itemizedlist>
+                </para>
+            </sect3>
+<?newpage?>
+            <sect3>
+                <title>Protocol: generation of large GFP reporter transgenes</title>
+                <para><emphasis>In vivo</emphasis> recombination circumvents size limitations associated with cloning and PCR fusion approaches. Smaller fragments with a minimum overlap of 350bp (<link linkend="bib18">Maryon et al., 1996</link>), can be generated by various methods and coinjected to recombine into the full reporter transgene. All three types of reporter trangenes (transcriptional, translational and "<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=smg-1" role="_blank">smg-1</ulink></emphasis>-based") can be generated by this method. As an example of this approach, the following protocol describes the generation an N-terminally fused GFP translational reporter.</para>
+                </sect3>
+                <sect3>
+                <title>Generation of an N-terminal GFP translational reporter</title>
+                <para>To generate a translational GFP reporter for a large gene (e.g., <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-41" role="_blank">lin-41</ulink></emphasis>; pers. com. Frank Slack), the simplest approach is to generate <emphasis>5<symbol role="symbolfont">&#x02032;</symbol>-upstream-GFP</emphasis> and <emphasis>GFP-ORF-3<symbol role="symbolfont">&#x02032;</symbol>-downstream</emphasis> fragments (by PCR fusion in this case) which will recombine to form <emphasis>5<symbol role="symbolfont">&#x02032;</symbol>-upstream-GFP-ORF-3<symbol role="symbolfont">&#x02032;</symbol>-downstream</emphasis> (see <xref linkend="figure4"/>). <emphasis>5<symbol role="symbolfont">&#x02032;</symbol>-upstream-GFP</emphasis> contains the promoter fused to the coding region of GFP. <emphasis>GFP-ORF-3<symbol role="symbolfont">&#x02032;</symbol>-downstream</emphasis> is a fusion of GFP to the genomic coding region and the complete 3<symbol role="symbolfont">&#x02032;</symbol> UTR.</para>
+<literallayout></literallayout>
+                            <mediaobject id="figure4" xreflabel="Figure 4">
+                            <imageobject>
+                                <imagedata entityref="fig4" width="5in"  align="center"/>
+                            </imageobject>
+                            <textobject><phrase>Generating a N-terminal translational reporter figure 4</phrase></textobject> &fig4legend;
+                            </mediaobject>
+<?newpage?>
+                        <para><emphasis role="bold">Steps:</emphasis></para>
+                <procedure>
+                    <step>
+                        <substeps>
+                            <step>
+                                <title><emphasis>5<symbol role="symbolfont">&#x02032;</symbol>-upstream-GFP</emphasis> fragment</title>
+                                    <substeps>
+                                        <step>
+                                        <para>PCR amplify <emphasis>5<symbol role="symbolfont">&#x02032;</symbol>-upstream</emphasis> to include overlapping 3<symbol role="symbolfont">&#x02032;</symbol> linker to the first 24nt of the GFP coding region (GFP sequence: ATGAGTAAAGGAGAAGAACTTTTC).</para>
+                                        </step>
+                                        <step>
+                                        <para>PCR amplify GFP coding region (5<symbol role="symbolfont">&#x02032;</symbol> primer: ATGAGTAAAGGAGAAGAACTTTTC; 3<symbol role="symbolfont">&#x02032;</symbol> primer: GTCAGAGGCACGGGCGCGAGATG) from reporter gene vector (e.g., pPD95.75).</para>
+                                        </step>
+                                        <step>
+                                        <para>PCR fuse <emphasis>5<symbol role="symbolfont">&#x02032;</symbol>-upstream</emphasis> and GFP coding region <emphasis>not including the STOP codon</emphasis> (5<symbol role="symbolfont">&#x02032;</symbol> nested primer; 3<symbol role="symbolfont">&#x02032;</symbol> nested GFP primer: TTTGTATAGTTCATCCATGCC).</para>
+                                        </step>
+                                    </substeps>
+                            </step>
+                            <step>
+                                <title><emphasis>GFP-ORF-3<symbol role="symbolfont">&#x02032;</symbol>-downstream</emphasis> fragment</title>
+                                    <substeps>
+                                        <step>
+                                        <para>PCR amplify <emphasis>ORF-3<symbol role="symbolfont">&#x02032;</symbol>-downstream</emphasis> to include overlapping 5<symbol role="symbolfont">&#x02032;</symbol> linker to the last 24nt of the GFP coding region <emphasis>minus the STOP codon</emphasis> (GFP sequence: CATGGCATGGATGAACTATACAAA).</para>
+                                        </step>
+                                        <step>
+                                        <para>PCR amplify GFP coding region (5<symbol role="symbolfont">&#x02032;</symbol> primer: GTTTCGAATGATACTAACATAAC; 3<symbol role="symbolfont">&#x02032;</symbol> primer: TTTGTATAGTTCATCCATGCC) from reporter gene vector (e.g., pPD95.75).</para>
+                                        </step>
+                                        <step>
+                                        <para>PCR fuse GFP coding region and <emphasis>ORF-3'-downstream</emphasis> region (5<symbol role="symbolfont">&#x02032;</symbol> nested GFP primer: ATGAGTAAAGGAGAAGAACTTTTC; 3<symbol role="symbolfont">&#x02032;</symbol> nested <emphasis>ORF-3<symbol role="symbolfont">&#x02032;</symbol>-downstream</emphasis> primer).</para>
+                                        </step>
+                                    </substeps>
+                                </step>
+                            </substeps>
+                    </step>
+                   <step>
+                        <title>Co-injection of PCR fusion products</title>
+                            <substeps>
+                            <step>
+                            <para>Inject PCR fusion products (<emphasis>5<symbol role="symbolfont">&#x02032;</symbol>-upstream-GFP</emphasis> and <emphasis>GFP-ORF-3<symbol role="symbolfont">&#x02032;</symbol>-downstream</emphasis>) simultaneously at equal molar ratios.</para>
+                            </step>
+                            </substeps>
+                                <sidebar><note>
+                                <para>Inject <emphasis>5<symbol role="symbolfont">&#x02032;</symbol>-upstream-GFP</emphasis> and <emphasis>GFP-ORF-3<symbol role="symbolfont">&#x02032;</symbol>-downstream</emphasis> individually for comparison to expression pattern from coinjected products.</para></note></sidebar>
+</step>
+                 </procedure>
+            </sect3>
+            <sect3>
+               <title>Discussion</title>
+                <para><emphasis>In vivo</emphasis> recombination technology provides a way to bypass the difficulties involved in the amplification and cloning of large DNA fragments. However, the efficiency of homologous recombination in <emphasis>C. elegans</emphasis> is largely uncharacterized. In addition, the <emphasis>5<symbol role="symbolfont">&#x02032;</symbol>-upstream-GFP</emphasis> or <emphasis>GFP-ORF-3<symbol role="symbolfont">&#x02032;</symbol>-downstream</emphasis> fragment may lead to erroneous expression on its own. To minimize undesirable background expression, truncated GFP sequences that maintain sufficient overlap to trigger homologous recombination could be used.</para>
+             </sect3>
+        </sect2>
+        <sect2>
+        <title>Protocol 4: Generating GFP reporter constructs using Gateway<symbol role="symbolfont">&#xF6DA;</symbol> cloning technology</title>
+    <sect3>
+            <title>Introduction</title>
+            <para>In the wake of large scale genome sequencing projects, there has been an effort to make available the large number of functionally relevant DNA sequences (e.g., ORFs, cDNAs, promoters, 3<symbol role="symbolfont">&#x02032;</symbol> UTRs) in a versatile format. Gateway<symbol role="symbolfont">&#xF6DA;</symbol> cloning technology <ulink url="http://www.invitrogen.com/content.cfm?pageid=4072">http://www.invitrogen.com/content.cfm?pageid=4072</ulink> is a high-throughput method available for <emphasis>in vitro</emphasis> cloning of DNA fragments into a variety of vector backbones.</para>
+            <para>Presented here is a Gateway<symbol role="symbolfont">&#xF6DA;</symbol> cloning strategy suitable for generating transcriptional  <emphasis>promoter::gfp</emphasis> fusions and translational <emphasis>promoter::ORF::gfp</emphasis> fusions (<link linkend="bib4">Dupuy et al., 2004</link>; <link linkend="bib12">Hope et al., 2004</link>). In addition, the promoter clones generated by this method can be used within the Gateway<symbol role="symbolfont">&#xF6DA;</symbol> system for a variety of applications (e.g., tissue-specific RNAi and yeast one hybrid screens).</para>
+<?newpage?>
+                <itemizedlist mark='bullet'>
+                <title>Pros of using Gateway&#x000AE; technology:</title>
+                <listitem>
+                <para>Fast, efficient <emphasis>in vitro</emphasis> reaction</para>
+                </listitem>
+                <listitem>
+                <para>Compatible with large collection of vectors for other studies (<link linkend="bib4">Dupuy et al., 2004</link>)</para>
+                </listitem>
+                </itemizedlist>
+                <itemizedlist mark='bullet'>
+                <title>Cons of using Gateway&#x000AE; technology:</title><listitem>
+                <para>Decreased cloning efficiency above 2-3 kb (<link linkend="bib17">Marsischky and LaBaer, 2004</link>)</para>
+                </listitem>
+                <listitem>
+                <para>Proprietary cloning system</para>
+                </listitem>
+               <listitem>
+               <para>Multistep procedure</para>
+               </listitem>
+               </itemizedlist>
+		</sect3>
+        <sect3>
+            <title>Protocol: generation of <emphasis>promoter::gfp</emphasis> and <emphasis>promoter::ORF::gfp</emphasis> reporters</title>
+            <para>The Gateway<symbol role="symbolfont">&#xF6DA;</symbol> system takes advantage of the site-specific recombination properties of bacteriophage lambda (<link linkend="bib15">Landy, 1989</link>; <link linkend="bib8">Hartley et al., 2000</link>). Bacteriophage lambda integrase proteins recognize compatible recombination sites (<emphasis>att</emphasis> sites), found in the cloning vector and flanking the DNA sequence of interest, to carry out the recombination event.</para>
+            <para>For generating <emphasis>promoter::gfp</emphasis> and <emphasis>promoter::ORF::gfp</emphasis> reporters, a promoter is initially amplified with primers containing flanking <emphasis>att</emphasis> sites (<emphasis>attB4</emphasis> and <emphasis>attB1R</emphasis>). The PCR product is recombined with pDONR-P4-P1R to generate pENTRY-prom (<xref linkend="figure5"/>). Finally, pENTRY-prom is recombined with the appropriate vectors to generate the intended product:
+            <simplelist>
+            <member><emphasis>promoter::gfp</emphasis> reporter: recombine pENTRY-prom with pENTRY-gfp and pDEST-DD03 (<xref linkend="figure6"/>).</member>
+            <member><emphasis>promoter::ORF::gfp</emphasis> reporters: recombine pENTRY-prom with pENTRY-ORF and pDEST-MB14 (<xref linkend="figure7"/>).</member>
+            </simplelist></para>
+            <mediaobject id="figure5" xreflabel="Figure 5">
+                            <imageobject>
+                                <imagedata entityref="fig5"  width="2.8in" depth="8.5in" align="center"/>
+                            </imageobject>
+                            <textobject><phrase>Generating pENTRY-prom figure 5</phrase></textobject> &fig5legend;
+                            </mediaobject>
+            <mediaobject id="figure6" xreflabel="Figure 6">
+                            <imageobject>
+                                <imagedata entityref="fig6"  width="4in" align="center"/>
+                            </imageobject>
+                            <textobject><phrase>Generating pENTRY-prom figure 5</phrase></textobject> &fig6legend;
+                            </mediaobject>
+            <mediaobject id="figure7" xreflabel="Figure 7">
+                            <imageobject>
+                                <imagedata entityref="fig7"  width="4in" align="center"/>
+                            </imageobject>
+                            <textobject><phrase>Generating pENTRY-prom figure 5</phrase></textobject> &fig7legend;
+                            </mediaobject>
+	<para><emphasis role="bold">Steps:</emphasis></para>
+<procedure>
+            <step>
+            <title>Generation of <emphasis>attB4-prom-attB1R</emphasis></title>
+            <para>Design primers to amplify a promoter of interest. The primers must contain <emphasis>attB4</emphasis> (5<symbol role="symbolfont">&#x02032;</symbol> primer) and <emphasis>attB1R</emphasis> (3<symbol role="symbolfont">&#x02032;</symbol> primer) sequences in addition to the promoter specific sequences.</para>
+            <para><emphasis role="bold">5<symbol role="symbolfont">&#x02032;</symbol> primer:</emphasis> (<emphasis>attB4</emphasis> site)</para>
+            <para>5<symbol role="symbolfont">&#x02032;</symbol>-GGGGCAACTTTGTATAGAAAAGTTG---promoter-specific sequence-3<symbol role="symbolfont">&#x02032;</symbol></para>
+            <para><emphasis role="bold">3<symbol role="symbolfont">&#x02032;</symbol> primer:</emphasis> (<emphasis>attB1R</emphasis> site)</para>
+            <para>5<symbol role="symbolfont">&#x02032;</symbol>-GGGGACTGCTTTTTTGTACAAACTTGTC---promoter-specific sequence-3<symbol role="symbolfont">&#x02032;</symbol></para>
+            <para>Amplify <emphasis>attB4-prom-attB1R</emphasis> from an appropriate source (genomic DNA preparation, worm lysate, plasmid, cosmid, etc.).</para>
+            </step>
+            <step>
+            <title>Generation of pENTRY-prom</title>
+            <para>Recombine <emphasis>attB4-prom-attB1R</emphasis> with pDONR-P4-P1R <ulink url="http://www.invitrogen.com/search.cfm?searchTerm=12537023 category=Vectors">(Invitrogen, cat. num. 12537023</ulink>) to generate an Entry Vector (pENTRY-prom) in which the promoter is flanked by <emphasis>attL4</emphasis> and <emphasis>attR1</emphasis> sites.</para>
+                <sidebar><note>
+                <para>Cryptic <emphasis>att</emphasis> sites may be present in genomic DNA sequences that could interfere with targeted recombination. However, this is found to be fairly unlikely (<link linkend="bib8">Hartley et al., 2000</link>).</para>
+                </note></sidebar>
+			</step>
+            <step>
+                <title>Generation of <emphasis>promoter::gfp</emphasis> and <emphasis>promoter::ORF::gfp</emphasis> reporter</title>
+                <para>
+                    <orderedlist numeration="lowerroman">
+                    <listitem>
+                    <para><emphasis>promoter::gfp</emphasis> reporter: recombine pENTRY-prom with pENTRY-gfp and pDEST-DD03 (<xref linkend="figure6"/>).</para>
+                    </listitem>
+                    <listitem>
+                    <para><emphasis>promoter::ORF::gfp</emphasis> reporter: recombine pENTRY-prom with pENTRY-ORF and pDEST-MB14 (<xref linkend="figure7"/>). The vector pDEST-MB14 already contains the <emphasis>gfp</emphasis> gene and is engineered for the recombination product to be in frame.</para>
+                    </listitem>
+                    </orderedlist></para>
+<para>In the study by Dupuy et al., the destination vectors (pDEST-DD03 <symbol role="symbolfont">&#x0026;</symbol> pDEST-MB14) contain the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-119" role="_blank">unc-119</ulink></emphasis> gene which is used in ballistic transformation protocols (Praitis, 2001). pENTRY-GFP, pENTRY-ORF, pDEST-DD03 and pDEST-MB14 can be obtained from Marc Vidal (<ulink url="mailto:marc_vidal@dfci.harvard.edu">marc_vidal@dfci.harvard.edu</ulink>).</para>
+            </step>
+            </procedure>
+        </sect3>
+		<sect3>
+			<title>Links</title>
+			<para>Promoterome database: <ulink url="http://vidal.dfci.harvard.edu/promoteromedb/">http://vidal.dfci.harvard.edu/promoteromedb/</ulink></para>
+			<para>Invitrogen: <ulink url="http://www.invitrogen.com">http://www.invitrogen.com</ulink></para>
+			<para>Gateway<symbol role="symbolfont">&#xF6DA;</symbol> cloning technology: <ulink url="http://www.invitrogen.com/content.cfm?pageid=4072">http://www.invitrogen.com/content.cfm?pageid=4072</ulink></para>
+        </sect3>
+</sect2>
+<sect2>
+        <title>Protocol 5: Generating GFP reporter constructs using yeast homologous recombination</title>
+            <sect3>
+                <title>Introduction</title>
+                <para>The analysis of gene expression from large genomic loci requires the construction of large reporter transgenes. Traditional cloning strategies rely on available restriction sites for the insertion of a reporter gene within a gene of interest. The multitude of restriction sites within large DNA fragments makes this a difficult task. One method to bypass the need for restriction sites is yeast homologous recombination (<link linkend="bib9">Hawkins et al., 2003</link>). This approach exploits the naturally occuring homologous recombination in <emphasis>S. cerevisiae</emphasis> and can be used to generate precise insertions of a reporter gene into virtually any target sequence.
+                    <itemizedlist mark='bullet'>
+                    <title>Pros of using yeast homologous recombination:</title>
+                        <listitem>
+                        <para>Generation of large (&gt; 18kb) reporter gene fusions</para>
+                        </listitem>
+                        <listitem>
+                        <para>No requirement for restriction sites</para>
+                        </listitem>
+                        <listitem>
+                        <para>Limited use of PCR amplification</para>
+                        </listitem>
+                    </itemizedlist>
+                    <itemizedlist mark='bullet'>
+                    <title>Cons of using yeast homologous recombination:</title>
+                        <listitem>
+                        <para>Requirement for yeast culturing skills</para>
+                        </listitem>
+                        </itemizedlist>
+                </para>
+            </sect3>
+            <sect3>
+                <title>Protocol</title>
+                <para>Yeast homologous recombination utilizes the site-specific recombination properties of <emphasis>S. cerevisiae</emphasis>. An initial PCR reaction amplifies a modified GFP reporter cassette (GFP-<emphasis>URA3</emphasis>-GFP) with primers containing at least 50 base pairs of sequence homologous to the insertion site within the gene of interest ("target sequence") (see <link linkend="figure8">Figure 8</link>). The cassette is recombined into the target sequence that is carried by a bacterial shuttle vector (pRS415). Subsequent selection steps generate the final GFP fusion construct (see <link linkend="figure9">Figure 9</link>).</para>
+                            <para><emphasis role="bold">Reagents:</emphasis></para>
+                        <itemizedlist mark='bullet'>
+                        <listitem>
+                         <para>Target sequence cloned into the yeast-bacterial shuttle vector (pRS415)</para>
+                          </listitem>
+     <listitem>
+<para>Primers to amplify (n<subscript>50</subscript>)-GFP-<emphasis>URA3</emphasis>-GFP-(n<subscript>50</subscript>) cassette (see Step 2)</para>
+</listitem>
+<listitem>
+<para>Vector pCB182: contains two tandem repeats of GFP flanking <emphasis>URA3</emphasis></para>
+</listitem>
+<listitem>
+<para>Vector pRS415: yeast-bacterial shuttle vector</para>
+</listitem>
+<listitem>
+<para>Yeast strain CBS17: MAT<symbol role="symbolfont">&#x03B1;</symbol> <emphasis>his3</emphasis><symbol role="symbolfont">&#x03B4;</symbol><emphasis>200 leu2</emphasis><symbol role="symbolfont">&#x03B4;</symbol><emphasis>1 ura3-52 mal hap2</emphasis></para>
+</listitem>
+<listitem>
+        <para>Yeast strain CBY668: MAT<symbol role="symbolfont">&#x03B1;</symbol> <emphasis>ade2-101 leu2-3,112 ura3-52 cyh2 kar1-1</emphasis></para>
+</listitem>
+</itemizedlist>
+<para><emphasis role="bold">Steps:</emphasis></para>
+<procedure>
+ <step>
+ <title>Generation of (n<subscript>50</subscript>)-GFP-<emphasis>URA3</emphasis>-GFP-(n<subscript>50</subscript>) cassette</title>
+ <para>Design primers to amplify GFP-<emphasis>URA3</emphasis>-GFP. The primers must contain at least 50bp overhangs homologous to the target site and the core sequences (complementary to GFP) as follows:</para>
+                                <para>5<symbol role="symbolfont">&#x02032;</symbol> primer: 5<symbol role="symbolfont">&#x02032;</symbol>-(n<subscript>50</subscript>)-ATGAGTAAAGGAGAAGAACTTTTCAC-3<symbol role="symbolfont">&#x02032;</symbol></para>
+                                <para>3<symbol role="symbolfont">&#x02032;</symbol> primer: 5<symbol role="symbolfont">&#x02032;</symbol>-(n<subscript>50</subscript>)-GAATTCTTTGTATAGTTCATCCATGC-3<symbol role="symbolfont">&#x02032;</symbol></para>
+                                <para>Amplify (n<subscript>50</subscript>)-GFP-<emphasis>URA3</emphasis>-GFP-(n<subscript>50</subscript>) from pCB182 (<xref linkend="figure8"/>).</para>
+                                <sidebar><note>
+                                <para>A small band (~800 bp) might be generated during PCR amplification because of homology between tandem GFP repeats. This product will not interfere in the next step since it does not contain <emphasis>URA3</emphasis>.</para>
+                                </note></sidebar>
+                                <mediaobject id="figure8" xreflabel="Figure 8">
+                                <imageobject>
+                                    <imagedata entityref="fig8" width="4in" align="center"/>
+                                </imageobject>
+                                <textobject><phrase>Isolation of GFP fusion construct figure 9</phrase></textobject> &fig8legend;
+                                </mediaobject>
+                            </step>
+                            <step>
+                                <title>Recombination of GFP-<emphasis>URA3</emphasis>-GFP into target sequence</title>
+                                <para>Transform (n<subscript>50</subscript>)-GFP-<emphasis>URA3</emphasis>-GFP-(n<subscript>50</subscript>) into CBS17 (carrying target sequence-containing pRS415). Select on solid media lacking uracil (selection for GFP-<emphasis>URA3</emphasis>-GFP) and leucine (selection for target sequence-containing pRS415; <xref linkend="figure9"/>).</para>
+                           </step>
+                           <step>
+                                <title>Selection of strains carrying a homogeneous population of GFP-<emphasis>URA3</emphasis>-GFP containing plasmids</title>
+                                <para>The GFP-<emphasis>URA3</emphasis>-GFP cassette will recombine specifically into the target plasmid or unspecifically into the yeast genome. In addition, since yeast strains carry multiple copies of CEN-based plasmids (e.g., pRS415), not all of the plasmids need to contain the GFP-<emphasis>URA3</emphasis>-GFP insert for growth without uracil (<xref linkend="figure9"/>).</para>
+                                <mediaobject id="figure9" xreflabel="Figure 9">
+                                <imageobject>
+                                    <imagedata entityref="fig9" width="4in" align="center"/>
+                                </imageobject>
+                                <textobject><phrase>Isolation of GFP fusion construct figure 9</phrase></textobject> &fig9legend;
+                                </mediaobject>
+                                <para>To obtain a yeast strain containing only plasmids carrying GFP-<emphasis>URA3</emphasis>-GFP and no chromosomal insertions, replica-print yeast between different solid media. Transfer individual plasmids into karyogamy-deficient recipient yeast strains (<emphasis>kar1-1</emphasis>) by exceptional cytoduction (<link linkend="bib5">Dutcher, 1981</link>). The <emphasis>kar1-1</emphasis> mutation limits the exchange of chromosomal DNA between cells but does not affect exchange of plasmids or extranuclear material. As a result, haploid cells retain their original nuclear genotype but receive plasmid from the mating partner</para>
+                                <para>Mate strains carrying GFP-<emphasis>URA3</emphasis>-GFP <emphasis>en masse</emphasis> with CBY668 spread out as a lawn on rich medium. Select <emphasis>kar1-1</emphasis> recipients on solid medium containing cycloheximide but lacking leucine. Cycloheximide resistance confered by <emphasis>cyh2</emphasis> to CBY668 is recessive. Therefore only haploid cells will grow (not diploids and not the original transformants). Only yeast having received the plasmid grow without leucine and only yeast in which the GFP-<emphasis>URA3</emphasis>-GFP cassette was integrated into the plasmid grow without uracil.</para>
+                          </step>
+                          <step>
+                                <title>Generation of GFP fusion construct</title>
+                                <para>To select for the final GFP fusion construct, grow yeast on solid medium containing 5-fluoroorotic acid and lacking leucine (<xref linkend="figure9"/>). 5-fluoroorotic acid selects against cells containing the <emphasis>URA3</emphasis> gene.</para>
+                                    <sidebar><note>
+                                    <para>The cytoduction step (step 3), previous to 5-fluoroorotic acid treatment, is essential to obtain plasmid recombinants.</para>
+                                    </note></sidebar>
+                        </step>
+            </procedure>
+         </sect3>
+     </sect2>
+      <sect2>
+            <title>Protocol 6: Cell type-specific GFP expression from reconstituted reporter genes</title>
+            <para>Conventional transcriptional and translational reporters rarely direct expression in a single cell type. Moreover, cell-specific <emphasis>cis</emphasis>-regulatory sequences are not available for all 959 somatic cells of <emphasis>C. elegans</emphasis>. Advances in the molecular understanding of GFP have led to the development of reconstituted GFP expression systems. Partial GFP peptides (N-GFP: residues 1-157 and C-GFP: residues 158-238) co-expressed in bacteria can form a stable fluorescent product. In eukaryotic cells, GFP fluorescence occurs when N-GFP and C-GFP are fused to short peptides (e.g., leucine zippers) that naturally interact <emphasis>in vivo</emphasis> (<link linkend="bib7">Ghosh et al., 2000</link>; <xref linkend="figure10"/>; <xref linkend="figure11"/>).</para>
+<literallayout></literallayout>
+                    <mediaobject id="figure10" xreflabel="Figure 10">
+                    <imageobject>
+                        <imagedata entityref="fig10" width="5in" align="center"/>
+                    </imageobject>
+                    <textobject><phrase>NZGFP-CZGFP Reconstitution figure 11</phrase></textobject> &fig10legend;
+                    </mediaobject>
+                    <mediaobject id="figure11" xreflabel="Figure 11">
+                    <imageobject>
+                        <imagedata entityref="fig11" width="4in" align="center"/>
+                    </imageobject>
+                    <textobject><phrase>NZGFP-CZGFP Reconstitution figure 11</phrase></textobject> &fig11legend;
+                    </mediaobject>
+            <para>To apply this approach to <emphasis>C. elegans</emphasis>, two expression vectors have been developed that contain GFP polypeptides, N-GFP and C-GFP, fused via a small linker to sequences that can form an antiparallel leucine zipper (NZ and CZ; <link linkend="bib26">Zhang et al., 2004</link>). The vectors, refered to as NZGFP and CZGFP, are suited for the cloning of <emphasis>cis</emphasis>-regulatory DNA fragments. By combining <emphasis>cis</emphasis>-regulatory sequences yielding overlapping expression patterns, one can engineer worm strains that label specific subsets of cells.</para>
+                    <table frame='all'>
+					<title>Reagents (Chalfie, pers. comm.)</title>
+                    <tgroup cols='3' align='center' colsep='1' rowsep='1'>
+                    <colspec colname='c1' colwidth='0.7*'/>
+                    <colspec colname='c2' colwidth='1*'/>
+                    <colspec colname='c3' colwidth="1.3*"/>
+                    <thead>
+                    <row>
+                      <entry>Vector</entry>
+                      <entry>Reporter gene</entry>
+                      <entry>Comments</entry>
+                    </row>
+                    </thead>
+                    <tbody>
+                    <row>
+                      <entry>TU#710</entry>
+                      <entry>NZGFP in pPD95.77</entry>
+                      <entry>GFP portion in NZGFP contains the introns from the original pPD95.77</entry>
+                    </row>
+                    <row>
+                      <entry>TU#711</entry>
+                      <entry>CZGFP in pPD95.77</entry>
+                      <entry>GFP portion in CZGFP contains the intron from the original pPD95.77</entry>
+                    </row>
+                    <row>
+                      <entry>TU#712</entry>
+                      <entry>NZYFP version of TU#710</entry>
+                      <entry>Missense mutations: S65G, V68L, and S72A</entry>
+                    </row>
+                    <row>
+                      <entry>TU#713</entry>
+                      <entry>CZYFP version of TU#711</entry>
+                      <entry>Missense mutations: T203Y</entry>
+                    </row>
+                    <row>
+                      <entry>TU#714</entry>
+                      <entry>NZCFP version of TU#7102</entry>
+                      <entry>Missense mutations: Y66W, N146I, and M153T</entry>
+                    </row>
+                    <row>
+                      <entry>TU#715</entry>
+                      <entry>CZCFP version of TU#711</entry>
+                      <entry>Missense mutations: V163A</entry>
+                    </row>
+                    </tbody>
+                    </tgroup>
+                    </table>
+      </sect2>
+</sect1>
+<sect1>
+	<title>References</title>
+	&WMGFPR_Refs;
+	<para/>
+</sect1>
+</article>

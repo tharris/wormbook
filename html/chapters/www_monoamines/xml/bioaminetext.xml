@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY fig1 SYSTEM 'bioaminefig1.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'bioaminefig1leg.xml'>
+<!ENTITY bioamine_Refs SYSTEM "bioaminerefs.xml">
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="bioamine_ArticleID">
+	<articleinfo>
+		<!--see DocBook's authorgroup element -->
+		<title>Biogenic amine neurotransmitters in <emphasis>C. elegans</emphasis><footnote>
+			<para>Edited by Erik M. Jorgensen and Joshua M. Kaplan. Last revised December 15, 2006. Published February 20, 2007. This chapter should be cited as: Chase, D.L. and Koelle, M.R. Biogenic amine neurotransmitters in <emphasis>C. elegans</emphasis> (February 20, 2007), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.132.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+			<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2007 Daniel L. Chase and Michael R. Koelle. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+			</footnote>
+		</title>
+		<author><othername>Daniel L. Chase<superscript>1</superscript><remark><footnote><para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:danchase@biochem.umass.edu">danchase@biochem.umass.edu</ulink></para></footnote></remark>, Michael R. Koelle<superscript>2</superscript></othername>
+			<affiliation><orgname><superscript>1</superscript>Department of Biochemistry and Molecular Biology</orgname><address>University of Massachusetts, Amherst, MA 01003 USA</address></affiliation>
+			<affiliation><orgname><superscript>2</superscript>Department of Molecular Biophysics &amp; Biochemistry</orgname><address>Yale University, New Haven, CT 06520 USA</address>
+			</affiliation>
+		</author>
+	</articleinfo>
+<abstract>
+<title><emphasis role="bold">Abstract</emphasis></title>
+<para><emphasis role="bold">Four biogenic amines: octopamine, tyramine, dopamine and serotonin act in</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">to modulate behavior in response to changing environmental cues. These neurotransmitters act at both neurons and muscles to affect egg laying, pharyngeal pumping, locomotion and learning. A variety of experimental approaches including genetic, imaging, biochemical and pharmacological analyses have been used to identify the enzymes and cells that make and release the amines and the cells and receptors that bind them. Dopamine and serotonin act through receptors and downstream signaling mechanisms similar to those that operate in the mammalian brain suggesting that</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">will provide a valuable model for understanding biogenic amine signaling in the brain.</emphasis></para>
+</abstract>
+<?newpage?>
+<sect1 id="sec1">
+<title>Introduction</title>
+<para>The biogenic amines dopamine, serotonin, octopamine and tyramine can all be detected in <emphasis>C. elegans</emphasis> extracts by HPLC analysis and appear to function as neurotransmitters or neuromodulators (<link linkend="bib38">Sulston et al., 1975</link><!--: PMID: 240872-->; <link linkend="bib33">Sanyal et al., 2004</link><!--: PMID: 14739932-->; <link linkend="bib14">Horvitz et al., 1982</link><!--: PMID: 6805073-->; <link linkend="bib1">Alkema et al., 2005</link><!--: PMID: 15848803-->). Other signaling amines found in vertebrates (histamine, epinephrine, and norepinephrine) appear not to be made in <emphasis>C. elegans</emphasis> (<link linkend="bib14">Horvitz et al., 1982</link><!--: PMID: 6805073-->; <link linkend="bib33">Sanyal et al., 2004</link><!--: PMID: 14739932-->). Biogenic amines modulate a variety of <emphasis>C. elegans</emphasis> behaviors including locomotion, egg laying (see <ulink url="http://www.wormbook.org/chapters/www_egglaying/egglaying.html" role="_blank">Egg laying</ulink>), defecation, and foraging. Dopamine and serotonin have established roles in mammalian nervous system function and abnormal signaling by these neurotransmitters has been implicated in several human diseases including Parkinson's disease, schizophrenia, and depression. It is not clear whether octopamine or its biosynthetic precursor tyramine function as neurotransmitters in mammals. Octopamine, however, can act as a neurotransmitter in invertebrates and recent evidence has implicated tyramine as a neurotransmitter in <emphasis>C. elegans</emphasis> (<link linkend="bib1">Alkema et al., 2005</link><!--: PMID: 15848803-->). Studies in <emphasis>C. elegans</emphasis> have begun to elucidate the molecular and cellular signaling mechanisms by which these neurotransmitters control behavior.</para>
+<para>A number of tools are available to study the molecular and cellular mechanisms of signaling by biogenic amines in <emphasis>C. elegans</emphasis>. The genes encoding the enzymes responsible for synthesis of these neurotransmitters and the gene encoding the transporter (<emphasis><ulink url="http://www.wormbase.org/db/get?name=cat-1;class=Gene" role="_blank">cat-1</ulink></emphasis>) that loads these neurotransmitters into vesicles have been identified and mutants are available in each (see <link linkend="figure1">Figure 1</link>). Analysis of the phenotypes of such mutants has shed light on the behaviors controlled by the amines and detailed analysis of the expression patterns of the biosynthetic enzymes and transporter has helped identify the cells and neurons in which the neurotransmitters are made and released (see <link linkend="table1">Table 1</link>). Cells containing dopamine and serotonin can also be identified using formaldehyde-induced fluorescence and / or antibody stains. Seventeen putative biogenic amine receptors have been identified based on sequence similarity to mammalian receptors, and mutants for most of these are available (see <link linkend="table2">Table 2</link>). Although the specific biogenic amine that activates a given receptor homolog cannot be accurately predicted based purely on sequence analysis, in a growing number of cases pharmacological analysis of cloned <emphasis>C. elegans</emphasis> receptors has been used to determine their likely physiological ligands (see <link linkend="table2">Table 2</link>). Transgenes in which the promoters for the receptors drive expression of fluorescent proteins have been used to identify the cells in which the receptors are expressed and that thus respond to the neurotransmitter signal (see <link linkend="table2">Table 2</link>). Finally, a variety of drugs that target biogenic amine receptors are available and their effects on behavior can be helpful in determining the physiological roles of the receptors (see <link linkend="table3">Table 3</link>). The specificity of these drugs on <emphasis>C. elegans</emphasis> receptors is however largely unclear, as most of the drugs were developed against mammalian receptors and interact with regions of the receptors that may not be evolutionarily conserved. As a result, many of the drugs tested show different affinities for <emphasis>C. elegans</emphasis> receptors than seen for their mammalian receptor counterparts, and indeed may have completely different activities at the <emphasis>C. elegans</emphasis> receptors than they have at the mammalian receptors.</para>
+<para>This chapter provides a reference source that organizes the growing body of literature in the field of biogenic amine signaling in <emphasis>C. elegans</emphasis> and also highlights current gaps in the field.</para>
+<literallayout></literallayout>
+		<mediaobject id="figure1" xreflabel="Figure 1">
+			<imageobject>
+				<imagedata entityref="fig1" width="4.5in" align="center"/>
+			</imageobject>
+			<textobject>
+				<phrase>figure 1</phrase>
+			</textobject> &fig1legend;
+</mediaobject>
+<table id="table1" frame="all" rules="all" cellpadding="0" cellspacing="0" width="70%">
+<title><emphasis role="bold">Table 1. Cells that synthesize biogenic amines</emphasis></title>
+<tgroup cols="6">
+<colspec colname="c1" align="center" colwidth="1*"/>
+<colspec colname="c2" align="center" colwidth="1*"/>
+<colspec colname="c3" align="center" colwidth="1*"/>
+<colspec colname="c4" align="center" colwidth="1*"/>
+<colspec colname="c5" align="center" colwidth="1*"/>
+<colspec colname="c6" align="center" colwidth="1*"/>
+<thead>
+<row>
+<entry>Neuron / cell</entry>
+<entry>Dopamine</entry>
+<entry>Serotonin</entry>
+<entry>Octopamine</entry>
+<entry>Tyramine</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=CAT-1;class=Protein" role="_blank">CAT-1</ulink> expression<superscript>a</superscript></entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ADE;class=Cell" role="_blank">ADE</ulink></entry>
+<entry>&#x0002B;<superscript>1, 9, 10, 11</superscript></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry>&#x0002B;</entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=PDE;class=Cell" role="_blank">PDE</ulink></entry>
+<entry>&#x0002B;<superscript>1, 9, 10, 11</superscript></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry>&#x0002B;</entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=CEP;class=Cell" role="_blank">CEP</ulink></entry>
+<entry>&#x0002B;<superscript>1, 9, 10, 11</superscript></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry>&#x0002B;</entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=R5A;class=Cell" role="_blank">R5A</ulink>, <ulink url="http://www.wormbase.org/db/get?name=R7A;class=Cell" role="_blank">R7A</ulink>, <ulink url="http://www.wormbase.org/db/get?name=R9A;class=Cell" role="_blank">R9A</ulink></entry>
+<entry>&#x0002B;<superscript>2, 11</superscript></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry>NE</entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=RIC;class=Cell" role="_blank">RIC</ulink></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry>&#x0002B;<superscript>3</superscript></entry>
+<entry>&#x0002B;<superscript>3</superscript></entry>
+<entry>&#x0002B;</entry>
+</row>
+<row>
+<entry>Gonad sheath</entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry>&#x0002B;<superscript>3</superscript></entry>
+<entry>&#x0002B;<superscript>3</superscript></entry>
+<entry>NR</entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=RIM;class=Cell" role="_blank">RIM</ulink></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry>&#x0002B;<superscript>3</superscript></entry>
+<entry>NR</entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=UV1;class=Strain" role="_blank">UV1</ulink></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry>&#x0002B;<superscript>3</superscript></entry>
+<entry>NR</entry>
+</row>
+<row>
+<entry><ulink url="http://wormbase.org/db/cell/cell.cgi?name=CP1;class=Cell" role="_blank">CP1</ulink>-<ulink url="http://wormbase.org/db/cell/cell.cgi?name=CP6;class=Cell" role="_blank">6</ulink></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry>&#x0002B;<superscript>4,12</superscript></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry>NE</entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=R1;class=Cell" role="_blank">R1</ulink>, <ulink url="http://www.wormbase.org/db/get?name=R3;class=Cell" role="_blank">R3</ulink>, <ulink url="http://www.wormbase.org/db/get?name=R9;class=Cell" role="_blank">R9</ulink></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry>&#x0002B;<superscript>4</superscript></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry>NE</entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=NSM;class=Cell" role="_blank">NSM</ulink></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry>&#x0002B;<superscript>5, 6, 8, 12</superscript></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry>&#x0002B;</entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=HSN;class=Cell" role="_blank">HSN</ulink></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry>&#x0002B;<superscript>6, 8, 12</superscript></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry>&#x0002B;</entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=VC4;class=Cell" role="_blank">VC4</ulink>, 5</entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry>&#x0002B;<superscript>7</superscript></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry>&#x0002B;</entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ADF;class=Cell" role="_blank">ADF</ulink></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry>&#x0002B;<superscript>7, 12</superscript></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry>&#x0002B;</entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=RIH;class=Cell" role="_blank">RIH</ulink></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry>&#x0002B;<superscript>7, 12</superscript></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry>&#x0002B;</entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=AIM;class=Cell" role="_blank">AIM</ulink></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry>&#x0002B;<superscript>7, 12</superscript></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry>&#x0002B;</entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=CAN;class=Cell" role="_blank">CAN</ulink></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry><symbol role="symbolfont">&#x02212;</symbol></entry>
+<entry>&#x0002B;</entry>
+</row>
+<row>
+<entry namest="c1" nameend="c6" align="left"><superscript>a</superscript>All <ulink url="http://www.wormbase.org/db/get?name=CAT-1;class=Protein" role="_blank">CAT-1</ulink> expression was reported in a single publication (<link linkend="bib10">Duerr et al., 1999</link>) NE, not examined; NR, not reported.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<para>References</para>
+<simplelist>
+<member>1. <link linkend="bib38">Sulston et al., 1975</link><!--: PMID 240872--></member>
+<member>2. <link linkend="bib39">Sulston and Horvitz, 1977</link><!--: PMID: 838129--></member>
+<member>3. <link linkend="bib1">Alkema et al., 2005</link><!--: PMID: 15848803--></member>
+<member>4. <link linkend="bib18">Loer and Kenyon, 1993</link><!--: PMID: 8254383--></member>
+<member>5. <link linkend="bib14">Horvitz et al., 1982</link><!--: PMID: 6805073--></member>
+<member>6. <link linkend="bib9">Desai et al., 1988</link><!--: PMID: 3200316--></member>
+<member>7. <link linkend="bib10">Duerr et al., 1999</link><!--: PMID: 9870940--></member>
+<member>8. <link linkend="bib20">McIntire et al., 1992</link><!--: PMID: 1739461--></member>
+<member>9. <link linkend="bib19">Lynch et al., 1995</link><!--: PMID: 7581455--></member>
+<member>10. <link linkend="bib22">Nass et al., 2002</link><!--: PMID: 11867711--></member>
+<member>11. <link linkend="bib16">Lints and Emmons 1999</link><!--: PMID: 10572056--></member>
+<member>12. <link linkend="bib43">Sze et al., 2000</link><!--: PMID: 10676966--></member>
+</simplelist>
+</sect1>
+<sect1 id="sec2">
+<title>Octopamine</title>
+<para>Octopamine is synthesized from tyramine by the tyramine <symbol role="symbolfont">&#x003B2;</symbol>-hydroxylase <ulink url="http://www.wormbase.org/db/get?name=TBH-1;class=Protein" role="_blank">TBH-1</ulink>. Based on the expression of <ulink url="http://www.wormbase.org/db/get?name=TBH-1;class=Protein" role="_blank">TBH-1</ulink> as determined by antibody stain, octopamine synthesis is limited to the <ulink url="http://www.wormbase.org/db/get?name=RIC;class=Cell" role="_blank">RIC</ulink> interneurons and the gonadal sheath cells, (<link linkend="bib1">Alkema et al., 2005</link><!--: PMID: 15848803-->). The behavioral defects of <emphasis><ulink url="http://www.wormbase.org/db/get?name=tbh-1;class=Gene" role="_blank">tbh-1</ulink></emphasis> mutants have not been described in detail, however they share several (though apparently not all) pleiotropies with <emphasis><ulink url="http://www.wormbase.org/db/get?name=tdc-1;class=Gene" role="_blank">tdc-1</ulink></emphasis> mutants (which cannot synthesize tyramine or octopamine, see <link linkend="figure1">Figure 1</link>). One of the issues in this field is whether the cells that make octopamine also release tyramine as a neurotransmitter, or whether tyramine functions in those cells simply as a precursor in octopamine synthesis. While no octopamine receptors have yet been verified using pharmacological criteria, <ulink url="http://www.wormbase.org/db/get?name=SER-3;class=Protein" role="_blank">SER-3</ulink> appears to be a leading candidate and may be activated by octopamine in the SIA interneurons in response to starvation (<link linkend="bib40">Suo et al., 2006</link><!--: PMID: 17021164-->). Behavioral defects associated with <emphasis><ulink url="http://www.wormbase.org/db/get?name=ser-3;class=Gene" role="_blank">ser-3</ulink></emphasis> mutants have not yet been described, however treatment of animals with exogenous octopamine causes several behavioral effects, including inhibition of egg laying and inhibition of pharyngeal pumping (<link linkend="bib14">Horvitz et al., 1982</link><!--: PMID: 6805073-->; <link linkend="bib1">Alkema et al., 2005</link><!--: PMID: 15848803-->). Both of these behaviors are normally stimulated by the presence of food, suggesting that octopamine signaling opposes the signal induced by food. Supporting the role of octopamine in the control of egg laying, treatment with phentolamine (an octopamine antagonist in insects) stimulates egg-laying behavior (<link linkend="bib14">Horvitz et al., 1982</link><!--: PMID: 6805073-->).</para>
+</sect1>
+<sect1 id="sec3">
+<title>Tyramine</title>
+<para>Tyramine is present in low abundance in <emphasis>C. elegans</emphasis>, perhaps because it is made in only a few cells, and in some of those cells serves as an intermediate in the synthesis of octopamine (<link linkend="bib1">Alkema et al., 2005</link><!--: PMID: 15848803-->). The enzyme used to synthesize tyramine (<ulink url="http://www.wormbase.org/db/get?name=TDC-1;class=Protein" role="_blank">TDC-1</ulink>) appears to be expressed in only two cells types that do not also express the enzyme that converts tyramine to octopamine (<ulink url="http://www.wormbase.org/db/get?name=TBH-1;class=Protein" role="_blank">TBH-1</ulink>), and these cells (the <ulink url="http://wormbase.org/db/cell/cell.cgi?name=RIML;class=Cell" role="_blank">RIM-1</ulink> motorneurons and the <ulink url="http://www.wormbase.org/db/get?name=uv1;class=Cell" role="_blank">uv1</ulink> neuroendocrine cells) may thus release tyramine as a neurotransmitter (<link linkend="bib1">Alkema et al., 2005</link><!--: PMID: 15848803-->). <emphasis><ulink url="http://www.wormbase.org/db/get?name=tdc-1;class=Gene" role="_blank">tdc-1</ulink></emphasis> mutants exhibit behavioral defects not shared with <emphasis><ulink url="http://www.wormbase.org/db/get?name=tbh-1;class=Gene" role="_blank">tbh-1</ulink></emphasis> mutants, and characterization of these defects indicate that tyramine is required for the following: 1) inhibition of head oscillations as animals back in response to light touch to the anterior portion of the body; 2) inhibition of egg laying; and 3) modulation of spontaneous reversals (<link linkend="bib1">Alkema et al., 2005</link><!--: PMID: 15848803-->; <link linkend="bib27">Rex et al., 2004</link><!--: PMID: 15569254-->). The latter two functions suggest that tyramine may be preferentially released during times of low food abundance when the animal needs to reduce egg laying and search for new food supplies. Two receptors, <ulink url="http://www.wormbase.org/db/get?name=SER-2;class=Protein" role="_blank">SER-2</ulink> and <ulink url="http://www.wormbase.org/db/get?name=TYRA-2;class=Protein" role="_blank">TYRA-2</ulink>, have been identified that bind tyramine with relatively high affinity when expressed in cell culture (<link linkend="bib28">Rex et al., 2002</link><!--: PMID: 12354282-->; <link linkend="bib27">Rex et al., 2004</link><!--: PMID: 15569254-->; <link linkend="bib26a">Rex et al., 2005</link><!--: PMID: 15953361-->). Mutations in <emphasis><ulink url="http://www.wormbase.org/db/get?name=ser-2;class=Gene" role="_blank">ser-2</ulink></emphasis> cause several behavioral defects (see <link linkend="table2">Table 2</link>), some of which are similar to the behavioral defects seen in <emphasis><ulink url="http://www.wormbase.org/db/get?name=tdc-1;class=Gene" role="_blank">tdc-1</ulink></emphasis> mutants. For example, <emphasis><ulink url="http://www.wormbase.org/db/get?name=ser-2;class=Gene" role="_blank">ser-2</ulink></emphasis> mutants fail to suppress head oscillations in response to touch (<link linkend="bib27">Rex et al., 2004</link><!--: PMID: 15569254-->). Signaling to suppress head oscillations acts through the mechanosensory neurons <ulink url="http://www.wormbase.org/db/get?name=ALM;class=Cell" role="_blank">ALM</ulink> and <ulink url="http://www.wormbase.org/db/get?name=AVM;class=Cell" role="_blank">AVM</ulink>, which form gap junctions with the command interneurons <ulink url="http://www.wormbase.org/db/get?name=AVA;class=Cell" role="_blank">AVA</ulink> and <ulink url="http://www.wormbase.org/db/get?name=AVD;class=Cell" role="_blank">AVD</ulink> that control backward movement. The <ulink url="http://www.wormbase.org/db/get?name=AVA;class=Cell" role="_blank">AVA</ulink> and <ulink url="http://www.wormbase.org/db/get?name=AVD;class=Cell" role="_blank">AVD</ulink> neurons in turn form gap junctions with the tyraminergic <ulink url="http://wormbase.org/db/cell/cell.cgi?name=RIM;class=Cell" role="_blank">RIM</ulink> neurons which then synapse onto and presumably modulate the activity of the <ulink url="http://www.wormbase.org/db/get?name=RMD;class=Cell" role="_blank">RMD</ulink> motorneurons that directly innervate head muscles (<link linkend="bib1">Alkema et al., 2005</link><!--: PMID: 15848803-->). Interestingly, none of the cells that have been identified that express <ulink url="http://www.wormbase.org/db/get?name=SER-2;class=Protein" role="_blank">SER-2</ulink> are postsynaptic to the RIM motorneurons, suggesting that if tyramine acts through <ulink url="http://www.wormbase.org/db/get?name=SER-2;class=Protein" role="_blank">SER-2</ulink> to suppress head oscillations it must function extrasynaptically. <ulink url="http://www.wormbase.org/db/get?name=SER-2;class=Protein" role="_blank">SER-2</ulink> is expressed on the head muscles that effect head movements, and thus these muscles are likely sites of action for tyramine (<link linkend="bib45">Tsalik et al., 2003</link><!--: PMID: 14568548-->). While a single <emphasis><ulink url="http://www.wormbase.org/db/get?name=tyra-2;class=Gene" role="_blank">tyra-2</ulink></emphasis> mutant is available, an analysis of <ulink url="http://www.wormbase.org/db/get?name=TYRA-2;class=Protein" role="_blank">TYRA-2</ulink> effects on behavior has not yet been published. <ulink url="http://www.wormbase.org/db/get?name=TYRA-2;class=Protein" role="_blank">TYRA-2</ulink> is expressed in neurons of the amphid sensilla (<ulink url="http://www.wormbase.org/db/get?name=ASE;class=Cell" role="_blank">ASE</ulink>, <ulink url="http://www.wormbase.org/db/get?name=ASG;class=Cell" role="_blank">ASG</ulink>, <ulink url="http://www.wormbase.org/db/get?name=ASH;class=Cell" role="_blank">ASH</ulink> and <ulink url="http://www.wormbase.org/db/get?name=ASI;class=Cell" role="_blank">ASI</ulink>), the <ulink url="http://www.wormbase.org/db/get?name=ALM;class=Cell" role="_blank">ALM</ulink> mechanosensory neurons and a few other neurons (<link linkend="bib26a">Rex et al., 2005</link><!--: PMID: 15953361-->). The expression of <ulink url="http://www.wormbase.org/db/get?name=TYRA-2;class=Protein" role="_blank">TYRA-2</ulink> on the <ulink url="http://www.wormbase.org/db/get?name=ALM;class=Cell" role="_blank">ALM</ulink> neurons suggests that tyramine could inhibit head oscillations by modulating the activity of the <ulink url="http://www.wormbase.org/db/get?name=ALM;class=Cell" role="_blank">ALM</ulink> neurons, which in turn synapse onto and presumably modulate the activity of the <ulink url="http://www.wormbase.org/db/get?name=RMD;class=Cell" role="_blank">RMD</ulink> neurons. The <ulink url="http://www.wormbase.org/db/get?name=ALM;class=Cell" role="_blank">ALM</ulink> neurons are not postsynaptic to the neurons that make tyramine and thus tyramine would have to act extrasynaptically to act through <ulink url="http://www.wormbase.org/db/get?name=ALM;class=Cell" role="_blank">ALM</ulink>-expressed <ulink url="http://www.wormbase.org/db/get?name=TYRA-2;class=Protein" role="_blank">TYRA-2</ulink> receptors.</para>
+<para>Exogenous tyramine inhibits serotonin-stimulated pharyngeal pumping, and mutations in <emphasis><ulink url="http://www.wormbase.org/db/get?name=ser-2;class=Gene" role="_blank">ser-2</ulink></emphasis> block this effect, consistent with the idea that tyramine is released in response to food deprivation to inhibit pharyngeal pumping. <ulink url="http://www.wormbase.org/db/get?name=SER-2;class=Protein" role="_blank">SER-2</ulink> is expressed on pharyngeal muscles and thus tyramine could act directly on them (<link linkend="bib45">Tsalik et al., 2003</link><!--: PMID: 14568548-->). Exogenous tyramine also inhibits egg laying in wild-type animals, and <emphasis><ulink url="http://www.wormbase.org/db/get?name=tdc-1;class=Gene" role="_blank">tdc-1</ulink></emphasis> mutants are weakly hyperactive egg layers (<link linkend="bib1">Alkema et al., 2005</link><!--: PMID: 15848803-->). If tyramine does inhibit egg laying it likely does not act through <ulink url="http://www.wormbase.org/db/get?name=SER-2;class=Protein" role="_blank">SER-2</ulink>, as tyramine still inhibits egg laying in <emphasis><ulink url="http://www.wormbase.org/db/get?name=ser-2;class=Gene" role="_blank">ser-2</ulink></emphasis> mutants. While the synthesis of tyramine in the gonadal sheath cells is consistent with a role in egg laying, tyramine may simply be an intermediate in those cells in the synthesis of octopamine. Indeed, the inhibitory effects of exogenous tyramine on egg-laying behavior may be the result of tyramine being converted to octopamine inside the animal, as the effects of exogenous tyramine have not been tested in <emphasis><ulink url="http://www.wormbase.org/db/get?name=tbh-1;class=Gene" role="_blank">tbh-1</ulink></emphasis> mutants, and exogenous octopamine also inhibits egg laying.</para>
+<?newpage?>
+<table id="table2" frame="all" rules="all" cellpadding="0" cellspacing="0" width="100%">
+<title><emphasis role="bold">Table 2. Biogenic amine receptors: their expression patterns, pharmacology and mutant phenotypes</emphasis></title>
+<tgroup cols="5">
+<colspec colname="c1" align="center" colwidth="0.7*"/>
+<colspec colname="c2" align="center" colwidth="1.5*"/>
+<colspec colname="c3" align="center" colwidth="0.8*"/>
+<colspec colname="c4" align="center" colwidth="0.5*"/>
+<colspec colname="c5" align="center" colwidth="1.3*"/>
+<thead>
+<row>
+<entry>Clone / Gene name<superscript>a</superscript></entry>
+<entry>Expression patterns<superscript>b</superscript></entry>
+<entry>Pharmacology</entry>
+<entry>Mutants</entry>
+<entry>Mutant phenotype</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry><ulink url="http://wormbase.org/db/seq/clone?name=F15A8.5;class=Clone" role="_blank">F15A8.5</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=dop-1;class=Gene" role="_blank">dop-1</ulink></emphasis>)</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ALM;class=Cell" role="_blank">ALM</ulink>, <ulink url="http://www.wormbase.org/db/get?name=ALN;class=Cell" role="_blank">ALN</ulink>, <ulink url="http://www.wormbase.org/db/get?name=AVM;class=Cell" role="_blank">AVM</ulink>, <ulink url="http://www.wormbase.org/db/get?name=PLN;class=Cell" role="_blank">PLN</ulink>, <ulink url="http://www.wormbase.org/db/get?name=PVQ;class=Cell" role="_blank">PVQ</ulink>, <ulink url="http://www.wormbase.org/db/get?name=RIS;class=Cell" role="_blank">RIS</ulink> and in other head neurons, head muscles, excretory gland cells, amphid and labial support cells<superscript>7</superscript>. Cholinergic ventral cord motor neurons<superscript>9</superscript>. <ulink url="http://www.wormbase.org/db/get?name=ALM;class=Cell" role="_blank">ALM</ulink>, <ulink url="http://www.wormbase.org/db/get?name=PHC;class=Cell" role="_blank">PHC</ulink>, <ulink url="http://www.wormbase.org/db/get?name=PLM;class=Cell" role="_blank">PLM</ulink>, and unidentified others<superscript>11</superscript>.</entry>
+<entry>DA &gt; 5-HT &gt; OA &gt; TA<superscript>4</superscript>.</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=ev748;class=Variation" role="_blank">ev748</ulink>, <ulink url="http://www.wormbase.org/db/get?name=ok398;class=Variation" role="_blank">ok398</ulink>, <ulink url="http://www.wormbase.org/db/get?name=tm534;class=Variation" role="_blank">tm534</ulink>, <ulink url="http://www.wormbase.org/db/get?name=tm535;class=Variation" role="_blank">tm535</ulink>, <ulink url="http://www.wormbase.org/db/get?name=vs100;class=Variation" role="_blank">vs100</ulink>, <ulink url="http://www.wormbase.org/db/get?name=vs101;class=Variation" role="_blank">vs101</ulink></emphasis></entry>
+<entry>Defective in tap habituation<superscript>11</superscript>. Defective in basal slowing and response to exogenous dopamine (in <emphasis><ulink url="http://www.wormbase.org/db/get?name=dop-3;class=Gene" role="_blank">dop-3</ulink></emphasis> background)<superscript>9</superscript>.</entry>
+</row>
+<row>
+<entry><ulink url="http://wormbase.org/db/seq/clone?name=K09G1.4;class=Clone" role="_blank">K09G1.4</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=dop-2;class=Gene" role="_blank">dop-2</ulink></emphasis>)</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ADE;class=Cell" role="_blank">ADE</ulink>, <ulink url="http://www.wormbase.org/db/get?name=CEP;class=Cell" role="_blank">CEP</ulink>, <ulink url="http://www.wormbase.org/db/get?name=PDE;class=Cell" role="_blank">PDE</ulink>, and other head and tail neurons<superscript>3</superscript>. <ulink url="http://www.wormbase.org/db/get?name=PDA;class=Cell" role="_blank">PDA</ulink>, <ulink url="http://www.wormbase.org/db/get?name=RIA;class=Cell" role="_blank">RIA</ulink> and other head neurons, <ulink url="http://www.wormbase.org/db/get?name=RID;class=Cell" role="_blank">RID</ulink>, <ulink url="http://www.wormbase.org/db/get?name=SIA;class=Cell" role="_blank">SIA</ulink>, <ulink url="http://www.wormbase.org/db/get?name=SIB;class=Cell" role="_blank">SIB</ulink><superscript>7</superscript>.</entry>
+<entry>DA &gt; 5-HT &gt; TA &gt; OA<superscript>3</superscript>.</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=tm1062;class=Variation" role="_blank">tm1062</ulink>, <ulink url="http://www.wormbase.org/db/get?name=vs105;class=Variation" role="_blank">vs105</ulink></emphasis></entry>
+<entry>ND</entry>
+</row>
+<row>
+<entry><ulink url="http://wormbase.org/db/seq/clone?name=T14E8.3;class=Clone" role="_blank">T14E8.3</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=dop-3;class=Gene" role="_blank">dop-3</ulink></emphasis>)</entry>
+<entry>Cholinergic and GABA&#x02019;ergic ventral cord motor neurons<superscript>9</superscript>.</entry>
+<entry>ND</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=vs106;class=Variation" role="_blank">vs106</ulink>, <ulink url="http://www.wormbase.org/db/get?name=tm1356;class=Variation" role="_blank">tm1356</ulink></emphasis></entry>
+<entry>Defective in basal slowing and response to exogenous dopamine<superscript>9</superscript>.</entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F59C12.2;class=Gene" role="_blank">F59C12.2</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=ser-1;class=Gene" role="_blank">ser-1</ulink></emphasis>)</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=pm3;class=Cell" role="_blank">pm3</ulink>, <ulink url="http://www.wormbase.org/db/get?name=pm4;class=Cell" role="_blank">pm4</ulink>, <ulink url="http://www.wormbase.org/db/get?name=pm5;class=Cell" role="_blank">pm5</ulink>, <ulink url="http://www.wormbase.org/db/get?name=pm6;class=Cell" role="_blank">pm6</ulink>, <ulink url="http://www.wormbase.org/db/get?name=pm7;class=Cell" role="_blank">pm7</ulink>, <ulink url="http://www.wormbase.org/db/get?name=pm8;class=Cell" role="_blank">pm8</ulink><superscript>7</superscript>. <ulink url="http://www.wormbase.org/db/get?name=PVT;class=Cell" role="_blank">PVT</ulink>, pharyngeal muscles, vulval muscles and other head, tail and some ray neurons<superscript>10</superscript>. Diagonal muscles of male, pharyngeal muscles, neurons of the head, neurons in the tail including <ulink url="http://www.wormbase.org/db/get?name=PVT;class=Cell" role="_blank">PVT</ulink> and <ulink url="http://www.wormbase.org/db/get?name=PVQ;class=Cell" role="_blank">PVQ</ulink>, ventral cord motor neurons (not VCs), vulval muscles, uterine cells and cells of the posterior intestine<superscript>21</superscript>. Neurons in the head<superscript>20</superscript>.</entry>
+<entry>5-HT &gt; DA, OA<superscript>2</superscript>.</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=ok345;class=Variation" role="_blank">ok345</ulink></emphasis></entry>
+<entry>Defective in egg laying in response to 5-HT<superscript>10, 20, 21</superscript> and fluoxetine<superscript>10</superscript>. Males defective in tail curling in response to 5-HT<superscript>21</superscript>.</entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Y22D7AR.13;class=Gene" role="_blank">Y22D7AR.13</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=ser-4;class=Gene" role="_blank">ser-4</ulink></emphasis>)</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=PVT;class=Cell" role="_blank">PVT</ulink>, <ulink url="http://www.wormbase.org/db/get?name=RIB;class=Cell" role="_blank">RIB</ulink>, <ulink url="http://www.wormbase.org/db/get?name=RIS;class=Cell" role="_blank">RIS</ulink> and other head neurons, a pharyngeal neuron, and a tail neuron<superscript>7</superscript>. Neurons in the head<superscript>20</superscript>.</entry>
+<entry>5-HT &gt; DA, OA<superscript>1</superscript>.</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=ok512;class=Variation" role="_blank">ok512</ulink></emphasis></entry>
+<entry>Defective in egg laying in response to imipramine<superscript>10</superscript>. Males defective in tail curling in response to 5-HT<superscript>20</superscript>.</entry>
+</row>
+<row>
+<entry><ulink url="http://wormbase.org/db/seq/clone?name=C09B7.1;class=Clone" role="_blank">C09B7.1</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=ser-7;class=Gene" role="_blank">ser-7</ulink></emphasis>)</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=M4;class=Cell" role="_blank">M4</ulink> motor neuron<superscript>5</superscript>. Pharyngeal neurons including <ulink url="http://www.wormbase.org/db/get?name=MC;class=Cell" role="_blank">MC</ulink>, <ulink url="http://www.wormbase.org/db/get?name=M4;class=Cell" role="_blank">M4</ulink>, <ulink url="http://www.wormbase.org/db/get?name=I2;class=Cell" role="_blank">I2</ulink>, <ulink url="http://www.wormbase.org/db/get?name=I3;class=Cell" role="_blank">I3</ulink>, <ulink url="http://www.wormbase.org/db/get?name=I4;class=Cell" role="_blank">I4</ulink>, <ulink url="http://www.wormbase.org/db/get?name=I6;class=Cell" role="_blank">I6</ulink>, <ulink url="http://www.wormbase.org/db/get?name=M2;class=Cell" role="_blank">M2</ulink>, <ulink url="http://www.wormbase.org/db/get?name=M3;class=Cell" role="_blank">M3</ulink>, <ulink url="http://www.wormbase.org/db/get?name=M5;class=Cell" role="_blank">M5</ulink>, vulval muscles<superscript>19</superscript>.</entry>
+<entry>5-HT<superscript>5</superscript>; 5-HT &gt; DA, TA, OA<superscript>19</superscript>.</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=tm1325;class=Variation" role="_blank">tm1325</ulink>, <ulink url="http://www.wormbase.org/db/get?name=tm1548;class=Variation" role="_blank">tm1548</ulink>, <ulink url="http://www.wormbase.org/db/get?name=tm1728;class=Variation" role="_blank">tm1728</ulink>, <ulink url="http://www.wormbase.org/db/get?name=ok1944;class=Variation" role="_blank">ok1944</ulink></emphasis></entry>
+<entry>Defective in egg laying in response to 5-HT<superscript>19</superscript>.</entry>
+</row>
+<row>
+<entry><ulink url="http://wormbase.org/db/seq/clone?name=K06C4.6;class=Clone" role="_blank">K06C4.6</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=mod-1;class=Gene" role="_blank">mod-1</ulink></emphasis>)</entry>
+<entry>Head, ventral cord and tail neurons, not in muscle cells<superscript>12</superscript>.</entry>
+<entry>5-HT &gt; &gt; DA, TA, OA<superscript>12</superscript>.</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=ok103;class=Variation" role="_blank">ok103</ulink></emphasis></entry>
+<entry>Defective in enhanced slowing<superscript>12, 13</superscript>.</entry>
+</row>
+<row>
+<entry><ulink url="http://wormbase.org/db/seq/clone?name=C02D4.2;class=Clone" role="_blank">C02D4.2</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=ser-2;class=Gene" role="_blank">ser-2</ulink></emphasis>)</entry>
+<entry><emphasis>ser-2A</emphasis>: <ulink url="http://www.wormbase.org/db/get?name=AIY;class=Cell" role="_blank">AIY</ulink>, <ulink url="http://www.wormbase.org/db/get?name=ALN;class=Cell" role="_blank">ALN</ulink>, <ulink url="http://www.wormbase.org/db/get?name=AUA;class=Cell" role="_blank">AUA</ulink>, <ulink url="http://www.wormbase.org/db/get?name=AVH;class=Cell" role="_blank">AVH</ulink>, <ulink url="http://www.wormbase.org/db/get?name=CAN;class=Cell" role="_blank">CAN</ulink>, <ulink url="http://www.wormbase.org/db/get?name=DA9;class=Cell" role="_blank">DA9</ulink>, <ulink url="http://www.wormbase.org/db/get?name=LUA;class=Cell" role="_blank">LUA</ulink>, <ulink url="http://www.wormbase.org/db/get?name=NSM;class=Cell" role="_blank">NSM</ulink>, <ulink url="http://www.wormbase.org/db/get?name=PVC;class=Cell" role="_blank">PVC</ulink>, <ulink url="http://www.wormbase.org/db/get?name=RIA;class=Cell" role="_blank">RIA</ulink>, <ulink url="http://www.wormbase.org/db/get?name=RIC;class=Cell" role="_blank">RIC</ulink>, <ulink url="http://www.wormbase.org/db/get?name=RID;class=Cell" role="_blank">RID</ulink>, <ulink url="http://www.wormbase.org/db/get?name=SABD;class=Cell" role="_blank">SABD</ulink>, <ulink url="http://www.wormbase.org/db/get?name=SABV;class=Cell" role="_blank">SABV</ulink>, <ulink url="http://www.wormbase.org/db/get?name=SDQ;class=Cell" role="_blank">SDQ</ulink>, head muscles, diagonal muscles, pm1&#x0002F;6 muscles<superscript>7</superscript>, <emphasis>ser-2b</emphasis>: <ulink url="http://www.wormbase.org/db/get?name=AIY;class=Cell" role="_blank">AIY</ulink>, <ulink url="http://www.wormbase.org/db/get?name=AIZ;class=Cell" role="_blank">AIZ</ulink>, <ulink url="http://www.wormbase.org/db/get?name=BDU;class=Cell" role="_blank">BDU</ulink>, <ulink url="http://www.wormbase.org/db/get?name=DVA;class=Cell" role="_blank">DVA</ulink>, <ulink url="http://www.wormbase.org/db/get?name=PVT;class=Cell" role="_blank">PVT</ulink>, <ulink url="http://www.wormbase.org/db/get?name=RID;class=Cell" role="_blank">RID</ulink>, <ulink url="http://www.wormbase.org/db/get?name=RME;class=Cell" role="_blank">RME</ulink>, <ulink url="http://www.wormbase.org/db/get?name=SIAD;class=Cell" role="_blank">SIAD</ulink>, <ulink url="http://www.wormbase.org/db/get?name=SIAV;class=Cell" role="_blank">SIAV</ulink>, excretory gland cells<superscript>7</superscript>. <emphasis>ser-2d</emphasis>: <ulink url="http://www.wormbase.org/db/get?name=OLL;class=Cell" role="_blank">OLL</ulink>, <ulink url="http://www.wormbase.org/db/get?name=PVD;class=Cell" role="_blank">PVD</ulink><superscript>7</superscript>. <emphasis><ulink url="http://www.wormbase.org/db/get?name=ser-2;class=Gene" role="_blank">ser-2</ulink></emphasis>(see footnote (c)):<ulink url="http://www.wormbase.org/db/get?name=RME;class=Cell" role="_blank">RME</ulink>, <ulink url="http://www.wormbase.org/db/get?name=RID;class=Cell" role="_blank">RID</ulink>, <ulink url="http://www.wormbase.org/db/get?name=BDU;class=Cell" role="_blank">BDU</ulink>, <ulink url="http://www.wormbase.org/db/get?name=AIY;class=Cell" role="_blank">AIY</ulink>, <ulink url="http://www.wormbase.org/db/get?name=AVH;class=Cell" role="_blank">AVH</ulink>, <ulink url="http://www.wormbase.org/db/get?name=AIZ;class=Cell" role="_blank">AIZ</ulink>, <ulink url="http://www.wormbase.org/db/get?name=ALN;class=Cell" role="_blank">ALN</ulink>, <ulink url="http://www.wormbase.org/db/get?name=RIC;class=Cell" role="_blank">RIC</ulink>, <ulink url="http://www.wormbase.org/db/get?name=RIA;class=Cell" role="_blank">RIA</ulink>, <ulink url="http://www.wormbase.org/db/get?name=PDA;class=Cell" role="_blank">PDA</ulink>, ut1 and ut2<superscript>8</superscript>.</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=ser-2;class=Gene" role="_blank">ser-2</ulink></emphasis><superscript>c</superscript> TA &gt; OA &#x0003D; DA &gt; 5-HT<superscript>6, 8</superscript>; <emphasis>ser-2A</emphasis><superscript>c</superscript> TA &gt; OA &gt; 5-HT &gt; DA<superscript>8</superscript>.</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=pk1357;class=Variation" role="_blank">pk1357</ulink></emphasis></entry>
+<entry>Defective in egg laying in response to 5-HT<superscript>10</superscript>. Fail to suppress head oscillations while reversing<superscript>8</superscript>. Blocks 5-HT stimulated pharyngeal pumping<superscript>8</superscript>.</entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=K02F2.6;class=Gene" role="_blank">K02F2.6</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=ser-3;class=Gene" role="_blank">ser-3</ulink></emphasis>)</entry>
+<entry>Neurons of the head including <ulink url="http://www.wormbase.org/db/get?name=SIA;class=Cell" role="_blank">SIA</ulink> and the tail neurons <ulink url="http://www.wormbase.org/db/get?name=PHA;class=Cell" role="_blank">PHA</ulink>, <ulink url="http://www.wormbase.org/db/get?name=PHB;class=Cell" role="_blank">PHB</ulink>, <ulink url="http://www.wormbase.org/db/get?name=PVQ;class=Cell" role="_blank">PVQ</ulink>, head muscles, intestine, phasmid socket cells, spermatheca, eggs, gonad and vulva<superscript>17</superscript>.</entry>
+<entry>ND</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=ad1774;class=Variation" role="_blank">ad1774</ulink></emphasis></entry>
+<entry>ND</entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=T02E9.3;class=Gene" role="_blank">T02E9.3</ulink></entry>
+<entry>ND</entry>
+<entry>ND</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=ok568;class=Variation" role="_blank">ok568</ulink></emphasis></entry>
+<entry>ND</entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=C52B11.3;class=Gene" role="_blank">C52B11.3</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=dop-4;class=Gene" role="_blank">dop-4</ulink></emphasis>)</entry>
+<entry>Pharyngeal neurons <ulink url="http://www.wormbase.org/db/get?name=I1;class=Cell" role="_blank">I1</ulink> and <ulink url="http://www.wormbase.org/db/get?name=I2;class=Cell" role="_blank">I2</ulink>, <ulink url="http://www.wormbase.org/db/get?name=ASG;class=Cell" role="_blank">ASG</ulink>, <ulink url="http://www.wormbase.org/db/get?name=AVL;class=Cell" role="_blank">AVL</ulink>, <ulink url="http://www.wormbase.org/db/get?name=CAN;class=Cell" role="_blank">CAN</ulink>, <ulink url="http://www.wormbase.org/db/get?name=PQR;class=Cell" role="_blank">PQR</ulink>, male ray 8, cells of the vulva, intestine, rectal gland and rectal epithelium<superscript>16</superscript>.</entry>
+<entry>ND</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=ok1321;class=Variation" role="_blank">ok1321</ulink>, <ulink url="http://www.wormbase.org/db/get?name=tm1392;class=Variation" role="_blank">tm1392</ulink></emphasis></entry>
+<entry>ND</entry>
+</row>
+<row>
+<entry><ulink url="http://wormbase.org/db/seq/clone?name=M03F4.3;class=Clone" role="_blank">M03F4.3</ulink></entry>
+<entry>Some neurons in the head and in the vulva<superscript>20</superscript>.</entry>
+<entry>ND</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=ok325;class=Variation" role="_blank">ok325</ulink></emphasis></entry>
+<entry>ND</entry>
+</row>
+<row>
+<entry><ulink url="http://wormbase.org/db/seq/clone?name=F14D12.6;class=Clone" role="_blank">F14D12.6</ulink></entry>
+<entry>ND</entry>
+<entry>ND</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=ok371;class=Variation" role="_blank">ok371</ulink></emphasis></entry>
+<entry>ND</entry>
+</row>
+<row>
+<entry><ulink url="http://wormbase.org/db/seq/clone?name=F01E11.5;class=Clone" role="_blank">F01E11.5</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=tyra-2;class=Gene" role="_blank">tyra-2</ulink></emphasis>)</entry>
+<entry>Pharyngeal neurons <ulink url="http://www.wormbase.org/db/get?name=MC;class=Cell" role="_blank">MC</ulink> and <ulink url="http://www.wormbase.org/db/get?name=NSM;class=Cell" role="_blank">NSM</ulink>, amphid neurons <ulink url="http://www.wormbase.org/db/get?name=ASE;class=Cell" role="_blank">ASE</ulink>, <ulink url="http://www.wormbase.org/db/get?name=ASG;class=Cell" role="_blank">ASG</ulink>, <ulink url="http://www.wormbase.org/db/get?name=ASH;class=Cell" role="_blank">ASH</ulink>, <ulink url="http://www.wormbase.org/db/get?name=ASI;class=Cell" role="_blank">ASI</ulink>, and other neurons including <ulink url="http://www.wormbase.org/db/get?name=PVD;class=Cell" role="_blank">PVD</ulink>, <ulink url="http://www.wormbase.org/db/get?name=CAN;class=Cell" role="_blank">CAN</ulink>, and <ulink url="http://www.wormbase.org/db/get?name=ALM;class=Cell" role="_blank">ALM</ulink>.</entry>
+<entry>TA &gt; OA &#x0003D; DA &gt; 5-HT<superscript>18</superscript></entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=tm1815;class=Variation" role="_blank">tm1815</ulink>, <ulink url="http://www.wormbase.org/db/get?name=tm1846;class=Variation" role="_blank">tm1846</ulink></emphasis></entry>
+<entry>ND</entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Y54G2A.35;class=Gene" role="_blank">Y54G2A.35</ulink></entry>
+<entry>ND</entry>
+<entry>ND</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/get?name=tm2146;class=Variation" role="_blank">tm2146</ulink>, <ulink url="http://www.wormbase.org/db/get?name=tm2104;class=Variation" role="_blank">tm2104</ulink></emphasis></entry>
+<entry>ND</entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=C24A8.1;class=Gene" role="_blank">C24A8.1</ulink></entry>
+<entry>ND</entry>
+<entry>ND</entry>
+<entry>-</entry>
+<entry>ND</entry>
+</row>
+<row>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F16D3.7;class=Gene" role="_blank">F16D3.7</ulink></entry>
+<entry>Body-wall muscles, vulval muscles and some neurons in the head<superscript>20</superscript>.</entry>
+<entry>ND</entry>
+<entry><emphasis>tm2647</emphasis></entry>
+<entry>ND</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<simplelist>
+<member><superscript>a</superscript>Biogenic amine receptors identified by blast searches of the <emphasis>C. elegans</emphasis> genomic and protein databases<superscript>14, 15, 9, 7</superscript>.</member>
+<member><superscript>b</superscript>Expression patterns of biogenic amine receptors have been inferred from analysis of transgenes in which the promoter region for each receptor gene controlled the expression of fluorescent proteins. In certain cases the expression pattern of a particular receptor was examined by different investigators using different promoter regions. This resulted in different expression patterns. In such cases we have included the expression pattern observed by each investigator separately followed by the publication reference.</member>
+<member><superscript>c</superscript>The <emphasis><ulink url="http://www.wormbase.org/db/get?name=ser-2;class=Gene" role="_blank">ser-2</ulink></emphasis> and <emphasis>ser-2A</emphasis> isoforms described by Rex <emphasis>et al</emphasis>. are different from the <emphasis><ulink url="http://www.wormbase.org/db/get?name=ser-2;class=Gene" role="_blank">ser-2</ulink></emphasis> and <emphasis>ser-2A</emphasis> isoforms described by Tsalik et al.</member>
+</simplelist>
+<para>References</para>
+<simplelist>
+<member>1. <link linkend="bib26">Olde and McCombie, 1997</link><!--: PMID: 9061615--></member>
+<member>2. <link linkend="bib11">Hamdan et al., 1999</link><!--: PMID: 10098838--></member>
+<member>3. <link linkend="bib41">Suo et al., 2003</link><!--: PMID: 12887685--></member>
+<member>4. <link linkend="bib40">Suo et al., 2002</link><!--: PMID: 11814642--></member>
+<member>5. <link linkend="bib13">Hobson et al., 2003</link><!--: PMID: 12969249--></member>
+<member>6. <link linkend="bib28">Rex and Komuniecki, 2002</link><!--: PMID: 12354282--></member>
+<member>7. <link linkend="bib45">Tsalik et al., 2003</link><!--: PMID: 14568548--></member>
+<member>8. <link linkend="bib27">Rex et al. 2004</link><!--: PMID: 15569254--></member>
+<member>9. <link linkend="bib6">Chase et al., 2004</link><!--: PMID: 15378064--></member>
+<member>10. <link linkend="bib8">Dempsey et al., 2005</link><!--: PMID: 15654117--></member>
+<member>11. <link linkend="bib33">Sanyal et al., 2004</link><!--: PMID: 14739932--></member>
+<member>12. <link linkend="bib29">Ranganathan et al., 2000</link><!--: PMID: 11100728--></member>
+<member>13. <link linkend="bib34">Sawin et al., 2000</link><!--: PMID: 10896158--></member>
+<member>14. <link linkend="bib2a">Bargmann, 1998</link><!--: PMID: 9851919--></member>
+<member>15. <link linkend="bib15">Komuniecki et al., 2004</link><!--: PMID: 15279946--></member>
+<member>16. <link linkend="bib37a">Sugiura et al., 2005</link><!--: PMID: 16001968--></member>
+<member>17. <link linkend="bib42">Suo et al., 2006</link><!--: PMID: 17021164--></member>
+<member>18. <link linkend="bib26a">Rex et al., 2005</link><!--: PMID: 15953361--></member>
+<member>19. <link linkend="bib13a">Hobson et al., 2006</link><!--: PMID: 16204223--></member>
+<member>20. <link linkend="bib5">Carre-Pierrat et al., 2006</link><!--: PMID: 170829136--></member>
+<member>21. <link linkend="bib4">Carnell et al., 2006</link><!--: PMID: 16291940--></member>
+</simplelist>
+</sect1>
+<sect1 id="sec4">
+<title>Dopamine</title>
+<para>Dopamine is made in eight neurons in the hermaphrodite and in an additional six neurons located in the tail of the male (see <link linkend="table1">Table 1</link>). Each of these fourteen neurons are thought to be mechanosensory, and ablation of these cells or mutations that block synthesis or release of dopamine cause defects in the animal's ability to sense or respond to changes in its environment (see <ulink url="http://www.wormbook.org/chapters/www_mechanosensation/mechanosensation.html" role="_blank">Mechanosensation</ulink>; <link linkend="bib34">Sawin et al., 2000</link><!--: PMID: 10896158-->; <link linkend="bib12">Hills et al., 2004</link><!--: PMID: 14762140-->; <link linkend="bib33">Sanyal et al., 2004</link><!--: PMID: 14739932-->; <link linkend="bib17">Liu and Sternberg, 1995</link><!--: PMID: 7826644-->; <link linkend="bib18">Loer and Kenyon, 1993</link><!--: PMID: 8254383-->; <link linkend="bib3a">Bettinger and McIntire, 2004</link><!--: PMID 15344920-->; <link linkend="bib10">Duerr et al., 1999</link><!--: PMID: 9870940-->). Dopamine signaling has established roles in the modulation of locomotion behavior and in learning. Dopamine-dependent effects on <emphasis>C. elegans</emphasis> behavior have been gleaned primarily from the analysis of: 1) wild-type animals exposed to exogenous dopamine; 2) wild-type animals in which the dopaminergic neurons have been ablated; and 3) mutants for <emphasis><ulink url="http://www.wormbase.org/db/get?name=cat-2;class=Gene" role="_blank">cat-2</ulink></emphasis>, which encodes a tyrosine hydroxylase responsible for catalyzing the rate-limiting step in the synthesis of dopamine (see <link linkend="figure1">Figure 1</link>; <link linkend="bib35">Schafer and Kenyon, 1995</link><!--: PMID: 7723846-->; <link linkend="bib47">Weinshenker and Thomas, 1995</link><!--: PMID: 7472454-->; <link linkend="bib34">Sawin et al., 2000</link><!--: PMID: 10896158-->; <link linkend="bib12">Hills et al., 2004</link><!--: PMID: 14762140-->; <link linkend="bib17">Liu and Sternberg, 1995</link><!--: PMID: 7826644-->; <link linkend="bib33">Sanyal et al., 2004</link><!--: PMID: 14739932-->; <link linkend="bib18">Loer and Kenyon, 1993</link><!--: PMID: 8254383-->; <link linkend="bib3a">Bettinger and McIntire, 2004</link><!--: PMID 15344920-->).</para>
+<para>Dopamine signaling allows <emphasis>C. elegans</emphasis> to respond to changes in its environment by modulating locomotion behavior. Well-fed, wild-type animals slow their locomotion rate when they encounter a bacterial lawn and this &#x0201C;basal slowing response&#x0201D; requires dopamine, as <emphasis><ulink url="http://www.wormbase.org/db/get?name=cat-2;class=Gene" role="_blank">cat-2</ulink></emphasis> mutants or animals in which the dopaminergic neurons have been ablated fail to exhibit basal slowing (<link linkend="bib34">Sawin et al., 2000</link><!--: PMID: 10896158-->). Consistent with the idea that dopaminergic neurons are mechanosensory, this slowing response appears to be caused by physical rather than chemical attributes of the bacterial lawn as wild-type animals also slow in response to a Sephadex matrix and this slowing response also requires <emphasis><ulink url="http://www.wormbase.org/db/get?name=cat-2;class=Gene" role="_blank">cat-2</ulink></emphasis> (<link linkend="bib34">Sawin et al., 2000</link><!--: PMID: 10896158-->).</para>
+<para>Dopamine signaling also allows animals to search efficiently for new food sources. Well-fed, wild-type animals after exhausting a food source search the immediate area for additional food before expanding their search to include more distant, surrounding areas. This localized search for food is called area restricted searching and is accomplished in <emphasis>C. elegans</emphasis> through an increased frequency of high-angled turns immediately after an animal has exhausted a food supply. If, after a short time, the animal fails to find additional food in the area where it had been feeding, the frequency of high-angled turns is reduced and, as a result, the animal begins to explore more distant areas. Dopamine signaling is required for area restricted searching as <emphasis><ulink url="http://www.wormbase.org/db/get?name=cat-2;class=Gene" role="_blank">cat-2</ulink></emphasis> mutants or animals in which the dopaminergic neurons have been ablated do not increase the frequency of high-angled turns immediately after exhausting their food supply like wild-type animals and thus spend less time in the immediate area in which food was recently exhausted. Consistent with this role for dopamine signaling, animals exposed to exogenous dopamine display an increased frequency of high-angled turns and animals exposed to raclopride, a dopamine antagonist, display a decreased frequency of high-angled turns (<link linkend="bib12">Hills et al., 2004</link><!--: PMID: 14762140-->).</para>
+<para>Dopamine thus plays at least two distinct roles in the modulation of locomotion behavior to ensure that animals remain in the area of food. This ability to stay near food is vital for <emphasis>C. elegans</emphasis> to survive in the wild, and animals that briefly wander off a food source must quickly relocate it. In such animals dopamine signals to cause an increased frequency of high-angled turns that prevent the animal from wandering too far from the food source. Upon re-encountering the food source dopamine signals to cause a slowing of forward locomotion increasing the likelihood that the animal does not wander away from the food source again. If however, the animal depletes the food source, the increased frequency of high-angled turns would cause the animal to search the local environment efficiently for new food. Upon failing to encounter new food in the local environment, the frequency of the high-angled turns diminishes and the animal then explores for more distant sources of food.</para>
+<para>Dopamine signaling also allows <emphasis>C. elegans</emphasis> to alter their behavior based upon previous experience. That is, dopamine affects learning in <emphasis>C. elegans</emphasis>. For example, wild-type animals respond to a nonlocalized mechanical stimulus (plate tapping) by either backing or by accelerating their forward locomotion rate (<link linkend="bib32a">Rose and Rankin, 2001</link><!--: PMID: 11274251-->). Upon repeated tapping of the plate wild-type animals habituate to the stimulus and display a decreased frequency of reversals. Habituation to plate tapping is modulated by dopamine signaling as <emphasis><ulink url="http://www.wormbase.org/db/get?name=cat-2;class=Gene" role="_blank">cat-2</ulink></emphasis> mutants and mutants of the D1-like dopamine receptor <emphasis><ulink url="http://www.wormbase.org/db/get?name=dop-1;class=Gene" role="_blank">dop-1</ulink></emphasis> habituate to tap more rapidly than do wild-type animals. Additionally, normal tap response can be restored in <emphasis><ulink url="http://www.wormbase.org/db/get?name=cat-2;class=Gene" role="_blank">cat-2</ulink></emphasis> mutants by exposing them to exogenous dopamine (<link linkend="bib33">Sanyal et al., 2004</link><!--: PMID: 14739932-->). Interestingly dopamine does not control whether or not the animal can respond or habituate to tap as both wild-type and mutant animals respond to repeated tapping by reducing reversal rates to the same extent, rather dopamine affects how rapidly the animal responds to repeated tapping. <ulink url="http://www.wormbase.org/db/get?name=DOP-1;class=Protein" role="_blank">DOP-1</ulink> is expressed in the mechanosensory neurons <ulink url="http://www.wormbase.org/db/get?name=ALM;class=Cell" role="_blank">ALM</ulink> and <ulink url="http://www.wormbase.org/db/get?name=PLM;class=Cell" role="_blank">PLM</ulink> (among others) and rescue experiments showed that dopamine acts through the <ulink url="http://www.wormbase.org/db/get?name=DOP-1;class=Protein" role="_blank">DOP-1</ulink> receptor in the mechanosensory neurons to modulate the tap response (<link linkend="bib33">Sanyal et al., 2004</link><!--: PMID: 14739932-->). The molecular mechanisms used by dopamine to modulate habituation remain unclear but could certainly be limited to the modulation of the activity or the recovery from activation of the <ulink url="http://www.wormbase.org/db/get?name=ALM;class=Cell" role="_blank">ALM</ulink> and <ulink url="http://www.wormbase.org/db/get?name=PLM;class=Cell" role="_blank">PLM</ulink> neurons.</para>
+<para>Dopamine is also required for another form of learning, state-dependent olfactory adaptation (see <ulink url="http://www.wormbook.org/chapters/www_chemosensation/chemosensation.html" role="_blank">Chemosensation in <emphasis>C. elegans</emphasis></ulink>). Animals exposed for prolonged periods to an odorant adapt to the odorant stimulus and exhibit a diminished response to the odorant upon reexposure. Such adaptation lasts for several hours (<link linkend="bib7a">Colbert and Bargmann, 1995</link><!--: PMID: 7718242-->). Wild-type animals adapted to an odorant while intoxicated by ethanol exhibit adaptation to the odorant only if ethanol is again present during reexposure. If such adapted animals are instead reexposed to the odorant in the absence of intoxicating concentrations of ethanol they respond to the odorant as if they had not been preexposed. Thus adaptation to the odorant is state-dependent. The ability to acquire state-dependent adaptation requires dopamine as <emphasis><ulink url="http://www.wormbase.org/db/get?name=cat-1;class=Gene" role="_blank">cat-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=cat-2;class=Gene" role="_blank">cat-2</ulink></emphasis> mutants adapted to an odorant in the presence of ethanol show adaptation regardless of whether ethanol is present during the testing period (<link linkend="bib3a">Bettinger and McIntire, 2004</link><!--: PMID: 15344920-->). The signaling mechanisms through which dopamine effects state-dependent learning have not yet been identified.</para>
+<para>Four dopamine receptors (<ulink url="http://www.wormbase.org/db/get?name=DOP-1;class=Protein" role="_blank">DOP-1</ulink> through <ulink url="http://www.wormbase.org/db/get?name=DOP-4;class=Protein" role="_blank">DOP-4</ulink>) have been identified in <emphasis>C. elegans,</emphasis> including homologs of each of the two classes of dopamine receptor (D1- and D2-like) found in mammals (see <link linkend="table2">Table 2</link>). Mutants are available in each receptor and analysis of the receptor mutants has allowed assignment of particular receptors to the modulation of specific behaviors. For example, mutants in the D2-like dopamine receptor <ulink url="http://www.wormbase.org/db/get?name=DOP-3;class=Protein" role="_blank">DOP-3</ulink> fail to slow in response to a bacterial lawn. Thus, <ulink url="http://www.wormbase.org/db/get?name=DOP-3;class=Protein" role="_blank">DOP-3</ulink> is the receptor activated by dopamine in response to a bacterial lawn to slow locomotion rate. The slowing defect of <emphasis><ulink url="http://www.wormbase.org/db/get?name=dop-3;class=Gene" role="_blank">dop-3</ulink></emphasis> mutants is rescued by mutations in the D1-like receptor <ulink url="http://www.wormbase.org/db/get?name=DOP-1;class=Protein" role="_blank">DOP-1</ulink> indicating that <ulink url="http://www.wormbase.org/db/get?name=DOP-1;class=Protein" role="_blank">DOP-1</ulink> and <ulink url="http://www.wormbase.org/db/get?name=DOP-3;class=Protein" role="_blank">DOP-3</ulink> antagonize each other to control the rate of locomotion in response to changing environmental stimuli (<link linkend="bib6">Chase et al., 2004</link><!--: PMID: 15378064-->). In <emphasis>C. elegans</emphasis> then, as in mammals, D1- and D2-like receptors can function antagonistically to control behavior. The <ulink url="http://www.wormbase.org/db/get?name=DOP-1;class=Protein" role="_blank">DOP-1</ulink> and <ulink url="http://www.wormbase.org/db/get?name=DOP-3;class=Protein" role="_blank">DOP-3</ulink> receptors are coexpressed in the motor neurons of the ventral cord and function there to modulate locomotion rate. The ventral cord motor neurons are not postsynaptic to the dopaminergic neurons, and thus dopamine can function extrasynaptically in <emphasis>C. elegans</emphasis>. As mentioned earlier, mutations in the <ulink url="http://www.wormbase.org/db/get?name=DOP-1;class=Protein" role="_blank">DOP-1</ulink> receptor also cause defects in the ability of animals to respond to mechanical stimulation (plate tapping). <ulink url="http://www.wormbase.org/db/get?name=DOP-1;class=Protein" role="_blank">DOP-1</ulink> functions in the touch neurons to modulate this response, and these neurons are also not postsynaptic to the dopaminergic neurons.</para>
+<para>Dopamine may control other behaviors in addition to those revealed by the analysis of <emphasis><ulink url="http://www.wormbase.org/db/get?name=cat-2;class=Gene" role="_blank">cat-2</ulink></emphasis> mutants, as <emphasis><ulink url="http://www.wormbase.org/db/get?name=cat-2;class=Gene" role="_blank">cat-2</ulink></emphasis> null mutants retain significant levels of dopamine (<link linkend="bib33">Sanyal et al., 2004</link><!--: PMID: 14739932-->). In mammals, enzymes known as tyrosinases may be capable of converting tyrosine to L-DOPA to partially bypass the requirement for tyrosine hydroxylase (<link linkend="bib31">Rios et al., 1999</link><!--: PMID: 10212311-->). Four putative tyrosinases (<emphasis><ulink url="http://www.wormbase.org/db/get?name=tyr-1;class=Gene" role="_blank">tyr-1</ulink></emphasis> through <emphasis><ulink url="http://www.wormbase.org/db/get?name=tyr-4;class=Gene" role="_blank">tyr-4</ulink></emphasis>) have been identified in <emphasis>C. elegans</emphasis>. Elimination of all dopamine signaling may be possible by combining mutations in the tyrosinases with <emphasis><ulink url="http://www.wormbase.org/db/get?name=cat-2;class=Gene" role="_blank">cat-2</ulink></emphasis> mutations and the analysis of such mutants may reveal additional behaviors controlled by dopamine signaling not observed previously in the analysis of <emphasis><ulink url="http://www.wormbase.org/db/get?name=cat-2;class=Gene" role="_blank">cat-2</ulink></emphasis> mutants.</para>
+</sect1>
+<sect1 id="sec5">
+<title>Serotonin</title>
+<para>Serotonin is made in eight types of neurons in <emphasis>C. elegans</emphasis> (see <link linkend="table1">Table 1</link>). Its role in modulating behavior has been established largely through analysis of mutants for the genes encoding the serotonin biosynthetic enzymes, or through behavioral studies of wild-type animals exposed to drugs thought to alter serotonin signaling. Treatment with exogenous serotonin causes dramatic behavioral effects: it inhibits locomotion and the defecation motor program, but stimulates egg laying and pharyngeal pumping (<link linkend="bib47">Weinshenker et al., 1995</link><!--: PMID: 7472454-->; <link linkend="bib14">Horvitz et al., 1982</link><!--: PMID: 6805073-->; <link linkend="bib36">Segalat et al., 1995</link><!--: PMID: 7886454-->; <link linkend="bib34">Sawin et al., 2000</link><!--: PMID: 10896158-->; <link linkend="bib32">Rogers et al., 2001</link><!--: PMID: 11745661-->; <link linkend="bib23">Niacaris and Avery, 2003</link><!--: PMID: 12477893-->; <link linkend="bib46">Waggoner et al., 1998</link><!--: PMID: 9697864-->; <link linkend="bib21">Mendel et al., 1995</link><!--: PMID: 7886455-->). Defects in some of the same behaviors are observed in mutants that lack activity of the serotonin biosynthetic enzymes <ulink url="http://www.wormbase.org/db/get?name=BAS-1;class=Protein" role="_blank">BAS-1</ulink> or <ulink url="http://www.wormbase.org/db/get?name=CAT-4;class=Protein" role="_blank">CAT-4</ulink> (<link linkend="bib18">Loer and Kenyon, 1993</link><!--: PMID: 8254383-->; <link linkend="bib46">Waggoner et al., 1998</link><!--: PMID: 9697864-->; <link linkend="bib34">Sawin et al., 2000</link><!--: PMID: 10896158-->; <link linkend="figure1">Figure 1</link>).</para>
+<para>Serotonin signaling allows <emphasis>C. elegans</emphasis> to respond to changes in its environment by modulating locomotion behavior. Food-deprived animals slow their locomotion rate dramatically when they encounter a bacterial lawn and this &#x0201C;enhanced slowing response&#x0201D; requires serotonin as <emphasis><ulink url="http://www.wormbase.org/db/get?name=bas-1;class=Gene" role="_blank">bas-1</ulink> and <ulink url="http://www.wormbase.org/db/get?name=cat-4;class=Gene" role="_blank">cat-4</ulink></emphasis> mutants (but not <emphasis><ulink url="http://www.wormbase.org/db/get?name=cat-2;class=Gene" role="_blank">cat-2</ulink></emphasis> mutants) exhibit defects in enhanced slowing (<link linkend="bib34">Sawin et al., 2000</link><!--: PMID: 10896158-->). Furthermore, treatment of <emphasis><ulink url="http://www.wormbase.org/db/get?name=bas-1;class=Gene" role="_blank">bas-1</ulink>; <ulink url="http://www.wormbase.org/db/get?name=cat-4;class=Gene" role="_blank">cat-4</ulink></emphasis> double mutants with exogenous serotonin can rescue the enhanced slowing defects. The enhanced slowing response caused by serotonin signaling is much more dramatic than the slowing response caused by dopamine signaling, as many food-deprived animals come to a full stop as they encounter food whereas well-fed animals often simply slow their locomotion rate. Serotonin signaling thus provides a mechanism to ensure that food-deprived animals absolutely do not leave a food source once they have encountered it whereas dopamine signaling in well-fed animals encourages the animal to stay in the proximity of food but still may permit limited exploration for new or better food sources.</para>
+<para>Serotonin is synthesized in the neurosecretory motor neurons (NSMs), which have sensory endings in the lumen of the pharynx that might sense food, and which also have access to the outside of the pharynx and the pseudocoelom, where serotonin might be released to communicate with the rest of the animal. Thus serotonergic neurons are well positioned to signal a favorable food environment and allow the animal to remain in the area of food to feed and to have progeny. Recently, a mutation was isolated in the <emphasis><ulink url="http://www.wormbase.org/db/get?name=tph-1;class=Gene" role="_blank">tph-1</ulink></emphasis> gene, which encodes another serotonin biosynthetic enzyme, tryptophan hydroxylase (see <link linkend="figure1">Figure 1</link>). <emphasis><ulink url="http://www.wormbase.org/db/get?name=tph-1;class=Gene" role="_blank">tph-1</ulink></emphasis> mutants show a modest reduction in egg laying and a reduction in the frequency of pharyngeal pumping, but have not yet been tested for defects in defecation or locomotion (<link linkend="bib43">Sze et al., 2000</link><!--: PMID: 10676966-->).</para>
+<para>Four receptors have been identified that bind serotonin, including three G protein coupled (metabotropic) receptors (<ulink url="http://www.wormbase.org/db/get?name=SER-1;class=Protein" role="_blank">SER-1</ulink>, <ulink url="http://www.wormbase.org/db/get?name=SER-4;class=Protein" role="_blank">SER-4</ulink> and <ulink url="http://www.wormbase.org/db/get?name=SER-7;class=Protein" role="_blank">SER-7</ulink>) and one serotonin-gated chloride channel (<ulink url="http://www.wormbase.org/db/get?name=MOD-1;class=Protein" role="_blank">MOD-1</ulink>; <link linkend="table2">Table 2</link>; <link linkend="bib26">Olde and McCombie, 1997</link><!--: PMID: 9061615-->; <link linkend="bib11">Hamdan et al., 1999</link><!--: PMID: 10098838-->; <link linkend="bib13">Hobson et al., 2003</link><!--: PMID: 12969249-->; <link linkend="bib29">Ranganathan et al., 2000</link><!--: PMID: 11100728-->). Analysis of mutants for these receptors has shed light on the mechanisms by which serotonin modulates locomotion, pharyngeal pumping, and egg laying.</para>
+<para>The serotonin-gated chloride channel, <ulink url="http://www.wormbase.org/db/get?name=MOD-1;class=Protein" role="_blank">MOD-1</ulink>, appears to be required for enhanced slowing, but cells expressing <ulink url="http://www.wormbase.org/db/get?name=MOD-1;class=Protein" role="_blank">MOD-1</ulink> have not been determined (<link linkend="bib34">Sawin et al., 2000</link><!--: PMID: 10896158-->; <link linkend="bib29">Ranganathan et al., 2000</link><!--: PMID: 11100728-->). Of the three G protein-coupled receptors, <ulink url="http://www.wormbase.org/db/get?name=SER-1;class=Protein" role="_blank">SER-1</ulink> has the clearest role in the control of egg laying, and might also be responsible for the effects of serotonin on pharyngeal pumping. <ulink url="http://www.wormbase.org/db/get?name=SER-1;class=Protein" role="_blank">SER-1</ulink> is expressed on the vulval muscles and <emphasis><ulink url="http://www.wormbase.org/db/get?name=ser-1;class=Gene" role="_blank">ser-1</ulink></emphasis> mutants fail to lay eggs in response to serotonin (<link linkend="bib8">Dempsey et al., 2005</link><!--: PMID: 15654117-->; <link linkend="bib4">Carnell et al., 2006</link><!--: PMID: 16291940-->). <ulink url="http://www.wormbase.org/db/get?name=SER-1;class=Protein" role="_blank">SER-1</ulink> is additionally expressed on pharyngeal muscles and may be responsible for the observed effect of serotonin on the repolarization of the pharyngeal muscles (<link linkend="bib8">Dempsey et al., 2005</link><!--: PMID: 15654117-->; <link linkend="bib4">Carnell et al., 2006</link><!--: PMID: 16291940-->; <link linkend="bib23">Niacaris et al., 2003</link><!--: PMID: 12477893-->). <ulink url="http://www.wormbase.org/db/get?name=SER-4;class=Protein" role="_blank">SER-4</ulink> and <ulink url="http://www.wormbase.org/db/get?name=SER-7;class=Protein" role="_blank">SER-7</ulink> are also expressed in pharyngeal neurons or muscles and so might also play a role in controlling pharyngeal activity (<link linkend="bib13">Hobson et al., 2003</link><!--: PMID: 12969249-->; <link linkend="bib45">Tsalik et al., 2003</link><!--: PMID: 14568548-->). While <ulink url="http://www.wormbase.org/db/get?name=MOD-1;class=Protein" role="_blank">MOD-1</ulink>, <ulink url="http://www.wormbase.org/db/get?name=SER-1;class=Protein" role="_blank">SER-1</ulink>, <ulink url="http://www.wormbase.org/db/get?name=SER-4;class=Protein" role="_blank">SER-4</ulink> and <ulink url="http://www.wormbase.org/db/get?name=SER-7;class=Protein" role="_blank">SER-7</ulink> are the only serotonin receptors for which pharmacological criteria are available, the expression patterns of several other putative serotonin receptors have been examined (<link linkend="bib5">Carre-Pierrat et al., 2006</link><!--: PMID: 170829136-->).</para>
+<para>Serotonin signaling has been studied extensively in the control of egg laying (see <ulink url="http://www.wormbook.org/chapters/www_egglaying/egglaying.html" role="_blank">Egg laying</ulink>). Serotonin is made in two classes of neurons that directly innervate the vulval muscles: the <ulink url="http://www.wormbase.org/db/get?name=VC4;class=Cell" role="_blank">VC4</ulink>/5 neurons (<link linkend="bib10">Duerr et al., 1999</link><!--: PMID: 9870940-->) and the pair of HSN hermaphrodite-specific neurons (<link linkend="bib9">Desai et al., 1988</link><!--: PMID: 3200316-->; <link linkend="bib20">McIntire et al., 1992</link><!--: PMID: 1739461-->; <link linkend="bib43">Sze et al., 2000</link><!--: PMID: 10676966-->). A strong case has been made that HSN-released serotonin stimulates egg laying. Exogenous serotonin causes egg laying, and mutants in which the HSN neurons die (<emphasis><ulink url="http://www.wormbase.org/db/get?name=egl-1;class=Gene" role="_blank">egl-1</ulink></emphasis> mutants) are strongly egg-laying defective (<ulink url="http://www.wormbase.org/db/get?name=Egl;class=Phenotype" role="_blank">Egl</ulink>). Selective serotonin-reuptake inhibitors, which cause endogenous serotonin to persist in synapses after release, cause egg laying in wild-type animals but not in <emphasis><ulink url="http://www.wormbase.org/db/get?name=egl-1;class=Gene" role="_blank">egl-1</ulink></emphasis> mutants, suggesting the reuptake inhibitors potentiate the effects of HSN-released serotonin to stimulate egg laying. However, serotonin release is not solely responsible for the stimulation of egg laying, as mutations in the serotonin biosynthetic enzymes <ulink url="http://www.wormbase.org/db/get?name=BAS-1;class=Protein" role="_blank">BAS-1</ulink> and <ulink url="http://www.wormbase.org/db/get?name=CAT-4;class=Protein" role="_blank">CAT-4</ulink> do not cause animals to become <ulink url="http://www.wormbase.org/db/get?name=Egl;class=Phenotype" role="_blank">Egl</ulink>, and <emphasis><ulink url="http://www.wormbase.org/db/get?name=tph-1;class=Gene" role="_blank">tph-1</ulink></emphasis> mutants are only modestly defective in egg laying (<link linkend="bib47">Weinshenker et al., 1995</link><!--: PMID: 7472454-->; <link linkend="bib43">Sze et al., 2000</link><!--: PMID: 10676966-->). Thus, other neurotransmitters released from the HSN neurons must function together with serotonin to stimulate egg laying. In addition to stimulating egg laying, serotonin is also thought to have an inhibitory effect on egg laying: calcium imaging studies suggest that serotonin autoreceptors inhibit HSN activity (<link linkend="bib37">Shyn et al., 2003</link><!--: PMID: 14588249-->). One model is that serotonin release from the HSN stimulates a cluster of egg laying events, but also inhibits further HSN activity, explaining the ~20 minute interval between clusters of egg-laying events that typically occurs (<link linkend="bib46">Waggoner et al., 1998</link><!--: PMID: 9697864-->).</para>
+<?newpage?>
+<table id="table3" frame="all" rules="all" cellpadding="0" cellspacing="0" width="100%">
+<title><emphasis role="bold">Table 3. Drugs and their effects on</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis></title>
+<tgroup cols="4">
+<colspec colname="c1" align="center" colwidth="0.7*"/>
+<colspec colname="c2" align="center" colwidth="1*"/>
+<colspec colname="c3" align="center" colwidth="0.8*"/>
+<colspec colname="c4" align="center" colwidth="2*"/>
+<thead>
+<row>
+<entry>Drug</entry>
+<entry>Mammalian / invertebrate targets</entry>
+<entry><emphasis>C. elegans</emphasis> targets<superscript>a</superscript></entry>
+<entry>Effects of drugs on wild-type <emphasis>C. elegans</emphasis></entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Dopamine</entry>
+<entry>Dopamine receptors</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=DOP-1;class=Protein" role="_blank">DOP-1</ulink>, <ulink url="http://www.wormbase.org/db/get?name=DOP-3;class=Protein" role="_blank">DOP-3</ulink><superscript>10, 28</superscript></entry>
+<entry>Inhibits locomotion<superscript>1, 13, 10</superscript>. Inhibits egg laying<superscript>1, 2</superscript>. Inhibits defecation<superscript>2, 13</superscript>. Increases frequency of high-angled turns<superscript>25</superscript>.</entry>
+</row>
+<row>
+<entry>Serotonin</entry>
+<entry>Serotonin receptors</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=SER-1;class=Protein" role="_blank">SER-1</ulink><superscript>26, 27</superscript>, <ulink url="http://www.wormbase.org/db/get?name=SER-2;class=Protein" role="_blank">SER-2</ulink><superscript>26, 5</superscript>, <ulink url="http://www.wormbase.org/db/get?name=MOD-5;class=Protein" role="_blank">MOD-5</ulink><superscript>17</superscript> <ulink url="http://www.wormbase.org/db/get?name=MOD-1;class=Protein" role="_blank">MOD-1</ulink><superscript>13, 14</superscript></entry>
+<entry>Inhibits locomotion<superscript>11, 3, 13</superscript>. Inhibits defecation<superscript>2, 11</superscript>. Stimulates pharyngeal pumping<superscript>11, 3, 8, 6</superscript> (in the absence of food). Stimulates egg laying<superscript>2, 3, 7, 12</superscript>. Causes male tail curling<superscript>4</superscript>. Causes reduced sensitivity to aldicarb-induced paralysis<superscript>21</superscript>. Stimulates vulval muscle calcium transients<superscript>22</superscript>. Inhibits HSN calcium transients<superscript>22</superscript>. Inhibits olfactory adaptation<superscript>24</superscript>.</entry>
+</row>
+<row>
+<entry>Octopamine</entry>
+<entry>Octopamine receptors</entry>
+<entry/>
+<entry>Causes uncoordinated locomotion<superscript>3</superscript>. Inhibits pharyngeal pumping<superscript>3, 8, 6</superscript> (in the presence of food or 5-HT). Inhibits egg laying<superscript>3, 11</superscript> (in the presence of food or 5-HT). Inhibits defecation<superscript>2, 3</superscript>.</entry>
+</row>
+<row>
+<entry>Tyramine</entry>
+<entry>Tyramine receptors</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=SER-2;class=Protein" role="_blank">SER-2</ulink><superscript>5</superscript></entry>
+<entry>Inhibits egg laying (5, 9) (in the presence of food or 5-HT).</entry>
+</row>
+<row>
+<entry>Quinpirole</entry>
+<entry>Dopamine receptors (agonist)</entry>
+<entry/>
+<entry>Inhibits locomotion<superscript>11</superscript>. Inhibits egg laying<superscript>11</superscript>.</entry>
+</row>
+<row>
+<entry>Chlorpromazine</entry>
+<entry>D2 receptors (antagonist)</entry>
+<entry/>
+<entry>Stimulates egg laying<superscript>2</superscript>.</entry>
+</row>
+<row>
+<entry>Raclopride</entry>
+<entry>Dopamine receptors (antagonist)</entry>
+<entry/>
+<entry>Blocks the effects of dopamine on turning frequency<superscript>25</superscript>. Eliminates area-restricted search behavior<superscript>25</superscript></entry>
+</row>
+<row>
+<entry><symbol role="symbolfont">&#x003B1;</symbol>-methyl 5-HT</entry>
+<entry>Serotonin receptors (agonist)</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=SER-1;class=Protein" role="_blank">SER-1</ulink><superscript>29</superscript></entry>
+<entry>Stimulates egg laying<superscript>23</superscript>.</entry>
+</row>
+<row>
+<entry>Methiothepin</entry>
+<entry>Serotonin receptors (antagonist)</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=MOD-1;class=Protein" role="_blank">MOD-1</ulink><superscript>14</superscript></entry>
+<entry>Blocks 5-HT-induced inhibition of locomotion<superscript>13</superscript>. Causes defects in enhanced slowing<superscript>13</superscript>. Causes hypersensitivity to aldicarb-induced paralysis<superscript>21</superscript>.</entry>
+</row>
+<row>
+<entry>Mianserin</entry>
+<entry>Serotonin receptors (antagonist)</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=MOD-1;class=Protein" role="_blank">MOD-1</ulink><superscript>14</superscript></entry>
+<entry>Blocks 5-HT-induced inhibition of locomotion<superscript>13</superscript>. Causes defects in enhanced slowing<superscript>13</superscript>.</entry>
+</row>
+<row>
+<entry>Gramine</entry>
+<entry>Serotonin receptors (antagonist)</entry>
+<entry/>
+<entry>Inhibits pharyngeal pumping<superscript>8</superscript>.</entry>
+</row>
+<row>
+<entry>Ketanserin</entry>
+<entry>Serotonin receptors (antagonist)</entry>
+<entry/>
+<entry>Causes hypersensitivity to aldicarb-induced paralysis<superscript>21</superscript>.</entry>
+</row>
+<row>
+<entry>Fluoxetine</entry>
+<entry>Serotonin-specific reuptake transporter (inhibitor)</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=MOD-5;class=Protein" role="_blank">MOD-5</ulink> and others<superscript>16, 17, 26</superscript></entry>
+<entry>Stimulates egg laying<superscript>2, 16</superscript>. Potentiates enhanced slowing response<superscript>13, 17</superscript>. Stimulates nose contraction<superscript>16</superscript>. Inhibits locomotion<superscript>16, 21</superscript>.</entry>
+</row>
+<row>
+<entry>Paroxetine</entry>
+<entry>Serotonin-specific reuptake transporter (inhibitor)</entry>
+<entry/>
+<entry>Stimulates nose contraction<superscript>16</superscript>.</entry>
+</row>
+<row>
+<entry>Clomipramine</entry>
+<entry>Serotonin reuptake transporter (inhibitor)</entry>
+<entry/>
+<entry>Stimulates egg laying<superscript>2</superscript>. Stimulates nose contraction<superscript>16</superscript>.</entry>
+</row>
+<row>
+<entry>Imipramine</entry>
+<entry>Monoamine reuptake transporter (inhibitor)</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=EGL-2;class=Protein" role="_blank">EGL-2</ulink><superscript>18</superscript></entry>
+<entry>Stimulates egg laying<superscript>2, 12, 19</superscript>. Stimulates pharyngeal pumping<superscript>20</superscript>.</entry>
+</row>
+<row>
+<entry>Reserpine</entry>
+<entry>Monoamine vesicular transporter (inhibitor)</entry>
+<entry/>
+<entry>Stimulates locomotion<superscript>15</superscript> (in the presence of food). Inhibits egg laying<superscript>15</superscript>.</entry>
+</row>
+<row>
+<entry>Phentolamine</entry>
+<entry>Octopamine and adrenergic receptors (antagonist)</entry>
+<entry/>
+<entry>Stimulates egg laying<superscript>3</superscript>.</entry>
+</row>
+<row>
+<entry namest="c1" nameend="c4" align="left"><superscript>a</superscript>To qualify as a <emphasis>C. elegans</emphasis> target for a particular drug either: 1) mutation of the gene encoding the target protein must cause amine or drug-specific behavioral defects <emphasis role="underline">and</emphasis> lessen the behavioral effects of exogenous drug exposure; or 2) the target protein must bind to the drug <emphasis>in vitro</emphasis> <emphasis role="underline">and</emphasis> mutation of the gene encoding the target protein must lessen the effects of the exogenous drug <emphasis>in vivo</emphasis>.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<para>References</para>
+<simplelist>
+<member>1. <link linkend="bib35">Schafer and Kenyon, 1995</link><!--: PMID: 7723846--></member>
+<member>2. <link linkend="bib47">Weinshenker et al., 1995</link><!--: PMID: 7472454--></member>
+<member>3. <link linkend="bib14">Horvitz et al., 1982</link><!--: PMID: 6805073--></member>
+<member>4. <link linkend="bib18">Loer and Kenyon, 1993</link><!--: PMID: 8254383--></member>
+<member>5. <link linkend="bib27">Rex et al., 2004</link><!--: PMID: 15569254--></member>
+<member>6. <link linkend="bib32">Rogers et al., 2001</link><!--: PMID: 11745661--></member>
+<member>7. <link linkend="bib46">Waggoner et al., 1998</link><!--: PMID: 9697864--></member>
+<member>8. <link linkend="bib23">Niacaris and Avery, 2003</link><!--: PMID: 12477893--></member>
+<member>9. <link linkend="bib1">Alkema et al., 2005</link><!--: PMID: 15848803--></member>
+<member>10. <link linkend="bib6">Chase et al., 2004</link><!--: PMID: 15378064--></member>
+<member>11. <link linkend="bib36">Segalat et al., 1995</link><!--: PMID: 7886454--></member>
+<member>12. <link linkend="bib21">Mendel et al., 1995</link><!--: PMID: 7886455--></member>
+<member>13. <link linkend="bib34">Sawin et al., 2000</link><!--: PMID: 10896158--></member>
+<member>14. <link linkend="bib29">Ranganathan et al., 2000</link><!--: PMID: 11100728--></member>
+<member>15. <link linkend="bib10">Duerr et al., 1999</link><!--: PMID: 9870940--></member>
+<member>16. <link linkend="bib7">Choy and Thomas, 1999</link><!--: PMID: 10488330--></member>
+<member>17. <link linkend="bib30">Ranganathan et al., 2001</link><!--: PMID: 11487610--></member>
+<member>18. <link linkend="bib48">Weinshenker et al., 1999</link><!--: PMID: 10559392--></member>
+<member>19. <link linkend="bib44">Trent et al., 1983</link><!--: PMID: 11813735--></member>
+<member>20. <link linkend="bib2">Avery and Horvitz, 1990</link><!--: PMID: 2181052--></member>
+<member>21. <link linkend="bib24">Nurrish et al., 1999</link><!--: PMID: 10677040--></member>
+<member>22. <link linkend="bib37">Shyn et al., 2003</link><!--: PMID: 14588249--></member>
+<member>23. <link linkend="bib3">Bastiani et al., 2003</link><!--: PMID: 14704167--></member>
+<member>24. <link linkend="bib25">Nuttley et al., 2002</link><!--: PMID: 12202746--></member>
+<member>25. <link linkend="bib12">Hills et al., 2004</link><!--: PMID: 14762140--></member>
+<member>26. <link linkend="bib8">Dempsey et al., 2005</link><!--: PMID: 15654117--></member>
+<member>27. <link linkend="bib11">Hamdan et al., 1999</link><!--: PMID: 10098838--></member>
+<member>28. <link linkend="bib40">Suo et al., 2002</link><!--: PMID: 11814642--></member>
+<member>29. <link linkend="bib4">Carnell et al., 2006</link><!--: PMID: 16291940--></member>
+</simplelist>
+</sect1>
+<sect1 id="sec6">
+<title>Acknowledgements</title>
+<para>DLC was funded by the National Institutes of Health grant MH077935-01, the National Parkinson Foundation and the Parkinson Disease Foundation. MRK was funded by National Institutes of Health grant NS036918.</para>
+</sect1>
+<?newpage?>
+<sect1>
+<title>Bibliography</title>
+&bioamine_Refs;
+<para/>
+</sect1>
+</article>

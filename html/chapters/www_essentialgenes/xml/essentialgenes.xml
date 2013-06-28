@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY esg_Refs SYSTEM 'esgrefs.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="esg_ArticleID">
+    <articleinfo>
+        <!--see DocBook's authorgroup element -->
+        <title>Essential genes<remark>
+               <footnote>
+                    <para>Edited by Jonathan Hodgkin and Philip Anderson. Last revised March 4, 2005. Published December 24, 2005. This chapter should be cited as: Kemphues K. Essential Genes (December 24, 2005), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.57.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+			<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2005 Kenneth Kemphues, This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+			</footnote>
+            </remark>
+        </title>
+        <!--            <revhistory>
+                        <revision>
+                                <revnumber>1.0</revnumber>
+                                <date>Last revised 3/4/05</date>
+                        </revision>
+                </revhistory>
+-->
+        <author>
+            <firstname>Kenneth</firstname>
+            <surname>Kemphues<remark>
+                    <footnote>
+                        <para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:kjk1@cornell.edu">kjk1@cornell.edu</ulink>
+                        </para>
+                    </footnote>
+                </remark>
+            </surname>
+            <affiliation>
+                <address>Department of Molecular Biology and Genetics, Cornell University, Ithaca, NY, 14853, USA</address>
+            </affiliation>
+        </author>
+    </articleinfo>
+    <abstract>
+        <title><emphasis role="bold">Abstract</emphasis></title>
+        <para><emphasis role="bold">Understanding the biology of</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">relies on identification and analysis of
+            essential genes, genes required for growth to a fertile adult. Approaches for
+            identifying essential genes include several types of classical forward genetic screens,
+            genome-wide RNA interference screens and systematic targeted gene knockout. Based on
+            most estimates made from screening results thus far, from 15&#x02013;30% of</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">genes
+            appear to be essential. Genetic redundancy masks some essential functions and pleiotropy
+            of many essential genes poses a challenge for a full understanding of their functions.
+            Temperature sensitive mutations are valuable tools for studies of essential genes, but
+            our ability to analyze essential genes would benefit from development of new tools for
+            conditional inactivation or activation of specific genes.</emphasis></para>
+    </abstract>
+    <sect1>
+        <title>Overview</title>
+        <para>Understanding the biology of <emphasis>C. elegans</emphasis> relies on identification and analysis of
+            essential genes. An essential gene is defined here as a gene necessary for growth to a
+            fertile adult. Some essential genes were identified fortuitously, but most essential
+            genes have been identified through mutant screens designed specifically to isolate
+            lethal and sterile mutations. Starting with Sydney Brenner&apos;s pioneering genetic
+            analysis, many <emphasis>C. elegans</emphasis> geneticists have sought to understand the nature of the genome
+            by estimating the fraction of the genome devoted to essential functions. Based on the
+            frequency of X chromosome lethal mutations, Brenner estimated that the <emphasis>C. elegans</emphasis> genome
+            had about 2000 essential genes (<link linkend="bib3">Brenner, 1974</link><!--; PMID 4366476-->). Inclusion of sterile
+            mutations raised this estimate to about 3000, and a number of screens for lethal and
+            sterile mutations in specific genomic regions in the 1970s and 80s yielded gene
+            frequencies raising the upper limit of this estimate to as high as 30% of the genome or
+            about 5700. (See <link linkend="bib16">Herman, 1978</link><!--; PMID 631558--> and <link linkend="bib23">Johnsen and Baillie, 1997</link><!--; PMID-->) for
+            references and discussion. Also see (<link linkend="bib9">Feichtinger, 1995</link><!--; PMID-->, for alternative
+            statistical analyses arriving at an estimate of about 8500.) With the sequencing of the
+            genome and the development of methods to target specific genes, it is now within our
+            power to obtain loss-of-function mutations in every gene in the worm, and efforts are
+            under way to do just that. However, even with this new ability to systematically knock
+            out genes, many essential functions can remain cryptic due to genetic redundancy or to pleiotropy.</para>
+    </sect1>
+    <sect1>
+	<title>Types of essential genes</title>
+	<para>There are three types of mutations that identify essential
+        functions: zygotic lethal mutations (lethals), maternal-effect lethal mutations
+        (maternal-effect lethals) and sterile mutations (steriles). Zygotic lethals prevent the
+        development to adult of individuals homozygous for the mutation. Zygotic lethals are broadly
+        categorized, based on the time of developmental arrest, as embryonic or larval lethals.
+        Maternal-effect lethals are a special class of sterilizing mutations that prevent the
+        development of the progeny of hermaphrodites homozygous for the mutation. Such mutations
+        define genes whose expression in the mother is required for embryonic development. Sterile
+        mutations prevent the production of fertilized eggs by individuals homozygous for the
+        mutation. Sterility could arise due to defects in germline development, somatic gonad
+    development, oogenesis, spermatogenesis, ovulation or fertilization.</para>
+	</sect1>
+	<sect1>
+		<title>Methods for identifying essential genes</title>
+		<para>Classically, most lethal and sterile mutations have been identified by
+        random mutagenesis followed by either of two types of screens: genome-wide screens for
+        conditional lethals, such as temperature-sensitive mutations, and screens for
+        non-conditional lethals and steriles in particular genomic regions for which balancers are
+        available. More recently this approach has been augmented and, to a certain extent, replaced
+        by approaches that target individual genes for knockdown or knockout. Two different
+        large-scale screening methods are being used: systematic RNA interference (RNAi) and
+        PCR-based screens for intragenic deletions after mutagenesis.</para>
+		<sect2>
+		<title>Classical mutant hunts</title>
+	<para>Genome wide screens for temperature-sensitive embryonic lethal mutations carried out in the late
+        1970s and early 80s provided the first stocked lethal mutants for studies of development.
+        Genes identified in these early screens are named either <emphasis>emb</emphasis> (arrest in embryogenesis) or
+        <emphasis>zyg</emphasis> (zygote defective) depending on the lab where the work was done, but operationally the
+        screens were identical. Their analysis provided a foundation for understanding the
+        complexity of lethal phenotypes as well as insight into the relative contributions of
+        maternal vs. zygotic gene expression to the developmental process (see <link linkend="bib48">Wood, 1988</link><!--; PMID-->
+        for references and discussion). Conclusions from the work were that many genes are required
+        at multiple times in development and maternal gene expression plays a major role in
+        embryogenesis. Temperature-sensitive lethal mutations are extremely valuable because they
+        can be used to analyze essential genes with roles in multiple processes and are discussed
+        more below.</para>
+		<para>Non-conditional lethal and sterile mutations must be maintained in the
+        heterozygous condition, requiring constant selection to avoid loss of the mutation. This
+        problem can be partially overcome by using closely linked visible markers to &#x0201C;balance&#x0201D; the
+        lethal mutation. Because of this, early screens for lethal and sterile mutations were
+        limited to small regions of the genome with convenient visible markers (e.g., <link linkend="bib38">Rogalski et
+        al., 1982</link><!--; PMID 7187364-->; <link linkend="bib39">Rose and Baillie, 1980</link><!--; PMID 7262541-->). However, the development of
+        free duplications and crossover-suppressing chromosomal rearrangements (balancer
+        chromosomes) allowed easy maintenance of lethals and steriles, thus making it feasible to
+        carry out large-scale screens for non-conditional lethal mutations (see <link linkend="bib7">Edgley et al.,
+        1995</link><!--; PMID 8531724--> for a detailed discussion of balancer chromosomes). Such screens are
+        restricted to regions of the genome for which balancers are available. However, because such
+        balancers cover much of the genome it has been possible to collect mutations representing
+        more than 860 essential loci by this method (for example <link linkend="bib4">Clark et al., 1988</link><!--; PMID 3396868-->;
+        <link linkend="bib13">Gonczy et al., 1999</link><!--; PMID 10085292-->; <link linkend="bib16">Herman, 1978</link><!--; PMID 631558-->; <link linkend="bib17">Howell et al., 1987</link><!--; PMID-->;
+        <link linkend="bib18">Howell and Rose, 1990</link><!--; PMID 2249758-->; <link linkend="bib21">Johnsen and Baillie, 1988</link><!--; PMID 3419443-->; <link linkend="bib22">Johnsen and
+        Baillie, 1991</link><!--; PMID 1752418-->; <link linkend="bib25">Kemphues et al., 1988</link><!--; PMID 3224814-->; <link linkend="bib29">McKim et al., 1988</link><!--; PMID
+        8608931-->; <link linkend="bib30">McKim et al., 1992</link><!--; PMID 1603066-->; <link linkend="bib32">Meneely and Herman, 1979</link><!--; PMID 574105-->; <link linkend="bib38">Rogalski
+        et al., 1982</link><!--; PMID 7187364-->; <link linkend="bib39">Rose and Baillie, 1980</link><!--; PMID 7262541-->; <link linkend="bib40">Rosenbluth et al., 1983</link><!--;
+        PMID-->; <link linkend="bib44">Sigurdson et al., 1984</link><!--; PMID 6500256-->; <link linkend="bib46">Stewart et al., 1998</link><!--; PMID 9862482-->; <link linkend="bib49">Zetka and
+        Rose, 1992</link><!--; PMID 1644275-->). Genes identified in these screens are named <emphasis>let</emphasis> (lethal), <emphasis>ooc</emphasis>
+        (oocyte defective), <emphasis>mel</emphasis> (maternal-effect lethal), and <emphasis>spe</emphasis> (spermatogenesis defective) or <emphasis>fer</emphasis>
+        (fertilization defective &#x02014; identical to <emphasis>spe</emphasis> mutants in phenotype). For <emphasis>mel</emphasis> and <emphasis>spe</emphasis> mutants
+        it has been possible to develop genome-wide screens for non-conditional mutations in the
+        absence of balancer chromosomes. In these screens, F1 progeny of mutagenized hermaphrodites
+        are picked singly onto plates and the phenotypes are scored in the F2. In the case of
+        spermatogenesis defective mutations, the homozygotes are identified as hermaphrodites that
+        produce only unfertilized eggs and whose embryo production can be rescued by mating to wild-type males (for example <link linkend="bib1">Argon and Ward, 1980</link><!--; PMID 7196361-->; <link linkend="bib27">L'Hernault et al., 1988</link><!--; PMID
+        3197956-->; <link linkend="bib47">Ward and Miwa, 1978</link><!--; PMID 580424-->). In the case of<emphasis> mel</emphasis> mutations, the homozygous
+        mutant animals are identified in the genetic background of an egg-laying defective mutation
+        (<link linkend="bib26">Kemphues et al., 1988</link><!--; PMID 3345562-->; <link linkend="bib37">Priess et al., 1987</link><!--; PMID 3677169-->). Because egg-laying
+        defects allow larvae to hatch inside the mother, killing her at a young age, mutations that
+        block production of larval progeny allow survival of the F2 animals into old age.
+        Maternal-effect lethal mutations can be distinguished from sterile mutations by the
+        accumulation of fertilized but unhatched eggs in the uterus. Unfertilized eggs do not form
+        light-refracting eggshells. </para>
+		</sect2>
+		<sect2>
+		<title>RNAi</title>
+		<para>Identification and analysis of essential genes has been
+        greatly facilitated by RNA interference (RNAi; see <ulink url="http://www.wormbook.org/chapters/www_introreversegenetics/introreversegenetics.html">Reverse genetics</ulink>).RNAi leads to
+        gene-specific mRNA degradation and is triggered by double stranded RNAi specific for the
+        target gene. The double stranded RNA can be delivered by microinjection, by uptake of dsRNA
+        by worms in solution (soaking), or by feeding worms bacteria engineered to synthesize the
+        RNA of interest. Whole genome screens have been carried out by RNAi feeding in a wild-type
+        genetic background (<link linkend="bib10">Fraser et al., 2000</link><!--; PMID 11099033-->; <link linkend="bib24">Kamath et al., 2003</link><!--; PMID 12529635-->)
+        and in the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rrf-3" role="_blank">rrf-3</ulink></emphasis> sensitized genetic background (<link linkend="bib45">Simmer et al., 2003</link><!--; PMID 14551910-->). Because
+        RNAi is susceptible to false negatives and often gives incompletely penetrant phenotypes
+        (see below), it can only provide a minimum estimate for essential genes in the genome.
+        Although the screens in the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rrf-3" role="_blank">rrf-3</ulink></emphasis> genetic background were more sensitive for viable RNAi
+        phenotypes, they identified slightly fewer essential genes than found in the wild-type
+        background. Based on RNAi results in the wild-type background, the minimum number of
+        essential genes is about 1750. (1170 genes with lethal and sterile RNAi phenotypes adjusted
+        for a false negative rate of 22% and 86% genome coverage; <link linkend="bib24">Kamath et al., 2003</link><!--; PMID
+        12529635-->) Screens have also been carried out using RNAi administered by injection or
+        soaking worms in dsRNA solutions (<link linkend="bib12">Gonczy et al., 2000</link><!--; PMID 11099034-->; <link linkend="bib28">Maeda et al., 2001</link><!--;
+        PMID 11231151-->; <link linkend="bib35">Piano et al., 2000</link><!--; PMID 11137018-->; <link linkend="bib36">Piano et al., 2002</link><!--; PMID 12445391-->).
+        Comparison of these results to each other and to results from classical genetic screens has
+        revealed some limitations of RNAi for discovering gene function: some genes appear to be
+        insensitive to RNAi and outcomes can vary. Some essential genes will give no RNAi
+        phenotypes, give very weak phenotypes or give phenotypes other than lethality or sterility.
+        Furthermore, the efficiency of RNAi differs somewhat with different techniques for
+        introducing the dsRNA triggers (<link linkend="bib36">Piano et al., 2002</link><!--; PMID 12445391-->) and even from trial to
+        trial with the same technique (<link linkend="bib45">Simmer et al., 2003</link><!--; PMID 14551910-->). Another limitation, not
+        restricted to RNAi, is genetic redundancy (discussed below and see <ulink url="http://www.wormbook.org/chapters/www_geneduplication/geneduplication.html">Gene duplications and genetic redundancy in <emphasis>C. elegans</emphasis></ulink>).</para>
+		</sect2>
+        <sect2>
+		<title>Generating loss-of-function alleles by targeted intragenic deletion</title>
+		<para>Two approaches have been used to generate targeted loss-of-function mutations by intragenic deletion. Common to both
+        is the PCR-based screening of populations of randomly mutagenized worms to identify rare
+        deletions in targeted genes. The worms carrying the deletions are enriched and eventually
+        isolated by sibling selection schemes. Initially, transposon insertions in targeted genes
+        were isolated in the expectation that the insertions would be mutagenic (<link linkend="bib42">Rushforth et al.,
+        1993</link><!--; PMID 8380898-->), but because of a high frequency of silent insertions (<link linkend="bib41">Rushforth and
+        Anderson, 1996</link><!--; PMID 8524324-->; <link linkend="bib42">Rushforth et al., 1993</link><!--; PMID 8380898-->) a two-step process of
+        first isolating insertion-bearing worms and then screening populations of these worms for
+        imprecise excision events was developed (<link linkend="bib50">Zwaal et al., 1993</link><!--; PMID 8395047-->). Chemical
+        mutagenesis, which proved to be more efficient, has now replaced the use of transposon
+        excision for generating deletions (<link linkend="bib20">Jansen et al., 1997</link><!--; PMID-->). The procedure is
+        labor-intensive, and not efficient for a single target gene. Therefore, two groups have
+        organized large scale efforts and are now generating intragenic deletions based on requests
+        from members of the research community: the <ulink url="http://celeganskoconsortium.omrf.org/" role="_blank"><emphasis>C. elegans</emphasis> Gene Knockout Consortium</ulink>
+        and the <ulink url="http://www.grs.nig.ac.jp/c.elegans/index.jsp" role="_blank">National Bioresource Project for the Experimental Animal <emphasis>C. elegans</emphasis></ulink>
+Based on results to date, about 1800 genes
+        have been knocked out with 20-24% being essential (Shohei Mitani, Don Moerman and Bob
+        Barstead, personal communications). Projecting the higher frequency to the whole genome
+        (19,727 CDS; <ulink url="http://www.wormbase.org/" role="_blank">Wormbase</ulink>, release WS136, 12/3/05) yields an estimate of 4645
+        essential genes. However, this is likely to be inaccurate because gene knockouts are not
+        being done randomly, but rather are biased toward genes with known functions in other
+        organisms, or towards genes with known mutant or RNAi phenotypes.</para>
+		</sect2>
+	</sect1>
+	<sect1>
+	<title>Redundancy of essential genes</title>
+	<para>Many genes are members of multigene families and members of these families can often
+        have redundant functions. In rare cases where nucleotide sequence is highly conserved, RNAi
+        with a single trigger molecule can target multiple family members (e.g., <link linkend="bib5">Colombo et al.,
+        2003</link><!--; PMID 12750478-->). If the number of family members is small, it is possible to reveal
+        redundancies by double or triple knockout or knockdown (e.g., <link linkend="bib43">Schubert et al., 2000</link><!--; PMID
+        10882103-->; <link linkend="bib15">Gotta and Ahringer, 2001</link><!--; PMID 11231580-->). Redundant pathways, in which different
+        processes can accomplish the same essential function, are more cryptic and are not likely to
+        be detected except by fortuitous double mutant combinations or screens for synthetic lethal        mutations (enhancers). See <ulink url="http://www.wormbook.org/chapters/www_geneduplication/geneduplication.html">Gene duplications and genetic redundancy in <emphasis>C. elegans</emphasis></ulink> for further consideration of redundancy and
+        <ulink url="http://www.wormbook.org/chapters/www_geneticenhancers/geneticenhancers.html" role="_blank">Genetic enhancers</ulink> for further discussion of enhancers.</para>
+	</sect1>
+	<sect1>
+		<title>Pleiotropic essential gene phenotypes</title>
+		<para>Many essential genes function repeatedly during the life of the worm and can have different
+        essential roles in different tissues. (See <ulink url="http://www.wormbook.org/chapters/www_geneticmosaics/geneticmosaics.html">Genetic mosaics</ulink>) However, null mutant phenotypes
+        often reveal only one essential role, leading to incomplete understanding of the gene&apos;s
+        role. A clear example is the Notch family member <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis>. Null mutations in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis> are sterile
+        mutations. Analysis of the null alleles revealed that <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis> was required for germline
+        proliferation (<link linkend="bib2">Austin and Kimble, 1987</link><!--; PMID 3677168-->). Expression of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis> during oogenesis
+        is also required for cell fate specification in the early embryo. However, this function is
+        masked in animals homozygous for the null allele by the failure of these animals to produce
+        embryos. The embryonic role of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis> was revealed by the recovery of <emphasis><ulink url="http://www.wormbase.org/db/get?name=e2072;class=Variation" role="_blank">e2072</ulink></emphasis>, a special
+        non-conditional allele that did not affect germline proliferation, and three
+        temperature-sensitive mutations (<link linkend="bib37">Priess et al., 1987</link><!--; PMID 3677169-->). Analysis of these
+        mutations revealed that signaling through the <ulink url="http://www.wormbase.org/db/seq/protein?name=GLP-1;class=protein" role="_blank">GLP-1</ulink> protein plays major roles in cell fate
+        specification at multiple times in the early embryo (<link linkend="bib19">Hutter and Schnabel, 1994</link><!--; PMID
+        7925009-->; <link linkend="bib31">Mello et al., 1994</link><!--; PMID 8156602-->; <link linkend="bib33">Moskowitz et al., 1994</link><!--; PMID 7720570-->; <link linkend="bib37">Priess et
+        al., 1987</link><!--; PMID 3677169-->). Clearly, null alleles generated by targeted deletions will be
+        inadequate for full understanding of essential gene functions. </para><para>The <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis> example illustrates
+        not only the problem of pleiotropy but also one solution &#x02014; the recovery and analysis of
+        temperature-sensitive mutations. Temperature-sensitive mutations, as discussed above, are
+        being used effectively for analysis of many essential <emphasis>C. elegans</emphasis> genes. Judicious
+        temperature shifts can reveal multiple functions for a given gene. For example, shifting
+        from permissive to restrictive temperature for brief periods early in embryogenesis revealed
+        distinct roles for <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis> at the four-cell and the 12-cell stage (<link linkend="bib31">Mello et al., 1994</link><!--; PMID
+        8156602-->). Therefore the continued screening for temperature-sensitive lethal mutations
+        (e.g., <link linkend="bib8">Encalada et al., 2000</link><!--; PMID 11112326-->; <link linkend="bib11">Golden et al., 2000</link><!--; PMID 11134076-->; <link linkend="bib34">O'Connell et
+        al., 1998</link><!--; PMID 9649522-->) will provide reagents for specific analyses that often benefit the
+        community at large. The relative rarity of temperature-sensitive mutations and the extreme
+        difficulty of targeting such mutations to specific genes restricts their utility.</para>
+<para>Another
+        solution to the pleiotropy problem, conditional gene expression, used effectively in other
+        genetic models like fruit flies and mice, has not yet been developed for <emphasis>C. elegans</emphasis>. In this
+        approach, transgenes that have conditional promoters driving the gene of interest or that
+        have strategically-placed recombination sequences are transformed into null mutant
+        backgrounds. These constructs can be designed for gene activation or inactivation in
+        specific tissues, at specific developmental times or in response to drug applications.
+        Systems for conditional gene expression include the GAL4-UAS system applied effectively in
+        fruit flies (<link linkend="bib6">Duffy, 2002</link><!--; PMID 12324939-->) and the Cre/lox and tetracycline inducible systems
+        being used in mouse (<link linkend="bib14">Gossen and Bujard, 2002</link><!--; PMID 12429690-->). Adaptation of these tools for
+        <emphasis>C. elegans</emphasis> would greatly facilitate analysis of essential genes.</para>
+		</sect1>
+		<sect1>
+		<title>Summary</title>
+		<para>The number of essential genes in <emphasis>C. elegans</emphasis> as estimated by gene knockout, RNAi and classical genetic
+        screens appears to be less than 30% of the genome. The combination of RNAi and targeted gene
+        knockouts ensures the identification of most essential <emphasis>C. elegans</emphasis> genes in the foreseeable
+        future. Genetic redundancy could mask a significant number of essential functions, but
+        construction of double and triple mutants or polygenic RNAi has the potential to identify
+        many of these cases. Studies of null mutations can identify many roles of essential genes,
+        but some roles of essential genes can be masked by early developmental arrest. Although
+        temperature-sensitive mutations can overcome this problem, the difficulty of targeting
+        temperature-sensitive mutations to specific genes makes it desirable to develop additional
+        tools for conditional inactivation or activation of essential genes.</para>
+</sect1>
+    <sect1>
+        <title>References</title>
+		<para/>
+		&esg_Refs;</sect1>
+</article>

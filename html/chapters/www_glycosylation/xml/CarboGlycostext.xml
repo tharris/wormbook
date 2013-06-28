@@ -1,0 +1,1360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY fig1 SYSTEM 'CarboGlycosfig1.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'CarboGlycosfig1leg.xml'>
+<!ENTITY fig2 SYSTEM 'CarboGlycosfig2.jpg' NDATA JPG>
+<!ENTITY fig2legend SYSTEM 'CarboGlycosfig2leg.xml'>
+<!ENTITY fig3 SYSTEM 'CarboGlycosfig3.jpg' NDATA JPG>
+<!ENTITY fig3legend SYSTEM 'CarboGlycosfig3leg.xml'>
+<!ENTITY CarboGlycos_Refs SYSTEM 'CarboGlycosrefs.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="CarboGlycos_ArticleID">
+	<articleinfo>
+		<!--see DocBook's authorgroup element -->
+<title>Carbohydrates and glycosylation<footnote>
+			<para>Edited by Patricia Kuwabara. Last revised October 17, 2006. Published December 18, 2006. This chapter should be cited as: Berninsone, P.M. Carbohydrates and glycosylation (December 18, 2006), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.125.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+			<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2006 Patricia M. Berninsone. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+			</footnote>
+		</title>
+<author>
+<firstname>Patricia M.</firstname>
+	<surname>Berninsone<remark><footnote><para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:berninsone@unr.edu">berninsone@unr.edu</ulink></para></footnote></remark></surname>
+<affiliation><address>Biology Department, University of Nevada, Reno, Reno, NV 89557 USA</address>
+</affiliation>
+</author>
+</articleinfo>
+<abstract>
+<title><emphasis role="bold">Abstract</emphasis></title>
+<para><emphasis role="bold">The</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">genome contains sequences similar to a large number of mammalian genes implicated in the assembly, processing, and modification of glycans. In recent years, spectacular progress has been made in developing and refining tools to obtain structural information with small amounts of material, increasing our understanding of glycan structural complexity in this organism. These approaches have revealed novel N- and O-glycan structures in</emphasis> <emphasis><emphasis role="bold">C. elegans,</emphasis></emphasis> <emphasis role="bold">as well as a high degree of conservation in glycosaminoglycan structure. In parallel, studies in which glycan structure is perturbed by genetic manipulation have begun to reveal the roles of specific carbohydrate moieties in developmental and physiological processes. This review summarizes recent work elucidating the fine structure of complex carbohydrates in</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">as well as genetic studies that have uncovered novel roles for complex carbohydrates in developmental processes.</emphasis></para>
+</abstract>
+<?newpage?>
+<sect1 id="sec1">
+<title>Introduction<remark><footnote><simplelist columns="2" type="horiz">
+<member><emphasis role="bold">Abbreviations:</emphasis></member><member/>
+<member>Cer:</member><member>ceramide</member>
+<member>Fuc:</member><member>fucose</member>
+<member>FucT:</member><member>fucosyltransferase</member>
+<member>GAG:</member><member>glycosaminoglycan</member>
+<member>Gal:</member><member>galactose</member>
+<member>GalNAc:</member><member>N-acetylgalactosamine</member>
+<member>GalNAcT:</member><member>N-acetylgalactosiminyltransferase</member>
+<member>GalT:</member><member>galactosyltransferase</member>
+<member>Glc:</member><member>glucose</member>
+<member>GlcA:</member><member>glucuronic acid</member>
+<member>GlcAT:</member><member>glucuronyltransferase</member>
+<member>GlcNAc:</member><member>N-acetylglucosamine</member>
+<member>GlcT:</member><member>glucosyltransferase</member>
+<member>GnT:</member><member>N-acetylglucosamilyltransferase</member>
+<member>IdoA:</member><member>iduronic acid</member>
+<member>HS:</member><member>heparan sulfate</member>
+<member>HSPG:</member><member>heparan sulfate proteoglycan</member>
+<member>Man:</member><member>mannose</member>
+<member>ManT:</member><member>mannosyltransferase</member>
+<member>PCho:</member><member>phosphorylcholine</member>
+<member>P-glu:</member><member>phosphoglucose</member>
+<member>P-man:</member><member>phosphomannose</member>
+<member>Xyl:</member><member>xylose</member>
+<member>XylT:</member><member>xylosyltransferase</member>
+</simplelist>
+</footnote></remark></title>
+<para>Complex carbohydrates are involved in multiple biological processes, from protein folding, oligomerization and stability, to the immune response and host-pathogen interactions (<link linkend="bib100">Varki, 1993</link><!--; PMID 8490246-->). Glycoconjugates also play important roles in developmental processes, as revealed by the pathology of human diseases caused by abnormal glycosylation (<link linkend="bib26">Freeze and Aebi, 2005</link><!--; PMID 16154350-->) and genetic studies in model organisms (<link linkend="bib36">Haltiwanger and Lowe, 2004</link><!--; PMID 15189151-->).</para>
+<para>The structural diversity of naturally occurring glycans is determined by complex biosynthetic pathways, which typically vary among species and appear to be modulated by factors that can differ greatly among cell types. Unlike nucleic acids and proteins, oligosaccharide chains are often assembled in non-linear, branched structures that are synthesized without the use of a template. In principle, each monosaccharide can generate an <symbol role="symbolfont">&#x003B1;</symbol> or a <symbol role="symbolfont">&#x003B2;</symbol> linkage to one of several positions on another monosaccharide or to another type of molecule, having the potential to produce an astounding molecular complexity. Moreover, individual sugar moieties within a chain can be modified by phosphorylation, sulfation, methylation, O-acetylation, or fatty acylation, further increasing the combinatorial possibilities for oligosaccharide diversity (<link linkend="bib101">Varki et al., 1999</link><!--; 0-87969-560-9-->). In addition to the complexity of glycan moieties <emphasis>per se</emphasis>, it is not possible to predict with certainty whether a protein will be modified by oligosaccharides, even when glycosylation motifs have been observed for a number of glycopeptide bonds (<link linkend="bib95">Spiro, 2002</link><!--; PMID 12042244-->). Another source of variation is microheterogeneity, in which the structure of the oligosaccharide attached to each glycosylation site may vary (<link linkend="bib56">Jones et al., 2005</link><!--; PMID 16126345-->).The focus of this review will be on the contributions that genetic and biochemical analysis in <emphasis>C. elegans</emphasis> have made to our understanding of the role of glycans in development.</para>
+</sect1>
+<sect1 id="sec2">
+<title>Glycosylation pathways in <emphasis>C. elegans</emphasis></title>
+<para>The <emphasis>C. elegans</emphasis> genome contains sequences similar to a large number of mammalian genes implicated in the assembly, processing and modification of a variety of glycans (<link linkend="bib92">Schachter, 2004</link><!--; PMID 15465323-->; see <link linkend="app1">Appendix 1</link>). Although only a limited number of these genes have been functionally characterized, the degree of homology suggests that <emphasis>C. elegans</emphasis> possesses a repertoire of enzymes for the synthesis of a variety of complex carbohydrates. The occurrence of N-glycans [reviewed in <link linkend="bib92">Schachter (2004)</link><!--; PMID 15465323-->], GalNAc-O-Ser/Thr glycans (<link linkend="bib34">Guerardel et al., 2001</link><!--; PMID 11415447-->), glycosaminoglycans (<link linkend="bib97">Toyoda et al., 2000</link><!--; PMID 10644674-->; <link linkend="bib110">Yamada et al., 1999</link><!--; PMID 10526159-->), glycolipids (<link linkend="bib27">Gerdt et al., 1999</link><!--; PMID 10583390-->; <link linkend="bib28">Gerdt et al., 1997</link><!--; PMID 9134433-->) and chitin (<link linkend="bib102">Veronico et al., 2001</link><!--; PMID 11589574-->) has been verified in <emphasis>C. elegans</emphasis> in structural or biochemical studies. Although <emphasis>C. elegans</emphasis> N- and O-glycans have common features with vertebrate glycans in terms of their core glycan biosynthesis, their terminal structures show significant differences. Among them, <emphasis>C. elegans</emphasis> glycans lack sialic acid (<link linkend="bib6">Bacic et al., 1990</link><!--; PMID 2226708-->) and contain unusual fucose additions, O-methylated fucose and mannose and phosphorylcholine substitutions (<link linkend="bib17">Cipollo et al., 2002</link><!--; PMID 12361949-->; <link linkend="bib41">Haslam and Dell, 2003</link><!--; PMID 12765772-->). In recent years, spectacular progress has been made in developing and refining tools to define the structures of glycans. Our understanding of the role of glycoconjugates in the development of <emphasis>C. elegans</emphasis> to date is largely due to the identification of mutations in genes involved in their biosynthesis.</para>
+</sect1>
+<sect1 id="sec3">
+<title>Glycosaminoglycans</title>
+<para>Proteoglycans consist of a core protein and one or more covalently attached glycosaminoglycan (GAG) chains. GAG chains are attached to serine residues in core proteins by a common &#x0201C;tetrasaccharide linkage&#x0201D; region. Structural studies have confirmed that <emphasis>C. elegans</emphasis> synthesizes this ubiquitous linker region (<link linkend="bib34">Guerardel et al., 2001</link><!--; PMID 11415447-->). GAGs are linear polysaccharides, composed of repeating disaccharide units consisting of an amino sugar (GlcNAc or GalNAc) and an uronic acid (GlcA and IdoA; see <link linkend="figure1">Figure 1</link>). Different classes of GAGs are defined by the composition of the disaccharides: heparan sulfate (HS) has a repeating disaccharide of GlcNAc-<symbol role="symbolfont">&#x003B1;</symbol>1,4-GlcA-<symbol role="symbolfont">&#x003B2;</symbol>1,4, whereas chondroitin and chondroitin sulfate (CS) have GalNAc-<symbol role="symbolfont">&#x003B1;</symbol>1,4-GlcA<symbol role="symbolfont">&#x003B2;</symbol>1,3. Monosaccharides within the GAG polymers can be modified in several ways: GlcNAc N-deacetylation and N-sulfation, uronic acid epimerization and O-sulfation at different positions. These modifications result in an enormous molecular complexity that increases the capacity of GAGs to interact with proteins through varied arrangements of sulfated sugar residues (<link linkend="bib98">Turnbull et al., 2001</link><!--; PMID 11166215-->). <emphasis>C. elegans</emphasis> produces heparan sulfate containing all modifications previously described in other organisms (<link linkend="bib97">Toyoda et al., 2000</link><!--; PMID 10644674-->; <link linkend="bib110">Yamada et al., 1999</link><!--; PMID 10526159-->). In contrast, chondroitin appears not to be secondarily modified in <emphasis>C. elegans</emphasis> (<link linkend="bib97">Toyoda et al., 2000</link><!--; PMID 10644674-->).</para>
+<literallayout></literallayout>
+		<mediaobject id="figure1" xreflabel="Figure 1">
+			<imageobject>
+				<imagedata entityref="fig1" width="6in" align="center"/>
+			</imageobject>
+			<textobject>
+				<phrase>figure 1</phrase>
+			</textobject> &fig1legend;</mediaobject>
+<sect2 id="sec3_1">
+<title>Chondroitin</title>
+<para>A screen for <emphasis>C. elegans</emphasis> mutants defective in vulva morphogenesis identified 8 <emphasis>sqv</emphasis> (<emphasis><emphasis role="underline">sq</emphasis></emphasis>uashed <emphasis><emphasis role="underline">v</emphasis></emphasis>ulva) genes (<link linkend="bib46">Herman et al., 1999</link><!--; PMID 9927677-->) required for various steps of chondroitin biosynthesis (see <link linkend="figure2">Figure 2</link>). With the exception of <emphasis><ulink url="http://www.wormbase.org/db/get?name=sqv-5;class=Gene" role="_blank">sqv-5</ulink>,</emphasis> the <emphasis>sqv</emphasis> genes control the biosynthesis of both heparan sulfate and chondroitin (<link linkend="bib7">Berninsone et al., 2001</link><!--; PMID 11259660-->; <link linkend="bib10">Bulik et al., 2000</link><!--; PMID 11005858-->; <link linkend="bib52">Hwang and Horvitz, 2002</link><!--; PMID 12391315-->; <link linkend="bib53">Hwang and Horvitz, 2002</link><!--; PMID 12391314-->; <link linkend="bib54">Hwang et al., 2003</link><!--; PMID 12584198-->). <ulink url="http://www.wormbase.org/db/get?name=SQV-5;class=Protein" role="_blank">SQV-5</ulink> is a bifunctional glycosyltransferase that functions in the initiation and elongation of chondroitin, but not heparan sulfate chains (<link linkend="bib55">Hwang et al., 2003</link><!--; PMID 12761549-->; <link linkend="bib78">Mizuguchi et al., 2003</link><!--; PMID 12761550-->), suggesting that defects in the biosynthesis of chondroitin account for the defects caused by mutations in all <emphasis>sqv</emphasis> genes.</para>
+<para>In all the <emphasis>sqv</emphasis> mutants, the vulval extracellular space fails to expand during vulval morphogenesis (<link linkend="bib46">Herman et al., 1999</link><!--; PMID 9927677-->). Strong <emphasis>sqv</emphasis> mutations also cause maternal-effect lethality: most progeny of homozygous mutants fail to initiate cytokinesis. These mutant eggs fail to form the fluid-filled extracellular space between the egg and the eggshell (<link linkend="bib47">Herman and Horvitz, 1999</link><!--; PMID 9927678-->; <link linkend="bib53">Hwang and Horvitz, 2002</link><!--; PMID 12391314-->). The ability of extracellular chondroitin to interact with water and generate osmotic pressure might be implicated in the expansion of the extracellular spaces in the <emphasis>C. elegans</emphasis> embryo and vulva; among other possibilities (<link linkend="bib55">Hwang et al., 2003</link><!--; PMID 12761549-->).</para>
+</sect2>
+<sect2 id="sec3_2">
+<title>Heparan sulfate</title>
+<para>The EXT gene family members are glycosyltransferases required for the biosynthesis of heparan sulfate chains. Mutations in EXT1 and EXT2 lead to hereditary multiple exostoses. Only two homologs of the EXT family exist in <emphasis>C. elegans</emphasis>: <emphasis><ulink url="http://www.wormbase.org/db/get?name=rib-1;class=Gene" role="_blank">rib-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=rib-2;class=Gene" role="_blank">rib-2</ulink></emphasis>. <emphasis><ulink url="http://www.wormbase.org/db/get?name=rib-2;class=Gene" role="_blank">rib-2</ulink></emphasis> is essential for embryonic development (<link linkend="bib80">Morio et al., 2003</link><!--; PMID 12565862-->) and encodes a unique <symbol role="symbolfont">&#x003B1;</symbol>1,4-N-acetylglucosaminyltransferase involved in both the biosynthetic initiation and elongation of heparan sulfate (<link linkend="bib65">Kitagawa et al., 2001</link><!--; PMID 11121397-->). The biochemical activity of <ulink url="http://www.wormbase.org/db/get?name=RIB-1;class=Protein" role="_blank">RIB-1</ulink> remains elusive.</para>
+<literallayout></literallayout>
+		<mediaobject id="figure2" xreflabel="Figure 2">
+			<imageobject>
+				<imagedata entityref="fig2" width="5in" align="center"/>
+			</imageobject>
+			<textobject>
+				<phrase>figure 2</phrase>
+			</textobject> &fig2legend;</mediaobject>
+<para>Contrasting with the essential nature of heparan sulfate chain synthesis (<link linkend="bib80">Morio et al., 2003</link><!--; PMID 12565862-->), <emphasis>C. elegans</emphasis> mutants lacking three heparan sulfate modifying enzymes are viable and fertile. <emphasis><ulink url="http://www.wormbase.org/db/get?name=hse-5;class=Gene" role="_blank">hse-5</ulink>, <ulink url="http://www.wormbase.org/db/get?name=hst-6;class=Gene" role="_blank">hst-6</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=hst-2;class=Gene" role="_blank">hst-2</ulink></emphasis> mutants (<ulink url="http://www.wormbase.org/db/get?name=HSE-5;class=Protein" role="_blank">HSE-5</ulink>: glucuronyl C5-epimerase, <ulink url="http://www.wormbase.org/db/get?name=HST-6;class=Protein" role="_blank">HST-6</ulink>: heparan sulfate 6O-sulfotransferase and <ulink url="http://www.wormbase.org/db/get?name=HST-2;class=Protein" role="_blank">HST-2</ulink>: 2O-sulfotransferase) exhibit distinct as well as overlapping axonal and cellular guidance defects in specific neurons (<link linkend="bib11">Bulow and Hobert, 2004</link><!--; PMID 15003172-->). <emphasis><ulink url="http://www.wormbase.org/db/get?name=hst-2;class=Gene" role="_blank">hst-2</ulink></emphasis> mutants also display cell migration defects (<link linkend="bib64">Kinnunen et al., 2005</link><!--; PMID 15671174-->). These HS modifications are required for the function of the <emphasis><ulink url="http://www.wormbase.org/db/get?name=slt-1;class=Gene" role="_blank">slt-1</ulink>/<ulink url="http://www.wormbase.org/db/get?name=sax-3;class=Gene" role="_blank">sax-3</ulink></emphasis> signaling system in some, but not all cellular contexts (<link linkend="bib11">Bulow and Hobert, 2004</link><!--; PMID 15003172-->).</para>
+<para>Defects in heparan sulfate synthesis or specific modifications disrupt neuroblast migrations. C-5 epimerized and 6-O-sulfated heparan sulfate chains attached to the cell surface proteoglycans syndecan (<ulink url="http://www.wormbase.org/db/get?name=SDN-1;class=Protein" role="_blank">SDN-1</ulink>) and glypican (<ulink url="http://www.wormbase.org/db/get?name=GPN-1;class=Protein" role="_blank">GPN-1</ulink>) are required for the activity of <ulink url="http://www.wormbase.org/db/get?name=KAL-1;class=Protein" role="_blank">KAL-1</ulink>, the <emphasis>C. elegans</emphasis> anosmin ortholog, in embryonic neuroblast migration (<link linkend="bib51">Hudson et al., 2006</link><!--; PMID 16677626-->). These <emphasis>in vivo</emphasis> analyses underscore the importance of molecular diversity encoded by HS chains and argue that each individual modification provides information required for axon patterning and cell migration.</para>
+</sect2>
+<sect2 id="sec3_3">
+<title>Heparan sulfate and chondroitin modified proteins</title>
+<para>The <emphasis>C. elegans</emphasis> genome encodes several putative heparan sulfate proteoglycan (HSPG) core proteins: the cell surface HSPGs <ulink url="http://www.wormbase.org/db/get?name=SDN-1;class=Protein" role="_blank">SDN-1</ulink>/syndecan (<link linkend="bib77">Minniti et al., 2004</link><!--; PMID 15456854-->; <link linkend="bib89">Rhiner et al., 2005</link><!--; PMID 16176946-->) and <ulink url="http://www.wormbase.org/db/get?name=GPN-1;class=Protein" role="_blank">GPN-1</ulink>/glypican (<link linkend="bib51">Hudson et al., 2006</link><!--; PMID 16677626-->) and the basement membrane HSPGs <ulink url="http://www.wormbase.org/db/get?name=UNC-52;class=Protein" role="_blank">UNC-52</ulink>/perlecan (<link linkend="bib91">Rogalski et al., 1993</link><!--; PMID 8393416-->) and <ulink url="http://www.wormbase.org/db/get?name=CLE-1;class=Protein" role="_blank">CLE-1</ulink>/collagen XVIII (<link linkend="bib2">Ackley et al., 2001</link><!--; PMID 11257122-->). <ulink url="http://www.wormbase.org/db/get?name=SDN-1;class=Protein" role="_blank">SDN-1</ulink> (<link linkend="bib77">Minniti et al., 2004</link><!--; PMID 15456854-->) and <ulink url="http://www.wormbase.org/db/get?name=GPN-1;class=Protein" role="_blank">GPN-1</ulink> (<link linkend="bib51">Hudson et al., 2006</link><!--; PMID 16677626-->) have been shown to be modified by heparan sulfate chains.</para>
+<para>Nine chondroitin proteoglycan core proteins (<ulink url="http://www.wormbase.org/db/seq/protein?name=CPG-1;class=Protein" role="_blank">CPG-1</ulink> to <ulink url="http://www.wormbase.org/db/seq/protein?name=CPG-9;class=Protein" role="_blank">CPG-9</ulink>) were identified in <emphasis>C. elegans</emphasis> using a combination of biochemical purification and mass spectrometry (<link linkend="bib86">Olson et al., 2006</link><!--; PMID 16785326-->). None of these proteins have homologs in vertebrates or other invertebrates, but all of them have sequence motifs required for initiation of glycosaminoglycan biosynthesis similar to those found in vertebrates. Simultaneous RNAi depletion of two of these core proteins (CPG-1/<ulink url="http://www.wormbase.org/db/get?name=C07G2.1a;class=Gene" role="_blank">C07G2.1a</ulink> and CPG-2/<ulink url="http://www.wormbase.org/db/get?name=B0280.5;class=Gene" role="_blank">B0280.5</ulink>) resulted in multinucleate single cell embryos (<link linkend="bib86">Olson et al., 2006</link><!--; PMID 16785326-->), resembling the embryonic phenotype resulting from inhibiting the <ulink url="http://www.wormbase.org/db/get?name=SQV-5;class=Protein" role="_blank">SQV-5</ulink> chondroitin synthase (<link linkend="bib55">Hwang et al., 2003</link><!--; PMID 12761549-->; <link linkend="bib78">Mizuguchi et al., 2003</link><!--; PMID 12761550-->). This study shows that the chondroitin proteoglycans encoded by <emphasis><ulink url="http://www.wormbase.org/db/get?name=cpg-1;class=Gene" role="_blank">cpg-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=cpg-2;class=Gene" role="_blank">cpg-2</ulink></emphasis> play a crucial role in embryonic cytokinesis.</para>
+</sect2>
+</sect1>
+<sect1 id="sec4">
+<title>N-linked glycans</title>
+<para>N-linked glycans are complex and diverse sugar chains attached to an asparagine residue of a polypeptide chain within the consensus peptide sequence Asn-X-Ser/Thr. The yeast and mammalian biosynthetic pathways have been elucidated in great detail (<link linkend="bib48">Herscovics, 1999</link><!--; PMID 10580131-->; <link linkend="bib66">Kornfeld and Kornfeld, 1985</link><!--; PMID 3896128-->). The initial steps of this pathway are conserved in most eukaryotes and involve the synthesis of a lipid-linked oligosaccharide precursor structure that is transferred <emphasis>en bloc</emphasis> to nascent proteins in the ER. Transfer of Glc<subscript>3</subscript>Man<subscript>9</subscript>GlcNAc<subscript>2</subscript> to Asn is followed by glucose trimming in the ER. Subsequent cycles of glucose re-addition and removal participate in quality control of protein-folding. The processed high-mannose Man<subscript>5</subscript>GlcNAc<subscript>2</subscript>-Asn N-glycan serves as a substrate for the diversification of N-glycans in the Golgi. In vertebrates, these reactions generate a large repertoire of hybrid and complex N-glycan subtypes (see <link linkend="figure3">Figure 3</link>, top panel).</para>
+<literallayout></literallayout>
+		<mediaobject id="figure3" xreflabel="Figure 3">
+			<imageobject>
+				<imagedata entityref="fig3" width="5in" align="center"/>
+			</imageobject>
+			<textobject>
+				<phrase>figure 3</phrase>
+			</textobject> &fig3legend;</mediaobject>
+<sect2 id="sec4_1">
+<title>Diversity of N-glycan structures in <emphasis>C. elegans</emphasis></title>
+<para>Whereas the N-glycan biosynthetic pathway appears to be fairly well conserved in <emphasis>C. elegans</emphasis> (see <link linkend="app1">Appendix 1</link>), the resulting N-glycan structures are qualitatively and quantitatively different than those found in mammals, as shown by structural analysis of N-glycans enzymatically released from <emphasis>C. elegans</emphasis> glycoproteins (see <link linkend="figure3">Figure 3</link>, reviewed in <link linkend="bib41">Haslam and Dell, 2003</link><!--; PMID 12765772-->; <link linkend="bib92">Schachter, 2004</link><!--; PMID 15465323-->). <emphasis>C. elegans</emphasis> predominantly contains oligomannose Man<subscript>5-9</subscript>GlcNAc<subscript>2</subscript>-Asn glycans (which are present in vertebrates) and large amounts of paucimannose Man<subscript>3-4</subscript>GlcNAc<subscript>2</subscript>-Asn glycans (which are not usually present in vertebrates; <link linkend="bib3">Altmann et al., 2001</link><!--; PMID 11530201-->; <link linkend="bib17">Cipollo et al., 2002</link><!--; PMID 12361949-->; <link linkend="bib41">Haslam and Dell, 2003</link><!--; PMID 12765772-->; <link linkend="bib42">Haslam et al., 2002</link><!--; PMID 12655779-->; <link linkend="bib81">Natsuka et al., 2002</link><!--; PMID 12038976-->; <link linkend="bib93">Schachter et al., 2002</link><!--; PMID 12655770-->; <link linkend="bib111">Zhang et al., 2003</link><!--; PMID 12603202-->; see <link linkend="figure3">Figure 3</link>, bottom panel). Complex and hybrid N-glycans, which are very abundant in vertebrates, are either absent or present in low levels in <emphasis>C. elegans</emphasis> (<link linkend="bib17">Cipollo et al., 2002</link><!--; PMID 12361949-->; <link linkend="bib42">Haslam et al., 2002</link><!--; PMID 12655779-->; <link linkend="bib81">Natsuka et al., 2002</link><!--; PMID 12038976-->), although this organism has at least some of the biosynthetic components required for the synthesis of high mannose and abbreviated mammalian-type complex glycans. GnTI (N-acetylglucosaminyltransferase I) initiates and is essential for the conversion of Man<subscript>5</subscript>GlcNAc<subscript>2</subscript>-Asn to hybrid and complex N-glycans. Three genes encoding enzymatically active GnTI (<emphasis><ulink url="http://www.wormbase.org/db/get?name=gly-12;class=Gene" role="_blank">gly-12</ulink>, <ulink url="http://www.wormbase.org/db/get?name=gly-13;class=Gene" role="_blank">gly-13</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=gly-14;class=Gene" role="_blank">gly-14</ulink></emphasis>) exist in <emphasis>C. elegans</emphasis> (<link linkend="bib14">Chen et al., 1999</link><!--; PMID 9867843-->). GnTII (<emphasis><ulink url="http://www.wormbase.org/db/get?name=gly-20;class=Gene" role="_blank">gly-20</ulink></emphasis>; <link linkend="bib13">Chen et al., 2002</link><!--; PMID 12417409-->) and GnTV (<emphasis><ulink url="http://www.wormbase.org/db/get?name=gly-2;class=Gene" role="_blank">gly-2</ulink></emphasis>; <link linkend="bib106">Warren et al., 2002</link>; <link linkend="bib107">Warren et al., 2002</link><!--; PMID 11937505-->), which initiate the formation of the N-glycan &#x0201C;antennae&#x0201D;, are also expressed in <emphasis>C. elegans</emphasis>. A model to explain this apparent discrepancy has been proposed, based on the expression in <emphasis>C. elegans</emphasis> of a N-acetylglucosaminidase, which removes GnTI-added GlcNAc, thus preventing the formation of complex glycan and resulting in the formation of large amounts of &#x0201C;paucimannose&#x0201D; N-glycans (<link linkend="bib111">Zhang et al., 2003</link><!--; PMID 12603202-->).</para>
+<para>Unusually modified N-glycans have been detected in <emphasis>C. elegans</emphasis>. Fuc-rich glycans, which carry terminal Fuc on the antennae as well as the core, sometimes contain O-methylated Fuc and O-methylated Man. Phosphorylcholine (PCho)-substituted N-glycans have been identified in a high mannose structure carrying three PCho groups (<link linkend="bib17">Cipollo et al., 2002</link><!--; PMID 12361949-->) and on complex type glycans where PCho is attached at GlcNAc (<link linkend="bib41">Haslam and Dell, 2003</link><!--; PMID 12765772-->). This last structure has been previously found in several parasitic nematodes (<link linkend="bib43">Haslam et al., 1999</link><!--; PMID 10409642-->; <link linkend="bib44">Haslam et al., 1997</link><!--; PMID 9108548-->; <link linkend="bib79">Morelle et al., 2000</link><!--; PMID 10988255-->).</para>
+<para>The structural studies summarized above identified N-glycans extracted from mixed stage <emphasis>C. elegans</emphasis> cultures. These preparations are expected to be enriched in glycans from the largest and most represented developmental stages. A recent study (<link linkend="bib16">Cipollo et al., 2005</link><!--; PMID 15899899-->) has shown that the N-glycan profile of each developmental stage appears to be unique. The general trend of the number and abundance of N-glycans was Dauer~L1&gt;Adult~L4&gt;L3~L2. Dauer larvae contain complex glycans with higher molecular masses than those of other stages, and a higher abundance of high molecular weight PCho-containing glycans was observed in L1 and Dauer larvae. This study also documents the structures of novel N-glycans, e.g., difucosyl PCho glycans in which PCho substitutes both core and terminally linked GlcNAc.</para>
+</sect2>
+<sect2 id="sec4_2">
+<title>N-glycosylated proteins in <emphasis>C. elegans</emphasis></title>
+<para>The rather strict consensus peptide sequence Asn-X-Ser/Thr for N-glycosylation has been supported by numerous structural, mutagenic and <emphasis>in vitro</emphasis> approaches (<link linkend="bib95">Spiro, 2002</link><!--; PMID 12042244-->). Although this sequence occurs frequently in proteins, N-linked glycosylation does not occur at every potential glycosylation site, most probably due to conformational factors (<link linkend="bib4">Apweiler et al., 1999</link><!--; PMID 10580125-->). Thus, it is not possible to predict with certainty if a protein is in fact N-glycosylated. Microheterogeneity in N-glycan chains can also occur among different molecules of the same protein (<link linkend="bib56">Jones et al., 2005</link><!--; PMID 16126345-->).</para>
+<para>Recently developed methods have allowed the identification of 304 <emphasis>C. elegans</emphasis> proteins containing N-glycans and the simultaneous determination of the glycosylation sites (<link linkend="bib22">Fan et al., 2004</link><!--; PMID 15301963-->; <link linkend="bib23">Fan et al., 2005</link><!--; PMID 15888633-->; <link linkend="bib59">Kaji et al., 2003</link><!--; PMID 12754521-->). These studies employed lectin affinity chromatography to isolate glycopeptides generated by tryptic digestion of <emphasis>C. elegans</emphasis> protein fractions, followed by a variety of mass spectrometry approaches. All but four of the N-glycosylation sites identified correspond to the conventional Asn-X-Ser/Thr. Three peptides contain Asn-X-Cys (<link linkend="bib23">Fan et al., 2005</link><!--; PMID 15888633-->; <link linkend="bib59">Kaji et al., 2003</link><!--; PMID 12754521-->). The identified N-glycoproteins comprise soluble and hydrophobic proteins, and many of them are extracellular matrix components which have been implicated in cell adhesion or are components of basement membranes. Among them, <ulink url="http://www.wormbase.org/db/get?name=PAT-2;class=Protein" role="_blank">PAT-2</ulink>, <ulink url="http://www.wormbase.org/db/get?name=INA-1;class=Protein" role="_blank">INA-1</ulink> (the two <emphasis>C. elegans</emphasis> integrin <symbol role="symbolfont">&#x003B1;</symbol> subunits), <ulink url="http://www.wormbase.org/db/get?name=PAT-3;class=Protein" role="_blank">PAT-3</ulink> (the integrin <symbol role="symbolfont">&#x003B2;</symbol> subunit), <ulink url="http://www.wormbase.org/db/get?name=T22A3.8;class=Gene" role="_blank">T22A3.8</ulink>, <ulink url="http://www.wormbase.org/db/get?name=EPI-1;class=Protein" role="_blank">EPI-1</ulink>, <ulink url="http://www.wormbase.org/db/get?name=LAM-1;class=Protein" role="_blank">LAM-1</ulink>, <ulink url="http://www.wormbase.org/db/get?name=C54D1.5;class=Gene" role="_blank">C54D1.5</ulink> (the four laminin subunit gene products), <ulink url="http://www.wormbase.org/db/get?name=NID-1;class=Protein" role="_blank">NID-1</ulink> (nidogen) and <ulink url="http://www.wormbase.org/db/get?name=DGN-1;class=Protein" role="_blank">DGN-1</ulink> (dystroglycan) contain at least one N-linked glycan [see <link linkend="bib23">Fan et al. (2005)</link><!--; PMID 15888633-->; <link linkend="bib59">Kaji et al., (2003)</link><!--; PMID 12754521--> for complete lists].</para>
+<para>In individual studies, some <emphasis>C. elegans</emphasis> proteins have been demonstrated to contain N-linked oligosaccharides. <ulink url="http://www.wormbase.org/db/get?name=GLP-1;class=Protein" role="_blank">GLP-1</ulink>, a member of the <ulink url="http://www.wormbase.org/db/get?name=LIN-12;class=Protein" role="_blank">LIN-12</ulink>/Notch family of receptor proteins essential for distal tip cell (DTC) control of germline proliferation (<link linkend="bib5">Austin and Kimble, 1987</link><!--; PMID 3677168-->) is a glycoprotein (<link linkend="bib19">Crittenden et al., 1994</link><!--; PMID 7607080-->).</para>
+<para><ulink url="http://www.wormbase.org/db/get?name=MIG-17;class=Protein" role="_blank">MIG-17</ulink>, a member of the ADAM (a disintegrin and metalloprotease) family, regulates directional migration of the distal tip cell (DTC) (<link linkend="bib83">Nishiwaki et al., 2000</link><!--; PMID 10864868-->). Sensitivity to N-glycanase indicated that <ulink url="http://www.wormbase.org/db/get?name=MIG-17;class=Protein" role="_blank">MIG-17</ulink> is N-glycosylated (<link linkend="bib84">Nishiwaki et al., 2004</link><!--; PMID 14688791-->). A mutation in <emphasis><ulink url="http://www.wormbase.org/db/get?name=mig-23;class=Gene" role="_blank">mig-23</ulink></emphasis> causes defective DTC migration and genetically interacts with <emphasis><ulink url="http://www.wormbase.org/db/get?name=mig-17;class=Gene" role="_blank">mig-17</ulink></emphasis>. <ulink url="http://www.wormbase.org/db/get?name=MIG-23;class=Protein" role="_blank">MIG-23</ulink> is a membrane-bound nucleoside diphosphatase (NDPase) required for glycosylation and proper localization of <ulink url="http://www.wormbase.org/db/get?name=MIG-17;class=Protein" role="_blank">MIG-17</ulink> (<link linkend="bib84">Nishiwaki et al., 2004</link><!--; PMID 14688791-->). NDPase activities in the lumen of the Golgi apparatus generate nucleoside monophosphates required for translocation of nucleotide sugars from the cytosol into the Golgi lumen (<link linkend="bib8">Berninsone et al., 1994</link><!--; PMID 7506254-->). Nucleotide sugars are the activated donors for glycosylation reactions in the lumen of the endoplasmic reticulum and Golgi apparatus (<link linkend="bib49">Hirschberg et al., 1998</link><!--; PMID 9759482-->). Genetic studies in <emphasis>S.cerevisiae</emphasis> showed that guanosine diphosphatase, an NDPase, is required for protein and sphingolipid glycosylation in the Golgi lumen (<link linkend="bib1">Abeijon et al., 1993</link><!--; PMID 8391537-->). Hence, <ulink url="http://www.wormbase.org/db/get?name=MIG-23;class=Protein" role="_blank">MIG-23</ulink> likely affects DTC migration through its role in the transport of nucleotide sugars into the lumen of the Golgi apparatus. Although the <emphasis><ulink url="http://www.wormbase.org/db/get?name=mig-23;class=Gene" role="_blank">mig-23</ulink></emphasis> mutation may affect the glycosylation of other proteins, <ulink url="http://www.wormbase.org/db/get?name=MIG-23;class=Protein" role="_blank">MIG-23</ulink> appears to regulate DTC migration through glycosylation and correct localization of <ulink url="http://www.wormbase.org/db/get?name=MIG-17;class=Protein" role="_blank">MIG-17</ulink>.</para>
+</sect2>
+</sect1>
+<sect1 id="sec5">
+<title>O-linked glycans</title>
+<sect2 id="sec5_1">
+<title>O-GalNAc linked (mucin-type) glycans</title>
+<para>The GalNAc <symbol role="symbolfont">&#x003B1;</symbol>-Ser/Thr linkage has been considered a hallmark of mucins where it occurs in clusters. However, this linkage has also been found in a wide variety of other proteins (<link linkend="bib37">Hang and Bertozzi, 2005</link><!--; PMID 16005634-->). No primary amino acid consensus sequence has emerged for mucin-type O-linked glycosylation. In general, glycosylation of Thr is preferred over Ser (<link linkend="bib21">Elhammer et al., 1993</link><!--; PMID 8486674-->) and the linkage is found in clusters of Ser/Thr residues with a <symbol role="symbolfont">&#x003B2;</symbol>turn near Pro and at a distance from charged amino acids (<link linkend="bib37">Hang and Bertozzi, 2005</link><!--; PMID 16005634-->).</para>
+<para><emphasis>C. elegans</emphasis> expresses a family of functional polypeptide N-acetylgalactosaminyltransferases (ppGalNacT) involved in the initiation of mucin-type O-glycosylation (<link linkend="bib35">Hagen and Nehrke, 1998</link><!--; PMID 9525933-->; see <link linkend="app1">Appendix 1</link>). A <emphasis>C. elegans</emphasis> core 1 <symbol role="symbolfont">&#x003B2;</symbol>3-GalT or T-synthase has been recently characterized (<link linkend="bib58">Ju et al., 2006</link><!--; PMID 16762980-->). This enzyme adds Gal to GalNAc<symbol role="symbolfont">&#x003B1;</symbol>1-Ser/Thr to generate the core 1 structure Gal<symbol role="symbolfont">&#x003B2;</symbol>1-3GalNAc<symbol role="symbolfont">&#x003B1;</symbol>1-Ser/Thr. This is the most common of O-glycan structures in vertebrates and is a precursor to more complex O-glycans. Two families of unusual mucin-type O-glycans were identified in <emphasis>C. elegans</emphasis> (<link linkend="bib34">Guerardel et al., 2001</link><!--; PMID 11415447-->). Both families were characterized by the presence of multiple <symbol role="symbolfont">&#x003B2;</symbol>-Glc residues in non-reducing terminal positions, a type of substitution without precedent in O-glycans. One of these families presented either type-1 core Gal<symbol role="symbolfont">&#x003B2;</symbol>1,3GalNAc or one of three novel core types: Gal<symbol role="symbolfont">&#x003B2;</symbol>1,6[Gal<symbol role="symbolfont">&#x003B2;</symbol>1,3]GalNAc, Glc<symbol role="symbolfont">&#x003B2;</symbol>1-6[Gal<symbol role="symbolfont">&#x003B2;</symbol>1,3]GalNAc and [Glc<symbol role="symbolfont">&#x003B2;</symbol>1-6(Glc<symbol role="symbolfont">&#x003B2;</symbol>1,4)Gal<symbol role="symbolfont">&#x003B2;</symbol>1-3)]GalNAc. Some of the O-glycans contain the GlcA<symbol role="symbolfont">&#x003B2;</symbol>1,3 Gal<symbol role="symbolfont">&#x003B2;</symbol>1,3GalNAc trisaccharide sequence. The second mucin type O-glycan characterized is unusual in that it presented a GlcNAc-ol in the terminal position. This suggests that it would be linked to the protein through a GlcNAc and not a GalNAc. The unusual features of these structures suggest the expression in <emphasis>C. elegans</emphasis> of novel glycosyltransferase activities. For example, a novel <symbol role="symbolfont">&#x003B2;</symbol>1,6GlcT acting on the GalNAc residue of the core has been cloned and expressed (<link linkend="bib106">Warren et al., 2002</link>). The enzyme is encoded by the <emphasis><ulink url="http://www.wormbase.org/db/get?name=gly-1;class=Gene" role="_blank">gly-1</ulink></emphasis> gene and is homologous to the vertebrate <symbol role="symbolfont">&#x003B2;</symbol>1,6GlNAcT that acts on the GalNAc residue of O-glycan core 1 (Gal<symbol role="symbolfont">&#x003B2;</symbol>1,3GlcNAc) to make O-glycan core 2.</para>
+<para>The large amounts of O-glycans purified in this study suggest that <emphasis>C. elegans</emphasis> expresses an abundance of highly O-glycosylated proteins. Studies on the parasitic nematode <emphasis>Toxocara canis</emphasis> have shown that it secretes a family of highly O-glycosylated mucin type glycoproteins (<link linkend="bib69">Loukas et al., 2000</link><!--; PMID 10950959-->; <link linkend="bib20">Dell et al., 1999</link><!--; PMID 10571024-->; <link linkend="bib62">Khoo et al., 1991</link><!--; PMID 1823159-->). In <emphasis>C. elegans</emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/get?name=let-653;class=Gene" role="_blank">let-653</ulink></emphasis> encodes a mucin-type glycoprotein (<link linkend="bib57">Jones and Baillie, 1995</link><!--; PMID 7476875-->). Mutations in <emphasis><ulink url="http://www.wormbase.org/db/get?name=let-65;class=Gene" role="_blank">let-65</ulink></emphasis>3 result in larval death and vacuole formation anterior to the pharyngeal bulb, suggesting malfunction or deformation of the excretory/secretory apparatus. Biochemical characterization of a <emphasis>C. elegans</emphasis> L1-specific surface antigen suggested that it contains O-linked carbohydrates (<link linkend="bib45">Hemmer et al., 1991</link><!--; PMID 1955471-->). This antigen is not detected on the surface of L1 animals carrying mutations in the <emphasis><ulink url="http://www.wormbase.org/db/get?name=srf-3;class=Gene" role="_blank">srf-3</ulink></emphasis> gene, which encodes a Golgi UDP-Gal/UDP-GlcNAc transporter implicated in glycosylation of surface components (<link linkend="bib50">Hoflich et al., 2004</link><!--; PMID 15123614-->). Loss of <ulink url="http://www.wormbase.org/db/get?name=SRF-3;class=Protein" role="_blank">SRF-3</ulink> activity affects both N-linked and O-linked glycosylation (<link linkend="bib15">Cipollo et al., 2004</link><!--; PMID 15452127-->).</para>
+</sect2>
+<sect2 id="sec5_2">
+<title>O-GlcNAc linked</title>
+<para>O-linked GlcNAc at Ser and Thr residues is an evolutionary conserved modification emerging as a key regulator of nuclear and cytoplasmic protein activity (<link linkend="bib70">Love and Hanover, 2005</link><!--; PMID 16317114-->). The GlcNAc transferase (OGT) responsible for this modification was the first glycopeptide-forming enzyme to be localized outside the secretory apparatus (<link linkend="bib71">Lubas et al., 1997</link><!--; PMID 9083068-->). O-GlcNAc addition may compete with O-phosphorylation for certain Ser/Thr target sites, suggesting a potential regulatory cycle in which cytosolic <symbol role="symbolfont">&#x003B2;</symbol>-N-acetylglucosaminidase plays a key role (<link linkend="bib18">Comer and Hart, 2001</link><!--; PMID 11425311-->). O-GlcNAc addition is driven in part by the levels of UDP-GlcNAc derived from the hexosamine biosynthetic pathway, a nutrient-sensing pathway implicated in cellular signaling (<link linkend="bib38">Hanover, 2001</link><!--; PMID 11532966-->). In mammals, the OGT gene is essential for embryonic and stem cell development and produces multiple transcripts (<link linkend="bib40">Hanover et al., 2003</link><!--; PMID 12504895-->; <link linkend="bib85">O&apos;Donnell et al., 2004</link><!--; PMID 14749383-->; <link linkend="bib94">Shafi et al., 2000</link><!--; PMID 10801981-->). O-GlcNAc addition has been implicated in mammalian insulin resistance (<link linkend="bib38">Hanover, 2001</link><!--; PMID 11532966-->; <link linkend="bib75">McClain et al., 2002</link><!--; PMID 12136128-->; <link linkend="bib103">Vosseller et al., 2002</link><!--; PMID 11959983-->; <link linkend="bib108">Wells et al., 2001</link><!--; PMID 11269319-->) histone remodeling, transcription, proliferation, apoptosis and proteosomal degradation.</para>
+<para>In <emphasis>C. elegans</emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/get?name=ogt-1;class=Gene" role="_blank">ogt-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=oga-1;class=Gene" role="_blank">oga-1</ulink></emphasis> encode the single orthologs of OGT (<link linkend="bib71">Lubas et al., 1997</link><!--; PMID 9083068-->) and O-GlcNAcase (<link linkend="bib24">Forsythe et al., 2006</link><!--; PMID 16882729-->), respectively. Putative null alleles of <emphasis><ulink url="http://www.wormbase.org/db/get?name=ogt-1;class=Gene" role="_blank">ogt-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=oga-1;class=Gene" role="_blank">oga-1</ulink></emphasis> are viable and fertile, allowing the examination of the role of O-GlcNAc in this organism. Nuclear pore complexes in the <emphasis><ulink url="http://www.wormbase.org/db/get?name=ogt-1;class=Gene" role="_blank">ogt-1</ulink></emphasis> mutant strain lack O-GlcNAc but are capable of transporting transcription factors into the nucleus at normal rates. Conversely, <emphasis><ulink url="http://www.wormbase.org/db/get?name=oga-1;class=Gene" role="_blank">oga-1</ulink></emphasis> null mutants accumulate O-GlcNAc on nuclear pores and other proteins. A dramatic elevation in the levels of trehalose and glycogen was detected in <emphasis><ulink url="http://www.wormbase.org/db/get?name=ogt-1;class=Gene" role="_blank">ogt-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=oga-1;class=Gene" role="_blank">oga-1</ulink></emphasis> mutants with a concomitant decrease in triglyceride storage (<link linkend="bib39">Hanover et al., 2005</link><!--; PMID 16051707-->). The <emphasis><ulink url="http://www.wormbase.org/db/get?name=ogt-1;class=Gene" role="_blank">ogt-1</ulink></emphasis> deletion allele suppresses dauer formation induced by the partial loss of <emphasis><ulink url="http://www.wormbase.org/db/get?name=daf-2;class=Gene" role="_blank">daf-2</ulink></emphasis>, encoding an insulin-like receptor (<link linkend="bib90">Riddle, 1977</link>). In comparable conditions, the <emphasis><ulink url="http://www.wormbase.org/db/get?name=oga-1;class=Gene" role="_blank">oga-1</ulink></emphasis> null mutant enhances dauer formation of the <emphasis><ulink url="http://www.wormbase.org/db/get?name=daf-2;class=Gene" role="_blank">daf-2</ulink></emphasis> mutant. Thus, the nematode hexosamine-signaling pathway interacts with the insulin-like-signaling pathway, as suggested in mammals. The insulin-like-signaling pathway modulates lipid and carbohydrate storage in <emphasis>C. elegans</emphasis> (<link linkend="bib63">Kimura et al., 1997</link><!--; PMID 9252323-->). These studies implicate O-GlcNAc cycling by <ulink url="http://www.wormbase.org/db/get?name=OGT-1;class=Protein" role="_blank">OGT-1</ulink> and <ulink url="http://www.wormbase.org/db/get?name=OGA-1;class=Protein" role="_blank">OGA-1</ulink> in modulating insulin-like signaling and/or parallel pathways regulating dauer formation in <emphasis>C. elegans</emphasis>.</para>
+</sect2>
+</sect1>
+<sect1 id="sec6">
+<title>Glycolipids</title>
+<para>A glycosphingolipid consists of an oligosaccharide usually attached via glucose or galactose to the terminal primary hydroxyl group of the lipid moiety ceramide. Most mammalian glycosphingolipids contain a Gal-<symbol role="symbolfont">&#x003B2;</symbol>1,4-Glc-<symbol role="symbolfont">&#x003B2;</symbol>1-ceramide core, which is extended by the stepwise addition of further monosaccharides giving rise to several defined core structures (<link linkend="bib101">Varki et al., 1999</link><!--; 0-87969-560-9-->).</para>
+<para><emphasis>C. elegans</emphasis> glycosphingolipids belong to the invertebrate-specific arthro-series, which contain the invertebrate-specific Man-<symbol role="symbolfont">&#x003B2;</symbol>1,4-Glc-<symbol role="symbolfont">&#x003B2;</symbol>1-ceramide core, extended by addition of neutral sugars. They share structural homology with the equivalent structures from the porcine parasitic nematode, <emphasis>Ascaris suum</emphasis> (<link linkend="bib28">Gerdt et al., 1997</link><!--; PMID 9134433-->; <link linkend="bib27">Gerdt et al., 1999</link><!--; PMID 10583390-->; <link linkend="bib68">Lochnit et al., 1997</link><!--; PMID 9147062-->). Some of these glycosphingolipids are modified by phosphorylcholine (PCho), an antigenic determinant frequently detected in parasitic nematodes (<link linkend="bib67">Lochnit et al., 1998</link><!--; PMID 9417105-->; <link linkend="bib73">Maizels et al., 1987</link><!--; PMID 2436131-->).</para>
+<para>A role for glycosphingolipids as receptors for the <emphasis>Bacillus thuringensis</emphasis> (Bt) crystal toxin was revealed by genetic studies in <emphasis>C. elegans</emphasis>. The crystal (Cry) proteins produced by Bt are pore forming toxins that are lethal to insects and nematodes but generally innocuous to vertebrates. The potential problem associated with long-term use of transgenic crops expressing Cry proteins to control insect pests is the development of resistance among target populations. Mutations in the <emphasis>bre</emphasis> (<emphasis role="underline"><emphasis>B</emphasis></emphasis>t <emphasis role="underline"><emphasis>re</emphasis></emphasis>sistant) genes cause Bt resistance in <emphasis>C. elegans</emphasis> (<link linkend="bib32">Griffitts et al., 2003</link><!--; PMID 12944392-->; <link linkend="bib33">Griffitts et al., 2001</link><!--; PMID 11486087-->; <link linkend="bib74">Marroquin et al., 2000</link><!--; PMID 10924467-->). The <emphasis>bre</emphasis> genes encode four glycosyltransferases that act in a single pathway and are required for the uptake of toxin into intestinal cells. (<link linkend="bib32">Griffitts et al., 2003</link><!--; PMID 12944392-->; <link linkend="bib33">Griffitts et al., 2001</link><!--; PMID 11486087-->). <ulink url="http://www.wormbase.org/db/get?name=BRE-2;class=Protein" role="_blank">BRE-2</ulink> and <ulink url="http://www.wormbase.org/db/get?name=BRE-4;class=Protein" role="_blank">BRE-4</ulink> synthesize the Gal<symbol role="symbolfont">&#x003B2;</symbol>1,3GlcNAc and GalNAc<symbol role="symbolfont">&#x003B2;</symbol>1,4GlcNAc moieties, respectively, which are commonly found on glycolipids and glycoproteins. <emphasis><ulink url="http://www.wormbase.org/db/get?name=bre-3;class=Gene" role="_blank">bre-3</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=bre-5;class=Gene" role="_blank">bre-5</ulink></emphasis> are the <emphasis>C. elegans</emphasis> homologs of the <emphasis>Drosophila</emphasis> genes <emphasis>egghead</emphasis> and <emphasis>brainiac</emphasis>, respectively, which encode consecutive glycosyltransferases involved in the synthesis of the carbohydrate chains on glycosphingolipids (<link linkend="bib32">Griffitts et al., 2003</link><!--; PMID 12944392-->). Lipid and glycoprotein analysis of <emphasis>bre</emphasis> mutant animals demonstrated that the BRE enzymes are required to synthesize the carbohydrate chains of glycolipids and that Bt toxin specifically binds glycolipids (<link linkend="bib31">Griffitts et al., 2005</link><!--; PMID 15705852-->).</para>
+<para>Mutations in <emphasis><ulink url="http://www.wormbase.org/db/get?name=bre-5;class=Gene" role="_blank">bre-5</ulink></emphasis> and other genes involved in glycosphingolipid biosynthesis also suppress the egg-laying defect associated with elevated <emphasis><ulink url="http://www.wormbase.org/db/get?name=lin-12;class=Gene" role="_blank">lin-12</ulink></emphasis> activity (<link linkend="bib60">Katic et al., 2005</link><!--; PMID 16157663-->). Brainiac modulates Notch signaling in <emphasis>Drosophila</emphasis> (<link linkend="bib29">Goode et al., 1996</link><!--; PMID 8812107-->; <link linkend="bib30">Goode and Perrimon, 1997</link><!--; PMID 9598350-->) suggesting that the importance of glycosphingolipids for proper <ulink url="http://www.wormbase.org/db/get?name=LIN-12;class=Protein" role="_blank">LIN-12</ulink>/Notch signaling might be functionally conserved. Genetic evidence suggests that <emphasis><ulink url="http://www.wormbase.org/db/get?name=bre-5;class=Gene" role="_blank">bre-5</ulink></emphasis> functions prior to <ulink url="http://www.wormbase.org/db/get?name=LIN-12;class=Protein" role="_blank">LIN-12</ulink> activation by ligand-induced ectodomain shedding (<link linkend="bib60">Katic et al., 2005</link><!--; PMID 16157663-->).</para>
+</sect1>
+<sect1 id="sec7">
+<title>Chitin</title>
+<para>Chitin, a linear polymer of <symbol role="symbolfont">&#x003B2;</symbol>1,4 linked GlcNAc, is one of the main components of the fungal cell wall and the exoskeletons of arthropods. The eggshells of many free-living and parasitic nematodes contain chitin (<link linkend="bib9">Brydon et al., 1987</link><!--; PMID 3696175-->; <link linkend="bib109">Wharton, 1980</link><!--; PMID 7003502-->). In addition, this polysaccharide has been detected in the feeding apparatus of the strongyloid nematode <emphasis>Oesophagostomum dentatun</emphasis> (<link linkend="bib82">Neuhaus et al., 1997</link>). In <emphasis>C. elegans</emphasis>, chitin is detected in the eggshell and in elaborate patterns in the pharyngeal lumen walls of adult and larvae (<link linkend="bib112">Zhang et al., 2005</link><!--; PMID 16098962-->). Two genes encoding chitin synthases, <emphasis><ulink url="http://www.wormbase.org/db/get?name=chs-1;class=Gene" role="_blank">chs-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=chs-2;class=Gene" role="_blank">chs-2</ulink></emphasis>, exhibit different temporal expression patterns: <emphasis><ulink url="http://www.wormbase.org/db/get?name=chs-1;class=Gene" role="_blank">chs-1</ulink></emphasis> is expressed in later larval stages and adults, while <emphasis><ulink url="http://www.wormbase.org/db/get?name=chs-2;class=Gene" role="_blank">chs-2</ulink></emphasis> expression is restricted to a short period before each molt, but not in adults (<link linkend="bib102">Veronico et al., 2001</link><!--; PMID 11589574-->). Maternal <emphasis><ulink url="http://www.wormbase.org/db/get?name=chs-1;class=Gene" role="_blank">chs-1</ulink></emphasis> gene activity is likely involved in the production of eggshell chitin, as shown by RNAi experiments and analysis of <emphasis><ulink url="http://www.wormbase.org/db/get?name=chs-1;class=Gene" role="_blank">chs-1</ulink></emphasis> null mutants. <emphasis><ulink url="http://www.wormbase.org/db/get?name=chs-2;class=Gene" role="_blank">chs-2</ulink></emphasis> is expressed in the pharynx and inactivation of <emphasis><ulink url="http://www.wormbase.org/db/get?name=chs-2;class=Gene" role="_blank">chs-2</ulink></emphasis> by RNAi revealed visible defects in the grinder (<link linkend="bib112">Zhang et al., 2005</link><!--; PMID 16098962-->). Hence, <emphasis><ulink url="http://www.wormbase.org/db/get?name=chs-1;class=Gene" role="_blank">chs-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=chs-2;class=Gene" role="_blank">chs-2</ulink></emphasis> play different and non-overlapping roles in development.</para>
+</sect1>
+<sect1 id="sec8">
+<title>Conclusions</title>
+<para>Assignment of biological functions to glycans and glycan modified acceptors in any multicellular organism is a difficult task. The extreme complexity of glycan structures is compounded by the fact that many yet unidentified acceptors might be modified by the same type of glycan. In addition, very little is known about how the expression of these molecules is regulated during development and differentiation. <emphasis>C. elegans</emphasis> and small model organisms are likely to provide platforms where perturbations of glycan structure can be analyzed in the context of development and differentiation. Sensitive techniques for glycan analysis can be applied to mutants to obtain qualitative and quantitative information about their glycosylation phenotypes. Identification of the specific acceptor(s) carrying the abnormal glycan structures represents an additional challenge, yet these studies may help understand the molecular mechanisms linking glycosylation defects with specific phenotypes. Despite the enormous difference in complexity with mammals, the recent genetic and structural studies suggest that <emphasis>C. elegans</emphasis> is a promising model system for investigating basic roles of glycans in development.</para>
+</sect1>
+<sect1 id="sec9">
+<title>References</title>
+&CarboGlycos_Refs;
+<para/>
+</sect1>
+<?newpage?>
+<appendix id="app1">
+<title>Appendix 1</title>
+<para>This Appendix includes putative glycosylation genes based on homology to genes from other species. Activity refers to presumed biochemical function, except those entries indicated with *, for which the <emphasis>C. elegans</emphasis> gene has been expressed and its biochemical activity has been demonstrated. Adapted from <link linkend="bib92">Schachter (2004)</link><!--; PMID 15465323-->.</para>
+<informaltable>
+<tgroup cols="5">
+<colspec colname="c1" align="center" colwidth="1.2*"/>
+<colspec colname="c2" align="center" colwidth="0.7*"/>
+<colspec colname="c3" align="center" colwidth="0.7*"/>
+<colspec colname="c4" align="center" colwidth="0.5*"/>
+<colspec colname="c5" align="center" colwidth="0.6*"/>
+<thead>
+<row>
+<entry>Activity</entry>
+<entry><emphasis>C. elegans</emphasis> gene</entry>
+<entry>Mutant phenotype</entry>
+<entry>RNAi phenotype</entry>
+<entry>Reference(s)</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry namest="c1" nameend="c5" align="left"><emphasis role="bold">Genes involved in synthesis and modification of GAG (Xyl-Ser O-glycans)</emphasis></entry>
+</row>
+<row>
+<entry>UDP-GlcA decarboxylase *</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=D2096.4;class=Gene" role="_blank">D2096.4</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=sqv-1;class=Gene" role="_blank">sqv-1</ulink></emphasis>)</entry>
+<entry>Squashed vulva, hermaphrodite sterile</entry>
+<entry>WT</entry>
+<entry><link linkend="bib53">Hwang and Horvitz, 2002</link><!--; PMID 12391314--></entry>
+</row>
+<row>
+<entry><symbol role="symbolfont">&#x003B2;</symbol>gal <symbol role="symbolfont">&#x003B2;</symbol>1,3-GalT II *</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Y110A2AL.14;class=Gene" role="_blank">Y110A2AL.14</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=sqv-2;class=Gene" role="_blank">sqv-2</ulink></emphasis>)</entry>
+<entry>Squashed vulva, hermaphrodite sterile</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Clr;class=Phenotype" role="_blank">Clr</ulink>, <ulink url="http://www.wormbase.org/db/get?name=Cyk;class=Phenotype" role="_blank">Cyk</ulink>, <ulink url="http://www.wormbase.org/db/get?name=Egl;class=Phenotype" role="_blank">Egl</ulink>, <ulink url="http://www.wormbase.org/db/get?name=Sma;class=Phenotype" role="_blank">Sma</ulink></entry>
+<entry><link linkend="bib54">Hwang et al., 2003</link><!--; PMID 12584198-->; <link linkend="bib104">Wang et al., 2005</link><!--; PMID 15987734--></entry>
+</row>
+<row>
+<entry>Xyl-prot <symbol role="symbolfont">&#x003B2;</symbol>1,4-GalT *</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=R10E11.4;class=Gene" role="_blank">R10E11.4</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=sqv-3;class=Gene" role="_blank">sqv-3</ulink></emphasis>)</entry>
+<entry>Squashed vulva, hermaphrodite sterile</entry>
+<entry/>
+<entry><link linkend="bib10">Bulik et al., 2000</link><!--; PMID 11005858--></entry>
+</row>
+<row>
+<entry>UDP-Glc dehydrogenase *</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F29F11.1;class=Gene" role="_blank">F29F11.1</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=sqv-4;class=Gene" role="_blank">sqv-4</ulink></emphasis>)</entry>
+<entry>Squashed vulva, hermaphrodite sterile</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Emb;class=Phenotype" role="_blank">Emb</ulink></entry>
+<entry><link linkend="bib52">Hwang and Horvitz, 2002</link><!--; PMID 12391315--></entry>
+</row>
+<row>
+<entry><symbol role="symbolfont">&#x003B2;</symbol>1,4GalNAcT I/II (chondroitin synthase) *</entry>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=T24D11.1;class=Protein" role="_blank">T24D11.1a,b</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=sqv-5;class=Gene" role="_blank">sqv-5</ulink></emphasis>)</entry>
+<entry>Squashed vulva, hermaphrodite sterile</entry>
+<entry/>
+<entry><link linkend="bib55">Hwang et al., 2003</link><!--; PMID 12761549-->; <link linkend="bib78">Mizuguchi et al., 2003</link><!--; PMID 12761550--></entry>
+</row>
+<row>
+<entry>Polypeptide <symbol role="symbolfont">&#x003B2;</symbol>-XylT *</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Y50D4C.4;class=Gene" role="_blank">Y50D4C.4</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=sqv-6;class=Gene" role="_blank">sqv-6</ulink></emphasis>)</entry>
+<entry>Squashed vulva, hermaphrodite sterile</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Cyk;class=Phenotype" role="_blank">Cyk</ulink></entry>
+<entry><link linkend="bib54">Hwang et al., 2003</link><!--; PMID 12584198--></entry>
+</row>
+<row>
+<entry>Gal-Gal-Xyl-S <symbol role="symbolfont">&#x003B2;</symbol>1,3 GlcAT *</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ZK1307.5;class=Gene" role="_blank">ZK1307.5</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=sqv-8;class=Gene" role="_blank">sqv-8</ulink></emphasis>)</entry>
+<entry>Squashed vulva, hermaphrodite sterile</entry>
+<entry/>
+<entry><link linkend="bib10">Bulik et al., 2000</link><!--; PMID 11005858--></entry>
+</row>
+<row>
+<entry>Heparan sulfate synthesis</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F12F6.3;class=Gene" role="_blank">F12F6.3</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=rib-1;class=Gene" role="_blank">rib-1</ulink></emphasis>)</entry>
+<entry>Abnormal</entry>
+<entry>WT</entry>
+<entry><link linkend="bib65">Kitagawa et al., 2001</link><!--; PMID 11121397--></entry>
+</row>
+<row>
+<entry><symbol role="symbolfont">&#x003B1;</symbol>1,4-GnT I/II (heparan sulfate synthesis) *</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=K01G5.6;class=Gene" role="_blank">K01G5.6</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=rib-2;class=Gene" role="_blank">rib-2</ulink></emphasis>)</entry>
+<entry>Abnormal</entry>
+<entry>WT</entry>
+<entry><link linkend="bib65">Kitagawa et al., 2001</link><!--; PMID 11121397--></entry>
+</row>
+<row>
+<entry>GlcAT/GlcT/GalT?</entry>
+<entry><ulink url="http://wormbase.org/db/gene/gene?name=B0310.5;class=Gene" role="_blank">B0310.5</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://wormbase.org/db/gene/gene?name=F08G5.5;class=Gene" role="_blank">F08G5.5</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry>D-GlcA C5-epimerase</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=B0285.5;class=Gene" role="_blank">B0285.5</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=hse-5;class=Gene" role="_blank">hse-5</ulink></emphasis>)</entry>
+<entry>Axon, cell guidance defects</entry>
+<entry>WT</entry>
+<entry><link linkend="bib11">Bulow and Hobert, 2004</link><!--; PMID 15003172--></entry>
+</row>
+<row>
+<entry>Heparan sulfate N-deacetylase/N-sulfotransferase</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F08B4.6;class=Gene" role="_blank">F08B4.6</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=hst-1;class=Gene" role="_blank">hst-1</ulink></emphasis>)</entry>
+<entry>Abnormal</entry>
+<entry>WT/<ulink url="http://www.wormbase.org/db/get?name=Emb;class=Phenotype" role="_blank">Emb</ulink>, <ulink url="http://www.wormbase.org/db/get?name=Ste;class=Phenotype" role="_blank">Ste</ulink></entry>
+<entry/>
+</row>
+<row>
+<entry>Heparan sulfate 2O-sulfotransferase</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=C34F6.4;class=Gene" role="_blank">C34F6.4</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=hst-2;class=Gene" role="_blank">hst-2</ulink></emphasis>)</entry>
+<entry>Axon, cell guidance defects</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Mig;class=Phenotype" role="_blank">Mig</ulink>, <ulink url="http://www.wormbase.org/db/get?name=Egl;class=Phenotype" role="_blank">Egl</ulink></entry>
+<entry><link linkend="bib11">Bulow and Hobert, 2004</link><!--; PMID 15003172-->; <link linkend="bib64">Kinnunen et al., 2005</link><!--; PMID 15671174--></entry>
+</row>
+<row>
+<entry>Heparan sulfate 6O-sulfotransferase</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Y34B4A.3;class=Gene" role="_blank">Y34B4A.3</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=hst-6;class=Gene" role="_blank">hst-6</ulink></emphasis>)</entry>
+<entry>Axon, cell guidance defects</entry>
+<entry>WT</entry>
+<entry><link linkend="bib11">Bulow and Hobert, 2004</link><!--; PMID 15003172--></entry>
+</row>
+<row>
+<entry namest="c1" nameend="c5" align="left"><emphasis role="bold">Genes involved in N-glycan synthesis</emphasis></entry>
+</row>
+<row>
+<entry namest="c1" nameend="c5" align="left">Synthesis of the lipid linked precursor</entry>
+</row>
+<row>
+<entry>ALG7</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=T08D2.2;class=Gene" role="_blank">T08D2.2</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Y60A3A.13;class=Gene" role="_blank">Y60A3A.13</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry>ALG1</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=T26A5.4;class=Gene" role="_blank">T26A5.4</ulink></entry>
+<entry/>
+<entry>WT/<ulink url="http://www.wormbase.org/db/get?name=Emb;class=Phenotype" role="_blank">Emb</ulink>,Ste</entry>
+<entry/>
+</row>
+<row>
+<entry>ALG2</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=T23F2.1;class=Gene" role="_blank">T23F2.1</ulink></entry>
+<entry/>
+<entry>WT/Abn</entry>
+<entry/>
+</row>
+<row>
+<entry>ALG3</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=K09E4.2;class=Gene" role="_blank">K09E4.2</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry>ALG6</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=C08B11.8;class=Gene" role="_blank">C08B11.8</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry>ALG8</entry>
+<entry><ulink url="http://wormbase.org/db/seq/sequence?name=C08H9.3;class=Gene_name" role="_blank">C08H9.3</ulink></entry>
+<entry/>
+<entry>WT/<ulink url="http://www.wormbase.org/db/get?name=Emb;class=Phenotype" role="_blank">Emb</ulink>, <ulink url="http://www.wormbase.org/db/get?name=Lva;class=Phenotype" role="_blank">Lva</ulink></entry>
+<entry/>
+</row>
+<row>
+<entry>ALG9</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=C14A4.3;class=Gene" role="_blank">C14A4.3</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry>ALG10</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=T24D1.4;class=Gene" role="_blank">T24D1.4</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry>Lec35/Monosaccharide-P-dolichol utilization</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F38E1.9;class=Gene" role="_blank">F38E1.9</ulink></entry>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Let;class=Phenotype" role="_blank">Let</ulink>, <ulink url="http://www.wormbase.org/db/get?name=Gro;class=Phenotype" role="_blank">Gro</ulink>, <ulink url="http://www.wormbase.org/db/get?name=Bmd;class=Phenotype" role="_blank">Bmd</ulink>, <ulink url="http://www.wormbase.org/db/get?name=Lva;class=Phenotype" role="_blank">Lva</ulink></entry>
+<entry/>
+</row>
+<row>
+<entry namest="c1" nameend="c5" align="left"><emphasis role="bold">Oligosaccharyltransferase complex</emphasis></entry>
+</row>
+<row>
+<entry>OST1/ribophorin</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=T22D1.4;class=Gene" role="_blank">T22D1.4</ulink></entry>
+<entry/>
+<entry>WT/ Abn</entry>
+<entry><link linkend="bib104">Wang et al., 2005</link><!--; PMID 15987734--></entry>
+</row>
+<row>
+<entry>Ribophorin II</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=M01A10.3;class=Gene" role="_blank">M01A10.3</ulink></entry>
+<entry/>
+<entry>WT/Abn</entry>
+<entry/>
+</row>
+<row>
+<entry>OST3</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ZK686.3;class=Gene" role="_blank">ZK686.3</ulink></entry>
+<entry/>
+<entry>WT/Abn</entry>
+<entry/>
+</row>
+<row>
+<entry>WBP1/DDOST/Ost48</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=T09A5.11;class=Gene" role="_blank">T09A5.11</ulink></entry>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Emb;class=Phenotype" role="_blank">Emb</ulink>, <ulink url="http://www.wormbase.org/db/get?name=Gro;class=Phenotype" role="_blank">Gro</ulink>, <ulink url="http://www.wormbase.org/db/get?name=Lon;class=Phenotype" role="_blank">Lon</ulink>, <ulink url="http://www.wormbase.org/db/get?name=Lvl;class=Phenotype" role="_blank">Lvl</ulink>, <ulink url="http://www.wormbase.org/db/get?name=Unc;class=Phenotype" role="_blank">Unc</ulink></entry>
+<entry/>
+</row>
+<row>
+<entry>OST2/<ulink url="http://www.wormbase.org/db/get?name=DAD-1;class=Protein" role="_blank">DAD-1</ulink></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F57B10.10;class=Gene" role="_blank">F57B10.10</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=dad-1;class=Gene" role="_blank">dad-1</ulink></emphasis>)</entry>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Emb;class=Phenotype" role="_blank">Emb</ulink>, <ulink url="http://www.wormbase.org/db/get?name=Gro;class=Phenotype" role="_blank">Gro</ulink>, <ulink url="http://www.wormbase.org/db/get?name=Lva;class=Phenotype" role="_blank">Lva</ulink>, <ulink url="http://www.wormbase.org/db/get?name=Unc;class=Phenotype" role="_blank">Unc</ulink></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=DAD-1;class=Protein" role="_blank">DAD-1</ulink> suppresses programmed cell death (<link linkend="bib96">Sugimoto et al., 1995</link><!--; PMID 7556086-->)</entry>
+</row>
+<row>
+<entry>STT3</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=T12A2.2;class=Gene" role="_blank">T12A2.2</ulink></entry>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Emb;class=Phenotype" role="_blank">Emb</ulink>, <ulink url="http://www.wormbase.org/db/get?name=Lva;class=Phenotype" role="_blank">Lva</ulink>, <ulink url="http://www.wormbase.org/db/get?name=Lon;class=Phenotype" role="_blank">Lon</ulink>, <ulink url="http://www.wormbase.org/db/get?name=Ste;class=Phenotype" role="_blank">Ste</ulink></entry>
+<entry/>
+</row>
+<row>
+<entry namest="c1" nameend="c5" align="left"><emphasis role="bold">Processing glycosydases</emphasis></entry>
+</row>
+<row>
+<entry><symbol role="symbolfont">&#x003B1;</symbol>1,2 glycosidase I</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F13H10.4;class=Gene" role="_blank">F13H10.4</ulink></entry>
+<entry/>
+<entry>WT/Abn</entry>
+<entry/>
+</row>
+<row>
+<entry><symbol role="symbolfont">&#x003B1;</symbol>1,3 glycosidase II</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F40F9.6a;class=Gene" role="_blank">F40F9.6a</ulink>,b</entry>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Emb;class=Phenotype" role="_blank">Emb</ulink>, <ulink url="http://www.wormbase.org/db/get?name=Lva;class=Phenotype" role="_blank">Lva</ulink></entry>
+<entry/>
+</row>
+<row>
+<entry><symbol role="symbolfont">&#x003B1;</symbol> 1,2 mannosidase I</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=C47E12.3;class=Gene" role="_blank">C47E12.3</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=T03G11.4;class=Gene" role="_blank">T03G11.4</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ZC410.3;class=Gene" role="_blank">ZC410.3</ulink></entry>
+<entry/>
+<entry>WT/<ulink url="http://www.wormbase.org/db/get?name=Emb;class=Phenotype" role="_blank">Emb</ulink></entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ZC506.1;class=Gene" role="_blank">ZC506.1</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry><symbol role="symbolfont">&#x003B1;</symbol> 3,6 mannosidase II</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F48C1.1a;class=Gene" role="_blank">F48C1.1a</ulink>,b</entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry namest="c1" nameend="c5" align="left"><emphasis role="bold">Quality control glycosyltransferases</emphasis></entry>
+</row>
+<row>
+<entry>Glycoprotein GlcT</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F26H9.8;class=Gene" role="_blank">F26H9.8</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F48E3.3;class=Gene" role="_blank">F48E3.3</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry namest="c1" nameend="c5" align="left"><emphasis role="bold">N-acetylglycosaminyltransferases specific for the synthesis of complex N-glycans</emphasis></entry>
+</row>
+<row>
+<entry><symbol role="symbolfont">&#x003B2;</symbol> 1,2 GnT I *</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=B0416.6;class=Gene" role="_blank">B0416.6</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=gly-13;class=Gene" role="_blank">gly-13</ulink></emphasis>)</entry>
+<entry>WT</entry>
+<entry>WT</entry>
+<entry><link linkend="bib14">Chen et al., 1999</link><!--; PMID 9867843--></entry>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F48E3.1a;class=Gene" role="_blank">F48E3.1a</ulink>,b (<emphasis><ulink url="http://www.wormbase.org/db/get?name=gly-12;class=Gene" role="_blank">gly-12</ulink></emphasis>)</entry>
+<entry>WT</entry>
+<entry>Abn</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=M01F1.1;class=Gene" role="_blank">M01F1.1</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=gly-14;class=Gene" role="_blank">gly-14</ulink></emphasis>)</entry>
+<entry>WT</entry>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry><symbol role="symbolfont">&#x003B2;</symbol> 1,2 GnT II *</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=C03E10.4;class=Gene" role="_blank">C03E10.4</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=gly-20;class=Gene" role="_blank">gly-20</ulink></emphasis>)</entry>
+<entry>WT</entry>
+<entry>WT</entry>
+<entry><link linkend="bib13">Chen et al., 2002</link><!--; PMID 12417409--></entry>
+</row>
+<row>
+<entry><symbol role="symbolfont">&#x003B2;</symbol> 1,6 GnT V *</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=C55B7.2;class=Gene" role="_blank">C55B7.2</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=gly-2;class=Gene" role="_blank">gly-2</ulink></emphasis>)</entry>
+<entry>WT</entry>
+<entry>WT/<ulink url="http://www.wormbase.org/db/get?name=Emb;class=Phenotype" role="_blank">Emb</ulink></entry>
+<entry><link linkend="bib107">Warren et al., 2002</link><!--; PMID 11937505--></entry>
+</row>
+<row>
+<entry namest="c1" nameend="c5" align="left"><emphasis role="bold">N-Glycan core fucosyltransferase</emphasis></entry>
+</row>
+<row>
+<entry>Gn-Asn-X <symbol role="symbolfont">&#x003B1;</symbol> 1,6 FucT</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=C10F3.6;class=Gene" role="_blank">C10F3.6</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=fut-8;class=Gene" role="_blank">fut-8</ulink></emphasis>)</entry>
+<entry/>
+<entry>WT</entry>
+<entry><link linkend="bib88">Paschinger et al., 2005</link><!--; PMID 15604090--></entry>
+</row>
+<row>
+<entry>Gal(NAc)<symbol role="symbolfont">&#x003B2;</symbol>1,4Gn (Fuc to Gn) <symbol role="symbolfont">&#x003B1;</symbol>1,3FucT *</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=K08F8.3;class=Gene" role="_blank">K08F8.3</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=fut-1;class=Gene" role="_blank">fut-1</ulink></emphasis>)</entry>
+<entry>WT</entry>
+<entry>WT</entry>
+<entry><link linkend="bib87">Paschinger et al., 2004</link><!--; PMID 15364955--></entry>
+</row>
+<row>
+<entry namest="c1" nameend="c5" align="left"><emphasis role="bold">Genes specific for GalNAc Ser/Thr O-glycan synthesis</emphasis></entry>
+</row>
+<row>
+<entry>Polypeptide GalNAcT *</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ZK688.8;class=Gene" role="_blank">ZK688.8</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=gly-3;class=Gene" role="_blank">gly-3</ulink></emphasis>)</entry>
+<entry/>
+<entry>WT</entry>
+<entry><link linkend="bib35">Hagen and Nehrke, 1998</link><!--; PMID 9525933--></entry>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://wormbase.org/db/seq/sequence?name=Y116F11B.12;class=Gene_name" role="_blank">Y116F11B.12</ulink>.a,b (<emphasis><ulink url="http://www.wormbase.org/db/get?name=gly-4;class=Gene" role="_blank">gly-4</ulink></emphasis>)</entry>
+<entry/>
+<entry>WT</entry>
+<entry><link linkend="bib104">Wang et al., 2005</link><!--; PMID 15987734--></entry>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Y39E4B.12a;class=Gene" role="_blank">Y39E4B.12a</ulink>,b,c (<emphasis><ulink url="http://www.wormbase.org/db/get?name=gly-5;class=Gene" role="_blank">gly-5</ulink></emphasis>)</entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=H38K22.5a;class=Gene" role="_blank">H38K22.5a</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=gly-6;class=Gene" role="_blank">gly-6</ulink></emphasis>)</entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Y46H3A.6;class=Gene" role="_blank">Y46H3A.6</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=gly-7;class=Gene" role="_blank">gly-7</ulink></emphasis>)</entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Y66A7A.6;class=Gene" role="_blank">Y66A7A.6</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=gly-8;class=Gene" role="_blank">gly-8</ulink></emphasis>)</entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://wormbase.org/db/gene/gene?name=Y47D3A.23;class=Gene" role="_blank">Y47D3A.23</ulink>(<emphasis><ulink url="http://www.wormbase.org/db/get?name=gly-9;class=Gene" role="_blank">gly-9</ulink></emphasis>)</entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Y45F10D.3;class=Gene" role="_blank">Y45F10D.3</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=gly-10;class=Gene" role="_blank">gly-10</ulink></emphasis>)</entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://wormbase.org/db/gene/gene?name=Y75B8A.9;class=Gene" role="_blank">Y75B8A.9</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=gly-11;class=Gene" role="_blank">gly-11</ulink></emphasis>)</entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry namest="c1" nameend="c5" align="left">GalNAc <symbol role="symbolfont">&#x003B1;</symbol> 1-O-S/T <symbol role="symbolfont">&#x003B2;</symbol> 1,3GalT (O-glycan core 1)</entry>
+</row>
+<row>
+<entry>Core 1 <symbol role="symbolfont">&#x003B2;</symbol>3-Gal-T or T-synthase*</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=C38H2.2;class=Gene" role="_blank">C38H2.2</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry><link linkend="bib58">Ju et al., 2006</link><!--; PMID 16762980--></entry>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=C02H6.1;class=Gene" role="_blank">C02H6.1</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=C16D9.6;class=Gene" role="_blank">C16D9.6</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=T22B11.2;class=Gene" role="_blank">T22B11.2</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Y38C1AB.1;class=Gene" role="_blank">Y38C1AB.1</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Y38C1AB.5;class=Gene" role="_blank">Y38C1AB.5</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ZC250.2;class=Gene" role="_blank">ZC250.2</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=C17A2.3;class=Gene" role="_blank">C17A2.3</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry namest="c1" nameend="c5" align="left">Homology to O-glycan core 1 <symbol role="symbolfont">&#x003B2;</symbol>1,3 GalT/core 2 <symbol role="symbolfont">&#x003B2;</symbol>1,6 GnT</entry>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=T09E11.6;class=Gene" role="_blank">T09E11.6</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry namest="c1" nameend="c5" align="left"><emphasis role="bold">Genes for GalNAc Ser/Thr O-glycan synthesis and possibly other pathways</emphasis></entry>
+</row>
+<row>
+<entry namest="c1" nameend="c4" align="left">Gal <symbol role="symbolfont">&#x003B2;</symbol>1,3GalNAca1-O-S/T (Gn to GalNAc) <symbol role="symbolfont">&#x003B2;</symbol>1,6-GnT (O-glycan core 2); homologous to <symbol role="symbolfont">&#x003B2;</symbol>1,6 IGnT</entry>
+<entry><link linkend="bib105">Warren et al., 2001</link><!--; PMID 11744632--></entry>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F44F4.6;class=Gene" role="_blank">F44F4.6</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=gly-1;class=Gene" role="_blank">gly-1</ulink></emphasis>)</entry>
+<entry>WT</entry>
+<entry>WT</entry>
+<entry><link linkend="bib106">Warren et al., 2002</link>; <emphasis><ulink url="http://www.wormbase.org/db/get?name=gly-1;class=Gene" role="_blank">gly-1</ulink></emphasis> does not encode core 2 <symbol role="symbolfont">&#x003B2;</symbol>1,6 GnT, but rather a <symbol role="symbolfont">&#x003B2;</symbol>1,6 GlcT</entry>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=C54C8.11;class=Gene" role="_blank">C54C8.11</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=gly-15;class=Gene" role="_blank">gly-15</ulink></emphasis>)</entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=T15D6.2;class=Gene" role="_blank">T15D6.2</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=gly-16;class=Gene" role="_blank">gly-16</ulink></emphasis>)</entry>
+<entry>WT</entry>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=T15D6.3;class=Gene" role="_blank">T15D6.3</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=gly-17;class=Gene" role="_blank">gly-17</ulink></emphasis>)</entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F22D6.11;class=Gene" role="_blank">F22D6.11</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=gly-18;class=Gene" role="_blank">gly-18</ulink></emphasis>)</entry>
+<entry>WT</entry>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F22D6.12;class=Gene" role="_blank">F22D6.12</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=gly-19;class=Gene" role="_blank">gly-19</ulink></emphasis>)</entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=T09E11.9;class=Gene" role="_blank">T09E11.9</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=R07B7.6;class=Gene" role="_blank">R07B7.6</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F30A10.4;class=Gene" role="_blank">F30A10.4</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F35H8.2;class=Gene" role="_blank">F35H8.2</ulink></entry>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry namest="c1" nameend="c5" align="left"><emphasis role="bold">Other galactosyltransferases</emphasis></entry>
+</row>
+<row>
+<entry><symbol role="symbolfont">&#x003B2;</symbol>Gn <symbol role="symbolfont">&#x003B2;</symbol>1,3-GalT</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F14B6.6;class=Gene" role="_blank">F14B6.6</ulink></entry>
+<entry/>
+<entry>WT/<ulink url="http://www.wormbase.org/db/get?name=Gro;class=Phenotype" role="_blank">Gro</ulink></entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=K08D12.5;class=Gene" role="_blank">K08D12.5</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=C47F8.3;class=Gene" role="_blank">C47F8.3</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=C47F8.6;class=Gene" role="_blank">C47F8.6</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=T09E11.11;class=Gene" role="_blank">T09E11.11</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=T09F5.1;class=Gene" role="_blank">T09F5.1</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=E03H4.11;class=Gene" role="_blank">E03H4.11</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=T15D6.5;class=Gene" role="_blank">T15D6.5</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F14B6.4;class=Gene" role="_blank">F14B6.4</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=T09E11.10;class=Gene" role="_blank">T09E11.10</ulink> (<symbol role="symbolfont">&#x003B2;</symbol>1,3-GnT?)</entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=C47F8.5;class=Gene" role="_blank">C47F8.5</ulink> (<symbol role="symbolfont">&#x003B2;</symbol>1,3-GnT?)</entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=C54C8.3;class=Gene" role="_blank">C54C8.3</ulink> (<symbol role="symbolfont">&#x003B2;</symbol>1,3-GnT?)</entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry><symbol role="symbolfont">&#x003B2;</symbol>Gn <symbol role="symbolfont">&#x003B2;</symbol>1,4-GalT</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=W02B12.11;class=Gene" role="_blank">W02B12.11</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry namest="c1" nameend="c5" align="left"><emphasis role="bold">Other N-acetylhexosaminyltransferases</emphasis></entry>
+</row>
+<row>
+<entry>Chitin Gn-T</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=T25G3.2;class=Gene" role="_blank">T25G3.2</ulink> (<emphasis>chi-1</emphasis>)</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Emb;class=Phenotype" role="_blank">Emb</ulink></entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Emb;class=Phenotype" role="_blank">Emb</ulink>. <ulink url="http://www.wormbase.org/db/get?name=Gro;class=Phenotype" role="_blank">Gro</ulink>,Ste</entry>
+<entry><link linkend="bib102">Veronico et al., 2001</link><!--; PMID 11589574-->; <link linkend="bib112">Zhang et al., 2005</link><!--; PMID 16098962--></entry>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F48A11.1;class=Gene" role="_blank">F48A11.1</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=chs-2;class=Gene" role="_blank">chs-2</ulink></emphasis>)</entry>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Bmd;class=Phenotype" role="_blank">Bmd</ulink>, <ulink url="http://www.wormbase.org/db/get?name=Emb;class=Phenotype" role="_blank">Emb</ulink>, <ulink url="http://www.wormbase.org/db/get?name=Gro;class=Phenotype" role="_blank">Gro</ulink>, <ulink url="http://www.wormbase.org/db/get?name=Unc;class=Phenotype" role="_blank">Unc</ulink></entry>
+<entry><link linkend="bib102">Veronico et al., 2001</link><!--; PMID 11589574-->; <link linkend="bib112">Zhang et al., 2005</link><!--; PMID 16098962--></entry>
+</row>
+<row>
+<entry>Gal<symbol role="symbolfont">&#x003B2;</symbol>1,4Gnb <symbol role="symbolfont">&#x003B2;</symbol>1,3-GnT</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=C18G1.3;class=Gene" role="_blank">C18G1.3</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry>O-Gn transferase *</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=K04G7.3;class=Gene" role="_blank">K04G7.3</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=ogt-1;class=Gene" role="_blank">ogt-1</ulink></emphasis>)</entry>
+<entry>Viable; suppressed constitutive dauer formation</entry>
+<entry/>
+<entry><link linkend="bib39">Hanover et al., 2005</link><!--; PMID 16051707--></entry>
+</row>
+<row>
+<entry>Gal<symbol role="symbolfont">&#x003B2;</symbol>1,4GlcCer <symbol role="symbolfont">&#x003B2;</symbol>1,3-GnT</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F48F7.3;class=Gene" role="_blank">F48F7.3</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry>Protein O-Man <symbol role="symbolfont">&#x003B2;</symbol>1,2-GnT1</entry>
+<entry>M70.4a,b</entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry namest="c1" nameend="c5" align="left"><emphasis role="bold">Genes involved in the biosynthesis of glycosphingolipids</emphasis></entry>
+</row>
+<row>
+<entry><symbol role="symbolfont">&#x003B2;</symbol>Gn <symbol role="symbolfont">&#x003B2;</symbol>1,3-GalT</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Y39E4B.9;class=Gene" role="_blank">Y39E4B.9</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=bre-2;class=Gene" role="_blank">bre-2</ulink></emphasis>)</entry>
+<entry>Bt resistant</entry>
+<entry>WT</entry>
+<entry><link linkend="bib31">Griffitts et al., 2005</link><!--; PMID 15705852--></entry>
+</row>
+<row>
+<entry>Glcb1-Cer <symbol role="symbolfont">&#x003B2;</symbol>1,4-Man-T</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=B0464.3;class=Gene" role="_blank">B0464.3</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=bre-3;class=Gene" role="_blank">bre-3</ulink></emphasis>)</entry>
+<entry>Bt resistant</entry>
+<entry/>
+<entry><link linkend="bib31">Griffitts et al., 2005</link><!--; PMID 15705852--></entry>
+</row>
+<row>
+<entry>GnbR <symbol role="symbolfont">&#x003B2;</symbol>1,4-GalNAcT</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Y73E7A.7;class=Gene" role="_blank">Y73E7A.7</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=bre-4;class=Gene" role="_blank">bre-4</ulink></emphasis>)</entry>
+<entry>Bt resistant</entry>
+<entry/>
+<entry><link linkend="bib31">Griffitts et al., 2005</link><!--; PMID 15705852-->; <link linkend="bib61">Kawar et al., 2002</link><!--; PMID 12167666--></entry>
+</row>
+<row>
+<entry>Man<symbol role="symbolfont">&#x003B2;</symbol>1,4GlcR <symbol role="symbolfont">&#x003B2;</symbol>1,3-GnT</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=T12G3.8;class=Gene" role="_blank">T12G3.8</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=bre-5;class=Gene" role="_blank">bre-5</ulink></emphasis>)</entry>
+<entry>Bt resistant Suppresses <ulink url="http://www.wormbase.org/db/get?name=Egl;class=Phenotype" role="_blank">Egl</ulink> defect associated with elevated <ulink url="http://www.wormbase.org/db/get?name=lin-12;class=Gene" role="_blank">lin-12</ulink> activity.</entry>
+<entry/>
+<entry><link linkend="bib31">Griffitts et al., 2005</link><!--; PMID 15705852-->; <link linkend="bib60">Katic et al., 2005</link><!--; PMID 16157663--></entry>
+</row>
+<row>
+<entry>Cer GlcT</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F59G1.1a;class=Gene" role="_blank">F59G1.1a</ulink>,b,c,d</entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F20B4.6;class=Gene" role="_blank">F20B4.6</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry namest="c1" nameend="c5" align="left"><emphasis role="bold">Other fucosyltransferases</emphasis></entry>
+</row>
+<row>
+<entry>Gal<symbol role="symbolfont">&#x003B2;</symbol>R<symbol role="symbolfont">&#x003B1;</symbol>1,2-FucT</entry>
+<entry/>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=EGAP9.2;class=Gene" role="_blank">EGAP9.2</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=fut-2;class=Gene" role="_blank">fut-2</ulink></emphasis>)</entry>
+<entry>WT</entry>
+<entry>WT</entry>
+<entry><link linkend="bib113">Zheng et al., 2002</link><!--; PMID 12163507--></entry>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=B0205.4;class=Gene" role="_blank">B0205.4</ulink></entry>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=C06E1.7;class=Gene" role="_blank">C06E1.7</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=C14C6.3;class=Gene" role="_blank">C14C6.3</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=C17A2.4;class=Gene" role="_blank">C17A2.4</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=C18G1.8;class=Gene" role="_blank">C18G1.8</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=EGAP9.3;class=Gene" role="_blank">EGAP9.3</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F08A8.5;class=Gene" role="_blank">F08A8.5</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F11A5.5;class=Gene" role="_blank">F11A5.5</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F17B5.4;class=Gene" role="_blank">F17B5.4</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F31F4.11;class=Gene" role="_blank">F31F4.11</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F31F4.17;class=Gene" role="_blank">F31F4.17</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=K06H6.6;class=Gene" role="_blank">K06H6.6</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=T26E4.3;class=Gene" role="_blank">T26E4.3</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=T26E4.4;class=Gene" role="_blank">T26E4.4</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=T26E4.5;class=Gene" role="_blank">T26E4.5</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=T26H5.8;class=Gene" role="_blank">T26H5.8</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=T28A8.2;class=Gene" role="_blank">T28A8.2</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=T28F2.1;class=Gene" role="_blank">T28F2.1</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=W07G4.2;class=Gene" role="_blank">W07G4.2</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Y5H2B.1;class=Gene" role="_blank">Y5H2B.1</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F41D3.6;class=Gene" role="_blank">F41D3.6</ulink> (galectin?)</entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry namest="c1" nameend="c5" align="left">Gal<symbol role="symbolfont">&#x003B2;</symbol>1,4/3Gn (Fuc to Gn) <symbol role="symbolfont">&#x003B1;</symbol>1,3/4-FucT (Lewis x or a)</entry>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F59E12.13;class=Gene" role="_blank">F59E12.13</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=fut-3;class=Gene" role="_blank">fut-3</ulink></emphasis>)</entry>
+<entry>WT</entry>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=K12H6.3;class=Gene" role="_blank">K12H6.3</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=fut-4;class=Gene" role="_blank">fut-4</ulink></emphasis>)</entry>
+<entry>WT</entry>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=T05A7.10;class=Gene" role="_blank">T05A7.10</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=fut-5;class=Gene" role="_blank">fut-5</ulink></emphasis>)</entry>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=T05A7.5;class=Gene" role="_blank">T05A7.5</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=fut-6;class=Gene" role="_blank">fut-6</ulink></emphasis>)</entry>
+<entry>WT</entry>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry>Protein O-FucT</entry>
+<entry>C15C7.7</entry>
+<entry/>
+<entry>WT</entry>
+<entry><link linkend="bib104">Wang et al., 2005</link><!--; PMID 15987734--></entry>
+</row>
+<row>
+<entry/>
+<entry>K10G9.3 (<emphasis><ulink url="http://www.wormbase.org/db/get?name=pad-2;class=Gene" role="_blank">pad-2</ulink></emphasis>)</entry>
+<entry/>
+<entry>Egl, <ulink url="http://www.wormbase.org/db/get?name=Bmd;class=Phenotype" role="_blank">Bmd</ulink>, <ulink url="http://www.wormbase.org/db/get?name=Let;class=Phenotype" role="_blank">Let</ulink>,Evl</entry>
+<entry><link linkend="bib76">Menzel et al., 2004</link><!--; PMID 15233996--></entry>
+</row>
+<row>
+<entry namest="c1" nameend="c5" align="left"><emphasis role="bold">Nucleotide sugar transport / antiporter cycle</emphasis></entry>
+</row>
+<row>
+<entry>UDP-GlcA/UDP-Gal/UDP-GalNAc transporter *</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=C52E12.3;class=Gene" role="_blank">C52E12.3</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=sqv-7;class=Gene" role="_blank">sqv-7</ulink></emphasis>)</entry>
+<entry>Squashed vulva</entry>
+<entry>WT/<ulink url="http://www.wormbase.org/db/get?name=Emb;class=Phenotype" role="_blank">Emb</ulink></entry>
+<entry><link linkend="bib7">Berninsone et al., 2001</link><!--; PMID 11259660--></entry>
+</row>
+<row>
+<entry>UDP-Gal/UDP-GlcNAc transporter *</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=M02B1.1;class=Gene" role="_blank">M02B1.1</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=srf-3;class=Gene" role="_blank">srf-3</ulink></emphasis>)</entry>
+<entry>Abnormal surface reactivity</entry>
+<entry/>
+<entry><link linkend="bib50">Hoflich et al., 2004</link><!--; PMID 15123614--></entry>
+</row>
+<row>
+<entry>GDP-Fuc transporter *</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=C50F4.14;class=Gene" role="_blank">C50F4.14</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry><link linkend="bib72">Luhn et al., 2001</link><!--; PMID 11326279--></entry>
+</row>
+<row>
+<entry>Putative nucleotide sugar transporter</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F15B10.1;class=Gene" role="_blank">F15B10.1</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry>Putative nucleotide sugar transporter</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ZC250.3;class=Gene" role="_blank">ZC250.3</ulink></entry>
+<entry/>
+<entry>WT/Abn</entry>
+<entry/>
+</row>
+<row>
+<entry>Putative nucleotide sugar transporter</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=K02E10.5;class=Gene" role="_blank">K02E10.5</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry>UDP-GlcNAc/UDP-GalNAc transporter*</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=C03H5.2;class=Gene" role="_blank">C03H5.2</ulink></entry>
+<entry/>
+<entry>WT/<ulink url="http://www.wormbase.org/db/get?name=Ste;class=Phenotype" role="_blank">Ste</ulink></entry>
+<entry><link linkend="bib12">Caffaro et al., 2006</link></entry>
+</row>
+<row>
+<entry>Putative nucleotide sugar transporter</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ZK896.9;class=Gene" role="_blank">ZK896.9</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry>E-NTPDase *</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=R07E4.4;class=Gene" role="_blank">R07E4.4</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=mig-23;class=Gene" role="_blank">mig-23</ulink></emphasis>)</entry>
+<entry>Defective DTC migration</entry>
+<entry>WT</entry>
+<entry><link linkend="bib84">Nishiwaki et al., 2004</link><!--; PMID 14688791--></entry>
+</row>
+<row>
+<entry>E-NTPDase *</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=K08H10.4;class=Gene" role="_blank">K08H10.4</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=uda-1;class=Gene" role="_blank">uda-1</ulink></emphasis>)</entry>
+<entry/>
+<entry>WT</entry>
+<entry><link linkend="bib99">Uccelletti et al., 2004</link><!--; PMID 15102851--></entry>
+</row>
+<row>
+<entry>E-NTPDase *</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=C33H5.14;class=Gene" role="_blank">C33H5.14</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry><link linkend="bib99">Uccelletti et al., 2004</link><!--; PMID 15102851--></entry>
+</row>
+<row>
+<entry>E-NTPDase</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F08C6.6;class=Gene" role="_blank">F08C6.6</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry namest="c1" nameend="c5" align="left"><emphasis role="bold">Nucleotide sugar synthesis</emphasis></entry>
+</row>
+<row>
+<entry>UDP-Gn 2 epimerase</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=D2007.5;class=Gene" role="_blank">D2007.5</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry>GDP-Man pyrophosphorylase</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=C15F1.4;class=Gene" role="_blank">C15F1.4</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=ppp-1;class=Gene" role="_blank">ppp-1</ulink></emphasis>)</entry>
+<entry/>
+<entry>Abn</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Y47D9A.1a;class=Gene" role="_blank">Y47D9A.1a</ulink>,b</entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry>P-Man mutase 2</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F52B11.2;class=Gene" role="_blank">F52B11.2</ulink></entry>
+<entry/>
+<entry>WT/<ulink url="http://www.wormbase.org/db/get?name=Gro;class=Phenotype" role="_blank">Gro</ulink></entry>
+<entry/>
+</row>
+<row>
+<entry>P-Glc mutase/P-Man mutase</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F21D5.1;class=Gene" role="_blank">F21D5.1</ulink></entry>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Emb;class=Phenotype" role="_blank">Emb</ulink>, Osm</entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=R05F9.6;class=Gene" role="_blank">R05F9.6</ulink></entry>
+<entry/>
+<entry>WT/<ulink url="http://www.wormbase.org/db/get?name=Emb;class=Phenotype" role="_blank">Emb</ulink></entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Y43F4B.5a;class=Gene" role="_blank">Y43F4B.5a</ulink>,b</entry>
+<entry/>
+<entry>WT/<ulink url="http://www.wormbase.org/db/get?name=Emb;class=Phenotype" role="_blank">Emb</ulink>/<ulink url="http://www.wormbase.org/db/get?name=Gro;class=Phenotype" role="_blank">Gro</ulink></entry>
+<entry/>
+</row>
+<row>
+<entry>P-Man isomerase</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=C05C8.7;class=Gene" role="_blank">C05C8.7</ulink></entry>
+<entry/>
+<entry>WT/<ulink url="http://www.wormbase.org/db/get?name=Emb;class=Phenotype" role="_blank">Emb</ulink>, <ulink url="http://www.wormbase.org/db/get?name=Lva;class=Phenotype" role="_blank">Lva</ulink>, <ulink url="http://www.wormbase.org/db/get?name=Sck;class=Phenotype" role="_blank">Sck</ulink>, <ulink url="http://www.wormbase.org/db/get?name=Ste;class=Phenotype" role="_blank">Ste</ulink></entry>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ZK632.4;class=Gene" role="_blank">ZK632.4</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry>UDP-Glu/UDP-Gal 4-epimerase</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=C47B2.6;class=Gene" role="_blank">C47B2.6</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry>Gal-1-phosphate uridyltransferase</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=Y55D5A.2;class=Gene" role="_blank">Y55D5A.2</ulink></entry>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry><ulink url="http://www.wormbase.org/db/get?name=ZK1058.3;class=Gene" role="_blank">ZK1058.3</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry>GDP-Man 4,6-dehydratase</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F56H6.5;class=Gene" role="_blank">F56H6.5</ulink></entry>
+<entry/>
+<entry>WT/ Abn</entry>
+<entry/>
+</row>
+<row>
+<entry>UDP-galactopyranose mutase</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=H04M03.4;class=Gene" role="_blank">H04M03.4</ulink></entry>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry namest="c1" nameend="c5" align="left"><emphasis role="bold">Other glycosidases</emphasis></entry>
+</row>
+<row>
+<entry><symbol role="symbolfont">&#x003B1;</symbol>-mannosidase</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F55D10.1;class=Gene" role="_blank">F55D10.1</ulink></entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry>Endo-<symbol role="symbolfont">&#x003B2;</symbol>N-acetylglucosaminidase *</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=F01F1.10a;class=Gene" role="_blank">F01F1.10a</ulink>,b</entry>
+<entry/>
+<entry>WT</entry>
+<entry/>
+</row>
+<row>
+<entry>O-Gn selective <symbol role="symbolfont">&#x003B2;</symbol>-Gnase</entry>
+<entry><ulink url="http://www.wormbase.org/db/get?name=T20B5.3;class=Gene" role="_blank">T20B5.3</ulink> (<emphasis><ulink url="http://www.wormbase.org/db/get?name=oga-1;class=Gene" role="_blank">oga-1</ulink></emphasis>)</entry>
+<entry/>
+<entry>WT</entry>
+<entry><link linkend="bib24">Forsythe et al., 2006</link></entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</appendix>
+</article>

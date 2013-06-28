@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY fig1 SYSTEM 'dnarepairfig1.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'dnarepairfig1leg.xml'>
+<!ENTITY fig2 SYSTEM 'dnarepairfig2.jpg' NDATA JPG>
+<!ENTITY fig2legend SYSTEM 'dnarepairfig2leg.xml'>
+<!ENTITY DNA_Refs SYSTEM 'dnarepairrefs.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>]>
+
+<article id="DNA_repair_ArticleID">
+    <articleinfo>
+        <title>DNA repair<footnote>
+                <para>Edited by Thomas Blumenthal. Last revised March 4, 2005. Published January 13, 2006. This chapter should be cited as: O'Neil, N. and Rose, A. DNA repair (January 13, 2006), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.54.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+		<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2006 Nigel O'Neil and Ann Rose. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+            </footnote>
+       </title>
+        <!--		<revhistory>
+			<revision>
+				<revnumber>1.0</revnumber>
+				<date>Last revised 3/14/05</date>
+			</revision>
+		</revhistory> 
+-->
+        <author>
+            <othername>Nigel O'Neil, Ann Rose<remark>
+                    <footnote>
+                        <para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:arose@gene.nce.ubc.ca">arose@gene.nce.ubc.ca</ulink>
+                        </para>
+                    </footnote>
+                </remark>
+            </othername>
+            <affiliation>
+                <address>Department of Medical Genetics, University of British Columbia, Vancouver, BC V6T 1Z3 Canada</address>
+            </affiliation>
+        </author>
+    </articleinfo>
+    <abstract>
+        <title><emphasis role="bold">Abstract</emphasis></title>
+        <para><emphasis role="bold">The integrity of the genome is essential to the health of the individual and to the
+            reproductive success of a species. Transmission of genetic information is in a selective
+            balance between two opposing forces, the maintenance of genetic stability versus elimination of mutational change and loss of evolutionary potential.</emphasis> <emphasis><emphasis role="bold">Caenorhabditis elegans</emphasis></emphasis> <emphasis role="bold">provides many advantages for the study of DNA surveillance
+            and repair in a multicellular organism. Several genes have been identified by
+            mutagenesis and RNA interference that affect DNA damage checkpoint and repair functions.
+            Many of these DNA damage response genes also play essential roles in DNA replication,
+            cell cycle control, development, meiosis and mitosis. To date, no obvious DNA
+            damage-induced checkpoint has been described in</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">somatic
+            cells. In contrast, the DNA damage response in the germ line is characterized by two
+            spatially separate checkpoints; mitotic germ nuclei proliferation arrest and apoptosis
+            of damaged meiotic nuclei. Both of these responses are regulated by checkpoint genes
+            including</emphasis> <emphasis><emphasis role="bold"><ulink url="http://www.wormbase.org/db/gene/gene?name=mrt-2" role="_blank">mrt-2</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=hus-1" role="_blank">hus-1</ulink>, rad-5</emphasis></emphasis> <emphasis role="bold">and</emphasis> <emphasis><emphasis role="bold"><ulink url="http://www.wormbase.org/db/gene/gene?name=cep-1" role="_blank">cep-1</ulink>,</emphasis></emphasis> <emphasis role="bold">the</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">ortholog of the human tumour suppressor p53. The germ line DNA damage
+            checkpoints in</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">provide an excellent model in which to
+            study the genes required to maintain genomic stability and to test compounds which might
+            have tumor suppressing properties. In addition to single gene studies, integration of
+            data from high-throughput screens has identified genes not previous implicated in the
+            DNA damage response and elucidated novel connections between the different repair
+            pathways. Most of the genes involved are conserved between worms and humans, and in
+            humans, are associated with either oncogenesis or tumor-suppression. Thus, studies of
+            the physical and functional interactions of the components of the repair pathways
+                in</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">will provide information about human repair disorders and cancer predisposition.</emphasis></para>
+    </abstract>
+    <sect1>
+        <title>Overview</title>
+        <para>The integrity of the genome is essential to the health of the individual and to the
+            reproductive success of a species. Faithful transmission of genetic information is in a
+            selective balance between genetic stability and mutational change as a resource for
+            evolutionary potential. In order to maintain genome fidelity the coordinated action of
+            surveillance and repair pathways is required. Much of our knowledge about repair has
+            come from studies in bacteria, yeast and mammals, including human cell lines (reviewed
+            in <link linkend="bib37">Sancar et al., 2004</link><!-- PMID 15189136-->; <link linkend="bib25">Krogh and Symington, 2004</link><!-- PMID 15355212-->), and it
+            is increasingly evident that most repair functions are highly conserved. <emphasis>Caenorhabditis</emphasis>
+            <emphasis>elegans</emphasis> provides an experimental model in which the repair
+            processes required for both genomic stability and mutational change can be studied. In
+            this Chapter, we present an overview of DNA damage response research using <emphasis>Caenorhabditis elegans</emphasis>. <link linkend="table1">Table 1</link> is a summary of some DNA damage response genes
+            identified in the <emphasis>C. elegans</emphasis> genome along with mutant phenotypes
+            where known. Included in the Table are components of the pathways for nucleotide
+            excision repair, mismatch repair, DNA damage checkpoint, non-homologous end joining,
+            homologous recombination repair, and chromosomal structure surveillance.</para>
+<literallayout></literallayout>
+<table id="table1" frame="all" rules="all" cellpadding="0" cellspacing="0" width="100%">
+<title>Table 1. List of repair genes and mutant phenotypes</title>
+<tgroup cols="5">
+<colspec colname="c1" align="center" colwidth="0.8*"/>
+<colspec colname="c2" align="center" colwidth="0.6*"/>
+<colspec colname="c3" align="center" colwidth="0.6*"/>
+<colspec colname="c4" align="center" colwidth="1*"/>
+<colspec colname="c5" align="center" colwidth="1*"/>
+<thead>
+<row>
+<entry>Pathway</entry>
+<entry>Gene</entry>
+<entry>Cosmid</entry>
+<entry>Mutant phenotype</entry>
+<entry>Reference</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry morerows="7">Uncloned rad mutants</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rad-1" role="_blank">rad-1</ulink></emphasis></entry>
+<entry>&#x02013;</entry>
+<entry>UV and gamma sensitive</entry>
+<entry><link linkend="bib17">Hartman and Herman, 1982</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rad-2" role="_blank">rad-2</ulink></emphasis></entry>
+<entry>&#x02013;</entry>
+<entry>UV and gamma sensitive</entry>
+<entry><link linkend="bib17">Hartman and Herman, 1982</link></entry>
+</row>
+<row> 
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rad-3" role="_blank">rad-3</ulink></emphasis></entry>
+<entry>&#x02013;</entry>
+<entry>UV sensitive, reduced brood size</entry>
+<entry><link linkend="bib17">Hartman and Herman, 1982</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rad-4" role="_blank">rad-4</ulink></emphasis></entry>
+<entry>&#x02013;</entry>
+<entry>UV sensitive, cold sensitive, suppressor of ndj</entry>
+<entry><link linkend="bib17">Hartman and Herman, 1982</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rad-6" role="_blank">rad-6</ulink></emphasis></entry>
+<entry>&#x02013;</entry>
+<entry>UV sensitive, Dpy, reduced brood size</entry>
+<entry><link linkend="bib17">Hartman and Herman, 1982</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rad-7" role="_blank">rad-7</ulink></emphasis></entry>
+<entry>&#x02013;</entry>
+<entry>UV sensitive, reduced brood size</entry>
+<entry><link linkend="bib17">Hartman and Herman, 1982</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rad-8" role="_blank">rad-8</ulink></emphasis></entry>
+<entry>&#x02013;</entry>
+<entry>UV sensitive, sick, reduced brood size</entry>
+<entry><link linkend="bib17">Hartman and Herman, 1982</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rad-9" role="_blank">rad-9</ulink></emphasis></entry>
+<entry>&#x02013;</entry>
+<entry>UV sensitive, sick, reduced brood size</entry>
+<entry><link linkend="bib17">Hartman and Herman, 1982</link></entry>
+</row>
+<row>
+<entry morerows="8">Nucleotide excision repair</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=xpa-1" role="_blank">xpa-1</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene/gene/gene?name=K07G5.2;class=CDS" role="_blank">K07G5.2</ulink></entry>
+<entry>UV sensitive</entry>
+<entry><link linkend="bib32">Park et al., 2002</link></entry>
+</row>
+<row>
+<entry>XPB</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y66D12A.15;class=CDS" role="_blank">Y66D12A.15</ulink></entry>
+<entry>&#x02013;</entry>
+<entry>&#x02013;</entry>
+</row>
+<row>
+<entry>XPC</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y76B12C.2;class=CDS" role="_blank">Y76B12C.2</ulink></entry>
+<entry>&#x02013;</entry>
+<entry>&#x02013;</entry>
+</row>
+<row>
+<entry>XPD</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y50D7A.2;class=CDS" role="_blank">Y50D7A.2</ulink></entry>
+<entry>&#x02013;</entry>
+<entry>&#x02013;</entry>
+</row>
+<row>
+<entry>XPE</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=M18.5;class=CDS" role="_blank">M18.5</ulink></entry>
+<entry>Let/Gro</entry>
+<entry><link linkend="bib24">Kamath et al., 2003</link></entry>
+</row>
+<row>
+<entry>XPF</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C47D12.8;class=CDS" role="_blank">C47D12.8</ulink></entry>
+<entry>UV sensitive</entry>
+<entry><link linkend="bib33">Park et al., 2004</link></entry>
+</row>
+<row>
+<entry>XPG</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F57B10.6;class=CDS" role="_blank">F57B10.6</ulink></entry>
+<entry>Emb</entry>
+<entry><link linkend="bib34">Piano et al., 2002</link></entry>
+</row>
+<row>
+<entry>ERCC1</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F10G8.7;class=CDS" role="_blank">F10G8.7</ulink></entry>
+<entry>&#x02013;</entry>
+<entry>&#x02013;</entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=csb-1" role="_blank">csb-1</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F53H4.1;class=CDS" role="_blank">F53H4.1</ulink></entry>
+<entry>UV sensitive</entry>
+<entry><link linkend="bib26">Lee et al., 2002</link></entry>
+</row>
+<row>
+<entry morerows="3">Mismatch repair</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=msh-6" role="_blank">msh-6</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y47G6A.11;class=CDS" role="_blank">Y47G6A.11</ulink></entry>
+<entry>Somatic instability and Mut</entry>
+<entry><link linkend="bib44">Tijsterman et al., 2002</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=msh-2" role="_blank">msh-2</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=H26D21.2;class=CDS" role="_blank">H26D21.2</ulink></entry>
+<entry>Microsatellite instability, Mut, reduced DD apoptosis</entry>
+<entry><link linkend="bib12">Degtyareva et al., 2002</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mlh-1" role="_blank">mlh-1</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=T28A8.7;class=CDS" role="_blank">T28A8.7</ulink></entry>
+<entry>&#x02013;</entry>
+<entry><link linkend="bib35">Pothof et al., 2003</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pms-2" role="_blank">pms-2</ulink></emphasis></entry>
+<entry>H12C20.2</entry>
+<entry>&#x02013;</entry>
+<entry><link linkend="bib35">Pothof et al., 2003</link></entry>
+</row>
+<row>
+<entry morerows="14">DNA damage checkpoint</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mrt-2" role="_blank">mrt-2</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y41C4A.14;class=CDS" role="_blank">Y41C4A.14</ulink></entry>
+<entry>Mrt, Rad, checkpoint defective</entry>
+<entry><link linkend="bib1">Ahmed and Hodgkin, 2000</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=hus-1" role="_blank">hus-1</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=H26D21.1;class=CDS" role="_blank">H26D21.1</ulink></entry>
+<entry>Mrt, Rad, checkpoint defective</entry>
+<entry><link linkend="bib20">Hofmann et al., 2002</link></entry>
+</row>
+<row>
+<entry><emphasis>rad-5</emphasis>/<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=clk-2" role="_blank">clk-2</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C07H6.6;class=CDS" role="_blank">C07H6.6</ulink></entry>
+<entry>Rad, checkpoint defective</entry>
+<entry><link linkend="bib2">Ahmed et al., 2001</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cep-1" role="_blank">cep-1</ulink></emphasis>/<emphasis>p53</emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F52B5.5;class=CDS" role="_blank">F52B5.5</ulink></entry>
+<entry>Rad, checkpoint defective</entry>
+<entry><link linkend="bib14">Derry et al., 2001</link>; <link linkend="bib38">Schumacher et al., 2001</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-1" role="_blank">egl-1</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F23B12.9;class=CDS" role="_blank">F23B12.9</ulink></entry>
+<entry>&#x02013;</entry>
+<entry><link linkend="bib20">Hofmann et al., 2002</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ape-1" role="_blank">ape-1</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F46F3.4;class=CDS" role="_blank">F46F3.4</ulink></entry>
+<entry>Enhanced <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cep-1" role="_blank">cep-1</ulink></emphasis>-dependent apoptosis</entry>
+<entry><link linkend="bib13">Deng et al., 2004</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=abl-1" role="_blank">abl-1</ulink></emphasis></entry>
+<entry>M79.1</entry>
+<entry>Enhanced radiation-induced apoptosis</entry>
+<entry><link linkend="bib13">Deng et al., 2004</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=brc-1" role="_blank">brc-1</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C36A4.8;class=CDS" role="_blank">C36A4.8</ulink></entry>
+<entry>Him and increased germ cell apoptosis</entry>
+<entry><link linkend="bib50">Boulton et al., 2004</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=brd-1" role="_blank">brd-1</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=K04C2.4;class=CDS" role="_blank">K04C2.4</ulink></entry>
+<entry>Him and increased germ cell apoptosis</entry>
+<entry><link linkend="bib50">Boulton et al., 2004</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pme-5" role="_blank">pme-5</ulink></emphasis></entry>
+<entry>ZK1005.1</entry>
+<entry>&#x02013;</entry>
+<entry><!--14706351-->&#x02013;</entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=kin-20" role="_blank">kin-20</ulink></emphasis></entry>
+<entry>F46F2.2</entry>
+<entry>Rad</entry>
+<entry><!--10517632-->&#x02013;</entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=hpr-9" role="_blank">hpr-9</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y39A1A.23;class=CDS" role="_blank">Y39A1A.23</ulink></entry>
+<entry>Rad</entry>
+<entry><link linkend="bib6">Boulton et al., 2002</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=hpr-17" role="_blank">hpr-17</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F32A11.2;class=CDS" role="_blank">F32A11.2</ulink> W</entry>
+<entry>Rad</entry>
+<entry><link linkend="bib40">Stergiou and Hengartner, 2004</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=chk-1" role="_blank">chk-1</ulink></emphasis></entry>
+<entry>Y39H10A.7</entry>
+<entry>&#x02013;</entry>
+<entry><!--12747829; 15326393-->&#x02013;</entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=chk-2" role="_blank">chk-2</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y60A3A.12;class=CDS" role="_blank">Y60A3A.12</ulink></entry>
+<entry>Emb Let, Him, absent chiasma in meiosis</entry>
+<entry><link linkend="bib31">MacQueen and Villeneuve, 2001</link></entry>
+</row>
+<row>
+<entry morerows="2">Non-homologous end joining</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cku-70" role="_blank">cku-70</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y47D3A.4;class=CDS" role="_blank">Y47D3A.4</ulink></entry>
+<entry>&#x02013;</entry>
+<entry>&#x02013;</entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cku-80" role="_blank">cku-80</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=R07E5.8;class=CDS" role="_blank">R07E5.8</ulink></entry>
+<entry>&#x02013;</entry>
+<entry><link linkend="bib6">Boulton et al., 2002</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lig-4" role="_blank">lig-4</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C07H6.1;class=CDS" role="_blank">C07H6.1</ulink></entry>
+<entry>&#x02013;</entry>
+<entry><link linkend="bib6">Boulton et al., 2002</link></entry>
+</row>
+<row>
+<entry morerows="7">Homologous recombination</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=atm-1" role="_blank">atm-1</ulink></emphasis></entry>
+<entry>Y48G1BL.F</entry>
+<entry>Radiation sensitve, checkpoint defective</entry>
+<entry><link linkend="bib40">Stergiou and Hengartner, 2004</link>; <link linkend="bib6">Boulton et al., 2002</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=atl-1" role="_blank">atl-1</ulink></emphasis></entry>
+<entry>T06E4.3</entry>
+<entry>Embryonic lethality, Him, Rad</entry>
+<entry><link linkend="bib3">Aoki et al., 2000</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rad-54" role="_blank">rad-54</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=W06D4.6;class=CDS" role="_blank">W06D4.6</ulink></entry>
+<entry>Rad</entry>
+<entry><link linkend="bib6">Boulton et al., 2002</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rad-50" role="_blank">rad-50</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=T04H1.4;class=CDS" role="_blank">T04H1.4</ulink></entry>
+<entry>Rad</entry>
+<entry><!--12242227-->&#x02013;</entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mre-11" role="_blank">mre-11</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=ZC302.1;class=CDS" role="_blank">ZC302.1</ulink></entry>
+<entry>Germline mortality, Him, Emb</entry>
+<entry><link linkend="bib11">Chin and Villeneuve, 2001</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rad-51" role="_blank">rad-51</ulink></emphasis></entry>
+<entry>Y43C5A.6</entry>
+<entry>Embryonic lethality, Him, Rad</entry>
+<entry><link linkend="bib40">Takanami et al., 1998</link><!--9862483--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=top-3" role="_blank">top-3</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y56A3A.27;class=CDS" role="_blank">Y56A3A.27</ulink></entry>
+<entry>&#x02013;</entry>
+<entry><link linkend="bib52">Wicky et al., 2004</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=dna-2" role="_blank">dna-2</ulink></emphasis></entry>
+<entry>F43G6.1</entry>
+<entry>Rad</entry>
+<entry><!--14644423-->&#x02013;</entry>
+</row>
+<row>
+<entry morerows="4">Chromosome structure</entry>
+<entry><emphasis>coh-2</emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F10G7.4;class=CDS" role="_blank">F10G7.4</ulink></entry>
+<entry>Late embryo or larval arrest or HIM</entry>
+<entry><!--12808038-->&#x02013;</entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=scc-3" role="_blank">scc-3</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F18E2.3;class=CDS" role="_blank">F18E2.3</ulink></entry>
+<entry>Embryonic lethal; cell division defects</entry>
+<entry><!--14560015-->&#x02013;</entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rec-8" role="_blank">rec-8</ulink></emphasis></entry>
+<entry>W02A2.6p</entry>
+<entry>Embryonic lethal; aneuploidy</entry>
+<entry><!--11390355-->&#x02013;</entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=him-1" role="_blank">him-1</ulink></emphasis>/<emphasis>smc-1</emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F28B3.7;class=CDS" role="_blank">F28B3.7</ulink></entry>
+<entry>UV sensitive, high incidence of males, Emb</entry>
+<entry><link linkend="bib17">Hartman and Herman, 1982</link><!--; 12827206--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=him-3" role="_blank">him-3</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=ZK381.1;class=CDS" role="_blank">ZK381.1</ulink></entry>
+<entry>High incidence males, implicated in sister repair</entry>
+<entry><!--15062099-->&#x02013;</entry>
+</row>
+<row>
+<entry morerows="7">Cytokinesis checkpoint</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mdf-1" role="_blank">mdf-1</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C50F4.11;class=CDS" role="_blank">C50F4.11</ulink></entry>
+<entry>Fail to arrest metaphase to anaphase</entry>
+<entry><!--10587648-->&#x02013;</entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mdf-2" role="_blank">mdf-2</ulink></emphasis></entry>
+<entry>Y69A2AR.30</entry>
+<entry>Fail to arrest metaphase to anaphase</entry>
+<entry><!--10587648-->&#x02013;</entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=san-1" role="_blank">san-1</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=ZC328.4;class=CDS" role="_blank">ZC328.4</ulink></entry>
+<entry>Fail to arrest cell cycle during anoxia</entry>
+<entry><!--14605367-->&#x02013;</entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=fzy-1" role="_blank">fzy-1</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=ZK177.6;class=CDS" role="_blank">ZK177.6</ulink></entry>
+<entry>Embryonic lethal, defective anaphase</entry>
+<entry><!--12498686-->&#x02013;</entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ify-1" role="_blank">ify-1</ulink></emphasis>/<emphasis>securin</emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C27A2.3;class=CDS" role="_blank">C27A2.3</ulink></entry>
+<entry>Embryonic lethal, defective anaphase</entry>
+<entry><!--10587648-->&#x02013;</entry>
+</row>
+<row>
+<entry><emphasis>sep-1</emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y47G6A.12;class=CDS" role="_blank">Y47G6A.12</ulink></entry>
+<entry>Prevents timely disjunction and segregation</entry>
+<entry><!--11728305-->&#x02013;</entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ubc-1" role="_blank">ubc-1</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C35B1.1;class=CDS" role="_blank">C35B1.1</ulink></entry>
+<entry>&#x02013;</entry>
+<entry><!--7546294-->&#x02013;</entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=air-2" role="_blank">air-2</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=B0207.4;class=CDS" role="_blank">B0207.4</ulink></entry>
+<entry>Embryonic lethal; cell division defects</entry>
+<entry><!--11940606-->&#x02013;</entry>
+</row>
+<row>
+<entry morerows="2">Helicases</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=dog-1" role="_blank">dog-1</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F33H2.1;class=CDS" role="_blank">F33H2.1</ulink></entry>
+<entry>Deletion of G tracts, mutator</entry>
+<entry><link linkend="bib46">Cheung et al., 2002</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=wrn-1" role="_blank">wrn-1</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F18C5.2;class=CDS" role="_blank">F18C5.2</ulink></entry>
+<entry>Abnornmal checkpoint response, premature aging</entry>
+<entry><link linkend="bib27">Lee et al., 2004</link></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=him-6" role="_blank">him-6</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=T04A11.6;class=CDS" role="_blank">T04A11.6</ulink></entry>
+<entry>Embryonic lethality, Him</entry>
+<entry><link linkend="bib52">Wicky et al., 2004</link></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<para>In addition to those listed in <link linkend="table1">Table 1</link> are those genes involved in base excision repair, DNA glycosylation, the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rad-6" role="_blank">rad-6</ulink></emphasis> pathway, trans-lesion bypass, and those encoding editing and processing nucleases.</para>
+</sect1>
+    <sect1>
+        <title>Radiation sensitivity of <emphasis>C. elegans</emphasis></title>
+        <para>In <emphasis>C. elegans</emphasis>, the first study of repair function was the
+            identification by <link linkend="bib17">Hartman and Herman (1982<!-- PMID 7152245-->)</link> of nine Rad
+            (radiation-sensitive) mutants, which were hypersensitive to ultraviolet light during
+            embryogenesis. UV irradiation of the Rad mutants results in a decrease in viability.
+            Many of these Rad mutants exhibit phenotypes in addition to their UV sensitivity
+            suggesting that the Rad genes are involved in other biological processes in addition to
+            their roles in the UV-induced DNA damage response (<link linkend="table1">Table 1</link>). More recently, researchers
+            have used reverse genetic techniques such as RNA interference and PCR-mediated gene
+            knockouts to investigate genes involved in different DNA damage response pathways such
+            as nucleotide excision repair (<link linkend="bib32">Park et al., 2002</link><!-- PMID 12243352-->; <link linkend="bib33">Park et al., 2004</link><!-- PMID
+            15336632-->; <link linkend="bib26">Lee et al., 2002</link><!-- PMID 12095617-->).</para>
+        <para>The UV sensitivity of <emphasis>C. elegans</emphasis> varies depending on the
+            developmental stage of the worm (<link linkend="bib19">Hartman, 1984</link><!-- PMID 6709723-->; <link linkend="bib18">Hartman, 1984</link><!-- PMID 6493262-->)
+            with wild-type animals being most sensitive to UV radiation during early embryogenesis.
+            The UV hypersensitivity of the early stage embryo might be due in part to the rapid cell
+            proliferation and the lack of obvious DNA damage-induced checkpoints; DNA replication
+            progresses even after exposure to large fluences of UV radiation (<link linkend="bib23">Jones and Hartman,
+            1996</link><!-- PMID 8657732-->).</para>
+    </sect1>
+<?newpage?>
+    <sect1>
+        <title>DNA damage checkpoints in the germ line</title>
+        <para>In contrast to the developing embryo, activation of the checkpoint in the germ line
+            results in obvious morphological changes that can be monitored by microscopy of live
+            animals. (<link linkend="bib16">Gartner et al., 2000</link><!-- PMID 10882129-->; <link linkend="bib40">Stergiou and Hengartner, 2004</link><!-- PMID
+            14685168-->). In response to DNA damage, mitotic germline nuclei arrest proliferation,
+            presumably to allow time for DNA repair. In the meiotic region of the germ line, cells
+            with DNA damage are removed by apoptosis before oogenesis. DNA damage-induced apoptosis
+            occurs in addition to physiological programmed germ cell death, which is hypothesized to
+            maintain germline homeostasis. DNA damage-induced germ
+            cell death requires the conserved apoptotic machinery (<link linkend="bib16">Gartner et al., 2000</link><!-- PMID 10882129-->). However, the proapoptotic gene <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-1" role="_blank">egl-1</ulink></emphasis>, which is required
+            for somatic programmed cell death but not physiological germ cell death, is not
+            absolutely required for DNA damage-induced germ cell apoptosis (<link linkend="bib16">Gartner et al., 2000</link><!--PMID 10882129-->) even though there is a <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cep-1" role="_blank">cep-1</ulink></emphasis>-dependent increase in
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-1" role="_blank">egl-1</ulink></emphasis> transcription after genotoxic stress (<link linkend="bib20">Hofmann et al., 2002</link><!--PMID 12445383-->). The specific genes involved in the germline DNA damage-induced
+            checkpoints are shown in <link linkend="figure1">Figure 1</link> and are discussed below.</para>
+               <literallayout></literallayout>
+    <mediaobject id="figure1" xreflabel="Figure 1">
+			<imageobject>
+			<imagedata entityref="fig1" width="3in" align="center"/>
+			</imageobject>
+<textobject>
+	<phrase>Genes involved in the germline DNA damage-induced
+            checkpoints  figure 1</phrase>
+</textobject> &fig1legend;</mediaobject>
+    <sect2>
+        <title><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mrt-2" role="_blank">mrt-2</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=hus-1" role="_blank">hus-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rad-5" role="_blank">rad-5</ulink></emphasis></title>
+        <para>An exciting finding was the identification of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mrt-2" role="_blank">mrt-2</ulink></emphasis>, a gene
+            responsible for germline immortality (<link linkend="bib1">Ahmed and Hodgkin, 2000</link><!-- PMID 10646593-->).
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mrt-2" role="_blank">mrt-2</ulink></emphasis> mutants exhibit progressive telomere shortening and
+            accumulate end-to-end chromosome fusions. In addition, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mrt-2" role="_blank">mrt-2</ulink></emphasis>
+            mutants are defective in DNA damage-induced mitotic arrest and apoptosis in the germline
+            (<link linkend="bib16">Gartner et al., 2000</link><!-- PMID 10882129-->). <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mrt-2" role="_blank">mrt-2</ulink></emphasis> encodes a homologue of
+            a checkpoint gene required to sense DNA damage in yeast (<emphasis>S. pombe</emphasis>
+            <emphasis>rad1</emphasis>/<emphasis>S. cerevisiae</emphasis>
+            <emphasis>rad17</emphasis>). In addition to <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mrt-2" role="_blank">mrt-2</ulink></emphasis>, function of the DNA damage checkpoint
+            involves the gene <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=hus-1" role="_blank">hus-1</ulink></emphasis>, which when mutated results in a phenotype
+            similar to <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mrt-2" role="_blank">mrt-2</ulink></emphasis> (<link linkend="bib20">Hofmann et al., 2002</link><!-- PMID 12445383-->). Another
+            checkpoint gene is <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rad-5" role="_blank">rad-5</ulink></emphasis> (<link linkend="bib16">Gartner et al., 2000</link><!-- PMID 10882129-->).
+            Cloning of the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rad-5" role="_blank">rad-5</ulink></emphasis> gene (<link linkend="bib2">Ahmed et al., 2001</link><!-- PMID 11747819-->) lead
+            to the surprising result that <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rad-5" role="_blank">rad-5</ulink></emphasis>(<emphasis><ulink url="http://www.wormbase.org/db/get?name=mn159;class=Variation" role="_blank">mn159</ulink></emphasis>)
+            (from <link linkend="bib17">Hartman and Herman, 1982</link><!-- PMID 7152245-->) is allelic with
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=clk-2" role="_blank">clk-2</ulink></emphasis>(<emphasis><ulink url="http://www.wormbase.org/db/get?name=qm37;class=Variation" role="_blank">qm37</ulink></emphasis>), a mutant implicated in regulation
+            of biological rhythms and life-span (<link linkend="bib5">Benard et al., 2001</link><!-- PMID 11641227-->; <link linkend="bib30">Lim et al., 2001</link><!--PMID 11696330-->). <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rad-5" role="_blank">rad-5</ulink></emphasis>/<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=clk-2" role="_blank">clk-2</ulink></emphasis> regulates the S
+            phase replication checkpoint and is homologous to <emphasis>S. cerevisiae</emphasis>
+            Tel2, which has an essential function in yeast for regulating telomere length.
+            Overexpression of human CLK2 in <emphasis>C. elegans</emphasis> made the cell
+            hypersensitive to apoptosis triggered by oxidative stress or DNA replication block and
+            gradually increased telomere length suggesting that human CLK2 may have a role in
+            maintaining telomere length (<link linkend="bib22">Jiang et al., 2003</link><!-- PMID 12670948-->). However, the role of
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rad-5" role="_blank">rad-5</ulink></emphasis>/<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=clk-2" role="_blank">clk-2</ulink></emphasis> in the regulation of telomere
+            length remains unclear. Studies investigating the effect of
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rad-5" role="_blank">rad-5</ulink></emphasis>/<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=clk-2" role="_blank">clk-2</ulink></emphasis> mutations on telomere length have
+            been contradictory (<link linkend="bib30">Lim et al., 2001</link><!-- PMID 11696330-->; <link linkend="bib5">Benard et al., 2001</link><!-- PMID 11641227-->;
+            <link linkend="bib2">Ahmed et al., 2001</link><!-- PMID 11747819-->). <link linkend="bib2">Ahmed and coworkers (2001</link><!-- PMID 11747819-->) suggest that
+            the differences observed in the three studies could be explained by the fact that
+            telomere length varies considerably between <emphasis>C. elegans</emphasis> strains and
+        that telomere length can fluctuate even within isogenic lines. <link linkend="bib10">Cheung et al. (2004)</link> used single telomere length analysis (STELA) and reported strain specific differences in wild type as well as mutant strains, such as the telomerase deficient <emphasis>trt-1</emphasis> (<link linkend="bib47">Cheung et al. in press</link>).</para>
+    </sect2>
+    <sect2>
+        
+            <title><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cep-1" role="_blank">cep-1</ulink></emphasis>/<emphasis>p53</emphasis></title>
+<para>p53 is a key regulator of the DNA damage-induced
+            checkpoint in mammals (reviewed in <link linkend="bib37">Sancar et al., 2004</link><!-- PMID 15189136-->). <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cep-1" role="_blank">cep-1</ulink></emphasis>, the <emphasis>C. elegans</emphasis> homolog
+            of p53, is required for DNA damage-induced apoptosis in the <emphasis>C.
+            elegans</emphasis> germ line, but not for programmed cell death occurring during worm
+            development nor physiological (radiation-independent) germ cell death (<link linkend="bib38">Schumacher et
+            al., 2001</link><!-- PMID 11696333-->; <link linkend="bib14">Derry et al., 2001</link><!-- PMID 11557844-->). Despite the differences in
+            the three-dimensional structure of the DNA binding domain between <ulink url="http://www.wormbase.org/db/seq/protein?name=CEP-1;class=protein" role="_blank">CEP-1</ulink> and human p53
+            (<link linkend="bib21">Huyen et al., 2004</link><!-- PMID 15242600-->) its role in the DNA damage checkpoint appears to be
+            conserved. Furthermore, <ulink url="http://www.wormbase.org/db/seq/protein?name=CEP-1;class=protein" role="_blank">CEP-1</ulink> can induce apoptosis in mammalian cells and this induction
+            can be inhibited by iASPP, an evolutionarily conserved inhibitor of p53 (<link linkend="bib49">Bergamaschi et al., 2003</link><!--PMID 12524540-->).</para>
+        <para>Several genes have been identified that either regulate <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cep-1" role="_blank">cep-1</ulink></emphasis>
+            activity or are regulated by <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cep-1" role="_blank">cep-1</ulink></emphasis>. The
+            <emphasis>C.elegans</emphasis> iASPP ortholog, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ape-1" role="_blank">ape-1</ulink></emphasis> (apoptotic
+            enhancer) is a conserved inhibitor of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cep-1" role="_blank">cep-1</ulink></emphasis>.
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ape-1" role="_blank">ape-1</ulink></emphasis>(<emphasis>RNAi</emphasis>) results in an increase in
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cep-1" role="_blank">cep-1</ulink></emphasis>-mediated apoptosis (<link linkend="bib49">Bergamaschi et al., 2003</link><!--PMID 12524540-->).
+            <link linkend="bib28">Lettre et al. (2004)</link><!-- PMID 15272318--> also identified <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ape-1" role="_blank">ape-1</ulink></emphasis> along with
+            several other genes in a genome-wide <emphasis>RNAi</emphasis> screen for genes that
+            when knocked out resulted in an increase in germ cell death. Many of the genes
+            identified in this screen required <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cep-1" role="_blank">cep-1</ulink></emphasis> activity for the increase
+            in germ cell death. <link linkend="bib13">Deng et al. (2004)</link><!-- PMID 15273685--> studied the antagonistic effects
+            of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=abl-1" role="_blank">abl-1</ulink></emphasis>, a homolog of the conserved nonreceptor tyrosine kinase
+            c-Abl, on <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cep-1" role="_blank">cep-1</ulink></emphasis>-mediated apoptosis. Deletion of
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=abl-1" role="_blank">abl-1</ulink></emphasis> results in increased radiation-induced apoptosis, but not
+            ethylnitrosourea-induced apoptosis. Thus, <ulink url="http://www.wormbase.org/db/seq/protein?name=ABL-1;class=protein" role="_blank">ABL-1</ulink> can distinguish proapoptotic signals
+            triggered by two different DNA-damaging agents. In addition, treatment of<emphasis> C.
+            elegans</emphasis> with c-Abl inhibitors results in a phenotype similar to the
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=abl-1" role="_blank">abl-1</ulink></emphasis> mutation, demonstrating the utility of<emphasis> C.
+            elegans</emphasis> as a model to screen for potential anticancer drugs.</para>
+        <para>In contrast to the <emphasis>Drosophila</emphasis> p53 ortholog,
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cep-1" role="_blank">cep-1</ulink></emphasis> has also been shown to regulate DNA damage-induced mitotic
+            germ cell arrest (B. Derry, personal communication). Furthermore, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cep-1" role="_blank">cep-1</ulink></emphasis>-mediated germline mitotic arrest is dependent
+            on <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=phg-1" role="_blank">phg-1</ulink></emphasis>, a <emphasis>C. elegans</emphasis> homolog of
+            the human growth arrest gene gas1. <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=phg-1" role="_blank">phg-1</ulink></emphasis> is required for <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cep-1" role="_blank">cep-1</ulink></emphasis>-mediated mitotic arrest but not for <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cep-1" role="_blank">cep-1</ulink></emphasis>-mediated apoptosis indicating that <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cep-1" role="_blank">cep-1</ulink></emphasis>-mediated mitotic arrest and apoptosis can be
+        separated (B. Derry, personal communication).</para>
+        </sect2>
+    </sect1>
+    <sect1>
+        <title>DNA mismatch repair</title>
+        <para>Components of the mismatch repair pathway were originally identified in bacteria as
+            mutation-prone strains. In humans, mismatch repair deficiency predisposes to hereditary
+            nonpolyposis colon cancer (HNPCC) and involves the proteins MSH2, MSH6, MLH1, and PMS2.
+                <emphasis>C. elegans</emphasis> has orthologs to all four of these genes. Utilizing
+            a system to screen for repeat sensitivity, <link linkend="bib44">Tijsterman et al. (2002)</link><!-- PMID 12072462-->
+            demonstrated that RNAi of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=msh-2" role="_blank">msh-2</ulink></emphasis>,
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=msh-6" role="_blank">msh-6</ulink></emphasis>,<emphasis> <ulink url="http://www.wormbase.org/db/gene/gene?name=mlh-1" role="_blank">mlh-1</ulink></emphasis> and
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pms-2" role="_blank">pms-2</ulink></emphasis> results in a mutator phenotype. In this screening system, a
+            DNA repeat puts a heat-shock promoter-driven lacZ transgene reporter gene out of frame.
+            Mutations that result in a frameshift would result in lacZ expression. In <emphasis>
+            <ulink url="http://www.wormbase.org/db/gene/gene?name=msh-2" role="_blank">msh-2</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=msh-6" role="_blank">msh-6</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mlh-1" role="_blank">mlh-1</ulink></emphasis> and
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pms-2" role="_blank">pms-2</ulink></emphasis>-deficient animals, in-frame lacZ+ patches were observed as a
+            result of somatic repeat instability (<link linkend="bib44">Tijsterman et al., 2002</link><!-- PMID 12072462-->; <link linkend="bib35">Pothof et
+            al., 2003</link><!-- PMID 12600937-->). <link linkend="bib12">Degtyareva et al., (2002</link><!-- PMID 11830642-->) used an
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=msh-2" role="_blank">msh-2</ulink></emphasis> mutant to demonstrate elevated levels of microsatellite
+            instability. In this study, the phenotype of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=msh-2" role="_blank">msh-2</ulink></emphasis> mutants was
+            similar to wild-type worms with regard to lifespan and meiotic chromosome segregation,
+            but <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=msh-2" role="_blank">msh-2</ulink></emphasis> animals had somewhat reduced fertility. In addition, the
+            mutant worms had reduced DNA damage-induced germ-line apoptosis after genotoxic stress,
+            linking a functional component of the mismatch repair pathway to the DNA damage
+            checkpoint in <emphasis>C. elegans</emphasis>. This result is similar to that observed
+            in mammalian mismatch repair mutants (reviewed in <link linkend="bib7">Buermeyer et al., 1999</link><!-- PMID 10690417-->).</para>
+        <para>Not all mismatch repair homologs have a role in DNA repair. Similar to the situation
+            in budding yeast, the <emphasis>C. elegans</emphasis> MutS family homologs,
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=him-14" role="_blank">him-14</ulink>/<ulink url="http://www.wormbase.org/db/gene/gene?name=msh-4" role="_blank">msh-4</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=msh-5" role="_blank">msh-5</ulink></emphasis> have no apparent role
+            in repair, but have a specialized role in crossing over during meiosis.</para>
+    </sect1>
+    <sect1>
+        <title>Homologous recombination repair</title>
+        <para>Double-strand breaks (DSBs) occur in response to environmental insult, such as
+            ionizing radiation or genotoxic chemicals, or cellular sources such as oxidative damage
+            or replication blocks in the DNA. In addition to their unwanted creation by DNA damaging
+            events or substances, DSBs are created biologically by <ulink url="http://www.wormbase.org/db/seq/protein?name=SPO-11;class=protein" role="_blank">SPO-11</ulink> as the highly regulated
+            initiation of meiotic recombination. The processing of both
+            categories of DSBs utilizes many of the same proteins and mechanisms. Central to DSB
+            repair is the RecA homolog, Rad51, which mediates functions involving strand invasion
+            during recombination (<link linkend="bib39">Shinohara and Ogawa, 1995</link><!-- PMID 8533149-->). <ulink url="http://www.wormbase.org/db/seq/protein?name=RAD-51;class=protein" role="_blank">RAD-51</ulink> localization to
+            DNA requires the products of the recombination genes <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mre-11" role="_blank">mre-11</ulink></emphasis> and
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=chk-2" role="_blank">chk-2</ulink></emphasis> (<link linkend="bib36">Rinaldo et al., 2002</link><!-- PMID 11861554-->; <link linkend="bib4">Alpi et al., 2003</link><!--12684824-->). <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rad-51" role="_blank">rad-51</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mre-11" role="_blank">mre-11</ulink></emphasis> are required for
+            both meiotic recombination and DNA repair (<link linkend="bib43">Takanami et al., 2000</link><!-- PMID 11058122-->; <link linkend="bib11">Chin and
+            Villeneuve, 2001</link><!-- PMID 11238374-->; <link linkend="bib42">Takanami et al., 2003</link><!-- PMID 12733639-->). It is unclear
+            whether the checkpoint kinase, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=chk-2" role="_blank">chk-2</ulink></emphasis> functions during DNA repair as
+            well as during meiosis because of the severe meiotic phenotype of
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=chk-2" role="_blank">chk-2</ulink></emphasis> loss of function mutants (<link linkend="bib31">MacQueen and Villeneuve, 2001</link><!-- PMID 11445542-->).</para>
+    </sect1>
+    <sect1>
+        <title>BRCA1 and BRCA2</title>
+        <para>BRCA1 (breast cancer) mutations are found in 45<symbol role= "symbolfont">&#x0025;</symbol> of all familial breast cancers
+            (<link linkend="bib45">Yoshida and Miki, 2004</link><!-- PMID 15546503-->). The BRCA1 gene performs a multitude of functions
+            in response to DNA damage, most of which are poorly understood. The <emphasis>C.
+            elegans</emphasis> ortholog, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=brc-1" role="_blank">brc-1</ulink></emphasis>, was identified by
+            yeast 2-hybrid interaction of its product with <ulink url="http://www.wormbase.org/db/seq/protein?name=BRD-1;class=protein" role="_blank">BRD-1</ulink>, a putative ortholog of BARD1
+            (<link linkend="bib50">Boulton et al., 2004</link><!-- PMID 14711411-->). <emphasis>RNAi</emphasis> depleted
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=brc-1" role="_blank">brc-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=brd-1" role="_blank">brd-1</ulink></emphasis> worms had a high incidence of
+            X-chromosome nondisjunction (Him phenotype) and increased germ cell death (apoptotic
+            phenotype). In addition, radiation treatment resulted in increased apoptotic cell death,
+            chromosome fragmentation, and radiation hyper-sensitivity, strongly implicating
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=brc-1" role="_blank">brc-1</ulink></emphasis> in DNA damage response.</para>
+			<para>Recently, a BRCA2-related gene has been identified and shown to be involved in double-strand break repair by homologous recombination like its mammalian counterpart. <link linkend="bib48">Martin et al. (2005)</link> demonstrated that the defect in HR is due to inefficient <ulink url="http://www.wormbase.org/db/seq/protein?name=RAD-51;class=protein" role="_blank">RAD-51</ulink> nuclear localization and a failure to recruit <ulink url="http://www.wormbase.org/db/seq/protein?name=RAD-51;class=protein" role="_blank">RAD-51</ulink> to DSBs.</para>
+    </sect1>
+    <sect1>
+        <title>The <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=dog-1" role="_blank">dog-1</ulink></emphasis> and RecQ helicases</title>
+        <para><emphasis>C. elegans</emphasis> was the first organism in which a mutant phenotype was
+            observed resulting from the loss of a G-tract interacting helicase, implicated in
+            repair. The <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=dog-1" role="_blank">dog-1</ulink></emphasis> (deletion of G tracts) gene encodes a putative
+            helicase required to maintain homopolymeric dC/dG tracts (<link linkend="bib46">Cheung et al., 2002</link><!--PMID 12101400-->). In humans, loss of function of the orthologous BRCA1-interacting protein
+            BACH1 results in breast cancer susceptibility (<link linkend="bib8">Cantor et al., 2001</link><!-- PMID 11301010-->; <link linkend="bib9">Cantor
+            et al., 2004</link><!-- PMID 14983014-->). Whereas in mouse, loss of function of a related gene, Rtel
+            (regulator of telomere length) showed telomere loss and displayed many chromosome breaks
+            and fusions (<link linkend="bib15">Ding et al., 2004</link><!-- PMID 15210109-->).</para>
+        <para>In humans, Bloom's syndrome is an autosomal-recessive human disorder caused by
+            mutations in the BLM RecQ helicase and is associated with loss of genomic integrity and
+            an increased incidence of cancer. The <emphasis>C. elegans</emphasis> homolog most
+            similar to the BLM helicase is <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=him-6" role="_blank">him-6</ulink></emphasis>, which when mutated results in
+            enhanced irradiation sensitivity, a partially defective S-phase checkpoint, and reduced
+            levels of DNA-damage induced apoptosis (<link linkend="bib52">Wicky et al., 2004</link><!--PMID 15143192-->).
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=him-6" role="_blank">him-6</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=top-3" role="_blank">top-3</ulink></emphasis> are needed to prevent the
+            accumulation of double-strand breaks in normally proliferating germ cells, and act in
+            partially redundant pathways downstream of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rad-51" role="_blank">rad-51</ulink></emphasis>.</para>
+        <para>A third helicase, the <emphasis>C. elegans</emphasis> Werner's Syndrome RecQ helicase,
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=WRN-1;class=protein" role="_blank">WRN-1</ulink>, is implicated in the DNA damage checkpoint (<link linkend="bib29">Li et al., 2004</link><!-- PMID 14704431-->; <link linkend="bib27">Lee et
+            al., 2004</link><!-- PMID 15115755-->). <link linkend="bib27">Lee et al. (2004)</link><!-- PMID 15115755--> showed that <ulink url="http://www.wormbase.org/db/seq/protein?name=WRN-1;class=protein" role="_blank">WRN-1</ulink> defects are
+            accentuated by gamma-irradiation, implying that they are derived from spontaneous or
+            induced DNA damage. Irrespective of gamma-irradiation, pre-meiotic germ cells had an
+            abnormal checkpoint response to DNA replication blockage. These observations suggest
+            that <ulink url="http://www.wormbase.org/db/seq/protein?name=WRN-1;class=protein" role="_blank">WRN-1</ulink> acts as a checkpoint protein for DNA damage and replication blockage. The
+            authors point out that the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=wrn-1" role="_blank">wrn-1</ulink></emphasis>(<emphasis>RNAi</emphasis>)
+            phenotypes are similar to those of Werner syndrome; for example, premature aging and
+            reduced body size, suggesting that <emphasis>C. elegans</emphasis> may be a useful model
+            for this human disease.</para>
+    </sect1>
+    <sect1>
+        <title>DNA damage repair and genomics</title>
+        <para>A broad perspective on genes involved in DNA repair has been gained using high
+            throughput, genome-wide analysis of RNAi phenotypes in <emphasis>C.
+            elegans</emphasis> (<link linkend="bib34">Piano et al., 2002</link><!-- PMID 12445391--> <link linkend="bib24">Kamath et al., 2003</link><!--; PMID 12529635-->
+            <link linkend="bib35">Pothof et al., 2003</link><!-- PMID 12600937-->; <link linkend="bib28">Lettre et al., 2004</link><!-- PMID 15272318-->; <link linkend="bib51">van Haaften et al., 2004</link><!-- PMID 15326288-->). As part of a large scale analysis of protein-protein interactions,
+            known proteins implicated in replication, nucleotide excision repair, mismatch repair,
+            base excision repair, non-homologous end joining, homologous recombination and
+            checkpoint pathways were used in yeast 2-hybrid experiments to identify physical
+            interactors in the predicted proteome (<link linkend="bib6">Boulton et al., 2002</link><!--; PMID 11778048-->; <link linkend="bib29">Li et al.,
+            2004</link><!-- PMID 14704431-->). Results from this study illustrate how sensors, transducers and
+            mediators are shared when generating different responses like chromatin remodeling,
+            altered gene expression and DNA replication (<xref linkend="figure2" />). In a striking way, data from
+                <emphasis>C. elegans</emphasis> demonstrates that many of the pathways are
+            interrelated, and that pathway components exhibit previously unrecognized links between
+            repair mechanisms and checkpoints.</para>
+               <literallayout></literallayout>
+    <mediaobject id="figure2" xreflabel="Figure 2">
+			<imageobject>
+			<imagedata entityref="fig2" width="7in" align="center"/>
+			</imageobject>
+<textobject><phrase> Types of alternative splicing figure 1</phrase></textobject>
+		&fig2legend;</mediaobject>
+    </sect1>
+    <sect1>
+        <title>Summary</title>
+        <para>
+            <emphasis>C. elegans</emphasis> has proven to be a useful model with which to
+            investigate the factors maintaining genome stability. Genes have been identified by
+            mutagenesis and <emphasis>RNAi</emphasis> that affect DNA damage checkpoint and repair
+            functions resulting in hypersensitivity to radiation. To date no obvious DNA
+            damage-induced checkpoint has been described in the soma. In contrast, the DNA damage
+            response in the germ line is characterized by two spatially separate checkpoint
+            responses; mitotic germ nuclei proliferation arrest and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cep-1" role="_blank">cep-1</ulink></emphasis>-mediated apoptosis of damaged meiotic nuclei.
+            In addition to single gene studies, integration of data from high-throughput screens has
+            identified genes not previously implicated in the DNA damage response and elucidated
+            novel connections between the different repair pathways.</para>
+    </sect1>
+    <sect1>
+        <title>Acknowledgments</title>
+        <para>We wish to thank Maja Tarailo, Jill Youds, Peter Lansdorp, David Baillie and our
+            reviewers for thoughtful comments on the chapter; Maja Tarailo for preparation of Figure
+            2; WormBase and PubMed for resources; and CIHR and NSERC for funding support.</para>
+    </sect1>
+    <sect1>
+        <title>References</title>
+		<para/>
+		&DNA_Refs;</sect1>
+</article>

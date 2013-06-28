@@ -1,0 +1,951 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY fig1 SYSTEM 'junctionsfig1.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'junctionsfig1leg.xml'>
+<!ENTITY fig2 SYSTEM 'junctionsfig2.jpg' NDATA JPG>
+<!ENTITY fig2legend SYSTEM 'junctionsfig2leg.xml'>
+<!ENTITY fig3 SYSTEM 'junctionsfig3.jpg' NDATA JPG>
+<!ENTITY fig3legend SYSTEM 'junctionsfig3leg.xml'>
+<!ENTITY fig4 SYSTEM 'junctionsfig4.jpg' NDATA JPG>
+<!ENTITY fig4legend SYSTEM 'junctionsfig4leg.xml'>
+<!ENTITY fig5 SYSTEM 'junctionsfig5.jpg' NDATA JPG>
+<!ENTITY fig5legend SYSTEM 'junctionsfig5leg.xml'>
+<!ENTITY fig6 SYSTEM 'junctionsfig6.jpg' NDATA JPG>
+<!ENTITY fig6legend SYSTEM 'junctionsfig6leg.xml'>
+
+<!ENTITY junctions_Refs SYSTEM 'junctionsrefs.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="junctions_ArticleID">
+    <articleinfo>
+        <!--see DocBook's authorgroup element -->
+        <title>Epithelial junctions and attachments<footnote>
+                <para>Edited by James M. Kramer and Donald G. Moerman. Last revised January 29, 2005. Published January 13, 2006. This chapter should be cited as: Labouesse, M. Epithelial junctions and attachments (January 13, 2006), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.56.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+		<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2006 Michel Labouesse. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+            </footnote>
+        </title>
+        <!--		<revhistory>
+			<revision>
+				<revnumber>1.0</revnumber>
+				<date>Last revised 1/29/05</date>
+			</revision>
+		</revhistory> 
+-->
+        <author>
+            <firstname>Michel</firstname>
+            <surname>Labouesse<remark>
+                    <footnote>
+                        <para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:lmichel@igbmc.u-strasbg.fr">lmichel@igbmc.u-strasbg.fr</ulink></para>
+                    </footnote>
+                </remark>
+            </surname>
+            <affiliation>
+                <address>Institut de G&#x000E9;n&#x000E9;tique et de Biologie Mol&#x000E9;culaire et Cellulaire CNRS/ INSERM/ULP, BP 10142, 67404 Illkirch Cedex France</address>
+            </affiliation>
+        </author>
+    </articleinfo>
+    <abstract>
+        <title><emphasis role="bold">Abstract</emphasis></title>
+        <para><emphasis role="bold">A distinctive feature of polarized epithelial cells is their specialized junctions,
+            which contribute to cell integrity and provide platforms to orchestrate cell shape
+            changes. The chapter discusses the composition and assembly of</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">cell-cell and cell-extracellular matrix junctions, proteins that
+            anchor the cytoskeleton and mechanisms involved in establishing epithelial polarity. The
+            focus remains cellular and does not properly deal with epithelial cells in the context
+            of the developing embryo.</emphasis></para>
+    </abstract>
+    <sect1>
+        <title>Introduction</title>
+        <para>The interest in epithelial junctions and their associated cytoskeletal elements is
+            recent. Essentially none of the genes mentioned in this chapter were known, let alone
+            discussed, when <emphasis>C. elegans</emphasis> II was released. This chapter introduces
+            the main players, and addresses cell adhesion, cytoskeletal anchoring, epithelial
+            polarity and fibrous organelle assembly with a focus on cellular function. For
+            developmental aspects or for a more comprehensive coverage of cell adhesion, the reader
+            should consult the chapter on <ulink url="http://www.wormbook.org/chapters/www_epidermalmorphogenesis/epidermalmorphogenesis.html">Epidermal morphogenesis</ulink> and reviews (<link linkend="bib17">Cox et al., 2004</link><!--; PMID 15090591-->; <link linkend="bib20">Ding et al.,
+            2004</link><!--; PMID 15501449-->).</para>
+    </sect1>
+    <sect1>
+        <title>Approaches to identify junctional and cytoskeletal components</title>
+        <para>The first reagents used to visualize junctional/cytoskeletal components were obtained
+            approximately 20 years ago when Francis and Waterston prepared monoclonal antibodies
+            (mAbs) against insoluble membrane-associated embryonic extracts (<link linkend="bib24">Francis and Waterston,
+            1985</link><!--; PMID 2413045-->; <link linkend="bib25">Francis and Waterston, 1991</link><!--; PMID 1860880-->). Some of these mAbs
+            turned out to recognize junctional components (<ulink url="http://www.wormbase.org/db/seq/protein?name=LET-805;class=protein" role="_blank">LET-805</ulink>/myotactin, <ulink url="http://www.wormbase.org/db/seq/protein?name=AJM-1;class=protein" role="_blank">AJM-1</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=VAB-10;class=protein" role="_blank">VAB-10</ulink>,
+            recognized by MH46, MH27 and MH5 mAbs, respectively) or intermediate filaments (IFs; MH4
+            and MH33 mAbs), and proved in some cases useful for cloning by means of phage display.</para>
+        <para>Since then, genes encoding junctional or cytoskeletal components have been identified
+            in screens for larval defects (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sma-1" role="_blank">sma-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mua-3" role="_blank">mua-3</ulink></emphasis>,
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mua-6" role="_blank">mua-6</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=vab-10" role="_blank">vab-10</ulink></emphasis>), elongation defects causing
+            embryonic lethality (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=hmr-1" role="_blank">hmr-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=hmp-1" role="_blank">hmp-1</ulink></emphasis>,
+                <emphasis> <ulink url="http://www.wormbase.org/db/gene/gene?name=hmp-2" role="_blank">hmp-2</ulink></emphasis>, <emphasis> <ulink url="http://www.wormbase.org/db/gene/gene?name=spc-1" role="_blank">spc-1</ulink></emphasis>,<emphasis>
+            <ulink url="http://www.wormbase.org/db/gene/gene?name=zen-4" role="_blank">zen-4</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mup-4" role="_blank">mup-4</ulink></emphasis>, <emphasis>pat-</emphasis> genes), or
+            variably penetrant sub-lethal body morphology defects (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=vab-10" role="_blank">vab-10</ulink></emphasis>,
+                <emphasis> <ulink url="http://www.wormbase.org/db/gene/gene?name=ifb-1" role="_blank">ifb-1</ulink></emphasis>, <emphasis> <ulink url="http://www.wormbase.org/db/gene/gene?name=vab-19" role="_blank">vab-19</ulink></emphasis>). Chromosomal deficiencies
+            have also been used to scan the genome for regions containing loci potentially required
+            for embryonic morphogenesis (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-413" role="_blank">let-413</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=vab-10" role="_blank">vab-10</ulink></emphasis>). With some exceptions
+                (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-805" role="_blank">let-805</ulink></emphasis>/myotactin, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ajm-1" role="_blank">ajm-1</ulink></emphasis>), all genes
+            identified through these screens turned out to encode proteins with clear homologues in
+            vertebrates and insects (see <link linkend="table1">Table 1</link>, <link linkend="figure2">Figure 2</link>).</para>
+        <para>Several junction and cytoskeleton components have also been identified in diverse RNAi
+            screens, a number that should increase. <link linkend="table1">Table 1</link> is a list of junctional/cytoskeletal
+            proteins, that is unlikely to be complete. A promising source for additional adhesion
+            proteins will be to mine the <emphasis>C. elegans</emphasis> genome (<link linkend="bib36">Hutter et al.,
+            2000</link><!--; PMID 10669422-->).</para>
+<table id="table1" frame="all" rules="all" cellpadding="0" cellspacing="0" width="100%">
+<title>Table 1. Genes are grouped (different shadings) according to their subcellular localization and/or function (see also <link linkend="figure2">Figure 2</link>). </title>
+<tgroup cols="7">
+<colspec colname="c1" align="left" colwidth="0.7*"/>
+<colspec colname="c2" align="left" colwidth="1*"/>
+<colspec colname="c3" align="left" colwidth="1*"/>
+<colspec colname="c4" align="left" colwidth="1*"/>
+<colspec colname="c5" align="left" colwidth="1*"/>
+<colspec colname="c6" align="left" colwidth="1*"/>
+<colspec colname="c7" align="left" colwidth="1.3*"/>
+<thead>
+<row>
+<entry>Gene</entry>
+<entry>Homology or (domains)</entry>
+<entry>Expression pattern</entry>
+<entry>Subcellular localization</entry>
+<entry>Phenotype</entry>
+<entry>Identification method</entry>
+<entry>Reference</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=act-5" role="_blank">act-5</ulink></emphasis></entry>
+<entry>Actin</entry>
+<entry>Int.</entry>
+<entry>Apical</entry>
+<entry>Larval let; gut lumen def.</entry>
+<entry>RNAi</entry>
+<entry><link linkend="bib28">Gobel et al., 2004</link><!--; PMID 15177034--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=erm-1" role="_blank">erm-1</ulink></emphasis></entry>
+<entry>Ezrin-radixin- moesin (FERM domain)</entry>
+<entry>Most epithelia</entry>
+<entry>Apical</entry>
+<entry>Larval let; gut consctriction</entry>
+<entry>RNAi</entry>
+<entry><link linkend="bib28">Gobel et al., 2004</link><!--; PMID 15177034-->; <link linkend="bib78">Van Furden et al., 2004</link><!--; PMID 15242805--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=eps-8" role="_blank">eps-8</ulink></emphasis></entry>
+<entry>EPS8 (PTB, SH3)</entry>
+<entry>Int. (also many other cells)</entry>
+<entry>Tip of int. microvilli, PM in embryos</entry>
+<entry>Emb; larval let; ab. Int.brush border</entry>
+<entry>Homol. + del</entry>
+<entry><link linkend="bib18">Croce et al., 2004</link><!--; PMID 15558032--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sma-1" role="_blank">sma-1</ulink></emphasis></entry>
+<entry><symbol role="symbolfont">&#x003B2;</symbol><subscript>H</subscript>-spectrin</entry>
+<entry>Ep., int., P., E.c.</entry>
+<entry>Apical</entry>
+<entry>Elongation def.</entry>
+<entry>Larval def.</entry>
+<entry><link linkend="bib48">McKeown et al., 1998</link><!--; PMID 9570773-->; <link linkend="bib59">Norman and Moerman, 2002</link><!--; PMID 11994313--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=spc-1" role="_blank">spc-1</ulink></emphasis></entry>
+<entry><symbol role="symbolfont">&#x03B1;</symbol>-spectrin</entry>
+<entry>Ubiq.</entry>
+<entry>Apical, basolateral</entry>
+<entry>Emb; elongation def.</entry>
+<entry>Emb</entry>
+<entry><link linkend="bib53">Moorthy et al., 2000</link><!--; PMID 10811831-->; <link linkend="bib59">Norman and Moerman, 2002</link><!--; PMID 11994313--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-70" role="_blank">unc-70</ulink></emphasis></entry>
+<entry><symbol role="symbolfont">&#x003B2;</symbol><subscript>G</subscript>-spectrin</entry>
+<entry>Ubiq.</entry>
+<entry>Basolateral</entry>
+<entry>Larval let</entry>
+<entry>Larval def.</entry>
+<entry><link linkend="bib30">Hammarlund et al., 2000</link><!--; PMID 10811832-->; <link linkend="bib53">Moorthy et al., 2000</link><!--; PMID 10811831--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=nfm-1" role="_blank">nfm-1</ulink></emphasis></entry>
+<entry>Merlin (FERM domain)</entry>
+<entry>Int.</entry>
+<entry>Basolateral</entry>
+<entry>Unknown</entry>
+<entry>RNAi</entry>
+<entry><link linkend="bib28">Gobel et al., 2004</link><!--; PMID 15177034--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=hmr-1" role="_blank">hmr-1</ulink></emphasis></entry>
+<entry>E-cadherin</entry>
+<entry>Ep., int., P.</entry>
+<entry>CeAJ</entry>
+<entry>Emb; ventral enclosure def.</entry>
+<entry>Emb</entry>
+<entry><link linkend="bib16">Costa et al., 1998</link><!--; PMID 9531567-->; <link linkend="bib67">Raich et al., 1999</link><!--; PMID 10531027--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=hmp-1" role="_blank">hmp-1</ulink></emphasis></entry>
+<entry><symbol role="symbolfont">&#x003B1;</symbol>-catenin</entry>
+<entry>Ep., int., P.</entry>
+<entry>CeAJ</entry>
+<entry>Emb; elongation def.</entry>
+<entry>Emb</entry>
+<entry><link linkend="bib16">Costa et al., 1998</link><!--; PMID 9531567-->; <link linkend="bib61">Pettitt et al., 2003</link><!--; PMID 12847081-->; <link linkend="bib67">Raich et al., 1999</link><!--; PMID 10531027--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=hmp-2" role="_blank">hmp-2</ulink></emphasis></entry>
+<entry><symbol role="symbolfont">&#x003B2;</symbol>-catenin</entry>
+<entry>Ep., int., P.</entry>
+<entry>CeAJ</entry>
+<entry>Emb; elongation def.</entry>
+<entry>Emb</entry>
+<entry><link linkend="bib16">Costa et al., 1998</link><!--; PMID 9531567-->; <link linkend="bib67">Raich et al., 1999</link><!--; PMID 10531027--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=jac-1" role="_blank">jac-1</ulink></emphasis></entry>
+<entry>P120-catenin</entry>
+<entry>Ep., int., P.</entry>
+<entry>CeAJ</entry>
+<entry>None alone</entry>
+<entry>RNAi</entry>
+<entry><link linkend="bib61">Pettitt et al., 2003</link><!--; PMID 12847081--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=vab-9" role="_blank">vab-9</ulink></emphasis></entry>
+<entry>BCMP1 claudin</entry>
+<entry>Ep., int., P.</entry>
+<entry>CeAJ</entry>
+<entry>Elongation def.</entry>
+<entry>Larval def.</entry>
+<entry><link linkend="bib74">Simske et al., 2003</link><!--; PMID 12819787--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=apr-1" role="_blank">apr-1</ulink></emphasis></entry>
+<entry>APC</entry>
+<entry>Ep., int., P.</entry>
+<entry>CeAJ</entry>
+<entry>Emb; ventral enclosure def.</entry>
+<entry>m.b.</entry>
+<entry><link linkend="bib33">Hoier et al., 2000</link><!--; PMID 10766743--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=dlg-1" role="_blank">dlg-1</ulink></emphasis></entry>
+<entry>Discs Large (PDZ, SH3, GuK)</entry>
+<entry>All epithelia</entry>
+<entry>CeAJ</entry>
+<entry>Emb; elongation def.</entry>
+<entry>RNAi</entry>
+<entry><link linkend="bib8">Bossinger et al., 2001</link><!--; PMID 11161560-->; <link linkend="bib23">Firestein and Rongo, 2001</link><!--; PMID 11694581-->; <link linkend="bib43">Koppen et al., 2001</link><!--; PMID 11715019-->; <link linkend="bib49">McMahon et al., 2001</link><!--; PMID 11493666-->; <link linkend="bib72">Segbert et al., 2004</link><!--; PMID 14729475--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ajm-1" role="_blank">ajm-1</ulink></emphasis></entry>
+<entry>Novel (coiled coil)</entry>
+<entry>All epithelia</entry>
+<entry>CeAJ</entry>
+<entry>Emb; elongation def.</entry>
+<entry>mAb + e.s.</entry>
+<entry><link linkend="bib8">Bossinger et al., 2001</link><!--; PMID 11161560-->; <link linkend="bib43">Koppen et al., 2001</link><!--; PMID 11715019-->; <link linkend="bib66">Priess and Hirsh, 1986</link><!--; PMID 3743895--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=clc-1" role="_blank">clc-1</ulink></emphasis></entry>
+<entry>Classical claudin</entry>
+<entry>P.</entry>
+<entry>CeAJ</entry>
+<entry>Permeability def.</entry>
+<entry>RNAi</entry>
+<entry><link linkend="bib2">Asano et al., 2003</link><!--; PMID 12814550--></entry>
+</row>
+<row>
+<entry><emphasis>lad-1</emphasis>/ <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sax-7" role="_blank">sax-7</ulink></emphasis></entry>
+<entry>L1CAM (FN3 + Ig rep)</entry>
+<entry>All epithelia</entry>
+<entry>CeAJ</entry>
+<entry>Partial Emb; elongation def.</entry>
+<entry>Larval screen; Homol. + del</entry>
+<entry><link linkend="bib11">Chen et al., 2001</link>; <link linkend="bib86">Sasakura et al.,2005</link>; <link linkend="bib87">Wang et al., 2005</link><!--; PMID 11502758--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-413" role="_blank">let-413</ulink></emphasis></entry>
+<entry>Scribble (LRR, PDZ)</entry>
+<entry>Ubiq. up 350-c, all epithelia</entry>
+<entry>Basolateral</entry>
+<entry>Emb; elongation def.</entry>
+<entry>Df screen</entry>
+<entry><link linkend="bib7">Bossinger et al., 2004</link><!--; PMID 15063180-->; <link linkend="bib45">Legouis et al., 2000</link><!--; PMID 20342795-->; <link linkend="bib46">Legouis et al., 2003</link><!--; PMID 14578922--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=par-3" role="_blank">par-3</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=PAR-3;class=protein" role="_blank">PAR-3</ulink> (PDZ)</entry>
+<entry>Early embryo; int., spermT.</entry>
+<entry>Apical</entry>
+<entry>Emb; gastrulation def.; Ste</entry>
+<entry>RNAi</entry>
+<entry><link linkend="bib1">Aono et al., 2004</link><!--; PMID 15151982-->; <link linkend="bib55">Nance et al., 2003</link><!--; PMID 13129846-->; <link linkend="bib56">Nance and Priess, 2002</link><!--; PMID 11807031--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=par-6" role="_blank">par-6</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbase.org/db/seq/protein?name=PAR-6;class=protein" role="_blank">PAR-6</ulink> (PDZ)</entry>
+<entry>Early embryo; int.</entry>
+<entry>Apical</entry>
+<entry>Emb; gastrulation def.</entry>
+<entry>RNAi</entry>
+<entry><link linkend="bib55">Nance et al., 2003</link><!--; PMID 13129846-->; <link linkend="bib56">Nance and Priess, 2002</link><!--; PMID 11807031--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=crb-1" role="_blank">crb-1</ulink></emphasis></entry>
+<entry>Crumbs</entry>
+<entry>Int.</entry>
+<entry>Apical</entry>
+<entry>None alone</entry>
+<entry>RNAi</entry>
+<entry><link linkend="bib8">Bossinger et al., 2001</link><!--; PMID 11161560-->; <link linkend="bib72">Segbert et al., 2004</link><!--; PMID 14729475--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=zen-4" role="_blank">zen-4</ulink></emphasis></entry>
+<entry>MKLP1 kinesin</entry>
+<entry>Unknown in epithelia</entry>
+<entry>Unknown</entry>
+<entry>Emb; no buccal cavity</entry>
+<entry>Emb</entry>
+<entry><link linkend="bib50">Mishima et al., 2002</link><!--; PMID 11782313-->; <link linkend="bib65">Portereiko et al., 2004</link><!--; PMID 15182666-->; <link linkend="bib68">Raich et al., 1998</link><!--; PMID 9693365--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cyk-4" role="_blank">cyk-4</ulink></emphasis></entry>
+<entry>RhoGAP (PH, GAP)</entry>
+<entry>Unknown in epithelia</entry>
+<entry>Unknown</entry>
+<entry>Emb; no buccal cavity</entry>
+<entry>Emb</entry>
+<entry><link linkend="bib37">Jantsch- Plunger et al., 2000</link><!--; PMID 10871280-->; <link linkend="bib50">Mishima et al., 2002</link><!--; PMID 11782313-->; <link linkend="bib65">Portereiko et al., 2004</link><!--; PMID 15182666--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ifa-1" role="_blank">ifa-1</ulink></emphasis></entry>
+<entry>IF</entry>
+<entry>R., V. Ut., E.c., P., P-I. v.</entry>
+<entry>FO</entry>
+<entry>Larval let</entry>
+<entry>Bioch.; RNAi</entry>
+<entry><link linkend="bib21">Dodemont et al., 1994</link><!--; PMID 8013462-->; <link linkend="bib38">Karabinos et al., 2001</link><!--; PMID 11427699-->; <link linkend="bib40">Karabinos et al., 2003</link><!--; PMID 14529618--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mua-6" role="_blank">mua-6</ulink></emphasis>/ <emphasis>ifa-2</emphasis></entry>
+<entry>IF</entry>
+<entry>Ep., R., V. Ut.,</entry>
+<entry>FO</entry>
+<entry>Muscle detach.</entry>
+<entry>Larval def.</entry>
+<entry><link linkend="bib21">Dodemont et al., 1994</link><!--; PMID 8013462-->; <link linkend="bib31">Hapiak et al., 2003</link><!--; PMID 14597206-->; <link linkend="bib38">Karabinos et al., 2001</link><!--; PMID 11427699-->; <link linkend="bib40">Karabinos et al., 2003</link><!--; PMID 14529618--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ifa-3" role="_blank">ifa-3</ulink></emphasis></entry>
+<entry>IF</entry>
+<entry>Ep., R., P-I. v.</entry>
+<entry>FO</entry>
+<entry>Emb; muscle detach</entry>
+<entry>Bioch.; RNAi</entry>
+<entry><link linkend="bib21">Dodemont et al., 1994</link><!--; PMID 8013462-->; <link linkend="bib38">Karabinos et al., 2001</link><!--; PMID 11427699-->; <link linkend="bib40">Karabinos et al., 2003</link><!--; PMID 14529618-->; <link linkend="bib85">Woo et al., 2004</link><!--; PMID 14975728--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ifb-1" role="_blank">ifb-1</ulink></emphasis></entry>
+<entry>IF</entry>
+<entry>Ep., R., V. Ut., P., P-I. v.</entry>
+<entry>FO</entry>
+<entry>Emb; muscle detach</entry>
+<entry>Vab / RNAi</entry>
+<entry><link linkend="bib21">Dodemont et al., 1994</link><!--; PMID 8013462-->; <link linkend="bib38">Karabinos et al., 2001</link><!--; PMID 11427699-->; <link linkend="bib40">Karabinos et al., 2003</link><!--; PMID 14529618-->; <link linkend="bib85">Woo et al., 2004</link><!--; PMID 14975728--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ifc-1" role="_blank">ifc-1</ulink></emphasis></entry>
+<entry>IF</entry>
+<entry>Ep., R., P., int.</entry>
+<entry>FO in ep.?, CeAJ in P., apical in int. </entry>
+<entry>Partial lethality</entry>
+<entry>mAb + e.s.</entry>
+<entry><link linkend="bib38">Karabinos et al., 2001</link><!--; PMID 11427699-->; <link linkend="bib40">Karabinos et al., 2003</link><!--; PMID 14529618-->; <link linkend="bib41">Karabinos et al., 2004</link><!--; PMID--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ifc-2" role="_blank">ifc-2</ulink></emphasis></entry>
+<entry>IF</entry>
+<entry>P., int.</entry>
+<entry>Cytoplasmic + CeAJ</entry>
+<entry>Weak lethality in adults</entry>
+<entry>mAb + e.s.</entry>
+<entry><link linkend="bib39">Karabinos et al., 2002</link><!--; PMID 12204276-->; <link linkend="bib41">Karabinos et al., 2004</link><!--; PMID--></entry>
+</row>
+<row>
+<entry><emphasis>ifb-2</emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ifd-1" role="_blank">ifd-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ifd-2" role="_blank">ifd-2</ulink></emphasis>, <emphasis>ife-1</emphasis></entry>
+<entry>IF</entry>
+<entry>Int.</entry>
+<entry>Apical</entry>
+<entry>None alone/ partial larval let in triple knock-down</entry>
+<entry>mAb + e.s.</entry>
+<entry><link linkend="bib7">Bossinger et al., 2004</link><!--; PMID 15063180-->; <link linkend="bib21">Dodemont et al., 1994</link><!--; PMID 8013462-->; <link linkend="bib38">Karabinos et al., 2001</link><!--; PMID 11427699-->; <link linkend="bib40">Karabinos et al., 2003</link><!--; PMID 14529618-->; <link linkend="bib41">Karabinos et al., 2004</link><!--; PMID--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-858" role="_blank">let-858</ulink></emphasis></entry>
+<entry>Novel (FN3 repeats + TM)</entry>
+<entry>Hyp syncytia, P cells, P.</entry>
+<entry>FO</entry>
+<entry>Emb; muscle detach</entry>
+<entry>mAb + e.s.</entry>
+<entry><link linkend="bib35">Hresko et al., 1999</link><!--; PMID 10444073--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mup-4" role="_blank">mup-4</ulink></emphasis></entry>
+<entry>Matrilin-like (VWA+EGF rep.; TM)</entry>
+<entry>Hyp syncytia, P cells, P.</entry>
+<entry>FO</entry>
+<entry>Emb; muscle detach</entry>
+<entry>Emb</entry>
+<entry><link linkend="bib26">Gatewood and Bucher, 1997</link><!--; PMID 9136009-->; <link linkend="bib34">Hong et al., 2001</link><!--; PMID 11470827--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mua-3" role="_blank">mua-3</ulink></emphasis></entry>
+<entry>Matrilin-like (LDL+ VWA+ EGF rep.; TM)</entry>
+<entry>Hyp syncytia, P cells, P.</entry>
+<entry>FO</entry>
+<entry>Muscle detach</entry>
+<entry>Larval def.</entry>
+<entry><link linkend="bib4">Bercher et al., 2001</link><!--; PMID 11470828-->; <link linkend="bib63">Plenefisch et al., 2000</link><!--; PMID 10683173--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=vab-19" role="_blank">vab-19</ulink></emphasis></entry>
+<entry>Kank (ANK rep.)</entry>
+<entry>Hyp syncytia, P cells, P.</entry>
+<entry>FO</entry>
+<entry>Emb; muscle detach</entry>
+<entry>Vab screen</entry>
+<entry><link linkend="bib19">Ding et al., 2003</link><!--; PMID 14534136--></entry>
+</row>
+<row>
+<entry><emphasis>vab-10A</emphasis></entry>
+<entry>Plakin (CH rep.; SPEC, PLEC rep.)</entry>
+<entry>Hyp syncytia, P cells, P.</entry>
+<entry>FO</entry>
+<entry>Emb; muscle detach</entry>
+<entry>Df &amp; larval screens</entry>
+<entry><link linkend="bib6">Bosher et al., 2003</link><!--; PMID 12756232-->; <link linkend="bib63">Plenefisch et al., 2000</link><!--; PMID 10683173--></entry>
+</row>
+<row>
+<entry><emphasis>vab-10B</emphasis></entry>
+<entry>Plakin (CH rep.; SPEC rep.; GAR)</entry>
+<entry>Hyp syncytia, P cells, P., R., int., muscles, NS</entry>
+<entry>Between FO in ep. apical in gut</entry>
+<entry>Emb; ep. thickening</entry>
+<entry>Df &amp; larval screens</entry>
+<entry><link linkend="bib6">Bosher et al., 2003</link><!--; PMID 12756232--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mel-11" role="_blank">mel-11</ulink></emphasis></entry>
+<entry>MBP (ANK rep.)</entry>
+<entry>Epidermis</entry>
+<entry>CeAJ</entry>
+<entry>Ste; enclosure def.</entry>
+<entry>Suppressor</entry>
+<entry><link linkend="bib62">Piekny et al., 2003</link><!--; PMID 14522875-->; <link linkend="bib82">Wissmann et al., 1999</link><!--; PMID 10208747-->; <link linkend="bib83">Wissmann et al., 1997</link><!--; PMID 9042856--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ptp-3" role="_blank">ptp-3</ulink></emphasis></entry>
+<entry>Protein phosphatase (TM)</entry>
+<entry>Epidermis</entry>
+<entry>CeAJ</entry>
+<entry>Body morphology def.</entry>
+<entry>Homol. + del</entry>
+<entry><link linkend="bib32">Harrington et al., 2002</link><!--; PMID 11959824--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cdc-42" role="_blank">cdc-42</ulink></emphasis></entry>
+<entry>Cdc42 GTPase</entry>
+<entry>Epidermis.</entry>
+<entry>CeAJ</entry>
+<entry>Unknown</entry>
+<entry>Homol.</entry>
+<entry><link linkend="bib12">Chen et al., 1996</link><!--; PMID 8824291-->; <link linkend="bib13">Chen et al., 1993</link><!--; PMID 8514766-->; <link linkend="bib14">Chen et al., 1993</link><!--; PMID 7677998--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ced-10" role="_blank">ced-10</ulink></emphasis>/ <emphasis>rac-1</emphasis></entry>
+<entry>Rac GTPase</entry>
+<entry>Epidermis</entry>
+<entry>CeAJ</entry>
+<entry>Ced; Mig; Emb</entry>
+<entry>Larval screen</entry>
+<entry><link linkend="bib14">Chen et al., 1993</link><!--; PMID 7677998-->; <link linkend="bib22">Ellis et al., 1991</link><!--; PMID 1936965-->; <link linkend="bib69">Reddien and Horvitz, 2000</link><!--; PMID 10707082-->; <link linkend="bib75">Soto et al., 2002</link><!--; PMID 11877381--></entry>
+</row>
+<row>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pak-1" role="_blank">pak-1</ulink></emphasis></entry>
+<entry>P21-activated kinase</entry>
+<entry>Epidermis</entry>
+<entry>CeAJ</entry>
+<entry>Unknown</entry>
+<entry>Homol.</entry>
+<entry><link linkend="bib12">Chen et al., 1996</link><!--; PMID 8824291--></entry>
+</row>
+<row>
+<entry namest="c1" nameend="c7">Abbreviations: ab., abnormal; ANK rep., ankyrin repeat; APC, Adenomatosis Polyposis Carcinoma; bind., binding; Bioch., biochemical approach; CeAJ, <emphasis>C. elegans</emphasis> Apical Junction; Ced, Cell Death abnormal; CH, calponin homology domain; def., defect; del, deletion screen; detach., detachment; Df, deficiency; E.c., excretory cell; EGF rep., repeats found in the Epidermal Growth Factor; Emb, embryonic lethal; ep., epidermis; e.s., epitope screening; FERM, domain found in Band 4.1, ezrin, radixin, moesin proteins; FN3 rep., fibronectin type III repeats; GAR, growth arrest protein-2 related repeat; Homol., homology; IF, intermediate filament; Ig rep., immunoglobulin superfamily repeat; int., intestine; LDL rep., Low Density Lipoprotein receptor A repeats; let, lethal; LRR, Leucine-Rich repeat; mAb, monoclonal antibody; Mb, membrane; m.b., molecular biology; Mig, migration defective; P., pharynx; PDZ, PSD-95/ Disc Large/ ZO-1 homology domain; PH, pleckstrin homology domain; P-I. v., pharynx-intestinal valve; PLEC rep., plectin repeat; PM, plasma membrane; PTB, phosphotyrosine-binding domain; R., rectum; rep., repeats; RNAi, RNA interference; SH3, src homology domain type 3; SPEC rep., spectrin repeat; spermT., spermatheca; TM, transmembrane domain;; ut. Uterus; Vab, variably abnormal; V., vulva; VWA, von Willebrand Factor A repeats.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+    </sect1>
+    <sect1>
+        <title>Epithelial cytoskeleton</title>
+        <para>All three cytoskeletal networks can be found in <emphasis>C. elegans</emphasis>, in
+            contrast to <emphasis> Drosophila</emphasis> which lacks intermediate filaments (IFs; <link linkend="figure1">Figure 1A</link>). Except for IFs (see below), the expression and
+            potential functions of individual cytoskeletal proteins in epithelia have not yet been
+            fully characterized.</para>
+        <mediaobject id="figure1" xreflabel="Figure 1">
+            <imageobject>
+                <imagedata entityref="fig1" width="5in" align="center"/>
+            </imageobject>
+            <textobject>
+                <phrase> figure 1</phrase>
+            </textobject> &fig1legend;</mediaobject>
+		<mediaobject id="figure2" xreflabel="Figure 2">
+                <imageobject>
+                    <imagedata entityref="fig2" width="5.778in" align="center"/>
+                </imageobject>
+                <textobject>
+                    <phrase> figure 2</phrase>
+                </textobject> &fig2legend;</mediaobject>
+<?newpage?>
+        <sect2>
+            <title>Actin</title>
+            <para>
+                <emphasis>C. elegans</emphasis> has five closely related actins (ACT-1-5). In the
+                epidermis, actin is found at the cell cortex, and, starting at the 1.5-fold stage,
+                in circumferential bundles located under the furrows of the embryonic sheath, a
+                structure thought to maintain the shape of the embryo during elongation (<link linkend="bib15">Costa et
+                al., 1997</link><!--; PMID-->; <link linkend="bib66">Priess and Hirsh, 1986</link><!--; PMID 3743895-->). The specific molecular
+                composition, organization and polarity of these bundles have not been established.
+                In the intestine, actin microfilaments are enriched at the lumen (<link linkend="bib28">Gobel et al., 2004</link><!--; PMID 15177034-->; <link linkend="bib78">Van
+                    Furden et al., 2004</link><!--; PMID
+                15242805-->).</para>
+        </sect2>
+        <sect2>
+            <title>Microtubules</title>
+            <para>There are nine <symbol role="symbolfont">&#x03B1;</symbol>-tubulins (TBA-1-9)
+                and six <symbol role="symbolfont">&#x03B2;</symbol>-tubulins (TBB-1-6) in the
+                    <emphasis>C. elegans</emphasis> genome. Microtubules are oriented
+                circumferentially in dorsal (hyp7) and ventral (P cells) epidermal cells, where they
+                might be intermingled with actin microfilament bundles, but are less well-organized
+                in lateral seam cells (<link linkend="bib15">Costa et al., 1997</link><!--; PMID-->; <link linkend="bib66">Priess and Hirsh, 1986</link><!--; PMID
+                3743895-->). In the intestine, microtubules are enriched at the prospective lumen
+                (<link linkend="bib47">Leung et al., 1999</link><!--; PMID 10588867-->). How the microtubule cytoskeleton is anchored to
+                the plasma membrane is not known.</para>
+        </sect2>
+        <sect2>
+            <title>Intermediate filaments</title>
+            <para>Among the eleven individual IFs (IFA-1-4, IFB-1-2, IFC-1-2,
+                IFD-1-2, <ulink url="http://www.wormbase.org/db/seq/protein?name=IFE-1;class=protein" role="_blank">IFE-1</ulink>), three (<ulink url="http://www.wormbase.org/db/seq/protein?name=IFB-1;class=protein" role="_blank">IFB-1</ulink>,
+                <ulink url="http://www.wormbase.org/db/seq/protein?name=MUA-6;class=protein" role="_blank">MUA-6</ulink>/IFA-2 and <ulink url="http://www.wormbase.org/db/seq/protein?name=IFA-3;class=protein" role="_blank">IFA-3</ulink>) are expressed in the epidermis, where
+                they form short filaments between the apical and basal membranes located
+                circumferentially at the interface between body wall muscles and the cuticle
+                (<link linkend="bib3">Bartnik et al., 1986</link><!--; PMID 3519620-->; <link linkend="bib24">Francis and Waterston, 1985</link><!--; PMID 2413045-->;
+                <link linkend="bib25">Francis and Waterston, 1991</link><!--; PMID 1860880-->). <emphasis>In vitro</emphasis> polymerization suggests that
+                    <ulink url="http://www.wormbase.org/db/seq/protein?name=IFB-1;class=protein" role="_blank">IFB-1</ulink> forms obligate heteropolymers with IFA-2 and <ulink url="http://www.wormbase.org/db/seq/protein?name=IFA-3;class=protein" role="_blank">IFA-3</ulink>,
+                reminiscent of the vertebrate keratin system (<link linkend="bib40">Karabinos et al., 2003</link><!--; PMID
+                14529618-->). Expression studies and genetic analysis further suggest that <ulink url="http://www.wormbase.org/db/seq/protein?name=IFB-1;class=protein" role="_blank">IFB-1</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=IFA-3;class=protein" role="_blank">IFA-3</ulink> is the major heteropolymer in the embryonic epidermis,
+                while <ulink url="http://www.wormbase.org/db/seq/protein?name=IFB-1;class=protein" role="_blank">IFB-1</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=MUA-6;class=protein" role="_blank">MUA-6</ulink> is critical in the
+                larval epidermis (<link linkend="bib31">Hapiak et al., 2003</link><!--; PMID 14597206-->; <link linkend="bib40">Karabinos et al., 2003</link><!--; PMID
+                14529618-->; <link linkend="bib85">Woo et al., 2004</link><!--; PMID 14975728-->), with a possible minor contribution from
+                <ulink url="http://www.wormbase.org/db/seq/protein?name=IFC-1;class=protein" role="_blank">IFC-1</ulink> (<link linkend="bib41">Karabinos et al., 2004</link><!--; PMID-->). In the pharynx, <ulink url="http://www.wormbase.org/db/seq/protein?name=IFA-1;class=protein" role="_blank">IFA-1</ulink> forms heteropolymers
+                with <ulink url="http://www.wormbase.org/db/seq/protein?name=IFB-1;class=protein" role="_blank">IFB-1</ulink> and is essential for feeding, while in the
+                intestine three out of the four intestinal IFs must be removed to affect feeding and
+                survival (<link linkend="bib7">Bossinger et al., 2004</link><!--; PMID 15063180-->; <link linkend="bib38">Karabinos et al., 2001</link><!--; PMID
+                11427699-->; <link linkend="bib40">Karabinos et al., 2003</link><!--; PMID 14529618-->; <link linkend="bib41">Karabinos et al., 2004</link><!--;
+            PMID-->).</para>
+        </sect2>
+    </sect1>
+    <sect1>
+        <title>Apical junction components</title>
+        <para>Despite apparent differences, <emphasis>C. elegans</emphasis> epithelial cells look
+            very similar to their vertebrate and fly counterparts. Although transmission electron
+            microscopy identifies a single electron-dense junction in <emphasis>C.
+            elegans</emphasis> (<link linkend="figure1">Figure 1B, 1E</link>), whereas flies and vertebrates
+            possess two junctional complexes, recent cellular and genetic analyses establish that
+            worm epithelial cells do contain two molecularly and functionally distinct junctional
+            complexes. These two complexes together are commonly referred to as the CeAJ
+                (<emphasis>C. elegans</emphasis> Apical Junction; <link linkend="figure3">Figure 3A</link>).</para>
+        <mediaobject id="figure3" xreflabel="Figure 3">
+            <imageobject>
+                <imagedata entityref="fig3" width="5.377in" align="center"/>
+            </imageobject>
+            <textobject>
+                <phrase> figure 3</phrase>
+            </textobject> &fig3legend;</mediaobject>
+        <sect2>
+            <title>The cadherin-catenin complex (CCC)</title>
+            <para>This complex is analogous in composition and to a large extent in function to the
+                cadherin-catenin complex found in flies and vertebrates (<link linkend="bib16">Costa et al., 1998</link><!--; PMID
+                9531567-->). The CCC includes homologues of the classical E-cadherin (<ulink url="http://www.wormbase.org/db/seq/protein?name=HMR-1;class=protein" role="_blank">HMR-1</ulink>), <symbol role="symbolfont">&#x03B1;</symbol>-catenin
+                    (<ulink url="http://www.wormbase.org/db/seq/protein?name=HMP-1;class=protein" role="_blank">HMP-1</ulink>), <symbol role="symbolfont"
+                >&#x03B2;</symbol>-catenin (<ulink url="http://www.wormbase.org/db/seq/protein?name=HMP-2;class=protein" role="_blank">HMP-2</ulink>), p120-catenin (<ulink url="http://www.wormbase.org/db/seq/protein?name=JAC-1;class=protein" role="_blank">JAC-1</ulink>),
+                and a distant claudin superfamily member (<ulink url="http://www.wormbase.org/db/seq/protein?name=VAB-9;class=protein" role="_blank">VAB-9</ulink>; <link linkend="bib16">Costa et al., 1998</link><!--; PMID 9531567-->;
+                <link linkend="bib61">Pettitt et al., 2003</link><!--; PMID 12847081-->; <link linkend="bib74">Simske et al., 2003</link><!--; PMID 12819787-->; for
+                further details, see <ulink url="http://www.wormbook.org/chapters/www_cadherinsuperfam/cadherinsuperfam.html">The cadherin superfamily</ulink>). The CCC is the most apical within
+                the CeAJ (<link linkend="bib43">Koppen et al., 2001</link><!--; PMID
+                11715019-->; <link linkend="bib49">McMahon et al., 2001</link><!--; PMID 11493666-->).</para>
+        </sect2>
+        <sect2>
+            <title>The <ulink url="http://www.wormbase.org/db/seq/protein?name=DLG-1;class=protein" role="_blank">DLG-1</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=AJM-1;class=protein" role="_blank">AJM-1</ulink> complex (DAC)</title>
+            <para>This complex is defined by two membrane-associated proteins, a <emphasis>
+                    Drosophila</emphasis> Discs-large homologue (<ulink url="http://www.wormbase.org/db/seq/protein?name=DLG-1;class=protein" role="_blank">DLG-1</ulink>), and a
+                new coiled-coil protein (<ulink url="http://www.wormbase.org/db/seq/protein?name=AJM-1;class=protein" role="_blank">AJM-1</ulink>; <link linkend="bib8">Bossinger et al., 2001</link><!--; PMID
+                11161560-->; <link linkend="bib23">Firestein and Rongo, 2001</link><!--; PMID 11694581-->; <link linkend="bib43">Koppen et al., 2001</link><!--; PMID 11715019-->; <link linkend="bib49">McMahon et al., 2001</link><!--;
+                PMID 11493666-->). <ulink url="http://www.wormbase.org/db/seq/protein?name=DLG-1;class=protein" role="_blank">DLG-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=AJM-1;class=protein" role="_blank">AJM-1</ulink> form a
+                bona fide complex since they interact <emphasis> in vitro</emphasis> and are mutually dependent on each
+                other for proper localization <emphasis>in vivo</emphasis> (<link linkend="bib43">Koppen et al., 2001</link><!--; PMID 11715019-->; <link linkend="bib49">McMahon et al., 2001</link><!--; PMID
+                11493666-->; <link linkend="bib72">Segbert et al., 2004</link><!--; PMID 14729475-->).</para>
+            <para>The number of additional proteins belonging to the DAC and how <ulink url="http://www.wormbase.org/db/seq/protein?name=DLG-1;class=protein" role="_blank">DLG-1</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=AJM-1;class=protein" role="_blank">AJM-1</ulink> is anchored to the membrane is not
+                known. The claudin homologues <ulink url="http://www.wormbase.org/db/seq/protein?name=CLC-1;class=protein" role="_blank">CLC-1</ulink> or <ulink url="http://www.wormbase.org/db/seq/protein?name=CLC-2;class=protein" role="_blank">CLC-2</ulink>, or the L1-CAM homologue
+                    LAD-1/<ulink url="http://www.wormbase.org/db/seq/protein?name=SAX-7;class=protein" role="_blank">SAX-7</ulink>, which colocalize with <ulink url="http://www.wormbase.org/db/seq/protein?name=AJM-1;class=protein" role="_blank">AJM-1</ulink>, might in some tissues fulfill this role (<link linkend="bib2">Asano et al., 2003</link><!--; PMID
+                12814550-->; <link linkend="bib11">Chen et al., 2001</link><!--; PMID 11502758-->).</para>
+        </sect2>
+        <sect2>
+            <title>Additional proteins not assigned to a particular complex</title>
+            <para>Several signaling proteins localize at the CeAJ or should do so based on homology,
+                but their specific function is seldom known (<link linkend="table1">Table 1</link>; see <link linkend="bib17">Cox et al., 2004</link><!--; PMID
+                15090591--> for more references). Among them, the APC homologue <ulink url="http://www.wormbase.org/db/seq/protein?name=APR-1;class=protein" role="_blank">APR-1</ulink> might be part of the CCC, since its <emphasis>
+                Drosophila</emphasis> counterpart colocalizes with Armadillo/<symbol
+                    role="symbolfont">&#x03B2;</symbol>-catenin, and since <emphasis>
+                <ulink url="http://www.wormbase.org/db/gene/gene?name=apr-1" role="_blank">apr-1</ulink></emphasis> null mutants display an embryonic phenotype reminiscent of the
+                    <emphasis> <ulink url="http://www.wormbase.org/db/gene/gene?name=hmr-1" role="_blank">hmr-1</ulink></emphasis> ventral enclosure defect (<link linkend="bib5">Bienz and Hamada, 2004</link><!--;
+                PMID 15363803-->; <link linkend="bib33">Hoier et al., 2000</link><!--; PMID 10766743-->).</para>
+        </sect2>
+    </sect1>
+    <sect1>
+        <title>Cell adhesion, microfilament anchorage and gate function</title>
+        <para>In vertebrates and <emphasis> Drosophila</emphasis>, adherens junctions maintain
+            cell-cell adhesion and anchor actin microfilaments, while tight junctions (septate
+            junctions in <emphasis> Drosophila</emphasis>) ensure a paracellular gate function. In
+            addition, both junctional complexes contribute to maintenance of cell polarity and act
+            as signaling platforms (<link linkend="bib9">Braga, 2002</link><!--; PMID 12231348-->; <link linkend="bib77">Tsukita et al., 1999</link><!--; PMID
+            99439613-->). In this framework, what is known about the cellular functions of the two CeAJ complexes?</para>
+        <sect2>
+            <title>Cell-cell adhesion</title>
+            <para>Mutations inactivating the CCC affect cell-cell adhesion, but only in certain
+                circumstances. Mutations in <emphasis> <ulink url="http://www.wormbase.org/db/gene/gene?name=hmr-1" role="_blank">hmr-1</ulink></emphasis>/E-cadherin, or simultaneous
+                loss of zygotic and maternal <emphasis> <ulink url="http://www.wormbase.org/db/gene/gene?name=hmp-1" role="_blank">hmp-1</ulink></emphasis>/<symbol role="symbolfont"
+                    >&#x03B1;</symbol>-catenin or <emphasis> <ulink url="http://www.wormbase.org/db/gene/gene?name=hmp-2" role="_blank">hmp-2</ulink></emphasis>/<symbol
+                    role="symbolfont">&#x03B2;</symbol>-catenin prevent the stable assembly of
+                new CeAJs during the morphogenetic movement known as ventral enclosure (for further
+                details, see <ulink url="http://www.wormbook.org/chapters/www_epidermalmorphogenesis/epidermalmorphogenesis.html">Epidermal Morphogenesis</ulink>; <link linkend="bib16">Costa et al., 1998</link><!--; PMID
+                9531567-->; <link linkend="bib67">Raich et al., 1999</link><!--; PMID 10531027-->). Surprisingly however, such mutations do
+                not impair cell adhesion among other epidermal cells or intestinal cells (<link linkend="figure3">Figure 3C</link>).</para>
+            <para>The absence of the <ulink url="http://www.wormbase.org/db/seq/protein?name=DLG-1;class=protein" role="_blank">DLG-1</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=AJM-1;class=protein" role="_blank">AJM-1</ulink>  complex
+                does not cause major cell adhesion defects, despite the absence of a detectable
+                electron density in <ulink url="http://www.wormbase.org/db/seq/protein?name=DLG-1;class=protein" role="_blank">DLG-1</ulink>  deficient embryos, or the presence
+                of localized bubble-like separations between adjacent <ulink url="http://www.wormbase.org/db/seq/protein?name=AJM-1;class=protein" role="_blank">AJM-1</ulink>
+                deficient cells (<link linkend="figure3">Figure 3D</link>; <link linkend="bib43">Koppen et al., 2001</link><!--; PMID 11715019-->; <link linkend="bib49">McMahon et al., 2001</link><!--;
+                PMID 11493666-->). Expression of a truncated form of the putative DAC component
+                    LAD-1/<ulink url="http://www.wormbase.org/db/seq/protein?name=SAX-7;class=protein" role="_blank">SAX-7</ulink> leads to morphogenetic defects that could be
+                interpreted as adhesion defects (<link linkend="bib11">Chen et al., 2001</link><!--; PMID 11502758-->). Identification of null alleles in this gene confirm that it is required in different ways for normal embryonic morphogenesis; in particular it is required for muscle attachment (see below), although the exact nature of the adhesion defect has not been established (<link linkend="bib87">Wang et al., 2005</link>).</para>
+            <para>The unexpected observation that cell adhesion remains largely unaffected when one
+                CeAJ complex is missing suggests that <emphasis>C. elegans</emphasis>, like
+                vertebrates, might contain redundant adhesion systems (<link linkend="bib71">Sakisaka and Takai, 2004</link><!--;
+                PMID 15363801-->). The two CeAJ complexes likely cooperate to maintain cell adhesion,
+                since simultaneous loss of a CCC and DAC components causes severe adhesion defects
+                in the epidermis and the intestine (<link linkend="figure3">Figure 3E</link>; <link linkend="bib72">Segbert et al.,
+                2004</link><!--; PMID 14729475-->; <link linkend="bib74">Simske et al., 2003</link><!--; PMID 12819787-->; L. McMahon and M.
+                Labouesse, unpublished results).</para>
+        </sect2>
+<?newpage?>
+        <sect2>
+            <title>Paracellular gate function</title>
+            <para>The strong sequence similarity between <ulink url="http://www.wormbase.org/db/seq/protein?name=DLG-1;class=protein" role="_blank">DLG-1</ulink> and Discs
+                Large, which in <emphasis> Drosophila</emphasis> associates with septate junctions,
+                and the occurrence of vacuoles in <emphasis> <ulink url="http://www.wormbase.org/db/gene/gene?name=ajm-1" role="_blank">ajm-1</ulink></emphasis> and <emphasis>
+                <ulink url="http://www.wormbase.org/db/gene/gene?name=dlg-1" role="_blank">dlg-1</ulink></emphasis> null mutants, raised the possibility that the DAC could perform a
+                role analogous to septate junctions in maintaining paracellular gating (<link linkend="bib43">Koppen et al., 2001</link><!--; PMID 11715019-->).
+                Indirect support for this view has come from the observation that a low-molecular
+                weight fluorescent dye can diffuse between phrayngeal cells in animals lacking
+                <ulink url="http://www.wormbase.org/db/seq/protein?name=CLC-1;class=protein" role="_blank">CLC-1</ulink>, a possible DAC component (<link linkend="figure3">Figure 3D</link>; <link linkend="bib2">Asano et al., 2003</link><!--;
+                PMID 12814550-->). </para>
+        </sect2>
+        <sect2>
+            <title>Actin anchoring</title>
+            <para>In the epidermis, the CCC complex is essential to anchor the circumferential actin
+                bundles, since lack of <ulink url="http://www.wormbase.org/db/seq/protein?name=HMP-1;class=protein" role="_blank">HMP-1</ulink>/<symbol role="symbolfont"
+                    >&#x03B1;</symbol>-catenin or <ulink url="http://www.wormbase.org/db/seq/protein?name=HMP-2;class=protein" role="_blank">HMP-2</ulink>/<symbol
+                    role="symbolfont">&#x03B2;</symbol>-catenin causes them to detach from the
+                CeAJ (<link linkend="figure4">Figure 4B</link>; <link linkend="bib16">Costa et al., 1998</link><!--; PMID 9531567-->). Consistent
+                with the observation that drugs inhibiting actin polymerization prevent embryonic
+                elongation (<link linkend="bib66">Priess and Hirsh, 1986</link><!--; PMID 3743895-->), <emphasis> <ulink url="http://www.wormbase.org/db/gene/gene?name=hmp-1" role="_blank">hmp-1</ulink></emphasis> and
+                    <emphasis> <ulink url="http://www.wormbase.org/db/gene/gene?name=hmp-2" role="_blank">hmp-2</ulink></emphasis> mutations block elongation, while loss of <ulink url="http://www.wormbase.org/db/seq/protein?name=JAC-1;class=protein" role="_blank">JAC-1</ulink>/p120
+                catenin enhances the elongation defect of a weak <emphasis> <ulink url="http://www.wormbase.org/db/gene/gene?name=hmp-1" role="_blank">hmp-1</ulink></emphasis>
+                mutation (<link linkend="bib16">Costa et al., 1998</link><!--; PMID 9531567-->; <link linkend="bib61">Pettitt et al., 2003</link><!--; PMID 12847081-->).
+                The presence of redundant adhesion systems in <emphasis>C. elegans</emphasis> has
+                made it possible to separate the actin anchoring and the cell-cell adhesion
+                functions of the CCC.</para>
+            <mediaobject id="figure4" xreflabel="Figure 4">
+                <imageobject>
+                    <imagedata entityref="fig4" width="4.5in" align="center"/>
+                </imageobject>
+                <textobject>
+                    <phrase> figure 4</phrase>
+                </textobject> &fig4legend;</mediaobject>
+            <para>Several proteins acting either within the CCC, at the apical membrane, or within
+                fibrous organelles (see below) ensure the regular distribution of microfilament
+                bundles in the epidermis (<link linkend="figure4">Figure 4C</link>). For instance, in mutants
+                affecting the CCC component <ulink url="http://www.wormbase.org/db/seq/protein?name=VAB-9;class=protein" role="_blank">VAB-9</ulink>/claudin or the <symbol role="symbolfont"
+                    >&#x03B1;</symbol>-spectrin/<ulink url="http://www.wormbase.org/db/seq/protein?name=SPC-1;class=protein" role="_blank">SPC-1</ulink>, microfilaments
+                often form thicker bundles and thereby reduce elongation (<link linkend="bib19">Ding et al., 2003</link><!--; PMID
+                14534136-->; <link linkend="bib59">Norman and Moerman, 2002</link><!--; PMID 11994313-->; <link linkend="bib74">Simske et al., 2003</link><!--; PMID
+                12819787-->).</para>
+            <para>In the intestine, the Ezrin-Radixin-Moesin homologue <ulink url="http://www.wormbase.org/db/seq/protein?name=ERM-1;class=protein" role="_blank">ERM-1</ulink>, together with
+                    <ulink url="http://www.wormbase.org/db/seq/protein?name=SMA-1;class=protein" role="_blank">SMA-1</ulink>/<symbol role="symbolfont"
+                >&#x03B2;</symbol><subscript>H</subscript>-spectrin, act as scaffolding proteins to anchor actin
+                filaments at the lumen and ensure proper lumen formation (<link linkend="bib28">G&#x000F6;bel et al., 2004</link><!--; PMID 15177034-->; <link linkend="bib78">Van Furden et al., 2004</link><!--; PMID 15242805-->). In
+                particular, strong RNAi against <emphasis> <ulink url="http://www.wormbase.org/db/gene/gene?name=erm-1" role="_blank">erm-1</ulink></emphasis> causes a severe
+                reduction of apical microfilaments and gut lumen constrictions (<link linkend="figure4">Figure 4E</link>). Although <ulink url="http://www.wormbase.org/db/seq/protein?name=ERM-1;class=protein" role="_blank">ERM-1</ulink> is expressed in other epithelia, it only
+                appears essential for the development of epithelia not lined by a cuticle (G&#x000F6;bel et al., 2004<!--; PMID 15177034-->; <link linkend="bib78">Van
+                    Furden et al., 2004</link><!--; PMID
+                15242805-->). Another protein critical for lumen formation and gut function is EPS-8A,
+                the long isoform of the <emphasis>C. elegans</emphasis> homologue of the receptor tyrosine kinase (RTK)
+                receptor substrate Eps8, a protein that in vertebrates links RTK and Rac GTPase
+                signaling. EPS-8A is localized at the tips of the brush border intestinal
+                microvilli, where it acts as a barbed-end actin-capping factor that stabilizes
+                microvilli (<link linkend="bib18">Croce et al., 2004</link><!--; PMID 15558032-->). When EPS-8A is removed by RNAi or a
+                mutation, the gut lumen becomes strongly enlarged, causing larval lethality.</para>
+        </sect2>
+    </sect1>
+    <sect1>
+        <title>Assembly of apical junctions and establishment of epithelial polarity</title>
+        <para>In <emphasis> Drosophila</emphasis>, the interplay between three scaffolding
+            complexes: basolaterally the Scribble/Discs Large/Lethal giant larvae complex, and
+            apically the Bazooka/DmPAR-6/DaPKC and Crumbs/Stardust/Disc Lost complexes, specify
+            epithelial polarity (<link linkend="bib42">Knust and Bossinger, 2002</link><!--; PMID 12471248-->; <link linkend="bib54">Muller and Bossinger, 2003</link><!--; PMID 14623435-->;
+            <link linkend="bib57">Nelson, 2003</link><!--; PMID 12700771-->). In <emphasis>C. elegans</emphasis>, the establishment of
+            epithelial polarity may involve different mechanisms, since <ulink url="http://www.wormbase.org/db/seq/protein?name=PAR-3;class=protein" role="_blank">PAR-3</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=PAR-6;class=protein" role="_blank">PAR-6</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=PKC-3;class=protein" role="_blank">PKC-3</ulink> have so far not been found in the epidermis (<link linkend="bib7">Bossinger et al., 2004</link><!--; PMID 15063180-->; <link linkend="bib49">McMahon et al., 2001</link><!--; PMID 11493666-->), while some other homologues of key <emphasis>Drosophila</emphasis> polarity proteins are not expressed in equivalent membrane
+            domains. Current observations point to the existence of multiple, probably redundant,
+            cues to position junctions.</para>
+        <sect2>
+            <title>Cellular processes involved in specifying polarity</title>
+            <para>The establishment of epithelial polarity often requires slightly different
+                processes in cells that form sheets or tubes (<link linkend="bib57">Nelson, 2003</link><!--; PMID 12700771-->; <link linkend="bib85">Zegers et
+                al., 2003</link><!--; PMID 12667754-->). During development of the epidermis, CeAJ components are
+                assembled in a step-wise fashion. They are initially found along the lateral
+                membrane, and then rapidly adopt their final apical distribution (<link linkend="figure5">Figure 5A</link>). It is not clear, however, whether CeAJ components are
+                degraded laterally, actively transported apically or prevented from docking
+                basolaterally (<link linkend="bib49">McMahon et al., 2001</link><!--; PMID 11493666-->).</para>
+            <mediaobject id="figure5" xreflabel="Figure 5">
+                <imageobject>
+                    <imagedata entityref="fig5" width="3.5in" align="center"/>
+                </imageobject>
+                <textobject>
+                    <phrase> figure 5</phrase>
+                </textobject> &fig5legend;</mediaobject>
+            <para>In the intestine, the pharynx and the excretory cell, epithelial polarity appears
+                to start by the formation of small vesicles, whose expansion contributes to form the
+                lumen (<link linkend="bib10">Buechner et al., 1999</link><!--; PMID 10491271-->; <link linkend="bib47">Leung et al., 1999</link><!--; PMID 10588867-->).
+                Microtubules and actin microfilaments are enriched at the prospective lumen, where
+                they play a critical role in gut tubulogenesis (<link linkend="bib47">Leung et al., 1999</link><!--; PMID 10588867-->).
+                As in the epidermis, the CeAJ assembles in a step-wise manner, except that CeAJ
+                components intially accumulate in puncta at the midline (future apical surface) to
+                subsequently adopt a sub-apical continuous distribution (<link linkend="bib8">Bossinger et al., 2001</link><!--;
+                PMID 11161560-->; <link linkend="bib47">Leung et al., 1999</link><!--; PMID 10588867-->).</para>
+        </sect2>
+        <sect2>
+            <title>Defining the basal position of the CeAJ</title>
+            <para>In the epidermis, the basolateral protein <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-413;class=protein" role="_blank">LET-413</ulink>, the only <emphasis>C.
+                elegans</emphasis> Scribble homologue, positions the CeAJ presumably by promoting
+                its apical condensation (<link linkend="bib45">Legouis et al., 2000</link><!--; PMID 20342795-->; <link linkend="bib49">McMahon et al., 2001</link><!--;
+                PMID 11493666-->). In <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-413;class=protein" role="_blank">LET-413</ulink> deficient embryos, and depending on authors, <ulink url="http://www.wormbase.org/db/seq/protein?name=DLG-1;class=protein" role="_blank">DLG-1</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=AJM-1;class=protein" role="_blank">AJM-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=HMP-1;class=protein" role="_blank">HMP-1</ulink>/<symbol role="symbolfont">&#x03B1;</symbol>-catenin, remain
+                lateral leading to lateral assembly of electron dense junctions (<link linkend="figure5">Figure 5B</link>; <link linkend="bib45">Legouis et al., 2000</link><!--; PMID 20342795-->; <link linkend="bib49">McMahon et al.,
+                2001</link><!--; PMID 11493666-->), or reach their sub-apical position less efficiently (<link linkend="bib43">Koppen et al., 2001</link><!--; PMID 11715019-->).
+                Moreover, in the epidermis as well as in the intestine, apical membrane markers
+                progressively spread into the lateral membrane, suggesting that <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-413;class=protein" role="_blank">LET-413</ulink> acts to
+                maintain polarity (<link linkend="bib7">Bossinger et al., 2004</link><!--; PMID 15063180-->; <link linkend="bib43">Koppen et al., 2001</link><!--; PMID 11715019-->; <link linkend="bib49">McMahon et al., 2001</link><!--;
+                PMID 11493666-->; <link linkend="bib72">Segbert et al., 2004</link><!--; PMID 14729475-->). Although <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-413;class=protein" role="_blank">LET-413</ulink> biochemical
+                activity is unknown, it has been predicted that it might act through a small GTPase.
+                Its N-terminal leucine-rich repeats, which mediate basolateral localization, show
+                good similarity with the Ras-interacting protein SUR-8 (<link linkend="bib46">Legouis et al., 2003</link><!--; PMID
+                14578922-->).</para>
+        </sect2>
+        <sect2>
+            <title>Apical proteins involved in specifying polarity and tubulogenesis</title>
+            <para><ulink url="http://www.wormbase.org/db/seq/protein?name=PAR-3;class=protein" role="_blank">PAR-3</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=PAR-6;class=protein" role="_blank">PAR-6</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=PKC-3;class=protein" role="_blank">PKC-3</ulink> are present at the apical membrane of tubular organs, where
+                their role has been difficult to assess owing to their early requirement in
+                development (<link linkend="bib60">Pellettieri and Seydoux, 2002</link><!--; PMID 12471246-->). Roles for <ulink url="http://www.wormbase.org/db/seq/protein?name=PAR-3;class=protein" role="_blank">PAR-3</ulink> and
+                <ulink url="http://www.wormbase.org/db/seq/protein?name=PAR-6;class=protein" role="_blank">PAR-6</ulink> in epithelial polarity have been uncovered in two specific cases. Indirect
+                evidence in favor of a role for <emphasis>C. elegans</emphasis> PAR proteins in
+                establishing cell polarity initially came from very elegant experiments in which
+                <ulink url="http://www.wormbase.org/db/seq/protein?name=PAR-3;class=protein" role="_blank">PAR-3</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=PAR-6;class=protein" role="_blank">PAR-6</ulink> were only provided to the zygote (<link linkend="bib55">Nance et al., 2003</link><!--; PMID
+                13129846-->). Although blastomeres after the 8-cell stage are not truly epithelial,
+                they are polarized and require the activity of <ulink url="http://www.wormbase.org/db/seq/protein?name=PAR-3;class=protein" role="_blank">PAR-3</ulink>/ <ulink url="http://www.wormbase.org/db/seq/protein?name=PAR-6;class=protein" role="_blank">PAR-6</ulink> to maintain cell-cell
+                adhesion and restrict <ulink url="http://www.wormbase.org/db/seq/protein?name=PAR-1;class=protein" role="_blank">PAR-1</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=PAR-2;class=protein" role="_blank">PAR-2</ulink> to their basolateral surfaces. Lack of <ulink url="http://www.wormbase.org/db/seq/protein?name=PAR-3;class=protein" role="_blank">PAR-3</ulink>
+                or <ulink url="http://www.wormbase.org/db/seq/protein?name=PAR-6;class=protein" role="_blank">PAR-6</ulink> considerably slows down ingression of gut precursors during gastrulation
+                (<link linkend="bib55">Nance et al., 2003</link><!--; PMID 13129846-->). RNAi feeding in larvae also established that
+                <ulink url="http://www.wormbase.org/db/seq/protein?name=PAR-3;class=protein" role="_blank">PAR-3</ulink> is required in the distal spermatheca to specify polarity and to assemble the
+                CeAJ (<link linkend="figure5">Figure 5C</link>). In turn, absence of the CeAJ compromises
+                signaling between the spermatheca and the germline (<link linkend="bib1">Aono et al., 2004</link><!--; PMID
+                15151982-->).</para>
+            <para>Several observations indicate that establishing cell polarity in the intestine
+                involves multiple parallel cues. For instance, the Crumbs homologue <ulink url="http://www.wormbase.org/db/seq/protein?name=CRB-1;class=protein" role="_blank">CRB-1</ulink>, an apical
+                protein in the gut, plays an ancillary role in cell polarity which can be revealed
+                by the simultaneous knock-down of <ulink url="http://www.wormbase.org/db/seq/protein?name=LET-413;class=protein" role="_blank">LET-413</ulink>, <ulink url="http://www.wormbase.org/db/seq/protein?name=HMP-1;class=protein" role="_blank">HMP-1</ulink>/<symbol
+                    role="symbolfont">&#x03B1;</symbol>-catenin and <ulink url="http://www.wormbase.org/db/seq/protein?name=CRB-1;class=protein" role="_blank">CRB-1</ulink> (<link linkend="bib7">Bossinger et al.,
+                2004</link><!--; PMID 15063180-->; <link linkend="bib8">Bossinger et al., 2001</link><!--; PMID 11161560-->). Similarly, the Moesin
+                homologue <ulink url="http://www.wormbase.org/db/seq/protein?name=ERM-1;class=protein" role="_blank">ERM-1</ulink> is not essential for junction assembly or cell polarity, unless it
+                is inactivated together with <emphasis> <ulink url="http://www.wormbase.org/db/gene/gene?name=hmr-1" role="_blank">hmr-1</ulink></emphasis>/E-cadherin, in which case
+                the CeAJ is missing in many places (as observed after the simultaneous loss of a DAC
+                and CCC components; see <link linkend="figure3">Figure 3E</link>; <link linkend="bib76">Speck et al., 2003</link><!--; PMID
+                12511959-->; <link linkend="bib78">Van Furden et al., 2004</link><!--;
+                PMID 15242805-->).</para>
+            <para>Two new players,<emphasis> <ulink url="http://www.wormbase.org/db/gene/gene?name=zen-4" role="_blank">zen-4</ulink></emphasis> and <emphasis> <ulink url="http://www.wormbase.org/db/gene/gene?name=cyk-4" role="_blank">cyk-4</ulink></emphasis>, have
+                recently been identified as factors required for epithelialization of arcade cells
+                during pharynx tubulogenesis (<link linkend="figure5">Figure 5C</link>). Normally, arcade cells undergo a
+                mesenchymal-epithelial transition to assemble typical CeAJs, express <ulink url="http://www.wormbase.org/db/seq/protein?name=PAR-3;class=protein" role="_blank">PAR-3</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=PKC-3;class=protein" role="_blank">PKC-3</ulink> at
+                their apical membrane and create a tube (<link linkend="bib64">Portereiko and Mango, 2001</link><!--; PMID 11336509-->;
+                <link linkend="bib65">Portereiko et al., 2004</link><!--; PMID 15182666-->). In<emphasis> <ulink url="http://www.wormbase.org/db/gene/gene?name=zen-4" role="_blank">zen-4</ulink></emphasis> or <emphasis>
+                    <ulink url="http://www.wormbase.org/db/gene/gene?name=cyk-4" role="_blank">cyk-4</ulink></emphasis> mutants, these steps fail, perhaps because the arcade
+                microtubule and actin cytoskeletons are disorganized (<link linkend="bib65">Portereiko et al., 2004</link><!--; PMID
+                15182666-->). The conventional kinesin <ulink url="http://www.wormbase.org/db/seq/protein?name=ZEN-4;class=protein" role="_blank">ZEN-4</ulink>/MKLP1 and the Rho
+                GTPase-activating protein <ulink url="http://www.wormbase.org/db/seq/protein?name=CYK-4;class=protein" role="_blank">CYK-4</ulink> were previously described to form a complex that
+                bundles microtubules and constructs the spindle midzone during cytokinesis (<link linkend="bib27">Glotzer,
+                2001</link><!--; PMID 11687493-->). Whether and how the functions of the <ulink url="http://www.wormbase.org/db/seq/protein?name=ZEN-4;class=protein" role="_blank">ZEN-4</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=CYK-4;class=protein" role="_blank">CYK-4</ulink> complex in cytokinesis and epithelialization are related is
+                not yet known.</para>
+        </sect2>
+    </sect1>
+    <sect1>
+        <title>Junction disassembly and cell fusion</title>
+        <para>Multiple cell fusion events occur during <emphasis>C. elegans</emphasis> development,
+            which directly affect its morphogenesis and organogenesis. Confocal and transmission
+            electron microscopy have suggested that fusion is initiated by a pore-forming mechanism
+            originating at a single point located within or in very close proximity of a CeAJ
+            (<link linkend="bib52">Mohler et al., 1998</link><!--; PMID 9768364-->). This pore is then thought to expand by vesiculation
+            of the membrane (<link linkend="bib52">Mohler et al., 1998</link><!--; PMID 9768364-->).</para>
+<?newpage?>
+        <para>While several mutants have been described that affect the decision to fuse, the only
+            gene known to be necessary and sufficient for the fusion process itself is <emphasis>
+                <ulink url="http://www.wormbase.org/db/gene/gene?name=eff-1" role="_blank">eff-1</ulink></emphasis> (<link linkend="bib51">Mohler et al., 2002</link><!--; PMID 11879640-->). In <emphasis>
+            <ulink url="http://www.wormbase.org/db/gene/gene?name=eff-1" role="_blank">eff-1</ulink></emphasis> mutants, cell fusion is blocked at an early step, presumably at the
+            initiation and expansion steps (<link linkend="bib51">Mohler et al., 2002</link><!--; PMID 11879640-->). Ectopic expression
+            of <ulink url="http://www.wormbase.org/db/seq/protein?name=EFF-1;class=protein" role="_blank">EFF-1</ulink> triggers fusion between cells that normally do not fuse, resulting in
+            cytoplasmic mixing and the disappearance of CeAJs within one hour of expression (<link linkend="bib73">Shemer
+            et al., 2004</link><!--; PMID 15341747-->).</para>
+    </sect1>
+    <sect1>
+        <title>Fibrous organelles: junctions with the extracellular matrix and mechanical coupling</title>
+        <para>
+            <emphasis>C. elegans</emphasis> dorsal and ventral epidermal cells possess a major
+            adhesion complex, called the fibrous organelle (FO), which mediates attachment to
+            muscles and the cuticle, or which transmits cuticle deformation to mechanosensory touch
+            neurons (<link linkend="bib25">Francis and Waterston, 1991</link><!--; PMID 1860880-->). Similar structures are also found
+            in the pharyngeal marginal cells. FOs look ultrastructurally, functionally and to some
+            extent molecularly like type I hemidesmosomes (HDs). In vertebrates, HDs attach the
+            basal layer of the epidermis to the basal lamina and are essential to anchor keratin
+            filaments (<link linkend="bib58">Nievers et al., 1999</link><!--; PMID 10367727-->).</para>
+        <sect2>
+            <title>Fibrous organelles resemble type I hemidesmosomes </title>
+            <para>Transmission electron microscopy reveals the presence of regularly spaced electron
+                densities at the apical and basal plasma membranes of the ventral and dorsal
+                epidermis, in regions overlying body wall, vulval, uterine and anal muscles (<link linkend="figure1">Figure 1C&#x02013;D</link>, <link linkend="figure6">Figure 6A</link>; <link linkend="bib24">Francis and Waterston,
+                1985</link><!--; PMID 2413045-->; <link linkend="bib25">Francis and Waterston, 1991</link><!--; PMID 1860880-->). These plaques,
+                together with the dense array of filaments connecting them, correspond to FOs.</para>
+            <para>A key FO component is an isoform of the gene <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=vab-10" role="_blank">vab-10</ulink></emphasis>,
+                    VAB-10A, resembling plectin and BPAG1e which in HDs connect
+                keratin filaments to integrin and BPAG2 adhesion receptors (<link linkend="bib6">Bosher et al., 2003</link><!--;
+                PMID 12756232-->; <link linkend="bib58">Nievers et al., 1999</link><!--; PMID 10367727-->). Immunogold staining localizes
+                    VAB-10A to a region enriched in filaments, while genetic
+                experiments show that VAB-10A is required to anchor IFs (<link linkend="figure6">Figure 6A&#x02013;B</link>; <link linkend="bib6">Bosher et al., 2003</link><!--; PMID 12756232-->). Genetic and
+                immunofluorescence experiments argue that the filaments associated with FOs
+                correspond to the <ulink url="http://www.wormbase.org/db/seq/protein?name=IFB-1;class=protein" role="_blank">IFB-1</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=IFA-3;class=protein" role="_blank">IFA-3</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=IFB-1;class=protein" role="_blank">IFB-1</ulink>/IFA-2 heterodimers (see cytoskeleton
+                section; <link linkend="figure6">Figure 6A</link>; <link linkend="bib31">Hapiak et al., 2003</link><!--; PMID 14597206-->; <link linkend="bib40">Karabinos
+                et al., 2003</link><!--; PMID 14529618-->; <link linkend="bib85">Woo et al., 2004</link><!--; PMID 14975728-->). Besides
+                VAB-10A and IFs, another presumptive FO component is
+                    <ulink url="http://www.wormbase.org/db/seq/protein?name=VAB-19;class=protein" role="_blank">VAB-19</ulink>, which is homologous to the tumor suppressor Kank
+                    (<link linkend="figure6">Figure 6A</link>; <link linkend="bib19">Ding et al., 2003</link><!--; PMID 14534136-->).</para>
+            <para>The transmembrane adhesion molecules predicted to link
+                VAB-10A  and IFs are <ulink url="http://www.wormbase.org/db/seq/protein?name=MUA-3;class=protein" role="_blank">MUA-3</ulink>  and
+                <ulink url="http://www.wormbase.org/db/seq/protein?name=MUP-4;class=protein" role="_blank">MUP-4</ulink>  on the apical side of the epidermis, and
+                myotactin/<ulink url="http://www.wormbase.org/db/seq/protein?name=LET-805;class=protein" role="_blank">LET-805</ulink>  on its basal side (<link linkend="figure6">Figure 6A</link>; <link linkend="bib4">Bercher et al., 2001</link><!--; PMID 11470828-->; <link linkend="bib34">Hong et al., 2001</link><!--;
+                PMID 11470827-->; <link linkend="bib35">Hresko et al., 1999</link><!--; PMID 10444073-->). These proteins are unrelated to
+                integrins and BPAG2, implying that HDs and FOs are not strictly equivalent (<link linkend="table1">Table 1</link>). Intriguingly, however, the extracellular domains of <ulink url="http://www.wormbase.org/db/seq/protein?name=MUA-3;class=protein" role="_blank">MUA-3</ulink> and <ulink url="http://www.wormbase.org/db/seq/protein?name=MUP-4;class=protein" role="_blank">MUP-4</ulink> show weak similarity to matrilins, which are
+                components of vertebrate tendons, a structure enriched in collagens like the cuticle
+                (<link linkend="bib29">Hahn and Labouesse, 2001</link><!--; PMID 11696341-->).</para>
+            <para>Akin to the skin blistering phenotype observed in patients compromised for an HD
+                component, mutations inactivating FO components cause the epidermis to detach from
+                the cuticle on its apical side and from muscles on its basal side (<link linkend="figure6">Figure 6B&#x02013;C</link>; <link linkend="bib4">Bercher et al., 2001</link><!--; PMID 11470828-->; <link linkend="bib6">Bosher et al.,
+                2003</link><!--; PMID 12756232-->; <link linkend="bib19">Ding et al., 2003</link><!--; PMID 14534136-->; <link linkend="bib31">Hapiak et al., 2003</link><!--; PMID
+                14597206-->; <link linkend="bib34">Hong et al., 2001</link><!--; PMID 11470827-->; <link linkend="bib35">Hresko et al., 1999</link><!--; PMID 10444073-->;
+                <link linkend="bib40">Karabinos et al., 2003</link><!--; PMID 14529618-->; <link linkend="bib85">Woo et al., 2004</link><!--; PMID 14975728-->). Muscle
+                contractions are responsible for this phenotype since inhibiting their activity
+                strongly reduces detachment (<link linkend="bib6">Bosher et al., 2003</link><!--; PMID 12756232-->; <link linkend="bib19">Ding et al., 2003</link><!--;
+                PMID 14534136-->). The ensuing detachment causes elongation defects and embryonic
+                lethality, except in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mua-3" role="_blank">mua-3</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mua-6" role="_blank">mua-6</ulink></emphasis>/<emphasis>ifa-2</emphasis>
+                mutants, which only affect larvae, suggesting that <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mua-3" role="_blank">mua-3</ulink></emphasis> and
+                    <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mua-6" role="_blank">mua-6</ulink></emphasis> fulfill a specialized role associated with the
+                presence of a cuticle.</para>
+            <mediaobject id="figure6" xreflabel="Figure 6">
+                <imageobject>
+                    <imagedata entityref="fig6" width="3.8in" align="center"/>
+                </imageobject>
+                <textobject>
+                    <phrase> figure 6</phrase>
+                </textobject> &fig6legend;</mediaobject>
+        </sect2>
+        <sect2>
+            <title>Assembly of fibrous organelles</title>
+            <para>FO components initially appear as foci at the apical and basal epidermal
+                membranes, which progressively evolve into short circumferential bands overlying
+                muscles after the pretzel stage (<link linkend="figure6">Figure 6A</link>; <link linkend="bib25">Francis and Waterston,
+                1991</link><!--; PMID 1860880-->). FO assembly requires input from muscles (<link linkend="bib35">Hresko et al., 1999</link><!--;
+                PMID 10444073-->). It is still unclear, however, whether muscles simply stabilize FOs,
+                or whether they induce the expression of FO components, much as <emphasis>
+                    Drosophila</emphasis> muscles induce the differentiation of tendon cells (<link linkend="bib81">Volk,
+                1999</link><!--; PMID 10529807-->).</para>
+            <para>The initial assembly of FO components at the muscle-epidermis interface does not
+                depend on other FO components, but their fine patterning does (<link linkend="figure6">Figure 6B&#x02013;C</link>). In the absence of VAB-10A, other
+                components get dispersed or they aggregate into abnormal bundles (<link linkend="bib6">Bosher et al.,
+                2003</link><!--; PMID 12756232-->). Likewise, when myotactin/<ulink url="http://www.wormbase.org/db/seq/protein?name=LET-805;class=protein" role="_blank">LET-805</ulink> is
+                absent, FOs are not restricted to a narrow area where muscles should be and
+                <ulink url="http://www.wormbase.org/db/seq/protein?name=VAB-19;class=protein" role="_blank">VAB-19</ulink>  becomes dispersed in a broad area (<link linkend="bib19">Ding et al.,
+                2003</link><!--; PMID 14534136-->; <link linkend="bib35">Hresko et al., 1999</link><!--; PMID 10444073-->). Reciprocally, when
+                <ulink url="http://www.wormbase.org/db/seq/protein?name=VAB-19;class=protein" role="_blank">VAB-19</ulink>  is absent, the distribution of IFs is enlarged and
+                the myotactin pattern fails to evolve into a pattern of circumferential bands (<link linkend="bib19">Ding
+                et al., 2003</link><!--; PMID 14534136-->).</para>
+            <para> Maintenance of FOs depends also on VAB-10B, another
+                <ulink url="http://www.wormbase.org/db/seq/protein?name=VAB-10;class=protein" role="_blank">VAB-10</ulink> isoform, whose distribution is intermingled with
+                that of VAB-10A (<link linkend="figure6">Figure 6A, D</link>; <link linkend="bib6">Bosher et al.,
+                2003</link><!--; PMID 12756232-->). The reason for the progressive loss of FOs in
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=vab-10" role="_blank">vab-10</ulink></emphasis>B mutants is unclear, and may be due to a thickening of
+                the epidermis, and/or a failure to maintain the integrity of the actin and
+                microtubule cytoskeleton after the two-fold stage (Landmann and Labouesse,
+                unpublished).</para>
+        </sect2>
+    </sect1>
+    <sect1>
+        <title>Conclusions and future directions</title>
+        <para>Seven years ago, we knew essentially nothing about epithelial junctions in
+                <emphasis>C. elegans</emphasis>. The identification of several key actors involved
+            in building junctions thus represents a major step forward. Yet much remains to be
+            learned, particularly in analyzing the molecular relationship between the three
+            cytoskeletal networks and in defining how adhesion complex can modulate signaling.
+                <emphasis>C. elegans</emphasis> has small cells and does not easily lend itself to
+            biochemical analysis. Nonetheless, some recent technical developments, such as rapid
+            cameras with better resolution, reagents that can monitor protein activity or
+            protein-protein interaction <emphasis> in vivo</emphasis>, the TAP-tag method of purifying protein complexes,
+            should allow researchers in the field to make up for those disadvantages. When combined
+            with the traditional power of worm genetics, these techniques offer promise towards
+            elucidating how adhesion complexes can regulate morphogenesis, or how compromising
+            junction integrity can result in human diseases.</para>
+    </sect1>
+    <sect1>
+        <title>Acknowledgements</title>
+        <para>I thank past and present members of the Labouesse lab for lively and useful
+            discussions, in particular Renaud Legouis for critical reading of the manuscript. Work
+            in my laboratory is funded by institutional funds from the CNRS, INSERM and H&#x000F4;pitaux
+            Universitaires de Strasbourg, and by grants from the European Community, the Association
+            pour la Recherche sur le Cancer and the Association Fran&#x000E7;aise contre les
+        Myopathies.</para>
+    </sect1>
+    <sect1>
+        <title>References</title>
+		<para/>
+		&junctions_Refs;</sect1>
+</article>

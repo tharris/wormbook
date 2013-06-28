@@ -1,0 +1,2652 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY fig1 SYSTEM 'encykifig1.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'encykifig1leg.xml'>
+<!ENTITY fig2 SYSTEM 'encykifig2.jpg' NDATA JPG>
+<!ENTITY fig2legend SYSTEM 'encykifig2leg.xml'>
+
+<!ENTITY encyki_Refs SYSTEM 'encykirefs.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="encyki_ArticleID">
+    <articleinfo>
+        <!--see DocBook's authorgroup element -->
+        <title>Genomic overview of protein kinases<footnote>
+                <para>Edited by Iva Greenwald. Last revised December 10, 2005. Published December 13, 2005. This chapter should be cited as: Manning, G. Genomic overview of Protein Kinases (December 13, 2005), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.60.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+		<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2005 Gerard Manning. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+            </footnote>
+       </title>
+        <!--		<revhistory>
+			<revision>
+				<revnumber>1.0</revnumber>
+				<date>Last revised 5/6/05</date>
+			</revision>
+		</revhistory>
+-->
+        <author>
+            <firstname>Gerard</firstname>
+            <surname>Manning<remark>
+                    <footnote>
+                        <para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:manning@salk.edu">manning@salk.edu</ulink>
+                        </para>
+                    </footnote>
+                </remark>
+            </surname>
+            <affiliation>
+                <orgname>Razavi-Newman Center for Bioinformatics, Salk Institute for Biological Studies</orgname>
+                <address>La Jolla, California 92037 USA</address>
+            </affiliation>
+        </author>
+    </articleinfo>
+    <abstract>
+        <title><emphasis role="bold">Abstract</emphasis></title>
+        <para><emphasis role="bold">Protein kinases are one of the largest and most influential of gene families:
+            constituting some 2% of the proteome, they regulate almost all biochemical pathways and
+            may phosphorylate up to 30% of the proteome. Bioinformatics and comparative genomics
+            were used to determine the</emphasis> <emphasis role="bold-italic">C. elegans</emphasis> <emphasis role="bold">kinome and put it in
+            evolutionary and functional context. Kinases are deeply conserved in evolution, and the
+            worm has family homologs for over 80% of the human kinome. Almost half of the 438 worm
+            kinases are members of worm-specific or worm-expanded families. Such radiations
+            include genes involved in spermatogenesis, chemosensation, Wnt signaling and FGF
+            receptor-like kinases. The</emphasis> <emphasis role="bold-italic">C. briggsae</emphasis> <emphasis role="bold">kinome is largely similar
+            apart from the expanded classes, showing that such expansions are evolutionarily recent.</emphasis></para>
+    </abstract>
+    <sect1>
+        <title>Introduction</title>
+        <para>Protein kinases constitute one of the largest and most important of protein families,
+            accounting for ~2% of genes in a variety of eukaryotic genomes. By phosphorylating
+            substrate proteins, kinases modify the activity, location and affinities of up to 30% of
+            all cellular proteins, and direct most cellular processes, particularly in signal
+            transduction and co-ordination of complex pathways. Many of these pathways are highly
+            conserved, and 53 distinct kinase functions and subfamilies appear to have been
+            conserved between yeasts, nematodes, insects and vertebrates, with a further 91
+            subfamilies of kinases being seen throughout metazoan genomes. This makes kinase
+            signaling particularly amenable to comparative studies, and kinase activity a
+            particularly good readout of the physiological state of any cell.</para>
+        <para>This chapter will introduce the diversity of kinases in <emphasis>C.
+            elegans</emphasis>, and compare them to those of fungi and other metazoans, as well as
+            to preliminary results from analysis of the <emphasis>C. briggsae</emphasis> kinome.</para>
+    </sect1>
+    <sect1>
+        <title>The <emphasis>C. elegans</emphasis> kinome</title>
+        <para>Most protein kinases share a common ePK (eukaryotic protein kinase) catalytic domain,
+            and can be identified by sequence similarity with Blast or profile hidden Markov models
+            (HMMs). The remaining atypical protein kinases (aPK) belong to several families, some of
+            which have structural, but not sequence similarity to ePKs. We used ePK and aPK HMMs,
+            and Blast/psi-Blast with divergent kinase sequences, to identify protein kinase
+            sequences in <emphasis>C. elegans</emphasis> genomic and expressed sequences (<link linkend="bib2">Manning et al., 2002</link><!--; PMID 12368087-->; <link linkend="bib6">Plowman et al., 1999</link><!--; PMID 10570119-->).
+            We identified 438 protein kinase genes, including 20 atypical kinases, and an additional
+            25 kinase fragments or pseudogenes. All sequences and supporting data are available at
+                <ulink url="http://kinase.com" role="_blank">http://kinase.com</ulink>, and all but 8
+            sequences are now identical to wormpep (v. 141) sequences.</para>
+    </sect1>
+    <sect1>
+        <title>Kinase evolution</title>
+        <para>To put worm kinases into an evolutionary and functional context, we compared them with
+            the distant kinomes of human, fly, and yeast. At these distances, 1:1 orthology is rare,
+            so we classified each kinase into a hierarchy of groups, families, and sometimes
+            subfamilies (<link linkend="bib2">Manning et al., 2002a</link><!--; PMID 12368087-->; <link linkend="bib3">Manning et al., 2002b</link><!--; PMID 12471243-->).
+            The classification is based on sequence similarity within the kinase domain, the
+            presence of additional domains, known biological functions, and conservation across
+            divergent genomes. Across the four kinomes, there are 10 groups, 143 families and 212
+            subfamilies. The classification of each worm kinase is given in Appendix A.</para>
+        <para>Since kinases perform such a variety of distinct basic cellular functions, it is not
+            surprising to see that 53 subfamilies and functions are present in all four
+            kinomes (<xref linkend="figure1"/>). A further 91 subfamilies were found in all three
+            metazoan kinomes, including the tyrosine kinase (TK) group and the TKL group, which
+            mediate much of the complexity of intercellular signal transduction. The gain and loss
+            of kinase functions and subfamilies in each evolutionary lineage is also seen. In
+            general, the data support the coelomate clade, where insects are more closely related to
+            vertebrates than to nematodes, rather than the ecdysozoa clade, which groups insects and
+            nematodes together.</para>
+        <mediaobject id="figure1" xreflabel="Figure 1">
+            <imageobject>
+                <imagedata width="3in" depth="3.355in" entityref="fig1" align="center"/>
+            </imageobject>
+            <textobject>
+                <phrase>figure 1</phrase>
+            </textobject> &fig1legend;</mediaobject>
+        <para>Nematodes share 153 subfamilies with human, providing close homologs for 81% (419/518)
+            of all human kinases. 6 families appear to have been lost from nematodes, based on their
+            presence in fly, human and more basal organisms (<link linkend="table1">Table 1</link>), and several new families have
+            been invented within the coelomate lineage, whose functions predominantly map to
+            immunity/angiogenesis, neurobiology, cell cycle and morphogenesis. There are 13 such
+            human-specific families, and 16 shared between fly and human.</para>
+<table id="table1" frame="all" rules="all" cellpadding="0" cellspacing="0" width="100%">
+<title>Table 1. Kinases lost in worm, or gained in fly or human kinomes.</title>
+<tgroup cols="7">
+<colspec colname="c1" align="left" colwidth="1*"/>
+<colspec colname="c2" align="left" colwidth="1*"/>
+<colspec colname="c3" align="left" colwidth="1.2*"/>
+<colspec colname="c4" align="left" colwidth="1*"/>
+<colspec colname="c5" align="left" colwidth="1*"/>
+<colspec colname="c6" align="left" colwidth="3*"/>
+<colspec colname="c7" align="left" colwidth="3*"/>
+<thead>
+<row>
+<entry>Group</entry>
+<entry>Family</entry>
+<entry>Subfamily</entry>
+<entry>Fly count</entry>
+<entry>Human count</entry>
+<entry>Function</entry>
+<entry>Notes</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry namest="c1" nameend="c7"><emphasis role="bold">Secondarily lost from worm</emphasis></entry>
+</row>
+<row>
+<entry>Atypical</entry>
+<entry>G11</entry>
+<entry/>
+<entry>1</entry>
+<entry>1</entry>
+<entry>Unknown</entry>
+<entry>Also in yeast and plants</entry>
+</row>
+<row>
+<entry>CAMK</entry>
+<entry>CAMKL</entry>
+<entry>PASK</entry>
+<entry>1</entry>
+<entry>1</entry>
+<entry>Glucose sensor</entry>
+<entry>Also in yeast</entry>
+</row>
+<row>
+<entry>Other</entry>
+<entry>TTK</entry>
+<entry/>
+<entry>1</entry>
+<entry>1</entry>
+<entry>Cell cycle</entry>
+<entry>Also in yeast and plants</entry>
+</row>
+<row>
+<entry>Atypical</entry>
+<entry>PIKK</entry>
+<entry>DNAPK</entry>
+<entry>1</entry>
+<entry>1</entry>
+<entry>DNA repair</entry>
+<entry>Also in Dictyostelium</entry>
+</row>
+<row>
+<entry>Atypical</entry>
+<entry>TIF</entry>
+<entry/>
+<entry>1</entry>
+<entry>3</entry>
+<entry>Transcriptional control</entry>
+<entry>Also in Dictyostelium. NHR co-factor</entry>
+</row>
+<row>
+<entry>TK</entry>
+<entry>CCK4</entry>
+<entry/>
+<entry>1</entry>
+<entry>1</entry>
+<entry>Neuronal; cell growth</entry>
+<entry>Also in Hydra. Neuronal pathfinding; cancer</entry>
+</row>
+<row>
+<entry namest="c1" nameend="c7"><emphasis role="bold">Fly + Human</emphasis></entry>
+</row>
+<row>
+<entry>CAMK</entry>
+<entry>Trbl</entry>
+<entry/>
+<entry>1</entry>
+<entry>3</entry>
+<entry>Cell cycle</entry>
+<entry/>
+</row>
+<row>
+<entry>CMGC</entry>
+<entry>CDK</entry>
+<entry>CDK10</entry>
+<entry>1</entry>
+<entry>1</entry>
+<entry>Cell cycle?</entry>
+<entry/>
+</row>
+<row>
+<entry>Other</entry>
+<entry>IKK</entry>
+<entry/>
+<entry>2</entry>
+<entry>4</entry>
+<entry>Immunity</entry>
+<entry>NFkb signaling</entry>
+</row>
+<row>
+<entry>Other</entry>
+<entry>MOS</entry>
+<entry/>
+<entry>1</entry>
+<entry>1</entry>
+<entry>Cell cycle</entry>
+<entry>Meiosis</entry>
+</row>
+<row>
+<entry>Other</entry>
+<entry>SLOB</entry>
+<entry/>
+<entry>2</entry>
+<entry>1</entry>
+<entry>Neuronal</entry>
+<entry>Synaptic transmission</entry>
+</row>
+<row>
+<entry>Other</entry>
+<entry>TOPK</entry>
+<entry/>
+<entry>1</entry>
+<entry>1</entry>
+<entry>Cell cycle</entry>
+<entry/>
+</row>
+<row>
+<entry>STE</entry>
+<entry>Ste20</entry>
+<entry>NinaC</entry>
+<entry>1</entry>
+<entry>2</entry>
+<entry>Neuronal</entry>
+<entry>Phototransduction</entry>
+</row>
+<row>
+<entry>TK</entry>
+<entry>Jak</entry>
+<entry/>
+<entry>1</entry>
+<entry>4</entry>
+<entry>Immunity</entry>
+<entry>Cytokine signaling</entry>
+</row>
+<row>
+<entry>TK</entry>
+<entry>Musk</entry>
+<entry/>
+<entry>1</entry>
+<entry>1</entry>
+<entry>Neuronal</entry>
+<entry>Synaptic transmission</entry>
+</row>
+<row>
+<entry>TK</entry>
+<entry>PDGFR/ VEGFR</entry>
+<entry/>
+<entry>2</entry>
+<entry>8</entry>
+<entry>Angiogenesis; morphogenesis; immunity</entry>
+<entry/>
+</row>
+<row>
+<entry>TK</entry>
+<entry>Ret</entry>
+<entry/>
+<entry>1</entry>
+<entry>1</entry>
+<entry>Immunity, development</entry>
+<entry>Growth factor receptor</entry>
+</row>
+<row>
+<entry>TK</entry>
+<entry>Sev</entry>
+<entry/>
+<entry>1</entry>
+<entry>1</entry>
+<entry>Morphogenesis</entry>
+<entry/>
+</row>
+<row>
+<entry>TK</entry>
+<entry>Syk</entry>
+<entry/>
+<entry>1</entry>
+<entry>2</entry>
+<entry>Immunity; morphogenesis</entry>
+<entry/>
+</row>
+<row>
+<entry>TK</entry>
+<entry>Tec</entry>
+<entry/>
+<entry>1</entry>
+<entry>5</entry>
+<entry>Immunity; morphogenesis</entry>
+<entry/>
+</row>
+<row>
+<entry>TKL</entry>
+<entry>LISK</entry>
+<entry>LIMK</entry>
+<entry>1</entry>
+<entry>2</entry>
+<entry>Cytoskeletal</entry>
+<entry/>
+</row>
+<row>
+<entry>TKL</entry>
+<entry>LISK</entry>
+<entry>TESK</entry>
+<entry>1</entry>
+<entry>2</entry>
+<entry>Testis development</entry>
+<entry/>
+</row>
+<row>
+<entry namest="c1" nameend="c7"><emphasis role="bold">Human</emphasis></entry>
+</row>
+<row>
+<entry>Atypical</entry>
+<entry>Alpha</entry>
+<entry>ChaK</entry>
+<entry>0</entry>
+<entry>2</entry>
+<entry>Neuronal</entry>
+<entry>Human adds kinase to metazoan-wide channel</entry>
+</row>
+<row>
+<entry>Atypical</entry>
+<entry>BCR</entry>
+<entry/>
+<entry>0</entry>
+<entry>1</entry>
+<entry>Cell growth</entry>
+<entry>Ras/MAPK growth factor responses</entry>
+</row>
+<row>
+<entry>Atypical</entry>
+<entry>FAST</entry>
+<entry/>
+<entry>0</entry>
+<entry>1</entry>
+<entry>Apoptosis</entry>
+<entry/>
+</row>
+<row>
+<entry>Atypical</entry>
+<entry>H11</entry>
+<entry/>
+<entry>0</entry>
+<entry>1</entry>
+<entry>Apoptosis?</entry>
+<entry/>
+</row>
+<row>
+<entry>CAMK</entry>
+<entry>CAMKL</entry>
+<entry>HUNK</entry>
+<entry>0</entry>
+<entry>1</entry>
+<entry>Development</entry>
+<entry>Mammary gland development</entry>
+</row>
+<row>
+<entry>CAMK</entry>
+<entry>Trio</entry>
+<entry/>
+<entry>0</entry>
+<entry>6</entry>
+<entry>Muscle</entry>
+<entry>Human adds kinase to conserved protein</entry>
+</row>
+<row>
+<entry>Other</entry>
+<entry>NKF3</entry>
+<entry/>
+<entry>0</entry>
+<entry>2</entry>
+<entry>Unknown</entry>
+</row>
+<row>
+<entry>Other</entry>
+<entry>NKF4</entry>
+<entry/>
+<entry>0</entry>
+<entry>2</entry>
+<entry>Cytoskeletal</entry>
+</row>
+<row>
+<entry>Other</entry>
+<entry>NKF5</entry>
+<entry/>
+<entry>0</entry>
+<entry>2</entry>
+<entry>Testis development?</entry>
+</row>
+<row>
+<entry>TK</entry>
+<entry>Axl</entry>
+<entry/>
+<entry>0</entry>
+<entry>3</entry>
+<entry>Cell growth; adhesion</entry>
+</row>
+<row>
+<entry>TK</entry>
+<entry>Lmr</entry>
+<entry/>
+<entry>0</entry>
+<entry>3</entry>
+<entry>Cell growth?</entry>
+</row>
+<row>
+<entry>TK</entry>
+<entry>Tie</entry>
+<entry/>
+<entry>0</entry>
+<entry>2</entry>
+<entry>Angiogenesis</entry>
+</row>
+<row>
+<entry>TKL</entry>
+<entry>RIPK</entry>
+<entry/>
+<entry>0</entry>
+<entry>5</entry>
+<entry>Immunity</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+        <para>On the other hand, the worm shares eight subfamilies with human which are absent from
+            <emphasis>Drosophila</emphasis> (<link linkend="table2">Table 2</link>). These include two receptor tyrosine kinase families, an atypical
+            elongation factor 2 kinase (eEF2K), several members of the CAMK group (MELK, PSK, PIM)
+            and the HH498 subfamily of Mixed Lineage Kinases (MLK). In some but not all cases, the
+            fly genome has related genes that may fulfill a similar function. SGK, eEF2K and HH498
+            are found in <emphasis>Dictyostelium</emphasis>, and ABC1-C in yeast, reinforcing their
+            secondary loss from insects. The secondary loss of conserved kinases within each lineage
+            highlights how essential functions are dependent on the context of other genes and
+            pathways in the organism.</para>
+<table id="table2" frame="all" rules="all" cellpadding="0" cellspacing="0" width="100%">
+<title>Table 2. Kinase subfamilies shared by worm and human, but not fly.</title>
+<tgroup cols="6">
+<colspec colname="c1" align="left" colwidth="1*"/>
+<colspec colname="c2" align="left" colwidth="1*"/>
+<colspec colname="c3" align="left" colwidth="1*"/>
+<colspec colname="c4" align="left" colwidth="1*"/>
+<colspec colname="c5" align="left" colwidth="1*"/>
+<colspec colname="c6" align="left" colwidth="3*"/>
+<thead>
+<row>
+<entry>Group</entry>
+<entry>Family</entry>
+<entry>Subfamily</entry>
+<entry>Worm genes</entry>
+<entry>Human genes</entry>
+<entry>Notes</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>AGC</entry>
+<entry>SGK</entry>
+<entry/>
+<entry>1</entry>
+<entry>3</entry>
+<entry>Close relative to the AKT (PKB) family</entry>
+</row>
+<row>
+<entry>Atypical</entry>
+<entry>ABC1</entry>
+<entry>ABC1-C</entry>
+<entry>1</entry>
+<entry>1</entry>
+<entry>Other ABC1 subfamilies may compensate.</entry>
+</row>
+<row>
+<entry>Atypical</entry>
+<entry>MHCK</entry>
+<entry>eEF2K</entry>
+<entry>1</entry>
+<entry>1</entry>
+<entry>Eukaryotic elongation factor 2 kinase.</entry>
+</row>
+<row>
+<entry>CAMK</entry>
+<entry>CAMKL</entry>
+<entry>MELK</entry>
+<entry>1</entry>
+<entry>1</entry>
+<entry>MELK is an outgroup of MARK, which is present in fly. Splicing function?</entry>
+</row>
+<row>
+<entry>CAMK</entry>
+<entry>PSK</entry>
+<entry/>
+<entry>1</entry>
+<entry>2</entry>
+<entry>Human PSKH1 has a Golgi function.</entry>
+</row>
+<row>
+<entry>CAMK</entry>
+<entry>PIM</entry>
+<entry/>
+<entry>2</entry>
+<entry>3</entry>
+<entry>Related to PASK, which is present in fly and absent from worm.</entry>
+</row>
+<row>
+<entry>TKL</entry>
+<entry>MLK</entry>
+<entry>HH498</entry>
+<entry>1</entry>
+<entry>1</entry>
+<entry>Human form is cardiac-specific, worm is neuronal- restricted. Divergent functions?</entry>
+</row>
+<row>
+<entry>TK</entry>
+<entry>Trk</entry>
+<entry/>
+<entry>1</entry>
+<entry>3</entry>
+<entry>Neurotrophin receptor. Fly has closely related Ror and Musk families.</entry>
+</row>
+<row>
+<entry>TK</entry>
+<entry>Met</entry>
+<entry/>
+<entry>2</entry>
+<entry>2</entry>
+<entry>Worm has a clear Met homolog and a divergent family member.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+    </sect1>
+    <sect1>
+        <title>Recent expansions and inventions in the worm kinome</title>
+        <para>The <emphasis>C. elegans</emphasis> kinome is also marked by a dramatic expansion of
+            a small number of kinase classes. <emphasis>C. elegans</emphasis> has almost twice as
+            many kinases as <emphasis>Drosophila</emphasis> (438 vs. 241 genes), but virtually all
+            the difference (195 of 197 genes) is accounted for by expansions of a small number of
+            families and of worm-specific families.</para>
+        <para>Fifteen kinase subfamilies are nematode-specific, accounting for almost a quarter of
+            the kinome (105 genes). They include 8 distinct subfamilies within a large expansion of
+            CK1 group kinases, containing 78 kinases, and two FGFR-like receptor tyrosine kinase
+            families. An additional 5 families are in the Other group, and have very little
+            similarity to any non-worm kinases. In general, they are not well characterized.</para>
+<table id="table3" frame="all" rules="all" cellpadding="0" cellspacing="0" width="400">
+<title>Table 3. Worm-specific and worm-expanded kinase classes. Counts of genes in kinomes. <emphasis>C. briggsae</emphasis> data from unpublished analysis of genome-predicted peptides.</title>
+<tgroup cols="5">
+<colspec colname="c1" align="left" colwidth="3*"/>
+<colspec colname="c2" align="left" colwidth="1*"/>
+<colspec colname="c3" align="left" colwidth="1*"/>
+<colspec colname="c4" align="left" colwidth="1*"/>
+<colspec colname="c5" align="left" colwidth="1*"/>
+<thead>
+<row>
+<entry>Name/Classification</entry>
+<entry><emphasis>C. elegans</emphasis></entry>
+<entry><emphasis>C. briggsae</emphasis></entry>
+<entry>Fly</entry>
+<entry>Human</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>CK1/Dual</entry>
+<entry>3</entry>
+<entry>3</entry>
+<entry>0</entry>
+<entry>0</entry>
+</row>
+<row>
+<entry>CK1/TTBKL</entry>
+<entry>31</entry>
+<entry>22</entry>
+<entry>0</entry>
+<entry>0</entry>
+</row>
+<row>
+<entry>CK1/Worm6</entry>
+<entry>28</entry>
+<entry>19</entry>
+<entry>0</entry>
+<entry>0</entry>
+</row>
+<row>
+<entry>CK1/Worm7</entry>
+<entry>2</entry>
+<entry>1</entry>
+<entry>0</entry>
+<entry>0</entry>
+</row>
+<row>
+<entry>CK1/Worm8</entry>
+<entry>3</entry>
+<entry>1</entry>
+<entry>0</entry>
+<entry>0</entry>
+</row>
+<row>
+<entry>CK1/Worm9</entry>
+<entry>2</entry>
+<entry>0</entry>
+<entry>0</entry>
+<entry>0</entry>
+</row>
+<row>
+<entry>CK1/Worm10</entry>
+<entry>2</entry>
+<entry>2</entry>
+<entry>0</entry>
+<entry>0</entry>
+</row>
+<row>
+<entry>CK1/Worm11</entry>
+<entry>1</entry>
+<entry>2</entry>
+<entry>0</entry>
+<entry>0</entry>
+</row>
+<row>
+<entry>CK1/Unique</entry>
+<entry>6</entry>
+<entry>3</entry>
+<entry>0</entry>
+<entry>0</entry>
+</row>
+<row>
+<entry>TK/Fer</entry>
+<entry>38</entry>
+<entry>24</entry>
+<entry>1</entry>
+<entry>2</entry>
+</row>
+<row>
+<entry>RGC group</entry>
+<entry>27</entry>
+<entry>20</entry>
+<entry>6</entry>
+<entry>5</entry>
+</row>
+<row>
+<entry>TK/KIN-16</entry>
+<entry>16</entry>
+<entry>6</entry>
+<entry>0</entry>
+<entry>0</entry>
+</row>
+<row>
+<entry>Other/Haspin</entry>
+<entry>13</entry>
+<entry>1</entry>
+<entry>1</entry>
+<entry>1</entry>
+</row>
+<row>
+<entry>CMGC/GSK3</entry>
+<entry>7</entry>
+<entry>6</entry>
+<entry>3</entry>
+<entry>2</entry>
+</row>
+<row>
+<entry>CAMK/CAMKL/ CHK1</entry>
+<entry>7</entry>
+<entry>1</entry>
+<entry>1</entry>
+<entry>1</entry>
+</row>
+<row>
+<entry>Ste/Ste7</entry>
+<entry>10</entry>
+<entry>8</entry>
+<entry>4</entry>
+<entry>7</entry>
+</row>
+<row>
+<entry>CMGC/MAPK/Jnk</entry>
+<entry>5</entry>
+<entry>3</entry>
+<entry>1</entry>
+<entry>3</entry>
+</row>
+<row>
+<entry>TK/KIN-9</entry>
+<entry>5</entry>
+<entry>5</entry>
+<entry>0</entry>
+<entry>0</entry>
+</row>
+<row>
+<entry>Other/Worm1</entry>
+<entry>2</entry>
+<entry>1</entry>
+<entry>0</entry>
+<entry>0</entry>
+</row>
+<row>
+<entry>Other/Worm2</entry>
+<entry>3</entry>
+<entry>2</entry>
+<entry>0</entry>
+<entry>0</entry>
+</row>
+<row>
+<entry>Other/Worm3</entry>
+<entry>2</entry>
+<entry>1</entry>
+<entry>0</entry>
+<entry>0</entry>
+</row>
+<row>
+<entry>Other/Worm4</entry>
+<entry>1</entry>
+<entry>1</entry>
+<entry>0</entry>
+<entry>0</entry>
+</row>
+<row>
+<entry>Other/Worm5</entry>
+<entry>3</entry>
+<entry>0</entry>
+<entry>0</entry>
+<entry>0</entry>
+</row>
+<row>
+<entry><emphasis role="bold">Total</emphasis></entry>
+<entry><emphasis role="bold">217</emphasis></entry>
+<entry><emphasis role="bold">132</emphasis></entry>
+<entry><emphasis role="bold">17</emphasis></entry>
+<entry><emphasis role="bold">21</emphasis></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+        <para>These kinases may hold a key to several nematode-specific biological functions. In
+            several cases, the expansions appear recent, as the members are closely related by
+            sequence and chromosomal location, and several appear to have been generated since the
+                <emphasis>C. elegans</emphasis>/<emphasis>C. briggsae</emphasis> split. Many may
+            have reduced or no function: several have lost catalytic or other conserved residues and
+            20 of the 25 worm kinase pseudogenes are from these families, indicating a high rate of
+            gene turnover. A similar expansion is seen in <emphasis>C. briggsae</emphasis>, and
+            though it appears that this is more modest, some of this may be due to the preliminary
+            nature of the annotation and kinase analysis of this genome.</para>
+        <para>Reproductive functions often drive rapid evolution, and there is some evidence
+            implicating kinase expansions in nematode spermatogeneis. One CK1 gene
+            (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=spe-6" role="_blank">spe-6</ulink></emphasis>) and one Fer gene (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=spe-8" role="_blank">spe-8</ulink></emphasis>) function in
+            spermatogenesis, and half or more of these classes are selectively expressed in sperm by
+            microarray analysis (<link linkend="bib5">Muhlrad and Ward, 2002</link><!--; PMID 12019230-->; <link linkend="bib8">Reinke et al., 2000</link><!--; PMID 11030340-->; P. Muhlrad and S. Ward, pers. commun.).</para>
+        <para>Receptor guanylate cyclases (RGC) have a catalytically inactive kinase domain, and
+            have separately expanded in all three metazoans, but most dramatically in worm (<link linkend="bib4">Morton,
+            2004</link><!--; PMID 15126679-->). Most are uncharacterized, but several are expressed in highly
+            restricted sets of neurons and are implicated in chemosensation, and one
+            (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=daf-11" role="_blank">daf-11</ulink></emphasis>) is involved in dauer formation (<link linkend="bib12">Vowels and Thomas, 1992</link><!--;
+            PMID 1732156-->).</para>
+        <para>The KIN-9 (previously known as <emphasis>kin-6</emphasis>) and KIN-16 families encode
+            receptor tyrosine kinases, whose kinase domains and overall structure most resemble the
+            FGF receptor family. Some of the KIN-16 family have arrays of extracellular
+            immunoglobulin repeats, and some have vestigial extracellular regions (<link linkend="bib7">Popovici et al.,
+            1999</link><!--; PMID 10568743-->), while KIN-6 members have diverse novel extracellular regions. KIN-16
+            includes the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=old-1" role="_blank">old-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=old-2" role="_blank">old-2</ulink></emphasis> genes thought to
+            be involved in age and stress resistance (<link linkend="bib9">Rikke et al., 2000</link><!--; PMID 10779528-->). Many of
+            the KIN-16 genes are chromosomally clustered, and are poorly conserved in <emphasis>C.
+            briggsae</emphasis>, indicating a recent origin (<link linkend="figure2">Figure 2A</link>). The KIN-9 genes are not clustered and
+            all have <emphasis>briggsae</emphasis> orthologs.</para>
+    <mediaobject id="figure2" xreflabel="Figure 2">
+        <imageobject>
+            <imagedata width="6.5in" entityref="fig2" align="center"/>
+        </imageobject>
+        <textobject>
+            <phrase>figure 2</phrase>
+        </textobject> &fig2legend;</mediaobject>
+        <para>Of the 7 GSK3 members, 6 have clear <emphasis>briggsae</emphasis> homologs, but only
+            one (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gsk-3" role="_blank">gsk-3</ulink></emphasis>) has been characterized, and it acts in a defined Wnt
+            signaling pathway (<link linkend="bib10">Schlesinger et al., 1999</link><!--; PMID 10444600-->). The additional members may
+            act in an expanded Wnt-like pathway, as worms have other duplicated pathway members
+            including three members each of the beta-catenin and dishevelled families. Both CK1 and
+            Fer kinases are implicated in mammalian Wnt signaling, and some of their worm expansions
+            may also function in this pathway. The role of GSK3 in insulin signaling may also
+            correlate with the expansion of insulin genes in nematodes.</para>
+        <para>The expansion of the Jnk stress-response MAPK family is partially paralleled by the
+            expansion of the MAPKK (Ste7) family, which now includes 4 putative Jnk kinases (JNKKs).</para>
+	</sect1>
+    <sect1>
+        <title>The <emphasis>C. briggsae</emphasis> kinome</title>
+        <para>A preliminary analysis of <emphasis>C. briggsae</emphasis> predicted proteins (release
+            25; <link linkend="bib11">Stein et al., 2003</link><!--; PMID 14624247-->) indicates the presence of 341 kinase genes,
+            using the <emphasis>C. elegans</emphasis> kinome as blast query set. An additional 30 or
+            more kinases or kinase fragments were detected by direct search of the genome, but are
+            still poorly predicted. The majority (320) of <emphasis>C. briggsae</emphasis> kinases
+            appear orthologous to a single <emphasis>C. elegans</emphasis> kinase, by bidirectional
+            blast searches. The main differences between the two kinomes are in the
+            recently-expanded families, where the expansion appears to have continued since the
+            <emphasis>elegans</emphasis>/<emphasis>briggsae</emphasis> split. Of 21
+            <emphasis>briggsae</emphasis>-unique kinases, 19 are from expanded families, and 98 of
+            117 elegans-unique kinases are from expanded families. More thorough sequence analysis
+            will likely reveal more briggsae kinases and more ortholog pairs, but this data does
+            strongly support both continued gene birth and death, and sequence diversification,
+            within these expanded families. The difference between conserved and expanded families
+            is shown in <xref linkend="figure2"/>A of the nematode-specific KIN-16 family, in which
+            few pairs of obvious orthologs are seen between the two species. By contrast, the CDK
+            family has 13 members in both species, all of which pair off in an orthologous fashion
+                (<xref linkend="figure2"/>B).</para>
+    </sect1>
+    <sect1>
+        <title>Phosphatases</title>
+        <para>Phosphatases remove phosphates from kinase substrates, both reversing kinase-based
+            activation, and relieving kinase-mediated repressions. Phosphatases belong to several
+            different families, including a number of distinct phosphatase domains: the PTP (protein
+            tyrosine phosphatase), DSP (dual-specificity phosphatase which dephosphorylates both
+            tyrosine and serine/threonine) and several families of STP, or serine-threonine
+            phosphatases. While ‘phosphatome’ analysis lags behind that of the kinomes, an initial
+            survey of <emphasis>C. elegans</emphasis> phosphatases identified 83 PTPs, 26 DSPs and
+            65 STPs (<link linkend="bib6">Plowman et al., 1999</link><!--; PMID 10570119-->). The completion of two nematode genomes
+            and multiple other eukaryotic genomes now opens the door for comparative analysis to
+            identify additional <emphasis>C. elegans</emphasis> phosphatases and to compare their
+            distribution with those of other organisms, and with the expansions of their cognate kinomes.</para>
+    </sect1>
+    <sect1>
+        <title>References</title>
+		<para/>
+		&encyki_Refs;</sect1>
+<appendix>
+        <title>Appendix A: Classification of worm kinases</title>
+<table id="table4" frame="all" rules="all" cellpadding="0" cellspacing="0" width="100%">
+<title>Table 4. Classification of worm kinases</title>
+<tgroup cols="8">
+<colspec colname="c1" align="left" colwidth="1.1*"/>
+<colspec colname="c2" align="left" colwidth="1.2*"/>
+<colspec colname="c3" align="left" colwidth="1.3*"/>
+<colspec colname="c4" align="left" colwidth="1.3*"/>
+<colspec colname="c5" align="left" colwidth="1.5*"/>
+<colspec colname="c6" align="left" colwidth="2*"/>
+<colspec colname="c7" align="left" colwidth="1.8*"/>
+<colspec colname="c8" align="left" colwidth="2*"/>
+<thead>
+<row>
+<entry>Group</entry>
+<entry>Family</entry>
+<entry>Subfamily</entry>
+<entry># Kinases (domains)</entry>
+<entry>Distribution</entry>
+<entry>Names</entry>
+<entry>Other Wormbook entries</entry>
+<entry>Name/ function overview</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>AGC</entry>
+<entry/>
+<entry/>
+<entry>2</entry>
+<entry>Nematodes, Dictyos- telium</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F31E3.2;class=CDS" role="_blank">F31E3.2</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F28C10.3;class=CDS" role="_blank">F28C10.3</ulink></entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>AGC</entry>
+<entry>AKT</entry>
+<entry/>
+<entry>2</entry>
+<entry>All kinomes</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=akt-1" role="_blank">akt-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=akt-2" role="_blank">akt-2</ulink></emphasis></entry>
+<entry/>
+<entry>PI3K signaling</entry>
+</row>
+<row>
+<entry>AGC</entry>
+<entry>DMPK</entry>
+<entry>GEK</entry>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=K08B12.5;class=CDS" role="_blank">K08B12.5</ulink></entry>
+<entry/>
+<entry>Myotonic dystrophy protein kinase</entry>
+</row>
+<row>
+<entry>AGC</entry>
+<entry>DMPK</entry>
+<entry>ROCK</entry>
+<entry>1</entry>
+<entry>Metazoans, Dictyos- telium</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-502" role="_blank">let-502</ulink></emphasis></entry>
+<entry/>
+<entry>Myotonic dystrophy protein kinase/Rho kinase</entry>
+</row>
+<row>
+<entry>AGC</entry>
+<entry>GRK</entry>
+<entry>BARK</entry>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=grk-2" role="_blank">grk-2</ulink></emphasis></entry>
+<entry/>
+<entry>Beta adrenergic receptor kinase</entry>
+</row>
+<row>
+<entry>AGC</entry>
+<entry>GRK</entry>
+<entry>GRK</entry>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=grk-1" role="_blank">grk-1</ulink></emphasis></entry>
+<entry/>
+<entry>G protein coupled kinase</entry>
+</row>
+<row>
+<entry>AGC</entry>
+<entry>MAST</entry>
+<entry/>
+<entry>1</entry>
+<entry>Metazoans, Dictyos- telium</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=kin-4" role="_blank">kin-4</ulink></emphasis></entry>
+<entry/>
+<entry>Microtubule associated serine/ threonine kinase</entry>
+</row>
+<row>
+<entry>AGC</entry>
+<entry>NDR</entry>
+<entry/>
+<entry>2</entry>
+<entry>All kinomes</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sax-1" role="_blank">sax-1</ulink></emphasis>, <ulink url="http://www.wormbase.org/db/gene/gene?name=T20F10.1;class=CDS" role="_blank">T20F10.1</ulink></entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>AGC</entry>
+<entry>PDK1</entry>
+<entry/>
+<entry>2</entry>
+<entry>All kinomes</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pdk-1" role="_blank">pdk-1</ulink></emphasis>, <ulink url="http://www.wormbase.org/db/gene/gene?name=W04B5.5;class=CDS" role="_blank">W04B5.5</ulink></entry>
+<entry/>
+<entry>PI3K signaling</entry>
+</row>
+<row>
+<entry>AGC</entry>
+<entry>PKA</entry>
+<entry/>
+<entry>2</entry>
+<entry>All kinomes</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=kin-1" role="_blank">kin-1</ulink></emphasis>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F47F2.1;class=CDS" role="_blank">F47F2.1</ulink></entry>
+<entry/>
+<entry>cAMP-dependent protein kinase</entry>
+</row>
+<row>
+<entry>AGC</entry>
+<entry>PKC</entry>
+<entry>Alpha</entry>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pkc-2" role="_blank">pkc-2</ulink></emphasis></entry>
+<entry/>
+<entry>Protein kinase C isoforms</entry>
+</row>
+<row>
+<entry>AGC</entry>
+<entry>PKC</entry>
+<entry>Delta</entry>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tpa-1" role="_blank">tpa-1</ulink></emphasis></entry>
+<entry/>
+<entry>Protein kinase C isoforms</entry>
+</row>
+<row>
+<entry>AGC</entry>
+<entry>PKC</entry>
+<entry>Eta</entry>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=kin-13" role="_blank">kin-13</ulink></emphasis></entry>
+<entry/>
+<entry>Protein kinase C isoforms</entry>
+</row>
+<row>
+<entry>AGC</entry>
+<entry>PKC</entry>
+<entry>Iota</entry>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pkc-3" role="_blank">pkc-3</ulink></emphasis></entry>
+<entry/>
+<entry>Protein kinase C isoforms</entry>
+</row>
+<row>
+<entry>AGC</entry>
+<entry>PKG</entry>
+<entry/>
+<entry>2</entry>
+<entry>All metazoans</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-4" role="_blank">egl-4</ulink></emphasis>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C09G4.2;class=CDS" role="_blank">C09G4.2</ulink></entry>
+<entry/>
+<entry>cGMP-dependent protein kinase</entry>
+</row>
+<row>
+<entry>AGC</entry>
+<entry>PKN</entry>
+<entry/>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F46F6.2;class=CDS" role="_blank">F46F6.2</ulink></entry>
+<entry/>
+<entry>Protein kinase N</entry>
+</row>
+<row>
+<entry>AGC</entry>
+<entry>RSK</entry>
+<entry>MSK</entry>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C54G4.1;class=CDS" role="_blank">C54G4.1</ulink></entry>
+<entry/>
+<entry>Ribosomal S6 kinase</entry>
+</row>
+<row>
+<entry>AGC</entry>
+<entry>RSK</entry>
+<entry>p70</entry>
+<entry>2</entry>
+<entry>Metazoans, fungi</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y43D4A.6;class=CDS" role="_blank">Y43D4A.6</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=R04A9.5;class=CDS" role="_blank">R04A9.5</ulink></entry>
+<entry/>
+<entry>Ribosomal S6 kinase</entry>
+</row>
+<row>
+<entry>AGC</entry>
+<entry>RSK</entry>
+<entry>RSK</entry>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=T01H8.1a;class=CDS" role="_blank">T01H8.1a</ulink></entry>
+<entry/>
+<entry>Ribosomal S6 kinase</entry>
+</row>
+<row>
+<entry>AGC</entry>
+<entry>RSKL</entry>
+<entry/>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F55C5.7;class=CDS" role="_blank">F55C5.7</ulink></entry>
+<entry/>
+<entry>Ribosomal S6 kinase-like</entry>
+</row>
+<row>
+<entry>AGC</entry>
+<entry>SGK</entry>
+<entry/>
+<entry>1</entry>
+<entry>Nematodes, vertebrates, dictyos- telium</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=W10G6.2;class=CDS" role="_blank">W10G6.2</ulink></entry>
+<entry/>
+<entry>Serum/glucocor- ticoid-regulated kinase</entry>
+</row>
+<row>
+<entry>AGC</entry>
+<entry>YANK</entry>
+<entry/>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=M03C11.1;class=CDS" role="_blank">M03C11.1</ulink></entry>
+<entry/>
+<entry>Uncharacterized</entry>
+</row>
+<row>
+<entry>Atypical</entry>
+<entry>A6</entry>
+<entry/>
+<entry>2</entry>
+<entry>All kinomes</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-60" role="_blank">unc-60</ulink></emphasis>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F38E9.5;class=CDS" role="_blank">F38E9.5</ulink></entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>Atypical</entry>
+<entry>ABC1</entry>
+<entry>ABC1-A</entry>
+<entry>1</entry>
+<entry>All kinomes</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C35D10.4;class=CDS" role="_blank">C35D10.4</ulink></entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>Atypical</entry>
+<entry>ABC1</entry>
+<entry>ABC1-B</entry>
+<entry>1</entry>
+<entry>All kinomes</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=D2023.6;class=CDS" role="_blank">D2023.6</ulink></entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>Atypical</entry>
+<entry>ABC1</entry>
+<entry>ABC1-C</entry>
+<entry>1</entry>
+<entry>All but insects</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y32H12A.7;class=CDS" role="_blank">Y32H12A.7</ulink></entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>Atypical</entry>
+<entry>Alpha</entry>
+<entry>eEF2K</entry>
+<entry>1</entry>
+<entry>Nematodes, vertebrates, dictyos- telium</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=efk-1" role="_blank">efk-1</ulink></emphasis></entry>
+<entry/>
+<entry>Elongation factor 2 kinase</entry>
+</row>
+<row>
+<entry>Atypical</entry>
+<entry>BRD</entry>
+<entry/>
+<entry>3</entry>
+<entry>Metazoans, Dictyos- telium</entry>
+<entry>Y119C1B.8, <ulink url="http://www.wormbase.org/db/gene/gene?name=F57C7.1b;class=CDS" role="_blank">F57C7.1b</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F13C5.2;class=CDS" role="_blank">F13C5.2</ulink></entry>
+<entry/>
+<entry>Bromodo-main- containing kinase</entry>
+</row>
+<row>
+<entry>Atypical</entry>
+<entry>PDHK</entry>
+<entry/>
+<entry>2</entry>
+<entry>Metazoans, fungi</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=ZK370.5;class=CDS" role="_blank">ZK370.5</ulink>, aSWK467</entry>
+<entry/>
+<entry>Pyruvate dehydrogenase kinase</entry>
+</row>
+<row>
+<entry>Atypical</entry>
+<entry>PIKK</entry>
+<entry>ATM</entry>
+<entry>1</entry>
+<entry>Metazoans, fungi</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=atm-1" role="_blank">atm-1</ulink></emphasis></entry>
+<entry/>
+<entry>DNA damage response</entry>
+</row>
+<row>
+<entry>Atypical</entry>
+<entry>PIKK</entry>
+<entry>ATR</entry>
+<entry>1</entry>
+<entry>All kinomes</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=atl-1" role="_blank">atl-1</ulink></emphasis></entry>
+<entry/>
+<entry>DNA damage response</entry>
+</row>
+<row>
+<entry>Atypical</entry>
+<entry>PIKK</entry>
+<entry>FRAP</entry>
+<entry>1</entry>
+<entry>All kinomes</entry>
+<entry>B0261.2</entry>
+<entry/>
+<entry>Metabolic regulation (aka TOR)</entry>
+</row>
+<row>
+<entry>Atypical</entry>
+<entry>PIKK</entry>
+<entry>SMG1</entry>
+<entry>1</entry>
+<entry>Metazoans, Dictyos- telium</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=smg-1" role="_blank">smg-1</ulink></emphasis></entry>
+<entry/>
+<entry>mRNA surveillance</entry>
+</row>
+<row>
+<entry>Atypical</entry>
+<entry>PIKK</entry>
+<entry>TRRAP</entry>
+<entry>1</entry>
+<entry>All kinomes</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C47D12.1;class=CDS" role="_blank">C47D12.1</ulink></entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>Atypical</entry>
+<entry>RIO</entry>
+<entry>RIO1</entry>
+<entry>1</entry>
+<entry>All kinomes</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=M01B12.5;class=CDS" role="_blank">M01B12.5</ulink></entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>Atypical</entry>
+<entry>RIO</entry>
+<entry>RIO2</entry>
+<entry>1</entry>
+<entry>All kinomes</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y105E8B.3;class=CDS" role="_blank">Y105E8B.3</ulink></entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>Atypical</entry>
+<entry>RIO</entry>
+<entry>RIO3</entry>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=ZK632.3;class=CDS" role="_blank">ZK632.3</ulink></entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>Atypical</entry>
+<entry>TAF1</entry>
+<entry/>
+<entry>1</entry>
+<entry>All kinomes</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=taf-1" role="_blank">taf-1</ulink></emphasis></entry>
+<entry/>
+<entry>Basal transcription: TFIID associated factor.</entry>
+</row>
+<row>
+<entry>CAMK</entry>
+<entry>CAMK1</entry>
+<entry/>
+<entry>1</entry>
+<entry>All kinomes</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cmk-1" role="_blank">cmk-1</ulink></emphasis></entry>
+<entry/>
+<entry>Calmodulin- dependent protein kinase 1</entry>
+</row>
+<row>
+<entry>CAMK</entry>
+<entry>CAMK2</entry>
+<entry/>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-43" role="_blank">unc-43</ulink></emphasis></entry>
+<entry/>
+<entry>Calmodulin- dependent protein kinase 1</entry>
+</row>
+<row>
+<entry>CAMK</entry>
+<entry>CAMKL</entry>
+<entry>AMPK</entry>
+<entry>2</entry>
+<entry>All kinomes</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=aak-1" role="_blank">aak-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=aak-2" role="_blank">aak-2</ulink></emphasis></entry>
+<entry/>
+<entry>Metabolic regulation</entry>
+</row>
+<row>
+<entry>CAMK</entry>
+<entry>CAMKL</entry>
+<entry>BRSK</entry>
+<entry>1</entry>
+<entry>Metazoans, Dictyos- telium</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sad-1" role="_blank">sad-1</ulink></emphasis></entry>
+<entry/>
+<entry>Neuronal vesicle release</entry>
+</row>
+<row>
+<entry>CAMK</entry>
+<entry>CAMKL</entry>
+<entry>CHK1</entry>
+<entry>5 (7)</entry>
+<entry>Metazoans, fungi</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=chk-1" role="_blank">chk-1</ulink></emphasis>, <ulink url="http://www.wormbase.org/db/gene/gene?name=Y43D4A.6;class=CDS" role="_blank">Y43D4A.6</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=R02C2.1;class=CDS" role="_blank">R02C2.1</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=R02C2.2;class=CDS" role="_blank">R02C2.2</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=DC2.7;class=CDS" role="_blank">DC2.7</ulink></entry>
+<entry/>
+<entry>Cell cycle checkpoint kinase 1</entry>
+</row>
+<row>
+<entry>CAMK</entry>
+<entry>CAMKL</entry>
+<entry>LKB</entry>
+<entry>1</entry>
+<entry>Metazoans, Dictyos- telium</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=par-4" role="_blank">par-4</ulink></emphasis></entry>
+<entry/>
+<entry>Activator of AMPK</entry>
+</row>
+<row>
+<entry>CAMK</entry>
+<entry>CAMKL</entry>
+<entry>MARK</entry>
+<entry>2</entry>
+<entry>All kinomes</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=par-1" role="_blank">par-1</ulink></emphasis>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F23C8.8;class=CDS" role="_blank">F23C8.8</ulink></entry>
+<entry><ulink url="http://www.wormbook.org/chapters/www_asymcelldiv/asymcelldiv.html">Asymmetric cell division and axis formation in the embryo</ulink></entry>
+<entry>Microtubule affinity regulating kinase</entry>
+</row>
+<row>
+<entry>CAMK</entry>
+<entry>CAMKL</entry>
+<entry>MELK</entry>
+<entry>1</entry>
+<entry>Nematodes and vertebrates</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=W03G1.6;class=CDS" role="_blank">W03G1.6</ulink></entry>
+<entry/>
+<entry>Maternal embryonic leucine zipper kinase</entry>
+</row>
+<row>
+<entry>CAMK</entry>
+<entry>CAMKL</entry>
+<entry>NIM1</entry>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F49C5.4;class=CDS" role="_blank">F49C5.4</ulink></entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>CAMK</entry>
+<entry>CAMKL</entry>
+<entry>NuaK</entry>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=B0496.3;class=CDS" role="_blank">B0496.3</ulink></entry>
+<entry/>
+<entry>Uncharacterized</entry>
+</row>
+<row>
+<entry>CAMK</entry>
+<entry>CAMKL</entry>
+<entry>QIK</entry>
+<entry>1</entry>
+<entry>Metazoans, Dictyos- telium</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=kin-29" role="_blank">kin-29</ulink></emphasis></entry>
+<entry/>
+<entry>Qin induced kinase</entry>
+</row>
+<row>
+<entry>CAMK</entry>
+<entry>CAMKL</entry>
+<entry>SNRK</entry>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=ZK524.4;class=CDS" role="_blank">ZK524.4</ulink></entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>CAMK</entry>
+<entry>CASK</entry>
+<entry/>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-2" role="_blank">lin-2</ulink></emphasis></entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>CAMK</entry>
+<entry>DAPK</entry>
+<entry/>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=K12C11.4;class=CDS" role="_blank">K12C11.4</ulink></entry>
+<entry/>
+<entry>Death-associated protein kinase</entry>
+</row>
+<row>
+<entry>CAMK</entry>
+<entry>DCAM- KL</entry>
+<entry/>
+<entry>2</entry>
+<entry>All metazoans</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=zyg-8" role="_blank">zyg-8</ulink></emphasis>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F32D8.1;class=CDS" role="_blank">F32D8.1</ulink></entry>
+<entry/>
+<entry>Doublecortin and CAMK-like</entry>
+</row>
+<row>
+<entry>CAMK</entry>
+<entry>MAPK- APK</entry>
+<entry>MAPK- APK</entry>
+<entry>2</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=K08F8.1;class=CDS" role="_blank">K08F8.1</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C44C8.6;class=CDS" role="_blank">C44C8.6</ulink></entry>
+<entry/>
+<entry>MAPK activated protein kinase</entry>
+</row>
+<row>
+<entry>CAMK</entry>
+<entry>MAPK- APK</entry>
+<entry>MNK</entry>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=R166.5;class=CDS" role="_blank">R166.5</ulink></entry>
+<entry/>
+<entry>MAPK activated protein kinase</entry>
+</row>
+<row>
+<entry>CAMK</entry>
+<entry>MLCK</entry>
+<entry/>
+<entry>4 (5)</entry>
+<entry>All metazoans</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-22" role="_blank">unc-22</ulink></emphasis>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C24G7.5;class=CDS" role="_blank">C24G7.5</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=ZC373.4;class=CDS" role="_blank">ZC373.4</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F12F3.2;class=CDS" role="_blank">F12F3.2</ulink></entry>
+<entry/>
+<entry>Myosin light chain kinase</entry>
+</row>
+<row>
+<entry>CAMK</entry>
+<entry>PHK</entry>
+<entry/>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y50D7A.3;class=CDS" role="_blank">Y50D7A.3</ulink></entry>
+<entry/>
+<entry>Phosphorylase kinase</entry>
+</row>
+<row>
+<entry>CAMK</entry>
+<entry>PIM</entry>
+<entry/>
+<entry>2</entry>
+<entry>Nematodes and vertebrates</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=prk-1" role="_blank">prk-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=prk-2" role="_blank">prk-2</ulink></emphasis></entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>CAMK</entry>
+<entry>PKD</entry>
+<entry/>
+<entry>2</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=T25E12.4;class=CDS" role="_blank">T25E12.4</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=W09C5.5;class=CDS" role="_blank">W09C5.5</ulink></entry>
+<entry/>
+<entry>Protein kinase D</entry>
+</row>
+<row>
+<entry>CAMK</entry>
+<entry>PSK</entry>
+<entry/>
+<entry>1</entry>
+<entry>Nematodes and vertebrates</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=R06A10.4;class=CDS" role="_blank">R06A10.4</ulink></entry>
+<entry/>
+<entry>Protein serine kinase</entry>
+</row>
+<row>
+<entry>CAMK</entry>
+<entry>RAD53</entry>
+<entry/>
+<entry>2</entry>
+<entry>Metazoans, fungi</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=chk-2" role="_blank">chk-2</ulink></emphasis>, <ulink url="http://www.wormbase.org/db/gene/gene?name=T08D2.7;class=CDS" role="_blank">T08D2.7</ulink></entry>
+<entry/>
+<entry>DNA damage checkpoint</entry>
+</row>
+<row>
+<entry>CAMK</entry>
+<entry>RSKb</entry>
+<entry>MSKb</entry>
+<entry>0(1)</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C54G4.1;class=CDS" role="_blank">C54G4.1</ulink></entry>
+<entry/>
+<entry>Second domain of RSK kinases</entry>
+</row>
+<row>
+<entry>CAMK</entry>
+<entry>RSKb</entry>
+<entry>RSKb</entry>
+<entry>0(1)</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=T01H8.1a;class=CDS" role="_blank">T01H8.1a</ulink></entry>
+<entry/>
+<entry>Second domain of RSK kinases</entry>
+</row>
+<row>
+<entry>CAMK</entry>
+<entry>TSSK</entry>
+<entry/>
+<entry>3</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=B0511.4;class=CDS" role="_blank">B0511.4</ulink>, W02B12.12, <ulink url="http://www.wormbase.org/db/gene/gene?name=Y38H8A.4;class=CDS" role="_blank">Y38H8A.4</ulink></entry>
+<entry/>
+<entry>Testis-specific serine kinase</entry>
+</row>
+<row>
+<entry>CK1</entry>
+<entry>Unique</entry>
+<entry/>
+<entry>6</entry>
+<entry>Some metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=T15B12.2;class=CDS" role="_blank">T15B12.2</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=ZK507.3;class=CDS" role="_blank">ZK507.3</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C25H3.1;class=CDS" role="_blank">C25H3.1</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F16B12.5;class=CDS" role="_blank">F16B12.5</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=ZK507.1;class=CDS" role="_blank">ZK507.1</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=K09E4.1;class=CDS" role="_blank">K09E4.1</ulink></entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>CK1</entry>
+<entry>CK1</entry>
+<entry>CK1-A</entry>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C03C10.1;class=CDS" role="_blank">C03C10.1</ulink></entry>
+<entry/>
+<entry>Cell kinase 1/Casein kinase 1</entry>
+</row>
+<row>
+<entry>CK1</entry>
+<entry>CK1</entry>
+<entry>CK1-D</entry>
+<entry>1</entry>
+<entry>All kinomes</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F46F2.2;class=CDS" role="_blank">F46F2.2</ulink></entry>
+<entry/>
+<entry>Cell kinase 1/Casein kinase 1</entry>
+</row>
+<row>
+<entry>CK1</entry>
+<entry>CK1</entry>
+<entry>CK1-G</entry>
+<entry>1</entry>
+<entry>Metazoans, fungi</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y106G6E.6;class=CDS" role="_blank">Y106G6E.6</ulink></entry>
+<entry/>
+<entry>Cell kinase 1/Casein kinase 1</entry>
+</row>
+<row>
+<entry>CK1</entry>
+<entry>Dual</entry>
+<entry/>
+<entry>3 (6)</entry>
+<entry>Nematodes</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F59A6.4;class=CDS" role="_blank">F59A6.4</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=T05A7.6;class=CDS" role="_blank">T05A7.6</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=H05L14.1;class=CDS" role="_blank">H05L14.1</ulink></entry>
+<entry/>
+<entry>Dual-domain CK1 kinase subfamily</entry>
+</row>
+<row>
+<entry>CK1</entry>
+<entry>TTBK</entry>
+<entry/>
+<entry>1</entry>
+<entry>Metazoans, Dictyos- telium</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=R90.1;class=CDS" role="_blank">R90.1</ulink></entry>
+<entry/>
+<entry>Tau tubulin kinase</entry>
+</row>
+<row>
+<entry>CK1</entry>
+<entry>TTBKL</entry>
+<entry/>
+<entry>31</entry>
+<entry>Nematodes</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=M7.7;class=CDS" role="_blank">M7.7</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=B0207.7;class=CDS" role="_blank">B0207.7</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F35C11.3;class=CDS" role="_blank">F35C11.3</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=Y71F9AL.2;class=CDS" role="_blank">Y71F9AL.2</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C04G2.2;class=CDS" role="_blank">C04G2.2</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C45G9.1;class=CDS" role="_blank">C45G9.1</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F32B6.10;class=CDS" role="_blank">F32B6.10</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=W01B6.2;class=CDS" role="_blank">W01B6.2</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C05C12.1;class=CDS" role="_blank">C05C12.1</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C49C8.1;class=CDS" role="_blank">C49C8.1</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=Y73B6A.2;class=CDS" role="_blank">Y73B6A.2</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=D2024.1;class=CDS" role="_blank">D2024.1</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=Y47G6A.13;class=CDS" role="_blank">Y47G6A.13</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F54H5.2;class=CDS" role="_blank">F54H5.2</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C56C10.6;class=CDS" role="_blank">C56C10.6</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C53A5.4;class=CDS" role="_blank">C53A5.4</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=K06H7.8;class=CDS" role="_blank">K06H7.8</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=D2045.5;class=CDS" role="_blank">D2045.5</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=W09C3.1;class=CDS" role="_blank">W09C3.1</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=R10D12.10;class=CDS" role="_blank">R10D12.10</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=T11F8.4;class=CDS" role="_blank">T11F8.4</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=ZC581.2;class=CDS" role="_blank">ZC581.2</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=T05C12.1;class=CDS" role="_blank">T05C12.1</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=W06F12.3;class=CDS" role="_blank">W06F12.3</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C03C10.2;class=CDS" role="_blank">C03C10.2</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=T19D12.5;class=CDS" role="_blank">T19D12.5</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=ZK666.8;class=CDS" role="_blank">ZK666.8</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=ZK354.6;class=CDS" role="_blank">ZK354.6</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F26A1.4;class=CDS" role="_blank">F26A1.4</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C14A4.13;class=CDS" role="_blank">C14A4.13</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=W03G9.5;class=CDS" role="_blank">W03G9.5</ulink></entry>
+<entry/>
+<entry>Tau tubulin kinase-like</entry>
+</row>
+<row>
+<entry>CK1</entry>
+<entry>VRK</entry>
+<entry/>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F28B12.3;class=CDS" role="_blank">F28B12.3</ulink></entry>
+<entry/>
+<entry>Vaccinia-related kinase</entry>
+</row>
+<row>
+<entry>CK1</entry>
+<entry>Worm10</entry>
+<entry/>
+<entry>2</entry>
+<entry>Nematodes</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F26A1.3;class=CDS" role="_blank">F26A1.3</ulink>, F25F2.1</entry>
+<entry/>
+<entry>Uncharacterized</entry>
+</row>
+<row>
+<entry>CK1</entry>
+<entry>Worm11</entry>
+<entry/>
+<entry>1</entry>
+<entry>Nematodes</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=K11C4.1;class=CDS" role="_blank">K11C4.1</ulink></entry>
+<entry/>
+<entry>Uncharacterized</entry>
+</row>
+<row>
+<entry>CK1</entry>
+<entry>Worm6</entry>
+<entry/>
+<entry>28</entry>
+<entry>Nematodes</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y38H8A.3;class=CDS" role="_blank">Y38H8A.3</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C39H7.1;class=CDS" role="_blank">C39H7.1</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=ZK596.2;class=CDS" role="_blank">ZK596.2</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C50F4.10;class=CDS" role="_blank">C50F4.10</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C08F8.6;class=CDS" role="_blank">C08F8.6</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F36H12.8;class=CDS" role="_blank">F36H12.8</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=R13H9.5;class=CDS" role="_blank">R13H9.5</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=Y69F12A.1;class=CDS" role="_blank">Y69F12A.1</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=B0218.5;class=CDS" role="_blank">B0218.5</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F36H12.9;class=CDS" role="_blank">F36H12.9</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=R13H9.6;class=CDS" role="_blank">R13H9.6</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=T09B4.7;class=CDS" role="_blank">T09B4.7</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C09D4.3;class=CDS" role="_blank">C09D4.3</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C55B7.10;class=CDS" role="_blank">C55B7.10</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F41G3.5;class=CDS" role="_blank">F41G3.5</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F38E1.3;class=CDS" role="_blank">F38E1.3</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C27D8.1;class=CDS" role="_blank">C27D8.1</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=Y39G8C.2;class=CDS" role="_blank">Y39G8C.2</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F53C3.1;class=CDS" role="_blank">F53C3.1</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F33D11.7;class=CDS" role="_blank">F33D11.7</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C34B2.3;class=CDS" role="_blank">C34B2.3</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C49C3.2;class=CDS" role="_blank">C49C3.2</ulink>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=spe-6" role="_blank">spe-6</ulink></emphasis>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C09B9.4;class=CDS" role="_blank">C09B9.4</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=ZK354.2;class=CDS" role="_blank">ZK354.2</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=Y65B4A.9;class=CDS" role="_blank">Y65B4A.9</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F59E12.3;class=CDS" role="_blank">F59E12.3</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C38C3.4;class=CDS" role="_blank">C38C3.4</ulink></entry>
+<entry/>
+<entry>Uncharacterized</entry>
+</row>
+<row>
+<entry>CK1</entry>
+<entry>Worm7</entry>
+<entry/>
+<entry>2</entry>
+<entry>Nematodes</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=T01H10.4;class=CDS" role="_blank">T01H10.4</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=ZC373.3;class=CDS" role="_blank">ZC373.3</ulink></entry>
+<entry/>
+<entry>Uncharacterized</entry>
+</row>
+<row>
+<entry>CK1</entry>
+<entry>Worm8</entry>
+<entry/>
+<entry>3</entry>
+<entry>Nematodes</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F22F1.2;class=CDS" role="_blank">F22F1.2</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F39F10.3;class=CDS" role="_blank">F39F10.3</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F39F10.2;class=CDS" role="_blank">F39F10.2</ulink></entry>
+<entry/>
+<entry>Uncharacterized</entry>
+</row>
+<row>
+<entry>CK1</entry>
+<entry>Worm9</entry>
+<entry/>
+<entry>2</entry>
+<entry>Nematodes</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=K04C1.5;class=CDS" role="_blank">K04C1.5</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=E02H4.6;class=CDS" role="_blank">E02H4.6</ulink></entry>
+<entry/>
+<entry>Uncharacterized</entry>
+</row>
+<row>
+<entry>CMGC</entry>
+<entry/>
+<entry/>
+<entry>1</entry>
+<entry>Nematodes, fungi</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F52B5.2;class=CDS" role="_blank">F52B5.2</ulink></entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>CMGC</entry>
+<entry>CDK</entry>
+<entry/>
+<entry>1</entry>
+<entry>Metazoans, fungi</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=H01G02.2;class=CDS" role="_blank">H01G02.2</ulink></entry>
+<entry/>
+<entry>Cyclin dependent kinase</entry>
+</row>
+<row>
+<entry>CMGC</entry>
+<entry>CDK</entry>
+<entry>CDC2</entry>
+<entry>2</entry>
+<entry>All kinomes</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cdk-1" role="_blank">cdk-1</ulink></emphasis>, <ulink url="http://www.wormbase.org/db/gene/gene?name=K03E5.3;class=CDS" role="_blank">K03E5.3</ulink></entry>
+<entry/>
+<entry>Cell cycle: cyclin dependent kinase</entry>
+</row>
+<row>
+<entry>CMGC</entry>
+<entry>CDK</entry>
+<entry>CDK4</entry>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cdk-4" role="_blank">cdk-4</ulink></emphasis></entry>
+<entry/>
+<entry>Cell cycle: cyclin dependent kinase</entry>
+</row>
+<row>
+<entry>CMGC</entry>
+<entry>CDK</entry>
+<entry>CDK5</entry>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cdk-5" role="_blank">cdk-5</ulink></emphasis></entry>
+<entry/>
+<entry>Cyclin dependent kinase</entry>
+</row>
+<row>
+<entry>CMGC</entry>
+<entry>CDK</entry>
+<entry>CDK7</entry>
+<entry>1</entry>
+<entry>All kinomes</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cdk-7" role="_blank">cdk-7</ulink></emphasis></entry>
+<entry/>
+<entry>Cell cycle: cyclin dependent kinase</entry>
+</row>
+<row>
+<entry>CMGC</entry>
+<entry>CDK</entry>
+<entry>CDK8</entry>
+<entry>1</entry>
+<entry>All kinomes</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F39H11.3;class=CDS" role="_blank">F39H11.3</ulink></entry>
+<entry/>
+<entry>Cell cycle: cyclin dependent kinase</entry>
+</row>
+<row>
+<entry>CMGC</entry>
+<entry>CDK</entry>
+<entry>CDK9</entry>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=H25P06.2;class=CDS" role="_blank">H25P06.2</ulink></entry>
+<entry/>
+<entry>Cell cycle: cyclin dependent kinase</entry>
+</row>
+<row>
+<entry>CMGC</entry>
+<entry>CDK</entry>
+<entry>CRK7</entry>
+<entry>1</entry>
+<entry>All kinomes</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=B0285.1;class=CDS" role="_blank">B0285.1</ulink></entry>
+<entry/>
+<entry>Cell cycle: cyclin dependent kinase</entry>
+</row>
+<row>
+<entry>CMGC</entry>
+<entry>CDK</entry>
+<entry>PITSLRE</entry>
+<entry>2</entry>
+<entry>Metazoans, Dictyos- telium</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=ZC504.3;class=CDS" role="_blank">ZC504.3</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=B0495.2;class=CDS" role="_blank">B0495.2</ulink></entry>
+<entry/>
+<entry>Cell cycle: cyclin dependent kinase</entry>
+</row>
+<row>
+<entry>CMGC</entry>
+<entry>CDK</entry>
+<entry>TAIRE</entry>
+<entry>2</entry>
+<entry>All metazoans</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pct-1" role="_blank">pct-1</ulink></emphasis>, <ulink url="http://www.wormbase.org/db/gene/gene?name=ZC123.4;class=CDS" role="_blank">ZC123.4</ulink></entry>
+<entry/>
+<entry>Cell cycle: cyclin dependent kinase</entry>
+</row>
+<row>
+<entry>CMGC</entry>
+<entry>CDKL</entry>
+<entry/>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y42A5A.4;class=CDS" role="_blank">Y42A5A.4</ulink></entry>
+<entry/>
+<entry>Cyclin dependent kinase-like</entry>
+</row>
+<row>
+<entry>CMGC</entry>
+<entry>CLK</entry>
+<entry/>
+<entry>3</entry>
+<entry>All kinomes</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C16A11.3;class=CDS" role="_blank">C16A11.3</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=Y111B2A.1;class=CDS" role="_blank">Y111B2A.1</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=E02H4.3;class=CDS" role="_blank">E02H4.3</ulink></entry>
+<entry/>
+<entry>CDC-like kinase, involved in splicing</entry>
+</row>
+<row>
+<entry>CMGC</entry>
+<entry>Dyrk</entry>
+<entry>Dyrk1</entry>
+<entry>1</entry>
+<entry>Metazoans, Dictyos- telium</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mbk-1" role="_blank">mbk-1</ulink></emphasis></entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>CMGC</entry>
+<entry>Dyrk</entry>
+<entry>Dyrk2</entry>
+<entry>3</entry>
+<entry>Metazoans, Dictyos- telium</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mbk-2" role="_blank">mbk-2</ulink></emphasis>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C36B7.1;class=CDS" role="_blank">C36B7.1</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C36B7.2;class=CDS" role="_blank">C36B7.2</ulink></entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>CMGC</entry>
+<entry>Dyrk</entry>
+<entry>HIPK</entry>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=hpk-1" role="_blank">hpk-1</ulink></emphasis></entry>
+<entry/>
+<entry>Hypoxia-induc- ible protein kinase</entry>
+</row>
+<row>
+<entry>CMGC</entry>
+<entry>Dyrk</entry>
+<entry>PRP4</entry>
+<entry>1</entry>
+<entry>Metazoans, Dictyos- telium</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F22D6.5;class=CDS" role="_blank">F22D6.5</ulink></entry>
+<entry/>
+<entry>mRNA processing</entry>
+</row>
+<row>
+<entry>CMGC</entry>
+<entry>GSK</entry>
+<entry/>
+<entry>7</entry>
+<entry>All kinomes</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gsk-3" role="_blank">gsk-3</ulink></emphasis>, <ulink url="http://www.wormbase.org/db/gene/gene?name=R03D7.5;class=CDS" role="_blank">R03D7.5</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=Y106G6D.4;class=CDS" role="_blank">Y106G6D.4</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C44H4.6;class=CDS" role="_blank">C44H4.6</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=Y106G6E.1;class=CDS" role="_blank">Y106G6E.1</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C36B1.10;class=CDS" role="_blank">C36B1.10</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F21F3.2;class=CDS" role="_blank">F21F3.2</ulink></entry>
+<entry/>
+<entry>Glycogen synthase kinase 3</entry>
+</row>
+<row>
+<entry>CMGC</entry>
+<entry>MAPK</entry>
+<entry/>
+<entry>3</entry>
+<entry>Some metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=W06B3.2;class=CDS" role="_blank">W06B3.2</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F09C12.2;class=CDS" role="_blank">F09C12.2</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C04G6.1;class=CDS" role="_blank">C04G6.1</ulink></entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>CMGC</entry>
+<entry>MAPK</entry>
+<entry>Erk</entry>
+<entry>1</entry>
+<entry>All kinomes</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mpk-1" role="_blank">mpk-1</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbook.org/chapters/www_RTKRasMAPKsignaling/RTKRasMAPKsignaling.html">RTKRas/ MAP kinase signaling</ulink></entry>
+<entry>Growth factor response MAPK</entry>
+</row>
+<row>
+<entry>CMGC</entry>
+<entry>MAPK</entry>
+<entry>Erk7</entry>
+<entry>1</entry>
+<entry>Metazoans, Dictyos- telium</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C05D10.2;class=CDS" role="_blank">C05D10.2</ulink></entry>
+<entry/>
+<entry>Variant MAPK</entry>
+</row>
+<row>
+<entry>CMGC</entry>
+<entry>MAPK</entry>
+<entry>Jnk</entry>
+<entry>5</entry>
+<entry>All metazoans</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=jnk-1" role="_blank">jnk-1</ulink></emphasis>, <ulink url="http://www.wormbase.org/db/gene/gene?name=T07A9.3;class=CDS" role="_blank">T07A9.3</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=Y51B9A.9;class=CDS" role="_blank">Y51B9A.9</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=ZC416.4;class=CDS" role="_blank">ZC416.4</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C49C3.10;class=CDS" role="_blank">C49C3.10</ulink></entry>
+<entry><ulink url="http://www.wormbook.org/chapters/www_signalingimmuneresponse/signalingimmuneresponse.html">Signaling in the immune response</ulink></entry>
+<entry>Stress-response MAPK</entry>
+</row>
+<row>
+<entry>CMGC</entry>
+<entry>MAPK</entry>
+<entry>nmo</entry>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lit-1" role="_blank">lit-1</ulink></emphasis></entry>
+<entry/>
+<entry>Variant MAPK</entry>
+</row>
+<row>
+<entry>CMGC</entry>
+<entry>MAPK</entry>
+<entry>p38</entry>
+<entry>3</entry>
+<entry>Metazoans, fungi</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pmk-1" role="_blank">pmk-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pmk-2" role="_blank">pmk-2</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pmk-3" role="_blank">pmk-3</ulink></emphasis></entry>
+<entry/>
+<entry>Stress-response MAPK</entry>
+</row>
+<row>
+<entry>CMGC</entry>
+<entry>RCK</entry>
+<entry/>
+<entry>1</entry>
+<entry>All kinomes</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=M04C9.5;class=CDS" role="_blank">M04C9.5</ulink></entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>CMGC</entry>
+<entry>SRPK</entry>
+<entry/>
+<entry>1</entry>
+<entry>All kinomes</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=spk-1" role="_blank">spk-1</ulink></emphasis></entry>
+<entry/>
+<entry>mRNA splicing</entry>
+</row>
+<row>
+<entry>Other</entry>
+<entry>Unique</entry>
+<entry/>
+<entry>10</entry>
+<entry>All kinomes</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=flr-4" role="_blank">flr-4</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=zyg-1" role="_blank">zyg-1</ulink></emphasis>, <ulink url="http://www.wormbase.org/db/gene/gene?name=Y106G6A.1;class=CDS" role="_blank">Y106G6A.1</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=D2045.7;class=CDS" role="_blank">D2045.7</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=K09A9.1;class=CDS" role="_blank">K09A9.1</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=Y53F4B.1;class=CDS" role="_blank">Y53F4B.1</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=K11H12.9;class=CDS" role="_blank">K11H12.9</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=K02E10.7;class=CDS" role="_blank">K02E10.7</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F37E3.3;class=CDS" role="_blank">F37E3.3</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C29H12.5;class=CDS" role="_blank">C29H12.5</ulink></entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>Other</entry>
+<entry>Aur</entry>
+<entry/>
+<entry>2</entry>
+<entry>All kinomes</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=air-1" role="_blank">air-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=air-2" role="_blank">air-2</ulink></emphasis></entry>
+<entry/>
+<entry>Cell cycle/chrom- osomal stability</entry>
+</row>
+<row>
+<entry>Other</entry>
+<entry>Bub</entry>
+<entry/>
+<entry>1</entry>
+<entry>All kinomes</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=bub-1" role="_blank">bub-1</ulink></emphasis></entry>
+<entry/>
+<entry>Cell cycle</entry>
+</row>
+<row>
+<entry>Other</entry>
+<entry>Bud32</entry>
+<entry/>
+<entry>1</entry>
+<entry>All kinomes</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F52C12.2;class=CDS" role="_blank">F52C12.2</ulink></entry>
+<entry/>
+<entry>Essential homolog of yeast Bud32.</entry>
+</row>
+<row>
+<entry>Other</entry>
+<entry>CAMKK</entry>
+<entry>Meta</entry>
+<entry>1</entry>
+<entry>Metazoans, Dictyos- telium</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ckk-1" role="_blank">ckk-1</ulink></emphasis></entry>
+<entry/>
+<entry>CAMK kinase</entry>
+</row>
+<row>
+<entry>Other</entry>
+<entry>CDC7</entry>
+<entry/>
+<entry>1</entry>
+<entry>All kinomes</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C34G6.5;class=CDS" role="_blank">C34G6.5</ulink></entry>
+<entry/>
+<entry>Variant cyclin- dependent kinase</entry>
+</row>
+<row>
+<entry>Other</entry>
+<entry>CK2</entry>
+<entry/>
+<entry>1</entry>
+<entry>All kinomes</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=B0205.7;class=CDS" role="_blank">B0205.7</ulink></entry>
+<entry/>
+<entry>Cell kinase 2/Casein kinase 2</entry>
+</row>
+<row>
+<entry>Other</entry>
+<entry>Haspin</entry>
+<entry/>
+<entry>13</entry>
+<entry>All kinomes</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y18H1A.10;class=CDS" role="_blank">Y18H1A.10</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=K08B4.5;class=CDS" role="_blank">K08B4.5</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C50H2.7;class=CDS" role="_blank">C50H2.7</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=T05E8.2;class=CDS" role="_blank">T05E8.2</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=ZK177.2;class=CDS" role="_blank">ZK177.2</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=H12I13.1;class=CDS" role="_blank">H12I13.1</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=Y48B6A.10;class=CDS" role="_blank">Y48B6A.10</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C01H6.9;class=CDS" role="_blank">C01H6.9</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F22H10.5;class=CDS" role="_blank">F22H10.5</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C04G2.10;class=CDS" role="_blank">C04G2.10</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=Y40A1A.1;class=CDS" role="_blank">Y40A1A.1</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=Y73B6A.1;class=CDS" role="_blank">Y73B6A.1</ulink>, aSWK457</entry>
+<entry/>
+<entry>Nuclear kinase; meiosis?</entry>
+</row>
+<row>
+<entry>Other</entry>
+<entry>IRE</entry>
+<entry/>
+<entry>1</entry>
+<entry>All kinomes</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ire-1" role="_blank">ire-1</ulink></emphasis></entry>
+<entry/>
+<entry>Unfolded protein response</entry>
+</row>
+<row>
+<entry>Other</entry>
+<entry>Nak</entry>
+<entry/>
+<entry>2</entry>
+<entry>All kinomes</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sel-5" role="_blank">sel-5</ulink></emphasis>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F46G11.3;class=CDS" role="_blank">F46G11.3</ulink></entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>Other</entry>
+<entry>Nek</entry>
+<entry/>
+<entry>4</entry>
+<entry>All kinomes</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F19H6.1;class=CDS" role="_blank">F19H6.1</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=ZC581.1;class=CDS" role="_blank">ZC581.1</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=Y39G10AR.3;class=CDS" role="_blank">Y39G10AR.3</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=pqn-25" role="_blank">pqn-25</ulink>,</entry>
+<entry/>
+<entry>Cell cycle (NIMA-related kinase)</entry>
+</row>
+<row>
+<entry>Other</entry>
+<entry>NKF1</entry>
+<entry/>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C01C4.3;class=CDS" role="_blank">C01C4.3</ulink></entry>
+<entry/>
+<entry>Uncharacterized</entry>
+</row>
+<row>
+<entry>Other</entry>
+<entry>NKF2</entry>
+<entry/>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=EEED8.9;class=CDS" role="_blank">EEED8.9</ulink></entry>
+<entry/>
+<entry>Uncharacterized</entry>
+</row>
+<row>
+<entry>Other</entry>
+<entry>NRBP</entry>
+<entry/>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=K10D3.5;class=CDS" role="_blank">K10D3.5</ulink></entry>
+<entry/>
+<entry>Nuclear receptor binding protein</entry>
+</row>
+<row>
+<entry>Other</entry>
+<entry>PEK</entry>
+<entry>GCN2</entry>
+<entry>1</entry>
+<entry>All kinomes</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y81G3A.3;class=CDS" role="_blank">Y81G3A.3</ulink></entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>Other</entry>
+<entry>PEK</entry>
+<entry>PEK</entry>
+<entry>2</entry>
+<entry>Metazoans, Dictyos- telium</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pek-1" role="_blank">pek-1</ulink></emphasis>, <ulink url="http://www.wormbase.org/db/gene/gene?name=Y38E10A.8;class=CDS" role="_blank">Y38E10A.8</ulink></entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>Other</entry>
+<entry>PLK</entry>
+<entry/>
+<entry>3</entry>
+<entry>All kinomes</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=plk-1" role="_blank">plk-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=plk-2" role="_blank">plk-2</ulink></emphasis>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F55G1.8;class=CDS" role="_blank">F55G1.8</ulink></entry>
+<entry/>
+<entry>Cell cycle: polo-like kinase</entry>
+</row>
+<row>
+<entry>Other</entry>
+<entry>SCY1</entry>
+<entry/>
+<entry>2</entry>
+<entry>All kinomes</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=W07G4.3;class=CDS" role="_blank">W07G4.3</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=ZC581.9;class=CDS" role="_blank">ZC581.9</ulink></entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>Other</entry>
+<entry>TBCK</entry>
+<entry/>
+<entry>1</entry>
+<entry>Metazoans, Dictyos- telium</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C33F10.2;class=CDS" role="_blank">C33F10.2</ulink></entry>
+<entry/>
+<entry>TBC domain kinase</entry>
+</row>
+<row>
+<entry>Other</entry>
+<entry>TLK</entry>
+<entry/>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C07A9.3;class=CDS" role="_blank">C07A9.3</ulink></entry>
+<entry/>
+<entry>Tousled-like kinase</entry>
+</row>
+<row>
+<entry>Other</entry>
+<entry>ULK</entry>
+<entry/>
+<entry>2</entry>
+<entry>All kinomes</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=unc-51" role="_blank">unc-51</ulink></emphasis>, <ulink url="http://www.wormbase.org/db/gene/gene?name=T07F12.4;class=CDS" role="_blank">T07F12.4</ulink></entry>
+<entry/>
+<entry>Homolog of <emphasis>Drosophila</emphasis> Fused</entry>
+</row>
+<row>
+<entry>Other</entry>
+<entry>VPS15</entry>
+<entry/>
+<entry>1</entry>
+<entry>All kinomes</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=ZK930.1;class=CDS" role="_blank">ZK930.1</ulink></entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>Other</entry>
+<entry>WEE</entry>
+<entry/>
+<entry>2</entry>
+<entry>All kinomes</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=wee-1.1" role="_blank">wee-1.1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=wee-1.3" role="_blank">wee-1.3</ulink></emphasis></entry>
+<entry/>
+<entry>Cell cycle</entry>
+</row>
+<row>
+<entry>Other</entry>
+<entry>Wnk</entry>
+<entry/>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C46C2.1;class=CDS" role="_blank">C46C2.1</ulink></entry>
+<entry/>
+<entry>With no lysine[K]</entry>
+</row>
+<row>
+<entry>Other</entry>
+<entry>Worm1</entry>
+<entry/>
+<entry>2</entry>
+<entry>Nematodes</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mes-1" role="_blank">mes-1</ulink></emphasis>, <ulink url="http://www.wormbase.org/db/gene/gene?name=B0198.3;class=CDS" role="_blank">B0198.3</ulink></entry>
+<entry/>
+<entry>Uncharacterized</entry>
+</row>
+<row>
+<entry>Other</entry>
+<entry>Worm2</entry>
+<entry/>
+<entry>3</entry>
+<entry>Nematodes</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=K09C6.8;class=CDS" role="_blank">K09C6.8</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=T10B5.2;class=CDS" role="_blank">T10B5.2</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=K09C6.7;class=CDS" role="_blank">K09C6.7</ulink></entry>
+<entry/>
+<entry>Uncharacterized</entry>
+</row>
+<row>
+<entry>Other</entry>
+<entry>Worm3</entry>
+<entry/>
+<entry>2</entry>
+<entry>Nematodes</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=R107.4;class=CDS" role="_blank">R107.4</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=Y39G8B.5;class=CDS" role="_blank">Y39G8B.5</ulink></entry>
+<entry/>
+<entry>Uncharacterized</entry>
+</row>
+<row>
+<entry>Other</entry>
+<entry>Worm4</entry>
+<entry/>
+<entry>1</entry>
+<entry>Nematodes</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C28A5.6;class=CDS" role="_blank">C28A5.6</ulink></entry>
+<entry/>
+<entry>Uncharacterized</entry>
+</row>
+<row>
+<entry>Other</entry>
+<entry>Worm5</entry>
+<entry/>
+<entry>3</entry>
+<entry>Nematodes</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C44C10.7;class=CDS" role="_blank">C44C10.7</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F16B12.7;class=CDS" role="_blank">F16B12.7</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=K08H2.5;class=CDS" role="_blank">K08H2.5</ulink></entry>
+<entry/>
+<entry>Uncharacterized</entry>
+</row>
+<row>
+<entry>RGC</entry>
+<entry>RGC</entry>
+<entry/>
+<entry>27</entry>
+<entry>All metazoans</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gcy-13" role="_blank">gcy-13</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gcy-14" role="_blank">gcy-14</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=odr-1" role="_blank">odr-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gcy-19" role="_blank">gcy-19</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gcy-15" role="_blank">gcy-15</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gcy-9" role="_blank">gcy-9</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=daf-11" role="_blank">daf-11</ulink></emphasis>, <ulink url="http://www.wormbase.org/db/gene/gene?name=T01A4.1b;class=CDS" role="_blank">T01A4.1b</ulink>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gcy-4" role="_blank">gcy-4</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gcy-17" role="_blank">gcy-17</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gcy-3" role="_blank">gcy-3</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gcy-7" role="_blank">gcy-7</ulink></emphasis>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C04H5.4;class=CDS" role="_blank">C04H5.4</ulink>a, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gcy-11" role="_blank">gcy-11</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gcy-18" role="_blank">gcy-18</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gcy-25" role="_blank">gcy-25</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gcy-21" role="_blank">gcy-21</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gcy-27" role="_blank">gcy-27</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gcy-23" role="_blank">gcy-23</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gcy-1" role="_blank">gcy-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gcy-20" role="_blank">gcy-20</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gcy-5" role="_blank">gcy-5</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gcy-6" role="_blank">gcy-6</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gcy-8" role="_blank">gcy-8</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gcy-22" role="_blank">gcy-22</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gcy-2" role="_blank">gcy-2</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gcy-12" role="_blank">gcy-12</ulink></emphasis></entry>
+<entry/>
+<entry>Receptor guanylate cyclase</entry>
+</row>
+<row>
+<entry>STE</entry>
+<entry>Unique</entry>
+<entry/>
+<entry>1</entry>
+<entry>Metazoans, Dictyos- telium</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F18F11.4;class=CDS" role="_blank">F18F11.4</ulink></entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>STE</entry>
+<entry>Ste11</entry>
+<entry/>
+<entry>2</entry>
+<entry>All kinomes</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=nsy-1" role="_blank">nsy-1</ulink></emphasis>, <ulink url="http://www.wormbase.org/db/gene/gene?name=B0414.7;class=CDS" role="_blank">B0414.7</ulink></entry>
+<entry/>
+<entry>MAP kinase kinase kinase</entry>
+</row>
+<row>
+<entry>STE</entry>
+<entry>Ste20</entry>
+<entry>FRAY</entry>
+<entry>1</entry>
+<entry>Metazoans, Dictyos- telium</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y59A8B.23;class=CDS" role="_blank">Y59A8B.23</ulink></entry>
+<entry/>
+<entry>MAP4 kinase and related</entry>
+</row>
+<row>
+<entry>STE</entry>
+<entry>Ste20</entry>
+<entry>KHS</entry>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=ZC404.9;class=CDS" role="_blank">ZC404.9</ulink></entry>
+<entry/>
+<entry>Subfamily of MAP4K kinases</entry>
+</row>
+<row>
+<entry>STE</entry>
+<entry>Ste20</entry>
+<entry>MSN</entry>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=ZC504.4;class=CDS" role="_blank">ZC504.4</ulink></entry>
+<entry/>
+<entry>Subfamily of MAP4K kinases</entry>
+</row>
+<row>
+<entry>STE</entry>
+<entry>Ste20</entry>
+<entry>MST</entry>
+<entry>1</entry>
+<entry>All kinomes</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F14H12.4;class=CDS" role="_blank">F14H12.4</ulink></entry>
+<entry/>
+<entry>Subfamily of MAP4K kinases</entry>
+</row>
+<row>
+<entry>STE</entry>
+<entry>Ste20</entry>
+<entry>PAKA</entry>
+<entry>2</entry>
+<entry>All kinomes</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C09B8.7;class=CDS" role="_blank">C09B8.7</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=Y38F1A.1;class=CDS" role="_blank">Y38F1A.1</ulink></entry>
+<entry/>
+<entry>Couples small GTPases to cytoskeleton</entry>
+</row>
+<row>
+<entry>STE</entry>
+<entry>Ste20</entry>
+<entry>PAKB</entry>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C45B11.1;class=CDS" role="_blank">C45B11.1</ulink></entry>
+<entry/>
+<entry>Couples small GTPases to cytoskeleton</entry>
+</row>
+<row>
+<entry>STE</entry>
+<entry>Ste20</entry>
+<entry>SLK</entry>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C04A11.3;class=CDS" role="_blank">C04A11.3</ulink></entry>
+<entry/>
+<entry>Subfamily of MAP4K kinases</entry>
+</row>
+<row>
+<entry>STE</entry>
+<entry>Ste20</entry>
+<entry>STLK</entry>
+<entry>2</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C03B1.5;class=CDS" role="_blank">C03B1.5</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=Y52D3.1;class=CDS" role="_blank">Y52D3.1</ulink></entry>
+<entry/>
+<entry>Subfamily of MAP4K kinases</entry>
+</row>
+<row>
+<entry>STE</entry>
+<entry>Ste20</entry>
+<entry>TAO</entry>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=T17E9.1;class=CDS" role="_blank">T17E9.1</ulink></entry>
+<entry/>
+<entry>Subfamily of MAP4K kinases</entry>
+</row>
+<row>
+<entry>STE</entry>
+<entry>Ste20</entry>
+<entry>YSK</entry>
+<entry>1</entry>
+<entry>Metazoans, fungi</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=T19A5.2;class=CDS" role="_blank">T19A5.2</ulink></entry>
+<entry/>
+<entry>Subfamily of MAP4K kinases</entry>
+</row>
+<row>
+<entry>STE</entry>
+<entry>Ste7</entry>
+<entry/>
+<entry>10</entry>
+<entry>All kinomes</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=jkk-1" role="_blank">jkk-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mek-1" role="_blank">mek-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mek-2" role="_blank">mek-2</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sek-1" role="_blank">sek-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mkk-4" role="_blank">mkk-4</ulink></emphasis>, <ulink url="http://www.wormbase.org/db/gene/gene?name=ZC449.6;class=CDS" role="_blank">ZC449.6</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=VZC374L.1;class=CDS" role="_blank">VZC374L.1</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=E02D9.1a;class=CDS" role="_blank">E02D9.1a</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F35C8.2;class=CDS" role="_blank">F35C8.2</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F35C8.1;class=CDS" role="_blank">F35C8.1</ulink></entry>
+<entry><ulink url="http://www.wormbook.org/chapters/www_RTKRasMAPKsignaling/RTKRasMAPKsignaling.html">RTKRas/ MAP kinase signaling</ulink></entry>
+<entry>MAP kinase kinase</entry>
+</row>
+<row>
+<entry>TK</entry>
+<entry>Unique</entry>
+<entry/>
+<entry>7</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C16D9.2;class=CDS" role="_blank">C16D9.2</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=Y38H6C.20;class=CDS" role="_blank">Y38H6C.20</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F40A3.5;class=CDS" role="_blank">F40A3.5</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F59F5.3;class=CDS" role="_blank">F59F5.3</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=R151.4;class=CDS" role="_blank">R151.4</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C34F11.5;class=CDS" role="_blank">C34F11.5</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=T22B11.3;class=CDS" role="_blank">T22B11.3</ulink></entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>TK</entry>
+<entry>Abl</entry>
+<entry/>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=abl-1" role="_blank">abl-1</ulink></emphasis></entry>
+<entry/>
+<entry>Abelseon leukemia virus homolog</entry>
+</row>
+<row>
+<entry>TK</entry>
+<entry>Ack</entry>
+<entry/>
+<entry>2</entry>
+<entry>All metazoans</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ark-1" role="_blank">ark-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=kin-25" role="_blank">kin-25</ulink></emphasis></entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>TK</entry>
+<entry>Csk</entry>
+<entry/>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=Y48G1C.2;class=CDS" role="_blank">Y48G1C.2</ulink></entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>TK</entry>
+<entry>Fer</entry>
+<entry/>
+<entry>38</entry>
+<entry>All metazoans</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=frk-1" role="_blank">frk-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=spe-8" role="_blank">spe-8</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=kin-5" role="_blank">kin-5</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=kin-14" role="_blank">kin-14</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=kin-21" role="_blank">kin-21</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=kin-24" role="_blank">kin-24</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=kin-26" role="_blank">kin-26</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=kin-28" role="_blank">kin-28</ulink></emphasis>, <ulink url="http://www.wormbase.org/db/gene/gene?name=Y43C5B.2;class=CDS" role="_blank">aSWK454</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=Y43C5B.2;class=CDS" role="_blank">Y43C5B.2</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=Y116A8C.24;class=CDS" role="_blank">Y116A8C.24</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=K09B11.5;class=CDS" role="_blank">K09B11.5</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=Y52D5A.2;class=CDS" role="_blank">Y52D5A.2</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=Y69E1A.3;class=CDS" role="_blank">Y69E1A.3</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=T25B9.5;class=CDS" role="_blank">T25B9.5</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=M176.9;class=CDS" role="_blank">M176.9</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=ZC581.7;class=CDS" role="_blank">ZC581.7</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F59A3.8;class=CDS" role="_blank">F59A3.8</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=R05H5.4;class=CDS" role="_blank">R05H5.4</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=W01B6.5;class=CDS" role="_blank">W01B6.5</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=T08G5.2;class=CDS" role="_blank">T08G5.2</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F57B9.8;class=CDS" role="_blank">F57B9.8</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=T21G5.1;class=CDS" role="_blank">T21G5.1</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C25A8.5;class=CDS" role="_blank">C25A8.5</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=T06C10.3;class=CDS" role="_blank">T06C10.3</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F22B3.8;class=CDS" role="_blank">F22B3.8</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F01D4.3;class=CDS" role="_blank">F01D4.3</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=W03F8.2;class=CDS" role="_blank">W03F8.2</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=ZK622.1;class=CDS" role="_blank">ZK622.1</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=R11E3.1;class=CDS" role="_blank">R11E3.1</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=T25B9.4;class=CDS" role="_blank">T25B9.4</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=ZK593.9;class=CDS" role="_blank">ZK593.9</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F26E4.5;class=CDS" role="_blank">F26E4.5</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=W03A5.1;class=CDS" role="_blank">W03A5.1</ulink>, C35E7.10, <ulink url="http://www.wormbase.org/db/gene/gene?name=C55C3.4;class=CDS" role="_blank">C55C3.4</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C18H7.4;class=CDS" role="_blank">C18H7.4</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F23C8.7;class=CDS" role="_blank">F23C8.7</ulink></entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>TK</entry>
+<entry>Src</entry>
+<entry/>
+<entry>3</entry>
+<entry>All metazoans</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=src-1" role="_blank">src-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=src-2" role="_blank">src-2</ulink></emphasis>, <ulink url="http://www.wormbase.org/db/gene/gene?name=Y47G6A.5a;class=CDS" role="_blank">Y47G6A.5a</ulink></entry>
+<entry/>
+<entry>Non-receptor tyrosine kinase</entry>
+</row>
+<row>
+<entry>TKL</entry>
+<entry>IRAK</entry>
+<entry/>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=K09B11.1;class=CDS" role="_blank">K09B11.1</ulink></entry>
+<entry/>
+<entry>IL-1 receptor associated kinase</entry>
+</row>
+<row>
+<entry>TKL</entry>
+<entry>LRRK</entry>
+<entry/>
+<entry>1</entry>
+<entry>Metazoans, Dictyos- telium</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=T27C10.5;class=CDS" role="_blank">T27C10.5</ulink></entry>
+<entry/>
+<entry>Leucine rich repeat kinase</entry>
+</row>
+<row>
+<entry>TKL</entry>
+<entry>MLK</entry>
+<entry>HH498</entry>
+<entry>1</entry>
+<entry>Nematodes, vertebrates, Dictyos- telium</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C24A1.3;class=CDS" role="_blank">C24A1.3</ulink></entry>
+<entry/>
+<entry>Uncharacterized</entry>
+</row>
+<row>
+<entry>TKL</entry>
+<entry>MLK</entry>
+<entry>ILK</entry>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C29F9.7;class=CDS" role="_blank">C29F9.7</ulink></entry>
+<entry/>
+<entry>Integrin linked kinase</entry>
+</row>
+<row>
+<entry>TKL</entry>
+<entry>MLK</entry>
+<entry>LZK</entry>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F33E2.2;class=CDS" role="_blank">F33E2.2</ulink></entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>TKL</entry>
+<entry>MLK</entry>
+<entry>MLK</entry>
+<entry>2</entry>
+<entry>Metazoans, Dictyos- telium</entry>
+<entry><ulink url="http://www.wormbase.org/db/seq/pcr?name=mv_Y58A7A.f;class=PCR_product" role="_blank">Y58A7A.f</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=R13F6.7;class=CDS" role="_blank">R13F6.7</ulink></entry>
+<entry/>
+<entry>Mixed lineage kinase</entry>
+</row>
+<row>
+<entry>TKL</entry>
+<entry>MLK</entry>
+<entry>TAK1</entry>
+<entry>2</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F52F12.3;class=CDS" role="_blank">F52F12.3</ulink>, <ulink url="http://www.wormbase.org/db/seq/pcr?name=Aff_Y105C5.Y;class=Oligo_set" role="_blank">Y105C5.y</ulink></entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>TKL</entry>
+<entry>RAF</entry>
+<entry/>
+<entry>3</entry>
+<entry>All metazoans</entry>
+<entry><emphasis>raf-1</emphasis>, <emphasis>pex-1</emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ksr-1" role="_blank">ksr-1</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbook.org/chapters/www_RTKRasMAPKsignaling/RTKRasMAPKsignaling.html">RTKRas/ MAP kinase signaling</ulink></entry>
+<entry>Ras-MAPK signaling</entry>
+</row>
+<row>
+<entry>TKL</entry>
+<entry>STKR</entry>
+<entry>Type1</entry>
+<entry>2</entry>
+<entry>All metazoans</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sma-6" role="_blank">sma-6</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=daf-1" role="_blank">daf-1</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbook.org/chapters/www_tgfbsignal/tgfbsignal.html">TGF-<symbol role="symbolfont">&#x003B2;</symbol> signaling</ulink></entry>
+<entry>TGFb and related receptors</entry>
+</row>
+<row>
+<entry>TKL</entry>
+<entry>STKR</entry>
+<entry>Type2</entry>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=daf-4" role="_blank">daf-4</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbook.org/chapters/www_tgfbsignal/tgfbsignal.html">TGF-<symbol role="symbolfont">&#x003B2;</symbol> signaling</ulink></entry>
+<entry>TGFb and related receptors</entry>
+</row>
+<row>
+<entry>TK-RTK</entry>
+<entry>Alk</entry>
+<entry/>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=scd-2" role="_blank">scd-2</ulink></emphasis></entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>TK-RTK</entry>
+<entry>DDR</entry>
+<entry/>
+<entry>2</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F11D5.3;class=CDS" role="_blank">F11D5.3</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C25F6.4;class=CDS" role="_blank">C25F6.4</ulink></entry>
+<entry/>
+<entry>Discoidin domain receptor.</entry>
+</row>
+<row>
+<entry>TK-RTK</entry>
+<entry>EGFR</entry>
+<entry/>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=let-23" role="_blank">let-23</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbook.org/chapters/www_RTKRasMAPKsignaling/RTKRasMAPKsignaling.html">RTKRas/ MAP kinase signaling</ulink></entry>
+<entry>Growth factor (EGF) receptor</entry>
+</row>
+<row>
+<entry>TK-RTK</entry>
+<entry>Eph</entry>
+<entry/>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=vab-1" role="_blank">vab-1</ulink></emphasis></entry>
+<entry/>
+<entry>Ephrin receptor</entry>
+</row>
+<row>
+<entry>TK-RTK</entry>
+<entry>Fak</entry>
+<entry/>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=kin-32" role="_blank">kin-32</ulink></emphasis></entry>
+<entry/>
+<entry>Focal adhesion kinase</entry>
+</row>
+<row>
+<entry>TK-RTK</entry>
+<entry>FGFR</entry>
+<entry/>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-15" role="_blank">egl-15</ulink></emphasis></entry>
+<entry><ulink url="http://www.wormbook.org/chapters/www_RTKRasMAPKsignaling/RTKRasMAPKsignaling.html">RTKRas/ MAP kinase signaling</ulink></entry>
+<entry>Growth factor FGF) receptor</entry>
+</row>
+<row>
+<entry>TK-RTK</entry>
+<entry>InsR</entry>
+<entry/>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=daf-2" role="_blank">daf-2</ulink></emphasis></entry>
+<entry/>
+<entry>Insulin receptor</entry>
+</row>
+<row>
+<entry>TK-RTK</entry>
+<entry>KIN-16</entry>
+<entry/>
+<entry>15 (16)</entry>
+<entry>Nematodes</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=old-1" role="_blank">old-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=old-2" role="_blank">old-2</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=ver-1" role="_blank">ver-1</ulink></emphasis>, <ulink url="http://www.wormbase.org/db/gene/gene?name=R09D1.13;class=CDS" role="_blank">R09D1.13</ulink>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=kin-23" role="_blank">kin-23</ulink></emphasis>, <ulink url="http://www.wormbase.org/db/gene/gene?name=T17A3.8;class=CDS" role="_blank">T17A3.8</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=T01G5.1;class=CDS" role="_blank">T01G5.1</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C08H9.8;class=CDS" role="_blank">C08H9.8</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F59F3.1;class=CDS" role="_blank">F59F3.1</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=M176.7;class=CDS" role="_blank">M176.7</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F59F3.5;class=CDS" role="_blank">F59F3.5</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=M176.6;class=CDS" role="_blank">M176.6</ulink>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=kin-30" role="_blank">kin-30</ulink></emphasis>, <ulink url="http://www.wormbase.org/db/gene/gene?name=R09D1.12;class=CDS" role="_blank">R09D1.12</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=Y50D4B.6;class=CDS" role="_blank">Y50D4B.6</ulink></entry>
+<entry/>
+<entry>Uncharacterized</entry>
+</row>
+<row>
+<entry>TK-RTK</entry>
+<entry>KIN-9</entry>
+<entry/>
+<entry>5</entry>
+<entry>Nematodes</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F09G2.1;class=CDS" role="_blank">F09G2.1</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F09A5.2;class=CDS" role="_blank">F09A5.2</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=C24G6.2;class=CDS" role="_blank">C24G6.2</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=F08F1.1;class=CDS" role="_blank">F08F1.1</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=B0252.1;class=CDS" role="_blank">B0252.1</ulink></entry>
+<entry/>
+<entry>Uncharacterized</entry>
+</row>
+<row>
+<entry>TK-RTK</entry>
+<entry>Met</entry>
+<entry/>
+<entry>2</entry>
+<entry>Nematodes and vertebrates</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=F11E6.8;class=CDS" role="_blank">F11E6.8</ulink>, <ulink url="http://www.wormbase.org/db/gene/gene?name=T14E8.1;class=CDS" role="_blank">T14E8.1</ulink></entry>
+<entry/>
+<entry>Growth factor (HGF/SF) receptor</entry>
+</row>
+<row>
+<entry>TK-RTK</entry>
+<entry>Ror</entry>
+<entry/>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cam-1" role="_blank">cam-1</ulink></emphasis></entry>
+<entry/>
+<entry>Receptor tyrosine kinase</entry>
+</row>
+<row>
+<entry>TK-RTK</entry>
+<entry>Ryk</entry>
+<entry/>
+<entry>1</entry>
+<entry>All metazoans</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=C16B8.1;class=CDS" role="_blank">C16B8.1</ulink></entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>TK-RTK</entry>
+<entry>Trk</entry>
+<entry/>
+<entry>1</entry>
+<entry>Nematodes and vertebrates</entry>
+<entry><ulink url="http://www.wormbase.org/db/gene/gene?name=D1073.1;class=CDS" role="_blank">D1073.1</ulink></entry>
+<entry/>
+<entry>Neurotropin receptor</entry>
+</row>
+<row>
+<entry>TOTAL</entry>
+<entry/>
+<entry/>
+<entry>438(447)</entry>
+<entry/>
+<entry/>
+<entry/>
+<entry/>
+</row>
+</tbody>
+</tgroup>
+</table>
+</appendix>
+</article>

@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY fig1 SYSTEM 'RNAishfig1.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'RNAishfig1leg.xml'>
+<!ENTITY RNAish_Refs SYSTEM 'RNAishrefs.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="RNAish_ArticleID">
+	<articleinfo>
+        <!--see DocBook's authorgroup element -->
+		<title>RNA <emphasis>in situ</emphasis> hybridization of dissected gonads<footnote>
+				<para>Edited by Oliver Hobert. WormMethods editor, Victor Ambros. Last revised May 3, 2005. Published June 14, 2006. This chapter should be cited as: Lee, M.-H. and Schedl, T. RNA <emphasis>in situ</emphasis> hybridization of dissected gonads (June 14, 2006), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.107.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+		<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2006 Min-Ho Lee and Tim Schedl. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+			</footnote>	
+		</title>
+<!--		<revhistory>
+			<revision>
+				<revnumber>1.0</revnumber>
+				<date>Last revised 5/21/05</date>
+			</revision>
+		</revhistory>
+-->
+		<author>
+			<othername>Min-Ho Lee<remark>
+					<footnote>
+						<para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:mhlee@albany.edu">mhlee@albany.edu</ulink> or <ulink url="mailto:ts@genetics.wustl.edu">ts@genetics.wustl.edu</ulink>
+						</para>
+					</footnote>
+				</remark>
+				<remark>
+					<footnote>
+						<para>Current address: Department of Biological Sciences, University at Albany, SUNY, Albany, NY 12222</para>
+					</footnote>
+				</remark>
+, Tim Schedl<remark><superscript>&#x000A7;</superscript></remark>
+			</othername>
+						<affiliation>
+				<address>Department of Genetics, Washington University School of Medicine, St. Louis, MO 63110 USA</address>
+			</affiliation>
+		</author>
+		</articleinfo>
+    <sect1>
+        <title>Introduction</title>
+        <para>Determination of the temporal and spatial pattern of gene expression is an important step in understanding gene function during <emphasis>C. elegans</emphasis> development. The expression pattern of a gene can be examined in several ways including transgenic reporter fusions (e.g., gfp, <symbol role="symbolfont">&#x003B2;</symbol>-galactosidase), as well as immunohistochemistry and RNA <emphasis>in situ</emphasis> hybridization for analysis of the endogenous protein and mRNA, respectively. While reporter fusions and immnohistochemistry require time and effort to generate reagents (reporter construction and generation of transgenic lines or antibody production), RNA <emphasis>in situ</emphasis> hybridization only requires the transcribed region of a gene of interest. In addition, as a complement to protein expression patterns of a gene, RNA <emphasis>in situ</emphasis> allows one to determine whether the mRNA is subjected to post-transcriptional controls such as differential RNA localization, stability, and/or translational regulation (<link linkend="bib3">Evans et al., 1994</link><!-- PMID 8168128-->; <link linkend="bib13">Seydoux and Fire 1994</link><!-- PMID 7607073-->; <link linkend="bib6">Jones et al., 1996</link><!-- PMID 8948583-->; <link linkend="bib8">Lee and Schedl 2001</link><!-- PMID 11562350-->,<link linkend="bib9"> 2004</link><!-- PMID 15105376-->).</para>
+        <para>Several <emphasis>in situ</emphasis> hybridization protocols have been developed to detect RNA in <emphasis>C. elegans</emphasis>. RNA <emphasis>in situ</emphasis> in embryos is well described previously (<link linkend="bib14">Seydoux and Fire, 1995</link><!-- PMID 8531733-->. Protocols for whole-mount <emphasis>in situ</emphasis> of intact animals and embryos can be also found at  <ulink url="http://nematode.lab.nig.ac.jp/method/index.html" role="_blank">Yuji Kohara's website</ulink>. Fluorescence RNA <emphasis>in situ</emphasis> hybridizations have been also described (<link linkend="bib1">Albertson et al., 1995</link><!-- PMID 8531734-->; <link linkend="bib5">Graves, et al., 1999</link><!-- PMID 10391248-->; <link linkend="bib11">Pitt et al., 2000</link><!-- PMID 10694425-->). In this chapter, a protocol for detection of mRNA by <emphasis>in situ</emphasis> hybridization to dissected gonads is described. This protocol is primarily based on the method of <link linkend="bib14">Seydoux and Fire (1995)</link> as adapted for dissected gonads.</para>
+        <para>In contrast to an earlier method described for dissected gonads wherein the gonads were affixed to slides (<link linkend="bib2">Crittenden et al., 1994</link><!-- PMID 7607080-->), the various manipulations described below (gonad dissections, hybridizations, and washes) are all performed in solution, either in glass dishes (dissection) or in small glass tubes (hybridization). Washes are done by low-speed spins and all solutions (except fixatives) contain 0.1% Tween 20 to prevent dissected gonads from sticking to glass. A key to make this protocol work consistently is to fix dissected gonads in a combination of paraformaldehyde (3%) and glutaraldehyde (0.25%). The addition of glutaraldehyde results in a lower background, as compared to fixation with paraformaldehyde alone and makes gonads both less sticky and less susceptible to breakage.</para>
+        <para>It is important to perform RNA <emphasis>in situ</emphasis> hybridization using both sense and anti-sense probes for a gene of interest, at least for initial experiments. RNA <emphasis>in situ</emphasis> hybridization with a sense probe should give little or no signal compared to that with an anti-sense probe (<xref linkend="figure1"/>). The sense probe background control is particularly important for detecting transcripts that are expressed at very low levels, which requires an extended developing time with the alkaline phosphatase-mediated detection system. In general, we can easily detect most mRNAs that have five or more EST clones reported in WormBase. For mRNAs that have less than two EST clones (therefore likely expressed at very low levels), it is helpful to concentrate the probe either by using more template in the asymmetric PCR (probe synthesis step) or by dissolving the digoxigenin (DIG) labeled probe in a smaller volume. RNA <emphasis>in situ</emphasis> hybridization with a concentrated anti-sense probe usually results in increased signal with decreased developing time of the alkaline phosphatase-mediated detection system. In addition, concentration of the sense probe does not increase the background signal significantly.</para>
+            <mediaobject id="figure1" xreflabel="Figure 1">
+				<imageobject>
+					<imagedata entityref="fig1" width="4in" align="center"/>
+				</imageobject>
+			<textobject><phrase>Gemline RNA <emphasis>in situ</emphasis> hybridization with an anti-sense and a sense probes figure 1</phrase>
+            </textobject> &fig1legend;
+            </mediaobject>
+    </sect1>
+    <sect1>
+        <title>General expression pattern</title>
+        <para>The levels of most maternal mRNAs become higher in the middle of the pachytene region and remain high in the developing oocytes in the proximal region because the bulk of RNA synthesis for oogenesis occurs in pachytene stage germ cells, with progressively less RNA synthesis as germ cells proceed through the diplotene stage. As chromosomes become highly condensed in late stage oocytes (diakinesis), almost no <emphasis>de novo</emphasis> RNA synthesis occurs (<link linkend="bib4">Gibert et al., 1984</link><!-- PMID 6234041-->; <link linkend="bib12">Schisa et al., 2001</link><!-- PMID 11262230-->) and RNA polymerase II becomes inactive (<link linkend="bib7">Kelly et al., 2002</link><!-- PMID 11807039-->). Therefore, most maternal mRNAs are transcribed primarily in pachytene stage germ cells in the distal region and transported into the common cytoplasmic core. In the proximal region, maternal mRNAs are packaged into growing oocytes. These processes result in extensive RNA accumulation throughout pachytene stage germ cells and developing oocytes (<xref linkend="figure1"/>).</para>
+        <para>Some mRNAs are expressed throughout the germline including the distal mitotic region (e.g., <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=glp-1" role="_blank">glp-1</ulink></emphasis>) while others are only expressed in meiotic cells (e.g., <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=rme-2" role="_blank">rme-2</ulink></emphasis>). For a number of transcripts expressed throughout the germline, the relative levels observed in the distal mitotic region are lower, compared to the levels in the meiotic pachytene cells and proximal oocytes (<xref linkend="figure1"/>). The difference is likely, at least in part, a reflection of a lower level of the mRNA/protein being required for function in the distal mitotic region, while a higher level is required for late oogenesis and/or maternally for early embryogenesis.</para>
+    </sect1>
+    <sect1>
+        <title>Materials</title>
+        <para>Solutions do not need to be treated with diethyl pyrocarbonate.</para>
+        <para>PBS: Make a 10x stock solution according to <link linkend="bib15">Sambrook et al. (1989)</link>.</para>
+        <para>PBTw: 1x PBS containing 0.1% Tween 20.</para>
+        <para>Paraformaldehyde / glutaraldehyde fix:Paraformaldehyde/Glutaraldehyde fixation works well for germline RNA <emphasis>in situ</emphasis>: gonads remain intact through an extensive protease treatment (50 <symbol role="symbolfont">&#x03BC;</symbol>g/ml Proteinase K for 30 min at room temperature (RT) that would destroy gonads fixed in paraformaldehyde alone. This fixation can also be used with good results for histological staining with some antibodies.
+                <orderedlist>
+                    <title>To make 3% paraformaldehyde / 0.25% glutaraldehyde / 0.1M K<subscript>2</subscript>HPO<subscript>4</subscript> (pH7.2), mix</title>
+                <listitem>
+                    <para>10 ml 16% formaldehyde (sealed ampoules from EM Sciences #15710)</para>
+                </listitem>
+                <listitem>
+                    <para>0.53 ml 25% glutaraldehyde (sealed ampoules from EM Sciences #16220)</para>
+                </listitem>
+                <listitem>
+                    <para>25 ml 0.2 M K<subscript>2</subscript>HPO<subscript>4</subscript> (pH7.2)</para>
+                    <para>and dispense in 10 ml aliquots and store at <symbol role="symbolfont">&#x02212;</symbol>20<symbol role="symbolfont">&#x00B0;</symbol>C.</para>
+                </listitem>
+                </orderedlist>
+               </para>
+        <para>Proteinase K: 20 mg/ml. Dispense in 10 <symbol role="symbolfont">&#x03BC;</symbol>l aliquots and store at <symbol role="symbolfont">&#x02212;</symbol>80<symbol role="symbolfont">&#x00B0;</symbol>C. Do not refreeze, discard after use.</para>
+        <para>Hybridization buffer: 5X SSC, 50 % deionized formamide, 100 <symbol role="symbolfont">&#x03BC;</symbol>g/ml autoclaved Herring sperm DNA, 50 <symbol role="symbolfont">&#x03BC;</symbol>g/ml Heparin and 0.1 % Tween-20. We make 50 ml, dispense in 10 ml aliquots and store at <symbol role="symbolfont">&#x02212;</symbol>20<symbol role="symbolfont">&#x00B0;</symbol>C.</para>
+        <para>Alkaline-phosphatase-conjugated anti-DIG (Fab2 fragment) from Roche (#1 093 274): An optimal dilution of this antibody needs to be determined empirically as lot-to-lot variations may exist. We have been using dilutions from 1:1000 to 1:2500.</para>
+        <para>Staining Solution: 100 mM NaCl; 5 mM MgCl<subscript>2</subscript>; 100 mM Tris (pH 9.5); 0.1% Tween 20; 1mM Levamisole. Levamisole is a potent inhibitor of endogenous phosphatases.</para>
+        <para>Sigma Fast BCIP/NBT tablet (#B5655): Dissolve one tablet in 10 ml staining solution. If non-specific background signal is high, you may want to use more staining solution (up to 20 ml) to dissolve the tablet.</para>
+		<para>Anti-Fade solution: Make 0.2M Dabco (Sigma #D2522) in 20 mM Tris (pH 8.0), which can be stored at <symbol role="symbolfont">&#x02212;</symbol>20<symbol role="symbolfont">&#x00B0;</symbol>C. Then dilute this solution (10%) in glycerol (90%) and store <symbol role="symbolfont">&#x02212;</symbol>20<symbol role="symbolfont">&#x00B0;</symbol>C.</para>
+        <para>Culture tubes: Borosilicate glass tubes with plain end. These tubes can be baked to decontaminate RNase. Available from Fisher as 6 mm (O.D.) x 50 mm (length) in either Pyrex (Fisher #14-957AA) or Kimax (Fisher #14-925B) brands.</para>
+        <para>Dissection dishes: We use Square Watch Glass from Carolina Biological Supply (#ER-74-2300).</para>
+        <para>QIAquick PCR Purification kit from Qiagen (#28104): Works well to remove unincorporated dNTP and PCR primers.</para>
+        <para>DIG DNA Labeling Mix, 10 x conc.: Roche (#1 277 065).</para>
+    </sect1>
+    <sect1>
+        <title>Procedure</title>
+        <para>Single-stranded probes from cloned cDNA can be prepared anytime. Following dissections and fixation, fixed gonads can be stored in 100% MeOH at <symbol role="symbolfont">&#x02212;</symbol>20<symbol role="symbolfont">&#x00B0;</symbol>C for at least one week. Once the gonads are subjected to permeabilization, the remaining procedure has to be completed.</para>
+                                <procedure>
+                                        <title>Preparation of single-stranded probes from cloned cDNA</title>
+                                        <para>Based on <link linkend="bib10">Patel and Goodman (1992)</link>, with slight modifications.</para>
+                                <step>
+                                      <title>PCR amplification of a cDNA of interest with any set of primers.</title>
+                                        <para>A cloned cDNA template is optimal because amplified products from genomic DNA usually generate high background.</para>
+                                        <para>Use less than 1<symbol role="symbolfont">&#x03BC;</symbol>l (10 pmole/<symbol role="symbolfont">&#x03BC;</symbol>l) of primers because QIAquick PCR Purification kit will not effectively remove primers if the concentration is higher.</para>
+                                        <para>We usually set up two 50 <symbol role="symbolfont">&#x03BC;</symbol>l PCR reaction with 35 cycles (94<symbol role="symbolfont">&#x00B0;</symbol>C 30 seconds, 55<symbol role="symbolfont">&#x00B0;</symbol>C 30 seconds and 72<symbol role="symbolfont">&#x00B0;</symbol>C, 1 minute/1 kb).</para>
+                                            <simplelist type='horiz' columns='2'>
+                                                <member>10x Taq Buffer</member>
+                                                <member>5.0 <symbol role="symbolfont">&#x03BC;</symbol>l</member>
+                                                <member>dNTP mix (2.5 mM each)</member>
+                                                <member>2.0 <symbol role="symbolfont">&#x03BC;</symbol>l</member>
+                                                <member>5'Primer (10 pmole/<symbol role="symbolfont">&#x03BC;</symbol>l)</member>
+                                                <member>1.0 <symbol role="symbolfont">&#x03BC;</symbol>l</member>
+                                                <member>3'Primer (10 pmole/<symbol role="symbolfont">&#x03BC;</symbol>l)</member>
+                                                <member>1.0 <symbol role="symbolfont">&#x03BC;</symbol>l</member>
+                                                <member>a cloned cDNA (1:50 dilution of miniprep DNA) or 5&#x02013;10 ng of purified plasmid</member>
+                                                <member>2.0 <symbol role="symbolfont">&#x03BC;</symbol>l</member>
+                                                <member>Taq Polymerase</member>
+												<member>2 units</member>
+                                                <member>ddH<subscript>2</subscript>O</member>
+                                                <member>to 50 <symbol role="symbolfont">&#x03BC;</symbol>l</member>
+                                                </simplelist>
+                                         <para>Run 3 <symbol role="symbolfont">&#x03BC;</symbol>l each in an agarose gel; the PCR product must be an intense single band.</para>
+                                </step>
+                                <step>
+                                    <title>Purification of PCR product</title>
+                                        <para>Use the QIAquick PCR Purification kit to purify the PCR product away from unincorporated dNTP and PCR primers. Elute with 25 <symbol role="symbolfont">&#x03BC;</symbol>l Elution buffer. The concentration should be above 200 ng/<symbol role="symbolfont">&#x03BC;</symbol>l.</para>
+                               </step>
+                               <step>
+                                        <title>Asymmetric (one-way) PCR</title>
+                                        <para>To generate DIG labeled probe (35 cycles, 94<symbol role="symbolfont">&#x00B0;</symbol>C 30 seconds, 55<symbol role="symbolfont">&#x00B0;</symbol>C 30 seconds and 72<symbol role="symbolfont">&#x00B0;</symbol>C, 1 minute/1 kb):</para>
+                                            <simplelist type='horiz' columns='2'>
+                                            <member>10x Taq Buffer</member>
+                                            <member>2.5 <symbol role="symbolfont">&#x03BC;</symbol>l</member>
+                                            <member>DIG DNA Labeling Mix, 10 x conc</member>
+                                            <member>2.5 <symbol role="symbolfont">&#x03BC;</symbol>l</member>
+                                            <member>Primer<footnote><para>Use only one primer. We set up two reactions, one to generate a sense probe with 5'primer and the other to generate an anti-sense probe with 3'primer. RNA <emphasis>in situ</emphasis> hybridization with the sense probe will be a background control.</para></footnote> (10 pmole/<symbol role="symbolfont">&#x03BC;</symbol>l)</member>
+                                            <member>1.0 <symbol role="symbolfont">&#x03BC;</symbol>l</member>
+                                            <member>Purified PCR product (at least 200 ng/<symbol role="symbolfont">&#x03BC;</symbol>l)</member>
+                                            <member>4.0 <symbol role="symbolfont">&#x03BC;</symbol>l</member>
+                                            <member>Taq Polymerase</member>
+                                            <member>2 units</member>
+                                            <member>ddH<subscript>2</subscript>O</member>
+                                            <member>to 25 <symbol role="symbolfont">&#x03BC;</symbol>l</member>
+                                            </simplelist>
+                                </step>
+                                <step>
+                                        <para>75 <symbol role="symbolfont">&#x03BC;</symbol>l of H<subscript>2</subscript>O is added to the reaction and 90&#x02013;95 <symbol role="symbolfont">&#x03BC;</symbol>l of the diluted reaction is transferred to a new tube.</para>
+                                </step>
+                                <step>
+                                        <para>10 <symbol role="symbolfont">&#x03BC;</symbol>l of 1M NaCl and 3 vols of 100% EtOH are added to the diluted reaction. After 30 min at <symbol role="symbolfont">&#x02212;</symbol>70<symbol role="symbolfont">&#x00B0;</symbol>C or overnight at <symbol role="symbolfont">&#x02212;</symbol>20<symbol role="symbolfont">&#x00B0;</symbol>C, the reaction is centrifuged at 14,000 rpm for 10 min. The pellet is washed in 70% ethanol, dried, and resuspended in 400 <symbol role="symbolfont">&#x03BC;</symbol>l of hybridization buffer.</para>
+                                </step>
+                                 <step>
+                                        <para>The probe is boiled for 1 hr. This step reduces the length of the probe for efficient penetration.</para>
+                                 </step>
+                                 <step>
+                                        <para>Probes can be stored at <symbol role="symbolfont">&#x02212;</symbol>20<symbol role="symbolfont">&#x00B0;</symbol>C for a long period. We have used two year-old probe without any obvious reduction of signal.</para>
+                                 </step>
+                      </procedure>
+                      <procedure>
+                              <title>Dissections and fixation</title>
+                              <step>
+                                   <para>Wear latex gloves (optional), prepare dissected gonads (see <ulink url="http://www.genetics.wustl.edu/tslab/gonad_dissections.html">http://www.genetics.wustl.edu/tslab/gonad_dissections.html</ulink> for dissection) and fix in 3% paraformaldehyde / 0.25% glutaraldehyde / 0.1 M K<subscript>2</subscript>HPO<subscript>4</subscript> (pH7.2) for 1.5 to 2 hr at RT. We routinely dissect about 150 animals per each hybridization to obtain 40 or more gonads that are completely extruded, well stained, and unbroken at the end of the entire procedure.</para>
+								</step>
+								<step>
+										<para>Transfer entire contents to a 5 ml glass conical tube and spin in clinical table top centrifuge for 1 min at setting 3 (All subsequent spins are also for 1 min at setting 3).</para>
+								</step>
+								<step>
+									<para>Discard the fixative in the appropriate chemical waste container and resuspend in 2-4 ml PBTw.</para>
+								</step>
+								<step>
+                                    <para>Spin and discard PBTw as much as possible.</para>
+                                </step>
+                                <step>
+                                    <para>Add about 2 ml of 100% cold (-20<symbol role="symbolfont">&#x00B0;</symbol>C) Methanol (MeOH). At this point, dissected gonads can be stored in 100% MeOH at <symbol role="symbolfont">&#x02212;</symbol>20<symbol role="symbolfont">&#x00B0;</symbol>C for at least one week with no obvious problems.</para>
+								</step>
+						</procedure>
+						<procedure>
+								<title>Permeabilization: Proteinase K digestion</title>
+								<step>
+									<para>Add 2-3 ml of PBTw to the MeOH solution, and spin. Wash twice in PBTw. Now split the sample into 2 or more tubes (either into 5 ml conical tubes or into 6 mm x 50 mm culture tubes).</para>
+								</step>
+                                <step>
+                                     <para>Using a 20 mg/ml stock of Proteinase K (PrK), make solutions of 50 <symbol role="symbolfont">&#x03BC;</symbol>g/ml PrK in PBTw. Add 2ml PrK / PBTw and digest for 30 min at RT.</para>
+                                </step>
+                                <step>
+                                    <para>Wash three times in PBTw.</para>
+                                </step>
+                                <step>
+                                    <para>Fix 15 min in 3% paraformaldehyde / 0.25% glutaraldehyde / 0.1M K<subscript>2</subscript>HPO<subscript>4</subscript> (pH7.2)</para>
+                                </step>
+                                <step>
+                                    <para>Incubate 15 min in PBTw containing 2 mg/ml glycine.</para>
+                                </step>
+                                <step>
+                                    <para>Wash three times in PBTw.</para>
+                                </step>
+                                <step>
+                                    <para>Divide gonads among several 6 x 50 mm culture tubes, one tube per hybridzation.</para>
+                                </step>
+                </procedure>
+                <procedure>
+                                <title>Hybridization and wash</title>
+                                <step>
+                                    <para>Place gonads in 400 <symbol role="symbolfont">&#x03BC;</symbol>l of 50% PBTw / 50% hybridization buffer (HB) and incubate 5 min at 48<symbol role="symbolfont">&#x00B0;</symbol>C (in water bath).</para>
+                                </step>
+                                <step>
+                                    <para>Pre-hybridize in 400 <symbol role="symbolfont">&#x03BC;</symbol>l HB for 1 hr at 48<symbol role="symbolfont">&#x00B0;</symbol>C.</para>
+                                </step>
+                                <step>
+                                    <para>Dilute boiled probe in HB to give 100 <symbol role="symbolfont">&#x03BC;</symbol>l of solution. Try a 1:2 dilution for probes to messages of unknown abundance. Experience with <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gld-1" role="_blank">gld-1</ulink></emphasis> probes suggests that probe dilution is not critical &#x02013; a strong, clean signal was obtained at dilutions between 1:2 and 1:5, but it began to fall off at 1:10. Probe to major sperm protein RNA, which is very abundant during spermatogenesis, could be diluted 1:20 without any fall off in signal.</para>
+                                </step>
+                                <step>
+                                    <para>Boil diluted probe 5 min, cool to 48<symbol role="symbolfont">&#x00B0;</symbol>, and add to gonads.</para>
+                                </step>
+                                <step>
+                                    <para>Hybridize for 12 to 36 hr at 48<symbol role="symbolfont">&#x00B0;</symbol>C (longer hybridization times tend to give increased signal and lower background). We routinely hybridize for 36 hrs.</para>
+                                </step>
+                                <step>
+                                    <para>Wash three times in PBTw.</para>
+                                </step>
+                                <step>
+                                    <para>Divide gonads among several 6 x 50 mm culture tubes, one tube per hybridzation.</para>
+                                </step>
+                                <step>
+                                    <para>Add 400 <symbol role="symbolfont">&#x03BC;</symbol>l of HB that is pre-warmed to 48<symbol role="symbolfont">&#x00B0;</symbol>, spin down, and remove supernatant.</para>
+                                </step>
+                                <step>
+                                    <para>Divide gonads among several 6 x 50 mm culture tubes, one tube per hybridzation.</para>
+                                </step>
+                                <step>
+                                    <para>Wash 4 x 15 min in HB at 48<symbol role="symbolfont">&#x00B0;</symbol>C.</para>
+                                </step>
+                                <step>
+                                    <para>Then perform the following washes:</para>
+                            <substeps>
+                                <step>
+                                    <para>1 &#x000D7; 10 min in 50% HB / 50% PBTw at 48<symbol role="symbolfont">&#x00B0;</symbol></para>
+                                </step>
+                                <step>
+                                    <para>2 &#x000D7; 10 min in PBTw at 48<symbol role="symbolfont">&#x00B0;</symbol></para>
+                                </step>
+                                <step>
+                                    <para>1 &#x000D7; 5 min in PBTw at RT</para>
+                                </step>
+                           </substeps>
+                                </step>
+                </procedure>
+                <procedure>
+                                <title>Probe detection</title>
+                                <step>
+                                    <para>Incubate 15 min in PBTw /0.5 mg/ml BSA (either fraction V or restriction enzyme grade).</para>
+                                </step>
+                                <step>
+                                    <para>Dilute alkaline-phosphatase-conjugated anti-DIG (Fab2 fragment) to optimal conc. in PBTw /BSA. Add 500 <symbol role="symbolfont">&#x03BC;</symbol>l to each tube and incubate overnight at 4<symbol role="symbolfont">&#x00B0;</symbol>C or at RT for 2 hr. For gonads, overnight at 4<symbol role="symbolfont">&#x00B0;</symbol>C is definitely better than 2 hr at RT.</para>
+                                </step>
+                                <step>
+                                    <para>Wash at RT as follows:</para>
+                           <substeps>
+                                <step>
+                                    <para>2 x 2 min PBTw</para>
+                                </step>
+                                <step>
+                                    <para>3 x 20 min PBTw / BSA</para>
+                                </step>
+                                <step>
+                                    <para>2 x 5 min in Staining solution.</para>
+                                 </step>
+                           </substeps>
+                                </step>
+                               <step>
+                                    <para>Transfer gonads to staining solution with BCIP/NDT and 100 ng/ml DAPI and cover to protect from light. Signal will come up anywhere between 5 min and 6 hr. For convenience, the reaction can be monitored by transferring tube contents to a glass dish and inspecting periodically under the dissecting scope. However, stain will appear darker in the dissecting scope than under Nomarski optics with a 40X or higher lens.</para>
+                                </step>
+                                <step>
+                                    <para>Stop the reaction by washing three times in PBTw. Finally place gonads in PBS containing 100 ng/ml DAPI.</para>
+                                </step>
+                                <step>
+                                    <para>After removing DAPI solution as much as possible, add 35 <symbol role="symbolfont">&#x03BC;</symbol>l anti-fade solution.</para>
+                                </step>
+                </procedure>
+                <procedure>
+                                <title>Mounting gonads for viewing</title>
+                                <step>
+                                    <para>Using a drawn capillary pipette, transfer settled worms onto a large 2% agar pad that covers most of a slide. After drawing off excess liquid with a capillary, an eyelash hair can be used to push gonads and intestines away from one another. Cover with a large (24 x 50 mm) coverslip, taking care not to move the coverslip once in place. Also do not seal the coverslip immediately &#x02013; image may improve as liquid evaporates and gonads become somewhat flattened. We usually take images after storing the slides at 4<symbol role="symbolfont">&#x00B0;</symbol>C overnight without sealing. Bright field (Nomarski) images must be taken before DAPI images because the strong UV light focused by the microscope literally burns gonads brown. Slides can be stored at 4<symbol role="symbolfont">&#x00B0;</symbol>C for a week or more, particularly if sealed with nail polish around the periphery of the coverslip. Because the stain is purplish, images are better in color than in black and white.</para>
+                                </step>
+                </procedure>
+    </sect1>
+    <sect1>
+            <title>Acknowledgements</title>
+            <para>We are grateful to Ross Francis for establishing this protocol and members of the Schedl lab for comments on this review. Work in the TS lab is supported by NIH grant GM63310.</para>
+    </sect1>
+    <sect1>
+            <title>References</title>
+			&RNAish_Refs;
+			<para/>
+    </sect1>
+</article>

@@ -1,0 +1,776 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY % local.notation.class '| MOV'>
+<!NOTATION MOV SYSTEM 'MOV'>
+<!ENTITY fig1 SYSTEM 'protcodingfig1.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'protcodingfig1leg.xml'>
+<!ENTITY fig2 SYSTEM 'protcodingfig2.jpg' NDATA JPG>
+<!ENTITY fig2legend SYSTEM 'protcodingfig2leg.xml'>
+<!ENTITY fig3 SYSTEM 'protcodingfig3.jpg' NDATA JPG>
+<!ENTITY fig3legend SYSTEM 'protcodingfig3leg.xml'>
+<!ENTITY fig4 SYSTEM 'protcodingfig4.jpg' NDATA JPG>
+<!ENTITY fig4legend SYSTEM 'protcodingfig4leg.xml'>
+<!ENTITY fig5 SYSTEM 'protcodingfig5.jpg' NDATA JPG>
+<!ENTITY fig5legend SYSTEM 'protcodingfig5leg.xml'>
+<!ENTITY fig6 SYSTEM 'protcodingfig6.jpg' NDATA JPG>
+<!ENTITY fig6legend SYSTEM 'protcodingfig6leg.xml'>
+<!ENTITY fig7 SYSTEM 'protcodingfig7.jpg' NDATA JPG>
+<!ENTITY fig7legend SYSTEM 'protcodingfig7leg.xml'>
+<!ENTITY fig8 SYSTEM 'protcodingfig8.jpg' NDATA JPG>
+<!ENTITY fig8legend SYSTEM 'protcodingfig8leg.xml'>
+<!ENTITY fig9 SYSTEM 'protcodingfig9.jpg' NDATA JPG>
+<!ENTITY fig9legend SYSTEM 'protcodingfig9leg.xml'>
+<!ENTITY fig10 SYSTEM 'protcodingfig10.jpg' NDATA JPG>
+<!ENTITY fig10legend SYSTEM 'protcodingfig10leg.xml'>
+<!ENTITY protcoding_Refs SYSTEM 'protcodingrefs.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="SchwarzGenomicProteinCoding_ArticleID">
+    <articleinfo>
+        <!--see DocBook's authorgroup element -->
+        <title>Genomic classification of protein-coding gene families<footnote><para>Edited by Jonathan Hodgkin and Philip Anderson. Last revised April 02, 2005. Published September 23, 2005. This chapter should be cited as: Schwarz, E.M. Genomic classification of protein-coding gene families (September 23, 2005), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.29.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+		<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2005 Erich M. Schwarz. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+</footnote></title>
+        <!--		<revhistory>
+			<revision>
+				<revnumber>1.0</revnumber>
+				<date>Last revised 4/2/05</date>
+			</revision>
+		</revhistory> 
+-->
+        <author>
+            <firstname>Erich M.</firstname>
+            <surname>Schwarz<remark><footnote><para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:emsch@its.caltech.edu">emsch@its.caltech.edu</ulink></para></footnote></remark></surname>
+            <affiliation>
+                <address>Division of Biology, 156-29, California Institute of Technology, Pasadena, CA 91125 USA</address>
+            </affiliation>
+        </author>
+    </articleinfo>
+    <abstract>
+        <title><emphasis role="bold">Abstract</emphasis></title>
+        <para><emphasis role="bold">This chapter reviews analytical tools currently in use for protein classification, and
+            gives an overview of the</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">proteome. Computational analysis of proteins relies heavily on hidden Markov models of protein families. Proteins can also be classified by predicted secondary or tertiary structures, hydrophobic profiles, compositional biases, or size ranges. Strictly orthologous protein families remain difficult to identify, except by skilled human labor. The InterPro and NCBI KOG classifications encompass 79% of</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">protein-coding genes; in both classifications, a small number of protein families account for a disproportionately large number of genes.</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">protein-coding genes include at least ~12,000 orthologs of</emphasis> <emphasis><emphasis role="bold">C. briggsae</emphasis></emphasis> <emphasis role="bold">genes, and at
+            least ~4,400 orthologs of non-nematode eukaryotic genes. Some metazoan proteins
+            conserved in other nematodes are absent from</emphasis> <emphasis><emphasis role="bold">C. elegans.</emphasis></emphasis> <emphasis role="bold">Conversely, 9% of</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">protein-coding genes are conserved among all metazoa or eukaryotes, yet have no known functions.</emphasis></para>
+    </abstract>
+    <sect1>
+        <title>Introduction</title>
+        <para>Full genome sequences make it possible, for the first time, to completely list an organism's gene products. <emphasis>C. elegans</emphasis> has ~19,800 protein-coding genes, of which ~3,400 have mutant alleles and ~2,400 others have obvious phenotypes in mass RNAi screens: this leaves ~70% of genes functionally unaccounted for. Some of these unannotated genes are clearly ancient (i.e., they encode proteins conserved in metazoa or eukaryotes) and must have critical functions, even though classical biochemistry and genetics gave no indication of them before genomics (<link linkend="bib87">Tatusov  et al., 1997</link><!-- PMID 9381173 --> and <link linkend="bib86">2003</link><!-- PMID 12969510 -->). At least ~12,000 genes are conserved between <emphasis>C. elegans</emphasis> and <emphasis>C. briggsae</emphasis>; although most of them have no known RNAi phenotypes in culture, they must be required in some way for life in the wild (<link linkend="bib83">Stein et al., 2003</link><!-- PMID 14624247 -->). To make sense of these thousands of genes, it is necessary (though not sufficient) to classify their protein products en masse. Genome-wide protein classification is based on the computational analysis of primary protein sequences, which in turn is based on theories of protein structure and evolution. This chapter briefly reviews protein evolution, describes current analytical tools, and gives an overview of the <emphasis>C. elegans</emphasis> proteome. Analyses shown here are based on the WS130 archival release of WormBase.</para>
+    </sect1>
+    <sect1>
+        <title>Similarity, homology, and shared functions</title>
+        <para>Proteins are often classified as "homologous", "similar", or "having shared function." These three ideas are related, but are neither identical nor entirely obvious.</para>
+        <para>Similarity is the degree to which two traits correspond to one another in some way; homology is the property of two traits in different organisms being derived from a common trait in a shared ancestor (<link linkend="bib14">De Beer, 1997</link><!-- ISBN0192892878 -->; <link linkend="bib25">Fitch, 2000</link><!-- PMID 10782117 -->; <link linkend="bib71">Ridley, 2003</link><!-- ISBN1405103450 -->). Similarity can be directly observed by comparing modern proteins. Homology cannot: it can only be indirectly discerned through similarity, which requires that we have some computational model for distinguishing random from nonrandom similarity (<link linkend="bib17">Durbin et al., 1999</link><!-- ISBN0521629713 -->). Similarity can, in principle, also arise from convergent evolution instead of divergent homology. In protein sequence analysis, it is possible to distinguish convergence from divergence by computing a phylogenetic tree, estimating the sequences of common ancestors on the tree, and checking these ancestors for increased similarity with increasing age (<link linkend="bib24">Fitch, 1970</link><!-- PMID 5449325 -->). Alternatively, one can detect convergence by checking proteins for dissimilarities (such as tertiary structure) that change very slowly with time (<link linkend="bib26">Galperin et al., 1998</link><!-- PMID 9724324 -->).</para>
+        <para>Homology can arise in three ways. To distinguish two of them, Fitch (1970) proposed the terms "orthology" and "paralogy": orthologous genes are those whose last common ancestor split into two gene lineages through speciation, while paralogous genes are those which split through intragenomic duplication within a single species. In the former case, it is likely that orthologs will go on performing similar biological roles; in the latter, paralogs have long been known to allow a second gene copy to acquire a new role by functional divergence (<link linkend="bib23">Fay and Wu, 2003</link><!-- PMID 14527302 -->; <link linkend="bib88">Taylor and Raes, 2004</link><!-- PMID 15568988 -->). Later, <link linkend="bib32">Gray and Fitch (1983<!-- PMID 6100986 -->)</link> coined the term "xenology" to denote cases where homology arose through horizontal gene transfer (<link linkend="bib25">Fitch, 2000</link><!-- PMID 10782117 -->). Such transfers rarely occur into metazoa (<link linkend="bib48">Kurland et al., 2003</link><!-- PMID 12902542 -->), but do appear to have occurred from rhizobia to the plant-parasitic nematode <emphasis>Meloidogyne</emphasis>, and thus might have occurred from microbes to <emphasis>Caenorhabditis</emphasis> as well (<link linkend="bib75">Scholl et al., 2003</link><!-- PMID 12801413 -->).</para>
+        <para>Some ambiguities remain. For instance, if a single gene exists in <emphasis>C. elegans</emphasis> with several homologs in humans, and those homologs diversified after the nematode-chordate divergence, are all human homologs considered orthologs of the worm gene? One proposed solution is to call all of the genes in question inparalogs or co-orthologs (<link linkend="bib82">Sonnhammer and Koonin, 2002</link><!-- PMID 12446146 -->). Moreover, all of these terms treat genes as unbroken blocks of biological information. But proteins often have multiple domains which undergo intragenic duplication and rearrangement (<link linkend="bib80">Soding and Lupas, 2003</link><!-- PMID 12938173 -->). It is therefore possible for part of a protein to have homologies that the entire protein does not share; in SwissProt, the 50 most widely distributed protein domains can be found in 16 to 141 protein families apiece (<link linkend="bib21">Enright et al., 2002</link><!-- PMID 11917018 -->).</para>
+        <para>Protein functions are often assumed to be not merely similar, but unchanged, between protein orthologs, and somewhat unchanged even between paralogs. For several <emphasis>C. elegans</emphasis> proteins, this generalization has been experimentally supported (<link linkend="bib4">Asp&#x000F6;ck et al., 2003</link><!-- PMID 12810585 -->; <link linkend="bib16">Duerr et al., 1999</link><!-- PMID 9870940 -->; <link linkend="bib34">Haun et al., 1998</link><!-- PMID 9560230 -->; <link linkend="bib50">Lee et al., 1994</link><!-- PMID 8288128 -->; <link linkend="bib49">Lee et al., 2001</link><!-- PMID 11747821 -->; <link linkend="bib51">Levitan et al., 1996</link><!-- PMID 8962160 -->; <link linkend="bib81">Solari et al., 2005</link><!-- PMID 15637588 -->; <link linkend="bib92">Westmoreland et al., 2001</link><!-- PMID 11517269 -->; <link linkend="bib94">Zhang et al., 1999</link><!-- PMID 10191059 -->). However, in some protein families, biochemical functions change more quickly than sequences do (<link linkend="bib29">Gerlt and Babbitt, 2001</link><!-- PMID 11395407 -->). Conversely, divergent protein homologs can retain common function though sharing only a few key residues (<link linkend="bib58">Meng et al., 2004</link><!-- PMID 15146493 -->). Furthermore, instances exist of a single biochemical function being independently generated in two or more distinct protein families through convergent evolution (<link linkend="bib26">Galperin et al., 1998</link><!-- PMID 9724324 -->; <link linkend="bib60">Morett et al., 2003</link><!-- PMID 12794638 -->). Similarity is a useful source of testable hypotheses about protein functions, but it is not a substitute for experimentally testing them.</para>
+            
+    </sect1>
+<?newpage?>
+    <sect1>
+        <title>Classifying proteins</title>
+        <para>Protein sequences are opaque to the human eye; computational analysis is required for
+            biologists to make sense of them or sort them into groups. The first question a
+            biologist generally asks about a new protein of interest is what known proteins are most
+            similar to it. This problem was tamed by BLAST, which allows fast heuristic searches of
+            large protein databases with sound statistical scores for hits (<link linkend="bib44">Korf et al., 2003</link>).</para>
+        <para>While useful, BLAST searching is somewhat limited. A typical BLAST output is a jumble of pairwise alignments, often in a long list, giving only a rough sense of what the common areas of similarity are. For more clarity, one needs a coherent multiple alignment of the protein to any well-defined protein sets which it resembles. This was first addressed by scanning individual sequences with matrices of aligned protein sequences ("profiles": <link linkend="bib33">Gribskov et al., 1990</link><!-- PMID 2314273 -->). Later, hidden Markov models (HMMs) proved to enable sensitive and mathematically rigorous searches with aligned families (<link linkend="bib17">Durbin et al., 1999</link><!-- ISBN0521629713 -->). This led to the development of the HMMER search software (<link linkend="bib19">Eddy, 2005</link>) and its use to construct the PFAM protein family database (<link linkend="bib6">Bateman et al., 2004</link><!-- PMID 14681378 -->). Similar databases were developed independently (e.g., PRINTS, PROSITE, ProDom, SMART, and TIGRFAMs; <link linkend="bib66">Ouzounis et al., 2003</link><!-- PMID 12838343 -->); with PFAM, all of these were amalgamated into InterPro (<link linkend="bib62">Mulder et al., 2005</link><!-- PMID 15608177 -->). Meanwhile, BLAST was extended to accept sequence profiles as queries, allowing BLAST searches for conserved protein domains (<link linkend="bib2">Altschul et al., 1997</link><!-- PMID 9254694 -->; <link linkend="bib57">Marchler-Bauer et al., 2005</link><!-- PMID 15608175 -->).</para>
+        <para>Both BLAST and other similarity searches rely on comparing two or more primary sequences to each other and searching for statistically significant matches. However, three-dimensional protein structures can be plainly similar even where primary sequences have diverged unrecognizably, making structural similarity a powerful classification method (<link linkend="bib38">Huyen et al., 2004</link><!-- PMID 15242600 -->; <link linkend="bib31">Grant et al., 2004</link><!-- PMID 15128436 -->; <link linkend="bib79">Siew and Fischer, 2004</link><!-- PMID 15327940 -->). For <emphasis>C. elegans</emphasis>, only a few protein structures have been determined; most must be inferred computationally, with limited reliability (<link linkend="bib61">Moult et al., 2003</link><!-- PMID 14579322 -->). This situation is expected to improve through structural genomics (<link linkend="bib10">Chance et al., 2004</link><!-- PMID 15489337 -->; <link linkend="bib53">Luan et al., 2004</link><!-- PMID 15489332 -->).</para>
+        <para>Although tertiary structures are hard to predict, useful algorithms exist for detecting secondary structures. HMMs can predict signal sequences and transmembrane <symbol role="symbolfont">&#x03B1;</symbol>-helices (<link linkend="bib47">Krogh et al., 2001</link><!-- PMID 11152613 -->; <link linkend="bib65">Nielsen and Krogh, 1998</link><!-- PMID 9783217 -->) and these predictions can be integrated for greater accuracy (<link linkend="bib39">K&#x000E4;ll et al., 2004</link><!-- PMID 15111065 -->). Other programs can scan a protein sequence for potential coiled-coil regions (<link linkend="bib54">Lupas, 1996</link><!-- PMID 8743703 -->) or low complexity regions likely to form nonglobular domains (<link linkend="bib69">Promponas et al., 2000</link><!-- PMID 11120681 -->; <link linkend="bib91">Wan et al., 2003</link><!-- PMID 12804090 -->). In many cases, such simple features actually can suggest function. Asparagine/glutamine-rich regions may enable epigenetic regulation (<link linkend="bib59">Michelitsch and Weissman, 2000</link><!-- PMID 11050225 -->; <link linkend="bib78">Si et al., 2003</link><!-- PMID 14697205 -->). Protein regions with low sequence complexity or disordered secondary structure participate in transcriptional and translational regulation, signal transduction, and quarternary structure assembly (<link linkend="bib18">Dyson and Wright, 2005</link><!-- PMID 15738986 -->; <link linkend="bib40">Karlin et al., 2002</link><!-- PMID 11782551 -->; <link linkend="bib52">Liu et al., 2002</link><!-- PMID 12215414 -->). Proteins with seven predicted transmembrane sequences are often G-protein coupled receptors (<link linkend="bib68">Pierce et al., 2002</link><!-- PMID 12209124 -->). Coiled-coil motifs, though seemingly generic, are overrepresented in proteins required for meiosis (<link linkend="bib12">Colaiacovo et al., 2002</link><!-- PMID 12242227 -->). Other sequence motifs that determine subcellular localization (e.g., nuclear localization signals) have been difficult to predict with the reliability needed for genome-wide analysis; however, recent work suggests that such predictions may be feasible (<link linkend="bib63">Nair and Rost, 2004</link><!-- PMID 15215440 -->; <link linkend="bib67">Park and Kanehisa, 2003</link><!-- PMID 12967962 -->; <link linkend="bib77">Scott et al., 2004</link><!-- PMID 15466294 -->).</para>
+        <para>Protein size is so simple a classification that it is often overlooked. <emphasis>C. elegans</emphasis> proteins have an unsurprising median size (343 residues), but a wide size range (16-18,562 residues). Some proteins, such as cytoskeletal or extracellular matrix components, must be over 1000 residues long to do their jobs at all (e.g., dystrophin and titin; <link linkend="bib37">Hutter et al., 2000</link><!-- PMID 10669422 -->). Others are so small (30-80 residues) that they can barely support stable tertiary structures (<link linkend="bib35">Honda et al., 2004</link><!-- PMID 15296744 -->; <link linkend="bib64">Neidigh et al., 2002</link><!-- PMID 11979279 -->), yet have vital functions  (e.g., subunits of F0- and F1-ATP synthases; <link linkend="bib5">Basrai et al., 1997</link><!-- PMID 9267801 -->; <link linkend="bib42">Kessler et al., 2003</link><!-- PMID 12566404 -->). Both extremes, in <emphasis>C. elegans</emphasis> , include highly conserved proteins.</para>
+    </sect1>
+    <sect1>
+        <title>Sorting proteins into homologs, orthologs and paralogs</title>
+        <para>For many years, working out protein homologies was done gene by individual gene (<link linkend="bib85">Swofford et al., 1996</link><!-- ISBN0878932828 -->). While the techniques used were computational from the beginning, the data available for analysis were limited by the difficulty of manually isolating proteins and cloning genes. Wholesale genomic sequencing reversed this problem: there are now vast data available, but the expertise required to do manual phylogenetic analysis scales poorly to entire genomes, making methods for automatic protein phylogenetic analysis highly desirable.</para>
+        <para>One approach is to identify proteins as groups or clusters of homologs, leaving their orthology and paralogy undefined; this is how HMMs in PFAM and InterPro work. Homology groups can also be generated from BLAST searches of multiple genomes using Bayesian matrices (<link linkend="bib21">Enright et al., 2002</link><!-- PMID 11917018 -->). An advantage of homology-only searches is that they can dissect complex proteins into multiple domains easily; for instance, InterPro can mark each domain with an HMM corresponding to its pertinent family. A disadvantage is that such searches can lump proteins into large groups while ignoring their detailed evolutionary history. For instance, there is an InterPro family for protein kinases (IPR000719); however, this protein superfamily is multifarious, encompassing 134 orthologous families bound together by 8 ancient paralogies (<link linkend="bib56">Manning et al., 2002</link><!-- PMID 12471243 -->).</para>
+        <para>It would thus be highly desirable to have an agreed-upon way of constructing groups of orthologous and paralogous proteins, of the sort worked out for detecting homologous proteins by InterPro. Unfortunately, no such standard currently exists, though several strategies have been tried. Orthology groups were computed by <link linkend="bib87">Tatusov et al. (1997</link><!-- PMID 9381173 -->, <link linkend="bib86">2003</link><!-- PMID 12969510 -->) who used triplets of mutual best BLAST hits to construct KOGs (euKaryotic Orthologous Groups), TWOGs (candidate TWo-species Orthologous Groups) and LSEs (Lineage-Specific Expansions peculiar to a single lineage) for two yeasts (<emphasis>Saccharomyces cerevisiae</emphasis> and <emphasis>Schizosaccharomyces pombe</emphasis>), one plant (<emphasis>Arabidopsis thaliana</emphasis>), and three metazoa (<emphasis>Homo sapiens</emphasis>, <emphasis>Drosophila melanogaster</emphasis>, and <emphasis>C. elegans</emphasis>). <link linkend="bib70">Remm et al. (2001<!-- PMID 11743721 -->)</link> subsequently developed InParanoid, which generates pairwise orthologs and paralogs between pairs of species rather than several species at a time. Two methods of deriving orthology groups from PFAM have also been devised (HOPS and RIO: <link linkend="bib84">Storm and Sonnhammer, 2003</link><!-- PMID 14525933 -->; <link linkend="bib95">Zmasek and Eddy, 2002</link><!-- PMID 12028595 -->).</para>
+        <para>The classifications presented here, while useful, are necessarily imperfect. One challenge for an automatic classification is to correctly distinguish between protein motifs and protein families. Motifs are defined by InterPro as independent structural units that can be found either alone or with other domains or repeats, while families are defined as groups of proteins with shared domain or repeat architecture (<link linkend="bib62">Mulder et al., 2005</link><!-- PMID 15608177 -->). An InterPro motif can be present in a small set of <emphasis>C. elegans</emphasis> protein families, yet not exactly correspond with any one family. For example, the InterPro motif IPR007284  (DUF398/Ground-like domain) is found in both the <emphasis>groundhog</emphasis> (<emphasis>grd</emphasis>) and <emphasis>ground-like</emphasis> (<emphasis>grd</emphasis>) families, while the InterPro motifs IPR003586 and IPR003587 (Hint domains) are found in the <emphasis>groundhog</emphasis> and <emphasis>warthog</emphasis> (<emphasis>wrt</emphasis>) families, but none of these three motifs precisely identifies a gene family on its own (<link linkend="bib3">Asp&#x000F6;ck et al., 1999</link><!-- PMID 10523520 -->). Another challenge is that <emphasis>C. elegans</emphasis> encodes gene families with remarkably high lineage-specific expansion and primary sequence divergence. Two well-studied instances of such families are seven-pass transmembrane receptors (<link linkend="bib41">Keating et al., 2003</link><!-- PMID 14521838 -->; <link linkend="bib72">Robertson, 1998</link><!-- PMID 9582190 -->, <link linkend="bib73">2000</link><!-- PMID 10673277 -->, and <link linkend="bib74">2001</link><!-- PMID 11238245 -->) and nuclear hormone receptors (<link linkend="bib30">Gissendanner et al. 2004</link><!-- PMID 14738886 -->; <link linkend="bib55">Maglich et al., 2001</link><!-- PMID 11532213 -->). In both cases, reliably sorting out the family members has absolutely required prolonged effort by experts; indeed, in the case of seven-pass receptors, classification is still going on (<link linkend="bib11">Chen et al., 2005</link><!-- PMID 15618405 -->; <link linkend="bib89">Thomas et al., 2005</link><!-- PMID 15761060 -->). Such protein families tend to be parceled out among InterPro and NCBI classes with limited accuracy.</para>
+        <para>By the WS130 archival release, WormBase had incorporated the PFAM/InterPro and NCBI KOG/TWOG/LSE families. In the near future, it is expected to also include InParanoid analyses. The rest of this chapter includes a summary of results from NCBI and PFAM/InterPro analyses.</para>
+    </sect1>
+    <sect1>
+        <title>Protein classes in <emphasis>C. elegans</emphasis></title>
+        <para>As noted above, subcellular localization can be roughly predicted from primary sequence. By this criterion, half of <emphasis>C. elegans</emphasis> genes encode purely cytosolic proteins, one-third encode membrane-embedded proteins, one-eighth encode secreted proteins, and one-tenth encode cytosolic proteins which aggregate through coiled-coils (see <xref linkend="figure1"/>; <link linkend="table1">Table 1</link>). No attempt has yet been made in WormBase to predict more fine-grained protein localization to the nucleus or other organelles.</para>
+<table id="table1" frame='all'>
+                <title><emphasis role="bold">Table 1. The numbers of <emphasis role="bold-italic">C. elegans</emphasis> genes whose products are included in various groups.</emphasis> These are shown along with the number of protein families they encode</title>
+               <tgroup cols='2'  colsep='1' rowsep='1'>
+                <colspec colname="c1" colwidth="0.75*" align="left" />
+                <colspec colname="c2" colwidth="0.5*" align="center" />
+                
+                <thead>
+                        <row valign="middle" >
+                            <entry>Total genes</entry>
+                            <entry>19762</entry>
+                        </row>
+                </thead>
+                <tbody>
+                        <row>
+                            <entry>Any family</entry>
+                            <entry>15544</entry>
+                        </row>
+
+                        <row>
+                            <entry>No family</entry>
+                            <entry>4218</entry>
+                        </row>
+                        <row>
+                            <entry>InterPro (IPR)</entry>
+                            <entry>5209</entry>
+                        </row>
+                        <row>
+                            <entry>KOG or TWOG</entry>
+                            <entry>10070</entry>
+                        </row>
+                        <row>
+                            <entry>KOG</entry>
+                            <entry>9515</entry>
+                        </row>
+                        <row>
+                            <entry>TWOG</entry>
+                            <entry>582</entry>
+                        </row>
+                        <row>
+                            <entry>LSE</entry>
+                            <entry>5321</entry>
+                        </row>
+                        <row>
+                            <entry>IPR and KOG/TWOG</entry>
+                            <entry>4208</entry>
+                        </row>
+                        <row>
+                            <entry>IPR, no KOG/TWOG</entry>
+                            <entry>1001</entry>
+                        </row>
+                        <row>
+                            <entry>KOG/TWOG, no IPR</entry>
+                            <entry>5862</entry>
+                        </row>
+                        <row>
+                            <entry>LSE only</entry>
+                            <entry>4473</entry>
+                        </row>
+                        <row>
+                            <entry>Signal only</entry>
+                            <entry>2303</entry>
+                        </row>
+                        <row>
+                            <entry>Transmembrane</entry>
+                            <entry>5683</entry>
+                        </row>
+                        <row>
+                            <entry>Cytosolic + coils</entry>
+                            <entry>1995</entry>
+                        </row>
+                        <row>
+                            <entry>Cytosolic - coils</entry>
+                            <entry>9781</entry>
+                        </row>
+                        <row>
+                    <entry namest="c1" nameend="c2" ></entry>
+                    </row>
+                        <row valign="middle" >
+                            <entry><emphasis role="bold">Total families</emphasis></entry>
+                           <entry><emphasis role="bold">6627</emphasis></entry>
+                        </row>
+                        <row>
+                            <entry>IPR</entry>
+                            <entry>1337</entry>
+                        </row>
+                        <row>
+                            <entry>KOG</entry>
+                            <entry>4222</entry>
+                        </row>
+                        <row>
+                            <entry>TWOG</entry>
+                            <entry>225</entry>
+                        </row>
+                        <row>
+                            <entry>LSE</entry>
+                            <entry>843</entry>
+                        </row>
+    
+                </tbody>
+                </tgroup>
+                </table>
+<literallayout></literallayout>
+        <mediaobject id="figure1" xreflabel="Figure 1">
+				<imageobject>
+					<imagedata entityref="fig1" width="4in" align="center"/>
+				</imageobject>
+			<textobject><phrase>Generation of founder cells in the early embryo</phrase></textobject>
+            &fig1legend;
+       </mediaobject>
+
+        <para>By their size, these proteins fall into three groups (see <xref linkend="figure2"/>). Roughly 90% have a strikingly regular logarithmic distribution of sizes from 100 to 1000 residues. This leaves two tails, each including ~5% of proteins, that deviate sharply downward or upward in size. Both the small and the large extremes include highly conserved proteins that probably cannot change size towards more normal levels without losing their function (e.g., small ribosomal proteins or large cytoskeletal ones). Within the central ~90% of proteins, most sizes are equally represented, except for a noticeable peak at ~340 residues caused by a nematode-specific expansion of chemosensory receptors (see <xref linkend="figure3"/>; <link linkend="bib72">Robertson, 1998</link><!-- PMID 9582190 -->; <link linkend="bib73">2000</link><!-- PMID 10673277 --> and <link linkend="bib74">2001</link><!-- PMID 11238245 -->).</para>
+<literallayout></literallayout>
+       <mediaobject id="figure2" xreflabel="Figure 2">
+				<imageobject>
+					<imagedata entityref="fig2" width="5.5in" align="center"/>
+				</imageobject>
+			<textobject><phrase>Generation of founder cells in the early embryo</phrase></textobject>
+            &fig2legend;
+       </mediaobject>
+       
+       <literallayout></literallayout>
+       <mediaobject id="figure3" xreflabel="Figure 3">
+				<imageobject>
+					<imagedata entityref="fig3" width="5.5in" align="center"/>
+				</imageobject>
+			<textobject><phrase>Generation of founder cells in the early embryo</phrase></textobject>
+            &fig3legend;
+       </mediaobject>
+
+<?newpage?>        
+          <para>Two different systems of identifying protein families, from InterPro and NCBI, have been applied to <emphasis>C. elegans</emphasis> as of the WS130 release of WormBase. There are many different ways to examine these data, but one starting point is to look at how the protein families map to gene numbers (see <xref linkend="figure4"/>; <link linkend="table1">Table 1</link>). Both systems identify significant numbers of genes (~5000 and ~15,000), and both systems have some genes that they alone can identify (see <xref linkend="figure5"/>), but NCBI's families are considerably more extensive. Collectively, both methods provide some sort of identification for 79% of <emphasis>C. elegans</emphasis> protein-coding genes, going well beyond the functional classifications currently possible by mutant or RNAi phenotypes.</para>
+        <para>One striking feature of the protein family sets, whether from InterPro or from NCBI, is that they are very lopsided in how many genes individual families contain. This can be noticed by careful examination of <xref linkend="figure4"/>, but is easier to see if one plots the coverage of genes by protein families as a normalized curve (see <xref linkend="figure6"/>). Of all 5,209 genes with an InterPro family identification, 50% fall into only 80 families (out of 1,337 families) and 25% into only 21; of all 15,258 genes with an NCBI affiliation, 50% fall into only 372 NCBI families (out of 5,290 families) and 25% into only 51 (see <xref linkend="figure6"/> and <xref linkend="figure7"/>; <link linkend="table2">Tables 2</link> and <link linkend="table3">3</link>). This is likely to reflect general trends of protein structural evolution, since 54 three-dimensional protein folds (6.6% of all folds) account for 76% of all known structures (<link linkend="bib31">Grant et al., 2004</link><!-- PMID 15128436 -->). In contrast, 699 InterPro and 3,341 NCBI families are encoded by only a single gene apiece in the <emphasis>C. elegans</emphasis> genome (see <xref linkend="figure8"/>).</para>
+       <literallayout></literallayout>
+          <mediaobject id="figure4" xreflabel="Figure 4">
+				<imageobject>
+					<imagedata entityref="fig4" width="6in" align="center"/>
+				</imageobject>
+			<textobject><phrase>Generation of founder cells in the early embryo</phrase></textobject>
+            &fig4legend;
+       </mediaobject>
+       
+       <mediaobject id="figure5" xreflabel="Figure 5">
+				<imageobject>
+					<imagedata entityref="fig5" width="4in" align="center"/>
+				</imageobject>
+			<textobject><phrase>Generation of founder cells in the early embryo</phrase></textobject>
+            &fig5legend;
+       </mediaobject>
+       
+       <literallayout></literallayout>
+       <mediaobject id="figure6" xreflabel="Figure 6">
+				<imageobject>
+					<imagedata entityref="fig6" width="5.5in" align="center"/>
+				</imageobject>
+			<textobject><phrase>Generation of founder cells in the early embryo</phrase></textobject>
+            &fig6legend;
+            </mediaobject>
+            <literallayout></literallayout>
+            <mediaobject id="figure7" xreflabel="Figure 7">
+				<imageobject>
+					<imagedata entityref="fig7" width="5.5in" align="center"/>
+				</imageobject>
+			<textobject><phrase>Generation of founder cells in the early embryo</phrase></textobject>
+            &fig7legend;
+       </mediaobject>
+       <literallayout></literallayout>
+       <mediaobject id="figure8" xreflabel="Figure 8">
+				<imageobject>
+					<imagedata entityref="fig8" width="5.5in" align="center"/>
+				</imageobject>
+			<textobject><phrase>Generation of founder cells in the early embryo</phrase></textobject>
+            &fig8legend;
+       </mediaobject>
+   <table id="table2" frame='all'>
+                <title><emphasis role="bold">Table 2. The most gene-populated InterPro protein families.</emphasis> These 80 families include 50% of all 5,209 genes encoding any InterPro family members. Full descriptions of these families, with references, are available at <ulink url="http://www.ebi.ac.uk/interpro" role="_blank">http://www.ebi.ac.uk/interpro</ulink> (<link linkend="bib67">Mulder et al., 2005</link><!--  PMID15608177 -->).</title>
+                 <tgroup cols='2'  colsep='1' rowsep='1'>
+                <colspec colname="c1" colwidth="0.25*" align="center"/>
+                <colspec colname="c2" colwidth="1*" align="left"/>
+               <thead>
+                        <row valign="middle">
+                            <entry>Number of genes</entry>
+                            <entry>InterPro Family</entry>
+                        </row>
+                </thead>
+               <tbody>
+                        <row>
+                            <entry>439</entry>
+                            <entry>IPR000719   [Protein kinase]</entry>
+                        </row>
+    
+                        <row>
+                            <entry>401</entry>
+                            <entry>IPR002290  [Serine/threonine protein kinase]</entry>
+                        </row>
+                        <row>
+                            <entry>319</entry>
+                            <entry>IPR001245  [Tyrosine protein kinase]</entry>
+                        </row>
+                        <row>
+                            <entry>283</entry>
+                            <entry>IPR003003  [7TM chemoreceptor, subfamily 2]</entry>
+                        </row>
+                        <row>
+                            <entry>179</entry>
+                            <entry>IPR000276    [Rhodopsin-like GPCR superfamily]</entry>
+                        </row>
+                         <row>
+                            <entry>94</entry>
+                            <entry>IPR000242   [Tyrosine specific protein phosphatase]</entry>
+                        </row>
+    
+                        <row>
+                            <entry>93</entry>
+                            <entry>IPR000324  [Vitamin D receptor]</entry>
+                        </row>
+                        <row>
+                            <entry>89</entry>
+                            <entry>IPR006201  [Neurotransmitter-gated ion-channel]</entry>
+                        </row>
+                        <row>
+                            <entry>87</entry>
+                            <entry>IPR002198  [Short-chain dehydrogenase/reductase SDR]</entry>
+                        </row>
+                        <row>
+                            <entry>78</entry>
+                            <entry>IPR001128  [Cytochrome P450]</entry>
+                        </row>
+                         <row>
+                            <entry>76</entry>
+                            <entry>IPR001806   [Ras GTPase]</entry>
+                        </row>
+    
+                        <row>
+                            <entry>74</entry>
+                            <entry>IPR002347  [Glucose/ribitol dehydrogenase]</entry>
+                        </row>
+                        <row>
+                            <entry>74</entry>
+                            <entry>IPR002401   [E-class P450, group I]</entry>
+                        </row>
+                        <row>
+                            <entry>71</entry>
+                            <entry>IPR003579  [Ras small GTPase, Rab type]</entry>
+                        </row>
+                        <row>
+                            <entry>66</entry>
+                            <entry>IPR002213  [UDP-glucuronosyl/UDP-glucosyltransferase]</entry>
+                        </row>
+                         <row>
+                            <entry>61</entry>
+                            <entry>IPR005821   [Ion transport protein]</entry>
+                        </row>
+    
+                        <row>
+                            <entry>60</entry>
+                            <entry>IPR000169  [Peptidase, eukaryotic cysteine peptidase active site]</entry>
+                        </row>
+                        <row>
+                            <entry>58</entry><entry>IPR003577   [Ras small GTPase, Ras type]</entry>
+                        </row>
+                        <row>
+                            <entry>58</entry><entry>IPR000387   [Tyrosine specific protein phosphatase and dual specificity  protein phosphatase]</entry>
+                        </row>
+                        <row>
+                            <entry>55</entry><entry>IPR005828   [General substrate transporter]</entry>
+                        </row>
+                         <row>
+                            <entry>52</entry><entry>IPR003578   [Ras small GTPase, Rho type]</entry>
+                        </row>
+    
+                        <row>
+                            <entry>51</entry><entry>IPR001534   [Transthyretin-like]</entry>
+                        </row>
+                        <row>
+                            <entry>47</entry><entry>IPR001723   [Steroid hormone receptor]</entry>
+                        </row>
+                        <row>
+                            <entry>44</entry><entry>IPR000609   [Integral membrane protein Srg, nematode type]</entry>
+                        </row>
+                        <row>
+                            <entry>42</entry><entry>IPR003280   [K<superscript>+</superscript> channel, two pore]</entry>
+                        </row>
+                         <row>
+                            <entry>40</entry><entry>IPR003286   [Nematode reverse transcriptase-like]</entry>
+                        </row>
+    
+                        <row>
+                            <entry>39</entry><entry>IPR001506   [Peptidase M12A, astacin]</entry>
+                        </row>
+                        <row>
+                            <entry>39</entry><entry>IPR006028   [Gamma-aminobutyric acid A receptor]</entry>
+                        </row>
+                        <row>
+                            <entry>39</entry><entry>IPR004151  [<emphasis>C. elegans</emphasis> Sre G protein-coupled chemoreceptor]</entry>
+                        </row>
+                        <row>
+                            <entry>37</entry><entry>IPR001993   [Mitochondrial substrate carrier]</entry>
+                        </row>
+                         <row>
+                            <entry>37</entry><entry>IPR005829   [Sugar transporter superfamily]</entry>
+                        </row>
+    
+                        <row>
+                            <entry>36</entry><entry>IPR001283   [Allergen V5/Tpx-1 related]</entry>
+                        </row>
+                        <row>
+                            <entry>36</entry><entry>IPR000344   [Nematode chemoreceptor, Sra]</entry>
+                        </row>
+                        <row>
+                            <entry>35</entry><entry>IPR002041   [GTP-binding nuclear protein Ran]</entry>
+                        </row>
+                        <row>
+                            <entry>35</entry><entry>IPR005834   [Haloacid dehalogenase-like hydrolase]</entry>
+                        </row>
+                         <row>
+                            <entry>35</entry><entry>IPR001223   [Glycoside hydrolase, family 18]</entry>
+                        </row>
+    
+                        <row>
+                            <entry>34</entry><entry>IPR000718   [Peptidase M13, neprilysin]</entry>
+                        </row>
+                        <row>
+                            <entry>33</entry><entry>IPR000215   [Proteinase inhibitor I4, serpin]</entry>
+                        </row>
+                        <row>
+                            <entry>32</entry><entry>IPR000834   [Peptidase M14, carboxypeptidase A]</entry>
+                        </row>
+                        <row>
+                            <entry>30</entry><entry>IPR008166   [Protein of unknown function DUF23]</entry>
+                        </row>
+                         <row>
+                            <entry>29</entry><entry>IPR003392   [Patched]</entry>
+                        </row>
+    
+                        <row>
+                            <entry>29</entry><entry>IPR000668   [Peptidase C1A, papain]</entry>
+                        </row>
+                        <row>
+                            <entry>27</entry><entry>IPR001873   [Na<superscript>+</superscript> channel, amiloride-sensitive]</entry>
+                        </row>
+                        <row>
+                            <entry>25</entry><entry>IPR001079   [Galectin, galactose-binding lectin]</entry>
+                        </row>
+                        <row>
+                            <entry>25</entry><entry>IPR001394   [Peptidase C19, ubiquitin carboxyl-terminal hydrolase 2]</entry>
+                        </row>
+                         <row>
+                            <entry>25</entry><entry>IPR002921   [Lipase, class 3]</entry>
+                        </row>
+    
+                        <row>
+                            <entry>25</entry><entry>IPR000615   [Bestrophin]</entry>
+                        </row>
+                        <row>
+                            <entry>25</entry><entry>IPR000990   [Innexin]</entry>
+                        </row>
+                        <row>
+                            <entry>24</entry><entry>IPR002492   [Transposase, Tc1/Tc3]</entry>
+                        </row>
+                        <row>
+                            <entry>24</entry><entry>IPR001412   [Aminoacyl-tRNA  synthetase, class I]</entry>
+                        </row>
+                         <row>
+                            <entry>23</entry><entry>IPR000164   [Histone H3]</entry>
+                        </row>
+    
+                        <row>
+                            <entry>22</entry><entry>IPR001211   [Phospholipase A2]</entry>
+                        </row>
+                        <row>
+                            <entry>22</entry><entry>IPR002659   [Glycosyl transferase, family 31]</entry>
+                        </row>
+                        <row>
+                            <entry>21</entry><entry>IPR002394   [Nicotinic acetylcholine receptor]</entry>
+                        </row>
+                        <row>
+                            <entry>21</entry><entry>IPR001019   [Guanine nucleotide binding protein [G-protein], alpha subunit]</entry>
+                        </row>
+                         <row>
+                            <entry>21</entry><entry>IPR001757   [ATPase, E1-E2 type]</entry>
+                        </row>
+    
+                        <row>
+                            <entry>21</entry><entry>IPR006688   [ADP-ribosylation factor]</entry>
+                        </row>
+                        <row>
+                            <entry>21</entry><entry>IPR001699   [Transcription factor, T-box]</entry>
+                        </row>
+                        <row>
+                            <entry>21</entry><entry>IPR000566   [Lipocalin-related protein and Bos/Can/Equ allergen]</entry>
+                        </row>
+                        <row>
+                            <entry>20</entry><entry>IPR003235   [Nematode insulin-related peptide, beta type]</entry>
+                        </row>
+                         <row>
+                            <entry>20</entry><entry>IPR003406   [Glycosyl transferase, family 14]</entry>
+                        </row>
+    
+                        <row>
+                            <entry>19</entry><entry>IPR002119   [Histone H2A]</entry>
+                        </row>
+                        <row>
+                            <entry>19</entry><entry>IPR002067   [Mitochondrial carrier protein]</entry>
+                        </row>
+                        <row>
+                            <entry>19</entry><entry>IPR001461   [Peptidase A1, pepsin]</entry>
+                        </row>
+                        <row>
+                            <entry>18</entry><entry>IPR002516   [Glycosyl transferase, family 11]</entry>
+                        </row>
+                         <row>
+                            <entry>18</entry><entry>IPR000795   [Protein synthesis factor, GTP-binding]</entry>
+                        </row>
+                        <row>
+                            <entry>18</entry><entry>IPR001163   [Small nuclear ribonucleoprotein [Sm protein]]</entry>
+                        </row>
+                        <row>
+                            <entry>18</entry><entry>IPR002453   [Beta tubulin]</entry>
+                        </row>
+                        <row>
+                            <entry>18</entry><entry>IPR002918   [Lipase, class 2]</entry>
+                        </row>
+                        <row>
+                            <entry>18</entry><entry>IPR002113   [Adenine nucleotide translocator 1]</entry>
+                        </row>
+                         <row>
+                            <entry>18</entry><entry>IPR001327   [FAD-dependent pyridine nucleotide-disulphide oxidoreductase]</entry>
+                        </row>
+    
+                        <row>
+                            <entry>18</entry><entry>IPR004825   [Insulin/IGF/relaxin]</entry>
+                        </row>
+                        <row>
+                            <entry>18</entry><entry>IPR002184   [Integral membrane protein Srb, nematode type]</entry>
+                        </row>
+                        <row>
+                            <entry>17</entry><entry>IPR000301   [CD9/CD37/CD63 antigen]</entry>
+                        </row>
+                        <row>
+                            <entry>17</entry><entry>IPR000217   [Tubulin]</entry>
+                        </row>
+                         <row>
+                            <entry>17</entry><entry>IPR000558   [Histone H2B]</entry>
+                        </row>
+    
+                        <row>
+                            <entry>16</entry><entry>IPR001951   [Histone H4]</entry>
+                        </row>
+                        <row>
+                            <entry>16</entry><entry>IPR002123   [Phospholipid/glycerol acyltransferase]</entry>
+                        </row>
+                        <row>
+                            <entry>16</entry><entry>IPR000910   [HMG1/2 [high mobility group] box]</entry>
+                        </row>
+                </tbody>
+                </tgroup>
+                </table>
+<table id="table3" frame='all'>
+                <title><emphasis role="bold">Table 3. The most gene-populated NCBI protein families.</emphasis> These 51 NCBI KOG/TWOG/LSE families include 25% of all 15,258 genes encoding any NCBI family members. NCBI's descriptions of these families are available at <ulink url=" http://www.ncbi.nlm.nih.gov/COG/new/" role="_blank"></ulink> (<link linkend="bib87">Tatusov et al., 1997</link> and <link linkend="bib86">2003</link>).</title>
+               <tgroup cols='2'  colsep='1' rowsep='1'>
+                <colspec colname="c1" colwidth="0.25*" align="center" />
+                <colspec colname="c2" colwidth="1*" align="left" />
+                
+                <thead>
+                        <row valign="middle" >
+                            <entry>Number of genes</entry><entry>NCBI  KOG/TWOG/LSE family</entry>
+                        </row>
+                </thead>
+                <tbody>
+                            <row><entry>267</entry><entry>LSE0262 [Predicted olfactory G-protein coupled receptor]</entry></row>
+                            <row><entry>260</entry><entry>LSE0498 [7-transmembrane olfactory receptor]</entry></row>
+                            <row><entry>236</entry><entry>KOG4297 [C-type lectin]</entry></row>
+                            <row><entry>210</entry><entry>LSE0146 [Uncharacterized protein]</entry></row>
+                            <row><entry>206</entry><entry>KOG3575 [Hormone receptors]</entry></row>
+                            <row><entry>172</entry><entry>KOG3544 [Collagens (type IV and type XIII), and related proteins]</entry></row>
+                            <row><entry>132</entry><entry>LSE0338 [Predicted transposase]</entry></row>
+                            <row><entry>110</entry><entry>LSE0501 [7-transmembrane olfactory receptor]</entry></row>
+                            <row><entry>93</entry><entry>KOG1164 [Casein kinase (serine/threonine/tyrosine protein kinase)]</entry></row>
+                            <row><entry>92</entry><entry>LSE0150 [Uncharacterized protein, contains BTB/POZ domain]</entry></row>
+                            <row><entry>86</entry><entry>KOG1721 [Zn-finger]</entry></row>
+                            <row><entry>84</entry><entry>KOG3656 [7 transmembrane receptor]</entry></row>
+                            <row><entry>77</entry><entry>LSE3897 [Unnamed protein]</entry></row>
+                            <row><entry>76</entry><entry>LSE0021 [Sra family integral membrane protein]</entry></row>
+                            <row><entry>76</entry><entry>KOG1192 [UDP-glucuronosyl and UDP-glucosyl transferase]</entry></row>
+                            <row><entry>72</entry><entry>KOG1075 [Reverse transcriptase]</entry></row>
+                            <row><entry>72</entry><entry>LSE0499 [Integral membrane O-acyltransferase]</entry></row>
+                            <row><entry>70</entry><entry>LSE0023 [Predicted receptor]</entry></row>
+                            <row><entry>69</entry><entry>LSE0147 [Chemoreceptor/7TM receptor]</entry></row>
+                            <row><entry>64</entry><entry>LSE0503 [Secreted surface protein]</entry></row>
+                            <row><entry>63</entry><entry>KOG0789 [Protein tyrosine phosphatase]</entry></row>
+                            <row><entry>61</entry><entry>LSE0502 [7-transmembrane receptor]</entry></row>
+                            <row><entry>60</entry><entry>LSE0562 [Nuclear hormone receptor]</entry></row>
+                            <row><entry>59</entry><entry>KOG4735 [Extracellular protein with conserved cysteines]</entry></row>
+                            <row><entry>58</entry><entry>LSE0504 [7-transmembrane receptor]</entry></row>
+                            <row><entry>58</entry><entry>LSE0020 [Sre G protein-coupled chemoreceptor]</entry></row>
+                            <row><entry>56</entry><entry>KOG2532 [Permease of the major facilitator superfamily]</entry></row>
+                            <row><entry>51</entry><entry>LSE0018 [Uncharacterized protein]</entry></row>
+                            <row><entry>51</entry><entry>LSE0505 [7-transmembrane receptor]</entry></row>
+                            <row><entry>50</entry><entry>LSE0263 [F-box domain]</entry></row>
+                            <row><entry>47</entry><entry>KOG3645 [Acetylcholine receptor]</entry></row>
+                            <row><entry>46</entry><entry>KOG1418 [Tandem pore domain K+ channel]</entry></row>
+                            <row><entry>46</entry><entry>KOG0156 [Cytochrome P450 CYP2 subfamily]</entry></row>
+                            <row><entry>46</entry><entry>LSE0506 [Uncharacterized protein with conserved cysteine]</entry></row>
+                            <row><entry>42</entry><entry>KOG1217 [Fibrillins and related proteins containing Ca<superscript>2+</superscript>-binding EGF-like domains]</entry></row>
+                            <row><entry>42</entry><entry>LSE0508 [Uncharacterized protein]</entry></row>
+                            <row><entry>42</entry><entry>KOG1695 [Glutathione S-transferase]</entry></row>
+                            <row><entry>41</entry><entry>KOG1516 [Carboxylesterase and related proteins]</entry></row>
+                            <row><entry>40</entry><entry>KOG0374 [Serine/threonine specific protein phosphatase PP1, catalytic subunit]</entry></row>
+                            <row><entry>40</entry><entry>KOG3714 [Meprin A metalloprotease]</entry></row>
+                            <row><entry>38</entry><entry>KOG0194 [Protein tyrosine kinase]</entry></row>
+                            <row><entry>38</entry><entry>LSE0514 [Predicted secreted cysteine rich protein found only in <emphasis>C.elegans</emphasis>]</entry></row>
+                            <row><entry>38</entry><entry>LSE0510 [Extracellular protein with cysteine rich structures]</entry></row>
+                            <row><entry>38</entry><entry>LSE0509 [Uncharacterized protein]</entry></row>
+                            <row><entry>37</entry><entry>LSE0511 [Uncharacterized protein]</entry></row>
+                            <row><entry>36</entry><entry>KOG3017 [Defense-related protein containing SCP domain]</entry></row>
+                            <row><entry>36</entry><entry>KOG0017 [Transposon-encoded proteins with TYA, reverse transcriptase, integrase domains in various combinations]</entry></row>
+                            <row><entry>36</entry><entry>KOG2806 [Chitinase]</entry></row>
+                            <row><entry>36</entry><entry>LSE0516 [Uncharacterized protein, contains major sperm protein (MSP) domain]</entry></row>
+                            <row><entry>35</entry><entry>LSE0518 [7-transmembrane receptor]</entry></row>
+                            <row><entry>35</entry><entry>KOG4185 [Predicted E3 ubiquitin ligase]</entry></row>
+                            </tbody>
+                            </tgroup>
+                        </table>
+
+    </sect1>
+    <sect1>
+        <title>Evolutionary history</title>
+        <para>By examining the membership of KOGs and TWOGs, it is possible to trace their origin to phylogenetic divisions between nematodes and other animal phyla, or between animals and other eukaryotes (<link linkend="bib22">Erwin and Davidson, 2002</link><!-- PMID 12070079 -->; <link linkend="bib43">King, 2004</link><!-- PMID 15363407 -->). There are 3951 KOGs shared by <emphasis>C. elegans</emphasis>, <emphasis>H. sapiens</emphasis>, and <emphasis>D. melanogaster</emphasis>; in contrast, the number of KOGs found in only two of these species is &gt;10% of this number (331 KOGs in human and fly but not worm; 261 KOGs found in worm and human or fly). In some cases, a gene found in <emphasis>H. sapiens</emphasis> and <emphasis>D. melanogaster</emphasis> but not <emphasis>C. elegans</emphasis> may reflect simplication of the <emphasis>Caenorhabditis</emphasis> genome after the divergence of <emphasis>Caenorhabditis</emphasis> from other nematodes. For instance, orthologs of Hox3 and <emphasis>Antennapedia</emphasis>/Hox6 are missing from <emphasis>C. elegans</emphasis> but present in other nematodes (e.g., <emphasis>Brugia malayi</emphasis>; <link linkend="bib1">Aboobaker and Blaxter, 2003</link><!-- PMID 12526742 -->), as is the BRCA2-binding tumor suppressor EMSY (<link linkend="bib36">Hughes-Davies et al., 2003</link><!-- PMID 14651845 -->). Such genes may encode proteins that are needed for most metazoa but that have proven dispensable in the short-lived, anatomically minimal <emphasis>C. elegans</emphasis> and its close relatives. Evidence that loss of protein families may be a general trait of fast-breeding model organisms has recently come from EST sequencing of the staghorn coral <emphasis>Acropora millepora</emphasis> (<link linkend="bib46">Kortschak et al., 2003</link><!-- PMID 14680636 -->).</para>
+        <para>Some metazoan proteins which seem missing from <emphasis>C. elegans</emphasis> may actually be present, but
+            be so divergent in their primary sequence that they are hard to recognize. Examples of
+            such abnormally divergent proteins include the axin homolog <ulink url="http://www.wormbase.org/db/seq/protein?name=PRY-1;class=protein" role="_blank">PRY-1</ulink> (<link linkend="bib45">Korswagen et al., 2002</link><!-- PMID 12023307 -->), the BRCA1 ortholog <ulink url="http://www.wormbase.org/db/seq/protein?name=BRC-1;class=protein" role="_blank">BRC-1</ulink> (<link linkend="bib8">Boulton et al., 2004</link><!-- PMID 14711411 -->), the BRCA2 homolog <ulink url="http://www.wormbase.org/db/seq/protein?name=BRC-2;class=protein" role="_blank">BRC-2</ulink> (<link linkend="bib7">Bork et al., 1996</link><!-- PMID 8673099 -->), the opsin homolog <ulink url="http://www.wormbase.org/db/seq/protein?name=SRO-1;class=protein" role="_blank">SRO-1</ulink> (<link linkend="bib90">Troemel et al., 1995</link><!-- PMID 7585938 -->) the p53 ortholog <ulink url="http://www.wormbase.org/db/seq/protein?name=CEP-1;class=protein" role="_blank">CEP-1</ulink> (<link linkend="bib15">Derry et al., 2001</link><!-- PMID 11557844 -->; <link linkend="bib76">Schumacher et al., 2001</link><!-- PMID 11696333 -->),  and the SKI/SNO homolog <ulink url="http://www.wormbase.org/db/seq/protein?name=DAF-5;class=protein" role="_blank">DAF-5</ulink> (<link linkend="bib13">da Graca et al. 2004</link><!-- PMID 14681186 -->) More generally, a higher divergence of many <emphasis>C. elegans</emphasis> proteins from those of  <emphasis>H. sapiens</emphasis> versus <emphasis>D. melanogaster</emphasis> has been observed by <link linkend="bib84">Storm and Sonnhammer (2003)</link>,
+            perhaps because nematodes are a deeply divergent phylum of the Coelomata (<link linkend="bib93">Wolf et al., 2004</link><!-- PMID 14707168 -->).</para>
+        <para>While gene loss and divergence tends to deplete <emphasis>C. elegans</emphasis> of recognizable protein families, other factors maintain or expand the population of <emphasis>C. elegans</emphasis> protein-coding genes. There is an overall tendency of complex eukaryotic genomes to have more paralogues than microbial genomes (<link linkend="bib20">Enright et al., 2003</link><!-- PMID 12888524 -->). One manifestation of this is for a gene family to differentially expand in a single metazoan phylum (e.g., nematodes). Such lineage-specific expansions were observed both by the KOG classification of NCBI and by Inparanoid; while a few of these expansions are shared by divergent phyla (such as arthropods and nematodes), they  usually differ between phyla (<link linkend="bib70">Remm et al., 2001</link><!-- PMID 11743721 -->; <link linkend="bib86">Tatusov et al., 2003</link><!-- PMID 12969510 -->). Meanwhile, some gene families have been tenaciously retained from the origins of metazoa or eukaryotes until now: <emphasis>C. elegans</emphasis> shares 2518 KOGs with at least one species of unicellular eukaryotes, and shares 860 KOGs with six species of plants, animals, and unicellular eukaryotes (<link linkend="bib80">Soding and Lupas, 2003</link><!-- PMID 12938173 -->; <link linkend="bib86">Tatusov et al., 2003</link><!-- PMID 12969510 -->).</para>
+    </sect1>
+    <sect1>
+        <title>Functional classification</title>
+        <para>Both InterPro and NCBI protein families can be mapped to functional groups. For InterPro, the mapping involves correlating InterPro families with one or more terms in the Gene Ontology (GO) devised by Ashburner and coworkers (<link linkend="bib27">Gene Ontology Consortium, 2000</link><!-- PMID 10802651 -->; <link linkend="bib9">Camon et al., 2003</link><!-- PMID 12654719 -->). GO is a vocabulary for describing the functions of gene products, with three terminologies ("ontologies") specifying biochemical activity ("molecular function"), subcellular localization, and global biological purpose ("biological process"). A direct mapping of <emphasis>C. elegans</emphasis> genes to GO terms via InterPro families yields 333 different terms from the biological process ontology, and 556 from the molecular function one. These GO terms are lopsidedly distributed to <emphasis>C. elegans</emphasis> genes, mirroring the InterPro families from which they are derived (<link linkend="table4">Tables 4</link> and <link linkend="table5">5</link>). Because GO is extensive, abbreviated versions of GO ("GOslim") have been developed as aids to genome annotation (<link linkend="bib9">Camon et al., 2003</link><!-- PMID 12654719 -->; <link linkend="bib28">Gene Ontology Consortium, 2004</link><!-- PMID 14681407 -->). A summary of molecular function annotations with GOslim is shown in  <xref linkend="figure9"/>; note that this only applies to the 26% of protein-coding genes that actually encode InterPro families. Over 50% of the inferred functions fall into three biochemical categories: binding of various  ligands, hydrolysis, and molecular group transfers. Another ~20% fall into receptor activity or enzyme regulation. The remaining ~30% of GOslim annotations fall into 19 other categories.</para>
+                   <table id="table4" frame='all'>
+                <title><emphasis role="bold">Table 4. The most frequently predicted biological processes for InterPro families in <emphasis role="bold-italic">C. elegans.</emphasis></emphasis> These 33 biological process terms include 75% of all 4,753 gene annotations (for 4,062 genes), using GO terms derived from InterPro. Definitions of GO terms, with references, are available  at <ulink url="http://geneontology.org"> role="_blank">http://geneontology.org</ulink> (Gene Ontology Consortium, 2000<!--PMID10802651-->).</title>
+               <tgroup cols='2' colsep='1' rowsep='1'>
+                <colspec colname="c1" colwidth="0.5*" align="center" />
+                <colspec colname="c2" colwidth="2*" align="left" />
+                
+                <thead>
+                        <row valign="middle" >
+                            <entry>Number of genes</entry><entry>Biological process</entry>
+                        </row>
+                </thead>
+                <tbody>
+                            <row><entry>443</entry><entry>protein amino acid phosphorylation (GO:0006468)</entry></row>
+                            <row><entry>339</entry><entry>metabolism (GO:0008152)</entry></row>
+                            <row><entry>322</entry><entry>proteolysis and peptidolysis (GO:0006508)</entry></row>
+                            <row><entry>213</entry><entry>G-protein coupled receptor protein signaling pathway (GO:0007186)</entry></row>
+                            <row><entry>207</entry><entry>transport (GO:0006810)</entry></row>
+                            <row><entry>205</entry><entry>electron transport (GO:0006118)</entry></row>
+                            <row><entry>192</entry><entry>regulation of transcription, DNA-dependent (GO:0006355)</entry></row>
+                            <row><entry>170</entry><entry>ion transport (GO:0006811)</entry></row>
+                            <row><entry>163</entry><entry>protein biosynthesis (GO:0006412)</entry></row>
+                            <row><entry>124</entry><entry>protein amino acid dephosphorylation (GO:0006470)</entry></row>
+                            <row><entry>89</entry><entry>intracellular protein transport (GO:0006886)</entry></row>
+                            <row><entry>86</entry><entry>nucleosome assembly (GO:0006334)</entry></row>
+                            <row><entry>83</entry><entry>protein transport (GO:0015031)</entry></row>
+                            <row><entry>79</entry><entry>chromosome organization and biogenesis, sensu Eukaryota (GO:0007001)</entry></row>
+                            <row><entry>77</entry><entry>small GTPase mediated signal transduction (GO:0007264)</entry></row>
+                            <row><entry>75</entry><entry>sensory perception of chemical stimulus (GO:0007606)</entry></row>
+                            <row><entry>74</entry><entry>carbohydrate metabolism (GO:0005975)</entry></row>
+                            <row><entry>69</entry><entry>potassium ion transport (GO:0006813)</entry></row>
+                            <row><entry>66</entry><entry>signal transduction (GO:0007165)</entry></row>
+                            <row><entry>45</entry><entry>ubiquitin-dependent protein catabolism (GO:0006511)</entry></row>
+                            <row><entry>43</entry><entry>sodium ion transport (GO:0006814)</entry></row>
+                            <row><entry>42</entry><entry>lipid catabolism (GO:0016042)</entry></row>
+                            <row><entry>40</entry><entry>RNA-dependent DNA replication (GO:0006278)</entry></row>
+                            <row><entry>39</entry><entry>cation transport (GO:0006812)</entry></row>
+                            <row><entry>39</entry><entry>tRNA aminoacylation for protein translation (GO:0006418)</entry></row>
+                            <row><entry>34</entry><entry>lipid metabolism (GO:0006629)</entry></row>
+                            <row><entry>33</entry><entry>amino acid metabolism (GO:0006520)</entry></row>
+                            <row><entry>32</entry><entry>ATP synthesis coupled proton transport (GO:0015986)</entry></row>
+                            <row><entry>30</entry><entry>DNA repair (GO:0006281)</entry></row>
+                            <row><entry>29</entry><entry>physiological process (GO:0007582)</entry></row>
+                            <row><entry>29</entry><entry>microtubule-based movement (GO:0007018)</entry></row>
+                            <row><entry>28</entry><entry>protein amino acid glycosylation (GO:0006486)</entry></row>
+                            <row><entry>26</entry><entry>response to oxidative stress (GO:0006979)</entry></row>
+</tbody>
+</tgroup>
+</table>
+<table id="table5" frame='all'>
+                <title><emphasis role="bold">Table 5. The most frequently predicted molecular functions for InterPro families in <emphasis role="bold-italic">C. elegans</emphasis>.</emphasis> These 56 molecular function terms include 75% of all 7,343 gene annotations (for 4,846 genes), using GO terms derived from InterPro.</title>
+                <tgroup cols='2'  colsep='1' rowsep='1'>
+                <colspec colname="c1" colwidth="0.5*" align="center" />
+                <colspec colname="c2" colwidth="2*" align="left" />
+                
+                <thead>
+                        <row valign="middle" >
+                        <entry>Number of genes</entry><entry>Molecular function</entry>
+                        </row>
+                </thead> 
+                <tbody>
+                        <row><entry>588</entry><entry>ATP binding (GO:0005524)</entry></row>
+                            <row><entry>439</entry><entry>protein kinase activity (GO:0004672)</entry></row>
+                            <row><entry>401</entry><entry>protein serine/threonine kinase activity (GO:0004674)</entry></row>
+                            <row><entry>319</entry><entry>protein-tyrosine kinase activity (GO:0004713)</entry></row>
+                            <row><entry>308</entry><entry>DNA binding (GO:0003677)</entry></row>
+                            <row><entry>288</entry><entry>G-protein coupled receptor activity (GO:0004930)</entry></row>
+                            <row><entry>218</entry><entry>molecular function unknown (GO:0005554)</entry></row>
+                            <row><entry>185</entry><entry>rhodopsin-like receptor activity (GO:0001584)</entry></row>
+                            <row><entry>172</entry><entry>oxidoreductase activity (GO:0016491)</entry></row>
+                            <row><entry>155</entry><entry>transporter activity (GO:0005215)</entry></row>
+                            <row><entry>141</entry><entry>structural constituent of ribosome (GO:0003735)</entry></row>
+                            <row><entry>133</entry><entry>transmembrane receptor activity (GO:0004888)</entry></row>
+                            <row><entry>132</entry><entry>catalytic activity (GO:0003824)</entry></row>
+                            <row><entry>127</entry><entry>GTP binding (GO:0005525)</entry></row>
+                            <row><entry>108</entry><entry>ligand-dependent nuclear receptor activity (GO:0004879)</entry></row>
+                            <row><entry>101</entry><entry>ion channel activity (GO:0005216)</entry></row>
+                            <row><entry>98</entry><entry>protein tyrosine phosphatase activity (GO:0004725)</entry></row>
+                            <row><entry>92</entry><entry>monooxygenase activity (GO:0004497)</entry></row>
+                            <row><entry>91</entry><entry>extracellular ligand-gated ion channel activity (GO:0005230)</entry></row>
+                            <row><entry>87</entry><entry>cysteine-type endopeptidase activity (GO:0004197)</entry></row>
+                            <row><entry>81</entry><entry>hydrolase activity (GO:0016787)</entry></row>
+                            <row><entry>76</entry><entry>RNA binding (GO:0003723)</entry></row>
+                            <row><entry>71</entry><entry>transferase activity, transferring hexosyl groups (GO:0016758</entry></row>
+                            <row><entry>58</entry><entry>phosphoprotein phosphatase activity (GO:0004721)</entry></row>
+                            <row><entry>56</entry><entry>binding (GO:0005488)</entry></row>
+                            <row><entry>53</entry><entry>calcium ion binding (GO:0005509)</entry></row>
+                            <row><entry>47</entry><entry>structural molecule activity (GO:0005198)</entry></row>
+                            <row><entry>46</entry><entry>transcription factor activity (GO:0003700)</entry></row>
+                            <row><entry>42</entry><entry>potassium channel activity (GO:0005267)</entry></row>
+                            <row><entry>40</entry><entry>RNA-directed DNA polymerase activity (GO:0003964)</entry></row>
+                            <row><entry>39</entry><entry>tRNA ligase activity (GO:0004812)	</entry></row>
+                            <row><entry>39</entry><entry>GABA-A receptor activity (GO:0004890)</entry></row>
+                            <row><entry>39</entry><entry>astacin activity (GO:0008533)</entry></row>
+                            <row><entry>36</entry><entry>serine-type endopeptidase inhibitor activity (GO:0004867)</entry></row>
+                            <row><entry>36</entry><entry>signal transducer activity (GO:0004871)</entry></row>
+                            <row><entry>34</entry><entry>cysteine-type peptidase activity (GO:0008234)</entry></row>
+                            <row><entry>34</entry><entry>hormone activity (GO:0005179)</entry></row>
+                            <row><entry>34</entry><entry>neprilysin activity (GO:0004245)</entry></row>
+                            <row><entry>32</entry><entry>metalloendopeptidase activity (GO:0004222)</entry></row>
+                            <row><entry>32</entry><entry>carboxypeptidase A activity (GO:0004182)</entry></row>
+                            <row><entry>30</entry><entry>hydrogen-transporting ATP synthase activity, rotational mechanism (GO:0046933</entry></row>
+                            <row><entry>29</entry><entry>ubiquitin thiolesterase activity (GO:0004221)</entry></row>
+                            <row><entry>29</entry><entry>hydrogen-transporting ATPase activity, rotational mechanism (GO:0046961)</entry></row>
+                            <row><entry>29</entry><entry>hedgehog receptor activity (GO:0008158)</entry></row>
+                            <row><entry>28</entry><entry>lipid binding (GO:0008289)</entry></row>
+                            <row><entry>27</entry><entry>sodium channel activity (GO:0005272)</entry></row>
+                            <row><entry>27</entry><entry>peroxidase activity (GO:0004601)</entry></row>
+                            <row><entry>27</entry><entry>acyltransferase activity (GO:0008415)</entry></row>
+                            <row><entry>25</entry><entry>sugar binding (GO:0005529)</entry></row>
+                            <row><entry>25</entry><entry>triacylglycerol lipase activity (GO:0004806)</entry></row>
+                            <row><entry>24</entry><entry>chaperone activity (GO:0003754)</entry></row>
+                            <row><entry>24</entry><entry>transposase activity (GO:0004803)</entry></row>
+                            <row><entry>23</entry><entry>zinc ion binding (GO:0008270)</entry></row>
+                            <row><entry>22</entry><entry>galactosyltransferase activity (GO:0008378)</entry></row>
+                            <row><entry>22</entry><entry>phospholipase A2 activity (GO:0004623)</entry></row>
+                            <row><entry>21</entry><entry>nicotinic acetylcholine-activated cation-selective channel activity (GO:0004889)</entry></row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+       <mediaobject id="figure9" xreflabel="Figure 9">
+				<imageobject>
+					<imagedata entityref="fig9" width="7in" align="center"/>
+				</imageobject>
+			<textobject><phrase>Generation of founder cells in the early embryo</phrase></textobject>
+            &fig9legend;
+       </mediaobject>
+
+        <para>Independently, NCBI KOG/TWOG/LSE families have been placed in 24 functional categories by Koonin and coworkers (<link linkend="bib86">Tatusov et al., 2003</link><!-- PMID 12969510 -->). A mapping of <emphasis>C. elegans</emphasis> genes to these categories is shown in <xref linkend="figure10"/>. The NCBI classification has not yet been mapped onto GO, a much more structured and widely used system. However, NCBI functional annotations currently cover more of the <emphasis>C. elegans</emphasis> genome (66% of protein-coding genes) than InterPro annotations. The single well-defined function that summarizes a truly disproportionate fraction of NCBI gene annotations (22.1%) is signal transduction; 21 other functional annotations all get much smaller sets of genes (0.2-6.5% apiece). 19% of genes have only a broad guess at their function, and 12% of genes are functionally unknown.</para>
+            <mediaobject id="figure10" xreflabel="Figure 10">
+				<imageobject>
+					<imagedata entityref="fig10" width="7in" align="center"/>
+				</imageobject>
+			<textobject><phrase>Generation of founder cells in the early embryo</phrase></textobject>
+            &fig10legend;
+       </mediaobject>
+    </sect1>
+       
+        <sect1>
+        <title>Acknowledgements</title> <para>This work was supported by a grant (# P41 HG02223) from theNational Human Genome Research Institute at the U.S. National Institutes of Health. I thank Darin Blasiar and Kimberly Van Auken for computing the InterPro search results againstWormBase release WS130, and my colleagues in WormBase for providing the scientific environment that allowed this chapter to be written. I thank Titus Brown, Karin Kiontke, Paul Sternberg, Weiwei Zhong, and two anonymous reviewers for helpful comments on the manuscript.</para></sect1>
+    <sect1>
+        <title>References</title>
+        <para/>
+        &protcoding_Refs;
+        </sect1>
+</article>

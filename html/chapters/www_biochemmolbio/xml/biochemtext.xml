@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY fig1 SYSTEM 'biochemfig1.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'biochemfig1leg.xml'>
+<!ENTITY fig2 SYSTEM 'biochemfig2.jpg' NDATA JPG>
+<!ENTITY fig2legend SYSTEM 'biochemfig2leg.xml'>
+<!ENTITY biochem_Refs SYSTEM 'biochemrefs.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>]>
+<article id="biochem_ArticleID">
+	<articleinfo>
+			<!--see DocBook's authorgroup element-->
+<title>Biochemistry and molecular biology<footnote>
+		<para>Edited by Victor Ambros. Last revised April 11, 2005. Published February 13, 2006. This chapter should be cited as: Walhout, A.J.M. and Boulton, S.J. Biochemistry and molecular biology (February 13, 2006), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.86.1, <ulink url="http://www.wormbook.org" role="_blank">http://www.wormbook.org</ulink>.</para>
+<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2006 Albertha J. M. Walhout and Simon J. Boulton. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+		</footnote>
+	</title>
+	<author>
+		<othername>Albertha J. M. Walhout, ed.<remark>
+				<footnote>
+					<para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:marian.walhout@umassmed.edu" role="_blank">marian.walhout@umassmed.edu</ulink> or <ulink url="mailto:simon.boulton@cancer.org.uk" role="_blank">simon.boulton@cancer.org.uk</ulink></para>
+				</footnote>
+			</remark>
+		</othername>
+		<affiliation>
+			<address>Program in Gene Function and Expression and Program in Molecular Medicine, University of Massachusetts Medical School, Worcester, MA 01605 USA</address>
+		</affiliation>
+	</author>
+<author>
+		<othername>Simon J. Boulton, ed.<remark><superscript>&#x000A7;</superscript></remark></othername>
+		<affiliation>
+			<address>DNA damage Response Laboratory, London Research Institute, Cancer Research UK, Blanche Lane, South Mimms, UK, EN6 3LD</address>
+		</affiliation>
+	</author>
+	</articleinfo>
+<para>Several forward and reverse proteomic approaches are available that can be used to identify interaction partners for a protein of interest. Here we provide methods for identifying interacting partners by the yeast two-hybrid system (a reverse proteomic method) and by tandem immuno-affinity purification of protein complexes combined with mass spectrometry (a forward proteomic method).</para>
+<?newpage?>
+<sect1>
+<title>The yeast two-hybrid system</title>
+<para>The yeast two-hybrid system is a convenient reverse proteomic approach to identify and study protein-protein interactions (<link linkend="bib4">Fields and Song, 1989</link><!-- PMID 2547163-->; <link linkend="bib17">Vidal and Legrain, 1999</link><!-- PMID 9927722-->; <link linkend="bib22">Walhout and Vidal, 2001</link><!-- PMID 11403578-->). The yeast two-hybrid system can be used with a single bait protein of interest. However, large datasets in which many <emphasis>C. elegans</emphasis> proteins were used as baits are now also available (<link linkend="bib1">Boulton et al., 2002</link><!-- PMID 11778048-->; <link linkend="bib2">Davy et al., 2001</link><!-- PMID 11559592-->; <link linkend="bib8">Li et al., 2004</link><!-- PMID 14704431-->; <link linkend="bib15">Tewari et al., 2004</link><!-- PMID 14992718-->; <link linkend="bib19">Walhout et al., 2002</link><!-- PMID 12445390-->; <link linkend="bib18">Walhout et al., 2000</link><!-- PMID 10615043-->).</para>
+<para>The yeast two-hybrid system is based on the functional reconstitution of an intact transcription factor that activates reporter gene expression (<link linkend="figure1">Figure 1</link>). Reporter gene expression can efficiently be selected for in yeast. As indicated by the name, the yeast two-hybrid system utilizes two hybrid proteins. The bait protein (X; <link linkend="figure1">Figure 1</link>) is fused to the DNA binding domain (DB; <link linkend="figure1">Figure 1</link>) of a transcription factor. The prey protein (Y; <link linkend="figure1">Figure 1</link>) is fused to the transcription activation domain (AD; <link linkend="figure1">Figure 1</link>) of a transcription factor. In our system, we use the yeast transcription factor Gal4. When two hybrid proteins are co-expressed in yeast and when X and Y can physically interact with each other, a functional transcription factor is reconstituted. This reconstituted transcription factor activates the expression of a set of reporter genes. To minimize the number of false positives identified, we use 3 reporter genes: <emphasis>HIS3</emphasis>, <emphasis>URA3</emphasis> and <emphasis>lacZ</emphasis>. Expression of these genes is measured by growth on minimal media lacking histidine (for <emphasis>HIS3</emphasis>), or uracil (<emphasis>URA3</emphasis>), or by a colorimetric (&#x0201C;blue-white&#x0201D;) assay.</para>
+<literallayout></literallayout>
+<mediaobject id="figure1" xreflabel="Figure 1">
+			<imageobject>
+				<imagedata entityref="fig1" width="4in" align="center"/>
+			</imageobject>
+			<textobject>
+				<phrase>figure 1</phrase>
+			</textobject> &fig1legend;</mediaobject>
+<para>Performing yeast two-hybrid screens consists of the following steps: 1) creating a DB-X bait, 2) testing self-activation by the DB-X bait, 3) performing the yeast two-hybrid screen and 4) identifying the prey. These steps are described below in more detail. For additional information see <link linkend="bib17">Vidal and Legrain (1999)</link><!-- PMID 9927722--> and <link linkend="bib22">Walhout and Vidal (2001)</link><!-- PMID 11403578-->.</para>
+<sect2>
+<title>Creating DB-X baits</title>
+<para>Bait-encoding ORFs can be cloned into a DB-containing vector by regular, restriction-enzyme based cloning or by Gateway cloning. For regular cloning, we use the plasmid pPC97 that has the DNA binding domain of Gal4 immediately upstream of a multiple cloning site (<link linkend="bib17">Vidal and Legrain, 1999</link><!-- PMID 9927722-->). We generally prefer to use Gateway cloning because many DB-ORF baits can be created simultaneously and in a standardized and high-throughput manner (<link linkend="bib6">Hartley et al., 2000</link><!-- PMID 11076863-->; <link linkend="bib20">Walhout et al., 2000</link><!-- PMID 10900455-->; <link linkend="bib21">Walhout et al., 2000</link><!-- PMID 11075367-->). After creating the DB-ORF clone(s) of interest, they need to be transformed into the yeast strain MaV103 (<link linkend="bib16">Vidal, 1997</link><!-- PMID-->; <link linkend="bib17">Vidal and Legrain, 1999</link><!-- PMID 9927722-->; <link linkend="bib22">Walhout and Vidal, 2001</link><!-- PMID 11403578-->). A protocol for high-efficiency yeast transformations is provided below. Because DB-ORF-containing plasmids contain a <emphasis>LEU2</emphasis> marker gene, transformants need to be selected on plates lacking leucine (Sc-Leu). Before proceeding with the actual yeast two-hybrid screen, bait strains need to be examined for self-activation, i.e. their ability to activate reporter gene expression in the absence of an AD-Y interaction partner (see below).</para>
+<para>For Gateway LR cloning the following reagents are required:</para>
+<orderedlist numeration="arabic">
+<listitem><para>An Entry clone from the ORFeome that contains the ORF(s) of interest (<link linkend="bib23">Reboul et al., 2003</link><!--PMID: 12679813-->). These can be obtained from Dr. Marc Vidal's laboratory, see <ulink url="http://worfdb.dfci.harvard.edu/" role="_blank">http://worfdb.dfci.harvard.edu/</ulink>.</para></listitem>
+<listitem><para>A Destination vector containing the DNA binding domain of Gal4: (pDEST<subscript>DB</subscript>; <link linkend="bib20">Walhout et al., 2000</link><!-- PMID 10900455-->). This vector can be obtained from Invitrogen, as part of their Gateway-compatible yeast two-hybrid system (catalog number: 10835-031).</para></listitem>
+<listitem><para>Gateway LR enzyme (Invitrogen, catalog number: 11791&#x02013;020).</para></listitem>
+<listitem><para>Competent DH5<symbol role="symbolfont">&#x003B1;</symbol> bacteria with a transformation efficiency of &gt;10<superscript>7</superscript> colonies/<symbol role="symbolfont">&#x003BC;</symbol>gDNA.</para></listitem>
+<listitem><para>LB/ampicillin plates (50 <symbol role="symbolfont">&#x003BC;</symbol>g/ml).</para></listitem>
+</orderedlist>
+<para>Protocols for Gateway cloning reactions are described elsewhere (<link linkend="bib20">Walhout et al., 2000</link><!-- PMID 10900455-->).</para>
+</sect2>
+<sect2>
+<title>Testing self-activation by DB-X baits</title>
+<orderedlist numeration="arabic">
+<listitem><para>After transformation to create the DB-X bait strain, pick 12 individual yeast colonies and patch them onto a fresh Sc-Leu plate. We patch 5 control strains at the bottom of each plate for comparison (see <link linkend="bib22">Walhout and Vidal (2001)</link><!-- PMID 11403578--> for details).</para></listitem>
+<listitem><para>Incubate overnight at 30&#x000B0;C.</para></listitem>
+<listitem><para>Next day, replica plate the patches onto 5 Sc-Leu,-His &#x0002B; 3-amintotriazole (3AT) plates (containing 20, 40, 60, 80 and 100 mM 3AT). 3AT is a competitive inhibitor of the His3 enzyme and only baits that exhibit self-activation will be able to grow in the presence of this compound. After replica plating, the 3AT-containing plates need to be replica cleaned 2 or 3 times, until no yeast is visible (<link linkend="bib22">Walhout and Vidal, 2001</link><!-- PMID 11403578-->).</para></listitem>
+<listitem><para>Next day, perform <emphasis>lacZ</emphasis> assay (see below for protocol).</para></listitem>
+<listitem><para>Look at the 3AT plates on days 3, 4 and 5 after replica plating. Bait strains that grow on plates containing 100 mM 3AT cannot be used in yeast two-hybrid experiments. For baits that can be used, use the lowest 3AT concentration at which no growth is observed after 5 days in subsequent yeast two-hybrid screens.</para></listitem>
+<listitem><para>We also perform <emphasis>lacZ</emphasis> assays to examine self-activation (see below). Patches that are blue correspond to self-activating baits.</para></listitem>
+</orderedlist>
+</sect2>
+<sect2>
+<title>Performing yeast two-hybrid screens</title>
+<orderedlist numeration="arabic">
+<listitem><para>For yeast two-hybrid screens, the transformation protocol indicated below should be followed. For screens, we use 30 <symbol role="symbolfont">&#x003BC;</symbol>g of a <emphasis>C. elegans</emphasis> AD-Y cDNA library (<link linkend="bib20">Walhout et al., 2000</link><!-- PMID 10900455-->). This library contains cDNAs obtained from worms of all developmental stages, males and dauer larvae and is highly comprehensive (<link linkend="bib11">Reboul et al., 2001</link><!-- PMID 11242119-->). The vector in which the cDNAs were cloned (pPC86, <link linkend="bib16">Vidal, 1997</link><!-- PMID-->) contains a <emphasis>TRP1</emphasis> marker for selection of yeast transformants on media lacking tryptophan. The transformation reactions should be directly plated on Sc-Leu,-His,-Trp &#x0002B; 3AT plates to select for colonies in which a protein-protein interaction between a bait and prey protein takes place.</para></listitem>
+<listitem><para>To estimate the transformation efficiency of the reaction, serial dilutions of one reaction (1/10; 1/100 and 1/1000) should be plated on Sc-Leu,-Trp media (<link linkend="bib22">Walhout and Vidal, 2001</link><!-- PMID 11403578-->). After incubating for 3 days at 30&#x000B0;C, the number of colonies should be counted and the total number of transformants calculated. We aim to screen at least 1 million colonies per bait.</para></listitem>
+<listitem><para>Incubate the screen plates for 4&#x02013;5 days at 30&#x000B0;C.</para></listitem>
+<listitem><para>Pick any growing colonies (that are clearly bigger than background colonies, this varies from bait to bait) and patch with a sterile toothpick on a fresh Sc-Leu,-Trp,-His &#x0002B; 3AT plate. Incubate overnight at 30&#x000B0;C.</para></listitem>
+<listitem><para>Next day, replica plate the positives onto a fresh Sc-Leu,-Trp,-His &#x0002B; 3AT plate, a YEPD plate containing a nitrocellulose filter for <emphasis>lacZ</emphasis> assays (see below) and a Sc-Leu,-Trp,-Ura plate. Replica clean the 3AT containing plate and the Sc-Leu, -Trp,-Ura plate until no yeast is visible. Incubate at 30&#x000B0;C.</para></listitem>
+<listitem><para>Next day, perform the <emphasis>lacZ</emphasis> assay (see below).</para></listitem>
+<listitem><para>Examine growth of potential positives on the other two plates after incubating for 3&#x02013;5 days. Any growing patches are considered positives. We only consider colonies that score positive for at least 2 reporter genes, e.g., they grow on 3AT-containing media and are blue.</para></listitem>
+<listitem><para>Retest each interaction in fresh bait-containing yeast cells by PCR/Gap-repair (<link linkend="bib22">Walhout and Vidal, 2001</link><!-- PMID 11403578-->) to minimize the number of false positives.</para></listitem>
+</orderedlist>
+</sect2>
+<sect2>
+<title>Yeast transformations</title>
+<orderedlist numeration="arabic">
+<listitem><para>Patch the required yeast strain on a YEPD plate and incubate overnight at 30&#x000B0;C.</para></listitem>
+<listitem><para>Next day, inoculate 500 ml liquid YEPD media with the relevant yeast strain to a density of OD<subscript>600</subscript> = ~0.1.</para></listitem>
+<listitem><para>Incubate at 30&#x000B0;C while shaking vigorously until the culture reaches an OD<subscript>600</subscript> between 0.4&#x02013;0.5.</para></listitem>
+<listitem><para>Harvest the cells by centrifugation for 5 minutes at 1,800 rpm at room temperature.</para></listitem>
+<listitem><para>Decant the medium and wash the cells with 50 ml sterile water.</para></listitem>
+<listitem><para>Resuspend the cells by pipetting up and down. Centrifuge 5min. at 1,800 rpm and RT - decant water.</para></listitem>
+<listitem><para>Wash the cells in 10 ml TE/LiAc (10 mM Tris-HCl, pH 8.0; 1 mM EDTA; 0.1 M lithium acetate), centrifuge as described above.</para></listitem>
+<listitem><para>Resuspend the cells in a volume of TE/LiAc solution corresponding to 10 times the final OD<subscript>600</subscript> value (i.e. for a 500 ml culture with an OD<subscript>600</subscript> = 0.5, 5 ml TE/LiAc solution should be used).</para></listitem>
+<listitem><para>Add 0.1 volume boiled (bring to a boil, and put on ice) salmon sperm DNA (10 mg/ml stock solution; Sigma, catalog number: D9156).</para></listitem>
+<listitem><para>For each tranformation reaction put 50 <symbol role="symbolfont">&#x003BC;</symbol>l of the cell suspension in a 1.5 ml eppendorf tube.</para></listitem>
+<listitem><para>Add the DNA to be transformed. For screens we use 30 reactions, each with 1<symbol role="symbolfont">&#x003BC;</symbol>g library DNA.</para></listitem>
+<listitem><para>Add the DNA to be transformed and 300 <symbol role="symbolfont">&#x003BC;</symbol>l TE/LiAc/PEG solution (made from a 10X stock solutions of TE and LiAc with the remaining volume being polyethylene glycol Mw 3350).</para></listitem>
+<listitem><para>Resuspend carefully by pipetting.</para></listitem>
+<listitem><para>Incubate at least 30 minutes at 30&#x000B0;C.</para></listitem>
+<listitem><para>Heat-shock the reactions for exactly 20 minutes at 42&#x000B0;C.</para></listitem>
+<listitem><para>Quickly centrifuge the tubes in a microcentrifuge, 5 seconds is sufficient.</para></listitem>
+<listitem><para>Remove the supernatant.</para></listitem>
+<listitem><para>Resuspend the cells in 350 <symbol role="symbolfont">&#x003BC;</symbol>l sterile water and plate on the appropriate selective media (i.e., Sc-Leu,-Trp,-His with the appropriate concentration of 3AT; <link linkend="bib22">Walhout and Vidal, 2001</link><!-- PMID 11403578-->).</para></listitem>
+</orderedlist>
+</sect2>
+<?newpage?>
+<sect2>
+<title><emphasis>lacZ</emphasis> assays</title>
+<orderedlist numeration="arabic">
+<listitem><para>Yeast should be grown overnight at 30&#x000B0;C on a nitrocellulose filter that is placed on top of a YEPD plate (<link linkend="bib22">Walhout and Vidal, 2001</link><!-- PMID 11403578-->). We use filters from Osmonics (catalog number: WP4HY13700).</para></listitem>
+<listitem><para>Next day, place 2 Whatman paper filters (Whatman catalog number: 1454125) in an empty 15 cm Petri dish.</para></listitem>
+<listitem><para>Soak the filters with 6 ml Z-buffer (<link linkend="bib22">Walhout and Vidal, 2001</link><!-- PMID 11403578-->) containing 11 <symbol role="symbolfont">&#x003BC;</symbol>l <symbol role="symbolfont">&#x003B2;</symbol>-mercaptoethanol and 100 <symbol role="symbolfont">&#x003BC;</symbol>l 4&#x00025; X-gal solution (dissolved in dimethylformamide). This should be done in a chemical hood.</para></listitem>
+<listitem><para>Take the nitrocellulose filter containing the yeast with a pair of tweezers and quick-freeze for 10 seconds in liquid nitrogen. Thaw while holding with the tweezers.</para></listitem>
+<listitem><para>Carefully place the nitrocellulose on top of the Whatman filters, with the yeast patches facing up.</para></listitem>
+<listitem><para>Incubate overnight at 37&#x000B0;C.</para></listitem>
+<listitem><para>Blue yeast patches correspond to self-activating baits (when only DB-X is used), or to potential positives (when DB-X is screened against an AD-Y cDNA library).</para></listitem>
+</orderedlist>
+</sect2>
+<sect2>
+<title>Identifying interacting preys</title>
+<para>The ORFs encoding interacting preys can be obtained from yeast by colony PCR using AD and Term primers. For a protocol see: <link linkend="bib22">Walhout and Vidal (2001)</link><!-- PMID 11403578-->. PCR products can be used in PCR/Gap-repair to retest potential interactions. PCR products corresponding to retesting positives should be purified to remove the primers. Subsequently, PCR products can be sequenced using the AD primer to obtain an IST (interaction sequence tag). ISTs can be blasted against Wormpep in Wormbase (<ulink url="http://www.wormbase.org/db/searches/blat" role="_blank">http://www.wormbase.org/db/searches/blat</ulink>) to identify the prey.</para>
+</sect2>
+</sect1>
+<sect1>
+<title>Tandem immuno-affinity purification</title>
+<para>Multi-protein complexes are the functional units of many cellular processes. Defining the components of these complexes, how they associate and their intrinsic biochemical activities provides a wealth of information about the context in which proteins operate (<link linkend="bib3">Deshaies et al., 2002</link><!-- PMID 12096135-->; <link linkend="bib5">Gavin et al., 2002</link><!-- PMID 11805826-->; <link linkend="bib7">Ho et al., 2002</link><!-- PMID 11805837-->; <link linkend="bib12">Rigaut et al., 1999</link><!-- PMID 10504710-->; <link linkend="bib13">Shevchenko et al., 2002</link><!-- PMID 12096120-->). Here we describe a standardized method for purification of protein complexes from <emphasis>C. elegans</emphasis> extracts by tandem immuno-affinity (<link linkend="bib9">Polanowska et al., 2004</link><!-- PMID 15152596-->). This method describes the following steps: 1). Creating the transgene for expression of an epitope tagged form of your protein of interest (P.O.I.), 2). Growth and harvesting the transgenic line, 3). Generating lysates, 4) Preparing antibody coupled beads, 5) Tandem immuno-affinity purification of protein complexes, and 6) Preparation of the sample for mass-spectrometry (MS).</para>
+<sect2>
+<title>Creating the transgene</title>
+<para>We have constructed pSB_GW::TAG, a Gateway destination vector that can be used to generate transgenic animals that express any P.O.I. fused at the C-terminus to HA_8xHis_TEV_Myc epitopes, enabling associated protein complexes to be purified from whole worm or embryo extracts by tandem immuno-affinity (<link linkend="figure2">Figure 2A</link>; <link linkend="bib9">Polanowska et al., 2004</link><!-- PMID 15152596-->). See (<link linkend="bib21">Walhout et al., 2000</link><!-- PMID 11075367-->) for details on Gateway cloning. The promoter and coding region of a gene of interest (G.O.I.) are cloned into the Gateway entry vector, sequenced, and then transferred by Gateway LR cloning into pSB_GW::TAG as previously described (<link linkend="bib9">Polanowska et al., 2004</link><!-- PMID 15152596-->; <link linkend="figure2">Figure 2A</link>). Stable transgenic animals generated by microparticle bombardment (<link linkend="bib10">Praitis et al., 2001</link><!-- PMID 11238406-->) of <emphasis>unc-119(ed3)</emphasis> mutants with pSB_G.O.I::TAG are then tested for transgene expression by western blotting using antibodies against either 1) the HA epitope (MAb12CA5), 2) 8xHis (anti-His antibody, Amersham BioSciences), or 3) the Myc epitope (MAb9E10).</para>
+<mediaobject id="figure2" xreflabel="Figure 2">
+			<imageobject>
+				<imagedata entityref="fig2" depth="7.8in" align="center"/>
+			</imageobject>
+			<textobject>
+				<phrase>figure 2</phrase>
+			</textobject> &fig2legend;</mediaobject>
+</sect2>
+<sect2>
+<title>Growth and harvesting the transgenic line</title>
+<para>We have optimized large-scale production of transgenic lines in BioFlo5000&#x000AE; fermenters (New Brunswick Scientific) or alternatively, smaller scale cultures grown in S-basal may yield sufficient material for purification purposes. See elsewhere for details (<link linkend="bib9">Polanowska et al., 2004</link><!-- PMID 15152596-->). The weight of worms required for purifying a given protein complex to sufficient levels for protein identification by MS will depend on the level of expression from the genes promotor and must be determined for each transgene. The complexes we have studied so far function in the DNA damage response and are expressed at low levels in all proliferating cells, but are undetectable in somatic tissues. For all complexes (n=5) studied approximately 50g of biomass was required to obtained sufficient protein for MS.</para>
+<para>To prepare the worms for lysis:</para>
+<orderedlist numeration="arabic">
+<listitem><para>Wash the worms twice in 4x the pellet volume of cold 0.1M NaCl.</para></listitem>
+<listitem><para>Centrifugate at 4,000 rpm in 30&#x00025; sucrose at 4&#x000B0;C for 5 minutes to remove residual bacteria and dead worms (<link linkend="figure2">Figure 2B</link>).</para></listitem>
+<listitem><para>Collect the live worms from the top of the sucrose solution.</para></listitem>
+<listitem><para>Wash a third time with 4x the pellet volume of cold 0.1M NaCl.</para></listitem>
+<listitem><para>Resuspend the pellet in twice the worm pellet volume of CSK lysis buffer [100mM Pipes (pH 6.0), 100mM NaCl, 3mM MgCl<subscript>2</subscript>, 1mM EGTA, 1mM DTT, 1mM PMSF, 0.3M sucrose, 0.5&#x00025; triton X 100, complete (Roche) protease inhibitor tablets, and phosphatase inhibitors: 2mM <symbol role="symbolfont">&#x003B2;</symbol>-glycerophosphate, 5mM NaF, 1mM Na<subscript>3</subscript>VO<subscript>4</subscript>, 0.1 <symbol role="symbolfont">&#x003BC;</symbol>M okadaic acid].</para></listitem>
+<listitem><para>Freeze down in 50 ml aliquots on dry ice and store at -80&#x000B0;C.</para></listitem>
+</orderedlist>
+</sect2>
+<sect2>
+<title>Generating lysates</title>
+<para>To generate whole worm extracts perform the following:</para>
+<orderedlist numeration="arabic">
+<listitem><para>Rapidly thaw the aliquot(s) in a 37&#x000B0;C water bath.</para></listitem>
+<listitem><para>Re-freeze on dry ice then re-thaw as before.</para></listitem>
+<listitem><para>Dounce the suspension 6 times in a homogenizer to break up the material.</para></listitem>
+<listitem><para>Clarify the mixture by centrifugation at 4,500 rpm and collect the soluble supernatant fraction (S).</para></listitem>
+<listitem><para>To extract the chromatin fraction (C), resuspend the pellet in half the pellet volume of CSK.</para></listitem>
+<listitem><para>Add micrococcal nuclease (Roche) to a final concentration of 3U/<symbol role="symbolfont">&#x003BC;</symbol>l.</para></listitem>
+<listitem><para>Incubate at 20&#x000B0;C with gentle shaking for 30 minutes.</para></listitem>
+<listitem><para>Stop the reaction by adding EDTA and EGTA to a final concentration of 5mM.</para></listitem>
+<listitem><para>Collection the chromatin fraction supernatant by high-speed centrifugation at 40,000 rpm.</para></listitem>
+</orderedlist>
+<para>Lysates can also be prepared from embryos:</para>
+<orderedlist numeration="arabic">
+<listitem><para>Resuspend the embryo pellet in twice the pellet volume of homogenization buffer (50 mM HEPES at pH 7.6, 200 mM KCl, 1 mM EDTA, 1 mM EGTA, 0.2&#x00025; Triton X-100, 5&#x00025; glycerol, complete (Roche) protease inhibitor tablets, and phosphatase inhibitors: 2mM <symbol role="symbolfont">&#x003B2;</symbol>-glycerophosphate, 5mM NaF, 1mM Na<subscript>3</subscript>VO<subscript>4</subscript>, 0.1 <symbol role="symbolfont">&#x003BC;</symbol>M okadaic acid).</para></listitem>
+<listitem><para>Sonicate on ice until the mixture has lost its viscosity.</para></listitem>
+<listitem><para>Centrifuge at 5,000<emphasis>g</emphasis> at 4&#x000B0;C for 5 min and collect the soluble extract (S).</para></listitem>
+<listitem><para>The chromatin bound fraction (C) is prepared as above.</para></listitem>
+</orderedlist>
+</sect2>
+<sect2>
+<title>Preparing antibody coupled beads</title>
+<orderedlist numeration="arabic">
+<listitem><para>Incubate 1 ml sepharose protein-A beads (Pharmacia) at 20&#x000B0;C with mouse ascite (2 mg of MAb12CA5(HA) and MAb9E10 (Myc) antibodies).</para></listitem>
+<listitem><para>Wash the beads with 10 volumes of 0.2 M sodium borate (pH 9.0).</para></listitem>
+<listitem><para>Add dimethylpimelimidate dihydrochloride (Sigma) to a final concentration of 2 mM to couple the antibody to the beads.</para></listitem>
+<listitem><para>Incubate for 30 minutes at 20&#x000B0;C.</para></listitem>
+<listitem><para>Wash the beads with 5 volumes of 0.1 M Tris-HCl (pH 8.0) and 10 volumes of PBS to stop the coupling reaction.</para></listitem>
+</orderedlist>
+<para>The coupled beads are stored at 4&#x000B0;C in two volumes of PBS in 0.5&#x00025; azide. Prior to purification, the beads should be washed in B0.1 buffer [50 mM Tris (pH 7.3), 0.1 M KCl, 1 mM EDTA, 10&#x00025; glycerol].</para>
+</sect2>
+<sect2>
+<title>Tandem immuno-affinity purification of protein complexes</title>
+<para>The first immuno-affinity step:</para>
+<orderedlist numeration="arabic">
+<listitem><para>Batch absorb at 4&#x000B0;C for 6 hours with 60 <symbol role="symbolfont">&#x003BC;</symbol>l HA coupled protein-A beads for each ml of extract (<link linkend="figure1">Figure 1</link>C).</para></listitem>
+<listitem><para>Transfer the beads to a BioRad column.</para></listitem>
+<listitem><para>Wash three times with 5 volumes of B0.1 buffer [supplemented with 1 mM DTT, 1mM PMSF, 2mM <symbol role="symbolfont">&#x003B2;</symbol>-glycerophosphate, 5 mM NaF, 1 mM Na3VO4, 1 <symbol role="symbolfont">&#x003BC;</symbol>M okadaic acid and complete protease inhibitor tablets].</para></listitem>
+<listitem><para>Elute the bound complex by resuspending the beads in one volume of B0.1 buffer containing 5 <symbol role="symbolfont">&#x003BC;</symbol>g/ml of double HA peptide.</para></listitem>
+<listitem><para>Incubate at 4&#x000B0;C for 2 hrs.</para></listitem>
+</orderedlist>
+<para>Using the same conditions as above, the HA eluate is subjected to a second immuno-affinity step using Myc coupled protein-A beads (<link linkend="figure2">Figure 2</link>C). Elution from Myc-beads is inefficient using Myc-peptide so recombinant TEV protease (Invitrogen) is used to cleave off the Myc epitope. The cleavage reaction is performed at 20&#x000B0;C for 4 hours at a concentration of 1 <symbol role="symbolfont">&#x003BC;</symbol>l TEV per 50 <symbol role="symbolfont">&#x003BC;</symbol>l of HA eluate. The HA-Myc eluate can be further concentrated by binding to Ni-agarose beads followed by elution using a 20&#x02013;500mM imidazole gradient in B0.1 buffer.</para>
+</sect2>
+<sect2>
+<title>Preparation of the sample for mass-spectrometry</title>
+<para>To minimize contamination with keratins replace gloves frequently. Also, resolve purified protein complexes on Nu-PAGE 4&#x02013;12&#x00025; pre-poured gels (Invitrogen) and stain with either Coomassie stain or silver stain (SilverQuest, Invitrogen). Bands are excised from the gel and prepared for MS analysis as described previously (<link linkend="bib14">Shevchenko et al., 1996</link><!-- PMID 8779443-->). Coomassie stainable levels of protein should be sufficient for protein identification by MS but it is important to discuss sample preparation with your MS lab/facility as they may have specific requirements. To obtain a protein ID, search the databases at <ulink url="http://wolf.bms.umist.ac.uk/mapper" role="_blank">PepMAPPER</ulink> and <ulink url="http://www.matrixscience.com/" role="_blank">MASCOT</ulink>  with the peak masses obtained from MS. Note that mock tandem immuno-affinity purification from extracts made from an untagged <emphasis>C. elegans</emphasis> strain occasionally gives two bands, one of which is <ulink url="http://www.wormbase.org/db/seq/protein?name=HSP-70;class=protein" role="_blank">HSP-70</ulink> (<ulink url="http://www.wormbase.org/db/get?name=C12C8.1;class=Gene" role="_blank">C12C8.1</ulink>; data not shown).</para>
+</sect2>
+</sect1>
+<?newpage?>
+<sect1>
+	<title>Acknowledgments</title>
+		<para>SB would like to thank Biotechiques for permitting the reproducion of some of the work published in Polanowska et al, 2004, Biotechniques <emphasis>36</emphasis>:778&#x02013;780, 782. AJMW is funded by NCI (R33 CA097516&#x02013;02), the Worcester Foundation and a Diabetes Endocrinology Research Center Grant 5 P30 DK32520. SB is funded by Breast Cancer Campaign (GA3221) and Cancer Research UK.</para>
+</sect1>
+<sect1>
+	<title>References</title>
+	&biochem_Refs;
+	<para/>
+</sect1>
+</article>
