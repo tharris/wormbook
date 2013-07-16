@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "docbookx.dtd"
+[
+<!ENTITY fig1 SYSTEM 'gbrowser_fig1.jpg' NDATA JPG>
+<!ENTITY fig2 SYSTEM 'gbrowser_fig2.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'gbrowser_fig1leg.xml'>
+<!ENTITY fig2legend SYSTEM 'gbrowser_fig2leg.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="gbrowser_text">
+<articleinfo>
+<title>An introduction to the UCSC Genome Browser<footnote><para>Edited by Oliver Hobert. Last revised April 23, 2013, Published July 1, 2013. This chapter should be cited as: Lee R. An introduction to the UCSC Genome Browser (July 1, 2013), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.150.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2013 Raymond Lee. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para></footnote></title>
+<author><othername>Raymond Lee<remark><footnote><para>To whom correspondence should be addressed. Email: <ulink url="mailto:raymond@caltech.edu">raymond@caltech.edu</ulink></para></footnote></remark></othername>
+<affiliation><orgname>Division of Biology, California Institute of Technology, Pasadena CA 91125, USA</orgname></affiliation>
+</author>
+</articleinfo>
+<para>The <ulink url="http://genome.ucsc.edu/" role="_blank">Genome Browser</ulink> at the University of California Santa Cruz provides a uniform graphical interface to sequences, features, and annotations of genomes across a wide spectrum of organisms, from yeast to humans. In particular, it covers seven nematode genomes: <emphasis>Caenorhabditis elegans, C. sp. 11, C. brenneri, C. briggsae, C. remanei, C. japonica</emphasis>, and <emphasis>Pristionchus pacificus</emphasis> and thus is particularly useful for multiple-genome comparative analysis. One can use the provided tools and visual aides to facilitate sequence feature detection and examination. This article provides a brief introduction for using the <ulink url="http://genome.ucsc.edu/" role="_blank">Genome Browser</ulink> from the perspective of a <emphasis>C. elegans</emphasis> researcher. Interested users should read the official user guide and explore the site more deeply as there are many more features not mentioned here.</para>
+<para>To begin, one should choose the nematode clade, then the organism <emphasis>C. elegans</emphasis>, a version of genome sequence assembly (e.g., WS220), and a region of the genome (<link linkend="figure1">Figure 1</link>). Browser behavior is context sensitive, depending on the choices made in order from left to right. There are three basic ways to specify a region to browse: by a range of chromosomal numerical positions, by a gene name and by an accession number. More flexibly, instead of exact positions, one can also search for a descriptive term (such as &ldquo;kinase inhibitor&rdquo;) that is present in gene records. Some restrictions are worth noting. Chromosome positions must start with &ldquo;chr&rdquo;. Gene names recognized by the browser are limited to those in RefSeq and Ensembl entries. Remarkably, most if not all named miRNA genes, like <emphasis><ulink url="http://www.wormbase.org/db/get?name=lin-4;class=Gene" role="_blank">lin-4</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/get?name=let-7;class=Gene" role="_blank">let-7</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/get?name=lsy-6;class=Gene" role="_blank">lsy-6</ulink></emphasis> and 170 <emphasis>mir</emphasis>- loci are excluded from the <ulink url="http://genome.ucsc.edu/" role="_blank">Genome Browser</ulink>.</para>
+<mediaobject id="figure1">
+<imageobject>
+<imagedata entityref="fig1" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 1</phrase>
+</textobject> &fig1legend;</mediaobject>
+<para>Once a region is selected, the <ulink url="http://genome.ucsc.edu/" role="_blank">Genome Browser</ulink> can display a wide selection of sequences and features as tracks. The tracks are easily customizable. One can add or remove specific tracks and change the order or look of tracks to make them easier to browse. Several tracks based on multiple genomic sequences are grouped under the Comparative Genomics section. There is a multiple sequence alignment track (Multiz) and three possible conservation tracks (phyloP, phastCons and conserved elements) to graphically display the results of conservation analyses. Scanning the genome with these tracks turned on (Multiz and phyloP in the following example), one can quite easily spot areas that show significant cross-species conservation, possibly implicating functional domains. For instance, on chromosome IV, between C48A7.14 and C48A7.13, there is a 530 bp region (chrIV:7402060-7402590) that is highly conserved between <emphasis>C. elegans</emphasis> and five other species but there is no existing annotation (<link linkend="figure2">Figure 2</link>). It could be an extension of a gene model nearby or a new gene.</para>
+<mediaobject id="figure2">
+<imageobject>
+<imagedata entityref="fig2" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 2</phrase>
+</textobject> &fig2legend;</mediaobject>
+<para>One important extension of the <ulink url="http://genome.ucsc.edu/" role="_blank">Genome Browser</ulink> is the ability to add custom tracks. Custom tracks allow users to incorporate their own or third party data into the browser so that imported sequence annotations can be inspected in the context of existing ones. A large collection of diverse sequence-based experimental data have been published by the <ulink url="http://modencode.org/" role="_blank">ModENCODE</ulink> project. There are experiments assessing every part of the genome for its involvement in expression regulation under specific biological conditions. <ulink url="http://modencode.org/" role="_blank">ModENCODE</ulink> data sets may be downloaded as sequence features in a compatible GFF3 format and included as custom tracks in the <ulink url="http://genome.ucsc.edu/" role="_blank">Genome Browser</ulink>. As an example, I added a track for <ulink url="http://intermine.modencode.org/query/portal.do?externalid= modENCODE_174&amp;class=Submission" role="_blank">modencode_174</ulink> (labeled as &ldquo;User Track:POLII CHIP&rdquo;), which marks genomic regions that have been identified as potential binding sites for RNA polymerase II. There is substantial overlap between a potential Pol II binding site and the inter-species conserved sequence between C48A7.14 and C48A7.13. This observation further supports the possibility that this stretch of sequence is functionally important and may be expressed.</para>
+</article>

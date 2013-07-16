@@ -1,0 +1,103 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>An introduction to the UCSC Genome Browser</title>
+      <meta name="generator" content="DocBook XSL Stylesheets V1.67.2">
+      <link rel="start" href="#WB_RLee_UCSCBrowser_JM_final_text" title="An introduction to the UCSC Genome Browser">
+      <!--#include virtual="/ssi/header_article.html" -->
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<!--#include virtual="/ssi/boilerplate.html" -->
+<div class="html_to_pdf_link">
+	<a href="gbrowser.pdf">Download PDF version</a>
+</div>
+
+      <div class="article" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h1 class="title"><a name="WB_RLee_UCSCBrowser_JM_final_text"></a>An introduction to the UCSC Genome Browser<sup><a name="d0e6" href="#ftn.d0e6">*</a></sup></h1>
+               </div>
+               <div>
+                  <div class="author"><span class="author"><span class="othername">Raymond Lee<em><span class="remark"><sup><a name="d0e27" href="#ftn.d0e27">&sect;</a></sup></span></em></span><br></span><span class="affiliation"><span class="orgname">Division of Biology, California Institute of Technology, Pasadena CA 91125, USA; </span></span></div>
+               </div>
+            </div>
+            <hr>
+         </div>
+        <div class="toc">
+
+	   <div id="section_locator"><a href="/toc_wormmethods.html">
+	         <b>This chapter is in WormBook section:</b><br />
+		       > WormMethods<br />>> Basic methods for <em>C. elegans</em>
+		</a></div><hr />
+		</div>
+		
+         <p>The <a href="http://genome.ucsc.edu/" target="_blank">Genome Browser</a> at the University of California Santa Cruz provides a uniform graphical interface to sequences, features, and annotations
+            of genomes across a wide spectrum of organisms, from yeast to humans. In particular, it covers seven nematode genomes: <span class="emphasis"><em>Caenorhabditis elegans, C. sp. 11, C. brenneri, C. briggsae, C. remanei, C. japonica</em></span>, and <span class="emphasis"><em>Pristionchus pacificus</em></span> and thus is particularly useful for multiple-genome comparative analysis. One can use the provided tools and visual aides
+            to facilitate sequence feature detection and examination. This article provides a brief introduction for using the <a href="http://genome.ucsc.edu/" target="_blank">Genome Browser</a> from the perspective of a <span class="emphasis"><em>C. elegans</em></span> researcher. Interested users should read the official user guide and explore the site more deeply as there are many more
+            features not mentioned here.
+         </p>
+         <p>To begin, one should choose the nematode clade, then the organism <span class="emphasis"><em>C. elegans</em></span>, a version of genome sequence assembly (e.g., WS220), and a region of the genome (<a href="#figure1">Figure 1</a>). Browser behavior is context sensitive, depending on the choices made in order from left to right. There are three basic
+            ways to specify a region to browse: by a range of chromosomal numerical positions, by a gene name and by an accession number.
+            More flexibly, instead of exact positions, one can also search for a descriptive term (such as &#8220;kinase inhibitor&#8221;) that is
+            present in gene records. Some restrictions are worth noting. Chromosome positions must start with &#8220;chr&#8221;. Gene names recognized
+            by the browser are limited to those in RefSeq and Ensembl entries. Remarkably, most if not all named miRNA genes, like <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=lin-4;class=Gene" target="_blank">lin-4</a></em></span>, <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=let-7;class=Gene" target="_blank">let-7</a></em></span>, <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=lsy-6;class=Gene" target="_blank">lsy-6</a></em></span> and 170 <span class="emphasis"><em>mir</em></span>- loci are excluded from the <a href="http://genome.ucsc.edu/" target="_blank">Genome Browser</a>.
+         </p>
+         <div class="mediaobject" align="center"><a name="figure1"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="432">
+<tr>
+  <td align="center"><p><a href="gbrowser_fig1.jpg"><img src="gbrowser_fig1_s.jpg" border="2" align="middle" alt=" figure 1"></a>
+  </td>
+</tr>
+            </table>
+            <div class="caption">
+               <p><b>Figure 1. UCSC Genome Browser select a region.&nbsp;</b>A screen capture of the UCSC Genome Browser that illustrates the process of selecting a specific region in the <span class="emphasis"><em>C. elegans</em></span> genome to browse.
+               </p>
+            </div>
+         </div>
+         <p>Once a region is selected, the <a href="http://genome.ucsc.edu/" target="_blank">Genome Browser</a> can display a wide selection of sequences and features as tracks. The tracks are easily customizable. One can add or remove
+            specific tracks and change the order or look of tracks to make them easier to browse. Several tracks based on multiple genomic
+            sequences are grouped under the Comparative Genomics section. There is a multiple sequence alignment track (Multiz) and three
+            possible conservation tracks (phyloP, phastCons and conserved elements) to graphically display the results of conservation
+            analyses. Scanning the genome with these tracks turned on (Multiz and phyloP in the following example), one can quite easily
+            spot areas that show significant cross-species conservation, possibly implicating functional domains. For instance, on chromosome
+            IV, between C48A7.14 and C48A7.13, there is a 530 bp region (chrIV:7402060-7402590) that is highly conserved between <span class="emphasis"><em>C. elegans</em></span> and five other species but there is no existing annotation (<a href="#figure2">Figure 2</a>). It could be an extension of a gene model nearby or a new gene.
+         </p>
+         <div class="mediaobject" align="center"><a name="figure2"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="432">
+<tr>
+  <td align="center"><p><a href="gbrowser_fig2.jpg"><img src="gbrowser_fig2_s.jpg" border="2" align="middle" alt=" figure 2"></a>
+  </td>
+</tr>
+            </table>
+            <div class="caption">
+               <p><b>Figure 2. Genome Browser alignment of diverse sequence features.&nbsp;</b>A Genome Browser view of a 4.5 kbp genomic region of <span class="emphasis"><em>C. elegans</em></span> LGIV. From top to bottom, there are aligned tracks of user-defined features (see text for explanation), gene models, three
+                  types of multiple sequence comparisons, and repeat elements.
+               </p>
+            </div>
+         </div>
+         <p>One important extension of the <a href="http://genome.ucsc.edu/" target="_blank">Genome Browser</a> is the ability to add custom tracks. Custom tracks allow users to incorporate their own or third party data into the browser
+            so that imported sequence annotations can be inspected in the context of existing ones. A large collection of diverse sequence-based
+            experimental data have been published by the <a href="http://modencode.org/" target="_blank">ModENCODE</a> project. There are experiments assessing every part of the genome for its involvement in expression regulation under specific
+            biological conditions. <a href="http://modencode.org/" target="_blank">ModENCODE</a> data sets may be downloaded as sequence features in a compatible GFF3 format and included as custom tracks in the <a href="http://genome.ucsc.edu/" target="_blank">Genome Browser</a>. As an example, I added a track for <a href="http://intermine.modencode.org/query/portal.do?externalid= modENCODE_174&amp;class=Submission" target="_blank">modencode_174</a> (labeled as &#8220;User Track:POLII CHIP&#8221;), which marks genomic regions that have been identified as potential binding sites for
+            RNA polymerase II. There is substantial overlap between a potential Pol II binding site and the inter-species conserved sequence
+            between C48A7.14 and C48A7.13. This observation further supports the possibility that this stretch of sequence is functionally
+            important and may be expressed.
+         </p>
+         <div class="footnotes"><br><hr width="100" align="left">
+            <div class="footnote">
+               <p><sup><a name="ftn.d0e6" href="#d0e6">*</a></sup>Edited by Oliver Hobert. Last revised April 23, 2013, Published July 11, 2013. This chapter should be cited as: Lee R. An introduction
+                  to the UCSC Genome Browser (July 11, 2013), <span class="emphasis"><em>WormBook</em></span>, ed. The <span class="emphasis"><em>C. elegans</em></span> Research Community, WormBook, doi/10.1895/wormbook.1.160.1, <a href="http://www.wormbook.org" target="_top">http://www.wormbook.org</a>.
+               </p>
+               <p><span class="bold"><strong>Copyright:</strong></span> &copy; 2013 Raymond Lee. This is an open-access article distributed under the terms of the Creative Commons Attribution License,
+                  which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are
+                  credited.
+               </p>
+            </div>
+            <div class="footnote">
+               <p><sup><a name="ftn.d0e27" href="#d0e27">&sect;</a></sup>To whom correspondence should be addressed. Email: <a href="mailto:raymond@caltech.edu" target="_top">raymond@caltech.edu</a></p>
+<p><img src="somerights20.gif" alt="Creative Commons License" align="middle" border="0"> All WormBook content, except where otherwise noted, is licensed under a <a href="http://creativecommons.org/licenses/by/2.5/" title="Creative Commons Attribution License" target="_blank">Creative Commons Attribution License</a>.</p>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
