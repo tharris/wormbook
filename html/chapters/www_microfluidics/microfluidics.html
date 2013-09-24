@@ -1,0 +1,1199 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Microfluidics as a tool for C. elegans research</title>
+      <meta name="generator" content="DocBook XSL Stylesheets V1.67.2">
+      <link rel="start" href="#WB_SanMiguel_Microfluidics_JM_text" title="Microfluidics as a tool for C. elegans research">
+      <link rel="next" href="#sec1" title="1.&nbsp;Introduction">
+      <!--#include virtual="/ssi/header_article.html" -->
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<!--#include virtual="/ssi/boilerplate.html" -->
+     <div class="html_to_pdf_link">
+       <a href="microfluidics.pdf">Download PDF version</a>
+    </div>
+      <div class="article" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h1 class="title"><a name="WB_SanMiguel_Microfluidics_JM_text"></a>Microfluidics as a tool for <span class="emphasis"><em>C. elegans</em></span> research<sup><a name="d0e9" href="#ftn.d0e9">*</a></sup></h1>
+               </div>
+               <div>
+                  <div class="author"><span class="author"><span class="othername">Adriana San-Miguel and Hang Lu<em><span class="remark"><sup><a name="d0e33" href="#ftn.d0e33">&sect;</a></sup></span></em></span><br></span><span class="affiliation"><span class="orgname">School of Chemical &amp; Biomolecular Engineering, Georgia Institute of Technology, Atlanta GA, 30332, USA; </span></span></div>
+               </div>
+            </div>
+            <hr>
+         </div>
+         <div class="toc">
+
+	   <div id="section_locator"><a href="/toc_wormmethods.html">
+	         <b>This chapter is in WormBook section:</b><br />
+		       > WormMethods
+		</a></div><hr />
+
+            <p><b>Table of Contents</b></p>
+            <dl>
+               <dt><span class="sect1"><a href="#sec1">1. Introduction</a></span></dt>
+               <dt><span class="sect1"><a href="#sec2">2. Applications and design considerations of worm-chips</a></span></dt>
+               <dd>
+                  <dl>
+                     <dt><span class="sect2"><a href="#sec2-1">2.1. Animal handling and manipulation</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec2-2">2.2. Worm immobilization and imaging</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec2-3">2.3. Behavioral assays</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec2-4">2.4. Chambers and droplets</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec2-5">2.5. High-throughput imaging and screening</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec2-6">2.6. Laser microsurgery</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="sect1"><a href="#sec3">3. Resources for chip fabrication</a></span></dt>
+               <dt><span class="sect1"><a href="#sec4">4. Fabrication of microfluidic devices for <span class="emphasis"><em>C. elegans</em></span> studies with soft lithography in-house.</a></span></dt>
+               <dd>
+                  <dl>
+                     <dt><span class="sect2"><a href="#sec4-1">4.1. Device design and masters</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec4-2">4.2. PDMS Replication Molding</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec4-3">4.3. Valves and 2-layer devices</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec4-4">4.4. Bonding the devices and connections to the macro world</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="sect1"><a href="#sec5">5. Conclusions</a></span></dt>
+               <dt><span class="sect1"><a href="#sec6">6. References</a></span></dt>
+            </dl>
+         </div>
+         <div class="abstract">
+            <p class="title"><span class="bold"><strong>Abstract:</strong></span></p>
+            <p><span class="bold"><strong>Microfluidics has emerged as a set of powerful tools that have greatly advanced some areas of biological research, including
+                     research using <span class="italic">C. elegans</span>. The use of microfluidics has enabled many experiments that are otherwise impossible with conventional methods. Today there
+                     are many examples that demonstrate the main advantages of using microfluidics for <span class="italic">C. elegans</span> research, achieving precise environmental conditions and facilitating worm handling. Examples range from behavioral analysis
+                     under precise chemical or odor stimulation, locomotion studies in well-defined structural surroundings, and even long-term
+                     culture on chip. Moreover, microfluidics has enabled coupling worm handling and imaging thus facilitating genetic screens,
+                     optogenetic studies, and laser ablation experiments. In this article, we review some of the applications of microfluidics
+                     for <span class="italic">C. elegans</span> research and provide guides for the design, fabrication, and use of microfluidic devices for <span class="italic">C. elegans</span> research studies.</strong></span></p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec1"></a>1.&nbsp;Introduction
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Microfluidics has recently emerged as a new technology for studies at the small scale ranging from the biological sciences,
+               soft matter, reactions and synthesis, high-throughput drug screening, encapsulation, and lab-on-chip diagnostics (<a href="#bib52">Whitesides, 2006</a>). As the name suggests, microfluidics involves fluid flows at the micron-scale, which are easily predictable and controllable
+               due to low Reynolds numbers (<a href="#bib7">Bretscher et al., 2008</a>). Consequently, accurate flow rates, concentration gradients, and shear rates can be applied in experiments, which additionally
+               require very small sample sizes or reagent volumes. Moreover, the large surface-to-volume area characteristic of micron-scale
+               features allows fast mass and heat transfer.
+            </p>
+            <p>Microfluidic devices evolved from the microfabrication methods used for electronic chips and MicroElectroMechanical Systems
+               (MEMS), which produce devices with small features ranging from 1 to 100 &micro;m with high precision. Typically, simple microfluidic
+               devices are made by soft lithography replica molding of a flexible silicone elastomer, PDMS (polydimethylsiloxane) (<a href="#bib23">Duffy et al., 1998</a>; <a href="#bib39">McDonald et al., 2000</a>; <a href="#bib53">Xia and Whitesides, 1998</a>). This material is optically transparent, gas permeable, non-toxic, inert, and compatible with aqueous solutions, making
+               it suitable for biological experimentation and microscopic observation. Fabrication of microfluidic devices is easy, fast
+               and inexpensive, and devices are thus usually single-use.
+            </p>
+            <p>Because of all the advantages it offers, the use of microfluidics as a platform for biological studies has been greatly increased.
+               For instance, microfluidics has been applied to study cells (<a href="#bib4">Andersson and van den Berg, 2003</a>; <a href="#bib16">Chung et al., 2011b</a>) as well as whole organisms such as <span class="emphasis"><em>Drosophila melanogaster</em></span> (<a href="#bib14">Chung et al., 2011a</a>; <a href="#bib37">Lucchetta et al., 2005</a>). <span class="emphasis"><em>C. elegans</em></span> research has been particularly impacted by this technology (<a href="#bib1">Albrecht and Bargmann, 2011</a>; <a href="#bib6">Ben-Yakar et al., 2009</a>; <a href="#bib9">Chalasani et al., 2007</a>; <a href="#bib12">Chronis, 2010</a>; <a href="#bib13">Chronis et al., 2007</a>; <a href="#bib21">Crane et al., 2010</a>; <a href="#bib25">Gray et al., 2004</a>; <a href="#bib30">Hulme et al., 2008</a>; <a href="#bib34">Lockery, 2007</a>; <a href="#bib36">Lockery et al., 2008</a>; <a href="#bib38">McCormick et al., 2011</a>; <a href="#bib54">Yanik et al., 2011</a>; <a href="#bib56">Zhang et al., 2005</a>; <a href="#bib57">Zimmer et al., 2009</a>), as it not only allows controlled flows and chemical stimuli delivery, but it also provides a platform for easy animal handling
+               and manipulation, which is otherwise manual, laborious, and time-consuming. Additionally, the use of glues and anesthetics
+               for studies that require worm immobilization can be avoided. Some devices have been used to examine behavior and neuronal
+               activity under certain spatial or temporal stimulus. The study of sensory and locomotion behavior in mazes and patterned surfaces
+               has also been made possible by microfluidics (<a href="#bib36">Lockery et al., 2008</a>; <a href="#bib56">Zhang et al., 2005</a>). Moreover, high-throughput imaging, phenotyping and screening, as well as laser ablation and nerve regeneration studies
+               have been successfully performed with the help of this technology (<a href="#bib15">Chung and Lu, 2009</a>; <a href="#bib18">Chung et al., 2008</a>; <a href="#bib20">Crane et al., 2009</a>; <a href="#bib21">Crane et al., 2010</a>; <a href="#bib26">Guo et al., 2008</a>; <a href="#bib44">Rohde et al., 2007</a>; <a href="#bib49">Stirman et al., 2010</a>). In general, engineering research in microfluidics has aimed at potentially transforming <span class="emphasis"><em>C. elegans</em></span> research from a laborious time-consuming per-worm experimenting platform into an easier task, aided by the simple, precise
+               and rapid on-chip worm handling, immobilization, and imaging.
+            </p>
+            <p>Microfluidic devices for worm studies can be made in a single layer or in multiple layers, with valves or without them, with
+               square or round channels, and with structures as simple as a channel or with very complicated features of only a few microns
+               in size. Additionally they can incorporate elements for efficient immobilization and worm trapping. Furthermore, devices with
+               multiple-depth features can also be made. This article describes the main applications of worm-chips developed thus far as
+               well as the basics of fabrication and functioning of simple one-layer PDMS devices for <span class="emphasis"><em>C. elegans</em></span> research, which can be easily fabricated by non-expert users. An optimal design for each application will be ultimately decided
+               by the requirements of the experiments balanced by the complexity one is willing to handle. We aim to illustrate a suite of
+               possibilities and inspire future applications.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec2"></a>2.&nbsp;Applications and design considerations of worm-chips
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Many different types of studies with <span class="emphasis"><em>C. elegans</em></span> can be carried out in microfluidic devices. The design of each device is highly dependent on the objective of the experiment
+               to be performed. Chips used for <span class="emphasis"><em>C. elegans</em></span> studies can broadly be divided into those dealing with behavioral assays, high-resolution imaging, and on-chip culture, although
+               no device falls into a single category. Most devices are PDMS chips with channels, chambers or pillars. The majority of these
+               devices are bonded to a glass slide and are thus closed to the environment, as the example shown in <a href="#figure1">Figure 1A</a>. These types of devices contain access ports for worm entry and exit. The channels and chambers are filled with liquid media,
+               typically M9 buffer, and access ports allow the exchange of media thus enabling delivery of soluble chemical stimuli. PDMS
+               chips can also be used on agar surfaces, as the example shown in <a href="#figure1">Figure 1B</a>. In this case, worms crawl on the agar surface while in the presence of a controlled gaseous environment. Typically, these
+               devices are better suited when behavior of worms crawling in agar surfaces or feeding from a bacterial lawn is a must. Recently,
+               however, glass-bonded chips that allow crawling and feeding have also been developed. Glass-bonded devices have the added
+               advantage of being able to incorporate on-chip valves since channels can be pressurized without leakage due to the strong,
+               irreversible bond between PDMS and glass. There is a wide variety of possibilities to incorporate into worm chips, and as
+               previously mentioned, no single chip is identical. The selection of features and degree of complexity to incorporate will
+               depend on the experiment under consideration. Operation of worm chips can be as easy as driving fluid by applying pressure
+               by hand (<a href="#bib17">Chung et al., 2011c</a>; <a href="#bib36">Lockery et al., 2008</a>) while some require syringe pumps or even extensive off-chip support (<a href="#bib18">Chung et al., 2008</a>). It is important to mention that very simple and elegant devices can be used to carry out very interesting experiments with
+               highly relevant scientific output. In the following text, the main applications of worm chips developed thus far are briefly
+               reviewed.
+            </p>
+            <div class="mediaobject" align="center"><a name="figure1"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="432">
+<tr>
+  <td align="center"><p><a href="microfluidics_fig1.jpg"><img src="microfluidics_fig1_s.jpg" border="2" align="middle" alt="figure 1"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b><span class="bold"><strong>Figure 1. Diagrams representing typical microfluidic devices for <span class="italic">C. elegans</span> experiments.</strong></span>&nbsp;</b>A) An example of a PDMS microfluidic device bonded to a glass slide, where worms are imaged in a fluid-filled channel. Access
+                     ports allow fluid exchange, worm entry and exit. Worms in imaging devices are typically immobilized by a variety of methods
+                     (Section 2.2). B) An example of a PDMS microfluidic device on top of an agar surface to study crawling worms&#8217; behavior in
+                     gas-filled chambers. Access ports allow gas exchange for stimuli input and controlled gaseous concentrations. Scale bars are
+                     &#8764; 1 cm to show typical chip dimensions. C) A microfluidic chip for <span class="emphasis"><em>C. elegans</em></span> imaging and sorting experiments showing connections to inlet and outlet lines with syringe needle pins and polyethylene tubing.
+                  </p>
+               </div>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2-1"></a>2.1.&nbsp;Animal handling and manipulation
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>The ease of worm handling provided by microfluidic devices is one of its most attractive advantages. Devices can be applied
+                  to study individual worms or worm populations (<a href="#bib12">Chronis, 2010</a>). In most cases, worms are easily loaded into devices directly by injecting a worm suspension in buffer media. For single-worm
+                  imaging studies, worm chips typically contain a wider loading channel or chamber upstream of the imaging channel (<a href="#bib13">Chronis et al., 2007</a>; <a href="#bib49">Stirman et al., 2010</a>). The pressure drop created by flowing the suspension through the device directs the worms towards imaging channels or chambers,
+                  where worms can be individually isolated with the inclusion of on-chip valves (<a href="#bib20">Crane et al., 2009</a>; <a href="#bib29">Hulme et al., 2010</a>). The presence of pillars in the loading area upstream of imaging channels has been utilized to bias worm loading towards
+                  a head-first orientation (<a href="#bib10">Chokshi et al., 2010</a>), which is useful to avoid stage movement when imaging several worms in series.
+               </p>
+               <p>The inclusion of channels close to the size of the worm body is desirable in many cases, as it allows high-resolution imaging
+                  of neuronal activity in live <span class="emphasis"><em>C. elegans</em></span> (<a href="#bib34">Lockery, 2007</a>) by restricting its movement. Imaging channels on the scale of the worm body size provide an added benefit for loading: when
+                  a worm enters a channel, the fluidic resistance is increased, and thus additional worms are prevented from entering an already
+                  loaded channel (<a href="#bib18">Chung et al., 2008</a>). Load regulating valves can also accomplish this objective by isolating worms in the imaging channel (<a href="#bib18">Chung et al., 2008</a>). Some chips contain parallel channels to study several worms at once, as those shown in <a href="#figure2">Figure 2</a>. In this case, the fluidic resistance change diverts incoming worms to other unloaded channels (<a href="#bib28">Hulme et al., 2007</a>; <a href="#bib49">Stirman et al., 2010</a>). In the case of parallel channels, bifurcations can be used so that downstream branches have the same fluidic resistance
+                  with no bias in worm distribution (<a href="#bib28">Hulme et al., 2007</a>), as shown in <a href="#figure2">Figure 2A</a>.
+               </p>
+               <div class="mediaobject" align="center"><a name="figure2"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="432">
+<tr>
+  <td align="center"><p><a href="microfluidics_fig2.jpg"><img src="microfluidics_fig2_s.jpg" border="2" align="middle" alt="figure 2"></a>
+  </td>
+</tr>
+                  </table>
+                  <div class="caption">
+                     <p><b><span class="bold"><strong>Figure 2. Designs that take advantage of pressure resistance for loading multiple samples in a parallel architecture.</strong></span>&nbsp;</b>Worms that enter a channel increase its fluidic resistance, thus directing the next worms to adjacent channels. A) Microfluidic
+                        device with branched network of channels for imaging in worm clamps. Black lines represent channels for worm loading. (<a href="#bib28">Hulme et al., 2007</a>) <span class="emphasis"><em>Reproduced by permission of The Royal Society of Chemistry</em></span>. B) Microfluidic device for parallel imaging of worms under light stimulation. Worms are studied in channels; area to the
+                        right is an unloading chamber. Scale bar is 250 &micro;m (<a href="#bib49">Stirman et al., 2010</a>) <span class="emphasis"><em>Reprinted with permission from Elsevier</em></span>.
+                     </p>
+                  </div>
+               </div>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2-2"></a>2.2.&nbsp;Worm immobilization and imaging
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Many chips have been devoted to the immobilization of worms in order to allow high-resolution microscopic imaging on chip
+                  without the use of anesthetics or glues. Microfluidic devices that are made with a glass coverslip on the bottom are compatible
+                  with standard fluorescence microscopy techniques, which allow live imaging of sub-cellular processes. In this instance, immobilization
+                  of the worms is necessary. On-chip worm immobilization has been accomplished by cooling (<a href="#bib18">Chung et al., 2008</a>), compression or restriction (<a href="#bib11">Chokshi et al., 2009</a>; <a href="#bib28">Hulme et al., 2007</a>), CO<sub>2</sub> (<a href="#bib11">Chokshi et al., 2009</a>), and gelation of the surrounding fluid (<a href="#bib32">Krajniak and Lu, 2010</a>). Each technique confers different advantages and the choice of which one to use depends on the requirements and complexity
+                  of the problem and the availability of hardware and software needed to implement them.
+               </p>
+               <p>Immobilization by compression takes advantage of the flexibility of PDMS, which readily deforms upon exertion of pressure,
+                  as shown in <a href="#figure3">Figure 3A</a>. Compression immobilization chips are 2-layer devices that operate in the same manner as on-chip valves. The bottom layer
+                  contains a channel where worms are injected, and above it a control layer contains a wider channel that, when pressurized,
+                  deforms the membrane (typically 20-75 &micro;m) between the two layers (<a href="#bib50">Unger et al., 2000</a>). The deflected membrane pushes the worm towards one side of the channel and against the glass slide, thus immobilizing it.
+                  It is important that the top channel is wide enough to allow sufficient membrane deflection (<a href="#bib11">Chokshi et al., 2009</a>; <a href="#bib24">Gilleland et al., 2010</a>). Additionally, a side suction channel can be included to help position the worm at a certain point along the channel (<a href="#bib55">Zeng et al., 2008</a>).
+               </p>
+               <div class="mediaobject" align="center"><a name="figure3"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="432">
+<tr>
+  <td align="center"><p><a href="microfluidics_fig3.jpg"><img src="microfluidics_fig3_s.jpg" border="2" align="middle" alt="figure 3"></a>
+  </td>
+</tr>
+                  </table>
+                  <div class="caption">
+                     <p><b><span class="bold"><strong>Figure 3. Worm immobilization techniques in microfluidic devices.</strong></span>&nbsp;</b>A) Physical immobilization: compression of a membrane deflected by pressure in the control channel. The yellow layer represents
+                        a PDMS layer containing the channel for worm imaging. The green layer is a second PDMS layer on top of the worm imaging with
+                        an air-filled channel that when pressurized deflects the PDMS membrane for worm immobilization. The bottom white represents
+                        a glass slide.(<a href="#bib11">Chokshi et al., 2009</a>) <span class="emphasis"><em>Reproduced by permission of The Royal Society of Chemistry</em></span>. B) Chemical immobilization: CO<sub>2</sub> diffusion through adjacent channel (<a href="#bib11">Chokshi et al., 2009</a>) <span class="emphasis"><em>Reproduced by permission of The Royal Society of Chemistry</em></span>. C) Physical restriction in worm clamp, top view of device design. (<a href="#bib28">Hulme et al., 2007</a>) <span class="emphasis"><em>Reproduced by permission of The Royal Society of Chemistry</em></span>. D) Physical constraint gel, worm is immobilized by gelation of surrounding fluid at physiological temperatures; scale bar
+                        is 60 &micro;m (<a href="#bib32">Krajniak and Lu, 2010</a>) <span class="emphasis"><em>Reproduced by permission of The Royal Society of Chemistry</em></span>. E) Cooling. Top: top view of a high-throughput imaging and sorting device that applies flow of a cooling fluid in a channel
+                        (blue) on top of the worm imaging channel (red). Green channels show valves to stop flow and worms; scale bar is 100 &micro;m (<a href="#bib18">Chung et al., 2008</a>) <span class="emphasis"><em>Reprinted by permission from Macmillan Publishers Ltd: Nature Methods, copyright 2008.</em></span> Bottom shows a side view of the same device with green valves closed.
+                     </p>
+                  </div>
+               </div>
+               <p>The pressure required to deflect the membrane enough to fully immobilize worms will depend on the membrane geometry, thickness,
+                  and stiffness of PDMS. For a 20:1 monomer to cross-linker ratio, a 30 &micro;m membrane requires 25 psi for worm immobilization
+                  (<a href="#bib11">Chokshi et al., 2009</a>). This pressure has been shown to be appropriate for short immobilization periods without visible damage to the worms. However,
+                  for extended immobilization times or to completely impede movement, as required for imaging of sub-cellular processes, other
+                  techniques may be better suited.
+               </p>
+               <p>Worm clamps, also called traps, are another immobilization technique based on physical restriction (<a href="#bib28">Hulme et al., 2007</a>). In this case a channel larger than the worm's diameter is tapered to an opening of 20 &micro;m or less (for adult worms) as shown
+                  in <a href="#figure3">Figure 3C</a>. Worms are trapped in the resulting wedge-shaped channel. Trapped worms can then be released by reversing the flow or pressurizing
+                  the channel. Worm traps, which allow movement in one plane but restrict it in the <span class="emphasis"><em>z</em></span> direction, have also been used to study worm locomotion and relate it to neuronal activity using calcium imaging (<a href="#bib13">Chronis et al., 2007</a>). In this case, immobilization does not need to be perfect since movement can be corrected by imaging software. Recently,
+                  a study that combines calcium imaging and optogenetics in a simple microfluidic device that restricts worms by the mid-body
+                  section has been applied to study coordinated motor neuron activity in <span class="emphasis"><em>C. elegans</em></span> driving forward locomotion (<a href="#bib51">Wen et al., 2012</a>). Other applications that involve calcium imaging on-chip are discussed in the following section (Section 2.3).
+               </p>
+               <p>Neither compression nor worm traps stop pharyngeal pumping and muscle contractions, which can potentially affect imaging of
+                  high-resolution sub-cellular processes. In contrast, immobilization by cooling does stop all of the worm's internal movements.
+                  This type of immobilization works by flowing a cooling fluid through a separate flow channel adjacent to the worm channel.
+                  Efficient heat transfer rapidly cools the worm in the channel to ~4 &deg;C and consequently immobilizes it (<a href="#figure3">Figure 3E</a>). In this way, sub-cellular processes, such as synapses, can be imaged at high magnification (<a href="#bib18">Chung et al., 2008</a>).
+               </p>
+               <p>Another recently developed method involves the injection of a Pluronic<sup>&reg;</sup> F127 solution to worm-loaded chambers. This biocompatible solution reversibly gels upon a very slight temperature increase
+                  (~2 &deg;C) and thus immobilizes the worms (<a href="#bib32">Krajniak and Lu, 2010</a>) as shown in <a href="#figure3">Figure 3D</a>. Additionally, worms can be immobilized by flowing CO<sub>2</sub> in a channel adjacent to the worm channel (<a href="#figure3">Figure 3B</a>). CO<sub>2</sub> diffuses through the PDMS membrane into the fluid surrounding the worm whereby the worm is immobilized; this method can be
+                  used for as long as 1-2 hrs of immobilization (<a href="#bib11">Chokshi et al., 2009</a>).
+               </p>
+               <p>The design and scheme to select would depend on the requirement of the specific application. When imaging very small features,
+                  absolute immobilization is necessary. When sorting after imaging is desired, the device design must take into consideration
+                  flow control in a single direction, along with the features required for immobilization. Functional imaging would require
+                  imaging near room temperature. Finally, all designs should ensure that the selected immobilization scheme (whether it is temperature,
+                  carbon dioxide or pressure) does not significantly alter the biological features of interest or process under study.
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2-3"></a>2.3.&nbsp;Behavioral assays
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>A large number of worm chips have been used to study behavioral and cellular responses of worms to controlled stimuli. These
+                  include spatial and temporal, gradient, and step stimuli. Some examples include the responses to dissolved gas concentration,
+                  nutrients, chemoattractants, pheromones, pathogenic substances, and temperature (<a href="#bib1">Albrecht and Bargmann, 2011</a>; <a href="#bib9">Chalasani et al., 2007</a>; <a href="#bib10">Chokshi et al., 2010</a>; <a href="#bib13">Chronis et al., 2007</a>; <a href="#bib25">Gray et al., 2004</a>; <a href="#bib38">McCormick et al., 2011</a>; <a href="#bib40">McGrath et al., 2009</a>; <a href="#bib43">Qin and Wheeler, 2007</a>; <a href="#bib56">Zhang et al., 2005</a>). The first example of controlled chemical stimulus showed the generation of a spatial linear oxygen gradient in a worm chamber
+                  (<a href="#bib25">Gray et al., 2004</a>). Such spatial, as well as temporal concentration changes, can be generated by flowing gases through channels adjacent to
+                  the worm channel (<a href="#figure4">Figure 4A</a>). Gas-phase stimuli have also been applied on single worms by creating temporal step changes in the oxygen or CO<sub>2</sub> concentration (<a href="#bib40">Zimmer et al., 2009</a>), where neuronal activities can be recorded and correlated (<a href="#figure4">Figure 4B</a>). This type of gaseous chemical stimuli has also been accomplished by creating a laminar gaseous flow over a worm arena (<a href="#bib7">Bretscher et al., 2008</a>; <a href="#bib40">McGrath et al., 2009</a>).
+               </p>
+               <div class="mediaobject" align="center"><a name="figure4"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="432">
+<tr>
+  <td align="center"><p><a href="microfluidics_fig4.jpg"><img src="microfluidics_fig4_s.jpg" border="2" align="middle" alt="figure 4"></a>
+  </td>
+</tr>
+                  </table>
+                  <div class="caption">
+                     <p><b><span class="bold"><strong>Figure 4. Chips for controlled stimulus delivery.</strong></span>&nbsp;</b>A) Oxygen gradient in aerotaxis microfluidic device. Top: top view, bottom: side view. (<a href="#bib25">Gray et al., 2004</a>) <span class="emphasis"><em>Reprinted by permission from Macmillan Publishers Ltd: Nature, copyright 2004.</em></span> B) Microfluidic chip for temporal delivery of oxygen, scale bar of cross-section is 100 &micro;m. (<a href="#bib57">Zimmer et al., 2009</a>) <span class="emphasis"><em>Reprinted with permission from Elsevier</em></span>. C) Olfactory maze for olfactory preference investigation. Maze width is ~ 5 cm. Worms are located between the agar surface
+                        and the PDMS maze, and can thus access directly test chambers containing bacterial lawns. (<a href="#bib56">Zhang et al., 2005</a>) <span class="emphasis"><em>Reprinted by permission from Macmillan Publishers Ltd: Nature, copyright 2005.</em></span> D) Designs of microfluidic chips for different types of stimulus delivery to a worm arena. Arena is a chamber 20 mm in length.
+                        This area is a pillar-filled microfabricated PDMS chip bonded to a glass slide, which allows worms to crawl in the fluid-filled
+                        chamber. Profiles of the stimulus that can be generated with each design are shown to the right. (<a href="#bib1">Albrecht and Bargmann, 2011</a>) <span class="emphasis"><em>Reprinted by permission from Macmillan Publishers Ltd: Nature Methods, copyright 2011.</em></span> E) Olfactory chip for delivery of chemicals to the worm nose. Top shows micrographs of chip with a worm loaded and its nose
+                        protruding to the stimulus injection region. Bottom shows the control of stimulus injection by alternating with buffer injection.
+                        Scale bars: upper left image, 2 mm; right images, 150 &micro;m. (<a href="#bib13">Chronis et al., 2007</a>) <span class="emphasis"><em>Reprinted by permission from Macmillan Publishers Ltd: Nature Methods, copyright 2007.</em></span></p>
+                  </div>
+               </div>
+               <p>Microfluidic devices have also been applied to provide worms with choices between four different odors in an eight-arm maze
+                  by positioning a microfluidic maze on top of an agar surface. The preference of trained worms to food odors over pathogenic
+                  bacteria odors was observed in this device (<a href="#bib56">Zhang et al., 2005</a>) (<a href="#figure4">Figure 4C</a>). Another device that has been successfully applied for chemical stimuli input is the olfactory chip (<a href="#bib9">Chalasani et al., 2007</a>; <a href="#bib10">Chokshi et al., 2010</a>; <a href="#bib13">Chronis et al., 2007</a>). This device contains a worm trap that allows the nose to protrude into a channel where a chemical stimulus is delivered
+                  (<a href="#figure4">Figure 4E</a>). The worm trap allows high-resolution imaging of neuronal activity by calcium imaging. Four channels are used for injection
+                  of stimulus and buffer or dye, which allows easy visualization and helps to avoid fluidic disruptions.
+               </p>
+               <p>The effect of chemical stimuli on the movement responses of freely moving or semi-restrained worms can also be made possible
+                  with microfluidic chips. In one example, worms subject to a chemoattractant stimulus are held at the mid body section by two
+                  adjacent suction channels while the stimulus is delivered to the freely-moving anterior part of the worm (<a href="#bib38">McCormick et al., 2011</a>) and the subsequent head position response is scored. Chemical stimuli applied to freely moving worms can be generated as
+                  temporal pulses, gradients, and spatial bands by simply including inlet channels with different designs (<a href="#bib1">Albrecht and Bargmann, 2011</a>) (<a href="#figure4">Figure 4D</a>). These types of stimuli have been applied to study locomotion of worm populations in a pillar-filled arena, where the pillars
+                  are designed such that they allow crawling-like behavior even though animals are immersed in liquid environments (<a href="#figure5">Figure 5A</a>).
+               </p>
+               <div class="mediaobject" align="center"><a name="figure5"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="432">
+<tr>
+  <td align="center"><p><a href="microfluidics_fig5.jpg"><img src="microfluidics_fig5_s.jpg" border="2" align="middle" alt="figure 5"></a>
+  </td>
+</tr>
+                  </table>
+                  <div class="caption">
+                     <p><b><span class="bold"><strong>Figure 5. Inclusion of physical structures to enhance or study locomotion on-chip.</strong></span>&nbsp;</b>A) Worms crawling in micro-post filled arena under chemical stimuli, scale bars are 500 &micro;m. (<a href="#bib1">Albrecht and Bargmann, 2011</a>). <span class="emphasis"><em>Reprinted by permission from Macmillan Publishers Ltd: Nature Methods, copyright 2011.</em></span> B) Worm crawling behavior in artificial dirt chips with varying feature size and spacing. (<a href="#bib36">Lockery et al., 2008</a>). <span class="emphasis"><em>Reproduced with permission of the American Physiological Society.</em></span></p>
+                  </div>
+               </div>
+               <p>Other chips have also taken advantage of the micro-scale features that can be generated by soft lithography to construct patterned
+                  environments and thus study the worm's movement and responses to them. The &#8220;artificial dirt&#8221; chip (<a href="#figure5">Figure 5B</a>) is a device consisting of arranged pillars at different spacing to mimic dirt that nematodes encounter in nature (<a href="#bib36">Lockery et al., 2008</a>). This type of study has also been performed in an agar device constructed from a PDMS mold (<a href="#bib41">Park et al., 2008</a>). The locomotion of worms has also been studied in waveform channels fabricated with different amplitude and wavelength (<a href="#bib36">Lockery et al., 2008</a>). From these studies, it has been found that there are optimum values of amplitude where worms can more efficiently move.
+                  Microfabrication has also been used in a force sensing device where SU-8 pillars attached to cantilevers are used to measure
+                  the forces exerted by crawling worms causing pillar deflection (<a href="#bib22">Doll et al., 2009</a>).
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2-4"></a>2.4.&nbsp;Chambers and droplets
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Studies of freely moving single worms can be performed with microfluidics by either incorporating chambers in the device or
+                  utilizing droplets to encapsulate single worms (<a href="#bib8">Carr et al., 2011</a>; <a href="#bib17">Chung et al., 2011c</a>; <a href="#bib19">Clausell-Tormos et al., 2008</a>; <a href="#bib29">Hulme et al., 2010</a>; <a href="#bib31">Kim et al., 2007</a>; <a href="#bib32">Krajniak and Lu, 2010</a>; <a href="#bib46">Shi et al., 2008</a>; <a href="#bib47">Shi et al., 2010</a>). Microfabricated chambers in PDMS devices distribute individual worms to separate compartments. Worms in large chambers
+                  can grow without restrictions and experience negligible shear in comparison with smaller channels. Food, odor, tastants, pheromones,
+                  and drugs can be supplied by an inlet channel to the chamber, while waste and debris can be removed through an outlet channel.
+                  These connections should be small enough to prevent worms from escaping. Additionally, on-chip valves can be used to close
+                  chamber inlets and outlets.
+               </p>
+               <p>Longitudinal observation throughout a worm's culture period in chambers can be performed by incorporating an adjacent worm
+                  clamp (<a href="#bib29">Hulme et al., 2010</a>) to trap and image the worm and then releasing it back to the chamber, as shown in <a href="#figure6">Figure 6A</a>. Alternatively, reversible immobilization of worms in the chambers for high-resolution imaging can also been accomplished
+                  by introducing a Pluronic F127 solution, which gels upon a slight temperature increase (<a href="#bib32">Krajniak and Lu, 2010</a>). The design of this type of device is shown in <a href="#figure6">Figure 6B</a>.
+               </p>
+               <div class="mediaobject" align="center"><a name="figure6"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="432">
+<tr>
+  <td align="center"><p><a href="microfluidics_fig6.jpg"><img src="microfluidics_fig6_s.jpg" border="2" align="middle" alt="figure 6"></a>
+  </td>
+</tr>
+                  </table>
+                  <div class="caption">
+                     <p><b><span class="bold"><strong>Figure 6. Worm chambers in microfluidic devices.</strong></span>&nbsp;</b>A) Array of chambers for simultaneous observation of multiple worms (<a href="#bib17">Chung et al., 2011c</a>) B) Chip with chambers incorporating an adjacent worm clamp for longitudinal observation (<a href="#bib29">Hulme et al., 2010</a>). C) Worm chambers with immobilization by gelation (<a href="#bib32">Krajniak and Lu, 2010</a>). <span class="emphasis"><em>All images reproduced by permission of The Royal Society of Chemistry</em></span>.
+                     </p>
+                  </div>
+               </div>
+               <p>Recently a device consisting of an array of 48 chambers, which allows the observation of multiple worms at the same time,
+                  was generated (<a href="#figure6">Figure 6C</a>). The inlet of each chamber is a very narrow channel, which traps a single worm. Pressurizing the main channel allows expansion
+                  of the entry ports thus loading a single worm into each chamber. Chemical stimuli can also be delivered to worms in these
+                  chambers and the worm's behavioral response while freely swimming can be studied (<a href="#bib17">Chung et al., 2011c</a>).
+               </p>
+               <p>Lifespan analysis has also been performed in a single-animal culture multiwell apparatus made of a perforated glass slide
+                  sealed by a PDMS membrane. Each well containing NGM and <span class="emphasis"><em>E. coli</em></span> provides a chamber for lifelong cultivation and analysis of individual worms (<a href="#bib42">Pincus et al., 2011</a>). In addition to culturing, development, and behavioral analysis, chambers have also been used as drug reservoirs for worm
+                  exposure. In this application, a worm is loaded into the drug reservoir for a given time and its behavior is subsequently
+                  monitored in an adjacent observation channel (<a href="#bib8">Carr et al., 2011</a>). Chambers have also been included in a compact disc device developed to culture worms under high gravity conditions (<a href="#bib31">Kim et al., 2007</a>).
+               </p>
+               <p>A different approach to trap individual worms in separate compartments has focused on encapsulating worms in droplets. The
+                  controlled flows obtained in microfluidic devices can be manipulated to generate water-in-oil droplets with uniform size.
+                  Worm eggs have been encapsulated in water droplets surrounded by silicon oil, after which the larva hatches inside the droplet
+                  (<a href="#bib19">Clausell-Tormos et al., 2008</a>). Water droplets generated in microfluidic devices can be then trapped in separate compartments inside the device (<a href="#bib46">Shi et al., 2008</a>). Droplets can also be squeezed into worm traps for imaging of high resolution processes (<a href="#bib47">Shi et al., 2010</a>). Although this technique is an excellent approach for individual worm studies, especially for very young worms otherwise
+                  difficult to isolate individually, some challenges include proper feeding of the animals and the presence of surfactants that
+                  may alter both the experimental conditions and the physiology. In this scenario, proper controls would need to be conducted.
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2-5"></a>2.5.&nbsp;High-throughput imaging and screening
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>One of the most important applications of microfluidics has been high-throughput automated imaging and screening of worm populations
+                  as it can greatly reduce the time required to study each worm. These chips are intended to screen for interesting mutants,
+                  drugs or RNAi libraries. In general, these chips contain an imaging channel and two outlets for worm sorting and recovery,
+                  as shown in <a href="#figure3">Figure 3E</a>. Devices that have been successfully used to identify interesting mutants incorporate a cooling channel for worm immobilization
+                  as well as a channel for positioning which guides the worm into the desired location for imaging (<a href="#bib18">Chung et al., 2008</a>; <a href="#bib33">Lee et al., 2013</a>). Interfacing these devices with image processing software allows for easier mutant identification (<a href="#bib20">Crane et al., 2009</a>; <a href="#bib33">Lee et al., 2013</a>). A device for screening and sorting animals, which contains a side suction channel to hold the worm in place while imaging
+                  and then releases it towards one exit or the other, has also been developed (<a href="#bib44">Rohde et al., 2007</a>).
+               </p>
+               <p>Additionally, high-throughput imaging of synaptic transmission has been accomplished by combining microfluidics and optogenetics,
+                  a technique to study neuronal function and synaptic transmission whereby specific neurons can be stimulated with light (<a href="#bib49">Stirman et al., 2010</a>). This chip was developed to monitor function of motorneurons, which innervate muscle walls, and when stimulated affect the
+                  worm length. This device is high throughput as it allows parallel investigation of several worms on the order of ~100 animals
+                  in less than 5 minutes. Other experiments, such as drug or RNAi screens, can also be performed using such a setup as long
+                  as the readout is morphometric (either gross change of the body or that of a fluorescent marker).
+               </p>
+               <p>A microfluidic device has also been recently applied for whole-animal drug screening with electrophysiological measurements.
+                  This device consists of parallel worm channels with a worm trap and electrodes that detect electrical activity and thus measure
+                  neuromuscular function (pharyngeal pumping specifically). Delivery of test solutions is possible and resulting changes in
+                  electrophysiological activity with high signal-to-noise ratio can be recorded (<a href="#bib35">Lockery et al., 2012</a>).
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2-6"></a>2.6.&nbsp;Laser microsurgery
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Performing on-chip laser ablation has been successfully achieved to study neuronal function and axonal regeneration (<a href="#bib5">Ben-Yakar and Bourgeois, 2009</a>). Axonal regeneration studies have been carried out on-chip through femtosecond laser nanoaxotomy while applying compression
+                  immobilization. Adjacent recovery chambers for worm feeding allow monitoring axonal regeneration. These studies found that
+                  regeneration occurs much faster if no anesthetics are used (<a href="#bib26">Guo et al., 2008</a>), evidencing the advantage of drug-free immobilization in microfluidic devices.
+               </p>
+               <p>A device to perform axotomy in animals exposed to a chemical library in multiwell plates has also been developed. In this
+                  case worms are held by suction channels and a compression valve while laser ablation of axons takes place in user-defined
+                  points (<a href="#bib45">Samara et al., 2010</a>). Immobilization of worms in a clamp has been proven useful to perform single synapse ablation in microfluidic devices (<a href="#bib2">Allen et al., 2008</a>). More recently, a high-throughput device for on-chip laser ablation of cells in a worm immobilized through cooling has been
+                  accomplished (<a href="#bib15">Chung and Lu, 2009</a>). This device is interfaced with computer software for image processing, which allows automated cell recognition and ablation.
+                  Furthermore, the device incorporates two sets of worm loading channels, which can operate in parallel for continuous operation.
+               </p>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec3"></a>3.&nbsp;Resources for chip fabrication
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Fabrication of microfluidic devices with soft lithography is a simple and inexpensive process. However, setting up chip microfabrication
+               capabilities in-house involves purchasing and installing equipment that will require maintenance and troubleshooting. For
+               laboratories that do not intend to be fabrication-intensive, there are publicly available resources that provide microfluidic
+               device fabrication services. The Stanford microfluidics foundry (<a href="http://www.stanford.edu/group/foundry/" target="_top">http://www.stanford.edu/group/foundry/</a>), managed by Stephen Quake's lab, and the Caltech's foundry (<a href="http://kni.caltech.edu/foundry/" target="_top">http://kni.caltech.edu/foundry/</a>), for example, can generate both masters and microfluidic devices from a CAD design. These are resources to consider especially
+               if devices will not be frequently used, no or little iteration/alteration of design is anticipated, or devices can be re-used
+               after cleaning. In this way, the time and costs of installing, maintaining, and troubleshooting equipment can be circumvented.
+               Ultimately, in deciding whether to make microfluidic devices in-house or utilize public resources, one should consider the
+               frequency and volume of chips utilized, whether new designs are being considered, as well as external fabrication costs versus
+               equipment setup, maintenance costs, and time.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec4"></a>4.&nbsp;Fabrication of microfluidic devices for <span class="emphasis"><em>C. elegans</em></span> studies with soft lithography in-house.
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Fabrication of PDMS microfluidic devices by soft-lithography rapid prototyping is simple, inexpensive, and fast (<a href="#bib23">Duffy et al., 1998</a>; <a href="#bib39">McDonald et al., 2000</a>). The complete process can be finished in one day, while molding of PDMS devices takes only a few hours. Soft lithography
+               (<a href="#bib53">Xia and Whitesides, 1998</a>) is based on the concept of cast molding. The basic concept relies on the generation of a master mold with the desired (negative)
+               features in high-relief. A liquid silicon pre-polymer mixture is then poured onto the mold and cured until solidified. The
+               solid elastomer with the desired features is then peeled-off. The process is shown in <a href="#figure7">Figure 7</a> and explained in detail next.
+            </p>
+            <div class="mediaobject" align="center"><a name="figure7"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="432">
+<tr>
+  <td align="center"><p><a href="microfluidics_fig7.jpg"><img src="microfluidics_fig7_s.jpg" border="2" align="middle" alt="figure 7"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b><span class="bold"><strong>Figure 7. Fabrication of microfluidic devices with PDMS replica molding.</strong></span>&nbsp;</b>The master fabrication steps are typically performed in a cleanroom environment although it is also possible outside if features
+                     of interest are large; the replica steps are typically done on lab benches.
+                  </p>
+               </div>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec4-1"></a>4.1.&nbsp;Device design and masters
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>The first step in fabrication is the device design, which is typically generated in a computer-assisted design program (CAD)
+                  (e.g., AutoCAD&reg; software) or other drawing programs (e.g., Adobe&reg; Illustrator&reg;). In this step, several design considerations
+                  need to be taken into account. The size of the channels should be determined by both their function and the size of the worms
+                  to be used. Curved, straight, and angled features can be included, but the minimum feature size attainable should be considered.
+                  High-resolution printing allows obtaining features with up to ~8 &micro;m lateral resolution (<a href="#bib48">Sia and Whitesides, 2003</a>). Additionally, the aspect ratio of the device should not fall below 1:10 (height to width); inexperienced users should aim
+                  for even smaller ratios. If wider channels are required, posts can be included to support the ceiling of the structure so
+                  it does not collapse.
+               </p>
+               <p>The physical masks are then fabricated on chromium-on-quartz plates (by a mask-making company) or printed on a flexible transparency.
+                  For designs with features smaller than 8 &micro;m, chrome masks are recommended. Most cleanrooms offer mask fabricating/printing
+                  services; additionally, this service is offered by several companies such as CAD/Art Services, Inc., Artnet Pro Inc., and
+                  Infinite Graphics. The transparency is then used as a mask for exposure of photoresist to UV light only in designated areas.
+                  UV light passes only through clear regions in the mask onto the photoresist, which has been spin-coated on a silicon wafer.
+                  Exposure of photoresist to UV light crosslinks (negative photoresists) or degrades (positive photoresists) the exposed areas.
+                  The photomask can be printed clear-field or dark-field, depending on the photoresist to be used. The most commonly used is
+                  SU-8 from MicroChem, a negative photoresist, with a dark-field mask. However, a good reason to use positive photoresist is
+                  that they can reflow when baked at high temperature (<a href="#bib50">Unger et al., 2000</a>). In this way, initially square channels can become round, as shown in <a href="#figure8">Figure 8</a>. Round channels are useful in the case where fully closable valves are required (as explained in Section 4.3). Once the photoresist
+                  is exposed, it is developed with photoresist-specific solvents that remove un-crosslinked polymers. Specific developing and
+                  baking protocols for each photoresist are available through the manufacturers.
+               </p>
+               <div class="mediaobject" align="center"><a name="figure8"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="432">
+<tr>
+  <td align="center"><p><a href="microfluidics_fig8.jpg"><img src="microfluidics_fig8_s.jpg" border="2" align="middle" alt="figure 8"></a>
+  </td>
+</tr>
+                  </table>
+                  <div class="caption">
+                     <p><b><span class="bold"><strong>Figure 8. Cross-sectional views of square and rounded channels with negative and positive photoresist, respectively.</strong></span>&nbsp;</b>Rounded channels can be closed off by a valve membrane, while square channels can act like a sieve, both useful for different
+                        applications.
+                     </p>
+                  </div>
+               </div>
+               <p>The height of the master features is obtained by the thickness of the spin-coated photoresists, which depends on the photoresist
+                  viscosity and spinning velocity. Typically, heights of 1-300 &micro;m can be achieved with SU-8. Positive resists can also give
+                  thin (~1 &micro;m) to thick (~20-100 &micro;m) layers. One should always check with manufacturers to confirm the performances of the photoresists.
+                  Additionally, masters with different height levels can be generated by spin-coating, exposing, and developing a second photoresist
+                  layer onto a previously fabricated first layer (<a href="#bib3">Anderson et al., 2000</a>).
+               </p>
+               <p>Once the master is fabricated, it is typically treated with fluorinated silanes to prevent irreversible adhesion between the
+                  master and PDMS (<a href="#bib23">Duffy et al., 1998</a>). A detailed protocol for simple single layer master molds is included next.
+               </p>
+               <div class="sect3" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="sec4-1-1"></a>4.1.1.&nbsp;Master mold fabrication protocol for single layer devices:
+                           </h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p><span class="emphasis"><em>Required equipment and supplies:</em></span></p>
+                  <div class="itemizedlist">
+                     <ul type="disc">
+                        <li>
+                           <p>Silicon wafers</p>
+                        </li>
+                        <li>
+                           <p>Wafer tweezers</p>
+                        </li>
+                        <li>
+                           <p>Piranha etch bath and etch solution</p>
+                        </li>
+                        <li>
+                           <p>SU-8 (MicroChem)</p>
+                        </li>
+                        <li>
+                           <p>Transparency mask</p>
+                        </li>
+                        <li>
+                           <p>SU-8 developer (MicroChem)</p>
+                        </li>
+                        <li>
+                           <p>Isopropyl alcohol</p>
+                        </li>
+                        <li>
+                           <p>Deionized water</p>
+                        </li>
+                        <li>
+                           <p>Nitrogen for drying</p>
+                        </li>
+                        <li>
+                           <p>Silanizing agent</p>
+                        </li>
+                        <li>
+                           <p>2 (or 3) hot plates</p>
+                        </li>
+                        <li>
+                           <p>Spin-coater: Equipment used to create a uniform layer of a specific height of un-crosslinked photoresist on a silicon wafer
+                              by spinning the substrate (e.g., WS-650Hz-23 Spin Coater from Laurell Technologies Corp.<sup>&reg;</sup>)
+                           </p>
+                        </li>
+                        <li>
+                           <p>Mask-aligner (with 365 nm UV light source): Equipment used to cross-link the photoresist by exposing the photoresist through
+                              the aligned mask to UV light (e.g., Karl Suss MA6)
+                           </p>
+                        </li>
+                        <li>
+                           <p>Vacuum pump and desiccator</p>
+                        </li>
+                        <li>
+                           <p>Mask (printed on emulsion films)</p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="orderedlist">
+                     <ol type="1">
+                        <li>
+                           <p>Cleaning silicon wafers: Prior to processing, it is important to ensure silicon wafers are clean. This is typically accomplished
+                              by placing the wafers in a bubbling piranha solution (1:3 sulfuric acid and hydrogen peroxide) for 10 minutes. <span class="bold"><strong><span class="emphasis"><em>Caution:</em></span></strong></span> <span class="emphasis"><em>the mixing process is strongly exothermic and releases hot vapor, and the mixture is highly corrosive and oxidating. This
+                                    step should be performed with extreme care and with personal protective equipment including face shield, apron, and gloves.</em></span> Afterwards, the wafers are rinsed with deionized water. Cleaned wafers are then dried with nitrogen gas and can be stored
+                              in a clean box prior to use.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Dehydrate clean wafers: Set a clean wafer on a hotplate at 200 &deg;C for 15 minutes to evaporate any residual humidity. Allow
+                              the wafer to cool to room temperature before proceeding to the next step.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Spin-coat photoresist: According to the desired height of the device, spin-coat the photoresist onto the wafer. Check the
+                              photoresist manufacturer's instruction for speed, acceleration, and time that will result in the desired coat thickness.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Soft-bake: Bake the spin-coated wafer on a hotplate at 65 &deg;C for the amount of time specified in the manufacturer's instruction
+                              for coatings of your desired thickness. Allow to cool to room temperature before proceeding to the next step.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Exposure: Measure the intensity of the light provided by the mask aligner. According to the thickness of your coating, a certain
+                              exposure energy is required (see the manufacturer's instructions). Calculate the exposure time required with this information.
+                              When exposing, hard contact is recommended and making sure the ink side of the transparency is in contact with the wafer.
+                              (The mask should be printed emulsion down and used with the emulsion side in contact with the photoresist to ensure fidelity).
+                           </p>
+                        </li>
+                        <li>
+                           <p>Post exposure bake: After exposure, bake the wafer on a hotplate at 95 &deg;C for the amount of time specified for your device
+                              height. Be sure to level the hotplate. Allow the wafer to cool to room temperature before proceeding.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Development: Immerse the wafer in a container with photoresist developer; gently move the container around to mix the solution.
+                              The developing time will depend on the features as well as the film thickness. Consult manufacturer's instructions. After
+                              the completion of the development, rinse the wafer with isopropyl alcohol and then deionized water. Dry with nitrogen gas.
+                              Milky streaks on the wafer are indicative of under-development; if this is the case, develop the wafer further as before.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Silanization: The wafer should be completely dry for this step. Place your wafer and an open glass vial with a drop or two
+                              of the silanizing agent in a desiccator. Apply vacuum for 20 minutes, leave under vacuum for several hours or overnight.
+                           </p>
+                        </li>
+                     </ol>
+                  </div>
+               </div>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec4-2"></a>4.2.&nbsp;PDMS Replication Molding
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>The next step in the fabrication process is cast molding. PDMS pre-polymer is mixed with cross-linker and poured onto the
+                  mask. Although other elastomeric materials can be used, PDMS provides the benefit of conforming to the master's features even
+                  at the micron-scale (<a href="#bib48">Sia and Whitesides, 2003</a>). PDMS elastomer kits are commercially available; the most common are Sylgard<sup>&reg;</sup> 184 (Dow Corning) and RTV 615 (Momentive Performance Materials Inc.).
+               </p>
+               <p>The cross-linker to pre-polymer ratio defines the stiffness of the PDMS after curing. Typically a 1:10 ratio is used. Devices
+                  that require softer features can be poured at 1:20, while stiffer PDMS can be accomplished by reducing this ratio up to 1:5,
+                  for example. Before pouring, this mixture is exposed to vacuum to remove air bubbles that can get trapped between the master
+                  and PDMS. Once the mixture is degassed it can be poured onto the master and cured at approximately 70 &deg;C for ~1-2 hours or
+                  overnight at room temperature. After the device is cured it can be easily peeled off the master. A detailed protocol to cast
+                  PDMS microfluidic devices from a microfabricated master follows.
+               </p>
+               <div class="sect3" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="sec4-2-1"></a>4.2.1.&nbsp;PDMS device replication molding protocol
+                           </h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p><span class="emphasis"><em>Required equipment and supplies:</em></span></p>
+                  <div class="itemizedlist">
+                     <ul type="disc">
+                        <li>
+                           <p>Master mold (silicon wafer with photoresist features)</p>
+                        </li>
+                        <li>
+                           <p>Vacuum pump and desiccator</p>
+                        </li>
+                        <li>
+                           <p>Balance</p>
+                        </li>
+                        <li>
+                           <p>Stopwatch (timer)</p>
+                        </li>
+                        <li>
+                           <p>Oven</p>
+                        </li>
+                        <li>
+                           <p>Scalpel and razor blades</p>
+                        </li>
+                        <li>
+                           <p>Compressed air or nitrogen</p>
+                        </li>
+                        <li>
+                           <p>Scotch tape</p>
+                        </li>
+                        <li>
+                           <p>Blunt syringe needles (or biopsy punches)</p>
+                        </li>
+                        <li>
+                           <p>Plasma etcher (with vacuum pump): Equipment that generates a plasma from a gas (oxygen in this case) (e.g., Harrick Plasma).
+                              Exposure of glass and PDMS surfaces to the plasma removes impurities and creates chemical charged groups on the surface, required
+                              for irreversible bonding.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Plastic petri dishes</p>
+                        </li>
+                        <li>
+                           <p>Glass slides or cover-slips</p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="orderedlist">
+                     <ol type="1">
+                        <li>
+                           <p>PDMS mixing: Weigh the desired amount of PDMS pre-polymer in a disposable cup. Pour the appropriate amount of cross-linker
+                              according to the desired final elastomer stiffness (typical is 1:10). Mix the pre-polymer and cross-linker with a plastic
+                              spatula.
+                           </p>
+                        </li>
+                        <li>
+                           <p>De-gassing: Place the plastic cup in a desiccator under vacuum for approximately 30 minutes or until all the bubbles have
+                              disappeared.
+                           </p>
+                        </li>
+                        <li>
+                           <p>PDMS casting: Place the master in a plastic petri dish and pour the de-gassed elastomer mixture onto the master. Try to avoid
+                              the creation of bubbles in the process. If there are visible bubbles, the poured master can be placed under vacuum until the
+                              bubbles disappear. Bake in an oven at 70 &deg;C for 2 hours. Once the PDMS has cured, gently peel it off of the master. Use a
+                              razorblade or scalpel to cut out the devices.
+                           </p>
+                        </li>
+                     </ol>
+                  </div>
+               </div>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec4-3"></a>4.3.&nbsp;Valves and 2-layer devices
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>On-chip valves can be fabricated on the devices by adding a second control layer on top of the main flow channels (<a href="#bib50">Unger et al., 2000</a>). Pressurizing the control layer deflects the membrane between both layers, thus closing the flow channels. Channels on the
+                  control layer should be designed without an outlet so that they can be easily pressurized. Two-layer devices are generated
+                  by utilizing two separate masters. The flow-layer master is spin-coated with PDMS to provide a membrane thickness of 20-50
+                  &micro;m. Partially cured layers from each master mold are then brought into contact, aligned and allowed to bond and completely
+                  cure. Valves fabricated this way can be either partially or fully closable using square or round channels in the flow layer
+                  as mentioned earlier (<a href="#figure8">Figure 8</a>). The advantage of these integrated valves is that one can automate the actuations using off-chip components (<a href="#bib18">Chung et al., 2008</a>; <a href="#bib20">Crane et al., 2009</a>).
+               </p>
+               <p>In addition to these pressurized fluid-actuated valves, simple screw valves can also be incorporated in microfluidic devices
+                  (<a href="#bib27">Hulme et al., 2009</a>). These valves contain a screw embedded in the PDMS, which is typically surrounded by a rigid epoxy or polyurethane, as shown
+                  in <a href="#figure9">Figure 9</a>. They are easily actuated upon rotation of the screw by hand, which is simple to operate.
+               </p>
+               <div class="mediaobject" align="center"><a name="figure9"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="432">
+<tr>
+  <td align="center"><p><a href="microfluidics_fig9.jpg"><img src="microfluidics_fig9_s.jpg" border="2" align="middle" alt="figure 9"></a>
+  </td>
+</tr>
+                  </table>
+                  <div class="caption">
+                     <p><b><span class="bold"><strong>Figure 9. Valves types for microfluidic devices.</strong></span>&nbsp;</b>A) Partial closure valves, B) Full-closure valves, C) Screw valves.
+                     </p>
+                  </div>
+               </div>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec4-4"></a>4.4.&nbsp;Bonding the devices and connections to the macro world
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Access ports to the inlet and outlet of microfluidic devices can be created by cutting holes at the inlet and outlet points
+                  in the device. These holes can be made with biopsy punches or sharpened blunt needles of 21 to 19 gauges. It is important
+                  to make clean cuts and avoid scraping of PDMS debris, which can clog the devices later on when the devices are in operation.
+                  Compressed air and adhesive tape (e.g., Scotch<sup>&reg;</sup> tape) can be used to remove dust and debris. Afterwards, the devices can be sealed by bonding to a glass microscope slide
+                  or coverslip. Irreversible bonding is achieved by treating both surfaces with oxygen or air plasma, which generates silanol
+                  groups (Si-OH) on both PDMS and glass surfaces; upon contact a Si-O-Si covalent bond is created (<a href="#bib39">McDonald et al., 2000</a>). The time of plasma activation depends on the power of the plasma generator, the position of the surfaces relative to the
+                  plasma, and what gas is used.
+               </p>
+               <p>Devices are typically connected to inlet and outlet lines through syringe needle pins and polyethylene tubing, as shown in
+                  <a href="#figure1">Figure 1C</a>. These connections are inserted in the previously made entry ports. Loading of worm suspensions and delivery of fluids can
+                  be performed with the aid of syringe pumps or peristaltic pumps. Connecting inlet ports to sealed pressurized containers is
+                  also an effective way to deliver fluids in a controlled fashion, with the aid of pressure regulators (<a href="#bib10">Chokshi et al., 2010</a>; <a href="#bib18">Chung et al., 2008</a>). Worms can also be easily loaded into microfluidic devices by gravity loading (<a href="#bib29">Hulme et al., 2010</a>), whereby placing reservoirs connected to the device at different heights can deliver fluids with different flow rates. Both
+                  pressure and gravity delivery systems will not determine flow rates: rather, the flow rates will depend on the pressure resistance
+                  in the chip and the external tubing and connectors. The delivery system used will ultimately depend on the specific application,
+                  the device design, and the available resources.
+               </p>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec5"></a>5.&nbsp;Conclusions
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Microfluidics is an easily implementable tool which provides not only a platform for easier worm handling, but also brings
+               about several advantages impossible to realize with typical methods for <span class="emphasis"><em>C. elegans</em></span> studies, such as imaging high-resolution patterns in un-anesthetized worms. Because of the ease of fabrication and implementation,
+               and all the advantages it provides for worm handling, the applications of this technique for biological studies are expected
+               to increase until it becomes a widespread research tool. Additionally, microfluidics will continue to impact <span class="emphasis"><em>C. elegans</em></span> research by greatly reducing the typical experimental time lapse. Although many applications of microfluidics have been already
+               shown, there is still a large window of opportunity for developing application-specific chips.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec6"></a>6.&nbsp;References
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p></p>
+            <div class="bibliography">
+               <div class="bibliomixed"><a name="bib1"></a><p class="bibliomixed"><span class="bibliomisc">Albrecht, D.R., and Bargmann, C.I. (2011). High-content behavioral analysis of <span class="emphasis"><em>Caenorhabditis elegans</em></span> in precise spatiotemporal chemical environments. Nat. Methods <span class="emphasis"><em>8</em></span>, 599-605.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=21666667&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nmeth.1630" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib2"></a><p class="bibliomixed"><span class="bibliomisc">Allen, P.B., Sgro, A.E., Chao, D.L., Doepker, B.E., Edgar, J.S., Shen, K., and Chiu, D.T. (2008). Single-synapse ablation
+                        and long-term imaging in live <span class="emphasis"><em>C. elegans</em></span>. J. Neurosci. Methods <span class="emphasis"><em>173</em></span>, 20-26.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=18579213&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.jneumeth.2008.05.007" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib3"></a><p class="bibliomixed"><span class="bibliomisc">Anderson, J.R., Chiu, D.T., Jackman, R.J., Cherniavskaya, O., McDonald, J.C., Wu, H.K., Whitesides, S.H., and Whitesides,
+                        G.M. (2000). Fabrication of topologically complex three-dimensional microfluidic systems in PDMS by rapid prototyping. Anal.
+                        Chem. <span class="emphasis"><em>72</em></span>, 3158-3164.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10939381&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1021/ac9912294" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib4"></a><p class="bibliomixed"><span class="bibliomisc">Andersson, H., and van den Berg, A. (2003). Microfluidic devices for cellomics: a review. Sensors and Actuators B: Chemical
+                        <span class="emphasis"><em>92</em></span>, 315-325.</span>
+                     <a href="http://dx.doi.org/10.1016/S0925-4005(03)00266-1" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib5"></a><p class="bibliomixed"><span class="bibliomisc">Ben-Yakar, A., and Bourgeois, F. (2009). Ultrafast laser nanosurgery in microfluidics for genome-wide screenings. Curr. Opin.
+                        Biotechnol. <span class="emphasis"><em>20</em></span>, 100-105.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=19278850&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.copbio.2009.01.008" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib6"></a><p class="bibliomixed"><span class="bibliomisc">Ben-Yakar, A., Chronis, N., and Lu, H. (2009). Microfluidics for the analysis of behavior, nerve regeneration, and neural
+                        cell biology in <span class="emphasis"><em>C. elegans</em></span>. Curr. Opin. in Neurobiol. <span class="emphasis"><em>19</em></span>, 561-567.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=19896831&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.conb.2009.10.010" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib7"></a><p class="bibliomixed"><span class="bibliomisc">Bretscher, A.J., Busch, K.E., and de Bono, M. (2008). A carbon dioxide avoidance behavior is integrated with responses to
+                        ambient oxygen and food in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Proc. Natl. Acad. Sci. U. S. A. <span class="emphasis"><em>105</em></span>, 8044-8049.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=18524954&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1073/pnas.0707607105" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib8"></a><p class="bibliomixed"><span class="bibliomisc">Carr, J.A., Parashar, A., Gibson, R., Robertson, A.P., Martin, R.J., and Pandey, S. (2011). A microfluidic platform for high-sensitivity,
+                        real-time drug screening on <span class="emphasis"><em>C. elegans</em></span> and parasitic nematodes. Lab Chip <span class="emphasis"><em>11</em></span>, 2385-2396.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=21647497&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1039/c1lc20170k" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib9"></a><p class="bibliomixed"><span class="bibliomisc">Chalasani, S.H., Chronis, N., Tsunozaki, M., Gray, J.M., Ramot, D., Goodman, M.B., and Bargmann, C.I. (2007). Dissecting a
+                        circuit for olfactory behaviour in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Nature <span class="emphasis"><em>450</em></span>, 63-70.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=17972877&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nature06292" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib10"></a><p class="bibliomixed"><span class="bibliomisc">Chokshi, T.V., Bazopoulou, D., and Chronis, N. (2010). An automated microfluidic platform for calcium imaging of chemosensory
+                        neurons in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Lab Chip <span class="emphasis"><em>10</em></span>, 2758-2763.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=20820480&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1039/c004658b" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib11"></a><p class="bibliomixed"><span class="bibliomisc">Chokshi, T. V., Ben-Yakar, A., and Chronis, N. (2009). CO<sub>2</sub> and compressive immobilization of <span class="emphasis"><em>C. elegans</em></span> on-chip. Lab Chip <span class="emphasis"><em>9</em></span>, 151-157.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=19209348&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1039/b807345g" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib12"></a><p class="bibliomixed"><span class="bibliomisc">Chronis, N. (2010). Worm chips : Microtools for <span class="emphasis"><em>C . elegans</em></span> biology. Lab Chip <span class="emphasis"><em>10</em></span>, 432-437.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=20126682&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1039/b919983g" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib13"></a><p class="bibliomixed"><span class="bibliomisc">Chronis, N., Zimmer, M., and Bargmann, C.I. (2007). Microfluidics for <span class="emphasis"><em>in vivo</em></span> imaging of neuronal and behavioral activity in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Nat. Methods <span class="emphasis"><em>4</em></span>, 727-731.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=17704783&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nmeth1075" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib14"></a><p class="bibliomixed"><span class="bibliomisc">Chung, K., Kim, Y., Kanodia, J.S., Gong, E., Shvartsman, S.Y., and Lu, H. (2011a). A microfluidic array for large-scale ordering
+                        and orientation of embryos. Nat. Methods <span class="emphasis"><em>8</em></span>, 171-176.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=21186361&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nmeth.1548" target="_blank">Article</a>u
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib15"></a><p class="bibliomixed"><span class="bibliomisc">Chung, K., and Lu, H. (2009). Automated high-throughput cell microsurgery on-chip. Lab Chip <span class="emphasis"><em>9</em></span>, 2764-2766.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=19967110&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1039/B910703G " target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib16"></a><p class="bibliomixed"><span class="bibliomisc">Chung, K., Rivet, C.A., Kemp, M.L., and Lu, H. (2011b). Imaging single-cell signaling dynamics with a deterministic high-density
+                        single-cell trap array. Anal. Chem. <span class="emphasis"><em>83</em></span>, 7044-7052.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=21809821&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1021/ac2011153" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib17"></a><p class="bibliomixed"><span class="bibliomisc">Chung, K., Zhan, M., Srinivasan, J., Sternberg, P.W., Gong, E., Schroeder, F.C., and Lu, H. (2011c). Microfluidic chamber
+                        arrays for whole-organism behavior-based chemical screening. Lab Chip <span class="emphasis"><em>11</em></span>, 3689-3697.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=21935539&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1039/C1LC20400A" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib18"></a><p class="bibliomixed"><span class="bibliomisc">Chung, K., Crane, M.M., and Lu, H. (2008). Automated on-chip rapid microscopy, phenotyping and sorting of <span class="emphasis"><em>C. elegans</em></span>. Nat. Methods <span class="emphasis"><em>5</em></span>, 637-643.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=18568029&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nmeth.1227" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib19"></a><p class="bibliomixed"><span class="bibliomisc">Clausell-Tormos, J., Lieber, D., Baret, J.C., El-Harrak, A., Miller, O.J., Frenz, L., Blouwolff, J., Humphry, K. J., K&ouml;ster,
+                        S., Duan, H.<span class="emphasis"><em>, et al.</em></span> (2008). Droplet-based microfluidic platforms for the encapsulation and screening of Mammalian cells and multicellular organisms.
+                        Chem. Biol. <span class="emphasis"><em>15</em></span>, 427-437.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=18482695&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.chembiol.2008.04.004" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib20"></a><p class="bibliomixed"><span class="bibliomisc">Crane, M.M., Chung, K., and Lu, H. (2009). Computer-enhanced high-throughput genetic screens of <span class="emphasis"><em>C. elegans</em></span> in a microfluidic system. Lab Chip <span class="emphasis"><em>9</em></span>, 38-40.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=19209332&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1039/B813730G " target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib21"></a><p class="bibliomixed"><span class="bibliomisc">Crane, M.M., Chung, K., Stirman, J., and Lu, H. (2010). Microfluidics-enabled phenotyping, imaging, and screening of multicellular
+                        organisms. Lab Chip <span class="emphasis"><em>10</em></span>, 1509-1517.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=20383347&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1039/b927258e" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib22"></a><p class="bibliomixed"><span class="bibliomisc">Doll, J.C., Harjee, N., Klejwa, N., Kwon, R., Coulthard, S.M., Petzold, B., Goodman, M.B., and Pruitt, B.L. (2009). SU-8 force
+                        sensing pillar arrays for biological measurements. Lab Chip <span class="emphasis"><em>9</em></span>, 1449-1454.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=19417913&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1039/b818622g" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib23"></a><p class="bibliomixed"><span class="bibliomisc">Duffy, D.C., McDonald, J.C., Schueller, O.J., and Whitesides, G.M. (1998). Rapid prototyping of microfluidic systems in poly(dimethylsiloxane).
+                        Anal. Chem. <span class="emphasis"><em>70</em></span>, 4974-4984.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=21644679&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1021/ac980656z" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib24"></a><p class="bibliomixed"><span class="bibliomisc">Gilleland, C.L., Rohde, C.B., Zeng, F., and Yanik, M.F. (2010). Microfluidic immobilization of physiologically active <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Nat. Protoc. <span class="emphasis"><em>5</em></span>, 1888-1902.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=21127483&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nprot.2010.143" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib25"></a><p class="bibliomixed"><span class="bibliomisc">Gray, J.M., Karow, D.S., Lu, H., Chang, A.J., Chang, J.S., Ellis, R.E., Marletta, M.A., and Bargmann, C.I. (2004). Oxygen
+                        sensation and social feeding mediated by a <span class="emphasis"><em>C. elegans</em></span> guanylate cyclase homologue. Nature <span class="emphasis"><em>430</em></span>, 317-322.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15220933&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nature02714" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib26"></a><p class="bibliomixed"><span class="bibliomisc">Guo, S.X., Bourgeois, F., Chokshi, T., Durr, N.J., Hilliard, M.A., Chronis, N., and Ben-Yakar, A. (2008). Femtosecond laser
+                        nanoaxotomy lab-on-achip for <span class="emphasis"><em>in vivo</em></span> nerve regeneration studies. Nat. Methods <span class="emphasis"><em>5</em></span>, 531-533.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=18408725&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nmeth.1203" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib27"></a><p class="bibliomixed"><span class="bibliomisc">Hulme, E.S., Shevkoplyas, S.S., and Whitesides, G.M. (2009). Incorporation of prefabricated screw, pneumatic, and solenoid
+                        valves into microfluidic devices. Lab Chip <span class="emphasis"><em>9</em></span>, 79-86.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=19209338&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1039/b809673b" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib28"></a><p class="bibliomixed"><span class="bibliomisc">Hulme, S.E., Shevkoplyas, S.S., Apfeld, J., Fontana, W., and Whitesides, G.M. (2007). A microfabricated array of clamps for
+                        immobilizing and imaging <span class="emphasis"><em>C. elegans</em></span>. Lab Chip <span class="emphasis"><em>7</em></span>, 1515-1523.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=17960280&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1039/B707861G" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib29"></a><p class="bibliomixed"><span class="bibliomisc">Hulme, S.E., Shevkoplyas, S.S., Mcguigan, A.P., Apfeld, J., and Whitesides, G.M. (2010). Lifespan-on-a-chip: microfluidic
+                        chambers for performing lifelong observation of <span class="emphasis"><em>C . elegans</em></span>. Lab Chip <span class="emphasis"><em>10</em></span>, 589-597.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=20162234&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1039/b919265d" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib30"></a><p class="bibliomixed"><span class="bibliomisc">Hulme, S.E., Shevkoplyas, S.S., and Samuel, A. (2008). Microfluidics: streamlining discovery in worm biology. Nat. Methods
+                        <span class="emphasis"><em>5</em></span>, 589-590.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=18587316&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nmeth0708-589" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib31"></a><p class="bibliomixed"><span class="bibliomisc">Kim, N., Dempsey, C.M., Zoval, J.V., Sze, J.Y., and Madou, M.J. (2007). Automated microfluidic compact disc (CD) cultivation
+                        system of <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Sensors and Actuators B-Chemical <span class="emphasis"><em>122</em></span>, 511-518.</span>
+                     <a href="http://dx.doi.org/http://dx.doi.org/10.1016/j.snb.2006.06.026" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib32"></a><p class="bibliomixed"><span class="bibliomisc">Krajniak, J., and Lu, H. (2010). Long-term high-resolution imaging and culture of <span class="emphasis"><em>C. elegans</em></span> in chip-gel hybrid microfluidic device for developmental studies. Lab Chip <span class="emphasis"><em>10</em></span>, 1862-1868.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=20461264&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1039/c001986k" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib33"></a><p class="bibliomixed"><span class="bibliomisc">Lee, H., Crane, M.M., Zhang, Y., and Lu, H. (2013). Quantitative screening of genes regulating tryptophan hydroxylase transcription
+                        in <span class="emphasis"><em>Caenorhabditis elegans</em></span> using microfluidics and an adaptive algorithm. Integr. Biol. (Camb). <span class="emphasis"><em>5</em></span>, 372-380.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=23168494&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1039/c2ib20078c" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib34"></a><p class="bibliomixed"><span class="bibliomisc">Lockery, S. (2007). Channeling the worm: microfluidic devices for nematode neurobiology. Nat. Methods <span class="emphasis"><em>4</em></span>, 691-692.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=17762874&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nmeth0907-691" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib35"></a><p class="bibliomixed"><span class="bibliomisc">Lockery, S.R., Hulme, S.E., Roberts, W.M., Robinson, K.J., Laromaine, A., Lindsay, T.H., Whitesides, G.M., and Weeks, J.C.
+                        (2012). A microfluidic device for whole-animal drug screening using electrophysiological measures in the nematode <span class="emphasis"><em>C. elegans</em></span>. Lab Chip <span class="emphasis"><em>12</em></span>, 2211-2220.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=22588281&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1039/c2lc00001f" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib36"></a><p class="bibliomixed"><span class="bibliomisc">Lockery, S.R., Lawton, K.J., Doll, J.C., Faumont, S., Coulthard, S.M., Thiele, T.R., Chronis, N., McCormick, K.E., Goodman,
+                        M.B., and Pruitt, B.L. (2008). Artificial dirt: microfluidic substrates for nematode neurobiology and behavior. J. Neurophysiol.
+                        <span class="emphasis"><em>99</em></span>, 3136-3143.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=18337372&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1152/jn.91327.2007." target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib37"></a><p class="bibliomixed"><span class="bibliomisc">Lucchetta, E.M., Lee, J.H., Fu, L.A., Patel, N.H., and Ismagilov, R.F. (2005). Dynamics of <span class="emphasis"><em>Drosophila</em></span> embryonic patterning network perturbed in space and time using microfluidics. Nature <span class="emphasis"><em>434</em></span>, 1134-1138.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15858575&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nature03509" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib38"></a><p class="bibliomixed"><span class="bibliomisc">McCormick, K.E., Gaertner, B.E., Sottile, M., Phillips, P.C., and Lockery, S.R. (2011). Microfluidic devices for analysis
+                        of spatial orientation behaviors in semi-restrained <span class="emphasis"><em>Caenorhabditis elegans</em></span>. PLoS One <span class="emphasis"><em>6</em></span>, e25710.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=22022437&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1371/journal.pone.0025710" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib39"></a><p class="bibliomixed"><span class="bibliomisc">McDonald, J.C., Duffy, D.C., Anderson, J.R., Chiu, D.T., Wu, H.K., Schueller, O.J., and Whitesides, G.M. (2000). Fabrication
+                        of microfluidic systems in poly(dimethylsiloxane). Electrophoresis <span class="emphasis"><em>21</em></span>, 27-40.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10634468&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib40"></a><p class="bibliomixed"><span class="bibliomisc">McGrath, P.T., Rockman, M.V., Zimmer, M., Jang, H., Macosko, E.Z., Kruglyak, L., and Bargmann, C.I. (2009). Quantitative mapping
+                        of a digenic behavioral trait implicates globin variation in <span class="emphasis"><em>C. elegans</em></span> sensory behaviors. Neuron <span class="emphasis"><em>61</em></span>, 692-699.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=19285466&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.neuron.2009.02.012" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib41"></a><p class="bibliomixed"><span class="bibliomisc">Park, S., Hwang, H., Nam, S.-W., Martinez, F., Austin, R.H., and Ryu, W.S. (2008). Enhanced <span class="emphasis"><em>Caenorhabditis elegans</em></span> locomotion in a structured microfluidic environment. PLoS One <span class="emphasis"><em>3</em></span>, e2550.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=18575618&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1371/journal.pone.0002550" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib42"></a><p class="bibliomixed"><span class="bibliomisc">Pincus, Z., Smith-Vikos, T., and Slack, F.J. (2011). MicroRNA predictors of longevity in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. PLoS Genet. <span class="emphasis"><em>7</em></span>, e1002306.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=21980307&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1371/journal.pgen.1002306" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib43"></a><p class="bibliomixed"><span class="bibliomisc">Qin, J., and Wheeler, A.R. (2007). Maze exploration and learning in <span class="emphasis"><em>C. elegans</em></span>. Lab Chip <span class="emphasis"><em>7</em></span>, 186-192.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=17268620&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1039/b613414a" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib44"></a><p class="bibliomixed"><span class="bibliomisc">Rohde, C.B., Zeng, F., Gonzalez-Rubio, R., Angel, M., and Yanik, M.F. (2007). Microfluidic system for on-chip high-throughput
+                        whole-animal sorting and screening at subcellular resolution. Proc. Natl. Acad. Sci. U. S. A. <span class="emphasis"><em>104</em></span>, 13891-13895.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=17715055&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1073/pnas.0706513104" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib45"></a><p class="bibliomixed"><span class="bibliomisc">Samara, C., Rohde, C.B., Gilleland, C.L., Norton, S., Haggarty, S.J., and Yanik, M. (2010). Large-scale <span class="emphasis"><em>in vivo</em></span> femtosecond laser neurosurgery screen reveals small-molecule enhancer of regeneration. Proc. Natl. Acad. Sci. U. S. A. <span class="emphasis"><em>107</em></span>, 18342-18347.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=20937901&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1073/pnas.1005372107" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib46"></a><p class="bibliomixed"><span class="bibliomisc">Shi, W., Qin, J., Ye, N., and Lin, B. (2008). Droplet-based microfluidic system for individual <span class="emphasis"><em>Caenorhabditis elegans</em></span> assay. Lab Chip <span class="emphasis"><em>8</em></span>, 1432-1435.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=18818795&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1039/B808753A" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib47"></a><p class="bibliomixed"><span class="bibliomisc">Shi, W., Wen, H., Lu, Y., Shi, Y., Lin, B., and Qin, J. (2010). Droplet microfluidics for characterizing the neurotoxin-induced
+                        responses in individual <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Lab Chip <span class="emphasis"><em>10</em></span>, 2855-2863.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=20882233&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1039/c0lc00256a" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib48"></a><p class="bibliomixed"><span class="bibliomisc">Sia, S., and Whitesides, G. (2003). Microfluidic devices fabricated in poly(dimethylsiloxane) for biological studies. Electrophoresis
+                        <span class="emphasis"><em>24</em></span>, 3563-3576.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=14613181&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1002/elps.200305584" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib49"></a><p class="bibliomixed"><span class="bibliomisc">Stirman, J.N., Brauner, M., Gottschalk, A., and Lu, H. (2010). High-throughput study of synaptic transmission at the neuromuscular
+                        junction enabled by optogenetics and microfluidics. J. Neurosci. Methods <span class="emphasis"><em>191</em></span>, 90-93.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=20538016&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.jneumeth.2010.05.019" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib50"></a><p class="bibliomixed"><span class="bibliomisc">Unger, M.A., Chou, H.P., Thorsen, T., Scherer, A., and Quake, S.R. (2000). Monolithic microfabricated valves and pumps by
+                        multilayer soft lithography. Science <span class="emphasis"><em>288</em></span>, 113-116.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10753110&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1126/science.288.5463.113" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib51"></a><p class="bibliomixed"><span class="bibliomisc">Wen, Q., Po, M.D., Hulme, E., Chen, S., Liu, X., Kwok, Sen W., Gershow, M., Leifer, Andrew M., Butler, V., Fang-Yen, C.<span class="emphasis"><em>, et al.</em></span> (2012). Proprioceptive coupling within motor neurons drives <span class="emphasis"><em>C. elegans</em></span> forward locomotion. Neuron <span class="emphasis"><em>76</em></span>, 750-761.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=23177960&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.neuron.2012.08.039" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib52"></a><p class="bibliomixed"><span class="bibliomisc">Whitesides, G.M. (2006). The origins and the future of microfluidics. Nature <span class="emphasis"><em>442</em></span>, 368-373.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=16871203&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nature05058" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib53"></a><p class="bibliomixed"><span class="bibliomisc">Xia, Y.N., and Whitesides, G.M. (1998). Soft lithography. Ann. Rev. Mater. Sci. <span class="emphasis"><em>28</em></span>, 153-184.</span>
+                     <a href="http://dx.doi.org/http://gmwgroup.harvard.edu/pubs/pdf/604.pdf" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib54"></a><p class="bibliomixed"><span class="bibliomisc">Yanik, M.F., Rohde, C.B., and Pardo-Martin, C. (2011). Technologies for micromanipulating, imaging, and phenotyping small
+                        invertebrates and vertebrates. Annu. Rev. of Biomed. Eng. <span class="emphasis"><em>13</em></span>, 185-217.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=21756142&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1146/annurev-bioeng-071910-124703" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib55"></a><p class="bibliomixed"><span class="bibliomisc">Zeng, F., Rohde, C.B., and Yanik, M.F. (2008). Sub-cellular precision on-chip small-animal immobilization, multi-photon imaging
+                        and femtosecond-laser manipulation. Lab Chip <span class="emphasis"><em>8</em></span>, 653-656.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=18432331&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1039/b804808h" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib56"></a><p class="bibliomixed"><span class="bibliomisc">Zhang, Y., Lu, H., and Bargmann, C.I. (2005). Pathogenic bacteria induce aversive olfactory learning in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Nature <span class="emphasis"><em>438</em></span>, 179-184.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=16281027&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nature04216" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib57"></a><p class="bibliomixed"><span class="bibliomisc">Zimmer, M., Gray, J.M., Pokala, N., Chang, A.J., Karow, D.S., Marletta, M.A., Hudson, M L., Morton, D.B., Chronis, N., and
+                        Bargmann, C.I. (2009). Neurons detect increases and decreases in oxygen levels using distinct guanylate cyclases. Neuron <span class="emphasis"><em>61</em></span>, 865-879.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=19323996&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.neuron.2009.02.013" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="footnotes"><br><hr width="100" align="left">
+            <div class="footnote">
+               <p><sup><a name="ftn.d0e9" href="#d0e9">*</a></sup>Edited by Oliver Hobert Last revised: January 2, 2013, Published September 24, 2013. This chapter should be cited as: San-Miguel
+                  A. and Lu H. Microfluidics as a tool for <span class="emphasis"><em>C. elegans</em></span> research. (September 24, 2013), <span class="emphasis"><em>WormBook</em></span>, ed. The <span class="emphasis"><em>C. elegans</em></span> Research Community, WormBook, doi/10.1895/wormbook.1.162.1, <a href="http://www.wormbook.org" target="_top">http://www.wormbook.org</a>.
+               </p>
+               <p><span class="bold"><strong>Copyright:</strong></span> &copy; 2013 Adriana San-Miguel and Hang Lu. This is an open-access article distributed under the terms of the Creative Commons
+                  Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author
+                  and source are credited.
+               </p>
+            </div>
+            <div class="footnote">
+               <p><sup><a name="ftn.d0e33" href="#d0e33">&sect;</a></sup>To whom correspondence should be addressed. E-mail: <a href="mailto:hang.lu@gatech.edu" target="_top">hang.lu@gatech.edu</a></p>
+<p><img src="somerights20.gif" alt="Creative Commons License" align="middle" border="0"> All WormBook content, except where otherwise noted, is licensed under a <a href="http://creativecommons.org/licenses/by/2.5/" title="Creative Commons Attribution License" target="_blank">Creative Commons Attribution License</a>.</p>
+            </div>
+         </div>
+      </div>
+   <!--#include virtual="/ssi/footer.html" --></body>
+</html>
