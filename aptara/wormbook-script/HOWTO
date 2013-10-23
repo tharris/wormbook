@@ -1,0 +1,15 @@
+Usage of textpresso :
+
+1. Be sure the path for 'perl' and 'touch' are correct in the script.  To execute the script for the first time :
+
+textpresso$ ./WormbaseLinkGenerator.pl WormbaseLinks.def http://www.sanger.ac.uk/Projects/C_elegans/LOCI/loci_all.txt aceserver.cshl.org docbook.xml
+
+(where docbook.xml is the input chapter in docbook xml format)
+
+The first run will generate a directory named WS149 (or similar name WS###)  of size ~ 1GB.
+
+2. After the WSXX/ directory is created, subsequent runs of textpresso utilize the local WS### directory.  The script is executed as follows :
+
+textpresso$ ./WormbaseLinkGenerator.pl WS149/ docbook2.xml
+
+(where docbook2.xml is the next chapter in docbook xml format)
