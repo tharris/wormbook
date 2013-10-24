@@ -1,26 +1,5 @@
 #!/usr/bin/perl -w
-##################################################################################
-# do argument handling
 
-my $USAGE = <<END_USAGE;
-
-$0 (c) Eimear Kenny, Wormbase, 2005. Modernized by Todd Harris 6/2013.
-    
-Usage: $0 <Wormbase link definitions file> <link to locus names at Sanger> <Wormbase url> <in file(s)?>
-
-- or -
-
-Usage: $0 <link directory> <in file(s)?> 
-
-SAMPLE INPUT: WormbaseLinkGenerator.pl WormbaseLinks.def http://www.sanger.ac.uk/Projects/C_elegans/LOCI/loci_all.txt aceserver.cshl.org  wnt_signal.html
-
-- or -
-
-SAMPLE INPUT: WormbaseLinkGenerator.pl WS140/ wnt_signal.html
-\n
-    
-END_USAGE
-####################################################################################
 $|=1;     
 use Ace; 
 use strict;
@@ -29,59 +8,67 @@ use IPC::Open2;
 use HTTP::Request;
 use LWP::UserAgent;
 use File::Basename;
+use Getopt::Long;
 
-  #####################################
-  # Declare globals                    #
-  #####################################
+my ($help,$links_from,$defs_file,$xml);
+GetOptions('help=s'        => \$help,	   	   
+	   'links-from=s'  => \$links_from,
+	   'defs-file=s'   => \$defs_file,
+	   'xml-files=s'   => \$xml,      # current var name
+    );
 
-my ($db)  = "";
-my %Links = ();
+
+if ($help) {
+    die <<END;
+    
+Usage: $0 [--links-from wormbase-server||directory] [--defs-file FILE]
+    
+         SAMPLE USAGE: local acedb with all defaults
+	    $0 --links-from localhost
+
+	 SAMPLE USAGE: remote files
+   	    $0 --links-from aceserver.cshl.org \
+	    --defs-file WormbaseLinks.def \
+            --xml-files wnt_signal.html
+
+         SAMPLE USAGE: local files
+         $0 --links-from /home/tharris/wormbook/wormbase-links-WS240/ \
+	    --defs-file WormbaseLinks.def \
+            --xml-files wnt_signal.html
+END
+;
+}   
+      
+
+
+
+$links_from ||= 'mining.wormbase.org';
+$defs_file  ||= 'WormbaseLinks.def';
+$xml        ||= 't/wntsignaling.html';
+
 my $j=0;
 my $version = "";
+my %links = ();
 
-  #####################################
-  # Main                              #
-  #####################################
-
-# Generate links from wormbase     
-#           or                                 
-# Grab links from directory                
-
-
-if (@ARGV == 2){
+# Are we working with local files or do we need
+# to fetch them?
+if ($links_from =~ /\w*\.\w*\.\w{3}/ || $links_from =~ /localhost/) {
     
-    my $links = $ARGV[0]; # directory
+    generate_wormbase_links_from_acedb();
     
-    %Links = &grabLinksFromDirectory($links);
-    
+# Otherwise, from a directory.
+} else {   
+    fetch_links_from_directory();
 }
-
-if(@ARGV == 4){
     
-    my $defs = $ARGV[0]; # def file
-    my $locus_url = $ARGV[1]; # url to locus_all.txt file at sanger
-    my $links = $ARGV[2]; # ace server
 
-    my %Templates = &readDefs($defs);  
-    %Links = &grabLinksFromWormbase($links, $locus_url, \%Templates);
+my @xml = split(/,/,$xml);
+    
 
-}
-
-if ((@ARGV < 2) || (@ARGV == 3) || (@ARGV > 4))
-{
-    die "$USAGE\n";
-}
-
-# Mark up links in .html files
-
-my @xml = pop(@ARGV);
-
-# start log file
-
-my $rundate = `date +%m-%d-%y`; chomp $rundate;
+my $rundate = `date +%Y-%m-%d`; chomp $rundate;
 my $runtime = `date +%H:%M:%S`; chomp $runtime;
 
-my $logfile = "data_report.$rundate.$$";
+my $logfile = "reports/$rundate.$$";
 system ("/bin/touch $logfile");
 open (LOG,">>$logfile") or die ("Could not create logfile\n");
 LOG->autoflush();
@@ -90,34 +77,35 @@ STDOUT->autoflush();
 open (STDERR,">>$logfile"); 
 STDERR->autoflush();
 
-print "############################################\n";
-print "# LOG FILE\n";
-print "#\n";     
-print "# -- run details    : $rundate $runtime\n";
-print "#\n";
-print "############################################\n";
-
-# match links
+print <<END;
+############################################
+# LOG FILE
+#
+# -- run details    : $rundate $runtime
+#
+############################################
+END
+;
 
 for (@xml){
-
+    
     my %Report = ();
-
+    
     print "The following biological entities occur in $_:\n";
-
-    my $xml = &GetSentences($_);
-
+    
+    my $xml = get_sentences($_);
+    
 #    TJF commented 2 lines below per discussion with Eimear 24 May 2005
 #    $xml =~ s/(\>)(\w)/$1 $2/g; # add white spaces around xml tagged words so
 #    $xml =~ s/(\w)(\<)/$1 $2/g; # that word boundaries can be established
-
-    for my $term (sort {length($b) <=> length($a)} keys % Links){  # matches the longest terms first 
+    
+    for my $term (sort {length($b) <=> length($a)} keys %links){  # matches the longest terms first 
 	
 	my $pterm = $term;
 	$pterm =~ s/([\.\':,\?\*])/\\$1/g;     # escape regex special chars
 	
 	next unless $xml =~ /${pterm}/;
-
+	
         # match the preceeding character to the term
 	# match the term
 	# match the follow character to the term (note: only match a period if followed by a space)
@@ -127,17 +115,17 @@ for (@xml){
 	# print the closing ulink tag
 	# print the following character for the term
 	# repeat for all instances of the term
-	my $matches = scalar($xml =~ s%([\>\s\/\(\[\{\*]+?)(${pterm})(\<|\s|\/|\. |\,|\:|\;|\)|\]|\}|\*)+?%$1\<ulink url\=\"$Links{$term}\" role\=\"_blank\"\>$2\<\/ulink\>$3%mg);
+	my $matches = scalar($xml =~ s%([\>\s\/\(\[\{\*]+?)(${pterm})(\<|\s|\/|\. |\,|\:|\;|\)|\]|\}|\*)+?%$1\<ulink url\=\"$links{$term}\" role\=\"_blank\"\>$2\<\/ulink\>$3%mg);
 	
 	$Report{$2} = $matches if defined ($2);
     }
-
+    
     open (OUT, ">ulinked_$_");
     print OUT $xml;
     close (OUT);
-
+    
     my $total = 0;
-
+    
     for (sort {$a cmp $b} keys % Report){
 	print "\t\t".$_." occurred ".$Report{$_}." times\n";
 	$total += $Report{$_};
@@ -149,12 +137,15 @@ for (@xml){
 
 my $endtime = `date +%H:%M:%S`; chomp $endtime;
 
-print "############################################\n";
-print "# END REPORT\n";
-print "#\n";
-print "# -- time ended     : $endtime\n";
-print "#\n";
-print "############################################\n";
+print <<END
+############################################
+# END REPORT
+#
+# -- time ended     : $endtime
+#
+############################################
+END
+;
 
 close STDERR;
 close STDOUT;
@@ -162,208 +153,220 @@ close LOG;
 
 exit(0);
 
-  ########################################
-  # Subroutines                          #
-  ########################################
 
 
-sub grabLinksFromDirectory{
-    my ($u) = @_;
+########################################
+# Subroutines                          #
+########################################
+# Wow. This is inredibly inefficient.
+sub fetch_links_from_directory {
 
-    my @files = <$u/*>;
-    my %Links=();
-
-    print "Grabbing links from $u ...";
+    my @files = <$links_from/*>;
+    
+    print "Grabbing links from $links_from ...\n";
     
     for my $path (@files){
 	my $object = basename($path, '');
-	my $link = join (" ", GetContents("$path"));
-	$Links{$object} = $link;
+	my $link = join (" ", get_file_contents("$path"));
+	$links{$object} = $link;
     }
-    print " done\n";
-
-    return %Links;
+    print "\t... done!\n";
 }
 
-sub grabLinksFromWormbase{
-    my ($links, $locus_url, $Templates) = @_;
+
+sub read_link_definitions_file {   
+    my %templates;
     
-    
-    my (%Objects) = &readAceObjects($links,$Templates);
-    my (%Locus) = &readCurrentLocus($locus_url);
-
-    my (%Links) = &makeWBLinks(\%Objects,\%Locus, $Templates);
-    return %Links;
-}
-
-sub readDefs{
-    my $template = shift;
-
-    my %Templates=();
-
-    print "\n";
-    print "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS\n";
-    print "Reading in URL templates ...";
-    open TMP, "<$template"
-	or die "Can't open $template: $!";
+    print "\tparsing the link definitions file $defs_file...\n";
+    open TMP, "<$defs_file" or die "Can't open $defs_file: $!";
     while (<TMP>){
 	chomp;
 	next if /^\/\//; # get rid of comment lines
 	my ($class, $template, $rules) = split/\t+/, $_;
-	$Templates{$class} = [ ($template, $rules) ];
+	$templates{$class} = [ ($template, $rules) ];
     }
-    close TMP
-	or die "Can't close $template: $!";
-    print "done\n\n";
-    return %Templates;
+    close TMP or die "Can't close $defs_file: $!";
+    return \%templates;
 }
 
 
-sub readAceObjects{
-    my ($links, $Templates) = @_;
 
-    print "Opening Wormbase connection ....";
 
-    my $db = Ace->connect(-host=>$links,-port=>2005) || die "Connection failure: ",Ace->error;
+# OBSOLETE
 
-    print "done\n";
+=pod
+
+sub read_locus_file{
+    print "\tparsing locus file ...\n";
+    my %locus;
+    my @tmp;
+    if ($locus_from =~ /http/) {
+	my $page = get_web_page($locus_from);
+	my @tmp = split /\n/, $page;    #splits by line
+    } else {
+	# Otherwise, it's a local file.
+	open IN,$locus_from or die "Could not open the locus file $locus_from...\n";
+	while (<IN>) {
+	    push @tmp,$_;
+	}   
+    }
     
-    my %Objects=();
-
-    # get ws version
-    my %status = $db->status;
-    $version = $status{database}{version};
-
-    system(`mkdir $version`) unless (-d $version);  # make directory of version number
-
-    for (sort keys %$Templates){
-	next if /Locus/;     #skips Locus
-	next if /Protein/;   #skips Protein
-	my @objects = ();
-	my $count = $db->count($_ => '*');
-	print "\nThere are $count terms in the $_ data class.\n";
-	print "Downloading now .......";
-	@objects = $db->fetch($_);
-	$Objects{$_} = [ @objects ];
-	print "done\n";
-    }
-    return (%Objects);
-}
-
-sub readCurrentLocus{
-    my $u = shift;
-
-    my %Locus=();
-
-    my $page = &getWebPage($u);
+    
     my $cgc_gene_pattern = "[a-z]{3,4}-[0-9]{1,}\.?[0-9]{1,}?";
-
-    my @tmp = split /\n/, $page;    #splits by line
     foreach (@tmp){
 	my @line = split /,/, $_;                #splits by comma
 
 	my $cgcgenename = $line[0];              #gets cgc locus name
 	my $wbgene = $line[1];                   #gets WBGene name
-	$Locus{$cgcgenename} = $wbgene;          #pushes into a hash (%Locus)
+	$locus{$cgcgenename} = $wbgene;          #pushes into a hash (%Locus)
 	my $syn_list = $line[-2];                #grabs any synonyms 
 	my @syn = split / /, $syn_list;          
 	for (@syn){
-	    $Locus{$_} = $wbgene if $_ =~ /^$cgc_gene_pattern$/;
-	    } #pushes into %Locus
+	    $locus{$_} = $wbgene if $_ =~ /^$cgc_gene_pattern$/;
+	} #pushes into %Locus
     }
-    my $count = scalar(keys %Locus);
-    print "There are $count terms in the Locus class.\n\n";
-    return %Locus;                               #returns hash
+    my $count = scalar(keys %locus);
+    return \%locus;
 }
 
-sub makeWBLinks{
-    my ($Objects, $Locus, $Templates) = @_;
+=cut
 
-    my %Links=();
+sub generate_wormbase_links_from_acedb {
 
-    print "Making links now .....";
-    for (keys %$Locus){
-	my ($o, $u) = "";
+    print "Fetching objects from remote server...\n";
+    my $templates = read_link_definitions_file();  
 
-	($o, $u) = &makeURL($$Locus{$_}, $$Templates{Locus}[0], $$Templates{Locus}[1], $version);
-	next unless (defined ($o) && defined ($u));
-	$Links{$o}=$u;
+    print "\topening remote connection ...\n";
+    my $db = Ace->connect(-host=>$links_from,-port=>2005) || die "Connection failure: " . Ace->error;
+      
+    my %status = $db->status;
+    $version   = $status{database}{version};
+    
+    if (-d $version) {
+#	die "$version/ already exists! We might be rewriting pre-existing files...\n";
+    } else {
+#	system(`mkdir -p $version`);
+    }
 
-	($o, $u) = &makeURL($_, $$Templates{Locus}[0], $$Templates{Locus}[1], $version);
-	next unless (defined ($o) && defined ($u));
-	$Links{$o}=$u;
+    foreach my $class (sort keys %$templates){
+	next unless $class eq 'Variation';
 
-	tr/a-z/A-Z/ for $_; # convert to uppercase for protein names
+	my $count = $db->count($class => '*');
+	print "\t\tfetching $class...\n";
+	print "\t\t\tfound $count terms in the $class class.\n";
+	print "\t\t\tgenerating links for $class ...\n";
 
-	($o, $u) = &makeURL($_, $$Templates{Protein}[0], $$Templates{Protein}[1], $version);
-	next unless (defined ($o) && defined ($u));
-	$Links{$o}=$u;
-
-   }
-
-    my $count = scalar(keys %$Objects);
-    for (keys %$Objects){
-	for my $i ( 0 .. $#{ $$Objects{$_} }){
-	    $$Objects{$_}[$i] =~ s/\///g;     # gets rid of forwardslashes
-	    $$Objects{$_}[$i] =~ s/\'//g;     # gets rid of primes
+	open OUT, ">$version/$class.txt" or die "Cannot open $version/$class.txt : $!";	
+	
+	my $i = $db->fetch_many($class => '*');
+	my $c;
+	while (my $object = $i->next) {
+	    $c++;
+	    $object =~ s/\///g;     # gets rid of forwardslashes
+	    $object =~ s/\'//g;     # gets rid of primes
 	    my ($o, $u) = "";
-	    ($o, $u) = &makeURL($$Objects{$_}[$i], $$Templates{$_}[0], $$Templates{$_}[1]);
-	    next unless (defined ($o) && defined ($u));
-	    $Links{$o}=$u;
+	    
+	    if ($class eq 'Variation' 
+		|| $class eq 'Transgene'
+		) {
+		my $public_name = $object->Public_name || $object;
+		($o, $u) = makeURL($object,$templates->{$class}[0], $templates->{$class}[1],$class,$public_name);	    
+		next unless (defined ($o) && defined ($u));
+		record($o,$u);
+	    } elsif ($class eq 'Gene') {
+		my @synonyms   = $object->Other_name;
+		push @synonyms,$object->Public_name;
+		# We will NOT markup Transcripts
+		foreach (@synonyms) {
+		    ($o, $u) = makeURL($object,$templates->{$class}[0], $templates->{$class}[1],$class,$_);
+		    next unless (defined ($o) && defined ($u));
+		    record($o,$u);
+		}
+		
+		my $public_name = $object->Public_name || $object;
+		($o, $u) = makeURL($object,$templates->{$class}[0], $templates->{$class}[1],$class,$public_name);	    
+		next unless (defined ($o) && defined ($u));
+		record($o,$u);
+	    } elsif ($class eq 'Phenotype') {
+		my @synonyms   = $object->Synonym;
+		push @synonyms,$object->Primary_name; 
+		foreach (@synonyms) {
+		    ($o, $u) = makeURL($object,$templates->{$class}[0], $templates->{$class}[1],$class,$_);
+		    next unless (defined ($o) && defined ($u));
+		    record($o,$u);
+		}
+	    } else {
+		($o, $u) = makeURL($object,$templates->{$class}[0], $templates->{$class}[1]);
+		next unless (defined ($o) && defined ($u));
+		record($o,$u);
+	    }
 	}
-   }
+	
+	close OUT or die " Cannot close $version/$class.txt : $!";       
+    }
+}    
 
-    print "done\n";
-    print "There are $j total links\n";
-    print "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\n";
-
-    return %Links;
+sub record {
+    my ($o,$u) = @_;
+    $links{$o}=$u;
+    print OUT "$o\t$u\n";     
 }
 
 sub makeURL{
-    my ($object, $url, $rule) = @_;
-    return unless $object =~ /$rule/;
+    my ($object,$url,$rule,$class,$public_name) = @_;
     $j++;
-    $url =~ s/SUB/$object/g;
-    my $o = $object; my $u = $url;
-    open OUT, ">$version/$object"  
-	or die "Cannot open $version/$object : $!";	
-    print OUT "$url\n"; 
-    close (OUT) 
-	or die " Cannot close $version/$object : $!";
     
-    return($o, $u);
+    my $o;
+    # use WbVar names for Variations.
+    if ($class && ($class eq 'Variation' 
+		   || $class eq 'Transgene'
+		   || $class eq 'Phenotype'
+		   || $class eq 'Gene',
+	)) { 
+	if ($public_name =~ /$rule/ ) {
+	    $o = $public_name;
+	} elsif ($object =~ /$rule/) {
+	    $o = $object;
+	}
+	return unless $o;
+    } else {
+	return unless $object =~ /$rule/;
+	$o = $object;
+    }
+    $url =~ s/SUB/$object/g;
+    return ($o,$url);
 }
 
-
-sub GetContents {
     
+
+    
+
+
+
+sub get_file_contents {
     my $filename = shift;
-    my @return = ();
     open (IN,"$filename");
     while (my $line = <IN>) { 
 	chomp ($line);
-	push @return, $line;
+	my ($object,$link) = split("\t",$line);
+	$links{$object} = $link;
     }
     close (IN);
-    return @return;
-    
 }
 
-sub getWebPage{
-    my $u = shift;
-    
-    my $ua = LWP::UserAgent->new(timeout => 30); #instantiates a new user agent
-    my $request = HTTP::Request->new(GET => $u); #grabs url
+sub get_web_page{
+    my $url      = shift;    
+    my $ua       = LWP::UserAgent->new(timeout => 30); #instantiates a new user agent
+    my $request  = HTTP::Request->new(GET => $url); #grabs url
     my $response = $ua->request($request);       #checks url, dies if not valid.
     die "Error while getting ", $response->request->uri," -- ", $response->status_line, "\nAborting" unless $response-> is_success;
     
-    my $page = $response->content;    #splits by line
+    my $page = $response->content;
     return $page;
 }
 
 
-sub GetSentences {    
+sub get_sentences {    
     my $xmlfile = shift;
     
     open (XML, "<$xmlfile") or die "Can't open xml file $xmlfile.";
