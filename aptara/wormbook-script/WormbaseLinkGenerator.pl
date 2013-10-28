@@ -249,66 +249,78 @@ sub generate_wormbase_links_from_acedb {
     }
 
     foreach my $class (sort keys %$templates){
-	next unless $class eq 'Variation';
-
-	my $count = $db->count($class => '*');
-	print "\t\tfetching $class...\n";
-	print "\t\t\tfound $count terms in the $class class.\n";
+	next unless $class eq 'Protein';
+	
+	print "\t\tfetching $class...\n";	
 	print "\t\t\tgenerating links for $class ...\n";
 
-	open OUT, ">$version/$class.txt" or die "Cannot open $version/$class.txt : $!";	
+	open OUT, ">$version/$class.txt" or die "Cannot open $version/$class.txt : $!"; 	    
 	
-	my $i = $db->fetch_many($class => '*');
-	my $c;
-	while (my $object = $i->next) {
-	    $c++;
-	    $object =~ s/\///g;     # gets rid of forwardslashes
-	    $object =~ s/\'//g;     # gets rid of primes
-	    my ($o, $u) = "";
+	if ($class eq 'Variation' || $class eq 'Protein') {
+	    my $dump_file = dump_objects_via_tace($class,$version);
 	    
-	    if ($class eq 'Variation' 
-		|| $class eq 'Transgene'
-		) {
-		my $public_name = $object->Public_name || $object;
-		($o, $u) = makeURL($object,$templates->{$class}[0], $templates->{$class}[1],$class,$public_name);	    
-		next unless (defined ($o) && defined ($u));
-		record($o,$u);
-	    } elsif ($class eq 'Gene') {
-		my @synonyms   = $object->Other_name;
-		push @synonyms,$object->Public_name;
-		# We will NOT markup Transcripts
-		foreach (@synonyms) {
-		    ($o, $u) = makeURL($object,$templates->{$class}[0], $templates->{$class}[1],$class,$_);
-		    next unless (defined ($o) && defined ($u));
-		    record($o,$u);
-		}
-		
-		my $public_name = $object->Public_name || $object;
-		($o, $u) = makeURL($object,$templates->{$class}[0], $templates->{$class}[1],$class,$public_name);	    
-		next unless (defined ($o) && defined ($u));
-		record($o,$u);
-	    } elsif ($class eq 'Phenotype') {
-		my @synonyms   = $object->Synonym;
-		push @synonyms,$object->Primary_name; 
-		foreach (@synonyms) {
-		    ($o, $u) = makeURL($object,$templates->{$class}[0], $templates->{$class}[1],$class,$_);
-		    next unless (defined ($o) && defined ($u));
-		    record($o,$u);
-		}
-	    } else {
-		($o, $u) = makeURL($object,$templates->{$class}[0], $templates->{$class}[1]);
-		next unless (defined ($o) && defined ($u));
+	    open IN,"<$dump_file";
+	    $/ = "\n\n";
+	    while (<IN>) {
+		my ($object) = $_ =~ /$class : "(.*)"/;
+		my ($public_name) = $_ =~ /Public_name\s*"(.*)"/;
+		$public_name ||= $object;
+		my ($o, $u) = makeURL($object,$templates->{$class}[0], $templates->{$class}[1],$class,$public_name); 
 		record($o,$u);
 	    }
+	} else {
+	    
+	    my $i = $db->fetch_many($class => '*');
+	    my $c;
+	    while (my $object = $i->next) {
+		$c++;
+		$object =~ s/\///g;     # gets rid of forwardslashes
+		$object =~ s/\'//g;     # gets rid of primes
+		my ($o, $u) = "";
+		
+		if ($class eq 'Transgene') {
+		    my $public_name = $object->Public_name || $object;
+		    ($o, $u) = makeURL($object,$templates->{$class}[0], $templates->{$class}[1],$class,$public_name);	    
+		    next unless (defined ($o) && defined ($u));
+		    record($o,$u);
+		} elsif ($class eq 'Gene') {
+		    my %seen;
+		    my @synonyms = $object->Other_name;
+		    push @synonyms,$object->Public_name;
+		    my @unique   = grep { ! $seen{$_}++ } @synonyms;
+		    foreach (@unique) {
+			($o, $u) = makeURL($object,$templates->{$class}[0], $templates->{$class}[1],$class,$_);
+			next unless (defined ($o) && defined ($u));
+			record($o,$u);
+		    }
+		    
+		    my $public_name = $object->Public_name || $object;
+		    ($o, $u) = makeURL($object,$templates->{$class}[0], $templates->{$class}[1],$class,$public_name);	    
+		    next unless (defined ($o) && defined ($u));
+		    record($o,$u);
+		} elsif ($class eq 'Phenotype') {
+		    my @synonyms   = $object->Synonym;
+		    push @synonyms,$object->Primary_name; 
+		    foreach (@synonyms) {
+			($o, $u) = makeURL($object,$templates->{$class}[0], $templates->{$class}[1],$class,$_);
+			next unless (defined ($o) && defined ($u));
+			record($o,$u);
+		    }
+		} else {
+		    ($o, $u) = makeURL($object,$templates->{$class}[0], $templates->{$class}[1]);
+		    next unless (defined ($o) && defined ($u));
+		    record($o,$u);
+		}
+	    }
+	    
+	    close OUT or die " Cannot close $version/$class.txt : $!";       
 	}
-	
-	close OUT or die " Cannot close $version/$class.txt : $!";       
     }
-}    
+}
 
 sub record {
     my ($o,$u) = @_;
-    $links{$o}=$u;
+    $links{$o} = $u;
     print OUT "$o\t$u\n";     
 }
 
@@ -321,14 +333,10 @@ sub makeURL{
     if ($class && ($class eq 'Variation' 
 		   || $class eq 'Transgene'
 		   || $class eq 'Phenotype'
-		   || $class eq 'Gene',
+		   || $class eq 'Gene'
+		   || $class eq 'Protein'
 	)) { 
-	if ($public_name =~ /$rule/ ) {
-	    $o = $public_name;
-	} elsif ($object =~ /$rule/) {
-	    $o = $object;
-	}
-	return unless $o;
+	$o = $public_name ? $public_name : $object;
     } else {
 	return unless $object =~ /$rule/;
 	$o = $object;
@@ -376,4 +384,33 @@ sub get_sentences {
     $/ = "\n";
     
     return $xml;
+}
+
+
+
+
+
+sub dump_objects_via_tace {
+    my ($class,$version) = @_;    
+
+    my $pwd = `pwd`;
+    chomp $pwd;    
+    my $tmp_dir = "$pwd/ace_dumps";
+    system(`mkdir -p $tmp_dir`);
+    
+    my $dump_file = "$tmp_dir/dump_${class}_from_ace.script";
+    unless (-e $dump_file) {
+	print "\t\tdumping the $class class\n\n";
+	open OUT,">$tmp_dir/dump_${class}_from_ace.script";
+	print OUT <<END;
+//tace script to dump database
+Find $class
+Write $tmp_dir/$class.ace
+END
+;
+
+	system("/usr/local/wormbase/acedb/bin/tace /usr/local/wormbase/acedb/wormbase_$version < $tmp_dir/dump_${class}_from_ace.script");
+	close OUT;
+    }
+    return "$tmp_dir/$class.ace";
 }
