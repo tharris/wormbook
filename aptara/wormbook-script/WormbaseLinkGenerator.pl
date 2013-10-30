@@ -32,7 +32,7 @@ Usage: $0 [--links-from wormbase-server||directory] [--defs-file FILE]
             --xml-files wnt_signal.html
 
          SAMPLE USAGE: local files
-         $0 --links-from /home/tharris/wormbook/wormbase-links-WS240/ \
+         $0 --links-from WS239/ \
 	    --defs-file WormbaseLinks.def \
             --xml-files wnt_signal.html
 END

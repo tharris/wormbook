@@ -3,6 +3,16 @@
 clear
 VERSION=$1
 
+die <<EOF 
+
+THIS SCRIPT IS DEPRECATED!
+
+Please see
+
+./WormbaseLinkGenerator.pl --help
+
+EOF
+
 echo Please wait Wormbase  link generator script is executing..
 
 for i in *.xml;

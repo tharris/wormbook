@@ -1,15 +1,25 @@
-Usage of textpresso :
+UPDATE: 30 OCTOBER 2013
 
-1. Be sure the path for 'perl' and 'touch' are correct in the script.  To execute the script for the first time :
+1. Generating entity=URI key/value pairs
 
-textpresso$ ./WormbaseLinkGenerator.pl WormbaseLinks.def http://www.sanger.ac.uk/Projects/C_elegans/LOCI/loci_all.txt aceserver.cshl.org docbook.xml
+WormBook staff will periodically -- in accordance with WormBase releases --
+generate updated lists of entity-to-URI mappings. These are stored in directories
+corresponding to the current WormBase version: WS239, WS240, etc.
 
-(where docbook.xml is the input chapter in docbook xml format)
+    ./WormbaseLinkGenerate.pl --links-from localhost
 
-The first run will generate a directory named WS149 (or similar name WS###)  of size ~ 1GB.
+This command can ONLY be run on a server hosting the full WormBase database!
 
-2. After the WSXX/ directory is created, subsequent runs of textpresso utilize the local WS### directory.  The script is executed as follows :
 
-textpresso$ ./WormbaseLinkGenerator.pl WS149/ docbook2.xml
+2. Marking up biological entities in docbook.xml with links to WormBase:
 
-(where docbook2.xml is the next chapter in docbook xml format)
+The command is:
+
+   ./WormbaseLinkGenerater.pl --links-from WS239/ --xml-files docbook.xml
+
+   Where --links-from points to a directory of entity=URI key value pairs.
+         --xml-files is a file in docbook.xml.
+
+
+Todd Harris (toddwharris@gmail.com)
+30 Oct 2013
