@@ -1,0 +1,69 @@
+UPDATE: 30 OCTOBER 2013
+
+Although the code for marking up docbook.xml chapters has changed *significantly* 
+these changes should have very little impact on the process of marking up chapters.
+
+This document describes these changes, how this portion of the markup pipeline works
+and who the responsible parties are.
+
+Overview:
+
+WormBook staff will periodically -- in accordance with WormBase releases --
+generate updated lists of entity-to-URI mappings. These are stored in directories
+corresponding to the current WormBase version: WS239, WS240, etc.
+
+Once generated, these files can be used by Aptara to generate entity-to-URI mappings
+in docbook.xml chapters.
+
+-------------------------------------------------------------------------------------
+1. Generating entity=URI key/value pairs
+-------------------------------------------------------------------------------------
+   Responsible party : The WormBook group.
+   Update frequency  : approximately once every two months.
+
+   Usage :
+       ./generate_object_to_uri_mappings_from_wormbase.pl
+
+   Description :
+
+	1. Creates directories 
+  	       ace_dumps -- a temporary directory
+	       WSXXX     -- output directory for object-to-uri mappings for 
+ 	                    current version of WormBase.
+	2. Dumps lists of objects from WormBase to ace_dumps/
+	3. Iterates over lists in ace_dumps, creating one file per class of
+	   object-to-uri mappings, placing them in WSXXX/, eg:
+	            
+		WS239/Variation.txt
+
+	4. gzips the output files in WSXXX/
+        5. Updates a sylink:
+        
+	      current -> WSXXX	  
+   
+   Caveats :
+	This script can ONLY be run on a server hosting the full WormBase
+	database! It expects the server to answer on port 2005.
+
+
+-------------------------------------------------------------------------------------
+2. Marking up biological entities in docbook.xml with links to WormBase
+-------------------------------------------------------------------------------------
+   Responsible party : Aptara
+   Update frequency  : on an as-needed basis
+
+   Usage :
+
+        ./markup_docbook_xml.pl
+
+   Description :
+        
+	1. Creates a directories called reports/ and xml_out/
+	2. Reads object-to-uri mappings in current/
+	3. Reads all .xml files in xml_in/
+	4. Extracts sentences in each xml file
+	5. Replaces known entities with appropriate URI from mappings
+	6. Prints new xml to xml_out/[FILENAME].xml
+	7. Once processed, files in xml_in are moved to xml_in-processed-YYYY-DD-MM/
+	
+

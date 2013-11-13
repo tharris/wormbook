@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "http://www.oasis-open.org/docbook/xml/4.4CR2/docbookx.dtd"
+[<!ENTITY % local.notation.class '| MOV'>
+<!NOTATION MOV SYSTEM 'MOV'>
+<!ENTITY fig1 SYSTEM 'wntfig1.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'wntfig1leg.xml'>
+<!ENTITY fig2 SYSTEM 'wntfig2.jpg' NDATA JPG>
+<!ENTITY fig2legend SYSTEM 'wntfig2leg.xml'>
+<!ENTITY fig3 SYSTEM 'wntfig3.jpg' NDATA JPG>
+<!ENTITY fig3legend SYSTEM 'wntfig3leg.xml'>
+<!ENTITY fig4 SYSTEM 'wntfig4.jpg' NDATA JPG>
+<!ENTITY fig4legend SYSTEM 'wntfig4leg.xml'>
+<!ENTITY fig5 SYSTEM 'wntfig5.jpg' NDATA JPG>
+<!ENTITY fig5legend SYSTEM 'wntfig5leg.xml'>
+<!ENTITY Wnt_Refs SYSTEM 'wntrefs.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="Wnt_ArticleID">
+	<articleinfo>
+        <!--see DocBook's authorgroup element -->
+		<title>Wnt signaling<footnote><para>Edited by Iva Greenwald. Last revised June 13, 2005. Published June 25, 2005. This chapter should be cited as:  Eisenmann, D. M., Wnt signaling (June 25, 2005), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.7.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2005 David M. Eisenmann. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para>
+</footnote>
+		</title>
+		<author>
+			<firstname>David M.</firstname>
+			<surname>Eisenmann<remark><footnote><para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:eisenman@umbc.edu">eisenman@umbc.edu</ulink></para></footnote></remark></surname>
+			<affiliation>
+				<address>Department of Biological Sciences, University of Maryland Baltimore County, Baltimore, MD 21250 USA</address>
+			</affiliation>
+		</author>
+<!--  Two "dummy" authors below for testing only
+		<author>
+			<firstname>Lisa</firstname>
+			<surname>Girard</surname>
+			<affiliation><orgname>Department of Chemistry, University of Georgia</orgname>
+				<address>Cape Cod, MA 21250 USA</address>
+			</affiliation>
+		</author>
+
+			<author>
+			<firstname>Tristan</firstname>
+			<surname>Fiedler
+				<remark>
+					<footnote>
+						<para>To whom correspondence should be addressed.
+							<email>email3@school3.edu</email>
+						</para>
+					</footnote>
+				</remark>
+			</surname>
+			
+			<affiliation>
+				<orgname>Department of Pharmacology, University of Minnesota</orgname>
+				<address>Minneapolis, MN 31330 USA</address>
+			</affiliation>
+		</author>
+-->
+	</articleinfo>
+	<abstract>
+		<title><emphasis role="bold">Abstract</emphasis></title>
+		<para><emphasis role="bold">The use of Wnt ligands for signaling between cells is a conserved feature of metazoan development. Activation of Wnt signal transduction pathways upon ligand binding can regulate diverse processes including cell proliferation, migration, polarity, differentiation and axon outgrowth. A 'canonical' Wnt signaling pathway has been elucidated in vertebrate and invertebrate model systems. In the canonical pathway, Wnt binding leads to the stabilization of the transcription factor <symbol role="symbolfont">&#x03B2;</symbol>-catenin, which enters the nucleus to regulate Wnt pathway target genes. However, Wnt binding also acts through <symbol role="symbolfont">&#x03B2;</symbol>-catenin-independent, noncanonical pathways, such as the planar cell polarity (PCP) pathway and a pathway involving Ca<superscript>2+</superscript> signaling. This chapter examines our current understanding of Wnt signaling and Wnt-mediated processes in the nematode</emphasis> <emphasis><emphasis role="bold">C. elegans.</emphasis></emphasis> <emphasis role="bold">Like other species, the</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">genome encodes multiple genes for Wnt ligands (five) and Wnt receptors (four frizzleds, one Ryk/Derailed). Unlike vertebrates or</emphasis> <emphasis><emphasis role="bold">Drosophila,</emphasis></emphasis> <emphasis role="bold">the</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">genome encodes three <symbol role="symbolfont">&#x03B2;</symbol>-catenin genes, which appear to have distinct functions in Wnt signaling and cell adhesion. Canonical Wnt signaling clearly exists in</emphasis> <emphasis><emphasis role="bold">C. elegans,</emphasis></emphasis> <emphasis role="bold">utilizing the <symbol role="symbolfont">&#x03B2;</symbol>-catenin <ulink url="http://www.wormbase.org/db/seq/protein?name=BAR-1;class=protein" role="_blank">BAR-1</ulink>. However, a noncanonical pathway utilizing the <symbol role="symbolfont">&#x03B2;</symbol>-catenin <ulink url="http://www.wormbase.org/db/seq/protein?name=WRM-1;class=protein" role="_blank">WRM-1</ulink> also exists, and to date a similar pathway has not been described in other species. Evidence for <symbol role="symbolfont">&#x03B2;</symbol>-catenin independent noncanonical Wnt signaling is currently limited. The role of Wnt signaling in over a dozen</emphasis> <emphasis><emphasis role="bold">C. elegans</emphasis></emphasis> <emphasis role="bold">developmental processes, including the regulation of cell fate, polarity and migration, is described.</emphasis></para>
+	</abstract>
+
+	<sect1>
+		<title>Introduction</title>
+		<para>The Wnt extracellular signaling pathway (wingless in <emphasis>Drosophila</emphasis>) is one of a handful
+            of evolutionarily-conserved signal transduction pathways used extensively during animal
+            development, from Hydra to humans (<link linkend="bib4">Cadigan and Nusse,
+                1997<!-- :PMID9407023 --></link>; <link linkend="bib89">Wodarz and Nusse,
+                    1998<!-- :PMID9891778 --></link>; <link linkend="bib31">Hobmayer et al., 2000<!-- :PMID 11001056 --></link>;
+            <link linkend="bib59">Peifer and Polakis, 2000<!-- :PMID10733430 --></link>). Wnt signals
+            control multiple aspects of development, including the proliferation, fate
+            specification, polarity, and migration of cells. In addition, overactivation of Wnt
+            signaling by mutation is a major factor in oncogenesis in the human colon and other
+            tissues (<link linkend="bib61">Polakis, 2000<!-- :PMID10921899 --></link>). Work in <emphasis>Drosophila</emphasis> and
+            vertebrates has shown that Wnt signals are transduced in at least two distinct ways; a
+            well-established 'canonical' or Wnt/<symbol role="symbolfont">&#x03B2;</symbol>-catenin pathway, and a noncanonical pathway or
+            pathways that are <symbol role="symbolfont">&#x03B2;</symbol>-catenin independent.</para>
+	    
+	</sect1>
+	<sect1>
+		<title>Canonical and noncanonical Wnt signaling in flies and vertebrates</title>
+		<para>A recent survey of known components in or associated with canonical Wnt signaling
+            pathways lists over 50 proteins (see
+            <ulink url="http://www.stanford.edu/~rnusse/pathways/cell2.html" role="_blank">www.stanford.edu/~rnusse/pathways/cell2.html</ulink>). Due to this complexity, this
+            review will focus only on well-established, core components of the pathway (for review,
+            see <link linkend="bib89">Wodarz and Nusse, 1998<!-- :PMID9891778 --></link>; <link
+					linkend="bib59">Peifer and Polakis, 2000<!-- :PMID20194786 --></link>). A major effector of
+            the canonical Wnt signaling pathway is the transcription factor <symbol role="symbolfont">&#x03B2;</symbol>-catenin (Armadillo in
+                flies; <xref linkend="figure1" />). In the absence of ligand, cytoplasmic <symbol role="symbolfont">&#x03B2;</symbol>-catenin interacts with APC and
+            Axin scaffold proteins and is a substrate for the kinases CKI and GSK3<symbol role="symbolfont">&#x03B2;</symbol>. Phosphorylated
+            <symbol role="symbolfont">&#x03B2;</symbol>-catenin is then ubiquitinated and destroyed by the proteosome. When Wnt ligand binds
+            to a Frizzled family receptor and a coreceptor of the LRP-5/6/arrow family, the
+            APC/Axin/CK1/GSK3<symbol role="symbolfont">&#x03B2;</symbol> destruction complex is inhibited, leading to the stabilization of
+            <symbol role="symbolfont">&#x03B2;</symbol>-catenin and its translocation to the nucleus where it interacts with TCF/LEF family
+            transcription factors. In the absence of signal, TCF/LEF factors bind DNA at
+            Wnt-responsive genes and interact with other factors (e.g. Groucho, histone deacetylase)
+            to repress transcription. <symbol role="symbolfont">&#x03B2;</symbol>-catenin binding to TCF/LEF proteins provides a transcription
+            activation domain so target gene expression is activated.</para>
+		<para>Noncanonical Wnt signaling pathways in <emphasis>Drosophila</emphasis> and vertebrates are less well
+            understood, but appear to function in a <symbol role="symbolfont">&#x03B2;</symbol>-catenin independent manner to regulate
+            processes such as convergent extension during vertebrate gastrulation, and the polarity
+            of hairs, bristles and ommatidia in <emphasis>Drosophila</emphasis> (for review, see, <link linkend="bib47">Kuhl et al., 2000<!-- :PMID10858654 --></link>; <link linkend="bib59">Peifer and Polakis,
+                2000<!-- :PMID20194786 --></link>; <link linkend="bib81">Veeman et al.,
+            2003<!-- :PMID12967557 --></link>). These noncanonical pathways have also been termed the
+            Wnt/Calcium and Wnt/JNK pathways in vertebrates and the Wnt/planar cell polarity pathway
+            (PCP) in flies. The similarity of these pathways to each other is under intense
+            investigation, and a discussion of their molecular details is beyond the scope of this
+            review. Briefly, activation of the <emphasis>Wnt</emphasis>/Calcium pathway involves Wnt binding to a
+            Frizzled receptor, leading to release of intracellular calcium and the activation of
+            enzymes such as CamKII and PKC (<link linkend="bib47">Kuhl et al.,
+            2000<!-- :PMID10858654 --></link>). The Wnt/Jnk and PCP pathways appear to be similar in
+            utilizing Frizzled receptors, Dishevelled, JNK and Rho family GTPases (<link
+					linkend="bib81">Veeman et al., 2003<!-- :PMID12967557 --></link>). While Wnts are used in the
+            vertebrate Wnt/Jnk pathway, no Wnt ligand has been identified for the <emphasis>Drosophila</emphasis> PCP
+            pathway. Currently, the conservation of function of these pathways in <emphasis>C.
+                elegans</emphasis> is unclear.</para>
+		<mediaobject id="figure1" xreflabel="Figure 1">
+			<imageobject>
+				<imagedata width="4.2in" entityref="fig1" align="center"/>
+			</imageobject>
+			<textobject><phrase>WormBook Wnt Signaling figure 1</phrase></textobject>
+            &fig1legend;
+        </mediaobject>
+	</sect1>
+	<sect1>
+		<title>Wnt pathway components in <emphasis>C. elegans</emphasis>
+		</title>
+		<para>
+			<emphasis>C. elegans</emphasis> has a complement of canonical Wnt pathway components
+            similar to those in flies and vertebrates, but with some notable differences (<link
+					linkend="bib64">Ruvkun and Hobert, 1998<!-- :PMID9851920 --></link>). Like those species,
+                <emphasis>C. elegans</emphasis> has multiple genes encoding Wnt ligands
+                (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-44" role="_blank">lin-44</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-20" role="_blank">egl-20</ulink></emphasis>,
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mom-2" role="_blank">mom-2</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cwn-1" role="_blank">cwn-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cwn-2" role="_blank">cwn-2</ulink></emphasis>;
+                (<link linkend="bib70">Shackleford et al., 1993<!-- :PMID0008510930 --></link>; <link
+					linkend="bib29">Herman et al., 1995<!-- :PMID0007553861 --></link>; <link linkend="bib62">Rocheleau et al., 1997<!-- :PMID0009288750 --></link>; <link linkend="bib80">Thorpe et al.,
+                1997<!-- :PMID0009288749 --></link>; Maloof et al.,1999),
+            Frizzled family Wnt receptors (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-17" role="_blank">lin-17</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mom-5" role="_blank">mom-5</ulink></emphasis>,
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mig-1" role="_blank">mig-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cfz-2" role="_blank">cfz-2</ulink></emphasis> (<link linkend="bib68">Sawa
+                et al., 1996<!-- :PMID0008804313 --></link>; <link linkend="bib62">Rocheleau et al.,
+                1997<!-- :PMID0009288750 --></link>; <link linkend="bib64">Ruvkun and Hobert,
+            1998<!-- :PMID9851920 --></link>; <link linkend="bib26">Herman, 2003</link>), and
+            Disheveled proteins (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mig-5" role="_blank">mig-5</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=dsh-1" role="_blank">dsh-1</ulink></emphasis>,
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=dsh-2" role="_blank">dsh-2</ulink></emphasis>; <link linkend="bib64">Ruvkun and Hobert,
+            1998<!-- :PMID9851920 --></link>). The worm genome also encodes homologs of Porcupine
+                (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mom-1" role="_blank">mom-1</ulink></emphasis>) (<link linkend="bib62">Rocheleau et al.,
+                    1997<!-- :PMID0009288750 --></link>), Casein Kinase I<symbol role="symbolfont">&#x03B1;</symbol> (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=kin-19" role="_blank">kin-19</ulink></emphasis>) (<link
+					linkend="bib60">Peters et al., 1999<!-- :PMID10517632 --></link>), GSK3<symbol role="symbolfont">&#x03B2;</symbol>
+            (<emphasis>gsk-3</emphasis>) (<link linkend="bib69">Schlesinger et al.,
+                1999<!-- :PMID0010444600 --></link>), and Axin (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pry-1" role="_blank">pry-1</ulink></emphasis>) (<link
+					linkend="bib45">Korswagen et al., 2002<!-- :PMID12023307 --></link>). Unlike other species,
+                <emphasis>C. elegans</emphasis> has three genes encoding divergent <symbol role="symbolfont">&#x03B2;</symbol>-catenin
+            proteins (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=bar-1" role="_blank">bar-1</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=wrm-1" role="_blank">wrm-1</ulink></emphasis> and
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=hmp-2" role="_blank">hmp-2</ulink></emphasis>; <link linkend="bib62">Rocheleau et al.,
+            1997<!-- :PMID0009288750 --></link>; <link linkend="bib10">Costa et al.,
+            1998<!-- :PMID0009531567 --></link>; <link linkend="bib14">Eisenmann et al.,
+            1998<!-- :PMID0009716532 --></link>), with the multiple functions of <symbol role="symbolfont">&#x03B2;</symbol>-catenin dispersed among
+            the three homologs (<link linkend="bib46">Korswagen et al., 2000<!-- :PMID0010952315 --></link>;
+                <link linkend="bib56">Natarajan et al., 2001<!-- :PMID11560894 --></link>). Also, worms appear
+            to have only a single TCF/LEF gene, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pop-1" role="_blank">pop-1</ulink></emphasis>, and a single APC gene,
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=apr-1" role="_blank">apr-1</ulink></emphasis>(<link linkend="bib62">Rocheleau et al.,
+                1997<!-- :PMID0009288750 --></link>). Finally, to date no gene encoding a clear LRP-5/6/Arrow
+            homolog has been identified, although caution is advised since nematode Wnt pathway
+            genes are quite diverged, and an axin-encoding gene was initially overlooked. The worm
+            genome encodes homologs of the Wnt pathway regulators Nlk (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lit-1" role="_blank">lit-1</ulink></emphasis>; <link linkend="bib53">Meneghini et al., 1999<!-- :PMID0010391246 --></link>; <link
+					linkend="bib63">Rocheleau et al., 1999<!-- :PMID0010380924 --></link>), TAK1
+            (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mom-4" role="_blank">mom-4</ulink></emphasis>; <link linkend="bib53">Meneghini et al.,
+            1999<!-- :PMID0010391246 --></link>; <link linkend="bib71">Shin et al.,
+            1999<!-- :PMID0010488343 --></link>) and TAB1 (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tap-1" role="_blank">tap-1</ulink></emphasis>; <link linkend="bib53">Meneghini et al., 1999<!-- :PMID0010391246 --></link>), and the recently identified Wnt
+            receptor Ryk/Derailed (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-18" role="_blank">lin-18</ulink></emphasis>; <link linkend="bib37">Inoue et al.,
+                2004<!-- :PMID15369677 --></link>).</para>
+	</sect1>
+	<sect1>
+		<title>Canonical and noncanonical Wnt pathways in <emphasis>C. elegans</emphasis>
+		</title>
+		<para>The first well-characterized Wnt pathway in <emphasis>C. elegans</emphasis> was a
+            noncanonical pathway that mediates a signal from P2 to <ulink url="http://www.wormbase.org/db/get?name=EMS;class=Cell" role="_blank">EMS</ulink> required for endoderm
+            formation (see below). In this pathway, the homologs of APC, <ulink url="http://www.wormbase.org/db/seq/protein?name=GSK-3;class=protein" role="_blank">GSK3</ulink><symbol role="symbolfont">&#x03B2;</symbol> and TCF behave in an
+            opposite manner from similar proteins in other species, suggesting that Wnt signaling
+            was fundamentally different in worms (<link linkend="bib23">Han,
+            1997<!-- :PMID0009288737 --></link>). Subsequent work showed that both canonical and noncanonical
+            Wnt signaling pathways exist in <emphasis>C. elegans</emphasis>. To date, it appears
+            that processes utilizing the <symbol role="symbolfont">&#x03B2;</symbol>-catenin homolog <ulink url="http://www.wormbase.org/db/seq/protein?name=BAR-1;class=protein" role="_blank">BAR-1</ulink> use a canonical Wnt pathway like
+            that found in other species, while processes involving the <symbol role="symbolfont">&#x03B2;</symbol>-catenin homolog <ulink url="http://www.wormbase.org/db/seq/protein?name=WRM-1;class=protein" role="_blank">WRM-1</ulink> use a
+            noncanonical Wnt pathway that is distinct from noncanonical pathways in vertebrates.
+            Like other <symbol role="symbolfont">&#x03B2;</symbol>-catenins, <ulink url="http://www.wormbase.org/db/seq/protein?name=BAR-1;class=protein" role="_blank">BAR-1</ulink> interacts directly with an amino terminal domain of
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>/TCF, and can activate transcription in yeast (<link linkend="bib46">Korswagen et
+                al., 2000<!-- :PMID0010952315 --></link>; <link linkend="bib56">Natarajan et al.,
+                2001<!-- :PMID11560894 --></link>). <ulink url="http://www.wormbase.org/db/seq/protein?name=WRM-1;class=protein" role="_blank">WRM-1</ulink> however, does not appear to interact strongly with
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>/TCF, and activates transcription less well than <ulink url="http://www.wormbase.org/db/seq/protein?name=BAR-1;class=protein" role="_blank">BAR-1</ulink> <emphasis>in
+            vitro</emphasis> and in a yeast system (<link linkend="bib46">Korswagen et al.,
+                2000<!-- :PMID0010952315 --></link>; <link linkend="bib56">Natarajan et al.,
+            2001<!-- :PMID11560894 --></link>). Other Wnt signaling components, such as Wnt receptors,
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=APR-1;class=protein" role="_blank">APR-1</ulink>/APC, <ulink url="http://www.wormbase.org/db/seq/protein?name=GSK-3;class=protein" role="_blank">GSK-3</ulink>/GSK3<symbol role="symbolfont">&#x03B2;</symbol> and <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>/TCF function in both types of pathways, but can behave
+            differently depending on whether the process is controlled in a canonical or
+            noncanonical manner. Several recent reviews have discussed canonical and noncanonical
+            Wnt signaling in <emphasis>C. elegans</emphasis> (<link linkend="bib44">Korswagen,
+                2002<!-- :PMID12210516 --></link>; <link linkend="bib26">Herman, 2003</link>;
+                <link linkend="bib30">Herman and Wu, 2004<!-- :PMID14977564 --></link>).</para>
+	</sect1>
+	<sect1>
+		<title>Processes utilizing a canonical Wnt/<ulink url="http://www.wormbase.org/db/seq/protein?name=BAR-1;class=protein" role="_blank">BAR-1</ulink> pathway</title>
+		<para>A substantial body of evidence suggests that canonical Wnt signaling pathways similar
+            to those in flies and vertebrates act in two post-embryonic processes, the control of QL
+            progeny migration and VPC fate specification. Two other processes, P12 fate
+            specification and contact mediated inhibition of gene expression in posterior seam
+            cells, may also use a canonical pathway. Interestingly, all of these pathways utilize
+            the <symbol role="symbolfont">&#x03B2;</symbol>-catenin <ulink url="http://www.wormbase.org/db/seq/protein?name=BAR-1;class=protein" role="_blank">BAR-1</ulink> and have a Hox gene as a downstream target.</para>
+		<sect2>
+			<title>Migration of the Q neuroblast progeny</title>
+			<para>The QL and QR neuroblasts are born at the same position along the anterior/posterior (A/P) axis, on the left and right sides. These two cells produce similar progeny in the L1, but their descendants migrate in opposite directions, in a manner dependent on the Hox gene <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-5" role="_blank">mab-5</ulink></emphasis> (<link linkend="bib77">Sulston and Horvitz, 1977</link>; <link linkend="bib7">Chalfie and Sulston, 1981<!-- :PMID7227647 --></link>; <link linkend="bib41">Kenyon, 1986<!-- :PMID3731276 --></link>). The <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-5" role="_blank">mab-5</ulink></emphasis> expressing QL progeny (QL.d) migrate further into the posterior, while the QR progeny (QR.d), which do not express <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-5" role="_blank">mab-5</ulink></emphasis>, migrate toward the anterior (<xref linkend="figure2" />). In <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-5" role="_blank">mab-5</ulink></emphasis> loss-of-function mutants, all cells migrate anteriorly, while in a <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-5" role="_blank">mab-5</ulink></emphasis> gain-of-function mutant they migrate posteriorly (<link linkend="bib8">Chalfie et al., 1983<!-- :PMID6857263 --></link>; <link linkend="bib41">Kenyon, 1986<!-- :PMID3731276 --></link>; <link linkend="bib65">Salser and Kenyon, 1992<!-- :PMID1346230 --></link>).</para>
+			<mediaobject id="figure2" xreflabel="Figure 2">
+				<imageobject>
+					<imagedata width="4in" entityref="fig2" align="center"/>
+				</imageobject>
+				<textobject><phrase>WormBook Wnt Signaling figure 2</phrase></textobject>
+            &fig2legend;
+        </mediaobject>
+			<para>
+			The expression of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-5" role="_blank">mab-5</ulink> </emphasis>in the QL progeny is controlled by a canonical Wnt pathway. The ligand for this pathway is EGL-20, with high levels of Wnt signal promoting posterior migration. Interestingly, the Q neuroblasts are not exposed to different levels of signal, rather the two cells have differing sensitivities to Wnt, such that the Wnt pathway is activated in QL.d, but not QR.d (<link linkend="bib88">Whangbo and Kenyon, 1999<!-- :PMID0010619031 --></link>). Factors acting positively in this process are <ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-20;class=protein" role="_blank">EGL-20</ulink>/Wnt, <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-17;class=protein" role="_blank">LIN-17</ulink>/Fz, <ulink url="http://www.wormbase.org/db/seq/protein?name=MIG-1;class=protein" role="_blank">MIG-1</ulink>/Fz, <ulink url="http://www.wormbase.org/db/seq/protein?name=MIG-5;class=protein" role="_blank">MIG-5</ulink>/Dsh, <ulink url="http://www.wormbase.org/db/seq/protein?name=BAR-1;class=protein" role="_blank">BAR-1</ulink>/<symbol role="symbolfont">&#x03B2;</symbol>-cat, and <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>/TCF (<link linkend="bib24">Harris et al., 1996<!-- :PMID0008898225 --></link>; <link linkend="bib52"> Maloof et al., 1999<!-- :PMID9834184 --></link>; <link linkend="bib13">Eisenmann and Kim, 2000<!-- :PMID0011063687 --></link>; <link linkend="bib46">Korswagen et al., 2000<!-- :PMID0010952315 --></link>; <link linkend="bib25">Herman, 2001<!-- :PMID11171341 --></link>; <xref linkend="figure3" />). Loss of function for these genes leads to lack of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-5" role="_blank">mab-5</ulink> </emphasis>expression and anterior migration of the QL.d. Also, overexpression of <emphasis>gsk-3</emphasis>/<emphasis>GSK3</emphasis><symbol role="symbolfont">&#x03B2;</symbol> or <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pry-1" role="_blank">pry-1</ulink>/axin</emphasis> leads to anterior QL.d migration (<link linkend="bib45">Korswagen et al., 2002<!-- :PMID12023307 --></link>). Conversely, mutation of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pry-1" role="_blank">pry-1</ulink>/axin</emphasis> causes expression of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-5" role="_blank">mab-5</ulink></emphasis> in the QR.d and posterior migration (<xref linkend="figure2" />) . These results suggest that <ulink url="http://www.wormbase.org/db/seq/protein?name=PRY-1;class=protein" role="_blank">PRY-1</ulink>/Axin and GSK-3/GSK3<symbol role="symbolfont">&#x03B2;</symbol> act negatively in this pathway, as in other canonical Wnt pathways.</para>
+<literallayout></literallayout>
+	<mediaobject id="figure3" xreflabel="Figure 3">
+				<imageobject>
+					<imagedata width="4in" entityref="fig3" align="center"/>
+				</imageobject>
+				<textobject><phrase>WormBook Wnt Signaling figure 3</phrase></textobject>
+            &fig3legend;
+        </mediaobject>
+			
+			<para>Recently, it was shown that overexpression of the full length Ror receptor tyrosine
+            kinase CAM-1, or the <ulink url="http://www.wormbase.org/db/seq/protein?name=CAM-1;class=protein" role="_blank">CAM-1</ulink> extracellular cysteine rich domain (which bind Wnts in
+            Frizzled receptors) causes reduction of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-5" role="_blank">mab-5</ulink></emphasis> expression and
+            anterior migration of the QL.d (<link linkend="bib42">Kim and Forrester,
+                2003<!-- :PMID14651925 --></link>; <link linkend="bib16">Forrester et al.,
+            2004<!-- :PMID15371357 --></link>). It is possible that <ulink url="http://www.wormbase.org/db/seq/protein?name=CAM-1;class=protein" role="_blank">CAM-1</ulink> serves as a sink for <ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-20;class=protein" role="_blank">EGL-20</ulink> signal
+            along the A/P axis, restricting its diffusion into the anterior. Finally, mutations in
+            the genes <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mig-14" role="_blank">mig-14</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=qid-5" role="_blank">qid-5</ulink></emphasis>,
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=qid-6" role="_blank">qid-6</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=qid-7" role="_blank">qid-7</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=qid-8" role="_blank">qid-8</ulink></emphasis>
+            also cause anterior migration of the QL.d, but are currently uncloned (<link
+						linkend="bib6">Ch'ng et al., 2003<!-- :PMID12930745 --></link>).</para>
+						
+						
+		</sect2>
+		<sect2>
+			<title>VPC fate specification</title>
+			<para>The six vulval precursor cells
+            (VPCs), P3.p - P8.p, are born in the ventral midbody region and express the Hox gene
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-39" role="_blank">lin-39</ulink></emphasis>. They are competent to adopt one of three cell fates,
+            1<symbol role="symbolfont">&#x00B0;</symbol>, 2<symbol role="symbolfont">&#x00B0;</symbol>, or 3<symbol role="symbolfont">&#x00B0;</symbol>. 1<symbol role="symbolfont">&#x00B0;</symbol> and 2<symbol role="symbolfont">&#x00B0;</symbol> cells divide to generate cells that form the vulval opening,
+            while 3<symbol role="symbolfont">&#x00B0;</symbol> cells divide once and fuse with the hyp7 syncytium (for review, see <link linkend="bib22">Greenwald, 1997</link>; <link linkend="bib43">Kornfeld,
+                1997<!-- :PMID0009055606 --></link>). The VPCs always adopt their fates in the pattern 3<symbol role="symbolfont">&#x00B0;</symbol> 3<symbol role="symbolfont">&#x00B0;</symbol>
+            2<symbol role="symbolfont">&#x00B0;</symbol> 1<symbol role="symbolfont">&#x00B0;</symbol> 2<symbol role="symbolfont">&#x00B0;</symbol> 3<symbol role="symbolfont">&#x00B0;</symbol> or F 3<symbol role="symbolfont">&#x00B0;</symbol> 2<symbol role="symbolfont">&#x00B0;</symbol> 1<symbol role="symbolfont">&#x00B0;</symbol> 2<symbol role="symbolfont">&#x00B0;</symbol> 3<symbol role="symbolfont">&#x00B0;</symbol>, where F indicates fusion with hyp7 without division.
+            This patterning is mediated by an inductive signal from the anchor cell that activates a
+            Ras pathway in P6.p (adopts 1<symbol role="symbolfont">&#x00B0;</symbol> fate), and lateral signals from P6.p that activate a
+            Notch pathway in P5.p and P7.p (adopt 2<symbol role="symbolfont">&#x00B0;</symbol> fates). A canonical Wnt signaling pathway acts
+            in the VPCs to allow the VPCs to adopt the 1<symbol role="symbolfont">&#x00B0;</symbol>, 2<symbol role="symbolfont">&#x00B0;</symbol> or 3<symbol role="symbolfont">&#x00B0;</symbol> cell fates correctly. When this
+            pathway is compromised, many VPCs adopt F or 3<symbol role="symbolfont">&#x00B0;</symbol> fates, leading to defects in vulval
+            induction (<link linkend="bib14">Eisenmann et al., 1998<!-- :PMID0009716532 --></link>).
+            Overactivation of this pathway leads to extra VPCs adopting vulval fates (<link
+						linkend="bib18">Gleason et al., 2002<!-- :PMID12023306 --></link>). This pathway has been
+            shown to use <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=bar-1" role="_blank">bar-1</ulink></emphasis>/<symbol role="symbolfont">&#x03B2;</symbol>-<emphasis>cat</emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pry-1" role="_blank">pry-1</ulink>/axin</emphasis>,
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=apr-1" role="_blank">apr-1</ulink>/APC</emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pop-1" role="_blank">pop-1</ulink>/TCF</emphasis>, and these genes
+            behave in a canonical fashion where <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pry-1" role="_blank">pry-1</ulink>/axin</emphasis> and
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=apr-1" role="_blank">apr-1</ulink>/APC</emphasis> act negatively (although see <link linkend="bib32">Hoier et al., 2000<!-- :PMID0010766743 --></link>) and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=bar-1" role="_blank">bar-1</ulink></emphasis>/<symbol role="symbolfont">&#x03B2;</symbol>-<emphasis>cat</emphasis> and
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pop-1" role="_blank">pop-1</ulink>/TCF</emphasis> act positively (<link linkend="bib14">Eisenmann et
+                al., 1998<!-- :PMID0009716532 --></link>; <link linkend="bib18">Gleason et al.,
+                2002<!-- :PMID12023306 --></link>). The Wnt signal(s) and receptors controlling this pathway
+            remain to be identified, but genetic redundancy is highly likely. One target of this
+            pathway is the Hox gene <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-39" role="_blank">lin-39</ulink></emphasis>. In <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=bar-1" role="_blank">bar-1</ulink></emphasis>/<symbol role="symbolfont">&#x03B2;</symbol>-<emphasis>cat</emphasis>
+            mutants, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-39" role="_blank">lin-39</ulink></emphasis> expression is lost in cells adopting the F fate,
+            and forced expression of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-39" role="_blank">lin-39</ulink></emphasis> can partially rescue
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=bar-1" role="_blank">bar-1</ulink></emphasis>/<symbol role="symbolfont">&#x03B2;</symbol>-<emphasis>cat</emphasis> mutants. Interestingly, the Ras pathway is also
+            required for regulation of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-39" role="_blank">lin-39</ulink></emphasis> in the VPCs, and when both the
+            Wnt and Ras pathways are compromised, most VPCs adopt the F fate, suggesting this is the
+            default fate for the VPCs in the absence of Wnt and Ras signals.</para>
+		</sect2>
+<?newpage?>
+		<sect2>
+			<title>P12 fate specification</title>
+			<para>The posterior hypodermal
+            cells P11 and P12 migrate into the ventral midline from left and right lateral positions
+            during the L1 stage and divide in different patterns (<link linkend="bib77">Sulston and Horvitz, 1977<!-- :PMID838129 --></link>). Either cell can adopt the P12 fate before
+            migration, but the right side cell usually does in wild type animals (<link
+						linkend="bib79">Sulston and White, 1980<!-- :PMID7190941 --></link>). As with VPC fate
+            specification, a Wnt pathway and an RTK/Ras pathway interact to regulate expression of a
+            Hox gene (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-5" role="_blank">egl-5</ulink></emphasis>) to determine the P12 fate (<link linkend="bib38">Jiang and Sternberg, 1998<!-- :PMID0009584132 --></link>; <link linkend="bib13">Eisenmann and
+                Kim, 2000<!-- :PMID0011063687 --></link>). The Wnt pathway utilizes
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-44" role="_blank">lin-44</ulink>/Wnt</emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-17" role="_blank">lin-17</ulink>/Fz</emphasis> and
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=bar-1" role="_blank">bar-1</ulink></emphasis>/<symbol role="symbolfont">&#x03B2;</symbol>-<emphasis>cat</emphasis>, and the Ras pathway is similar to that used in
+            vulval induction. Both this process and VPC fate specification utilize the downstream
+            transcriptional regulators <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=eor-1" role="_blank">eor-1</ulink></emphasis> (encodes a BTB/zinc finger
+            protein) and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=eor-2" role="_blank">eor-2</ulink></emphasis> (novel) (<link linkend="bib33">Howard and
+                Sundaram, 2002<!-- :PMID12130541 --></link>). Mutation of the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tcl-2" role="_blank">tcl-2</ulink>
+            </emphasis>gene, which encodes a novel protein acting in the T and Z1/Z4 polarity
+            pathways (below), also causes defects in P12 fate specification (<link linkend="bib92">Zhao et al., 2003<!-- :PMID12679102 --></link>).</para>
+		</sect2>
+		<sect2>
+			<title>Postdereid formation from V5</title>
+			<para>The hermaphrodite
+            lateral seam cells, V1 - V6 and T, divide during larval life in a stem cell pattern to
+            give seam cells and cells that fuse with the hypodermal syncytium (<link linkend="bib77">Sulston and Horvitz, 1977<!-- :PMID838129 --></link>). For most V cells, the Vn.pa
+            daughter is a seam cell, but for V5, the V5.pa cell divides to generate a sensory
+            structure called the postdereid. The ability of V5 to generate the postdereid in either
+            sex depends on contacts between V cells (<link linkend="bib79">Sulston and White,
+                1980<!-- :PMID7190941 --></link>; <link linkend="bib84">Waring and Kenyon,
+                    1990<!-- :PMID2295086 --></link>, <link linkend="bib85">1991<!-- :PMID2023634 --></link>; <link linkend="bib86">Waring et al.,
+                        1992<!-- :PMID1363089 --></link>; <link linkend="bib1">Austin and Kenyon, 1994<!-- :PMID0008149911 --></link>; <link linkend="bib24">Harris et al.,
+                            1996<!-- :PMID0008898225 --></link>), and proper regulation of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-5" role="_blank">mab-5</ulink></emphasis> (<link
+						linkend="bib41">Kenyon, 1986<!-- :PMID3731276 --></link>; <link linkend="bib66">Salser and
+                Kenyon, 1996<!-- :PMID0008625851 --></link>). When V cells anterior or posterior to V5 are
+            ablated, V5.pa makes a seam cell instead of a postdereid. Ablation of neighboring seam
+            cells leads to ectopic expression of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-5" role="_blank">mab-5</ulink></emphasis> in V5.pa (<link
+						linkend="bib35">Hunter et al., 1999<!-- :PMID0009895327 --></link>). The ectopic expression of
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-5" role="_blank">mab-5</ulink></emphasis> in V5.pa is due to the activation of a Wnt pathway
+            involving <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-20" role="_blank">egl-20</ulink>/Wnt</emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-17" role="_blank">lin-17</ulink>/Fz</emphasis>, and
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=bar-1" role="_blank">bar-1</ulink></emphasis>/<symbol role="symbolfont">&#x03B2;</symbol>-<emphasis>cat</emphasis>, since mutations in these genes prevent the V5.pa
+                cell fate transformation caused by V6 ablation (<link linkend="bib35">Hunter et al.,1999<!-- :PMID0009895327 --></link>).
+            Further, in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pry-1" role="_blank">pry-1</ulink>/axin</emphasis> mutants, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-5" role="_blank">mab-5</ulink> </emphasis>is
+            ectopically expressed in V5.pa and no postdereid is made (Maloof et
+                al., 1999). These results suggest that contacts between V5.p and other
+            seam cells leads to the inhibition of a Wnt pathway that would otherwise be active in V5
+            and induce <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-5" role="_blank">mab-5</ulink></emphasis> expression. This Wnt pathway is likely to be a
+            canonical pathway based on the <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=bar-1" role="_blank">bar-1</ulink></emphasis>/<symbol role="symbolfont">&#x03B2;</symbol>-<emphasis>cat</emphasis> and
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pry-1" role="_blank">pry-1</ulink>/axin</emphasis> results. How cell contacts lead to Wnt pathway
+            inhibition is currently unknown.</para>
+		</sect2>
+		<sect2>
+			<title>Ray formation from V5 in the male tail</title>
+			<para>In the male,
+            V5, V6 and T divide to generate the sensory rays (<link linkend="bib77">Sulston and
+                Horvitz, 1977<!-- :PMID838129 --></link>; <link linkend="bib76">Sulston et al.,
+                1980<!-- :PMID7409314 --></link>). Proper ray formation requires <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-5" role="_blank">mab-5</ulink></emphasis>
+            expression in V5 and V6, and is regulated by interactions between the seam cells (<link
+						linkend="bib79">Sulston and White, 1980<!-- :PMID7190941 --></link>;
+            <link linkend="bib84"> Waring and Kenyon, 1990<!-- :PMID2295086 --></link>; <link linkend="bib9">Chow and Emmons,
+                1994<!-- :PMID7956833 --></link>; <link linkend="bib84">Salser and Kenyon,
+            1996<!-- :PMID0008625851 --></link>). Specifically, following ablation of V6 in males, V5 now
+            expresses <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-5" role="_blank">mab-5</ulink></emphasis> earlier than usual and adopts the V6 fate (<link
+						linkend="bib35">Hunter et al., 1999<!-- :PMID0009895327 --></link>). It is likely that a
+            canonical Wnt pathway is required for this V5 fate transformation when V6 is ablated,
+            since mutations in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-20" role="_blank">egl-20</ulink>/Wnt</emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=bar-1" role="_blank">bar-1</ulink></emphasis>/<symbol role="symbolfont">&#x03B2;</symbol>-<emphasis>cat</emphasis>
+            suppress the fate transformation (<link linkend="bib35">Hunter et al.,
+                1999<!-- :PMID0009895327 --></link>). In <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pry-1" role="_blank">pry-1</ulink>/axin</emphasis> mutants, anterior V
+            cells express <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-5" role="_blank">mab-5</ulink> </emphasis>and generate rays, and formation of these
+            ectopic rays requires <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=bar-1" role="_blank">bar-1</ulink></emphasis>/<symbol role="symbolfont">&#x03B2;</symbol>-<emphasis>cat</emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-5" role="_blank">mab-5</ulink></emphasis>
+            activity (Maloof et al., 1999). Inhibition of the
+            activity of this Wnt pathway by cell contact requires <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=dpy-22" role="_blank">dpy-22</ulink>/sop-1/mdt-12
+            </emphasis>and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sop-3" role="_blank">sop-3</ulink>/mdt-1.1</emphasis>, which encode homologs of the
+            transcriptional Mediator complex components MED12/TRAP230 and MED1/TRAP220, respectively
+                (<link linkend="bib90">Zhang and Emmons, 2000<!-- :PMID0010970880 --></link>, <link
+						linkend="bib91">2001<!-- :PMID11171401 --></link>; <link linkend="bib55">Moghal and Sternberg,
+                2003<!-- :PMID12441291 --></link>; <link linkend="bib3">Bourbon et al.,
+            2004<!-- :PMID15175151 --></link>). Direct or indirect targets of this Wnt pathway include the
+            caudal homolog <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pal-1" role="_blank">pal-1</ulink></emphasis>, and the Hox genes <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mab-5" role="_blank">mab-5</ulink>
+            </emphasis>and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-5" role="_blank">egl-5</ulink></emphasis>. Therefore, in both sexes, cell contacts
+            between seam cells appear to inhibit Wnt signaling.</para>
+		</sect2>
+	</sect1>
+	<sect1>
+		<title>Processes utilizing a noncanonical Wnt/<ulink url="http://www.wormbase.org/db/seq/protein?name=WRM-1;class=protein" role="_blank">WRM-1</ulink> pathway</title>
+		<para>In a number of <emphasis>C. elegans </emphasis>Wnt-mediated processes the Wnt pathway
+            components act in a manner different from a canonical Wnt signaling pathway. Unlike
+            vertebrates, where noncanonical Wnt signaling does not use either a <symbol role="symbolfont">&#x03B2;</symbol>-catenin or a
+            TCF/LEF protein, these <emphasis>C. elegans</emphasis> pathways all utilize
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=wrm-1" role="_blank">wrm-1</ulink></emphasis>/<symbol role="symbolfont">&#x03B2;</symbol>-<emphasis>cat</emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pop-1" role="_blank">pop-1</ulink>/TCF </emphasis>and the Nemo-like
+            kinase <ulink url="http://www.wormbase.org/db/seq/protein?name=LIT-1;class=protein" role="_blank">LIT-1</ulink>/Nlk.</para>
+		<sect2>
+			<title>P2/<ulink url="http://www.wormbase.org/db/get?name=EMS;class=Cell" role="_blank">EMS</ulink> signaling in endoderm induction</title>
+			<para>One of the
+            best-studied Wnt-mediated processes is the signal from the P2 cell to the <ulink url="http://www.wormbase.org/db/get?name=EMS;class=Cell" role="_blank">EMS</ulink> cell at
+            the four-cell stage of embryogenesis, which polarizes <ulink url="http://www.wormbase.org/db/get?name=EMS;class=Cell" role="_blank">EMS</ulink> to divide into an anterior MS
+            daughter that produces mesodermal tissues and a posterior E daughter that produces
+            endoderm (<xref linkend="figure4" />).</para>
+            <mediaobject id="figure4" xreflabel="Figure 4">
+				<imageobject>
+					<imagedata width="4in" entityref="fig4" align="center"/>
+				</imageobject>
+			<textobject><phrase>WormBook Wnt Signaling figure 4</phrase></textobject>
+            &fig4legend;
+            </mediaobject>
+            <para>Blastomere isolation and recombination experiments indicated that a signal from P2 is required for <ulink url="http://www.wormbase.org/db/get?name=EMS;class=Cell" role="_blank">EMS</ulink> to produce endoderm (<link linkend="bib19">Goldstein, 1992<!-- :PMID0001589023 --></link>, <link linkend="bib20">Goldstein, 1993<!-- :PMID8269853 --></link>). Forward and reverse genetic screens identified the components of a Wnt pathway acting in this process (<link linkend="bib49">Lin et al., 1995<!-- :PMID0007585963 --></link>; <link linkend="bib40">Kaletta et al., 1997<!-- :PMID0009384382 --></link>; <link linkend="bib62">Rocheleau et al., 1997<!-- :PMID0009288750 --></link>; <link linkend="bib80">Thorpe et al., 1997<!-- :PMID0009288749 --></link>) (<xref linkend="figure5" />). This pathway utilizes <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mom-1" role="_blank">mom-1</ulink>/porcupine</emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mom-2" role="_blank">mom-2</ulink>/Wnt</emphasis>, <emphasis>mom-3/<ulink url="http://www.wormbase.org/db/gene/gene?name=mig-14" role="_blank">mig-14</ulink></emphasis> (uncloned), <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mom-5" role="_blank">mom-5</ulink>/Fz</emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=dsh-2" role="_blank">dsh-2</ulink>/Dsh</emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mig-5" role="_blank">mig-5</ulink>/Dsh</emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=kin-19" role="_blank">kin-19</ulink>/CKI</emphasis>, <emphasis>gsk-3/GSK3</emphasis><symbol role="symbolfont">&#x03B2;</symbol>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=apr-1" role="_blank">apr-1</ulink>/APC</emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=wrm-1" role="_blank">wrm-1</ulink></emphasis>/<symbol role="symbolfont">&#x03B2;</symbol>-<emphasis>cat</emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pop-1" role="_blank">pop-1</ulink>/TCF</emphasis> (<xref linkend="figure4" />; <link linkend="bib49">Lin et al., 1995<!-- :PMID0007585963 --></link>; <link linkend="bib62">Rocheleau et al., 1997<!-- :PMID0009288750 --></link>; <link linkend="bib80">Thorpe et al., 1997<!-- :PMID0009288749 --></link>; <link linkend="bib53">Meneghini et al., 1999<!-- :PMID0010391246 --></link>; <link linkend="bib60">Peters et al., 1999<!-- :PMID10517632 --></link>; <link linkend="bib63">Rocheleau et al., 1999<!-- :PMID0010380924 --></link>; <link linkend="bib69">Schlesinger et al., 1999<!-- :PMID0010444600 --></link>; <link linkend="bib71">Shin et al., 1999<!-- :PMID0010488343 --></link>; <link linkend="bib2">Bei et al., 2002<!-- :PMID12110172 --></link>; <link linkend="bib82">Walston et al., 2004<!-- :PMID15572126 --></link>). In addition, a parallel pathway involving the kinases <ulink url="http://www.wormbase.org/db/seq/protein?name=MOM-4;class=protein" role="_blank">MOM-4</ulink>/Tak1 and <ulink url="http://www.wormbase.org/db/seq/protein?name=LIT-1;class=protein" role="_blank">LIT-1</ulink>/Nlk and the binding protein <ulink url="http://www.wormbase.org/db/seq/protein?name=TAP-1;class=protein" role="_blank">TAP-1</ulink>/Tab1 interacts with the Wnt pathway to regulate endoderm induction (<link linkend="bib53">Meneghini et al., 1999<!-- :PMID0010391246 --></link>; <link linkend="bib63">Rocheleau et al., 1999<!-- :PMID0010380924 --></link>; <link linkend="bib71">Shin et al., 1999<!-- :PMID0010488343 --></link>). Mutations in almost all of these genes lead to a Mom phenotype (More mesoderm) in which <ulink url="http://www.wormbase.org/db/get?name=EMS;class=Cell" role="_blank">EMS</ulink> divides to give two MS-like daughters. However, <ulink url="http://www.wormbase.org/db/gene/gene?name=pop-1" role="_blank">pop-1</ulink>/TCF mutations cause the opposite phenotype, two E-like daughters (<xref linkend="figure4" />).</para>
+            <para>MS, the anterior daughter that produces mesoderm, contains high levels
+            of nuclear <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>/TCF, while E, the posterior daughter that produces endoderm, contains
+            lower levels of nuclear <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>/TCF (<link linkend="bib49">Lin et al.,
+            1995<!-- :PMID0007585963 --></link>). In the absence of signal, <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>/TCF represses target genes
+            (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=end-1" role="_blank">end-1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=end-3" role="_blank">end-3</ulink></emphasis>) in cooperation with <ulink url="http://www.wormbase.org/db/seq/protein?name=UNC-37;class=protein" role="_blank">UNC-37</ulink>/Groucho and <ulink url="http://www.wormbase.org/db/seq/protein?name=HDA-1;class=protein" role="_blank">HDA-1</ulink>/histone deacetylase
+                (<link linkend="bib5">Calvo et al., 2001<!-- :PMID11742996 --></link>). When Wnt ligand
+            binds, activation of both the Wnt and TAK1/NLK pathways leads to formation of a
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=WRM-1;class=protein" role="_blank">WRM-1</ulink>/<ulink url="http://www.wormbase.org/db/seq/protein?name=LIT-1;class=protein" role="_blank">LIT-1</ulink> complex that phosphorylates <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>/TCF, which accumulates in the cytoplasm
+                (<link linkend="bib53">Meneghini et al., 1999<!-- :PMID0010391246 --></link>; <link
+						linkend="bib63">Rocheleau et al., 1999<!-- :PMID0010380924 --></link>; <link linkend="bib71">Shin et al., 1999<!-- :PMID0010488343 --></link>; <link linkend="bib51">Maduro et al.,
+                2002<!-- :PMID12142026 --></link>; <link linkend="bib74">Smit et al.,
+            2004<!-- :PMID14960582 --></link>). Recent evidence suggests that LIT-1-dependent phosphorylation
+            of <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>/TCF creates a binding site for PAR-5, a 14-3-3 protein, and this interaction
+            facilitates <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>/TCF nuclear export (<link linkend="bib50">Lo et al.,
+            2004<!-- :PMID15066285 --></link>). After <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>/TCF export from the E nucleus, other
+            transcription factors (MED-1, MED-2, CBP-1) then activate endoderm-specific target genes
+                (<link linkend="bib5">Calvo et al., 2001<!-- :PMID11742996 --></link>; <link linkend="bib51">Maduro et al., 2002<!-- :PMID12142026 --></link>). <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>/TCF subcellular localization is
+            also regulated by another parallel pathway containing the Src kinase <ulink url="http://www.wormbase.org/db/seq/protein?name=SRC-1;class=protein" role="_blank">SRC-1</ulink> and the
+            inactive receptor tyrosine kinase <ulink url="http://www.wormbase.org/db/seq/protein?name=MES-1;class=protein" role="_blank">MES-1</ulink> (<link linkend="bib2">Bei et al.,
+                2002<!-- :PMID12110172 --></link>), and by the acetylation of <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>/TCF protein by histone
+            acetylases (<link linkend="bib17">Gay et al., 2003<!-- :PMID12651889 --></link>).</para>
+	<mediaobject id="figure5" xreflabel="Figure 5">
+				<imageobject>
+					<imagedata width="4.2in" entityref="fig5" align="center"/>
+				</imageobject>
+			<textobject><phrase>WormBook Wnt Signaling figure 5</phrase></textobject>
+                        &fig5legend;
+                    </mediaobject>
+			<para>There are several ways in which the pathway acting in endoderm specification is
+            different from a canonical Wnt pathway. First, in this pathway
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=apr-1" role="_blank">apr-1</ulink>/APC</emphasis> and <emphasis>gsk-3/GSK3</emphasis><symbol role="symbolfont">&#x03B2;</symbol>
+				 act positively, even
+            though these same factors act in a negative manner in other <emphasis>C.
+                elegans</emphasis> processes (compare <xref linkend="figure3" /> and <xref linkend="figure5" />). The mechanistic explanation for
+            this is currently unknown. Second, is the involvement of
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lit-1" role="_blank">lit-1</ulink>/<ulink url="http://www.wormbase.org/db/gene/gene?name=mom-4" role="_blank">mom-4</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=src-1" role="_blank">src-1</ulink>/<ulink url="http://www.wormbase.org/db/gene/gene?name=mes-1" role="_blank">mes-1</ulink></emphasis> pathways. There is
+            no evidence yet for these genes functioning in any canonical process in the worm.
+            Finally, the method of regulation of <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink> is a major difference between this pathway
+            and canonical pathways in other species. In a canonical pathway, TCF acts with other
+            factors to repress transcription until Wnt signaling leads to the formation of a
+            <symbol role="symbolfont">&#x03B2;</symbol>-catenin/TCF complex that can activate these target genes. In this worm pathway,
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>/TCF acts as a transcriptional repressor in the absence of signal, but signaling
+            leads to derepression of target genes via export of <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>. No evidence for this type of
+            regulation of TCF/LEF proteins has been seen in other species.</para>
+   		</sect2>
+		<sect2>
+			<title>T cell polarity</title>
+			<para>In hermaphrodites, the TL and TR cells
+            of the tail divide asymmetrically to give an anterior daughter (T.a) that generates
+            mostly hypodermal cell fates, and a posterior daughter (T.p) that generates mostly
+            neural fates (phasmid cells) (<link linkend="bib77">Sulston and Horvitz,
+                1977<!-- :PMID838129 --></link>). The asymmetric division of the T cells is controlled by a
+            Wnt pathway involving <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-44" role="_blank">lin-44</ulink>/Wnt</emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-17" role="_blank">lin-17</ulink>/Fz</emphasis>,
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lit-1" role="_blank">lit-1</ulink>/Nlk</emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=wrm-1" role="_blank">wrm-1</ulink></emphasis>/<symbol role="symbolfont">&#x03B2;</symbol>-<emphasis>
+		cat</emphasis> and
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pop-1" role="_blank">pop-1</ulink>/TCF</emphasis>. <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-44" role="_blank">lin-44</ulink>/Wnt</emphasis> is expressed in
+            several tail hypodermal cells posterior to the T cells (<link linkend="bib29">Herman et al., 1995<!-- :PMID0007553861 --></link>). In <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-44" role="_blank">lin-44</ulink>/Wnt</emphasis> mutants,
+            the polarity of the T divisions is reversed such that anterior cells adopt neural fates
+            and posterior cells adopt hypodermal fates (<link linkend="bib28">Herman and
+                Horvitz, 1994<!-- :PMID0008026318 --></link>). However, in animals mutant for
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-17" role="_blank">lin-17</ulink>/Fz</emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lit-1" role="_blank">lit-1</ulink>/Nlk</emphasis>, and
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pop-1" role="_blank">pop-1</ulink>/TCF</emphasis>, and in animals expressing a dominant-negative
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>/TCF protein, the asymmetry is abolished and both anterior and posterior progeny
+            adopt hypodermal fates (<link linkend="bib75">Sternberg and Horvitz,
+            1988<!-- :PMID0003181641 --></link>; <link linkend="bib63">Rocheleau et al.,
+            1999<!-- :PMID0010380924 --></link>; <link linkend="bib25">Herman, 2001<!-- :PMID11171341 --></link>).
+            The asymmetry in fates is mirrored by an asymmetry in <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>/TCF: nuclear <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>/TCF
+            levels are higher in the anterior daughter (T.a) and lower in posterior daughter (T.p).
+            These <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>/TCF differences are reversed in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-44" role="_blank">lin-44</ulink>/Wnt </emphasis>mutants and
+            abolished in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-17" role="_blank">lin-17</ulink>/Fz</emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pop-1" role="_blank">pop-1</ulink>/TCF</emphasis> (RNAi)
+            mutants (<link linkend="bib25">Herman, 2001<!-- :PMID11171341 --></link>). The different
+            phenotype of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-44" role="_blank">lin-44</ulink>/Wnt</emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-17" role="_blank">lin-17</ulink>/Fz</emphasis> mutants
+            suggests that a second, anteriorly-expressed Wnt must also function in this process, but
+            this Wnt has not been identified yet. The asymmetric division of the T cells is likely
+            to be mediated through effects on gene expression, since mutations in components of the
+            NURD (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-27" role="_blank">egl-27</ulink></emphasis>) and SWI/SNF (<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=psa-1" role="_blank">psa-1</ulink></emphasis>,
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=psa-4" role="_blank">psa-4</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-9" role="_blank">lin-9</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-35" role="_blank">lin-35</ulink></emphasis>,
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-37" role="_blank">lin-37</ulink></emphasis>) chromatin remodeling complexes lead to loss of
+            asymmetry (<link linkend="bib27">Herman et al., 1999<!-- :PMID0009927605 --></link>; <link
+						linkend="bib67">Sawa et al., 2000<!-- :PMID0011030341 --></link>; <link linkend="bib11">Cui et
+                al., 2004<!-- :PMID15280233 --></link>). A likely target gene is <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tlp-1" role="_blank">tlp-1</ulink></emphasis>,
+            which encodes a C2H2 zinc finger protein expressed in T.p in a Wnt-dependent manner
+                (<link linkend="bib93">Zhao et al., 2002<!-- :PMID11880358 --></link>). The novel protein
+            TCL-2, which acts in several other Wnt-mediated processes, also regulates T cell
+            polarity (<link linkend="bib92">Zhao et al., 2003<!-- :PMID12679102 --></link>).</para>
+		</sect2>
+		<sect2>
+			<title>Z1/Z4 polarity</title>
+			<para>The bilaterally-symmetric somatic gonad
+            in the hermaphrodite develops from two precursor cells, Z1 and Z4 (<link linkend="bib34">Hubbard and Greenstein, 2000<!-- :PMID10822256 --></link>). The two gonad arms each have a
+            proximal-distal axis that is defined by an asymmetric first division of Z1and Z4 into
+            daughter cells with 'proximal' (e.g. anchor cell) and 'distal' (e.g. distal tip cell)
+            fates. The pathway regulating the Z1/Z4 asymmetric divisions involves
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-17" role="_blank">lin-17</ulink>/Fz</emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=wrm-1" role="_blank">wrm-1</ulink></emphasis>/<symbol role="symbolfont">&#x03B2;</symbol>-<emphasis>cat</emphasis>,
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lit-1" role="_blank">lit-1</ulink>/Nlk</emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pop-1" role="_blank">pop-1</ulink>/TCF</emphasis>, and mutation of
+            these genes leads to a loss of asymmetry and the generation of two daughters with
+            proximal fates (<link linkend="bib75">Sternberg and Horvitz, 1988<!-- :PMID0003181641 --></link>;
+                <link linkend="bib54">Miskowski et al., 2001<!-- :PMID11161562 --></link>; <link
+						linkend="bib73">Siegfried and Kimble, 2002<!-- :PMID11807036 --></link>). In this tissue,
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>/TCF nuclear asymmetry is also present between sister cells, with higher nuclear
+            GFP::POP-1 in proximal Z1/Z4 daughters than in distal ones, and this asymmetry is
+            abolished in Wnt pathway mutants (<link linkend="bib72">Siegfried et al.,
+                2004<!-- :PMID15020416 --></link>). Mutations in the genes <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sys-1" role="_blank">sys-1</ulink></emphasis>,
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=sys-3" role="_blank">sys-3</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gon-14" role="_blank">gon-14</ulink></emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gon-15" role="_blank">gon-15</ulink></emphasis>
+            and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=gon-16" role="_blank">gon-16</ulink></emphasis> also show the 'symmetric sisters' phenotype for Z1 and
+            Z4 (<link linkend="bib72">Siegfried et al., 2004<!-- :PMID15020416 --></link>). However in these
+            five mutants, GFP::POP-1 asymmetry is not lost, suggesting that these genes act
+            downstream or in parallel to the noncanonical Wnt pathway. None of these mutations maps
+            to a region of the genome with known Wnt pathway components. <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=tcl-2" role="_blank">tcl-2</ulink></emphasis>,
+            which encodes a novel protein, also acts in Z1/Z4 asymmetry (<link linkend="bib92">Zhao
+                et al., 2003<!-- :PMID12679102 --></link>).</para>
+		</sect2>
+	</sect1>
+	<sect1>
+		<title>Differences in noncanonical pathways</title>
+		<para>There are two significant differences between the three
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=wrm-1" role="_blank">wrm-1</ulink></emphasis>/<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lit-1" role="_blank">lit-1</ulink></emphasis>/<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pop-1" role="_blank">pop-1</ulink></emphasis> -
+            dependent noncanonical pathways described above. First, for P2-EMS signaling, loss of
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pop-1" role="_blank">pop-1</ulink>/TCF</emphasis> activity results in two daughters with posterior
+            fates, which is the fate of the cell with lower nuclear <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink> levels. This makes sense
+            if <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink> acts as a repressor of the posterior fate. However, for both the Z1/Z4 and T
+            cell asymmetric divisions, loss of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pop-1" role="_blank">pop-1</ulink>/TCF</emphasis> function results in
+            both daughters adopt the anterior/proximal fate, which is the fate of the cell with
+            higher nuclear <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink> levels. This suggests that the high levels of <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink> in the
+            anterior/proximal daughters may be nonfunctional, or that the <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink> in the
+            posterior/distal daughters is qualitatively different in activity or protein-protein
+            interactions in a manner dependent on Wnt-signaling (for discussion, see (<link
+					linkend="bib30">Herman and Wu, 2004<!-- :PMID14977564 --></link>). This phenomenon is
+            likely related to a second difference, which is that for the Z1/Z4 and T cell processes,
+            loss of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pop-1" role="_blank">pop-1</ulink>/TCF</emphasis> gives the same phenotype as loss of
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=wrm-1" role="_blank">wrm-1</ulink></emphasis>/<symbol role="symbolfont">&#x03B2;</symbol>-<emphasis>cat</emphasis> or <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lit-1" role="_blank">lit-1</ulink>/Nlk</emphasis>, but for P2-EMS
+            signaling loss of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pop-1" role="_blank">pop-1</ulink>/TCF</emphasis> activity gives the opposite phenotype.
+            This would be expected if in the former cases Wnt signaling leads to an active, low
+            abundance form of POP-1, while in the latter case Wnt signaling removes active <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>
+            from the nucleus. In any case, these results indicate that in <emphasis>C.
+            elegans</emphasis> there is variability in how the same components are utilized within
+            noncanonical Wnt signaling pathways.</para>
+	</sect1>
+	<sect1>
+		<title>Other processes utilizing Wnt pathway components</title>
+		<para>A number of other developmental processes are known to utilize Wnt pathway components,
+            but the genetic and molecular details of the pathways have not yet been worked out in
+            detail.</para>
+		<sect2>
+			<title>Spindle reorientation in embryogenesis</title>
+			<para>Before the <ulink url="http://www.wormbase.org/db/get?name=EMS;class=Cell" role="_blank">EMS</ulink> blastomere divides to give MS
+            and E, its centrosomes rotate 90<symbol role="symbolfont">&#x00B0;</symbol> from the left/right axis to the anterior/posterior
+            axis (<link linkend="bib78">Sulston et al., 1983<!-- :PMID6684600 --></link>; <link linkend="bib36">Hyman and White, 1987<!-- :PMID3680373 --></link>). Blastomere isolation experiments showed
+            that this spindle reorientation also depends on the P2 signal to <ulink url="http://www.wormbase.org/db/get?name=EMS;class=Cell" role="_blank">EMS</ulink> (<link
+						linkend="bib21">Goldstein, 1995<!-- :PMID7744956 --></link>). The upstream genes
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mom-1" role="_blank">mom-1</ulink>/porcupine</emphasis>, <emphasis> <ulink url="http://www.wormbase.org/db/gene/gene?name=mom-2" role="_blank">mom-2</ulink>/Wnt</emphasis>,
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mom-5" role="_blank">mom-5</ulink>/Fz</emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=kin-19" role="_blank">kin-19</ulink>/CKI</emphasis>, and
+                <emphasis>gsk-3/GSK3</emphasis><symbol role="symbolfont">&#x03B2;</symbol>
+				 are required for <ulink url="http://www.wormbase.org/db/get?name=EMS;class=Cell" role="_blank">EMS</ulink> spindle reorientation, but
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=apr-1" role="_blank">apr-1</ulink>/APC</emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=wrm-1" role="_blank">wrm-1</ulink></emphasis>/<symbol role="symbolfont">&#x03B2;</symbol>-<emphasis>cat</emphasis> and
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pop-1" role="_blank">pop-1</ulink>/TCF</emphasis> are not (<link linkend="bib69">Schlesinger et al.,
+                1999<!-- :PMID0010444600 --></link>; <link linkend="bib82">Walston et al.,
+            2004<!-- :PMID15572126 --></link>). <ulink url="http://www.wormbase.org/db/get?name=EMS;class=Cell" role="_blank">EMS</ulink> spindle reorientation can still occur when transcription
+            initiation is inhibited. The <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=src-1" role="_blank">src-1</ulink>/<ulink url="http://www.wormbase.org/db/gene/gene?name=mes-1" role="_blank">mes-1</ulink></emphasis> pathway that acts in
+            endoderm induction also regulates <ulink url="http://www.wormbase.org/db/get?name=EMS;class=Cell" role="_blank">EMS</ulink> spindle reorientation in parallel to the Wnt
+            pathway (<link linkend="bib2">Bei et al., 2002<!-- :PMID12110172 --></link>). Together these
+            results suggest that spindle reorientation may be regulated by Wnt-dependent
+            modification of cytoskeletal factors downstream of <emphasis>gsk-3/GSK3</emphasis><symbol role="symbolfont">&#x03B2;</symbol>.
+            Mutations in the same genes listed above for <ulink url="http://www.wormbase.org/db/get?name=EMS;class=Cell" role="_blank">EMS</ulink> also cause spindle orientation defects
+            in cell of the early AB lineage (<link linkend="bib62">Rocheleau et al.,
+                1997<!-- :PMID0009288750 --></link>; <link linkend="bib80">Thorpe et al.,
+            1997<!-- :PMID0009288749 --></link>; <link linkend="bib82">Walston et al.,
+            2004<!-- :PMID15572126 --></link>). Spindle reorientation in these cells depends on cell contact
+            with the C blastomere. The Dishevelled genes <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=dsh-1" role="_blank">dsh-1</ulink></emphasis>,
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=dsh-2" role="_blank">dsh-2</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mig-5" role="_blank">mig-5</ulink></emphasis> all function during spindle
+            reorientation for <ulink url="http://www.wormbase.org/db/get?name=EMS;class=Cell" role="_blank">EMS</ulink> and the AB descendants with <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=dsh-2" role="_blank">dsh-2</ulink> </emphasis>playing a
+            major role in EMS, but <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mig-5" role="_blank">mig-5</ulink></emphasis> having the larger role in the AB
+            lineage (<link linkend="bib82">Walston et al., 2004<!-- :PMID15572126 --></link>). Note that in
+            spindle reorientation <emphasis>gsk-3/GSK3</emphasis><symbol role="symbolfont">&#x03B2;</symbol>
+				 appears to act positively, rather
+            than as a negative regulator as in the canonical pathway. The <symbol role="symbolfont">&#x03B2;</symbol>-catenin-independent
+            process of spindle reorientation may represent the first example of a noncanonical Wnt
+            pathway in <emphasis>C. elegans</emphasis> similar to those seen in other species.</para>
+		</sect2>
+		<sect2>
+			<title><ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink> asymmetry in AB embryonic lineages</title>
+			<para>In the early embryo, most left/right cell
+            divisions generate daughters with equivalent <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>/TCF staining, but most
+            anterior/posterior divisions generate an anterior daughter with higher levels of
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>/TCF than in the posterior daughter (as for EMS, <link linkend="bib48">Lin et al.,
+                1998<!-- :PMID0009458047 --></link>). Loss of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pop-1" role="_blank">pop-1</ulink></emphasis>/TCF activity results in cell fate defects
+            in these A/P sister cells. Mutations in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=wrm-1" role="_blank">wrm-1</ulink></emphasis>/<symbol role="symbolfont">&#x03B2;</symbol>-<emphasis>cat</emphasis> and
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-17" role="_blank">lin-17</ulink>/Fz</emphasis> can abolish the <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>/TCF asymmetry in some lineages,
+            suggesting a Wnt pathway mediates the differences in <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>/TCF levels, as it does in
+            <ulink url="http://www.wormbase.org/db/get?name=EMS;class=Cell" role="_blank">EMS</ulink>. It was proposed that <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>/TCF is part of a general A/P coordinate system that can
+            function to distinguish otherwise equivalent sister cells (<link linkend="bib48">Lin et
+                al., 1998<!-- :PMID0009458047 --></link>).</para>
+			<para>In the AB lineage, the <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>/TCF asymmetry between A/P sisters depends on contact with
+            the descendants of P1, and can be induced by contact of early AB descendants (when there
+            are 8 or fewer AB descendants) with E, MS, C, P2 or P3 (<link linkend="bib57">Park and
+                Priess, 2003<!-- :PMID12810601 --></link>). <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mom-2" role="_blank">mom-2</ulink>/Wnt </emphasis>activity is
+            required in P2 and C, but not MS, to induce this <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>/TCF asymmetry.
+           <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mom-5" role="_blank">mom-5</ulink>/Fz</emphasis> is also required. Interestingly, at later stages (when
+            there are &gt;32 progeny from AB) the AB descendants can divide to generate
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>/TCF asymmetry without prior contact with P1 descendants, and in the absence of
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mom-2" role="_blank">mom-2</ulink>/Wnt </emphasis>activity, but <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mom-5" role="_blank">mom-5</ulink>/Fz</emphasis> and
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mom-4" role="_blank">mom-4</ulink>/TAK1</emphasis> are still required. Recent experiments (<link
+						linkend="bib58">Park et al., 2004<!-- :PMID15620652 --></link>) showed that membrane-localized
+            MOM-5::GFP is enriched at the posterior pole of these embryonic cells prior to their
+            division, so that the posterior daughter inherits more MOM-5::GFP. AB descendants
+            isolated from the embryo and allowed to divide in culture for several divisions also
+            showed this enrichment of MOM-5::GFP. In both embryos and cultured cells, high
+            MOM-5::GFP levels correlated with low low levels of <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>/TCF and vice versa. These
+            results suggest that at later times A/P asymmetry for <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>/TCF either occurs in a
+            Wnt-independent but Frizzled-dependent manner, or utilizes a different Wnt signal
+            generated by the AB descendents themselves. In some ways this sequential A/P
+            polarization of cell divisions resembles the Wnt/planar cell polarity in flies, except
+            for the involvement of <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>/TCF in <emphasis>C. elegans</emphasis>. Further work will
+            be required to establish a mechanistic similarity.</para>
+		</sect2>
+		<sect2>
+			<title>P7.p polarity</title>
+			<para>During vulval development the vulval precursor cells P5.p and P7.p
+            adopt the 2<symbol role="symbolfont">&#x00B0;</symbol> fate. The progeny of these two cells adopt the VulA, B, C and D fates, but
+            the polarity of the P5.p and P7.p lineages is mirror symmetric relative to the center of
+            the vulva (ABCD vs. DCBA, Greenwald, 1997; <link
+						linkend="bib43">Kornfeld, 1997<!-- :PMID0009055606 --></link>). Wnt signaling is necessary for
+            P7.p to adopt a polarity opposite that of P5.p. When P5.p and P7.p divide there is an
+            asymmetry in <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>/TCF levels in the nuclei of their daughters: for P5.p and its
+            descendants, the anterior daughters have higher levels, but this is reversed for P7.p
+            and its descendants (<link linkend="bib12">Deshpande et al., 2005<!-- :PMID15649465 --></link>).
+            Mutations in the receptors <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-17" role="_blank">lin-17</ulink>/Fz</emphasis> and
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-18" role="_blank">lin-18</ulink>/Ryk</emphasis> alter the P7.p lineage polarity so that it resembles
+            that of P5.p (<link linkend="bib75">Sternberg and Horvitz, 1988<!-- :PMID0003181641 --></link>;
+                <link linkend="bib37">Inoue et al., 2004<!-- :PMID15369677 --></link>), and cause a
+            corresponding reversal in <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>/TCF asymmetry (<link linkend="bib12">Deshpande et al.,
+                2005<!-- :PMID15649465 --></link>). Genetic redundancy exists for the Wnt signal, since
+            reduction of function of either <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-44" role="_blank">lin-44</ulink></emphasis> and
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mom-2" role="_blank">mom-2</ulink></emphasis>, or <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-44" role="_blank">lin-44</ulink></emphasis> and
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cwn-2" role="_blank">cwn-2</ulink></emphasis>, causes P7.p polarity defects (<link linkend="bib37">Inoue et
+                al., 2004<!-- :PMID15369677 --></link>). <ulink url="http://www.wormbase.org/db/seq/protein?name=MOM-2;class=protein" role="_blank">MOM-2</ulink>/Wnt is expressed in several cells in the
+            region, including the anchor cell, and <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-44;class=protein" role="_blank">LIN-44</ulink>/Wnt is weakly expressed in the anchor
+            cell, suggesting that a gradient of Wnt signals from the anchor cell may regulate P5.p
+            and P7.p lineage polarity. Elegant experiments suggest that <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-44;class=protein" role="_blank">LIN-44</ulink>/Wnt acts through
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-17;class=protein" role="_blank">LIN-17</ulink>/Fz, while <ulink url="http://www.wormbase.org/db/seq/protein?name=MOM-2;class=protein" role="_blank">MOM-2</ulink>/Wnt acts through <ulink url="http://www.wormbase.org/db/seq/protein?name=LIN-18;class=protein" role="_blank">LIN-18</ulink>/Ryk, indicating that two Wnts acts
+            through different types of Wnt receptors to regulate a common downstream process (<link
+						linkend="bib37">Inoue et al., 2004<!-- :PMID15369677 --></link>).</para>
+		</sect2>
+		<sect2>
+			<title>1<symbol role="symbolfont">&#x00B0;</symbol> lineage of P6.p</title>
+			<para>During vulval development, the VPC P6.p adopts the 1<symbol role="symbolfont">&#x00B0;</symbol> fate and
+            generates eight cells that fuse to become the VulE and Vul F cells (Greenwald, 1997; <link linkend="bib43">Kornfeld,
+            1997<!-- :PMID0009055606 --></link>). The four P6.p granddaughters have the fates E-F-F-E, from
+            anterior to posterior. This pattern of fates is disrupted by ablation of the anchor cell
+            and mutations affecting the Ras pathway. In addition, mutation of
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-17" role="_blank">lin-17</ulink>/Fz</emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-18" role="_blank">lin-18</ulink>/Ryk </emphasis>disrupts this pattern
+            of fates (<link linkend="bib83">Wang and Sternberg, 2000<!-- :PMID11060231 --></link>).</para>
+	    </sect2>
+		<sect2>
+		<title>HSN migration</title>
+	    <para>The hermaphrodite-specific neurons (HSNs) are born in the posterior of the embryo and migrate anteriorly to the midbody region near the vulva. In <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cam-1" role="_blank">cam-1</ulink>/Ror RTK</emphasis> mutants, the HSNs migrate too far into the anterior (<link linkend="bib15">Forrester et al., 1999<!-- : PMID0010476968 --></link>). The <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cam-1" role="_blank">cam-1</ulink>/Ror</emphasis> overmigration defect is suppressed by mutations in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-20" role="_blank">egl-20</ulink>/Wnt</emphasis> or <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mig-1" role="_blank">mig-1</ulink>/Fz</emphasis>, and is phenocopied by excess <ulink url="http://www.wormbase.org/db/seq/protein?name=EGL-20;class=protein" role="_blank">EGL-20</ulink>/Wnt expression (<link linkend="bib16">Forrester et al., 2004<!-- :PMID15371357 --></link>; <link linkend="bib42">Kim and Forrester, 2003<!-- :PMID14651925 --></link>). The ability of wild-type <ulink url="http://www.wormbase.org/db/seq/protein?name=CAM-1;class=protein" role="_blank">CAM-1</ulink>/Ror to rescue the overmigration defect is dependent on the extracellular cysteine rich domain, which is a Wnt binding domains in Frizzled receptors. Overexpression of this domain causes the HSNs to adopt a more posterior location, a phenotype also seen in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-20" role="_blank">egl-20</ulink>/Wnt</emphasis> mutants. These results suggest that a Wnt pathway involving <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-20" role="_blank">egl-20</ulink>/Wnt</emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=mig-1" role="_blank">mig-1</ulink>/Fz</emphasis> (but not <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-17" role="_blank">lin-17</ulink>/Fz</emphasis>, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=bar-1" role="_blank">bar-1</ulink></emphasis>/<symbol role="symbolfont">&#x03B2;</symbol>-<emphasis>cat</emphasis> or <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pry-1" role="_blank">pry-1</ulink>/axin</emphasis>) acts in the HSNs to regulate their migration, and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cam-1" role="_blank">cam-1</ulink></emphasis> interacts antagonistically with this pathway (<link linkend="bib16">Forrester et al., 2004<!-- :PMID15371357 --></link>).</para>
+		</sect2>
+		<sect2>
+			<title>V5 polarity</title>
+			<para>The lateral seam cell V5 divides to give an anterior daughter with high
+            nuclear <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>/TCF that fuses with hyp7, and a posterior daughter with low nuclear
+            <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink>/TCF that becomes a seam stem cell (<link linkend="bib48">Lin et al.,
+                1998<!-- :PMID0009458047 --></link>; <link linkend="bib25">Herman,
+            2001<!-- :PMID11171341 --></link>). In <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-20" role="_blank">egl-20</ulink>/Wnt</emphasis> mutants, the polarity of
+            this V5 division is reversed 50% of the time (<link linkend="bib87">Whangbo et al.,
+                2000<!-- :PMID0011023862 --></link>). Other Wnt pathway genes known to act downstream of
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-20" role="_blank">egl-20</ulink>/Wnt</emphasis> do not cause this phenotype. Although
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-20" role="_blank">egl-20</ulink>/Wnt</emphasis> is expressed in cells posterior to V5 (<link
+						linkend="bib88">Whangbo and Kenyon, 1999<!-- :PMID0010619031 --></link>), it does not appear
+            to directly control the polarity of V5, since expression of
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-20" role="_blank">egl-20</ulink>/Wnt</emphasis> in the anterior can rescue the V5 polarity reversal in
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-20" role="_blank">egl-20</ulink>/Wnt</emphasis> mutants (<link linkend="bib87">Whangbo et al.,
+                2000<!-- :PMID0011023862 --></link>). The signal that reorients V5 in
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-20" role="_blank">egl-20</ulink>/Wnt</emphasis> mutants appears to come from direct contact of V5 with
+            the posterior seam cells V6 and T, since ablation of these cells in
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-20" role="_blank">egl-20</ulink>/Wnt</emphasis> mutants restores wild type V5 polarity. The V5 polarity
+            defect in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-20" role="_blank">egl-20</ulink>/Wnt</emphasis> mutants is also suppressed by mutations in
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-17" role="_blank">lin-17</ulink>/Fz</emphasis> and enhanced by a <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pry-1" role="_blank">pry-1</ulink>/axin</emphasis>
+            mutation. Therefore, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-20" role="_blank">egl-20</ulink>/Wnt</emphasis> acts to counteract a signal from
+            neighboring cells that would otherwise cause V5 to divide with a reversed polarity, and
+            this signaling pathway involves <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-17" role="_blank">lin-17</ulink>/Fz </emphasis>and
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pry-1" role="_blank">pry-1</ulink>/axin</emphasis>. Interestingly, global overexpression of
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-20" role="_blank">egl-20</ulink>/Wnt</emphasis> leads to a loss of asymmetric division for all the V
+            cells, such that both daughters now adopt the anterior, hyp7 cell fate (<link
+						linkend="bib87">Whangbo et al., 2000<!-- :PMID0011023862 --></link>). It should be pointed out
+            that mutations in <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=cam-1" role="_blank">cam-1</ulink>/Ror RTK</emphasis>, which antagonizes
+                <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=egl-20" role="_blank">egl-20</ulink>/Wnt</emphasis> function in HSN migration (see above), lead to a V1
+            polarity defect in the anterior (<link linkend="bib15">Forrester et al.,
+                1999<!-- :PMID0010476968 --></link>).</para>
+		</sect2>
+		<sect2>
+			<title>Polarity of other tail cells</title>
+			<para>
+				<emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-44" role="_blank">lin-44</ulink></emphasis> encodes a Wnt protein
+            expressed in the posterior hypodermal cells hyp8, hyp9, hyp10 and hyp11 that regulates
+            Wnt signaling in the T cells and P12, acting via the receptor
+            <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-17" role="_blank">lin-17</ulink>/Fz</emphasis> (<link linkend="bib28">Herman and Horvitz,
+                1994<!-- :PMID0008026318 --></link>; <link linkend="bib29">Herman et al.,
+                1995<!-- :PMID0007553861 --></link>; <link linkend="bib38">Jiang and Sternberg,
+                1998<!-- :PMID0009584132 --></link>). <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-44" role="_blank">lin-44</ulink>/Wnt</emphasis> mutants also display
+            defects in asymmetric division and cell fates for the male blast cells B, U and F (<link
+						linkend="bib28">Herman and Horvitz, 1994<!-- :PMID0008026318 --></link>).
+               <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-17" role="_blank">lin-17</ulink>/Fz</emphasis> also causes polarity defects in the B cell in males
+                (<link linkend="bib75">Sternberg and Horvitz, 1988<!-- :PMID0003181641 --></link>).</para>
+		</sect2>
+		<sect2>
+			<title>Spicule development</title>
+			<para>After the initial <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-44" role="_blank">lin-44</ulink>/Wnt</emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-17" role="_blank">lin-17</ulink>/Fz</emphasis> -dependent asymmetric division of the B cell in males (see above), one sublineage leads to a cell division producing the spicule neuron SPD and its associated non-neuronal sheath cell. In <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-44" role="_blank">lin-44</ulink>/Wnt</emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-17" role="_blank">lin-17</ulink>/Fz</emphasis> mutants, a sheath to neuron cell fate transformation in this sublineage is seen, and two neurons are made (<link linkend="bib39">Jiang and Sternberg, 1999<!-- :PMID0010197987 --></link>). Overexpression of <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=pop-1" role="_blank">pop-1</ulink>/TCF</emphasis> in males also leads to this transformation. Together these results suggest a Wnt pathway mediates this asymmetric cell division. A mutation in the <emphasis>son-1</emphasis> gene causes a similar sheath to neuron transformation (<link linkend="bib39">Jiang and Sternberg, 1999<!-- :PMID0010197987 --></link>). <emphasis>son-1 </emphasis>encodes a widely expressed HMG-box containing protein. <emphasis>son-1</emphasis> mutants share phenotypes with, and can enhance the phenotypes of, <emphasis><ulink url="http://www.wormbase.org/db/gene/gene?name=lin-17" role="_blank">lin-17</ulink>/Fz</emphasis> mutants for vulval induction (2<symbol role="symbolfont">&#x00B0;</symbol> cell fate), somatic gonad morphogenesis and ray production in males. Thus, an HMG-box protein not of the TCF/LEF class, may also regulate Wnt signaling in <emphasis>C. elegans</emphasis>.</para>
+		</sect2>
+	</sect1>
+	<sect1>
+		<title>Conclusion</title>
+		<para>As with other species, Wnt signaling controls a large number of development processes in <emphasis>C. elegans</emphasis>, and the number is still growing. Some of these processes utilize canonical Wnt pathways like those first characterized in <emphasis>Drosophila</emphasis> and vertebrates. Others utilize many of the same components, but act in a noncanonical manner. Curiously, the noncanonical pathway in <emphasis>C. elegans </emphasis>appears different from those in other species (Wnt/Calcium, Wnt/PCP), as it uses both <symbol role="symbolfont">&#x03B2;</symbol>-catenin and TCF proteins. To date, one difference between the two types of pathways is the use of <ulink url="http://www.wormbase.org/db/seq/protein?name=BAR-1;class=protein" role="_blank">BAR-1</ulink>/<symbol role="symbolfont">&#x03B2;</symbol>-cat in the canonical pathway and <ulink url="http://www.wormbase.org/db/seq/protein?name=WRM-1;class=protein" role="_blank">WRM-1</ulink>/ <symbol role="symbolfont">&#x03B2;</symbol>-cat in the noncanonical pathway. Related to this, the method of target gene activation by <ulink url="http://www.wormbase.org/db/seq/protein?name=POP-1;class=protein" role="_blank">POP-1</ulink> differs between pathways.</para>
+				<para>It will be interesting to determine if simply the identity of the <symbol role="symbolfont">&#x03B2;</symbol>-catenin expressed in a cell controls the behavior of the pathway. For many pathways the analysis is still too preliminary to determine which type of pathway is used, but it is quite likely that some of the processes discussed here may act independently of <symbol role="symbolfont">&#x03B2;</symbol>-catenin and TCF. Future work may establish that these other types of noncanonical pathways act in the worm, as in other species.</para> </sect1> 
+	<sect1>
+		<title>Acknowledgements</title>
+		<para>The work in the Eisenmann lab is supported by grants from the NSF, IBN-9817123 and
+            IBN-0131485, and the NIH GM065424. I thank Julie Gleason, Scott Emmons and anonymous
+            referees for critical reading of the manuscript and Julie Gleason for help with figures.</para>
+	</sect1>
+	<sect1>
+		<title>References</title>
+		<para/>
+		&Wnt_Refs;
+</sect1>
+</article>
