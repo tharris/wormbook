@@ -108,10 +108,10 @@ sub generate_wormbase_links_from_acedb {
 			record($o,$u);
 		    }
 		    
-		    my $public_name = $object->Public_name || $object;
-		    ($o, $u) = makeURL($object,$templates->{$class}[0], $templates->{$class}[1],$class,$public_name);	    
-		    next unless (defined ($o) && defined ($u));
-		    record($o,$u);
+#		    my $public_name = $object->Public_name || $object;
+#		    ($o, $u) = makeURL($object,$templates->{$class}[0], $templates->{$class}[1],$class,$public_name);	    
+#		    next unless (defined ($o) && defined ($u));
+#		    record($o,$u);
 		} elsif ($class eq 'Phenotype') {
 		    my @synonyms   = $object->Synonym;
 		    push @synonyms,$object->Primary_name; 

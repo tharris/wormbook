@@ -22,7 +22,9 @@ Usage: $0 [--links-dir directory] [--xml-dir directory]
          Mark up biological entities in docbook XML with links to WormBase.
 	 
 	 Basic usage:
-	 $0 
+	 $0
+	 ... or specifying the directories explicitly ...
+	 $0 --links-dir current/ --xml-dir xml_in
 
        Options:
 	 --links-dir  where to find object-to-uri mappings. Default: current/
