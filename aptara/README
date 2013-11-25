@@ -58,12 +58,34 @@ in docbook.xml chapters.
 
    Description :
         
-	1. Creates a directories called reports/ and xml_out/
+	1. Creates a directory called xml_out/
 	2. Reads object-to-uri mappings in current/
 	3. Reads all .xml files in xml_in/
 	4. Extracts sentences in each xml file
 	5. Replaces known entities with appropriate URI from mappings
-	6. Prints new xml to xml_out/[FILENAME].xml
-	7. Once processed, files in xml_in are moved to xml_in-processed-YYYY-DD-MM/
+	6. Prints new xml to xml_out/DATE-[FILENAME]/[FILENAME].xml
+	7. Once processed, files in xml_in are moved to 
+             xml_out/DATE-[FILENAME]/original_docbook/[FILENAME]
 	
+NOTES:
 
+The markup_docbook_xml.pl script expects a 
+naming convention like:
+
+   WB_Kutscher_ShahamJM_text(.*).xml  
+
+      Minimally, the _text(.*).xml should be present.
+
+xml_out sample structure:
+
+    xml_out/YYYY-MM-DD-WB_Kutscher_ShahamJM/
+
+        WB_Kutscher_ShahamJM_text.xml
+		-- docbook xml with entities linked
+
+	WB_Kutscher_ShahamJM_text.log
+		-- report on number of entities linked
+	
+	original_docbook/
+		-- directory containing the original docbook
+		   xml files provided in xml_in.     
