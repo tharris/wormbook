@@ -9,9 +9,10 @@ use HTTP::Request;
 use LWP::UserAgent;
 use File::Basename;
 use Getopt::Long;
+use FindBin qw/$Bin/;
 
 my ($help,$wormbase,$defs_file);
-GetOptions('help=s'        => \$help,	   	   
+GetOptions('help=s'      => \$help,	   	   
 	   'wormbase=s'  => \$wormbase,
     );
 
@@ -53,8 +54,8 @@ sub generate_wormbase_links_from_acedb {
     print "\topening remote connection ...\n";
     my $db = Ace->connect(-host=>$wormbase,-port=>2005) || die "Connection failure: " . Ace->error;
     
-    my %status = $db->status;
-    $version   = $status{database}{version};
+    my %status  = $db->status;
+    my $version = $status{database}{version};
     
     if (-d $version) {
 	warn "$version/ already exists! We might be rewriting pre-existing files...\n";
@@ -63,14 +64,15 @@ sub generate_wormbase_links_from_acedb {
     }
     
     foreach my $class (sort keys %$templates){
-	next unless $class eq 'Protein';
-	
+#	next unless $class eq 'Variation';
+
 	print "\t\tfetching $class...\n";	
 	print "\t\t\tgenerating links for $class ...\n";
 	
 	open OUT, ">$version/$class.txt" or die "Cannot open $version/$class.txt : $!"; 	    
-	
-	if ($class eq 'Variation' || $class eq 'Protein') {
+
+	if ($class =~ /cds|clone|protein|strain|transgene|variation/i) {
+            # The following require special handling: cell, gene, phenotype
 	    my $dump_file = dump_objects_via_tace($class,$version);
 	    
 	    open IN,"<$dump_file";
@@ -92,12 +94,13 @@ sub generate_wormbase_links_from_acedb {
 		$object =~ s/\'//g;     # gets rid of primes
 		my ($o, $u) = "";
 		
-		if ($class eq 'Transgene') {
-		    my $public_name = $object->Public_name || $object;
-		    ($o, $u) = makeURL($object,$templates->{$class}[0], $templates->{$class}[1],$class,$public_name);	    
-		    next unless (defined ($o) && defined ($u));
-		    record($o,$u);
-		} elsif ($class eq 'Gene') {
+#		if ($class eq 'Transgene') {
+#		    my $public_name = $object->Public_name || $object;
+#		    ($o, $u) = makeURL($object,$templates->{$class}[0], $templates->{$class}[1],$class,$public_name);	    
+#		    next unless (defined ($o) && defined ($u));
+#		    record($o,$u);
+#		} elsif ($class eq 'Gene') {
+		if ($class eq 'Gene') {
 		    my %seen;
 		    my @synonyms = $object->Other_name;
 		    push @synonyms,$object->Public_name;
@@ -108,10 +111,10 @@ sub generate_wormbase_links_from_acedb {
 			record($o,$u);
 		    }
 		    
-		    my $public_name = $object->Public_name || $object;
-		    ($o, $u) = makeURL($object,$templates->{$class}[0], $templates->{$class}[1],$class,$public_name);	    
-		    next unless (defined ($o) && defined ($u));
-		    record($o,$u);
+#		    my $public_name = $object->Public_name || $object;
+#		    ($o, $u) = makeURL($object,$templates->{$class}[0], $templates->{$class}[1],$class,$public_name);	    
+#		    next unless (defined ($o) && defined ($u));
+#		    record($o,$u);
 		} elsif ($class eq 'Phenotype') {
 		    my @synonyms   = $object->Synonym;
 		    push @synonyms,$object->Primary_name; 
@@ -125,10 +128,9 @@ sub generate_wormbase_links_from_acedb {
 		    next unless (defined ($o) && defined ($u));
 		    record($o,$u);
 		}
-	    }
-	    
-	    close OUT or die " Cannot close $version/$class.txt : $!";       
+	    }	    
 	}
+	close OUT or die " Cannot close $version/$class.txt : $!";
     }
 }
 
@@ -150,7 +152,7 @@ sub read_link_definitions_file {
 
 sub record {
     my ($o,$u) = @_;
-#    $links{$o} = $u;
+#    $links{$o} = $u;    
     print OUT "$o\t$u\n";     
 }
 
@@ -159,34 +161,31 @@ sub makeURL{
     
     # Use public names as the target for markup, but stable WB* IDs in the URI.
     my $o;
-    if ($class && ($class eq 'Variation' 
-		   || $class eq 'Transgene'
-		   || $class eq 'Phenotype'
-		   || $class eq 'Gene'
-		   || $class eq 'Protein'
-	)) { 
+#    if ($class && ($class eq 'Variation' 
+#		   || $class eq 'Transgene'
+#		   || $class eq 'Phenotype'
+#		   || $class eq 'Gene'
+#		   || $class eq 'Protein'
+#	)) { 
 	$o = $public_name ? $public_name : $object;
-    } else {
-	return unless $object =~ /$rule/;
-	$o = $object;
-    }
+#    } else {
+#	return unless $object =~ /$rule/;
+#	$o = $object;
+#    }
     $url =~ s/SUB/$object/g;
     return ($o,$url);
 }
 
 sub dump_objects_via_tace {
-    my ($class,$version) = @_;    
-
-    my $pwd = `pwd`;
-    chomp $pwd;    
-    my $tmp_dir = "$pwd/ace_dumps";
+    my ($class,$version) = @_;        
+    my $tmp_dir = "$Bin/ace_dumps";
     system(`mkdir -p $tmp_dir`);
-    
+
     my $dump_file = "$tmp_dir/dump_${class}_from_ace.script";
     unless (-e $dump_file) {
 	print "\t\tdumping the $class class\n\n";
-	open OUT,">$tmp_dir/dump_${class}_from_ace.script";
-	print OUT <<END;
+	open TEMP,">$tmp_dir/dump_${class}_from_ace.script";
+	print TEMP <<END;
 //tace script to dump database
 Find $class
 Write $tmp_dir/$class.ace
@@ -194,7 +193,7 @@ END
 ;
 
 	system("/usr/local/wormbase/acedb/bin/tace /usr/local/wormbase/acedb/wormbase_$version < $tmp_dir/dump_${class}_from_ace.script");
-	close OUT;
+	close TEMP;
     }
     return "$tmp_dir/$class.ace";
 }
