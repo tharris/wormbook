@@ -1,0 +1,842 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Thermotaxis navigation behavior</title>
+      <meta name="generator" content="DocBook XSL Stylesheets V1.67.2">
+      <link rel="start" href="#WB_Goodman_etal_text" title="Thermotaxis navigation behavior">
+      <link rel="next" href="#sec1" title="1.&nbsp;Introduction">
+      <!--#include virtual="/ssi/header_article.html" -->
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<!--#include virtual="/ssi/boilerplate.html" -->
+	<div class="html_to_pdf_link">
+		<a href="thermonav.pdf">Download PDF version</a>
+	</div>
+      <div class="article" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h1 class="title"><a name="WB_Goodman_etal_text"></a>Thermotaxis navigation behavior<sup><a name="d0e6" href="#ftn.d0e6">*</a></sup></h1>
+               </div>
+               <div>
+                  <div class="author"><span class="author"><span class="othername">Miriam B. Goodman<sup>1<span class="emphasis"><em>&sect;</em></span></sup>, Mason Klein<sup>2</sup>, Samuel Lasse<sup>1</sup>, Linjiao Luo<sup>2,3<span class="emphasis"><em>&sect;</em></span></sup>, Ikue Mori<sup>4<span class="emphasis"><em>&sect;</em></span></sup>, Aravi Samuel<sup>2</sup>, Piali Sengupta<sup>5</sup><em><span class="remark"><sup><a name="d0e57" href="#ftn.d0e57">&sect;</a></sup></span></em>, Dong Wang<sup>1,6**</sup></span><br></span><span class="affiliation"><span class="orgname"><sup>1</sup>Department of Molecular and Cellular Physiology, Stanford University School of Medicine, Stanford CA, USA; </span></span><span class="affiliation"><span class="orgname"><sup>2</sup>Department of Physics, Harvard University, Cambridge MA, USA; </span></span><span class="affiliation"><span class="orgname"><sup>3</sup>Department of Physics, Nanjing University, Nanjing, China; </span></span><span class="affiliation"><span class="orgname"><sup>4</sup>Division of Molecular Biology, Nagoya University, Nagoya, Japan; </span></span><span class="affiliation"><span class="orgname"><sup>5</sup>Department of Biology, Brandeis University, Waltham MA, USA; </span></span><span class="affiliation"><span class="orgname"><sup>6</sup>Department of Anesthesiology, Stanford University School of Medicine, Palo Alto CA, USA; </span></span></div>
+               </div>
+            </div>
+            <hr>
+         </div>
+         <div class="toc">
+ 
+	   <div id="section_locator"><a href="/toc_wormmethods.html">
+	         <b>This chapter is in WormBook section:</b><br />
+		       > WormMethods<br />>> Behavioral assays
+		</a></div><hr />
+
+            <p><b>Table of Contents</b></p>
+            <dl>
+               <dt><span class="sect1"><a href="#sec1">1. Introduction</a></span></dt>
+               <dt><span class="sect1"><a href="#sec2">2. Thermal preference assay (15-25&deg;C)</a></span></dt>
+               <dd>
+                  <dl>
+                     <dt><span class="sect2"><a href="#sec2-1">2.1. Important variables to consider</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec2-2">2.2. Experimental procedure</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec2-3">2.3. Data analysis</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec2-4">2.4. Equipment</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="sect1"><a href="#sec3">3. Noxious Thermogradient Assay (&gt;26&deg;C)</a></span></dt>
+               <dt><span class="sect1"><a href="#sec4">4. Thermotaxis: tracking thermoclines</a></span></dt>
+               <dd>
+                  <dl>
+                     <dt><span class="sect2"><a href="#sec4-1">4.1. Preparation for Ttx assays</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec4-2">4.2. Reagents for the radial gradient Ttx assay</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec4-3">4.3. Protocol for radial Ttx assay (single animal)</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec4-4">4.4. Equipment and reagents for linear Ttx assay (population)</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec4-5">4.5. Protocol for linear Ttx assay</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec4-6">4.6. Preparation of starved animals</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="sect1"><a href="#sec5">5. Linear thermal gradient for population thermotaxis assay</a></span></dt>
+               <dd>
+                  <dl>
+                     <dt><span class="sect2"><a href="#sec5-1">5.1. Linear thermal stage</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec5-2">5.2. Video microscopy</a></span></dt>
+                     <dt><span class="sect2"><a href="#sec5-3">5.3. Analyses of experimental data</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="sect1"><a href="#sec6">6. Author contributions</a></span></dt>
+               <dt><span class="sect1"><a href="#sec7">7. References</a></span></dt>
+            </dl>
+         </div>
+         <div class="abstract">
+            <p class="title"><span class="bold"><strong>Abstract</strong></span></p>
+            <p><span class="bold"><strong>This chapter describes four different protocols used to assay thermotaxis navigation behavior of single, or populations of,
+                     <em>C. elegans</em> hermaphrodites on spatial thermal gradients within the physiological temperature range (15-25&deg;C). A method to assay avoidance
+                     of noxious temperatures is also described.</strong></span></p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec1"></a>1.&nbsp;Introduction
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>As first described by Hedgecock and Russell (<a href="#bib7">Hedgecock and Russell, 1975</a>), <em>C. elegans</em> exhibits complex and experience-dependent navigation behaviors on spatial thermal gradients. The specific navigational strategy
+               that <em>C. elegans</em> exhibits when experiencing a given ambient temperature (<em>T</em>) is dictated by a &#8216;memory&#8217; of its cultivation temperature (referred to throughout this chapter as <em>T</em><sub><em>c</em></sub>). At <em>T&gt;T<sub>c</sub></em>, animals move down the gradient towards colder temperatures in a behavior called negative thermotaxis (also called cryophilic
+               behavior); at temperatures around <em>T<sub>c</sub></em>, animals track isotherms; at <em>T&lt;T<sub>c</sub></em>, animals are either atactic or move up the gradient towards warmer temperatures (positive thermotaxis or thermophilic behavior)
+               (reviewed in <a href="#bib4">Garrity et al., 2010</a>; <a href="#bib10">Kimata et al., 2012</a>).
+            </p>
+            <p>Although not unexpected, it has now become clear that the specific assay conditions and the method used for quantifying the
+               results greatly influence the outcome of thermotaxis behavioral assays (<a href="#bib1">Beverly et al., 2011</a>; <a href="#bib9">Jurado et al., 2010</a>; <a href="#bib15">Ramot et al., 2008</a>). Several different thermotaxis behavioral assay protocols have been described in the literature (eg., <a href="#bib12">Mori and Ohshima, 1995</a>; <a href="#bib15">Ramot et al., 2008</a>; <a href="#bib16">Ryu and Samuel, 2002</a>; <a href="#bib17">Yamada and Ohshima, 2003</a>; <a href="#bib19">Zariwala et al., 2003</a>; summarized in <a href="#bib10">Kimata et al., 2012</a>). Variability in key experimental and analyses parameters has led to some confusion about the contributions of specific molecules
+               and neurons to thermotaxis behavior. Critical experimental variables include the steepness and stability of the thermal gradient,
+               time period of the assay, the temperature at which the assay is initiated, and the cultivation conditions (temperature, humidity)
+               of the animals. Critical measurement issues include whether the behaviors of populations or individual animals are being monitored,
+               and whether end-point accumulation or underlying navigational decisions are being quantified.
+            </p>
+            <p>In this chapter we present updated protocols for thermotaxis behavioral assays and one for noxious heat avoidance. A microfluidic
+               device for measuring orientation responses of semi-restrained worms to temperature steps has also been described (<a href="#bib11">McCormick et al., 2011</a>); this method is not included here. Four of the provided protocols allow measurement of thermotaxis and/or isothermal tracking
+               behavior within the physiological temperature range (15-25&deg;C) (<a href="#sec2" title="2.&nbsp;Thermal preference assay (15-25&deg;C)">Sections 2</a>, <a href="#sec4" title="4.&nbsp;Thermotaxis: tracking thermoclines">4</a>, <a href="#sec5" title="5.&nbsp;Linear thermal gradient for population thermotaxis assay">5</a>); an additional protocol describes a method to measure avoidance of noxious temperature ranges (<a href="#sec3" title="3.&nbsp;Noxious Thermogradient Assay (&gt;26&deg;C)">Section 3</a>). The protocols also describe different data analysis methods and the use of either single animals or populations. No one
+               protocol is better or worse than others, each simply measures different parameters. The bottom line is that experimenters
+               should not only ensure that there is consistency across thermotaxis protocols used within and across experiments, but also
+               report all relevant experimental variables. This allows the results to be interpreted in the context of the specific experimental
+               method utilized, as well as to be reproduced reliably.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec2"></a>2.&nbsp;Thermal preference assay (15-25&deg;C)
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>The thermal preference assay (<a href="#bib7">Hedgecock and Russell, 1975</a>) captures the combined effects of both thermotaxis (a biased random walk) and isothermal tracking (reviewed by <a href="#bib4">Garrity et al., 2010</a>; <a href="#bib7">Hedgecock and Russell, 1975</a>; <a href="#bib10">Kimata et al., 2012</a>) by exposing a population of animals grown at temperatures between 15 and 25&deg;C to a stable, one-dimensional, linear thermal
+               gradient between 15&deg;C and 25&deg;C. This protocol describes an updated implementation of this assay (<a href="#bib15">Ramot et al., 2008</a>) that uses thermoelectric coolers to establish stable, well-controlled, and adjustable linear thermal gradients.
+            </p>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2-1"></a>2.1.&nbsp;Important variables to consider
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p><span class="bold"><strong><em>Animals</em>:</strong></span> We use synchronized populations of L4 or young adult animals and aim to distribute between 50 and 400 worms on to each assay
+                  plate. Fewer animals increase assay-to-assay variability, while more animals increase the chances of animal-to-animal interactions.
+                  Care should be taken to control feeding state since animals deprived of food for more than 3 hours exhibit altered responses
+                  to thermal gradients in the physiological range (15 to 25&deg;C) (<a href="#bib2">Chi et al., 2007</a>; <a href="#bib7">Hedgecock and Russell, 1975</a>; <a href="#bib15">Ramot et al., 2008</a>). Similarly, as mentioned above, thermotaxis behavior is sensitive to <em>T</em><sub><em>c</em></sub> (<a href="#bib7">Hedgecock and Russell, 1975</a>). Consequently, this variable must also be tightly controlled.
+               </p>
+               <p><span class="bold"><strong><em>Assay conditions</em>:</strong></span> High relative humidity (RH) affects the response to thermal gradients (<a href="#bib13">Murakami et al., 2005</a>; <a href="#bib20">Zhao et al., 2003</a>). One solution to this complication is to conduct assays in a humidity-controlled environment (30% RH is a good choice).
+                  If such an environment is not available, an alternative is to measure RH with a digital hygrometer and to reject assays conducted
+                  whenever RH exceeds 50%.
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2-2"></a>2.2.&nbsp;Experimental procedure
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p><a href="#figure1">Figure 1</a> is a graphical summary of the assay procedure.
+               </p>
+               <div class="mediaobject" align="center"><a name="figure1"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="432">
+<tr>
+  <td align="center"><p><a href="thermonav_fig1.jpg"><img src="thermonav_fig1_s.jpg" border="2" align="middle" alt=" figure 1"></a>
+  </td>
+</tr>
+                  </table>
+                  <div class="caption">
+                     <p><b>Figure 1. Graphical summary of the procedure for measuring thermal preference of a population of nematodes on linear thermal
+                           gradients (<a href="#sec2" title="2.&nbsp;Thermal preference assay (15-25&deg;C)">Section 2</a>).&nbsp;</b>This procedure assumes that synchronized populations of the desired animals have been prepared in advance.
+                     </p>
+                  </div>
+               </div>
+               <div class="sect3" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="sec2-2-1"></a>2.2.1.&nbsp;Assay plates:
+                           </h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p>We use vented, rectangular assay plates (7.6 cm <em>l</em> x 5 cm <em>w</em> x 1 cm <em>d</em>, <a href="http://www.labscientific.com/" target="_top">LabScientific</a>, Livingston, NJ) in place of circular Petri plates to simplify data handling and interpretation. Assay plates are prepared
+                     fresh each day and allowed to cool and dry at room temperature with the lid off for 1.5 &#8211; 2 hr. (When RH is low, we use shorter
+                     drying times. When RH is high, longer drying times are needed.). Use a leveling gel casting platform to ensure a level surface.
+                     Assay plates are filled with 10 mL of cool (&#8804;55&deg;C), liquid &#8216;assay agar&#8217;, assembled as follows: 1) Dissolve agar (17 g) and
+                     NaCl (3 g) in 975 mL ddH<sub>2</sub>0, autoclave for 20 min; 2) Cool to 55&deg;C; 3) Add CaCl<sub>2</sub> (1 mL of 1 M solution), MgSO<sub>4</sub> (1 mL of 1 M solution), and KH<sub>2</sub>PO<sub>4</sub> (25 mL of 1 M solution, pH 6.0).
+                  </p>
+               </div>
+               <div class="sect3" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="sec2-2-2"></a>2.2.2.&nbsp;Gradient set up:
+                           </h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p>The general set-up consists of an aluminum plate (25 cm <em>l</em> &times; 12 cm <em>w</em>, 1.6 mm <em>d</em>) with coolers attached to each end. Controllers and feedback thermistors independently control the temperature of each cooler.
+                     Cold water is delivered to the thermoelectric coolers either from the tap or from a refrigerated recirculating chiller. A
+                     handheld infrared thermometer is used to measure temperature on the thermal gradient plates and on assay plates. See below
+                     for equipment sources.
+                  </p>
+                  <p>To establish the desired thermal gradient across the aluminum plate (we typically use a gradient of 1.0&deg;C/cm), first, turn
+                     on your cooling system (tap water or refrigerated re-circulating pump). Next, use the controller software to load the desired
+                     temperature on to the controllers for the thermoelectric cooler at each end. Position assay plates at the center of the aluminum
+                     gradient plate and allow them to equilibrate for ~10 min, generating the desired linear thermal gradient across the agar surface.
+                     Verify temperature using a hand-held infrared thermometer. Use a thin layer of water between the assay plate and the aluminum
+                     gradient plate to maximize heat transfer.
+                  </p>
+               </div>
+               <div class="sect3" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="sec2-2-3"></a>2.2.3.&nbsp;Assay
+                           </h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p>Once assay plates reach thermal equilibrium, we transfer synchronized, well-fed young adult worms from two 6 cm growth plates
+                     in ddH<sub>2</sub>O to a 1.5 mL centrifuge tube. Spin at low speed to pellet the animals and wash twice in ddH<sub>2</sub>O, resuspend the animals in 100 &micro;L and transfer 20 &micro;L to a narrow starting zone at the center of each assay plate. Aim for
+                     ~200 animals/assay. Disperse the droplet across the surface using a &#8216;brush&#8217; made from a thin gel-sequencing pipette tip or
+                     fine paintbrush. Try not to gouge the agar since the animals will burrow. The assay clock starts as soon as animals begin
+                     to crawl away from the starting zone, which should take 1-2 min. We conduct assays for 10 min, since the distribution of animals
+                     reaches a steady state in this time window (<a href="#bib15">Ramot et al., 2008</a>).
+                  </p>
+               </div>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2-3"></a>2.3.&nbsp;Data analysis
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>We take a digital image of each assay plate using a digital camera + macro lens and oblique illumination delivered by a ring
+                  of red LEDs as described (<a href="#bib6">Glauser et al., 2011</a>). These images are used to determine the final position of each worm and to calculate a thermotaxis index: TI = (W-C)/(W+C)
+                  (where W indicates warm and C indicates cold), excluding any animals that may remain in the starting zone. A TI of -1 indicates
+                  that all of the animals moved to the colder side of the plate, while a TI of +1 indicates that all of the animals moved to
+                  the warmer side. Two methods are available for counting animals: 1) use particle counting macros in ImageJ (download from
+                  <a href="http://http://rsbweb.nih.gov/ij/" target="_top">http://http://rsbweb.nih.gov/ij/</a>; see also <a href="http://en.wikipedia.org/wiki/ImageJ" target="_top">http://en.wikipedia.org/wiki/ImageJ</a>), as described (<a href="#bib6">Glauser et al., 2011</a>), or 2) kill animals <em>in situ</em> by exposure to choloroform vapor and count them manually under a stereomicroscope as described by Ramot et al. (<a href="#bib15">Ramot et al., 2008</a>).
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec2-4"></a>2.4.&nbsp;Equipment
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="orderedlist">
+                  <ol type="1">
+                     <li>
+                        <p>Polystat Refrigerated Circulating Waterbath (Catalog No.12108-00, Cole-Parmer)</p>
+                     </li>
+                     <li>
+                        <p>Thermoeletric (Peltier) Device (MCW50-T and MCW60-T VGA Coolers, Swiftech)</p>
+                     </li>
+                     <li>
+                        <p>Thermoelectric Module Temperature Controller (5C7&#8211;365 and 5C7&#8211;378, McShane, Inc.)</p>
+                     </li>
+                     <li>
+                        <p>Photo Acquisition System: IC-Capture 2.0 controlled USB CCD Monochrome Camera (Model DMK 21BU04, The Imaging Source); Light
+                           source: Red LEDs ring controlled by a variable voltage regulator (Model TDGC-0.5KM, <a href="http://Variac.com" target="_top">Variac.com</a>)
+                        </p>
+                     </li>
+                     <li>
+                        <p>PC to connect to temperature controllers and to capture images</p>
+                     </li>
+                     <li>
+                        <p>Infrared thermometer: Mastercool 5226-A-SP or equivalent: &plusmn;2% accuracy, 0.1&deg;C resolution</p>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec3"></a>3.&nbsp;Noxious Thermogradient Assay (&gt;26&deg;C)
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>The same equipment described for the population thermal preference assay (<a href="#sec2" title="2.&nbsp;Thermal preference assay (15-25&deg;C)">Section 2</a>) can be used to conduct noxious thermogradient assays designed to measure the population response to thermal gradients in
+               the noxious range, &gt;26&deg;C (<a href="#bib6">Glauser et al., 2011</a>). This behavior persists in animals deprived of food for more than 3 hours, allowing the study of noxious heat avoidance
+               independently of thermotaxis. In this assay, the center of the gradient is set to &#8764;33&deg;C and a gradient of &#8764;1.0&deg;C/cm is established.
+               The starting zone is established at the cooler end of the assay plate by placing washed animals (as described in <a href="#sec2-2-3" title="2.2.3.&nbsp;Assay">Section 2.2.3</a>) in a 1 cm-wide vertical stripe. Animals are allowed to move freely for 15 min. The distribution of animals is measured as
+               follows: 1) a digital image is acquired using oblique illumination via LEDs; 2) the position of each worm is determined using
+               particle tracking macros in ImageJ; and 3) the plate is divided into 15 bins of equal width and the number of worms in each
+               bin is counted automatically.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec4"></a>4.&nbsp;Thermotaxis: tracking thermoclines
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>This section describes two thermotaxis (Ttx) assay methods to quantify the complex behavior exhibited by <em>C. elegans</em>: radial Ttx assay (<a href="#bib12">Mori and Ohshima, 1995</a>) and linear Ttx assay (<a href="#bib8">Ito et al., 2006</a>).
+            </p>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec4-1"></a>4.1.&nbsp;Preparation for Ttx assays
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="sect3" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="sec4-1-1"></a>4.1.1.&nbsp;Important considerations:
+                           </h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p>The working bench should be level. There should be no source of air currents and vibration nearby&#8212;such as a centrifuge or
+                     a draft chamber. Do not use an incubator for thermotaxis assays because it is strong source of wind from the fan and vibration
+                     from the compressor. Room temperature should be kept at 25 &plusmn; 1&deg;C. Avoid local temperature changes caused by sunlight. Low
+                     humidity (20-30%) is preferred for the assay.
+                  </p>
+               </div>
+               <div class="sect3" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="sec4-1-2"></a>4.1.2.&nbsp;Growth of C. elegans:
+                           </h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p><span class="underline">Incubator for animal growth:</span> A small volume (100-150L) incubator is preferred to maintain stable temperature.
+                  </p>
+                  <p><span class="underline">Cultivation plates:</span> Use a 6 cm plate containing 14 ml of NGM, which is the minimal volume required to establish a sufficient bacterial lawn.
+                     The NGM plates are spread with overnight-cultured <em>E. coli,</em> incubated for a day at room temperature (or overnight at 37&deg;C), and stored at room temperature. Do not use old seeded NGM
+                     plates (over 2 weeks).
+                  </p>
+                  <p><span class="underline">Animal cultivation:</span> Use healthy adult animals from uncrowded plates. Animals should be maintained by transferring 2 to 3 animals to a new NGM
+                     plate before starving. Do not use starved animals or those chunked from a starved plate. To avoid crowding, you may transfer
+                     &#8764;15 L4 larvae to a fresh and pre-incubated NGM plate prior to the assay. Grow these transferred animals for 8-24 hr (depending
+                     on cultivation temperature) and use for assays. To obtain sufficient animals for the linear Ttx assay, pick a single L4 animal
+                     onto a 6 cm plate containing 14 ml of nematode growth medium (NGM) with food (<a href="http://www.wormbase.org/db/get?name=OP50;class=Strain" target="_blank">OP50</a>) and incubate the plates for 72 hr at 23&deg;C, 90 hr at 20&deg;C, or 100 hr at 17&deg;C, to grow sufficient progeny. See <a href="#sec4-6" title="4.6.&nbsp;Preparation of starved animals">Section 4.6</a> below for the protocol for preparation of starved animals.
+                  </p>
+               </div>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec4-2"></a>4.2.&nbsp;Reagents for the radial gradient Ttx assay
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Ttx medium consists of 2% agar, 0.3% NaCl and 25 mM potassium phosphate buffer (pH 6.0). After autoclaving, pour exactly 8
+                  ml of the medium into a 9 cm plate. Store at 4&deg;C and use within 2 weeks. For the temperature source, we use vials filled with
+                  frozen glacial acetic acid (stored at 4&deg;C). Glass vials are 10 cm long and 2.7 cm in diameter. Freeze glacial acetic acid
+                  at &#8722;20&deg;C and store at 4&deg;C.
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec4-3"></a>4.3.&nbsp;Protocol for radial Ttx assay (single animal)
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="orderedlist">
+                  <ol type="1">
+                     <li>
+                        <p>Prior to the assay, remove lids of Ttx plates and dry the plates for about 30 min at room temperature. Do not dry Ttx plates in
+                           a windy place like in a fume hood. Overdrying Ttx plates causes the plates&#8217; surface to become rough. The surface of Ttx plates
+                           should be smooth as a mirror.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Invert the Ttx plates; mark  the center and a point 1.5 cm from the edge on the bottom of the plate.</p>
+                     </li>
+                     <li>
+                        <p>Take the vials containing frozen glacial acetic acid out from  the cold room and leave the vials for 10 min at room temperature
+                           (25&deg;C) to allow the acetic acid to start to melt. The melting point of glacial acetic acid is 16.7&deg;C.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Place the vial at the center of the Ttx plate.</p>
+                     </li>
+                     <li>
+                        <p>Leave the plates for &#8764;10-15 min at room temperature to form a stable radial thermal gradient on the surface of the Ttx plate.
+                           The thermal gradient is maintained for 1 hr on the plate with the glacial acetic acid vial. Replace the vials when half the
+                           glacial acid is melted.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Remove the vial and place an animal at the marked point near the edge of the Ttx plate. Do not scratch the surface of the
+                           Ttx plate and avoid bringing <em>E. coli</em> onto the Ttx plate. We generally transfer the animal first to either the unseeded part of a seeded NGM plate or onto an unseeded
+                           NGM plate for a few minutes before transferring to the Ttx plate.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Replace the vial at the center of the Ttx plate.</p>
+                     </li>
+                     <li>
+                        <p>Leave the plates for 50-60 min at room temperature. Ensure that the plate is not subjected to wind or vibration.</p>
+                     </li>
+                     <li>
+                        <p>Remove the vial and put several drops of chloroform on the lid to stop animal movement.</p>
+                     </li>
+                     <li>
+                        <p>Place the Ttx plates at 4&deg;C until they are photographed.</p>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec4-4"></a>4.4.&nbsp;Equipment and reagents for linear Ttx assay (population)
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Equipment required for establishing the linear thermal gradient was originally described by Hedgecock and Russell (<a href="#bib7">Hedgecock and Russell, 1975</a>). A stable, linear thermal gradient is established on a 60 cm long aluminum platform, one end of which is placed in a water
+                  bath at 5&deg;C and the opposite end in a water bath at 35&deg;C. A thin aluminum (135 mm &times; 95 mm x 1 mm) plate is placed on the aluminum
+                  platform (<a href="#figure2">Figure 2</a>). A square Ttx plate (14 cm &times; 10 cm x 1.45 cm in height) containing 18 ml of Ttx medium (see <a href="#sec4-1" title="4.1.&nbsp;Preparation for Ttx assays">Section 4.1</a> above) is placed on the aluminum plate such that the center of the Ttx plate is aligned at the surface temperature of 20&deg;C.
+                  The space between the bottom of the Ttx plate and the aluminum plate is filled with water. This procedure establishes a linear
+                  thermal gradient ranging from approximately 17 to 23&deg;C on the agar surface.
+               </p>
+               <div class="mediaobject" align="center"><a name="figure2"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="432">
+<tr>
+  <td align="center"><p><a href="thermonav_fig2.jpg"><img src="thermonav_fig2_s.jpg" border="2" align="middle" alt=" figure 2"></a>
+  </td>
+</tr>
+                  </table>
+                  <div class="caption">
+                     <p><b>Figure 2. Setup and quantification of linear Ttx assay (<a href="#sec3" title="3.&nbsp;Noxious Thermogradient Assay (&gt;26&deg;C)">Section 3</a>).&nbsp;</b>See text for details.
+                     </p>
+                  </div>
+               </div>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec4-5"></a>4.5.&nbsp;Protocol for linear Ttx assay
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="orderedlist">
+                  <ol type="1">
+                     <li>
+                        <p>Collect the animals (typically from 3-5 NGM plates per assay) with 1 ml of S-basal buffer at 20&deg;C. Wash once with S-basal
+                           buffer and then once with water. These washing steps should be carried out within 6 min in a water bath maintained at 20&deg;C.
+                           Place approximately 100&#8211;400 animals at the center of the Ttx plate.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Remove excess water with tissue paper within 2 min. After the animals begin to crawl on the agar surface, leave the Ttx plates
+                           undisturbed for 60 min.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Stop the assay by placing several drops of chloroform gas on the assay lid. Count the number of adult animals in each of the
+                           eight regions of the plate (<a href="#figure2">Figure 2</a>). The Ttx index is calculated as shown in <a href="#figure2">Figure 2</a>.
+                        </p>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec4-6"></a>4.6.&nbsp;Preparation of starved animals
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="sect3" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="sec4-6-1"></a>4.6.1.&nbsp;Reagents:
+                           </h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p><span class="underline">9 cm starvation plates:</span> The medium consists of 2% agar, 1 mM CaCl<sub>2</sub>, 1 mM MgSO<sub>4</sub>, and 25 mM pH 6.0 potassium phosphate. After autoclaving, pour exactly 8 ml of the medium into a 9 cm plate. Store at 4&deg;C
+                     and use within one month. <span class="underline">NG buffer:</span> NG buffer consists of 0.3% NaCl, 1 mM CaCl<sub>2</sub>, 1 mM MgSO<sub>4</sub>, and 25 mM pH 6.0 potassium phosphate.
+                  </p>
+               </div>
+               <div class="sect3" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="sec4-6-2"></a>4.6.2.&nbsp;Starvation methods:
+                           </h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p>Two methods for starving animals prior to performing either the radial or the linear Ttx assay are provided.</p>
+                  <p><span class="underline">Method 1.</span></p>
+                  <div class="orderedlist">
+                     <ol type="1">
+                        <li>
+                           <p>Incubate starvation plates at the assay temperature for &gt;3 hr.</p>
+                        </li>
+                        <li>
+                           <p>Incubate NG buffer in the water bath set at the assay temperature.</p>
+                        </li>
+                        <li>
+                           <p>Collect well-fed animals into a tube with pre-incubated NG buffer.</p>
+                        </li>
+                        <li>
+                           <p>Wash animals twice with NG buffer.</p>
+                        </li>
+                        <li>
+                           <p>Transfer animals to the pre-incubated starvation plate.</p>
+                        </li>
+                        <li>
+                           <p>Seal the starvation plate with Parafilm<sup>&reg;</sup>.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Incubate at the assay temperature for assay for the appropriate time (at 17&deg;C for 2-3 hr or at 25&deg;C for 30 min) prior to performing
+                              the assay.
+                           </p>
+                        </li>
+                     </ol>
+                  </div>
+                  <p><span class="underline">Method 2</span></p>
+                  <div class="orderedlist">
+                     <ol type="1">
+                        <li>
+                           <p>Incubate starvation plate at assay temperature for &gt;3 hr.</p>
+                        </li>
+                        <li>
+                           <p>Transfer 20 animals to the pre-incubated starvation plate.</p>
+                        </li>
+                        <li>
+                           <p>Seal the starvation plate with Parafilm<sup>&reg;</sup>.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Incubate at 17&deg;C for 2-3 hr or at 25&deg;C for 30 min prior to performing the assay.</p>
+                        </li>
+                     </ol>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec5"></a>5.&nbsp;Linear thermal gradient for population thermotaxis assay
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Below, we present a simple linear thermal gradient apparatus that utilizes Peltier-effect thermoelectric elements and resistive
+               cartridge heaters to establish highly reproducible and stable gradients on agar plates with simultaneous monitoring of worm
+               movements using video microscopy.
+            </p>
+            <p>We note that the larger format of the current assay (using 22 cm plates instead of traditional 9 cm round plates) represents
+               a qualitative improvement over previous assays (<a href="#bib2">Chi et al., 2007</a>; <a href="#bib3">Clark et al., 2007</a>; <a href="#bib16">Ryu and Samuel, 2002</a>). More worms can be studied in each experiment, and the low population density leads to fewer interactions between worms.
+               The ability to follow individual trajectories of individual worms that are uninterrupted by collisions with other animals
+               improves the statistical analysis of the navigational strategy.
+            </p>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec5-1"></a>5.1.&nbsp;Linear thermal stage
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>We establish a thermal gradient across an anodized aluminum slab (24 in. x 12 in. x 1/4 in.) by fixing the temperatures of two aluminum reservoir blocks (4 in. x 12 in. x 1.5 in.) underneath each end of the slab; between the blocks and the top slab are thin steel diffuser plates (4 in.
+                  x 12 in. x 1/16 in.). To one reservoir block we affix a pair of 120W thermoelectric coolers (TECs), which pump heat between
+                  the reservoir block and a commercial water block (Swiftech MCW-82) through which flows a circulating temperature-controlled
+                  bath of antifreeze coolant (using a VWR 1160S chiller). In the other reservoir block we drill holes and insert four 100 W
+                  resistive cartridge heaters (e.g., McMaster-Carr 3618K416 or similar). The TECs and heaters create a thermal gradient across
+                  the middle of the slab, atop which can be placed a square 22 &times; 22 cm of agar approximately 5 mm thick, either in a plastic
+                  dish or on a thin (1/16 in.) aluminum sheet.  Sufficient glycerol between the dish/sheet and the top surface of the slab ensures
+                  thermal contact (<a href="#figure3">Figure 3</a>). The entire structure is housed in a dark chamber to prevent stray light and air currents from affecting visibility of the
+                  worms and temperature stability.
+               </p>
+               <div class="mediaobject" align="center"><a name="figure3"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="432">
+<tr>
+  <td align="center"><p><a href="thermonav_fig3.jpg"><img src="thermonav_fig3_s.jpg" border="2" align="middle" alt=" figure 3"></a>
+  </td>
+</tr>
+                  </table>
+                  <div class="caption">
+                     <p><b>Figure 3. Side and top schematic views of the linear thermal gradient apparatus (<a href="#sec5" title="5.&nbsp;Linear thermal gradient for population thermotaxis assay">Section 5</a>).&nbsp;</b>Cold and warm reservoirs are temperature controlled with independent PID circuits, while crawling worms are imaged with a
+                        CCD camera under red LED illumination.
+                     </p>
+                  </div>
+               </div>
+               <p>Separate feedback loops are needed for &#8220;hot&#8221; and &#8220;cold&#8221; side temperature control. We use separate temperature sensors glued
+                  to the top surface of the aluminum slab near the hot and cold edges of the gradient. On the cold side, a PID controller, H-bridge
+                  amplifier (both from Accuthermo) and 12 V switching power supply (Oven Industries) act to control the TEC activity, while
+                  on the hot side a PID controller regulates a solid state relay (SSR) that passes 120 V ac power to the cartridge heaters.
+                  This system can typically achieve at least a 20&deg;C temperature difference across 16 in. of the aluminum slab. Typical approximate
+                  gradients employed are 0.2&deg;C/cm for navigation and 0.5&deg;C/cm for isothermal tracking experiments. To achieve steeper gradients
+                  with a similar system, one could use more powerful TECs, additional cartridge heaters, or make the aluminum slab narrower.
+                  Also note that the VWR chiller temperature can be set very low (near 0&deg;C) in this configuration, since the liquid bath is
+                  used only on the cold side of the gradient. It is also useful to cover the reservoir blocks and the bottom of the plate with
+                  an insulating foam.
+               </p>
+               <p>The temperature gradient at the agar surface will be less steep than the gradient across the aluminum slab, and needs to be
+                  verified with each setting of the temperature controllers. This can easily be done using a hand-held digital thermometer (e.g.,
+                  Fluke 50 Series).
+               </p>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec5-2"></a>5.2.&nbsp;Video microscopy
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Uniform illumination and high-contrast images are necessary to visualize worms navigating the linear thermal gradients. We
+                  have engineered a simple dark-field illuminator using four bars, each with 48 bright LEDs, in a plane just above the agar
+                  plate.  Using fresh, clean plates without surface defects, the only light-scattering objects are the worms themselves. These
+                  high-contrast images of the worms can be recorded using a CCD camera (e.g., Panasonic WV-BP554, or Mightex BCE-B050-U) equipped
+                  with a zoom lens that captures the image of the whole plate (8 mm to capture an entire 22 &times; 22 cm plate, longer for better
+                  images with a smaller field of view).
+               </p>
+               <p>We acquire frames from the CCD camera of worms executing thermotactic migrations along the surface of the agar plate, each
+                  experiment using approximately 20 worms and lasting 30 min. In this way, we can measure overall thermotactic drift upwards
+                  or downwards on the thermal gradient as well as score individual movements like forward crawling, backward crawling, and turns.
+                  The system can also be used to examine isothermal tracking.  We have written simple particle-tracking algorithms using LabVIEW
+                  Vision Assistant to measure individual crawling trajectories (see <a href="#bib5">Gershow et al., 2012</a>; <a href="#bib14">Omura et al., 2012</a>; <a href="#bib18">Yemini et al., 2011</a>;  for freely available image analysis routines). Examples of such trajectories under various experimental conditions are
+                  shown in (<a href="#figure4">Figure 4</a>).
+               </p>
+               <div class="mediaobject" align="center"><a name="figure4"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="432">
+<tr>
+  <td align="center"><p><a href="thermonav_fig4.jpg"><img src="thermonav_fig4_s.jpg" border="2" align="middle" alt=" figure 4"></a>
+  </td>
+</tr>
+                  </table>
+                  <div class="caption">
+                     <p><b>Figure 4. Resultant tracks from negative thermotaxis and isothermal tracking experiments (<a href="#sec5" title="5.&nbsp;Linear thermal gradient for population thermotaxis assay">Section 5</a>).&nbsp;</b>In the left panel, worms grown at 15&deg;C are placed in the middle at 20&deg;C and robustly navigate to the cold side.  In the right
+                        panel, worms track isotherms on a steeper gradient centered at their cultivation temperature.
+                     </p>
+                  </div>
+               </div>
+            </div>
+            <div class="sect2" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="sec5-3"></a>5.3.&nbsp;Analyses of experimental data
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Measurement of thermotactic migration requires setting the worms to a particular <em>T</em><sub><em>c</em></sub>. When placed on a spatial thermal gradient, worms will track isotherms in a band of temperatures near <em>T</em><sub><em>c</em></sub> and will rapidly and robustly migrate down gradients (negative thermotaxis behavior) when placed above their <em>T</em><sub><em>c</em></sub> (<a href="#figure4">Figure 4</a>) (<a href="#bib7">Hedgecock and Russell, 1975</a>). Worms can be set to a specific <em>T</em><sub><em>c</em></sub> by growing them overnight at <em>T</em><sub><em>c</em></sub> on an NGM plate with <a href="http://www.wormbase.org/db/get?name=OP50;class=Strain" target="_blank">OP50</a>. The day of the experiment, rinse several young adult worms in NGM buffer and pick them to a fresh NGM plate, then transfer
+                  the worms immediately to the agar slab on the linear thermal gradient. Isothermal tracks should emerge among the worms navigating
+                  at temperatures near their <em>T</em><sub><em>c</em></sub>. Negative thermotaxis should emerge among the worms navigating at temperatures above their <em>T</em><sub><em>c</em></sub>. To determine the thermotaxis or tracking ability of a particular strain normally requires 2-3 independent experiments, although
+                  more may be required if the behavior is not robust.
+               </p>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec6"></a>6.&nbsp;Author contributions
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p><a href="#sec2" title="2.&nbsp;Thermal preference assay (15-25&deg;C)">Section 2</a> contributed by S.L., D.W. and M.B.G.; <a href="#sec3" title="3.&nbsp;Noxious Thermogradient Assay (&gt;26&deg;C)">Section 3</a> contributed by M.B.G.; <a href="#sec4" title="4.&nbsp;Thermotaxis: tracking thermoclines">Section 4</a> contributed by I.M.; <a href="#sec5" title="5.&nbsp;Linear thermal gradient for population thermotaxis assay">Section 5</a> contributed by M.K., L.L. and A.S.; Compiled and edited by P.S.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec7"></a>7.&nbsp;References
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p></p>
+            <div class="bibliography">
+               <div class="bibliomixed"><a name="bib1"></a><p class="bibliomixed"><span class="bibliomisc">Beverly, M., Anbil, S., and Sengupta, P. (2011). Degeneracy and neuromodulation among thermosensory neurons contribute to
+                        robust thermosensory behaviors in <em>C. elegans</em>. J. Neurosci. <em>31</em>, 11718-11727.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=21832201&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1523/JNEUROSCI.1098-11.2011" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib2"></a><p class="bibliomixed"><span class="bibliomisc">Chi, C.A., Clark, D.A., Lee, S., Biron, D., Luo, L., Gabel, C.V., Brown, J., Sengupta, P., and Samuel, A.D. (2007). Temperature
+                        and food mediate long-term thermotactic behavioral plasticity by association-independent mechanisms in <em>C. elegans</em>. J. <a href="http://www.wormbase.org/db/get?name=WBPhenotype:0000996;class=Phenotype" target="_blank">Exp</a>. Biol. <em>210</em>, 4043-4052.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=17981872&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib3"></a><p class="bibliomixed"><span class="bibliomisc">Clark, D.A., Gabel, C.V., Lee, T.M., and Samuel, A.D. (2007). Short-term adaptation and temporal processing in the cryophilic
+                        response of <em>Caenorhabditis elegans</em>. J. Neurophysiol. <em>97</em>, 1903-1910.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=17151225&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1152/jn.00892.2006" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib4"></a><p class="bibliomixed"><span class="bibliomisc">Garrity, P.A., Goodman, M.B., Samuel, A.D., and Sengupta, P. (2010). Running hot and cold: behavioral strategies, neural circuits,
+                        and the molecular machinery for thermotaxis in <em>C. elegans</em> and <em>Drosophila</em>. Genes Dev. <em>24</em>, 2365-2382.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=21041406&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1101/gad.1953710" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib5"></a><p class="bibliomixed"><span class="bibliomisc">Gershow, M., Berck, M., Mathew, D., Luo, L., Kane, E.A., Carlson, J.R., and Samuel, A.D. (2012). Controlling airborne cues
+                        to study small animal navigation. Nat. Methods <em>9</em>, 290-296.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=22245808&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nmeth.1853" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib6"></a><p class="bibliomixed"><span class="bibliomisc">Glauser, D.A., Chen, W.C., Agin, R., MacInnis, B.L., Hellman, A.B., Garrity, P.A., Tan, M.W., and Goodman, M.B. (2011). Heat
+                        avoidance is regulated by transient receptor potential (TRP) channels and a neuropeptide signaling pathway in <em>C. elegans</em>. Genetics <em>188,</em> 91-103.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=21368276&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1534/genetics.111.127100" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib7"></a><p class="bibliomixed"><span class="bibliomisc">Hedgecock, E.M., and Russell, R.L. (1975). Normal and mutant thermotaxis in the nematode <em>Caenorhabditis elegans</em>. Proc. Natl. Acad. Sci. U. S. A. <em>72</em>, 4061-4065.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=1060088&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib8"></a><p class="bibliomixed"><span class="bibliomisc">Ito, H., Inada, H., and Mori, I. (2006). Quantitative analysis of thermotaxis in the nematode <em>Caenorhabditis elegans</em>. J. Neurosci. Methods <em>154</em>, 45-52.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=22022437&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/http://dx.doi.org/10.1016/j.jneumeth.2005.11.011" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib9"></a><p class="bibliomixed"><span class="bibliomisc">Jurado, P., Kodama, E., Tanizawa, Y., and Mori, I. (2010). Distinct thermal migration behaviors in response to different thermal
+                        gradients in <em>Caenorhabditis elegans</em>. Genes Brain Behav. <em>9</em>, 120-127.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=20002199&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1111/j.1601-183X.2009.00549.x" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib10"></a><p class="bibliomixed"><span class="bibliomisc">Kimata, T., Sasakura, H., Ohnishi, N., Nishio, N., and Mori, I. (2012). Thermotaxis of <em>C. elegans</em> as a model for temperature perception, neural information processing and neural plasticity. Worm <em>1</em>, 31-41.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=21832201&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.4161/worm.19504" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib11"></a><p class="bibliomixed"><span class="bibliomisc">McCormick, K.E., Gaertner, B.E., Sottile, M., Phillips, P.C. and Lockery, S. (2011) Microfludic devices for analysis of spatial
+                        orientation behaviors in semi-restrained <em>Caenorhabditis elegans</em>. PLoS One, e25710.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=22022437&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/ 10.1371/journal.pone.0025710" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib12"></a><p class="bibliomixed"><span class="bibliomisc">Mori, I., and Ohshima, Y. (1995). Neural regulation of thermotaxis in <em>Caenorhabditis elegans</em>. Nature <em>376</em>, 344-348.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=7630402&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/376344a0" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib13"></a><p class="bibliomixed"><span class="bibliomisc">Murakami, H., Bessinger, K., Hellmann, J., and Murakami, S. (2005). Aging-dependent and -independent modulation of associative
+                        learning behavior by insulin/insulin-like growth factor-1 signal in <em>Caenorhabditis elegans</em>. J. Neurosci. <em>25</em>, 10894-10904.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=16306402&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib14"></a><p class="bibliomixed"><span class="bibliomisc">Omura, D.T., Clark, D.A., Samuel, A.D., and Horvitz, H.R. (2012). Dopamine signaling is essential for precise rates of locomotion
+                        by <em>C. elegans</em>. PLoS One <em>7</em>, e38649.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=22719914&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1371/journal.pone.0038649" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib15"></a><p class="bibliomixed"><span class="bibliomisc">Ramot, D., MacInnis, B.L., Lee, H.C., and Goodman, M.B. (2008). Thermotaxis is a robust mechanism for thermoregulation in
+                        <em>Caenorhabditis elegans</em> nematodes. J. Neurosci. <em>28</em>, 12546-12557.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=19020047&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1523/JNEUROSCI.2857-08.2008" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib16"></a><p class="bibliomixed"><span class="bibliomisc">Ryu, W.S., and Samuel, A.D. (2002). Thermotaxis in <em>Caenorhabditis elegans</em> analyzed by measuring responses to defined thermal stimuli. J. Neurosci. <em>22</em>, 5727-5733.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12097525&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib17"></a><p class="bibliomixed"><span class="bibliomisc">Yamada, Y., and Ohshima, Y. (2003). Distribution and movement of <em>Caenorhabditis elegans</em> on a thermal gradient. J. <a href="http://www.wormbase.org/db/get?name=WBPhenotype:0000996;class=Phenotype" target="_blank">Exp</a>. Biol. <em>206</em>, 2581-2593.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12819265&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/ 10.1242/jeb.00477" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib18"></a><p class="bibliomixed"><span class="bibliomisc">Yemini, E., Kerr, R.A., and Schafer, W.R. (2011). Preparation of samples for single-worm tracking. Cold Spring Harb. Protoc.
+                        <em>2011</em>, 1475-1479.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=22135667&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1101/pdb.prot066993" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib19"></a><p class="bibliomixed"><span class="bibliomisc">Zariwala, H.A., Miller, A.C., Faumont, S. and Lockery, S.R. (2003) Step response analysis of thermotaxis in <em>Caenorhabditis elegans</em>. J. Neurosci. <em>10</em>, 4369-4377.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12764126&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib20"></a><p class="bibliomixed"><span class="bibliomisc">Zhao, B., Khare, P., Feldman, L., and Dent, J.A. (2003). Reversal frequency in <em>Caenorhabditis elegans</em> represents an integrated response to the state of the animal and its environment. J. Neurosci. <em>23</em>, 5319-5328.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12832557&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="footnotes"><br><hr width="100" align="left">
+            <div class="footnote">
+               <p><sup><a name="ftn.d0e6" href="#d0e6">*</a></sup>Edited by: Oliver Hobert Last revised: February 26, 2013, Published February 20, 2014. This chapter should be cited as: Goodman
+                  M. B., Klein M., Lasse S., Luo L., Mori I., Samuel A., Sengupta P., Wang D. Thermotaxis navigation behavior (February 20,
+                  2014), <span class="emphasis"><em>WormBook</em></span>, ed. The <span class="emphasis"><em>C. elegans</em></span> Research Community, WormBook, doi/10.1895/wormbook.1.168.1, <a href="http://www.wormbook.org" target="_top">http://www.wormbook.org</a>.
+               </p>
+               <p><sup>**</sup>Authors listed alphabetically, see Section 6 for individual author contributions.
+               </p>
+               <p><span class="bold"><strong>Copyright:</strong></span> &copy; 2014 Miriam B. Goodman, Mason Klein, Samuel Lasse, Linjiao Luo, Ikue Mori, Aravi Samuel, Piali Sengupta, Dong Wang. This
+                  is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted
+                  use, distribution, and reproduction in any medium, provided the original author and source are credited.
+               </p>
+            </div>
+            <div class="footnote">
+               <p><sup><a name="ftn.d0e57" href="#d0e57">&sect;</a></sup>To whom correspondence should be addressed. Email: Miriam B. Goodman <a href="mailto:mbgoodman@stanford.edu" target="_top">mbgoodman@stanford.edu</a>, Linjiao Luo <a href="mailto:linjiao@nju.edu.cn" target="_top">linjiao@nju.edu.cn</a>, Ikue Mori <a href="mailto:m46920a@nucc.cc.nagoya-u.ac.jp" target="_top">m46920a@nucc.cc.nagoya-u.ac.jp</a>, Piali Sengupta <a href="mailto:sengupta@brandeis.edu" target="_top">sengupta@brandeis.edu</a></p>
+ <p><img src="somerights20.gif" alt="Creative Commons License" align="middle" border="0"> All WormBook content, except where otherwise noted, is licensed under a <a href="http://creativecommons.org/licenses/by/2.5/" title="Creative Commons Attribution License" target="_blank">Creative Commons Attribution License</a>.</p>
+            </div>
+         </div>
+      </div>
+   <!--#include virtual="/ssi/footer.html" --></body>
+</html>
