@@ -1,0 +1,933 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "docbookx.dtd"
+[
+<!ENTITY fig1 SYSTEM 'chromatinanalysis_fig1.jpg' NDATA JPG>
+<!ENTITY fig2 SYSTEM 'chromatinanalysis_fig2.jpg' NDATA JPG>
+<!ENTITY fig3 SYSTEM 'chromatinanalysis_fig3.jpg' NDATA JPG>
+<!ENTITY fig4 SYSTEM 'chromatinanalysis_fig4.jpg' NDATA JPG>
+<!ENTITY fig5 SYSTEM 'chromatinanalysis_fig5.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'chromatinanalysis_fig1leg.xml'>
+<!ENTITY fig2legend SYSTEM 'chromatinanalysis_fig2leg.xml'>
+<!ENTITY fig3legend SYSTEM 'chromatinanalysis_fig3leg.xml'>
+<!ENTITY fig4legend SYSTEM 'chromatinanalysis_fig4leg.xml'>
+<!ENTITY fig5legend SYSTEM 'chromatinanalysis_fig5leg.xml'>
+<!ENTITY chromatinanalysis_ref SYSTEM 'chromatinanalysis_ref.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="chromatinanalysis">
+<articleinfo>
+<title>Modern techniques for the analysis of chromatin and nuclear organization in <emphasis>C. elegans</emphasis><footnote><para>Edited by Oliver Hobert Last revised May 23, 2013, Published April 2, 2014. This chapter should be cited as: Askjaer P., et al. Modern techniques for the analysis of chromatin and nuclear organization in <emphasis>C. elegans</emphasis> (April 2, 2014), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.169.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2014 Peter Askjaer, Sevin&#x00E7; Ercan, Peter Meister. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para></footnote></title>
+<author><othername>Peter Askjaer<superscript>1&#x00A7;</superscript>, Sevin&#x00E7; Ercan<superscript>2</superscript><superscript>&#x00A7;</superscript> and Peter Meister<superscript>3</superscript><remark><footnote><para>To whom correspondence should be addressed: <ulink url="mailto:pask@upo.es">pask@upo.es</ulink>, <ulink url="mailto:se71@nyu.edu">se71@nyu.edu</ulink>, or <ulink url="mailto:peter.meister@izb.unibe.ch">peter.meister@izb.unibe.ch</ulink></para></footnote></remark></othername>
+<affiliation><orgname><superscript>1</superscript>Andalusian Center for Developmental Biology (CABD), CSIC/JA/Universidad Pablo de Olavide, Seville, Spain</orgname></affiliation>
+<affiliation><orgname><superscript>2</superscript>Department of Biology and the Center for Genomics and Systems Biology, New York University, New York, NY 10003</orgname></affiliation>
+<affiliation><orgname><superscript>3Institute of Cell Biology, University of Bern, Bern, Switzerland</superscript></orgname></affiliation>
+</author></articleinfo>
+<abstract>
+<title><emphasis role="bold">Abstract</emphasis></title>
+<para><emphasis role="bold">In recent years, <emphasis role="italic">Caenorhabditis elegans</emphasis> has emerged as a new model to investigate the relationships between nuclear architecture, cellular differentiation, and organismal development. On one hand, <emphasis role="italic">C. elegans</emphasis> with its fixed lineage and transparent body is a great model organism to observe gene functions <emphasis role="italic">in vivo</emphasis> in specific cell types using microscopy. On the other hand, two different techniques have been applied in nematodes to identify binding sites for chromatin-associated proteins genome-wide: chromatin immunoprecipitation (ChIP), and Dam-mediated identification (DamID). We summarize here all three techniques together as they are complementary. We also highlight strengths and differences of the individual approaches.</emphasis></para>
+</abstract>
+<sect1 id="sec1">
+<title>Introduction</title>
+<sect2 id="sec1-1">
+<title>ChIP or DamID, clues for choice</title>
+<para>The major difference between ChIP and DamID is that while ChIP captures DNA associated with a protein at the time of crosslinking, DamID also identifies the DNA that has been bound transiently by the protein. While ChIP is based on the immunoprecipitation of the target by a specific antibody, DamID uses direct modification of the DNA by methylating adenines located close to the binding site. Unlike DamID, ChIP can map epigenetic modifications across the genome. DamID has the advantage of being able to identify binding sites when chromatin complexes are not soluble, very dynamic, or in low abundance.</para>
+<para>When choosing between ChIP and DamID, a number of points have to be kept in mind, depending on the target protein, the developmental stage, and the biological question.</para>
+<para>First, ChIP requires the availability of an antibody for the protein of interest whereas DamID does not rely on antibodies. Concerns about antibody specificity are therefore irrelevant for DamID (for a more detailed discussion, see <link linkend="bib21">Greil et al., 2006</link><!--: PMID 16938559-->). However, posttranslational modifications are not detectable by DamID, which is particularly relevant in studies on histone marks.</para>
+<para>Second, while ChIP may need to be optimized for each protein, it is relatively straightforward, once a suitable DamID protocol has been established, to analyze several proteins in parallel without further optimization. For example, in a recent tour de force approach, 112 uncharacterized candidate proteins were screened using DamID, which led to the identification of 42 novel chromatin associated factors in <emphasis>Drosophila melanogaster</emphasis> (<link linkend="bib59">van Bemmel et al., 2013</link><!--: PMID 23438860-->).</para>
+<para>Third, ChIP physically purifies the DNA interacting with the target, whereas DamID is an enzymatic modification of DNA that gets erased when DNA is replicated. Hence, in early embryos with fast replicating cells, ChIP may be more suited to detect interactions at that developmental stage. Similarly DamID is not suitable to detect dynamic changes in chromatin association during the cell cycle. On the other hand, DamID may be more sensitive to detect transient interactions (<link linkend="bib61">Venkatasubrahmanyam et al., 2007</link><!--: PMID 17925448-->).</para>
+<para>Fourth, DamID is an <emphasis>in vivo</emphasis> technique where methylation marks are deposited in living cells. On one hand, this avoids potential ChIP artifacts due to chemical crosslinking or other fixatives. On the other hand, DamID requires the introduction of foreign DNA encoding the Dam fusion protein and expression level and localization of the Dam fusion protein need special consideration (see below).</para>
+<para>In conclusion, depending on the particular protein of interest, either DamID or ChIP may be the more appropriate method for characterization of binding sites of a given protein. Both ChIP and DamID are potent methods for generating genome-wide information about association of proteins with chromatin. Importantly, comparative studies suggest that the two methods produce similar association profiles, which allow integration of both types of data sets (<link linkend="bib21">Moorman et al., 2006</link><!--: PMID 16880385-->; <link linkend="bib38">Negre et al., 2006</link><!--: PMID 16613483-->). In <emphasis>C. elegans</emphasis>, a significant overlap was also observed between DAF-16 target genes identified by ChIP and DamID (<link linkend="bib50">Schuster et al., 2010</link><!--: PMID 20706209-->) and between ChIP and DamID profiles for nuclear envelope proteins (<link linkend="bib71">Gonz&#x00E1;lez-Aguilera et al., 2014</link><!--PMID 24490688-->).</para>
+</sect2>
+<sect2 id="sec1-2">
+<title>Cell-type specificity of interactions</title>
+<para>Both ChIP and DamID are limited by the fact that they use entire animals, hence a mixture of cell types or even developmental stages, as a starting material. This might improve in the future with cell-type specific DamID or nuclei purification, but current protocols have all been developed using entire animals. Making use of the invariant cell lineage of the nematode, adaptation of the <emphasis>lacO</emphasis>/lacI system to visualize binding of transcription factors to specific sequence or localization of genes with single-cell resolution complements ChIP and DamID techniques, exploring cell type specificity of locus localization and nuclear organization.</para>
+</sect2>
+</sect1>
+<sect1 id="sec2">
+<title>Chromatin immunoprecipitation in <emphasis>C. elegans</emphasis></title>
+<sect2 id="sec2-1">
+<title>Introduction to ChIP</title>
+<para>Chromatin immunoprecipitation is a technique that is used to study protein-DNA interactions. Although there are variations in ChIP techniques, the most popular ones rely on the reversible crosslinker formaldehyde (<link linkend="bib22">Hecht and Grunstein, 1999</link><!--: PMID 10372373-->; <link linkend="bib29">Kuo and Allis, 1999</link><!--: PMID 10579938-->). Briefly, a ChIP experiment is composed of the following steps (<link linkend="figure1">Figure 1</link>): (1) worms are incubated with formaldehyde that crosslinks chromatin-associated proteins to each other and to DNA; (2) chromatin is sheared to shorter fragments and the protein of interest is immunoprecipitated along with bound DNA; and (3) bound DNA is identified and quantified.</para>
+</sect2>
+<sect2 id="sec2-2">
+<title>Experimental planning for ChIP</title>
+<para>ChIP measures DNA-protein interactions that are captured by formaldehyde crosslinking in a population of cells. Since formaldehyde crosslinks protein to protein and protein to DNA, ChIP measures both direct and indirect interactions with DNA. The success of a ChIP experiment for your protein of interest (hereafter &#x201C;target&#x201D;) depends on many factors. Most important are (1) the nature of the interaction with DNA, (2) abundance of the target, and (3) affinity and specificity of the antibody. Experimental planning will depend on the unique circumstances of your biological question, but below are some common considerations.</para>
+<mediaobject id="figure1" xreflabel="Figure 1">
+<imageobject>
+<imagedata entityref="fig1" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 1</phrase>
+</textobject> &fig1legend;</mediaobject>
+<sect3 id="sec2-2-1">
+<title>Different types of ChIP targets</title>
+<para>Typically, proteins that bind directly to DNA, such as histones and transcription factors, are easier to ChIP, whereas proteins that indirectly bind to DNA and chromatin-modifying enzymes are more difficult to detect by ChIP. Transcription factors that bind to a short DNA sequence motif show a &#x201C;focused&#x201D; binding. That is, ChIP enrichment is high at the binding site and declines sharply outside the sonication range (&sim;200-1000 bp) (<link linkend="bib39">Niu et al., 2011</link><!--: PMID 21177963-->). ChIP for histone modifications are generally successful if the antibody is specific and has high affinity to the target (<link linkend="bib9">Egelhofer et al., 2011</link><!--: PMID 21131980-->; <link linkend="bib31">Liu et al., 2011</link><!--: PMID 21177964-->). Some histone modifications and variants, such as H3K4me3 and H2A.Z, exist in a few nucleosomes that are located at specific regions and show more focused binding (<link linkend="bib65">Whittle et al., 2008</link><!--: PMID 18787694-->; <link linkend="bib31">Liu et al., 2011</link><!--: PMID 21177964-->) compared to other modifications that associate with the genome &#x201C;broadly&#x201D;, such as those associated with gene bodies like H3K36 methylation (<link linkend="bib28">Kolasinska-Zwierz et al., 2009</link><!--: PMID 19182803-->; <link linkend="bib19">Rechtsteiner et al., 2010</link><!--: PMID 20824077-->; <link linkend="bib31">Liu et al., 2011</link><!--: PMID 21177964-->;). ChIP enrichment signals for proteins with broad binding patterns are typically lower (<link linkend="bib23">Ikegami et al., 2010</link><!--: PMID 21176223-->). Some proteins can have focused, broad, and a combination of both binding patterns, such as RNA Polymerase II and the Dosage Compensation Complex (<link linkend="bib11">Ercan et al., 2007</link><!--: PMID 17293863-->; <link linkend="bib65">Whittle et al., 2008</link><!--: PMID 18787694-->; <link linkend="bib10">Ercan et al., 2009</link><!--: PMID 19853451-->; <link linkend="bib24">Jans et al., 2009</link><!--: PMID 19270160-->).</para>
+</sect3>
+<sect3 id="sec2-2-2">
+<title>Antibody selection and validation</title>
+<para>There are two common approaches to selecting an antibody for ChIP. The first one is to use an antibody against the native protein. The advantage of using an antibody against the native protein is the ability to ChIP the target in its wild-type context. The disadvantage is the difficulty of obtaining specific antibodies or controlling for their specificity. Using two different antibodies to different epitopes in the same target, or analyzing different subunits of the same protein complex helps mitigate specificity problems. If possible, it is best to control for the specificity of the antibody in the context of the ChIP experiment, as summarized in <link linkend="sec2-2-4">Section 2.2.4</link>, Controls. In our hands, rabbit polyclonal antibodies have been most successful. If possible, one should test the ability of the antibody to immunoprecipitate its target specifically. This is usually a good indication for if the ChIP will work. Antibody specificity should be tested using assays such as western blot and immunofluorescence and comparing wild type to mutant or RNAi signal (<link linkend="bib19">Rechtsteiner et al., 2010</link><!--: PMID 20824077-->; <link linkend="bib30">Landt et al., 2012</link><!--: PMID 22955991-->). However, some antibodies that work for ChIP may not work in these assays (<link linkend="bib9">Egelhofer et al., 2011</link><!--: PMID 21131980-->), and western blot and immunofluorescence analysis do not guarantee that the antibody will be specific within the ChIP assay. A large number of antibodies recognizing histone modifications were tested by the modENCODE groups and the validation data is available at <ulink url="http://compbio.med.harvard.edu/antibodies/">http://compbio.med.harvard.edu/antibodies/</ulink>.</para>
+<para>Another approach for immunoprecipitation is to use an affinity tag. In this approach, a transgenic worm expressing the tagged target is used for ChIP (<link linkend="bib39">Niu et al., 2011</link><!--: PMID 21177963-->). GFP-3XFlag tag was successfully used for tagging transcription factors (<link linkend="bib39">Niu et al., 2011</link><!--: PMID 21177963-->) and for MES-4 histone methylase (<link linkend="bib19">Rechtsteiner et al., 2010</link><!--: PMID 20824077-->). Custom made GFP antibodies were used by modENCODE, but a commercial ChIP-grade rabbit polyclonal GFP antibody is available (Abcam, Ab290). If the Flag is exposed, M2 anti-FLAG (Sigma-Aldrich<superscript>&#x00AE;</superscript> F3165) can also be used (<link linkend="bib19">Rechtsteiner et al., 2010</link><!--: PMID 20824077-->). The advantage of using tagged targets is to bypass requirement for a specific antibody and control for specificity using an untagged strain as a negative control. Moreover, the existing GFP-tagged transgenic strains can be used (<link linkend="bib49">Sarov et al., 2012</link><!--: PMID 22901814-->). If a tagged protein is chosen as the target, one should consider issues such as tag interference with binding, and expression at incorrect levels or incorrect tissues.</para>
+</sect3>
+<sect3 id="sec2-2-3">
+<title>Tissue or developmental-stage selection</title>
+<para>Most ChIP experiments have been performed with whole embryos or larva. If your target is found in a specific tissue, it is best to developmentally synchronize worms to enrich for that tissue. Tissue specific ChIP is desirable, but not yet common. It is possible to perform ChIP using a tagged target expressed in the tissue of interest (<link linkend="bib73">Kudron et al., 2013</link>)<!--PMID: 23347407-->, or by purification of nuclei from the tissue of interest (<link linkend="bib54">Steiner et al., 2012</link><!--: PMID 22219512-->).</para>
+</sect3>
+<sect3 id="sec2-2-4">
+<title>ChIP controls</title>
+<para>Choice of negative control differs according to the antibody. If an antibody recognizing the native protein is used, an ideal negative control is repeating the ChIP in a null mutant in which the target is not present. For essential proteins this is not possible, thus an unspecific antibody such as IgG is commonly used as a negative control. If a tagged target is used for ChIP, ChIP in an untagged strain is the best negative control. Positive controls may be chosen based on several genome-wide ChIP data that are available in literature and through <ulink url="http://www.modencode.org/">http://www.modencode.org/</ulink>, the modENCODE consortium website (<link linkend="bib19">Gerstein et al., 2010</link><!--: PMID 21177976-->). The number of experimental replicates depends on the range of difference that needs to be quantified, but a minimum of three biological replicates is desirable. We find that technical replicates are less important as they are often highly correlated with each other.</para>
+</sect3>
+<sect3 id="sec2-2-5">
+<title>ChIP quantification</title>
+<para>There are currently three methods for ChIP quantification, ChIP-qPCR, ChIP-chip and ChIP-seq. If the goal for ChIP quantification is to determine amount of binding at a specific locus (e.g., comparing wild type vs. mutant), ChIP-qPCR can be used. If the goal is to determine genome-wide binding sites, ChIP-chip or ChIP-seq are the methods of choice. In all three techniques ChIP enrichment is compared to Input DNA, therefore analysis of the Input DNA is necessary. We discuss qPCR, microarray and sequencing options for ChIP and DamID in the section following DamID below.</para>
+</sect3>
+</sect2>
+<sect2 id="sec2-3">
+<title>ChIP protocols</title>
+<sect3 id="sec2-3-1">
+<title>Worm collection</title>
+<para>Approximately 100-200 &#x00B5;l of embryos, and &sim;1-2 ml of larva (adults) give enough extract for a few ChIPs.</para>
+<sect4 id="sec2-3-1-1">
+<title>Embryo collection</title>
+<orderedlist numeration="arabic">
+<listitem><para>Bleach gravid adults until few or no adult pieces are visible.</para></listitem>
+<listitem><para>Wash embryos three times with M9.</para></listitem>
+<listitem><para>Resuspend &sim;500 &#x03BC;l embryos in 45 ml M9.</para></listitem>
+<listitem><para>Add formaldehyde to a final concentration of 2% (2.8 ml of 37%).</para></listitem>
+<listitem><para>Incubate by rocking at room temperature for 30 minutes.</para></listitem>
+<listitem><para>Quench formaldehyde by adding glycine to final 125 mM (2.5 ml of 2.5 M), and incubate 5 min.</para></listitem>
+<listitem><para>Centrifuge 3000 g for 2 min. Remove supernatant.</para></listitem>
+<listitem><para>Resuspend pellet in M9. Centrifuge 3000 g for 2 min. Remove supernatant.</para></listitem>
+<listitem><para>Transfer to microfuge tubes with PBS + protease inhibitors, spin at 6000 g for 1 min, remove supernatant.</para></listitem>
+<listitem><para>Wash once more with 1 ml PBS + protease inhibitors, spin at 6000 g for 1 min, remove supernatant and store at &#x2212;80&#x00B0;C.</para></listitem>
+</orderedlist>
+</sect4>
+<sect4 id="sec2-3-1-2">
+<title>Larva collection</title>
+<orderedlist numeration="arabic">
+<listitem><para>Clean up larva by settling and washing with &sim;20X volume of M9 three times.</para></listitem>
+<listitem><para>Wash larva with equal volume of PBS + protease inhibitors, spin at 3000 g for 1 min, remove supernatant.</para></listitem>
+<listitem><para>Resuspend in equal volume of PBS + protease inhibitors.</para></listitem>
+<listitem><para>Using 1 ml pipette tip, drip larva mix into a 100 ml beaker that contains liquid nitrogen. Do not hold the tip on top of the liquid nitrogen very long, the worms may freeze in the tip. This is to make frozen larva &#x201C;popcorn&#x201D;.</para></listitem>
+<listitem><para>Chill a 15 ml tube in liquid nitrogen, and pour popcorn into the 15 ml tube.</para></listitem>
+<listitem><para><ulink url="http://www.wormbase.org/db/get?name=WBPhenotype:0001003;class=Phenotype" role="_blank">Let</ulink> liquid nitrogen evaporate, but do not thaw the popcorn at any step until crosslinking. Close cap loosely and store at &#x2212;80&#x00B0;C.</para></listitem>
+</orderedlist>
+</sect4>
+</sect3>
+<sect3 id="sec2-3-2">
+<title>Extract preparation</title>
+<sect4 id="sec2-3-2-1">
+<title>Embryo extract preparation</title>
+<orderedlist numeration="arabic">
+<listitem><para>Resuspend &sim;100 &#x03BC;l of embryos (volume estimated when embryos are collected) in 500 &#x03BC;l FA buffer + 0.1% sarkosyl* + protease/phosphatase inhibitors.</para></listitem>
+<listitem><para>Spin down at top speed for 10 seconds. Remove supernatant.</para></listitem>
+<listitem><para>Resuspend in 1 ml FA buffer + 0.1% sarkosyl + protease/phosphatase inhibitors.</para></listitem>
+<listitem><para>Dounce on ice (30 strokes) using a glass dounce homogenizer pestle type B.</para></listitem>
+<listitem><para>Transfer to a 15 ml polystyrene tube. Make sure that embryos are well suspended and are at the bottom of the tube. Sonicate using Bioruptor settings: 4&#x00B0;C, 15 min on High, 30 sec on 30 sec off.</para></listitem>
+<listitem><para>Transfer samples to microfuge tubes and spin at top speed (13,000-17,000 g) for 15 min at 4&#x00B0;C. Take the supernatant, and put aside. Resuspend pellet in 0.5 ml FA buffer + 0.1% sarkosyl + protease/phosphatase inhibitors. Sonicate again.</para></listitem>
+<listitem><para>Transfer samples to microfuge tubes and spin at top speed for 15 min at 4&#x00B0;C. Take supernatant, combine with the first supernatant. Discard pellet.</para></listitem>
+<listitem><para>Determine the protein concentration of the supernatant by Bio-Rad assay.</para></listitem>
+<listitem><para>Take 25 &#x03BC;l aliquot to determine the extent of DNA shearing (DNA purification below).</para></listitem>
+<listitem><para>Continue with the next step or aliquot and snap freeze the ChIP extract in liquid nitrogen and store at &#x2212;80&#x00B0;C.</para></listitem>
+</orderedlist>
+<para>*Sarkosyl: this may reduce efficiency of some mouse monoclonal antibodies, but helps to obtain a tight range sonication in Bioruptor.</para>
+</sect4>
+<sect4 id="sec2-3-2-2">
+<title>Larva extract preparation</title>
+<para>Caution: Do not let the frozen worm popcorn thaw before crosslinking.</para>
+<para>Estimate popcorn weight.</para>
+<orderedlist numeration="arabic">
+<listitem><para>Grind worms into a frozen powder. 2 methods are:</para>
+<orderedlist numeration="arabic">
+<listitem><para>a) Mortar and pestle</para>
+<para>Grind popcorn to a fine powder in cryo-mortar and pestle. This takes &sim;10 min of vigorous grinding. During grinding, periodically add more liquid nitrogen to keep the sample frozen. Check under dissecting scope that there are no whole worms left. For adults, breaking on average of 4 pieces is enough.</para></listitem>
+<listitem><para>b) Mixer Mill</para>
+<para>You can use a cryo-mill (e.g., from Retsch) to break the worms. Take &sim;4 grams (2 mls of settled worms) of frozen worm popcorn, place in prechilled 50 ml cup and add one 25 mm ball. Submerge in liquid nitrogen to chill. Mix for 15 sec at 25 Hz. Open the chamber and collect sample using a tapered spatula. Check that most worms are broken into a few pieces. If not, break for another 15 sec at 25 Hz.</para></listitem>
+</orderedlist></listitem>
+<listitem><para>Transfer worm powder to 10 volume of 1.1% formaldehyde in PBS + protease and phosphatase inhibitors (1.1 ml of 37% formaldehyde + 36 ml of PBS).</para></listitem>
+<listitem><para>Incubate at room temperature for 10 min with rocking. Make sure all the worms are dissolved.</para></listitem>
+<listitem><para>Quench formaldehyde by adding glycine to a final concentration of 125 mM, and incubating 5 min at room temperature.</para></listitem>
+<listitem><para>Centrifuge 4000 g for 3 min at 4&#x00B0;C. Remove supernatant.</para></listitem>
+<listitem><para>Resuspend pellet in cold PBS + 1 mM PMSF and spin at 4000 g for 3 min.</para></listitem>
+<listitem><para>Resuspend pellet in 1 volume of popcorn weight FA buffer + 0.1% sarkosyl + protease/phosphatase inhibitors.</para></listitem>
+<listitem><para>Distribute 1 ml into a 15 ml polystyrene tube. Sonicate and process as in the embryo protocol above.</para></listitem>
+</orderedlist>
+</sect4>
+<sect4 id="sec2-3-2-3">
+<title>Quantifying extract protein</title>
+<para>Add 1 &#x00B5;l of 0, 0.5, 1, 2, 4, 8 mg/ml BSA to 800 &#x03BC;l of water. Add 1 or 2 &#x03BC;l of extract to 800 &#x03BC;l of water. Add 200 &#x03BC;l Bradford reagent (BioRad #500-0006) and incubate at room temperature 5 min. Transfer to spec cuvettes and measure at 595 nm. Plot standard curve and calculate extract concentration.</para>
+</sect4>
+<sect4 id="sec2-3-2-4">
+<title>Input DNA purification</title>
+<para>Add 1 &#x03BC;l RNaseA to 25 &#x03BC;l of extract and digest RNA at 37&#x00B0;C 1 h. Add 225 &#x03BC;l of ChIP elution buffer (250 mM NaCl, 1% SDS, 10 mM Tris.Cl pH 8, 1 mM EDTA). Add 2 &#x03BC;l of proteinase K and incubate at 50&#x00B0;C for 1-2 h. Incubate overnight at in 65&#x00B0;C water bath to reverse crosslinks. Next day purify DNA using Qiagen PCR purification kit. Run DNA on 1% agarose gel to check shearing. The majority of the sheared chromatin should be between 200-1000 bp in length. We do not recommend re-sonicating frozen extract, thus we recommend optimization of the sonication conditions before the experiment.</para>
+</sect4>
+</sect3>
+<sect3 id="sec2-3-3">
+<title>Chromatin immunoprecipitation</title>
+<orderedlist numeration="arabic">
+<listitem><para>Thaw extract on ice. Aliquot 0.5-2.0 mg of extract from embryos, or 2-4 mg of extract from larvae. The amount is chosen based on target amount and how well the antibody works. For high amount of target protein (e.g., histone modifications) or if you get high background signal, try using less extract. Some recommendations are below:</para>
+<table id="untable1" frame="all" rules="all" cellpadding="0" cellspacing="0" width="75">
+<title>&emsp;</title>
+<tgroup cols="4">
+<colspec colnum="1" colname="col1"/>
+<colspec colnum="2" colname="col2"/>
+<colspec colnum="3" colname="col3"/>
+<colspec colnum="4" colname="col4"/>
+<thead>
+<row valign="bottom" rowsep="1">
+<entry align="left">Amount (mg)</entry>
+<entry align="left">Embryo</entry>
+<entry align="left">L3</entry>
+<entry align="left">Adult</entry>
+</row>
+</thead>
+<tbody>
+<row valign="top" rowsep="1">
+<entry align="left">0.5</entry>
+<entry align="left">Histone mod.</entry>
+<entry align="left">Histone mod.</entry>
+<entry/>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">1</entry>
+<entry align="left">Histone mod. and Pol II</entry>
+<entry align="left">Histone mod. and Pol II</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">2</entry>
+<entry align="left">Transcription Factors</entry>
+<entry align="left">Transcription Factors</entry>
+<entry align="left">Histone mod. and Pol II</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">4</entry>
+<entry/>
+<entry/>
+<entry align="left">Transcription Factors</entry>
+<entry/>
+</row>
+</tbody>
+</tgroup>
+</table></listitem>
+<listitem><para>Add FA buffer + 0.1% sarkosyl + protease/phosphatase inhibitors to bring the volume up to 440 &#x03BC;l.</para></listitem>
+<listitem><para>Centrifuge at 4&#x00B0;C 5 min at top speed. Transfer the supernatant to new tubes.</para></listitem>
+<listitem><para>Take 5% of the extract as Input. Place at freezer until next day.</para></listitem>
+<listitem><para>Add antibody (1-5 &#x03BC;g) to the rest of the sample and incubate while rotating at 4&#x00B0;C overnight.</para></listitem>
+<listitem><para>Take 40 &#x03BC;l of protein A (or G, depending on antibody) coupled to sepharose beads (GE Healthcare) or to magnetic beads (Dynabeads<superscript>&#x00AE;</superscript>, LifeTechnologies) or custom-affinity beads, per ChIP sample and equilibrate using FA buffer. Add 1 ml FA buffer, invert a few times, spin at 2500 g for 1 min, remove supernatant. Repeat this wash a total of four times. After the washes, resuspend the beads in one bed volume of FA buffer.</para></listitem>
+<listitem><para>Add 40 &#x03BC;l beads to each ChIP sample and rotate at 4&#x00B0;C, 2 h.</para></listitem>
+<listitem><para>Wash beads at room temperature by adding 1 ml of each of the following buffers and incubating on a rotator. Collect beads by spinning for 1 min at 2500 g. (If magnetic or custom beads are used, collect beads by the appropriate method). Remove supernatant by pipetting.</para>
+<itemizedlist>
+<listitem><para>&#x2022; 2 times FA buffer for 5 min.</para></listitem>
+<listitem><para>&#x2022; 1 time FA-1 M NaCl for 5 min.</para>
+<para>After this wash, transfer beads to new tubes with the next wash buffer.</para></listitem>
+<listitem><para>&#x2022; 1 time FA-500 mM NaCl for 10 min.</para></listitem>
+<listitem><para>&#x2022; 1 time TEL buffer for 10 min.</para></listitem>
+<listitem><para>&#x2022; 2 times TE for 5 min.</para></listitem>
+</itemizedlist></listitem>
+<listitem><para>9.  To elute the immunocomplexes, add 125 &#x03BC;l ChIP Elution Buffer and place the tube in a 65&#x00B0;C heat block for 15 min. Vortex briefly every 5 min. Spin down the beads at 6000 g for 1 min and transfer the supernatant to a new tube. Repeat elution and combine supernatants.</para></listitem>
+<listitem><para>10. Add 200 &#x03BC;l Elution Buffer to inputs. Add 2 &#x03BC;l of 10 mg/ml Proteinase K to ChIP and Input samples, and incubate &sim;1 h at 50&#x00B0;C heat block.</para></listitem>
+<listitem><para>11. Reverse crosslink overnight at 65&#x00B0;C water bath.</para></listitem>
+<listitem><para>12. Purify DNA using Qiagen PCR purification kit. Elute in 50 &#x03BC;l Qiagen Elution buffer. We do not typically quantify ChIP DNA, because we found no correlation between amount of DNA and the ChIP signal/noise ratio. When an antibody produces high background, DNA amount would be high, but the specific enrichment may be low.</para></listitem>
+</orderedlist>
+<para>For qPCR we use 2 &#x03BC;l (Real-Time) or 5 &#x03BC;l (Agarose gel) of the 50 &#x03BC;l ChIP DNA. For ChIP-seq library preparation, we use half of the ChIP and 10 ng of Input DNA.</para>
+<sect4 id="sec2-3-3-1">
+<title>ChIP reagents</title>
+<para><emphasis role="underline">FA buffer:</emphasis></para>
+<para>50 mM HEPES/KOH pH 7.5, 1 mM EDTA, 1% Triton&#x2122; X-100, 0.1% sodium deoxycholate; 150 mM NaCl</para>
+<para><emphasis role="underline">FA-1 M NaCl buffer:</emphasis></para>
+<para>50 mM HEPES/KOH pH 7.5, 1 mM EDTA, 1% Triton X-100, 0.1% sodium deoxycholate; 1 M NaCl</para>
+<para><emphasis role="underline">FA-500 mM NaCl buffer:</emphasis></para>
+<para>50 mM HEPES/KOH pH 7.5, 1 mM EDTA, 1% Triton X-100, 0.1% sodium deoxycholate; 500 mM NaCl</para>
+<para><emphasis role="underline">TEL buffer:</emphasis></para>
+<para>0.25 M LiCl, 1% NP-40, 1% sodium deoxycholate, 1 mM EDTA, 10 mM Tris-HCl, pH 8.0</para>
+<para>Prepare 500 ml of FA and TE, 250 ml of FA-500 mM NaCl, FA-1 M NaCl, and TEL buffers, filter sterilize and store at 4&#x00B0;C.</para>
+<para><emphasis role="underline">ChIP Elution buffer:</emphasis></para>
+<para>1% SDS, 250 mM NaCl, 10 mM Tris pH 8.0, 1 mM EDTA</para>
+<para>Prepare 50 ml and store at room temperature.</para>
+<para>100X protease inhibitors-Calbiochem<superscript>&#x00AE;</superscript> (cat. #539131)</para>
+<para>100X protease inhibitors-Calbiochem (cat. #524624)</para>
+<para>Keep inhibitors on ice, and add to the FA buffer fresh before use.</para>
+</sect4>
+</sect3>
+</sect2>
+</sect1>
+<sect1 id="sec3">
+<title>DamID in <emphasis>C. elegans</emphasis></title>
+<sect2 id="sec3-1">
+<title>Introduction to DamID</title>
+<para>DamID was developed by Bas van Steensel and Steven Henikoff as an alternative to ChIP for mapping of protein interaction sites within DNA (<link linkend="bib60">van Steensel and Henikoff, 2000</link><!--: PMID 10748524-->). DamID is based on the fusion between DNA adenine methyltransferase (Dam) from <emphasis>Escherichia coli</emphasis> and a protein of interest that either binds chromatin directly or indirectly as part of a protein complex. When the fusion protein is expressed <emphasis>in vivo</emphasis>, the Dam tag will methylate adenines in the immediate vicinity of the binding sites of the chromatin-associated protein. Dam recognizes GATC motifs and creates a unique adenine methylation mark (G<superscript>m</superscript>ATC) not normally found in the DNA of eukaryotes. Through a series of enzymatic reactions methylated sites are amplified, and can be identified by array or sequencing techniques (<link linkend="figure2">Figure 2</link>). The principle of DamID is simple&#x2014;genomic DNA is extracted from animals expressing Dam fused to the protein of interest (assay) and animals expressing a fusion of Dam to GFP (control for DNA accessibility). Methylated sites are cut by a restriction enzyme, <emphasis>Dpn</emphasis>I, that recognizes specifically G<superscript>m</superscript>ATC. <emphasis>Dpn</emphasis>I cut sites are then ligated to an adaptor before cutting non-methylated GATC sites with <emphasis>Dpn</emphasis>II. PCR using the adaptor as a primer amplifies fragments between G<superscript>m</superscript>ATC sites. Microarray hybridization or sequencing of amplicons reveals the ratio of methylation between the assay and the control.</para>
+<para>Many chromatin-associated proteins, such as transcription factors, recognize short DNA sequences, whereas the nuclear lamina contacts domains of few to hundreds of kilobases. ChIP and DamID experiments typically provide resolution in the range of 0.5-2 kilobases (<link linkend="bib62">Vogel et al., 2007</link><!--: PMID 17545983-->). Shearing of genomic DNA fragments is the main determinant of resolution in ChIP, whereas density of GATC sequences and spreading of Dam activity to nearby recognition sites set the limit in DamID. <emphasis>C. elegans</emphasis> has 269,049 GATC sequences per haploid genome (<link linkend="bib51">Sha et al., 2010</link><!--: PMID 20691096-->), corresponding to an average density of one site for every 373 bp.</para>
+<para>DamID has proven successful in many species, including budding and fission yeast (<link linkend="bib61">Venkatasubrahmanyam et al., 2007</link><!--: PMID 17925448-->; <link linkend="bib67">Woolcock et al., 2011</link><!--: PMID 21151114-->), <emphasis>Arabidopsis thaliana</emphasis> (<link linkend="bib18">Germann et al., 2006</link><!--: PMID 16972870-->), <emphasis>D. melanogaster</emphasis> (<link linkend="bib60">van Steensel and Henikoff, 2000</link><!--: PMID 10748524-->; <link linkend="bib59">van Bemmel et al., 2013</link><!--: PMID 23438860-->), and cultured mouse and human cells (<link linkend="bib52">Song et al., 2004</link><!--: PMID 15367695-->; <link linkend="bib62">Vogel et al., 2006</link><!--: PMID 17038565-->). The versatility of the method is illustrated by the variety of protein classes for which DNA association sites have been mapped, ranging from transcription factors (<link linkend="bib40">Orian et al., 2003</link><!--: PMID 12695332-->; <link linkend="bib52">Song et al., 2004</link><!--: PMID 15367695-->), repressor elements (<link linkend="bib38">Negre et al., 2006</link><!--: PMID 16613483-->; <link linkend="bib62">Vogel et al., 2006</link><!--: PMID 17038565-->), components of the RNAi machinery (<link linkend="bib67">Woolcock et al., 2011</link><!--: PMID 21151114-->), histones (<link linkend="bib1">Braunschweig et al., 2009</link><!--: PMID 19834459-->), nuclear pore proteins (<link linkend="bib26">Kalverda and Fornerod, 2010</link><!--: PMID 21150273-->) to nuclear lamina associated proteins (<link linkend="bib42">Pickersgill et al., 2006</link><!--: PMID 16878134-->; <link linkend="bib53">Steglich et al., 2012</link><!--: PMID 22156748-->).</para>
+<para>In <emphasis>C. elegans</emphasis>, DamID has been used to identify target genes for the transcription factor DAF-16 (<link linkend="bib50">Schuster et al., 2010</link><!--: PMID 20706209-->), as well as to map chromatin anchored to the nuclear envelope (<link linkend="bib56">Towbin et al., 2012</link><!--: PMID 22939621-->; <link linkend="bib71">Gonz&#x00E1;lez-Aguilera et al., 2014</link><!--PMID 24490688-->). In addition, Fire and coworkers used Dam (without fusing it to a chromatin-associated protein) to probe the structure of the <emphasis>C. elegans</emphasis> genome for enzymatic accessibility (<link linkend="bib51">Sha et al., 2010</link><!--: PMID 20691096-->).</para>
+<mediaobject id="figure2" xreflabel="Figure 2">
+<imageobject>
+<imagedata entityref="fig2" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 2</phrase>
+</textobject> &fig2legend;</mediaobject>
+</sect2>
+<sect2 id="sec3-2">
+<title>Experimental planning for DamID</title>
+<para>Because DamID is based on ectopic expression of Dam fused to your protein(-s) of interest, it is important to consider carefully which developmental stage and/or tissue type is most relevant for your purposes. Generally, you want to set up your experiments in cells that normally express your protein.</para>
+<para>High expression of Dam causes extensive methylation of the adenines in the genome, which increases the background signal and may have adverse effects on cell metabolism. Therefore, keeping expression to a minimum is necessary to obtain a high signal/noise ratio. A typical approach to do this is to express the Dam-target under the control of a weak promoter, such as an inducible promoter in non-inducing conditions (<link linkend="bib21">Greil et al., 2006</link><!--: PMID 16938559-->; <link linkend="bib50">Schuster et al., 2010</link><!--: PMID 20706209-->).</para>
+<sect3 id="sec3-2-1">
+<title>Design and expression of DamID fusion proteins</title>
+<para>In principle, any protein can be fused to Dam to test for possible direct or indirect DNA interaction which expands the range of proteins for which the method is relevant (<link linkend="bib59">van Bemmel et al., 2013</link><!--: PMID 23438860-->). Importantly, the consequences of truncations or point mutations on the DNA association activities of the test protein can be analyzed by comparing DamID profiles from wild-type and mutant Dam fusions. Although experiments are generally performed using full-length proteins, isolated DNA binding domains can be tested as well (<link linkend="bib60">van Steensel and Henikoff, 2000</link><!--: PMID 10748524-->). Because expression of the Dam fusion protein should be maintained very low, both genomic DNA and cDNA sequences can be employed for cloning. As in the original <emphasis>Drosophila</emphasis> DamID constructs, Dam fusions in <emphasis>C. elegans</emphasis> can be driven by heat shock promoters from which basal transcription produces little but sufficient amounts of Dam fusion protein (<link linkend="bib50">Schuster et al., 2010</link><!--: PMID 20706209-->; <link linkend="bib56">Towbin et al., 2012</link><!--: PMID 22939621-->). Schuster and coworkers used the <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00002015;class=Gene" role="_blank">hsp-16.1</ulink></emphasis> promoter, and we used the <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00002018;class=Gene" role="_blank">hsp-16.41</ulink></emphasis> promoter to control expression of Dam::DAF-16 and Dam::LMN-1, respectively. The basal activities of these two promoters have not been evaluated in different tissues, but both promoters drive expression in most if not all cell types (<link linkend="bib55">Stringham et al., 1992</link><!--: PMID 1550963-->; <link linkend="bib47">Rohner et al., 2013</link><!--: PMID 23460676-->). The Dam protein can be added to either the N- or the C-terminus of the protein of interest. The size of Dam is equivalent to GFP and if any information exists as to whether your protein tolerates better the addition of a N- or a C-terminal tag, this may guide the design of the Dam fusion (see next section). We have used the classical 3&#x2019;UTR from the <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00006789;class=Gene" role="_blank">unc-54</ulink></emphasis> gene in our DamID constructs but choosing other 3&#x2019;UTRs could potentially be used to alter the relative signal contribution by different cell types in whole-animal DamID (<link linkend="bib33">Mangone et al., 2010</link><!--: PMID 20522740-->). Finally, to minimize variation in expression levels between different DamID strains, we recommend that transgenic strains be generated by MosSCI (<link linkend="bib15">Frokjaer-Jensen et al., 2008</link><!--: PMID 18953339-->) or alternative single-copy integration techniques. This may be particular relevant if you plan to compare several fusion proteins.</para>
+</sect3>
+<sect3 id="sec3-2-2">
+<title>Validation of DamID fusions</title>
+<para>Recombination during transgenesis may lead to production of a truncated fusion protein. For transgenic strains obtained by MosSCI, single copy insertion of full-length transgenes should ideally be validated by Southern blot or PCR-based methods. Additionally, incorrect processing of the chimeric transcripts may lead to aberrant localization or expression compared to their endogenous counterparts. When using <emphasis>hsp</emphasis> promoters in the design of DamID strains, the low transcriptional activity that is used during the DamID experiment should not produce detectable signal in immunofluorescence (IF) or Western blot (WB). This is a good control to ensure that your fusion protein is not overexpressed. Upon heat shock however, clear IF and WB signals should be detected and used to control for correct processing and localization.</para>
+<para>To address correct expression issues, a Myc epitope is typically included as linker between Dam and the protein of interest, although other detection methods, of course, can be used. IF and WB analysis with anti-Myc antibodies are suitable methods to verify correct fusion protein localization and processing, respectively.</para>
+</sect3>
+<sect3 id="sec3-2-3">
+<title>Biological material for DamID</title>
+<para>DamID experiments in <emphasis>C. elegans</emphasis> were performed in young embryos (<link linkend="bib56">Towbin et al., 2012</link><!--: PMID 22939621-->) or adult hermaphrodites (<link linkend="bib50">Schuster et al., 2010</link><!--: PMID 20706209-->; <link linkend="bib71">Gonz&#x00E1;lez-Aguilera et al., 2014</link><!--PMID 24490688-->), although in principle any developmental stage can be studied. Tissue-specific DamID has not been reported yet, but one can imagine purifying nuclei or cells from a particular tissue (<link linkend="bib14">Fox et al., 2007</link><!--: PMID 17848203-->; <link linkend="bib54">Steiner et al., 2012</link><!--: PMID 22219512-->; <link linkend="bib64">Von Stetina et al., 2007</link><!--: PMID 17612406-->) in animals expressing a Dam fusion throughout their body. To prevent amplification of contaminating bacterial DNA in the DamID protocol, using a <emphasis>dam-E. coli</emphasis> strain as food source when growing the nematode cultures is recommended (<link linkend="bib51">Sha et al., 2010</link><!--: PMID 20691096-->; <link linkend="bib56">Towbin et al., 2012</link><!--: PMID 22939621-->).</para>
+</sect3>
+<sect3 id="sec3-2-4">
+<title>DamID controls</title>
+<para>Accessibility of Dam to methylate its target GATC sequence depends on chromatin compactness and nucleosome positioning (<link linkend="bib60">van Steensel and Henikoff, 2000</link><!--: PMID 10748524-->; <link linkend="bib51">Sha et al., 2010</link><!--: PMID 20691096-->). &#x201C;Dam only&#x201D; controls are therefore included in DamID protocols and used as baseline subtraction for fusions between Dam and the protein(-s) to be analyzed. &#x201C;Dam only&#x201D; controls should be placed under control of the same promoter and 3&#x2019;UTR as the Dam fusion genes, and may consist of Dam alone or Dam fused to a fluorescent protein, such as GFP, allowing easy validation of expression. Alternatively, Dam could be fused to a mutant version of the test protein unable to interact with its target DNA (<link linkend="bib32">Luo et al., 2011</link><!--: PMID 21652649-->). To serve as control for DNA accessibility, the &#x201C;Dam only&#x201D; protein should be nuclear. GFP::Dam (i.e., GFP fused to the N-terminus of Dam) fulfills this criteria (<link linkend="bib51">Sha et al., 2010</link><!--: PMID 20691096-->; <link linkend="bib71">Gonz&#x00E1;lez-Aguilera et al., 2014</link><!--PMID 24490688-->), whereas Dam::GFP does not show nuclear localization (<link linkend="bib50">Schuster et al., 2010</link><!--: PMID 20706209-->). Being a relatively new technique in the <emphasis>C. elegans</emphasis> field, only three DamID data sets have been published that may serve as positive controls (<link linkend="bib50">Schuster et al., 2010</link><!--: PMID 20706209-->; <link linkend="bib56">Towbin et al., 2012</link><!--: PMID 22939621-->; <link linkend="bib71">Gonz&#x00E1;lez-Aguilera et al., 2014</link><!--PMID 24490688-->). However, because identification of DNA association sites is usually done by hybridization to high-content arrays followed by detailed bioinformatics analysis, positive controls are both expensive and laborious and are usually omitted. Instead, DamID experiments should include at least three biological replicates (also for the &#x201C;Dam only&#x201D; control), and one should observe a high correlation coefficient between the replicates (<link linkend="bib50">Schuster et al., 2010</link><!--: PMID 20706209-->; <link linkend="bib56">Towbin et al., 2012</link><!--: PMID 22939621-->; <link linkend="bib71">Gonz&#x00E1;lez-Aguilera et al., 2014</link><!--PMID 24490688-->).</para>
+</sect3>
+<sect3 id="sec3-2-5">
+<title>DamID evaluation</title>
+<para>Similarly to ChIP, DamID-amplified DNA fragments can be quantified by qPCR, DNA arrays, or direct sequencing. qPCR requires prior knowledge about the DNA elements associated with the protein of interest and is mostly suitable when a limited number of DNA fragments are to be analyzed (<link linkend="bib61">Venkatasubrahmanyam et al., 2007</link><!--: PMID 17925448-->). In contrast, arrays and sequencing methods provide genome-wide information about binding sites. These methods are discussed in more detail below.</para>
+</sect3>
+</sect2>
+<sect2 id="sec3-3">
+<title>DamID protocols</title>
+<sect3 id="sec3-3-1">
+<title>Generation of DamID strains</title>
+<sect4 id="sec3-3-1-1">
+<title>Cloning</title>
+<para>Insert your gene (cDNA or genomic fragment) into a suitable vector containing an inducible promoter with low basal activity, the <emphasis>dam</emphasis> open reading frame, and a robust 3&#x2019;UTR (e.g., the vector pBN61[<emphasis>unc-119(+)</emphasis> P<subscript><emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00002018;class=Gene" role="_blank">hsp-16.41</ulink></emphasis></subscript><emphasis>::dam::myc::</emphasis>MCS<emphasis>::unc-54</emphasis> 3&#x2019;UTR] (<link linkend="bib71">Gonz&#x00E1;lez-Aguilera et al., 2014</link><!--PMID 24490688-->)).</para>
+</sect4>
+<sect4 id="sec3-3-1-2">
+<title>Transgenesis</title>
+<para>We have successfully used the MosSCI method to insert single copies of Dam fusion transgenes into the <emphasis>C. elegans</emphasis> genome (<link linkend="bib15">Frokjaer-Jensen et al., 2008</link><!--: PMID 18953339-->; <link linkend="bib56">Towbin et al., 2012</link><!--: PMID 22939621-->). Alternatively, strains can be generated by bombardment (<link linkend="bib50">Schuster et al., 2010</link><!--: PMID 20706209-->), although variability between strains may be higher.</para>
+<para>Outcross transgenic lines with wild-type nematodes at least twice prior to validation and DamID.</para>
+</sect4>
+</sect3>
+<sect3 id="sec3-3-2">
+<title>Validation of DamID fusion proteins</title>
+<para>For proteins that are expressed during embryogenesis, this life stage provides the best material for validation of localization (by IF) and size of expressed fusion protein (by WB). For larval and adult nematodes the protocols below may need modification. All steps are at room temperature unless indicated otherwise.</para>
+<sect4 id="sec3-3-2-1">
+<title>Immunofluorescence</title>
+<orderedlist numeration="arabic">
+<listitem><para>Heat shock young adults for 1 h at 33&#x00B0;C and leave to recover for 2 h at 20&#x00B0;C. Include transgenic animals that have not been heat shocked and wild type animals as controls.</para></listitem>
+<listitem><para>Transfer 6-8 animals into 3 &#x03BC;l of M9 on a polylysine-coated slide (<link linkend="bib6">Crittenden and Kimble, 1999</link><!--: PMID 10231789-->). Use more M9 if cutting the animals cannot be done quickly; otherwise all liquid will evaporate. Using two 25-gauge syringe needles, cut the animals in the middle, allowing embryos to extrude from the animal. Cover the sample with a 12 x 12 mm coverslip. Gently remove excess liquid with a paper towel if needed; embryos should be squeezed (but not squashed!) by the coverslip.</para></listitem>
+<listitem><para>Put slides on metal blocks on dry ice for 15 min or store at -80&#x00B0;C.</para></listitem>
+<listitem><para>Flick off cover slip with a scalpel and submerge slides immediately in -20&#x00B0;C methanol&#x2014;leave for 15-18 min.</para></listitem>
+<listitem><para>Transfer slides to PBST (PBS with 0.1% Tween<superscript>&#x00AE;</superscript>-20)&#x2014;leave for 15 min.</para></listitem>
+<listitem><para>Transfer slides to fresh PBST&#x2014;leave for 15 min.</para></listitem>
+<listitem><para>Dry slides as much as possible but it is critical that the embryos do not dry out, as this will ruin the staining.</para></listitem>
+<listitem><para>Make a circle around embryos with Vaseline<superscript>&#x00AE;</superscript>.</para></listitem>
+<listitem><para>Block slides in 40 &#x03BC;l PBST-F (PBST with 10% Fetal Calf Serum)&#x2014;leave for 30 min in a wet chamber (e.g., plastic box with wet paper towels). Remove solution by aspiration.</para></listitem>
+<listitem><para>Dilute &#x03B1;-Myc antibody in PBST-F (e.g., Sigma-Aldrich, cat. #C3956 rabbit &#x03B1;-Myc diluted 1:100) and add 40 &#x03BC;l to each slide. Ideally, include an additional primary antibody as staining control. If your protein localizes to a specific nuclear structure or compartment, the control antibody should label this too. Leave for 2 h at room temperature or overnight at 4&#x00B0;C in wet chamber.</para></listitem>
+<listitem><para>Wash for 1 min in PBST.</para></listitem>
+<listitem><para>Wash for 30 min in PBST.</para></listitem>
+<listitem><para>Wash for 30 min in PBST.</para></listitem>
+<listitem><para>Dry slides as before. Reapply Vaseline.</para></listitem>
+<listitem><para>Add 40 &#x03BC;l secondary antibodies diluted in PBST-F (e.g., Invitrogen&#x2122;, cat. #A21071 goat anti-rabbit Alexa Fluor<superscript>&#x00AE;</superscript> 633&#x2013;conjugated antibody diluted 1:1000 plus a suitable fluorescently labeled antibody to visualize your control primary antibody). Leave in darkness for 2 h at room temperature or overnight at 4&#x00B0;C in wet chamber.</para></listitem>
+<listitem><para>Wash for 1 min in PBST.</para></listitem>
+<listitem><para>Wash for 30 min in PBST.</para></listitem>
+<listitem><para>Wash for 30 min in PBST.</para></listitem>
+<listitem><para>Rinse quickly with PBS.</para></listitem>
+<listitem><para>Dry slides as before. Remove Vaseline.</para></listitem>
+<listitem><para>Mount with Mowiol<superscript>&#x00AE;</superscript> anti-fading mounting medium containing 5 &#x03BC;g/ml Hoechst 33258 (e.g., 30 &#x03BC;l/24 x 24 mm coverslip).</para></listitem>
+</orderedlist>
+</sect4>
+<sect4 id="sec3-3-2-2">
+<title>Western blot</title>
+<orderedlist numeration="arabic">
+<listitem><para>1.Heat shock two 60 mm NGM plates of synchronized young adults for 1 h at 33&#x00B0;C and leave to recover for 2 h at 20&#x00B0;C. Include transgenic animals that have not been heat shocked and wild type animals as controls.</para></listitem>
+<listitem><para>2.Harvest embryos by standard hypochlorite treatment (1 N NaOH, 30% bleach solution). Dilute a small aliquot (e.g., 1 &#x03BC;l) to determine number of embryos in each sample and adjust to similar concentration if needed. Approximately 2000 embryos should be loaded per lane.</para></listitem>
+<listitem><para>3.Disrupt embryos by boiling and vortexing in SDS sample buffer together with 0.5 &#x03BC;m-diameter glass beads for 5 min.</para></listitem>
+<listitem><para>4.Separate by SDS&#x2013;PAGE and transfer to appropriate membrane according to standard protocols.</para></listitem>
+<listitem><para>5.Block membrane (e.g., with PBS containing 0.05% Tween-20 and 3% low-fat milk for 30 min).</para></listitem>
+<listitem><para>6.Incubate for 2 h with &#x03B1;-Myc primary antibody (e.g., Sigma-Aldrich, cat. #C3956 diluted 1:400).</para></listitem>
+<listitem><para>7.Wash membrane with PBS containing 0.05% Tween-20.</para></listitem>
+<listitem><para>8.Incubate for 2 h with appropriate secondary antibody (e.g., Sigma-Aldrich cat. #A0545 peroxidase-conjugated anti-rabbit antibody diluted 1:5000).</para></listitem>
+<listitem><para>9.Wash membrane and develop according to manufacture&#x0027;s instructions.</para></listitem>
+</orderedlist>
+</sect4>
+</sect3>
+<sect3 id="sec3-3-3">
+<title>Nematode culture</title>
+<para>DamID experiments should be performed on synchronized cultures. We prefer to scale up the culture and use liquid medium but nematodes could also be obtained from NGM plates. Approximately 30 mg clean embryo or adult nematode pellet is sufficient for each sample.</para>
+<orderedlist numeration="arabic">
+<listitem><para>Collect embryos from asynchronous cultures by standard hypochlorite treatment (1 N NaOH, 30% bleach solution).</para></listitem>
+<listitem><para>Wash embryos at least three times in S-medium.</para></listitem>
+<listitem><para>Leave embryos to hatch overnight at 20&#x00B0;C in S-medium with 5 &#x03BC;g/ml cholesterol and 0.01% Tween-20 in the absence of bacteria.</para></listitem>
+<listitem><para>Assay quality and quantity of hatched L1s.</para></listitem>
+<listitem><para>Start three independent 50 ml S-medium cultures for each strain with approximately 35,000 L1 larvae. Cultures should contain <emphasis>Dam- E. coli</emphasis> (e.g., strain GM119 or SCS110) harvested from 100 ml bacterial culture as food source.</para></listitem>
+<listitem><para>Grow cultures with continuous agitation (180 rpm) at 20&#x00B0;C.</para></listitem>
+<listitem><para>Monitor cultures and harvest when they are enriched for the life stage to be analyzed (e.g., 53 h for non-gravid young adults; 66 h for accumulation of young embryos, etc.).</para>
+<orderedlist numeration="arabic">
+<listitem><para>7.1. Harvest embryos by hypochlorite treatment and wash three times with M9.</para></listitem>
+<listitem><para>7.2. Harvest adults by centrifugation and wash 5-7 times with M9 to remove bacteria.</para></listitem>
+</orderedlist></listitem>
+<listitem><para>Make aliquots containing &sim;30 &#x03BC;l embryo or adult material. Remove excess liquid and snap-freeze in liquid nitrogen before storage at -80&#x00B0;C until further processing.</para></listitem>
+</orderedlist>
+</sect3>
+<sect3 id="sec3-3-4">
+<title>Purification and amplification of Dam-methylated DNA</title>
+<para>In our experience, the frequency of Dam methylation is significantly lower in embryos compared to adults (C. Gonz&#x00E1;lez-Aguilera and P. Askjaer, unpublished). We speculate that this is due to the rapid cell divisions in the early embryos, which continuously erase the Dam mark. (DNA replication converts the Dam mark into two hemi-methylated sequences, which are cut much less efficiently by <emphasis>Dpn</emphasis>I). Potentially, the <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00002018;class=Gene" role="_blank">hsp-16.41</ulink></emphasis> promoter may also have a higher basal activity in adults versus embryos. This difference in methylation frequency implies that the protocol differs slightly depending on the life stage to be analyzed.</para>
+<orderedlist numeration="arabic">
+<listitem><para>1.Purify genomic DNA (gDNA) from &sim;30 mg embryos or adults, e.g., with Qiagen DNeasy kit including RNase A (cat. #69504 and #19101). Avoid using too much material, as this will reduce the quality of the DNA prep.</para></listitem>
+<listitem><para>2.Digest 2.5 &#x03BC;g of adult gDNA with 10 units <emphasis>Dpn</emphasis>I (New England Biolabs<superscript>&#x00AE;</superscript> Inc., cat. #R0176S; cuts G<superscript>m</superscript>ATC) in 10 &#x03BC;l overnight at 37&#x00B0;C in a thermocycler. Scale up the reaction 2-fold for embryonic gDNA. Include an additional reaction with <emphasis>Dpn</emphasis>I for one of the biological samples to be used as ligation control (control A) and a control reaction without <emphasis>Dpn</emphasis>I (control B).</para></listitem>
+<listitem><para>3.Inactivate <emphasis>Dpn</emphasis>I by incubation for 20 min at 80&#x00B0;C.</para></listitem>
+</orderedlist>
+<para>Steps 4-13 are relevant for identification of methylation sites by DNA arrays. For high-throughput sequencing, jump to step 14.</para>
+<orderedlist numeration="arabic">
+<listitem><para>4.Prepare double-stranded adaptors by mixing 50 &#x03BC;l of primers AdRt (5&#x2019; CTAATACGACTCACTATAGGGCAGCGTGGTCGCGGCCGAGGA; 100 &#x03BC;M) and 50 &#x03BC;L of AdRb (5&#x2019; TCCTCGGCCG; 100 &#x03BC;M). Heat to 95&#x00B0;C and let cool down slowly to room temperature.</para></listitem>
+<listitem><para>5.For embryos: Split <emphasis>Dpn</emphasis>I digested DNA in two tubes, each with 10 &#x03BC;l.</para></listitem>
+<listitem><para>6.Mix 10 &#x03BC;l <emphasis>Dpn</emphasis>I digested DNA, 0.8 &#x03BC;l of the annealed adaptors (50 &#x03BC;M), 2 &#x03BC;l of 10x ligation buffer, and 5 units T4 DNA ligase (Roche Applied Science, cat. #10799009001, 5 U/&#x03BC;l), in a volume of 20 &#x03BC;l and incubate at 16&#x00B0;C in a thermocycler for 2 h or overnight. Include also a reaction with <emphasis>Dpn</emphasis>I digested DNA but omitting the T4 DNA ligase (control A).</para></listitem>
+<listitem><para>7.Inactivate the ligase by incubation for 10 min at 65&#x00B0;C.</para></listitem>
+<listitem><para>8.Digest non-methylated GATC sites by incubating the ligation reactions with 10 units <emphasis>Dpn</emphasis>II (New England Biolabs Inc., cat. #R0543S) in a volume of 50 &#x03BC;l for 1 h at 37&#x00B0;C. For embryos: Pool the two reactions in a single tube with 100 &#x03BC;l.</para></listitem>
+<listitem><para>9.Amplify methylated DNA, using for instance Advantage<superscript>&#x00AE;</superscript> cDNA Polymerase Mix (Clontech Laboratories, Inc., cat. #639105). Perform also a control reaction without DNA template (control C).</para>
+<orderedlist numeration="arabic">
+<listitem><para>1)28.75 &#x03BC;l ddH<subscript>2</subscript>O</para></listitem>
+<listitem><para>2)5 &#x03BC;l 10x cDNA PCR reaction buffer (Clontech)</para></listitem>
+<listitem><para>3)10 &#x03BC;l of <emphasis>Dpn</emphasis>II digested DNA</para></listitem>
+<listitem><para>4)1.25 &#x03BC;l of primer Adr-PCR (5&#x2019; GGTCGCGGCCGAGGATC; 50 &#x03BC;M)</para></listitem>
+<listitem><para>5)4 &#x03BC;l dNTP mix (Takara Bio Inc., cat. #4030, each 2.5 mM)</para></listitem>
+<listitem><para>6)1 &#x03BC;l Advantage cDNA Polymerase Mix</para>
+<para>PCR parameters</para>
+<orderedlist numeration="arabic">
+<listitem><para>68&#x00B0;C 10 min</para></listitem>
+<listitem><para>94&#x00B0;C 1 min</para></listitem>
+<listitem><para>65&#x00B0;C 5 min</para></listitem>
+<listitem><para>68&#x00B0;C 15 min</para></listitem>
+<listitem><para>94&#x00B0;C 1 min</para></listitem>
+<listitem><para>65&#x00B0;C 1 min</para></listitem>
+<listitem><para>68&#x00B0;C 10 min</para></listitem>
+<listitem><para>Go to step 5 3x</para></listitem>
+<listitem><para>94&#x00B0;C 1 min</para></listitem>
+<listitem><para>65&#x00B0;C 1 min</para></listitem>
+<listitem><para>68&#x00B0;C 2 min</para></listitem>
+<listitem><para>Go to step 9 23x (embryos) or 20x (adults).</para></listitem>
+</orderedlist></listitem>
+</orderedlist></listitem>
+<listitem><para>Check 5 &#x03BC;l of PCR reaction on an agarose gel. Successful amplification of Dam-methylated DNA should produce a smear from 200 to 1500 bp. Appearance of discrete bands suggests the presence of a PCR contamination. If a strong smear appears in the control reactions A, B and C, try to reduce the number of cycles in step 12; control lanes do not necessarily need to be blank, but should be fainter than the other lanes.</para></listitem>
+<listitem><para>To achieve sufficient material, 6-7 (embryos) or 2 (adults) PCR reactions from the same <emphasis>Dpn</emphasis>II digestion are pooled and purified with Qiaquick PCR purification kit (Qiagen).</para></listitem>
+<listitem><para>Quantify purified DNA. Typically, 1 &#x03BC;g of DNA is needed for labeling and hybridization, but additional quantities may be required for quality checks, depending on the genomics facility.</para></listitem>
+<listitem><para>Label and hybridize to whole genome-tiling array according to the manufacture&#x0027;s instructions. Remember to include a dye-swap for one of the triplicates.</para></listitem>
+<listitem><para>For high-throughput sequencing, a modified linker containing a recognition site for enzymes that cut DNA 20-25 bp after the recognition site are ligated to the <emphasis>Dpn</emphasis>I-digested ends (e.g., <emphasis>EcoP15</emphasis>I or <emphasis>Mme</emphasis>I). Different strategies have been developed and the reader should consult the original papers (<link linkend="bib32">Luo et al., 2011</link><!--: PMID 21652649-->; <link linkend="bib51">Sha et al., 2010</link><!--: PMID 20691096-->). Please note that neither of the two papers identified DNA binding sites for <emphasis>C. elegans</emphasis> chromatin-associated proteins, hence, further optimization may be required.</para></listitem>
+<listitem><para>Digest with <emphasis>EcoP15</emphasis>I or <emphasis>Mme</emphasis>I to generate short Dam tags.</para></listitem>
+<listitem><para>Purify digested DNA. If the linker used in step 14 is biotin-labeled, purification can be performed with magnetic streptavidin beads.</para></listitem>
+<listitem><para>Ligate second linker.</para></listitem>
+<listitem><para>Optional: purify correctly ligated DNA based on size by denaturing polyacrylamide gel electrophoresis.</para></listitem>
+<listitem><para>PCR amplify Dam fragments using linker-specific primers.</para></listitem>
+<listitem><para>Gel-purify DNA of correct size (116-125 bp).</para></listitem>
+<listitem><para>Submit fragments for Solexa sequencing.</para></listitem>
+</orderedlist>
+</sect3>
+</sect2>
+</sect1>
+<sect1 id="sec4">
+<title>Methods for ChIP and DamID quantification</title>
+<sect2 id="sec4-1">
+<title>qPCR</title>
+<para>ChIP or DamID followed by qPCR is a viable option when one knows or has a good guess as to where the protein binds. Real-time PCR is used to quantify the relative amount of ChIP DNA compared to input DNA at the test and control loci. Selecting the test region for qPCR depends on the target. For example, in the case of a DNA-binding transcription factor, one can choose primers encompassing a region of the promoter with a putative DNA sequence motif. Genome wide ChIP data is available for a number of transcription factors (<ulink url="http://www.modencode.org/">http://www.modencode.org/</ulink>). The negative control locus should be at a region with no expected binding. We recommend expressing ChIP enrichment as percentage of the Input. Some researchers use fold enrichment compared to IgG control, or the negative control loci. In this case, one needs to make sure that the background signal does not vary too much from experiment to experiment.</para>
+</sect2>
+<sect2 id="sec4-2">
+<title>DNA microarrays</title>
+<para>For identification and quantification of DNA fragments by array technology, samples from the Dam fusion strain and the &#x201C;Dam only&#x201D; control strain are processed in parallel and fluorescently labeled with different dyes, followed by co-hybridization on high-density arrays. Similarly for ChIP-chip, ChIP and input DNA are amplified and labeled by two different fluorescent dyes (Cy3 and Cy5) and co-hybridized to microarrays that encompass the whole genome (<link linkend="bib2">Buck and Lieb, 2004</link><!--: PMID 14986705-->; <link linkend="bib11">Ercan et al., 2007</link><!--: PMID 17293863-->). To avoid potential bias introduced by the two dyes, a dye-swap experiment should be performed with at least one of the biological replicates. Analysis of hybridization data, including normalization and smoothening can be performed with various algorithms. Briefly, fluorescence signal ratio of ChIP to Input or &#x201C;Dam fusion&#x201D; to &#x201C;Dam only&#x201D; is a measure of ChIP or DamID enrichment per probe, and due to normalization, enrichment at each locus is relative to the rest of the genome. Further processing of data will typically depend on the class of chromatin-association being investigated. Whole-Genome Tiling Arrays from Roche NimbleGen containing 2.1 million 50 nt probes have been used in both ChIP-chip and DamID experiments, but are no longer produced. Equivalent arrays from other manufactures have not been tested in <emphasis>C. elegans</emphasis> DamID, but have been employed in DamID experiments in other organisms as well as in <emphasis>C. elegans</emphasis> ChIP studies.</para>
+</sect2>
+<sect2 id="sec4-3">
+<title>High-throughput sequencing</title>
+<para>DamID and ChIP DNA can be directly sequenced by high-throughput sequencing. ChIP-seq provides higher resolution and greater dynamic range compared to ChIP-chip, and is currently cheaper since sequencing can be multiplexed, and commercial microarrays are being phased out (<link linkend="bib41">Park, 2009</link><!--: PMID 19736561-->; <link linkend="bib30">Landt et al., 2012</link><!--: PMID 22955991-->). Multiplexing is done by including a unique identifying index to each sequencing library and pooling libraries for sequencing, for example, in one lane of an Illumina<superscript>&#x00AE;</superscript> flowcell. For ChIP-seq, having greater numbers of short reads is more important than having long reads. Therefore, single-end sequencing of 36-50 bp by Illumina is a popular method of choice. Transcription factors with more focused binding and fewer binding sites typically require fewer reads, while targets with broad patterns, such as histone modifications, require more reads. In our experience, 10-20 million mapped 50 bp reads are usually enough for a large range of targets in <emphasis>C. elegans</emphasis> (<link linkend="bib72">Kranz et al. 2013</link>)<!--PMID 24125077-->. Typically 80-90% of reads from ChIP map to the genome. One lane of Illumina HiSeq2500 typically provides &sim;150 million mapped reads, thus one can multiplex &sim;8 samples in a lane. ChIP-seq enrichment score is calculated for each base pair across the genome as read coverage of ChIP compared to Input, and thus reflects relative binding with respect to the whole genome. To accurately determine protein-binding sites by peak calling, it is important to sequence matching Input DNA preferably at same or higher coverage (<link linkend="bib4">Chen et al., 2012</link><!--: PMID 22522655-->).</para>
+<para>Although most published DamID experiments used DNA microarrays, recent studies have mapped Dam methylation sites with Illumina sequencing (<link linkend="bib51">Sha et al., 2010</link><!--: PMID 20691096-->; <link linkend="bib32">Luo et al., 2011</link><!--: PMID 21652649-->). These two studies differ in several details, but both included an enzymatic trimming of the methylated fragments to provide 20-27 bp DamID sequence tags that were identified by massive sequencing. Approximately 38% of raw sequence reads could be mapped to unique GATC sites in the <emphasis>C. elegans</emphasis> genome (<link linkend="bib51">Sha et al., 2010</link><!--: PMID 20691096-->), which implies that 10-20 million reads will be appropriate for each sample, thus similar to the situation in ChIP-seq.</para>
+</sect2>
+<sect2 id="sec4-4">
+<title>Data analysis</title>
+<para>Because data analysis will depend very much on several parameters, such as type of protein being analyzed (transcription factor, histone, nuclear envelope protein, and etc.), methods for data generation (array or sequencing), and extent of bioinformatics assistance available, it is not realistic to give detailed protocols on this aspect here. Please refer to published studies or contact us for further discussion.</para>
+</sect2>
+</sect1>
+<sect1 id="sec5">
+<title>Live chromatin imaging</title>
+<sect2 id="sec5-1">
+<title>Introduction</title>
+<para>The modENCODE consortium as well as the vast majority of published ChIP and DamID studies use either entire worms or developing embryos. The starting material is therefore a mixture of cell types and/or developmental stages, which hinders cell-type specific nuclear organization studies. One way to overcome this limitation is to make use of the <emphasis>C. elegans</emphasis> fixed lineage to carry out imaging-based analysis. Such techniques are low throughput compared to microarray- or sequencing-based studies, and only a limited number of loci/sequences can be studied. Imaging and ChIP/DamID are therefore complementary techniques. Fluorescence <emphasis>in situ</emphasis> hybridization is difficult to achieve in <emphasis>C. elegans,</emphasis> in particular in differentiated larvae or adults.</para>
+<para>All techniques to tag a locus <emphasis>in vivo</emphasis> in its chromatin context rely on the recognition of a bacterial- or phage-binding site by its cognate repressor. A number of repressor/binding site couples have been used in a variety of organisms (lacI/<emphasis>lacO;</emphasis> tetR/<emphasis>tetO</emphasis>; &#x03BB; repressor/operators). In <emphasis>C. elegans,</emphasis> the only system used up to now is the <emphasis>lacO</emphasis>/lacI couple (<link linkend="bib3">Carmi et al., 1998</link><!--: PMID 9823896-->; <link linkend="bib25">Kaltenbach et al., 2000</link><!--: PMID 11030349-->; <link linkend="bib20">Gonzalez-Serricchio and Sternberg, 2006</link><!--: PMID 16759392-->; <link linkend="bib69">Yuzyuk et al., 2009</link><!--: PMID 19460346-->; <link linkend="bib36">Meister et al., 2010b</link><!--: PMID 20395364-->; <link linkend="bib68">Yuen et al., 2011</link><!--: PMID 22018540-->; <link linkend="bib56">Towbin et al., 2012</link><!--: PMID 22939621-->; <link linkend="bib5">Cochella and Hobert, 2012</link><!--: PMID 23201143-->; <link linkend="bib47">Rohner et al., 2013</link><!--: PMID 23460676-->). The system has been used to answer a variety of biological questions:</para>
+<itemizedlist>
+<listitem><para>- analyze <emphasis>in vivo</emphasis> the interaction of a given protein (e.g., a transcription factor) with its cognate binding site, in a cell-type and developmental stage specific manner (<link linkend="bib3">Carmi et al., 1998</link><!--: PMID 9823896-->; <link linkend="bib25">Kaltenbach et al., 2000</link><!--: PMID 11030349-->; <link linkend="bib58">Updike and Mango, 2006</link><!--: PMID 17009877-->; <link linkend="bib27">Kiefer et al., 2007</link><!--: PMID 17250823-->; <link linkend="bib69">Yuzyuk et al., 2009</link><!--: PMID 19460346-->).</para></listitem>
+<listitem><para>- functionally dissect promoters for transcription factor binding and/or subnuclear positioning (<link linkend="bib47">Rohner et al., 2013</link><!--: PMID 23460676-->; <link linkend="bib58">Updike and Mango, 2006</link><!--: PMID 17009877-->; <link linkend="bib69">Yuzyuk et al., 2009</link><!--: PMID 19460346-->).</para></listitem>
+<listitem><para>- analyze mosaic worms using <emphasis>lacO</emphasis>/lacI as a tool to identify cells carrying an array (<link linkend="bib20">Gonzalez-Serricchio and Sternberg, 2006</link><!--: PMID 16759392-->).</para></listitem>
+<listitem><para>- determine cell ploidy by counting the number of <emphasis>lacO</emphasis>/lacI spots for a chromosomally integrated array (<link linkend="bib20">Gonzalez-Serricchio and Sternberg, 2006</link><!--: PMID 16759392-->).</para></listitem>
+<listitem><para>- quantify genome compaction using complex arrays in which binding sites are interspersed with exogenous DNA (<link linkend="bib69">Yuzyuk et al., 2009</link><!--: PMID 19460346-->).</para></listitem>
+<listitem><para>- analyze <emphasis>de novo</emphasis> centromere formation (<link linkend="bib68">Yuen et al., 2011</link><!--: PMID 22018540-->).</para></listitem>
+<listitem><para>- highlight changes in the organization of the nucleus during development (<link linkend="bib36">Meister et al., 2010b</link><!--: PMID 20395364-->).</para></listitem>
+<listitem><para>- uncover sequences and signals involved in genome nuclear organization (<link linkend="bib36">Meister et al., 2010b</link><!--: PMID 20395364-->; <link linkend="bib47">Rohner et al., 2013</link><!--: PMID 23460676-->; <link linkend="bib56">Towbin et al., 2012</link><!--: PMID 22939621-->)</para></listitem>
+</itemizedlist>
+<para>Depending on the biological question, the individual setup of the system is quite different. Here we present first a review of the different published systems, and then recently developed methods and reagents. In the last part, we discuss image acquisition and analysis techniques.</para>
+</sect2>
+<sect2 id="sec5-2">
+<title>Experimental planning</title>
+<sect3 id="sec5-2-1">
+<title>LacI/<emphasis>lacO</emphasis> systems for monitoring chromatin <emphasis>in vivo</emphasis></title>
+<para>Two major systems have been used to visualize sequences <emphasis>in vivo</emphasis> using lacI/<emphasis>lacO</emphasis>. In the first system, hereafter described as &#x201C;<emphasis>cis</emphasis> tagging&#x201D;, a single transgenic array encodes fluorescently tagged lacI and carries <emphasis>lacO</emphasis> sites as well as the sequences of interest. Fluorescent lacI therefore binds to the array which encodes it. In the second type, &#x201C;<emphasis>trans</emphasis> tagging&#x201D;, two different transgenes are used. One transgene provides expression of fluorescent lacI but does not contain <emphasis>lacO</emphasis> sites, hence is not bound by fluorescent lacI and remains microscopically invisible. A second transgene carrying <emphasis>lacO</emphasis> sites as well as the sequences of interest is observed in this case. Both systems require the expression of fluorescently tagged lacI.</para>
+</sect3>
+<sect3 id="sec5-2-2">
+<title>lacI expression in <emphasis>C. elegans</emphasis></title>
+<para>The Lac repressor from the <emphasis>E. coli</emphasis> lac operon is expressed as a fusion with a green or cyan fluorescent protein (GFP, CFP), and targeted to the nucleus by an NLS. There are a number of lacI variants currently used for tagging, and these variants differ between organisms for historical reasons. The most widely used in <emphasis>C. elegans</emphasis> is lacI<superscript>q</superscript><emphasis>,</emphasis> a lacI version mutated in its C-terminal tetramerization domain that provides high affinity to the <emphasis>lacO</emphasis> repeats. In budding yeast, binding of lacI to <emphasis>lacO</emphasis> repeats was shown to lead to replication fork passage problems, which in turn can modify gene localization (<link linkend="bib7">Dubarry et al., 2011</link><!--: PMID 21724830-->). This can be avoided by using lower affinity versions of lacI (lacI**, <link linkend="bib7">Dubarry et al., 2011</link><!--: PMID 21724830-->). In <emphasis>C. elegans,</emphasis> no difference in gene positioning has been observed between lacI<superscript>q</superscript> and lower affinity lacI versions with respect to <emphasis>lacO</emphasis> repeats for larger arrays and for bombardment-mediated transgenes (P. Meister, unpublished observations). Expression levels of the GFP-lacI need to be low, as overexpression elevates background fluorescence, enhances non-specific binding, and can cause slow growth or sick animals.</para>
+</sect3>
+<sect3 id="sec5-2-3">
+<title><emphasis>Cis</emphasis> tagging&#x2014;insertion of <emphasis>lacO</emphasis>, lacI-expressing constructs and sequences of interest on the same transgenic array</title>
+<para><emphasis>Cis</emphasis> systems are obtained by microinjection and typically stay extrachromosomal. They are created new for each sequence to be tested. For the expression of lacI, different promoters active in all cells have been used (<link linkend="table1">Table 1</link>), either inducible (<emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00002016;class=Gene" role="_blank">hsp-16.2</ulink></emphasis>p, <link linkend="bib3">Carmi et al., 1998</link><!--: PMID 9823896-->; <link linkend="bib20">Gonzalez-Serricchio and Sternberg, 2006</link><!--: PMID 16759392-->) or constitutively expressed (<emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00001088;class=Gene" role="_blank">dpy-30</ulink></emphasis>p, <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00001898;class=Gene" role="_blank">his-24</ulink></emphasis>p, <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00019947;class=Gene" role="_blank">htz-1</ulink></emphasis>p, <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00000235;class=Gene" role="_blank">baf-1</ulink></emphasis>p, <link linkend="bib3">Carmi et al., 1998</link><!--: PMID 9823896-->; <link linkend="bib27">Kiefer et al., 2007</link><!--: PMID 17250823-->; <link linkend="bib69">Yuzyuk et al., 2009</link><!--: PMID 19460346-->; <link linkend="bib13">Fakhouri et al., 2010</link><!--: PMID 20714352-->; <link linkend="bib36">Meister et al., 2010b</link><!--: PMID 20395364-->). As for other injected arrays, different levels of complexity can be achieved by adjusting the composition of injected DNA. Simple arrays, composed exclusively of plasmids are highly repetitive and contain up to 300 copies of each of the plasmids used to create them (<link linkend="bib36">Meister et al., 2010b</link><!--: PMID 20395364-->). In this case, the single <emphasis>lacO</emphasis> site present in each plasmid is sufficient to form of a visible spot, as the total number of plasmids is high. Complexity of the array can be increased by adding, for instance, sonicated fish (salmon or herring) DNA (from 40 to 90% of the total DNA), but in this case a plasmid with <emphasis>lacO</emphasis> repeats has to be added to the injection mix (<link linkend="bib27">Kiefer et al., 2007</link><!--: PMID 17250823-->; <link linkend="bib69">Yuzyuk et al., 2009</link><!--: PMID 19460346-->; <link linkend="bib13">Fakhouri et al., 2010</link><!--: PMID 20714352-->).</para>
+<table id="table1" frame="all" rules="all" cellpadding="0" cellspacing="0" width="75">
+<title>Table 1. <emphasis>Cis</emphasis> tagging systems&#x2014;lacI expressing constructs and <emphasis>lacO</emphasis> sites present on the same transgene.</title>
+<tgroup cols="4">
+<colspec colnum="1" colname="col1"/>
+<colspec colnum="2" colname="col2"/>
+<colspec colnum="3" colname="col3"/>
+<colspec colnum="4" colname="col4"/>
+<thead>
+<row valign="bottom" rowsep="1">
+<entry align="left"><emphasis role="bold">Laboratory and Reference</emphasis></entry>
+<entry align="left"><emphasis role="bold">Biological question</emphasis></entry>
+<entry align="left"><emphasis role="bold">Array composition (misture of plasmids</emphasis></entry>
+<entry align="left">lacI expression system/<emphasis>lacO</emphasis> composition*</entry>
+</row>
+</thead>
+<tbody>
+<row valign="top" rowsep="1">
+<entry align="left"><para>TY</para>
+<para><link linkend="bib3">Carmi et al., 1998</link><!-- PMID 9823896--></para></entry>
+<entry align="left"><emphasis>In vivo</emphasis> binding of SEX-1 to <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00006962;class=Gene" role="_blank">xol-1</ulink></emphasis> promoter</entry>
+<entry align="left">256x <emphasis>lacO/lacI/<ulink url="http://www.wormbase.org/db/get?name=WBGene00001079;class=Gene" role="_blank">dpy-20</ulink></emphasis> marker + or &#x2013; promoter</entry>
+<entry align="left"><emphasis>hsp-16.2p::gfp-lacI</emphasis> (induced)</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><para>PS</para>
+<para><link linkend="bib20">Gonzalez-Serrichio et al., 2006</link><!-- PMID 16759392--></para></entry>
+<entry align="left">Array tracking, mosaic analysis</entry>
+<entry align="left">256x <emphasis>lacO/lacI/</emphasis>pBluescriptII carrier/<emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00001079;class=Gene" role="_blank">dpy-20</ulink></emphasis> or <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00004397;class=Gene" role="_blank">rol-6</ulink></emphasis> marker</entry>
+<entry align="left"><emphasis>hsp-16.2p::gfp-lacI</emphasis> (induced)</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><para>SM</para>
+<para><link linkend="bib27">Kiefer et al., 2007</link><!-- PMID 17250823--></para></entry>
+<entry align="left"><emphasis>In vivo</emphasis> binding of PHA-4 to <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00003012;class=Gene" role="_blank">lin-26</ulink></emphasis> promoter</entry>
+<entry align="left">256x <emphasis>lacO/lacI/<ulink url="http://www.wormbase.org/db/get?name=WBGene00000481;class=Gene" role="_blank">cha-1</ulink></emphasis> marker/promoter/ <emphasis>pha-4p::yfp</emphasis> plus herring DNA</entry>
+<entry align="left"><emphasis>htz-1p::lacI-cfp</emphasis></entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><para>SM</para>
+<para><link linkend="bib69">Yzyuk et al., 2010</link><!-- PMID 19460346--></para></entry>
+<entry align="left">Chromatin compaction and cell plasticity</entry>
+<entry align="left">256x <emphasis>lacO/lacI/<ulink url="http://www.wormbase.org/db/get?name=WBGene00000481;class=Gene" role="_blank">cha-1</ulink></emphasis> marker/promoter/ <emphasis>pha-4p::yfp</emphasis> plus herring DNA</entry>
+<entry align="left"><emphasis>htz-1p::lacI-cfp</emphasis></entry>
+</row>
+<row valign="top" rowsep="1">
+<entry/>
+<entry/>
+<entry align="left">256x <emphasis>lacO/lacI/<ulink url="http://www.wormbase.org/db/get?name=WBGene00000481;class=Gene" role="_blank">cha-1</ulink></emphasis> marker/promoter/ <emphasis>pha-4p::yfp</emphasis> plus herring or salmon DNA</entry>
+<entry align="left"><emphasis>his-24p::lacI-cfp</emphasis></entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><para>SM</para>
+<para><link linkend="bib13">Fakhouri et al., 2010</link><!-- PMID 20714352--></para></entry>
+<entry align="left">Transcription factors cell type specificity and function in chromatin decompaction</entry>
+<entry align="left">256x <emphasis>lacO/lacI/<ulink url="http://www.wormbase.org/db/get?name=WBGene00000481;class=Gene" role="_blank">cha-1</ulink></emphasis> marker/promoter/ <emphasis>pha-4p::yfp</emphasis> plus herring DNA</entry>
+<entry align="left"><emphasis>his-24p</emphasis> or <emphasis>htz-1p::lacI-cfp</emphasis></entry>
+</row>
+<row valign="top" rowsep="1">
+<entry/>
+<entry/>
+<entry align="left">256x <emphasis>lacO/lacI/<ulink url="http://www.wormbase.org/db/get?name=WBGene00000481;class=Gene" role="_blank">cha-1</ulink></emphasis> marker/promoter/ <emphasis>pha-4p::yfp</emphasis> plus herring DNA</entry>
+<entry align="left"><emphasis>htz-1p::mCherry-lacI</emphasis></entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><para>GW<superscript><emphasis role="bold"><emphasis>&#x00A7;</emphasis></emphasis></superscript></para>
+<para><!--20395364--></para>
+<para><link linkend="bib36">Meister et al., 2010b</link><!-- PMID--></para></entry>
+<entry align="left">Nuclear organization changes during development</entry>
+<entry align="left">1x <emphasis>lacO/lacI/<ulink url="http://www.wormbase.org/db/get?name=WBGene00003515;class=Gene" role="_blank">myo-3</ulink>::rfp</emphasis> marker</entry>
+<entry align="left"><emphasis>baf-1p::gfp-lacI</emphasis>**</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left" namest="col1" nameend="col4"><para><emphasis role="bold">Transgene type</emphasis>: except where indicated transgenes are extrachromosomal injected arrays. <superscript><emphasis role="bold"><emphasis>&#x00A7;</emphasis></emphasis></superscript>Transgene is an integrated injected array.</para>
+<para><emphasis role="bold">lacI expression system: coinjected with and on the same array as the <emphasis>lacO</emphasis> sites. <emphasis>lacO</emphasis> composition: 256x lacO repeats coinjected except where indicated. **</emphasis>1x <emphasis>lacO</emphasis> on each plasmid.</para></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<para>The main advantage of <emphasis>cis</emphasis> systems is their ease of creation: they only require injection of a single DNA mixture, a standard technique in <emphasis>C. elegans</emphasis> laboratories. In these systems, the array carries four different components: (1) an expression construct for a fluorescently labelled protein of interest, (2) its putative binding sequence, (3) <emphasis>lacO</emphasis> repeats, and (4) the lacI-expressing plasmid. Colocalization on the array of fluorescent lacI and the fluorescent protein of interest (in different colors) indicates binding of the protein of interest to the sequence. SEX-1 binding to the <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00006962;class=Gene" role="_blank">xol-1</ulink></emphasis> promoter and a number of rules for PHA-4 binding to its target promoters were characterized with this technique (<link linkend="bib3">Carmi et al., 1998</link><!--: PMID 9823896-->; <link linkend="bib27">Kiefer et al., 2007</link><!--: PMID 17250823-->; <link linkend="bib13">Fakhouri et al., 2010</link><!--: PMID 20714352-->). Using complex arrays, the role of H3K27-dependent chromatin compaction during development was uncovered, which would not have been visible with smaller transgenes (<link linkend="bib69">Yuzyuk et al., 2009</link><!--: PMID 19460346-->; <link linkend="bib13">Fakhouri et al., 2010</link><!--: PMID 20714352-->).</para>
+<para>Extrachromosomal arrays are randomly lost during cell division. This has the unique advantage to allow cell-autonomous gene-function analysis, or &#x201C;mosaic analysis&#x201D;. The <emphasis>lacO/</emphasis>lacI spot can be used to identify unequivocally cells carrying the array (which becomes visible) (<link linkend="bib20">Gonzalez-Serricchio and Sternberg, 2006</link><!--: PMID 16759392-->).</para>
+<para>The main disadvantage of injected arrays is that it is difficult to control for their size and the exact ratio of their individual components, especially when adding fish DNA. <emphasis>A</emphasis> <emphasis>posteriori</emphasis> determination of array composition requires genomic DNA purification and quantitative PCR on the different components. Furthermore, it is almost impossible to determine the exact composition of complex arrays as the total size of the array is impossible to determine precisely.</para>
+</sect3>
+<sect3 id="sec5-2-4">
+<title><emphasis>Trans</emphasis> tagging&#x2014;insertion of the lacI expression system and <emphasis>lacO</emphasis>-tagged sequences at separate sites</title>
+<para>A number of transcriptional <emphasis>cis</emphasis> effects have been observed in arrays: in a strain carrying a GFP-lacI-expressing array with a <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00003515;class=Gene" role="_blank">myo-3</ulink></emphasis> muscle-specific marker, lacI is more expressed in muscle cells, while with a <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00006929;class=Gene" role="_blank">vit-5</ulink></emphasis> gut marker, the same lacI construct is more expressed in gut cells (<link linkend="bib36">Meister et al., 2010b</link><!--: PMID 20395364-->). To avoid such <emphasis>cis effects,</emphasis> one can separate the transgenes encoding lacI and marker genes from the sequences of interest tagged with <emphasis>lacO</emphasis>: <emphasis>trans</emphasis> tagging. Moreover, the latter systems are easy to use as strains can be injected and/or crossed (<link linkend="bib36">Meister et al., 2010b</link><!--: PMID 20395364-->; <link linkend="bib5">Cochella and Hobert, 2012</link><!--: PMID 23201143-->; <link linkend="bib56">Towbin et al., 2012</link><!--: PMID 22939621-->; <link linkend="bib47">Rohner et al., 2013</link><!--: PMID 23460676--> ).</para>
+<para>All published systems are described in <link linkend="table2">Table 2A</link> and <link linkend="table3">B</link>. Importantly, when creating new fluorescent lacI expression arrays for <emphasis>trans</emphasis> tagging, the plasmids used must not contain <emphasis>lacO</emphasis> sites (5&#x2019;-TTGTTATCCGCTCACAA), even as a single copy. Otherwise lacI will bind these and lead to the formation of a spot (<emphasis>cis</emphasis> tagging <link linkend="bib20">Gonzalez-Serricchio and Sternberg, 2006</link><!--: PMID 16759392-->; <link linkend="bib36">Meister et al., 2010b</link><!--: PMID 20395364-->).</para>
+<table id="table2" frame="all" rules="all" cellpadding="0" cellspacing="0" width="75">
+<title>Table 2A. <emphasis>Trans</emphasis> tagging systems&#x2014;lacI expressing constructs and <emphasis>lacO</emphasis> sites present on different transgenes*</title>
+<tgroup cols="8">
+<colspec colnum="1" colname="col1"/>
+<colspec colnum="2" colname="col2"/>
+<colspec colnum="3" colname="col3"/>
+<colspec colnum="4" colname="col4"/>
+<colspec colnum="5" colname="col5"/>
+<colspec colnum="6" colname="col6"/>
+<colspec colnum="7" colname="col7"/>
+<colspec colnum="8" colname="col8"/>
+<thead>
+<row valign="bottom" rowsep="1">
+<entry align="left"><emphasis role="bold">#</emphasis></entry>
+<entry align="left">lacI expression</entry>
+<entry align="left">lacI transgene type*</entry>
+<entry align="left">lacI array composition (mixture of plasmids)</entry>
+<entry align="left">lacI expression system</entry>
+<entry align="left"><emphasis>lacO</emphasis> target array composition</entry>
+<entry align="left"><emphasis>lacO</emphasis> trangene type*</entry>
+<entry align="left"><emphasis>lacO</emphasis> composition</entry>
+</row>
+</thead>
+<tbody>
+<row valign="top" rowsep="1">
+<entry align="left">1</entry>
+<entry align="left"><emphasis>syIs46</emphasis></entry>
+<entry align="left">Ext.</entry>
+<entry align="left"><emphasis>lacI/<ulink url="http://www.wormbase.org/db/get?name=WBGene00001079;class=Gene" role="_blank">dpy-20</ulink></emphasis><superscript><emphasis>+</emphasis></superscript></entry>
+<entry align="left"><emphasis>dpy-30p::gfp-lacI + hsp16.2p::gfp-lacI</emphasis> (induced)</entry>
+<entry align="left"><emphasis>256x lacO/promoter/<ulink url="http://www.wormbase.org/db/get?name=WBGene00004397;class=Gene" role="_blank">rol-6</ulink><superscript>+</superscript></emphasis> plus salmon DNA</entry>
+<entry align="left">Ext.</entry>
+<entry align="left">256x <emphasis>lacO</emphasis> repeats coinjected</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">2</entry>
+<entry align="left"><emphasis>syIs46</emphasis></entry>
+<entry align="left">Int.</entry>
+<entry align="left"><emphasis>lacI/BluescriptII</emphasis> carrier plus herring DNA</entry>
+<entry align="left"><emphasis>dpy-30p::gfp-lacI + hsp16.2p::gfp-lacI</emphasis> (induced)</entry>
+<entry align="left"><emphasis>256x lacO/</emphasis></entry>
+<entry align="left">Ext.</entry>
+<entry align="left">256x <emphasis>lacO</emphasis> repeats coinjected</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">3</entry>
+<entry align="left"><emphasis>pxEx214</emphasis></entry>
+<entry align="left">Ext.</entry>
+<entry align="left"><emphasis>lacI/<ulink url="http://www.wormbase.org/db/get?name=WBGene00004397;class=Gene" role="_blank">rol-6</ulink><superscript>+</superscript></emphasis></entry>
+<entry align="left"><emphasis>htz-1p::lacI-cfp</emphasis></entry>
+<entry align="left"><emphasis>256x lacO/promoter/<ulink url="http://www.wormbase.org/db/get?name=WBGene00000481;class=Gene" role="_blank">cha-1</ulink><superscript>+</superscript></emphasis> plus herring DNA</entry>
+<entry align="left">Ext.</entry>
+<entry align="left">256x <emphasis>lacO</emphasis> repeats coinjected</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">4</entry>
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=WBTransgene00006186;class=Transgene" role="_blank">gwIs39</ulink></emphasis></entry>
+<entry align="left">Int.</entry>
+<entry align="left"><emphasis>lacI/<ulink url="http://www.wormbase.org/db/get?name=WBGene00006929;class=Gene" role="_blank">vit-5</ulink>::gfp</emphasis></entry>
+<entry align="left"><emphasis>baf-1p::gfp-lacI</emphasis></entry>
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00004397;class=Gene" role="_blank">rol-6</ulink><superscript>+</superscript>/<ulink url="http://www.wormbase.org/db/get?name=WBGene00002016;class=Gene" role="_blank">hsp-16.2</ulink>::hlh-1</emphasis> or <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00004013;class=Gene" role="_blank">pha-4</ulink></emphasis></entry>
+<entry align="left">Int.</entry>
+<entry align="left">1x <emphasis>lacO</emphasis> on each plasmid</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">5</entry>
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=WBTransgene00006186;class=Transgene" role="_blank">gwIs39</ulink></emphasis></entry>
+<entry align="left">Int.</entry>
+<entry align="left"><emphasis>lacI/<ulink url="http://www.wormbase.org/db/get?name=WBGene00006929;class=Gene" role="_blank">vit-5</ulink>::gfp</emphasis></entry>
+<entry align="left"><emphasis>baf-1p::gfp-lacI</emphasis></entry>
+<entry align="left"><emphasis>256x lacO/promoter::mCherry/<ulink url="http://www.wormbase.org/db/get?name=WBGene00006843;class=Gene" role="_blank">unc-119</ulink><superscript>+</superscript></emphasis></entry>
+<entry align="left">Bom.</entry>
+<entry align="left">256x <emphasis>lacO</emphasis> repeats co-bombarded</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">6</entry>
+<entry align="left"><emphasis>mels1</emphasis></entry>
+<entry align="left">Bom.</entry>
+<entry align="left"><emphasis>lacI/<ulink url="http://www.wormbase.org/db/get?name=WBGene00006843;class=Gene" role="_blank">unc-119</ulink><superscript>+</superscript></emphasis></entry>
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00004027;class=Gene" role="_blank">pie-1</ulink>::gfp-lacI</emphasis></entry>
+<entry align="left"><emphasis>64x lacO/<ulink url="http://www.wormbase.org/db/get?name=WBGene00004397;class=Gene" role="_blank">rol-6</ulink><superscript>+</superscript></emphasis></entry>
+<entry align="left">Ext.</entry>
+<entry align="left">64x <emphasis>lacO</emphasis> repeats coinjected</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">7</entry>
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=WBTransgene00006186;class=Transgene" role="_blank">gwIs39</ulink></emphasis></entry>
+<entry align="left">Int.</entry>
+<entry align="left"><emphasis>lacI/<ulink url="http://www.wormbase.org/db/get?name=WBGene00006929;class=Gene" role="_blank">vit-5</ulink>::gfp</emphasis></entry>
+<entry align="left"><emphasis>baf-1p::gfp-lacI</emphasis></entry>
+<entry align="left">MosSCI with <emphasis>256x lacO/<ulink url="http://www.wormbase.org/db/get?name=WBGene00006843;class=Gene" role="_blank">unc-119</ulink><superscript>+</superscript></emphasis></entry>
+<entry align="left">MosSCI</entry>
+<entry align="left"><emphasis>256x lacO</emphasis> repeats integrated by MosSCI</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">8</entry>
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=WBTransgene00006186;class=Transgene" role="_blank">gwIs39</ulink></emphasis></entry>
+<entry align="left">Int.</entry>
+<entry align="left"><emphasis>lacI/<ulink url="http://www.wormbase.org/db/get?name=WBGene00006929;class=Gene" role="_blank">vit-5</ulink>::gfp</emphasis></entry>
+<entry align="left"><emphasis>baf-1p::gfp-lacI</emphasis></entry>
+<entry align="left"><emphasis>256x lacO/Isy-6</emphasis> sequence/<emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00001250;class=Gene" role="_blank">elt-2</ulink></emphasis>::<emphasis>dsred</emphasis></entry>
+<entry align="left">Int.</entry>
+<entry align="left">256x <emphasis>lacO</emphasis> repeats coinjected</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">9</entry>
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=WBTransgene00006186;class=Transgene" role="_blank">gwIs39</ulink></emphasis></entry>
+<entry align="left">Int.</entry>
+<entry align="left"><emphasis>lacI/<ulink url="http://www.wormbase.org/db/get?name=WBGene00006929;class=Gene" role="_blank">vit-5</ulink>::gfp</emphasis></entry>
+<entry align="left"><emphasis>baf-1p::gfp-lacI</emphasis></entry>
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00002016;class=Gene" role="_blank">hsp-16.2</ulink>::gfp</emphasis></entry>
+<entry align="left">Int.</entry>
+<entry align="left">1x <emphasis>lacO</emphasis> on each plasmid</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">10</entry>
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=WBTransgene00006186;class=Transgene" role="_blank">gwIs39</ulink></emphasis></entry>
+<entry align="left">Int.</entry>
+<entry align="left"><emphasis>lacI/<ulink url="http://www.wormbase.org/db/get?name=WBGene00006929;class=Gene" role="_blank">vit-5</ulink>::gfp</emphasis></entry>
+<entry align="left"><emphasis>baf-1p::gfp-lacI</emphasis></entry>
+<entry align="left"><emphasis>256x lacO/promoter::mCherry/<ulink url="http://www.wormbase.org/db/get?name=WBGene00006843;class=Gene" role="_blank">unc-119</ulink><superscript>+</superscript></emphasis></entry>
+<entry align="left">Bom.</entry>
+<entry align="left">256x <emphasis>lacO</emphasis> repeats co-bombarded</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">11</entry>
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=WBTransgene00006186;class=Transgene" role="_blank">gwIs39</ulink></emphasis></entry>
+<entry align="left">Int.</entry>
+<entry align="left"><emphasis>lacI/<ulink url="http://www.wormbase.org/db/get?name=WBGene00006929;class=Gene" role="_blank">vit-5</ulink>::gfp</emphasis></entry>
+<entry align="left"><emphasis>baf-1p::gfp-lacI</emphasis></entry>
+<entry align="left">MosSCI with <emphasis>256x lacO/<ulink url="http://www.wormbase.org/db/get?name=WBGene00006843;class=Gene" role="_blank">unc-119</ulink><superscript>+</superscript></emphasis></entry>
+<entry align="left">MosSCI</entry>
+<entry align="left">256x <emphasis>lacO</emphasis> repeats integrated by MosSCI</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry namest="col1" nameend="col8" align="left">*Transgene type: Ext.&#x2014;Extrachromosomal injected array, Int.&#x2014;Integrated injected array; Bom.&#x2014;Bombarded transgene; MosSCI&#x2014;transgene integrated by MosSCI.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<table id="table3" frame="all" rules="all" cellpadding="0" cellspacing="0" width="75">
+<title>Table 2B. Sources for <emphasis>Trans</emphasis> tagging systems</title>
+<tgroup cols="4">
+<colspec colnum="1" colname="col1"/>
+<colspec colnum="2" colname="col2"/>
+<colspec colnum="3" colname="col3"/>
+<colspec colnum="4" colname="col4"/>
+<thead>
+<row valign="bottom" rowsep="1">
+<entry align="left">#</entry>
+<entry align="left"><emphasis role="bold">Laboratory</emphasis></entry>
+<entry align="left"><emphasis role="bold">Biological question</emphasis></entry>
+<entry align="left"><emphasis role="bold">Reference</emphasis></entry>
+</row>
+</thead>
+<tbody>
+<row valign="bottom" rowsep="1">
+<entry align="left">1</entry>
+<entry align="left">SM</entry>
+<entry align="left"><emphasis>In vivo</emphasis> binding of PHA-4 to <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00003012;class=Gene" role="_blank">lin-26</ulink></emphasis> promoter</entry>
+<entry align="left"><link linkend="bib25">Kaltenbach et al., 2000</link><!-- PMID 11030349--></entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">2</entry>
+<entry align="left">PS</entry>
+<entry align="left">Ploidy analysis</entry>
+<entry align="left"><link linkend="bib20">Gonzalez-Serrichio et al., 2006</link><!-- PMID 16759392--></entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">3</entry>
+<entry align="left">SM</entry>
+<entry align="left"><emphasis>In vivo</emphasis> binding of HTZ-1 and transcriptional activation of pharyngeal genes</entry>
+<entry align="left"><link linkend="bib58">Updike and Mango, 2006</link><!--PMID 17009877--></entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">4 and 5</entry>
+<entry align="left">GW</entry>
+<entry align="left">Nuclear organization changes during development</entry>
+<entry align="left"><link linkend="bib36">Meister et al., 2010b</link><!-- PMID 20395364--></entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">6</entry>
+<entry align="left">OD</entry>
+<entry align="left"><emphasis>De novo</emphasis> centromere formation</entry>
+<entry align="left"><link linkend="bib68">Yuen et al., 2011</link><!--PMID 22018540--></entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">7</entry>
+<entry align="left">GW</entry>
+<entry align="left">Signals for perinuclear heterochromatin anchoring</entry>
+<entry align="left"><link linkend="bib56">Towbin et al., 2012</link><!--PMID 22939621--></entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">8</entry>
+<entry align="left">OH</entry>
+<entry align="left">Early asymmetric cell commitment and mRNA locus decompaction</entry>
+<entry align="left"><link linkend="bib5">Cochella and Hobert, 2012</link><!--PMID 23201143--></entry></row>
+<row valign="top" rowsep="1">
+<entry align="left">9, 10, and 11</entry>
+<entry align="left">GW</entry>
+<entry align="left">Nuclear organization and promoter dissection of  heat-shock induced <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00002016;class=Gene" role="_blank">hsp-16.2</ulink></emphasis></entry>
+<entry align="left"><link linkend="bib47">Rohner et al., 2013</link><!--PMID 23460676--></entry>
+</row>
+<row valign="top" rowsep="1">
+<entry namest="col1" nameend="col4" align="left"><emphasis role="bold">#</emphasis>Corresponds to the # listed in <link linkend="table2">Table 2A</link>.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</sect3>
+<sect3 id="sec5-2-5">
+<title>Published <emphasis>C. elegans</emphasis> strains constitutively expressing fluorescent lacI</title>
+<para>Four different strains expressing fluorescent lacI have been published to date and can be used directly by crossing them to the desired <emphasis>lacO</emphasis> carrying strain. The first strain, <ulink url="http://www.wormbase.org/db/get?name=PS2958;class=Strain" role="_blank">PS2958</ulink>, carries an integrated injected array (<emphasis><ulink url="http://www.wormbase.org/db/get?name=WBTransgene00004670;class=Transgene" role="_blank">syIs46</ulink></emphasis>) in which two plasmids drive expression of GFP-lacI, by the heat-shock inducible <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00002016;class=Gene" role="_blank">hsp-16.2</ulink></emphasis> promoter, and the constitutive <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00001088;class=Gene" role="_blank">dpy-30</ulink></emphasis> promoter (<link linkend="bib20">Gonzalez-Serricchio and Sternberg, 2006</link><!--: PMID 16759392-->). GFP-lacI is expressed from the 20-cell stage onward (likely from the <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00001088;class=Gene" role="_blank">dpy-30</ulink></emphasis> promoter) and is still visible in some cells in adults. However, the plasmids used to create this array contain <emphasis>lacO</emphasis> sites, hence the array is microscopically visible as GFP-lacI binds to it. Two large structures can be observed in all cells in uninduced conditions (P. Meister, unpublished observations). This construct has been used for mosaic analysis and ploidy determination. The second strain carries an extrachromosomal complex array (SM1353 <emphasis>pxEx214</emphasis>) with a <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00004397;class=Gene" role="_blank">rol-6</ulink></emphasis> marker and a CFP-lacI expression construct under the transcriptional control of the <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00019947;class=Gene" role="_blank">htz-1</ulink></emphasis> promoter (<link linkend="bib58">Updike and Mango, 2006</link><!--: PMID 17009877-->). The array also expresses the histone variant HTZ-1 tagged with YFP. The last two strains express GFP-lacI from integrated transgenes. In GW396, <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBTransgene00006186;class=Transgene" role="_blank">gwIs39</ulink>,</emphasis> an injected integrated array, drives expression of GFP-lacI under transcriptional control of the constitutive <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00000235;class=Gene" role="_blank">baf-1</ulink></emphasis> promoter (<link linkend="bib36">Meister et al., 2010b</link><!--: PMID 20395364-->). In this strain, expression is silenced in the germline and GFP-lacI is visible from about the 20-cell stage to late L4 (this array has a <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00006929;class=Gene" role="_blank">vit-5</ulink>::gfp</emphasis> intestinal marker expressed from late L4/adulthood, which hinders GFP-lacI observation at those stages). Last, the AV696 strain carries a bombarded construct (<emphasis><ulink url="http://www.wormbase.org/db/get?name=WBTransgene00018266;class=Transgene" role="_blank">meIs1</ulink></emphasis>), in which GFP-lacI is transcriptionally regulated by a <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00004027;class=Gene" role="_blank">pie-1</ulink></emphasis> promoter (<link linkend="bib68">Yuen et al., 2011</link><!--: PMID 22018540-->). Here, the fluorescent signal decreases rapidly at the beginning of embryogenesis, but is expressed in the germline, thus is useful to locate chromatin loci in the germline or in early embryos. Making a strain carrying both <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBTransgene00018266;class=Transgene" role="_blank">meIs1</ulink></emphasis> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBTransgene00006186;class=Transgene" role="_blank">gwIs39</ulink></emphasis> leads to silencing in <emphasis>trans</emphasis> of the <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00004027;class=Gene" role="_blank">pie-1</ulink></emphasis> construct in the germline (P. Meister, unpublished observations; <link linkend="bib44">Robert et al., 2005</link><!--: PMID 15774721-->).</para>
+<para>Choice of the fluorescent lacI expression strain should therefore depend mainly on the developmental stage of the biological question, either germline/early embryos (AV696) or late embryos/larvae/adults (GW396/PS2598/SM1353).</para>
+</sect3>
+<sect3 id="sec5-2-6">
+<title>Methods for <emphasis>lacO</emphasis> insertion into the <emphasis>C. elegans</emphasis> genome</title>
+<para>The transgene carrying <emphasis>lacO</emphasis> sites is what will be visualized. Different sizes of <emphasis>lacO</emphasis> transgenes have been analysed, ranging in size from large injected arrays to single copy integrations. Similar to <emphasis>cis</emphasis> tagging, simple arrays are readily identifiable with one <emphasis>lacO</emphasis> site per plasmid used to create them (<link linkend="bib20">Gonzalez-Serricchio and Sternberg, 2006</link><!--: PMID 16759392-->: <link linkend="bib36">Meister et al., 2010b</link><!--: PMID 20395364-->). Complex arrays need additional <emphasis>lacO</emphasis> repeats to lead to the formation of a visible spot (<link linkend="bib58">Updike and Mango, 2006</link><!--: PMID 17009877-->). Most of the published <emphasis>C. elegans</emphasis> simple arrays have been created with plasmids containing a single <emphasis>lacO</emphasis> site (e.g., most of the Fire library plasmids contain a single <emphasis>lacO</emphasis>). These are readily detected, usually at the nuclear periphery linked to their heterochromatic features and transcriptional silencing (<link linkend="bib36">Meister et al., 2010b</link><!--: PMID 20395364-->; <link linkend="bib57">Towbin et al., 2010</link><!--: PMID 21467137-->).</para>
+<para>Smaller transgenes with germline expression can be created by bombardment. In this case, 10-50 copies of the bombarded plasmid are typically integrated, with some variability in the number of the individual co-bombarded plasmids (<link linkend="bib36">Meister et al., 2010b</link><!--: PMID 20395364-->; <link linkend="bib47">Rohner et al., 2013</link><!--: PMID 23460676-->). A single <emphasis>lacO</emphasis> site per plasmid is no longer sufficient for the formation of a spot (compared to the 200-500 <emphasis>lacOs</emphasis> present in an injected simple array&#x2014;in budding yeast about 24 repeats is the minimal repeat length that can be visualized, yet this depends on the unbound lacI fluorescent background). Hence, <emphasis>lacO</emphasis> repeats must be co-bombarded with the plasmids of interest (e.g., 256 repeat, pSR1) (<link linkend="bib47">Rohner et al., 2008</link><!--: PMID 18302313-->; <link linkend="bib36">Meister et al., 2010b</link><!--: PMID 20395364-->). This method leads to about 50% co-integration rate, with visible transgenes when GFP-lacI is expressed in <emphasis>trans</emphasis>. These low-copy transgenes are less subject to silencing and display usually a random localization in embryos (<link linkend="bib36">Meister et al., 2010b</link><!--: PMID 20395364-->; <link linkend="bib57">Towbin et al., 2010</link><!--: PMID 21467137-->; <link linkend="bib47">Rohner et al., 2013</link><!--: PMID 23460676-->).</para>
+<para>Single targeted genomic insertions of <emphasis>lacO</emphasis> arrays can be achieved using MosSCI and derivatives (<link linkend="bib15">Frokjaer-Jensen et al., 2008</link><!--: PMID 18953339-->; <link linkend="bib56">Towbin et al., 2012</link><!--: PMID 22939621-->; <link linkend="bib47">Rohner et al., 2013</link><!--: PMID 23460676-->). Unlike insertion at random loci, this method allows the insertion of different sequences next to the <emphasis>lacO</emphasis> array at the same genomic location. This equalizes potential integration site and copy number effects, which are impossible to control for when using microparticle bombardment or injected arrays. As this method is new, two variations are detailed below. Finally, a number of strains carrying a single copy insertion of <emphasis>lacO</emphasis> repeats have been created by randomly inserting a modified <emphasis>Mos</emphasis> transposon (Christian Fr&#x00F8;kj&#x00E6;r-Jensen, personal communication).</para>
+<para>For all single site insertions, 256 <emphasis>lacO</emphasis> repeats (about &sim;12 kb in size) are used for a sufficient signal to noise ratio of the lacI fluorescence. One needs to be cautious when using plasmids containing <emphasis>lacO</emphasis> repeats since such vectors (pSV2-dhfr-8.32, pSR1, <link linkend="bib46">Robinett et al., 1996</link><!--: PMID 8991083-->; <link linkend="bib47">Rohner et al., 2008</link><!--: PMID 18302313-->) are direct repeats and can recombine during amplification in bacteria. Therefore recA bacterial strains (DH5&#x03B1;/XL1 blue) or recB recJ (SURE) are recommended for amplification/cloning. Moreover, when defreezing bacterial strains transformed with <emphasis>lacO</emphasis> repeat plasmids, it is good practice to isolate about 8 single colonies and test the length of <emphasis>lacO</emphasis> repeats by restriction enzyme digestion as the repeat stretch has a tendency to shrink in size. In addition, after insertion into the <emphasis>C. elegans</emphasis> genome the actual number of sites that is integrated is likely to be lower.</para>
+</sect3>
+</sect2>
+<sect2 id="sec5-3">
+<title>LacI/lacO protocols</title>
+<sect3 id="sec5-3-1">
+<title><emphasis>Cis</emphasis> tagging&#x2014;lacO and lacI expression constructs on the same transgene</title>
+<sect4 id="sec5-3-1-1">
+<title><emphasis>Cis</emphasis> tagging&#x2014;simple extrachromosomal arrays</title>
+<para>For simple arrays, the single <emphasis>lacO</emphasis> site present in the plasmid is sufficient for the formation of a visible spot due to the high plasmid copy number. Injection is carried out as for normal arrays, with concentrations of the fluorescent lacI construct ranging from 2.5&#x2013;50 ng/&#x03BC;l (see WormBook chapter <ulink url="http://www.wormbook.org/chapters/www_transformationmicroinjection/transformationmicroinjection.html">Transformation and microinjection</ulink>).</para>
+<para>Typical concentrations are as follows:</para>
+<para>-	selectable marker (e.g., <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00003515;class=Gene" role="_blank">myo-3</ulink>::rfp</emphasis> construct)	10-50 ng/&#x03BC;l</para>
+<para>-	fluorescent lacI expression construct	2.5-50 ng/&#x03BC;l</para>
+<para>-	sequences of interest	variable (length dependent)</para>
+</sect4>
+<sect4 id="sec5-3-1-2">
+<title><emphasis>Cis</emphasis> tagging&#x2014;complex arrays</title>
+<para>For complex arrays, additional <emphasis>lacO</emphasis> sites should be added to the injection mixture.</para>
+<para>Typical concentrations are as follows:</para>
+<para>-	selectable marker (e.g., <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00000481;class=Gene" role="_blank">cha-1</ulink></emphasis> rescuing construct)	2 ng/&#x03BC;l</para>
+<para>-	<emphasis>lacO</emphasis> repeat fragment (e.g., pSV-dhfr-8.32 <emphasis>Sph</emphasis>I/<emphasis>Kpn</emphasis>I)	4.5 ng/&#x03BC;l</para>
+<para>-	fluorescent lacI expression construct	2.5-50 ng/&#x03BC;l</para>
+<para>-	sequences of interest	variable (length dependent)</para>
+<para>-	sheared salmon/herring sperm DNA/<emphasis>E. coli</emphasis> DNA	to 100 ng/&#x03BC;l</para>
+<para>Injection is carried out as described (see <ulink url="http://www.wormbook.org/chapters/www_transformationmicroinjection/transformationmicroinjection.html">Transformation and microinjection</ulink>).</para>
+</sect4>
+</sect3>
+<sect3 id="sec5-3-2">
+<title><emphasis>Trans</emphasis> tagging</title>
+<sect4 id="sec5-3-2-1">
+<title><emphasis>Trans</emphasis> tagging&#x2014;simple and complex extrachromosomal arrays</title>
+<para>These arrays are similar to those for <emphasis>cis</emphasis> tagging, except that the fluorescent lacI expression construct is omitted and the injected strain expresses a fluorescent lacI (see above). In case addition of metazoan DNA to the complex array is a concern, replacing sheared fish DNA with sheared <emphasis>E. coli</emphasis> DNA has been used successfully (<link linkend="bib5">Cochella and Hobert, 2012</link><!--: PMID 23201143-->).</para>
+</sect4>
+<sect4 id="sec5-3-2-2">
+<title>Bombardment-mediated insertion of lacO arrays next to sequences of interest</title>
+<para>As for complex arrays, the unique <emphasis>lacO</emphasis> site in the plasmids used for bombardment is not sufficient for the formation of a visible spot. Hence, a <emphasis>lacO</emphasis> repeats-containing fragment is co-bombarded with the sequences of interest and a selectable marker. Typically, <emphasis>unc-119(<ulink url="http://www.wormbase.org/db/get?name=WBVar00145093;class=Variation" role="_blank">ed3</ulink>)</emphasis> nematodes are bombarded with 8 &#x03BC;g of a 1:1:1 (w/w) mixture of an <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00006843;class=Gene" role="_blank">unc-119</ulink></emphasis> rescuing construct, the sequences of interest and <emphasis>lacO</emphasis> repeats (e.g., pSR1 <link linkend="bib47">Rohner et al., 2008</link><!--: PMID 18302313-->).</para>
+</sect4>
+<sect4 id="sec5-3-2-3">
+<title>Single copy integration of endogenous loci</title>
+<para><emphasis>lacO</emphasis> constructs exist for ectopic integration of sequences at the <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBVar00254893;class=Variation" role="_blank">ttTi5605</ulink></emphasis> chromosome II MosSCI locus (<link linkend="bib47">Rohner et al., 2013</link><!--: PMID 23460676-->). These plasmids can be modified by restriction enzyme cloning to insert sequences of interest next to the <emphasis>lacO</emphasis> arrays. The resulting plasmid is used as a template to integrate <emphasis>lacO</emphasis> repeats at the <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBVar00254893;class=Variation" role="_blank">ttTi5605</ulink></emphasis> site. MosSCI is carried out according to the original protocol (<link linkend="bib15">Frokjaer-Jensen et al., 2008</link><!--: PMID 18953339-->; <link linkend="bib15">Frokjaer-Jensen et al., 2012</link><!--: PMID 22290181-->). Integration of certain constructs, especially longer ones, is more difficult to achieve for unclear reasons, in which case the indirect MosSCI heat-shock procedure is recommended.</para>
+<para>To tag other loci with <emphasis>lacO</emphasis> repeats (e.g., close to your favorite gene/sequence), similar <emphasis>Mos-</emphasis>mediated integration can be carried out using a <emphasis>Mos</emphasis> insertion located near the site of interest. Due to the resolution of optical microscopes, &#x2018;near&#x2019; means in the next 20-40 kb (<link linkend="bib35">Meister et al., 2010a</link><!--PMID: 20946824-->). In some cases, increasing the distance between the <emphasis>Mos</emphasis> insertion and the region of interest might even be recommended to avoid possible artifacts due to the integration of <emphasis>lacO</emphasis> repeats. Although no such case has been described in the nematode, it is a good control to compare localization obtained with <emphasis>lacO</emphasis> integrations with fluorescence <emphasis>in situ</emphasis> hybridization of the same locus in a wild-type strain. Approximately 13,000 Mos insertions have been created by the NemaGeneTag project, and are available to the community as unvalidated or validated insertions (<ulink url="http://elegans.imbb.forth.gr/nemagenetag/">http://elegans.imbb.forth.gr/nemagenetag/</ulink>). All insertions can be browsed (<ulink url="http://pbil.univ-lyon1.fr/segalat/data/index.php">http://pbil.univ-lyon1.fr/segalat/data/index.php</ulink>) and ordered (<ulink url="http://ums3421.univ-lyon1.fr/spip.php?article14">http://ums3421.univ-lyon1.fr/spip.php?article14</ulink>) online. This is the most cost-effective manner to create <emphasis>lacO</emphasis>-tagged loci, as compared to ZFN/TALEN methods (Transcription-Activator Like Effector Nuclease) (<link linkend="bib66">Wood et al., 2011</link><!--: PMID 21700836-->), in which the nuclease is engineered to create a double strand break at a given sequence, providing a break for homologous recombination. CRISPR-based techniques are likely to be similarly efficient to Mos excision for the creation of the site-specific DSB (<link linkend="bib70">Dickinson et al., 2013</link>)<!--PMID 23995389-->. To achieve site-specific recombination, MosSCI requires homology between the <emphasis>Mos</emphasis> insertion site where the break is created by transposon excision and the plasmid, which serves as a template for homologous recombination during break repair. To efficiently achieve the creation of templates with homology surrounding <emphasis>lacO</emphasis> repeats, a triple plasmid Gateway<superscript>&#x00AE;</superscript> (Invitrogen) system with a middle <emphasis>lacO/Cb <ulink url="http://www.wormbase.org/db/get?name=WBGene00006843;class=Gene" role="_blank">unc-119</ulink></emphasis> plasmid has been created (<link linkend="bib56">Towbin et al., 2012</link><!--: PMID 22939621-->).</para>
+<mediaobject id="figure3" xreflabel="Figure 3">
+<imageobject>
+<imagedata entityref="fig3" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 3</phrase>
+</textobject> &fig3legend;</mediaobject>
+<orderedlist numeration="arabic">
+<listitem><para>Cross the <emphasis>Mos</emphasis> insertion strain to an <emphasis>unc-119(<ulink url="http://www.wormbase.org/db/get?name=WBVar00145093;class=Variation" role="_blank">ed3</ulink>)</emphasis> mutant and select for <ulink url="http://www.wormbase.org/db/get?name=WBPhenotype:0000643;class=Phenotype" role="_blank">Unc</ulink> worms homozygous for the <emphasis>Mos</emphasis> insertion of interest (selection by PCR). At this point, it is good to cross in the transgene for the expression of GFP-lacI to have a visual confirmation of <emphasis>lacO</emphasis> integration later (see above for strains).</para></listitem>
+<listitem><para>Design primers to amplify left and right sequences located at the 5&#x2019; and 3&#x2019; of the <emphasis>Mos</emphasis> insertion site (<link linkend="figure3">Figure 3A</link>). 1.5 kb is sufficient for efficient recombination (Robert and Bessereau,  <!--PMID 17159906-->). Primers are designed for Gateway BP cloning.</para>
+<para>Use following 5&#x2019; extensions for the following primers a to d (in 5&#x2019;-&gt; 3&#x2019; direction):</para>
+<orderedlist numeration="arabic">
+<listitem><para>a: GGGG ACA ACT TTG TAT AGA AAA GTT G&#x2014;locus specific sequence</para></listitem>
+<listitem><para>b: GGGG AC TGC TTT TTT GTA CAA ACT TG&#x2014;locus specific sequence (reverse complement)</para></listitem>
+<listitem><para>c: GGGG ACA GCT TTC TTG TAC AAA GTG G&#x2014;locus specific sequence</para></listitem>
+<listitem><para>d: GGGG AC AAC TTT GTA TAA TAA AGT TG&#x2014;locus specific sequence (reverse complement).</para></listitem>
+</orderedlist>
+<para>To minimize amplification errors, we use Phusion<superscript>&#x00AE;</superscript> polymerase (New England Biolabs, Inc.) according to the manufacturer&#x0027;s instruction with the following cycling conditions: [98&#x00B0;C, 30&#x2019;&#x2019;]; [98&#x00B0;C, 10&#x2019;&#x2019;; 45&#x00B0;C, 30&#x2019;&#x2019;; 72&#x00B0;C 30&#x2019;&#x2019;/kb] 5x; [98&#x00B0;C, 10&#x2019;&#x2019;; 50&#x00B0;C, 30&#x2019;&#x2019;; 72&#x00B0;C, 30&#x2019;&#x2019;/kb] 20x; 72&#x00B0;C, 10&#x2019; 12&#x00B0;C &#x221E;.</para>
+<para>Test amplicon length and perform BP cloning according to the manufacturer&#x0027;s manual (Invitrogen). In our hands, it is preferable to transform and plate at least half of the cloning reaction to get a sufficient number of colonies. BP cloning has been highly efficient, with at least 7 out of 8 colonies testing positive for the desired insertion.</para></listitem>
+<listitem><para>Perform the Gateway LR reaction with the 5&#x2019;, middle [see note above about <emphasis>lacO</emphasis> repeats plasmid], and 3&#x2019; clones. Transform at least half of the LR reaction to get a sufficient number of colonies. Test the plasmids using a PCR across 2 elements of the recombination reaction and prepare minipreps.</para></listitem>
+<listitem><para>Test the length of <emphasis>lacO</emphasis> sites in the destination vector. The length of the repeats should be about 10 kb to make a visible spot <emphasis>in vivo</emphasis>. Normally the <emphasis>lacO</emphasis> repeats length does not change drastically during LR recombination, as LR uses a site-specific recombinase and transformation is carried in DH5&#x03B1; recA strains. It is recommended however to purify plasmids from 8-10 different colonies.</para></listitem>
+<listitem><para>Carry on MosSCI according to the original protocol (<link linkend="bib15">Frokjaer-Jensen et al., 2008</link><!--: PMID 18953339-->; <link linkend="bib15">Frokjaer-Jensen et al., 2012</link><!--: PMID 22290181-->). Use the indirect, heat-shock procedure if the direct insertion is not successful.</para></listitem>
+<listitem><para>Check insertion by PCR using primers outside of the homology region and in the inserted transgene. Check for the presence of a visible spot under the microscope in 2-3 lines. During the homologous recombination procedure, some <emphasis>lacO</emphasis> repeats might get lost, which therefore makes the GFP-lacI spot difficult or impossible to see. However, most of the lines we obtained had a readily visible spot.</para></listitem>
+</orderedlist>
+<para>Independent of the tagging system used, once lines expressing a fluorescent lacI and carrying <emphasis>lacO-</emphasis>tagged constructs have been obtained, there are two ways of imaging the lacI/<emphasis>lacO</emphasis> spots. The animals are either fixed and stained or directly imaged on an agarose pad. As procedures for fixing, staining and imaging are similar to published protocols (see WormBook chapter <ulink url="http://www.wormbook.org/chapters/www_immunohistochemistry/immunohistochemistry.html">Immunohistochemistry</ulink>; <link linkend="bib27">Kiefer et al., 2007</link><!--: PMID 17250823-->, see also DamID <link linkend="sec3-3-2-1">Section 3.3.2.1</link> above), we will focus on live imaging of nematode embryos and larvae.</para>
+</sect4>
+</sect3>
+<sect3 id="sec5-3-3">
+<title>Preparing worms and embryos for live imaging</title>
+<mediaobject id="figure4" xreflabel="Figure 4">
+<imageobject>
+<imagedata entityref="fig4" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 4</phrase>
+</textobject> &fig4legend;</mediaobject>
+<sect4 id="sec5-3-3-1">
+<title>Preparing agarose pads for microscopy</title>
+<orderedlist numeration="arabic">
+<listitem><para>Prepare the molding bench (<link linkend="figure4">Figure 4A</link>).</para>
+<para>Put three microscope slides next to each other on a flat surface. Stick both outer slides with tape to the surface, putting thick laboratory tape on top of the slides. The thickness of the pad will depend on the thickness of the tape glued on the outer slides. Put 2-3 additional layers of tape on the slides to increase the thickness of the pad.</para></listitem>
+<listitem><para>Prepare 2% agarose in water and melt at 95&#x00B0;C. Agarose can be aliquoted in 0.5-1 ml tubes for future use and stored at room temperature. Re-melting of aliquoted agarose is achieved by putting the solution at 95&#x00B0;C for 5 min followed by brief vortexing. The molten agarose can be kept longer at 70&#x00B0;C instead of 95&#x00B0;C. At high temperatures, agarose hydrolyzes and does not harden anymore.</para></listitem>
+<listitem><para>Prepare the agarose pad (<link linkend="figure4">Figure 4A</link>). Put a drop (50-100 &#x03BC;l) of molten agarose on a slide placed in the middle of the two taped slides. Immediately place a second slide, perpendicularly to the first one, creating a flat surface. This can be kept for several hours if the upper slide is not removed (otherwise the pad dries out and becomes unusable).</para></listitem>
+</orderedlist>
+</sect4>
+<sect4 id="sec5-3-3-2">
+<title>Preparing embryos for live imaging</title>
+<orderedlist numeration="arabic">
+<listitem><para>Pick gravid adults with fine forceps, move them to an watch glass filled with M9. In our hands, GFP fluorescence is always higher when worms have been grown at temperatures above 20&#x00B0;C. This is likely due to GFP variants optimized for mammalian expression at 37&#x00B0;C, as we also observed that fluorescence is higher after heat-shock at 34&#x00B0;C. Try to avoid taking too much bacteria as <emphasis>E. coli</emphasis> will stick to embryos once dissected and usually has high auto-fluorescence. If needed, move the adults with a platinum pick to bacteria-free plates prior putting them in M9 buffer.</para></listitem>
+<listitem><para>Cut adults in the middle of the worm (approximately at the vulva). Delicately squeeze the head and tail parts to release the embryos from the adult carcasses.</para></listitem>
+<listitem><para>Using a mouth pipette, aspirate the embryos. Mouth pipettes are made using glass capillaries: (1) A 10 &#x03BC;L micro-sampling glass pipette is heated in the flame of an ethanol burner; (2) Once the glass is soft, pull both ends apart; (3) Break the elongated ends to create a pipette with an end with a diameter of &sim;40 &#x03BC;m; (4) Place the pipette in a mouth pipette aspirator (Sigma-Aldrich cat. #A5177 or building plans available upon request).</para></listitem>
+<listitem><para>Transfer the embryos to the agarose pad. Make sure to hold the tip of the mouth pipette vertically during the transfer as failure to do so will lead to dripping of embryos out of the capillary. Once over the agarose pad, blow in the mouth pipette to expel the embryos, allow them to settle on the agarose (20 sec), delicately aspirate excess M9 with the mouth pipette. The M9 layer should be at a minimum height, so that embryos do not move anymore when an eyelash is put on the pad.</para></listitem>
+<listitem><para>Group embryos together using an eyelash tip (a flexible eyelash fixed on a tip/toothpick with nail polish). Grouping embryos together is very helpful for finding the embryos under the microscope and minimizes the search time at high magnification.</para></listitem>
+<listitem><para>Put a coverslip on top of the pad/embryos, making sure to avoid trapping too many bubbles, in particular close to the embryos as bubbles diffract light. The coverslip should be laid at an angle on one side of the pad and then slowly lowered on the embryos, pushing away bubbles.</para></listitem>
+<listitem><para>For longer acquisition times, it is recommended to minimize evaporation (which would flatten the pad, damage embryos and shift focus). Injection oil (mineral oil, Sigma-Aldrich cat. #M5904) efficiently hinders water exchange between the pad and the exterior. Injection oil also allows oxygenations so that the embryos can develop and hatch if kept overnight in such a chamber. Put enough oil to fill the gap between the slide and the coverslip around the agarose pad.</para></listitem>
+<listitem><para>In order to avoid movement of embryos due to focusing and sliding of the coverslip/pad, glue the coverslip to the slide using either a 1:1:1 mixture of Vaseline/lanoline/paraffin (also known as Valap) (on 2 sides only to avoid impairing gas exchanges) or Vaseline (less solid). Both types of glue melt at 70&#x00B0;C.</para></listitem>
+</orderedlist>
+</sect4>
+<sect4 id="sec5-3-3-3">
+<title>Preparing larvae/adults for live imaging</title>
+<para>Preparation of agarose pads is similar to the preparation of pads for embryos, except that 0.5 &#x03BC;l 10% NaN<subscript>3</subscript> is added per 1 mL agarose. This inhibits movement, but also depletes ATP in the worms. This technique is hence not suited for long-term imaging. Alternatively, anesthetizing worms with 400 mM ethanol has been recently shown to deliver similar results (Alicia Woock and Jennifer Cecile, personal communication). Similarly, worms can be anesthetized with 1 mg/ml Tricaine (ethyl 3-aminobenzoate methanesulfonate salt) and 0.1 mg/ml of tetramisole hydrochloride dissolved in M9 before transferring them onto the agarose pad (<link linkend="bib68">Yuen et al., 2011</link><!--: PMID 22018540-->).</para>
+<para>When transferring worms to the agarose pad, care should be taken not to transfer too many bacteria as these are autofluorescent. Worms can be washed in M9, spun down and recovered with a pipette before depositing a drop of worm-containing M9 on the pad. Excess M9 is removed with a mouth pipette before putting a coverslip on top of the worms.</para>
+</sect4>
+</sect3>
+<sect3 id="sec5-3-4">
+<title>Imaging live embryos and worms</title>
+<para>Imaging <emphasis>lacO</emphasis>-tagged chromatin in embryos is challenging: embryos are relatively thick (about 20 &#x00B5;m) and diffract light; the <emphasis>lacO</emphasis>/lacI spot can be small (sub-resolution) and highly dynamic; the fluorescent signal is low as overexpression of lacI is deleterious for the animals; and finally, <emphasis>C. elegans</emphasis> embryos and larvae are highly sensitive to focused light.</para>
+<para>If the fluorescence signal of the <emphasis>lacO</emphasis>/lacI spot is bright (e.g., the transgene is large) and embryos/worms do not have to be imaged too frequently, a classical epifluorescence microscope equipped with a mercury lamp is sufficient for imaging (<link linkend="bib3">Carmi et al., 1998</link><!--: PMID 9823896-->; <link linkend="bib20">Gonzalez-Serricchio and Sternberg, 2006</link><!--: PMID 16759392-->; <link linkend="bib5">Cochella and Hobert, 2012</link><!--: PMID 23201143-->). These systems are especially well suited when lineaging is necessary.</para>
+<para>For most <emphasis>lacO</emphasis> constructs, however, confocal imaging is essential or optimal to answer the biological question. Indeed, the observed structure can be small (sub-resolution for single copy inserts) and out-of-focus haze would make it invisible. Two main systems are used to achieve confocal images: point scanning and spinning disk confocal microscopes. In the first system a focused laser beam is moving over the sample at high speed, and emitted light is filtered for out-of-focus photons by passing through a pinhole and acquired by a photomultiplier. These systems are well suited for imaging large arrays (<link linkend="bib58">Updike and Mango, 2006</link><!--: PMID 17009877-->). They are however not adapted for repeated imaging as laser power hence light-induced damage is concentrated on a single point.</para>
+<para>An alternative solution, which minimizes excitation/damage, is the use of spinning disk confocal devices. In spinning disk microscopy, the laser beam is split into hundreds of focused sub-beams, rotating on the sample at high speed. The laser power on each point as well as the time spent by the laser on each point of the sample (dwell time) is minimized, but repeated several hundred times per second. Emitted light is filtered through the pinholes, and photons are acquired using a highly sensitive CCD camera. Image acquisition speed is limited by the frame-reading rate of the camera: the whole field of view can be acquired in as little as 30 milliseconds (the minimal readout time of the camera chip). Using a correct combination of lenses/objective/camera, sampling will meet the Nyquist rate (about 90 nm/pixel). We found that the best system for this application is a spinning disk confocal microscope. To obtain stacks spanning the entire thickness of embryos, higher laser power has to be applied to be able to record light emitted from nuclei located far away (in the z direction) from the objective. Indeed, light from these nuclei is diffracted by the embryo structures located between the objective and them, which greatly reduces the signal. In our microscopy systems, this is usually incompatible with survival of the embryos when imaging repeatedly. For time-lapse experiments, imaging is limited to the 10 &#x03BC;m (in the z direction) closer to the objective, which give the best signal to noise ratio. Chromatin inside the nucleus is dynamic, hence precise positioning of the GFP-lacI/<emphasis>lacO</emphasis> spots necessitates a fast acquisition device. Typically, exposure time should not be more than 100 ms per optical slice. As for any live imaging, it is good practice to evaluate whether the development of the worms is disturbed by light exposure. An easy way to check this is to compare illuminated and control embryos at approximately the same stage and follow their development over time using DIC microscopy.</para>
+<para>Typical images acquired with a spinning disk confocal (TILL Photonics) of embryos carrying two different types of <emphasis>lacO</emphasis>-tagged chromatin are shown in <link linkend="figure4">Figure 4C-D</link>. Large arrays (about 300-500 copies of the injected plasmids, 3-5 Mb in size, strain <ulink url="http://www.wormbase.org/db/get?name=GW76;class=Strain" role="_blank">GW76</ulink>) obtained by gonadal injection, create large heterochromatic structures, which are located at the nuclear periphery due to their epigenetic silencing (<link linkend="figure4">Figure 4C</link> and <link linkend="bib56">Towbin et al., 2012</link><!--: PMID 22939621-->). In <link linkend="figure4">Figure 4D</link>, an embryo with 256 <emphasis>lacO</emphasis> repeats integrated as a single copy using the MosSCI technique described above is shown (<ulink url="http://www.wormbase.org/db/get?name=GW440;class=Strain" role="_blank">GW440</ulink>, <link linkend="bib47">Rohner et al., 2013</link><!--: PMID 23460676-->). In each nucleus, the GFP-lacI spot is smaller and emerges from background nuclear fluorescence created by unbound GFP-lacI. This system has been used to test the function of conserved sequences in the <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00002016;class=Gene" role="_blank">hsp-16.2</ulink></emphasis> promoter on perinuclear pore localization, inserting different mutant versions of the promoter at the same locus.</para>
+</sect3>
+<sect3 id="sec5-3-5">
+<title>Basic image analysis</title>
+<sect4 id="sec5-3-5-1">
+<title>Compaction state</title>
+<para>Chromatin compaction state has been correlated with its transcriptional status as well as cell plasticity (<link linkend="bib69">Yuzyuk et al., 2009</link><!--: PMID 19460346-->; <link linkend="bib13">Fakhouri et al., 2010</link><!--: PMID 20714352-->; <link linkend="bib5">Cochella and Hobert, 2012</link><!--: PMID 23201143-->; <link linkend="bib47">Rohner et al., 2013</link><!--: PMID 23460676-->). Only large arrays are adapted to this type of measurement as for smaller transgenes de-compaction is either not visible (bombarded transgenes) or not relevant (single <emphasis>lacO</emphasis> insertions).</para>
+<para>In the easiest case, arrays adopt different shapes over time or space. Quantification can therefore be achieved by classifying the shapes and counting the number of cells in which arrays have a specific shape. This has been used to show that complex arrays progressively increase their compaction state during development (<link linkend="bib69">Yuzyuk et al., 2009</link><!--: PMID 19460346-->).</para>
+<para>Alternatively, compaction measurement can be achieved on projections along the z-axis by calculating the ratio of the surface occupied by the array versus the projected nuclear surface (<link linkend="bib5">Cochella and Hobert, 2012</link><!--: PMID 23201143-->). Similarly, the 3D volume of a transcriptionally-activated array can be normalized to the volume of a non-transcriptionally-activated array (<link linkend="bib47">Rohner et al., 2008</link> <!--: PMID 18302313-->). Finally, <emphasis>ad hoc</emphasis> solutions can be developed using image analysis software [Volocity (PerkinElmer) or Imaris (Bitplane)] to measure array volume in different cell types or following a given treatment (<link linkend="bib47">Rohner et al., 2008</link> <!--: PMID 18302313-->; <link linkend="bib13">Fakhouri et al., 2010</link><!--: PMID 20714352-->).</para>
+</sect4>
+<sect4 id="sec5-3-5-2">
+<title>Radial nuclear localization</title>
+<para>Location of a tagged locus inside the nuclear volume is most easily determined by measuring the position of the locus relative to the nuclear periphery (radial position). The nuclear periphery can be outlined either by labeling a component of the nuclear lamina or the nuclear pore complex, or using the background fluorescence of the unbound GFP-lacI. The first method is more precise as boundaries are sharper, but introducing this fluorescent peripheral marker in the <emphasis>lacO</emphasis>/GFP-lacI strain requires an additional worm-crossing step. A number of strains exist, with either tagged lamin (YG66, <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00000235;class=Gene" role="_blank">baf-1</ulink>p::gfp::<ulink url="http://www.wormbase.org/db/get?name=WBGene00003052;class=Gene" role="_blank">lmn-1</ulink></emphasis>, <link linkend="bib34">Mattout et al., 2011</link><!--: PMID 21962710-->) or tagged lamin-associated proteins (<ulink url="http://www.wormbase.org/db/get?name=XA3507;class=Strain" role="_blank">XA3507</ulink>, <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00004027;class=Gene" role="_blank">pie-1</ulink>p::<ulink url="http://www.wormbase.org/db/get?name=WBGene00002275;class=Gene" role="_blank">lem-2</ulink>::gfp</emphasis>, <link linkend="bib17">Galy et al., 2003</link><!--: PMID 12937276-->). Alternatively, staining with an anti-lamin or an anti-nuclear pore can also be used.</para>
+<mediaobject id="figure5" xreflabel="Figure 5">
+<imageobject>
+<imagedata entityref="fig5" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 5</phrase>
+</textobject> &fig5legend;</mediaobject>
+<para>Ideally, one would directly measure the 3D distance between the nuclear rim and the tagged locus. Most of the embryonic nuclei, but also many somatic nuclei in larvae and adults, can be considered spherical. There are exceptions however, for example, muscle cell nuclei, which are elongated along the body axis of the worm. In this case radial position determination requires consideration of the elongated and flat shape of nuclei performed by <emphasis>ad hoc</emphasis> software (<link linkend="bib36">Meister et al., 2010b</link><!--: PMID 20395364-->).</para>
+<para>In the case of spherical nuclei, determination of the shortest distance from the spot to the nuclear periphery is hindered by physical constraints. Resolution of the microscope in the optical imaging plane (x and y directions) is about 200 nm, while in the z direction it is often more than 450 nm. Hence, determination of the position of a spot in an xy plane is by far more precise than in the xz or yz planes. Similarly, determining where the nuclear edge is in the z direction at the top or the bottom of the sphere is difficult, even using confocal images. One way to overcome this limitation is to make use of the optical z stacks. If sections are close enough in the z direction (0.2 &#x03BC;m steps), and although the &#x2018;real&#x2019; spot might lie between two imaging planes, its image will be brighter in one plane (<link linkend="figure5">Figure 5C</link>). This plane is chosen as the z section of the nucleus, which contains the spot. In this plane, xy positions can be determined with high precision (about 90 nm) and are used to measure the shortest distance from the nuclear periphery to the spot (<link linkend="figure5">Figure 5D</link>). However, this measurement is valid for the central z sections only: spots located at the top 25% or the bottom 25% of the nucleus cannot be used (<link linkend="figure5">Figure 5F</link>, discarded volumes). In these volumes, the shortest distance from the nuclear periphery to the spot might lie in the z direction, in which case measuring this distance in the xy plane is imprecise (see above). The cross section of the nucleus in this plane is an ellipsoid or a disc. To quantify the distribution of the spot, this surface is split into three concentric zones of equal area (<link linkend="figure5">Figure 5D</link>). Using equal surfaces leads to a thin outermost zone at the nuclear periphery (in terms of radial distances, between 1 and 0.82 radius) while zone 2 lies between 0.82 and 0.58 radius. Using the coordinates of the spot and the diameter of the nucleus in the axis of the spot, each spot is assigned to one of the three concentric zones. Scoring position in a number of nuclei gives a score for the locus studied in each of the three zones (<link linkend="figure5">Figure 5E</link>). If a given locus does not show any preferential localization, it would be equally distributed among the three zones when scored in a sufficient number of cells (33%, red line, <link linkend="figure5">Figure 5E</link>). If the locus shows preferential positioning at the nuclear rim, its 3-zone scoring will show enrichment in zone 1 (<link linkend="figure5">Figure 5E</link>, dark blue). Conversely, a centrally positioned locus will show higher enrichment in zone 2 and 3 and depletion in zone 1 (<link linkend="figure5">Figure 5E</link>, light blue).</para>
+<para>The three-zone scoring method (zones, <link linkend="figure5">Figure 5F</link>) and a zoning method using concentric shells (for which one would be able to precisely measure distances in the z direction; shells, <link linkend="figure5">Figure 5F</link>) have been compared mathematically. The systematic error introduced by the first method (<link linkend="figure5">Figure 5D</link>) is minimal if spots located in the higher and lower caps are excluded. The error introduced leads to a bias towards the most internal zones and an underestimation of the spots located at the nuclear rim (<link linkend="bib35">Meister et al., 2010a</link><!--: PMID: 20946824-->).</para>
+</sect4>
+</sect3>
+</sect2>
+</sect1>
+<sect1 id="sec6">
+<title>Acknowledgements</title>
+<para>We are indebted to Kohta Ikegami for his comments and clarifications on the methods, Cristina Gonz&#x00E1;lez-Aguilera for her efforts in establishing the DamID protocol in <emphasis>C. elegans</emphasis>, Bas van Steensel for reagents and advice. We would like to thank Susan Gasser for continuous support and the Gasser and Meister laboratories for discussions, especially Lutz Gehlen for computer simulations.</para>
+</sect1>
+<sect1 id="sec7">
+<title>References</title>
+<para/>
+&chromatinanalysis_ref;
+</sect1>
+</article>
