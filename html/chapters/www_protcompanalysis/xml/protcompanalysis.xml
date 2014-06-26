@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "docbookx.dtd"
+[
+<!ENTITY fig1 SYSTEM 'protcompanalysis_fig1.jpg' NDATA JPG>
+<!ENTITY fig2 SYSTEM 'protcompanalysis_fig2.jpg' NDATA JPG>
+<!ENTITY fig3 SYSTEM 'protcompanalysis_fig3.jpg' NDATA JPG>
+<!ENTITY fig4 SYSTEM 'protcompanalysis_fig4.jpg' NDATA JPG>
+<!ENTITY fig5 SYSTEM 'protcompanalysis_fig5.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'protcompanalysis_fig1leg.xml'>
+<!ENTITY fig2legend SYSTEM 'protcompanalysis_fig2leg.xml'>
+<!ENTITY fig3legend SYSTEM 'protcompanalysis_fig3leg.xml'>
+<!ENTITY fig4legend SYSTEM 'protcompanalysis_fig4leg.xml'>
+<!ENTITY fig5legend SYSTEM 'protcompanalysis_fig5leg.xml'>
+<!ENTITY protcompanalysis_ref SYSTEM 'protcompanalysis_ref.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="protcompanalysis">
+<articleinfo>
+<title>Mass spectrometry-based shotgun proteomic analysis of <emphasis>C. elegans</emphasis> protein complexes<footnote><para>Edited by Oliver Hobert Last revised June 26, 2013, Published June 24, 2014. This chapter should be cited as: Fonslow, B.R., et al. Mass spectrometry-based shotgun proteomic analysis of <emphasis>C. elegans</emphasis> protein complexes (June 24, 2014), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.171.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2014 Bryan R. Fonslow, James J. Moresco, Patricia G. Tu, Antti P. Aalto, Amy E. Pasquinelli, Andrew G. Dillin, and John R. Yates III. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para></footnote></title>
+<author>
+<othername>Bryan R. Fonslow<superscript>1</superscript>, James J. Moresco<superscript>1<emphasis>&sect;</emphasis></superscript>, Patricia G. Tu<superscript>1</superscript>, Antti P. Aalto<superscript>2</superscript>, Amy E. Pasquinelli<superscript>2</superscript>, Andrew G. Dillin<superscript>3</superscript>, and John R. Yates III<superscript>1</superscript><remark><footnote><para>To whom correspondence should be addressed: E-mail: <ulink url="mailto:jmoresco@scripps.edu">jmoresco@scripps.edu</ulink>, <ulink url="mailto:jyates@scripps.edu">jyates@scripps.edu</ulink></para></footnote></remark></othername>
+<affiliation><orgname><superscript>1</superscript>Department of Chemical Physiology, The Scripps Research Institute, La Jolla CA 92037 USA</orgname></affiliation>
+<affiliation><orgname><superscript>2</superscript>Division of Biological Sciences, University of California, San Diego, La Jolla CA 92093 USA</orgname></affiliation>
+<affiliation><orgname><superscript>3</superscript>Howard Hughes Medical Institute, Department of Molecular and Cellular Biology, University of California, Berkeley, Berkeley CA 94720 USA</orgname></affiliation>
+</author></articleinfo>
+<abstract>
+<title><emphasis role="bold">Abstract</emphasis></title>
+<para><emphasis role="bold">Mass spectrometry (MS)-based shotgun proteomics is an enabling technology for the study of <emphasis>C. elegans</emphasis> proteins. When coupled with co-immunoprecipitation (CoIP), new interactions and functions among proteins can be discovered. We provide a general background on protein complexes and methods for their analysis, along with the lifecycle and interaction types of proteins that ultimately define the identifiable components of protein complexes. We highlight traditional biochemical methods to evaluate whether the complexes are sufficiently pure and abundant for analysis with shotgun proteomics. We present two CoIP-MS case studies of protein complexes from <emphasis>C. elegans,</emphasis> using both endogenous and fusion protein antibodies to illustrate the important aspects of their analyses. We discuss results from mass spectrometers with differences in mass accuracy and resolution, along with the relevant information that can be extracted from the data generated, such as protein relative abundance, post-translational modifications, and identification confidence. Finally, we illustrate how comparative analysis can reveal candidate binding partners for biological follow-up and validation. This chapter should act as a complement and extension to the WormBook chapter <ulink url="http://www.wormbook.org/chapters/www_biochemmolbio/biochemmolbio.html#d0e784">Biochemistry and molecular biology</ulink>, which describes tandem affinity purification (TAP) of protein complexes for analysis by mass spectrometry.</emphasis></para>
+</abstract>
+<sect1 id="sec1">
+<title>Introduction</title>
+<para><emphasis>C. elegans</emphasis> is an excellent model system for basic biology and increasingly for the study of disease phenotypes (WormBook chapter <ulink url="http://www.wormbook.org/chapters/www_obesity/obesity.html#d0e2226">Obesity and the regulation of fat metabolism</ulink>; <link linkend="bib49">Rodriguez et al., 2013</link>)<!--PMID:23428113-->. A remarkable amount of genetic reagents, resources, and information has been generated though these basic and translational studies. With the advent of numerous technologies, including mass spectrometry-based proteomics, studies of the protein-protein interactions within <emphasis>C. elegans</emphasis> are becoming commonplace (<link linkend="bib57">Tewari et al., 2004</link><!--PMID:14992718-->; <link linkend="bib3">Audhya and Desai, 2008</link><!--PMID:18372286-->; Biochemistry and molecular biology). These studies are beneficial since they can leverage the wide array of existing information and resources of the <emphasis>C. elegans</emphasis> community to quickly follow-up and understand protein-based discoveries.</para>
+<para>There are some obvious advantages and challenges associated with using <emphasis>C. elegans</emphasis> as a biochemical tool, particularly for CoIP-MS of protein complexes, compared to more commonly used cell culture systems. First and foremost, novel protein-based findings can be quickly validated or rejected in a phenotypically-testable system (WormBook chapter <ulink url="http://www.wormbook.org/chapters/www_introreversegenetics/introreversegenetics.html">Reverse genetics</ulink>; <link linkend="bib17">Dong et al., 2007</link><!--PMID:17673661-->; <link linkend="bib41">Moresco et al., 2010</link><!--PMID:20546956-->). Thus, the inferred functional relevance and cooperativity between a protein of interest (POI) and a candidate protein that is pulled down during a CoIP can be directly correlated. Second, tissue-specific protein expression can also be considered, facilitating and/or necessitating the differentiation of tissue-specific protein interactions from CoIP-MS results. That is, the analysis of different cell types from worms, instead of a homogenous cell culture type, can provide information about the multiple functions and forms of a protein or protein complex. For instance, integration of a tagged fusion protein can be characterized to ensure appropriate cellular and subcellular localization. Additionally, if the fusion protein is integrated into a null mutant, the rescue of associated phenotypes can be tested to ensure proper protein function. Once integrated and characterized, a tissue-specific expressed and tagged POI can be used to pull down tissue-specific binding partners. Identified candidate tissue-specific POI binding partners can be validated through cytological co-localization experiments. The cuticle helps to make <emphasis>C. elegans</emphasis> a robust and easily-handled organism (WormBook chapter <ulink url="http://www.wormbook.org/chapters/www_cuticle/cuticle.html#d0e1575">The cuticle</ulink>), yet provides a tough exterior for protein complex-friendly lysis and separation of tissue types. Abundant proteins from large tissues are ideal CoIP-MS targets, but can obscure the POI if it is only expressed in a small number of cells. Sample complexity can be reduced with synchronization of worms or purification of specific cell types, such as embryos, and can alleviate some of these challenges. For worm CoIP methods, we point the reader to a number of excellent protocols on this topic (<ulink url="http://www.wormbook.org/chapters/www_biochemmolbio/biochemmolbio.html#d0e58">Biochemistry and molecular biology</ulink>; <link linkend="bib47">Polanowska et al., 2004</link><!--PMID:15152596-->; <link linkend="bib34">Jedamzik and Eckmann, 2009</link><!--PMID:20147044-->), particularly to <link linkend="bib63">Zanin et al. (2011)</link><!--PMID:22118282-->, which provides MS-compatible elution conditions. Throughout this chapter we will describe the methods that can be used to identify post-translational modifications, protein interactions, and complexes, enabling the researcher to exploit the advantages of <emphasis>C. elegans</emphasis> as a model organism to study basic biology and disease mechanisms.</para>
+</sect1>
+<sect1 id="sec2">
+<title>Types of protein complexes and analysis methods</title>
+<para>Proteins can be present in different types of complexes (<link linkend="figure1">Figure 1</link>). The simplest is an obligate dimer where two proteins are always found together. Condition-specific complexes may only form in the presence of a post-translational modification, such as phosphorylation. Transient complexes, perhaps involving enzymes, may only interact briefly. The different time scales and stabilities of complex interactions can be defined by varying affinities of protein-protein interactions. Protein complexes that are part of larger macromolecular structures can co-purify other proteins and need to be isolated from the larger structure. Smaller, stable protein complexes can assemble as subunits to form larger &ldquo;complex isoforms&rdquo; or &ldquo;complexoforms&rdquo;. These complexoforms can also contain protein isoforms or PTMs (<link linkend="bib56">Talavera et al., 2013</link><!--PMID:23563420-->), recently deemed &ldquo;proteoforms&rdquo; (<link linkend="bib53">Smith et al., 2013</link><!--PMID:23443629-->). Because of the complex combinatorial nature of proteoforms and complexoforms, is it important for the researcher to determine which proteoforms of their POI may be tagged and/or pulled down from a CoIP.</para>
+<mediaobject id="figure1" xreflabel="Figure 1">
+<imageobject>
+<imagedata entityref="fig1" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 1</phrase>
+</textobject> &fig1legend;</mediaobject>
+<para>While binary protein interactions can be determined with the yeast two-hybrid system (<link linkend="bib7">Boxem et al., 2008</link><!--PMID:18692475-->; <link linkend="bib51">Simonis et al., 2009</link><!--PMID:19123269-->) (<link linkend="figure1">Figure 1A</link>), higher-order, <emphasis>in vivo</emphasis> protein-protein interactions are better elucidated using CoIP-MS. CoIP-MS experiments (<link linkend="figure2">Figure 2</link>) generally involve the purification of a POI and its binding partners, followed by Multidimensional Protein Identification Technology (MudPIT) (<link linkend="bib59">Washburn et al., 2001</link><!--PMID:11231557-->), more generally known as shotgun or bottom-up proteomics (<link linkend="bib67">Zhang et al., 2013</link><!--PMID:23438204-->). Shotgun proteomics can identify hundreds of proteins from a CoIP within a few hours in an unbiased fashion. Putative interactions can be validated through reciprocal CoIPs with detection by shotgun proteomics or Western blotting. Global reciprocal CoIP-MS experiments performed in yeast (<link linkend="bib25">Gavin et al., 2002</link><!--PMID:11805826-->; <link linkend="bib24">Gavin et al., 2006</link><!--PMID:16429126-->; <link linkend="bib36">Krogan et al., 2006</link><!--PMID:16554755-->; <link linkend="bib13">Collins et al., 2007</link><!--PMID:17200106-->; <link linkend="bib6">Babu et al., 2012</link><!--PMID:22940862-->) have illustrated the concept of &ldquo;complex isoforms&rdquo; through the modularity of protein complex architecture. For instance, complexes averaged three to 12 protein components, depending on the study, ranging from two to 83 overall; some proteins were more promiscuous and were identified in many purifications and complexes. In general, these global CoIP-MS studies performed originally in yeast, and more recently with human cell lines (<link linkend="bib20">Ewing et al., 2007</link><!--PMID:17353931-->; <link linkend="bib30">Havugimana et al., 2012</link><!--PMID:22939629-->), have changed the way protein complexes are elucidated and understood. Thus, the researcher must be aware of these complexities and capabilities when designing an experiment and interpreting the results. Essentially, when a CoIP is performed on a single POI, all complexoforms which the POI participates in will be co-purified and co-identified. Complexoforms can be differentiated through multiple reciprocal purifications of different POI proteoforms and complex components (<link linkend="bib24">Gavin et al., 2006</link><!--PMID:16429126-->) and through intact complex analysis methods (<link linkend="bib32">Heck, 2008</link><!--PMID:18974734-->; <link linkend="bib21">Fonslow et al., 2010</link><!--PMID:20614870-->).</para>
+<mediaobject id="figure2" xreflabel="Figure 2">
+<imageobject>
+<imagedata entityref="fig2" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 2</phrase>
+</textobject> &fig2legend;</mediaobject>
+<para>In addition to identification of POI binding partners, analysis of CoIPs by MS has other notable advantages. Numerous PTMs (<link linkend="table1">Table 1</link>) can also be readily identified during CoIP-MS experiments. PTMs can be identified on peptides by consecutive measurements of mass differences in both intact peptide and fragment ion masses. Condition-specific PTMs and interactions can be discovered through the purification of protein complexes from different genetic backgrounds and conditional treatments. Moreover, the identification of co-immunoprecipitated proteins with MS provides an unbiased, broad view of the interactions and functions of a POI, facilitating new and unexpected biological discoveries (<link linkend="bib52">Skop et al., 2004</link><!--PMID:15166316-->; <link linkend="bib4">Audhya et al., 2005</link><!--PMID:16247027-->; <link linkend="bib10">Cheeseman et al., 2005</link><!--PMID:15854912-->; <link linkend="bib26">Gottschalk et al., 2005</link><!--PMID:15990870-->; <link linkend="bib18">Duchaine et al., 2006</link><!--PMID:16439208-->; <link linkend="bib44">Olson et al., 2006</link><!--PMID:16785326-->; <link linkend="bib5">Audhya et al., 2007</link><!--PMID:17895996-->; <link linkend="bib27">Grill et al., 2007</link><!--PMID:17698012-->; <link linkend="bib50">Schlaitz et al., 2007</link><!--PMID:17218259-->; <link linkend="bib65">Zhang et al., 2007</link><!--PMID:18042455-->; <link linkend="bib23">Gassmann et al., 2008</link><!--PMID:18765790-->; <link linkend="bib14">Csankovszki et al., 2009</link><!--PMID:19119011-->; <link linkend="bib15">Dammermann et al., 2009</link><!--PMID:19656802-->; <link linkend="bib28">Gu et al., 2009</link><!--PMID:19800275-->; <link linkend="bib60">Welburn et al., 2010</link><!--PMID:20471944-->; <link linkend="bib61">Witte et al., 2011</link><!--PMID:21478858-->; <link linkend="bib31">He et al., 2012</link><!--PMID:23237951-->; <link linkend="bib64">Zhang et al., 2012</link><!--PMID:22542102-->). Notably, combining different purification methods with shotgun proteomics has also been successful for identifying protein interactions by pull-downs with small molecules (<link linkend="bib40">Min et al., 2007</link><!--PMID:17115034-->), chromatin (<link linkend="bib12">Chu et al., 2006</link><!--PMID:16943775-->), lipid rafts (<link linkend="bib48">Rao et al., 2011</link><!--PMID:21070894-->), and lipid droplets (<link linkend="bib64">Zhang et al., 2012</link><!--PMID:22493183-->). As methods have improved, mostly though advances in mass spectrometer speed and sensitivity, a greater number of putative protein interactions are found. Thus, these larger, more comprehensive data sets have become less straightforward to interpret manually. Bioinformatic methods have been introduced to provide confidence values to CoIPed proteins from these larger data sets (<link linkend="bib36">Krogan et al., 2006</link><!--PMID:16554755-->; <link linkend="bib54">Sowa et al., 2009</link><!--PMID:19615732-->; <link linkend="bib11">Choi et al., 2011</link><!--PMID:21131968-->; <link linkend="bib33">Jager et al., 2012</link><!--PMID:22190034-->). These analyses often allow for differentiation of protein complex components from background proteins. We will illustrate how one such program, the <emphasis>Comp</emphasis>arative <emphasis>P</emphasis>roteomic <emphasis>A</emphasis>nalysis <emphasis>S</emphasis>oftware <emphasis>S</emphasis>uite (<emphasis>CompPASS)</emphasis> (<link linkend="bib54">Sowa et al., 2009</link><!--PMID:19615732-->), can be used on nematode CoIP-MS data to find validated protein interactions and new candidate binding partners. Collectively, the combination of cross-disciplinary methodologies can elucidate different types of biologically-relevant protein complex interactions from <emphasis>C. elegans</emphasis>.</para>
+<table id="table1" frame="all" rules="all" cellpadding="0" cellspacing="0" width="75">
+<title><emphasis role="bold">Table 1: List of common MS-identifiable PTMs.</emphasis></title>
+<tgroup cols="3">
+<colspec colnum="1" colname="col1"/>
+<colspec colnum="2" colname="col2"/>
+<colspec colnum="3" colname="col3"/>
+<thead>
+<row valign="bottom" rowsep="1">
+<entry align="left"><emphasis role="bold">PTM</emphasis></entry>
+<entry align="left"><emphasis role="bold">Mass shift (&Delta; <ulink url="http://www.wormbase.org/db/get?name=Da;class=Cell" role="_blank">Da</ulink>)</emphasis></entry>
+<entry align="left"><emphasis role="bold">Considerations</emphasis></entry>
+</row>
+</thead>
+<tbody>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis role="bold">Phosphorylation</emphasis></entry>
+<entry align="left">+ 79.9663</entry>
+<entry align="left">Use phosphatase inhibitors</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis role="bold">Acetylation</emphasis></entry>
+<entry align="left">+ 42.0106</entry>
+<entry align="left">Has a similar mass shift associated with lysine carbamylation from urea and trimethylation</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis role="bold">Ubiquitination</emphasis></entry>
+<entry align="left">+ 114.0429</entry>
+<entry align="left"><para>Trypsin digestion leaves C-terminal GG on lysine</para>
+<para>Chloroacetamide should be used for protein alkylation</para></entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis role="bold">Methylation</emphasis></entry>
+<entry align="left">+ 14.1097</entry>
+<entry align="left">Avoid methanol in sample preparations</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</sect1>
+<sect1 id="sec3">
+<title>Description of protein of interest (POI) case studies</title>
+<para>The remaining sections will refer to actual CoIP-MS data we have generated and analyzed as case studies for this chapter. The first POI (POI<superscript>#</superscript>1) is ALP-1, an alpha-actinin-associated LIM-Enigma family protein that is required for maintenance of actin filament organization and for stabilizing muscle contraction. ALP-1 is a soluble, abundant protein, making CoIP-MS analysis relatively straightforward. ALP-1 falls into the category of macromolecular-bound since it associates with actin, so we will discuss the results in this context. We performed CoIPs from <ulink url="http://www.wormbase.org/db/get?name=UU18;class=Strain" role="_blank">UU18</ulink>, a strain with GFP fused to an ALP-1 exon that is expressed as three isoforms (proteoforms): ALP-1b, c, and d (<link linkend="bib39">McKeown et al., 2006</link><!--PMID:16278882-->). Therefore, we expect at least three complexoforms to exist. A GFP-expressing strain driven by the identical <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00001132;class=Gene" role="_blank">alp-1</ulink></emphasis> promoter would have been ideal to serve as a negative control, but was not available. Instead we used a strain expressing GFP in the muscle as the bulk of ALP-1 expression is also in the muscle. We used anti-GFP antibody to perform the CoIPs in this example.</para>
+<para>POI<superscript>#</superscript>2, a soluble protein of lower abundance than ALP-1, is from an on-going CoIP-MS study. We included this case study since the experimental design, quality control experiments, and results were ideal to illustrate the successful execution of a CoIP-MS study using an antibody to an endogenous protein. We expect many complexoforms to be isolated, as this polyclonal antibody should recognize all isoforms of POI<superscript>#</superscript>2. A null mutant strain of POI<superscript>#</superscript>2 was used for negative control CoIPs.</para>
+</sect1>
+<sect1 id="sec4">
+<title>Protein lifecycle considerations in protein complex analysis</title>
+<para>When performing a CoIP we are usually attempting to isolate the POI at a time when it is performing its function. Co-isolated proteins are thought to be similarly involved in that function. However, every protein also interacts with a large number of regulatory or &ldquo;housekeeping&rdquo; proteins during its defined lifecycle (<link linkend="figure3">Figure 3</link>). Thus, when performing and interpreting results from a CoIP-MS experiment it is important to consider that a POI can be purified from all points within its lifecycle from synthesis to degradation. The co-immunoprecipitated lifecycle proteins should be identified as binding partners although they may not be of interest to the researcher. Proteins involved in protein synthesis (initiation and elongation factors, ribosomal proteins, etc.), protein folding (chaperones and heat shock proteins), and degradation (ubiquitin-associated proteins, etc.) will likely be identified in most CoIPs. For instance in our POI<superscript>#</superscript>1 case study (<link linkend="table2">Table 2</link>), we found many regulatory proteins (HSP-60, EFT-4, RPS-6, INF-1, and UBA-1) more abundant in the CoIP than the negative control.</para>
+<mediaobject id="figure3" xreflabel="Figure 3">
+<imageobject>
+<imagedata entityref="fig3" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 3</phrase>
+</textobject> &fig3legend;</mediaobject>
+<table id="table2" frame="all" rules="all" cellpadding="0" cellspacing="0" width="75">
+<title><emphasis role="bold">Table 2: List of identified proteins, spectral counts, and sequence coverages from GFP and ALP-1::GFP CoIPs-MS runs as the POI<superscript>#</superscript>1 case study.</emphasis> Error shown as standard deviations of spectral counts and sequence coverages from duplicate runs.</title>
+<tgroup cols="6">
+<colspec colnum="1" colname="col1"/>
+<colspec colnum="2" colname="col2"/>
+<colspec colnum="3" colname="col3"/>
+<colspec colnum="4" colname="col4"/>
+<colspec colnum="5" colname="col5"/>
+<colspec colnum="6" colname="col6"/>
+<thead>
+<row valign="bottom" rowsep="1">
+<entry align="left"><emphasis role="bold">Category</emphasis></entry>
+<entry align="left"><emphasis role="bold">Gene</emphasis></entry>
+<entry align="left"><emphasis role="bold">Control Spectral Counts</emphasis></entry>
+<entry align="left"><emphasis role="bold">CoIP Spectral Counts</emphasis></entry>
+<entry align="left"><emphasis role="bold">Control Sequence Coverage</emphasis></entry>
+<entry align="left"><emphasis role="bold">CoIP Sequence Coverage</emphasis></entry>
+</row>
+</thead>
+<tbody>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis role="bold">Target</emphasis></entry>
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00001132;class=Gene" role="_blank">alp-1</ulink></emphasis></entry>
+<entry align="left">0</entry>
+<entry align="left">136 &plusmn; 5</entry>
+<entry align="left">-</entry>
+<entry align="left">33 &plusmn; 5%</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis role="bold">Tag</emphasis></entry>
+<entry align="left"><emphasis>gfp</emphasis></entry>
+<entry align="left">13 &plusmn; 6</entry>
+<entry align="left">8 &plusmn; 3</entry>
+<entry align="left">16 &plusmn; 8%</entry>
+<entry align="left">25 &plusmn; 1%</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis role="bold">Known binding partners</emphasis></entry>
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00000064;class=Gene" role="_blank">act-2</ulink></emphasis></entry>
+<entry align="left">0</entry>
+<entry align="left">6202 &plusmn; 202</entry>
+<entry align="left">-</entry>
+<entry align="left">80 &plusmn; 4%</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry/>
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00000066;class=Gene" role="_blank">act-4</ulink></emphasis></entry>
+<entry align="left">0</entry>
+<entry align="left">6377 &plusmn; 167</entry>
+<entry align="left">-</entry>
+<entry align="left">78 &plusmn; 2%</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry/>
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00000063;class=Gene" role="_blank">act-1</ulink></emphasis></entry>
+<entry align="left">0</entry>
+<entry align="left">6241 &plusmn; 72</entry>
+<entry align="left">-</entry>
+<entry align="left">76 &plusmn; 4%</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry/>
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00000065;class=Gene" role="_blank">act-3</ulink></emphasis></entry>
+<entry align="left">0</entry>
+<entry align="left">6241 &plusmn; 72</entry>
+<entry align="left">-</entry>
+<entry align="left">76 &plusmn; 4%</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry/>
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00006787;class=Gene" role="_blank">unc-52</ulink></emphasis></entry>
+<entry align="left">0</entry>
+<entry align="left">8510 &plusmn; 1083</entry>
+<entry align="left">-</entry>
+<entry align="left">72 &plusmn; 2%</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry/>
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00003776;class=Gene" role="_blank">nmy-1</ulink></emphasis></entry>
+<entry align="left">0</entry>
+<entry align="left">1236 &plusmn; 554</entry>
+<entry align="left">-</entry>
+<entry align="left">66 &plusmn; 7%</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry/>
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00003515;class=Gene" role="_blank">myo-3</ulink></emphasis></entry>
+<entry align="left">0</entry>
+<entry align="left">761 &plusmn; 25</entry>
+<entry align="left">-</entry>
+<entry align="left">58 &plusmn; 4%</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry/>
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00006820;class=Gene" role="_blank">unc-89</ulink></emphasis></entry>
+<entry align="left">0</entry>
+<entry align="left">28 &plusmn; 9</entry>
+<entry align="left">-</entry>
+<entry align="left">5 &plusmn; 2%</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry/>
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00006407;class=Gene" role="_blank">lim-9</ulink></emphasis></entry>
+<entry align="left">0</entry>
+<entry align="left">2 &plusmn; 0</entry>
+<entry align="left">-</entry>
+<entry align="left">4 &plusmn; 0%</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry/>
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00003929;class=Gene" role="_blank">pat-2</ulink></emphasis></entry>
+<entry align="left">0</entry>
+<entry align="left">3 &plusmn; 1</entry>
+<entry align="left">-</entry>
+<entry align="left">4 &plusmn; 2%</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry/>
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00003930;class=Gene" role="_blank">pat-3</ulink></emphasis></entry>
+<entry align="left">0</entry>
+<entry align="left">2 &plusmn; 1</entry>
+<entry align="left">-</entry>
+<entry align="left">3 &plusmn; 1%</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry/>
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00003931;class=Gene" role="_blank">pat-4</ulink></emphasis></entry>
+<entry align="left">0</entry>
+<entry align="left">4 &plusmn; 0</entry>
+<entry align="left">-</entry>
+<entry align="left">7 &plusmn; 2%</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis role="bold">Potential binding partner</emphasis></entry>
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00015217;class=Gene" role="_blank">tes-1</ulink></emphasis></entry>
+<entry align="left">0</entry>
+<entry align="left">9 &plusmn; 4</entry>
+<entry align="left">-</entry>
+<entry align="left">18 &plusmn; 5%</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis role="bold">Background</emphasis> (Bead, antibody, or tag)</entry>
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00006537;class=Gene" role="_blank">tbb-2</ulink></emphasis></entry>
+<entry align="left">404 &plusmn; 143</entry>
+<entry align="left">534 &plusmn; 273</entry>
+<entry align="left">53 &plusmn; 18%</entry>
+<entry align="left">62 &plusmn; 24%</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis role="bold">Background</emphasis> (Lifecycle)</entry>
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00002025;class=Gene" role="_blank">hsp-60</ulink></emphasis></entry>
+<entry align="left">19 &plusmn; 9</entry>
+<entry align="left">254 &plusmn; 84</entry>
+<entry align="left">10 &plusmn; 5%</entry>
+<entry align="left">68 &plusmn; 10%</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry/>
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00001169;class=Gene" role="_blank">eft-4</ulink></emphasis></entry>
+<entry align="left">38 &plusmn; 18</entry>
+<entry align="left">156 &plusmn; 58</entry>
+<entry align="left">10 &plusmn; 5%</entry>
+<entry align="left">40 &plusmn; 14%</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry/>
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00004475;class=Gene" role="_blank">rps-6</ulink></emphasis></entry>
+<entry align="left">44 &plusmn; 21</entry>
+<entry align="left">88 &plusmn; 61</entry>
+<entry align="left">15 &plusmn; 7%</entry>
+<entry align="left">43% &plusmn; 2%</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry/>
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00002083;class=Gene" role="_blank">inf-1</ulink></emphasis></entry>
+<entry align="left">8 &plusmn; 4</entry>
+<entry align="left">63 &plusmn; 28</entry>
+<entry align="left">5 &plusmn; 2%</entry>
+<entry align="left">56 &plusmn; 22%</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry/>
+<entry align="left"><emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00006699;class=Gene" role="_blank">uba-1</ulink></emphasis></entry>
+<entry align="left">0</entry>
+<entry align="left">88 &plusmn; 44</entry>
+<entry align="left">-</entry>
+<entry align="left">33 &plusmn; 19%</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</sect1>
+<sect1 id="sec5">
+<title>Sources and considerations for background protein binding</title>
+<para>The interpretation of CoIP-MS results can also be aided by an understanding of potential sources of background proteins. Background proteins can generally be classified into two categories&mdash;random or systematic. Random background proteins can be introduced through small variations in sample preparation or analysis and may often be due to non-specific interactions with abundant proteins within the lysate. Additionally, both random background proteins and <emphasis>bona fide</emphasis> binding partners may be identified pseudo-randomly in replicate runs. This is due to the sensitive, but pseudo-random sampling of low abundance proteins/peptides using tandem MS in shotgun proteomic analysis of protein complexes (<link linkend="bib37">Liu et al., 2004</link><!--PMID:15253663-->). Generally, increasing the number of replicate runs allows for better separation of background noise and <emphasis>bona fide</emphasis> binding partners. This concept has been exploited in many computational analyses of protein complex data and is described in <link linkend="sec8">Section 8</link>. Systematic background protein interactions present a greater, but surmountable challenge since they are reproducibly identified in all runs. The proper use of negative controls can reduce systematic noise through identification of background proteins that bind to the antibody, CoIP support (agarose, sepharose, magnetic beads, etc.), or purification tag (FLAG, GFP, etc.). For instance, performing a CoIP on an untagged lysate identifies proteins that bind the support and/or antibody. These background proteins can also be removed through tandem purification (<ulink url="http://www.wormbook.org/chapters/www_biochemmolbio/biochemmolbio.html">Biochemistry and molecular biology</ulink>) although at the expense of recovery and yield. For larger purification tags, such as GFP, a strain with GFP expressed from a transcriptional fusion could be used as a negative control. For instance in a case study of POI<superscript>#</superscript>1, <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00006537;class=Gene" role="_blank">tbb-2</ulink></emphasis> was abundant in both GFP control and ALP-1::GFP runs indicating it either bound to the beads, antibody, or GFP tag. In our case study of POI<superscript>#</superscript>2, proteins purified from a strain lacking POI<superscript>#</superscript>2 likely bound to the beads or antibody. Thus, the negative control runs should account for any background proteins from the CoIP support and antibody. Another source of systematic background proteins can be introduced from co-purifying macromolecules. For instance in our case study of POI<superscript>#</superscript>1, ALP-1 is a known muscle-associated protein (<link linkend="bib29">Han and Beckerle, 2009</link><!--PMID:19261811-->; <link linkend="bib39">McKeown et al., 2006</link><!--PMID:16278882-->). Consequently, from our POI<superscript>#</superscript>1 CoIPs we identified muscle proteins (ACT-1, ACT-2, ACT-3, ACT-4, UNC-52, NMY-1, and MYO-3) with higher spectral counts than ALP-1 (<link linkend="table2">Table 2</link>). Similar results could be expected for CoIP of DNA-binding proteins (i.e., transcription factors) which pull down an abundance of histones via DNA (<link linkend="figure1">Figure 1C</link>). In the case of DNA binding proteins, DNase or probe sonication can be used to remove DNA that would otherwise co-purify non-protein-protein interactions.</para>
+<para>The combination of in-solution digestion and high-sensitivity MS analysis of protein complexes provides much greater sensitivity and comprehensiveness than traditional methods. These analytical characteristics provide the opportunity to identify weak, sub-stoichiometric, and transient protein interactions with a target protein, but also allow for identification of more background proteins. We will discuss statistical and comparative analyses that can aid in differentiating binding partners from background proteins in <link linkend="sec8">Section 8</link>. Despite these bioinformatics methods to identify and remove background proteins, shotgun proteomic analysis will be more comprehensive and straightforward if protein complex purifications are relatively pure. As described in the next section, traditional biochemical and molecular biology methods can be used to evaluate and minimize background proteins in a CoIP preparation.</para>
+</sect1>
+<sect1 id="sec6">
+<title>Co-immunoprecipitation quality control</title>
+<para>Two traditional methods can be used to ensure the success of a CoIP-MS experiment and minimize the time and cost associated with MS-based shotgun proteomic analyses. Western blotting analysis should primarily be used for ensuring the expression of the POI and tracking the POI throughout the CoIP process, as in <link linkend="figure4">Figure 4A</link>. Depletion of POI<superscript>#</superscript>2 from the lysate can be observed by comparison of whole worm lysate (lane 1) to the CoIP supernatant (lanes 3 and 5), while enrichment can be detected by comparison of whole worm lysate to CoIP eluate (lanes 7 and 9).</para>
+<mediaobject id="figure4" xreflabel="Figure 4">
+<imageobject>
+<imagedata entityref="fig4" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 4</phrase>
+</textobject> &fig4legend;</mediaobject>
+<para>The analogous gel-based protein-staining analysis is also beneficial. Thus, we also suggest probing all proteins from lysates, CoIP supernatants, and 5&ndash;10% of the CoIP with coomassie- or silver-stained gel to estimate the purification and enrichment of the POI and its binding partners (<link linkend="figure4">Figure 4B</link>). In this case, side-by-side comparison of the CoIP to the lysate (<link linkend="figure4">Figure 4B</link>, compare lanes 7 and 9 to lane 1, respectively) allows for evaluation of the protein complex purity and POI<superscript>#</superscript>2 abundance. One of the main requirements for a successful CoIP-MS analysis is that a band with the approximate mass of your POI should be present in a gel-based analysis and be one of the most abundant proteins from the CoIP. Having ample abundance of the POI means that many potential binding partners are also likely present in detectable amounts (<link linkend="figure4">Figure 4B, lanes 7 and 9</link>). Note that the appropriate negative control runs have been performed to establish that purified proteins are specific to POI<superscript>#</superscript>2 (<link linkend="figure4">Figure 4B, lanes 8 and 10</link>). Gel-based analyses can serve to evaluate purity and yield. If the control and purification lanes are very similar then the CoIP is not pure. There are multiple experimental variables that can be tested. Suggested points in the CoIP pipeline to consider include: the expression of the protein in relevant strains, particularly if a POI is transgenically-tagged; the POI recovery from lysis; antibody integrity and conjugation to beads; and POI recovery from the CoIP. With a relatively pure and abundant POI from a CoIP, MS-based shotgun proteomics can now be performed to identify proteins and PTMs within the sample. Note that shotgun proteomic analysis is more sensitive if proteins are not cut out of gels and instead analyzed entirely in-solution (Das et al., 2010<!--: PMID 20968308-->). Thus, the remaining 90% of a CoIP sample (after gel-based quality control experiments) can be subjected to in-solution tryptic digestion and shotgun proteomics analysis (<link linkend="figure2">Figure 2</link>).</para>
+<para>With many technological advances to mass spectrometers, MS analysis can be as sensitive as a Western blot for a POI. However, a common question we have encountered is &ldquo;if my bait protein can be detected by Western, why is it not detected by shotgun proteomics?&rdquo; There are two likely answers to this question. First, the main difference between a Western and shotgun proteomic analysis is detection selectivity. With a Western, as long as the antibody is specific, the other proteins present in the CoIP do not interfere with the detection of the POI or its binding partners. Thus a Western yields no relevant information about the purity of the CoIP. That is, Western results can appear essentially the same for a whole worm lysate (<link linkend="figure4">Figure 4A, lane 1</link>) or for a highly pure protein complex (<link linkend="figure4">Figure 4A, lanes 7, and 9</link>) since only POI<superscript>#</superscript>2 is detected. Shotgun proteomic analysis identifies peptides/proteins within a sample based on relative abundance. If the bait protein has not been purified and enriched from the other abundant proteins within the lysate, shotgun proteomic analysis will mostly identify the abundant background proteins and not the POI (<link linkend="figure4">Figure 4B, lane 1</link>). Secondly, another major difference between Western and shotgun proteomic analysis is sensitivity. Although mass spectrometers are extremely sensitive, a peptide/protein signal is not amplifiable as in a Western analysis. Thus, even if a protein complex is pure and detectable by Western, it may not be detectable by MS.</para>
+</sect1>
+<sect1 id="sec7">
+<title>Mass spectrometry methods for protein and PTM identification</title>
+<para>Peptides are compatible with both nanoflow liquid chromatography (nLC) and tandem MS (MS/MS). Online multidimensional nLC/LC facilitates efficient separation and identification of modified and unmodified peptides. Mass spectrometers can be generally categorized as having either low or high resolution and mass accuracy. Resolution and accuracy define the capabilities to confidently measure the masses of peptides and their gas-phase fragments for sequencing. Currently utilized low-resolution instruments are primarily ion traps (<link linkend="figure2">Figure 2</link>) and are regularly used for protein identification and some PTM identification. High-resolution instruments, such as the Orbitrap (<link linkend="figure2">Figure 2</link>), can be used for all experiments. However, they are most beneficial in experiments to identify PTMs and quantitative experiments with isotopic labeling (<link linkend="bib35">Krijgsveld et al., 2003</link><!--PMID:12858183-->), although isotopic methods have yet to be applied to <emphasis>C. elegans</emphasis> CoIPs. Peptides are identified by matching experimentally-generated fragmentation spectra to theoretically-generated fragmentation spectra from protein sequence databases (<link linkend="bib19">Eng et al., 1994</link><!--PMID:24226387-->). Peptide matches from reversed protein sequences are appended to the database and can be used to measure false matches and control protein, peptide, and spectrum false discovery rates (FDR usually ~1% for proteins and ~0.1% for peptides). Higher mass accuracy measurement of intact peptide masses can be used as an additional filter to improve sensitivity, specificity, and confidence in peptide identifications with database searches (<link linkend="bib62">Yates et al., 2006</link><!--PMID:16408932-->). Peptide identifications serve as representations for protein and PTM identifications; thus, higher mass accuracy and higher confidence in peptide identifications also improve the sensitivity, specificity, and confidence in both protein and PTM identifications. This is illustrated in <link linkend="table3">Table 3</link> where we have displayed the results of a protein database search including three common PTMs (phosphorylation, acetylation, and ubiquitination) with low resolution (LTQ) and high resolution (Orbitrap) data from replicate POI<superscript>#</superscript>1 CoIPs. A cursory look at the results would indicate that low resolution provides better results. Indeed the low resolution MS sampling is faster and thus more comprehensive over the same analysis time. Conversely, the high-resolution results are smaller and more stringent, but are of much higher confidence. This is the reason the low resolution MS instrument is often used for identifying proteins and the high-resolution instruments for confident PTM identification. To resolve this discrepancy, high-resolution MS instruments are consistently improving in speed and sensitivity to approach the comprehensiveness of low resolution instruments (<link linkend="bib43">Olsen et al., 2009</link><!--PMID:19828875-->).</para>
+<para>Theoretically, 100% sequence coverage of a POI is possible since all possible peptide sequences are considered in the protein database search, including N-terminal, C-terminal, and internal peptides, along with multiple missed trypsin cleavage sites and sometimes non-tryptic peptides. Consideration of PTMs can also add to the overall protein sequence coverage. Practically, 50% protein sequence coverage is a reasonable result for a highly abundant protein in a CoIP sample, but is protein and sequence dependent. Protein sequence coverage is assigned by grouping the identified peptides to represent the minimum number of proteins that best explain the peptide sequences. Unique peptide sequences provide unambiguous evidence that a protein is present, while non-unique peptides contribute to protein sequence coverage and relative quantitation. Unique peptides are those that are not present in other proteins within the protein database. Conversely, non-unique peptides are those that are present within at least two proteins. Non-unique peptides often come from protein isoforms, but can also be present in redundant proteins. The number of unique peptides identified for a protein is dependent both on its sequence homology to other proteins within the protein database used and the abundance of the protein within the sample. Since proteins identified by unique peptides can share non-unique peptides, the non-unique peptides are often replicated and grouped within all relevant proteins. The appropriate grouping of peptides in shotgun proteomics is called the &ldquo;Protein Inference Problem&rdquo; (<link linkend="bib42">Nesvizhskii and Aebersold, 2005</link><!--PMID:16009968-->) and is generally addressed computationally. Although this can present identification and quantification challenges, the sensitivity, comprehensiveness, and power of shotgun proteomics in biological discovery has far exceeded any shortcomings from the analysis of proteins as a mixture of peptides. Additionally, the &ldquo;Protein Inference Problem&rdquo; is less of a challenge for simple mixtures, such as CoIPs described herein versus whole cell lysates; fewer non-unique peptides are actually present and identified within a sample of fewer proteins, making assignment of the non-unique peptides more straightforward.</para>
+<table id="table3" frame="all" rules="all" cellpadding="0" cellspacing="0" width="75">
+<title><emphasis role="bold">Table 3: List of identified peptides, proteins, and modified peptides from replicate runs of the same sample with low and high resolution mass spectrometers</emphasis>. Database searches were controlled to the same peptide FDR (0.1%) with different peptide per protein requirements.</title>
+<tgroup cols="5">
+<colspec colnum="1" colname="col1"/>
+<colspec colnum="2" colname="col2"/>
+<colspec colnum="3" colname="col3"/>
+<colspec colnum="4" colname="col4"/>
+<colspec colnum="5" colname="col5"/>
+<thead>
+<row valign="bottom" rowsep="1">
+<entry align="left"><emphasis role="bold">Mass spectrometer</emphasis></entry>
+<entry namest="col2" nameend="col4" align="left"><emphasis role="bold">Linear ion trap (LTQ)</emphasis></entry>
+<entry align="left"><emphasis role="bold">Orbitrap</emphasis></entry>
+</row>
+<row valign="bottom" rowsep="1">
+<entry align="left"><emphasis role="bold">Resolution &amp; mass accuracy</emphasis></entry>
+<entry align="left"><emphasis role="bold">Low</emphasis></entry>
+<entry/>
+<entry/>
+<entry align="left"><emphasis role="bold">High</emphasis></entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis role="bold">Required peptides per protein</emphasis></entry>
+<entry align="left"><emphasis role="bold">1</emphasis></entry>
+<entry align="left"><emphasis role="bold">2</emphasis></entry>
+<entry align="left"><emphasis role="bold">5</emphasis></entry>
+<entry align="left"><emphasis role="bold">1*</emphasis></entry>
+</row>
+</thead>
+<tfoot>
+<row valign="top" rowsep="1">
+<entry namest="col1" nameend="col5" align="left">*Peptides are required to be within 10 ppm of the expected mass.</entry>
+</row>
+</tfoot>
+<tbody>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis role="bold">Peptides</emphasis></entry>
+<entry align="left">7,421</entry>
+<entry align="left">7,689</entry>
+<entry align="left">6,601</entry>
+<entry align="left">2,970</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis role="bold">Proteins</emphasis></entry>
+<entry align="left">1,344</entry>
+<entry align="left">868</entry>
+<entry align="left">453</entry>
+<entry align="left">707</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis role="bold">Phosphopeptides</emphasis></entry>
+<entry align="left">81</entry>
+<entry align="left">76</entry>
+<entry align="left">45</entry>
+<entry align="left">16</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis role="bold">Acetylated peptides</emphasis></entry>
+<entry align="left">84</entry>
+<entry align="left">97</entry>
+<entry align="left">70</entry>
+<entry align="left">31</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis role="bold">Ubiquitinated peptides</emphasis></entry>
+<entry align="left">61</entry>
+<entry align="left">52</entry>
+<entry align="left">32</entry>
+<entry align="left">2</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<para>Analysis of purified protein complexes of enough mass (high nanogram to low microgram) with MudPIT generally yield high protein sequence coverages (&gt;50%) of the POI and its binding partners; although the ability to achieve high sequence coverages is POI and CoIP dependent. For instance, in both of our case studies we achieved approximately 30% sequence coverage (<link linkend="figure4">Figure 4B</link> and <link linkend="table3">Table 3</link>). A benefit of high protein sequence coverage is a higher probability of identifying post-translationally modified peptides, even if substoichiometric. The most commonly searched and identified PTMs (<link linkend="table1">Table 1</link>) are phosphorylation, acetylation, ubiquitination, and methylation. Almost all PTMs can be identified using mass spectrometry with the appropriate sample preparation and analysis considerations (<link linkend="bib67">Zhang et al., 2013</link><!--PMID:23438204-->), but this is outside the scope of this chapter. The measurement of both peptide precursor and fragment ion masses allows for identification and localization of many types of PTMs on proteins. That is, the modification mass can typically be detected on both the intact peptide and on the fragments to confirm the PTM identity and site of modification. An example phosphopeptide with phosphorylation site localization is shown in <link linkend="figure2">Figure 2</link> (lower left). Trypsin is primarily used for proteolytic digestions of protein complexes and can provide excellent protein sequence coverages and identification of most PTMs. For regions of proteins that have too many or too few tryptic cleavage sites, other less-selective proteases, such as subtilisin and elastase, can be used to improve protein sequence and PTM coverage (<link linkend="bib38">MacCoss et al., 2002</link><!--PMID:12060738-->; <link linkend="bib22">Fonslow and Yates, 2012</link>).</para>
+</sect1>
+<sect1 id="sec8">
+<title>Identification of candidate and <emphasis>bona fide</emphasis> binding partners</title>
+<para>Shotgun proteomics provides an effective means to identify proteins and PTMs within a sample from a CoIP. The most abundant and readily identified proteins from a database search of a CoIP-MS run should be from <emphasis>bona fide</emphasis> protein interactions. Thus, the quality of CoIP-MS results can, in part, be quickly and manually confirmed by the presence of known protein binding partners, if available. Generally these results are difficult to interpret unless compared to the appropriate negative control or conditional CoIP runs. There are both simple and complex methods for comparing CoIP-MS results, mostly dependent on the scale, depth, and complexity of analyses. The simplest analysis is a pairwise Venn comparison. This comparison may be most similar to a gel-based comparison since either the presence or absence of a protein is considered (<link linkend="bib55">Tabb et al., 2002</link><!--PMID:12643522-->; <link linkend="bib8">Carvalho et al., 2008</link><!--PMID:18644148-->); since shotgun proteomics is more sensitive than gel-based analysis, the depth of the comparison is greater and more informative. For instance, the number of proteins uniquely found using shotgun proteomic Venn comparison of POI<superscript>#</superscript>2 (<link linkend="figure5">Figure 5A</link>) is much greater than those visible using a gel-based analysis (Lanes 7 and 9 in <link linkend="figure4">Figure 4B</link>). Often, for strongly associated, robust binding partners this simple Venn analysis easily reveals these interactions for further follow-up and characterization. This is illustrated by the two known binding partners that were only present in the CoIP (<link linkend="figure5">Figure 5A</link>). The consideration of protein identification reproducibility, either by identification frequency (<link linkend="figure5">Figure 5B</link>) or p-value (<link linkend="figure5">Figure 5C</link>), between CoIP replicate analyses can also be included in a Venn comparison to further increase confidence in binding partner candidates (Carvalho et al., 2011<!-- PMIS: 21075743-->). From these more stringent considerations, the same 15 proteins were only found in POI<superscript>#</superscript>2 CoIPs (Figures 5B and 5C) and could be considered for biological validation. Similarly, proteins that are identified in only the negative control experiments yield a rough estimate of the background noise in the analyses. The noise can be better modeled by high-level statistical methods, but by considering identification frequency (<link linkend="figure5">Figure 5B</link>) and p-value (<link linkend="figure5">Figure 5C</link>) the noise is reduced from 113 proteins (<link linkend="figure5">Figure 5A</link>) to only three proteins. Ideally there will be more proteins unique to the POI CoIP, than the negative control CoIP. Similarly, these methods can be applied to find changes in binding partners between conditional treatments. However, subtle differences can be hard to detect with this method and generally require higher-level analyses. Additionally, these Venn analysis methods can break down if the POI or <emphasis>bona fide</emphasis> binding partners are abundant and are also detected to a limited extent in negative control experiments. A few proteins from our POI<superscript>#</superscript>1 case study are shown in <link linkend="table2">Table 2</link> as examples from a Venn comparison. As in our POI<superscript>#</superscript>2 case study (<link linkend="figure4">Figure 4B</link>), we achieved a reasonable number of spectral counts (136 &plusmn; 5) and sequence coverage (33 &plusmn; 5%) for our POI<superscript>#</superscript>1, ALP-1. Additionally, we identified a number of expected binding partners with even higher spectral counts and sequence coverages, presumably due to their macromolecular, polymeric nature. The identified actin isoforms (ACT-1&ndash;4) highlight that homologous proteins can be a challenge to differentiate with shotgun proteomics since they are not analyzed in their intact form. Redundant peptides can indicate at least one of the isoforms is present, but unique peptides must be identified to determine which isoform is present. If we were interested in quantifying the relative abundances of actin isoforms, the use of dNSAF instead of spectral counting would be ideally suited. Using this simple analysis method, we found a potential ALP-1 binding partner, TES-1, a LIM-domain binding protein, which was not present in the GFP control runs.</para>
+<mediaobject id="figure5" xreflabel="Figure 5">
+<imageobject>
+<imagedata entityref="fig5" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 5</phrase>
+</textobject> &fig5legend;</mediaobject>
+<para>Adding another level of complexity to the analysis, the relative abundance of proteins can also be considered between samples instead of simply considering absence or presence in the CoIP. This type of analysis considers changes in proteins that are present reproducibly in both samples within the overlap of the Venn diagrams (Figures 5B and 5C) and can be used for comparisons with negative controls or conditional CoIPs. Protein abundances for comparison between samples are estimated using peptide spectral counts (<link linkend="bib37">Liu et al., 2004</link><!--PMID:15253663-->)&mdash;the number of times spectra are identified for a protein, similar to transcript microarray abundance values (Pavelka et al., 2008<!--: PMID 18029349-->) or mRNA reads in RNA-Seq&mdash;and can be normalized to protein length by a normalized spectral abundance factor (NSAF) (<link linkend="bib69">Zybailov et al., 2006</link><!--PMID:16944946-->). The use of NSAF facilitates comparison of relative abundances of different proteins within the same sample. Since many proteins share peptide sequences, distributing shared peptide spectral counts among redundant proteins yields a distributed NSAF (dNSAF) that provides further improvements to estimate relative abundances within a sample, particularly for different proteoforms (<link linkend="bib68">Zhang et al., 2010</link><!--PMID:20166708-->). In this case, comparison of protein relative abundances using spectral counting is used to find candidate binding partners. A Volcano plot considers both the fold-change of relative protein abundances and the significance of the fold-change as a p-value. By comparison of triplicate POI<superscript>#</superscript>2 CoIPs to negative control CoIPs with a Volcano plot (<link linkend="figure5">Figure 5D</link>), the expected proteins (POI<superscript>#</superscript>2 and known binding partners) have the highest and most significant fold-changes, revealing other potential binding partners with high significance and lower fold-changes. Changes in protein binding partners could also be evaluated using this method by comparison of conditional treated and untreated POI CoIP results. Each level of comparison provides a means to narrow and refine candidate binding partners to testable, physiologically relevant, <emphasis>bona fide</emphasis> binding partners.</para>
+<para>Even more sophisticated analyses provide greater confidence in binding partners. Through statistical considerations of multiple experimental variables, <emphasis>bona fide</emphasis> binding partners are more easily differentiated from background noise (<link linkend="bib36">Krogan et al., 2006</link><!--PMID:16554755-->; <link linkend="bib11">Choi et al., 2011</link><!--PMID:21131968-->; <link linkend="bib33">Jager et al., 2012</link><!--PMID:22190034-->). Standard triplicate analyses facilitate statistical considerations of experimental error with the majority of these methods. However, power law global error modeling of spectral counting data has shown the largest gain in both accuracy and precision when an additional fourth replicate is performed, with diminishing returns from more replicates (<link linkend="bib46">Pavelka et al., 2008</link><!--PMID:18029349-->). We have analyzed our triplicate case-study POI<superscript>#</superscript>2 CoIP data using <emphasis>CompPASS</emphasis> (<link linkend="figure5">Figure 5E</link>). <emphasis>CompPASS</emphasis> considers the uniqueness, abundance, and reproducibility of proteins within parallel runs by establishing a threshold that is inherent to the sampling of mass spectrometry-based shotgun proteomic analysis (<link linkend="bib54">Sowa et al., 2009</link><!--PMID:19615732-->). Similar to the Volcano plot comparison, POI<superscript>#</superscript>2, known binding partners, and candidate binding partners cluster within the plot. These candidates can then be used for biological follow-up.</para>
+</sect1>
+<sect1 id="sec9">
+<title>Conclusions and perspectives</title>
+<para>Mass spectrometry-based proteomics provides a powerful tool to study <emphasis>C. elegans</emphasis> proteins. Remarkable results have routinely emerged from genetic and RNAi studies in <emphasis>C. elegans</emphasis>, particularly when combined with enabling technologies. Mass spectrometry-based proteomics is following a similar, enabling trend and we hope to continue facilitating these studies. Through our own work and collaborations with <emphasis>C. elegans</emphasis> biologists we have learned the power of these analyses, along with some of the common pitfalls, challenges, and misconceptions; we have explained and addressed these recurring topics to advance this area of research. We envision this chapter bridging a gap between <emphasis>C. elegans</emphasis> biologists and protein mass spectrometrists, acting as a guide for <emphasis>C. elegans</emphasis> protein complex preparation, shotgun proteomic analysis, data interpretation, and troubleshooting.</para>
+</sect1>
+<sect1 id="sec10">
+<title>Glossary</title>
+<para>CoIP-MS &ndash; co-immunoprecipitation followed by mass spectrometry</para>
+<para>dNSAF &ndash; distribution normalized spectral abundance factor; a relative measure of protein abundance that considers the shared sequences between homologous and redundant proteins by distributing spectral counts.</para>
+<para>MS/MS &ndash; tandem mass spectrometry; mass spectra are acquired on both intact and fragmented peptide ions to sequence the peptide.</para>
+<para>MudPIT &ndash; Multidimensional Protein Identification Technology</para>
+<para>NSAF &ndash; normalized spectral abundance factor; a normalized relative measure of protein abundance that considers the length of proteins by dividing the spectral counts by the protein sequence length.</para>
+<para>POI &ndash; protein of interest</para>
+<para>Protein complex isoforms (complexoforms) &ndash; protein complexes composed of similar subcomplexes (cores, attachments, and modules) that confer different biological functions.</para>
+<para>Protein complex attachments &ndash; stable protein subcomplexes that are unique to protein complexoforms.</para>
+<para>Protein complex cores &ndash; stable protein subcomplexes that are promiscuously found in many similar protein complexoforms.</para>
+<para>Protein complex modules &ndash; small, stable protein subcomplexes that assemble into attachments.</para>
+<para>Protein isoforms &ndash; different forms of the same protein from related genes, single nucleotide polymorphisms, or alternative RNA splicing.</para>
+<para>Proteoforms &ndash; different forms of the same protein arising from both protein isoforms and differential PTMs.</para>
+<para>PTM &ndash; post-translational modification.</para>
+<para>Reversed peptide and protein sequence &ndash; reversed sequences are appended to forward sequences in a protein database to estimate noise and false forward peptide and protein matches from the database search.</para>
+<para>Sequence coverage &ndash; percentage of a protein that is sequenced in a shotgun proteomics run by reconstruction of the protein sequence from identified peptides.</para>
+<para>Spectral count &ndash; the number of times peptides are sampled and identified by MS/MS for a given protein; a relative measure of protein abundance similar to transcript sequence counting.</para>
+</sect1>
+<sect1 id="sec11">
+<title>Acknowledgments</title>
+<para>B.R.F, J.J.M., P.T., and J.R.Y. are supported by the US National Center for Research Resources (5P41RR011823-17), National Institute of General Medical Sciences (8P41GM103533-17), National Institute of Diabetes and Digestive and Kidney Diseases (R01DK074798), National Heart, Lung, and Blood Institute (HHSN268201000035C), and National Institute of Mental Health (R01MH067880). A.P.A. is supported by the Sigrid Jus&eacute;lius Foundation and A.E.P. is supported by the NIH (GM071654), Keck, and Peter Gruber Foundations.</para>
+</sect1>
+<sect1 id="sec12">
+<title>References</title>
+<para/>
+&protcompanalysis_ref;
+</sect1>
+</article>

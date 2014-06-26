@@ -1,0 +1,1324 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Mass spectrometry-based shotgun proteomic analysis of C. elegans protein complexes</title>
+      <meta name="generator" content="DocBook XSL Stylesheets V1.67.2">
+      <link rel="start" href="#WB_Fonslow_etal" title="Mass spectrometry-based shotgun proteomic analysis of C. elegans protein complexes">
+      <link rel="next" href="#sec1" title="1.&nbsp;Introduction">
+      <script language="javascript" type="text/javascript" src="/js/history_list.js"></script>
+      <!--#include virtual="/ssi/header_article.html" -->
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+ <!--#include virtual="/ssi/boilerplate.html" -->
+ 	<div class="html_to_pdf_link">
+		<a href="protcompanalysis.pdf">Download PDF version</a>
+	</div>
+      <div class="article" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h1 class="title"><a name="WB_Fonslow_etal"></a>Mass spectrometry-based shotgun proteomic analysis of <span class="emphasis"><em>C. elegans</em></span> protein complexes<sup><a name="d0e9" href="#ftn.d0e9">*</a></sup></h1>
+               </div>
+               <div>
+                  <div class="author"><span class="author"><span class="othername">Bryan R. Fonslow<sup>1</sup>, James J. Moresco<sup>1<span class="emphasis"><em>&sect;</em></span></sup>, Patricia G. Tu<sup>1</sup>, Antti P. Aalto<sup>2</sup>, Amy E. Pasquinelli<sup>2</sup>, Andrew G. Dillin<sup>3</sup>, and John R. Yates III<sup>1</sup><em><span class="remark"><sup><a name="d0e55" href="#ftn.d0e55">&sect;</a></sup></span></em></span><br></span><span class="affiliation"><span class="orgname"><sup>1</sup>Department of Chemical Physiology, The Scripps Research Institute, La Jolla CA 92037 USA; </span></span><span class="affiliation"><span class="orgname"><sup>2</sup>Division of Biological Sciences, University of California, San Diego, La Jolla CA 92093 USA; </span></span><span class="affiliation"><span class="orgname"><sup>3</sup>Howard Hughes Medical Institute, Department of Molecular and Cellular Biology, University of California, Berkeley, Berkeley
+                           CA 94720 USA</span></span></div>
+               </div>
+            </div>
+            <hr>
+         </div>
+         <div class="toc">
+ 
+	   <div id="section_locator"><a href="/toc_wormmethods.html">
+	         <b>This chapter is in WormBook section:</b><br />
+		       > WormMethods<br />>> Cell and molecular biology
+		</a></div><hr />
+
+            <p><b>Table of Contents</b></p>
+            <dl>
+               <dt><span class="sect1"><a href="#sec1">1. Introduction</a></span></dt>
+               <dt><span class="sect1"><a href="#sec2">2. Types of protein complexes and analysis methods</a></span></dt>
+               <dt><span class="sect1"><a href="#sec3">3. Description of protein of interest (POI) case studies</a></span></dt>
+               <dt><span class="sect1"><a href="#sec4">4. Protein lifecycle considerations in protein complex analysis</a></span></dt>
+               <dt><span class="sect1"><a href="#sec5">5. Sources and considerations for background protein binding</a></span></dt>
+               <dt><span class="sect1"><a href="#sec6">6. Co-immunoprecipitation quality control</a></span></dt>
+               <dt><span class="sect1"><a href="#sec7">7. Mass spectrometry methods for protein and PTM identification</a></span></dt>
+               <dt><span class="sect1"><a href="#sec8">8. Identification of candidate and <span class="emphasis"><em>bona fide</em></span> binding partners</a></span></dt>
+               <dt><span class="sect1"><a href="#sec9">9. Conclusions and perspectives</a></span></dt>
+               <dt><span class="sect1"><a href="#sec10">10. Glossary</a></span></dt>
+               <dt><span class="sect1"><a href="#sec11">11. Acknowledgments</a></span></dt>
+               <dt><span class="sect1"><a href="#sec12">12. References</a></span></dt>
+            </dl>
+         </div>
+         <div class="abstract">
+            <p class="title"><span class="bold"><strong>Abstract</strong></span></p>
+            <p><span class="bold"><strong>Mass spectrometry (MS)-based shotgun proteomics is an enabling technology for the study of <span class="emphasis"><em>C. elegans</em></span> proteins. When coupled with co-immunoprecipitation (CoIP), new interactions and functions among proteins can be discovered.
+                     We provide a general background on protein complexes and methods for their analysis, along with the lifecycle and interaction
+                     types of proteins that ultimately define the identifiable components of protein complexes. We highlight traditional biochemical
+                     methods to evaluate whether the complexes are sufficiently pure and abundant for analysis with shotgun proteomics. We present
+                     two CoIP-MS case studies of protein complexes from <span class="emphasis"><em>C. elegans,</em></span> using both endogenous and fusion protein antibodies to illustrate the important aspects of their analyses. We discuss results
+                     from mass spectrometers with differences in mass accuracy and resolution, along with the relevant information that can be
+                     extracted from the data generated, such as protein relative abundance, post-translational modifications, and identification
+                     confidence. Finally, we illustrate how comparative analysis can reveal candidate binding partners for biological follow-up
+                     and validation. This chapter should act as a complement and extension to the WormBook chapter <a href="http://www.wormbook.org/chapters/www_biochemmolbio/biochemmolbio.html#d0e784" target="_top">Biochemistry and molecular biology</a>, which describes tandem affinity purification (TAP) of protein complexes for analysis by mass spectrometry.</strong></span></p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec1"></a>1.&nbsp;Introduction
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p><span class="emphasis"><em>C. elegans</em></span> is an excellent model system for basic biology and increasingly for the study of disease phenotypes (WormBook chapter <a href="http://www.wormbook.org/chapters/www_obesity/obesity.html#d0e2226" target="_top">Obesity and the regulation of fat metabolism</a>; <a href="#bib49">Rodriguez et al., 2013</a>). A remarkable amount of genetic reagents, resources, and information has been generated though these basic and translational
+               studies. With the advent of numerous technologies, including mass spectrometry-based proteomics, studies of the protein-protein
+               interactions within <span class="emphasis"><em>C. elegans</em></span> are becoming commonplace (<a href="#bib57">Tewari et al., 2004</a>; <a href="#bib3">Audhya and Desai, 2008</a>; Biochemistry and molecular biology). These studies are beneficial since they can leverage the wide array of existing information
+               and resources of the <span class="emphasis"><em>C. elegans</em></span> community to quickly follow-up and understand protein-based discoveries.
+            </p>
+            <p>There are some obvious advantages and challenges associated with using <span class="emphasis"><em>C. elegans</em></span> as a biochemical tool, particularly for CoIP-MS of protein complexes, compared to more commonly used cell culture systems.
+               First and foremost, novel protein-based findings can be quickly validated or rejected in a phenotypically-testable system
+               (WormBook chapter <a href="http://www.wormbook.org/chapters/www_introreversegenetics/introreversegenetics.html" target="_top">Reverse genetics</a>; <a href="#bib17">Dong et al., 2007</a>; <a href="#bib41">Moresco et al., 2010</a>). Thus, the inferred functional relevance and cooperativity between a protein of interest (POI) and a candidate protein that
+               is pulled down during a CoIP can be directly correlated. Second, tissue-specific protein expression can also be considered,
+               facilitating and/or necessitating the differentiation of tissue-specific protein interactions from CoIP-MS results. That is,
+               the analysis of different cell types from worms, instead of a homogenous cell culture type, can provide information about
+               the multiple functions and forms of a protein or protein complex. For instance, integration of a tagged fusion protein can
+               be characterized to ensure appropriate cellular and subcellular localization. Additionally, if the fusion protein is integrated
+               into a null mutant, the rescue of associated phenotypes can be tested to ensure proper protein function. Once integrated and
+               characterized, a tissue-specific expressed and tagged POI can be used to pull down tissue-specific binding partners. Identified
+               candidate tissue-specific POI binding partners can be validated through cytological co-localization experiments. The cuticle
+               helps to make <span class="emphasis"><em>C. elegans</em></span> a robust and easily-handled organism (WormBook chapter <a href="http://www.wormbook.org/chapters/www_cuticle/cuticle.html#d0e1575" target="_top">The cuticle</a>), yet provides a tough exterior for protein complex-friendly lysis and separation of tissue types. Abundant proteins from
+               large tissues are ideal CoIP-MS targets, but can obscure the POI if it is only expressed in a small number of cells. Sample
+               complexity can be reduced with synchronization of worms or purification of specific cell types, such as embryos, and can alleviate
+               some of these challenges. For worm CoIP methods, we point the reader to a number of excellent protocols on this topic (<a href="http://www.wormbook.org/chapters/www_biochemmolbio/biochemmolbio.html#d0e58" target="_top">Biochemistry and molecular biology</a>; <a href="#bib47">Polanowska et al., 2004</a>; <a href="#bib34">Jedamzik and Eckmann, 2009</a>), particularly to <a href="#bib63">Zanin et al. (2011)</a>, which provides MS-compatible elution conditions. Throughout this chapter we will describe the methods that can be used to
+               identify post-translational modifications, protein interactions, and complexes, enabling the researcher to exploit the advantages
+               of <span class="emphasis"><em>C. elegans</em></span> as a model organism to study basic biology and disease mechanisms.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec2"></a>2.&nbsp;Types of protein complexes and analysis methods
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Proteins can be present in different types of complexes (<a href="#figure1">Figure 1</a>). The simplest is an obligate dimer where two proteins are always found together. Condition-specific complexes may only form
+               in the presence of a post-translational modification, such as phosphorylation. Transient complexes, perhaps involving enzymes,
+               may only interact briefly. The different time scales and stabilities of complex interactions can be defined by varying affinities
+               of protein-protein interactions. Protein complexes that are part of larger macromolecular structures can co-purify other proteins
+               and need to be isolated from the larger structure. Smaller, stable protein complexes can assemble as subunits to form larger
+               &#8220;complex isoforms&#8221; or &#8220;complexoforms&#8221;. These complexoforms can also contain protein isoforms or PTMs (<a href="#bib56">Talavera et al., 2013</a>), recently deemed &#8220;proteoforms&#8221; (<a href="#bib53">Smith et al., 2013</a>). Because of the complex combinatorial nature of proteoforms and complexoforms, is it important for the researcher to determine
+               which proteoforms of their POI may be tagged and/or pulled down from a CoIP.
+            </p>
+            <div class="mediaobject" align="center"><a name="figure1"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="432">
+<tr>
+  <td align="center"><p><a href="protcompanalysis_fig1.jpg"><img src="protcompanalysis_fig1_s.jpg" border="2" align="middle" alt=" figure 1"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 1: Types of protein interactions and complexes:&nbsp;</b>(A) obligate interactions, (B) condition-specific interactions, (C) transient complex between an enzyme and substrate representing
+                     transient interactions, (D) a DNA-bound protein representing protein complexes that are part of large macromolecular structures,
+                     and (E) &#8220;complex isoforms&#8221; or &#8220;complexoforms&#8221; containing cores, modules, and attachments (Adapted from Gavin et al., 2006)
+                     as combinations of obligate, condition-specific, and transient interactions.
+                  </p>
+               </div>
+            </div>
+            <p>While binary protein interactions can be determined with the yeast two-hybrid system (<a href="#bib7">Boxem et al., 2008</a>; <a href="#bib51">Simonis et al., 2009</a>) (<a href="#figure1">Figure 1A</a>), higher-order, <span class="emphasis"><em>in vivo</em></span> protein-protein interactions are better elucidated using CoIP-MS. CoIP-MS experiments (<a href="#figure2">Figure 2</a>) generally involve the purification of a POI and its binding partners, followed by Multidimensional Protein Identification
+               Technology (MudPIT) (<a href="#bib59">Washburn et al., 2001</a>), more generally known as shotgun or bottom-up proteomics (<a href="#bib67">Zhang et al., 2013</a>). Shotgun proteomics can identify hundreds of proteins from a CoIP within a few hours in an unbiased fashion. Putative interactions
+               can be validated through reciprocal CoIPs with detection by shotgun proteomics or Western blotting. Global reciprocal CoIP-MS
+               experiments performed in yeast (<a href="#bib25">Gavin et al., 2002</a>; <a href="#bib24">Gavin et al., 2006</a>; <a href="#bib36">Krogan et al., 2006</a>; <a href="#bib13">Collins et al., 2007</a>; <a href="#bib6">Babu et al., 2012</a>) have illustrated the concept of &#8220;complex isoforms&#8221; through the modularity of protein complex architecture. For instance,
+               complexes averaged three to 12 protein components, depending on the study, ranging from two to 83 overall; some proteins were
+               more promiscuous and were identified in many purifications and complexes. In general, these global CoIP-MS studies performed
+               originally in yeast, and more recently with human cell lines (<a href="#bib20">Ewing et al., 2007</a>; <a href="#bib30">Havugimana et al., 2012</a>), have changed the way protein complexes are elucidated and understood. Thus, the researcher must be aware of these complexities
+               and capabilities when designing an experiment and interpreting the results. Essentially, when a CoIP is performed on a single
+               POI, all complexoforms which the POI participates in will be co-purified and co-identified. Complexoforms can be differentiated
+               through multiple reciprocal purifications of different POI proteoforms and complex components (<a href="#bib24">Gavin et al., 2006</a>) and through intact complex analysis methods (<a href="#bib32">Heck, 2008</a>; <a href="#bib21">Fonslow et al., 2010</a>).
+            </p>
+            <div class="mediaobject" align="center"><a name="figure2"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="432">
+<tr>
+  <td align="center"><p><a href="protcompanalysis_fig2.jpg"><img src="protcompanalysis_fig2_s.jpg" border="2" align="middle" alt=" figure 2"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 2: CoIP-MS schematic for analysis of <span class="emphasis"><em>C. elegans</em></span> protein complexes.&nbsp;</b>A preparative growth of animals is lysed in a protein complex-compatible buffer with a dounce on ice, bead beater at 4&deg;C,
+                     or in liquid nitrogen with a mortar and pestle. The POI is CoIPed and eluted for proteomic analysis. Quality control, gel-based
+                     analysis is performed on 10% of CoIP (<a href="#figure4">Figure 4</a>). Shotgun proteomic analysis is performed on the remaining 90% of the CoIP. Proteins are precipitated with tricholoracetic
+                     acid (TCA)/acetone or methanol/chloroform to remove lipids and surfactants. Proteins are resolubilized, primarily with 8 M
+                     urea, then alkylated, reduced, and digested to peptides with trypsin. Tryptic peptides are analyzed using MudPIT, consisting
+                     of online nLC/LC-MS/MS. Peptides are fractionated by charge with strong cation exchange (SCX) chromatography and then further separated by hydrophobicity
+                     with reverse-phase high performance liquid chromatography (RP-HPLC). Separated peptides are transferred into the mass spectrometer
+                     by electrospray ionization (ESI) where their intact and fragment ion masses can be measured with either high or low mass accuracy
+                     and resolution using the LTQ or the Orbitrap, respectively. Bioinformatic analysis is performed on the <a href="http://www.wormbase.org/db/get?name=MS;class=Cell" target="_blank">MS</a>/MS data. A SEQUEST protein database search is used to match experimental and theoretical peptide spectra and to localize
+                     PTMs. Spectra can be manually annotated to validate peptide identification or PTM localization. In this case, the blue and
+                     green annotations are sequence informative ions while the red ions are phosphorylation site-specific ions that localize the
+                     PTMs. DTASelect is used to filter confident peptide matches and reassemble the peptides into proteins. Further analysis can
+                     be performed between replicate and comparative runs with Venn diagrams or more sophisticated statistical software (see <a href="#figure5">Figure 5</a>).
+                  </p>
+               </div>
+            </div>
+            <p>In addition to identification of POI binding partners, analysis of CoIPs by MS has other notable advantages. Numerous PTMs (<a href="#table1" title="Table 1: List of common MS-identifiable PTMs.">Table 1</a>) can also be readily identified during CoIP-MS experiments. PTMs can be identified on peptides by consecutive measurements
+               of mass differences in both intact peptide and fragment ion masses. Condition-specific PTMs and interactions can be discovered
+               through the purification of protein complexes from different genetic backgrounds and conditional treatments. Moreover, the
+               identification of co-immunoprecipitated proteins with MS provides an unbiased, broad view of the interactions and functions of a POI, facilitating new and unexpected biological discoveries
+               (<a href="#bib52">Skop et al., 2004</a>; <a href="#bib4">Audhya et al., 2005</a>; <a href="#bib10">Cheeseman et al., 2005</a>; <a href="#bib26">Gottschalk et al., 2005</a>; <a href="#bib18">Duchaine et al., 2006</a>; <a href="#bib44">Olson et al., 2006</a>; <a href="#bib5">Audhya et al., 2007</a>; <a href="#bib27">Grill et al., 2007</a>; <a href="#bib50">Schlaitz et al., 2007</a>; <a href="#bib65">Zhang et al., 2007</a>; <a href="#bib23">Gassmann et al., 2008</a>; <a href="#bib14">Csankovszki et al., 2009</a>; <a href="#bib15">Dammermann et al., 2009</a>; <a href="#bib28">Gu et al., 2009</a>; <a href="#bib60">Welburn et al., 2010</a>; <a href="#bib61">Witte et al., 2011</a>; <a href="#bib31">He et al., 2012</a>; <a href="#bib64">Zhang et al., 2012</a>). Notably, combining different purification methods with shotgun proteomics has also been successful for identifying protein
+               interactions by pull-downs with small molecules (<a href="#bib40">Min et al., 2007</a>), chromatin (<a href="#bib12">Chu et al., 2006</a>), lipid rafts (<a href="#bib48">Rao et al., 2011</a>), and lipid droplets (<a href="#bib64">Zhang et al., 2012</a>). As methods have improved, mostly though advances in mass spectrometer speed and sensitivity, a greater number of putative
+               protein interactions are found. Thus, these larger, more comprehensive data sets have become less straightforward to interpret
+               manually. Bioinformatic methods have been introduced to provide confidence values to CoIPed proteins from these larger data
+               sets (<a href="#bib36">Krogan et al., 2006</a>; <a href="#bib54">Sowa et al., 2009</a>; <a href="#bib11">Choi et al., 2011</a>; <a href="#bib33">Jager et al., 2012</a>). These analyses often allow for differentiation of protein complex components from background proteins. We will illustrate
+               how one such program, the <span class="emphasis"><em>Comp</em></span>arative <span class="emphasis"><em>P</em></span>roteomic <span class="emphasis"><em>A</em></span>nalysis <span class="emphasis"><em>S</em></span>oftware <span class="emphasis"><em>S</em></span>uite (<span class="emphasis"><em>CompPASS)</em></span> (<a href="#bib54">Sowa et al., 2009</a>), can be used on nematode CoIP-MS data to find validated protein interactions and new candidate binding partners. Collectively,
+               the combination of cross-disciplinary methodologies can elucidate different types of biologically-relevant protein complex
+               interactions from <span class="emphasis"><em>C. elegans</em></span>.
+            </p>
+            <div class="table"><a name="table1"></a><p class="title"><span class="bold">Table 1: List of common MS-identifiable PTMs.</span></p>
+               <table summary="Table 1: List of common MS-identifiable PTMs." border="1">
+                  <colgroup>
+                     <col>
+                     <col>
+                     <col>
+                  </colgroup>
+                  <thead>
+                     <tr valign="bottom">
+                        <th align="left" valign="bottom"><span class="bold"><strong>PTM</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>Mass shift (&#916; <a href="http://www.wormbase.org/db/get?name=Da;class=Cell" target="_blank">Da</a>)</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>Considerations</strong></span></th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="bold"><strong>Phosphorylation</strong></span></td>
+                        <td align="left" valign="top">+ 79.9663</td>
+                        <td align="left" valign="top">Use phosphatase inhibitors</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="bold"><strong>Acetylation</strong></span></td>
+                        <td align="left" valign="top">+ 42.0106</td>
+                        <td align="left" valign="top">Has a similar mass shift associated with lysine carbamylation from urea and trimethylation</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="bold"><strong>Ubiquitination</strong></span></td>
+                        <td align="left" valign="top">+ 114.0429</td>
+                        <td align="left" valign="top">
+                           <p>Trypsin digestion leaves C-terminal GG on lysine</p>
+                           
+                           <p>Chloroacetamide should be used for protein alkylation</p>
+                        </td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="bold"><strong>Methylation</strong></span></td>
+                        <td align="left" valign="top">+ 14.1097</td>
+                        <td align="left" valign="top">Avoid methanol in sample preparations</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec3"></a>3.&nbsp;Description of protein of interest (POI) case studies
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>The remaining sections will refer to actual CoIP-MS data we have generated and analyzed as case studies for this chapter.
+               The first POI (POI<sup>#</sup>1) is ALP-1, an alpha-actinin-associated LIM-Enigma family protein that is required for maintenance of actin filament organization
+               and for stabilizing muscle contraction. ALP-1 is a soluble, abundant protein, making CoIP-MS analysis relatively straightforward.
+               ALP-1 falls into the category of macromolecular-bound since it associates with actin, so we will discuss the results in this
+               context. We performed CoIPs from <a href="http://www.wormbase.org/db/get?name=UU18;class=Strain" target="_blank">UU18</a>, a strain with GFP fused to an ALP-1 exon that is expressed as three isoforms (proteoforms): ALP-1b, c, and d (<a href="#bib39">McKeown et al., 2006</a>). Therefore, we expect at least three complexoforms to exist. A GFP-expressing strain driven by the identical <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00001132;class=Gene" target="_blank">alp-1</a></em></span> promoter would have been ideal to serve as a negative control, but was not available. Instead we used a strain expressing
+               GFP in the muscle as the bulk of ALP-1 expression is also in the muscle. We used anti-GFP antibody to perform the CoIPs in
+               this example.
+            </p>
+            <p>POI<sup>#</sup>2, a soluble protein of lower abundance than ALP-1, is from an on-going CoIP-MS study. We included this case study since the
+               experimental design, quality control experiments, and results were ideal to illustrate the successful execution of a CoIP-MS
+               study using an antibody to an endogenous protein. We expect many complexoforms to be isolated, as this polyclonal antibody
+               should recognize all isoforms of POI<sup>#</sup>2. A null mutant strain of POI<sup>#</sup>2 was used for negative control CoIPs.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec4"></a>4.&nbsp;Protein lifecycle considerations in protein complex analysis
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>When performing a CoIP we are usually attempting to isolate the POI at a time when it is performing its function. Co-isolated
+               proteins are thought to be similarly involved in that function. However, every protein also interacts with a large number
+               of regulatory or &#8220;housekeeping&#8221; proteins during its defined lifecycle (<a href="#figure3">Figure 3</a>). Thus, when performing and interpreting results from a CoIP-MS experiment it is important to consider that a POI can be
+               purified from all points within its lifecycle from synthesis to degradation. The co-immunoprecipitated lifecycle proteins
+               should be identified as binding partners although they may not be of interest to the researcher. Proteins involved in protein
+               synthesis (initiation and elongation factors, ribosomal proteins, etc.), protein folding (chaperones and heat shock proteins),
+               and degradation (ubiquitin-associated proteins, etc.) will likely be identified in most CoIPs. For instance in our POI<sup>#</sup>1 case study (<a href="#table2" title="Table 2: List of identified proteins, spectral counts, and sequence coverages from GFP and ALP-1::GFP CoIPs-MS runs as the POI#1 case study. Error shown as standard deviations of spectral counts and sequence coverages from duplicate runs.">Table 2</a>), we found many regulatory proteins (HSP-60, EFT-4, RPS-6, INF-1, and UBA-1) more abundant in the CoIP than the negative
+               control.
+            </p>
+            <div class="mediaobject" align="center"><a name="figure3"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="432">
+<tr>
+  <td align="center"><p><a href="protcompanalysis_fig3.jpg"><img src="protcompanalysis_fig3_s.jpg" border="2" align="middle" alt=" figure 3"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 3: The lifecycle of a protein determines protein interactions.&nbsp;</b>A: Protein synthesized by ribosome; B: Protein modified and trafficked; C: Protein performing a function; D: Protein targeted
+                     for degradation.
+                  </p>
+                  <p>An epitope can be purified from the time it is made (A) to the time it is degraded (D). Although the researcher may only be
+                     interested in functional binding partners and complexes (C), other &#8220;housekeeping&#8221; proteins and complexes (A, B, D) will also
+                     be purified and identified.
+                  </p>
+               </div>
+            </div>
+            <div class="table"><a name="table2"></a><p class="title"><span class="bold">Table 2: List of identified proteins, spectral counts, and sequence coverages from GFP and ALP-1::GFP CoIPs-MS runs as the
+                     POI<sup>#</sup>1 case study.</span> Error shown as standard deviations of spectral counts and sequence coverages from duplicate runs.
+               </p>
+               <table summary="Table 2: List of identified proteins, spectral counts, and sequence coverages from GFP and ALP-1::GFP CoIPs-MS runs as the POI#1 case study. Error shown as standard deviations of spectral counts and sequence coverages from duplicate runs." border="1">
+                  <colgroup>
+                     <col>
+                     <col>
+                     <col>
+                     <col>
+                     <col>
+                     <col>
+                  </colgroup>
+                  <thead>
+                     <tr valign="bottom">
+                        <th align="left" valign="bottom"><span class="bold"><strong>Category</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>Gene</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>Control Spectral Counts</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>CoIP Spectral Counts</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>Control Sequence Coverage</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>CoIP Sequence Coverage</strong></span></th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="bold"><strong>Target</strong></span></td>
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00001132;class=Gene" target="_blank">alp-1</a></em></span></td>
+                        <td align="left" valign="top">0</td>
+                        <td align="left" valign="top">136 &plusmn; 5</td>
+                        <td align="left" valign="top">-</td>
+                        <td align="left" valign="top">33 &plusmn; 5%</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="bold"><strong>Tag</strong></span></td>
+                        <td align="left" valign="top"><span class="emphasis"><em>gfp</em></span></td>
+                        <td align="left" valign="top">13 &plusmn; 6</td>
+                        <td align="left" valign="top">8 &plusmn; 3</td>
+                        <td align="left" valign="top">16 &plusmn; 8%</td>
+                        <td align="left" valign="top">25 &plusmn; 1%</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="bold"><strong>Known binding partners</strong></span></td>
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00000064;class=Gene" target="_blank">act-2</a></em></span></td>
+                        <td align="left" valign="top">0</td>
+                        <td align="left" valign="top">6202 &plusmn; 202</td>
+                        <td align="left" valign="top">-</td>
+                        <td align="left" valign="top">80 &plusmn; 4%</td>
+                     </tr>
+                     <tr valign="top">
+                        <td valign="top">&nbsp;</td>
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00000066;class=Gene" target="_blank">act-4</a></em></span></td>
+                        <td align="left" valign="top">0</td>
+                        <td align="left" valign="top">6377 &plusmn; 167</td>
+                        <td align="left" valign="top">-</td>
+                        <td align="left" valign="top">78 &plusmn; 2%</td>
+                     </tr>
+                     <tr valign="top">
+                        <td valign="top">&nbsp;</td>
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00000063;class=Gene" target="_blank">act-1</a></em></span></td>
+                        <td align="left" valign="top">0</td>
+                        <td align="left" valign="top">6241 &plusmn; 72</td>
+                        <td align="left" valign="top">-</td>
+                        <td align="left" valign="top">76 &plusmn; 4%</td>
+                     </tr>
+                     <tr valign="top">
+                        <td valign="top">&nbsp;</td>
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00000065;class=Gene" target="_blank">act-3</a></em></span></td>
+                        <td align="left" valign="top">0</td>
+                        <td align="left" valign="top">6241 &plusmn; 72</td>
+                        <td align="left" valign="top">-</td>
+                        <td align="left" valign="top">76 &plusmn; 4%</td>
+                     </tr>
+                     <tr valign="top">
+                        <td valign="top">&nbsp;</td>
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00006787;class=Gene" target="_blank">unc-52</a></em></span></td>
+                        <td align="left" valign="top">0</td>
+                        <td align="left" valign="top">8510 &plusmn; 1083</td>
+                        <td align="left" valign="top">-</td>
+                        <td align="left" valign="top">72 &plusmn; 2%</td>
+                     </tr>
+                     <tr valign="top">
+                        <td valign="top">&nbsp;</td>
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00003776;class=Gene" target="_blank">nmy-1</a></em></span></td>
+                        <td align="left" valign="top">0</td>
+                        <td align="left" valign="top">1236 &plusmn; 554</td>
+                        <td align="left" valign="top">-</td>
+                        <td align="left" valign="top">66 &plusmn; 7%</td>
+                     </tr>
+                     <tr valign="top">
+                        <td valign="top">&nbsp;</td>
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00003515;class=Gene" target="_blank">myo-3</a></em></span></td>
+                        <td align="left" valign="top">0</td>
+                        <td align="left" valign="top">761 &plusmn; 25</td>
+                        <td align="left" valign="top">-</td>
+                        <td align="left" valign="top">58 &plusmn; 4%</td>
+                     </tr>
+                     <tr valign="top">
+                        <td valign="top">&nbsp;</td>
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00006820;class=Gene" target="_blank">unc-89</a></em></span></td>
+                        <td align="left" valign="top">0</td>
+                        <td align="left" valign="top">28 &plusmn; 9</td>
+                        <td align="left" valign="top">-</td>
+                        <td align="left" valign="top">5 &plusmn; 2%</td>
+                     </tr>
+                     <tr valign="top">
+                        <td valign="top">&nbsp;</td>
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00006407;class=Gene" target="_blank">lim-9</a></em></span></td>
+                        <td align="left" valign="top">0</td>
+                        <td align="left" valign="top">2 &plusmn; 0</td>
+                        <td align="left" valign="top">-</td>
+                        <td align="left" valign="top">4 &plusmn; 0%</td>
+                     </tr>
+                     <tr valign="top">
+                        <td valign="top">&nbsp;</td>
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00003929;class=Gene" target="_blank">pat-2</a></em></span></td>
+                        <td align="left" valign="top">0</td>
+                        <td align="left" valign="top">3 &plusmn; 1</td>
+                        <td align="left" valign="top">-</td>
+                        <td align="left" valign="top">4 &plusmn; 2%</td>
+                     </tr>
+                     <tr valign="top">
+                        <td valign="top">&nbsp;</td>
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00003930;class=Gene" target="_blank">pat-3</a></em></span></td>
+                        <td align="left" valign="top">0</td>
+                        <td align="left" valign="top">2 &plusmn; 1</td>
+                        <td align="left" valign="top">-</td>
+                        <td align="left" valign="top">3 &plusmn; 1%</td>
+                     </tr>
+                     <tr valign="top">
+                        <td valign="top">&nbsp;</td>
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00003931;class=Gene" target="_blank">pat-4</a></em></span></td>
+                        <td align="left" valign="top">0</td>
+                        <td align="left" valign="top">4 &plusmn; 0</td>
+                        <td align="left" valign="top">-</td>
+                        <td align="left" valign="top">7 &plusmn; 2%</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="bold"><strong>Potential binding partner</strong></span></td>
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00015217;class=Gene" target="_blank">tes-1</a></em></span></td>
+                        <td align="left" valign="top">0</td>
+                        <td align="left" valign="top">9 &plusmn; 4</td>
+                        <td align="left" valign="top">-</td>
+                        <td align="left" valign="top">18 &plusmn; 5%</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="bold"><strong>Background</strong></span> (Bead, antibody, or tag)
+                        </td>
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00006537;class=Gene" target="_blank">tbb-2</a></em></span></td>
+                        <td align="left" valign="top">404 &plusmn; 143</td>
+                        <td align="left" valign="top">534 &plusmn; 273</td>
+                        <td align="left" valign="top">53 &plusmn; 18%</td>
+                        <td align="left" valign="top">62 &plusmn; 24%</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="bold"><strong>Background</strong></span> (Lifecycle)
+                        </td>
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00002025;class=Gene" target="_blank">hsp-60</a></em></span></td>
+                        <td align="left" valign="top">19 &plusmn; 9</td>
+                        <td align="left" valign="top">254 &plusmn; 84</td>
+                        <td align="left" valign="top">10 &plusmn; 5%</td>
+                        <td align="left" valign="top">68 &plusmn; 10%</td>
+                     </tr>
+                     <tr valign="top">
+                        <td valign="top">&nbsp;</td>
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00001169;class=Gene" target="_blank">eft-4</a></em></span></td>
+                        <td align="left" valign="top">38 &plusmn; 18</td>
+                        <td align="left" valign="top">156 &plusmn; 58</td>
+                        <td align="left" valign="top">10 &plusmn; 5%</td>
+                        <td align="left" valign="top">40 &plusmn; 14%</td>
+                     </tr>
+                     <tr valign="top">
+                        <td valign="top">&nbsp;</td>
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00004475;class=Gene" target="_blank">rps-6</a></em></span></td>
+                        <td align="left" valign="top">44 &plusmn; 21</td>
+                        <td align="left" valign="top">88 &plusmn; 61</td>
+                        <td align="left" valign="top">15 &plusmn; 7%</td>
+                        <td align="left" valign="top">43% &plusmn; 2%</td>
+                     </tr>
+                     <tr valign="top">
+                        <td valign="top">&nbsp;</td>
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00002083;class=Gene" target="_blank">inf-1</a></em></span></td>
+                        <td align="left" valign="top">8 &plusmn; 4</td>
+                        <td align="left" valign="top">63 &plusmn; 28</td>
+                        <td align="left" valign="top">5 &plusmn; 2%</td>
+                        <td align="left" valign="top">56 &plusmn; 22%</td>
+                     </tr>
+                     <tr valign="top">
+                        <td valign="top">&nbsp;</td>
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00006699;class=Gene" target="_blank">uba-1</a></em></span></td>
+                        <td align="left" valign="top">0</td>
+                        <td align="left" valign="top">88 &plusmn; 44</td>
+                        <td align="left" valign="top">-</td>
+                        <td align="left" valign="top">33 &plusmn; 19%</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec5"></a>5.&nbsp;Sources and considerations for background protein binding
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>The interpretation of CoIP-MS results can also be aided by an understanding of potential sources of background proteins. Background
+               proteins can generally be classified into two categories&#8212;random or systematic. Random background proteins can be introduced
+               through small variations in sample preparation or analysis and may often be due to non-specific interactions with abundant
+               proteins within the lysate. Additionally, both random background proteins and <span class="emphasis"><em>bona fide</em></span> binding partners may be identified pseudo-randomly in replicate runs. This is due to the sensitive, but pseudo-random sampling
+               of low abundance proteins/peptides using tandem MS in shotgun proteomic analysis of protein complexes (<a href="#bib37">Liu et al., 2004</a>). Generally, increasing the number of replicate runs allows for better separation of background noise and <span class="emphasis"><em>bona fide</em></span> binding partners. This concept has been exploited in many computational analyses of protein complex data and is described
+               in <a href="#sec8" title="8.&nbsp;Identification of candidate and bona fide binding partners">Section 8</a>. Systematic background protein interactions present a greater, but surmountable challenge since they are reproducibly identified
+               in all runs. The proper use of negative controls can reduce systematic noise through identification of background proteins
+               that bind to the antibody, CoIP support (agarose, sepharose, magnetic beads, etc.), or purification tag (FLAG, GFP, etc.).
+               For instance, performing a CoIP on an untagged lysate identifies proteins that bind the support and/or antibody. These background
+               proteins can also be removed through tandem purification (<a href="http://www.wormbook.org/chapters/www_biochemmolbio/biochemmolbio.html" target="_top">Biochemistry and molecular biology</a>) although at the expense of recovery and yield. For larger purification tags, such as GFP, a strain with GFP expressed from
+               a transcriptional fusion could be used as a negative control. For instance in a case study of POI<sup>#</sup>1, <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00006537;class=Gene" target="_blank">tbb-2</a></em></span> was abundant in both GFP control and ALP-1::GFP runs indicating it either bound to the beads, antibody, or GFP tag. In our
+               case study of POI<sup>#</sup>2, proteins purified from a strain lacking POI<sup>#</sup>2 likely bound to the beads or antibody. Thus, the negative control runs should account for any background proteins from the
+               CoIP support and antibody. Another source of systematic background proteins can be introduced from co-purifying macromolecules.
+               For instance in our case study of POI<sup>#</sup>1, ALP-1 is a known muscle-associated protein (<a href="#bib29">Han and Beckerle, 2009</a>; <a href="#bib39">McKeown et al., 2006</a>). Consequently, from our POI<sup>#</sup>1 CoIPs we identified muscle proteins (ACT-1, ACT-2, ACT-3, ACT-4, UNC-52, NMY-1, and MYO-3) with higher spectral counts than
+               ALP-1 (<a href="#table2" title="Table 2: List of identified proteins, spectral counts, and sequence coverages from GFP and ALP-1::GFP CoIPs-MS runs as the POI#1 case study. Error shown as standard deviations of spectral counts and sequence coverages from duplicate runs.">Table 2</a>). Similar results could be expected for CoIP of DNA-binding proteins (i.e., transcription factors) which pull down an abundance
+               of histones via DNA (<a href="#figure1">Figure 1C</a>). In the case of DNA binding proteins, DNase or probe sonication can be used to remove DNA that would otherwise co-purify
+               non-protein-protein interactions.
+            </p>
+            <p>The combination of in-solution digestion and high-sensitivity MS analysis of protein complexes provides much greater sensitivity and comprehensiveness than traditional methods. These analytical
+               characteristics provide the opportunity to identify weak, sub-stoichiometric, and transient protein interactions with a target
+               protein, but also allow for identification of more background proteins. We will discuss statistical and comparative analyses
+               that can aid in differentiating binding partners from background proteins in <a href="#sec8" title="8.&nbsp;Identification of candidate and bona fide binding partners">Section 8</a>. Despite these bioinformatics methods to identify and remove background proteins, shotgun proteomic analysis will be more
+               comprehensive and straightforward if protein complex purifications are relatively pure. As described in the next section,
+               traditional biochemical and molecular biology methods can be used to evaluate and minimize background proteins in a CoIP preparation.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec6"></a>6.&nbsp;Co-immunoprecipitation quality control
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Two traditional methods can be used to ensure the success of a CoIP-MS experiment and minimize the time and cost associated
+               with MS-based shotgun proteomic analyses. Western blotting analysis should primarily be used for ensuring the expression of
+               the POI and tracking the POI throughout the CoIP process, as in <a href="#figure4">Figure 4A</a>. Depletion of POI<sup>#</sup>2 from the lysate can be observed by comparison of whole worm lysate (lane 1) to the CoIP supernatant (lanes 3 and 5), while
+               enrichment can be detected by comparison of whole worm lysate to CoIP eluate (lanes 7 and 9).
+            </p>
+            <div class="mediaobject" align="center"><a name="figure4"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="432">
+<tr>
+  <td align="center"><p><a href="protcompanalysis_fig4.jpg"><img src="protcompanalysis_fig4_s.jpg" border="2" align="middle" alt=" figure 4"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 4: Quality control gel analysis prior to mass spectrometric analysis.&nbsp;</b>(A) Western blot analysis to track target POI<sup>#</sup>2 through the CoIP process. (B) Silver-stained gel analysis to track purification and abundance of the target POI<sup>#</sup>2 and binding partners through CoIP process. POI<sup>#</sup>2 silver-stained bands are marked based on the position in the Western blot. Protein spectral counts (SC) and sequence coverages
+                     (Seq Cov) for POI<sup>#</sup>2 are listed under each present or absent gel band to illustrate the relative detectability of POI<sup>#</sup>2 in the lysate (Lane 1), the CoIP with (Lane 7) and without (Lane 9) RNase treatment, and from the POI<sup>#</sup>2 negative control knock out strain (Lanes 2, 8, and 10). The gel lanes are the following: (1) N2 lysate, (2) Negative control
+                     lysate, (3) N2 CoIP supernatant, (4) Negative control CoIP supernatant, (5) N2 + RNAse treatment CoIP supernatant, (6) Negative
+                     control + RNase treatment CoIP supernatant, (7) N2 CoIP eluate, (8) Negative control CoIP eluate, (9) N2 + RNAse treatment
+                     CoIP eluate, and (10) Negative control + RNAse treatment CoIP eluate.
+                  </p>
+               </div>
+            </div>
+            <p>The analogous gel-based protein-staining analysis is also beneficial. Thus, we also suggest probing all proteins from lysates,
+               CoIP supernatants, and 5&#8211;10% of the CoIP with coomassie- or silver-stained gel to estimate the purification and enrichment
+               of the POI and its binding partners (<a href="#figure4">Figure 4B</a>). In this case, side-by-side comparison of the CoIP to the lysate (<a href="#figure4">Figure 4B</a>, compare lanes 7 and 9 to lane 1, respectively) allows for evaluation of the protein complex purity and POI<sup>#</sup>2 abundance. One of the main requirements for a successful CoIP-MS analysis is that a band with the approximate mass of your
+               POI should be present in a gel-based analysis and be one of the most abundant proteins from the CoIP. Having ample abundance
+               of the POI means that many potential binding partners are also likely present in detectable amounts (<a href="#figure4">Figure 4B, lanes 7 and 9</a>). Note that the appropriate negative control runs have been performed to establish that purified proteins are specific to
+               POI<sup>#</sup>2 (<a href="#figure4">Figure 4B, lanes 8 and 10</a>). Gel-based analyses can serve to evaluate purity and yield. If the control and purification lanes are very similar then
+               the CoIP is not pure. There are multiple experimental variables that can be tested. Suggested points in the CoIP pipeline
+               to consider include: the expression of the protein in relevant strains, particularly if a POI is transgenically-tagged; the
+               POI recovery from lysis; antibody integrity and conjugation to beads; and POI recovery from the CoIP. With a relatively pure
+               and abundant POI from a CoIP, MS-based shotgun proteomics can now be performed to identify proteins and PTMs within the sample.
+               Note that shotgun proteomic analysis is more sensitive if proteins are not cut out of gels and instead analyzed entirely in-solution
+               (Das et al., 2010). Thus, the remaining 90% of a CoIP sample (after gel-based quality control experiments) can be subjected
+               to in-solution tryptic digestion and shotgun proteomics analysis (<a href="#figure2">Figure 2</a>).
+            </p>
+            <p>With many technological advances to mass spectrometers, MS analysis can be as sensitive as a Western blot for a POI. However, a common question we have encountered is &#8220;if my bait protein
+               can be detected by Western, why is it not detected by shotgun proteomics?&#8221; There are two likely answers to this question.
+               First, the main difference between a Western and shotgun proteomic analysis is detection selectivity. With a Western, as long
+               as the antibody is specific, the other proteins present in the CoIP do not interfere with the detection of the POI or its
+               binding partners. Thus a Western yields no relevant information about the purity of the CoIP. That is, Western results can
+               appear essentially the same for a whole worm lysate (<a href="#figure4">Figure 4A, lane 1</a>) or for a highly pure protein complex (<a href="#figure4">Figure 4A, lanes 7, and 9</a>) since only POI<sup>#</sup>2 is detected. Shotgun proteomic analysis identifies peptides/proteins within a sample based on relative abundance. If the
+               bait protein has not been purified and enriched from the other abundant proteins within the lysate, shotgun proteomic analysis
+               will mostly identify the abundant background proteins and not the POI (<a href="#figure4">Figure 4B, lane 1</a>). Secondly, another major difference between Western and shotgun proteomic analysis is sensitivity. Although mass spectrometers
+               are extremely sensitive, a peptide/protein signal is not amplifiable as in a Western analysis. Thus, even if a protein complex
+               is pure and detectable by Western, it may not be detectable by MS.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec7"></a>7.&nbsp;Mass spectrometry methods for protein and PTM identification
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Peptides are compatible with both nanoflow liquid chromatography (nLC) and tandem MS (MS/MS). Online multidimensional nLC/LC facilitates efficient separation and identification of modified and unmodified peptides.
+               Mass spectrometers can be generally categorized as having either low or high resolution and mass accuracy. Resolution and
+               accuracy define the capabilities to confidently measure the masses of peptides and their gas-phase fragments for sequencing.
+               Currently utilized low-resolution instruments are primarily ion traps (<a href="#figure2">Figure 2</a>) and are regularly used for protein identification and some PTM identification. High-resolution instruments, such as the
+               Orbitrap (<a href="#figure2">Figure 2</a>), can be used for all experiments. However, they are most beneficial in experiments to identify PTMs and quantitative experiments
+               with isotopic labeling (<a href="#bib35">Krijgsveld et al., 2003</a>), although isotopic methods have yet to be applied to <span class="emphasis"><em>C. elegans</em></span> CoIPs. Peptides are identified by matching experimentally-generated fragmentation spectra to theoretically-generated fragmentation
+               spectra from protein sequence databases (<a href="#bib19">Eng et al., 1994</a>). Peptide matches from reversed protein sequences are appended to the database and can be used to measure false matches and
+               control protein, peptide, and spectrum false discovery rates (FDR usually ~1% for proteins and ~0.1% for peptides). Higher
+               mass accuracy measurement of intact peptide masses can be used as an additional filter to improve sensitivity, specificity,
+               and confidence in peptide identifications with database searches (<a href="#bib62">Yates et al., 2006</a>). Peptide identifications serve as representations for protein and PTM identifications; thus, higher mass accuracy and higher
+               confidence in peptide identifications also improve the sensitivity, specificity, and confidence in both protein and PTM identifications.
+               This is illustrated in <a href="#table3" title="Table 3: List of identified peptides, proteins, and modified peptides from replicate runs of the same sample with low and high resolution mass spectrometers. Database searches were controlled to the same peptide FDR (0.1%) with different peptide per protein requirements.">Table 3</a> where we have displayed the results of a protein database search including three common PTMs (phosphorylation, acetylation,
+               and ubiquitination) with low resolution (LTQ) and high resolution (Orbitrap) data from replicate POI<sup>#</sup>1 CoIPs. A cursory look at the results would indicate that low resolution provides better results. Indeed the low resolution
+               MS sampling is faster and thus more comprehensive over the same analysis time. Conversely, the high-resolution results are smaller
+               and more stringent, but are of much higher confidence. This is the reason the low resolution MS instrument is often used for identifying proteins and the high-resolution instruments for confident PTM identification. To
+               resolve this discrepancy, high-resolution MS instruments are consistently improving in speed and sensitivity to approach the comprehensiveness of low resolution instruments
+               (<a href="#bib43">Olsen et al., 2009</a>).
+            </p>
+            <p>Theoretically, 100% sequence coverage of a POI is possible since all possible peptide sequences are considered in the protein
+               database search, including N-terminal, C-terminal, and internal peptides, along with multiple missed trypsin cleavage sites
+               and sometimes non-tryptic peptides. Consideration of PTMs can also add to the overall protein sequence coverage. Practically,
+               50% protein sequence coverage is a reasonable result for a highly abundant protein in a CoIP sample, but is protein and sequence
+               dependent. Protein sequence coverage is assigned by grouping the identified peptides to represent the minimum number of proteins
+               that best explain the peptide sequences. Unique peptide sequences provide unambiguous evidence that a protein is present,
+               while non-unique peptides contribute to protein sequence coverage and relative quantitation. Unique peptides are those that
+               are not present in other proteins within the protein database. Conversely, non-unique peptides are those that are present
+               within at least two proteins. Non-unique peptides often come from protein isoforms, but can also be present in redundant proteins.
+               The number of unique peptides identified for a protein is dependent both on its sequence homology to other proteins within
+               the protein database used and the abundance of the protein within the sample. Since proteins identified by unique peptides
+               can share non-unique peptides, the non-unique peptides are often replicated and grouped within all relevant proteins. The
+               appropriate grouping of peptides in shotgun proteomics is called the &#8220;Protein Inference Problem&#8221; (<a href="#bib42">Nesvizhskii and Aebersold, 2005</a>) and is generally addressed computationally. Although this can present identification and quantification challenges, the
+               sensitivity, comprehensiveness, and power of shotgun proteomics in biological discovery has far exceeded any shortcomings
+               from the analysis of proteins as a mixture of peptides. Additionally, the &#8220;Protein Inference Problem&#8221; is less of a challenge
+               for simple mixtures, such as CoIPs described herein versus whole cell lysates; fewer non-unique peptides are actually present
+               and identified within a sample of fewer proteins, making assignment of the non-unique peptides more straightforward.
+            </p>
+            <div class="table"><a name="table3"></a><p class="title"><span class="bold">Table 3: List of identified peptides, proteins, and modified peptides from replicate runs of the same sample with low and
+                     high resolution mass spectrometers</span>. Database searches were controlled to the same peptide FDR (0.1%) with different peptide per protein requirements.
+               </p>
+               <table summary="Table 3: List of identified peptides, proteins, and modified peptides from replicate runs of the same sample with low and high resolution mass spectrometers. Database searches were controlled to the same peptide FDR (0.1%) with different peptide per protein requirements." border="1">
+                  <colgroup>
+                     <col>
+                     <col>
+                     <col>
+                     <col>
+                     <col>
+                  </colgroup>
+                  <thead>
+                     <tr valign="bottom">
+                        <th align="left" valign="bottom"><span class="bold"><strong>Mass spectrometer</strong></span></th>
+                        <th colspan="3" align="left" valign="bottom"><span class="bold"><strong>Linear ion trap (LTQ)</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>Orbitrap</strong></span></th>
+                     </tr>
+                     <tr valign="bottom">
+                        <th align="left" valign="bottom"><span class="bold"><strong>Resolution &amp; mass accuracy</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>Low</strong></span></th>
+                        <th valign="bottom">&nbsp;</th>
+                        <th valign="bottom">&nbsp;</th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>High</strong></span></th>
+                     </tr>
+                     <tr valign="top">
+                        <th align="left" valign="top"><span class="bold"><strong>Required peptides per protein</strong></span></th>
+                        <th align="left" valign="top"><span class="bold"><strong>1</strong></span></th>
+                        <th align="left" valign="top"><span class="bold"><strong>2</strong></span></th>
+                        <th align="left" valign="top"><span class="bold"><strong>5</strong></span></th>
+                        <th align="left" valign="top"><span class="bold"><strong>1*</strong></span></th>
+                     </tr>
+                  </thead>
+                  <tfoot>
+                     <tr valign="top">
+                        <th colspan="5" align="left" valign="top">*Peptides are required to be within 10 ppm of the expected mass.</th>
+                     </tr>
+                  </tfoot>
+                  <tbody>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="bold"><strong>Peptides</strong></span></td>
+                        <td align="left" valign="top">7,421</td>
+                        <td align="left" valign="top">7,689</td>
+                        <td align="left" valign="top">6,601</td>
+                        <td align="left" valign="top">2,970</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="bold"><strong>Proteins</strong></span></td>
+                        <td align="left" valign="top">1,344</td>
+                        <td align="left" valign="top">868</td>
+                        <td align="left" valign="top">453</td>
+                        <td align="left" valign="top">707</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="bold"><strong>Phosphopeptides</strong></span></td>
+                        <td align="left" valign="top">81</td>
+                        <td align="left" valign="top">76</td>
+                        <td align="left" valign="top">45</td>
+                        <td align="left" valign="top">16</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="bold"><strong>Acetylated peptides</strong></span></td>
+                        <td align="left" valign="top">84</td>
+                        <td align="left" valign="top">97</td>
+                        <td align="left" valign="top">70</td>
+                        <td align="left" valign="top">31</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="bold"><strong>Ubiquitinated peptides</strong></span></td>
+                        <td align="left" valign="top">61</td>
+                        <td align="left" valign="top">52</td>
+                        <td align="left" valign="top">32</td>
+                        <td align="left" valign="top">2</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <p>Analysis of purified protein complexes of enough mass (high nanogram to low microgram) with MudPIT generally yield high protein
+               sequence coverages (&gt;50%) of the POI and its binding partners; although the ability to achieve high sequence coverages is
+               POI and CoIP dependent. For instance, in both of our case studies we achieved approximately 30% sequence coverage (<a href="#figure4">Figure 4B</a> and <a href="#table3" title="Table 3: List of identified peptides, proteins, and modified peptides from replicate runs of the same sample with low and high resolution mass spectrometers. Database searches were controlled to the same peptide FDR (0.1%) with different peptide per protein requirements.">Table 3</a>). A benefit of high protein sequence coverage is a higher probability of identifying post-translationally modified peptides,
+               even if substoichiometric. The most commonly searched and identified PTMs (<a href="#table1" title="Table 1: List of common MS-identifiable PTMs.">Table 1</a>) are phosphorylation, acetylation, ubiquitination, and methylation. Almost all PTMs can be identified using mass spectrometry
+               with the appropriate sample preparation and analysis considerations (<a href="#bib67">Zhang et al., 2013</a>), but this is outside the scope of this chapter. The measurement of both peptide precursor and fragment ion masses allows
+               for identification and localization of many types of PTMs on proteins. That is, the modification mass can typically be detected
+               on both the intact peptide and on the fragments to confirm the PTM identity and site of modification. An example phosphopeptide
+               with phosphorylation site localization is shown in <a href="#figure2">Figure 2</a> (lower left). Trypsin is primarily used for proteolytic digestions of protein complexes and can provide excellent protein
+               sequence coverages and identification of most PTMs. For regions of proteins that have too many or too few tryptic cleavage
+               sites, other less-selective proteases, such as subtilisin and elastase, can be used to improve protein sequence and PTM coverage
+               (<a href="#bib38">MacCoss et al., 2002</a>; <a href="#bib22">Fonslow and Yates, 2012</a>).
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec8"></a>8.&nbsp;Identification of candidate and <span class="emphasis"><em>bona fide</em></span> binding partners
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Shotgun proteomics provides an effective means to identify proteins and PTMs within a sample from a CoIP. The most abundant
+               and readily identified proteins from a database search of a CoIP-MS run should be from <span class="emphasis"><em>bona fide</em></span> protein interactions. Thus, the quality of CoIP-MS results can, in part, be quickly and manually confirmed by the presence
+               of known protein binding partners, if available. Generally these results are difficult to interpret unless compared to the
+               appropriate negative control or conditional CoIP runs. There are both simple and complex methods for comparing CoIP-MS results,
+               mostly dependent on the scale, depth, and complexity of analyses. The simplest analysis is a pairwise Venn comparison. This
+               comparison may be most similar to a gel-based comparison since either the presence or absence of a protein is considered (<a href="#bib55">Tabb et al., 2002</a>; <a href="#bib8">Carvalho et al., 2008</a>); since shotgun proteomics is more sensitive than gel-based analysis, the depth of the comparison is greater and more informative.
+               For instance, the number of proteins uniquely found using shotgun proteomic Venn comparison of POI<sup>#</sup>2 (<a href="#figure5">Figure 5A</a>) is much greater than those visible using a gel-based analysis (Lanes 7 and 9 in <a href="#figure4">Figure 4B</a>). Often, for strongly associated, robust binding partners this simple Venn analysis easily reveals these interactions for
+               further follow-up and characterization. This is illustrated by the two known binding partners that were only present in the
+               CoIP (<a href="#figure5">Figure 5A</a>). The consideration of protein identification reproducibility, either by identification frequency (<a href="#figure5">Figure 5B</a>) or p-value (<a href="#figure5">Figure 5C</a>), between CoIP replicate analyses can also be included in a Venn comparison to further increase confidence in binding partner
+               candidates (Carvalho et al., 2011). From these more stringent considerations, the same 15 proteins were only found in POI<sup>#</sup>2 CoIPs (Figures 5B and 5C) and could be considered for biological validation. Similarly, proteins that are identified in
+               only the negative control experiments yield a rough estimate of the background noise in the analyses. The noise can be better
+               modeled by high-level statistical methods, but by considering identification frequency (<a href="#figure5">Figure 5B</a>) and p-value (<a href="#figure5">Figure 5C</a>) the noise is reduced from 113 proteins (<a href="#figure5">Figure 5A</a>) to only three proteins. Ideally there will be more proteins unique to the POI CoIP, than the negative control CoIP. Similarly,
+               these methods can be applied to find changes in binding partners between conditional treatments. However, subtle differences
+               can be hard to detect with this method and generally require higher-level analyses. Additionally, these Venn analysis methods
+               can break down if the POI or <span class="emphasis"><em>bona fide</em></span> binding partners are abundant and are also detected to a limited extent in negative control experiments. A few proteins from
+               our POI<sup>#</sup>1 case study are shown in <a href="#table2" title="Table 2: List of identified proteins, spectral counts, and sequence coverages from GFP and ALP-1::GFP CoIPs-MS runs as the POI#1 case study. Error shown as standard deviations of spectral counts and sequence coverages from duplicate runs.">Table 2</a> as examples from a Venn comparison. As in our POI<sup>#</sup>2 case study (<a href="#figure4">Figure 4B</a>), we achieved a reasonable number of spectral counts (136 &plusmn; 5) and sequence coverage (33 &plusmn; 5%) for our POI<sup>#</sup>1, ALP-1. Additionally, we identified a number of expected binding partners with even higher spectral counts and sequence
+               coverages, presumably due to their macromolecular, polymeric nature. The identified actin isoforms (ACT-1&#8211;4) highlight that
+               homologous proteins can be a challenge to differentiate with shotgun proteomics since they are not analyzed in their intact
+               form. Redundant peptides can indicate at least one of the isoforms is present, but unique peptides must be identified to determine
+               which isoform is present. If we were interested in quantifying the relative abundances of actin isoforms, the use of dNSAF
+               instead of spectral counting would be ideally suited. Using this simple analysis method, we found a potential ALP-1 binding
+               partner, TES-1, a LIM-domain binding protein, which was not present in the GFP control runs.
+            </p>
+            <div class="mediaobject" align="center"><a name="figure5"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="432">
+<tr>
+  <td align="center"><p><a href="protcompanalysis_fig5.jpg"><img src="protcompanalysis_fig5_s.jpg" border="2" align="middle" alt=" figure 5"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 5:&nbsp;</b>Computational comparison of CoIP results for identification of candidate binding partners for biological follow-up. Venn diagrams
+                     of identified proteins from triplicate analysis of N2 and negative control CoIPs considering proteins identified in (A) only
+                     one replicate, (B) all three replicates, and (C) with statistical significance (p &lt; 0.05) based on spectral counts and replicate
+                     frequency. *Denotes the location of the POI in the Venn diagram. Colored numbers indicate either the number of known binding
+                     partners (blue) or potential binding partners (green). (D) Comparison of the abundance fold-change in proteins based on spectral
+                     count ratio and statistical significance (p &lt; 0.05) of the fold-change by dividing N2 protein spectral counts by negative
+                     control protein spectral counts. A value of 1 is used for proteins not present in either sample with no spectral counts. Proteins
+                     with the highest positive fold-change are the POI (magenta), known binding partners (blue), and potential binding partners
+                     (green) above background binding partners (black). (E) Comparison of identified protein confidence values from <span class="emphasis"><em>CompPASS</em></span>. Protein confidence scores from negative control runs are subtracted from N2 protein confidence scores. The POI (magenta)
+                     and known binding partners (blue) cluster in the upper right portion of the graph to reveal potential binding partners (green)
+                     over background binding partners (black).
+                  </p>
+               </div>
+            </div>
+            <p>Adding another level of complexity to the analysis, the relative abundance of proteins can also be considered between samples
+               instead of simply considering absence or presence in the CoIP. This type of analysis considers changes in proteins that are
+               present reproducibly in both samples within the overlap of the Venn diagrams (Figures 5B and 5C) and can be used for comparisons
+               with negative controls or conditional CoIPs. Protein abundances for comparison between samples are estimated using peptide
+               spectral counts (<a href="#bib37">Liu et al., 2004</a>)&#8212;the number of times spectra are identified for a protein, similar to transcript microarray abundance values (Pavelka et
+               al., 2008) or mRNA reads in RNA-Seq&#8212;and can be normalized to protein length by a normalized spectral abundance factor (NSAF)
+               (<a href="#bib69">Zybailov et al., 2006</a>). The use of NSAF facilitates comparison of relative abundances of different proteins within the same sample. Since many
+               proteins share peptide sequences, distributing shared peptide spectral counts among redundant proteins yields a distributed
+               NSAF (dNSAF) that provides further improvements to estimate relative abundances within a sample, particularly for different
+               proteoforms (<a href="#bib68">Zhang et al., 2010</a>). In this case, comparison of protein relative abundances using spectral counting is used to find candidate binding partners.
+               A Volcano plot considers both the fold-change of relative protein abundances and the significance of the fold-change as a
+               p-value. By comparison of triplicate POI<sup>#</sup>2 CoIPs to negative control CoIPs with a Volcano plot (<a href="#figure5">Figure 5D</a>), the expected proteins (POI<sup>#</sup>2 and known binding partners) have the highest and most significant fold-changes, revealing other potential binding partners
+               with high significance and lower fold-changes. Changes in protein binding partners could also be evaluated using this method
+               by comparison of conditional treated and untreated POI CoIP results. Each level of comparison provides a means to narrow and
+               refine candidate binding partners to testable, physiologically relevant, <span class="emphasis"><em>bona fide</em></span> binding partners.
+            </p>
+            <p>Even more sophisticated analyses provide greater confidence in binding partners. Through statistical considerations of multiple
+               experimental variables, <span class="emphasis"><em>bona fide</em></span> binding partners are more easily differentiated from background noise (<a href="#bib36">Krogan et al., 2006</a>; <a href="#bib11">Choi et al., 2011</a>; <a href="#bib33">Jager et al., 2012</a>). Standard triplicate analyses facilitate statistical considerations of experimental error with the majority of these methods.
+               However, power law global error modeling of spectral counting data has shown the largest gain in both accuracy and precision
+               when an additional fourth replicate is performed, with diminishing returns from more replicates (<a href="#bib46">Pavelka et al., 2008</a>). We have analyzed our triplicate case-study POI<sup>#</sup>2 CoIP data using <span class="emphasis"><em>CompPASS</em></span> (<a href="#figure5">Figure 5E</a>). <span class="emphasis"><em>CompPASS</em></span> considers the uniqueness, abundance, and reproducibility of proteins within parallel runs by establishing a threshold that
+               is inherent to the sampling of mass spectrometry-based shotgun proteomic analysis (<a href="#bib54">Sowa et al., 2009</a>). Similar to the Volcano plot comparison, POI<sup>#</sup>2, known binding partners, and candidate binding partners cluster within the plot. These candidates can then be used for biological
+               follow-up.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec9"></a>9.&nbsp;Conclusions and perspectives
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Mass spectrometry-based proteomics provides a powerful tool to study <span class="emphasis"><em>C. elegans</em></span> proteins. Remarkable results have routinely emerged from genetic and RNAi studies in <span class="emphasis"><em>C. elegans</em></span>, particularly when combined with enabling technologies. Mass spectrometry-based proteomics is following a similar, enabling
+               trend and we hope to continue facilitating these studies. Through our own work and collaborations with <span class="emphasis"><em>C. elegans</em></span> biologists we have learned the power of these analyses, along with some of the common pitfalls, challenges, and misconceptions;
+               we have explained and addressed these recurring topics to advance this area of research. We envision this chapter bridging
+               a gap between <span class="emphasis"><em>C. elegans</em></span> biologists and protein mass spectrometrists, acting as a guide for <span class="emphasis"><em>C. elegans</em></span> protein complex preparation, shotgun proteomic analysis, data interpretation, and troubleshooting.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec10"></a>10.&nbsp;Glossary
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>CoIP-MS &#8211; co-immunoprecipitation followed by mass spectrometry</p>
+            <p>dNSAF &#8211; distribution normalized spectral abundance factor; a relative measure of protein abundance that considers the shared
+               sequences between homologous and redundant proteins by distributing spectral counts.
+            </p>
+            <p>MS/MS &#8211; tandem mass spectrometry; mass spectra are acquired on both intact and fragmented peptide ions to sequence the peptide.
+            </p>
+            <p>MudPIT &#8211; Multidimensional Protein Identification Technology</p>
+            <p>NSAF &#8211; normalized spectral abundance factor; a normalized relative measure of protein abundance that considers the length
+               of proteins by dividing the spectral counts by the protein sequence length.
+            </p>
+            <p>POI &#8211; protein of interest</p>
+            <p>Protein complex isoforms (complexoforms) &#8211; protein complexes composed of similar subcomplexes (cores, attachments, and modules)
+               that confer different biological functions.
+            </p>
+            <p>Protein complex attachments &#8211; stable protein subcomplexes that are unique to protein complexoforms.</p>
+            <p>Protein complex cores &#8211; stable protein subcomplexes that are promiscuously found in many similar protein complexoforms.</p>
+            <p>Protein complex modules &#8211; small, stable protein subcomplexes that assemble into attachments.</p>
+            <p>Protein isoforms &#8211; different forms of the same protein from related genes, single nucleotide polymorphisms, or alternative
+               RNA splicing.
+            </p>
+            <p>Proteoforms &#8211; different forms of the same protein arising from both protein isoforms and differential PTMs.</p>
+            <p>PTM &#8211; post-translational modification.</p>
+            <p>Reversed peptide and protein sequence &#8211; reversed sequences are appended to forward sequences in a protein database to estimate
+               noise and false forward peptide and protein matches from the database search.
+            </p>
+            <p>Sequence coverage &#8211; percentage of a protein that is sequenced in a shotgun proteomics run by reconstruction of the protein
+               sequence from identified peptides.
+            </p>
+            <p>Spectral count &#8211; the number of times peptides are sampled and identified by MS/MS for a given protein; a relative measure of protein abundance similar to transcript sequence counting.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec11"></a>11.&nbsp;Acknowledgments
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>B.R.F, J.J.M., P.T., and J.R.Y. are supported by the US National Center for Research Resources (5P41RR011823-17), National
+               Institute of General Medical Sciences (8P41GM103533-17), National Institute of Diabetes and Digestive and Kidney Diseases
+               (R01DK074798), National Heart, Lung, and Blood Institute (HHSN268201000035C), and National Institute of Mental Health (R01MH067880).
+               A.P.A. is supported by the Sigrid Jus&eacute;lius Foundation and A.E.P. is supported by the NIH (GM071654), Keck, and Peter Gruber
+               Foundations.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec12"></a>12.&nbsp;References
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p></p>
+            <div class="bibliography">
+               <div class="bibliomixed"><a name="bib1"></a><p class="bibliomixed"><span class="bibliomisc">Ahringer, J., ed. Reverse genetics (April 6, 2006), <span class="emphasis"><em>WormBook</em></span>, ed. The <span class="emphasis"><em>C. elegans</em></span> Research Community, WormBook, doi/10.1895/wormbook.1.47.1, <a href="http://www.wormbook.org" target="_top">http://www.wormbook.org</a>.</span>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib2"></a><p class="bibliomixed"><span class="bibliomisc">Ashrafi, K. Obesity and the regulation of fat metabolism (March 9, 2007), <span class="emphasis"><em>WormBook</em></span>, ed. The <span class="emphasis"><em>C. elegans</em></span> Research Community, WormBook, doi/10.1895/wormbook.1.130.1, <a href="http://www.wormbook.org" target="_top">http://www.wormbook.org</a>.</span>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib3"></a><p class="bibliomixed"><span class="bibliomisc">Audhya, A., and Desai, A. (2008). Proteomics in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Brief. Funct. Genomic Proteomic <span class="emphasis"><em>7</em></span>, 205-210.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=18372286&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1093/bfgp/eln014" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib4"></a><p class="bibliomixed"><span class="bibliomisc">Audhya, A., Hyndman, F., McLeod, I.X., Maddox, A.S., Yates, J.R., 3<sup>rd</sup>., Desai, A., and Oegema, K. (2005). A complex containing the Sm protein CAR-1 and the RNA helicase CGH-1 is required for
+                        embryonic cytokinesis in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. J Cell Biol. <span class="emphasis"><em>171</em></span>, 267-279.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=16247027&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1083/jcb.2005061" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib5"></a><p class="bibliomixed"><span class="bibliomisc">Audhya, A., McLeod, I.X., Yates, J.R., and Oegema, K. (2007). MVB-12, a fourth subunit of metazoan ESCRT-I, functions in receptor
+                        downregulation. PloS One <span class="emphasis"><em>2</em></span>, e956.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=16247027&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1371/journal.pone.0000956" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib6"></a><p class="bibliomixed"><span class="bibliomisc">Babu, M., Vlasblom, J., Pu, S., Guo, X., Graham, C., Bean, B.D., Burston, H.E., Vizeacoumar, F.J., Snider, J., Phanse, S.<span class="emphasis"><em>,</em></span> et al<span class="emphasis"><em>.</em></span> (2012). Interaction landscape of membrane-protein complexes in <span class="emphasis"><em>Saccharomyces cerevisiae</em></span>. Nature <span class="emphasis"><em>489</em></span>, 585-589.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=22940862&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nature11354" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib7"></a><p class="bibliomixed"><span class="bibliomisc">Boxem, M., Maliga, Z., Klitgord, N., Li, N., Lemmens, I., Mana, M., de Lichtervelde, L., Mul, J.D., van de Peut, D., Devos, M.<span class="emphasis"><em>,</em></span> et al<span class="emphasis"><em>.</em></span> (2008). A protein domain-based interactome network for <span class="emphasis"><em>C. elegans</em></span> early embryogenesis. Cell <span class="emphasis"><em>134</em></span>, 534-545.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=18692475&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.cell.2008.07.009" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib8"></a><p class="bibliomixed"><span class="bibliomisc">Carvalho, P.C., Fischer, J.S., Chen, E.I., Yates, J.R., 3<sup>rd</sup>., and Barbosa, V.C. (2008). PatternLab for proteomics: a tool for differential shotgun proteomics. BMC bioinformatics <span class="emphasis"><em>9</em></span>, 316.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=18644148&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1186/1471-2105-9-316" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib9"></a><p class="bibliomixed"><span class="bibliomisc">Carvalho, P.C., Fischer, J.S., Perales, J., Yates, J.R., Barbosa, V.C., and Bareinboim, E. (2011). Analyzing marginal cases
+                        in differential shotgun proteomics. Bioinformatics <span class="emphasis"><em>27</em></span>, 275-276.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=21075743&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1093/bioinformatics/btq632" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib10"></a><p class="bibliomixed"><span class="bibliomisc">Cheeseman, I.M., MacLeod, I., Yates, J.R., 3<sup>rd</sup>., Oegema, K., and Desai, A. (2005). The CENP-F-like proteins HCP-1 and HCP-2 target CLASP to kinetochores to mediate chromosome
+                        segregation. Curr. Biol. <span class="emphasis"><em>15</em></span>, 771-777.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15854912&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/http://dx.doi.org/10.1016/j.cub.2005.03.018" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib11"></a><p class="bibliomixed"><span class="bibliomisc">Choi, H., Larsen, B., Lin, Z.Y., Breitkreutz, A., Mellacheruvu, D., Fermin, D., Qin, Z.S., Tyers, M., Gingras, A.C., and Nesvizhskii,
+                        A.I. (2011). SAINT: probabilistic scoring of affinity purification-mass spectrometry data. Nat. Methods <span class="emphasis"><em>8</em></span>, 70-73.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=21131968&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nmeth.1541" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib12"></a><p class="bibliomixed"><span class="bibliomisc">Chu, D.S., Liu, H., Nix, P., Wu, T.F., Ralston, E.J., Yates, J.R., 3<sup>rd</sup>., and Meyer, B.J. (2006). Sperm chromatin proteomics identifies evolutionarily conserved fertility factors. Nature <span class="emphasis"><em>443</em></span>, 101-105.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=16943775&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nature05050" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib13"></a><p class="bibliomixed"><span class="bibliomisc">Collins, S.R., Kemmeren, P., Zhao, X.C., Greenblatt, J.F., Spencer, F., Holstege, F.C., Weissman, J.S., and Krogan, N.J. (2007).
+                        Toward a comprehensive atlas of the physical interactome of <span class="emphasis"><em>Saccharomyces cerevisiae</em></span>. Mol. Cell. Proteomics <span class="emphasis"><em>6</em></span>, 439-450.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=17200106&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1074/mcp.M600381-MCP200" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib14"></a><p class="bibliomixed"><span class="bibliomisc">Csankovszki, G., Collette, K., Spahl, K., Carey, J., Snyder, M., Petty, E., Patel, U., Tabuchi, T., Liu, H., McLeod, I., et
+                        al. (2009). Three distinct condensin complexes control <span class="emphasis"><em>C. elegans</em></span> chromosome dynamics. Curr. Biol. <span class="emphasis"><em>19</em></span>, 9-19.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=19119011&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.cub.2008.12.006" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib15"></a><p class="bibliomixed"><span class="bibliomisc">Dammermann, A., Pemble, H., Mitchell, B.J., McLeod, I., Yates, J.R., 3<sup>rd</sup>., Kintner, C., Desai, A.B., and Oegema, K. (2009). The hydrolethalus syndrome protein HYLS-1 links core centriole structure
+                        to cilia formation. Genes Dev. <span class="emphasis"><em>23</em></span>, 2046-2059.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=19656802&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1101/gad.1810409" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib16"></a><p class="bibliomixed"><span class="bibliomisc">Das, S., Bosley, A.D., Ye, X., Chan, K.C., Chu, I., Green, J.E., Issaq, H.J., Veenstra, T.D., and Andresson, T. (2010). Comparison
+                        of strong cation exchange and SDS-PAGE fractionation for analysis of multiprotein complexes. J. Proteome Res. <span class="emphasis"><em>9</em></span>, 6696-6704.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12858183&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1021/pr100843x" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib17"></a><p class="bibliomixed"><span class="bibliomisc">Dong, M.Q., Venable, J.D., Au, N., Xu, T., Park, S.K., Cociorva, D., Johnson, J.R., Dillin, A., and Yates, J.R., 3<sup>rd</sup>. (2007). Quantitative mass spectrometry identifies insulin signaling targets in <span class="emphasis"><em>C. elegans</em></span>. Science <span class="emphasis"><em>317</em></span>, 660-663.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=17673661&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1126/science.1139952" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib18"></a><p class="bibliomixed"><span class="bibliomisc">Duchaine, T.F., Wohlschlegel, J.A., Kennedy, S., Bei, Y., Conte, D., Jr., Pang, K., Brownell, D.R., Harding, S., Mitani, S.,
+                        Ruvkun, G., et al. (2006). Functional proteomics reveals the biochemical niche of <span class="emphasis"><em>C. elegans</em></span> DCR-1 in multiple small-RNA-mediated pathways. Cell <span class="emphasis"><em>124</em></span>, 343-354.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=16439208&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/http://dx.doi.org/10.1016/j.cell.2005.11.036" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib19"></a><p class="bibliomixed"><span class="bibliomisc">Eng, J.K., McCormack, A.L., and Yates, J.R., 3<sup>rd</sup>. (1994). An approach to correlate tandem mass spectral data of peptides with amino acid sequences in a protein database.
+                        J. Am. Soc. Mass Spectrom. <span class="emphasis"><em>5</em></span>, 976-989.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=24226387&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/http://dx.doi.org/10.1016/1044-0305(94)80016-2" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib20"></a><p class="bibliomixed"><span class="bibliomisc">Ewing, R.M., Chu, P., Elisma, F., Li, H., Taylor, P., Climie, S., McBroom-Cerajewski, L., Robinson, M.D., O'Connor, L., Li,
+                        M., et al. (2007). Large-scale mapping of human protein-protein interactions by mass spectrometry. Mol. Syst. Biol. <span class="emphasis"><em>3</em></span>, 89.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=17353931&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/msb4100134" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib21"></a><p class="bibliomixed"><span class="bibliomisc">Fonslow, B.R., Kang, S.A., Gestaut, D.R., Graczyk, B., Davis, T.N., Sabatini, D.M., and Yates, J.R., 3<sup>rd</sup>. (2010). Native capillary isoelectric focusing for the separation of protein complex isoforms and subcomplexes. Anal. Chem.
+                        <span class="emphasis"><em>82</em></span>, 6643-6651.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=20614870&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1021/ac101235k" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib22"></a><p class="bibliomixed"><span class="bibliomisc">Fonslow, B.R., and Yates, J.R., 3<sup>rd</sup>. (2012). Proteolytic Digestion Methods for Shotgun Proteomics. In Comprehensive Sampling and Sample Preparation, Volume 3,
+                        Janusz Pawliszyn, Editor-in-Chief. (Oxford: Academic Press), pp. 261-276.</span>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib23"></a><p class="bibliomixed"><span class="bibliomisc">Gassmann, R., Essex, A., Hu, J.S., Maddox, P.S., Motegi, F., Sugimoto, A., O'Rourke, S.M., Bowerman, B., McLeod, I., Yates,
+                        J.R., 3<sup>rd</sup>., et al. (2008). A new mechanism controlling kinetochore-microtubule interactions revealed by comparison of two dynein-targeting
+                        components: SPDL-1 and the Rod/Zwilch/Zw10 complex. Genes Dev. <span class="emphasis"><em>22</em></span>, 2385-2399.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=18765790&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1101/gad.1687508" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib24"></a><p class="bibliomixed"><span class="bibliomisc">Gavin, A.C., Aloy, P., Grandi, P., Krause, R., Boesche, M., Marzioch, M., Rau, C., Jensen, L.J., Bastuck, S., Dumpelfeld,
+                        B., et al. (2006). Proteome survey reveals modularity of the yeast cell machinery. Nature <span class="emphasis"><em>440</em></span>, 631-636.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=16429126&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nature04532" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib25"></a><p class="bibliomixed"><span class="bibliomisc">Gavin, A.C., Bosche, M., Krause, R., Grandi, P., Marzioch, M., Bauer, A., Schultz, J., Rick, J.M., Michon, A.M., Cruciat,
+                        C.M., et al. (2002). Functional organization of the yeast proteome by systematic analysis of protein complexes. Nature <span class="emphasis"><em>415</em></span>, 141-147.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11805826&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib26"></a><p class="bibliomixed"><span class="bibliomisc">Gottschalk, A., Almedom, R.B., Schedletzky, T., Anderson, S.D., Yates, J.R., 3<sup>rd</sup>., and Schafer, W.R. (2005). Identification and characterization of novel nicotinic receptor-associated proteins in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. EMBO J. <span class="emphasis"><em>24</em></span>, 2566-2578.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15990870&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/sj.emboj.7600741" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib27"></a><p class="bibliomixed"><span class="bibliomisc">Grill, B., Bienvenut, W.V., Brown, H.M., Ackley, B.D., Quadroni, M., and Jin, Y. (2007). <span class="emphasis"><em>C. elegans</em></span> RPM-1 regulates axon termination and synaptogenesis through the Rab GEF GLO-4 and the Rab GTPase GLO-1. Neuron <span class="emphasis"><em>55</em></span>, 587-601.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=17698012&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.neuron.2007.07.009" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib28"></a><p class="bibliomixed"><span class="bibliomisc">Gu, W., Shirayama, M., Conte, D., Jr., Vasale, J., Batista, P.J., Claycomb, J.M., Moresco, J.J., Youngman, E.M., Keys, J.,
+                        Stoltz, M.J., et al. (2009). Distinct argonaute-mediated 22G-RNA pathways direct genome surveillance in the <span class="emphasis"><em>C. elegans</em></span> germline. Mol. Cell <span class="emphasis"><em>36</em></span>, 231-244.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=19800275&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.molcel.2009.09.020" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib29"></a><p class="bibliomixed"><span class="bibliomisc">Han, H.F., and Beckerle, M.C. (2009). The ALP-Enigma protein ALP-1 functions in actin filament organization to promote muscle
+                        structural integrity in <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Mol. Biol. Cell <span class="emphasis"><em>20</em></span>, 2361-2370.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=19261811&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1091/mbc.E08-06-0584" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib30"></a><p class="bibliomixed"><span class="bibliomisc">Havugimana, P.C., Hart, G.T., Nepusz, T., Yang, H., Turinsky, A.L., Li, Z., Wang, P.I., Boutz, D.R., Fong, V., Phanse, S.,
+                        et al. (2012). A census of human soluble protein complexes. Cell <span class="emphasis"><em>150</em></span>, 1068-1081.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=22939629&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.cell.2012.08.011" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib31"></a><p class="bibliomixed"><span class="bibliomisc">He, Y., Beatty, A., Han, X., Ji, Y., Ma, X., Adelstein, R.S., Yates, J.R., 3<sup>rd</sup>., Kemphues, K., and Qi, L. (2012). Nonmuscle myosin IIB links cytoskeleton to IRE1&#945; signaling during ER stress. Dev. Cell
+                        <span class="emphasis"><em>23</em></span>, 1141-1152.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=23237951&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.devcel.2012.11.006" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib32"></a><p class="bibliomixed"><span class="bibliomisc">Heck, A.J. (2008). Native mass spectrometry: a bridge between interactomics and structural biology. Nat. Methods <span class="emphasis"><em>5</em></span>, 927-933.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=18974734&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nmeth.1265" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib33"></a><p class="bibliomixed"><span class="bibliomisc">Jager, S., Cimermancic, P., Gulbahce, N., Johnson, J.R., McGovern, K.E., Clarke, S.C., Shales, M., Mercenne, G., Pache, L.,
+                        Li, K., et al. (2012). Global landscape of HIV-human protein complexes. Nature <span class="emphasis"><em>481</em></span>, 365-370.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=22190034&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nature10719" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib34"></a><p class="bibliomixed"><span class="bibliomisc">Jedamzik, B., and Eckmann, C.R. (2009). Analysis of in vivo protein complexes by coimmunoprecipitation from <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Cold Spring Harb. Protoc. <span class="emphasis"><em>2009</em></span>, pdb prot5299.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=20147044&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1101/pdb.prot5299" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib35"></a><p class="bibliomixed"><span class="bibliomisc">Krijgsveld, J., Ketting, R.F., Mahmoudi, T., Johansen, J., Artal-Sanz, M., Verrijzer, C.P., Plasterk, R.H., and Heck, A.J.
+                        (2003). Metabolic labeling of <span class="emphasis"><em>C. elegans</em></span> and <span class="emphasis"><em>D. melanogaster</em></span> for quantitative proteomics. Nature Biotechnol. <span class="emphasis"><em>21</em></span>, 927-931.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12858183&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib36"></a><p class="bibliomixed"><span class="bibliomisc">Krogan, N.J., Cagney, G., Yu, H., Zhong, G., Guo, X., Ignatchenko, A., Li, J., Pu, S., Datta, N., Tikuisis, A.P., et al. (2006).
+                        Global landscape of protein complexes in the yeast <span class="emphasis"><em>Saccharomyces cerevisiae</em></span>. Nature <span class="emphasis"><em>440</em></span>, 637-643.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=16554755&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nature04670" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib37"></a><p class="bibliomixed"><span class="bibliomisc">Liu, H., Sadygov, R.G., and Yates, J.R., 3<sup>rd</sup>. (2004). A model for random sampling and estimation of relative protein abundance in shotgun proteomics. Anal. Chem. <span class="emphasis"><em>76</em></span>, 4193-4201.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15253663&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1021/ac0498563" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib38"></a><p class="bibliomixed"><span class="bibliomisc">MacCoss, M.J., McDonald, W.H., Saraf, A., Sadygov, R., Clark, J.M., Tasto, J.J., Gould, K.L., Wolters, D., Washburn, M., Weiss,
+                        A., et al. (2002). Shotgun identification of protein modifications from protein complexes and lens tissue. Proc. Natl. Acad.
+                        Sci. U. S. A. <span class="emphasis"><em>99</em></span>, 7900-7905.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12060738&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1073/pnas.122231399" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib39"></a><p class="bibliomixed"><span class="bibliomisc">McKeown, C.R., Han, H.F., and Beckerle, M.C. (2006). Molecular characterization of the <span class="emphasis"><em>Caenorhabditis elegans</em></span> ALP/Enigma gene <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00001132;class=Gene" target="_blank">alp-1</a></em></span>. Developmental Dyn. <span class="emphasis"><em>235</em></span>, 530-538.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=16278882&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1002/dvdy.20633" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib40"></a><p class="bibliomixed"><span class="bibliomisc">Min, J., Kyung Kim, Y., Cipriani, P.G., Kang, M., Khersonsky, S.M., Walsh, D.P., Lee, J.Y., Niessen, S., Yates, J.R., 3<sup>rd</sup>., Gunsalus, K., et al. (2007). Forward chemical genetic approach identifies new role for GAPDH in insulin signaling. Nat.
+                        Chem. Biol. <span class="emphasis"><em>3</em></span>, 55-59.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=17115034&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nchembio833" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib41"></a><p class="bibliomixed"><span class="bibliomisc">Moresco, J.J., Carvalho, P.C., and Yates, J.R., 3<sup>rd</sup>. (2010). Identifying components of protein complexes in <span class="emphasis"><em>C. elegans</em></span> using co-immunoprecipitation and mass spectrometry. J. Proteomics <span class="emphasis"><em>73</em></span>, 2198-2204.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=20546956&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.jprot.2010.05.008" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib42"></a><p class="bibliomixed"><span class="bibliomisc">Nesvizhskii, A.I., and Aebersold, R. (2005). Interpretation of shotgun proteomic data: the protein inference problem. Mol.
+                        Cell. Proteomics <span class="emphasis"><em>4</em></span>, 1419-1440.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=16009968&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1074/mcp.R500012-MCP200" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib43"></a><p class="bibliomixed"><span class="bibliomisc">Olsen, J.V., Schwartz, J.C., Griep-Raming, J., Nielsen, M.L., Damoc, E., Denisov, E., Lange, O., Remes, P., Taylor, D., Splendore,
+                        M., et al. (2009). A dual pressure linear ion trap Orbitrap instrument with very high sequencing speed. Mol. Cell. Proteomics
+                        <span class="emphasis"><em>8</em></span>, 2759-2769.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=19828875&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1074/mcp.M900375-MCP200" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib44"></a><p class="bibliomixed"><span class="bibliomisc">Olson, S.K., Bishop, J.R., Yates, J.R., Oegema, K., and Esko, J.D. (2006). Identification of novel chondroitin proteoglycans
+                        in <span class="emphasis"><em>Caenorhabditis elegans</em></span>: embryonic cell division depends on CPG-1 and CPG-2. J. Cell Biol. <span class="emphasis"><em>173</em></span>, 985-994.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=16785326&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1083/jcb.200603003" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib45"></a><p class="bibliomixed"><span class="bibliomisc">Page, A.P. and Johnstone, I.L. The cuticle (March 19, 2007), <span class="emphasis"><em>WormBook</em></span>, ed. The <span class="emphasis"><em>C. elegans</em></span> Research Community, WormBook, doi/10.1895/wormbook.1.138.1, <a href="http://www.wormbook.org" target="_top">http://www.wormbook.org</a>.</span>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib46"></a><p class="bibliomixed"><span class="bibliomisc">Pavelka, N., Fournier, M.L., Swanson, S.K., Pelizzola, M., Ricciardi-Castagnoli, P., Florens, L., and Washburn, M.P. (2008).
+                        Statistical similarities between transcriptomics and quantitative shotgun proteomics data. Mol. Cell. Proteomics <span class="emphasis"><em>7</em></span>, 631-644.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=18029349&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib47"></a><p class="bibliomixed"><span class="bibliomisc">Polanowska, J., Martin, J.S., Fisher, R., Scopa, T., Rae, I., and Boulton, S.J. (2004). Tandem immunoaffinity purification
+                        of protein complexes from <span class="emphasis"><em>Caenorhabditis elegans</em></span>. Biotechniques <span class="emphasis"><em>36</em></span>, 778-780, 782.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15152596&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib48"></a><p class="bibliomixed"><span class="bibliomisc">Rao, W., Isaac, R.E., and Keen, J.N. (2011). An analysis of the <span class="emphasis"><em>Caenorhabditis elegans</em></span> lipid raft proteome using geLC-MS/<a href="http://www.wormbase.org/db/get?name=MS;class=Cell" target="_blank">MS</a>. J. Proteomics <span class="emphasis"><em>74</em></span>, 242-253.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=21070894&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.jprot.2010.11.001" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib49"></a><p class="bibliomixed"><span class="bibliomisc">Rodriguez, M., Snoek, L.B., De Bono, M., and Kammenga, J.E. (2013). Worms under stress: <span class="emphasis"><em>C. elegans</em></span> stress response and its relevance to complex human disease and aging. Trends Genet. <span class="emphasis"><em>29</em></span>, 367-374.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=23428113&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.tig.2013.01.010" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib50"></a><p class="bibliomixed"><span class="bibliomisc">Schlaitz, A.L., Srayko, M., Dammermann, A., Quintin, S., Wielsch, N., MacLeod, I., de Robillard, Q., Zinke, A., Yates, J.R.,
+                        3<sup>rd</sup>., Muller-Reichert, T., et al. (2007). The <span class="emphasis"><em>C. elegans</em></span> RSA complex localizes protein phosphatase 2A to centrosomes and regulates mitotic spindle assembly. Cell <span class="emphasis"><em>128</em></span>, 115-127.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=17218259&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.cell.2006.10.050" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib51"></a><p class="bibliomixed"><span class="bibliomisc">Simonis, N., Rual, J.F., Carvunis, A.R., Tasan, M., Lemmens, I., Hirozane-Kishikawa, T., Hao, T., Sahalie, J.M., Venkatesan,
+                        K., Gebreab, F., et al. (2009). Empirically controlled mapping of the <span class="emphasis"><em>Caenorhabditis elegans</em></span> protein-protein interactome network. Nat. Methods <span class="emphasis"><em>6</em></span>, 47-54.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=19123269&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nmeth.1279" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib52"></a><p class="bibliomixed"><span class="bibliomisc">Skop, A.R., Liu, H., Yates, J., 3<sup>rd</sup>., Meyer, B.J., and Heald, R. (2004). Dissection of the mammalian midbody proteome reveals conserved cytokinesis mechanisms.
+                        Science <span class="emphasis"><em>305</em></span>, 61-66.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15166316&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1126/science.1097931" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib53"></a><p class="bibliomixed"><span class="bibliomisc">Smith, L.M., Kelleher, N.L., Linial, M., Goodlett, D., Langridge-Smith, P., Ah Goo, Y., Safford, G., Bonilla, L., Kruppa,
+                        G., Zubarev, R., et al. (2013). Proteoform: a single term describing protein complexity. Nat. Methods <span class="emphasis"><em>10</em></span>, 186-187.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=23443629&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nmeth.2369" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib54"></a><p class="bibliomixed"><span class="bibliomisc">Sowa, M.E., Bennett, E.J., Gygi, S.P., and Harper, J.W. (2009). Defining the human deubiquitinating enzyme interaction landscape.
+                        Cell <span class="emphasis"><em>138</em></span>, 389-403.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=19615732&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/j.cell.2009.04.042" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib55"></a><p class="bibliomixed"><span class="bibliomisc">Tabb, D.L., McDonald, W.H., and Yates, J.R., 3<sup>rd</sup>. (2002). DTASelect and Contrast: tools for assembling and comparing protein identifications from shotgun proteomics. J. Proteome
+                        Res. <span class="emphasis"><em>1</em></span>, 21-26.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12643522&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1021/pr015504q" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib56"></a><p class="bibliomixed"><span class="bibliomisc">Talavera, D., Robertson, D.L., and Lovell, S.C. (2013). Alternative splicing and protein interaction data sets. Nat. Biotechnol.
+                        <span class="emphasis"><em>31</em></span>, 292-293.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=23563420&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/nbt.2540" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib57"></a><p class="bibliomixed"><span class="bibliomisc">Tewari, M., Hu, P.J., Ahn, J.S., Ayivi-Guedehoussou, N., Vidalain, P.O., Li, S., Milstein, S., Armstrong, C.M., Boxem, M.,
+                        Butler, M.D., et al. (2004). Systematic interactome mapping and genetic perturbation analysis of a <span class="emphasis"><em>C. elegans</em></span> TGF-&#946; signaling network. Mol. Cell <span class="emphasis"><em>13</em></span>, 469-482.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=14992718&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/http://dx.doi.org/10.1016/S1097-2765(04)00033-4" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib58"></a><p class="bibliomixed"><span class="bibliomisc">Walhout, A.J.M. and Boulton, S.J. Biochemistry and molecular biology (February 13, 2006), <span class="emphasis"><em>WormBook</em></span>, ed. The <span class="emphasis"><em>C. elegans</em></span> Research Community, WormBook, doi/10.1895/wormbook.1.86.1, <a href="http://www.wormbook.org" target="_top">http://www.wormbook.org</a>.</span>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib59"></a><p class="bibliomixed"><span class="bibliomisc">Washburn, M.P., Wolters, D., and Yates, J.R., 3<sup>rd</sup>. (2001). Large-scale analysis of the yeast proteome by multidimensional protein identification technology. Nat. Biotechnol.
+                        <span class="emphasis"><em>19</em></span>, 242-247.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11231557&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/85686" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib60"></a><p class="bibliomixed"><span class="bibliomisc">Welburn, J.P., Vleugel, M., Liu, D., Yates, J.R., 3<sup>rd</sup>., Lampson, M.A., Fukagawa, T., and Cheeseman, I.M. (2010). Aurora B phosphorylates spatially distinct targets to differentially
+                        regulate the kinetochore-microtubule interface. Mol. Cell <span class="emphasis"><em>38</em></span>, 383-392.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=20471944&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/http://dx.doi.org/10.1016/j.molcel.2010.02.034" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib61"></a><p class="bibliomixed"><span class="bibliomisc">Witte, K., Schuh, A.L., Hegermann, J., Sarkeshik, A., Mayers, J.R., Schwarze, K., Yates, J.R., 3<sup>rd</sup>., Eimer, S., and Audhya, A. (2011). TFG-1 function in protein secretion and oncogenesis. Nat. Cell Biol. <span class="emphasis"><em>13</em></span>, 550-558.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=21478858&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1038/ncb2225" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib62"></a><p class="bibliomixed"><span class="bibliomisc">Yates, J.R., Cociorva, D., Liao, L., and Zabrouskov, V. (2006). Performance of a linear ion trap-Orbitrap hybrid for peptide
+                        analysis. Anal. Chem. <span class="emphasis"><em>78</em></span>, 493-500.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=16408932&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1021/ac0514624" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib63"></a><p class="bibliomixed"><span class="bibliomisc">Zanin, E., Dumont, J., Gassmann, R., Cheeseman, I., Maddox, P., Bahmanyar, S., Carvalho, A., Niessen, S., Yates, J.R., 3<sup>rd</sup>., Oegema, K., et al. (2011). Affinity purification of protein complexes in <span class="emphasis"><em>C. elegans</em></span>. Methods Cell Biol. <span class="emphasis"><em>106</em></span>, 289-322.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=22118282&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1016/B978-0-12-544172-8.00011-6" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib64"></a><p class="bibliomixed"><span class="bibliomisc">Zhang, C., Montgomery, T.A., Fischer, S.E., Garcia, S.M., Riedel, C.G., Fahlgren, N., Sullivan, C.M., Carrington, J.C., and
+                        Ruvkun, G. (2012). The <span class="emphasis"><em>Caenorhabditis elegans</em></span> RDE-10/RDE-11 complex regulates RNAi by promoting secondary siRNA amplification. Curr. Biol. <span class="emphasis"><em>22</em></span>, 881-890.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=22542102&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/http://dx.doi.org/10.1016/j.cub.2012.04.011" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib65"></a><p class="bibliomixed"><span class="bibliomisc">Zhang, L., Ding, L., Cheung, T.H., Dong, M.Q., Chen, J., Sewell, A.K., Liu, X., Yates, J.R., 3<sup>rd</sup>., and Han, M. (2007). Systematic identification of <span class="emphasis"><em>C. elegans</em></span> miRISC proteins, miRNAs, and mRNA targets by their interactions with GW182 proteins AIN-1 and AIN-2. Mol. Cell <span class="emphasis"><em>28</em></span>, 598-613.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=18042455&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/http://dx.doi.org/10.1016/j.molcel.2007.09.014" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib66"></a><p class="bibliomixed"><span class="bibliomisc">Zhang, P., Na, H., Liu, Z., Zhang, S., Xue, P., Chen, Y., Pu, J., Peng, G., Huang, X., Yang, F., et al. (2012). Proteomic
+                        study and marker protein identification of <span class="emphasis"><em>Caenorhabditis elegans</em></span> lipid droplets. Mol. Cell. Proteomics <span class="emphasis"><em>11</em></span>, 317-328.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=22542102&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1074/mcp.M111.016345" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib67"></a><p class="bibliomixed"><span class="bibliomisc">Zhang, Y., Fonslow, B.R., Shan, B., Baek, M.C., and Yates, J.R., 3<sup>rd</sup>. (2013). Protein analysis by shotgun/bottom-up proteomics. Chemical Rev. <span class="emphasis"><em>113</em></span>, 2343-2394.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=23438204&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1021/cr3003533" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib68"></a><p class="bibliomixed"><span class="bibliomisc">Zhang, Y., Wen, Z., Washburn, M.P., and Florens, L. (2010). Refinements to label free proteome quantitation: how to deal with
+                        peptides shared by multiple proteins. Anal. Chem. <span class="emphasis"><em>82</em></span>, 2272-2281.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=20166708&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1021/ac9023999" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib69"></a><p class="bibliomixed"><span class="bibliomisc">Zybailov, B., Mosley, A.L., Sardiu, M.E., Coleman, M.K., Florens, L., and Washburn, M.P. (2006). Statistical analysis of membrane
+                        proteome expression changes in <span class="emphasis"><em>Saccharomyces cerevisiae</em></span>. J. Proteome Res. <span class="emphasis"><em>5</em></span>, 2339-2347.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=16944946&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/10.1021/pr060161n" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="footnotes"><br><hr width="100" align="left">
+            <div class="footnote">
+               <p><sup><a name="ftn.d0e9" href="#d0e9">*</a></sup>Edited by Oliver Hobert Last revised June 26, 2013, Published June 24, 2014. This chapter should be cited as: Fonslow, B.R.,
+                  et al. Mass spectrometry-based shotgun proteomic analysis of <span class="emphasis"><em>C. elegans</em></span> protein complexes (June 24, 2014), <span class="emphasis"><em>WormBook</em></span>, ed. The <span class="emphasis"><em>C. elegans</em></span> Research Community, WormBook, doi/10.1895/wormbook.1.171.1, <a href="http://www.wormbook.org" target="_top">http://www.wormbook.org</a>.
+               </p>
+               <p><span class="bold"><strong>Copyright:</strong></span> &copy; 2014 Bryan R. Fonslow, James J. Moresco, Patricia G. Tu, Antti P. Aalto, Amy E. Pasquinelli, Andrew G. Dillin, and John
+                  R. Yates III. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which
+                  permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
+               </p>
+            </div>
+            <div class="footnote">
+               <p><sup><a name="ftn.d0e55" href="#d0e55">&sect;</a></sup>To whom correspondence should be addressed: E-mail: <a href="mailto:jmoresco@scripps.edu" target="_top">jmoresco@scripps.edu</a>, <a href="mailto:jyates@scripps.edu" target="_top">jyates@scripps.edu</a></p>
+ <p><img src="somerights20.gif" alt="Creative Commons License" align="middle" border="0"> All WormBook content, except where otherwise noted, is licensed under a <a href="http://creativecommons.org/licenses/by/2.5/" title="Creative Commons Attribution License" target="_blank">Creative Commons Attribution License</a>.</p>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
