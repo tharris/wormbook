@@ -129,8 +129,8 @@ sub process_xml {
 	my $total = 0;	
 	foreach my $class (sort {$a cmp $b} keys %$report){
 	    printf LOG "%10s \n",uc($class);
-	    printf LOG "%15s %-15s \n",'entity','occurrences';
-	    printf LOG "%15s %-15s \n",'------','-----------';
+	    printf LOG "%15s %15s %-15s \n",'class','entity','occurrences';
+	    printf LOG "%15s %15s %-15s \n",'-----','------','-----------';
 	    foreach my $entity (sort { $report->{$class}->{$a} <=> $report->{$class}->{$b} } 
 				keys %{$report->{$class}}) {
 		printf LOG "%15s %15s %-15s \n",$class,$entity,$report->{$class}->{$entity};

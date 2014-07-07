@@ -63,9 +63,12 @@ in docbook.xml chapters.
 	3. Reads all .xml files in xml_in/
 	4. Extracts sentences in each xml file
 	5. Replaces known entities with appropriate URI from mappings
-	6. Prints new xml to xml_out/DATE-[FILENAME]/[FILENAME].xml
+	6. Prints new xml to xml_out/[DATE]-[FILENAME]/[FILENAME].xml
+              * there may be multiple files, including figure legends and references
 	7. Once processed, files in xml_in are moved to 
-             xml_out/DATE-[FILENAME]/original_docbook/[FILENAME]
+             xml_out/[DATE]-[FILENAME]/original_docbook/[FILENAME]
+        8. A log file is created in xml_out/[DATE]-[FILENAME]_text.log
+           showing the number of entities marked up. Useful for debugging.
 	
 NOTES:
 
@@ -74,7 +77,9 @@ naming convention like:
 
    WB_Kutscher_ShahamJM_text(.*).xml  
 
-      Minimally, the _text(.*).xml should be present.
+      Minimally, the 
+         _text(.*).xml 
+      should be present.
 
 xml_out sample structure:
 
@@ -101,7 +106,12 @@ xml_out sample structure:
 A sample docbook chapter is provided in t/sample_chapter/xml_docbook. To test the
 pipeline, you need to relocate this sample to the xml_in directory.
 
- $ cp t/sample_chapter/xml_docbook/WB_Kutscher_ShahamJM_text.xml xml_in/.
+ $ cp t/sample_chapter/xml_docbook/* xml_in/.
 
  // Now run the pipeline!
+ // Using this command with no arguments will use:
+ //     link definitions: in current/
+ //     and markup docbook xml in: xml_in/
+ // Output will be placed in xml_out/ in a directory corresponding to the 
+ // name of the chapter.
  $ markup_docbook_xml.pl
