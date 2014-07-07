@@ -133,7 +133,7 @@ sub process_xml {
 	    printf LOG "%15s %-15s \n",'------','-----------';
 	    foreach my $entity (sort { $report->{$class}->{$a} <=> $report->{$class}->{$b} } 
 				keys %{$report->{$class}}) {
-		printf LOG "%15s %-15s \n",$entity,$report->{$class}->{$entity};
+		printf LOG "%15s %15s %-15s \n",$class,$entity,$report->{$class}->{$entity};
 		$total += $report->{$class}->{$entity};
 	    }
 	}
