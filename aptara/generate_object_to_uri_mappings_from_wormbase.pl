@@ -64,12 +64,12 @@ sub generate_wormbase_links_from_acedb {
     }
     
     foreach my $class (sort keys %$templates){
-	next unless $class eq 'Protein';
+#	next unless $class eq 'Protein';
 
 	print "\t\tfetching $class...\n";	
 	print "\t\t\tgenerating links for $class ...\n";
 	
-	open OUT, ">$version/$class.txt" or die "Cannot open $version/$class.txt : $!"; 	    
+	open OUT, ">>$version/$class.txt" or die "Cannot open $version/$class.txt : $!"; 	    
 
 	if ($class =~ /cds|clone|strain|transgene|variation/i) {
             # The following require special handling: cell, gene, phenotype, protein
@@ -88,11 +88,18 @@ sub generate_wormbase_links_from_acedb {
 	    
 	    my $i = $db->fetch_many($class => '*');
 	    my $c;
+#	    my $this_start = 0;
 	    while (my $object = $i->next) {
 		$c++;
 		$object =~ s/\///g;     # gets rid of forwardslashes
 		$object =~ s/\'//g;     # gets rid of primes
 		my ($o, $u) = "";
+
+#		if ($object eq 'CN:CN13393') {
+#		    $this_start++;
+#		}
+#		next if $this_start == 0;
+
 		
 #		if ($class eq 'Transgene') {
 #		    my $public_name = $object->Public_name || $object;
