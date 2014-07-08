@@ -79,6 +79,7 @@ sub process_xml {
 	print "\t* processing $filename...\n";
 	
 	my $report = {};    
+	my %total_seen;
 	print LOG "The following biological entities occur in $filename:\n";
 	
 	my $xml = get_sentences($filepath);
@@ -117,8 +118,9 @@ sub process_xml {
 		my $matches = scalar($xml =~ s%([\>\s\/\(\[\{\*]+?)(${pterm})(\<|\s|\/|\. |\,|\:|\;|\)|\]|\}|\*)+?%$1\<ulink url\=\"$url\" role\=\"_blank\"\>$2\<\/ulink\>$3%mg);
 		
 		if (defined ($2)) {
-		    $report->{$class}->{$2} = $matches;
-		}
+		    $report->{$class}->{$2} = $matches;		    
+		    $total_seen{$class}+= $matches;
+		}	       
 	    }
 	}
 
@@ -128,12 +130,15 @@ sub process_xml {
 	
 	my $total = 0;	
 	foreach my $class (sort {$a cmp $b} keys %$report){
-	    printf LOG "%10s \n",uc($class);
-	    printf LOG "%15s %15s %-15s \n",'class','entity','occurrences';
-	    printf LOG "%15s %15s %-15s \n",'-----','------','-----------';
+	    my $total_seen      = $total_seen{$class};
+	    my $unique_entities = scalar keys %{$report->{$class}};
+	    print LOG "\n";
+	    printf LOG "%10s \n",uc($class) . ": $total_seen links generated from $unique_entities unique entities";	    
+	    printf LOG "%15s %-15s \n",'entity','occurrences';
+	    printf LOG "%15s %-15s \n",'------','-----------';
 	    foreach my $entity (sort { $report->{$class}->{$a} <=> $report->{$class}->{$b} } 
 				keys %{$report->{$class}}) {
-		printf LOG "%15s %15s %-15s \n",$class,$entity,$report->{$class}->{$entity};
+		printf LOG "%15s %-15s \n",$entity,$report->{$class}->{$entity};
 		$total += $report->{$class}->{$entity};
 	    }
 	}
@@ -149,13 +154,13 @@ sub process_xml {
     Done! 
 	
     The DocBook XML with entities linked to WormBase:
-      xml_out/*
+	xml_out/[DATE]-[FILENAME]
 
     Reports for each file available at:
-      xml_out/*/*report.log   
+      xml_out/[DATE]-[FILENAME]/*.log   
 
     Input file(s) has been relocated to:
-      xml_out/*/original_docbook/
+      xml_out/[DATE]-[FILENAME]/original_docbook/
 
 END
 ;

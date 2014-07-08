@@ -64,15 +64,15 @@ sub generate_wormbase_links_from_acedb {
     }
     
     foreach my $class (sort keys %$templates){
-#	next unless $class eq 'Variation';
+	next unless $class eq 'Protein';
 
 	print "\t\tfetching $class...\n";	
 	print "\t\t\tgenerating links for $class ...\n";
 	
 	open OUT, ">$version/$class.txt" or die "Cannot open $version/$class.txt : $!"; 	    
 
-	if ($class =~ /cds|clone|protein|strain|transgene|variation/i) {
-            # The following require special handling: cell, gene, phenotype
+	if ($class =~ /cds|clone|strain|transgene|variation/i) {
+            # The following require special handling: cell, gene, phenotype, protein
 	    my $dump_file = dump_objects_via_tace($class,$version);
 	    
 	    open IN,"<$dump_file";
@@ -123,6 +123,18 @@ sub generate_wormbase_links_from_acedb {
 			next unless (defined ($o) && defined ($u));
 			record($o,$u);
 		    }
+		} elsif ($class eq 'Protein') {
+		    # Instead of using all protein IDs, we will
+		    # create a fake look up table based on CGC names.
+		    # The Gene_name tag in the ?Protein class is now more like a brief ID, basically useless.
+		    my $cgc_name = eval { $object->Corresponding_CDS->Gene->CGC_name };
+		    if ($cgc_name) {
+			my $new_case = uc($cgc_name);
+			($o, $u) = makeURL($object,$templates->{$class}[0], $templates->{$class}[1],'Protein',$new_case);
+			next unless (defined ($o) && defined ($u));
+			record($o,$u);
+		    }
+		    
 		} else {
 		    ($o, $u) = makeURL($object,$templates->{$class}[0], $templates->{$class}[1]);
 		    next unless (defined ($o) && defined ($u));
