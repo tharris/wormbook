@@ -84,22 +84,61 @@ sub generate_wormbase_links_from_acedb {
 		my ($o, $u) = makeURL($object,$templates->{$class}[0], $templates->{$class}[1],$class,$public_name); 
 		record($o,$u);
 	    }
-	} else {
-	    
-	    my $i = $db->fetch_many($class => '*');
+	} elsif ($class eq 'Protein') {
+	    # Protein is SUPER special. Actually just genes with CGC names and their correposnding Proteins.
+
+	    my $i = $db->fetch_many('Gene' => '*');
 	    my $c;
-#	    my $this_start = 0;
+
+	    my $this_start = 0;
 	    while (my $object = $i->next) {
+
+#		if ($object eq '
+
+
 		$c++;
 		$object =~ s/\///g;     # gets rid of forwardslashes
 		$object =~ s/\'//g;     # gets rid of primes
 		my ($o, $u) = "";
 
-#		if ($object eq 'CN:CN13393') {
-#		    $this_start++;
-#		}
-#		next if $this_start == 0;
+                # Instead of using all protein IDs, we will
+		# create a fake look up table based on CGC names.
+		# The Gene_name tag in the ?Protein class is now more like a brief ID, basically useless.
 
+		# Does this Gene have a CGC_name? If no, we don't care about it.
+		if (my $cgc_name = $object->CGC_name) {
+		    
+		    # Now walk to Proteins.
+		    my @cds = $object->Corresponding_CDS;
+		    my %seen;
+		    foreach my $cds (@cds) {
+			my $corresponding_protein = $cds->Corresponding_protein;
+			$seen{$corresponding_protein}++;
+		    }
+
+		    my $new_case = uc($cgc_name);
+		    
+		    # For each protein, add an entry to the file. Note that one gene->many proteins will be flattened
+		    # so this is pretty meaningless.
+		    foreach my $protein (keys %seen) {			
+			($o, $u) = makeURL($protein,$templates->{$class}[0], $templates->{$class}[1],'Protein',$new_case);
+		    }
+		    next unless (defined ($o) && defined ($u));
+		    record($o,$u);
+		}
+		
+	    }
+
+
+	} else {
+	    
+	    my $i = $db->fetch_many($class => '*');
+	    my $c;
+	    while (my $object = $i->next) {
+		$c++;
+		$object =~ s/\///g;     # gets rid of forwardslashes
+		$object =~ s/\'//g;     # gets rid of primes
+		my ($o, $u) = "";
 		
 #		if ($class eq 'Transgene') {
 #		    my $public_name = $object->Public_name || $object;
@@ -127,17 +166,6 @@ sub generate_wormbase_links_from_acedb {
 		    push @synonyms,$object->Primary_name; 
 		    foreach (@synonyms) {
 			($o, $u) = makeURL($object,$templates->{$class}[0], $templates->{$class}[1],$class,$_);
-			next unless (defined ($o) && defined ($u));
-			record($o,$u);
-		    }
-		} elsif ($class eq 'Protein') {
-		    # Instead of using all protein IDs, we will
-		    # create a fake look up table based on CGC names.
-		    # The Gene_name tag in the ?Protein class is now more like a brief ID, basically useless.
-		    my $cgc_name = eval { $object->Corresponding_CDS->Gene->CGC_name };
-		    if ($cgc_name) {
-			my $new_case = uc($cgc_name);
-			($o, $u) = makeURL($object,$templates->{$class}[0], $templates->{$class}[1],'Protein',$new_case);
 			next unless (defined ($o) && defined ($u));
 			record($o,$u);
 		    }
