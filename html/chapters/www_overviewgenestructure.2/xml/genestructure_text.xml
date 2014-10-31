@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+                         "docbookx.dtd"
+[
+<!ENTITY fig1 SYSTEM 'genestructure_fig1.jpg' NDATA JPG>
+<!ENTITY fig2 SYSTEM 'genestructure_fig2.jpg' NDATA JPG>
+<!ENTITY fig3 SYSTEM 'genestructure_fig3.jpg' NDATA JPG>
+<!ENTITY fig4 SYSTEM 'genestructure_fig4.jpg' NDATA JPG>
+<!ENTITY fig5 SYSTEM 'genestructure_fig5.jpg' NDATA JPG>
+<!ENTITY fig6 SYSTEM 'genestructure_fig6.jpg' NDATA JPG>
+<!ENTITY fig7 SYSTEM 'genestructure_fig7.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'genestructure_fig1leg.xml'>
+<!ENTITY fig2legend SYSTEM 'genestructure_fig2leg.xml'>
+<!ENTITY fig3legend SYSTEM 'genestructure_fig3leg.xml'>
+<!ENTITY fig4legend SYSTEM 'genestructure_fig4leg.xml'>
+<!ENTITY fig5legend SYSTEM 'genestructure_fig5leg.xml'>
+<!ENTITY fig6legend SYSTEM 'genestructure_fig6leg.xml'>
+<!ENTITY fig7legend SYSTEM 'genestructure_fig7leg.xml'>
+<!ENTITY genestructure_ref SYSTEM 'genestructure_ref.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="genestructure_text">
+<articleinfo>
+<title>Overview of gene structure in <emphasis>C. elegans</emphasis><footnote><para>Edited by Jonathan Hodgkin. Last revised. Published October 29, 2014. This chapter should be cited as: Spieth et al. Overview of gene structure in <emphasis>C. elegans</emphasis> (October 29, 2014), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.65.2, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2014 John Spieth, Daniel Lawson, Paul Davis, Gary Williams, Kevin Howe. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para></footnote></title>
+<author><othername>John Spieth<superscript>1</superscript>, Daniel Lawson<superscript>2</superscript>, Paul Davis<superscript>2</superscript>, Gary Williams<superscript>2</superscript>, Kevin Howe<superscript>2</superscript><remark><footnote><para>To whom correspondence should be addressed. E-mail: <ulink url="mailto:klh@ebi.ac.uk">klh@ebi.ac.uk</ulink></para></footnote></remark></othername>
+<affiliation><orgname><superscript>1</superscript>Genome Sequencing Center, Washington University School of Medicine, St. Louis, MO 63108 USA</orgname></affiliation>
+<affiliation><orgname><superscript>2</superscript>European Molecular Biology Laboratory, European Bioinformatics Institute, Wellcome Trust Genome Campus, Hinxton, Cambridge, <ulink url="http://www.wormbase.org/db/get?name=CB10;class=Clone" role="_blank">CB10</ulink> 1SD UK</orgname></affiliation></author></articleinfo>
+<abstract>
+<title><emphasis role="bold">Abstract</emphasis></title>
+<para><emphasis role="bold">In the early stage of the <emphasis>C. elegans</emphasis> sequencing project, the <emphasis>ab initio</emphasis> gene prediction program Genefinder was used to find protein-coding genes. Subsequently, protein-coding genes structures have been actively curated by <ulink url="http://www.wormbase.org/#01-23-6">WormBase</ulink> using evidence from all available data sources. Most coding loci were identified by the Genefinder program, but the process of gene curation results in a continual refinement of the details of gene structure, involving the correction and confirmation of intron splice sites, the addition of alternate splicing forms, the merging and splitting of incorrect predictions, and the creation and extension of 5&rsquo; and 3&rsquo; ends. The development of new technologies results in the availability of further data sources, and these are incorporated into the evidence used to support the curated structures. Non-coding genes are more difficult to curate using this methodology, and so the structures for most of these have been imported from the literature or from specialist databases of ncRNA data. This article describes the structure and curation of transcribed regions of genes.</emphasis></para>
+</abstract>
+<sect1 id="sec1">
+<title>What is a gene?</title>
+<para><ulink url="http://www.wormbase.org/resources/person/WBPerson77#0123--10">Sydney Brenner</ulink>, the founder of modern worm biology, once said, &ldquo;Old geneticists knew what they were talking about when they used the term &lsquo;gene&rsquo;, but it seems to have become corrupted by modern genomics to mean any piece of expressed sequence&hellip;&rdquo; (<link linkend="bib8">Brenner, 2000</link><!-- PMID: 10744539-->). Dr. Brenner&apos;s lament serves to illustrate two points: the first is that the concept of a gene can mean different things to different people in different contexts, the second is that the concept of a gene has been evolving, not only in the modern genomic era, but ever since it first appeared in the early 1900s as a term to conceptualize the particulate basis of heritable physical traits (<link linkend="bib50">Snyder and Gerstein, 2003</link><!-- PMID: 12690176-->). Therefore, in a review of gene structure in <emphasis>C. elegans</emphasis> it seems prudent to define what we mean by a gene.</para>
+<para>Our definition of a gene is essentially: &ldquo;a union of genomic sequences encoding a coherent set of potentially overlapping functional products&rdquo; (<link linkend="bib15">Gerstein et al., 2007</link><!-- PMID: 17567988-->). This encompasses promoters and control regions necessary for the transcription, processing and if applicable, translation of a gene. Hence, we include not only protein-coding genes (genes that encode polypeptides), but also non-coding RNA genes (ribosomal RNA, transfer RNA, micro RNA, anti-sense RNA, piwi-interacting RNA, and <ulink url="http://www.wormbase.org/db/get?name=WBPhenotype:0000229;class=Phenotype" role="_blank">small</ulink> nuclear RNA genes). One additional type of gene we will briefly discuss is the pseudogene, though these are not usually considered to be functional.</para>
+<para>The full extent of most <emphasis>C. elegans</emphasis> genes is not known because promoters remain, for the most part, incompletely defined. Even the full extent of the primary transcript is frequently not known because a majority (70%) of protein-coding genes are rapidly modified by trans-splicing, which involves the addition of a short 22 nt exogenous RNA species to the 5&rsquo; end of a transcript (<link linkend="bib62">Zorio et al., 1994</link><!-- PMID: 7969472-->). Definition of the true 5&rsquo; ends of genes is an active area of research  (<link linkend="bib11">Chen et al. 2013</link><!-- PMID: 23550086-->; <link linkend="bib25">Kruesi et al. 2013</link><!-- PMID: 23795297-->; <link linkend="bib48">Saito et al. 2013</link><!-- PMID: 23636945-->; <link linkend="bib17">Gu et al. 2012</link><!-- PMID: 23260138-->). Some non-coding RNA genes are also trans-spliced; a precursor of the microRNA <ulink url="http://www.wormbase.org/db/get?name=WBGene00002285;class=Gene" role="_blank">let-7</ulink> (C05G5.6) was identified with a trans-splice leader sequence (<link linkend="bib7">Bracht et al., 2004</link><!-- PMID: 15337850-->). This article is concerned primarily with the properties of the transcribed regions of <emphasis>C. elegans</emphasis> genes.</para>
+</sect1>
+<sect1 id="sec2">
+<title>Protein-coding genes</title>
+<sect2 id="sec2-1">
+<title>Prediction and curation</title>
+<para>In the initial stage of the <emphasis>C. elegans</emphasis> sequencing project, prior to the publication of the genome in 1998 (<link linkend="bib9">The <emphasis>C. elegans</emphasis> Sequencing Consortium, 1998</link><!-- PMID: 9851916-->), Genefinder (Green and Hillier, unpublished software) was the gene prediction program of choice. Genefinder is an <emphasis>ab initio</emphasis> predictor and requires only a genomic DNA sequence and parameters based on a training set of confirmed coding sequences. Note that Genefinder, like most other gene prediction tools, is actually a coding sequence (CDS) predictor and does not attempt to define untranslated regions (UTRs).</para>
+<para>In the <ulink url="http://www.wormbase.org/#01-23-6">WormBase</ulink> database, the structure of a coding gene is held as three different types of data. The first is the &ldquo;Gene&rdquo;, which holds information on the span from the start to end of the transcribed region of that locus. The second is the &ldquo;Transcript&rdquo;, which holds the exon structure, including the 5&rsquo; and 3&rsquo; untranslated regions (UTRs) and attempts to faithfully model a mature mRNA sequence. The third is the &ldquo;CDS&rdquo;, which is purely a protein-coding set of exons from a START codon to a STOP codon, with no UTR. It is only the &ldquo;CDS&rdquo; structure which is manually curated, with often two or more &ldquo;CDS&rdquo; isoforms being made for the same gene, based on evidence for trans-splicing or alternative splicing. The &ldquo;Transcript&rdquo; structures are automatically deduced by combining the &ldquo;CDS&rdquo; structures and the aligned EST, mRNA and OST transcript data to extend the &ldquo;CDS&rdquo; out to cover the UTRs. The predicted &ldquo;Transcript&rdquo; structures for each locus are then combined to find the maximum bounds of transcription for that locus, giving the reported span of the &ldquo;Gene&rdquo;. Thus the manually curated &ldquo;CDS&rdquo; structures are used to automatically define the &ldquo;Transcript&rdquo; structures and &ldquo;Gene&rdquo; regions. RNAseq data is not currently used to extend the UTR regions of the &ldquo;Transcript&rdquo; structures because their short length often makes it hard to distinguish from which of two nearby genes they were derived.</para>
+<para>With the completion of the <emphasis>C. elegans</emphasis> genome sequence, a renewed effort to improve the coding gene predictions was initiated. The coding sequence (CDS) structures are manually curated, using all available evidence from the literature, protein similarity, peptides identified by mass-spectrometry, transcript evidence, <emphasis>ab initio</emphasis> gene predictions and features such as trans-spliced leader sequence (TSL) sites and polyadenylation sites.</para>
+<para>Even for a model organism with a mature reference genome sequence such as <emphasis>C. elegans</emphasis>, the definition of a canonical set of gene structures is constantly being revisited. As new projects and technologies producing transcript and other data have appeared, <ulink url="http://www.wormbase.org/#01-23-6">WormBase</ulink> has used them to improve the CDS structures. Some of these include:</para>
+<itemizedlist>
+<listitem><para>&#x2022; RNASeq short read data, extracted from the NCBI and EBI Short Read Archive. These data are from many projects with about half coming from the various releases of data from the <ulink url="http://www.modencode.org/">modENCODE</ulink> project (<link linkend="bib16">Gerstein et al. 2010</link><!-- PMID: 21177976-->).</para></listitem>
+<listitem><para>&#x2022; messenger RNA (mRNA) deposited with the International Nucleotide Sequence Database Collaboration (<ulink url="http://www.insdc.org/">INSDC</ulink>).</para></listitem>
+<listitem><para>&#x2022; Expressed Sequence Tag (EST) from both <emphasis>C. elegans</emphasis> (<ulink url="http://www.wormbase.org/resources/person/WBPerson334#0123--10">Yuji Kohara</ulink>, unpublished; <ulink url="http://nematode.lab.nig.ac.jp/">http://nematode.lab.nig.ac.jp/</ulink>) and other nematode species (from multiple sources including <ulink url="http://www.insdc.org/">INSDC</ulink>, the <ulink url="http://genome.wustl.edu/">Genome Institute of Washington University St. Louis</ulink>, NemBase, available at <ulink url="http://www.nematodes.org">www.nematodes.org</ulink> and <ulink url="http://nematode.net/NN3_frontpage.cgi">Nematode.net</ulink>).</para></listitem>
+<listitem><para>&#x2022; Orfeome Sequence Tags (OST) (<link linkend="bib38">Reboul et al., 2003</link><!-- PMID: 12679813-->; <link linkend="bib55">Vaglio et al., 2003</link><!-- PMID: 12519990-->).</para></listitem>
+<listitem><para>&#x2022; Race Sequence Tags (RST) (<ulink url="http://www.wormbase.org/resources/person/WBPerson1551#0123--10">Marc Vidal</ulink> laboratory 2009, unpublished).</para></listitem>
+<listitem><para>&#x2022; cDNA data from other projects (e.g., <ulink url="http://www.wormbase.org/resources/person/WBPerson2951#0123--10">Makedonka Mitreva</ulink> 2008, unpublished).</para></listitem>
+<listitem><para>&#x2022; mass spectroscopy projects, primarily from the <ulink url="http://www.wormbase.org/resources/person/WBPerson3666#0123--10">Michael MacCoss</ulink> and <ulink url="http://www.wormbase.org/resources/person/WBPerson250#0123--10">Michael Hengartner</ulink> laboratories.</para></listitem>
+<listitem><para>&#x2022; projects looking for trans-spliced leader sequences sites (TSLs) (<link linkend="bib26">Lamm et al. 2011</link><!-- PMID: 21177965-->; <link linkend="bib20">Hwang et al. 2004</link><!-- PMID: 14757812-->).</para></listitem>
+<listitem><para>&#x2022; polyadenylation sites from EST sequences and several projects (<link linkend="bib22">Jan et al. 2011</link><!-- PMID: 21085120-->; <link linkend="bib26">Lamm et al. 2011</link><!-- PMID: 21177965-->; <link linkend="bib29">Mangone et al. 2010</link><!-- PMID: 20522740-->).</para></listitem>
+<listitem><para>&#x2022; the use of transcription start sites is an active area of research (<link linkend="bib11">Chen et al. 2013</link><!-- PMID: 23550086-->; <link linkend="bib25">Kruesi et al. 2013</link><!-- PMID: 23795297-->; <link linkend="bib48">Saito et al. 2013</link><!-- PMID: 23636945-->; <link linkend="bib17">Gu et al. 2012</link><!-- PMID: 23260138-->).</para></listitem>
+</itemizedlist>
+<para>The RNASeq, EST, mRNA, OST, RST and other transcript data are aligned to the genome and are used to confirm the splice donor and acceptor sites of introns and guide the curation of alternatively spliced CDS isoforms, although the sparsity of long transcript evidence in some genes with low levels of expression can make it difficult to confirm some putative isoform structures.</para>
+<para>The various features that indicate the start and end of a gene, including regulatory regions, TSS sites, TSL sites, expressed transcripts that define the UTRs, polyadenylation sites, and homologous gene structures are all valuable evidence when curating the structure of a gene.</para>
+<para>To direct curation efforts towards the genes with the lowest-quality gene models, a system of automatically comparing the structure of the CDS against the available alignment evidence is used. Those structures having the greatest discordance with the alignment evidence are assigned a higher priority for manual curation (<link linkend="bib59">Williams et al. 2011</link><!-- PMID: 21543339-->).</para>
+<para>Through manual curation, we endeavor to continually improve the accuracy of the gene structures. How accurate are the gene structures? In <ulink url="http://www.wormbase.org/#01-23-6">WormBase</ulink> release WS237 (May, 2013), 12,530 CDS structures (48%) have every base of every exon confirmed by either mRNA, EST, or OST transcription evidence, showing the gene is real and the structure correct. An additional 11,602 (44%) have at least one base of an exon confirmed by transcript data, indicating the gene is real and part of the structure is correct. The remaining 8% of the CDS predictions currently have no mRNA, EST or OST evidence and tend to be expressed at a low level and so lack good RNASeq evidence. These gene structures are therefore largely based on <emphasis>ab initio</emphasis> gene prediction or sequence conservation with orthologs or paralogs such as the family of genes coding for seven-transmembrane domain receptors. The above statistics do not currently use coverage by RNASeq short reads to confirm that the full structure is correct. The short length of RNASeq reads can give rise to unreliable alignments which warrants their treatment as a separate class of data from the ESTs/mRNAs (which are longer and higher quality). As technology underlying RNASeq data improves, resulting in longer read lengths and higher quality, this distinction will become less necessary.</para>
+<para>How many additional <emphasis>C. elegans</emphasis> genes remain to be found? It&apos;s hard to know for certain, but over the 30 months from release WS220 to release WS237, the number of curated protein-coding genes increased by 119, some of which were the result of splitting existing genes. In release WS237, all of the new genes that could be unambiguously supported by the evidence from the <ulink url="http://www.modencode.org/">modENCODE</ulink> RNASeq data had been curated leaving about 140 which are more dubious. It is expected that as experimental evidence accumulates, the curated CDS structures will be refined and the number of new genes and structural changes that can be easily made will decline to low levels, with changes mainly based on detailed investigation of the properties of a gene in the literature. At present, however, the number of changes to existing CDS structures, creation of new coding genes and creation of new isoforms of existing genes made in each <ulink url="http://www.wormbase.org/#01-23-6">WormBase</ulink> release does not appear to be decreasing (<link linkend="figure1">Figure 1</link>). This is largely due to the continuing incorporation of the final 2012 freeze of the <ulink url="http://www.modencode.org/">modENCODE</ulink> RNASeq data. The <ulink url="http://www.modencode.org/">modENCODE</ulink> gene models are a useful guide when curating CDS structures but have not been converted into curated CDS structures <emphasis>en masse.</emphasis> This is because many curated <ulink url="http://www.wormbase.org/#01-23-6">WormBase</ulink> CDS structures incorporate knowledge from experts or the literature and should not be overwritten automatically and also the <ulink url="http://www.modencode.org/">modENCODE</ulink> gene model structures were based, in part, on a specific older set of <ulink url="http://www.wormbase.org/#01-23-6">WormBase</ulink> gene structures, many of which would have been incorrect before the advent of large-scale RNASeq data. <link linkend="figure2">Figure 2</link> shows some typical changes to genes structures involving merging and splitting of genes.</para>
+<mediaobject id="figure1" xreflabel="Figure 1">
+<imageobject>
+<imagedata entityref="fig1" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 1</phrase>
+</textobject> &fig1legend;</mediaobject>
+<mediaobject id="figure2" xreflabel="Figure 2">
+<imageobject>
+<imagedata entityref="fig2" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 2</phrase>
+</textobject> &fig2legend;</mediaobject>
+<para>There are currently 321 protein-coding gene models that have been classified as belonging to a transposable element. These Transposon-CDSs have been classified as such based on published associations, protein similarity to transposon protein domains, or overlap between these loci and repeat motifs corresponding to transposable elements. An example Transposon-CDS is <ulink url="http://www.wormbase.org/db/get?name=B0213.1;class=Gene" role="_blank"><ulink url="http://www.wormbase.org/db/get?name=WBGene00043074;class=Gene" role="_blank">B0213.1</ulink></ulink>. This gene belongs to a member of the Tc1 transposon family which was the first <emphasis>C. elegans</emphasis> transposable element identified (<link linkend="bib44">Rosenzweig et al. 1983</link><!-- PMID: 6306578-->). <ulink url="http://www.wormbase.org/#01-23-6">WormBase</ulink> excludes Transposon-CDSs from the canonical protein-coding gene set, so they are not treated as a part of the normal set of coding genes and they do not have their protein translation added to the set of available <ulink url="http://www.wormbase.org/#01-23-6">WormBase</ulink> proteins.</para>
+</sect2>
+<sect2 id="sec2-2">
+<title>Gene number and sizes</title>
+<para>In <ulink url="http://www.wormbase.org/#01-23-6">WormBase</ulink> data release WS237, there were 20,512 protein-coding genes. Most coding genes are relatively <ulink url="http://www.wormbase.org/db/get?name=WBPhenotype:0000229;class=Phenotype" role="_blank">small</ulink> (<link linkend="figure3">Figure 3</link>), covering a genomic region of approximately 3 kbp (from start to stop codon including introns), although there are some very <ulink url="http://www.wormbase.org/db/get?name=WBPhenotype:0000319;class=Phenotype" role="_blank">large</ulink> genes which skew the mean. The median size of coding genes is only 1,956 bp, spanning from <ulink url="http://www.wormbase.org/db/get?name=K07C5.13;class=Gene" role="_blank"><ulink url="http://www.wormbase.org/db/get?name=WBGene00050947;class=Gene" role="_blank">K07C5.13</ulink></ulink> (81 bp) and <ulink url="http://www.wormbase.org/db/get?name=F11A6.15;class=Gene" role="_blank"><ulink url="http://www.wormbase.org/db/get?name=WBGene00206532;class=Gene" role="_blank">F11A6.15</ulink></ulink> (87 bp) to a few genes with very <ulink url="http://www.wormbase.org/db/get?name=WBPhenotype:0000319;class=Phenotype" role="_blank">large</ulink> spans caused by introns of more than 100 Kb such as <ulink url="http://www.wormbase.org/db/get?name=Y61B8A.6;class=Gene" role="_blank"><ulink url="http://www.wormbase.org/db/get?name=WBGene00219383;class=Gene" role="_blank">Y61B8A.6</ulink></ulink> (134,155 bp) and <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00008901;class=Gene" role="_blank">nhr-27</ulink></emphasis> (F16H9.2) (102,626 bp) and the <emphasis>C. elegans</emphasis> titin gene <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00006436;class=Gene" role="_blank">ttn-1</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/get?name=WBGene00021069;class=Gene" role="_blank">W06H8.8</ulink>) with a span of 81,718 bp. <link linkend="figure4">Figure 4</link> shows the distribution of sizes of the coding sequence (CDS) part of coding genes which hints at being a bimodal curve.</para>
+<mediaobject id="figure3" xreflabel="Figure 3">
+<imageobject>
+<imagedata entityref="fig3" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 3</phrase>
+</textobject> &fig3legend;</mediaobject>
+<mediaobject id="figure4" xreflabel="Figure 4">
+<imageobject>
+<imagedata entityref="fig4" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 4</phrase>
+</textobject> &fig4legend;</mediaobject>
+</sect2>
+<sect2 id="sec2-3">
+<title>Exons</title>
+<para><emphasis>C. elegans</emphasis> genes, like most eukaryotic protein-coding genes, contain exons separated by introns. There are 131,083 unique, coding exons (the same exon used in alternatively-spliced isoforms of the same gene is considered as one unique exon) in the WS237 protein-coding gene set, which account for 26% of the genome, considerably more than the corresponding estimate of 1.5% for the human genome (<link linkend="bib21">The International Human Genome Sequencing Consortium, 2001</link><!-- PMID: 11237011-->).</para>
+<para>The average gene contains 6.4 coding exons, although there are a few genes with a <ulink url="http://www.wormbase.org/db/get?name=WBPhenotype:0000319;class=Phenotype" role="_blank">large</ulink> number of exons (<link linkend="figure5">Figure 5</link>). <ulink url="http://www.wormbase.org/db/get?name=W06H8.8g;class=Gene" role="_blank">W06H8.8g</ulink>, an isoform of the titin gene (<emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00006436;class=Gene" role="_blank">ttn-1</ulink></emphasis>), has 66 coding exons and there are 73 unique exons used overall in the various titin isoforms.</para>
+<mediaobject id="figure5" xreflabel="Figure 5">
+<imageobject>
+<imagedata entityref="fig5" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 5</phrase>
+</textobject> &fig5legend;</mediaobject>
+<para>The average size of unique exons in all protein-coding genes is 200.7 bp, but there are a <ulink url="http://www.wormbase.org/db/get?name=WBPhenotype:0000229;class=Phenotype" role="_blank">small</ulink> number of very <ulink url="http://www.wormbase.org/db/get?name=WBPhenotype:0000319;class=Phenotype" role="_blank">large</ulink> exons. Again, as with gene size, these few <ulink url="http://www.wormbase.org/db/get?name=WBPhenotype:0000319;class=Phenotype" role="_blank">large</ulink> exons skew the average. The median size is only 123 bp, thus exons are similar in size to exons in human genes (<link linkend="bib21">The International Human Genome Sequencing Consortium, 2001</link><!-- PMID: 11237011-->). An example of a <ulink url="http://www.wormbase.org/db/get?name=WBPhenotype:0000319;class=Phenotype" role="_blank">large</ulink> exon is one of 7,569 bp found in <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00004130;class=Gene" role="_blank">pqn-43</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/get?name=F54E2.3b;class=Gene" role="_blank">F54E2.3b</ulink>). Some examples of <ulink url="http://www.wormbase.org/db/get?name=WBPhenotype:0000229;class=Phenotype" role="_blank">small</ulink> exons include a 7 bp exon in <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00001122;class=Gene" role="_blank">dyf-6</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/get?name=F46F6.4d;class=Gene" role="_blank">F46F6.4d</ulink>) and a 9 bp exon in <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00017929;class=Gene" role="_blank">grld-1</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/get?name=F29C4.7c;class=Gene" role="_blank">F29C4.7c</ulink>).</para>
+<para>There are 549 single-exon genes in WS237 that comprise 2.7% of all coding genes and 0.87% of the total coding bases in all coding genes. The curation of single-exon genes is particularly prone to error, because they may be a part of a non-coding gene or a 3&rsquo; UTR that has evidence of expression with an open reading frame that can be marked up as a coding region.</para>
+</sect2>
+<sect2 id="sec2-4">
+<title>Introns</title>
+<para>There are 108,151 (WS237) unique introns (the same intron used in different isoforms or spliced variants is considered as one unique intron) in all of the coding sequences of <emphasis>C. elegans</emphasis>. Of these, 100,065 (92.5%) are confirmed by RNASeq with 3 or more reads in a library spanning the intron boundaries, and 88,174 (81.5%) are confirmed by EST or cDNA sequences spanning them.</para>
+<itemizedlist>
+<listitem><para>&#x2022; 85,658 (79.2%) are confirmed by both RNAseq and EST/cDNA.</para></listitem>
+<listitem><para>&#x2022; 14,407 (13.3%) have only RNASeq confirmation.</para></listitem>
+<listitem><para>&#x2022; 2,516 (2.3%) have only EST/cDNA confirmation.</para></listitem>
+<listitem><para>&#x2022; 5,570 (5.1%) have no direct EST/cDNA or RNASeq transcript evidence.</para></listitem>
+</itemizedlist>
+<para>The introns with no supporting evidence or evidence from only RNAseq or only EST/cDNA data are usually from poorly expressed genes which consequently have sporadic direct evidence based on expression. Those with no direct evidence are based on either <emphasis>ab initio</emphasis> predicted structures or have other supporting evidence such as homology to other genes.</para>
+<para>Work is continuing to curate novel alternately spliced introns that have been confirmed by RNAseq, mass-spectroscopy and other projects.</para>
+<para>The most common size of CDS introns is 47 bp with the median size being 65 bp. There are some examples of very <ulink url="http://www.wormbase.org/db/get?name=WBPhenotype:0000229;class=Phenotype" role="_blank">small</ulink> artificial introns in <ulink url="http://www.wormbase.org/#01-23-6">WormBase</ulink> used by the gene sequence curators to change the frame of a CDS. In <ulink url="http://www.wormbase.org/db/get?name=WBGene00044200;class=Gene" role="_blank">H37A05.4</ulink> this is used to work around a strongly suspected, but unverified, genomic sequence error in a highly repetitive region. In <ulink url="http://www.wormbase.org/db/get?name=ZK484.1a;class=Gene" role="_blank">ZK484.1a</ulink> there is a conserved, specific +1 translational frameshift to express the orthinine decarboxylase antizyme protein. In <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00003098;class=Gene" role="_blank">lys-9</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/get?name=C54C8.6;class=Gene" role="_blank">C54C8.6</ulink>) there is suspected to be post-transcriptional modification to correct the translation frame. There are three natural <ulink url="http://www.wormbase.org/db/get?name=WBPhenotype:0000229;class=Phenotype" role="_blank">small</ulink> introns with a size of 25 bp or less: <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00006959;class=Gene" role="_blank">xbp-1</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/get?name=R74.3a;class=Gene" role="_blank">R74.3a</ulink>) (23 bp), <ulink url="http://www.wormbase.org/db/get?name=K08E5.6;class=Gene" role="_blank"><ulink url="http://www.wormbase.org/db/get?name=WBGene00195174;class=Gene" role="_blank">K08E5.6</ulink></ulink> (25 bp), and <ulink url="http://www.wormbase.org/db/get?name=WBGene00017118;class=Gene" role="_blank">E04A4.3</ulink> (25 bp).</para>
+<para>The largest confirmed intron is 100,912 bp, found in <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00008901;class=Gene" role="_blank">nhr-27</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/get?name=F16H9.2b;class=Gene" role="_blank">F16H9.2b</ulink>), supported by an RST sequence indicating that there is an SL1 trans-spliced isoform which re-uses 34 bp of coding sequence contained within <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00001560;class=Gene" role="_blank">gei-3</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/get?name=T22H6.6a;class=Gene" role="_blank">T22H6.6a</ulink>). The next longest intron is 21,230 bp, found in <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00002189;class=Gene" role="_blank">kin-1</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/get?name=ZK909.2j;class=Gene" role="_blank">ZK909.2j</ulink>). It is confirmed by a cDNA and an EST clone containing the SL1 trans-splice leader sequence at its 5&rsquo; end.</para>
+<para>The intron size in <emphasis>C. elegans</emphasis> appears to be positively correlated with local recombination rates (<link linkend="bib36">Prachumwat et al., 2004</link><!-- PMID: 15082572-->) and short introns are preferentially found in highly expressed genes (<link linkend="bib10">Castillo-Davis et al., 2002</link><!-- PMID: 12134150-->).</para>
+<para>The introns of <emphasis>C. elegans</emphasis> have always been considered <ulink url="http://www.wormbase.org/db/get?name=WBPhenotype:0000229;class=Phenotype" role="_blank">small</ulink>, but as more genomes are being sequenced and annotated it is becoming evident that they are not distinctly smaller than those of most eukaryotes. The modal length of <emphasis>Drosophila</emphasis> introns is only 59 bp (<link linkend="bib21">The International Human Genome Sequencing Consortium, 2001</link><!-- PMID: 11237011-->), as compared to 47 bp for the worm. The mean size of introns on the largest, somatic, macronuclear chromosome of <emphasis>Paramecium</emphasis> is only 25 bp (<link linkend="bib63">Zagulski et al., 2004</link><!-- PMID: 15296759-->). Fungal introns are also <ulink url="http://www.wormbase.org/db/get?name=WBPhenotype:0000229;class=Phenotype" role="_blank">small</ulink>; Neurospora introns average 134 bp (<link linkend="bib13">Galagan et al., 2003</link><!-- PMID: 12712197-->), <emphasis>Sordaria macrospora</emphasis> 106 bp (<link linkend="bib34">Nowrousian et al., 2004</link><!-- PMID: 14761789-->), and <emphasis>Cryptococcus neoformans</emphasis> 67 bp (<link linkend="bib27">Loftus et al., 2005</link><!-- PMID: 15653466-->). Even in humans the modal intron length is only 87 bp, but there are also some very <ulink url="http://www.wormbase.org/db/get?name=WBPhenotype:0000319;class=Phenotype" role="_blank">large</ulink> introns, shifting the mean length to more than 3,300 bp genes (<link linkend="bib21">The International Human Genome Sequencing Consortium, 2001</link><!-- PMID: 11237011-->).</para>
+<para><emphasis>C. elegans</emphasis> introns follow the GU-AG splice site rule, although GC is a rare 5&rsquo; splice site variant (<link linkend="bib6">Blumenthal and Steward, 1997</link>). There are 870 introns with GC-AG splice sites in WS237. A well-characterised example is the donor splice site of intron 8 of <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00002280;class=Gene" role="_blank">let-2</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/get?name=F01G12.5b;class=Gene" role="_blank">F01G12.5b</ulink>) (<link linkend="bib49">Sibley et al. 1993</link><!-- PMID: 7691828-->). From their analysis of 669 introns Blumenthal and Steward found that <emphasis>C. elegans</emphasis> has a highly conserved and extended 3&rsquo; splice site (UUUCAG) and no obvious polypyrimidine tract other than the 3&rsquo; splice site consensus. They suggest that the 3&rsquo; intron boundary may be more important in <emphasis>C. elegans</emphasis> intron recognition than in other organisms.</para>
+<para>In addition to splicing information, some <emphasis>C. elegans</emphasis> introns contain sequences involved in the regulation of gene expression (<link linkend="bib61">Zhang and Emmons, 2000</link><!-- PMID: 10970880-->).</para>
+</sect2>
+<sect2 id="sec2-5">
+<title>Alternative splicing and isoforms</title>
+<para>Alternative splicing is covered in detail in the WormBook chapter <ulink url="http://www.wormbook.org/chapters/www_altsplicing.2/pre-mRNA.html">Pre-mRNA splicing and its regulation in <emphasis>Caenorhabditis elegans</emphasis></ulink>, so here we will just mention it briefly. Alternative splice forms are only annotated in <ulink url="http://www.wormbase.org/#01-23-6">WormBase</ulink> when there is direct transcript or literature citation evidence for the alternative form. In <ulink url="http://www.wormbase.org/#01-23-6">WormBase</ulink> release WS237 there were 20,512 coding gene loci, 3,623 (18%) genes had curated evidence of alternative splicing with a total of 9,484 alternatively-spliced forms giving rise to different protein products (<link linkend="figure6">Figure 6</link>). The number of alternatively-spliced forms per gene tends to be <ulink url="http://www.wormbase.org/db/get?name=WBPhenotype:0000229;class=Phenotype" role="_blank">small</ulink> with 68% having either one or two alternatively-spliced forms. The remaining 32% of loci have between 3 and 17 alternatively-spliced forms. Many of these alternative forms show only minor changes to the CDS with alternate 5&rsquo; end structures (SL1/2 outrons) or <ulink url="http://www.wormbase.org/db/get?name=WBPhenotype:0000229;class=Phenotype" role="_blank">small</ulink> multiples of 3 (i.e., 3,6,9) bp differences to the splice donor or acceptor sites.</para>
+<mediaobject id="figure6" xreflabel="Figure 6">
+<imageobject>
+<imagedata entityref="fig6" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 6</phrase>
+</textobject> &fig6legend;</mediaobject>
+</sect2>
+</sect1>
+<sect1 id="sec3">
+<title>Pseudogenes</title>
+<para>Processed pseudogenes, which are created by reverse transcription of mRNA into cDNA followed by reintegration into the genome, are fairly easy to detect because they lack introns. These are rare in <emphasis>C. elegans</emphasis> (<link linkend="bib18">Harrison et al., 2001</link><!-- PMID: 11160906-->). Unprocessed pseudogenes arise by duplication of a gene, which is subsequently disabled by random mutation. Unprocessed pseudogenes usually have features that aid in their identification, such as frameshifts, premature stops, insertions and truncations compared to their functional homolog, or a ratio of non-synonymous vs. synonymous nucleotide substitution rates indicating a lack of purifying selection. These features are probably valid indicators for most pseudogenes, assuming that the function of the gene is at the protein level. Some pseudogenes are expressed, but mRNAs containing premature stops are usually subject to rapid, nonsense-mediated decay (NMD), so they were difficult to detect using traditional sequencing technologies. With the advent of new sequencing technologies it is possible to detect transcripts that are unique to a pseudogenic loci compared to their functional homolog.</para>
+<para>The gene <ulink url="http://www.wormbase.org/db/get?name=WBGene00014987;class=Gene" role="_blank">ZK637.6</ulink> (<link linkend="bib35">Park et al 2013</link><!-- PMID: 23485825-->) is an example of how regarding pseudogenes as simply inert, broken genes should be treated with caution. This is a pseudogene with a frameshift and a premature STOP codon when compared to the first exon of the parental gene, <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00014025;class=Gene" role="_blank">asna-1</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/get?name=WBGene00014987;class=Gene" role="_blank">ZK637.6</ulink>), a positive regulator of insulin secretion. The miRNA transcript <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00003343;class=Gene" role="_blank">mir-249</ulink></emphasis> (Y48D7A.3) binds to the <ulink url="http://www.wormbase.org/db/get?name=WBGene00014987;class=Gene" role="_blank">ZK637.6</ulink> transcript and directs its cleavage. There is a strong negative correlation between expression of the <ulink url="http://www.wormbase.org/db/get?name=WBGene00014987;class=Gene" role="_blank">ZK637.6</ulink> transcript and <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00003343;class=Gene" role="_blank">mir-249</ulink></emphasis>. The complementarity of <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00003343;class=Gene" role="_blank">mir-249</ulink></emphasis> and <ulink url="http://www.wormbase.org/db/get?name=WBGene00014987;class=Gene" role="_blank">ZK637.6</ulink> is evolutionarily conserved in nematodes, which may indicate a possible function of the miRNA in degrading the pseudogene&apos;s transcript. There is currently no evidence, however, of a functional role for the pseudogene. The expression of the <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00014025;class=Gene" role="_blank">asna-1</ulink></emphasis> mRNA is not dependent on the expression of <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00003343;class=Gene" role="_blank">mir-249</ulink></emphasis>, so the pseudogene is not acting as a &ldquo;miRNA decoy&rdquo;, guarding its parental gene by acting as the regulated target.</para>
+<para>Even before large-scale sequencing of the C. elegans</emphasis> genome commenced, pseudogenes were identified in the major sperm protein (MSP) (<link linkend="bib58">Ward et al., 1988</link><!-- PMID: 3351915-->) and heat-shock protein gene families (<link linkend="bib19">Heschl and Baillie, 1989</link><!-- PMID: 2744444-->). Genefinder predictions associated with the genome sequencing project did not attempt to predict pseudogenes. The first genome-wide analysis of pseudogenes was done in 2001 (<link linkend="bib18">Harrison et al., 2001</link><!-- PMID: 11160906-->). Analyzing Wormpep release 18 and the corresponding version of the genomic sequence (which had only 332 annotated pseudogenes), the authors found 2,168 pseudogenes, or 11.7% of the annotated genes. Most of these were unprocessed pseudogenes, with only 208 designated as processed pseudogenes. They found that pseudogenes are unevenly distributed across the genome with a disproportionate number on chromosome IV; the density was also higher on chromosome arms than in the central regions. Looking at the distribution of pseudogenes among gene families they found that the number of pseudogenes is not correlated with the size of the gene family, but several families were associated with <ulink url="http://www.wormbase.org/db/get?name=WBPhenotype:0000319;class=Phenotype" role="_blank">large</ulink> numbers of pseudogenes. One of these families was the 7-TM receptor family, a finding supported by Robertson&apos;s characterization of chemoreceptor gene families (<link linkend="bib41">Robertson, 2002</link>; <link linkend="bib40">Robertson, 2000</link><!-- PMID: 10673277-->; <link linkend="bib39">Robertson, 1998</link><!-- PMID: 9582190-->). A higher estimate of the number of pseudogenes comes from an analysis of reporter gene fusions (<link linkend="bib31">Mounsey et al., 2002</link><!-- PMID: 11997343-->). Extrapolating from the number of 364 randomly selected reporter gene fusions that showed no expression, the authors estimate that 20% of the annotated <emphasis>C. elegans</emphasis> genes may be pseudogenes. Furthermore, they found that pseudogenes were enriched for genes that had been recently duplicated.</para>
+<para><ulink url="http://www.wormbase.org/#01-23-6">WormBase</ulink> release WS237 contains 1469 annotated pseudogenes (these are not counted as part of the set of 20,512 protein coding genes). This is lower than either of the above estimates, however coverage is closer to these estimates thanks partly to <ulink url="http://www.wormbase.org/#01-23-6">WormBase</ulink> staff being able to work with <ulink url="http://www.modencode.org/">modENCODE</ulink> data providers (<link linkend="bib16">Gerstein et al. 2010</link><!-- PMID: 21177976-->). Almost half of the curated loci are located on chromosome V (<link linkend="table1">Table 1</link>). This bias is partly a reflection of the curation of chemoreceptor genes, which are located primarily on chromosome V (<link linkend="bib41">Robertson, 2002</link>; <link linkend="bib40">Robertson, 2000</link><!-- PMID: 10673277-->; <link linkend="bib39">Robertson, 1998</link><!-- PMID: 9582190-->; see also <ulink url="http://www.wormbook.org/chapters/www_putativechemoreceptorfam/putativechemoreceptorfam.html">The putative chemoreceptor families of <emphasis>C. elegans</emphasis>)</ulink>. There have been numerous attempts at automating the identification of new and mis-classified pseudogenes in <emphasis>C. elegans</emphasis>, and the number of annotated pseudogenes in <ulink url="http://www.wormbase.org/#01-23-6">WormBase</ulink> is still likely to be an underestimate.</para>
+<table id="table1" frame="all" rules="all" cellpadding="0" cellspacing="0" width="75">
+<title>Table 1. Chromosomal distributions of protein-coding genes, ncRNAs, and pseudogenes. Gene data was taken from <ulink url="http://www.wormbase.org/#01-23-6">WormBase</ulink> release WS237. Chromosomal cluster boundaries were taken from <link linkend="bib3">Barnes et al. (1995)</link><!-- PMID: 8536965-->.</title>
+<tgroup cols="6">
+<colspec colnum="1" colname="col1"/>
+<colspec colnum="2" colname="col2"/>
+<colspec colnum="3" colname="col3"/>
+<colspec colnum="4" colname="col4"/>
+<colspec colnum="5" colname="col5"/>
+<colspec colnum="6" colname="col6"/>
+<thead>
+<row valign="bottom" rowsep="1">
+<entry align="left"><emphasis role="bold">Chromosome</emphasis></entry>
+<entry align="left"><emphasis role="bold">Size (Mb)</emphasis></entry>
+<entry align="left"><emphasis role="bold">Protein-coding genes</emphasis></entry>
+<entry align="left"><emphasis role="bold">ncRNA genes</emphasis></entry>
+<entry align="left"><emphasis role="bold">Pseudogenes</emphasis></entry>
+<entry align="left"><emphasis role="bold">Density (genes/Mb)</emphasis></entry>
+</row>
+</thead>
+<tbody>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis role="bold">I</emphasis></entry>
+<entry align="left"><emphasis role="bold">15.08</emphasis></entry>
+<entry align="left"><emphasis role="bold">2,920</emphasis></entry>
+<entry align="left"><emphasis role="bold">1,117</emphasis></entry>
+<entry align="left"><emphasis role="bold">143</emphasis></entry>
+<entry align="left"><emphasis role="bold">277</emphasis></entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">Left</entry>
+<entry align="left">4.00</entry>
+<entry align="left">600</entry>
+<entry align="left">201</entry>
+<entry align="left">9</entry>
+<entry align="left">202</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">Center</entry>
+<entry align="left">6.26</entry>
+<entry align="left">1,381</entry>
+<entry align="left">551</entry>
+<entry align="left">27</entry>
+<entry align="left">312</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">Right</entry>
+<entry align="left">4.82</entry>
+<entry align="left">939</entry>
+<entry align="left">365</entry>
+<entry align="left">107</entry>
+<entry align="left">292</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis role="bold">II</emphasis></entry>
+<entry align="left"><emphasis role="bold">15.28</emphasis></entry>
+<entry align="left"><emphasis role="bold">3,552</emphasis></entry>
+<entry align="left"><emphasis role="bold">1,403</emphasis></entry>
+<entry align="left"><emphasis role="bold">186</emphasis></entry>
+<entry align="left"><emphasis role="bold">336</emphasis></entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">Left</entry>
+<entry align="left">5.90</entry>
+<entry align="left">1,555</entry>
+<entry align="left">429</entry>
+<entry align="left">90</entry>
+<entry align="left">351</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">Center</entry>
+<entry align="left">5.44</entry>
+<entry align="left">1,277</entry>
+<entry align="left">669</entry>
+<entry align="left">42</entry>
+<entry align="left">365</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">Right</entry>
+<entry align="left">3.94</entry>
+<entry align="left">720</entry>
+<entry align="left">305</entry>
+<entry align="left">54</entry>
+<entry align="left">273</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis role="bold">III</emphasis></entry>
+<entry align="left"><emphasis role="bold">13.78</emphasis></entry>
+<entry align="left"><emphasis role="bold">2,699</emphasis></entry>
+<entry align="left"><emphasis role="bold">1,019</emphasis></entry>
+<entry align="left"><emphasis role="bold">106</emphasis></entry>
+<entry align="left"><emphasis role="bold">277</emphasis></entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">Left</entry>
+<entry align="left">4.80</entry>
+<entry align="left">843</entry>
+<entry align="left">325</entry>
+<entry align="left">59</entry>
+<entry align="left">255</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">Center</entry>
+<entry align="left">4.29</entry>
+<entry align="left">1,009</entry>
+<entry align="left">374</entry>
+<entry align="left">8</entry>
+<entry align="left">324</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">Right</entry>
+<entry align="left">4.68</entry>
+<entry align="left">847</entry>
+<entry align="left">320</entry>
+<entry align="left">39</entry>
+<entry align="left">257</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis role="bold">IV</emphasis></entry>
+<entry align="left"><emphasis role="bold">17.49</emphasis></entry>
+<entry align="left"><emphasis role="bold">3,348</emphasis></entry>
+<entry align="left"><emphasis role="bold">15,990</emphasis></entry>
+<entry align="left"><emphasis role="bold">276</emphasis></entry>
+<entry align="left"><emphasis role="bold">1,121</emphasis></entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">Left</entry>
+<entry align="left">6.74</entry>
+<entry align="left">1,231</entry>
+<entry align="left">3,212</entry>
+<entry align="left">64</entry>
+<entry align="left">668</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">Center</entry>
+<entry align="left">5.08</entry>
+<entry align="left">1,207</entry>
+<entry align="left">848</entry>
+<entry align="left">66</entry>
+<entry align="left">417</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">Right</entry>
+<entry align="left">5.67</entry>
+<entry align="left">910</entry>
+<entry align="left">11,930</entry>
+<entry align="left">146</entry>
+<entry align="left">2,290</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis role="bold">V</emphasis></entry>
+<entry align="left"><emphasis role="bold">20.92</emphasis></entry>
+<entry align="left"><emphasis role="bold">5,149</emphasis></entry>
+<entry align="left"><emphasis role="bold">1,971</emphasis></entry>
+<entry align="left"><emphasis role="bold">687</emphasis></entry>
+<entry align="left"><emphasis role="bold">373</emphasis></entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">Left</entry>
+<entry align="left">6.51</entry>
+<entry align="left">1,533</entry>
+<entry align="left">407</entry>
+<entry align="left">90</entry>
+<entry align="left">311</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">Center</entry>
+<entry align="left">6.99</entry>
+<entry align="left">1,798</entry>
+<entry align="left">1,059</entry>
+<entry align="left">106</entry>
+<entry align="left">423</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">Right</entry>
+<entry align="left">7.42</entry>
+<entry align="left">1,818</entry>
+<entry align="left">505</entry>
+<entry align="left">491</entry>
+<entry align="left">379</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left"><emphasis role="bold">X</emphasis></entry>
+<entry align="left"><emphasis role="bold">17.72</emphasis></entry>
+<entry align="left"><emphasis role="bold">2,844</emphasis></entry>
+<entry align="left"><emphasis role="bold">3,088</emphasis></entry>
+<entry align="left"><emphasis role="bold">86</emphasis></entry>
+<entry align="left"><emphasis role="bold">338</emphasis></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</sect1>
+<sect1 id="sec4">
+<title>Non-coding RNA genes</title>
+<sect2 id="sec4-1">
+<title>Prediction and curation</title>
+<para>Non-coding RNAs are classified into 11 identifiable types. 61% of non-coding loci (15,366) were identified through large scale deep sequencing and correspond to the piRNA type (<link linkend="bib47">Ruby et al. 2006</link><!-- PMID: 17174894-->). These are primarily clustered on chromosomes IV and V which accounts for the bias on <link linkend="table1">Table 1</link>. The remaining non-coding RNAs come from a variety of sources: expert databases, publications, and <ulink url="http://www.wormbase.org/#01-23-6">WormBase</ulink> curators.</para>
+</sect2>
+<sect2 id="sec4-2">
+<title>Gene number and sizes</title>
+<para>In WS237 there were 24,611 annotated ncRNA loci. Most (97%) of the <emphasis>C. elegans</emphasis> non-coding RNA genes are less than 300 bp long and they have a range from 17 bp (three members of a class of tiny non-coding RNA (tncRNA) genes: <ulink url="http://www.wormbase.org/db/get?name=WBGene00195032;class=Gene" role="_blank">Y37E3.24</ulink>, <ulink url="http://www.wormbase.org/db/get?name=WBGene00189979;class=Gene" role="_blank">W04A8.8</ulink>, and <ulink url="http://www.wormbase.org/db/get?name=WBGene00189980;class=Gene" role="_blank">F02C12.7</ulink>) to lincRNAs such as <ulink url="http://www.wormbase.org/db/get?name=WBGene00220260;class=Gene" role="_blank">Y105C5B.1420</ulink> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00219739;class=Gene" role="_blank">linc-136</ulink></emphasis> (T27C4.6) with genomic spans of 8,360 bp and 6,035 bp respectively (<link linkend="figure7">Figure 7</link>). There is an unusual number of ncRNA gene in the size range 100 to 150 bp. 3030 of the 3426 genes in this size range are from a <ulink url="http://www.modencode.org/">modENCODE</ulink> project which aimed to identify ncRNA genes using RNAseq (<link linkend="bib16">Gerstein et al. 2010</link><!-- PMID: 21177976-->). It is possible that this experiment particularly targeted ncRNA genes of the order of the size of a RNASeq short read, resulting in a bias towards the identification of genes of this size.</para>
+<mediaobject id="figure7" xreflabel="Figure 7">
+<imageobject>
+<imagedata entityref="fig7" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 7</phrase>
+</textobject> &fig7legend;</mediaobject>
+</sect2>
+<sect2 id="sec4-3">
+<title>Identified types of non-coding RNA</title>
+<para>In 2012 a study was conducted to investigate the existence of long intergenic non-coding RNA genes (lincRNA) outside of vertebrates (<link linkend="bib32">Nam, et al. 2012</link><!-- PMID: 22707570-->). This study took all available RNASeq, polyadenylation site, and ribosome-mapping data to identify lincRNA-like structures in <emphasis>C. elegans</emphasis>. Hundreds of candidate lincRNAs were proposed and then were scrutinised by <ulink url="http://www.wormbase.org/#01-23-6">WormBase</ulink>, resulting in 170 structures. Approximately 25% of the newly identified lincRNAs showed little sequence conservation and mapped antisense to clusters of 22G or 26G endogenous siRNAs, as would be expected if they serve as templates and targets for these siRNAs. The other 75% displayed greater conservation and included lincRNAs with expression and sequence features associating them with processes such as dauer formation, male identity, sperm formation, and interaction with sperm-specific mRNAs (<link linkend="bib32">Nam, et al. 2012</link><!-- PMID: 22707570-->).</para>
+<para>The antisense RNA genes (asRNA) form a relatively new class of non-coding RNA genes annotated in <ulink url="http://www.wormbase.org/#01-23-6">WormBase</ulink> and forms a sub class within the lincRNAs. This class currently only consists of the published gene set (<link linkend="bib32">Nam, et al. 2012</link><!-- PMID: 22707570-->) named <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00219738;class=Gene" role="_blank">anr-1</ulink></emphasis> (T26A5.11) to <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00219759;class=Gene" role="_blank">anr-58</ulink></emphasis> (Y50D4A.9) that were discovered by utilising available RNASeq, polyadenylation site, and ribosome-mapping data to identify lincRNAs, with those complementary to protein-coding transcripts being classified as asRNAs.</para>
+<para>Members of the microRNA (miRNA) class of 22-nucleotide RNAs regulate the expression of target genes containing sequences that have antisense complementarity to the mature miRNA transcript. miRNAs annotations in <ulink url="http://www.wormbase.org/#01-23-6">WormBase</ulink> are almost exclusively derived from <ulink url="http://www.mirbase.org/">miRBase</ulink> (<link linkend="bib23">Kozomara et al. 2011</link><!-- PMID: 21037258-->). A small number of annotations have been received via private submission but these have ultimately been incorporated into <ulink url="http://www.mirbase.org/">miRBase</ulink> and the additional evidence incorporated into the locus annotation. In WS237 there were 227 annotated miRNA gene loci with 444 annotated transcripts. These transcripts correspond to 230 miRNA primary transcripts and 214 mature transcripts. An example of a gene that produces 2 mature transcripts is <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00050921;class=Gene" role="_blank">mir-1019</ulink></emphasis> (M04C9.8a and M04C9.8b). This RNA appears to be the complete intronic sequence of the <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00001121;class=Gene" role="_blank">dyf-5</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/get?name=WBGene00010860;class=Gene" role="_blank">M04C9.5</ulink>) protein coding gene, which produces a hairpin structure that results in a miR-1019-5p and miR-1019-3p active product after cleavage (<link linkend="bib46">Ruby et al. 2007</link><!-- PMID: 17589500-->). An example of a gene that has multiple primary transcripts but only a single identifiable mature transcript is <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00002285;class=Gene" role="_blank">let-7</ulink></emphasis>, which has at least 3 primary transcripts, C05G5.6.1, C05G5.6.2, and C05G5.6.3, with C05G5.6.3 undergoing trans-splicing to SL1 as well as polyadenylation (<link linkend="bib7">Bracht et al 2004</link><!-- PMID: 15337850-->).</para>
+<para>Members of the &lsquo;non-coding RNA&rsquo; (ncRNA) class in <ulink url="http://www.wormbase.org/#01-23-6">WormBase</ulink> are RNA genes whose properties or functions have not yet been identified. These are created when a region of transcription overlaps with a region of the genome where no discernible coding intron/exon structure can be annotated, or which derive from publications where the author has not described the function.</para>
+<para>Piwi-interacting RNA genes (piRNA) are the most abundant class of small non-coding RNA in the <emphasis>C. elegans</emphasis> genome and range in size from 26 to 31 nucleotides. These have been associated with both epigenetic and post-transcriptional gene silencing of retrotransposons and other genetic elements. In WS237 there were 15,366 piRNA genes which corresponds to 61% of the non-coding gene loci. This data was incorporated from a single publication (<link linkend="bib4">Batista et al. 2008</link><!-- PMID: 18571452-->).</para>
+<para>The genes for the 18S (<emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00004512;class=Gene" role="_blank">rrn-1.1</ulink></emphasis> (F31C3.7)), 5.8S (<emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00004567;class=Gene" role="_blank">rrn-2.1</ulink></emphasis> (F31C3.11)), and 26S (<emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00004622;class=Gene" role="_blank">rrn-3.1</ulink></emphasis> (F31C3.9) to <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00004677;class=Gene" role="_blank">rrn-3.56</ulink></emphasis> (F31C3.10)) ribosomal RNAs (rRNA), first sequenced and characterized by <link linkend="bib12">Ellis et al. (1986)</link><!-- PMID: 3960722-->, are found in a large tandem-repeat of ~55 copies on the right-end of chromosome I. Each repeat contains one copy each of the 18S, 5.8S, and 26S genes. For the purposes of the reference genome assembly, only 1 full copy of the tandem repeat was assembled and finished. The 5S ribosomal RNA genes are found in a tandem-repeat of an estimated 110 copies on chromosome V (<link linkend="bib53">Sulston and Brenner, 1974</link><!-- PMID: 4858229-->; <link linkend="bib33">Nelson and Honda, 1985</link><!-- PMID: 4065574-->). Each copy of the 5S gene (Y102A5D.10) is interspersed with copies of one of the SL1 splice-leader genes, <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00077481;class=Gene" role="_blank">sls-1.4</ulink></emphasis> (Y102A5D.16). The current reference assembly was produced by sequencing and finishing the clones that border the cluster to the point where reads could no longer be anchored in the correct position and an overlap was found. This resulted in a compression of the repeat cluster containing approximately 15 copies of this tandem repeat. As the reference genome only contains representative tandem repeats for each cluster, the reference gene set only contains a fraction of the full set of rRNA genes (<link linkend="table2">Table 2</link>).</para>
+<table id="table2" frame="all" rules="all" cellpadding="0" cellspacing="0" width="75">
+<title>Table 2. Numbers of types of non-coding RNA genes in <ulink url="http://www.wormbase.org/#01-23-6">WormBase</ulink> release WS237.</title>
+<tgroup cols="2">
+<colspec colnum="1" colname="col1"/>
+<colspec colnum="2" colname="col2"/>
+<thead>
+<row valign="bottom" rowsep="1">
+<entry align="left"><emphasis role="bold">Type</emphasis></entry>
+<entry align="left"><emphasis role="bold">Number</emphasis></entry>
+</row>
+</thead>
+<tbody>
+<row valign="top" rowsep="1">
+<entry align="left">tslRNA</entry>
+<entry align="left">128</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">tRNA</entry>
+<entry align="left">634</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">asRNA</entry>
+<entry align="left">26</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">miRNA</entry>
+<entry align="left">227</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">ncRNA (uncategorised)</entry>
+<entry align="left">7,821</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">piRNA</entry>
+<entry align="left">15,366</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">rRNA</entry>
+<entry align="left">22</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">scRNA</entry>
+<entry align="left">1</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">snoRNA</entry>
+<entry align="left">341</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">snRNA</entry>
+<entry align="left">117</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left">lincRNA</entry>
+<entry align="left">67</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<para>There is one small cytoplasmic RNA gene (scRNA) in <emphasis>C. elegans</emphasis>. In virtually all vertebrate cells, Ro ribonucleoproteins (RNPs) consist of the 60-kDa Ro autoantigen bound to one of several small cytoplasmic RNA molecules known as Y RNAs. <emphasis>Caenorhabditis elegans</emphasis> embryos contain only one major species of Ro RNP complex. The gene <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00006967;class=Gene" role="_blank">yrn-1</ulink></emphasis> (F55G1.16) encodes a noncoding RNA gene with structural similarity to the vertebrate Y RNAs. <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00006967;class=Gene" role="_blank">yrn-1</ulink></emphasis> is bound by the <emphasis>C. elegans</emphasis> Ro protein, <ulink url="http://www.wormbase.org/db/get?name=WP:CE15613;class=Protein" role="_blank">ROP-1</ulink>. The nematode RNP complex is formed by the assembly of <ulink url="http://www.wormbase.org/db/get?name=WP:CE15613;class=Protein" role="_blank">ROP-1</ulink> and <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00006967;class=Gene" role="_blank">yrn-1</ulink></emphasis>. RNA interference of <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00006967;class=Gene" role="_blank">yrn-1</ulink></emphasis> does not produce any detectable phenotype (<link linkend="bib56">Van Horn 1995</link><!-- PMID: 7489501-->).</para>
+<para>Small nucleolar RNA genes (snoRNA) are a sub-class of snRNAs. They are small RNA molecules that play a role in RNA biogenesis and guide chemical modifications of ribosomal RNAs (rRNAs) and other tRNA genes. There are 341 identified snoRNA genes in <emphasis>C. elegans</emphasis>.</para>
+<para>Small nuclear ribonucleic acid RNA genes (snRNA), also commonly referred to as U-RNA, are found within the nucleus. snRNA are always associated with a set of specific proteins, in complexes called small nuclear ribonucleoproteins (snRNP). There are 117 identified snRNA genes in <emphasis>C. elegans</emphasis>.</para>
+<para>There are 612 nuclear and 22 mitochondrial transfer RNA (tRNA) genes in <emphasis>C. elegans</emphasis>. Seven nuclear genes have been identified as suppressor tRNAs: <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00006314;class=Gene" role="_blank">sup-5</ulink></emphasis> (B0523.t1), <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00006316;class=Gene" role="_blank">sup-7</ulink></emphasis> (C03B1.t1), <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00006327;class=Gene" role="_blank">sup-21</ulink></emphasis> (C06E2.t1), <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00006330;class=Gene" role="_blank">sup-24</ulink></emphasis> (Y73F8A.t2), <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00006334;class=Gene" role="_blank">sup-29</ulink></emphasis> (Y37E11AL.t1), <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00006333;class=Gene" role="_blank">sup-28</ulink></emphasis> (C48C5.t6), and <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00006338;class=Gene" role="_blank">sup-33</ulink></emphasis> (D1073.t1). Two are likely to be pseudogenes: <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00004716;class=Gene" role="_blank">rtw-5</ulink></emphasis> (K06G5.t1), and <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00004717;class=Gene" role="_blank">rtw-6</ulink></emphasis> (Y40C5A.t1). The remainder were predicted computationally (<link linkend="bib28">Lowe and Eddy, 1997</link><!-- PMID: 9023104-->). The tRNA genes range in size from 64 to 122 bp with 72% having 72 or 73 bp. 29 of the 608 are genes with two exons and the remainder have a single exon. <ulink url="http://lowelab.ucsc.edu/tRNAscan-SE/">tRNAscan</ulink> also predicts that there are 213 tRNA pseudogenes. Nuclear tRNA genes are over-represented on the X chromosome with 45% residing there. The other 55% are distributed uniformly over the autosomes; however, there is a slight enrichment on chromosome III and a lower density in the central region of chromosome IV and on the left arm of chromosome I.</para>
+<para>Approximately 70% of <emphasis>C. elegans</emphasis> mRNAs are covalently modified at their 5&rsquo; end by the addition of 22-nt trans-spliced leader RNA sequences. <emphasis>C. elegans</emphasis> contains 128 trans-spliced leader (TSL) RNA genes which encode 2 sub-types of TSL. The most abundant form, SL1, is mainly trans-spliced to the 5&rsquo; end of pre-mRNAs, including the first cistron in polycistronic (operon) pre-mRNAs; the rarer form, SL2, is generally trans-spliced to downstream cistrons in polycistronic operons. The <emphasis>C. elegans</emphasis> genome contains 110 SL1 RNA genes on the 1 kb tandem repeat that also contains the genes for 5S rRNA (<link linkend="bib24">Krause and Hirsh, 1987</link><!-- PMID: 3581169-->). In contrast, the genome contains only 18 dispersed SL2 RNA genes, which specify a variety of variant SL2 RNAs (<link linkend="bib52">Stein et al., 2003</link><!-- PMID: 14624247-->). Some of these have different SL2 sequences, and in the past these have been given different names, such as <ulink url="http://www.wormbase.org/db/get?name=SL3;class=Strain" role="_blank">SL3</ulink>, <ulink url="http://www.wormbase.org/db/get?name=WBGene00004840;class=Gene" role="_blank">SL4</ulink>, etc. (<link linkend="bib45">Ross et al., 1995</link><!-- PMID: 7665629-->). Nonetheless, they are all variants of SL2 and now are given the names SL2a, SL2b, etc. They are used randomly at SL2-accepting trans-splice sites (<ulink url="http://www.wormbase.org/resources/person/WBPerson71#0123--10">T. Blumenthal</ulink>, unpublished). The C. briggsae</emphasis> genome also contains 18 SL2 RNA genes, and all 36 genes from the two species descended from four primordial SL2 RNA genes present in their last common ancestor (<link linkend="bib52">Stein et al., 2003</link><!-- PMID: 14624247-->). Trans-splicing is covered in more detail in <ulink url="http://www.wormbook.org/chapters/www_transsplicingoperons.2/transsplicingoperons.html">Trans-splicing and operons in <emphasis>C. elegans</emphasis></ulink>.</para>
+</sect2>
+</sect1>
+<sect1 id="sec5">
+<title>Genomic organization</title>
+<para><emphasis>C. elegans</emphasis> chromosomes have several distinctive features. Instead of having centromeres embedded in highly repeated sequences, its chromosomes are holocentric, with microtubule attachment sites distributed along their length. In hermaphrodites (XX), gene expression from both X chromosomes is down-regulated in somatic cells by a dosage compensation mechanism in order to approximately match the expression in males, which have one X chromosome (XO) (See <ulink url="http://www.wormbook.org/chapters/www_dosagecomp/dosagecomp.html">X-Chromosome Dosage Compensation</ulink>). <emphasis>C. elegans</emphasis> autosomes have distinct domains&mdash;a central region flanked by two distal &ldquo;arms&rdquo; that together comprise more than half of the chromosome (<link linkend="table1">Table 1</link>). Compared with the centers, the arms have higher meiotic recombination rates, lower gene density, and higher repeat content (<link linkend="bib43">Rockman et al., 2009</link><!-- PMID: 19283065-->; <link linkend="bib9">The <emphasis>C. elegans</emphasis> Sequencing Consortium 1998</link><!-- PMID: 9851916-->; <link linkend="bib3">Barnes et al., 1995</link><!-- PMID: 8536965-->). Arms are not as sharply defined on the X chromosome.</para>
+<para>Protein-coding genes are found equally on either strand of DNA and are fairly uniformly distributed throughout the genome. They are slightly denser on autosomes than on chromosome X (<link linkend="table1">Table 1</link>) and, in general, the central regions of the autosomes are denser than the arms. The left arm of chromosome II is an exception.</para>
+<para>Genes in general do not overlap one another, that is to say, their coding exons do not overlap, but there are numerous examples of genes that fall within introns of another gene, either on the same or the opposite strand. <ulink url="http://www.wormbase.org/db/get?name=F10F2.2;class=Gene" role="_blank"><ulink url="http://www.wormbase.org/db/get?name=WBGene00008654;class=Gene" role="_blank">F10F2.2</ulink></ulink> contains 5 coding genes on the opposite strand in 2 large introns, in addition to two ncRNA genes in the same sense. There are examples of pairs of transcripts having non-overlapping coding exons but sharing the same locus, for example, <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00006756;class=Gene" role="_blank">unc-17</ulink></emphasis> (ZC416.8) and <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00000481;class=Gene" role="_blank">cha-1</ulink></emphasis> (ZC416.8). These two genes share a common promoter and a first, non-coding exon. The rest of the coding exons do not overlap, so the two genes encode different proteins with mutationally separable functions: <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00006756;class=Gene" role="_blank">unc-17</ulink></emphasis> encodes a synaptic vesicle acetylcholine transporter, while <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00000481;class=Gene" role="_blank">cha-1</ulink></emphasis> encodes a choline acetyltransferase (<link linkend="bib37">Rand et al. 2000</link><!-- PMID: 11099459-->; <link linkend="bib1">Alfonso et al., 1994</link><!-- PMID: 8057385-->). Other examples of non-overlapping transcripts sharing one locus include <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00002977;class=Gene" role="_blank">lev-10</ulink></emphasis> (Y105E8A.7) and <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00001147;class=Gene" role="_blank">eat-18</ulink></emphasis> (Y105E8A.7), <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00006946;class=Gene" role="_blank">wars-2</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/get?name=C34E10.4b;class=Gene" role="_blank">C34E10.4b</ulink>) and <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00006946;class=Gene" role="_blank">prx-10</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/get?name=C34E10.4a;class=Gene" role="_blank">C34E10.4a</ulink>), and <ulink url="http://www.wormbase.org/db/get?name=Y65B4BL.1a;class=Gene" role="_blank">Y65B4BL.1a</ulink> and Y65B4BL.1b.</para>
+<para>Most genes are transcribed from a single sense strand of the locus. An exception is the pair of loci, <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00016561;class=Gene" role="_blank">eri-6</ulink></emphasis> (C41D11.1) and <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00016566;class=Gene" role="_blank">eri-7</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/get?name=C41D11.7;class=Gene" role="_blank">C41D11.7</ulink>), that are in adjacent locations but opposite strands. They produce separate pre-messenger RNAs (pre-mRNAs) which are <emphasis>trans</emphasis>-spliced to form a functional mRNA, <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00016561;class=Gene" role="_blank">eri-6</ulink>/7</emphasis>. <emphasis>Trans</emphasis>-splicing of <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00016561;class=Gene" role="_blank">eri-6</ulink>/7</emphasis> is mediated by a direct repeat that flanks the <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00016561;class=Gene" role="_blank">eri-6</ulink></emphasis> gene (<link linkend="bib14">Fischer et al. 2008</link><!-- PMID: 18784652-->). Another unusual locus is <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00006784;class=Gene" role="_blank">unc-49</ulink></emphasis> (T21C12.1), which contains a single copy of a GABA receptor N terminus, followed by three tandem copies of a GABA receptor C terminus. Using a single promoter, <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00006784;class=Gene" role="_blank">unc-49</ulink></emphasis> generates three distinct GABA-A receptor-like subunits by splicing the N terminus to each of the three C-terminal repeats (<link linkend="bib2">Bamber et al. 1999</link><!-- PMID: 10377345-->).</para>
+<para>Examples of RNA editing in <emphasis>C. elegans</emphasis> are rare. <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00000079;class=Gene" role="_blank">adr-1</ulink></emphasis> (H15N14.1) and <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00000080;class=Gene" role="_blank">adr-2</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/get?name=T20H4.4;class=Gene" role="_blank">T20H4.4</ulink>) have been shown to mediate editing of the RNA products of <ulink url="http://www.wormbase.org/db/get?name=ZC239.6;class=Gene" role="_blank"><ulink url="http://www.wormbase.org/db/get?name=WBGene00022569;class=Gene" role="_blank">ZC239.6</ulink></ulink>, <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00000202;class=Gene" role="_blank">exos-4.2</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/get?name=Y6D11A.1;class=Gene" role="_blank">Y6D11A.1</ulink>), <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00006798;class=Gene" role="_blank">unc-64</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/get?name=F56A8.7a;class=Gene" role="_blank">F56A8.7a</ulink>), <ulink url="http://www.wormbase.org/db/get?name=WBGene00020985;class=Gene" role="_blank">W03D8.2</ulink>, and <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00016913;class=Gene" role="_blank">lam-2</ulink></emphasis> (<ulink url="http://www.wormbase.org/db/get?name=C54D1.5;class=Gene" role="_blank">C54D1.5</ulink>) in nervous, and possibly vulval, tissue (<link linkend="bib54">Tonkin et al. 2002</link><!-- PMID: 12426375-->). There is also C-to-U RNA editing in <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00001596;class=Gene" role="_blank">gld-2</ulink></emphasis> (ZC308.1) transcripts in germline cells, although somatic cell <emphasis><ulink url="http://www.wormbase.org/db/get?name=WBGene00001596;class=Gene" role="_blank">gld-2</ulink></emphasis> transcripts show no detectable editing. (<link linkend="bib57">Wang et al. 2004</link><!-- PMID: 15317977-->).</para>
+<para>A characteristic feature of the worm genome is the existence of genes organized into operons. These polycistronic gene clusters contain two or more closely spaced genes, which are oriented in a head to tail direction. They are transcribed as a single polycistronic mRNA and separated into individual mRNAs by the process of trans-splicing (<link linkend="bib51">Spieth et al., 1993</link><!-- PMID: 8098272-->). These topics are covered in detail in <ulink url="http://www.wormbook.org/chapters/www_transsplicingoperons.2/transsplicingoperons.html">Trans-splicing and operons in <emphasis>C. elegans</emphasis></ulink>.</para>
+</sect1>
+<sect1 id="sec6">
+<title>Conclusion</title>
+<para>This chapter has described some of the ways in which gene structures in <ulink url="http://www.wormbase.org/#01-23-6">WormBase</ulink> are curated. Inevitably there will be new technologies which will be developed in the future that have greater or lesser effects on the way the structure of genes can be defined and understood. <ulink url="http://www.wormbase.org/#01-23-6">WormBase</ulink> curators will continue to endeavor to use all available data to refine and correct the structures of genes, and to review our curation policies such as when to add a rarely-observed alternate splicing event to the set of isoforms at a locus, how much effort to put into manually curating ncRNA genes and how much attention should be given to curating transcripts that are antisense to a coding gene. Many questions that have some bearing on the structure of genes also remain to be addressed, such as how alternately spliced transcripts at a locus are regulated and the precise definition of promoters, enhancers and other regulatory regions.</para>
+</sect1>
+<sect1 id="sec7">
+<title>Acknowledgments</title>
+<para>This work was supported by grants from the National Human Genome Research Institute (#U41 HG002042, principal investigator, R.K.W.; and P41-HG002223, principal investigator, P.W.S.) and the British Medical Research Council.</para>
+</sect1>
+<sect1 id="sec8">
+<title>References</title>
+<para/>
+&genestructure_ref;
+</sect1>
+</article>
