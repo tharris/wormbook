@@ -28,16 +28,32 @@ CustomLog    /usr/local/wormbook/logs/httpd/www.wormbook.org/access.log combined
    allow from all
 </Location>
 
+# http://www.wormbook.org/chapters/xml/www_overviewgenestructure.2/genestructure.xml
+
 Alias /db/                                  /usr/local/wormbook/domains/www.wormbook.org/cgi-perl/
 
 <Directory "/usr/local/wormbook/domains/www.wormbook.org/html">
 
 #   <FilesMatch "!cms">
 #        Options Indexes FollowSymLinks +Includes
+#       Options +Indexes 
        AllowOverride  FileInfo Indexes Limit Options
        SetHandler     perl-script
        PerlHandler    Apache::AddBoilerplate
        DirectoryIndex   index.html index.php
+       Order allow,deny
+       allow from all
+#  </FilesMatch>
+</Directory>
+
+<Directory "/usr/local/wormbook/domains/www.wormbook.org/html/chapters/*/xml">
+#   <FilesMatch "!cms">
+#        Options Indexes FollowSymLinks +Includes
+       Options +Indexes 
+       AllowOverride  FileInfo Indexes Limit Options
+#       SetHandler     perl-script
+#       PerlHandler    Apache::AddBoilerplate
+#       DirectoryIndex   index.html index.php
        Order allow,deny
        allow from all
 #  </FilesMatch>
