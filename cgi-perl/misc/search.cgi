@@ -10,10 +10,10 @@
 
 use strict;
 # Brittle: will break with new versions of Perl
-use lib qw( /home/tharris70/perl5/lib/perl/5.10 /home/tharris70/perl5/lib/perl/5.10.0 
-            /home/tharris70/perl5/share/perl/5.10 /home/tharris70/perl5/share/perl/5.10.0
-            /home/tharris70/perl5/local/share/perl/5.10.0 
-            /home/tharris70/perl5/local/lib/perl/5.10.0 );
+#use lib qw( /home/tharris70/perl5/lib/perl/5.10 /home/tharris70/perl5/lib/perl/5.10.0 
+#            /home/tharris70/perl5/share/perl/5.10 /home/tharris70/perl5/share/perl/5.10.0
+#            /home/tharris70/perl5/local/share/perl/5.10.0 
+#            /home/tharris70/perl5/local/lib/perl/5.10.0 );
 use Search::Indexer;
 use Storable qw(store retrieve);
 use CGI;
@@ -22,11 +22,11 @@ use CGI::Carp qw(fatalsToBrowser);
 
 $|=1; #turn off output buffering
 
-my $indexDir="/home/tharris70/domains/www.wormbook.org/search_index";                    # directory in which index files are (ixw.bdb, ixp.bdb, ixd.bdb)
-my $nameFile="/home/tharris70/domains/www.wormbook.org/search_index/lookup.name";        # full name of lookup.name file
-my $contentFile="/home/tharris70/domains/www.wormbook.org/search_index/lookup.content";  # full name of lookup.content file
-my $sectionFile="/home/tharris70/domains/www.wormbook.org/search_index/lookup.sections"; # full name of lookup.sections file
-my $htmlDir="/home/tharris70/domains/www.wormbook.org/html/chapters/";                   # path to the root directory of the web page
+my $indexDir="/usr/local/wormbook/domains/www.wormbook.org/search_index";                    # directory in which index files are (ixw.bdb, ixp.bdb, ixd.bdb)
+my $nameFile="/usr/local/wormbook/domains/www.wormbook.org/search_index/lookup.name";        # full name of lookup.name file
+my $contentFile="/usr/local/wormbook/domains/www.wormbook.org/search_index/lookup.content";  # full name of lookup.content file
+my $sectionFile="/usr/local/wormbook/domains/www.wormbook.org/search_index/lookup.sections"; # full name of lookup.sections file
+my $htmlDir="/usr/local/wormbook/domains/www.wormbook.org/html/chapters/";                   # path to the root directory of the web page
 my $htmlRoot="http://www.wormbook.org/chapters/";                   # URL that prefixes all pages (e.g. http://www.wormbook.org)
 my $ctxtNumChars=60;                                                # number of characters to print around the match string
 my $maxExcerpts=4;                                                  # max number of matched lines to print per matched document
@@ -59,7 +59,7 @@ print $q->header();
 
 unless ($embedded) {
     print $q->start_html(-title=>'WormBook Search',-style=>{src=>'/css/bookworm.css'});
-    print qq(<div id="container">);
+    print qq(<div id="content">);
     banner();
 }
 
@@ -167,7 +167,7 @@ sub banner {
 
 </head>
 <body>       
-<div id="container"> 
+<div id="content"> 
 
 
 <div id="fotocredit"><a href="/"><img alt="WormBook Header Image" src="/images/header_760x96.png" border="0" /> <span>Embryo series courtesy of Einhard Schierenberg</span></a></div>    <link rel="stylesheet" type="text/css" href="/css/wb_menu.css">

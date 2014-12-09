@@ -1,0 +1,81 @@
+# ------------------------------------------------------------
+#            WORMBOOK HTTPD CONFIGURATION FILE
+# ------------------------------------------------------------
+# $Id: httpd.conf,v 1.5 2009/10/07 17:19:04 todd Exp $
+#
+
+ServerName www.wormbook.org
+ServerAdmin toddwharris@gmail.com
+
+PerlPostConfigRequire /usr/local/wormbook/domains/www.wormbook.org/conf/perl.startup
+DocumentRoot /usr/local/wormbook/domains/www.wormbook.org/html
+
+LogFormat "%h %l %u %t \"%r\" %s %b" common
+LogFormat "%h %l %u %t %{Referer}i \"%{User-Agent}i\" \"%r\" %s %b" combined_format
+LogFormat "witheld %l %u %t \"%r\" %s %b" anonymous
+
+ErrorLog     /usr/local/wormbook/logs/httpd/www.wormbook.org/error.log
+CustomLog    /usr/local/wormbook/logs/httpd/www.wormbook.org/access.log combined_format
+
+
+<Location /db/>
+   SetHandler  	  perl-script
+#   PerlHandler    Apache::Registry
+   PerlResponseHandler ModPerl::Registry
+   PerlSendHeader Off
+   Options	  +ExecCGI
+   Order allow,deny
+   allow from all
+</Location>
+
+# http://www.wormbook.org/chapters/xml/www_overviewgenestructure.2/genestructure.xml
+
+Alias /db/                                  /usr/local/wormbook/domains/www.wormbook.org/cgi-perl/
+
+<Directory "/usr/local/wormbook/domains/www.wormbook.org/html">
+
+#   <FilesMatch "!cms">
+#        Options Indexes FollowSymLinks +Includes
+#       Options +Indexes 
+       AllowOverride  FileInfo Indexes Limit Options
+       SetHandler     perl-script
+       PerlHandler    Apache::AddBoilerplate
+       DirectoryIndex   index.html index.php
+       Order allow,deny
+       allow from all
+#  </FilesMatch>
+</Directory>
+
+<Directory "/usr/local/wormbook/domains/www.wormbook.org/html/chapters/*/xml">
+#   <FilesMatch "!cms">
+#        Options Indexes FollowSymLinks +Includes
+       Options +Indexes 
+       AllowOverride  FileInfo Indexes Limit Options
+#       SetHandler     perl-script
+#       PerlHandler    Apache::AddBoilerplate
+#       DirectoryIndex   index.html index.php
+       Order allow,deny
+       allow from all
+#  </FilesMatch>
+</Directory>
+
+
+# MUST occur in this order.
+Alias /wbg/uploads/    /usr/local/wormbook/domains/www.wormbook.org/html/wbg/uploads/
+Alias /wbg/i           /usr/local/wormbook/domains/www.wormbook.org/html/wbg/i
+Alias /wbg/pdf         /usr/local/wormbook/domains/www.wormbook.org/html/wbg/pdf
+Alias /wbg/volumes     /usr/local/wormbook/domains/www.wormbook.org/html/wbg/volumes
+Alias /wbg/            /usr/local/wormbook/domains/www.wormbook.org/wordpress/
+
+<Directory "/usr/local/wormbook/domains/www.wormbook.org/wordpress">
+   AllowOverride  FileInfo Indexes Limit Options
+   DirectoryIndex   index.php
+   AddType application/x-httpd-php .php
+   Order allow,deny
+#   Order Deny,Allow
+   Allow from all
+</Directory>
+
+
+
+ErrorDocument 404 /db/misc/error_doc
