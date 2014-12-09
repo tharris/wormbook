@@ -25,13 +25,19 @@ define('DB_USER', 'wormbook');
 define('DB_PASSWORD', '3l3g@nz');
 
 /** MySQL hostname */
-define('DB_HOST', 'mysql.wormbook.org');
+define('DB_HOST', 'localhost');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
 
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
+
+
+
+define('WP_HOME','http://54.165.141.74/wbg');
+define('WP_SITEURL','http://54.165.141.74/wbg');
+
 
 /**#@+
  * Authentication Unique Keys.

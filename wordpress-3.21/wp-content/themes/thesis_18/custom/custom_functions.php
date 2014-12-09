@@ -222,8 +222,8 @@ function front_page($slug) {
 	   <h3>Next Worm Breeder\'s Gazette</h3>
            <p class="noindent">
 
-
-	   The next issue of the Worm Breeder\'s Gazette (Volume 19, #4) will be released in August 2013.  The <b>submission deadline</b> is <b>01 August, 2013</b>.</p>
+	   The release date for the next version of the Worm Breeder\'s Gazette is pending. Stay tuned for details!
+<!--	   The next issue of the Worm Breeder\'s Gazette (Volume 20, #2) will be released in September 2014.  The <b>submission deadline</b> is <b>01 February, 2014</b>.</p>-->
 
 
           <h3>Stay up-to-date!</h3>
