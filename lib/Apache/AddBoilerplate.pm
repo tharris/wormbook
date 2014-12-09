@@ -20,8 +20,8 @@ sub handler {
     # do we want to redirect, and finally to avoid redirect loops
     # we only do this on the initial request.
     # You must load Apache2::SubRequest in order to run internal_redirect
-    if ($r->content_type eq 'httpd/unix-directory' 
-        && $r->uri =~ '/$'
+   if ($r->content_type eq 'httpd/unix-directory' 
+       && $r->uri =~ '/$'
 	&& $r->is_initial_req
 	&& ($r->unparsed_uri eq $r->uri)
 	) {
@@ -62,6 +62,7 @@ sub handler {
 	     || $r->filename =~ /not_found\.html/
 	     || $r->filename =~ /newsarchive\.html/
 	     || $r->filename =~ /photocredits\.html/
+	     || $r->filename =~ /xml/
 	     || $r->filename =~ /toc_/           # keeps css correct for subsection table of contents
 	     ) {
 	
@@ -82,9 +83,10 @@ sub handler {
     
     # No header for stats pages
     my $stats;
-    if ($r->filename =~ /access_statistics/) {
+#    if ($r->filename =~ /access_statistics/) {
+    if ($r->filename =~ /xml/) {
 	$boiler = 'off';
-	$stats++;
+#	$stats++;
     }
     
     
@@ -106,7 +108,7 @@ sub handler {
 		$_ =~ s/$1>/$1 onload='highlightIgorSearchTerms(document.referrer);'>/;
 	    }
 	    else {
-		$_ =~ s/$1>/$1 onload='highlightIgorSearchTerms(document.referrer);'><div id="container">/;
+		$_ =~ s/$1>/$1 onload='highlightIgorSearchTerms(document.referrer);'><div id="content">/;
 	    }
 	}
 	
