@@ -1,0 +1,490 @@
+/*
+File:			custom.css
+Description:	Custom styles for Thesis
+
+BASIC USAGE:
+
+If you have enabled the custom stylesheet in the Thesis options panel, the <body> tag 
+will be appended with the "custom" class, like so: <body class="custom">. You can use 
+the "custom" class to override *any* CSS declarations contained in the style.css file.
+
+For example, if you wish to change the default link color to green, you would add the 
+following declarations to this file:
+
+	.custom a, .custom a:visited { color: #090; }	<--- This makes links green
+	.custom a:hover { color: #00f; }				<--- This makes links blue when you mouse over them
+
+WHY THIS WORKS:
+
+By using the "custom" class, you are creating more specific CSS declarations for HTML
+elements. CSS styling is applied through rules of specificity, and because declarations
+prepended with .custom are more specific, they get applied when the page is rendered!
+
+More information about styling your Thesis installation using this file can be found
+in the User's Guide:
+	http://diythemes.com/thesis/rtfm/customizing-thesis-with-customcss/
+*/
+
+
+// body.custom { background: #44443f url('images/bg-ocean.jpg') 50% 0 no-repeat; }
+
+body.custom { 
+       /* background: #44443f; */
+	border:0px;
+
+}
+
+
+
+.custom #container { margin-top: 2em; 
+		     margin-bottom: 2em;
+		     padding: 0.3em;
+/*	             background: #33332f;
+      border: 0.4em solid #3e3e3a; 
+*/
+	}
+
+.custom { border:0 solid #FFFFFF; }
+
+.custom #page { background: #fff; }
+
+
+
+/*
+
+.custom #header, .custom .post, .custom .teasers_box, .custom #footer, .custom #footer a, .custom #footer a:active, .custom #archive_info, .custom .prev_next, .custom #comment_list, .custom #comment_list dd, .custom #commentform, .custom #sidebar_1, .custom #sidebar_2, .custom #comment_list dt.comment, .custom #comment_list dd.comment, .custom #comment_list dl .bypostauthor .format_text, .custom #trackback_list {
+        border-bottom: 0px;
+        border-top: 0px;
+        border-right: 0px;
+        border-left: 0px;
+}
+.custom #content_box, .custom #column_wrap {
+        background: none;
+}
+
+*/
+
+.custom #content_box {background:none;}
+
+/* Remove borders from select entities */
+.custom #sidebar_1, .custom #sidebar_2, .custom #content, .custom #column_wrap,  {
+	border:0;
+
+}
+
+
+div.flickr-caption {
+	padding-bottom:5px;
+}
+
+
+/* ******************** */
+/* Previous Next        */
+/* ******************** */
+.custom .prev_next {
+	margin-top:2.0em;	
+	border-width:0.2em 0 0.2em 0;
+
+/*	border-bottom:1px solid #DDDDDD; */
+}
+
+.custom .prev_next .label {
+     font-size:1.1em;
+     padding:0 1.1em 0 1.1em; 
+}
+
+.custom .prev_next a {
+	font-size:1.2em;
+}
+
+/* Submit a comment / number of comments */
+.custom .prev_next .navigation-meta {
+	float:right;
+}
+
+
+/* The footer */
+.custom #footer p {
+   font-size:1.0em;
+}
+
+
+
+/* This is the outer frame */
+.custom img.frame {
+    border:1px solid #ddd;
+}
+
+
+.custom div#header {
+	height:75px;
+	border:0px;
+	vertical-align:bottom;
+	margin-left:auto;
+	margin-right:auto;
+     padding-bottom:1.7em;
+}
+
+.custom .menu {
+     border-bottom-width:2px;
+}
+
+div#header-left {
+}
+
+
+
+.custom #custom_box img {
+	-moz-background-clip:border;
+	-moz-background-inline-policy:continuous;
+	-moz-background-origin:padding;
+	background:#FFFFFF none repeat scroll 0 0;
+	border-color:#BBBBBB;
+	border-style:solid;
+	display:block;
+	border-width:0.1em;
+	padding:0.1em;
+}
+
+
+#custom_box img.three_by_two {
+	height:19.7em;
+	width:29.6em;
+}
+
+
+.custom #feature_box {
+	padding:30px;
+	margin:0 0em;
+	font-size:1.8em;
+
+}
+
+
+/* ****************************************** */
+/* Table of contents listing                 */
+/* ****************************************** */
+.custom #toc {
+	width:80%;
+
+}
+
+
+/* A single submission for the TOC */
+#toc .entry {
+	padding:5px 0px 1.0em 25px;
+        /* We use clear:right here to keep entries from flowing around our image/pseudo sidebar */
+/*	clear:right; */
+	overflow:hidden;
+}
+
+#toc .entry .title {
+	font-size:1.0em;
+}
+
+#toc .entry .authors {
+/*	margin-left:15px;  */
+ 	font-size:0.9em;
+	white-space:no-wrap;
+}
+
+#toc .entry .date {
+	margin-left:25px;
+	font-style:italic;
+}
+
+#toc .entry .tags {
+	margin-left:25px;
+	font-style:italic;
+}
+
+
+#toc .entry {
+	whitespace:no-wrap;
+}
+
+/* Fix up the form - it's pretty ugly */
+.tdomf_buttons td {
+	width: 300px;
+	padding-bottom:50px;
+	text-align:right;
+}
+
+.tdomf_form fieldset iframe {
+	height: 125px;
+}
+
+
+
+
+/* All pages EXCEPT for:
+   index
+   per-volume archive
+*/
+.custom #content_box.narrow_box {
+	width:650px;
+	margin:auto;
+}
+
+.custom pre {
+	border:none;
+}
+
+
+
+/* post_box used on both pages AND posts. What a drag */
+.custom .post_box {
+/*    width:600px; */
+    border:0px solid #FFFFFF;
+    padding-left:10px;
+    margin-left:auto;
+    margin-right:auto;
+    padding-top:2.2em;
+}
+
+/* The width of the POST container - only used on posts */
+.custom .post {
+	width:600px;
+}
+
+.custom .post_box p {
+	padding: 0;
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 0.7em;
+}
+
+.custom .post_box .format_text {
+    text-align:justify;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+/* use cover-image-solo OR pseudo-sidebar and its entries */
+.custom #cover-image-solo {
+	float:left;
+	padding:0em 5em 2em 0;
+}
+
+/* Sortof a sidebar, but without really being one (TOC wraps) */
+.custom #pseudo-sidebar {
+	float:left;
+	padding:0em 1em 2em 0;
+}
+
+.custom #cover-image {
+	padding:0em 2em 2em 0;
+	width:250px;
+}
+
+.custom #big-note {
+	padding:1em 1em 1em 1em;
+	-moz-background-clip:border; 
+	-moz-background-inline-policy:continuous; 
+	-moz-background-origin:padding; 
+	background:#E3F0F2 none repeat scroll 0 0;
+	border-color:#ADDDE6;
+	border-style:solid;
+	border-width:0.077em;
+	font-size:1.3em;
+        width:223px;
+}
+
+.custom #big-note h3 {
+	font-variant:small-caps;
+	font-size:1em;
+	letter-spacing:2px;
+	line-height:1.385em;
+	margin-bottom:0.692em;
+}
+
+.custom #big-note .readmore {
+   padding:0.5em 0 0 0;
+   text-align:right;
+}
+
+
+
+
+.custom h1.entry-title {
+   font-size:1.8em;
+}
+
+.custom .post_box h1.post-category {
+  padding:10px 0 10px 0px;
+}
+
+.custom .post_box p {
+	text-indent:1.8em;
+	line-height:01.em;
+}
+
+.custom .post_box p.noindent {
+	text-indent:0;
+}
+
+/* No text indent on documentation pages. Looks weird */
+.custom .documentation p {
+	text-indent:0;
+}
+
+
+/* Post meta, like authors and affiliations */
+.custom .post-meta {
+	font-size:1.5em;
+        padding:10px 0 1.0em 1.5em;
+}
+
+.custom .post-meta .authors {
+
+}
+
+.custom .post-meta .affiliations {
+   padding-top:1.4em;
+   font-size:0.8em;
+}
+
+.custom .post-meta .correspondence-to {   
+   padding-top:1.4em;
+   font-size:0.8em;
+}
+
+.custom p.reference {
+	text-indent: -2em;
+	margin-left: 2em;
+	padding: 0;
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+}
+
+
+
+/* ARCHIVES */
+.custom #archives-list ul {
+   list-style-image: none;
+   list-style-position: outside;
+   list-style-type:none;
+}
+
+.custom #archives-list ul li {
+   margin-bottom: 0.692em;
+}
+
+
+
+/* Caveat that appears above the comment form */
+.custom .comment-caveat {
+	font-style:italic;
+        font-size:1.1em;
+	width:90%;
+        padding:0px 10px 25px 10px;
+}
+
+
+
+
+
+
+
+
+/* Links */
+.custom a:link {
+ text-decoration:none;
+}
+
+.custom a:visited {
+ text-decoration:none;
+}
+
+.custom a:active {
+ text-decoration:none;
+}
+
+.custom a:hover {
+ text-decoration:underline;
+}
+
+
+
+
+
+/* FIGURES */
+.custom div.imagefloat {
+   float:left;
+   padding-right: 10px;
+   padding-top:1em;
+}
+
+.custom div.imagefloatcaption {
+	font-size:1.0em;
+	padding-top:1.0em;
+	clear:none;
+        }	
+
+
+/* for standalone images with no caption */
+.custom div.imagecenter {
+   margin-left:auto;
+   margin-right:auto;
+   text-align:center;
+   width:100%;
+   padding:0em 0 1em 0;
+}
+
+
+/* Sequence markup that DW hand-coded. Yikes */
+.custom p.sequence {
+	font-family:courier;
+}
+
+.custom p.sequence span.plain {
+	font-color:#888888;
+}
+
+.custom p.sequence span.red {
+	font-color:#ff0000;
+}
+
+
+/* PDFs */
+.custom #pdf-issue {
+/*	float:right; */
+	font-size:1.1em;
+/*	background:#E3F0F2 none repeat scroll 0 0; 
+	border-color:#ADDDE6;
+	border-style:solid;
+	border-width:0.077em;
+*/
+	margin-left:275px;
+	margin-right:auto;
+	margin-top:0.5em;
+}
+
+.custom .pdf-icon {
+	height:2.5em;
+	padding-right:0.5em;
+	vertical-align:middle;
+}
+
+
+/* The search box */
+#s {
+	float:right;
+/*	color:#ff0000;  */
+	color:#AAAAAA;
+	background:#fff;
+	border-left:1px solid #DDDDDD; 
+	border-top:1px solid #DDDDDD; 
+	border-bottom:1px solid #DDDDDD; 
+	border-right:1px solid #DDDDDD; 
+	padding:0.7em;
+	padding-bottom:0.8em;
+	margin-left:2em; 
+	font-family:"Arial"; 
+	font-size:8pt; 
+	width:20em; 
+	height:12px; 
+/*	text-transform:uppercase;  */
+	letter-spacing:1px;
+}
