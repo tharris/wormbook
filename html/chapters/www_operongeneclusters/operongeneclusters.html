@@ -1,0 +1,2004 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Operon and non-operon gene clusters in the C. elegans genome</title>
+      <meta name="generator" content="DocBook XSL Stylesheets V1.67.2">
+      <link rel="start" href="#WB_Blumenthal" title="Operon and non-operon gene clusters in the C. elegans genome">
+      <link rel="next" href="#sec1" title="1.&nbsp;Trans-splicing and operons">
+       <script language="javascript" type="text/javascript" src="/js/history_list.js"></script>
+      <!--#include virtual="/ssi/header_article.html" -->
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<!--#include virtual="/ssi/boilerplate.html" -->
+	<div class="html_to_pdf_link">
+		<a href="operongeneclusters.pdf">Download PDF version</a>
+	</div>
+      <div class="article" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h1 class="title"><a name="WB_Blumenthal"></a>Operon and non-operon gene clusters in the <span class="emphasis"><em>C. elegans</em></span> genome<sup><a name="d0e9" href="#ftn.d0e9">*</a></sup></h1>
+               </div>
+               <div>
+                  <div class="author"><span class="author"><span class="othername">Thomas Blumenthal<sup>1</sup><em><span class="remark"><sup><a name="d0e35" href="#ftn.d0e35">&sect;</a></sup></span></em>, Paul Davis<sup>2</sup> and Alfonso Garrido-Lecca<sup>1</sup></span><br></span><span class="affiliation"><span class="orgname"><sup>1</sup>Department of Molecular, Cellular and Developmental Biology, University of Colorado, Boulder, CO 80309 USA; </span></span><span class="affiliation"><span class="orgname"><sup>2</sup>Wormbase, European Bioinformatics Institute, EMBL, Wellcome Trust Genome Campus, Hinxton, <a href="http://www.wormbase.org/db/get?name=CB10;class=Clone" target="_blank">CB10</a> 1SD, UK; </span></span></div>
+               </div>
+            </div>
+            <hr>
+         </div>
+         <div class="toc">
+
+	   <div id="section_locator"><a href="/toc_molecularbiology.html">
+	         <b>This chapter is in WormBook section:</b><br />
+		       > Molecular biology
+		</a></div><hr />
+
+            <p><b>Table of Contents</b></p>
+            <dl>
+               <dt><span class="sect1"><a href="#sec1">1. Trans-splicing and operons</a></span></dt>
+               <dt><span class="sect1"><a href="#sec2">2. SL2-type operons</a></span></dt>
+               <dt><span class="sect1"><a href="#sec3">3. Hybrid operons</a></span></dt>
+               <dt><span class="sect1"><a href="#sec4">4. SL2-type operons with long spacing</a></span></dt>
+               <dt><span class="sect1"><a href="#sec5">5. SL2-type operons with juxtaposed 3' end formation and trans-splice sites</a></span></dt>
+               <dt><span class="sect1"><a href="#sec6">6. SL2 trans-splicing at downstream exons</a></span></dt>
+               <dt><span class="sect1"><a href="#sec7">7. Alternative operons</a></span></dt>
+               <dt><span class="sect1"><a href="#sec8">8. SL1-type operons</a></span></dt>
+               <dt><span class="sect1"><a href="#sec9">9. Dicistronic mRNAs</a></span></dt>
+               <dt><span class="sect1"><a href="#sec10">10. Overlapping genes</a></span></dt>
+               <dt><span class="sect1"><a href="#sec11">11. Identification of operons</a></span></dt>
+               <dt><span class="sect1"><a href="#sec12">12. Regulation in and of operons</a></span></dt>
+               <dt><span class="sect1"><a href="#sec13">13. Genome architecture</a></span></dt>
+               <dt><span class="sect1"><a href="#sec14">14. Tables 1-8</a></span></dt>
+               <dt><span class="sect1"><a href="#sec15">15. References</a></span></dt>
+            </dl>
+         </div>
+         <div class="abstract">
+            <p class="title"><span class="bold"><strong>Abstract</strong></span></p>
+            <p><span class="bold"><strong>Nearly 15% of the ~20,000 <span class="italic">C. elegans</span> genes are contained in operons, multigene clusters controlled by a single promoter. The vast majority of these are of a type
+                     where the genes in the cluster are ~100 bp apart and the pre-mRNA is processed by 3' end formation accompanied by trans-splicing.
+                     A spliced leader, SL2, is specialized for operon processing. Here we summarize current knowledge on several variations on
+                     this theme including: (1) hybrid operons, which have additional promoters between genes; (2) operons with exceptionally long
+                     (&gt; 1 kb) intercistronic regions; (3) operons with a second 3' end formation site close to the trans-splice site; (4) alternative
+                     operons, in which the exons are sometimes spliced as a single gene and sometimes as two genes; (5) SL1-type operons, which
+                     use SL1 instead of SL2 to trans-splice and in which there is no intercistronic space; (6) operons that make dicistronic mRNAs;
+                     and (7) non-operon gene clusters, in which either two genes use a single exon as the 3' end of one and the 5' end of the next,
+                     or the 3' UTR of one gene serves as the outron of the next. Each of these variations is relatively infrequent, but together
+                     they show a remarkable variety of tight-linkage gene arrangements in the <span class="italic">C. elegans</span> genome.</strong></span></p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec1"></a>1.&nbsp;Trans-splicing and operons
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Operons are polycistronic clusters of genes transcribed from a promoter at the 5' end of the cluster. Although operons were considered
+               to be absent from eukaryotic genomes, it is now clear that operons are present in the genomes of numerous eukaryotes (<a href="#bib15">Spieth et al., 1993</a>; <a href="#bib5">Blumenthal et al., 2002</a>; <a href="#bib7">Guiliano and Blaxter, 2006</a>). For example, the <span class="emphasis"><em>Drosophila</em></span> genome contains &gt;30 dicistronic clusters that make mRNAs that encode two different genes (<a href="#bib13">Misra et al., 2002</a>). Most operons in eukaryotes are of a different type in which the polycistronic pre-mRNA arising from the operon is co-transcriptionally
+               processed by 3' end formation and spliced leader (SL) trans-splicing between the genes to make monocistronic mature mRNAs
+               (<a href="#bib3">Blumenthal, 2004</a>). In SL trans-splicing, a short spliced leader RNA exon is spliced onto the 5' end of the pre-mRNA by conventional splicing
+               mechanisms, providing a cap for the downstream mRNAs.
+            </p>
+            <p>Nearly 15% of the ~20,000 protein-coding genes in the <span class="emphasis"><em>C. elegans</em></span> genome are organized into ~1250 operons, tight clusters of two to eight genes (<a href="#bib1">Allen et al., 2011</a>). In most cases the genes are separated by an intercistronic region of ~100 bp from the polyA addition site of the upstream
+               gene to the trans-splice site of the downstream gene. The polycistronic pre-mRNA is processed by coordinated 3' end formation
+               of the upstream gene and trans-splicing at the 5' end of the downstream gene. This trans-splicing event involves a spliced
+               leader, SL2, specialized for operon pre-mRNA processing.
+            </p>
+            <p>However, SL1 trans-splicing is the more common kind of trans-splicing in <span class="emphasis"><em>C. elegans</em></span>. Most SL1 trans-splicing occurs near the 5' ends of genes rather than downstream in operons. This removes the outron, the
+               RNA between the transcription start site and the first 3' splice site in the pre-mRNA. A rare type of operon, SL1-type, uses
+               SL1 for trans-splicing a downstream gene. SL1-type operons are mechanistically quite interesting since they have no intercistronic
+               sequence; polyadenylation of the upstream gene occurs right at the trans-splice site of the downstream gene (<a href="#bib17">Williams et al., 1999</a>). In these operons, 3' end formation may occur by SL1 trans-splicing of the downstream gene, resulting in a free 3' end upstream
+               that may then be debranched and polyadenylated. Thus, in these cases, the same processing event at least sometimes may serve
+               to create the 3' end of the upstream gene mRNA and the 5' end of the downstream gene mRNA.
+            </p>
+            <p>Here we present an in-depth analysis of gene clusters in the <span class="emphasis"><em>C. elegans</em></span> genome in an effort to determine whether they all represent true operons and whether there are alternative ways of processing
+               operon pre-mRNAs. Several variations of SL2-type operon are considered. These include the relatively common hybrid operons,
+               which have longer intercistronic regions that accommodate an extra promoter between the genes (<a href="#bib8">Huang et al., 2007</a>; <a href="#bib16">Whittle et al, 2008</a>), as well as several less common variations on the operon theme. For example, some operons have an extra polyadenylation
+               signal (AAUAAA) near the trans-splice site that results in 3' end formation close to the site of trans-splicing. There are
+               some operons with unusually long (&gt; 1 KB) intercistronic regions (<a href="#bib14">Morton and Blumenthal, 2011</a>). Alternative operons are sometimes spliced as if they are a single gene (<a href="#bib9">Jan et al., 2011</a>; <a href="#bib14">Morton and Blumenthal, 2011</a>). The existence of a variation on the SL1-type operon, in which the upstream mRNA is discarded rather than being polyadenylated,
+               is described. In this case, the expression of the upstream gene occurs from a dicistronic mRNA. The worm genome also contains
+               occasional examples of operons that make dicistronic mRNAs, which are apparently translated in that form, much like the <span class="emphasis"><em>Drosophila</em></span> operons. However, it is currently unknown how translation of the downstream cistron is initiated. Finally, two types of tightly
+               linked non-operon gene clusters are identified. In one type, a single exon serves as the 3' end of an upstream gene as well
+               as the 5' end of a downstream gene. In another type, the 3' UTR of an upstream gene serves as an outron for SL1 trans-splicing
+               of a downstream gene. These are not operons since the genes are not transcribed from the same promoter. In this paper, examples
+               of each kind of gene cluster are described, and tables with lists of known examples of each type are included.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec2"></a>2.&nbsp;SL2-type operons
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Allen and coworkers mapped SL1 and SL2 trans-splice sites from deep sequencing transcriptome data (<a href="#bib1">Allen et al., 2011</a>), and used this data to identify operons supported by SL2 trans-splicing (Supplemental File 3 in <a href="#bib1">Allen et al., 2011</a>). Almost all gene clusters in the <span class="emphasis"><em>C. elegans</em></span> genome are of the type exemplified in <a href="#figure1">Figure 1</a>, in this case a four-gene operon. SL2-type operons range from two to eight genes expressed from a single promoter at the
+               5' end of the cluster. We have performed chromatin immunoprecipitation experiments with an Affymetrix tiling array (ChIP/chip)
+               for H3K9 acetylation (H3K9ac), an epigenetic mark of active promoters. The data show that for most operons there is only a
+               single H3K9Ac peak, found at the 5' end of the cluster. An example is shown in <a href="#figure1">Figure 1</a>. The genes are very close together, usually ~100 bp separating the 3' end of the upstream gene (the site of polyA addition)
+               and the trans-splice site of the downstream gene and virtually all trans-splicing is to SL2. Furthermore, Allen et al. demonstrated
+               a strong relationship between the intercistronic distance and the percent of trans-splicing to SL2: shorter distance correlates
+               with increased SL2. There are around 1250 operons of this kind, a subset of which are hybrid operons considered in the next
+               section.
+            </p>
+            <div class="mediaobject" align="center"><a name="figure1"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="432">
+<tr>
+  <td align="center"><p><a href="operongeneclusters_fig1.jpg"><img src="operongeneclusters_fig1_s.jpg" border="2" align="middle" alt=" figure 1"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 1. A typical SL2-type operon.&nbsp;</b>The figure shows a four-gene operon with exons shown as colored boxes and introns as angled lines. The direction of transcription
+                     is from left to right, as indicated by the arrows on the 3' UTRs. The green bar denotes the extent of the operon. The pre-mRNA
+                     is processed to yield multiple mature mRNAs. The first gene in the operon <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00007626;class=Gene" target="_blank">rnf-121</a></em></span> is trans-spliced mostly to SL1, whereas the three downstream genes are trans-spliced mostly to SL2 (data from <a href="#bib1">Allen et al. 2011</a>). In each case, the 3' cleavage sites are ~100 bp upstream of the SL2-specific trans-splice sites. This is a download from
+                     <a href="http://www.wormbase.org/" target="_top">Wormbase</a>. There are &gt;1200 documented operons of this type in the <span class="emphasis"><em>C. elegans</em></span> genome (<a href="#bib1">Allen et al., 2011</a>). Here and throughout, the number of SL1 and SL2 reads shown is data from the deep sequencing project reported in <a href="#bib1">Allen et al. (2011)</a>. Sequencing was performed on RNA isolated from several different worm stages and the data pooled. Below the operon bar, H3K9ac
+                     ChIP/chip performed on young adult worms, which marks active promoters, is shown. The length of the vertical lines is proportional
+                     to the intensity of the hybridization signal corresponding to the indicated genomic position. The horizontal black bar marks
+                     a peak called by the data analysis program.
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec3"></a>3.&nbsp;Hybrid operons
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Many operons have the characteristics described above, but have another important feature: in addition to the upstream operon
+               promoter, they contain a second promoter within the operon. This has been demonstrated in several ways. Transgenic constructs
+               containing only the intercistronic DNA fused to a reporter gene were found to be expressed in patterns characteristic of the
+               endogenous genes (<a href="#bib8">Huang et al., 2007</a>). When analyzed by ChIP for proteins previously shown to peak at promoters&#8212;including the variant histone HTZ, the histone
+               modification H3K4Me3, and RNA polymerase II&#8212;many operons were found to contain peaks between genes (<a href="#bib16">Whittle et al, 2008</a>; <a href="#bib2">Baugh et al., 2009</a>). Furthermore, some operons have a peak of <a href="http://www.wormbase.org/db/get?name=WBGene00008890;class=Gene" target="_blank"><span class="emphasis"><em>ser-5</em></span></a> phosphorylated RNA polymerase, which typically occurs near 5' ends of genes, between genes in operons (<a href="http://www.wormbase.org/resources/person/WBPerson12628" target="_top">A. Garrido-Lecca</a> and <a href="http://www.wormbase.org/resources/person/WBPerson71" target="_top">T. Blumenthal</a>, unpublished observations). Finally, SL1 trans-splicing, generally associated with sites close to promoters, occurs preferentially
+               at some downstream operon genes with long intercistronic regions (<a href="#bib1">Allen et al., 2011</a>). Further validation of the relationship between an internal promoter and SL1 trans-splicing was provided by analysis of
+               two deletion strains: a deletion within a hybrid operon intercistronic region dramatically reduced SL1 usage at the downstream
+               trans-splice site, while increasing the SL2 trans-splicing at this site. In contrast, a deletion at the 5' end of a different
+               hybrid operon dramatically reduced the SL2 trans-splicing at a downstream gene, leaving the SL1 trans-splicing unchanged (<a href="#bib1">Allen et al., 2011</a>).
+            </p>
+            <p>The intercistronic region from a typical hybrid operon is depicted in <a href="#figure2">Figure 2</a>. The downstream gene in this operon receives significant levels of SL1, presumably from the internal promoter, and of SL2,
+               presumably from transcripts originating from the promoter at the 5' end of the operon. Note also the &gt;500 bp intercistronic
+               region. The ChIP/chip peak of H3K9ac between the genes indicates the location of an internal promoter (<a href="#figure2">Figure 2</a>).
+            </p>
+            <div class="mediaobject" align="center"><a name="figure2"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="432">
+<tr>
+  <td align="center"><p><a href="operongeneclusters_fig2.jpg"><img src="operongeneclusters_fig2_s.jpg" border="2" align="middle" alt=" figure 2"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 2. The intercistronic region from a typical hybrid operon.&nbsp;</b>In this kind of operon, there is a promoter at the 5' end of the cluster (not shown) and an additional promoter between the
+                     genes as shown by H3K9ac ChIP/chip data (bottom). In the example shown here, the intercistronic distance is longer than in
+                     a typical operon (~500 bp). Transcripts from the promoter at the 5' end of the cluster undergo 3' end formation of C23H3.5.2,
+                     along with SL2 trans-splicing at the 5' end of <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00016020;class=Gene" target="_blank">sptl-1</a></em></span>. The internal promoter is responsible for synthesis of an outron that is trans-spliced by SL1 at the same site. In this example
+                     there are 192 SL2 and 481 SL1 reads at the site indicated by the vertical arrow for <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00016020;class=Gene" target="_blank">sptl-1</a></em></span> (<a href="#bib1">Allen et al., 2011</a>). Below the operon bar H3K9ac ChIP/chip, which marks active promoters, is shown. The length of the vertical lines is proportional
+                     to the number of reads corresponding to the indicated genomic position. The horizontal black bar marks a peak called by the
+                     data analysis program.
+                  </p>
+               </div>
+            </div>
+            <p>Hybrid operons usually have intercistronic distances &gt;500 bp and from 10-80% SL2 usage at the downstream trans-splice site.
+               While not as common as standard SL2-type operons, the hybrid operon arrangement is not uncommon in the <span class="emphasis"><em>C. elegans</em></span> genome. To what extent can intercistronic distance alone predict operon status? Intercistronic distance for gene pairs with
+               the site of poly A addition of another gene less than 1000 bp upstream were calculated. They were divided into three groups
+               based on their percent SL2 trans-splicing: &gt;80%, 10-80%, and &lt;10% (<a href="#figure3">Figure 3</a>). The vast majority of genes receiving &gt;80% SL2 are 90-120 bp downstream of another gene, whereas the rest are generally
+               much farther from genes in the same orientation. In fact, the difference is so dramatic that it is mostly accurate to conclude
+               that genes in this close range can be reliably diagnosed as downstream in operons solely based on intercistronic length. Furthermore,
+               the distribution of genes with very low SL2 levels (0-10%) is quite different from that of those receiving between 10 and
+               80% SL2. The former are presumably not in operons, while the latter likely represent hybrid operons.
+            </p>
+            <div class="mediaobject" align="center"><a name="figure3"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="432">
+<tr>
+  <td align="center"><p><a href="operongeneclusters_fig3.jpg"><img src="operongeneclusters_fig3_s.jpg" border="2" align="middle" alt=" figure 3"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 3. Intercistronic lengths of genes grouped by % SL2 trans-splicing.&nbsp;</b>Data is from <a href="#bib1">Allen et al (2011)</a>. All genes whose distances to the next upstream polyA addition site was 1000 bp or less and that were trans-spliced were
+                     analyzed for number of SL2 reads divided by total trans-spliced reads. The genes are grouped according to level of SL2 trans-splicing,
+                     and plotted (# of genes in each 10 bp bin of intercistronic distance). The number of genes plotted is: 80-100% SL2: 1232;
+                     11-79% SL2: 520; 0-10% SL2: 1272.
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec4"></a>4.&nbsp;SL2-type operons with long spacing
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Whereas hybrid operons have long spacing and a relatively low percent SL2 trans-splicing, there are also examples of genes
+               that receive high levels of SL2, yet are spaced more than a thousand bp downstream of the nearest gene in the same orientation.
+               It has not been clear until recently whether these represent operons with long intercistronic distances or whether these genes
+               are trans-spliced to SL2 even though they are not downstream in operons. However, analysis of two examples with spacing &gt;2000
+               bp demonstrated that in the two cases analyzed experimentally the entire region between the genes was transcribed. Thus, they
+               appeared to be bona fide operons but with uncharacteristically long distances between genes (<a href="#bib14">Morton and Blumenthal, 2011</a>). A third example (<a href="#figure4">Figure 4</a>) provides some insight into this phenomenon. This operon is composed of <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00004277;class=Gene" target="_blank">rab-18</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00006697;class=Gene" target="_blank">uaf-1</a></em></span>. All of the non-coding regions of this operon, including the introns and the intercistronic region appear to be much longer
+               than typical sizes for this kind of non-coding region in <span class="emphasis"><em>C. elegans</em></span>. The intercistronic DNA is 3 kb long. Interestingly, this operon in <span class="emphasis"><em>C. briggsae</em></span> appears to be typical, in that both the intercistronic region and the introns are short (<a href="#figure4">Figure 4B</a>). The expansion in <span class="emphasis"><em>C. elegans</em></span> is due to insertion of large amounts of repetitive DNA throughout the non-coding regions of the operon, as shown in the lower
+               part of <a href="#figure4">Figure 4A</a>. Furthermore, repetitive DNA is frequently present in <span class="emphasis"><em>C. elegans</em></span> operons that have long intercistronic regions (<a href="http://www.wormbase.org/resources/person/WBPerson3729" target="_top">J. Morton</a> and <a href="http://www.wormbase.org/resources/person/WBPerson71" target="_top">T. Blumenthal</a>, unpublished observations). It seems likely that most <span class="emphasis"><em>C. elegans</em></span> operons have a short intercistronic region to facilitate processing of their pre-mRNA by coordinated 3' end formation and
+               trans-splicing. The fact that operons like this one, with long intercistronic regions, are nevertheless trans-spliced mainly
+               to SL2, suggests that the presence of extensive amounts of repetitive DNA may not interfere with this mechanism. Additional
+               examples of SL2-type operons with long spacing are listed in <a href="#table1" title="Table 1. Operon gene pairs with &gt; 1 kb spacing.">Table 1</a> (<a href="#sec14" title="14.&nbsp;Tables 1-8">Section 14</a>). Interestingly, many of these examples have a gene (or in one case an entire operon) in the opposite orientation between
+               the distantly spaced operon genes.
+            </p>
+            <div class="mediaobject" align="center"><a name="figure4"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="432">
+<tr>
+  <td align="center"><p><a href="operongeneclusters_fig4.jpg"><img src="operongeneclusters_fig4_s.jpg" border="2" align="middle" alt=" figure 4"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 4. An SL2-type operon with exceptionally long spacing between the two genes.&nbsp;</b><span class="bold"><strong>A.</strong></span> CEOP3052 is comprised of the <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00004277;class=Gene" target="_blank">rab-18</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00006697;class=Gene" target="_blank">uaf-1</a></em></span> genes. They are ~3 kb apart (<a href="http://www.wormbase.org/" target="_top">Wormbase</a>). The unusually long introns and ICR contain large amounts of repetitive DNA, shown in the lower track of panel A. Panel
+                     <span class="bold"><strong>B</strong></span> shows a comparison of the gene structure of <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00006697;class=Gene" target="_blank">uaf-1</a></em></span> in <span class="emphasis"><em>C. elegans</em></span> with that of the related nematode, <span class="emphasis"><em>C. briggsae</em></span>. Exons are shown as boxes and introns as horizontal or angled lines. Exons are to scale, but introns are not. An autoregulatory
+                     suicide exon is gray in panel B, but is not shown in panel A (<a href="#bib11">MacMorris et al., 1999</a>). In <span class="emphasis"><em>C. briggsae</em></span> the introns are more typical of <span class="emphasis"><em>Caenorhabditis</em></span> genes. Similarly, the ICR is only 267 bp in this species.
+                  </p>
+               </div>
+            </div>
+            <p>In sum, it appears there are two classes of operon with long spacing: (1) hybrid operons, which have substantial levels of
+               SL1 trans-splicing emanating from transcripts initiating at an internal promoter; and (2) operons where virtually all of the
+               downstream gene trans-splicing is to SL2 even though the intercistronic region is long. These operons occur in regions of
+               the chromosome expanded by insertion of repetitive DNA and even whole genes on the opposite strand. As in the case of the
+               operon shown in <a href="#figure4">Figure 4</a>, these operons can sometimes be validated by the fact that the intercistronic DNA in another <span class="emphasis"><em>Caenorhabditis</em></span> species is of a more typical operon length.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec5"></a>5.&nbsp;SL2-type operons with juxtaposed 3' end formation and trans-splice sites
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>In some operons there is a 3' end formation site spaced a typical ~100 bp upstream of the trans-splice site, and there is
+               a second 3' end formation site very close to the trans-splice site, as shown in <a href="#figure5">Figure 5</a>. Additional examples are listed in <a href="#table2" title="Table 2. SL2-type operons with a polyA site near the trans-splice site.">Table 2</a> (<a href="#sec14" title="14.&nbsp;Tables 1-8">Section 14</a>). Alternative 3' end formation is a well-established phenomenon, but in an operon it has an interesting and potentially significant
+               extra dimension. If trans-splicing occurs before 3' end formation, then presumably only the 3' end formation site 100 bp upstream
+               would be available because not enough RNA would be present to allow binding of the 3' end formation protein CstF, which binds
+               downstream of the cleavage site. If 3' end formation occurs at the proximal site first, then trans-splicing would occur normally.
+               However, if the distal 3' end formation site is used before trans-splicing occurs, the RNA upstream of the trans-splice site
+               would be too short to allow trans-splicing. Thus it is possible that in these cases alternative 3' end formation is a regulatory
+               phenomenon, as it often is. However, in this scenario the expression of the gene downstream in the operon is regulated by
+               alternative 3' end formation of the gene upstream. Nothing is currently known about the order of processing events in these
+               operons, so such regulation remains hypothetical. It is often possible to determine whether a phenomenon is important by determining
+               whether it is conserved. In this case, many of the downstream polyA sites are present in <span class="emphasis"><em>C. briggsae</em></span> (<a href="#table2" title="Table 2. SL2-type operons with a polyA site near the trans-splice site.">Table 2</a>, <a href="#sec14" title="14.&nbsp;Tables 1-8">Section 14</a>) suggesting they may play important roles.
+            </p>
+            <div class="mediaobject" align="center"><a name="figure5"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="432">
+<tr>
+  <td align="center"><p><a href="operongeneclusters_fig5.jpg"><img src="operongeneclusters_fig5_s.jpg" border="2" align="middle" alt=" figure 5"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 5. The intercistronic region of an SL2-type operon with a second polyA site just upstream of the trans-splice site.&nbsp;</b>This kind of operon has two, alternatively used polyA sites, a proximal site at ~100 bp upstream of the trans-splice site,
+                     and a distal site just upstream of the trans-splice site. When the distal site is used, subsequent trans-splicing of the downstream
+                     gene is impossible. The sequence shown is from the proximal polyA signal of <a href="http://www.wormbase.org/db/get?name=F55A12.3;class=Gene" target="_blank">F55A12.3</a> to the translation start site of <a href="http://www.wormbase.org/db/get?name=WBGene00018863;class=Gene" target="_blank">F55A12.2</a>. The polyA signals are underlined. The two sites of polyadenylation are underlined and boldface. Both sites are used based
+                     on known 3' end formation and both show ChIP-seq CstF-64 peaks (data not shown). The trans-splice site is underlined and italicized.
+                     <a href="http://www.wormbase.org/db/get?name=WBGene00018863;class=Gene" target="_blank">F55A12.2</a> is trans-spliced 97% of the time to SL2 (196 reads in the transcriptome data (<a href="#bib1">Allen et al., 2011</a>)).
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec6"></a>6.&nbsp;SL2 trans-splicing at downstream exons
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>There are several instances of SL2 trans-splicing occurring at a 3' splice site that is also used as a cis-splice site: that
+               is, at the 3' end of an intron. A list of examples is given in <a href="#table3" title="Table 3. SL2 trans-splicing to ds exons.">Table 3</a> (<a href="#sec14" title="14.&nbsp;Tables 1-8">Section 14</a>), and the phenomenon is illustrated in <a href="#figure6">Figure 6</a>. Sometimes in these cases, the first exon is trans-spliced to SL2 as well, but sometimes there is no evidence for trans-splicing
+               of the first exon. Furthermore, higher levels of SL2 trans-splicing are observed when the trans-splice sites are closer to
+               the next upstream polyA site (<a href="#table3" title="Table 3. SL2 trans-splicing to ds exons.">Table 3</a>, <a href="#sec14" title="14.&nbsp;Tables 1-8">Section 14</a>), consistent with the idea that they are spliced to SL2 because they are downstream in operons.
+            </p>
+            <div class="mediaobject" align="center"><a name="figure6"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="432">
+<tr>
+  <td align="center"><p><a href="operongeneclusters_fig6.jpg"><img src="operongeneclusters_fig6_s.jpg" border="2" align="middle" alt=" figure 6"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 6. A gene with SL2 trans-splicing at the second exon.&nbsp;</b>The picture shows portions of two operon genes, <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00006968;class=Gene" target="_blank">yars-1</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00019543;class=Gene" target="_blank">cif-1</a></em></span>, with the region between them. The numbers of SL1 and SL2 reads (<a href="#bib1">Allen et al., 2011</a>) are given at the sites of trans-splicing. Mapped ESTs are shown as green bars. Some contain exon 1, whereas others begin
+                     with trans-splicing at exon 2.
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec7"></a>7.&nbsp;Alternative operons
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>The Blumenthal and Bartel groups independently reported several instances of SL2 trans-splicing accompanied by 3' end formation
+               within annotated single genes, alternative operons (<a href="#bib9">Jan et al., 2011</a>; <a href="#bib14">Morton and Blumenthal, 2011</a>). Some interesting and important genes exhibit this phenomenon; e.g., <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00018319;class=Gene" target="_blank">hdac-6</a></em></span> (<a href="#figure7">Figure 7</a>), <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00004884;class=Gene" target="_blank">smg-6</a></em></span>, and <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00004862;class=Gene" target="_blank">sma-9</a></em></span>. In these three cases there is good evidence for: (1) mRNAs encompassing the entire gene, (2) mRNAs comprising only the 5'
+               part of the gene due to 3' end formation within the gene, and (3) mRNAs comprising only the 3' part of the gene resulting
+               from SL2 trans-splicing ~100 nt downstream of the internal 3' end formation site. Mechanistically, the events that gave rise
+               to the latter two types of mRNA are the same as any other operon. In the case of <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00004862;class=Gene" target="_blank">sma-9</a></em></span>, this has been shown to be functionally significant (<a href="#bib18">Yin et al., 2010</a>). This phenomenon is also similar to other cases of alternative 3' end formation vs. cis-splicing. There is a choice between
+               3' end formation within an intron and removal of the intron by cis-splicing. Presumably the relative rates of 3' end formation
+               and cis-splicing determine which process occurs. 3' end formation is accompanied by SL2 trans-splicing at the site that otherwise
+               would have served as the 3' splice site for cis-splicing. These genes/operons, termed &#8220;alternative operons&#8221;, can potentially
+               incorporate a level of regulation or specialization of function unique to this situation. A list of 17 clear cases and five
+               additional possible cases are given in <a href="#table4" title="Table 4. Alternative operons.">Table 4</a> (<a href="#sec14" title="14.&nbsp;Tables 1-8">Section 14</a>). In the latter cases, the internal SL2 trans-splicing is well documented, but the 3' end formation upstream is only predicted.
+               However, appropriately located canonical 3' end formation signals make it likely that these are actual alternative operons,
+               although it is possible that in these latter instances no stable upstream product accumulates.
+            </p>
+            <div class="mediaobject" align="center"><a name="figure7"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="432">
+<tr>
+  <td align="center"><p><a href="operongeneclusters_fig7.jpg"><img src="operongeneclusters_fig7_s.jpg" border="2" align="middle" alt=" figure 7"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 7. An alternative operon.&nbsp;</b><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00018319;class=Gene" target="_blank">hdac-6</a></em></span>, which encodes a histone deacetylase, can be processed in either of two ways. When exon 9 is skipped, a full length <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00018319;class=Gene" target="_blank">hdac-6</a></em></span> mRNA is synthesized by splicing exon 8 to exon 10. When exon 8 is spliced to exon 9, 3' end formation at the end of exon
+                     9 occurs and is accompanied by SL2 trans-splicing just downstream, at the 5' end of exon 10, thereby creating a nine-exon
+                     upstream mRNA and a two-exon downstream mRNA.
+                  </p>
+               </div>
+            </div>
+            <p>Interestingly, several genes encoding proteins involved in 3' end formation/transcription termination are present on this
+               list. These include <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00020092;class=Gene" target="_blank">pcf-11</a>, <a href="http://www.wormbase.org/db/get?name=WBGene00011051;class=Gene" target="_blank">pfs-2</a></em></span>, and <a href="http://www.wormbase.org/db/get?name=T23H2.3;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00020742;class=Gene" target="_blank">T23H2.3</a></a>, which encodes the worm homolog of the transcription termination factor, TTF2. These genes may be autogenously regulated
+               at the level of premature 3' end formation within the gene. This could occur when the levels of their encoded proteins are
+               high. The formation of an SL2 trans-spliced downstream product could be an unintended consequence of premature 3' end formation
+               or an integral part of an autoregulatory pathway.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec8"></a>8.&nbsp;SL1-type operons
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>In this type of operon there is no intercistronic DNA: the 3' end of the upstream gene immediately precedes the trans-splice
+               site of the downstream gene, and all trans-splicing is to SL1, rather than SL2 (<a href="#figure8">Figure 8A</a>) (<a href="#bib17">Williams et al., 1999</a>). It was hypothesized that a single RNA processing event, SL1 trans-splicing, gives rise to both mature downstream mRNA,
+               and an upstream mRNA that gets polyadenylated and debranched. An AAUAAA polyadenylation signal is present just upstream of
+               the trans-splice site, making this quite a reasonable idea. However, when one such operon was studied experimentally in transgenic
+               worms, 3' end formation of the upstream gene clearly competed with trans-splicing of the downstream gene, suggesting that
+               a single pre-mRNA molecule does not give rise to both mRNAs.
+            </p>
+            <div class="mediaobject" align="center"><a name="figure8"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="432">
+<tr>
+  <td align="center"><p><a href="operongeneclusters_fig8.jpg"><img src="operongeneclusters_fig8_s.jpg" border="2" align="middle" alt=" figure 8"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 8. SL1-type operons.&nbsp;</b><span class="bold"><strong>A.</strong></span> In this type of operon, 3' cleavage may occur by SL1 trans-splicing at least sometimes, resulting in a downstream mature
+                     SL1 trans-spliced mRNA and an upstream precursor that apparently can be polyadenylated at the site of trans-splicing&#8211;catalyzed
+                     cleavage. The transcriptome data has 40 SL1 reads and no SL2 reads (<a href="#bib1">Allen et al., 2011</a>). The green bars show extents of a few ESTs, where the <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00044008;class=Gene" target="_blank">gip-2</a></em></span> EST ends precisely at the site where the <a href="http://www.wormbase.org/db/get?name=C45G3.5;class=Gene" target="_blank">C45G3.5</a> ESTs begin. The sequence of the genome at this site is shown below. The polyA addition signal, the variant sequence AGUAAA
+                     in this case, is underlined, as is the trans-splice site. <span class="bold"><strong>B.</strong></span> An SL1-type operon with no monocistronic mRNA for the upstream gene. In this two-gene operon, 3' end formation occurs only
+                     at the 3' end of the cluster. There is no CstF-64 peak at the 3' end of <a href="http://www.wormbase.org/db/get?name=WBGene00011563;class=Gene" target="_blank">jmjd-4</a> in a ChIP-seq experiment, whereas there is a strong peak at the 3' end of <a href="http://www.wormbase.org/db/get?name=T07C4.12;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00044891;class=Gene" target="_blank">T07C4.12</a></a> (<a href="http://www.wormbase.org/resources/person/WBPerson12628" target="_top">A. Garrido-Lecca</a> and <a href="http://www.wormbase.org/resources/person/WBPerson71" target="_top">T. Blumenthal</a>, unpublished). Although there is no 3' end formation within the operon, there is SL1 trans-splicing that results in production
+                     of mature <a href="http://www.wormbase.org/db/get?name=T07C4.12;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00044891;class=Gene" target="_blank">T07C4.12</a></a> mRNA, as indicated by 188 SL1 transcriptome reads at this site (<a href="#bib1">Allen et al., 2011</a>). The upstream gene, <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00011563;class=Gene" target="_blank">jmjd-4</a></em></span>, must be expressed from the dicistronic mRNA where the <a href="http://www.wormbase.org/db/get?name=T07C4.12;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00044891;class=Gene" target="_blank">T07C4.12</a></a> encoding exons are out of frame. The sequence shown at the bottom is of some of the intercistronic DNA. The trans-splice
+                     site is underlined.
+                  </p>
+               </div>
+            </div>
+            <p><a href="#table5" title="Table 5. SL1-type operons.">Table 5</a> (<a href="#sec14" title="14.&nbsp;Tables 1-8">Section 14</a>) presents 23 examples of SL1-type operon in the genome, as defined both by SL1 trans-splicing and by an AAUAAA and 3' end
+               formation at the trans-splice site. Each of these 23 operons also has the characteristic extended polypyrimidine tract reported
+               in the first three SL1-type operons previously studied (<a href="#bib17">Williams et al., 1999</a>). Intriguingly, analysis of 3' end formation in the UTRome project (<a href="#bib12">Mangone et al., 2010</a>), as well as other determinations of 3' ends (our unpublished observations), demonstrates that for most of these genes, 3'
+               ends occur directly on the AG of the trans-splice site, indicating that these 3' ends could be the result of polyadenylation
+               at the free 3' end created by SL1 trans-splicing of the downstream gene. Analysis at the whole genome level of dinucleotides
+               at which polyA is added indicates that AG is among the very rarest sites for polyadenylation in <span class="emphasis"><em>C. elegans</em></span> (<a href="#bib12">Mangone et al., 2010</a>). It seems likely that this represents a new mechanism for 3' end formation&#8212;cleavage by trans-splicing, instead of by the
+               usual mechanism (cleavage by 3' end formation machinery). Cleavage would then be followed by polyadenylation dependent on
+               the AAUAAA near the free 3' end created by trans-splicing. The apparent discrepancy between the experimental results and the
+               transcriptome data is unresolved. However, a reasonable explanation would be that both conventional and trans-splicing-dependent
+               3' end formation can occur at these 3' ends, perhaps depending on the circumstances.
+            </p>
+            <p><a href="#figure8">Figure 8B</a> shows an example of an unusual SL1-type operon where there is no AAUAAA upstream of the trans-splice site and no accumulation
+               of an upstream mRNA. The 3' UTRome shows no 3' end formation at the 3' end of <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00011563;class=Gene" target="_blank">jmjd-4</a></em></span>. Presumably in this case trans-splicing by SL1 is important for making downstream mature mRNA, but the upstream product is
+               discarded. When trans-splicing does not occur, a dicistronic mRNA is presumably transported to the cytoplasm for translation
+               of the upstream cistron.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec9"></a>9.&nbsp;Dicistronic mRNAs
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Operons that make dicistronic mRNAs have been well documented in <span class="emphasis"><em>Drosophila</em></span>, and they also are present in <span class="emphasis"><em>C. elegans</em></span> (<a href="#figure9">Figure 9</a>; <a href="#table6" title="Table 6. Gene pairs that produce dicistronic mRNAs">Table 6</a>, <a href="#sec14" title="14.&nbsp;Tables 1-8">Section 14</a>). In these cases, there is no evidence for processing of the dicistronic mRNA, either by trans-splicing or 3' end formation
+               between the two genes. These operons appear similar to those identified in <span class="emphasis"><em>Drosophila</em></span>, where the mechanism for internal translation of the downstream open reading frame, perhaps an internal ribosome entry site
+               (IRES), is not yet known.
+            </p>
+            <div class="mediaobject" align="center"><a name="figure9"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="432">
+<tr>
+  <td align="center"><p><a href="operongeneclusters_fig9.jpg"><img src="operongeneclusters_fig9_s.jpg" border="2" align="middle" alt=" figure 9"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 9. An operon producing only a dicistronic mRNA.&nbsp;</b>The diagram shows the first two genes in CEOP4532, <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00044083;class=Gene" target="_blank">tin-9.2</a></em></span> and <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00007201;class=Gene" target="_blank">exos-4.1</a></em></span>, shown in their entirety, with filled boxes representing translated regions and open boxes untranslated. They specify two
+                     paralogous exonucleases. The ESTs shown below the operon bar demonstrate that only dicistronic mRNAs are produced. There is
+                     no evidence in the database for either 3' end formation or trans-splicing and no ChIP-seq peak of CstF-64 (data not shown)
+                     between the genes. The 3' UTRome data shows 3' end formation only at the 3' end of the two-gene cluster. Both proteins must
+                     be expressed from this single mRNA. It is not known how translation of the downstream protein is initiated. The <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00007201;class=Gene" target="_blank">exos-4.1</a></em></span> ATG start codon overlaps the <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00044083;class=Gene" target="_blank">tin-9.2</a></em></span> TGA stop codon: ATGA. In other operons making dicistronic mRNAs (listed in <a href="#table6" title="Table 6. Gene pairs that produce dicistronic mRNAs">Table 6</a>), the open reading frames of the two genes can have a greater overlap or they can be separated by non-translated sequences.
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec10"></a>10.&nbsp;Overlapping genes
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Overlapping genes of two kinds can be found. In one type, the 3' UTR of the upstream gene overlaps with the outron of the
+               downstream gene. In the example shown in <a href="#figure10">Figure 10A</a>, a single stretch of DNA serves two purposes, although the two resulting mature mRNAs have no sequences in common, just as
+               with operons. A single stretch of DNA serves as the 3' UTR and 3' end formation signal of the upstream gene as well as the
+               outron, the region needed for trans-splicing of the downstream gene. These can easily be mistaken for SL1-type operons, since
+               the genes are nearly touching and the trans-splicing is to SL1. However, the key difference is that the 3' ends do not occur
+               at the exact sites of the 3' cleavage products created by trans-splicing. The polyA sites are a bit further upstream or can
+               even occur downstream of the trans-splice site. The most likely explanation is that these genes are not in an operon, but
+               there is a promoter for the downstream gene within the 3' UTR of the upstream gene. The H3K9ac track supports the existence
+               of this hypothetical promoter (<a href="#figure10">Figure 10A</a>). Examples of this arrangement are listed in <a href="#table7" title="Table 7. Non-operon gene clusters with a promoter of the downstream gene in the 3' UTR of the upstream gene.">Table 7</a> (<a href="#sec14" title="14.&nbsp;Tables 1-8">Section 14</a>).
+            </p>
+            <div class="mediaobject" align="center"><a name="figure10"></a><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="432">
+<tr>
+  <td align="center"><p><a href="operongeneclusters_fig10.jpg"><img src="operongeneclusters_fig10_s.jpg" border="2" align="middle" alt=" figure 10"></a>
+  </td>
+</tr>
+               </table>
+               <div class="caption">
+                  <p><b>Figure 10. Overlapping genes. A.&nbsp;</b><span class="bold"><strong>A.</strong></span> two-gene cluster where the 3' UTR of one gene overlaps with the outron of the next gene downstream. The sequence shows the
+                     3' UTR of <a href="http://www.wormbase.org/db/get?name=F07F6.4;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00017217;class=Gene" target="_blank">F07F6.4</a></a>, with the site of polyA addition (dotted underline and boldface) and the polyA signal (underlined and in boldface). This
+                     site is only eighteen bp upstream of the SL1 trans-splice site of <a href="http://www.wormbase.org/db/get?name=F07F6.8;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00017220;class=Gene" target="_blank">F07F6.8</a></a> (double underlined). Presumably a promoter within the <a href="http://www.wormbase.org/db/get?name=F07F6.4;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00017217;class=Gene" target="_blank">F07F6.4</a></a> 3' UTR results in the synthesis of the <a href="http://www.wormbase.org/db/get?name=F07F6.8;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00017220;class=Gene" target="_blank">F07F6.8</a></a> outron. The H3K9ac track shown provides evidence for this promoter. The length of the vertical lines is proportional to the
+                     number of reads corresponding to the indicated genomic position. <span class="bold"><strong>B.</strong></span> Dual use of an exon. This panel shows an example of two genes that overlap. The upstream gene, <a href="http://www.wormbase.org/db/get?name=W09G3.8;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00012371;class=Gene" target="_blank">W09G3.8</a></a>, ends within the exon shown in the middle of the diagram. The downstream gene, <a href="http://www.wormbase.org/db/get?name=W09G3.2;class=Gene" target="_blank">W09G3.2</a>, begins by SL1 trans-splicing at the 5' end of this same exon, as indicated by 555 SL1 transcriptome reads at this site.
+                     In this case, it is impossible for a single polycistronic pre-mRNA to give rise to both mRNAs.
+                  </p>
+               </div>
+            </div>
+            <p>The second kind of overlapping gene involves dual use of a single exon. Sometimes a single stretch of DNA can serve as parts
+               of exons of two adjacent genes. <a href="#figure10">Figure 10B</a> illustrates an unusual arrangement in which an exon is sometimes used as the end of the coding region and 3' UTR of the upstream
+               gene, or alternatively as the 5' UTR and beginning of the coding region of the downstream gene. Obviously, this cannot be
+               an operon since the two mRNAs must be made from different pre-mRNA molecules. <a href="#table8" title="Table 8. Use of a single exon by two genes">Table 8</a> (<a href="#sec14" title="14.&nbsp;Tables 1-8">Section 14</a>) lists additional examples.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec11"></a>11.&nbsp;Identification of operons
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Originally, operons were identified based on both the presence of SL2 trans-splicing and close intercistronic spacing. However,
+               there are significant gray areas&#8212;closely spaced genes without much SL2 trans-splicing, or SL2 trans-spliced genes without
+               genes closely spaced upstream. It is now clear that in <span class="emphasis"><em>C. elegans</em></span>, SL2 trans-splicing is by far the best predictor of transcription from a promoter upstream of another gene. The only exceptions
+               appear to be occasional SL2 trans-splicing at intron trans-splice sites, and many of these could be uncharacterized alternative
+               operons. Therefore, operon designations for gene clusters are most reliably based solely on SL2 trans-splicing. To what extent
+               do operons defined this way have different intercistronic length distributions? The data in <a href="#figure3">Figure 3</a> definitively answer this question: genes in the same orientation less than one kb apart can be divided into three groups
+               according to their SL2 trans-splicing levels. The vast majority of genes receiving &gt;80% SL2 are 90-120 bp downstream of another
+               gene, whereas the rest have much longer spacing. In fact, the difference is so dramatic that genes in this close range can
+               be diagnosed as very likely to be downstream in operons, solely based on intercistronic length. Furthermore, the distribution
+               of genes with very low SL2 levels (0-10%) is quite different from that of those receiving between 10 and 80% SL2. The former
+               are rarely in operons, whereas the latter are mostly in hybrid operons.
+            </p>
+            <p>Genes spaced &gt;1000 bp apart are very rarely in operons. However, the genes spaced between 130&#8211;1000 bp apart can not be accurately
+               diagnosed based on intercistronic length alone&#8212;some are in operons, some hybrid operons, and some not in operons. This highlights
+               the danger of assigning genes in organisms that lack SL2 trans-splicing to operons based solely on intercistronic distance.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec12"></a>12.&nbsp;Regulation in and of operons
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>The <span class="emphasis"><em>C. elegans</em></span> genome has a surprisingly varied array of gene clusters. Because the vast majority of such clusters fit the general description
+               of SL2-type operons: ~100 bp intercistronic region containing a Ur element (<a href="#bib10">Lasda et al., 2010</a>) and with almost all trans-splicing to SL2 (<a href="#figure1">Figure 1</a>), it seems likely that this is an optimal arrangement for processing of the polycistronic RNA precursor to produce individual
+               mature mRNAs. Because expression of downstream operon genes depends on successful 3&#8217; end formation and trans-splicing, it
+               is not surprising that expression levels of genes more distant from the promoter drop off somewhat (<a href="#bib6">Cutter et al., 2009</a>; <a href="http://www.wormbase.org/resources/person/WBPerson4673" target="_top"><a href="http://www.wormbase.org/db/get?name=M;class=Cell" target="_blank">M</a>. A. Allen</a> and <a href="http://www.wormbase.org/resources/person/WBPerson71" target="_top">T. Blumenthal</a>, unpublished observations). Although this does not constitute regulation <span class="emphasis"><em>per se</em></span>, it does suggest that position within operons may have been selected based on need for higher or lower expression levels.
+               In general, there is no obvious relationship between the functions of genes in the same operon, but there are interesting
+               exceptions to this rule (<a href="#bib4">Blumenthal and Gleason, 2003</a>). For example, ceop4596 contains three genes, all of which specify proteins involved in pre-mRNA splicing. The operon dataset
+               as a whole (the operome) largely contains genes required for growth, including especially the genes for the basic machinery
+               of gene expression and energy generation. The presence of genes in operons may allow the worm to respond rapidly to the need
+               for growth during particular times in the life cycle, such as embryogenesis and relief from starvation (<a href="#bib19">Zaslaver et al., 2011</a>).
+            </p>
+            <p>The other kinds of operons considered in this manuscript are quite rare compared with conventional SL2-type operons, and it
+               seems likely that many of them have arisen in response to need for specific kinds of regulatory requirements. For example,
+               hybrid operons contain a promoter at the 5&#8217; end of the cluster and a different promoter somewhere within the cluster. Presumably,
+               the internal promoter results in expression of the gene or genes downstream of it at a time or place where the 5&#8217; end promoter
+               is not expressed, or is expressed at an insufficiently high level. The internal promoter allows differential expression of
+               the genes in the operon in response to particular signals, for example, but still allows the entire cluster to be expressed
+               as a unit when needed. Both co-regulation and differential expression are thereby achieved.
+            </p>
+            <p>SL2-type operons with an extra 3&#8217; end formation signal very close to the trans-splice site present a possibility for a very
+               different sort of regulation. When the upstream 3&#8217; end formation signal is used, both upstream and downstream genes can be
+               expressed as in a conventional SL2-type operon. However, when the 3&#8217; end formation site just upstream of the trans-splice
+               site is used before trans-splicing has occurred, expression of the downstream gene from the same pre-mRNA would be eliminated
+               because there would be insufficient RNA upstream of the trans-splice site to allow for trans-splicing. Hence the downstream
+               RNA would lack a cap and would presumably be degraded. In contrast, if trans-splicing occurred before 3&#8217; end formation, then
+               both genes could be expressed no matter which 3&#8217; end formation site was used. Thus, differences in the efficiency of 3&#8217; end
+               formation at the two sites and of trans-splicing determines which genes are expressed from these polycistronic pre-mRNAs.
+               Differential use of 3&#8217; end formation sites has been shown before to result in inclusion or exclusion of sites needed to bind
+               regulatory RNAs and proteins, thereby regulating expression of the gene (<a href="#bib9">Jan et al., 2011</a>). With this type of operon, there should be an interesting extra effect of such regulation: expression levels of the gene
+               downstream would depend on choice of 3&#8217; end formation site upstream.
+            </p>
+            <p>The SL1-type operons present a similar kind of regulatory opportunity. If SL1 trans-splicing happens first, the free 3&#8217; end
+               of the upstream mRNA can theoretically be polyadenylated, so both products could be made from a single pre-mRNA molecule.
+               However, if 3&#8217; end formation happens first, then the downstream gene is inactivated, so only the upstream part of the pre-mRNA
+               is produced. Thus, any change in the relative efficiencies of 3&#8217; end formation and SL1 trans-splicing could potentially result
+               in changes in the relative expression of the two genes involved. Nonetheless, no SL1-type operon has yet been shown to be
+               regulated this way.
+            </p>
+            <p>Alternative operons present yet another regulatory possibility. In this case, when cis-splicing occurs, one gene product is
+               made, but when 3' end formation accompanied by trans-splicing occurs, two gene products are potentially made from the same
+               set of exons. Which processing event occurs would be determined by their relative efficiencies. The fact that three of these
+               alternative operons encode proteins required for 3' end formation or transcription termination strongly suggests that this
+               arrangement is at least sometimes regulatory, apparently autoregulatory in these instances.
+            </p>
+            <p>Two of the kinds of operon discussed here are presumably regulated at the level of translation. In the SL1-type operon that
+               produces both a dicistronic mRNA and a trans-spliced mRNA, the expression of the downstream gene could be modulated by the
+               efficiency of translation of the two mRNAs. It is currently not known how translation of a downstream gene in a dicistronic
+               mRNA is initiated, so it is premature to speculate how such translation could be controlled. Second, the operons that make
+               only a single dicistronic mRNA must also be subject to any regulation that occurs at the level of translation.
+            </p>
+            <p>When two genes share exons, as in the case of the gene pairs, <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00000481;class=Gene" target="_blank">cha-1</a>/<a href="http://www.wormbase.org/db/get?name=WBGene00006756;class=Gene" target="_blank">unc-17</a></em></span> or <a href="http://www.wormbase.org/db/get?name=W09G3.8;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00012371;class=Gene" target="_blank">W09G3.8</a></a>/.2 (<a href="#figure10">Figure 10B</a>), they generally cannot be expressed from the same pre-mRNA. So for any given pre-mRNA only one of the two genes can be expressed.
+               This can be regulated at the level of alternative splice site choice, as a decision between 3&#8217; end formation and splicing.
+               In the case shown in <a href="#figure10">Figure 10B</a>, the exon can serve as the 3&#8217; end of an upstream gene or, alternatively, as the first exon of the downstream gene. How such
+               choices are made is not currently known.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec13"></a>13.&nbsp;Genome architecture
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>The many ways of arranging genes with a minimum of wasted space discussed in this chapter suggest that <span class="emphasis"><em>C. elegans</em></span> may have had to adapt by minimizing its genome size. The result is a surprising variety of gene arrangements where regulation
+               can occur, but with a minimum of DNA dedicated to conventional regulatory elements. Although many of these interesting gene
+               arrangements have been reported first in <span class="emphasis"><em>C. elegans</em></span>, some have subsequently been found in other nematodes and in other phyla. It seems reasonable to predict, therefore, that
+               some of the apparently unique gene arrangements discussed here will be found in other species.
+            </p>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec14"></a>14.&nbsp;Tables 1-8
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <div class="table"><a name="table1"></a><p class="title"><span class="bold">Table 1. Operon gene pairs with &gt; 1 kb spacing.</span></p>
+               <table summary="Table 1. Operon gene pairs with &gt; 1 kb spacing." border="1">
+                  <colgroup>
+                     <col>
+                     <col>
+                     <col>
+                     <col>
+                     <col>
+                     <col>
+                  </colgroup>
+                  <thead>
+                     <tr valign="bottom">
+                        <th align="left" valign="bottom"><span class="bold"><strong>1</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>2</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>3</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>4</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>5</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>6</strong></span></th>
+                     </tr>
+                     <tr valign="bottom">
+                        <th rowspan="2" align="left" valign="bottom"><span class="bold"><strong>Gene pair</strong></span></th>
+                        <th rowspan="2" align="left" valign="bottom"><span class="bold"><strong>ceop</strong></span></th>
+                        <th colspan="2" align="left" valign="bottom"><span class="bold"><strong>reads</strong></span></th>
+                        <th rowspan="2" align="left" valign="bottom"><span class="bold"><strong>spacing (kb)</strong></span></th>
+                        <th rowspan="2" align="left" valign="bottom"><span class="bold"><strong>intervening gene</strong></span></th>
+                     </tr>
+                     <tr valign="bottom">
+                        <th align="left" valign="bottom"><span class="bold"><strong>#</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>%SL2</strong></span></th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr valign="top">
+                        <td align="left" valign="top">B0414.8 &#8211; .7</td>
+                        <td align="left" valign="top">1003</td>
+                        <td align="left" valign="top">6</td>
+                        <td align="left" valign="top">67</td>
+                        <td align="left" valign="top">2.6</td>
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=B0414.1;class=Gene" target="_blank">B0414.1</a></td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=F30A10.9;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00009266;class=Gene" target="_blank">F30A10.9</a></a> - .3
+                        </td>
+                        <td align="left" valign="top">1005</td>
+                        <td align="left" valign="top">701</td>
+                        <td align="left" valign="top">33</td>
+                        <td align="left" valign="top">10</td>
+                        <td align="left" valign="top">F30A10.8</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top">F49C12.8&#8211; .11</td>
+                        <td align="left" valign="top">4680</td>
+                        <td align="left" valign="top">7374</td>
+                        <td align="left" valign="top">89</td>
+                        <td align="left" valign="top">1.2</td>
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=F49C12.10;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00009879;class=Gene" target="_blank">F49C12.10</a></a></td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top">K01C8.9&#8211; .6</td>
+                        <td align="left" valign="top">2742</td>
+                        <td align="left" valign="top">876</td>
+                        <td align="left" valign="top">85</td>
+                        <td align="left" valign="top">2.6</td>
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=K01C8.8;class=Gene" target="_blank">K01C8.8</a></td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=T16H12.11;class=Gene" target="_blank">T16H12.11</a> - .3
+                        </td>
+                        <td align="left" valign="top">3652</td>
+                        <td align="left" valign="top">1</td>
+                        <td align="left" valign="top">100</td>
+                        <td align="left" valign="top">4</td>
+                        <td align="left" valign="top">ceop3648</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top">Y51H7C.6&#8211; .5</td>
+                        <td align="left" valign="top">2048</td>
+                        <td align="left" valign="top">208</td>
+                        <td align="left" valign="top">80</td>
+                        <td align="left" valign="top">3.5</td>
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=Y51H7C.9;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00021787;class=Gene" target="_blank">Y51H7C.9</a></a></td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=Y54E10BL.6;class=Gene" target="_blank">Y54E10BL.6</a> &#8211; .5
+                        </td>
+                        <td align="left" valign="top">1943</td>
+                        <td align="left" valign="top">2901</td>
+                        <td align="left" valign="top">81</td>
+                        <td align="left" valign="top">2.6</td>
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=Y54E10BL.3;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00021838;class=Gene" target="_blank">Y54E10BL.3</a></a></td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top">Y57A10A.18-.16</td>
+                        <td align="left" valign="top">2688</td>
+                        <td align="left" valign="top">254</td>
+                        <td align="left" valign="top">62</td>
+                        <td align="left" valign="top">6.7</td>
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=Y57A10A.35;class=Gene" target="_blank">Y57A10A.35</a></td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=WBGene00022759;class=Gene" target="_blank">ZK546.2</a> &#8211; .1
+                        </td>
+                        <td align="left" valign="top">2690</td>
+                        <td align="left" valign="top">812</td>
+                        <td align="left" valign="top">52</td>
+                        <td align="left" valign="top">1.9</td>
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=ZK546.15;class=Gene" target="_blank">ZK546.15</a></td>
+                     </tr>
+                     <tr valign="top">
+                        <td colspan="6" align="left" valign="top"><span class="bold"><strong>Column 1</strong></span> indicates gene pairs, <span class="bold"><strong>2</strong></span> operon designation, <span class="bold"><strong>3</strong></span> number of trans-spliced reads (<a href="#bib1">Allen et al., 2011</a>), <span class="bold"><strong>4</strong></span> % of these that are spliced to SL2 or one of its variants, <span class="bold"><strong>5</strong></span> the spacing between the polyA site of the upstream gene and the trans-splice site of the downstream gene, <span class="bold"><strong>6</strong></span> gene or genes, usually on the opposite strand, that occur between the operon genes.
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <div class="table"><a name="table2"></a><p class="title"><span class="bold">Table 2. SL2-type operons with a polyA site near the trans-splice site.</span></p>
+               <table summary="Table 2. SL2-type operons with a polyA site near the trans-splice site." border="1">
+                  <colgroup>
+                     <col>
+                     <col>
+                     <col>
+                     <col>
+                     <col>
+                     <col>
+                     <col>
+                  </colgroup>
+                  <thead>
+                     <tr valign="bottom">
+                        <th align="left" valign="bottom"><span class="bold"><strong>1</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>2</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>3</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>4</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>5</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>6</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>7</strong></span></th>
+                     </tr>
+                     <tr valign="bottom">
+                        <th align="left" valign="bottom"><span class="bold"><strong>Gene pair</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>polyA signal1</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>at</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>polyA signal2</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>at</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>%SL1</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>conserved?</strong></span></th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=C15H11.7;class=Gene" target="_blank">C15H11.7</a>/.4
+                        </td>
+                        <td align="left" valign="top">GATAAA</td>
+                        <td align="left" valign="top">-141</td>
+                        <td align="left" valign="top">AAAAAA</td>
+                        <td align="left" valign="top">-29</td>
+                        <td align="left" valign="top">18</td>
+                        <td align="left" valign="top">-</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=C17E4.5;class=Gene" target="_blank">C17E4.5</a>/.11
+                        </td>
+                        <td align="left" valign="top">TAAAAA</td>
+                        <td align="left" valign="top">-112</td>
+                        <td align="left" valign="top">AGTAAA</td>
+                        <td align="left" valign="top">-43</td>
+                        <td align="left" valign="top">11</td>
+                        <td align="left" valign="top">+/-</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top">C24F3.1/.4</td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-136</td>
+                        <td align="left" valign="top">TATAAA</td>
+                        <td align="left" valign="top">-36</td>
+                        <td align="left" valign="top">6</td>
+                        <td align="left" valign="top">-</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=C34E10.6;class=Gene" target="_blank">C34E10.6</a>/.5
+                        </td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-121</td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-54</td>
+                        <td align="left" valign="top">4</td>
+                        <td align="left" valign="top">+</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=C43E11.4;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00016604;class=Gene" target="_blank">C43E11.4</a></a>/.11
+                        </td>
+                        <td align="left" valign="top">AATAAT</td>
+                        <td align="left" valign="top">-130</td>
+                        <td align="left" valign="top">AATAAT</td>
+                        <td align="left" valign="top">-23</td>
+                        <td align="left" valign="top">5</td>
+                        <td align="left" valign="top">-</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top">C47B2.6/.7</td>
+                        <td align="left" valign="top">AATATA</td>
+                        <td align="left" valign="top">-188</td>
+                        <td align="left" valign="top">AAAAAA</td>
+                        <td align="left" valign="top">-42</td>
+                        <td align="left" valign="top">6</td>
+                        <td align="left" valign="top">+</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=C56C10.8;class=Gene" target="_blank">C56C10.8</a>/7
+                        </td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-181</td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-25</td>
+                        <td align="left" valign="top">22</td>
+                        <td align="left" valign="top">+</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=D2096.8;class=Gene" target="_blank">D2096.8</a>/.7
+                        </td>
+                        <td align="left" valign="top">AATACT</td>
+                        <td align="left" valign="top">-170</td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-27</td>
+                        <td align="left" valign="top">7</td>
+                        <td align="left" valign="top">-</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=E02C12.13;class=Gene" target="_blank">E02C12.13</a>/.4
+                        </td>
+                        <td align="left" valign="top">CATAAA</td>
+                        <td align="left" valign="top">-89</td>
+                        <td align="left" valign="top">TATAAA</td>
+                        <td align="left" valign="top">-47</td>
+                        <td align="left" valign="top">23</td>
+                        <td align="left" valign="top">+</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=WBGene00008505;class=Gene" target="_blank">F01G4.6</a>/.5
+                        </td>
+                        <td align="left" valign="top">TATAAA</td>
+                        <td align="left" valign="top">-171</td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-31</td>
+                        <td align="left" valign="top">6</td>
+                        <td align="left" valign="top">+</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=F21D5.7;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00009012;class=Gene" target="_blank">F21D5.7</a></a>/.6
+                        </td>
+                        <td align="left" valign="top">AATTAA</td>
+                        <td align="left" valign="top">-170</td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-16</td>
+                        <td align="left" valign="top">1</td>
+                        <td align="left" valign="top">-</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=F25H2.11;class=Gene" target="_blank">F25H2.11</a>/12
+                        </td>
+                        <td align="left" valign="top">AATGAA</td>
+                        <td align="left" valign="top">-115</td>
+                        <td align="left" valign="top">AAAAAA</td>
+                        <td align="left" valign="top">-25</td>
+                        <td align="left" valign="top">5</td>
+                        <td align="left" valign="top">-</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=F40G9.3;class=Gene" target="_blank">F40G9.3</a>/2
+                        </td>
+                        <td align="left" valign="top">CATGAA</td>
+                        <td align="left" valign="top">-121</td>
+                        <td align="left" valign="top">TTTAAA</td>
+                        <td align="left" valign="top">-40</td>
+                        <td align="left" valign="top">5</td>
+                        <td align="left" valign="top">+</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=F45H10.2;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00009739;class=Gene" target="_blank">F45H10.2</a></a>/.1
+                        </td>
+                        <td align="left" valign="top">AGTGAA</td>
+                        <td align="left" valign="top">-120</td>
+                        <td align="left" valign="top">GAAAAA</td>
+                        <td align="left" valign="top">-33</td>
+                        <td align="left" valign="top">13</td>
+                        <td align="left" valign="top">+/-</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=WBGene00009770;class=Gene" target="_blank">F46B6.5</a>/.4
+                        </td>
+                        <td align="left" valign="top">GATGAA</td>
+                        <td align="left" valign="top">-117</td>
+                        <td align="left" valign="top">TATGAA</td>
+                        <td align="left" valign="top">-31</td>
+                        <td align="left" valign="top">3</td>
+                        <td align="left" valign="top">-</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=F55A12.3;class=Gene" target="_blank">F55A12.3</a>/.2
+                        </td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-115</td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-39</td>
+                        <td align="left" valign="top">3</td>
+                        <td align="left" valign="top">-</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=F59A2.3;class=Gene" target="_blank">F59A2.3</a>/.4
+                        </td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-134</td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-19</td>
+                        <td align="left" valign="top">14</td>
+                        <td align="left" valign="top">+</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=K08E7.2;class=Gene" target="_blank">K08E7.2</a>/.1
+                        </td>
+                        <td align="left" valign="top">TATGAA</td>
+                        <td align="left" valign="top">-130</td>
+                        <td align="left" valign="top">GATAAA</td>
+                        <td align="left" valign="top">-22</td>
+                        <td align="left" valign="top">14</td>
+                        <td align="left" valign="top">+/-</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=R119.4;class=Gene" target="_blank">R119.4</a>/.3
+                        </td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-112</td>
+                        <td align="left" valign="top">TATAAA</td>
+                        <td align="left" valign="top">-30</td>
+                        <td align="left" valign="top">0</td>
+                        <td align="left" valign="top">+</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=T20H4.4;class=Gene" target="_blank">T20H4.4</a>/<a href="http://www.wormbase.org/db/get?name=R151.10;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00020113;class=Gene" target="_blank">R151.10</a></a></td>
+                        <td align="left" valign="top">AATTAA</td>
+                        <td align="left" valign="top">-116</td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-29</td>
+                        <td align="left" valign="top">8</td>
+                        <td align="left" valign="top">-</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=T05G5.6;class=Gene" target="_blank">T05G5.6</a>/.5
+                        </td>
+                        <td align="left" valign="top">ATATAT</td>
+                        <td align="left" valign="top">-132</td>
+                        <td align="left" valign="top">AAAAAA</td>
+                        <td align="left" valign="top">-26</td>
+                        <td align="left" valign="top">6</td>
+                        <td align="left" valign="top">+</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=WBGene00011503;class=Gene" target="_blank">T05G5.9</a>/.8
+                        </td>
+                        <td align="left" valign="top">AATGAA</td>
+                        <td align="left" valign="top">-128</td>
+                        <td align="left" valign="top">TATAAA</td>
+                        <td align="left" valign="top">-33</td>
+                        <td align="left" valign="top">6</td>
+                        <td align="left" valign="top">-</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=WBGene00021311;class=Gene" target="_blank">Y32H12A.2</a>/ZK121.1
+                        </td>
+                        <td align="left" valign="top">AATATA</td>
+                        <td align="left" valign="top">-124</td>
+                        <td align="left" valign="top">AATAGA</td>
+                        <td align="left" valign="top">-28</td>
+                        <td align="left" valign="top">12</td>
+                        <td align="left" valign="top">-</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=Y38A10A.7;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00021392;class=Gene" target="_blank">Y38A10A.7</a></a>/.6
+                        </td>
+                        <td align="left" valign="top">TATAAT</td>
+                        <td align="left" valign="top">-89</td>
+                        <td align="left" valign="top">TATAAA</td>
+                        <td align="left" valign="top">-29</td>
+                        <td align="left" valign="top">6</td>
+                        <td align="left" valign="top">-</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=Y47G6A.22;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00021647;class=Gene" target="_blank">Y47G6A.22</a></a>/.21
+                        </td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-136</td>
+                        <td align="left" valign="top">AAAAAA</td>
+                        <td align="left" valign="top">-45</td>
+                        <td align="left" valign="top">53</td>
+                        <td align="left" valign="top">+/-</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=Y62E10A.1;class=Gene" target="_blank">Y62E10A.1</a>/.5
+                        </td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-109</td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-28</td>
+                        <td align="left" valign="top">2</td>
+                        <td align="left" valign="top">-</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=Y71H2AM.5;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00022170;class=Gene" target="_blank">Y71H2AM.5</a></a>/.4
+                        </td>
+                        <td align="left" valign="top">GATAAA</td>
+                        <td align="left" valign="top">-121</td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-18</td>
+                        <td align="left" valign="top">9</td>
+                        <td align="left" valign="top">+</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=Y111B2A.2;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00013728;class=Gene" target="_blank">Y111B2A.2</a></a>/.3
+                        </td>
+                        <td align="left" valign="top">GATGAA</td>
+                        <td align="left" valign="top">-138</td>
+                        <td align="left" valign="top">TTTAAA</td>
+                        <td align="left" valign="top">-40</td>
+                        <td align="left" valign="top">10</td>
+                        <td align="left" valign="top">-</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=ZK856.13;class=Gene" target="_blank">ZK856.13</a>/.10
+                        </td>
+                        <td align="left" valign="top">TATAAA</td>
+                        <td align="left" valign="top">-123</td>
+                        <td align="left" valign="top">TATAAA</td>
+                        <td align="left" valign="top">-29</td>
+                        <td align="left" valign="top">3</td>
+                        <td align="left" valign="top">-</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=ZK1010.1;class=Gene" target="_blank">ZK1010.1</a>/.2
+                        </td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-116</td>
+                        <td align="left" valign="top">TATAAA</td>
+                        <td align="left" valign="top">-12</td>
+                        <td align="left" valign="top">8</td>
+                        <td align="left" valign="top">-</td>
+                     </tr>
+                     <tr valign="top">
+                        <td colspan="7" align="left" valign="top">These gene pairs (full designation for upstream gene/same designation for downstream gene up to the dot) all have two sites
+                           of polyA addition, a proximal site (<span class="bold"><strong>columns 2</strong></span> and <span class="bold"><strong>3</strong></span>), and a distal site (<span class="bold"><strong>columns 4</strong></span> and <span class="bold"><strong>5</strong></span>). However, they are not SL1-type operons based on the fact that most of their trans-splicing is to SL2 (<span class="bold"><strong>column 6</strong></span>) (<a href="#bib1">Allen et al., 2011</a>) and the distal site is not identical with the site of trans-splicing. <span class="bold"><strong>Column 7</strong></span> indicates whether the distal sites are also present in the related nematode, <span class="emphasis"><em>C. briggsae</em></span> (+/-) indicates that a possible signal is present.
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <div class="table"><a name="table3"></a><p class="title"><span class="bold">Table 3. SL2 trans-splicing to ds exons.</span></p>
+               <table summary="Table 3. SL2 trans-splicing to ds exons." border="1">
+                  <colgroup>
+                     <col>
+                     <col>
+                     <col>
+                     <col>
+                     <col>
+                     <col>
+                     <col>
+                     <col>
+                  </colgroup>
+                  <thead>
+                     <tr valign="bottom">
+                        <th align="left" valign="bottom"><span class="bold"><strong>1</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>2</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>3</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>4</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>5</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>6</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>7</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>8</strong></span></th>
+                     </tr>
+                     <tr valign="bottom">
+                        <th valign="bottom">&nbsp;</th>
+                        <th valign="bottom">&nbsp;</th>
+                        <th colspan="4" align="left" valign="bottom"><span class="bold"><strong>reads</strong></span></th>
+                        <th valign="bottom">&nbsp;</th>
+                        <th valign="bottom">&nbsp;</th>
+                     </tr>
+                     <tr valign="bottom">
+                        <th valign="bottom">&nbsp;</th>
+                        <th valign="bottom">&nbsp;</th>
+                        <th colspan="2" align="left" valign="bottom"><span class="bold"><strong>ds exon</strong></span></th>
+                        <th colspan="2" align="left" valign="bottom"><span class="bold"><strong>1<sup>st</sup> exon</strong></span></th>
+                        <th colspan="2" align="left" valign="bottom"><span class="bold"><strong>bp from upstream gene to:</strong></span></th>
+                     </tr>
+                     <tr valign="bottom">
+                        <th align="left" valign="bottom"><span class="bold"><strong>Gene</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>exon#</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>#</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>%SL2</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>#</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>%SL2</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>ds exon</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>1<sup>st</sup> exon</strong></span></th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr valign="top">
+                        <td align="left" valign="top">C10G11.5</td>
+                        <td align="left" valign="top">2</td>
+                        <td align="left" valign="top">453</td>
+                        <td align="left" valign="top">81</td>
+                        <td align="left" valign="top">903</td>
+                        <td align="left" valign="top">5</td>
+                        <td align="left" valign="top">260</td>
+                        <td align="left" valign="top">75</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top">F57B10.3</td>
+                        <td align="left" valign="top">2</td>
+                        <td align="left" valign="top">773</td>
+                        <td align="left" valign="top">24</td>
+                        <td align="left" valign="top">0</td>
+                        <td align="left" valign="top">-</td>
+                        <td align="left" valign="top">1200</td>
+                        <td align="left" valign="top">600</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top">K10C3.6</td>
+                        <td align="left" valign="top">2</td>
+                        <td align="left" valign="top">480</td>
+                        <td align="left" valign="top">39</td>
+                        <td align="left" valign="top">0</td>
+                        <td align="left" valign="top">-</td>
+                        <td align="left" valign="top">2100</td>
+                        <td align="left" valign="top">600</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=Y106G6H.8;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00013720;class=Gene" target="_blank">Y106G6H.8</a></a></td>
+                        <td align="left" valign="top">2</td>
+                        <td align="left" valign="top">5</td>
+                        <td align="left" valign="top">100</td>
+                        <td align="left" valign="top">2068</td>
+                        <td align="left" valign="top">88</td>
+                        <td align="left" valign="top">280</td>
+                        <td align="left" valign="top">100</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top">Y87G2A.8</td>
+                        <td align="left" valign="top">2</td>
+                        <td align="left" valign="top">963</td>
+                        <td align="left" valign="top">13</td>
+                        <td align="left" valign="top">0</td>
+                        <td align="left" valign="top">-</td>
+                        <td align="left" valign="top">1100</td>
+                        <td align="left" valign="top">600</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=WBGene00018394;class=Gene" target="_blank">F43E2.6</a></td>
+                        <td align="left" valign="top">2</td>
+                        <td align="left" valign="top">16</td>
+                        <td align="left" valign="top">88</td>
+                        <td align="left" valign="top">0</td>
+                        <td align="left" valign="top">-</td>
+                        <td align="left" valign="top">900</td>
+                        <td align="left" valign="top">400</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top">F42G9.5</td>
+                        <td align="left" valign="top">2</td>
+                        <td align="left" valign="top">83</td>
+                        <td align="left" valign="top">47</td>
+                        <td align="left" valign="top">89</td>
+                        <td align="left" valign="top">0</td>
+                        <td align="left" valign="top">1200</td>
+                        <td align="left" valign="top">80</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top">R07E5.10</td>
+                        <td align="left" valign="top">2</td>
+                        <td align="left" valign="top">536</td>
+                        <td align="left" valign="top">77</td>
+                        <td align="left" valign="top">808</td>
+                        <td align="left" valign="top">75</td>
+                        <td align="left" valign="top">500</td>
+                        <td align="left" valign="top">300</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top">ZK121.1</td>
+                        <td align="left" valign="top">2</td>
+                        <td align="left" valign="top">21</td>
+                        <td align="left" valign="top">81</td>
+                        <td align="left" valign="top">586</td>
+                        <td align="left" valign="top">88</td>
+                        <td align="left" valign="top">290</td>
+                        <td align="left" valign="top">3,40,100,140</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top">F54E7.1</td>
+                        <td align="left" valign="top">2</td>
+                        <td align="left" valign="top">10</td>
+                        <td align="left" valign="top">100</td>
+                        <td align="left" valign="top">110</td>
+                        <td align="left" valign="top">72</td>
+                        <td align="left" valign="top">600</td>
+                        <td align="left" valign="top">400</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=WBGene00020107;class=Gene" target="_blank">R151.2</a></td>
+                        <td align="left" valign="top">2</td>
+                        <td align="left" valign="top">954</td>
+                        <td align="left" valign="top">24</td>
+                        <td align="left" valign="top">173</td>
+                        <td align="left" valign="top">93</td>
+                        <td align="left" valign="top">1600</td>
+                        <td align="left" valign="top">110,190</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=K08F11.3;class=Gene" target="_blank">K08F11.3</a></td>
+                        <td align="left" valign="top">2</td>
+                        <td align="left" valign="top">2529</td>
+                        <td align="left" valign="top">89</td>
+                        <td align="left" valign="top">23</td>
+                        <td align="left" valign="top">100</td>
+                        <td align="left" valign="top">470</td>
+                        <td align="left" valign="top">100</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=WBGene00018426;class=Gene" target="_blank">F44E7.4</a></td>
+                        <td align="left" valign="top">2</td>
+                        <td align="left" valign="top">288</td>
+                        <td align="left" valign="top">15</td>
+                        <td align="left" valign="top">357</td>
+                        <td align="left" valign="top">14</td>
+                        <td align="left" valign="top">2200</td>
+                        <td align="left" valign="top">1900</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top">K10B3.6</td>
+                        <td align="left" valign="top">2</td>
+                        <td align="left" valign="top">23</td>
+                        <td align="left" valign="top">30</td>
+                        <td align="left" valign="top">0</td>
+                        <td align="left" valign="top">-</td>
+                        <td align="left" valign="top">1500</td>
+                        <td align="left" valign="top">800</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=WBGene00016278;class=Gene" target="_blank">C30H7.2</a></td>
+                        <td align="left" valign="top">2</td>
+                        <td align="left" valign="top">390</td>
+                        <td align="left" valign="top">39</td>
+                        <td align="left" valign="top">9</td>
+                        <td align="left" valign="top">100</td>
+                        <td align="left" valign="top">1200</td>
+                        <td align="left" valign="top">600</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=WBGene00012997;class=Gene" target="_blank">Y48C3A.18</a></td>
+                        <td align="left" valign="top">2</td>
+                        <td align="left" valign="top">11</td>
+                        <td align="left" valign="top">91</td>
+                        <td align="left" valign="top">120</td>
+                        <td align="left" valign="top">91</td>
+                        <td align="left" valign="top">1100</td>
+                        <td align="left" valign="top">800</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=Y50D7A.8;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00021756;class=Gene" target="_blank">Y50D7A.8</a></a></td>
+                        <td align="left" valign="top">2</td>
+                        <td align="left" valign="top">8</td>
+                        <td align="left" valign="top">88</td>
+                        <td align="left" valign="top">310</td>
+                        <td align="left" valign="top">50</td>
+                        <td align="left" valign="top">2400</td>
+                        <td align="left" valign="top">1100</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=F01F1.5;class=Gene" target="_blank">F01F1.5</a></td>
+                        <td align="left" valign="top">2</td>
+                        <td align="left" valign="top">84</td>
+                        <td align="left" valign="top">68</td>
+                        <td align="left" valign="top">310</td>
+                        <td align="left" valign="top">85</td>
+                        <td align="left" valign="top">500</td>
+                        <td align="left" valign="top">200</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top">F01F1.1</td>
+                        <td align="left" valign="top">2</td>
+                        <td align="left" valign="top">211</td>
+                        <td align="left" valign="top">51</td>
+                        <td align="left" valign="top">2</td>
+                        <td align="left" valign="top">50</td>
+                        <td align="left" valign="top">500</td>
+                        <td align="left" valign="top">90</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top">K08D10.2</td>
+                        <td align="left" valign="top">2</td>
+                        <td align="left" valign="top">18</td>
+                        <td align="left" valign="top">94</td>
+                        <td align="left" valign="top">456</td>
+                        <td align="left" valign="top">86</td>
+                        <td align="left" valign="top">800</td>
+                        <td align="left" valign="top">100</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=F28F8.6;class=Gene" target="_blank">F28F8.6</a></td>
+                        <td align="left" valign="top">2</td>
+                        <td align="left" valign="top">707</td>
+                        <td align="left" valign="top">47</td>
+                        <td align="left" valign="top">25</td>
+                        <td align="left" valign="top">72</td>
+                        <td align="left" valign="top">700</td>
+                        <td align="left" valign="top">140</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top">C34E10.4</td>
+                        <td align="left" valign="top">2</td>
+                        <td align="left" valign="top">101</td>
+                        <td align="left" valign="top">93</td>
+                        <td align="left" valign="top">18</td>
+                        <td align="left" valign="top">0</td>
+                        <td align="left" valign="top">600</td>
+                        <td align="left" valign="top">44</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top">C34E10.4</td>
+                        <td align="left" valign="top">3</td>
+                        <td align="left" valign="top">11</td>
+                        <td align="left" valign="top">82</td>
+                        <td align="left" valign="top">18</td>
+                        <td align="left" valign="top">0</td>
+                        <td align="left" valign="top">700</td>
+                        <td align="left" valign="top">44</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top">C34E10.4</td>
+                        <td align="left" valign="top">5</td>
+                        <td align="left" valign="top">17</td>
+                        <td align="left" valign="top">88</td>
+                        <td align="left" valign="top">18</td>
+                        <td align="left" valign="top">0</td>
+                        <td align="left" valign="top">1400</td>
+                        <td align="left" valign="top">44</td>
+                     </tr>
+                     <tr valign="top">
+                        <td colspan="8" align="left" valign="top">Some SL2 trans-splicing events occur at downstream exons, rather than, or in addition to, the first exon in the gene. The
+                           numbers of reads (<span class="bold"><strong>columns 3</strong></span> and <span class="bold"><strong>5</strong></span>) and percent SL2 (<span class="bold"><strong>columns 4</strong></span> and <span class="bold"><strong>6</strong></span>) at the downstream (ds) exon (<span class="bold"><strong>columns 3</strong></span> and <span class="bold"><strong>4</strong></span>) and at the first exon (if trans-spliced) (<span class="bold"><strong>columns 5</strong></span> and <span class="bold"><strong>6</strong></span>) are indicated (<a href="#bib1">Allen et al., 2011</a>). Distances between the trans-splice site(s) and the nearest upstream polyA site are shown in <span class="bold"><strong>columns 7 and 8</strong></span>. When multiple numbers appear in the rightmost column, the nearest upstream gene uses more than one polyA site.
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <div class="table"><a name="table4"></a><p class="title"><span class="bold">Table 4. Alternative operons.</span></p>
+               <table summary="Table 4. Alternative operons." border="1">
+                  <colgroup>
+                     <col>
+                     <col>
+                     <col>
+                     <col>
+                  </colgroup>
+                  <thead>
+                     <tr valign="bottom">
+                        <th align="left" valign="bottom"><span class="bold"><strong>Gene</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>polyA signal</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>position (bp)</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>SL2 ts at exon #</strong></span></th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=WBGene00007284;class=Gene" target="_blank">C03H12.1</a></td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-147</td>
+                        <td align="left" valign="top">11</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=WBGene00007476;class=Gene" target="_blank">C09E9.1</a></td>
+                        <td align="left" valign="top">TATGAA</td>
+                        <td align="left" valign="top">-181</td>
+                        <td align="left" valign="top">3</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00007490;class=Gene" target="_blank">mks-5</a></em></span></td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-119</td>
+                        <td align="left" valign="top">10</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=WBGene00016457;class=Gene" target="_blank">C35E7.5</a></td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-135</td>
+                        <td align="left" valign="top">4</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=WBGene00016624;class=Gene" target="_blank">C44B7.2</a>/.1
+                        </td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-320</td>
+                        <td align="left" valign="top">12</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00002036;class=Gene" target="_blank">hum-2</a></em></span></td>
+                        <td align="left" valign="top">TATAAA</td>
+                        <td align="left" valign="top">-454</td>
+                        <td align="left" valign="top">14</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=F40E10.6;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00009574;class=Gene" target="_blank">F40E10.6</a></a></td>
+                        <td align="left" valign="top">ATTAAA</td>
+                        <td align="left" valign="top">-158</td>
+                        <td align="left" valign="top">7</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00018319;class=Gene" target="_blank">hdac-6</a></em></span></td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-164</td>
+                        <td align="left" valign="top">9</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=WBGene00010113;class=Gene" target="_blank">F55D12.5</a></td>
+                        <td align="left" valign="top">TATAAA</td>
+                        <td align="left" valign="top">-120</td>
+                        <td align="left" valign="top">5</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=WBGene00010264;class=Gene" target="_blank">F58G1.2</a></td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-128</td>
+                        <td align="left" valign="top">2</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00011051;class=Gene" target="_blank">pfs-2</a></em></span></td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-200</td>
+                        <td align="left" valign="top">4</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00020092;class=Gene" target="_blank">pcf-11</a></em></span></td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-56</td>
+                        <td align="left" valign="top">5</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00004862;class=Gene" target="_blank">sma-9</a></em></span></td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-171</td>
+                        <td align="left" valign="top">12</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00002001;class=Gene" target="_blank">hars-1</a></em></span></td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-111</td>
+                        <td align="left" valign="top">2</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=T23H2.3;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00020742;class=Gene" target="_blank">T23H2.3</a></a></td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-106</td>
+                        <td align="left" valign="top">6</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00004884;class=Gene" target="_blank">smg-6</a></em></span></td>
+                        <td align="left" valign="top">AATAAT</td>
+                        <td align="left" valign="top">-145</td>
+                        <td align="left" valign="top">6</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=WBGene00022067;class=Gene" target="_blank">Y67D8C.3</a></td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-197</td>
+                        <td align="left" valign="top">2</td>
+                     </tr>
+                     <tr valign="top">
+                        <td colspan="4" align="left" valign="top"><span class="bold"><strong>Possible alternative operons based on SL2 and AAUAAA</strong></span></td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=WBGene00016316;class=Gene" target="_blank">C32D5.8</a></td>
+                        <td align="left" valign="top">TATAAA</td>
+                        <td align="left" valign="top">-87</td>
+                        <td align="left" valign="top">2</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00006618;class=Gene" target="_blank">trt-1</a></em></span></td>
+                        <td align="left" valign="top">TATAAA</td>
+                        <td align="left" valign="top">-96</td>
+                        <td align="left" valign="top">2</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00006386;class=Gene" target="_blank">taf-5</a></em></span></td>
+                        <td align="left" valign="top">TATAAA</td>
+                        <td align="left" valign="top">-119</td>
+                        <td align="left" valign="top">2</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00000408;class=Gene" target="_blank">cdk-7</a></em></span></td>
+                        <td align="left" valign="top">AAAAAA</td>
+                        <td align="left" valign="top">-107</td>
+                        <td align="left" valign="top">2</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00013232;class=Gene" target="_blank">faah-4</a></em></span></td>
+                        <td align="left" valign="top">CATAAA</td>
+                        <td align="left" valign="top">-109</td>
+                        <td align="left" valign="top">2</td>
+                     </tr>
+                     <tr valign="top">
+                        <td colspan="4" align="left" valign="top">These are single genes when internal 3' end formation accompanied by SL2 trans-splicing does not occur, and operons when it
+                           does. The upper group represents confirmed alternative operons, and the lower group represents suspected alternative operons
+                           based on having similar properties to the first group. In the lower group, no mRNAs ending at internal polyA sites have been
+                           reported. In this table gene names are used instead of cosmid designations where available to illustrate the possible functional
+                           implications of these operons. The position of the polyA signal is given with respect to the alternative cis/trans splice
+                           site.
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <div class="table"><a name="table5"></a><p class="title"><span class="bold">Table 5. SL1-type operons.</span></p>
+               <table summary="Table 5. SL1-type operons." border="1">
+                  <colgroup>
+                     <col>
+                     <col>
+                     <col>
+                     <col>
+                  </colgroup>
+                  <thead>
+                     <tr valign="bottom">
+                        <th align="left" valign="bottom"><span class="bold"><strong>Gene pair</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>polyA signal</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>position</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>%SL1</strong></span></th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00001646;class=Gene" target="_blank">gna-1</a></em></span>&#8211; <a href="http://www.wormbase.org/db/get?name=B0024.11;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00007101;class=Gene" target="_blank">B0024.11</a></a></td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-12</td>
+                        <td align="left" valign="top">100</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=B0432.9;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00015190;class=Gene" target="_blank">B0432.9</a></a> &#8211; .13
+                        </td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-19</td>
+                        <td align="left" valign="top">73</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00007355;class=Gene" target="_blank">rpb-6</a> &#8211; <a href="http://www.wormbase.org/db/get?name=WBGene00007555;class=Gene" target="_blank">dohh-1</a></em></span></td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-13</td>
+                        <td align="left" valign="top">100</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=C07H6.2;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00015579;class=Gene" target="_blank">C07H6.2</a></a> &#8211; <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00002986;class=Gene" target="_blank">lig-4</a></em></span></td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-19</td>
+                        <td align="left" valign="top">98</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00003224;class=Gene" target="_blank">mes-6</a></em></span> &#8211; <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00001051;class=Gene" target="_blank">cks-1</a></em></span></td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-20</td>
+                        <td align="left" valign="top">99</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=C43H8.1;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00016621;class=Gene" target="_blank">C43H8.1</a></a> &#8211; <a href="http://www.wormbase.org/db/get?name=B0511.6;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00015232;class=Gene" target="_blank">B0511.6</a></a></td>
+                        <td align="left" valign="top">CATAAA</td>
+                        <td align="left" valign="top">-23</td>
+                        <td align="left" valign="top">98</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=C45G3.3;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00001590;class=Gene" target="_blank">C45G3.3</a></a> &#8211; <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00044008;class=Gene" target="_blank">gip-2</a></em></span></td>
+                        <td align="left" valign="top">AGTAAA</td>
+                        <td align="left" valign="top">-20</td>
+                        <td align="left" valign="top">99</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=F35D11.5;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00018046;class=Gene" target="_blank">F35D11.5</a></a> &#8211; <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00019747;class=Gene" target="_blank">ipla-1</a></em></span></td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-20</td>
+                        <td align="left" valign="top">44</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00000392;class=Gene" target="_blank">cdd-2</a> &#8211; <a href="http://www.wormbase.org/db/get?name=WBGene00003914;class=Gene" target="_blank">pam-1</a></em></span></td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-15</td>
+                        <td align="left" valign="top">99</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=F52C12.2;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00018679;class=Gene" target="_blank">F52C12.2</a></a> &#8211; .6
+                        </td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-14</td>
+                        <td align="left" valign="top">98</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00018847;class=Gene" target="_blank">marc-6</a></em></span> &#8211; <a href="http://www.wormbase.org/db/get?name=C35E7.9;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00016461;class=Gene" target="_blank">C35E7.9</a></a></td>
+                        <td align="left" valign="top">AATGAA</td>
+                        <td align="left" valign="top">-14</td>
+                        <td align="left" valign="top">none</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00018894;class=Gene" target="_blank">mff-2</a> &#8211; <a href="http://www.wormbase.org/db/get?name=WBGene00018893;class=Gene" target="_blank">tag-345</a></em></span></td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-21</td>
+                        <td align="left" valign="top">96</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=K04G7.11;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00019402;class=Gene" target="_blank">K04G7.11</a></a> &#8211; <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00004390;class=Gene" target="_blank">rnp-7</a></em></span></td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-18</td>
+                        <td align="left" valign="top">99</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00010725;class=Gene" target="_blank">erv-46</a></em></span> - <a href="http://www.wormbase.org/db/get?name=K09E9.3;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00010726;class=Gene" target="_blank">K09E9.3</a></a></td>
+                        <td align="left" valign="top">GATAAA</td>
+                        <td align="left" valign="top">-20</td>
+                        <td align="left" valign="top">100</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00003124;class=Gene" target="_blank">mai-1</a> &#8211; <a href="http://www.wormbase.org/db/get?name=WBGene00001684;class=Gene" target="_blank">gpd-2</a></em></span></td>
+                        <td align="left" valign="top">none</td>
+                        <td align="left" valign="top">NA</td>
+                        <td align="left" valign="top">93</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00044069;class=Gene" target="_blank">hat-1</a> &#8211; <a href="http://www.wormbase.org/db/get?name=WBGene00010839;class=Gene" target="_blank">chl-1</a></em></span></td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-27</td>
+                        <td align="left" valign="top">33</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=WBGene00010878;class=Gene" target="_blank">M05D6.5</a> &#8211; <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00010877;class=Gene" target="_blank">lact-4</a></em></span></td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-28</td>
+                        <td align="left" valign="top">97</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00011111;class=Gene" target="_blank">snfc-5</a> &#8211; <a href="http://www.wormbase.org/db/get?name=WBGene00004387;class=Gene" target="_blank">rnp-4</a></em></span></td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-17</td>
+                        <td align="left" valign="top">99</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00003225;class=Gene" target="_blank">mev-1</a> &#8211; <a href="http://www.wormbase.org/db/get?name=WBGene00000423;class=Gene" target="_blank">ced-9</a></em></span></td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-14</td>
+                        <td align="left" valign="top">98</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=T27E9.2;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00012094;class=Gene" target="_blank">T27E9.2</a></a> &#8211; <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00012097;class=Gene" target="_blank">abcf-2</a></em></span></td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-17</td>
+                        <td align="left" valign="top">100</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=WBGene00021402;class=Gene" target="_blank">Y38C1AA.12</a> &#8211; <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00000815;class=Gene" target="_blank">csn-3</a></em></span></td>
+                        <td align="left" valign="top">GATAAA</td>
+                        <td align="left" valign="top">-22</td>
+                        <td align="left" valign="top">99</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00006920;class=Gene" target="_blank">vha-11</a> &#8211; <a href="http://www.wormbase.org/db/get?name=WBGene00006912;class=Gene" target="_blank">vha-3</a></em></span></td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-31</td>
+                        <td align="left" valign="top">100</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=Y71H2AM.5;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00022170;class=Gene" target="_blank">Y71H2AM.5</a></a> &#8211; .4
+                        </td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-18</td>
+                        <td align="left" valign="top">9</td>
+                     </tr>
+                     <tr valign="top">
+                        <td colspan="4" align="left" valign="top">Gene names are used when possible functional implications are evident. Trans-splicing data is from (<a href="#bib1">Allen et al., 2011</a>). The four operons with substantial levels of SL2 trans-splicing also have polyA addition sites further upstream, so these
+                           apparently can act as either SL2-type or SL1-type operons.
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <div class="table"><a name="table6"></a><p class="title"><span class="bold">Table 6. Gene pairs that produce dicistronic mRNAs</span></p>
+               <table summary="Table 6. Gene pairs that produce dicistronic mRNAs" border="1">
+                  <colgroup>
+                     <col>
+                  </colgroup>
+                  <thead>
+                     <tr valign="bottom">
+                        <th align="left" valign="bottom"><span class="bold"><strong>Gene pair</strong></span></th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=W01A8.2;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00012164;class=Gene" target="_blank">W01A8.2</a></a> - .8
+                        </td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=EEED8.18;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00194696;class=Gene" target="_blank">EEED8.18</a></a> - .13
+                        </td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=B0334.15;class=Gene" target="_blank">B0334.15</a> - .5
+                        </td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=Y39A1A.5;class=Gene" target="_blank">Y39A1A.5</a> - .24
+                        </td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=C30A5.2;class=Gene" target="_blank">C30A5.2</a> &#8211; <a href="http://www.wormbase.org/db/get?name=WBGene00015350;class=Gene" target="_blank">C02F5.7</a></td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=Y62E10A.20;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00044745;class=Gene" target="_blank">Y62E10A.20</a></a> &#8211; .9
+                        </td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top">B0564.1</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top">T07C4.11 - .12</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <div class="table"><a name="table7"></a><p class="title"><span class="bold">Table 7. Non-operon gene clusters with a promoter of the downstream gene in the 3' UTR of the upstream gene.</span></p>
+               <table summary="Table 7. Non-operon gene clusters with a promoter of the downstream gene in the 3' UTR of the upstream gene." border="1">
+                  <colgroup>
+                     <col>
+                     <col>
+                     <col>
+                     <col>
+                  </colgroup>
+                  <thead>
+                     <tr valign="bottom">
+                        <th align="left" valign="bottom"><span class="bold"><strong>Gene pair</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>polyA signal</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>position</strong></span></th>
+                        <th align="left" valign="bottom"><span class="bold"><strong>%SL1</strong></span></th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=F07F6.4;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00017217;class=Gene" target="_blank">F07F6.4</a></a> &#8211; <a href="http://www.wormbase.org/db/get?name=F07F6.8;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00017220;class=Gene" target="_blank">F07F6.8</a></a></td>
+                        <td align="left" valign="top">AATGAA</td>
+                        <td align="left" valign="top">-35</td>
+                        <td align="left" valign="top">100</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top">F08G5.1 &#8211; .2</td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-26</td>
+                        <td align="left" valign="top">NA</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=F54A3.4;class=Gene" target="_blank">F54A3.4</a> &#8211; <a href="http://www.wormbase.org/db/get?name=Y59C2A.3;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00021986;class=Gene" target="_blank">Y59C2A.3</a></a></td>
+                        <td align="left" valign="top">AATCAA</td>
+                        <td align="left" valign="top">-22</td>
+                        <td align="left" valign="top">99</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top">F55A8.1 &#8211; <a href="http://www.wormbase.org/db/get?name=F52C12.5;class=Gene" target="_blank">F52C12.5</a></td>
+                        <td align="left" valign="top">GATAAA</td>
+                        <td align="left" valign="top">-32</td>
+                        <td align="left" valign="top">100</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top">M03F8.2 &#8211; <a href="http://www.wormbase.org/db/get?name=M03F8.1;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00019761;class=Gene" target="_blank">M03F8.1</a></a></td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-34</td>
+                        <td align="left" valign="top">100</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top">T10E9.7</td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-41</td>
+                        <td align="left" valign="top">100</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top">T24H10.7 &#8211; <a href="http://www.wormbase.org/db/get?name=WBGene00007633;class=Gene" target="_blank">C16D2.1</a></td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-19</td>
+                        <td align="left" valign="top">NA</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top">Y17G7B.6 - .12</td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-51</td>
+                        <td align="left" valign="top">100</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=WBGene00012521;class=Gene" target="_blank">Y32B12B.1</a> - .2
+                        </td>
+                        <td align="left" valign="top">CATAAA</td>
+                        <td align="left" valign="top">-19</td>
+                        <td align="left" valign="top">100</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=Y56A3A.30;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00013242;class=Gene" target="_blank">Y56A3A.30</a></a> &#8211; .29
+                        </td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-44</td>
+                        <td align="left" valign="top">99</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=Y57G11C.36;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00013325;class=Gene" target="_blank">Y57G11C.36</a></a> - .44
+                        </td>
+                        <td align="left" valign="top">AATAAA</td>
+                        <td align="left" valign="top">-21</td>
+                        <td align="left" valign="top">NA</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=WBGene00022068;class=Gene" target="_blank">Y67D8C.4</a> - .3
+                        </td>
+                        <td align="left" valign="top">AAAAAA</td>
+                        <td align="left" valign="top">-24</td>
+                        <td align="left" valign="top">100</td>
+                     </tr>
+                     <tr valign="top">
+                        <td colspan="4" align="left" valign="top">The position of the polyA signal is given with respect to the trans splice site of the downstream gene in bp. Trans-splicing
+                           data is from (<a href="#bib1">Allen et al., 2011</a>).
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <div class="table"><a name="table8"></a><p class="title"><span class="bold">Table 8. Use of a single exon by two genes</span></p>
+               <table summary="Table 8. Use of a single exon by two genes" border="1">
+                  <colgroup>
+                     <col>
+                  </colgroup>
+                  <thead>
+                     <tr valign="bottom">
+                        <th align="left" valign="bottom"><span class="bold"><strong>Gene pair</strong></span></th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=R06A10.1;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00019909;class=Gene" target="_blank">R06A10.1</a></a> (exon 5) - .5 (exon 1)
+                        </td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=F28D9.4;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00009220;class=Gene" target="_blank">F28D9.4</a></a> (exon 4) &#8211; <a href="http://www.wormbase.org/db/get?name=Y52B11C.1;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00013131;class=Gene" target="_blank">Y52B11C.1</a></a> (exon 1)
+                        </td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=W09G3.8;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00012371;class=Gene" target="_blank">W09G3.8</a></a> (exon 3) - .2 (exon 1)
+                        </td>
+                        <td align="left" valign="top"><a href="http://www.wormbase.org/db/get?name=C09G4.5;class=Gene" target="_blank">C09G4.5</a> (exon 7) &#8211; <a href="http://www.wormbase.org/db/get?name=C09G4.4;class=Gene" target="_blank"><a href="http://www.wormbase.org/db/get?name=WBGene00044001;class=Gene" target="_blank">C09G4.4</a></a> (exon 1)
+                        </td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00000481;class=Gene" target="_blank">cha-1</a></em></span> (exon 1) &#8211; <span class="emphasis"><em><a href="http://www.wormbase.org/db/get?name=WBGene00006756;class=Gene" target="_blank">unc-17</a></em></span> (exon 1)
+                        </td>
+                        <td class="auto-generated">&nbsp;</td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" valign="top"><span class="emphasis"><em>unc-60a</em></span> (exon 1) &#8211; <span class="emphasis"><em>unc-60b</em></span> (exon 1)
+                        </td>
+                        <td class="auto-generated">&nbsp;</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+         <div class="sect1" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="sec15"></a>15.&nbsp;References
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p></p>
+            <div class="bibliography">
+               <div class="bibliomixed"><a name="bib1"></a><p class="bibliomixed"><span class="bibliomisc">Allen, M.A., Hillier, L., Waterston, R.H. and Blumenthal, T. (2011). A global analysis of trans-splicing in <span class="emphasis"><em>C. elegans</em></span>. Genome Res. <span class="emphasis"><em>21</em></span>, 255-264.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=21177958&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/http://dx.doi.org/10.1101/gr.113811.110" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib2"></a><p class="bibliomixed"><span class="bibliomisc">Baugh, L.R., Demodena, J., and Sternberg, P.W. (2009). RNA Pol II accumulates at promoters of growth genes during developmental
+                        arrest. Science <span class="emphasis"><em>324</em></span>, 92-94.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=19251593&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/http://dx.doi.org/10.1126/science.1169628" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib3"></a><p class="bibliomixed"><span class="bibliomisc">Blumenthal, T. (2004). Operons in eukaryotes. Brief. Funct. Genomic. Proteomics. <span class="emphasis"><em>3,</em></span> 199-211.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=15642184&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/http://dx.doi.org/10.1093/bfgp/3.3.199" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib4"></a><p class="bibliomixed"><span class="bibliomisc">Blumenthal, T. and Gleason, K.S. (2003). <span class="emphasis"><em>Caenorhabditis elegans</em></span> operons: form and function. Nat. Rev. Genet. <span class="emphasis"><em>4</em></span>, 110-118.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12560808&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/http://dx.doi.org/10.1038/nrg995" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib5"></a><p class="bibliomixed"><span class="bibliomisc">Blumenthal, T., Evans, D., Link, C.D., Guffanti, A., Lawson, D., Thierry-Mieg, J., Thierry-Mieg, D., Chiu, W.L., Duke, K.,
+                        Kiraly, M., and Kim, S.K.. (2002). A global analysis of the <span class="emphasis"><em>Caenorhabditis elegans</em></span> operons. Nature: <span class="emphasis"><em>417</em></span>, 851-854.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12075352&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/http://dx.doi.org/10.1038/nature00831" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib6"></a><p class="bibliomixed"><span class="bibliomisc">Cutter, A.D., Dey, A. and Murray, R.L. (2009). Evolution of the <span class="emphasis"><em>Caenorhabditis elegans</em></span> genome. Mol. Biol. Evol. <span class="emphasis"><em>26</em></span>, 1199-1234.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=19289596&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/http://dx.doi.org/10.1093/molbev/msp048" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib7"></a><p class="bibliomixed"><span class="bibliomisc">Guiliano, D.B. and Blaxter, M.L. (2006) Operon conservation and the evolution of <span class="emphasis"><em>trans</em></span>-splicing in the Nematoda. PLOS Genet. <span class="emphasis"><em>2</em></span>, 1871- 1882.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=17121468&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/http://dx.doi.org/10.1371/journal.pgen.0020198" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib8"></a><p class="bibliomixed"><span class="bibliomisc">Huang P., Pleasance E.D., Maydan J.S., Hunt-Newbury R., O'Neil N.J., Mah A., Baillie D.L., Marra M.A., Moerman D.G., and Jones
+                        S.J. (2007). Identification and analysis of internal promoters in <span class="emphasis"><em>Caenorhabditis elegans</em></span> operons. Genome Res. <span class="emphasis"><em>17</em></span>, 1478&#8211;1485.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=17712020&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/http://dx.doi.org/10.1101/gr.6824707" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib9"></a><p class="bibliomixed"><span class="bibliomisc">Jan, C.H., Friedman, R.C., Ruby, J.G. and Bartel, D.P. (2011). Formation, regulation and evolution of <span class="emphasis"><em>Caenorhabditis elegans</em></span> 3' UTRs. Nature <span class="emphasis"><em>469</em></span>, 97-101.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=21085120&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/http://dx.doi.org/10.1038/nature09616" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib10"></a><p class="bibliomixed"><span class="bibliomisc">Lasda, E., Allen, M.A., and Blumenthal, T. (2010). Polycistronic pre-mRNA processing in vitro: snRNP and pre-mRNA role reversal
+                        in trans-splicing. Genes Dev. <span class="emphasis"><em>24</em></span>, 1645-1658.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=20624853&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/http://dx.doi.org/10.1101/gad.1940010" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib11"></a><p class="bibliomixed"><span class="bibliomisc">MacMorris, M.A., Zorio, D.A.R., and Blumenthal, T. (1999). An exon that prevents transport of a mature mRNA. Proc. Natl. Acad.
+                        Sci. <a href="http://www.wormbase.org/db/get?name=U;class=Cell" target="_blank">U</a>. S. A. <span class="emphasis"><em>96</em></span>, 3813-3818.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10097120&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib12"></a><p class="bibliomixed"><span class="bibliomisc">Mangone, M., Manoharan, A.P., Thierry-Mieg, D., Thierry-Mieg, J., Han, T., Mackowiak, S.D., Mis, E., Zegar, C., Gutwein, M.R.,
+                        Khivansara, V.<span class="emphasis"><em>, et al.</em></span> (2010). The landscape of <span class="emphasis"><em>C. elegans</em></span> 3' UTRs. Science <span class="emphasis"><em>329</em></span>, 432-435.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=20522740&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/http://dx.doi.org/10.1126/science.1191244" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib13"></a><p class="bibliomixed"><span class="bibliomisc">Misra, S., Crosby, M.A., Mungall, C.J., Matthews, B.B., Campbell, K.S., Hradecky, P., Huang, Y., Kaminker, J.S., Milburn,
+                        G.H., Prochnik, S.E., et al. (2002) Annotation of the <span class="emphasis"><em>Drosophila melanogaster</em></span> euchromatic genome: a systematic review. Genome Biol. <span class="emphasis"><em>3</em></span> RESEARCH0083, 1-22.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=12537572&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/http://dx.doi.org/10.1186/gb-2002-3-12-research0083" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib14"></a><p class="bibliomixed"><span class="bibliomisc">Morton, J.J., and Blumenthal, T. (2011). Identification of transcription start sites of trans-spliced genes: uncovering unusual
+                        operon arrangements. RNA. <span class="emphasis"><em>17</em></span>, 327-337.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=21156961&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/http://dx.doi.org/10.1261/rna.2447111" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib15"></a><p class="bibliomixed"><span class="bibliomisc">Spieth, J., Brooke, G., Kuersten, S., Lea, K., and Blumenthal, T. (1993). Operons in <span class="emphasis"><em>C. elegans</em></span>: Polycistronic mRNA precursors are processed by trans-splicing of SL2 to downstream coding regions. Cell <span class="emphasis"><em>73</em></span>, 521-532.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=8098272&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/http://dx.doi.org/10.1016/0092-8674(93)90139-H" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib16"></a><p class="bibliomixed"><span class="bibliomisc">Whittle, C.M., Lazakovitch, E., Gronostajski, R.M., and Lieb, J.D. (2009). DNA-binding specificity and in vivo targets of
+                        <span class="emphasis"><em>Caenorhabditis elegans</em></span> nuclear factor I. Proc. Natl. Acad. Sci. <a href="http://www.wormbase.org/db/get?name=U;class=Cell" target="_blank">U</a>. S. A. <span class="emphasis"><em>106</em></span>, 12049-12054.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=19584245&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/http://dx.doi.org/10.1073/pnas.0812894106" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib17"></a><p class="bibliomixed"><span class="bibliomisc">Williams, C., Xu, L., and Blumenthal, T. (1999). SL1 trans-splicing and 3' end formation in a unique class of <span class="emphasis"><em>Caenorhabditis elegans</em></span> operon. Mol. Cell. Biol. <span class="emphasis"><em>19</em></span>, 376-383.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=9858561&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib18"></a><p class="bibliomixed"><span class="bibliomisc">Yin, J., Yu, L., and Savage-Dunn, C. (2010). Alternative trans-splicing of <span class="emphasis"><em>Caenorhabditis elegans <a href="http://www.wormbase.org/db/get?name=WBGene00004862;class=Gene" target="_blank">sma-9</a>/schnurri</em></span> generates a short transcript that provides tissue-specific function in BMP signaling. BMC Mol. Biol. <span class="emphasis"><em>11</em></span>, 46.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=20565799&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/http://dx.doi.org/10.1186/1471-2199-11-46" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+               <div class="bibliomixed"><a name="bib19"></a><p class="bibliomixed"><span class="bibliomisc">Zaslaver, A., Baugh, L.R., and Sternberg, P.W. (2011). Metazoan operons accelerate recovery from growth-arrested states. Cell
+                        <span class="emphasis"><em>145</em></span>, 981-992.</span>
+                     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=21663799&amp;dopt=Abstract" target="_blank">Abstract</a>
+                     <a href="http://dx.doi.org/http://dx.doi.org/10.1016/j.cell.2011.05.013" target="_blank">Article</a>
+                     
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="footnotes"><br><hr width="100" align="left">
+            <div class="footnote">
+               <p><sup><a name="ftn.d0e9" href="#d0e9">*</a></sup>Edited by Julie Ahringer Last revised September 2, 2014. Published April 28, 2015. This chapter should be cited as: Blumenthal
+                  T., Davis P., Garrido-Lecca A. Operon and non-operon gene clusters in the <span class="emphasis"><em>C. elegans</em></span> genome (April 28, 2015), <span class="emphasis"><em>WormBook</em></span>, ed. The <span class="emphasis"><em>C. elegans</em></span> Research Community, WormBook, doi/10.1895/wormbook.1.175.1, <a href="http://www.wormbook.org" target="_top">http://www.wormbook.org</a>.
+               </p>
+               <p><span class="bold"><strong>Copyright:</strong></span> &copy; 2015 Thomas Blumenthal, Paul Davis, Alfonso Garrido-Lecca. This is an open-access article distributed under the terms of
+                  the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided
+                  the original author and source are credited.
+               </p>
+            </div>
+            <div class="footnote">
+               <p><sup><a name="ftn.d0e35" href="#d0e35">&sect;</a></sup>To whom correspondence should be addressed. E-mail: <a href="mailto:tom.blumenthal@colorado.edu" target="_top">tom.blumenthal@colorado.edu</a></p>
+ <p><img src="somerights20.gif" alt="Creative Commons License" align="middle" border="0"> All WormBook content, except where otherwise noted, is licensed under a <a href="http://creativecommons.org/licenses/by/2.5/" title="Creative Commons Attribution License" target="_blank">Creative Commons Attribution License</a>.</p>
+            </div>
+         </div>
+      </div>
+   <!--#include virtual="/ssi/footer.html" --></body>
+</html>
