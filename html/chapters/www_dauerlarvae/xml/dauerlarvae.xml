@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4CR2//EN"
+             "docbookx.dtd"
+[
+<!ENTITY fig1 SYSTEM 'dauerlarvae_fig1.jpg' NDATA JPG>
+<!ENTITY fig2 SYSTEM 'dauerlarvae_fig2.jpg' NDATA JPG>
+<!ENTITY fig3 SYSTEM 'dauerlarvae_fig3.jpg' NDATA JPG>
+<!ENTITY fig4 SYSTEM 'dauerlarvae_fig4.jpg' NDATA JPG>
+<!ENTITY fig1legend SYSTEM 'dauerlarvae_fig1leg.xml'>
+<!ENTITY fig2legend SYSTEM 'dauerlarvae_fig2leg.xml'>
+<!ENTITY fig3legend SYSTEM 'dauerlarvae_fig3leg.xml'>
+<!ENTITY fig4legend SYSTEM 'dauerlarvae_fig4leg.xml'>
+<!ENTITY dauerlarvae_ref SYSTEM 'dauerlarvae_ref.xml'>
+<!ENTITY pubmed_url 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids='>
+<!ENTITY crossref_url 'http://dx.doi.org/'>
+]>
+<article id="dauerlarvae">
+<articleinfo>
+<title>Working with dauer larvae<footnote><para>Edited by Oliver Hobert. Last revised May 4, 2016. Published in its final form August 9, 2018. This chapter should be cited as: Karp X. Working with dauer larvae. (August 9, 2018), <emphasis>WormBook</emphasis>, ed. The <emphasis>C. elegans</emphasis> Research Community, WormBook, doi/10.1895/wormbook.1.180.1, <ulink url="http://www.wormbook.org">http://www.wormbook.org</ulink>.</para>
+<para><emphasis role="bold">Copyright:</emphasis> &#x000A9; 2016 Xantha Karp. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</para></footnote></title>
+<author><othername>Xantha Karp<superscript>&sect;</superscript><remark><footnote><para>To whom correspondence should be addressed. Email: <ulink url="mailto:karp1x@cmich.edu">karp1x@cmich.edu</ulink></para></footnote></remark></othername>
+<affiliation><orgname>Department of Biology, Central Michigan University, Mount Pleasant, MI 48859 USA</orgname></affiliation>
+</author>
+</articleinfo>
+<abstract>
+<title><emphasis role="bold">Abstract</emphasis></title>
+<para><emphasis role="bold">Dauer diapause is a stress-resistant, developmentally quiescent, and long-lived larval stage adopted by <emphasis role="italic">Caenorhabditis elegans</emphasis> when conditions are unfavorable for growth and reproduction. This chapter contains methods to induce dauer larva formation, to isolate dauer larvae, and to study pre- and post-dauer stages.</emphasis></para>
+</abstract>
+<sect1 id="sec1">
+<title>Introduction</title>
+<para>The dauer larva is a stress-resistant, developmentally arrested stage formed in response to adverse environmental conditions (<link linkend="figure1">Figure 1</link>). In the wild, <emphasis role="italic">C. elegans</emphasis> is most often found in the dauer stage (<link linkend="bib7">Barri&egrave;re and F&eacute;lix, 2005</link><!--PMID: 16005289-->). Dauer larvae are morphologically distinct from other stages, display an altered metabolism, and express different genes (reviewed in the WormBook chapter <ulink url="http://www.wormbook.org/chapters/www_dauer/dauer.html">Dauer</ulink> and in <link linkend="bib17">Fielenbach and Antebi, 2008</link><!--PMID: 18708575-->). Dauer formation occurs immediately after the second larval molt (<link linkend="bib11">Cassada and Russell, 1975</link><!--PMID: 1183723-->; <link linkend="bib22">Golden and Riddle, 1984b</link><!--PMID: 6706004-->). If favorable environmental conditions are again encountered, dauer larvae recover and complete reproductive development. Time spent in the dauer stage does not affect the pattern or sequence of cell divisions during post-dauer development, nor does it shorten the adult lifespan (<link linkend="bib40">Klass and Hirsh, 1976</link><!--PMID: 1264206-->; <link linkend="bib44">Liu and Ambros, 1991</link><!--PMID: 26502479-->; <link linkend="bib16">Euling and Ambros, 1996</link><!--PMID: 8756295-->; <link linkend="bib9">Braendle and F&eacute;lix, 2008</link><!--PMID: 19000836-->). The process and regulation of dauer formation have been extensively studied to learn about signal transduction, neuronal function and remodeling, development, stress resistance, and aging, among other topics. This chapter details methods that are used to study dauer larvae, as well as pre- and post-dauer larvae.</para>
+<mediaobject id="figure1" xreflabel="Figure 1">
+<imageobject>
+<imagedata entityref="fig1" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 1</phrase>
+</textobject>&fig1legend;</mediaobject>
+</sect1>
+<sect1 id="sec2">
+<title>Dauer formation</title>
+<sect2 id="sec2.1">
+<title>The process of dauer formation</title>
+<para>The dauer formation decision is complex, and the outcome greatly impacts the survival of the individual and its progeny. Developing larvae sense cues from their environment. Specific neurons interpret these cues, and translate them into modulation of several interconnected signal transduction pathways. Ultimately, this modulation gives rise to a specific outcome to enter dauer or to develop continuously. A great deal is known about these steps, reviewed in other WormBook chapters and elsewhere (<ulink url="http://www.wormbook.org/chapters/www_dauer/dauer.html">Dauer</ulink>; <link linkend="bib36">Fielenbach and Antebi, 2008</link><!--PMID: 18708575-->). Here a brief outline of this decision is provided, focused on the aspects that are relevant to the methods described below.</para>
+<sect3 id="sec2.1.1">
+<title>Environmental cues</title>
+<para>The best understood environmental cues are those that have been most extensively used to experimentally manipulate dauer formation: dauer pheromone and temperature. Early descriptions of dauer larvae noted the existence of a chemical present in the medium in which worms have grown that stimulates larvae to enter dauer (<link linkend="bib11">Cassada and Russell, 1975</link><!--PMID: 1183723-->). Soon thereafter, crude dauer pheromone was extracted from such media and demonstrated to induce dauer formation when added to fresh plates (<link linkend="bib20">Golden and Riddle, 1982</link><!--PMID: 6896933-->). It was noted that the concentration of pheromone <emphasis role="italic">per se</emphasis> was less important than the ratio of pheromone to the bacterial food source (<link linkend="bib20">Golden and Riddle, 1982</link><!--PMID: 6896933-->; <link linkend="bib23">Golden and Riddle, 1984c</link><!--PMID: 24318910-->). Now, the &ldquo;pheromone&rdquo; is known to comprise a mix of ascarosides (<link linkend="bib31">Jeong et al., 2005</link><!--PMID: 15690045-->; <link linkend="bib10">Butcher et al., 2008</link><!--PMID: 18791072-->). The precise composition of this mix varies with developmental stage and environmental conditions (<link linkend="bib10">Butcher et al., 2008</link><!--PMID: 18791072-->; <link linkend="bib34">Kaplan et al., 2011</link><!--PMID: 21423575-->). Interestingly, individual isolates of wild <emphasis role="italic">C. elegans</emphasis> vary in the ascaroside mixtures they produce, and in their response to those mixtures (<link linkend="bib13">Diaz et al., 2014</link><!--PMID: 24618411-->). The molecule(s) that make up the &ldquo;food cue&rdquo; are less well characterized, but include bacterial fatty acids (<link linkend="bib37">Kaul et al., 2014</link><!--PMID: 24475206-->). The <ulink url="http://www.wormbase.org/db/get?name=WP:CE25046;class=Protein" role="_blank">CMK-1</ulink> kinase is required for sensation of the food cue (<link linkend="bib47">Neal et al., 2015</link><!--PMID: 26335407-->).</para>
+<para>Temperature also greatly impacts dauer formation. Genetically identical larvae grown in otherwise identical conditions can display vastly different dauer formation responses at different temperatures. In general, higher temperatures induce more dauer formation. Wild-type larvae grown in sparse population density (i.e., low pheromone) do not enter dauer at 15 &deg;C, 20 &deg;C, or 25 &deg;C, but some do enter dauer at 27 &deg;C (see below) (<link linkend="bib1">Ailion and Thomas, 2000</link><!--PMID: 11063684-->). Wild-type larvae grown on pheromone will enter dauer at higher penetrance at 25 &deg;C than at lower temperatures (<link linkend="bib21">Golden and Riddle, 1984a</link><!--PMID: 583682-->). Similarly dauer-constitutive (Daf-c) mutants are frequently temperature-sensitive, entering dauer at 25 &deg;C but with lower penetrance or not at all at lower temperatures (see <link linkend="sec3.5">Section 3.5</link>) (<link linkend="bib59">Riddle et al., 1981</link><!--PMID: 7219552-->; <link linkend="bib67">Swanson and Riddle, 1981</link><!--PMID: 7250500-->). This temperature sensitivity is most often due to the inherent temperature dependence of the dauer formation decision, rather than due to the production of an unstable protein (<link linkend="bib21">Golden and Riddle, 1984a</link><!--PMID: 583682-->).</para>
+</sect3>
+<sect3 id="sec2.1.2">
+<title>Signaling pathways</title>
+<para>Dauer-promoting environmental cues impact several signal transduction pathways that regulate dauer formation including cGMP, TGF&beta;, insulin-like, and nuclear hormone receptor pathways. The convergence of these pathways to regulate the dauer formation is reviewed in <ulink url="http://www.wormbook.org/chapters/www_dauer/dauer.html">Dauer</ulink>; and <link linkend="bib36">Fielenbach and Antebi (2008</link><!--PMID: 18708575-->), whereas specific pathways are reviewed in the following WormBook chapters: <ulink url="http://www.wormbook.org/chapters/www_tgfbsignal.2/TGFbetasignal.html">TGF-&beta; signaling in <emphasis role="italic">C. elegans</emphasis></ulink>, <ulink url="http://www.wormbook.org/chapters/www_insulingrowthsignal/insulingrowthsignal.html">Insulin/insulin-like growth factor signaling in <emphasis role="italic">C. elegans</emphasis></ulink>, and <ulink url="http://www.wormbook.org/chapters/www_nuclearhormonerecep.2/nucreceptor.html">Nuclear receptor signal transduction in <emphasis role="italic">C. elegans</emphasis></ulink>.</para>
+</sect3>
+</sect2>
+<sect2 id="sec2.2">
+<title>Timing of the dauer formation decision</title>
+<para>The dauer formation decision occurs during the first two larval stages in wild-type larvae (see <link linkend="figure1">Figure 1</link>). During the L1 stage, the decision is made whether to enter the pre-dauer L2d stage or to enter the more rapid L2 stage. Entry to L2 essentially commits the larva to continuous development, whereas L2d larvae continue to respond to environmental cues to decide whether to molt into dauer larvae or L3 larvae. The commitment to dauer entry does not occur until mid-late L2d stage (<link linkend="bib22">Golden and Riddle, 1984b</link><!--PMID: 6706004-->; <link linkend="bib64">Schaedel et al., 2012</link><!--PMID: 22505848-->). Thus, for the highest penetrance of dauer formation, it is advisable to grow wild-type larvae in dauer-inducing conditions until they enter the L2d-dauer molt (<link linkend="bib22">Golden and Riddle, 1984b</link><!--PMID: 6706004-->).</para>
+<para>Daf-c mutants, by contrast, display a temperature-sensitive period around the L1 molt (<link linkend="bib67">Swanson and Riddle, 1981</link><!--PMID: 7250500-->). Thus, Daf-c mutants grown at 25 &deg;C through the L1 molt will be committed to dauer formation; conversely, these strains grown at 15 &deg;C through the L1 molt will be committed to continuous development.</para>
+</sect2>
+</sect1>
+<sect1 id="sec3">
+<title>Methods to induce dauer formation</title>
+<para><link linkend="table1">Table 1</link> briefly summarizes the information in <link linkend="sec3">Section 3</link>, so that different methods can be compared. It is important to note that subtle changes in environmental conditions can impact dauer formation, particularly when the strains are near the threshold for the dauer formation decision (<link linkend="table2">Table 2</link>). It is always advisable to grow controls strictly in parallel with experimental animals for studies involving dauer formation.</para>
+<table id="table1" frame="all" rules="all" cellpadding="0" cellspacing="0" width="75">
+<title><emphasis role="bold">Table 1: Comparison of dauer induction methods</emphasis></title>
+<tgroup cols="9">
+<colspec colnum="1" colname="col1"/>
+<colspec colnum="2" colname="col2"/>
+<colspec colnum="3" colname="col3"/>
+<colspec colnum="4" colname="col4"/>
+<colspec colnum="5" colname="col5"/>
+<colspec colnum="6" colname="col6"/>
+<colspec colnum="7" colname="col7"/>
+<colspec colnum="8" colname="col8"/>
+<colspec colnum="9" colname="col9"/>
+<thead>
+<row valign="bottom" rowsep="1">
+<entry align="center"><emphasis role="bold">Method of inducing dauer</emphasis></entry>
+<entry align="center"><emphasis role="bold">Stages easily studied</emphasis></entry>
+<entry align="center"><emphasis role="bold">Plates</emphasis></entry>
+<entry align="center"><emphasis role="bold">Temp</emphasis></entry>
+<entry align="center"><emphasis role="bold">Control time in dauer</emphasis></entry>
+<entry align="center"><emphasis role="bold">Penetrance of dauer formation</emphasis></entry>
+<entry align="center"><emphasis role="bold">Genetic background</emphasis></entry>
+<entry align="center"><emphasis role="bold">Can induce dauer formation in Daf-d strains</emphasis></entry>
+<entry align="center"><emphasis role="bold">Other</emphasis></entry>
+</row>
+</thead>
+<tbody>
+<row valign="top" rowsep="1">
+<entry align="center">Starved plate</entry>
+<entry align="center">Dauer Post-dauer</entry>
+<entry align="center">NGM</entry>
+<entry align="center">Any</entry>
+<entry align="center">No</entry>
+<entry align="center">Variable; other stages on plates</entry>
+<entry align="center">Any</entry>
+<entry align="center">No</entry>
+<entry align="center">Simplest method</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="center">Dauer pheromone/ ascarosides</entry>
+<entry align="center">Pre-dauer Dauer Post-dauer</entry>
+<entry align="center">NGM + pheromone/ ascarosides</entry>
+<entry align="center">Any; best at 25 &deg;C</entry>
+<entry align="center">Yes</entry>
+<entry align="center">Variable, depending on prep</entry>
+<entry align="center">Any</entry>
+<entry align="center">Possible, depending on prep</entry>
+<entry/>
+</row>
+<row valign="top" rowsep="1">
+<entry align="center">High-density plating</entry>
+<entry align="center">Dauer Post-dauer</entry>
+<entry align="center">Egg white plates</entry>
+<entry align="center">Any; best at 25 &deg;C</entry>
+<entry align="center">Yes</entry>
+<entry align="center">Variable; recover dauers with 1% SDS</entry>
+<entry align="center">Any</entry>
+<entry align="center">Possible, when combined with high temperature (27 &deg;C)</entry>
+<entry align="center">Difficult to obtain dauers in strains with low brood size</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="center">High temperature (27 &deg;C)</entry>
+<entry align="center">Pre-dauer Dauer</entry>
+<entry align="center">NGM</entry>
+<entry align="center">27 &deg;C</entry>
+<entry align="center">Yes&mdash; but may recover spontaneously</entry>
+<entry align="center">Low except in mutant background</entry>
+<entry align="center">Higher penetrance in <ulink url="http://www.wormbase.org/db/get?name=WBPhenotype:0000639;class=Phenotype" role="_blank">Hid</ulink>* background</entry>
+<entry align="center">Some Daf-d strains become Daf-c at 27 &deg;C</entry>
+<entry align="center">Less healthy, Some L1 &amp; <ulink url="http://www.wormbase.org/db/get?name=WBPhenotype:0000082;class=Phenotype" role="_blank">L2 arrest</ulink></entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="center"><emphasis role="italic"><ulink url="http://www.wormbase.org/db/get?name=WBGene00000903;class=Gene" role="_blank">daf-7</ulink> (<ulink url="http://www.wormbase.org/db/get?name=WBVar00143951;class=Variation" role="_blank">e1372</ulink>)</emphasis></entry>
+<entry align="center">Pre-dauer Dauer</entry>
+<entry align="center">NGM</entry>
+<entry align="center">25 &deg;C</entry>
+<entry align="center">Yes</entry>
+<entry align="center">High</entry>
+<entry align="center">Requires <emphasis role="italic"><ulink url="http://www.wormbase.org/db/get?name=WBGene00000903;class=Gene" role="_blank">daf-7</ulink></emphasis></entry>
+<entry align="center">Yes: mutations in parallel or upstream pathways</entry>
+<entry align="center">Moderate <ulink url="http://www.wormbase.org/db/get?name=WBPhenotype:0000640;class=Phenotype" role="_blank">Egl</ulink>, Asynchronous recovery</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="center"><emphasis role="italic">daf-2 (<ulink url="http://www.wormbase.org/db/get?name=WBVar00143949;class=Variation" role="_blank">e1370</ulink>)</emphasis></entry>
+<entry align="center">Pre-dauer Dauer</entry>
+<entry align="center">NGM</entry>
+<entry align="center">25 &deg;C</entry>
+<entry align="center">Yes</entry>
+<entry align="center">High</entry>
+<entry align="center">Requires <emphasis role="italic"><ulink url="http://www.wormbase.org/db/get?name=WBGene00000898;class=Gene" role="_blank">daf-2</ulink></emphasis></entry>
+<entry align="center">Yes: mutations in parallel or upstream pathways</entry>
+<entry align="center">Slow growth, Pleiotropy, Asynchronous recovery</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="left" namest="col1" nameend="col9">*<ulink url="http://www.wormbase.org/db/get?name=WBPhenotype:0000639;class=Phenotype" role="_blank">Hid</ulink> stands for <emphasis role="italic">h</emphasis>igh temperature-<emphasis role="italic">i</emphasis>nduced <emphasis role="italic">d</emphasis>auer formation. <ulink url="http://www.wormbase.org/db/get?name=WBPhenotype:0000639;class=Phenotype" role="_blank">Hid</ulink> strains produce more dauer larvae than wild-type at 27 &deg;C (<link linkend="bib1">Ailion and Thomas, 2000</link><!--PMID: 11063684-->).</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<table id="table2" frame="all" rules="all" cellpadding="0" cellspacing="0" width="75">
+<title>Table 2. Environmental factors that influence dauer formation in a laboratory setting</title>
+<tgroup cols="1">
+<colspec colnum="1" colname="col1"/>
+<tbody>
+<row valign="top" rowsep="1">
+<entry align="center"><emphasis role="bold">Temperature:</emphasis> Higher temperatures induce dauer formation (<link linkend="bib21">Golden and Riddle, 1984a</link>).</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="center"><emphasis role="bold">Genetic background</emphasis>: In addition to characterized <ulink url="http://www.wormbase.org/db/get?name=WBPhenotype:0000637;class=Phenotype" role="_blank">Daf</ulink> mutations, many genes present in the background can modulate dauer formation when conditions are close to threshold (Harvey et al., 2009<!--PMID: 19615088-->).</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="center"><emphasis role="bold">Presence of contaminating microorganisms</emphasis>: In general, mold and bacterial contamination inhibit dauer formation (<link linkend="bib23">Golden and Riddle, 1984c</link><!--PMID: 24318910-->; X. Karp, unpublished observations).</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="center"><emphasis role="bold">Type of agar</emphasis>: Noble agar promotes dauer formation (<link linkend="bib47">Neal et al., 2013</link><!--PMID: 4014369-->).</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="center"><emphasis role="bold">Humidity</emphasis>: <emphasis role="italic">C. elegans</emphasis> can sense humidity, and can migrate to a preferred humidity level based on association with past experience, including starvation (<link linkend="bib62">Russell et al., 2014</link><!--PMID: 24843133-->). These findings suggest the possibility that dauer formation could be influenced by humidity. Rigorous tests of the precise effect of humidity on dauer formation are lacking, but in our hands humidity appears to promote dauer formation in response to exogenous pheromone (L. Nika and X. Karp, unpublished). However, it is not clear that humidity, if it does affect dauer formation, always does so in the same direction (S. Neal, personal communication). Carefully controlled experiments will be necessary to determine the magnitude and direction, if any, of these effects.</entry>
+</row>
+<row valign="top" rowsep="1">
+<entry align="center"><emphasis role="bold">Other factors</emphasis>: The above list is undoubtedly not exhaustive. Care should be taken to grow control strains strictly in parallel with experimental strains, including using the same batch of plates, in order to minimize any environmental differences.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<sect2 id="sec3.1">
+<title>Starved cultures</title>
+<para>When cultures of <emphasis role="italic">C. elegans</emphasis> become crowded and exhaust their food supply, dauer formation results (<link linkend="bib11">Cassada and Russell, 1975</link><!--PMID: 1183723-->). Wild-type larvae typically do not enter dauer at temperatures at or below 25 &deg;C when there is any food on the plate, even a small amount, unless high concentrations of pheromone are added by one of the methods discussed in <link linkend="sec3.2">Section 3.2</link> and <link linkend="sec3.3">Section 3.3</link>. Immediately after exhausting the food supply, most of the larvae will enter <ulink url="http://www.wormbase.org/db/get?name=WBPhenotype:0000081;class=Phenotype" role="_blank">L1 arrest</ulink>/L1 diapause (<link linkend="bib33">Johnson et al., 1984</link><!--PMID: 6542614-->). Some will remain arrested and others will continue on to the dauer stage. Thus, the first dauer larvae do not appear until at least a few days after exhaustion of the food supply. By contrast, very old plates contain relatively fewer dauer larvae. Dauer larva survival decreases with time, whereas the propensity to recover from dauer increases (<link linkend="bib40">Klass and Hirsh, 1976</link><!--PMID: 1264206-->; <link linkend="bib22">Golden and Riddle, 1984b</link><!--PMID: 6706004-->). In wild-type cultures, there is always a mix of stages observed on the plates. The percentage of dauer larvae versus other stages depends on the conditions listed in <link linkend="table2">Table 2</link>. Dauer larvae also form readily in liquid culture, even in the presence of food (<link linkend="bib11">Cassada and Russell, 1975</link><!--PMID: 1183723-->).</para>
+<para>Use of starved cultures to generate dauer larvae is the least labor-intensive method of obtaining dauer larvae, as all it requires is a clean plate of worms. This method does not require any special additives or media, and it is scalable simply by setting up more and larger plates. It is also very versatile because dauer larvae of any genotype (except dauer-defective (Daf-d) mutants) will form at any temperature. However, the precise length of time in dauer cannot be controlled with this method, as the history of individual worms on the plate cannot be known. The length of time spent in dauer can impact the biology of the worm (<link linkend="bib40">Klass and Hirsh, 1976</link><!--PMID: 1264206-->; <link linkend="bib29">Houthoofd et al., 2002</link><!--PMID: 12213552-->; <link linkend="bib24">Gomez et al., 2008</link><!--PMID: 18977240-->). Furthermore, because there are other stages beside dauer larvae present in starved cultures, one of the methods to isolate dauer larvae presented in <link linkend="sec4">Section 4</link> must be followed. Fortunately there are several simple, straightforward options to choose from.</para>
+<sect3 id="sec3.1.1">
+<title>Protocol for dauer induction by starvation</title>
+<orderedlist>
+<listitem><para>Pick three or more hermaphrodites to a 60 mm NGM plate (see <ulink url="http://www.wormbook.org/chapters/www_strainmaintain/strainmaintain.html">Maintenance of <emphasis role="italic">C.</emphasis> elegans</ulink>) with <ulink url="http://www.wormbase.org/db/get?name=OP50;class=Strain" role="_blank">OP50</ulink> or other food source and incubate at the appropriate temperature for your strain. Scale up or down as required.</para></listitem>
+<listitem><para>Approximately 10 days later (for healthy, fertile strains grown at 20 &deg;C) there should be plenty of dauer larvae on the plate.</para></listitem>
+</orderedlist>
+<para>See <link linkend="table2">Table 2</link> for important environmental considerations that will impact dauer formation.</para>
+</sect3>
+</sect2>
+<sect2 id="sec3.2">
+<title>Exogenous dauer pheromone</title>
+<para>Adding dauer pheromone to growth medium is a useful method for inducing dauer formation (see <link linkend="table1">Table 1</link>). Individual ascarosides can be added to growth medium to induce dauer formation (<link linkend="bib31">Jeong et al., 2005</link><!--PMID: 15690045-->; <link linkend="bib10">Butcher et al., 2008</link><!--PMID: 18791072-->). However, these ascarosides must be chemically synthesized and are not currently commercially available. Fortunately, isolating crude dauer pheromone from a liquid culture in which worms have grown is relatively straightforward. Once isolated, pheromone can be stored at -20 &deg;C for months to years. It is worth noting that wild <emphasis role="italic">C. elegans</emphasis> isolates differ drastically from <ulink url="http://www.wormbase.org/db/get?name=N2;class=Strain" role="_blank">N2</ulink> in their response to different ascarosides, so that adding pheromone derived from <ulink url="http://www.wormbase.org/db/get?name=N2;class=Strain" role="_blank">N2</ulink> may produce a different outcome within a wild isolate (<link linkend="bib13">Diaz et al., 2014</link><!--PMID: 24618411-->). Different preparations of dauer pheromone can vary widely in their potency. Some preps can induce Daf-d mutants to enter dauer, even though these mutants will not enter dauer under the conditions found on starved plates (<link linkend="bib70">Vowels and Thomas, 1992</link><!--PMID: 1732156-->; <link linkend="bib41">Larsen et al., 1995</link><!--PMID: 7789761-->; <link linkend="bib52">Ogg et al., 1997</link><!--PMID: 9353126-->). However, many preps that induce penetrant dauer formation in wild-type larvae still fail to induce dauer formation in Daf-d mutants (<link linkend="bib21">Golden and Riddle, 1984a</link><!--PMID: 583682-->). The precise methodology required to produce the stronger prep is unclear.</para>
+<sect3 id="sec3.2.1">
+<title>Protocols for dauer induction by exogenous pheromone (<link linkend="bib73">Zhang et al., 2013</link><!--PMID: 24014355-->; <link linkend="bib65">Schroeder and Flatt, 2014</link><!--PMID: 25226440-->)</title>
+<para>There are many protocols for producing crude dauer pheromone that have been published since its discovery in the, 1980s (<link linkend="bib20">Golden and Riddle, 1982</link><!--PMID: 6896933-->; <link linkend="bib21">Golden and Riddle, 1984a</link><!--PMID: 583682-->; <link linkend="bib23">Golden and Riddle, 1984c</link><!--PMID: 24318910-->; <link linkend="bib71">Vowels and Thomas, 1994</link><!--PMID: 7828815-->). Two recent, detailed protocols are recommended above. A video demonstrating their protocol is included in (<link linkend="bib65">Schroeder and Flatt, 2014</link><!--PMID: 25226440-->). A detailed protocol for assaying dauer larva formation induced by crude dauer pheromone is also available (<link linkend="bib47">Neal et al., 2013</link><!--PMID: 4014369-->). Alternatively, the potency of dauer pheromone can be assayed by testing for inhibition of dauer recovery (<link linkend="bib23">Golden and Riddle, 1984c</link><!--PMID: 24318910-->). An outline of the entire process from growing <emphasis role="italic">C. elegans</emphasis> cultures to testing the pheromone is shown in <link linkend="figure2">Figure 2</link>. See <link linkend="table2">Table 2</link> for important environmental considerations that will impact dauer formation. In our hands, keeping pheromone plates moist by using freshly poured plates and using a humidified chamber for storage and for experiments increases the penetrance of dauer formation by pheromone (L. Nika and <ulink url="http://www.wormbase.org/resources/person/WBPerson306">X. Karp</ulink>, unpublished observations). However, it is not clear that humidity always promotes dauer formation (see <link linkend="table2">Table 2</link>).</para>
+<mediaobject id="figure2" xreflabel="Figure 2">
+<imageobject>
+<imagedata entityref="fig2" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 2</phrase>
+</textobject>&fig2legend;</mediaobject>
+</sect3>
+</sect2>
+<sect2 id="sec3.3">
+<title>High-density plating</title>
+<para>An alternative to adding dauer pheromone to growth medium is to make use of the pheromone that wild-type worms produce. By plating worms at high density, the pheromone-to-food ratio is high enough to drive larvae into dauer (<link linkend="bib26">Hall et al., 2010</link><!--PMID: 20079644-->). A detailed protocol has recently been published (<link linkend="bib54">Ow and Hall, 2015</link><!--PMID: 26423977-->).</para>
+<sect3 id="sec3.3.1">
+<title>Protocol for dauer induction by high-density growth</title>
+<para>Summarized from <link linkend="bib54">Ow and Hall (2015)</link><!--PMID: 26423977-->. Note that viewing the original article is recommended for important additional detail and helpful images.</para>
+<orderedlist>
+<listitem><para>Cook egg whites by boiling in 50 mL water for each egg white, while stirring with a stir bar until the egg white is fully cooked but not burned.</para></listitem>
+<listitem><para>Puree the egg white mixture in a kitchen blender until smooth and frothy. Egg white mixture can be used immediately or stored at 4 &deg;C for &ap;1 month or at -20 &deg;C indefinitely.</para></listitem>
+<listitem><para>Add a thin layer of egg white mixture to the top of several 35 mm NGM plates (<ulink url="http://www.wormbook.org/chapters/www_strainmaintain/strainmaintain.html">Maintenance of <emphasis role="italic">C. elegans</emphasis></ulink>) previously seeded with <ulink url="http://www.wormbase.org/db/get?name=OP50;class=Strain" role="_blank">OP50</ulink>, covering the top of the plates completely. These are &ldquo;egg white plates&rdquo;.</para></listitem>
+<listitem><para>Obtain a well-fed, dense population that includes many gravid adult hermaphrodites growing on &ge;4 100 mm plates.</para></listitem>
+<listitem><para>Wash the above population off the plates, pellet, and add worms to one or more 35 mm egg white plates.</para></listitem>
+<listitem><para>Ensure adequate oxygenation of the worms on the egg white plate by increasing the space between the lid and the plate by adding a small piece of bench tape to the edge of the lid.</para></listitem>
+<listitem><para>Incubate the population for 60-72 hours at 20 &deg;C or 25 &deg;C. Wild-type strains will enter dauer efficiently at 20 &deg;C under these conditions, but 25 &deg;C is recommended for strains that enter dauer less readily.</para></listitem>
+<listitem><para>A synchronous population of dauer larvae will now be present, together with other stages representing larvae that did not enter dauer. Dauer larvae must be isolated by one of the methods described in <link linkend="sec4">Section 4</link>. A detailed protocol to isolate dauer larvae from egg white plates using SDS-resistance and sucrose floatation is available (<link linkend="bib54">Ow and Hall, 2015</link><!--PMID: 26423977-->).</para></listitem>
+</orderedlist>
+</sect3>
+</sect2>
+<sect2 id="sec3.4">
+<title>High temperature</title>
+<para>At high temperature (27 &deg;C) a small proportion of wild-type larvae will enter dauer (<link linkend="bib1">Ailion and Thomas, 2000</link><!--PMID: 11063684-->). Larvae with a weak Daf-c mutation often enter dauer at higher penetrance at 27 &deg;C than at 25 &deg;C, making this a useful technique to study these mutations. However, it should be noted that the genetic pathways regulating dauer formation appear to be modulated at this temperature, such that some genes promote dauer formation at 27 &deg;C but not 25 &deg;C. For example, loss-of-function mutations in <emphasis role="italic"><ulink url="http://www.wormbase.org/db/get?name=WBGene00000899;class=Gene" role="_blank">daf-3</ulink></emphasis>, encoding the SMAD transcription factor downstream of TGF&beta; signaling, cause a Daf-d phenotype at 25 &deg;C, but a Daf-c phenotype at 27 &deg;C (<link linkend="bib1">Ailion and Thomas, 2000</link><!--PMID: 11063684-->). Chemosensory mutants are also Daf-d at 25 &deg;C (<link linkend="bib70">Vowels and Thomas, 1992</link><!--PMID: 1732156-->; <link linkend="bib68">Thomas et al., 1993</link><!--PMID: 8375650-->), but Daf-c at 27 &deg;C (<link linkend="bib5">Apfeld and Kenyon, 1999</link><!--PMID: 10617200-->; <link linkend="bib1">Ailion and Thomas, 2000</link><!--PMID: 11063684-->). Also, wild-type larvae appear to be on the threshold of the dauer/continuous decision, such that slight variations in environmental conditions can alter this decision (<link linkend="bib1">Ailion and Thomas, 2000</link><!--PMID: 11063684-->). Furthermore, dauer larvae formed at 27 &deg;C can be transient, such that they spontaneously recover from dauer and resume development. Finally, worms are generally unhealthy at this temperature, and <ulink url="http://www.wormbase.org/db/get?name=WBPhenotype:0000059;class=Phenotype" role="_blank">larval arrest</ulink> that is not dauer formation is also observed (<link linkend="bib1">Ailion and Thomas, 2000</link><!--PMID: 11063684-->).</para>
+<sect3 id="sec3.4.1">
+<title>Protocol for dauer induction by temperature (adapted from <link linkend="bib1">Ailion and Thomas, 2000</link><!--PMID: 11063684-->)</title>
+<para>
+<orderedlist>
+<listitem><para>Pick gravid adults onto a fresh NGM plate (<ulink url="http://www.wormbook.org/chapters/www_strainmaintain/strainmaintain.html">Maintenance of <emphasis role="italic">C. elegans</emphasis></ulink>) seeded with <ulink url="http://www.wormbase.org/db/get?name=OP50;class=Strain" role="_blank">OP50</ulink> or your bacterial strain of choice.</para></listitem>
+<listitem><para>Allow the adults to lay eggs for several hours at the temperature at which they normally are maintained.</para></listitem>
+<listitem><para>Remove the adults.</para></listitem>
+<listitem><para>Shift the plates to 27 &deg;C.</para></listitem>
+<listitem><para>&ap;44 hours later dauer larvae will have formed (at later time points some larvae may have already recovered from dauer).</para></listitem>
+</orderedlist>
+</para>
+</sect3>
+</sect2>
+<sect2 id="sec3.5">
+<title>Daf-c mutants</title>
+<para>Loss-of-function mutations in dauer-opposing genes result in Daf-c phenotypes. Because wild-type larvae enter dauer more readily at higher temperatures, most Daf-c mutations are temperature-sensitive, providing a convenient method for manipulating dauer formation (<link linkend="bib67">Swanson and Riddle, 1981</link><!--PMID: 7250500-->).</para>
+<sect3 id="sec3.5.1">
+<title><emphasis role="italic">daf-7.</emphasis></title>
+<para><emphasis role="italic">daf-7(<ulink url="http://www.wormbase.org/db/get?name=WBVar00143951;class=Variation" role="_blank">e1372</ulink>)</emphasis> is a hypomorphic allele that causes penetrant dauer formation at 25 &deg;C. Some dauer larvae can be seen at 20 &deg;C and even 15 &deg;C, and it is likely that even the larvae that do not enter dauer at the permissive temperatures still grow through L2d (<link linkend="bib67">Swanson and Riddle, 1981</link><!--PMID: 7250500-->; <link linkend="bib70">Vowels and Thomas, 1992</link><!--PMID: 1732156-->). Thus, strains containing <emphasis role="italic">daf-7(<ulink url="http://www.wormbase.org/db/get?name=WBVar00143951;class=Variation" role="_blank">e1372</ulink>)</emphasis> are not suitable for studying the continuous, non-dauer (L1-L2-L3-L4) life history.</para>
+<para><emphasis role="italic"><ulink url="http://www.wormbase.org/db/get?name=WBGene00000903;class=Gene" role="_blank">daf-7</ulink></emphasis> encodes a TGF&beta; protein normally expressed in favorable conditions (<link linkend="bib63">Schackwitz et al., 1996</link><!--PMID: 8893028-->; <link linkend="bib57">Ren et al., 1996</link><!--PMID: 8910282-->). Lowering <emphasis role="italic"><ulink url="http://www.wormbase.org/db/get?name=WBGene00000903;class=Gene" role="_blank">daf-7</ulink></emphasis> expression permits activation of the downstream <ulink url="http://www.wormbase.org/db/get?name=WP:CE30963;class=Protein" role="_blank">DAF-3</ulink>/<ulink url="http://www.wormbase.org/db/get?name=WP:CE18985;class=Protein" role="_blank">DAF-5</ulink> complex (<link linkend="bib55">Patterson et al., 1997</link><!--PMID: 9334330-->; <link linkend="bib12">da Graca et al., 2004</link><!--PMID: 14681186-->). Crosstalk between pathways then results in modulation of the insulin-like and nuclear hormone receptor pathways (<link linkend="bib19">Gerisch et al., 2001</link><!--PMID: 11740945-->; <link linkend="bib46">Narasimhan et al., 2011</link><!--PMID: 21533078-->). Perhaps for this reason, <emphasis role="italic">daf-7(<ulink url="http://www.wormbase.org/db/get?name=WBVar00143951;class=Variation" role="_blank">e1372</ulink>)</emphasis> dauer larvae appear grossly similar to wild-type dauer larvae. However, <emphasis role="italic">daf-7(<ulink url="http://www.wormbase.org/db/get?name=WBVar00143951;class=Variation" role="_blank">e1372</ulink>)</emphasis> mutants do differ from wild-type in the following ways. First, <emphasis role="italic"><ulink url="http://www.wormbase.org/db/get?name=WBGene00000903;class=Gene" role="_blank">daf-7</ulink></emphasis> dauer larvae live longer than <ulink url="http://www.wormbase.org/db/get?name=N2;class=Strain" role="_blank">N2</ulink> dauer larvae (<link linkend="bib6">Banfield et al., 2008</link><!--PMID: 18772467-->). Second, <emphasis role="italic">daf-7(<ulink url="http://www.wormbase.org/db/get?name=WBVar00143951;class=Variation" role="_blank">e1372</ulink>)</emphasis> can be used to force dauer formation in Daf-d mutant backgrounds in the insulin-like pathway, even though these Daf-d mutants fail to form dauers on starved plates (<link linkend="bib70">Vowels and Thomas, 1992</link><!--PMID: 1732156-->; <link linkend="bib41">Larsen et al., 1995</link><!--PMID: 7789761-->). Additionally, <emphasis role="italic">daf-7(<ulink url="http://www.wormbase.org/db/get?name=WBVar00143951;class=Variation" role="_blank">e1372</ulink>)</emphasis> mutants are partially defective in recovery from dauer. While 100% of <emphasis role="italic">daf-7(<ulink url="http://www.wormbase.org/db/get?name=WBVar00143951;class=Variation" role="_blank">e1372</ulink>)</emphasis> larvae enter dauer at 25 &deg;C, dauer larvae do not always recover upon shifting to 15 &deg;C. Those that do recover do so asynchronously and over longer timescales than wild-type dauer larvae. This makes <emphasis role="italic">daf-7(<ulink url="http://www.wormbase.org/db/get?name=WBVar00143951;class=Variation" role="_blank">e1372</ulink>)</emphasis> less convenient for studying post-dauer stages (see <link linkend="sec5.2">Section 5.2</link>). Finally, <emphasis role="italic"><ulink url="http://www.wormbase.org/db/get?name=WBGene00000903;class=Gene" role="_blank">daf-7</ulink></emphasis> hermaphrodites have an egg-laying defective (<ulink url="http://www.wormbase.org/db/get?name=WBPhenotype:0000640;class=Phenotype" role="_blank">Egl</ulink>) phenotype, whether or not larvae develop through dauer (<link linkend="bib69">Trent et al., 1983</link><!--PMID: 11813735-->).</para>
+</sect3>
+<sect3 id="sec3.5.2">
+<title><emphasis role="italic"><ulink url="http://www.wormbase.org/db/get?name=WBGene00000898;class=Gene" role="_blank">daf-2</ulink>.</emphasis></title>
+<para>A second gene used to manipulate dauer formation is <emphasis role="italic"><ulink url="http://www.wormbase.org/db/get?name=WBGene00000898;class=Gene" role="_blank">daf-2</ulink></emphasis>, encoding the <emphasis role="italic">C. elegans</emphasis> insulin receptor (<link linkend="bib39">Kimura et al., 1997</link><!--PMID: 9252323-->). Myriad <emphasis role="italic"><ulink url="http://www.wormbase.org/db/get?name=WBGene00000898;class=Gene" role="_blank">daf-2</ulink></emphasis> alleles exist, grouped into two classes, where Class II alleles are the more severe and pleiotropic (<link linkend="bib18">Gems et al., 1998</link><!--PMID: 9725835-->). The canonical allele, <emphasis role="italic">daf-2(<ulink url="http://www.wormbase.org/db/get?name=WBVar00143949;class=Variation" role="_blank">e1370</ulink>)</emphasis>, is a Class II allele that is the most commonly used as a tool to induce dauer formation. <emphasis role="italic">daf-2(<ulink url="http://www.wormbase.org/db/get?name=WBVar00143949;class=Variation" role="_blank">e1370</ulink>)</emphasis> is similar to <emphasis role="italic">daf-7(<ulink url="http://www.wormbase.org/db/get?name=WBVar00143951;class=Variation" role="_blank">e1372</ulink>)</emphasis> in a number of ways: 1) &ap;100% of <emphasis role="italic">daf-2(<ulink url="http://www.wormbase.org/db/get?name=WBVar00143949;class=Variation" role="_blank">e1370</ulink>)</emphasis> larvae enter dauer at 25 &deg;C (<link linkend="bib18">Gems et al., 1998</link><!--PMID: 9725835-->); 2) <emphasis role="italic">daf-2(<ulink url="http://www.wormbase.org/db/get?name=WBVar00143949;class=Variation" role="_blank">e1370</ulink>)</emphasis> can be used to force dauer formation in Daf-d backgrounds, in this case, the TGF&beta; pathway (<link linkend="bib70">Vowels and Thomas, 1992</link><!--PMID: 1732156-->; <link linkend="bib41">Larsen et al., 1995</link><!--PMID: 7789761-->; <link linkend="bib52">Ogg et al., 1997</link><!--PMID: 9353126-->); 3) <emphasis role="italic">daf-2(<ulink url="http://www.wormbase.org/db/get?name=WBVar00143949;class=Variation" role="_blank">e1370</ulink>)</emphasis> dauer larvae do not all recover from dauer when shifted to 15 &deg;C, and those that do recover do so asynchronously; and 4) <emphasis role="italic"><ulink url="http://www.wormbase.org/db/get?name=WBGene00000898;class=Gene" role="_blank">daf-2</ulink></emphasis> dauer larvae live longer than wild-type dauer larvae, although the allele examined was <emphasis role="italic"><ulink url="http://www.wormbase.org/db/get?name=WBVar00088550;class=Variation" role="_blank">m41</ulink></emphasis>, not <emphasis role="italic"><ulink url="http://www.wormbase.org/db/get?name=WBVar00143949;class=Variation" role="_blank">e1370</ulink></emphasis> (<link linkend="bib6">Banfield et al., 2008</link><!--PMID: 18772467-->).</para>
+<para><emphasis role="italic">daf-2(<ulink url="http://www.wormbase.org/db/get?name=WBVar00143949;class=Variation" role="_blank">e1370</ulink>)</emphasis> also exhibits some differences from <emphasis role="italic">daf-7(<ulink url="http://www.wormbase.org/db/get?name=WBVar00143951;class=Variation" role="_blank">e1372</ulink>).</emphasis> There is less dauer formation at 20 &deg;C and 15 &deg;C (depending on conditions in <link linkend="table2">Table 2</link>). However, non-dauer larvae may still develop through L2d. <emphasis role="italic">daf-2(<ulink url="http://www.wormbase.org/db/get?name=WBVar00143949;class=Variation" role="_blank">e1370</ulink>)</emphasis> adult hermaphrodites are not <ulink url="http://www.wormbase.org/db/get?name=WBPhenotype:0000640;class=Phenotype" role="_blank">Egl</ulink>. Additionally, <emphasis role="italic">daf-2(<ulink url="http://www.wormbase.org/db/get?name=WBVar00143949;class=Variation" role="_blank">e1370</ulink>)</emphasis> larvae grow slowly at all temperatures, whether or not they enter dauer (<link linkend="bib61">Ruaud et al., 2011</link><!--PMID: 20944013-->).</para>
+<para>Other <emphasis role="italic"><ulink url="http://www.wormbase.org/db/get?name=WBGene00000898;class=Gene" role="_blank">daf-2</ulink></emphasis> alleles may also be used to induce dauer formation. These alleles share some features with <emphasis role="italic"><ulink url="http://www.wormbase.org/db/get?name=WBVar00143949;class=Variation" role="_blank">e1370</ulink></emphasis>, but may be different in some regards. For example, some Class I alleles form transient dauers (<link linkend="bib18">Gems et al., 1998</link><!--PMID: 9725835-->). Many <emphasis role="italic"><ulink url="http://www.wormbase.org/db/get?name=WBGene00000898;class=Gene" role="_blank">daf-2</ulink></emphasis> mutants, including <emphasis role="italic"><ulink url="http://www.wormbase.org/db/get?name=WBVar00143949;class=Variation" role="_blank">e1370</ulink></emphasis>, display other pleiotropic phenotypes such as non-dauer <ulink url="http://www.wormbase.org/db/get?name=WBPhenotype:0000059;class=Phenotype" role="_blank">larval arrest</ulink> and extreme longevity (<link linkend="bib38">Kenyon et al., 1993</link><!--PMID: 8247153-->; <link linkend="bib18">Gems et al., 1998</link><!--PMID: 9725835-->).</para>
+</sect3>
+<sect3 id="sec3.5.3">
+<title>Other alleles.</title>
+<para>Genes from the other dauer pathways are rarely used as tools to induce dauer formation because they are more difficult to work with and/or defective in various aspects of dauer morphogenesis (<link linkend="bib2">Albert and Riddle, 1988</link><!--PMID: 3350212-->; <link linkend="bib71">Vowels and Thomas, 1994</link><!--PMID: 7828815-->; <link linkend="bib4">Antebi et al., 1998</link><!--PMID: 9477318-->).</para>
+</sect3>
+<sect3 id="sec3.5.4">
+<title>Protocol for dauer induction by Daf-c mutations</title>
+<orderedlist>
+<listitem><para>Allow gravid adult hermaphrodites to lay eggs for several hours on standard plates* (<ulink url="http://www.wormbook.org/chapters/www_strainmaintain/strainmaintain.html">Maintenance of <emphasis role="italic">C. elegans</emphasis></ulink>)</para></listitem>
+<listitem><para>Remove adults if a synchronous population is desired.</para></listitem>
+<listitem><para>Incubate progeny at 25 &deg;C to induce dauer formation.</para></listitem>
+<listitem><para>Dauer larvae will form by approximately 48 hours at 25 &deg;C for <emphasis role="italic">daf-7(<ulink url="http://www.wormbase.org/db/get?name=WBVar00143951;class=Variation" role="_blank">e1372</ulink>)</emphasis><superscript>&dagger;</superscript> and by approximately 80 hours at 25 &deg;C for <emphasis role="italic">daf-2(<ulink url="http://www.wormbase.org/db/get?name=WBVar00143949;class=Variation" role="_blank">e1370</ulink>).</emphasis></para>
+<para>*If Daf-c alleles are used that cause transient dauer arrest, a short egg-lay with more gravid adult hermaphrodites per plate is advisable. For larger scale experiments embryos can be isolated by egg prep/bleaching protocols. Care should be used in deciding whether to further synchronize larvae by hatching the embryos in the absence of food. Larvae that experience <ulink url="http://www.wormbase.org/db/get?name=WBPhenotype:0000081;class=Phenotype" role="_blank">L1 arrest</ulink> have altered biology and gene expression, and are less likely to enter dauer than those that have not been arrested (<link linkend="bib22">Golden and Riddle, 1984b</link><!--PMID: 6706004-->; <link linkend="bib33">Johnson et al., 1984</link><!--PMID: 6542614-->; <link linkend="bib8">Baugh et al., 2009</link><!--PMID: 19251593-->; <link linkend="bib36">Karp et al., 2011</link><!--PMID: 21343388-->).</para>
+<para><superscript>&dagger;</superscript>Note that <emphasis role="italic">daf-7(<ulink url="http://www.wormbase.org/db/get?name=WBVar00143951;class=Variation" role="_blank">e1372</ulink>)</emphasis> is somewhat <ulink url="http://www.wormbase.org/db/get?name=WBPhenotype:0000640;class=Phenotype" role="_blank">Egl</ulink>, leading to a less synchronous population than in wild-type.</para></listitem>
+</orderedlist>
+</sect3>
+</sect2>
+</sect1>
+<sect1 id="sec4">
+<title>Isolating dauer larvae</title>
+<para>Dauer larvae can be isolated from other stages by virtue of the unique features of dauer larvae, discussed below. Two methods, SDS selection and fluorescent beads, take advantage of these features to allow rapid isolation of large numbers of dauer larvae (<link linkend="sec4.1">Section 4.1</link> and <link linkend="sec4.2">Section 4.2</link>). In addition to these methods, other unique dauer features can be helpful in identifying individual dauer larvae in different contexts (<link linkend="sec4.3">Sections 4.3</link> and <link linkend="sec4.4">Section 4.4</link>). <link linkend="figure3">Figure 3</link> summarizes three useful characteristics for identifying dauer larvae with respect to developmental progression through the dauer life history.</para>
+<mediaobject id="figure3" xreflabel="Figure 3">
+<imageobject>
+<imagedata entityref="fig3" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 3</phrase>
+</textobject>&fig3legend;</mediaobject>
+<sect2 id="sec4.1">
+<title>SDS selection</title>
+<para>The most commonly used technique to isolate dauer larvae is selection with 1% sodium dodecyl sulfate (SDS). SDS resistance is based on the presence of both a thickened cuticle and a buccal plug, effectively insulating dauer larvae from the environment (<link linkend="bib11">Cassada and Russell, 1975</link><!--PMID: 1183723-->). These features are established during the L2d-dauer molt (<link linkend="bib22">Golden and Riddle, 1984b</link><!--PMID: 6706004-->). If dauer larvae are stimulated to recover, they lose the buccal plug and become sensitive to SDS within a few hours. However, they retain the dauer cuticle until they molt into the post-dauer L4 stage, approximately 16-20 hours after recovery is initiated at 20 &deg;C (<link linkend="bib11">Cassada and Russell, 1975</link><!--PMID: 1183723-->). Embryos are partially SDS-resistant, but embryos are easily distinguished from dauer larvae and are not present in starved cultures (<link linkend="bib11">Cassada and Russell, 1975</link><!--PMID: 1183723-->).</para>
+<sect3 id="sec4.1.1">
+<title>SDS protocol, for large numbers of dauer larvae</title>
+<para>
+<orderedlist>
+<listitem><para>Wash worms off plates, pellet, and resuspend in 1% SDS.</para></listitem>
+<listitem><para>Incubate worms in 1% SDS for 30 minutes* with gentle agitation.</para></listitem>
+<listitem><para>Wash dauer larvae 1-5 times with water to remove all SDS.</para></listitem>
+<listitem><para>At this point, the tube will contain living dauer larvae and the carcasses of non-dauer larvae. If it is necessary to remove the carcasses, perform a sucrose floatation step (<link linkend="bib15">Epstein and Shakes, 1995</link>).</para></listitem>
+</orderedlist>
+</para>
+<para>*30 minutes is the standard time used; however, 10 minutes is sufficient to kill wild-type non-dauer stages, including recovering dauer larvae (<link linkend="bib11">Cassada and Russell, 1975</link><!--PMID: 1183723-->; <link linkend="bib51">Nika et al., 2016</link><!--PMID: 27172224-->). Wild-type dauer larvae can remain in SDS for hours.</para>
+</sect3>
+<sect3 id="sec4.1.2">
+<title>SDS protocol, for small numbers of dauer larvae</title>
+<para>If you have very few worms that you need to test and do not want to risk losing them in a wash, this protocol may be more suitable.</para>
+<orderedlist>
+<listitem><para>Pipette &ap;1 ml 1% SDS into an empty 35 mm Petri dish.</para></listitem>
+<listitem><para>Pick worms into the SDS.</para></listitem>
+<listitem><para>Incubate worms in 1% SDS for 30 minutes* with gentle agitation.</para></listitem>
+<listitem><para>Use an eyebrow pick to retrieve the worms.</para></listitem>
+<listitem><para>As an alternative to the eyebrow pick, use a sterile micropipette or Pasteur pipet to transfer the worms and SDS to an NGM plate (<ulink url="http://www.wormbook.org/chapters/www_strainmaintain/strainmaintain.html">Maintenance of <emphasis role="italic">C.</emphasis> elegans</ulink>). The larvae must then be picked to a fresh plate before the SDS begins to dry, because SDS crystals make it difficult to visualize the worms.</para>
+<para>*30 minutes is the standard time used; however, 10 minutes is sufficient to kill wild-type non-dauer stages, including recovering dauer larvae (<link linkend="bib11">Cassada and Russell, 1975</link><!--PMID: 1183723-->; <link linkend="bib51">Nika et al., 2016</link><!--PMID: 27172224-->). Wild-type dauer larvae can remain in SDS for hours (<link linkend="bib11">Cassada and Russell, 1975</link><!--PMID: 1183723-->).</para></listitem>
+</orderedlist>
+</sect3>
+</sect2>
+<sect2 id="sec4.2">
+<title>Fluorescent beads</title>
+<para>An alternative to SDS-selection that is particularly useful for SDS-sensitive mutants or for quantitative analyses is the use of fluorescent latex beads mixed into the bacterial food source. Dauer larvae neither eat nor pump, consistent with the presence of the buccal plug, and therefore lack beads in their digestive tract (<link linkend="bib11">Cassada and Russell, 1975</link><!--PMID: 1183723-->; <link linkend="bib51">Nika et al., 2016</link><!--PMID: 27172224-->). Indeed, the intestines of L2d larvae are emptied upon entering the L2d-dauer molt, and they remain empty until a few hours after recovery is initiated (<link linkend="bib51">Nika et al., 2016</link><!--PMID: 27172224-->). Other stages, with the exception of molting larvae, do contain beads in their digestive tract. If starved cultures are used to induce dauer formation, no molting larvae are present and lack of beads is highly effective to identify dauer larvae. Beads can also be used to isolate dauer larvae induced by other methods (<link linkend="bib51">Nika et al., 2016</link><!--PMID: 27172224-->).</para>
+<para>The presence or absence of beads can be visualized using a fluorescence dissecting microscope (<link linkend="bib51">Nika et al., 2016</link><!--PMID: 27172224-->). GFP-labeled <ulink url="http://www.wormbase.org/db/get?name=OP50;class=Strain" role="_blank">OP50</ulink> can be used as an alternative to beads, but are harder to visualize (<link linkend="bib51">Nika et al., 2016</link><!--PMID: 27172224-->).</para>
+<sect3 id="sec4.2.1">
+<title>Bead protocol for isolating dauer larvae from starved plates</title>
+<para>
+<orderedlist>
+<listitem><para>Culture <ulink url="http://www.wormbase.org/db/get?name=OP50;class=Strain" role="_blank">OP50</ulink> or the bacterial strain of your choice overnight, and concentrate the culture 10X (by spinning and resuspending the pellet in 1/10 the culture volume).</para></listitem>
+<listitem><para>Add 1 &micro;L of fluorescent beads (Sigma L3280; 0.5 &mu;m, red fluorescence) to each 1mL of concentrated <ulink url="http://www.wormbase.org/db/get?name=OP50;class=Strain" role="_blank">OP50</ulink> to produce a ratio of 1:1000 (v/v) beads to bacteria.</para></listitem>
+<listitem><para>Add 65 &micro;l of the bead-food mixture to a 60 mm NGM plate (<ulink url="http://www.wormbook.org/chapters/www_strainmaintain/strainmaintain.html">Maintenance of <emphasis role="italic">C. elegans</emphasis></ulink>) and allow to dry (plates can be prepared in advance and stored at 4 &deg;C for up to 8 weeks).</para></listitem>
+<listitem><para>Wash worms from starved cultures, pellet, and add to the prepared NGM+beads+OP50 plate.</para></listitem>
+<listitem><para>Incubate at least 20 minutes and no longer than 90 minutes at 20 &deg;C.</para></listitem>
+<listitem><para>Use a fluorescence dissecting microscope with a DS-Red filter at 100X magnification (or a Rhodamine filter at 150X magnification) to pick out worms that lack beads: these are dauer larvae.</para></listitem>
+</orderedlist>
+</para>
+</sect3>
+<sect3 id="sec4.2.2">
+<title>Bead protocol for isolating dauer larvae formed by exogenous pheromone or Daf-c mutation</title>
+<para>1-3. Complete steps 1-3 from the protocol above.</para>
+<para>
+<orderedlist>
+<listitem><para>Add embryos to plates and incubate at 25 &deg;C.</para></listitem>
+<listitem><para>After &ap;55 hours use a fluorescence dissecting microscope with a DS-Red filter at 100X magnification (or a Rhodamine filter at 150X magnifictation) to pick out worms that lack beads: these are dauer larvae.</para></listitem>
+</orderedlist>
+</para>
+<para>Note that beads are also effective at isolating mutant larvae with incomplete dauer morphogenesis (also called &ldquo;partial dauer&rdquo; or &ldquo;dauer-like&rdquo; larvae) formed by <ulink url="http://www.wormbase.org/db/get?name=WBPhenotype:0000637;class=Phenotype" role="_blank">Daf</ulink> mutants, such as <emphasis role="italic"><ulink url="http://www.wormbase.org/db/get?name=WBGene00000912;class=Gene" role="_blank">daf-16</ulink>; <ulink url="http://www.wormbase.org/db/get?name=WBGene00000903;class=Gene" role="_blank">daf-7</ulink></emphasis> (<link linkend="bib51">Nika et al., 2016</link><!--PMID: 27172224-->). In this strain, beads are not efficiently excreted prior to molting into dauer. Therefore, the best way to isolate dauer larvae is to grow larvae in the absence of beads at 25 &deg;C to stimulate dauer formation, and then transfer larvae to bead-containing plates for 30 minutes. Larvae in the dauer stage will lack beads. This method is recommended over SDS-selection because <emphasis role="italic"><ulink url="http://www.wormbase.org/db/get?name=WBGene00000912;class=Gene" role="_blank">daf-16</ulink>; <ulink url="http://www.wormbase.org/db/get?name=WBGene00000903;class=Gene" role="_blank">daf-7</ulink></emphasis> larvae display some SDS sensitivity (<link linkend="bib51">Nika et al., 2016</link><!--PMID: 27172224-->). Other partial dauer mutants have not been tested, but may be similar to <emphasis role="italic"><ulink url="http://www.wormbase.org/db/get?name=WBGene00000912;class=Gene" role="_blank">daf-16</ulink>; daf-7.</emphasis></para>
+</sect3>
+</sect2>
+<sect2 id="sec4.3">
+<title>Dauer morphology</title>
+<sect3 id="sec4.3.1">
+<title>Dauer alae</title>
+<para>The most unambiguous morphological criterion that distinguishes dauer larvae is the presence of dauer alae on the cuticle (<link linkend="bib60">Rossi et al., 2012</link><!--PMID: 22958929-->) (<link linkend="figure4">Figure 4</link>). Dauer alae form during the molt into dauer and remain until post-dauer larvae molt into the PDL4 stage (<link linkend="figure3">Figure 3</link>) (<link linkend="bib11">Cassada and Russell, 1975</link><!--PMID: 1183723-->). However, after recovery, during the PDL3 stage, dauer alae become stretched and more difficult to see as the larvae lose radial constriction (<link linkend="bib58">Riddle et al., 1997</link>). A compound microscope is required to visualize dauer alae, and thus using dauer alae to identify dauer larvae is not recommended for high throughput applications.</para>
+<mediaobject id="figure4" xreflabel="Figure 4">
+<imageobject>
+<imagedata entityref="fig4" width="4.8in" align="center"/>
+</imageobject>
+<textobject>
+<phrase>figure 4</phrase>
+</textobject>&fig4legend;</mediaobject>
+</sect3>
+<sect3 id="sec4.3.2">
+<title>Radial constriction</title>
+<para>The bodies of dauer larvae are highly constricted, such that dauer larvae appear longer and skinnier than other stages when viewed under the dissecting microscope. They also tend to appear darker, due to an increase in fat stores (<link linkend="bib11">Cassada and Russell, 1975</link><!--PMID: 1183723-->). When examined more closely under the compound microscope, it can be seen that the pharynx is particularly constricted. Constriction initiates during the L2d to dauer molt (<link linkend="bib22">Golden and Riddle, 1984b</link><!--PMID: 6706004-->). During recovery restriction decreases, such that larvae are noticeably less constricted after &ap;12 hours of recovery (<link linkend="bib11">Cassada and Russell, 1975</link><!--PMID: 1183723-->). When looking at a large population, unambiguous identification of dauer larvae based on radial constriction is more difficult than the preceding methods. This is particularly true when the population is starved, because non-dauer animals are often skinny.</para>
+</sect3>
+<sect3 id="sec4.3.3">
+<title>Refractile bodies</title>
+<para>The hypodermis and the intestine of dauer larvae both appear dark when viewed under the dissecting microscope, due to the accumulation of refractile granules in these tissues (<link linkend="bib70">Vowels and Thomas, 1992</link><!--PMID: 1732156-->). On a slide, these tissues appear bright by DIC and autofluorescent under UV light. This feature is more characteristic of the dauer life history than the dauer stage <emphasis role="italic">per se</emphasis>, because granules begin accumulating during L2d (<link linkend="bib22">Golden and Riddle, 1984b</link><!--PMID: 6706004-->) and persist in post-dauer stages (X. Karp, unpublished observations).</para>
+</sect3>
+</sect2>
+<sect2 id="sec4.4">
+<title>Other dauer characteristics</title>
+<para>Several additional features of dauer larvae have been observed. More investment is generally required to use these features compared to those described above because specialized markers, equipment, and/or experience are needed.</para>
+<sect3 id="sec4.4.1">
+<title>Behavior</title>
+<para>Dauer larvae display several behaviors that distinguish them from other stages. First, dauer larvae can nictate, or stand on their tails and wave back and forth. Nictation is thought to be a dispersal behavior unique to dauer larvae. Nictation cannot occur without a substrate such as mold or gauze and thus will not occur on standard, uncontaminated plates (<link linkend="bib11">Cassada and Russell, 1975</link><!--PMID: 1183723-->; <link linkend="bib42">Lee et al., 2012</link><!--PMID: 22081161-->). Dauer larvae on the surface of a plate are often quiescent, and can appear still and rodlike. They do however move quickly in response to stimuli (<link linkend="bib11">Cassada and Russell, 1975</link><!--PMID: 1183723-->; <link linkend="bib42">Lee et al., 2012</link><!--PMID: 22081161-->).</para>
+</sect3>
+<sect3 id="sec4.4.2">
+<title>IL2 Neurons:</title>
+<para>IL2 sensory neurons, found in the head, display two dauer characteristics. First, a <emphasis role="italic"><ulink url="http://www.wormbase.org/db/get?name=WBGene00002246;class=Gene" role="_blank">lag-2</ulink>::GFP</emphasis> reporter is expressed in IL2 neurons throughout the dauer stage, but not during other stages (<link linkend="bib53">Ouellet et al., 2008</link><!--PMID: 18599512-->). Second, IL2 neurons undergo dauer-specific dendritic arborization, visualizable with <emphasis role="italic"><ulink url="http://www.wormbase.org/db/get?name=WBGene00002246;class=Gene" role="_blank">lag-2</ulink>::GFP</emphasis> or <emphasis role="italic"><ulink url="http://www.wormbase.org/db/get?name=WBGene00002218;class=Gene" role="_blank">klp-6</ulink>::GFP</emphasis> (<link linkend="bib66">Schroeder et al., 2013</link><!--PMID: 23932402-->).</para>
+</sect3>
+<sect3 id="sec4.4.3">
+<title>Excretory duct pulsation</title>
+<para>The gland cell of dauer larvae lacks visible secretory granules, and the excretory duct of dauer larvae pulses at a frequency dependent on osmotic conditions (<link linkend="bib50">Nelson et al., 1983</link><!--PMID: 6827646-->; <link linkend="bib49">Nelson and Riddle, 1984</link><!--PMID: 6470649-->). This pulsation can be viewed by DIC optics, if dauer larvae are not anesthetized (<link linkend="bib49">Nelson and Riddle, 1984</link><!--PMID: 6470649-->).</para>
+</sect3>
+</sect2>
+</sect1>
+<sect1 id="sec5">
+<title>Pre- and post-dauer stages</title>
+<para>In addition to isolating dauer larvae, pre- and post-dauer larvae can be isolated and studied. Dauer is induced using one of the methods described in <link linkend="sec2">Section 2</link> (see <link linkend="table1">Table 1</link> for information about which methods are useful for isolating pre- or post-dauer larvae).</para>
+<sect2 id="sec5.1">
+<title>Pre-dauer larvae</title>
+<para>The pre-dauer L2d stage is different in many respects from the L2 stage. First, it is at least 50% longer than the L2 stage. During this time, larvae assess their environmental conditions and prepare for dauer formation, including accumulating fat stores (<link linkend="bib22">Golden and Riddle, 1984b</link><!--PMID: 6706004-->). Gene expression is also somewhat different in L2d larvae compared to L2 larvae (<link linkend="bib43">Liu et al., 2004</link><!--PMID: 15380030-->; <link linkend="bib28">Harvey et al., 2009</link><!--PMID: 19615088-->; <link linkend="bib32">Jeong et al., 2009</link><!--PMID: 19129915-->; <link linkend="bib36">Karp et al., 2011</link><!--PMID: 21343388-->). The lethargus and molt between L2d and dauer is also unique. It lasts approximately 12 hours at 25 &deg;C, in contrast to the 1-2hr molting period between all other stages (<link linkend="bib22">Golden and Riddle, 1984b</link><!--PMID: 6706004-->).</para>
+<sect3 id="sec5.1.1">
+<title>Obtaining pre-dauer larvae</title>
+<para>L2d larvae can be recognized by their darkened appearance and by the length of time in the second larval stage (<link linkend="bib22">Golden and Riddle, 1984b</link><!--PMID: 6706004-->). However, neither of these traits is sufficient to pick them out of a mixed population of worms. No L2d-specific fluorescent markers have been characterized. The best way to obtain L2d larvae, therefore, is to start with a synchronized population of embryos and grow the larvae in dauer-inducing conditions such as dauer pheromone or using a Daf-c mutation (see <link linkend="table1">Table 1</link>). Larvae grown under such conditions for approximately 24-30 hours after egg-laying (25 &deg;C) will be in the L2d stage (<link linkend="figure3">Figure 3</link>).</para>
+</sect3>
+</sect2>
+<sect2 id="sec5.2">
+<title>Post-dauer larvae and adults</title>
+<para>When wild-type dauer larvae are placed in favorable environmental conditions, they will recover quickly and synchronously. The first signs of recovery are pumping and feeding, beginning within two hours at 20 &deg;C (<link linkend="bib11">Cassada and Russell, 1975</link><!--PMID: 1183723-->; <link linkend="bib51">Nika et al., 2016</link><!--PMID: 27172224-->). Over the next several hours recovering dauer larvae feed, lose their radial constriction, and adjust their metabolism back to a non-dauer state. Gene expression also changes during this time (<link linkend="bib72">Wang and Kim, 2003</link><!--PMID: 12620986-->). By &ap;10-12 hours after stimulation to recovery at 20 &deg;C, or &ap;7-8 hours at 25 &deg;C, they reach the PDL3 (post-dauer L3 stage), where cell division and development have resumed. Cell fates, including cell divisions and expression of cell fate markers, are equivalent between L3 and PDL3 stages (<link linkend="bib44">Liu and Ambros, 1991</link><!--PMID: 26502479-->; <link linkend="bib16">Euling and Ambros, 1996</link><!--PMID: 8756295-->; <link linkend="bib9">Braendle and F&eacute;lix, 2008</link><!--PMID: 19000836-->; <link linkend="bib35">Karp and Greenwald, 2013</link><!--PMID: 23341633-->). However, no molt occurs between dauer and PDL3. Thus, dauer alae are still visible on the cuticle, although more difficult to see because they become stretched as the larva loses radial constriction and begins to grow (<link linkend="bib11">Cassada and Russell, 1975</link><!--PMID: 1183723-->; <link linkend="bib58">Riddle et al., 1997</link>).</para>
+<para>Larvae molt from PDL3 to the PDL4 stage approximately 16 hours after stimulation to recover from dauer at 20 &deg;C, or 12 hours after stimulation to recover at 25 &deg;C (<link linkend="figure3">Figure 3</link>) (<link linkend="bib11">Cassada and Russell, 1975</link><!--PMID: 1183723-->; <link linkend="bib56">Reape and Burnell, 1990</link><!--PMID: 2244887-->). PDL4 larvae are morphologically indistinguishable from L4 larvae, at least at the gross level. Similarly, PD adults appear identical to adults that developed continuously. However, subtle differences do exist. For example, some changes in muscle arm and neuronal cell structure persist in post-dauer stages (<link linkend="bib14">Dixon et al., 2008</link><!--PMID: 18436204-->; <link linkend="bib66">Schroeder et al., 2013</link><!--PMID: 23932402-->). Interestingly, this apparent similarity between post-dauer and continuously developed animals belies a number of changes at the level of expression of protein coding and small RNA coding genes, as well as changes in chromatin structure (<link linkend="bib26">Hall et al., 2010</link><!--PMID: 20079644-->; <link linkend="bib36">Karp et al., 2011</link><!--PMID: 21343388-->; <link linkend="bib27">Hall et al., 2013</link><!--PMID: 3329696-->).</para>
+<sect3 id="sec5.2.1">
+<title>Obtaining wild-type post-dauer larvae and adults</title>
+<para>Aside from the presence of dauer alae on PDL3 staged larvae, no simple morphological marker exists to distinguish PD animals from those that developed continuously. The best way to study post-dauer animals is to start with a population of dauer larvae isolated using one of the methods in <link linkend="sec4">Section 4</link>, and allow them to recover (<link linkend="figure3">Figure 3</link>) (<link linkend="bib11">Cassada and Russell, 1975</link><!--PMID: 1183723-->). Larvae become committed to recovery within one hour, but the first signs of recovery (resumption of pumping and feeding) are not apparent for another 1-2 hours (<link linkend="bib11">Cassada and Russell, 1975</link><!--PMID: 1183723-->; <link linkend="bib51">Nika et al., 2016</link><!--PMID: 27172224-->). Depending on the experiment, it may or may not be important to control the length of time larvae spent in dauer prior to recovery (see <link linkend="table1">Table 1</link>). It is worth noting that the propensity of dauer larvae to recover increases over time (<link linkend="bib22">Golden and Riddle, 1984b</link><!--PMID: 6706004-->). However, over several weeks, the ability of dauer larvae to recover decreases (<link linkend="bib40">Klass and Hirsh, 1976</link><!--PMID: 1264206-->).</para>
+</sect3>
+<sect3 id="sec5.2.2">
+<title>Protocol for isolating wild-type PD worms</title>
+<para>
+<orderedlist>
+<listitem><para>Use a method from <link linkend="sec3">Section 3</link> to obtain dauer larvae.</para></listitem>
+<listitem><para>SDS select (<link linkend="sec4.1">Section 4.1</link>; it is not necessary to remove carcasses) or use fluorescent beads (<link linkend="sec4.2">Section 4.2</link>) to isolate dauer larvae.</para></listitem>
+<listitem><para>Place dauer larvae on a fresh NGM plate (<ulink url="http://www.wormbook.org/chapters/www_strainmaintain/strainmaintain.html">Maintenance of <emphasis role="italic">C. elegans</emphasis></ulink>) with a bacterial food source and incubate at the desired temperature (15 &deg;C-25 &deg;C).</para></listitem>
+<listitem><para>To identify recovering dauer larvae, fluorescent beads should be added to the food source (<link linkend="sec4.2">Section 4.2</link>). Within 2 hours of recovery at 20 &deg;C, beads will be present in the digestive tract of a few larvae, indicating they have lost their buccal plug and begun to feed. By 3 hours, nearly 100% of larvae will be feeding (<link linkend="bib51">Nika et al., 2016</link><!--PMID: 27172224-->).</para></listitem>
+<listitem><para>To identify post-dauer L3-staged larvae, allow larvae to recover &ap;14 hours at 20 &deg;C (~8 hours at 25 &deg;C). Staging can be verified by the presence of indistinct dauer alae on the cuticle and by gonad and vulval morphology equivalent to L3-staged continuously developing larvae (<link linkend="bib16">Euling and Ambros, 1996</link><!--PMID: 8756295-->).</para></listitem>
+<listitem><para>To identify later stages, standard anatomical criteria can be used. See <link linkend="bib54">Ow and Hall (2015</link><!--PMID: 26423977-->) for details about obtaining post-dauer adults, and for details about obtaining a synchronous control population of adults that did not experience dauer.</para></listitem>
+</orderedlist>
+</para>
+</sect3>
+<sect3 id="sec5.2.3">
+<title>Obtaining Daf-c post-dauer larvae and adults</title>
+<para>Daf-c mutants recover asynchronously, and therefore allowing them to recover for certain periods of time is less helpful in obtaining particular stages. Post-dauer L4 and adult stages are easily recognized by their increased body size and by the development of their tissues, particularly the somatic gonad, germline, and vulva. However, distinguishing the early stages of recovery/post-dauer L3 can be challenging. The simplest way to accomplish this is by using fluorescent latex beads, as described in <link linkend="sec4.2">Section 4.2</link>. Larvae that are still within dauer lack beads whereas recovering larvae will have begun feeding and thus will have beads in their digestive tract. This method is also effective for distinguishing dauer and recovering mutant partial dauer larvae (<link linkend="bib51">Nika et al., 2016</link><!--PMID: 27172224-->). Using beads rather than SDS to isolate dauer larvae is recommended for dauer-like larvae that may exhibit some SDS sensitivity (<link linkend="bib51">Nika et al. 2016</link><!--PMID: 27172224-->).</para>
+</sect3>
+<sect3 id="sec5.2.4">
+<title>Protocol for isolating PD Daf-c worms</title>
+<para>
+<orderedlist>
+<listitem><para>Culture <ulink url="http://www.wormbase.org/db/get?name=OP50;class=Strain" role="_blank">OP50</ulink> or the bacterial strain of your choice overnight, and concentrate the culture 10X (by spinning and resuspending the pellet in 1/10 the culture volume).</para></listitem>
+<listitem><para>Add 1 &micro;L of fluorescent beads (Sigma L3280; 0.5&micro;m, red fluorescence) to each 1 ml of concentrated <ulink url="http://www.wormbase.org/db/get?name=OP50;class=Strain" role="_blank">OP50</ulink> to produce a ratio of 1:1000 (v/v) beads to bacteria.</para></listitem>
+<listitem><para>Add 65 &micro;l of the bead-food mixture to a 60 mm NGM plate (<ulink url="http://www.wormbook.org/chapters/www_strainmaintain/strainmaintain.html">Maintenance of <emphasis role="italic">C.</emphasis> elegans</ulink>) and allow to dry (plates can be prepared in advance and stored at 4 &deg;C).</para></listitem>
+<listitem><para>Use these plates when inducing dauer formation in a Daf-c background (<link linkend="sec3.5">Section 3.5</link>). Beads will be removed from the intestine prior to the L2d-dauer molt, and thus dauer larvae will lack beads* (<link linkend="bib51">Nika et al., 2016</link><!--PMID: 27172224-->).</para></listitem>
+<listitem><para>Alternatively, induce dauer formation on standard plates, and then pick dauer larvae to bead-containing plates.</para></listitem>
+<listitem><para>Shift dauer larvae to 15 &deg;C.</para></listitem>
+<listitem><para>Monitor for recovery by using a fluorescence microscope with a DS-Red filter at 100X magnification (or a Rhodamine filter at 150X magnification) to look for beads within the digestive tract.</para></listitem>
+<listitem><para>Recovery takes significantly longer than in wild-type. Typically, we see that about half the population has recovered 24 hours after shifting to 15 &deg;C, but wide variation is observed. We find that the longer a Daf-c mutant dauer larva is kept at 25 &deg;C, the more difficult recovery is (unpublished).</para></listitem>
+</orderedlist>
+</para>
+<para>*<emphasis role="italic"><ulink url="http://www.wormbase.org/db/get?name=WBGene00000912;class=Gene" role="_blank">daf-16</ulink>; <ulink url="http://www.wormbase.org/db/get?name=WBGene00000903;class=Gene" role="_blank">daf-7</ulink></emphasis> dauer-like larvae, and potentially other dauer-like larvae do not all expel beads as they molt into dauer. Therefore, these larvae should be grown on standard plates until dauer formation, and then moved to bead-containing plates (<link linkend="bib51">Nika et al., 2016</link><!--PMID: 27172224-->).</para>
+</sect3>
+</sect2>
+</sect1>
+<sect1 id="sec6">
+<title>Acknowledgements</title>
+<para>Many thanks to Sarah Hall (Syracuse University) for sharing the high density plating protocol prior to publication, and to Scott Neal (Brandeis University) helpful discussions. Thanks to Eric Montoye (Central Michigan University) for micrographs of dauer larvae. Thanks to Claudia Tenen (Columbia University) and to members of the Karp lab for comments on the manuscript. XK is supported by a grant from the National Institutes of Health (R15 GM117568) and by a grant from Central Michigan University (C62241).</para>
+</sect1>
+<sect1 id="sec7">
+<title>References</title>
+<para/>
+&dauerlarvae_ref;
+</sect1>
+</article>
